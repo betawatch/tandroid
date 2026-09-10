@@ -1,41 +1,19 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class wo extends ClickableSpan {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ wo(int i10) {
-        this.a = i10;
+public final class wo extends org.telegram.ui.Cells.s8 {
+    public wo(Context context) {
+        super(context);
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                of.f.s(view.getContext(), "https://t.me/BotFather");
-                break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(-1);
-                break;
-        }
-    }
-
-    private final void a(View view) {
+    @Override // org.telegram.ui.Cells.s8, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
     }
 }

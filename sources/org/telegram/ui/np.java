@@ -1,73 +1,35 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class np implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xp b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ yp b;
 
-    public /* synthetic */ np(xp xpVar, org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = xpVar;
-        this.c = b2VarArr;
-        this.d = i10;
+    public /* synthetic */ np(yp ypVar, int i10) {
+        this.a = i10;
+        this.b = ypVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
-                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
-                if (b2Var != null) {
-                    final int i10 = 1;
-                    final xp xpVar = this.b;
-                    final int i11 = this.d;
-                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.op
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(xpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(xpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    xpVar.showDialog(b2VarArr[0]);
+                yp ypVar = this.b;
+                org.telegram.ui.ActionBar.d2 d2Var = ypVar.r;
+                if (d2Var != null) {
+                    d2Var.setOnCancelListener(new qg(ypVar, 2));
+                    ypVar.showDialog(ypVar.r);
                     break;
                 }
                 break;
+            case 1:
+                yp ypVar2 = this.b;
+                ypVar2.getMessagesController().loadFullChat(ypVar2.E, 0, true);
+                break;
             default:
-                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
-                if (b2Var2 != null) {
-                    final int i12 = 0;
-                    final xp xpVar2 = this.b;
-                    final int i13 = this.d;
-                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.op
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    ConnectionsManager.getInstance(xpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(xpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    xpVar2.showDialog(b2VarArr2[0]);
-                    break;
-                }
+                yp ypVar3 = this.b;
+                ypVar3.getMessagesController().loadFullChat(ypVar3.E, 0, true);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.text.Editable;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class gq0 implements ar0 {
     public final /* synthetic */ kq0 a;
@@ -27,9 +27,9 @@ public final class gq0 implements ar0 {
     @Override // org.telegram.ui.ar0
     public final void b(Editable editable) {
         kq0 kq0Var = this.a;
-        org.telegram.ui.Components.hu huVar = kq0Var.M;
+        org.telegram.ui.Components.nu nuVar = kq0Var.M;
         kq0Var.a = editable;
-        huVar.setText(editable);
+        nuVar.setText(editable);
     }
 
     @Override // org.telegram.ui.ar0

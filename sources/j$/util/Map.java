@@ -101,8 +101,8 @@ public interface Map<K, V> {
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 try {
                     biConsumer.accept(entry.getKey(), entry.getValue());
-                } catch (IllegalStateException e7) {
-                    throw new ConcurrentModificationException(e7);
+                } catch (IllegalStateException e) {
+                    throw new ConcurrentModificationException(e);
                 }
             }
         }
@@ -114,11 +114,11 @@ public interface Map<K, V> {
                 try {
                     try {
                         entry.setValue(biFunction.apply(entry.getKey(), entry.getValue()));
-                    } catch (IllegalStateException e7) {
-                        throw new ConcurrentModificationException(e7);
+                    } catch (IllegalStateException e) {
+                        throw new ConcurrentModificationException(e);
                     }
-                } catch (IllegalStateException e10) {
-                    throw new ConcurrentModificationException(e10);
+                } catch (IllegalStateException e7) {
+                    throw new ConcurrentModificationException(e7);
                 }
             }
         }

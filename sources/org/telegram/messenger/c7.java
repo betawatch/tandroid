@@ -1,29 +1,40 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.content.SharedPreferences;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ SharedPreferences e;
+    public final /* synthetic */ boolean[] f;
 
-    public /* synthetic */ c7(MediaDataController mediaDataController, long j3, int i10) {
+    public /* synthetic */ c7(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = j3;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = sharedPreferences;
+        this.f = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPinnedMessages$161(this.c);
-                break;
-            case 1:
-                this.b.lambda$increasePeerRaiting$157(this.c);
+                SharedPreferences sharedPreferences = this.e;
+                boolean[] zArr = this.f;
+                this.b.lambda$loadRecentAndTopReactions$237(this.c, this.d, sharedPreferences, zArr);
                 break;
             default:
-                this.b.lambda$clearBotKeyboard$194(this.c);
+                SharedPreferences sharedPreferences2 = this.e;
+                boolean[] zArr2 = this.f;
+                this.b.lambda$loadRecentAndTopReactions$235(this.c, this.d, sharedPreferences2, zArr2);
                 break;
         }
     }

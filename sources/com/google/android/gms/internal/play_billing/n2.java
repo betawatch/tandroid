@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class n2 implements t2 {
     public static final int[] j = new int[0];
@@ -44,7 +44,7 @@ public final class n2 implements t2 {
     public static Field B(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e7) {
+        } catch (NoSuchFieldException e) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -55,7 +55,7 @@ public final class n2 implements t2 {
             String arrays = Arrays.toString(declaredFields);
             StringBuilder w10 = a4.a.w("Field ", str, " for ", name, " not found. Known fields are ");
             w10.append(arrays);
-            throw new RuntimeException(w10.toString(), e7);
+            throw new RuntimeException(w10.toString(), e);
         }
     }
 
@@ -1222,13 +1222,13 @@ public final class n2 implements t2 {
                                 m1Var.b[i19] = g10;
                                 m1Var.d = i20;
                                 break;
-                            } catch (IndexOutOfBoundsException e7) {
-                                e = e7;
+                            } catch (IndexOutOfBoundsException e) {
+                                e = e;
                                 i19 = i20;
                                 throw new b5(i19, m1Var.c, 1, e);
                             }
-                        } catch (IndexOutOfBoundsException e10) {
-                            e = e10;
+                        } catch (IndexOutOfBoundsException e7) {
+                            e = e7;
                         }
                     } else {
                         continue;
@@ -1519,15 +1519,15 @@ public final class n2 implements t2 {
                         int i32 = m1Var3.d;
                         try {
                             i11 = i32 + 1;
-                        } catch (IndexOutOfBoundsException e11) {
-                            e = e11;
+                        } catch (IndexOutOfBoundsException e10) {
+                            e = e10;
                         }
                         try {
                             m1Var3.b[i32] = booleanValue;
                             m1Var3.d = i11;
                             break;
-                        } catch (IndexOutOfBoundsException e12) {
-                            e = e12;
+                        } catch (IndexOutOfBoundsException e11) {
+                            e = e11;
                             i32 = i11;
                             throw new b5(i32, m1Var3.c, 1, e);
                         }
@@ -2868,7 +2868,7 @@ public final class n2 implements t2 {
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final boolean f(v1 v1Var, v1 v1Var2) {
-        boolean e7;
+        boolean e;
         int i10 = 0;
         while (true) {
             int[] iArr = this.a;
@@ -3034,10 +3034,10 @@ public final class n2 implements t2 {
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                        e7 = u2.e(c3.h(v1Var, j3), c3.h(v1Var2, j3));
+                        e = u2.e(c3.h(v1Var, j3), c3.h(v1Var2, j3));
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        e7 = u2.e(c3.h(v1Var, j3), c3.h(v1Var2, j3));
+                        e = u2.e(c3.h(v1Var, j3), c3.h(v1Var2, j3));
                         break;
                     case 51:
                     case 52:
@@ -3066,7 +3066,7 @@ public final class n2 implements t2 {
                     default:
                         i10 += 3;
                 }
-                if (e7) {
+                if (e) {
                     i10 += 3;
                 }
             } else if (v1Var.zzc.equals(v1Var2.zzc)) {

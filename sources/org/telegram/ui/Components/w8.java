@@ -1,35 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class w8 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f9 b;
+import android.app.Activity;
 
-    public /* synthetic */ w8(f9 f9Var, int i10) {
-        this.a = i10;
-        this.b = f9Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final class w8 extends c9 {
+    public final /* synthetic */ v8 G;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w8(d9 d9Var, Activity activity, v8 v8Var) {
+        super(d9Var, activity);
+        this.G = v8Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == -1) {
-                    f9.U(this.b);
-                    break;
-                }
-                break;
-            default:
-                f9 f9Var = this.b;
-                if (i10 == -1) {
-                    f9.U(f9Var);
-                }
-                if (i10 == 1) {
-                    f9Var.f0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.c9, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.G.invalidate();
     }
 }

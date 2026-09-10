@@ -15,10 +15,11 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class y extends n0 {
     public int E;
@@ -27,7 +28,7 @@ public class y extends n0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public l.d N;
+    public l2.h N;
     public w O;
     public Rect Q;
     public long R;
@@ -46,9 +47,9 @@ public class y extends n0 {
     public int w = -1;
     public int y = 0;
     public final ArrayList F = new ArrayList();
-    public final rg.b0 I = new rg.b0(this, 1);
+    public final l9 I = new l9(this, 29);
     public View M = null;
-    public final gl0 P = new gl0(this);
+    public final ql0 P = new ql0(this);
 
     public y(v vVar) {
         this.x = vVar;
@@ -147,17 +148,17 @@ public class y extends n0 {
         }
     }
 
-    public final void d(ll0 ll0Var) {
+    public final void d(vl0 vl0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == ll0Var) {
+        if (recyclerView == vl0Var) {
             return;
         }
-        gl0 gl0Var = this.P;
+        ql0 ql0Var = this.P;
         if (recyclerView != null) {
             recyclerView.p0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(gl0Var);
-            if (recyclerView2.F == gl0Var) {
+            recyclerView2.E.remove(ql0Var);
+            if (recyclerView2.F == ql0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -189,25 +190,25 @@ public class y extends n0 {
                 this.N = null;
             }
         }
-        this.H = ll0Var;
-        if (ll0Var != null) {
-            ll0Var.getResources();
+        this.H = vl0Var;
+        if (vl0Var != null) {
+            vl0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(gl0Var);
+            this.H.E.add(ql0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new l.d(this.H.getContext(), this.O);
+            this.N = new l2.h(this.H.getContext(), this.O);
         }
     }
 
-    public final int g(c1 c1Var, int i10) {
+    public final int f(c1 c1Var, int i10) {
         if ((i10 & 12) == 0) {
             return 0;
         }
@@ -254,9 +255,9 @@ public class y extends n0 {
                     return;
                 }
                 RecyclerView recyclerView = this.H;
-                int e7 = vVar.e(recyclerView, c1Var);
+                int e = vVar.e(recyclerView, c1Var);
                 WeakHashMap weakHashMap = r0.i0.a;
-                int b10 = (vVar.b(e7, recyclerView.getLayoutDirection()) & 65280) >> 8;
+                int b10 = (vVar.b(e, recyclerView.getLayoutDirection()) & 65280) >> 8;
                 if (b10 == 0) {
                     return;
                 }
@@ -548,15 +549,15 @@ public class y extends n0 {
                     c10 = 0;
                 } else {
                     if (this.y != 2) {
-                        int e7 = vVar2.e(this.H, c1Var2);
+                        int e = vVar2.e(this.H, c1Var2);
                         RecyclerView recyclerView = this.H;
                         WeakHashMap weakHashMap = r0.i0.a;
-                        int b10 = (vVar2.b(e7, recyclerView.getLayoutDirection()) & 65280) >> 8;
+                        int b10 = (vVar2.b(e, recyclerView.getLayoutDirection()) & 65280) >> 8;
                         if (b10 != 0) {
-                            int i15 = (e7 & 65280) >> 8;
+                            int i15 = (e & 65280) >> 8;
                             c10 = 0;
                             if (Math.abs(this.n) > Math.abs(this.r)) {
-                                i11 = g(c1Var2, b10);
+                                i11 = f(c1Var2, b10);
                                 if (i11 <= 0) {
                                     i11 = i(c1Var2, b10);
                                 } else if ((i15 & i11) == 0) {
@@ -566,7 +567,7 @@ public class y extends n0 {
                             } else {
                                 i11 = i(c1Var2, b10);
                                 if (i11 <= 0) {
-                                    i11 = g(c1Var2, b10);
+                                    i11 = f(c1Var2, b10);
                                     if (i11 > 0) {
                                         if ((i15 & i11) == 0) {
                                             i11 = v.c(i11, this.H.getLayoutDirection());
@@ -652,9 +653,9 @@ public class y extends n0 {
         if (c1Var != null) {
             View view2 = c1Var.a;
             RecyclerView recyclerView2 = this.H;
-            int e10 = vVar.e(recyclerView2, c1Var);
+            int e7 = vVar.e(recyclerView2, c1Var);
             WeakHashMap weakHashMap2 = r0.i0.a;
-            this.E = (vVar.b(e10, recyclerView2.getLayoutDirection()) & i14) >> (this.y * 8);
+            this.E = (vVar.b(e7, recyclerView2.getLayoutDirection()) & i14) >> (this.y * 8);
             this.s = view2.getLeft();
             this.v = view2.getTop();
             this.c = c1Var;
@@ -686,9 +687,9 @@ public class y extends n0 {
     public final void r(c1 c1Var) {
         RecyclerView recyclerView = this.H;
         v vVar = this.x;
-        int e7 = vVar.e(recyclerView, c1Var);
+        int e = vVar.e(recyclerView, c1Var);
         WeakHashMap weakHashMap = r0.i0.a;
-        if ((vVar.b(e7, recyclerView.getLayoutDirection()) & 16711680) == 0) {
+        if ((vVar.b(e, recyclerView.getLayoutDirection()) & 16711680) == 0) {
             Log.e("ItemTouchHelper", "Start drag has been called but dragging is not enabled");
             return;
         }

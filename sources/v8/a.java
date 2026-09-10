@@ -11,7 +11,7 @@ import com.google.android.gms.tasks.Task;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final long a = TimeUnit.MINUTES.toMillis(10);
@@ -19,25 +19,25 @@ public abstract class a {
     public static final /* synthetic */ int c = 0;
 
     public static void a(Task task, Activity activity) {
-        v vVar = new v();
-        int incrementAndGet = v.f.incrementAndGet();
-        vVar.a = incrementAndGet;
-        v.e.put(incrementAndGet, vVar);
-        v.d.postDelayed(vVar, a);
-        task.addOnCompleteListener(vVar);
+        u uVar = new u();
+        int incrementAndGet = u.f.incrementAndGet();
+        uVar.a = incrementAndGet;
+        u.e.put(incrementAndGet, uVar);
+        u.d.postDelayed(uVar, a);
+        task.addOnCompleteListener(uVar);
         FragmentTransaction beginTransaction = activity.getFragmentManager().beginTransaction();
-        int i10 = vVar.a;
+        int i10 = uVar.a;
         Bundle bundle = new Bundle();
         bundle.putInt("resolveCallId", i10);
         bundle.putInt("requestCode", 991);
         bundle.putLong("initializationElapsedRealtime", b);
-        w wVar = new w();
-        wVar.setArguments(bundle);
-        int i11 = vVar.a;
+        v vVar = new v();
+        vVar.setArguments(bundle);
+        int i11 = uVar.a;
         StringBuilder sb2 = new StringBuilder(58);
         sb2.append("com.google.android.gms.wallet.AutoResolveHelper");
         sb2.append(i11);
-        beginTransaction.add(wVar, sb2.toString()).commit();
+        beginTransaction.add(vVar, sb2.toString()).commit();
     }
 
     public static void b(Activity activity, int i10, int i11, Intent intent) {
@@ -49,9 +49,9 @@ public abstract class a {
         } else {
             try {
                 createPendingResult.send(i11);
-            } catch (PendingIntent.CanceledException e7) {
+            } catch (PendingIntent.CanceledException e) {
                 if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Exception sending pending result", e7);
+                    Log.e("AutoResolveHelper", "Exception sending pending result", e);
                 }
             }
         }

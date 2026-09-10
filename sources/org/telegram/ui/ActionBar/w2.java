@@ -1,88 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.view.WindowManager;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class w2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f3 b;
+public final class w2 extends TextView {
+    public final /* synthetic */ h3 a;
 
-    public /* synthetic */ w2(f3 f3Var, int i10) {
-        this.a = i10;
-        this.b = f3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w2(h3 h3Var, Context context) {
+        super(context);
+        this.a = h3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                f3 f3Var = this.b;
-                AnimatorSet animatorSet = f3Var.currentSheetAnimation;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    f3Var.currentSheetAnimation = null;
-                    f3Var.currentSheetAnimationType = 0;
-                    break;
-                }
-                break;
-            default:
-                f3 f3Var2 = this.b;
-                AnimatorSet animatorSet2 = f3Var2.currentSheetAnimation;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    f3Var2.currentSheetAnimation = null;
-                    f3Var2.currentSheetAnimationType = 0;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AnimationNotificationsLocker animationNotificationsLocker;
-        int i10 = this.a;
-        f3 f3Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = f3Var.currentSheetAnimation;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    f3Var.currentSheetAnimation = null;
-                    f3Var.currentSheetAnimationType = 0;
-                    f3Var.onOpenAnimationEnd();
-                    z2 z2Var = f3Var.delegate;
-                    if (z2Var != null) {
-                        z2Var.onOpenAnimationEnd();
-                    }
-                    if (f3Var.useHardwareLayer) {
-                        f3Var.container.setLayerType(0, null);
-                    }
-                    if (f3Var.isFullscreen) {
-                        WindowManager.LayoutParams attributes = f3Var.getWindow().getAttributes();
-                        attributes.flags &= -1025;
-                        f3Var.getWindow().setAttributes(attributes);
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        boolean z10;
+        View view;
+        View view2;
+        super.onMeasure(i10, i11);
+        h3 h3Var = this.a;
+        z10 = h3Var.multipleLinesTitle;
+        if (z10) {
+            int measuredHeight = getMeasuredHeight();
+            view = h3Var.customView;
+            if (view != null) {
+                view2 = h3Var.customView;
+                ((ViewGroup.MarginLayoutParams) view2.getLayoutParams()).topMargin = measuredHeight;
+            } else if (h3Var.containerView != null) {
+                for (int i12 = 1; i12 < h3Var.containerView.getChildCount(); i12++) {
+                    View childAt = h3Var.containerView.getChildAt(i12);
+                    if (childAt instanceof a3) {
+                        ((ViewGroup.MarginLayoutParams) childAt.getLayoutParams()).topMargin = measuredHeight;
+                        measuredHeight = AndroidUtilities.dp(48.0f) + measuredHeight;
                     }
                 }
-                if (f3Var.pauseAllHeavyOperations) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                }
-                animationNotificationsLocker = f3Var.notificationsLocker;
-                animationNotificationsLocker.unlock();
-                break;
-            default:
-                AnimatorSet animatorSet2 = f3Var.currentSheetAnimation;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    f3Var.currentSheetAnimation = null;
-                    f3Var.currentSheetAnimationType = 0;
-                    AndroidUtilities.runOnUIThread(new q(this, 9));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
+            }
         }
     }
 }

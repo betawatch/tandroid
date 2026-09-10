@@ -1,51 +1,24 @@
 package qg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ u0 a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ m c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ d0 f;
+public final class c0 implements View.OnClickListener {
+    public final /* synthetic */ d0 a;
 
-    public c0(d0 d0Var, u0 u0Var, float f7, m mVar, boolean z10, Runnable runnable) {
-        this.f = d0Var;
-        this.a = u0Var;
-        this.b = f7;
-        this.c = mVar;
-        this.d = z10;
-        this.e = runnable;
+    public c0(d0 d0Var) {
+        this.a = d0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        b1 b1Var;
-        d0 d0Var = this.f;
-        d0Var.x = null;
-        r0 r0Var = new r0(new u0[]{this.a});
-        c1 c1Var = d0Var.a;
-        int currentColor = c1Var.getCurrentColor();
-        float f7 = this.b * 1.0f;
-        r0Var.c = currentColor;
-        r0Var.d = f7;
-        m mVar = this.c;
-        r0Var.e = mVar;
-        mVar.getClass();
-        int currentColor2 = mVar instanceof d ? -1 : c1Var.getCurrentColor();
-        q0 painting = c1Var.getPainting();
-        boolean z10 = this.d;
-        painting.c(r0Var, currentColor2, z10, null);
-        if (z10 && (b1Var = c1Var.a) != null) {
-            b1Var.e();
-        }
-        Runnable runnable = this.e;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Cells.n nVar = (org.telegram.ui.Cells.n) view.getParent();
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(nVar.getCurrentChannel());
+        k0 k0Var = this.a.c;
+        int i10 = k0.V0;
+        k0Var.D1(arrayList);
     }
 }

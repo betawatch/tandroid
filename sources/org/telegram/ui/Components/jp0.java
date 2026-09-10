@@ -1,68 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class jp0 extends ll0 {
-    public final /* synthetic */ int X2;
-    public final /* synthetic */ hq0 Y2;
+public final class jp0 {
+    public final ru a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jp0(hq0 hq0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
-        this.X2 = i10;
-        this.Y2 = hq0Var;
+    public jp0(View view) {
+        ru ruVar = new ru(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = ruVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean E0(float f7) {
-        switch (this.X2) {
-            case 0:
-                hq0 hq0Var = this.Y2;
-                if (f7 >= AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 58.0f : 111.0f) + hq0Var.G0.b) {
-                }
-                break;
-            default:
-                hq0 hq0Var2 = this.Y2;
-                if (f7 >= AndroidUtilities.dp((!hq0Var2.h0 || hq0Var2.o0[1] == null) ? 58.0f : 111.0f) + hq0Var2.G0.b) {
-                }
-                break;
+    public final void a(Canvas canvas, float f7) {
+        ru ruVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (ruVar = this.a) == null) {
+            return;
         }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.X2) {
-            case 0:
-                hq0 hq0Var = this.Y2;
-                ll0 ll0Var = hq0Var.E;
-                if (ll0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!hq0Var.h0 || hq0Var.o0[1] == null) ? 58.0f : 111.0f) + hq0Var.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (ll0Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                hq0 hq0Var2 = this.Y2;
-                ll0 ll0Var2 = hq0Var2.E;
-                if (ll0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!hq0Var2.h0 || hq0Var2.o0[1] == null) ? 58.0f : 111.0f) + hq0Var2.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (ll0Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-        }
+        ruVar.run();
     }
 }

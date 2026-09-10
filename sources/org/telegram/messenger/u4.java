@@ -1,62 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ ImageLoader b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ u4(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
-        this.a = i11;
-        this.d = obj;
-        this.e = tLObject;
-        this.b = z10;
-        this.c = i10;
+    public /* synthetic */ u4(ImageLoader imageLoader, String str, int i10) {
+        this.a = i10;
+        this.b = imageLoader;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ImageLoader.5) this.d).lambda$fileDidFailedUpload$4(this.c, (String) this.e, this.b);
+                this.b.lambda$artworkLoadError$10(this.c);
                 break;
             case 1:
-                ((LocaleController) this.d).lambda$loadRemoteLanguages$11((Vector) this.e, this.b, this.c);
+                this.b.lambda$cancelForceLoadingForImageReceiver$6(this.c);
                 break;
             case 2:
-                ((MediaDataController) this.d).lambda$loadStickers$91(this.c, this.b, (Utilities.Callback) this.e);
+                this.b.lambda$preloadArtwork$8(this.c);
                 break;
             case 3:
-                ((MessagesStorage) this.d).lambda$loadUserInfo$129((TLRPC.User) this.e, this.b, this.c);
+                this.b.lambda$httpFileLoadError$9(this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.d).lambda$toggleTodo$33(this.c, this.b, (Runnable) this.e);
+                this.b.lambda$fileDidFailedLoad$12(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ u4(BaseController baseController, int i10, boolean z10, Object obj, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.c = i10;
-        this.b = z10;
-        this.e = obj;
-    }
-
-    public /* synthetic */ u4(ImageLoader.5 r22, int i10, String str, boolean z10) {
-        this.a = 0;
-        this.d = r22;
-        this.c = i10;
-        this.e = str;
-        this.b = z10;
     }
 }

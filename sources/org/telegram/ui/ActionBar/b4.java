@@ -1,47 +1,154 @@
 package org.telegram.ui.ActionBar;
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Point;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b4 implements Utilities.Callback {
-    public final /* synthetic */ Utilities.Callback a;
-    public final /* synthetic */ TLRPC.WallPaper b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+public final class b4 extends FrameLayout {
+    public f5 a;
+    public ActionBarLayout b;
+    public boolean c;
+    public final Paint d;
+    public r0.l1 e;
+    public i0.c f;
+    public i0.c h;
 
-    public /* synthetic */ b4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j3) {
-        this.a = callback;
-        this.b = wallPaper;
-        this.c = i10;
-        this.d = i11;
-        this.e = j3;
+    public b4(Activity activity) {
+        super(activity);
+        this.d = new Paint(1);
+        i0.c cVar = i0.c.e;
+        this.f = cVar;
+        this.h = cVar;
+        o oVar = new o(this, 8);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(this, oVar);
+        setSystemUiVisibility(1280);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        dg.a aVar = (dg.a) obj;
-        Utilities.Callback callback = this.a;
-        if (aVar != null) {
-            callback.run(aVar);
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i10, layoutParams);
+        r0.l1 l1Var = this.e;
+        if (l1Var != null) {
+            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
+                r0.i0.b(view, l1Var);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ActionBarLayout actionBarLayout = this.b;
+        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
+            this.b.N(canvas, this);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    public Paint getInternalNavbarPaint() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return ((ActionBarLayout) this.a).j();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.c = true;
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                try {
+                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    if (BuildVars.DEBUG_VERSION) {
+                        throw e;
+                    }
+                }
+            }
+        }
+        this.c = false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        setMeasuredDimension(size, size2);
+        i0.c cVar = this.f;
+        int i12 = (size - cVar.a) - cVar.c;
+        int i13 = (size2 - cVar.b) - cVar.d;
+        Point point = AndroidUtilities.displaySize;
+        point.x = i12;
+        point.y = i13;
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
+                int i15 = layoutParams.height;
+                int makeMeasureSpec2 = i15 > 0 ? View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
+                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).e0()) {
+                    childAt.forceLayout();
+                }
+                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
             return;
         }
-        TLRPC.WallPaper wallPaper = this.b;
-        ImageLocation forDocument = ImageLocation.getForDocument(wallPaper.document);
-        ImageReceiver imageReceiver = new ImageReceiver();
-        imageReceiver.setAllowLoadingOnAttachedOnly(false);
-        Point point = AndroidUtilities.displaySize;
-        int min = Math.min(point.x, point.y);
-        Point point2 = AndroidUtilities.displaySize;
-        imageReceiver.setImage(forDocument, (min / AndroidUtilities.density) + "_" + (Math.max(point2.x, point2.y) / AndroidUtilities.density) + "_f", null, ".jpg", wallPaper, 1);
-        imageReceiver.setDelegate(new org.telegram.tgnet.g(this.c, this.d, this.e, callback));
-        ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
+        super.requestLayout();
+    }
+
+    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
+        this.b = actionBarLayout;
+    }
+
+    public void setInternalNavigationBarColor(int i10) {
+        Paint paint = this.d;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidate();
+            int childCount = getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                getChildAt(i11).invalidate();
+            }
+        }
+    }
+
+    public void setParentActionBarLayout(f5 f5Var) {
+        this.a = f5Var;
     }
 }

@@ -2,13 +2,13 @@ package w;
 
 import android.os.Bundle;
 import android.os.Parcel;
+import bi.i5;
 import e9.f0;
 import e9.i0;
 import j$.util.DesugarCollections;
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
-import n4.y;
 import org.telegram.messenger.AndroidUtilities;
 import x7.z;
 import z3.l;
@@ -16,12 +16,12 @@ import z3.m;
 import z7.s;
 import z7.w;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class f {
     public static z3.b a(m mVar, byte[] bArr, int i10) {
         f0 u10 = i0.u();
-        mVar.e0(bArr, 0, i10, l.c, new ah.m(u10, 11));
+        mVar.A(bArr, 0, i10, l.c, new i5(u10, 8));
         return new z3.b(u10.i());
     }
 
@@ -63,13 +63,13 @@ public abstract /* synthetic */ class f {
         return bundle;
     }
 
-    public static ia.c f(int i10, y yVar) {
+    public static ia.c f(int i10, of.b bVar) {
         s sVar = new s(i10);
-        if (((HashMap) yVar.c) == null) {
-            yVar.c = new HashMap();
+        if (((HashMap) bVar.c) == null) {
+            bVar.c = new HashMap();
         }
-        ((HashMap) yVar.c).put(w.class, sVar);
-        return new ia.c((String) yVar.b, ((HashMap) yVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) yVar.c)));
+        ((HashMap) bVar.c).put(w.class, sVar);
+        return new ia.c((String) bVar.b, ((HashMap) bVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) bVar.c)));
     }
 
     public static StringBuilder g(String str, String str2) {

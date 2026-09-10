@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class zs0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,14 +35,14 @@ public final class zs0 implements Runnable {
             case 0:
                 PhotoViewer photoViewer = this.b;
                 if (photoViewer.l3 && photoViewer.P3 && !ApplicationLoader.mainInterfacePaused) {
-                    org.telegram.ui.ActionBar.v0 v0Var = this.b.o0;
-                    if (v0Var == null || !v0Var.t()) {
-                        org.telegram.ui.ActionBar.v0 v0Var2 = this.b.p0;
-                        if (v0Var2 == null || !v0Var2.t()) {
+                    org.telegram.ui.ActionBar.w0 w0Var = this.b.o0;
+                    if (w0Var == null || !w0Var.t()) {
+                        org.telegram.ui.ActionBar.w0 w0Var2 = this.b.p0;
+                        if (w0Var2 == null || !w0Var2.t()) {
                             au0 au0Var = this.b.T1;
                             if (au0Var == null || au0Var.getScrollY() == 0) {
-                                kd kdVar = this.b.X0;
-                                if (kdVar == null || kdVar.getVisibility() != 0) {
+                                ld ldVar = this.b.X0;
+                                if (ldVar == null || ldVar.getVisibility() != 0) {
                                     PhotoViewer photoViewer2 = PhotoViewer.a9;
                                     PhotoViewer photoViewer3 = this.b;
                                     if (photoViewer2 != photoViewer3) {
@@ -96,12 +96,12 @@ public final class zs0 implements Runnable {
                             }
                             if (f7 != -1.0f) {
                                 this.b.q3.f(f7);
-                                org.telegram.ui.Components.eg0 eg0Var = org.telegram.ui.Components.eg0.p0;
-                                if (f7 > eg0Var.a0) {
-                                    eg0Var.a0 = f7;
-                                    bi.a4 a4Var = eg0Var.b0;
-                                    if (a4Var != null) {
-                                        a4Var.invalidate();
+                                org.telegram.ui.Components.og0 og0Var = org.telegram.ui.Components.og0.p0;
+                                if (f7 > og0Var.a0) {
+                                    og0Var.a0 = f7;
+                                    u7 u7Var = og0Var.b0;
+                                    if (u7Var != null) {
+                                        u7Var.invalidate();
                                     }
                                 }
                             }
@@ -134,7 +134,7 @@ public final class zs0 implements Runnable {
                                 if (messageObject != null) {
                                     messageObject.cachedSavedTimestamp = Float.valueOf(o12);
                                 }
-                                Utilities.globalQueue.postRunnable(new b0(str, o12, 4));
+                                Utilities.globalQueue.postRunnable(new c0(str, o12, 4));
                             }
                         }
                         this.b.C3();
@@ -166,9 +166,9 @@ public final class zs0 implements Runnable {
                         this.b.C3();
                     }
                 }
-                tu0 tu0Var = this.b.E2;
-                if (tu0Var != null) {
-                    tu0.a(tu0Var);
+                vu0 vu0Var = this.b.E2;
+                if (vu0Var != null) {
+                    vu0.a(vu0Var);
                 }
                 PhotoViewer photoViewer15 = this.b;
                 if (photoViewer15.P3) {
@@ -178,7 +178,7 @@ public final class zs0 implements Runnable {
                 break;
             default:
                 PhotoViewer photoViewer16 = this.b;
-                if (!org.telegram.ui.Components.eg0.p0.P) {
+                if (!org.telegram.ui.Components.og0.p0.P) {
                     photoViewer16.L3 = false;
                     Bitmap bitmap = photoViewer16.C3;
                     if (bitmap != null) {
@@ -187,12 +187,12 @@ public final class zs0 implements Runnable {
                     }
                     photoViewer16.F3 = true;
                     Activity activity = photoViewer16.y;
-                    ah.w wVar = new ah.w(activity, 26);
-                    ImageReceiver imageReceiver = new ImageReceiver(wVar);
-                    wVar.b = imageReceiver;
+                    bi.n7 n7Var = new bi.n7(activity, 24);
+                    ImageReceiver imageReceiver = new ImageReceiver(n7Var);
+                    n7Var.b = imageReceiver;
                     TextureView textureView = new TextureView(activity);
-                    wVar.c = textureView;
-                    wVar.addView(textureView);
+                    n7Var.c = textureView;
+                    n7Var.addView(textureView);
                     try {
                         if (photoViewer16.D2) {
                             Drawable drawable = photoViewer16.x3.getDrawable();
@@ -210,7 +210,7 @@ public final class zs0 implements Runnable {
                             } else {
                                 Bitmap createBitmap = Bitmaps.createBitmap(photoViewer16.C2.getWidth(), photoViewer16.C2.getHeight(), Bitmap.Config.ARGB_8888);
                                 photoViewer16.C3 = createBitmap;
-                                AndroidUtilities.getBitmapFromSurface(photoViewer16.C2, createBitmap, new ej0(24, this, wVar));
+                                AndroidUtilities.getBitmapFromSurface(photoViewer16.C2, createBitmap, new ak0(21, this, n7Var));
                             }
                         } else {
                             Bitmap createBitmap2 = Bitmaps.createBitmap(photoViewer16.B2.getWidth(), photoViewer16.B2.getHeight(), Bitmap.Config.ARGB_8888);
@@ -234,9 +234,9 @@ public final class zs0 implements Runnable {
                         FileLog.e(th2);
                     }
                     photoViewer16.J3 = true;
-                    photoViewer16.w3 = (TextureView) wVar.c;
-                    if (org.telegram.ui.Components.eg0.x(false, photoViewer16.y, null, wVar, photoViewer16.U, photoViewer16.V, photoViewer16.K3)) {
-                        org.telegram.ui.Components.eg0.w(photoViewer16);
+                    photoViewer16.w3 = (TextureView) n7Var.c;
+                    if (org.telegram.ui.Components.og0.x(false, photoViewer16.y, null, n7Var, photoViewer16.U, photoViewer16.V, photoViewer16.K3)) {
+                        org.telegram.ui.Components.og0.w(photoViewer16);
                     }
                     photoViewer16.K3 = true;
                     if (!photoViewer16.D2) {
@@ -262,7 +262,7 @@ public final class zs0 implements Runnable {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Components.eg0.j(false);
+                    org.telegram.ui.Components.og0.j(false);
                     AndroidUtilities.runOnUIThread(this, 250L);
                     break;
                 }

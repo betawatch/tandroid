@@ -19,10 +19,10 @@ import android.util.TypedValue;
 import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.g8;
-import v7.o8;
+import v7.j8;
+import v7.r8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p extends g {
     public static final PorterDuff.Mode s = PorterDuff.Mode.SRC_IN;
@@ -101,7 +101,7 @@ public final class p extends g {
         }
         int save = canvas.save();
         canvas.translate(rect.left, rect.top);
-        if (isAutoMirrored() && o8.a(this) == 1) {
+        if (isAutoMirrored() && r8.a(this) == 1) {
             canvas.translate(rect.width(), 0.0f);
             canvas.scale(-1.0f, 1.0f);
         }
@@ -367,7 +367,7 @@ public final class p extends g {
     public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            o8.c(i10, drawable);
+            r8.c(i10, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i10));
         }
@@ -472,8 +472,8 @@ public final class p extends g {
                 ThreadLocal threadLocal = h0.c.a;
                 try {
                     colorStateList = h0.c.a(resources2, resources2.getXml(resourceId), theme);
-                } catch (Exception e7) {
-                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e7);
+                } catch (Exception e) {
+                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e);
                 }
             }
         }
@@ -555,7 +555,7 @@ public final class p extends g {
                                 }
                                 String string3 = f12.getString(2);
                                 if (string3 != null) {
-                                    iVar.a = g8.c(string3);
+                                    iVar.a = j8.c(string3);
                                 }
                                 iVar.f = h0.b.a(f12, xmlPullParser, theme, "fillColor", 1);
                                 float f13 = iVar.h;
@@ -637,7 +637,7 @@ public final class p extends g {
                                 }
                                 String string5 = f20.getString(1);
                                 if (string5 != null) {
-                                    hVar.a = g8.c(string5);
+                                    hVar.a = j8.c(string5);
                                 }
                                 hVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f20.getInt(2, 0);
                                 f20.recycle();

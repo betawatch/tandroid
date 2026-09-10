@@ -1,14 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class jz extends org.telegram.ui.Components.d61 {
-    @Override // org.telegram.ui.Components.ll0
-    public final Integer V0(int i10) {
-        org.telegram.ui.Components.h51 G = this.Y2.G(i10);
-        if (G == null || G.d != 2) {
-            return super.V0(i10);
-        }
-        return 0;
+public abstract class jz extends org.telegram.ui.ActionBar.p2 {
+    @Override // org.telegram.ui.ActionBar.p2
+    public final View createView(Context context) {
+        org.telegram.ui.Components.aw0 aw0Var = new org.telegram.ui.Components.aw0(context, null);
+        this.fragmentView = aw0Var;
+        return aw0Var;
     }
 }

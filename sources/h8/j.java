@@ -12,11 +12,10 @@ import android.widget.TextView;
 import androidx.mediarouter.app.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import ji.u4;
 import n6.q;
-import v7.j8;
+import v7.m8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -24,8 +23,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public u4 g;
-    public final u4 d = new u4(this, 28);
+    public l2.h g;
+    public final l2.h d = new l2.h(this, 26);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -89,21 +88,21 @@ public final class j {
                 synchronized (e.class) {
                     e.b(context);
                 }
-                i8.g X0 = j8.a(context).X0(new x6.b(context));
+                i8.g X0 = m8.a(context).X0(new x6.b(context));
                 if (X0 == null) {
                     return;
                 }
-                this.g.C(new aa.a(this.e, X0));
+                this.g.x(new aa.a(this.e, X0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.u((f) obj);
+                    this.a.p((f) obj);
                 }
                 arrayList.clear();
-            } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             } catch (k6.f unused) {
             }
         }

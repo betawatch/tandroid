@@ -5,7 +5,7 @@ import b2.r0;
 import b2.x1;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class f0 {
     public final n4.y a;
@@ -80,16 +80,16 @@ public final class f0 {
                 a0Var.l.getClass();
                 a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
                 if (z11 && fVar.d != null) {
-                    fVar.h.execute(new e(0, yVar));
+                    fVar.h.execute(new e(yVar, 0));
                 }
                 b2.s sVar = (b2.s) yVar.b;
-                fVar.i.c(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
+                fVar.i.a(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
                 j jVar = (j) fVar.c.remove();
                 jVar.c.I0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {
                 this.h = j11;
                 qVar.d();
-                fVar.h.execute(new e(1, yVar));
+                fVar.h.execute(new e(yVar, 1));
                 j jVar2 = (j) fVar.c.remove();
                 jVar2.c.M0(jVar2.a, jVar2.b);
             } else {

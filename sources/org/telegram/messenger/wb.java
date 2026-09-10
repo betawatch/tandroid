@@ -1,32 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wb implements RequestDelegate {
+public final /* synthetic */ class wb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
 
-    public /* synthetic */ wb(int i10, long j3, long j10, MessagesController messagesController) {
+    public /* synthetic */ wb(MessagesController messagesController, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j3;
-        this.d = j10;
+        this.c = tL_webBrowserSettings;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadUnknownDialog$208(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$loadWebBrowserConfig$510(this.c);
                 break;
             default:
-                this.b.lambda$deleteMessages$124(this.c, this.d, tLObject, tL_error);
+                this.b.lambda$loadWebBrowserConfig$508(this.c);
                 break;
         }
     }

@@ -1,12 +1,12 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class j1 {
     public static boolean a(Object obj, a0.h hVar) {
-        int e7 = hVar.e();
-        int i10 = e7 >>> 3;
-        int i11 = e7 & 7;
+        int e = hVar.e();
+        int i10 = e >>> 3;
+        int i11 = e & 7;
         if (i11 == 0) {
             ((i1) obj).c(i10 << 3, Long.valueOf(hVar.z()));
             return true;

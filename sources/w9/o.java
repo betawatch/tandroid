@@ -11,17 +11,17 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
-import k2.g0;
-import n7.z0;
+import n7.a1;
+import og.u0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class o {
     public final Context a;
     public final r b;
-    public final z0 c;
-    public o0.a d;
-    public o0.a e;
+    public final u0 c;
+    public a1 d;
+    public a1 e;
     public m f;
     public final u g;
     public final ba.c h;
@@ -31,9 +31,9 @@ public final class o {
     public final com.google.firebase.messaging.s l;
     public final j m;
     public final t9.a n;
-    public final g0 o;
+    public final l2.g o;
 
-    public o(k9.h hVar, u uVar, t9.a aVar, r rVar, s9.a aVar2, s9.a aVar3, ba.c cVar, ExecutorService executorService, j jVar, g0 g0Var) {
+    public o(k9.h hVar, u uVar, t9.a aVar, r rVar, s9.a aVar2, s9.a aVar3, ba.c cVar, ExecutorService executorService, j jVar, l2.g gVar) {
         this.b = rVar;
         hVar.a();
         this.a = hVar.a;
@@ -45,9 +45,9 @@ public final class o {
         this.h = cVar;
         this.l = new com.google.firebase.messaging.s(executorService);
         this.m = jVar;
-        this.o = g0Var;
+        this.o = gVar;
         System.currentTimeMillis();
-        this.c = new z0(24);
+        this.c = new u0();
     }
 
     public static Task a(o oVar, da.b bVar) {
@@ -57,13 +57,13 @@ public final class o {
         if (!Boolean.TRUE.equals(((ThreadLocal) sVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
-        oVar.d.p();
+        oVar.d.C();
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
         }
         try {
             try {
-                oVar.i.a(new t0.a(19));
+                oVar.i.a(new u2.c(12));
                 oVar.f.g();
                 if (bVar.d().b.a) {
                     if (!oVar.f.d(bVar)) {
@@ -78,15 +78,15 @@ public final class o {
                     forException = Tasks.forException(new RuntimeException("Collection of crash reports disabled in Crashlytics settings."));
                     nVar = new n(oVar, 0);
                 }
-            } catch (Exception e7) {
-                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e7);
-                forException = Tasks.forException(e7);
+            } catch (Exception e) {
+                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e);
+                forException = Tasks.forException(e);
                 nVar = new n(oVar, 0);
             }
-            sVar.h(nVar);
+            sVar.o(nVar);
             return forException;
         } catch (Throwable th2) {
-            sVar.h(new n(oVar, 0));
+            sVar.o(new n(oVar, 0));
             throw th2;
         }
     }
@@ -98,12 +98,12 @@ public final class o {
         }
         try {
             submit.get(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e7) {
-            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e7);
-        } catch (ExecutionException e10) {
-            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e10);
-        } catch (TimeoutException e11) {
-            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e11);
+        } catch (InterruptedException e) {
+            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e);
+        } catch (ExecutionException e7) {
+            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e7);
+        } catch (TimeoutException e10) {
+            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e10);
         }
     }
 }

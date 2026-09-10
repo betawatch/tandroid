@@ -22,7 +22,7 @@ import java.util.TreeSet;
 import v7.f7;
 import v7.p6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -389,10 +389,10 @@ public final class c {
         String str3 = this.h;
         String str4 = "".equals(str3) ? str : str3;
         if (this.c && z10) {
-            SpannableStringBuilder e7 = e(str4, treeMap);
+            SpannableStringBuilder e = e(str4, treeMap);
             String str5 = this.b;
             str5.getClass();
-            e7.append((CharSequence) str5);
+            e.append((CharSequence) str5);
             return;
         }
         if ("br".equals(str2) && z10) {
@@ -411,13 +411,13 @@ public final class c {
                 b(i10).i(j3, z10 || equals, str4, treeMap);
             }
             if (equals) {
-                SpannableStringBuilder e10 = e(str4, treeMap);
-                int length = e10.length() - 1;
-                while (length >= 0 && e10.charAt(length) == ' ') {
+                SpannableStringBuilder e7 = e(str4, treeMap);
+                int length = e7.length() - 1;
+                while (length >= 0 && e7.charAt(length) == ' ') {
                     length--;
                 }
-                if (length >= 0 && e10.charAt(length) != '\n') {
-                    e10.append('\n');
+                if (length >= 0 && e7.charAt(length) != '\n') {
+                    e7.append('\n');
                 }
             }
             for (Map.Entry entry2 : treeMap.entrySet()) {

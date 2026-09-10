@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final fb.i a = new fb.i(4);
@@ -149,24 +149,24 @@ public abstract class o {
         int i14;
         int i15;
         int i16;
-        int e7 = oVar.e();
+        int e = oVar.e();
         int d = oVar.d();
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         m mVar = new m();
         int i17 = 0;
         mVar.a = 0;
-        mVar.b = e7;
+        mVar.b = e;
         mVar.c = 0;
         mVar.d = d;
         arrayList2.add(mVar);
-        int abs = Math.abs(e7 - d) + e7 + d;
+        int abs = Math.abs(e - d) + e + d;
         int i18 = abs * 2;
         int[] iArr3 = new int[i18];
         int[] iArr4 = new int[i18];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            m mVar2 = (m) i2.g.z(1, arrayList2);
+            m mVar2 = (m) hc.b.z(1, arrayList2);
             int i19 = mVar2.a;
             int i20 = mVar2.b;
             int i21 = mVar2.c;
@@ -268,7 +268,7 @@ public abstract class o {
                 }
                 nVar.a += mVar2.a;
                 nVar.b += mVar2.c;
-                m mVar3 = arrayList3.isEmpty() ? new m() : (m) i2.g.z(1, arrayList3);
+                m mVar3 = arrayList3.isEmpty() ? new m() : (m) hc.b.z(1, arrayList3);
                 mVar3.a = mVar2.a;
                 mVar3.c = mVar2.c;
                 if (nVar.e) {

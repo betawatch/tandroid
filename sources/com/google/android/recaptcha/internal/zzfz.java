@@ -5,12 +5,12 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.c0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzfz extends j implements p {
     int zza;
@@ -43,17 +43,17 @@ final class zzfz extends j implements p {
         zzcg zzcgVar;
         zzfz zzfzVar;
         zzdr zzdrVar;
-        zzcg e7;
+        zzcg e;
         zzcx zzcxVar;
         zzfw zzfwVar;
         zzfy zzfyVar;
         a aVar = a.a;
         if (this.zza != 0) {
             try {
-                t7.b(obj);
+                u7.b(obj);
                 zzfzVar = this;
-            } catch (zzcg e10) {
-                zzcgVar = e10;
+            } catch (zzcg e7) {
+                zzcgVar = e7;
                 zzfzVar = this;
                 zzgb zzgbVar = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
@@ -62,7 +62,7 @@ final class zzfz extends j implements p {
                 return i.a;
             }
         } else {
-            t7.b(obj);
+            u7.b(obj);
             try {
                 zzcxVar = zzcx.zza;
                 zzgb zzgbVar2 = this.zzb;
@@ -70,10 +70,10 @@ final class zzfz extends j implements p {
                 zzfyVar = new zzfy(this.zzd, zzgbVar2, this.zze, this.zzc, null);
                 this.zza = 1;
                 zzfzVar = this;
-            } catch (zzcg e11) {
-                e7 = e11;
+            } catch (zzcg e10) {
+                e = e10;
                 zzfzVar = this;
-                zzcgVar = e7;
+                zzcgVar = e;
                 zzgb zzgbVar3 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar3.zzf = zzdrVar;
@@ -85,9 +85,9 @@ final class zzfz extends j implements p {
                 if (obj == aVar) {
                     return aVar;
                 }
-            } catch (zzcg e12) {
-                e7 = e12;
-                zzcgVar = e7;
+            } catch (zzcg e11) {
+                e = e11;
+                zzcgVar = e;
                 zzgb zzgbVar32 = zzfzVar.zzb;
                 zzdrVar = zzdv.zzd;
                 zzgbVar32.zzf = zzdrVar;

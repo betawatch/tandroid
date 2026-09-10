@@ -1,35 +1,14 @@
 package ug;
 
-import android.content.DialogInterface;
+import org.telegram.ui.Cells.x8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+public final class y extends x8 {
+    public static final /* synthetic */ int L = 0;
+    public int K;
 
-    public /* synthetic */ y(b0 b0Var, int i10) {
-        this.a = i10;
-        this.b = b0Var;
-    }
-
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                wg.r rVar = this.b.g0.r;
-                if (rVar != null) {
-                    rVar.setPaused(true);
-                    break;
-                }
-                break;
-            default:
-                wg.r rVar2 = this.b.g0.r;
-                if (rVar2 != null) {
-                    rVar2.setPaused(true);
-                    break;
-                }
-                break;
-        }
+    public int getType() {
+        return this.K;
     }
 }

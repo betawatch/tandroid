@@ -1,12 +1,12 @@
 package com.google.firebase.messaging;
 
 import a3.k0;
-import ah.i0;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import bi.cb;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -16,7 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -37,7 +37,7 @@ public abstract class g extends Service {
 
     public final void a(Intent intent) {
         if (intent != null) {
-            b0.b(intent);
+            c0.b(intent);
         }
         synchronized (this.lock) {
             try {
@@ -57,7 +57,7 @@ public abstract class g extends Service {
             return Tasks.forResult(null);
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new k0(this, intent, taskCompletionSource, 12));
+        this.executor.execute(new k0(this, intent, taskCompletionSource, 13));
         return taskCompletionSource.getTask();
     }
 
@@ -76,7 +76,7 @@ public abstract class g extends Service {
                 Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
-                this.binder = new c0(new a6.m(this, 12));
+                this.binder = new d0(new a4.m(this, 9));
             }
         } catch (Throwable th2) {
             throw th2;
@@ -106,7 +106,7 @@ public abstract class g extends Service {
             a(intent);
             return 2;
         }
-        b10.addOnCompleteListener(new a3.b(2), new i0(7, this, intent));
+        b10.addOnCompleteListener(new a3.b(2), new cb(3, this, intent));
         return 3;
     }
 

@@ -1,27 +1,9 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class rj0 extends di.d {
-    public final /* synthetic */ tj0 h0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rj0(tj0 tj0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, true);
-        this.h0 = tj0Var;
-    }
-
-    @Override // di.d
-    public final float a(float f7, float f10) {
-        tj0 tj0Var = this.h0;
-        boolean z10 = tj0Var.n0 == 0.0f;
-        tj0Var.n0 = f7;
-        if (z10) {
-            tj0Var.o0 = new org.telegram.ui.Components.sa0(tj0Var, 1);
-            tj0Var.S(false);
-        }
-        return f7;
-    }
+public interface rj0 {
+    void a(ArrayList arrayList);
 }

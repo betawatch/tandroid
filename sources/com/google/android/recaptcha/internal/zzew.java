@@ -5,10 +5,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.c0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzew extends j implements p {
     Object zza;
@@ -54,10 +54,10 @@ final class zzew extends j implements p {
         if (this.zzb != 0) {
             pVar2 = (kotlin.jvm.internal.p) this.zza;
             try {
-                t7.b(obj);
+                u7.b(obj);
                 zzc = obj;
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
@@ -65,14 +65,14 @@ final class zzew extends j implements p {
                 throw zzcgVar;
             }
         } else {
-            t7.b(obj);
+            u7.b(obj);
             kotlin.jvm.internal.p pVar3 = new kotlin.jvm.internal.p();
             try {
                 j3 = this.zzc;
                 zzevVar = new zzev(this.zze, this.zzd, this.zzf, pVar3, null);
                 pVar = pVar3;
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e7) {
+                e = e7;
                 pVar = pVar3;
             }
             try {
@@ -83,8 +83,8 @@ final class zzew extends j implements p {
                     return aVar;
                 }
                 pVar2 = pVar;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e10) {
+                e = e10;
                 pVar2 = pVar;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {

@@ -5,7 +5,6 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import d2.b;
 import e2.d;
 import e2.d0;
 import e2.h;
@@ -13,7 +12,7 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import i2.g;
+import hc.b;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -22,7 +21,7 @@ import w.f;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final v a = new v();
@@ -90,12 +89,7 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final int U() {
-        return 2;
-    }
-
-    @Override // z3.m
-    public final void e0(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void A(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -148,10 +142,10 @@ public final class a implements m {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = g.l(D4, "Truncating styl end (", ") to cueText.length() (");
-                        l4.append(spannableStringBuilder.length());
-                        l4.append(").");
-                        e2.a.n("Tx3gParser", l4.toString());
+                        StringBuilder m10 = b.m(D4, "Truncating styl end (", ") to cueText.length() (");
+                        m10.append(spannableStringBuilder.length());
+                        m10.append(").");
+                        e2.a.n("Tx3gParser", m10.toString());
                         D4 = spannableStringBuilder.length();
                     }
                     if (D3 >= D4) {
@@ -178,12 +172,17 @@ public final class a implements m {
             i13 = 1;
             i14 = 2;
         }
-        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new d2.b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d p(int i10, int i11, byte[] bArr) {
+    public final /* synthetic */ z3.d k(int i10, int i11, byte[] bArr) {
         return f.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int n() {
+        return 2;
     }
 
     @Override // z3.m

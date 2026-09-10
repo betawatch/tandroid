@@ -1,19 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class mt extends s4.l0 {
-    public final lt[] a = new lt[4];
-    public final ArrayList b = new ArrayList();
+public final class mt {
+    public int a;
+    public Object b;
 
-    @Override // s4.l0
-    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
-        lt ltVar = new lt(recyclerView, i10, new kt(this, 0));
-        this.a[i10] = ltVar;
-        return ltVar;
+    public boolean a(int i10) {
+        if (((xf.i) this.b) != null && this.a == i10) {
+            return false;
+        }
+        this.a = i10;
+        this.b = new xf.i(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i10, i10}, null, Shader.TileMode.CLAMP);
+        return true;
     }
 }

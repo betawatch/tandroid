@@ -1,33 +1,7 @@
 package qg;
 
-import ji.u4;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
-
-    public /* synthetic */ n0(q0 q0Var, int i10) {
-        this.a = i10;
-        this.b = q0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                q0 q0Var = this.b;
-                q0Var.c = null;
-                u4 u4Var = q0Var.a;
-                if (u4Var != null) {
-                    u4Var.n();
-                    break;
-                }
-                break;
-            default:
-                this.b.b();
-                break;
-        }
-    }
+public interface n0 {
+    void setOffset(float f7);
 }

@@ -9,10 +9,11 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import m.g3;
 import t7.u;
 import w7.l;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c extends l {
     public final v a = new v();
@@ -68,7 +69,7 @@ public final class c extends l {
                         for (int i15 = 0; i15 < x12; i15++) {
                             vVar.x();
                             vVar.z();
-                            arrayList3.add(new na.d());
+                            arrayList3.add(new u());
                         }
                         arrayList2 = arrayList3;
                     }
@@ -80,7 +81,7 @@ public final class c extends l {
                     vVar.x();
                     vVar.x();
                 }
-                arrayList.add(new l.d(arrayList2));
+                arrayList.add(new g3(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (i12 == 5) {
@@ -102,7 +103,7 @@ public final class c extends l {
                     for (int i16 = 0; i16 < x14; i16++) {
                         vVar.x();
                         b0Var3.b(!z17 ? a.d(i10, vVar) : -9223372036854775807L);
-                        arrayList4.add(new u(21));
+                        arrayList4.add(new rb.a(21));
                     }
                     list = arrayList4;
                 }

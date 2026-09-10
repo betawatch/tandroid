@@ -1,44 +1,55 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MediaController;
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Serializable n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ q6(int i10, int i11, String str) {
-        this.a = 3;
-        this.b = i10;
-        this.c = i11;
-        this.d = str;
+    public /* synthetic */ q6(MediaController mediaController, File file, TLRPC.TL_document tL_document, int i10, boolean z10, int i11, boolean z11, long j3) {
+        this.h = mediaController;
+        this.n = file;
+        this.r = tL_document;
+        this.c = i10;
+        this.b = z10;
+        this.e = i11;
+        this.f = z11;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
-                break;
-            case 1:
-                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
-                break;
-            case 2:
-                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$43(this.b, this.c);
+                ((MediaController) this.h).lambda$stopRecordingInternal$40((File) this.n, (TLRPC.TL_document) this.r, this.c, this.b, this.e, this.f, this.d);
                 break;
             default:
-                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
+                ((MessagesStorage) this.h).lambda$updatePinnedMessages$138(this.b, (HashMap) this.n, this.c, this.d, (ArrayList) this.r, this.e, this.f);
                 break;
         }
     }
 
-    public /* synthetic */ q6(Object obj, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = obj;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ q6(MessagesStorage messagesStorage, boolean z10, HashMap hashMap, int i10, long j3, ArrayList arrayList, int i11, boolean z11) {
+        this.h = messagesStorage;
+        this.b = z10;
+        this.n = hashMap;
+        this.c = i10;
+        this.d = j3;
+        this.r = arrayList;
+        this.e = i11;
+        this.f = z11;
     }
 }

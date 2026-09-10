@@ -1,28 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hi implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ SavedMessagesController b;
 
-    public /* synthetic */ hi(SecretChatHelper secretChatHelper, ArrayList arrayList, int i10) {
+    public /* synthetic */ hi(SavedMessagesController savedMessagesController, int i10) {
         this.a = i10;
-        this.b = secretChatHelper;
-        this.c = arrayList;
+        this.b = savedMessagesController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$resendMessages$14(this.c);
+                this.b.update();
+                break;
+            case 1:
+                this.b.saveCache();
+                break;
+            case 2:
+                this.b.lambda$deleteCache$12();
+                break;
+            case 3:
+                this.b.lambda$saveCache$10();
                 break;
             default:
-                this.b.lambda$processPendingEncMessages$0(this.c);
+                this.b.lambda$loadDialogs$1();
                 break;
         }
     }

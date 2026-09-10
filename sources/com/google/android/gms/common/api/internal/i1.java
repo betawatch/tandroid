@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i1 extends w0 {
     public final TaskCompletionSource b;
@@ -31,13 +31,13 @@ public final class i1 extends w0 {
     public final void c(p0 p0Var) {
         try {
             h(p0Var);
-        } catch (DeadObjectException e7) {
+        } catch (DeadObjectException e) {
+            a(k1.e(e));
+            throw e;
+        } catch (RemoteException e7) {
             a(k1.e(e7));
-            throw e7;
-        } catch (RemoteException e10) {
-            a(k1.e(e10));
-        } catch (RuntimeException e11) {
-            this.b.trySetException(e11);
+        } catch (RuntimeException e10) {
+            this.b.trySetException(e10);
         }
     }
 

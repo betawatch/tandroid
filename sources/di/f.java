@@ -1,69 +1,133 @@
 package di;
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.q20;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class f extends eh.b {
+public final class f extends qg.x1 {
     public final /* synthetic */ int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(i10, f6Var);
-        this.n = 2;
+    public /* synthetic */ f(Context context, int i10) {
+        super(context);
+        this.n = i10;
     }
 
-    @Override // eh.b, eh.a
-    public int G() {
-        switch (this.n) {
-            case 2:
-                if (a()) {
-                    return 301989887;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.G();
-        }
-    }
-
-    @Override // eh.b, eh.a
-    public int J() {
-        switch (this.n) {
-            case 2:
-                if (a()) {
-                    return 83886079;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.J();
-        }
-    }
-
-    @Override // eh.b
-    public boolean a() {
+    @Override // qg.x1
+    public final void a() {
         switch (this.n) {
             case 0:
-                return true;
+                super.a();
+                qg.w1 w1Var = this.a;
+                w1Var.q = true;
+                w1Var.K = false;
+                w1Var.L = true;
+                w1Var.H = true;
+                w1Var.c();
+                break;
             case 1:
-                return true;
-            default:
-                return super.a();
-        }
-    }
-
-    @Override // eh.b, eh.a
-    public int p() {
-        switch (this.n) {
+                super.a();
+                qg.w1 w1Var2 = this.a;
+                w1Var2.q = true;
+                w1Var2.K = false;
+                w1Var2.L = true;
+                w1Var2.H = true;
+                w1Var2.c();
+                break;
             case 2:
-                return a() ? 117440511 : 285212672;
+                q20 q20Var = new q20(50);
+                this.a = q20Var;
+                q20Var.N = 100;
+                q20Var.M = false;
+                q20Var.G = false;
+                q20Var.K = true;
+                q20Var.H = true;
+                q20Var.J = false;
+                q20Var.r = 4;
+                q20Var.w = 0.98f;
+                q20Var.v = 0.98f;
+                q20Var.u = 0.98f;
+                q20Var.c();
+                break;
+            case 3:
+                qg.w1 w1Var3 = this.a;
+                w1Var3.q = true;
+                w1Var3.K = false;
+                w1Var3.H = true;
+                w1Var3.J = true;
+                w1Var3.k = AndroidUtilities.dp(-14.0f);
+                qg.w1 w1Var4 = this.a;
+                w1Var4.x = 2000L;
+                w1Var4.y = 3000;
+                w1Var4.r = 16;
+                w1Var4.G = false;
+                w1Var4.N = 28;
+                w1Var4.P = j6.Mj;
+                w1Var4.c();
+                break;
+            case 4:
+                qg.w1 w1Var5 = this.a;
+                w1Var5.q = true;
+                w1Var5.K = false;
+                w1Var5.H = true;
+                w1Var5.J = true;
+                w1Var5.k = AndroidUtilities.dp(-14.0f);
+                qg.w1 w1Var6 = this.a;
+                w1Var6.x = 2000L;
+                w1Var6.y = 3000;
+                w1Var6.r = 16;
+                w1Var6.G = false;
+                w1Var6.N = 28;
+                w1Var6.P = j6.Mj;
+                w1Var6.c();
+                break;
             default:
-                return super.p();
+                super.a();
+                qg.w1 w1Var7 = this.a;
+                w1Var7.q = true;
+                w1Var7.K = false;
+                w1Var7.L = true;
+                w1Var7.H = true;
+                w1Var7.c();
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(org.telegram.ui.ActionBar.f6 f6Var, int i10, float f7, int i11) {
-        super(f6Var, i10, f7);
-        this.n = i11;
+    @Override // qg.x1
+    public int getStarsRectWidth() {
+        switch (this.n) {
+            case 0:
+                return getMeasuredWidth();
+            case 1:
+                return getMeasuredWidth();
+            case 2:
+                return getMeasuredWidth();
+            default:
+                return super.getStarsRectWidth();
+        }
+    }
+
+    @Override // qg.x1, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.n) {
+            case 3:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 4:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 5:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

@@ -1,67 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yh implements r0.n, yf.b0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ co a;
+public final /* synthetic */ class yh implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ eo b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot d;
+    public final /* synthetic */ TLRPC.User e;
 
-    public /* synthetic */ yh(co coVar) {
-        this.a = coVar;
+    public /* synthetic */ yh(eo eoVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.TL_error tL_error, TLRPC.User user) {
+        this.b = eoVar;
+        this.d = tL_attachMenuBot;
+        this.c = tL_error;
+        this.e = user;
     }
 
-    @Override // r0.n
-    public r0.l1 T0(View view, r0.l1 l1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.c;
-        co coVar = this.a;
-        if (coVar.Ua != i10 || coVar.Va != i11) {
-            coVar.Ua = i10;
-            coVar.Va = i11;
-            coVar.X0.requestLayout();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                eo.w1(this.b, this.d, this.c, this.e);
+                break;
+            default:
+                eo.W(this.b, this.d, this.c, this.e);
+                break;
         }
-        coVar.v.i(l1Var);
-        ih.f fVar = coVar.K3;
-        if (fVar != null) {
-            fVar.setPadding(i10, 0, i11, 0);
-        }
-        coVar.n7();
-        coVar.r7();
-        coVar.p9();
-        boolean p5 = l1Var.a.p(8);
-        if (coVar.Ta != p5) {
-            coVar.Ta = p5;
-            coVar.X0.S();
-        }
-        di.i1 i1Var = coVar.q1;
-        if (i1Var != null) {
-            r0.i0.b(i1Var, l1Var);
-        }
-        return r0.l1.b;
     }
 
-    @Override // yf.b0
-    public void a(int i10) {
-        co.S0(this.a, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        co coVar = this.a;
-        coVar.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            coVar.getParentActivity().startActivity(intent);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
+    public /* synthetic */ yh(eo eoVar, TLRPC.TL_error tL_error, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user) {
+        this.b = eoVar;
+        this.c = tL_error;
+        this.d = tL_attachMenuBot;
+        this.e = user;
     }
 }

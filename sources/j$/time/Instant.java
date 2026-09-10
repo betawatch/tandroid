@@ -50,8 +50,8 @@ public final class Instant implements Temporal, j$.time.temporal.m, Comparable<I
         Objects.requireNonNull(lVar, "temporal");
         try {
             return I(lVar.y(j$.time.temporal.a.INSTANT_SECONDS), lVar.j(j$.time.temporal.a.NANO_OF_SECOND));
-        } catch (b e7) {
-            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e7);
+        } catch (b e) {
+            throw new b("Unable to obtain Instant from TemporalAccessor: " + lVar + " of type " + lVar.getClass().getName(), e);
         }
     }
 

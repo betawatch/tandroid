@@ -1,31 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class i70 extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ ViewGroup o;
-    public final /* synthetic */ n70 p;
+public final class i70 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j70 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i70(n70 n70Var, View view, ViewGroup viewGroup) {
-        super(view, -2, -2);
-        this.p = n70Var;
-        this.o = viewGroup;
+    public /* synthetic */ i70(j70 j70Var, int i10) {
+        this.a = i10;
+        this.b = j70Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ViewGroup viewGroup = this.o;
-        n70 n70Var = this.p;
-        n70.a(n70Var, viewGroup);
-        Runnable runnable = n70Var.p;
-        if (runnable != null) {
-            runnable.run();
-            n70Var.p = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                j70 j70Var = this.b;
+                j70Var.e.d0 = null;
+                j70Var.requestLayout();
+                break;
+            default:
+                j70 j70Var2 = this.b;
+                j70Var2.e.d0 = null;
+                j70Var2.a = false;
+                break;
         }
     }
 }

@@ -1,69 +1,39 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il implements c91, d5, bl0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+public final class il extends FrameLayout {
+    public final HashMap a;
+    public final /* synthetic */ ll b;
 
-    public /* synthetic */ il(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
-        this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public il(ll llVar, Context context) {
+        super(context);
+        this.b = llVar;
+        this.a = new HashMap();
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        int i12 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        switch (i12) {
-            case 1:
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                vi viVar = chatAttachAlertPhotoLayout.b;
-                viVar.Y0();
-                viVar.Z1.l0(7, false, z10, i10, 0, 0L, viVar.s1(), false, 0L);
-                break;
-            default:
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                vi viVar2 = chatAttachAlertPhotoLayout.b;
-                viVar2.Y0();
-                viVar2.Z1.l0(4, true, z10, i10, 0, 0L, viVar2.s1(), false, 0L);
-                break;
+    public final void a() {
+        IMapsProvider.IMap iMap = this.b.H;
+        if (iMap == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean a(int i10, View view) {
-        boolean z10 = ChatAttachAlertPhotoLayout.q1;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        vi viVar = chatAttachAlertPhotoLayout.b;
-        if (!viVar.T0) {
-            if (i10 == 0 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0) {
-                ti tiVar = viVar.Z1;
-                if (tiVar != null) {
-                    tiVar.l0(0, false, true, 0, 0, 0L, viVar.s1(), false, 0L);
-                }
-                return true;
-            }
-            if (view instanceof org.telegram.ui.Cells.s5) {
-                nl0 nl0Var = chatAttachAlertPhotoLayout.I;
-                boolean z11 = !((org.telegram.ui.Cells.s5) view).a();
-                chatAttachAlertPhotoLayout.K = z11;
-                nl0Var.d(view, i10, z11);
-            }
+        IMapsProvider.IProjection projection = iMap.getProjection();
+        for (Map.Entry entry : this.a.entrySet()) {
+            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
+            View view = (View) entry.getValue();
+            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
+            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public void b(float f7) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        dm dmVar = chatAttachAlertPhotoLayout.P;
-        if (dmVar != null) {
-            chatAttachAlertPhotoLayout.B0 = f7;
-            dmVar.setZoom(f7);
-        }
-        chatAttachAlertPhotoLayout.t0(true);
     }
 }

@@ -2,8 +2,8 @@ package i6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.internal.clearcut.c2;
-import com.google.android.gms.internal.clearcut.w1;
+import com.google.android.gms.internal.clearcut.d2;
+import com.google.android.gms.internal.clearcut.x1;
 import g8.j;
 import java.util.Arrays;
 import n6.l;
@@ -12,7 +12,7 @@ import w7.e0;
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new j(9);
-    public final c2 a;
+    public final d2 a;
     public byte[] b;
     public final int[] c;
     public final String[] d;
@@ -20,11 +20,11 @@ public final class c extends o6.a {
     public final byte[][] f;
     public final k8.a[] h;
     public final boolean n;
-    public final w1 r;
+    public final x1 r;
 
-    public c(c2 c2Var, w1 w1Var) {
-        this.a = c2Var;
-        this.r = w1Var;
+    public c(d2 d2Var, x1 x1Var) {
+        this.a = d2Var;
+        this.r = x1Var;
         this.c = null;
         this.d = null;
         this.e = null;
@@ -89,8 +89,8 @@ public final class c extends o6.a {
         e0.r(parcel, q6);
     }
 
-    public c(c2 c2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z10, k8.a[] aVarArr) {
-        this.a = c2Var;
+    public c(d2 d2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z10, k8.a[] aVarArr) {
+        this.a = d2Var;
         this.b = bArr;
         this.c = iArr;
         this.d = strArr;

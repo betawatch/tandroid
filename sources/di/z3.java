@@ -1,50 +1,36 @@
 package di;
 
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z3 implements o1.f {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public final class z3 extends j61 {
+    public final /* synthetic */ h4 N;
 
-    public /* synthetic */ z3(View view, float f7, Runnable runnable) {
-        this.b = runnable;
-        this.d = view;
-        this.c = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z3(h4 h4Var, vl0 vl0Var, Activity activity, int i10, int i11, ai.c0 c0Var, f6 f6Var) {
+        super(vl0Var, activity, i10, i11, true, c0Var, f6Var);
+        this.N = h4Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                b4 b4Var = (b4) this.d;
-                a4 a4Var = b4Var.b;
-                if (!z10) {
-                    a4Var.setTranslationY(this.c);
-                    a4Var.K = false;
-                    b4Var.d = null;
-                    b4Var.e = null;
-                    Runnable runnable = this.b;
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            default:
-                AndroidUtilities.lambda$shakeViewSpring$14(this.b, (View) this.d, this.c, hVar, z10, f7, f10);
-                break;
+    @Override // org.telegram.ui.Components.j61, s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        f6 f6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
-    }
-
-    public /* synthetic */ z3(b4 b4Var, float f7, Runnable runnable) {
-        this.d = b4Var;
-        this.c = f7;
-        this.b = runnable;
+        h4 h4Var = this.N;
+        Activity parentActivity = h4Var.getParentActivity();
+        int i11 = j6.L6;
+        f6Var = ((org.telegram.ui.ActionBar.p2) h4Var).resourceProvider;
+        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, f6Var);
+        m4Var.setHeight(25);
+        return new fl0(m4Var);
     }
 }

@@ -2,60 +2,59 @@ package l2;
 
 import android.net.Uri;
 import java.io.IOException;
-import u2.t;
-import y2.p;
+import u2.u;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class d implements y2.h {
-    public final /* synthetic */ g a;
+public final class d implements y2.i {
+    public final /* synthetic */ i a;
+
+    @Override // y2.i
+    public void C(y2.k kVar, long j3, long j10, boolean z10) {
+        this.a.w((y2.q) kVar, j10);
+    }
 
     public void a() {
         long j3;
-        g gVar = this.a;
-        synchronized (z2.c.b) {
+        i iVar = this.a;
+        synchronized (z2.b.b) {
             try {
-                j3 = z2.c.c ? z2.c.d : -9223372036854775807L;
+                j3 = z2.b.c ? z2.b.d : -9223372036854775807L;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        gVar.L = j3;
-        gVar.y(true);
+        iVar.L = j3;
+        iVar.y(true);
     }
 
-    @Override // y2.h
-    public k4.d g(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
-        p pVar = (p) jVar;
-        g gVar = this.a;
-        a5.a aVar = gVar.q;
-        long j11 = pVar.a;
-        Uri uri = pVar.d.c;
-        aVar.q(new t(j10), pVar.c, iOException, true);
-        gVar.m.getClass();
-        gVar.x(iOException);
-        return y2.m.e;
+    @Override // y2.i
+    public k4.d k(y2.k kVar, long j3, long j10, IOException iOException, int i10) {
+        y2.q qVar = (y2.q) kVar;
+        i iVar = this.a;
+        a5.a aVar = iVar.q;
+        long j11 = qVar.a;
+        Uri uri = qVar.d.c;
+        aVar.q(new u(j10), qVar.c, iOException, true);
+        iVar.m.getClass();
+        iVar.x(iOException);
+        return y2.n.e;
     }
 
-    @Override // y2.h
-    public void i(y2.j jVar, long j3, long j10) {
-        p pVar = (p) jVar;
-        g gVar = this.a;
-        long j11 = pVar.a;
-        Uri uri = pVar.d.c;
-        t tVar = new t(j10);
-        gVar.m.getClass();
-        gVar.q.o(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        gVar.L = ((Long) pVar.f).longValue() - j3;
-        gVar.y(true);
+    @Override // y2.i
+    public void p(y2.k kVar, long j3, long j10) {
+        y2.q qVar = (y2.q) kVar;
+        i iVar = this.a;
+        long j11 = qVar.a;
+        Uri uri = qVar.d.c;
+        u uVar = new u(j10);
+        iVar.m.getClass();
+        iVar.q.o(uVar, qVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        iVar.L = ((Long) qVar.f).longValue() - j3;
+        iVar.y(true);
     }
 
-    @Override // y2.h
-    public void w(y2.j jVar, long j3, long j10, boolean z10) {
-        this.a.w((p) jVar, j10);
-    }
-
-    @Override // y2.h
-    public /* synthetic */ void h(y2.j jVar, long j3, long j10, int i10) {
+    @Override // y2.i
+    public /* synthetic */ void l(y2.k kVar, long j3, long j10, int i10) {
     }
 }

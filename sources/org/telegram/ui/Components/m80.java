@@ -1,132 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.os.Bundle;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class m80 extends View {
-    public static DecelerateInterpolator v;
-    public static Paint w;
-    public long a;
-    public float b;
-    public float c;
-    public long d;
-    public float e;
-    public float f;
-    public int h;
-    public int n;
-    public final RectF r;
-    public org.telegram.ui.Components.voip.h s;
+public final /* synthetic */ class m80 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public m80(Context context) {
-        super(context);
-        this.f = 1.0f;
-        this.r = new RectF();
-        if (v == null) {
-            v = new DecelerateInterpolator();
-            Paint paint = new Paint(1);
-            w = paint;
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            w.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
+    public /* synthetic */ m80(Object obj, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = j3;
     }
 
-    public final void a(float f7, boolean z10) {
-        if (z10) {
-            this.c = this.e;
-        } else {
-            this.e = f7;
-            this.c = f7;
-        }
-        if (f7 != 1.0f) {
-            this.f = 1.0f;
-        }
-        this.b = f7;
-        this.d = 0L;
-        this.a = System.currentTimeMillis();
-        invalidate();
-    }
-
-    public float getCurrentProgress() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.h;
-        RectF rectF = this.r;
-        if (i10 != 0 && this.e != 1.0f) {
-            w.setColor(i10);
-            w.setAlpha((int) (this.f * 255.0f));
-            getWidth();
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        }
-        w.setColor(this.n);
-        w.setAlpha((int) (this.f * 255.0f));
-        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
-        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        if (this.f > 0.0f) {
-            if (this.s == null) {
-                org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h(160, 0);
-                this.s = hVar;
-                hVar.k = false;
-                hVar.n = 0.8f;
-                hVar.m = 1.2f;
-            }
-            this.s.f = getMeasuredWidth();
-            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
-            invalidate();
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        float f7 = this.e;
-        if (f7 != 1.0f) {
-            float f10 = this.b;
-            if (f7 != f10) {
-                float f11 = this.c;
-                float f12 = f10 - f11;
-                if (f12 > 0.0f) {
-                    long j10 = this.d + j3;
-                    this.d = j10;
-                    if (j10 >= 300) {
-                        this.e = f10;
-                        this.c = f10;
-                        this.d = 0L;
-                    } else {
-                        this.e = (v.getInterpolation(j10 / 300.0f) * f12) + f11;
-                    }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                q80.q((q80) this.c, this.b);
+                break;
+            case 1:
+                org.telegram.ui.wy wyVar = (org.telegram.ui.wy) this.c;
+                MessagesController messagesController = wyVar.getMessagesController();
+                long j3 = this.b;
+                boolean isDialogMuted = messagesController.isDialogMuted(j3, 0L);
+                if (isDialogMuted) {
+                    wyVar.getNotificationsController().setDialogNotificationsSettings(j3, 0L, 4);
+                } else {
+                    wyVar.getNotificationsController().setDialogNotificationsSettings(j3, 0L, 3);
                 }
-                invalidate();
-            }
+                wc.A(wyVar, !isDialogMuted, null).j();
+                wyVar.finishPreviewFragment();
+                break;
+            case 2:
+                Utilities.Callback callback = ((ph.p) this.c).f;
+                if (callback != null) {
+                    callback.run(Long.valueOf(this.b));
+                    break;
+                }
+                break;
+            case 3:
+                wh.m.P((wh.m) this.c, this.b);
+                break;
+            case 4:
+                wh.p1 p1Var = (wh.p1) this.c;
+                p1Var.getClass();
+                org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                if (U != null) {
+                    p1Var.dismiss();
+                    U.presentFragment(ProfileActivity.m4(this.b));
+                    break;
+                }
+                break;
+            default:
+                zh.a3 a3Var = (zh.a3) this.c;
+                a3Var.getClass();
+                Bundle bundle = new Bundle();
+                long j10 = this.b;
+                if (j10 >= 0) {
+                    bundle.putLong("user_id", j10);
+                } else {
+                    bundle.putLong("chat_id", -j10);
+                }
+                a3Var.J0.H(new ProfileActivity(bundle, null));
+                break;
         }
-        float f13 = this.e;
-        if (f13 < 1.0f || f13 != 1.0f) {
-            return;
-        }
-        float f14 = this.f;
-        if (f14 != 0.0f) {
-            float f15 = f14 - (j3 / 200.0f);
-            this.f = f15;
-            if (f15 <= 0.0f) {
-                this.f = 0.0f;
-            }
-            invalidate();
-        }
-    }
-
-    public void setBackColor(int i10) {
-        this.h = i10;
-    }
-
-    public void setProgressColor(int i10) {
-        this.n = i10;
     }
 }

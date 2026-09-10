@@ -1,158 +1,134 @@
 package xh;
 
-import android.util.LongSparseArray;
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.f5;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.xq0;
-import s4.c1;
-import sg.m1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class g extends kl0 {
-    public final /* synthetic */ n c;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes4.dex */
+public final class g extends aw0 implements r0.m {
+    public final b2.q0 w0;
+    public final /* synthetic */ h x0;
 
-    public g(n nVar) {
-        this.c = nVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(h hVar, Context context) {
+        super(context, null);
+        this.x0 = hVar;
+        this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(c1 c1Var) {
-        return c1Var.f == 0;
-    }
-
-    public final void E(List list) {
-        n nVar = this.c;
-        ArrayList arrayList = nVar.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = 0;
-        while (i10 < list.size()) {
-            long j3 = ((TLRPC.TL_chatInviteImporter) list.get(i10)).user_id;
-            int i11 = i10 + 1;
-            while (true) {
-                if (i11 >= list.size()) {
-                    break;
+    @Override // r0.l
+    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+        org.telegram.ui.ActionBar.l lVar;
+        int i13;
+        org.telegram.ui.ActionBar.l lVar2;
+        h hVar = this.x0;
+        if (viewGroup == hVar.e && hVar.F.isAttachedToWindow()) {
+            lVar = ((org.telegram.ui.ActionBar.p2) hVar).actionBar;
+            boolean z10 = lVar.n0;
+            int top = (((View) hVar.F.getParent()).getTop() - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+            int bottom = ((View) hVar.F.getParent()).getBottom();
+            boolean z11 = false;
+            if (i11 >= 0) {
+                if (z10) {
+                    vl0 currentListView = hVar.F.getCurrentListView();
+                    iArr[1] = i11;
+                    if (top > 0) {
+                        iArr[1] = 0;
+                    }
+                    if (currentListView == null || (i13 = iArr[1]) <= 0) {
+                        return;
+                    }
+                    currentListView.scrollBy(0, i13);
+                    return;
                 }
-                if (((TLRPC.TL_chatInviteImporter) list.get(i11)).user_id == j3) {
-                    list.remove(i10);
-                    i10--;
-                    break;
+                if (i11 > 0) {
+                    vl0 currentListView2 = hVar.F.getCurrentListView();
+                    if (hVar.e.getHeight() - bottom < 0 || currentListView2 == null || currentListView2.canScrollVertically(1)) {
+                        return;
+                    }
+                    iArr[1] = i11;
+                    hVar.e.B0();
+                    return;
                 }
-                i11++;
-            }
-            i10++;
-        }
-        arrayList.clear();
-        arrayList.addAll(list);
-        if (isEmpty) {
-            s(!nVar.B ? 1 : 0, arrayList.size());
-        } else {
-            l();
-        }
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        n nVar = this.c;
-        return ((nVar.c.isEmpty() || !nVar.x) ? 0 : 1) + nVar.c.size() + (!nVar.B ? 1 : 0);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        n nVar = this.c;
-        if (i10 != 0 || nVar.B) {
-            return (i10 == h() + (-1) && !nVar.c.isEmpty() && nVar.x) ? 4 : 0;
-        }
-        return 2;
-    }
-
-    @Override // s4.h0
-    public final void v(c1 c1Var, int i10) {
-        n nVar = this.c;
-        ArrayList arrayList = nVar.c;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 != 0) {
-            if (i11 == 2) {
-                view.requestLayout();
                 return;
             }
-            return;
-        }
-        f5 f5Var = (f5) view;
-        int i12 = i10 - (!nVar.B ? 1 : 0);
-        LongSparseArray longSparseArray = nVar.d;
-        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i12);
-        boolean z10 = i12 != arrayList.size() - 1 || nVar.x;
-        j5 j5Var = f5Var.d;
-        f5Var.e = tL_chatInviteImporter;
-        f5Var.f = z10;
-        f5Var.setWillNotDraw(!z10);
-        TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        i9 i9Var = f5Var.a;
-        i9Var.r(user);
-        f5Var.b.e(user, i9Var);
-        f5Var.c.l(UserObject.getUserName(user), false);
-        String formatDateAudio = LocaleController.formatDateAudio(tL_chatInviteImporter.date, false);
-        if (tL_chatInviteImporter.via_chatlist) {
-            j5Var.l(LocaleController.getString(R.string.JoinedViaFolder), false);
-            return;
-        }
-        long j3 = tL_chatInviteImporter.approved_by;
-        if (j3 == 0) {
-            j5Var.l(LocaleController.formatString("RequestedToJoinAt", R.string.RequestedToJoinAt, formatDateAudio), false);
-            return;
-        }
-        TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
-        if (user2 != null) {
-            j5Var.l(LocaleController.formatString("AddedBy", R.string.AddedBy, UserObject.getFirstName(user2), formatDateAudio), false);
-        } else {
-            j5Var.l("", false);
+            lVar2 = ((org.telegram.ui.ActionBar.p2) hVar).actionBar;
+            lVar2.setCastShadows(hVar.e.getHeight() - bottom < 0);
+            if (hVar.e.getHeight() - bottom >= 0) {
+                vl0 currentListView3 = hVar.F.getCurrentListView();
+                int L0 = ((s4.c0) currentListView3.getLayoutManager()).L0();
+                if (L0 != -1) {
+                    s4.c1 K = currentListView3.K(L0);
+                    int top2 = K != null ? K.a.getTop() : -1;
+                    int paddingTop = currentListView3.getPaddingTop();
+                    if (top2 != paddingTop || L0 != 0) {
+                        iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
+                        currentListView3.scrollBy(0, i11);
+                        z11 = true;
+                    }
+                }
+            }
+            if (z10) {
+                if (z11 || top >= 0) {
+                    iArr[1] = i11;
+                } else {
+                    iArr[1] = i11 - Math.max(top, i11);
+                }
+            }
         }
     }
 
-    @Override // s4.h0
-    public final c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        n nVar = this.c;
-        boolean z10 = nVar.a;
-        if (i10 == 1) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 == 2) {
-            m1 m1Var = new m1(viewGroup.getContext(), 1);
-            m1Var.setTag(-33024);
-            view = m1Var;
-        } else if (i10 == 3) {
-            view = new View(viewGroup.getContext());
-        } else if (i10 != 4) {
-            view = new f5(viewGroup.getContext(), nVar, z10);
-        } else {
-            n2 n2Var = nVar.g;
-            xq0 xq0Var = new xq0(n2Var.getParentActivity(), 1, n2Var.getResourceProvider());
-            if (nVar.B) {
-                xq0Var.setBackgroundColor(j6.v0(j6.d6, n2Var.getResourceProvider()));
+    @Override // r0.m
+    public final void h(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        org.telegram.ui.ActionBar.l lVar;
+        h hVar = this.x0;
+        try {
+            if (viewGroup == hVar.e && hVar.F.isAttachedToWindow()) {
+                vl0 currentListView = hVar.F.getCurrentListView();
+                int bottom = ((View) hVar.F.getParent()).getBottom();
+                lVar = ((org.telegram.ui.ActionBar.p2) hVar).actionBar;
+                lVar.setCastShadows(hVar.e.getHeight() - bottom < 0);
+                if (hVar.e.getHeight() - bottom >= 0) {
+                    iArr[1] = i13;
+                    currentListView.scrollBy(0, i13);
+                }
             }
-            xq0Var.f(j6.d6, j6.a7, -1);
-            xq0Var.setViewType(15);
-            xq0Var.setMemberRequestButton(z10);
-            xq0Var.setIsSingleCell(true);
-            xq0Var.setItemsCount(1);
-            xq0Var.setTag(-33024);
-            view = xq0Var;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            AndroidUtilities.runOnUIThread(new qg.q0(this, 28));
         }
-        return new vk0(view);
+    }
+
+    @Override // r0.l
+    public final void n(int i10, View view) {
+        this.w0.a = 0;
+    }
+
+    @Override // r0.l
+    public final boolean o(View view, View view2, int i10, int i11) {
+        return i10 == 2;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // r0.l
+    public final void r(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+    }
+
+    @Override // r0.l
+    public final void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

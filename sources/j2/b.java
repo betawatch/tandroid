@@ -3,20 +3,21 @@ package j2;
 import b2.b1;
 import b2.u0;
 import b2.x1;
-import u2.b0;
+import n4.y;
+import u2.c0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public interface b {
-    void a(i2.h hVar);
+    void a(i2.g gVar);
 
-    void b(b1 b1Var, pf.b bVar);
+    void b(c0 c0Var);
 
-    void c(b0 b0Var);
+    void c(x1 x1Var);
 
-    void d(x1 x1Var);
+    void d(a aVar, c0 c0Var);
 
-    void e(a aVar, b0 b0Var);
+    void e(b1 b1Var, y yVar);
 
     void f(a aVar, int i10, long j3);
 

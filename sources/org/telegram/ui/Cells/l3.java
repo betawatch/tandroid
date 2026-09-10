@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.s51;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class l3 {
     public boolean a;
@@ -30,7 +30,7 @@ public final class l3 {
     public final void a(t1 t1Var) {
         TLRPC.Message message;
         String str;
-        SpannableStringBuilder e7 = bi.p9.e(R.string.ExpiredStory, false, new Object[0]);
+        SpannableStringBuilder e = zh.a6.e(R.string.ExpiredStory, false, new Object[0]);
         MessageObject messageObject = t1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
@@ -50,20 +50,20 @@ public final class l3 {
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
                 }
                 TextPaint textPaint2 = org.telegram.ui.ActionBar.j6.Z2;
-                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e7, 0, e7.length()) + 1.0f));
+                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.b = new StaticLayout(e7, textPaint2, dp, alignment, 1.0f, 0.0f, false);
+                this.b = new StaticLayout(e, textPaint2, dp, alignment, 1.0f, 0.0f, false);
                 this.c = new StaticLayout(str, textPaint2, AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
                 this.e = 0;
                 this.h = AndroidUtilities.dp(4.0f);
                 this.i = AndroidUtilities.dp(12.0f);
-                this.e = (int) p6.a(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
+                this.e = (int) r6.a(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
                 this.d = t1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
                 return;
             }

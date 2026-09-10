@@ -6,9 +6,9 @@ import jd.a;
 import kd.j;
 import kotlin.jvm.internal.p;
 import rd.l;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzev extends j implements l {
     Object zza;
@@ -51,7 +51,7 @@ final class zzev extends j implements l {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                u7.b(obj);
                 zzgrVar = this.zzc;
                 zzfp zzfpVar = this.zzd;
                 zzye zzyeVar = this.zze;
@@ -60,11 +60,11 @@ final class zzev extends j implements l {
                 obj = new zzhf(48, new zzes(zzfpVar, zzyeVar, null), null);
             } else {
                 if (i10 != 1) {
-                    t7.b(obj);
+                    u7.b(obj);
                     return (zzyg) obj;
                 }
                 zzgrVar = (zzgr) this.zza;
-                t7.b(obj);
+                u7.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
@@ -73,9 +73,9 @@ final class zzev extends j implements l {
                 return aVar;
             }
             return (zzyg) obj;
-        } catch (zzcg e7) {
-            this.zzf.a = e7;
-            throw e7;
+        } catch (zzcg e) {
+            this.zzf.a = e;
+            throw e;
         }
     }
 }

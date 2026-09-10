@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uc0 implements q0.a {
     public final /* synthetic */ int a;
@@ -73,8 +73,8 @@ public final /* synthetic */ class uc0 implements q0.a {
                                 id0Var.g0.add(cd0Var);
                                 id0Var.h0.k(cd0Var, cd0Var.a);
                             }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                         id0Var.I.moveCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngZoom(cd0Var.e.getPosition(), minZoomLevel));
                     } else {
@@ -103,8 +103,8 @@ public final /* synthetic */ class uc0 implements q0.a {
                             IMapsProvider.LatLng latLng2 = new IMapsProvider.LatLng(id0Var.x0.getLatitude(), id0Var.x0.getLongitude());
                             try {
                                 id0Var.I.addMarker(ApplicationLoader.getMapsProvider().onCreateMarkerOptions().position(latLng2).icon(R.drawable.map_pin2));
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                             }
                             id0Var.I.moveCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngZoom(latLng2, minZoomLevel));
                             id0Var.f0 = false;
@@ -113,15 +113,15 @@ public final /* synthetic */ class uc0 implements q0.a {
                     }
                     try {
                         id0Var.I.setMyLocationEnabled(true);
-                    } catch (Exception e11) {
-                        FileLog.e((Throwable) e11, false);
+                    } catch (Exception e10) {
+                        FileLog.e((Throwable) e10, false);
                     }
                     id0Var.I.getUiSettings().setMyLocationButtonEnabled(false);
                     id0Var.I.getUiSettings().setZoomControlsEnabled(false);
                     id0Var.I.getUiSettings().setCompassEnabled(false);
                     id0Var.I.setOnCameraMoveStartedListener(new qc0(id0Var, 4));
                     id0Var.I.setOnMyLocationChangeListener(new uc0(id0Var, 1));
-                    id0Var.I.setOnMarkerClickListener(new m4.g0(id0Var, minZoomLevel));
+                    id0Var.I.setOnMarkerClickListener(new m4.h0(id0Var, minZoomLevel));
                     id0Var.I.setOnCameraMoveListener(new sc0(id0Var, 3));
                     LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
                     List<String> providers = locationManager.getProviders(true);

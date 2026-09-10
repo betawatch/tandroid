@@ -6,18 +6,17 @@ import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
 import b2.x0;
-import bi.e4;
+import bi.g2;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.d0;
 import java.util.ArrayList;
 import java.util.Map;
-import ji.b5;
 import kotlin.jvm.internal.i;
 import m.p;
-import m4.a0;
-import m4.k0;
+import m4.b0;
+import m4.l0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class o implements i9.r, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -126,15 +125,15 @@ public final class o implements i9.r, com.google.android.gms.common.api.internal
     public void h(Throwable th2) {
         switch (this.a) {
             case 2:
-                a0 a0Var = (a0) this.d;
+                b0 b0Var = (b0) this.d;
                 if (th2 instanceof UnsupportedOperationException) {
                     e2.a.o("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
                 } else {
                     e2.a.f("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
                 }
-                d0.H(a0Var.t);
+                d0.H(b0Var.t);
                 if (this.b) {
-                    a0Var.p((m4.r) this.c);
+                    b0Var.p((m4.r) this.c);
                     break;
                 }
                 break;
@@ -145,22 +144,22 @@ public final class o implements i9.r, com.google.android.gms.common.api.internal
     public void onSuccess(Object obj) {
         switch (this.a) {
             case 2:
-                a0 a0Var = (a0) this.d;
+                b0 b0Var = (b0) this.d;
                 m4.r rVar = (m4.r) this.c;
                 boolean z10 = this.b;
-                w7.t.b(a0Var.t, (m4.s) obj);
-                d0.H(a0Var.t);
+                w7.u.b(b0Var.t, (m4.s) obj);
+                d0.H(b0Var.t);
                 if (z10) {
-                    a0Var.p(rVar);
+                    b0Var.p(rVar);
                     break;
                 }
                 break;
             default:
                 m4.s sVar = (m4.s) obj;
-                a0 a0Var2 = ((k0) this.d).g;
-                Handler handler = a0Var2.l;
+                b0 b0Var2 = ((l0) this.d).g;
+                Handler handler = b0Var2.l;
                 m4.r rVar2 = (m4.r) this.c;
-                d0.U(handler, new b5(a0Var2, rVar2, new e4(this, sVar, this.b, rVar2, 7)));
+                d0.U(handler, new m4.w(b0Var2, rVar2, new g2(this, sVar, this.b, rVar2, 6)));
                 break;
         }
     }
@@ -191,15 +190,15 @@ public final class o implements i9.r, com.google.android.gms.common.api.internal
         this.d = new ArrayList();
     }
 
-    public o(jh.a aVar, le.b bVar) {
+    public o(hh.a aVar, le.b bVar) {
         this.a = 1;
         this.c = aVar;
         this.d = bVar;
     }
 
-    public o(a0 a0Var, m4.r rVar, boolean z10, x0 x0Var) {
+    public o(b0 b0Var, m4.r rVar, boolean z10, x0 x0Var) {
         this.a = 2;
-        this.d = a0Var;
+        this.d = b0Var;
         this.c = rVar;
         this.b = z10;
     }

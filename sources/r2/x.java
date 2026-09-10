@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
-import k2.g0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -94,13 +93,13 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final /* synthetic */ boolean j(g0 g0Var) {
-        return false;
+    public final void j(Surface surface) {
+        this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final void k(Surface surface) {
-        this.a.setOutputSurface(surface);
+    public final /* synthetic */ boolean k(o0.b bVar) {
+        return false;
     }
 
     @Override // r2.l

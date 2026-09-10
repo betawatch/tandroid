@@ -1,10 +1,10 @@
 package com.google.mlkit.nl.languageid;
 
 import java.util.Arrays;
-import m2.t;
+import m.e3;
 import v7.q0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        t tVar = new t("IdentifiedLanguage", 29);
-        t tVar2 = new t(28, false);
-        ((t) tVar.d).d = tVar2;
-        tVar.d = tVar2;
-        tVar2.c = this.a;
-        tVar2.b = "languageTag";
+        e3 e3Var = new e3("IdentifiedLanguage", 29);
+        e3 e3Var2 = new e3(28, false);
+        ((e3) e3Var.d).d = e3Var2;
+        e3Var.d = e3Var2;
+        e3Var2.c = this.a;
+        e3Var2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
         q0 q0Var = new q0(28, false);
-        ((t) tVar.d).d = q0Var;
-        tVar.d = q0Var;
+        ((e3) e3Var.d).d = q0Var;
+        e3Var.d = q0Var;
         q0Var.c = valueOf;
         q0Var.b = "confidence";
-        return tVar.toString();
+        return e3Var.toString();
     }
 }

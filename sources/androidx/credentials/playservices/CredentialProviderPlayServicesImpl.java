@@ -3,14 +3,13 @@ package androidx.credentials.playservices;
 import a1.b;
 import a1.e;
 import a1.g;
-import ah.i0;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.ResultReceiver;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import bi.q5;
+import bi.cb;
 import com.google.android.gms.common.api.f;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
@@ -36,7 +35,7 @@ import w0.c;
 import w0.h;
 import w7.g8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -73,12 +72,12 @@ public final class CredentialProviderPlayServicesImpl implements j {
         return gd.i.a;
     }
 
-    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e7) {
-        i.e(e7, "e");
-        Log.w(TAG, "Clearing restore credential failed", e7);
+    private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e) {
+        i.e(e, "e");
+        Log.w(TAG, "Clearing restore credential failed", e);
         p pVar = new p();
         pVar.a = new a("Clear restore credential failed for unknown reason.");
-        if ((e7 instanceof f) && ((f) e7).getStatusCode() == 40201) {
+        if ((e instanceof f) && ((f) e).getStatusCode() == 40201) {
             pVar.a = new a("The restore credential internal service had a failure.");
         }
         Companion.getClass();
@@ -172,12 +171,12 @@ public final class CredentialProviderPlayServicesImpl implements j {
             ((m) it.next()).e();
         }
         com.google.android.gms.common.api.internal.h.a();
-        v e7 = w.e();
-        e7.d = new k6.c[]{i7.d.a};
-        e7.c = new a6.m(a2, 23);
-        e7.b = false;
-        e7.a = 1554;
-        a2.e(1, e7.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
+        v e = w.e();
+        e.d = new k6.c[]{i7.d.a};
+        e.c = new a4.m(a2, 23);
+        e.b = false;
+        e.a = 1554;
+        a2.e(1, e.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
             @Override // rd.l
             public final Object invoke(Object obj) {
                 gd.i runFallbackClearCredFlow$lambda$22;
@@ -204,13 +203,13 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e7) {
-        i.e(e7, "e");
+    public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e) {
+        i.e(e, "e");
         Companion.getClass();
         if (g.a(cancellationSignal)) {
             return;
         }
-        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(e7, executor, iVar);
+        runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(e, executor, iVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -268,13 +267,13 @@ public final class CredentialProviderPlayServicesImpl implements j {
             }
             g7.f fVar = new g7.f("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", eVar.a, eVar.b, null, eVar.d, null);
             h7.g gVar2 = new h7.g(context, h7.g.k, aVar, com.google.android.gms.common.api.i.c);
-            v e7 = w.e();
-            e7.d = new k6.c[]{q7.b.b};
-            e7.c = new a6.i(fVar, 23);
-            e7.a = 32704;
-            Task e10 = gVar2.e(1, e7.a());
-            i.d(e10, "doWrite(...)");
-            e10.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 27)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
+            v e = w.e();
+            e.d = new k6.c[]{q7.b.b};
+            e.c = new a4.m(fVar, 20);
+            e.a = 32704;
+            Task e7 = gVar2.e(1, e.a());
+            i.d(e7, "doWrite(...)");
+            e7.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 21)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
             return;
         }
         v0.e eVar2 = (v0.e) request;
@@ -289,18 +288,19 @@ public final class CredentialProviderPlayServicesImpl implements j {
                 return;
             }
             b7.a aVar2 = new b7.a(context, b7.a.k, aVar, new com.google.android.gms.common.api.internal.a());
-            v e11 = w.e();
-            e11.c = new a6.i(aVar2, d, 7);
-            e11.a = 5407;
-            aVar2.e(0, e11.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 19)).addOnFailureListener(new i0(9, eVar3, cancellationSignal));
-        } catch (JSONException e12) {
+            v e10 = w.e();
+            int i11 = 5;
+            e10.c = new pb.c(aVar2, d, i11);
+            e10.a = 5407;
+            aVar2.e(0, e10.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 17)).addOnFailureListener(new cb(i11, eVar3, cancellationSignal));
+        } catch (JSONException e11) {
             Companion.getClass();
             if (g.a(cancellationSignal)) {
                 return;
             }
             Executor executor2 = eVar3.g;
             if (executor2 != null) {
-                executor2.execute(new d1.b(eVar3, e12, i10));
+                executor2.execute(new d1.b(eVar3, e11, i10));
             } else {
                 i.h("executor");
                 throw null;
@@ -375,10 +375,10 @@ public final class CredentialProviderPlayServicesImpl implements j {
             new c1.e(context).g(request, cancellationSignal, executor, callback);
             return;
         }
-        f1.a aVar = new f1.a(context);
-        aVar.h = cancellationSignal;
-        aVar.f = callback;
-        aVar.g = executor;
+        f1.b bVar = new f1.b(context);
+        bVar.h = cancellationSignal;
+        bVar.f = callback;
+        bVar.g = executor;
         Companion.getClass();
         if (g.a(cancellationSignal)) {
             return;
@@ -393,16 +393,17 @@ public final class CredentialProviderPlayServicesImpl implements j {
             arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, i10, null, new ResultReceiver(null));
-        Context context2 = aVar.e;
+        Context context2 = bVar.e;
         i.e(context2, "context");
         h7.g gVar = new h7.g(context2, h7.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
-        v e7 = w.e();
-        e7.d = new k6.c[]{q7.b.a};
-        e7.c = new a4.m(getCredentialRequest, 23);
-        e7.a = 32701;
-        Task e10 = gVar.e(0, e7.a());
-        i.d(e10, "doRead(...)");
-        e10.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, aVar, executor, callback, 1), 28)).addOnFailureListener(new q5(request, aVar, callback, executor, cancellationSignal));
+        v e = w.e();
+        e.d = new k6.c[]{q7.b.a};
+        int i11 = 22;
+        e.c = new pb.c(getCredentialRequest, i11);
+        e.a = 32701;
+        Task e7 = gVar.e(0, e.a());
+        i.d(e7, "doRead(...)");
+        e7.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, bVar, executor, callback, 1), i11)).addOnFailureListener(new f1.a(request, bVar, callback, executor, cancellationSignal));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

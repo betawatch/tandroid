@@ -1,42 +1,58 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class cf1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eg1 b;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ cf1(eg1 eg1Var, int i10) {
-        this.a = i10;
-        this.b = eg1Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final class cf1 extends FrameLayout {
+    public ValueAnimator a;
+    public boolean b;
+    public float c;
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = ((1.0f - this.c) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f7, f7, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+        if (isPressed()) {
+            float f10 = this.c;
+            if (f10 != 1.0f) {
+                this.c = Utilities.clamp(f10 + 0.16f, 1.0f, 0.0f);
+                invalidate();
+            }
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                eg1 eg1Var = this.b;
-                eg1Var.x0();
-                eg1Var.B0();
-                break;
-            case 1:
-                this.b.x0();
-                break;
-            case 2:
-                this.b.O0(true);
-                break;
-            case 3:
-                this.b.finishPreviewFragment();
-                break;
-            case 4:
-                eg1 eg1Var2 = this.b;
-                eg1Var2.A0 = null;
-                eg1Var2.U0(true, false);
-                break;
-            default:
-                eg1 eg1Var3 = this.b;
-                eg1Var3.N.postOnAnimation(new cf1(eg1Var3, 1));
-                break;
+    @Override // android.view.View
+    public final void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        super.setPressed(z10);
+        if (this.b != z10) {
+            this.b = z10;
+            invalidate();
+            if (z10 && (valueAnimator = this.a) != null) {
+                valueAnimator.removeAllListeners();
+                this.a.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.c;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.a = ofFloat;
+                ofFloat.addUpdateListener(new f21(this, 16));
+                this.a.addListener(new mv0(this, 13));
+                this.a.setInterpolator(new OvershootInterpolator(5.0f));
+                this.a.setDuration(350L);
+                this.a.start();
+            }
         }
     }
 }

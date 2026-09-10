@@ -43,7 +43,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -83,7 +83,7 @@ public final class u extends g.g {
     public final int g0;
     public final p4.x h;
     public HashMap h0;
-    public pf.b i0;
+    public of.b i0;
     public final r j0;
     public PlaybackStateCompat k0;
     public MediaDescriptionCompat l0;
@@ -364,16 +364,16 @@ public final class u extends g.g {
     public final void p(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
         PlaybackStateCompat d;
-        pf.b bVar = this.i0;
+        of.b bVar = this.i0;
         r rVar = this.j0;
         if (bVar != null) {
-            bVar.k0(rVar);
+            bVar.q0(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
-            pf.b bVar2 = new pf.b(this.s, mediaSessionCompat$Token);
+            of.b bVar2 = new of.b(this.s, mediaSessionCompat$Token);
             this.i0 = bVar2;
-            bVar2.f0(rVar);
+            bVar2.m0(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -392,8 +392,8 @@ public final class u extends g.g {
             if (mediaSessionCompat$Token2.a() != null) {
                 try {
                     d = mediaSessionCompat$Token2.a().d();
-                } catch (RemoteException e7) {
-                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e7);
+                } catch (RemoteException e) {
+                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
                 }
                 this.k0 = d;
                 r();

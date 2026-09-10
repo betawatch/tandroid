@@ -1,45 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.text.TextPaint;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c61 extends s4.j {
-    public final /* synthetic */ d61 F;
+public final class c61 extends z51 {
+    public final int e;
+    public final b11 f;
 
-    public c61(d61 d61Var) {
-        this.F = d61Var;
+    public c61(String str, int i10, b11 b11Var) {
+        super(str, (b11) null);
+        this.e = i10;
+        this.f = b11Var;
     }
 
-    @Override // s4.j
-    public final void M() {
-        d61 d61Var = this.F;
-        if (d61Var.a1()) {
-            d61Var.invalidate();
+    @Override // org.telegram.ui.Components.z51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 3) {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
+        } else if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
         }
-        d61Var.B1();
-    }
-
-    @Override // s4.j
-    public final void O() {
-        d61 d61Var = this.F;
-        if (d61Var.a1()) {
-            d61Var.invalidate();
+        b11 b11Var = this.f;
+        if (b11Var != null) {
+            b11Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
-        d61Var.B1();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        d61 d61Var = this.F;
-        d61Var.invalidate();
-        d61Var.B1();
-    }
-
-    @Override // s4.j
-    public final void Q() {
-        d61 d61Var = this.F;
-        if (d61Var.a1()) {
-            d61Var.invalidate();
-        }
-        d61Var.B1();
     }
 }

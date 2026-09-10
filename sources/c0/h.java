@@ -12,10 +12,10 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.r6;
 import v7.c5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class h implements w {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
@@ -241,7 +241,7 @@ public abstract class h implements w {
         t10.append(timeUnit.toString().toLowerCase(locale));
         String sb2 = t10.toString();
         if (nanos + 1000 < 0) {
-            String t11 = p6.t(sb2, " (plus ");
+            String t11 = r6.t(sb2, " (plus ");
             long j10 = -nanos;
             long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
             long nanos2 = j10 - timeUnit.toNanos(convert);
@@ -249,17 +249,17 @@ public abstract class h implements w {
             if (convert > 0) {
                 String str = t11 + convert + " " + lowerCase;
                 if (z10) {
-                    str = p6.t(str, ",");
+                    str = r6.t(str, ",");
                 }
-                t11 = p6.t(str, " ");
+                t11 = r6.t(str, " ");
             }
             if (z10) {
                 t11 = t11 + nanos2 + " nanoseconds ";
             }
-            sb2 = p6.t(t11, "delay)");
+            sb2 = r6.t(t11, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(p6.t(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(r6.t(sb2, " but future completed as timeout expired"));
         }
         throw new TimeoutException(a4.a.C(sb2, " for ", hVar));
     }

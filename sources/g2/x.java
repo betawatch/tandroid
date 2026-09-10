@@ -2,14 +2,14 @@ package g2;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class x extends v {
     public final int d;
     public final Map e;
 
     public x(int i10, j jVar, Map map) {
-        super(i2.g.i(i10, "Response code: "), jVar, 2004);
+        super(hc.b.j(i10, "Response code: "), jVar, 2004);
         this.d = i10;
         this.e = map;
     }

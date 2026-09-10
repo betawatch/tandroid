@@ -2,12 +2,12 @@ package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.dg0;
-import org.telegram.ui.Components.eg0;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.ng0;
+import org.telegram.ui.Components.og0;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class g1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class g1 extends OldVideoPlayerRewinder {
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
                 photoViewer.z1.f(false);
-                eg0.p0.Q.f(false);
+                og0.p0.Q.f(false);
                 break;
         }
     }
@@ -40,9 +40,9 @@ public final class g1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 t1 t1Var = (t1) this.b;
-                w61 w61Var = t1Var.Gd;
-                w61Var.n = new l.d(this, 9);
-                w61Var.e(false);
+                j71 j71Var = t1Var.Gd;
+                j71Var.n = new o0.b(this);
+                j71Var.e(false);
                 t1Var.Gd.d(!z10);
                 t1Var.Gd.f(true);
                 t1Var.invalidate();
@@ -53,7 +53,7 @@ public final class g1 extends OldVideoPlayerRewinder {
                 photoViewer.z1.d(!z10);
                 photoViewer.z1.f(true);
                 photoViewer.e0.invalidate();
-                eg0.v(z10);
+                og0.v(z10);
                 break;
         }
     }
@@ -77,17 +77,17 @@ public final class g1 extends OldVideoPlayerRewinder {
                     photoViewer.q3.h(f7, false);
                     photoViewer.r3.invalidate();
                 }
-                eg0 eg0Var = eg0.p0;
-                eg0Var.Q.g(0L);
+                og0 og0Var = og0.p0;
+                og0Var.Q.g(0L);
                 if (z10) {
-                    eg0Var.Z = f7;
-                    bi.a4 a4Var = eg0Var.b0;
-                    if (a4Var != null) {
-                        a4Var.invalidate();
+                    og0Var.Z = f7;
+                    org.telegram.ui.u7 u7Var = og0Var.b0;
+                    if (u7Var != null) {
+                        u7Var.invalidate();
                     }
-                    dg0 dg0Var = eg0Var.h;
-                    if (dg0Var != null) {
-                        dg0Var.invalidate();
+                    ng0 ng0Var = og0Var.h;
+                    if (ng0Var != null) {
+                        ng0Var.invalidate();
                         break;
                     }
                 }

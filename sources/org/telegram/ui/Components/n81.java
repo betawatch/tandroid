@@ -1,55 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class n81 implements org.telegram.ui.jq0 {
-    public final /* synthetic */ p81 a;
+public abstract class n81 {
+    public abstract void b(View view, int i10, int i11);
 
-    public n81(p81 p81Var) {
-        this.a = p81Var;
+    public boolean c(int i10) {
+        return false;
     }
 
-    @Override // org.telegram.ui.jq0
-    public final void a(ArrayList arrayList) {
-        p81 p81Var = this.a;
-        try {
-            if (arrayList.isEmpty()) {
-                return;
-            }
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
-            if (sendingMediaInfo.path != null) {
-                p81Var.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(p81Var.e));
-                p81Var.d.b(p81Var.e, loadBitmap, true);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
+    public abstract View d(int i10);
+
+    public abstract int e();
+
+    public CharSequence g(int i10) {
+        return "";
     }
 
-    @Override // org.telegram.ui.jq0
-    public final void b() {
-        try {
-            Intent intent = new Intent("android.intent.action.PICK");
-            intent.setType("image/*");
-            this.a.b.startActivityForResult(intent, 11);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
+    public int h(int i10) {
+        return 0;
+    }
+
+    public void a(ArrayList arrayList) {
+    }
+
+    public int f(int i10) {
+        return i10;
     }
 }

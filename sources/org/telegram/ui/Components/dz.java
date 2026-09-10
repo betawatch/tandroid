@@ -1,80 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class dz implements yy {
-    public String a;
-    public int b;
-    public final ArrayList c = new ArrayList();
-    public final HashMap d = new HashMap();
-    public final HashMap e = new HashMap();
-    public final HashMap f = new HashMap();
-    public final ArrayList h = new ArrayList();
-    public final ArrayList n = new ArrayList();
-    public final ArrayList r = new ArrayList(0);
-    public final ArrayList s = new ArrayList(0);
-    public final LongSparseArray v = new LongSparseArray(0);
-    public final /* synthetic */ fz w;
+public final class dz extends hx0 {
+    public final /* synthetic */ ez A3;
+    public final /* synthetic */ int z3;
 
-    public dz(fz fzVar) {
-        this.w = fzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dz(ez ezVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        super(context, i10, f6Var);
+        this.A3 = ezVar;
+        this.z3 = i11;
     }
 
-    public final void a(Runnable runnable, boolean z10) {
-        String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new di.hd(this, z10, runnable, 2), z10);
+    @Override // org.telegram.ui.Components.hx0
+    public final void D1(int i10) {
+        cx cxVar;
+        ow owVar;
+        super.D1(i10);
+        ez ezVar = this.A3;
+        rz rzVar = ezVar.G;
+        dz dzVar = ezVar.r;
+        boolean z10 = dzVar.getSelectedCategory() == null;
+        int i11 = rz.O2;
+        rzVar.O(z10);
+        int i12 = this.z3;
+        if (i12 == 1 && (owVar = rzVar.I) != null) {
+            owVar.n(dzVar.getSelectedCategory() == null);
+        } else if (i12 == 0 && (cxVar = rzVar.B0) != null) {
+            cxVar.o0 = dzVar.getSelectedCategory() == null;
+            cxVar.invalidate();
+        }
+        ezVar.g(false);
     }
 
-    @Override // org.telegram.ui.Components.yy
-    public final void d() {
-        ww wwVar = this.w.Q.G0;
-        if (wwVar.F) {
-            return;
-        }
-        wwVar.e(true);
-        Utilities.raceCallbacks(new wp(this, 16), new cz(this, 0));
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        fz fzVar = this.w;
-        kz kzVar = fzVar.Q;
-        if (TextUtils.isEmpty(fzVar.N)) {
-            s4.h0 adapter = kzVar.D0.getAdapter();
-            bz bzVar = kzVar.y0;
-            if (adapter != bzVar) {
-                kzVar.D0.setAdapter(bzVar);
-            }
-            fzVar.l();
-            return;
-        }
-        int i10 = 1;
-        int i11 = fzVar.M + 1;
-        fzVar.M = i11;
-        this.b = i11;
-        this.a = fzVar.N;
-        fzVar.y = false;
-        this.c.clear();
-        this.d.clear();
-        this.e.clear();
-        this.f.clear();
-        this.h.clear();
-        this.r.clear();
-        this.s.clear();
-        this.v.clear();
-        kzVar.G0.e(true);
-        if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new wp(this, 16), new cz(this, i10));
-        } else {
-            Utilities.raceCallbacks(new wp(this, 16), new cz(this, 2), new cz(this, 3), new cz(this, 4), new cz(this, 5), new cz(this, 6), new cz(this, 7));
-        }
+    @Override // org.telegram.ui.Components.hx0
+    public final boolean z1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 }

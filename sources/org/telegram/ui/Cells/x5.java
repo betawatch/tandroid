@@ -1,79 +1,73 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Paint;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.wl;
-import org.telegram.tgnet.TLObject;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
-    public v5[] a;
-    public MediaController.AlbumEntry[] b;
-    public int c;
-    public w5 d;
-    public Paint e;
+    public final org.telegram.ui.Components.w9 a;
+    public final TextView b;
+    public final TextView c;
+    public final View d;
+    public final /* synthetic */ z5 e;
 
-    public final void a(int i10, MediaController.AlbumEntry albumEntry) {
-        v5[] v5VarArr = this.a;
-        this.b[i10] = albumEntry;
-        if (albumEntry == null) {
-            v5VarArr[i10].setVisibility(4);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x5(z5 z5Var, Context context) {
+        super(context);
+        this.e = z5Var;
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        addView(w9Var, w7.a6.c(-1.0f, -1));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setBackgroundResource(R.drawable.album_shadow);
+        addView(linearLayout, w7.a6.e(-1, 60, 83));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 13.0f);
+        textView.setTextColor(-1);
+        textView.setSingleLine(true);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        textView.setMaxLines(1);
+        textView.setGravity(80);
+        TextView g10 = com.google.android.gms.internal.vision.e2.g(linearLayout, textView, w7.a6.m(1.0f, 0, -1, 8, 0, 5), context);
+        this.c = g10;
+        g10.setTextSize(1, 13.0f);
+        g10.setTextColor(-1);
+        g10.setSingleLine(true);
+        g10.setEllipsize(truncateAt);
+        g10.setMaxLines(1);
+        g10.setGravity(80);
+        linearLayout.addView(g10, w7.a6.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
+        View view = new View(context);
+        this.d = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+        addView(view, w7.a6.c(-1.0f, -1));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.Components.w9 w9Var = this.a;
+        if (w9Var.getImageReceiver().hasNotThumb() && w9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
             return;
         }
-        v5 v5Var = v5VarArr[i10];
-        org.telegram.ui.Components.x9 x9Var = v5Var.a;
-        org.telegram.ui.Components.x9 x9Var2 = v5Var.a;
-        x9Var.q(0, true);
-        MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
-        if (photoEntry == null || photoEntry.path == null) {
-            x9Var2.setImageDrawable(org.telegram.ui.ActionBar.j6.R4);
-        } else {
-            x9Var2.p(photoEntry.orientation, photoEntry.invert, true);
-            if (albumEntry.coverPhoto.isVideo) {
-                x9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.j6.R4);
-            } else {
-                x9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.j6.R4);
-            }
-        }
-        v5Var.b.setText(albumEntry.bucketName);
-        v5Var.c.setText(String.format("%d", Integer.valueOf(albumEntry.photos.size())));
+        z5 z5Var = this.e;
+        z5Var.e.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.X9, false));
+        canvas.drawRect(0.0f, 0.0f, w9Var.getMeasuredWidth(), w9Var.getMeasuredHeight(), z5Var.e);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View[] viewArr = this.a;
-        int A = AndroidUtilities.isTablet() ? wl.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : wl.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
-        for (int i12 = 0; i12 < this.c; i12++) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
-            layoutParams.topMargin = AndroidUtilities.dp(4.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + A) * i12;
-            layoutParams.width = A;
-            layoutParams.height = A;
-            layoutParams.gravity = 51;
-            viewArr[i12].setLayoutParams(layoutParams);
-        }
-        super.onMeasure(i10, wl.C(4.0f, A, TLObject.FLAG_30));
-    }
-
-    public void setAlbumsCount(int i10) {
-        int i11 = 0;
-        while (true) {
-            v5[] v5VarArr = this.a;
-            if (i11 >= v5VarArr.length) {
-                this.c = i10;
-                return;
-            } else {
-                v5VarArr[i11].setVisibility(i11 < i10 ? 0 : 4);
-                i11++;
-            }
-        }
-    }
-
-    public void setDelegate(w5 w5Var) {
-        this.d = w5Var;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -3,17 +3,17 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bs0 implements ValueAnimator.AnimatorUpdateListener {
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.Components.ub ubVar;
+        org.telegram.ui.Components.tb tbVar;
         Drawable[] drawableArr = PhotoViewer.T8;
-        org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-        if (qcVar == null || (ubVar = qcVar.e) == null) {
+        org.telegram.ui.Components.pc pcVar = org.telegram.ui.Components.pc.w;
+        if (pcVar == null || (tbVar = pcVar.e) == null) {
             return;
         }
-        ubVar.updatePosition();
+        tbVar.updatePosition();
     }
 }

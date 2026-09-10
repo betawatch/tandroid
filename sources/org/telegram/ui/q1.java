@@ -1,49 +1,100 @@
 package org.telegram.ui;
 
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.KeyEvent;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class q1 extends WebViewClient {
-    public final /* synthetic */ t1 a;
+public final class q1 extends WebChromeClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public q1(t1 t1Var) {
-        this.a = t1Var;
+    public /* synthetic */ q1(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        try {
-            LaunchActivity launchActivity = LaunchActivity.G1;
-            if (launchActivity != null && launchActivity.isFinishing()) {
-                return true;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getContext(), 0, null);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new lu0(this, 8));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return false;
+    @Override // android.webkit.WebChromeClient
+    public final void onHideCustomView() {
+        switch (this.a) {
+            case 0:
+                super.onHideCustomView();
+                u1 u1Var = (u1) this.b;
+                j4 j4Var = u1Var.x;
+                if (j4Var.O != null) {
+                    j4Var.P.setVisibility(4);
+                    j4 j4Var2 = u1Var.x;
+                    j4Var2.P.removeView(j4Var2.O);
+                    WebChromeClient.CustomViewCallback customViewCallback = u1Var.x.S;
+                    if (customViewCallback != null && !customViewCallback.getClass().getName().contains(".chromium.")) {
+                        u1Var.x.S.onCustomViewHidden();
+                    }
+                    u1Var.x.O = null;
+                    break;
+                }
+                break;
+            default:
+                super.onHideCustomView();
+                org.telegram.ui.Components.zu zuVar = (org.telegram.ui.Components.zu) this.b;
+                if (zuVar.d != null) {
+                    zuVar.getSheetContainer().setVisibility(0);
+                    zuVar.e.setVisibility(4);
+                    zuVar.e.removeView(zuVar.d);
+                    WebChromeClient.CustomViewCallback customViewCallback2 = zuVar.f;
+                    if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
+                        zuVar.f.onCustomViewHidden();
+                    }
+                    zuVar.d = null;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        t1 t1Var = this.a;
-        if (!t1Var.s) {
-            return false;
+    @Override // android.webkit.WebChromeClient
+    public final void onShowCustomView(View view, int i10, WebChromeClient.CustomViewCallback customViewCallback) {
+        switch (this.a) {
+            case 0:
+                onShowCustomView(view, customViewCallback);
+                break;
+            default:
+                onShowCustomView(view, customViewCallback);
+                break;
         }
-        of.f.s(t1Var.x.L, str);
-        return true;
+    }
+
+    @Override // android.webkit.WebChromeClient
+    public final void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
+        switch (this.a) {
+            case 0:
+                j4 j4Var = ((u1) this.b).x;
+                if (j4Var.O != null) {
+                    customViewCallback.onCustomViewHidden();
+                    break;
+                } else {
+                    j4Var.O = view;
+                    j4Var.S = customViewCallback;
+                    AndroidUtilities.runOnUIThread(new mu0(this, 7), 100L);
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.zu zuVar = (org.telegram.ui.Components.zu) this.b;
+                FrameLayout frameLayout = zuVar.e;
+                if (zuVar.d == null && !org.telegram.ui.Components.og0.p0.P) {
+                    zuVar.I();
+                    zuVar.d = view;
+                    zuVar.getSheetContainer().setVisibility(4);
+                    frameLayout.setVisibility(0);
+                    frameLayout.addView(view, w7.a6.c(-1.0f, -1));
+                    zuVar.f = customViewCallback;
+                    break;
+                } else {
+                    customViewCallback.onCustomViewHidden();
+                    break;
+                }
+        }
     }
 }

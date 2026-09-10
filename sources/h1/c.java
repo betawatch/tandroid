@@ -6,7 +6,7 @@ import android.widget.Filter;
 import androidx.appcompat.widget.SearchView;
 import m.z2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c extends Filter {
     public b a;
@@ -30,8 +30,8 @@ public final class c extends Filter {
         if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
             try {
                 cursor = z2Var.f(z2Var.w, charSequence2);
-            } catch (RuntimeException e7) {
-                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e7);
+            } catch (RuntimeException e) {
+                Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
             }
             if (cursor != null) {
                 cursor.getCount();

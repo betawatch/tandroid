@@ -1,77 +1,79 @@
 package lg;
 
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.util.DisplayMetrics;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import o1.l;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class f {
-    public final kg.a a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final Path e;
-    public final Path f;
-    public final Path g;
-    public ValueAnimator h;
-    public ValueAnimator i;
-    public int j;
-    public final float[] k;
-    public final float[] l;
-    public int m;
-    public boolean n;
-    public float o;
-    public final f6 p;
+public final class f extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public float b;
+    public final /* synthetic */ i c;
 
-    public f(kg.a aVar, boolean z10, f6 f6Var) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        Paint paint3 = new Paint(1);
-        this.d = paint3;
-        this.e = new Path();
-        this.f = new Path();
-        this.g = new Path();
-        this.n = true;
-        this.o = 1.0f;
-        this.p = f6Var;
-        this.a = aVar;
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        if (!jg.g.A1) {
-            paint2.setStrokeJoin(Paint.Join.ROUND);
-        }
-        paint2.setColor(aVar.h);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        paint.setStyle(style);
-        paint.setColor(aVar.h);
-        paint3.setStrokeWidth(AndroidUtilities.dpf2(10.0f));
-        paint3.setStyle(style);
-        paint3.setStrokeCap(Paint.Cap.ROUND);
-        paint3.setColor(aVar.h);
-        long[] jArr = aVar.a;
-        this.k = new float[z10 ? jArr.length * 8 : jArr.length << 2];
-        long[] jArr2 = aVar.a;
-        this.l = new float[z10 ? jArr2.length * 8 : jArr2.length << 2];
+    public f(i iVar) {
+        this.c = iVar;
     }
 
-    public void a() {
-        kg.a aVar = this.a;
-        int i10 = aVar.g;
-        f6 f6Var = this.p;
-        if (i10 < 0 || !j6.c1(i10)) {
-            this.m = i0.a.f(j6.v0(j6.d6, f6Var)) < 0.5d ? aVar.i : aVar.h;
-        } else {
-            this.m = j6.v0(aVar.g, f6Var);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        DisplayMetrics displayMetrics;
+        float f11;
+        i iVar = this.c;
+        if (!iVar.f || iVar.n) {
+            return false;
         }
-        this.c.setColor(this.m);
-        this.b.setColor(this.m);
-        this.d.setColor(this.m);
+        l lVar = iVar.c.u;
+        if ((f7 / 7.0f) + ((float) lVar.i) >= iVar.getWidth() / 2.0f) {
+            displayMetrics = iVar.getResources().getDisplayMetrics();
+            f11 = 2.14748365E9f;
+        } else {
+            displayMetrics = iVar.getResources().getDisplayMetrics();
+            f11 = -2.14748365E9f;
+        }
+        lVar.i = i.a(displayMetrics, f11);
+        iVar.d.u.i = i.b(iVar.getResources().getDisplayMetrics(), (f10 / 10.0f) + ((float) iVar.d.u.i));
+        iVar.c.f();
+        iVar.d.f();
+        iVar.h = true;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        i iVar = this.c;
+        int i10 = iVar.F;
+        if (!iVar.n) {
+            AndroidUtilities.cancelRunOnUIThread(iVar.r);
+        }
+        if (!iVar.f && (Math.abs(f7) >= i10 || Math.abs(f10) >= i10)) {
+            this.a = (float) iVar.c.u.i;
+            this.b = (float) iVar.d.u.i;
+            iVar.f = true;
+        }
+        if (iVar.f && !iVar.n) {
+            iVar.c.u.i = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            iVar.d.u.i = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            iVar.c.f();
+            iVar.d.f();
+        }
+        return iVar.f;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        i iVar = this.c;
+        if (iVar.n || iVar.s) {
+            return false;
+        }
+        iVar.c(true);
+        return true;
     }
 }

@@ -1,34 +1,48 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.os.SystemClock;
-import android.view.MotionEvent;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class a8 extends f8 {
-    public long d;
-    public final /* synthetic */ k8 e;
+public final class a8 extends d8 {
+    public final /* synthetic */ Context E;
+    public final /* synthetic */ j8 F;
+    public final /* synthetic */ int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a8(k8 k8Var, Context context) {
+    public /* synthetic */ a8(j8 j8Var, Context context, Context context2, int i10) {
         super(context);
-        this.e = k8Var;
+        this.y = i10;
+        this.F = j8Var;
+        this.E = context2;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        k8 k8Var = this.e;
-        if (action == 0) {
-            if (this.a[this.b].getImageReceiver().hasBitmapImage()) {
-                k8Var.A0(true, true);
-                this.d = SystemClock.elapsedRealtime();
-                return true;
-            }
-        } else if (action != 2 && SystemClock.elapsedRealtime() - this.d >= 400) {
-            k8Var.A0(false, true);
+    @Override // org.telegram.ui.Components.d8
+    public final TextView a() {
+        switch (this.y) {
+            case 0:
+                ba0 ba0Var = new ba0(this.E);
+                ba0Var.setTextColor(this.F.getThemedColor(org.telegram.ui.ActionBar.j6.Oi));
+                ba0Var.setTextSize(1, 17.0f);
+                ba0Var.setTypeface(AndroidUtilities.bold());
+                ba0Var.setEllipsize(TextUtils.TruncateAt.END);
+                ba0Var.setSingleLine(true);
+                return ba0Var;
+            default:
+                ba0 ba0Var2 = new ba0(this.E);
+                int i10 = org.telegram.ui.ActionBar.j6.Si;
+                j8 j8Var = this.F;
+                ba0Var2.setTextColor(j8Var.getThemedColor(i10));
+                ba0Var2.setTextSize(1, 13.0f);
+                ba0Var2.setEllipsize(TextUtils.TruncateAt.END);
+                ba0Var2.setSingleLine(true);
+                ba0Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                ba0Var2.setBackground(org.telegram.ui.ActionBar.j6.Y(j8Var.getThemedColor(org.telegram.ui.ActionBar.j6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
+                ba0Var2.setOnClickListener(new org.telegram.ui.sh(15, this, ba0Var2));
+                return ba0Var2;
         }
-        return true;
     }
 }

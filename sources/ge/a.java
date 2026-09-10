@@ -1,5 +1,6 @@
 package ge;
 
+import ee.v;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
@@ -7,7 +8,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.jvm.internal.p;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a extends Thread {
     public static final /* synthetic */ AtomicIntegerFieldUpdater r = AtomicIntegerFieldUpdater.newUpdater(a.class, "workerCtl$volatile");
@@ -130,9 +131,9 @@ public final class a extends Thread {
     }
 
     public final i f() {
-        int e7 = e(2);
+        int e = e(2);
         c cVar = this.n;
-        if (e7 == 0) {
+        if (e == 0) {
             i iVar = (i) cVar.e.d();
             return iVar != null ? iVar : (i) cVar.f.d();
         }
@@ -178,15 +179,15 @@ public final class a extends Thread {
         if (i11 < 2) {
             return null;
         }
-        int e7 = e(i11);
+        int e = e(i11);
         int i12 = 0;
         long j12 = Long.MAX_VALUE;
         while (i12 < i11) {
-            e7++;
-            if (e7 > i11) {
-                e7 = 1;
+            e++;
+            if (e > i11) {
+                e = 1;
             }
-            a aVar = (a) cVar.h.b(e7);
+            a aVar = (a) cVar.h.b(e);
             if (aVar != null && aVar != this) {
                 m mVar = aVar.a;
                 if (i10 == 3) {
@@ -330,8 +331,8 @@ public final class a extends Thread {
                     this.h = false;
                     if (this.e == 0) {
                         Object obj = this.nextParkedWorker;
-                        d9.f fVar = c.v;
-                        if (obj != fVar) {
+                        v vVar = c.v;
+                        if (obj != vVar) {
                             r.set(this, -1);
                             while (this.nextParkedWorker != c.v) {
                                 AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = r;
@@ -390,7 +391,7 @@ public final class a extends Thread {
                             }
                         } else {
                             c cVar4 = this.n;
-                            if (this.nextParkedWorker == fVar) {
+                            if (this.nextParkedWorker == vVar) {
                                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.n;
                                 while (true) {
                                     long j10 = atomicLongFieldUpdater2.get(cVar4);

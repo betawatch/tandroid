@@ -1,137 +1,120 @@
 package sg;
 
 import android.content.Context;
-import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.lb0;
-import w7.x5;
+import org.telegram.ui.Cells.c7;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.ul0;
+import pg.f2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class o0 extends FrameLayout implements m0 {
-    public final f6 a;
-    public final ArrayList b;
-    public final n0 c;
-    public final n0 d;
-    public final n0 e;
-    public final boolean f;
+public final class o0 extends ul0 {
+    public final /* synthetic */ u0 c;
 
-    public o0(Context context, f6 f6Var) {
-        super(context);
-        this.b = new ArrayList();
-        this.a = f6Var;
-        for (lb0 lb0Var : lb0.values()) {
-            if (lb0Var.e) {
-                this.b.add(lb0Var);
-            }
-            if (this.b.size() == 3) {
-                break;
-            }
-        }
-        if (this.b.size() < 3) {
-            FileLog.e(new IllegalArgumentException("There should be at least 3 premium icons!"));
-            this.f = true;
-        } else {
-            this.c = a(context, 0);
-            this.d = a(context, 1);
-            this.e = a(context, 2);
-            setClipChildren(false);
-        }
+    public o0(u0 u0Var) {
+        this.c = u0Var;
     }
 
-    public final n0 a(Context context, int i10) {
-        lb0 lb0Var = (lb0) this.b.get(i10);
-        n0 n0Var = new n0(context);
-        y1 y1Var = new y1(20);
-        n0Var.e = y1Var;
-        Paint paint = new Paint(1);
-        n0Var.f = paint;
-        y1Var.r = 12;
-        y1Var.s = 8;
-        y1Var.t = 6;
-        if (i10 == 1) {
-            y1Var.N = 1001;
-        }
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 3;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.c.Y.size() + 3;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
         if (i10 == 0) {
-            y1Var.N = 1002;
+            return 0;
         }
-        y1Var.O = this.a;
-        y1Var.P = j6.Zj;
-        y1Var.c();
-        paint.setColor(-1);
-        n0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        n0Var.setForeground(lb0Var.c);
-        n0Var.setBackgroundResource(lb0Var.b);
-        n0Var.setPadding(AndroidUtilities.dp(8.0f));
-        n0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
-        addView(n0Var);
-        return n0Var;
+        int i11 = 1;
+        if (i10 != 1) {
+            i11 = 2;
+            if (i10 != 2) {
+                return 3;
+            }
+        }
+        return i11;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.f) {
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        u0 u0Var = this.c;
+        if (i11 == 3) {
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) u0Var.Y.get(i10 - 3);
+            wg.k kVar = (wg.k) view;
+            kVar.setBoost(tL_myBoost);
+            kVar.c(u0Var.X.contains(tL_myBoost), false);
             return;
         }
-        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int dp = AndroidUtilities.dp(76.0f);
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c.getLayoutParams();
-        layoutParams.height = dp;
-        layoutParams.width = dp;
-        float f7 = dp;
-        layoutParams.bottomMargin = (int) ((min * 0.1f) + f7);
-        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.d.getLayoutParams();
-        layoutParams2.height = dp;
-        layoutParams2.width = dp;
-        int i12 = (int) (f7 * 0.95f);
-        layoutParams2.rightMargin = i12;
-        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
-        layoutParams3.height = dp;
-        layoutParams3.width = dp;
-        layoutParams3.leftMargin = i12;
+        if (i11 == 2) {
+            m4 m4Var = (m4) view;
+            m4Var.setTextSize(15.0f);
+            m4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
+            m4Var.setText(LocaleController.getString(R.string.BoostingRemoveBoostFrom));
+            return;
+        }
+        if (i11 == 0) {
+            t0 t0Var = (t0) view;
+            u0Var.b0 = t0Var;
+            TLRPC.Chat chat = u0Var.Z;
+            m90 m90Var = t0Var.e;
+            try {
+                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), j6.gc, 2, new qg.q0(u0Var, 15));
+                int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
+                replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
+                m90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                m90Var.post(new f2(t0Var, indexOf, 1));
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+        }
     }
 
-    @Override // sg.m0
-    public void setOffset(float f7) {
-        if (this.f) {
-            return;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        f6 f6Var;
+        Context context = viewGroup.getContext();
+        u0 u0Var = this.c;
+        if (i10 == 0) {
+            t0 t0Var = new t0(context);
+            t0Var.a(u0Var.X, u0Var.Z);
+            view = t0Var;
+        } else if (i10 == 1) {
+            view = new c7(context, j6.w0(null, j6.a7, false), 0);
+        } else if (i10 == 2) {
+            view = new m4(context, 22);
+        } else if (i10 != 3) {
+            view = new View(context);
+        } else {
+            f6Var = ((h3) u0Var).resourcesProvider;
+            view = new wg.k(context, true, false, f6Var, true);
         }
-        float abs = Math.abs(f7 / getMeasuredWidth());
-        float interpolation = pr.i.getInterpolation(abs);
-        int right = getRight();
-        n0 n0Var = this.e;
-        n0Var.setTranslationX(((n0Var.getWidth() * 1.5f) + (right - n0Var.getRight()) + AndroidUtilities.dp(32.0f)) * interpolation);
-        n0Var.setTranslationY(AndroidUtilities.dp(16.0f) * interpolation);
-        float clamp = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.5f, interpolation), 1.0f, 0.0f);
-        n0Var.setScaleX(clamp);
-        n0Var.setScaleY(clamp);
-        int top = getTop();
-        n0 n0Var2 = this.c;
-        n0Var2.setTranslationY((((top - n0Var2.getTop()) - (n0Var2.getHeight() * 1.8f)) - AndroidUtilities.dp(32.0f)) * abs);
-        n0Var2.setTranslationX(AndroidUtilities.dp(16.0f) * abs);
-        float clamp2 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 1.8f, abs), 1.0f, 0.0f);
-        n0Var2.setScaleX(clamp2);
-        n0Var2.setScaleY(clamp2);
-        float interpolation2 = pr.g.getInterpolation(abs);
-        int left = getLeft();
-        n0 n0Var3 = this.d;
-        n0Var3.setTranslationX((((left - n0Var3.getLeft()) - (n0Var3.getWidth() * 2.5f)) + AndroidUtilities.dp(32.0f)) * interpolation2);
-        n0Var3.setTranslationY(((n0Var3.getHeight() * 2.5f) + (getBottom() - n0Var3.getBottom()) + AndroidUtilities.dp(32.0f)) * interpolation2);
-        float clamp3 = Utilities.clamp(AndroidUtilities.lerp(1.0f, 2.5f, abs), 1.0f, 0.0f);
-        n0Var3.setScaleX(clamp3);
-        n0Var3.setScaleY(clamp3);
-        float f10 = abs < 0.4f ? abs / 0.4f : 1.0f;
-        n0Var.h = f10;
-        n0Var2.h = f10;
-        n0Var3.h = f10;
+        return e2.j(view, view, -1, -2);
     }
 }

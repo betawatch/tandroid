@@ -1,39 +1,19 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class q9 extends o5 {
-    public final /* synthetic */ r9 e4;
+public final class q9 {
+    public int a;
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q9(r9 r9Var, Context context, pb pbVar, l5 l5Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, pbVar, l5Var, f6Var);
-        this.e4 = r9Var;
-    }
-
-    @Override // bi.o5
-    public final boolean K0() {
-        return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.e4.g.getCurrentItem();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        if (b0.c) {
-            b0.b.add(this);
-        } else {
-            super.invalidate();
+    public final int a() {
+        if (this.a != 6) {
+            return 0;
         }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (b0.c) {
-            b0.b.add(this);
-        } else {
-            super.invalidate(i10, i11, i12, i13);
+        int i10 = this.b;
+        if (i10 == 7) {
+            return 1;
         }
+        return i10 == 6 ? 2 : 0;
     }
 }

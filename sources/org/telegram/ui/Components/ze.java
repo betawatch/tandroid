@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class ze extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -73,13 +73,13 @@ public final class ze extends AnimatorListenerAdapter {
                 break;
             case 1:
                 ChatActivityEnterView chatActivityEnterView = this.b;
-                ke keVar = chatActivityEnterView.e1;
-                if (keVar != null) {
-                    keVar.setVisibility(8);
+                le leVar = chatActivityEnterView.e1;
+                if (leVar != null) {
+                    leVar.setVisibility(8);
                 }
-                qf qfVar = chatActivityEnterView.E0;
-                if (qfVar != null) {
-                    qfVar.requestFocus();
+                rf rfVar = chatActivityEnterView.E0;
+                if (rfVar != null) {
+                    rfVar.requestFocus();
                 }
                 chatActivityEnterView.x0();
                 break;
@@ -165,9 +165,9 @@ public final class ze extends AnimatorListenerAdapter {
             case 10:
                 ChatActivityEnterView chatActivityEnterView8 = this.b;
                 chatActivityEnterView8.V0 = null;
-                og ogVar = chatActivityEnterView8.Y2;
-                if (ogVar != null) {
-                    ogVar.x(0.0f);
+                qg qgVar = chatActivityEnterView8.Y2;
+                if (qgVar != null) {
+                    qgVar.y(0.0f);
                 }
                 chatActivityEnterView8.requestLayout();
                 chatActivityEnterView8.K3.unlock();

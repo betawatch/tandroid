@@ -17,24 +17,26 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n7.z0;
+import n7.a1;
 import org.json.JSONException;
 import org.json.JSONObject;
 import q9.n;
+import qg.m0;
+import t7.u;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final z0 c;
+    public final a1 c;
     public final j d;
     public final n e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final r9.j i;
+    public final r9.i i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -43,18 +45,18 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.j jVar) {
+    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        z0 z0Var = new z0(hVar);
-        if (na.d.a == null) {
-            na.d.a = new na.d();
+        a1 a1Var = new a1(hVar, 15);
+        if (u.b == null) {
+            u.b = new u();
         }
-        na.d dVar = na.d.a;
+        u uVar = u.b;
         if (j.d == null) {
-            j.d = new j(dVar);
+            j.d = new j(uVar);
         }
-        j jVar2 = j.d;
+        j jVar = j.d;
         n nVar = new n(new q9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
@@ -62,12 +64,12 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = z0Var;
-        this.d = jVar2;
+        this.c = a1Var;
+        this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
         this.h = executorService;
-        this.i = jVar;
+        this.i = iVar;
     }
 
     public final void a(i iVar) {
@@ -84,32 +86,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.A(r2);
+        r4.V(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b F;
+        ra.a g02;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                o0.a d = o0.a.d(hVar.a);
+                a1 h = a1.h(hVar.a);
                 try {
-                    F = this.c.F();
-                    int i10 = F.b;
+                    g02 = this.c.g0();
+                    int i10 = g02.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (d != null) {
-                        d.J();
+                    if (h != null) {
+                        h.j0();
                     }
                 } catch (Throwable th2) {
-                    if (d != null) {
-                        d.J();
+                    if (h != null) {
+                        h.j0();
                     }
                     throw th2;
                 }
@@ -117,20 +119,20 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(F);
+        k(g02);
         this.i.execute(new b(this, 1));
     }
 
-    public final ra.b c(ra.b bVar) {
+    public final ra.a c(ra.a aVar) {
         int responseCode;
         sa.b f7;
         k9.h hVar = this.a;
         hVar.a();
         String str = hVar.c.a;
-        String str2 = bVar.a;
+        String str2 = aVar.a;
         hVar.a();
         String str3 = hVar.c.g;
-        String str4 = bVar.d;
+        String str4 = aVar.d;
         sa.c cVar = this.b;
         sa.d dVar = cVar.c;
         if (!dVar.b()) {
@@ -177,8 +179,8 @@ public final class c implements d {
             int c11 = m1.j.c(f7.c);
             if (c11 != 0) {
                 if (c11 == 1) {
-                    ra.a a12 = bVar.a();
-                    a12.f = "BAD CONFIG";
+                    m0 a12 = aVar.a();
+                    a12.h = "BAD CONFIG";
                     a12.b = 5;
                     return a12.a();
                 }
@@ -186,7 +188,7 @@ public final class c implements d {
                     throw new e("Firebase Installations Service is unavailable. Please try again later.");
                 }
                 l(null);
-                ra.a a13 = bVar.a();
+                m0 a13 = aVar.a();
                 a13.b = 2;
                 return a13.a();
             }
@@ -197,10 +199,10 @@ public final class c implements d {
             TimeUnit timeUnit = TimeUnit.MILLISECONDS;
             jVar.a.getClass();
             long seconds = timeUnit.toSeconds(System.currentTimeMillis());
-            ra.a a14 = bVar.a();
+            m0 a14 = aVar.a();
             a14.d = str5;
-            a14.g = Long.valueOf(j3);
-            a14.h = Long.valueOf(seconds);
+            a14.f = Long.valueOf(j3);
+            a14.g = Long.valueOf(seconds);
             return a14.a();
         }
         throw new e("Firebase Installations Service is unavailable. Please try again later.");
@@ -232,20 +234,20 @@ public final class c implements d {
     }
 
     /* JADX WARN: Finally extract failed */
-    public final void f(ra.b bVar) {
+    public final void f(ra.a aVar) {
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                o0.a d = o0.a.d(hVar.a);
+                a1 h = a1.h(hVar.a);
                 try {
-                    this.c.A(bVar);
-                    if (d != null) {
-                        d.J();
+                    this.c.V(aVar);
+                    if (h != null) {
+                        h.j0();
                     }
                 } catch (Throwable th2) {
-                    if (d != null) {
-                        d.J();
+                    if (h != null) {
+                        h.j0();
                     }
                     throw th2;
                 }
@@ -278,7 +280,7 @@ public final class c implements d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String h(ra.b bVar) {
+    public final String h(ra.a aVar) {
         String a2;
         k9.h hVar = this.a;
         hVar.a();
@@ -286,13 +288,13 @@ public final class c implements d {
             k9.h hVar2 = this.a;
             hVar2.a();
         }
-        if (bVar.b == 1) {
-            ra.c cVar = (ra.c) this.e.get();
-            synchronized (cVar.a) {
+        if (aVar.b == 1) {
+            ra.b bVar = (ra.b) this.e.get();
+            synchronized (bVar.a) {
                 try {
-                    a2 = cVar.a();
+                    a2 = bVar.a();
                     if (a2 == null) {
-                        a2 = cVar.b();
+                        a2 = bVar.b();
                     }
                 } finally {
                 }
@@ -316,20 +318,20 @@ public final class c implements d {
     /* JADX WARN: Type inference failed for: r2v4 */
     /* JADX WARN: Type inference failed for: r2v6 */
     /* JADX WARN: Type inference failed for: r2v7, types: [sa.a] */
-    public final ra.b i(ra.b bVar) {
+    public final ra.a i(ra.a aVar) {
         int responseCode;
-        String str = bVar.a;
+        String str = aVar.a;
         String str2 = null;
         if (str != null && str.length() == 11) {
-            ra.c cVar = (ra.c) this.e.get();
-            synchronized (cVar.a) {
+            ra.b bVar = (ra.b) this.e.get();
+            synchronized (bVar.a) {
                 try {
-                    String[] strArr = ra.c.c;
+                    String[] strArr = ra.b.c;
                     int i10 = 0;
                     while (true) {
                         if (i10 < 4) {
                             String str3 = strArr[i10];
-                            String string = cVar.a.getString("|T|" + cVar.b + "|" + str3, null);
+                            String string = bVar.a.getString("|T|" + bVar.b + "|" + str3, null);
                             if (string == null || string.isEmpty()) {
                                 i10++;
                             } else if (string.startsWith("{")) {
@@ -346,27 +348,27 @@ public final class c implements d {
                 }
             }
         }
-        sa.c cVar2 = this.b;
+        sa.c cVar = this.b;
         k9.h hVar = this.a;
         hVar.a();
         String str4 = hVar.c.a;
-        String str5 = bVar.a;
+        String str5 = aVar.a;
         k9.h hVar2 = this.a;
         hVar2.a();
         String str6 = hVar2.c.g;
         k9.h hVar3 = this.a;
         hVar3.a();
         String str7 = hVar3.c.b;
-        sa.d dVar = cVar2.c;
+        sa.d dVar = cVar.c;
         if (!dVar.b()) {
             throw new e("Firebase Installations Service is unavailable. Please try again later.");
         }
         URL a2 = sa.c.a("projects/" + str6 + "/installations");
         int i11 = 0;
-        sa.a aVar = cVar2;
+        sa.a aVar2 = cVar;
         while (i11 <= 1) {
             TrafficStats.setThreadStatsTag(32769);
-            HttpURLConnection c10 = aVar.c(a2, str4);
+            HttpURLConnection c10 = aVar2.c(a2, str4);
             try {
                 try {
                     c10.setRequestMethod("POST");
@@ -380,10 +382,10 @@ public final class c implements d {
                 } catch (IOException | AssertionError unused2) {
                 }
                 if (responseCode >= 200 && responseCode < 300) {
-                    sa.a e7 = sa.c.e(c10);
+                    sa.a e = sa.c.e(c10);
                     c10.disconnect();
                     TrafficStats.clearThreadStatsTag();
-                    aVar = e7;
+                    aVar2 = e;
                 } else {
                     try {
                         sa.c.b(c10, str7, str4, str6);
@@ -391,51 +393,51 @@ public final class c implements d {
                         c10.disconnect();
                         TrafficStats.clearThreadStatsTag();
                         i11++;
-                        aVar = aVar;
+                        aVar2 = aVar2;
                     }
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
                     }
                     if (responseCode < 500 || responseCode >= 600) {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
-                        sa.a aVar2 = new sa.a(null, null, null, null, 2);
+                        sa.a aVar3 = new sa.a(null, null, null, null, 2);
                         c10.disconnect();
                         TrafficStats.clearThreadStatsTag();
-                        aVar = aVar2;
+                        aVar2 = aVar3;
                     } else {
                         c10.disconnect();
                         TrafficStats.clearThreadStatsTag();
                         i11++;
-                        aVar = aVar;
+                        aVar2 = aVar2;
                     }
                 }
-                int c11 = m1.j.c(aVar.e);
+                int c11 = m1.j.c(aVar2.e);
                 if (c11 != 0) {
                     if (c11 != 1) {
                         throw new e("Firebase Installations Service is unavailable. Please try again later.");
                     }
-                    ra.a a10 = bVar.a();
-                    a10.f = "BAD CONFIG";
+                    m0 a10 = aVar.a();
+                    a10.h = "BAD CONFIG";
                     a10.b = 5;
                     return a10.a();
                 }
-                String str8 = aVar.b;
-                String str9 = aVar.c;
+                String str8 = aVar2.b;
+                String str9 = aVar2.c;
                 j jVar = this.d;
                 jVar.getClass();
                 TimeUnit timeUnit = TimeUnit.MILLISECONDS;
                 jVar.a.getClass();
                 long seconds = timeUnit.toSeconds(System.currentTimeMillis());
-                sa.b bVar2 = aVar.d;
+                sa.b bVar2 = aVar2.d;
                 String str10 = bVar2.a;
                 long j3 = bVar2.b;
-                ra.a a11 = bVar.a();
+                m0 a11 = aVar.a();
                 a11.c = str8;
                 a11.b = 4;
                 a11.d = str10;
                 a11.e = str9;
-                a11.g = Long.valueOf(j3);
-                a11.h = Long.valueOf(seconds);
+                a11.f = Long.valueOf(j3);
+                a11.g = Long.valueOf(seconds);
                 return a11.a();
             } finally {
                 c10.disconnect();
@@ -460,12 +462,12 @@ public final class c implements d {
         }
     }
 
-    public final void k(ra.b bVar) {
+    public final void k(ra.a aVar) {
         synchronized (this.g) {
             try {
                 Iterator it = this.l.iterator();
                 while (it.hasNext()) {
-                    if (((i) it.next()).b(bVar)) {
+                    if (((i) it.next()).b(aVar)) {
                         it.remove();
                     }
                 }
@@ -479,9 +481,9 @@ public final class c implements d {
         this.j = str;
     }
 
-    public final synchronized void m(ra.b bVar, ra.b bVar2) {
+    public final synchronized void m(ra.a aVar, ra.a aVar2) {
         try {
-            if (this.k.size() != 0 && !TextUtils.equals(bVar.a, bVar2.a)) {
+            if (this.k.size() != 0 && !TextUtils.equals(aVar.a, aVar2.a)) {
                 Iterator it = this.k.iterator();
                 if (it.hasNext()) {
                     if (it.next() != null) {

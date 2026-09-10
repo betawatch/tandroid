@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import v7.e5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends e5 {
     public static final n1 n = new n1(0);
@@ -44,8 +44,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
-            } catch (RuntimeException e7) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e7);
+            } catch (RuntimeException e) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e);
             }
         }
     }

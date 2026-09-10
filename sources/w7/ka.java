@@ -3,7 +3,7 @@ package w7;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class ka implements ja {
     public final ArrayList a;
@@ -16,14 +16,14 @@ public final class ka implements ja {
     }
 
     @Override // w7.ja
-    public final void a(o0.a aVar) {
+    public final void a(n7.a1 a1Var) {
         ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((ja) obj).a(aVar);
+            ((ja) obj).a(a1Var);
         }
     }
 }

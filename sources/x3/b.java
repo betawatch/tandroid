@@ -6,7 +6,7 @@ import e2.d0;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -42,7 +42,7 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long a(p pVar) {
+    public final long c(p pVar) {
         long j3;
         long j10;
         long i10;
@@ -66,7 +66,7 @@ public final class b implements g {
                     long position2 = pVar.getPosition();
                     if (fVar.b(pVar, this.s)) {
                         fVar.a(pVar, false);
-                        pVar.q();
+                        pVar.p();
                         long j13 = this.n;
                         long j14 = fVar.b;
                         long j15 = j13 - j14;
@@ -121,11 +121,11 @@ public final class b implements g {
                 fVar.b(pVar, -1L);
                 fVar.a(pVar, false);
                 if (fVar.b > this.n) {
-                    pVar.q();
+                    pVar.p();
                     this.e = 4;
                     return -(this.v + j10);
                 }
-                pVar.r(fVar.d + fVar.e);
+                pVar.q(fVar.d + fVar.e);
                 this.r = pVar.getPosition();
                 this.v = fVar.b;
             }
@@ -141,11 +141,11 @@ public final class b implements g {
             throw new EOFException();
         }
         fVar.a(pVar, false);
-        pVar.r(fVar.d + fVar.e);
+        pVar.q(fVar.d + fVar.e);
         long j20 = fVar.b;
         while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j11 && fVar.a(pVar, true)) {
             try {
-                pVar.r(fVar.d + fVar.e);
+                pVar.q(fVar.d + fVar.e);
                 j20 = fVar.b;
             } catch (EOFException unused) {
             }
@@ -156,7 +156,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final b0 d() {
+    public final b0 h() {
         if (this.f != 0) {
             return new a(this);
         }
@@ -164,7 +164,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final void h(long j3) {
+    public final void y(long j3) {
         this.n = d0.i(j3, 0L, this.f - 1);
         this.e = 2;
         this.r = this.b;

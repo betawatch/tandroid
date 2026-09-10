@@ -9,10 +9,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ui0 extends org.telegram.ui.Components.ov0 {
-    public final l20 A0;
+public final class ui0 extends org.telegram.ui.Components.aw0 {
+    public final m20 A0;
     public final Paint B0;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 C0;
     public final /* synthetic */ cj0 D0;
@@ -30,8 +30,8 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
         this.x0 = new int[2];
         this.y0 = 0;
         this.z0 = new int[2];
-        this.A0 = new l20();
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.f;
+        this.A0 = new m20();
+        org.telegram.ui.Components.wr wrVar = org.telegram.ui.Components.wr.f;
         this.B0 = new Paint(1);
     }
 
@@ -39,7 +39,7 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
     
         if ((r5[1] - r3[1]) > r4) goto L81;
      */
-    @Override // org.telegram.ui.Components.ov0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -62,9 +62,9 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
         vi0 vi0Var = cj0Var.K;
         if (cj0Var.w && (t1Var = cj0Var.Q) != null && t1Var.getCurrentPosition() == null) {
             if (cj0Var.x) {
-                org.telegram.ui.Components.qf qfVar = cj0Var.S;
-                if (qfVar != null) {
-                    qfVar.setAlpha(0.0f);
+                org.telegram.ui.Components.rf rfVar = cj0Var.S;
+                if (rfVar != null) {
+                    rfVar.setAlpha(0.0f);
                 }
                 cj0Var.x = false;
             }
@@ -74,10 +74,10 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
             float x10 = cj0Var.Q.getX() + vi0Var.getX() + imageX;
             float y3 = cj0Var.Q.getY() + vi0Var.getY() + imageY;
             float textSize = (cj0Var.Q.getMessageObject() != null ? cj0Var.Q.getMessageObject().getTextPaint() : org.telegram.ui.ActionBar.j6.o2).getTextSize();
-            org.telegram.ui.Components.qf qfVar2 = cj0Var.S;
-            if (qfVar2 != null) {
+            org.telegram.ui.Components.rf rfVar2 = cj0Var.S;
+            if (rfVar2 != null) {
                 int[] iArr3 = this.w0;
-                qfVar2.getLocationOnScreen(iArr3);
+                rfVar2.getLocationOnScreen(iArr3);
                 f10 = 255.0f;
                 float paddingLeft = cj0Var.S.getPaddingLeft() + iArr3[0];
                 float paddingTop = (cj0Var.S.getPaddingTop() + iArr3[1]) - cj0Var.S.getScrollY();
@@ -123,7 +123,7 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
                 } else if (cj0Var.V != null) {
                     canvas2.save();
                     canvas2.translate(0.0f, cj0Var.S.getY());
-                    canvas2.saveLayerAlpha(cj0Var.S.getX() + cj0Var.S.getPaddingLeft(), 0.0f, ((cj0Var.S.getX() + cj0Var.S.getPaddingLeft()) + cj0Var.S.getWidth()) - cj0Var.S.getPaddingRight(), cj0Var.S.getHeight(), (int) org.telegram.messenger.wl.u(cj0Var.E, 0.1f, 1.0f, 255.0f), 31);
+                    canvas2.saveLayerAlpha(cj0Var.S.getX() + cj0Var.S.getPaddingLeft(), 0.0f, ((cj0Var.S.getX() + cj0Var.S.getPaddingLeft()) + cj0Var.S.getWidth()) - cj0Var.S.getPaddingRight(), cj0Var.S.getHeight(), (int) org.telegram.messenger.em.u(cj0Var.E, 0.1f, 1.0f, 255.0f), 31);
                     cj0Var.V.run(canvas2);
                     canvas2.restore();
                     canvas2.restore();
@@ -131,12 +131,12 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
                 } else {
                     f13 = alpha;
                     paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sd, this.C0));
-                    paint.setAlpha((int) org.telegram.messenger.wl.u(cj0Var.E, 0.1f, 1.0f, paint.getAlpha()));
+                    paint.setAlpha((int) org.telegram.messenger.em.u(cj0Var.E, 0.1f, 1.0f, paint.getAlpha()));
                     canvas2.drawRect(cj0Var.S.getPaddingLeft(), cj0Var.S.getY(), ((cj0Var.S.getX() + cj0Var.S.getPaddingLeft()) + cj0Var.S.getWidth()) - cj0Var.S.getPaddingRight(), cj0Var.S.getY() + cj0Var.S.getHeight(), paint);
                 }
-                org.telegram.ui.Components.d dVar = cj0Var.U;
-                if (dVar != null) {
-                    dVar.run(canvas2, new Utilities.Callback0Return() { // from class: org.telegram.ui.ti0
+                org.telegram.ui.Components.e eVar = cj0Var.U;
+                if (eVar != null) {
+                    eVar.run(canvas2, new Utilities.Callback0Return() { // from class: org.telegram.ui.ti0
                         @Override // org.telegram.messenger.Utilities.Callback0Return
                         public final Object run() {
                             Canvas canvas3 = canvas2;
@@ -223,10 +223,10 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
             canvas2.save();
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, lerp, getWidth(), AndroidUtilities.dp(14.0f) + lerp);
-            l20 l20Var = this.A0;
-            l20Var.b(canvas2, rectF, 1, lerp2);
+            m20 m20Var = this.A0;
+            m20Var.b(canvas2, rectF, 1, lerp2);
             rectF.set(0.0f, lerp3 - AndroidUtilities.dp(14.0f), getWidth(), lerp3);
-            l20Var.b(canvas2, rectF, 3, lerp4);
+            m20Var.b(canvas2, rectF, 3, lerp4);
             canvas2.restore();
             canvas2.restore();
         } else {
@@ -235,9 +235,9 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
         }
         if (cj0Var.w) {
             if (cj0Var.y) {
-                org.telegram.ui.Components.vg vgVar = cj0Var.W;
-                if (vgVar != null) {
-                    vgVar.setAlpha(0.0f);
+                org.telegram.ui.Components.xg xgVar = cj0Var.W;
+                if (xgVar != null) {
+                    xgVar.setAlpha(0.0f);
                 }
                 c10 = 0;
                 cj0Var.y = false;
@@ -261,7 +261,7 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
         super.dispatchDraw(canvas);
         if (cj0Var.l0 != null) {
             if (cj0Var.J == null) {
-                cj0Var.J = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), 23, this, false);
+                cj0Var.J = new org.telegram.ui.Components.n5(AndroidUtilities.dp(24.0f), 23, this, false);
             }
             Rect rect2 = AndroidUtilities.rectTmp2;
             rect2.set((int) ((cj0Var.l0.right - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(24.0f)), (int) ((cj0Var.l0.bottom - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(24.0f)), (int) (cj0Var.l0.right - AndroidUtilities.dp(12.0f)), (int) (cj0Var.l0.bottom - AndroidUtilities.dp(12.0f)));
@@ -274,9 +274,9 @@ public final class ui0 extends org.telegram.ui.Components.ov0 {
             paint2.setAlpha((int) (cj0Var.J.e() * 30.0f * cj0Var.E));
             canvas2.drawRoundRect(rectF2, height2, height2, paint2);
             cj0Var.J.setBounds(rect2);
-            org.telegram.ui.Components.o5 o5Var = cj0Var.J;
-            o5Var.v = (int) (cj0Var.E * 255.0f);
-            o5Var.draw(canvas2);
+            org.telegram.ui.Components.n5 n5Var = cj0Var.J;
+            n5Var.v = (int) (cj0Var.E * 255.0f);
+            n5Var.draw(canvas2);
         }
     }
 

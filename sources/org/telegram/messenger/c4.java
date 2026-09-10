@@ -1,26 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.function.ToIntFunction;
-import org.telegram.messenger.GiftAuctionController;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c4 implements ToIntFunction {
+public final /* synthetic */ class c4 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
 
-    public /* synthetic */ c4(int i10) {
+    public /* synthetic */ c4(int i10, boolean z10) {
         this.a = i10;
+        this.b = z10;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        int lambda$updateActiveAuctions$13;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        boolean z10 = this.b;
+        switch (i10) {
             case 0:
-                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
-                return lambda$updateActiveAuctions$13;
+                FingerprintController.generateNewKey(z10);
+                break;
+            case 1:
+                FingerprintController.lambda$generateNewKey$0(z10);
+                break;
+            case 2:
+                LiteMode.lambda$onPowerSaverApplied$0(z10);
+                break;
             default:
-                return Integer.parseInt((String) obj);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
+                break;
         }
     }
 }

@@ -6,15 +6,15 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.p3;
+import m.r3;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a extends n6.g {
     public final Context U;
 
-    public a(Context context, Looper looper, k kVar, l lVar, p3 p3Var) {
-        super(context, looper, 45, p3Var, kVar, lVar, 0);
+    public a(Context context, Looper looper, k kVar, l lVar, r3 r3Var) {
+        super(context, looper, 45, r3Var, kVar, lVar, 0);
         this.U = context;
     }
 

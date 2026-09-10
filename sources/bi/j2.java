@@ -1,74 +1,79 @@
 package bi;
 
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f01;
-import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.xi0;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uz;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class j2 {
-    public final long a;
-    public final float b;
-    public final float c;
-    public final xi0 d;
-    public final Paint e;
-    public final ImageReceiver f;
-    public final f01 g;
-    public boolean h;
-    public final org.telegram.ui.Components.e6 i;
-    public final org.telegram.ui.Components.e6 j;
+public final class j2 extends uz {
+    public final tv0 X;
+    public final /* synthetic */ k2 Y;
 
-    public j2(k2 k2Var, View view, int i10, long j3, int i11, boolean z10) {
-        Paint paint = new Paint(1);
-        this.e = paint;
-        this.a = j3;
-        this.b = Utilities.clamp01(Utilities.fastRandom.nextFloat());
-        this.c = Utilities.clamp01(Utilities.fastRandom.nextFloat());
-        if (z10) {
-            int[] iArr = k2Var.f;
-            xi0 xi0Var = new xi0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-            this.d = xi0Var;
-            xi0Var.v0 = view;
-            xi0Var.H(true);
-            xi0Var.I(0);
-            xi0Var.start();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(k2 k2Var) {
+        super(100, true);
+        this.Y = k2Var;
+        this.X = new tv0();
+        this.O = new i2(this, 0);
+    }
+
+    @Override // s4.o0
+    public final int A() {
+        return B();
+    }
+
+    @Override // org.telegram.ui.Components.uz
+    public final tv0 D1(int i10) {
+        TLRPC.Document document;
+        ArrayList<TLRPC.DocumentAttribute> arrayList;
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        int i11;
+        int i12;
+        tv0 tv0Var = this.X;
+        tv0Var.c = false;
+        Object F = this.Y.c.F(i10);
+        if (F instanceof TLRPC.BotInlineResult) {
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) F;
+            document = botInlineResult.document;
+            if (document != null) {
+                arrayList = document.attributes;
+            } else {
+                TLRPC.WebDocument webDocument = botInlineResult.content;
+                if (webDocument != null) {
+                    arrayList = webDocument.attributes;
+                } else {
+                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
+                    arrayList = webDocument2 != null ? webDocument2.attributes : null;
+                }
+            }
+        } else {
+            if (!(F instanceof TLRPC.Document)) {
+                tv0Var.c = true;
+                return tv0Var;
+            }
+            document = (TLRPC.Document) F;
+            arrayList = document.attributes;
         }
-        TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j3);
-        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
-        i9Var.p(userOrChat);
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.f = imageReceiver;
-        imageReceiver.setImageCoords(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(7.0f));
-        imageReceiver.setForUserOrChat(userOrChat, i9Var);
-        view.addOnAttachStateChangeListener(new i2(this, 0));
-        if (view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
+        tv0Var.b = 100.0f;
+        tv0Var.a = 100.0f;
+        tv0Var.c = false;
+        if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
+            tv0Var.a = i11;
+            tv0Var.b = i12;
         }
-        paint.setColor(-1135603);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("⭐️");
-        nq nqVar = new nq(R.drawable.star, 0);
-        nqVar.spaceScaleX = 0.875f;
-        spannableStringBuilder.setSpan(nqVar, 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new f01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
-        this.i = e6Var;
-        e6Var.d(0.0f, true);
-        e6Var.d(1.0f, false);
-        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, pr.h);
+        if (arrayList != null) {
+            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    tv0Var.a = documentAttribute.w;
+                    tv0Var.b = documentAttribute.h;
+                    break;
+                }
+            }
+        }
+        return tv0Var;
     }
 }

@@ -1,88 +1,232 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
+import android.os.Build;
+import android.provider.Settings;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eg0 b;
+public abstract class zf0 extends FrameLayout {
+    public float E;
+    public boolean F;
+    public boolean G;
+    public int H;
+    public int I;
+    public float J;
+    public boolean K;
+    public kc0 L;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public tu f;
+    public bi.nc h;
+    public RadialProgressView n;
+    public View r;
+    public String s;
+    public ArrayList v;
+    public String w;
+    public boolean x;
+    public TLRPC.WebPage y;
 
-    public /* synthetic */ zf0(eg0 eg0Var, int i10) {
-        this.a = i10;
-        this.b = eg0Var;
+    public static void a(org.telegram.ui.hu0 hu0Var, String str) {
+        int videoDuration = hu0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = hu0Var.v;
+        arrayList.clear();
+        if (videoDuration <= 15) {
+            return;
+        }
+        String[] split = str.split("\\|");
+        String s10 = a4.a.s(new StringBuilder(), split[0].split("\\$")[0], "2/");
+        String str2 = split[0].split("\\$N")[1];
+        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+        for (int i10 = 0; i10 < ceil; i10++) {
+            Locale locale = Locale.ROOT;
+            arrayList.add(s10 + "M" + i10 + str2 + "&sigh=" + str3);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                break;
-            case 1:
-                eg0 eg0Var = this.b;
-                PhotoViewer photoViewer = eg0Var.V;
-                if (photoViewer != null) {
-                    if (eg0Var.r != null) {
-                        eg0Var.Z = r2.getCurrentPosition() / eg0Var.r.getVideoDuration();
-                        eg0Var.a0 = eg0Var.r.getBufferedPosition();
-                    } else {
-                        if (photoViewer.F2 != null) {
-                            float m10 = eg0Var.m();
-                            eg0Var.Z = r1.n() / m10;
-                            eg0Var.a0 = r1.j() / m10;
-                        }
-                    }
-                    eg0Var.b0.invalidate();
-                    AndroidUtilities.runOnUIThread(eg0Var.e0, 500L);
-                    break;
-                }
-                break;
-            case 2:
-                eg0 eg0Var2 = this.b;
-                PhotoViewer photoViewer2 = eg0Var2.V;
-                if (photoViewer2 != null) {
-                    if ((photoViewer2.F2 != null || eg0Var2.r != null) && !eg0Var2.c0 && !eg0Var2.Y && !eg0Var2.w && !eg0Var2.s.isInProgress() && eg0Var2.f0) {
-                        g71 g71Var = eg0Var2.V.F2;
-                        boolean z10 = eg0Var2.g0[0] >= (((float) eg0Var2.t()) * eg0Var2.J) * 0.5f;
-                        long l4 = eg0Var2.l();
-                        long m11 = eg0Var2.m();
-                        if (l4 != -9223372036854775807L && m11 >= 15000) {
-                            qf0 qf0Var = eg0Var2.r;
-                            if (qf0Var != null) {
-                                PhotoViewer photoViewer3 = eg0Var2.V;
-                                photoViewer3.c4.startRewind(qf0Var, z10, eg0Var2.g0[0], photoViewer3.t1, eg0Var2.R);
-                            } else {
-                                PhotoViewer photoViewer4 = eg0Var2.V;
-                                photoViewer4.c4.startRewind(g71Var, z10, eg0Var2.g0[0], photoViewer4.t1, eg0Var2.R);
-                            }
-                            if (!eg0Var2.E) {
-                                eg0Var2.E = true;
-                                eg0Var2.y(true);
-                                if (!eg0Var2.i0) {
-                                    AndroidUtilities.runOnUIThread(eg0Var2.j0, 1500L);
-                                    eg0Var2.i0 = true;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                eg0 eg0Var3 = this.b;
-                PhotoViewer photoViewer5 = eg0Var3.V;
-                if (photoViewer5 != null && photoViewer5.c4.rewinding) {
-                    AndroidUtilities.runOnUIThread(eg0Var3.j0, 1500L);
-                    break;
-                } else {
-                    eg0Var3.E = false;
-                    eg0Var3.y(false);
-                    eg0Var3.i0 = false;
-                    break;
-                }
-                break;
+    public final void b(boolean z10) {
+        kc0 kc0Var = this.L;
+        if (!z10 && this.G) {
+            AndroidUtilities.runOnUIThread(kc0Var, 500L);
+        } else {
+            if (!z10 || this.G) {
+                return;
+            }
+            AndroidUtilities.cancelRunOnUIThread(kc0Var);
         }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String c(int i10) {
+        float f7;
+        int i11;
+        ArrayList arrayList = this.v;
+        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i11 = ((int) (i10 / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i11 = ((int) (i10 / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i11 = ((int) (i10 / 5.0f)) / 25;
+            } else {
+                f7 = i10 / 10.0f;
+            }
+            if (i11 >= arrayList.size()) {
+                return (String) arrayList.get(i11);
+            }
+            return null;
+        }
+        f7 = i10;
+        i11 = (int) (f7 / 25.0f);
+        if (i11 >= arrayList.size()) {
+        }
+    }
+
+    public final boolean d() {
+        return this.x;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.K) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final boolean e() {
+        boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
+        if (!z10 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
+            d5.B((Activity) getContext(), null, false);
+            return false;
+        }
+        if (this.n.getVisibility() == 0) {
+            return false;
+        }
+        if (og0.p0.P) {
+            og0.j(false);
+            AndroidUtilities.runOnUIThread(new vf0(this, 0), 300L);
+            return true;
+        }
+        this.h.setVisibility(0);
+        Activity activity = (Activity) getContext();
+        tu tuVar = this.f;
+        TLRPC.WebPage webPage = this.y;
+        if (og0.x(z10, activity, this, tuVar, webPage.embed_width, webPage.embed_height, false)) {
+            og0.w(PhotoViewer.t1());
+        }
+        return true;
+    }
+
+    public final void f() {
+        if (this.G && this.x) {
+            h("pauseVideo();");
+            this.G = false;
+            b(true);
+        }
+    }
+
+    public final void g() {
+        if (this.G || !this.x) {
+            return;
+        }
+        h("playVideo();");
+        this.G = true;
+        b(false);
+    }
+
+    public float getBufferedPosition() {
+        return this.J;
+    }
+
+    public int getCurrentPosition() {
+        return this.I;
+    }
+
+    public int getVideoDuration() {
+        return this.H;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j3) {
+        boolean z10 = this.G;
+        this.I = (int) j3;
+        if (z10) {
+            f();
+        }
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new bi.va(this, j3, 16), 100L);
+            return;
+        }
+        h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        tu tuVar = this.f;
+        if (tuVar.getParent() == this) {
+            TLRPC.WebPage webPage = this.y;
+            int i12 = webPage.embed_width;
+            if (i12 == 0) {
+                i12 = 100;
+            }
+            int i13 = webPage.embed_height;
+            int i14 = i13 != 0 ? i13 : 100;
+            int size = View.MeasureSpec.getSize(i10);
+            int size2 = View.MeasureSpec.getSize(i11);
+            float f7 = i12;
+            float f10 = i14;
+            float min = Math.min(size / f7, size2 / f10);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tuVar.getLayoutParams();
+            int i15 = (int) (f7 * min);
+            layoutParams.width = i15;
+            int i16 = (int) (f10 * min);
+            layoutParams.height = i16;
+            layoutParams.topMargin = (size2 - i16) / 2;
+            layoutParams.leftMargin = (size - i15) / 2;
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    public void setPlaybackSpeed(float f7) {
+        this.E = f7;
+        if (this.n.getVisibility() == 0) {
+            this.F = true;
+        } else if (this.x) {
+            h("setPlaybackSpeed(" + f7 + ");");
+        }
+    }
+
+    public void setTouchDisabled(boolean z10) {
+        this.K = z10;
     }
 }

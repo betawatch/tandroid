@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import v7.n6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends g {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
@@ -35,48 +35,48 @@ public class FirebaseMessagingService extends g {
 
     @Override // com.google.firebase.messaging.g
     public Intent getStartCommandIntent(Intent intent) {
-        return (Intent) ((ArrayDeque) s.b().e).poll();
+        return (Intent) ((ArrayDeque) s.d().e).poll();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0205  */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x020b  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0224  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0231  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x023e  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x024b  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x02bd  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x02c0  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x0290 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0278 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x025c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:162:0x0241  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:164:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:166:0x020e  */
-    /* JADX WARN: Removed duplicated region for block: B:167:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x01cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x031d  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x032d  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0376  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x038e  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x03d1  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0200  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x021f  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x02b8  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x028b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0273 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0257 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x023c  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:164:0x0222  */
+    /* JADX WARN: Removed duplicated region for block: B:166:0x0209  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x01c6 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x0316  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x0326  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x036f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0387  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x03cb  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x01f2  */
     @Override // com.google.firebase.messaging.g
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void handleIntent(Intent intent) {
+        int i10;
         String stringExtra;
         ApplicationInfo applicationInfo;
         Bundle bundle;
         boolean z10;
         Bundle extras;
-        char c10;
         int parseInt;
-        int i10;
+        int i11;
         String string;
         String string2;
         String string3;
@@ -84,7 +84,7 @@ public class FirebaseMessagingService extends g {
         String str;
         String str2;
         j6.a aVar;
-        int i11;
+        int i12;
         String action = intent.getAction();
         if (!ACTION_REMOTE_INTENT.equals(action) && !ACTION_DIRECT_BOOT_REMOTE_INTENT.equals(action)) {
             if (ACTION_NEW_TOKEN.equals(action)) {
@@ -95,6 +95,7 @@ public class FirebaseMessagingService extends g {
             return;
         }
         String stringExtra2 = intent.getStringExtra("google.message_id");
+        i10 = 10;
         if (!TextUtils.isEmpty(stringExtra2)) {
             Queue<String> queue = recentlyReceivedMessageIds;
             if (queue.contains(stringExtra2)) {
@@ -121,10 +122,10 @@ public class FirebaseMessagingService extends g {
                 }
                 j6.l l4 = j6.l.l(aVar.b);
                 synchronized (l4) {
-                    i11 = l4.a;
-                    l4.a = i11 + 1;
+                    i12 = l4.a;
+                    l4.a = i12 + 1;
                 }
-                l4.m(new j6.k(i11, 3, bundle2, 0));
+                l4.m(new j6.k(i12, 3, bundle2, 0));
                 return;
             }
             if (queue.size() >= 10) {
@@ -147,9 +148,9 @@ public class FirebaseMessagingService extends g {
                 if (!ACTION_DIRECT_BOOT_REMOTE_INTENT.equals(intent.getAction())) {
                     try {
                         k9.h.c();
-                        k9.h c11 = k9.h.c();
-                        c11.a();
-                        Context context = c11.a;
+                        k9.h c10 = k9.h.c();
+                        c10.a();
+                        Context context = c10.a;
                         SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.messaging", 0);
                         if (sharedPreferences.contains("export_to_big_query")) {
                             z10 = sharedPreferences.getBoolean("export_to_big_query", false);
@@ -183,28 +184,25 @@ public class FirebaseMessagingService extends g {
                                         try {
                                             parseInt = Integer.parseInt((String) obj);
                                         } catch (NumberFormatException unused3) {
-                                            c10 = 1;
                                             Log.w("FirebaseMessaging", "Invalid TTL: " + obj);
                                         }
-                                    } else {
-                                        c10 = 1;
                                     }
-                                    i10 = 0;
+                                    i11 = 0;
                                     string = extras2.getString("google.to");
                                     if (TextUtils.isEmpty(string)) {
                                         try {
-                                            k9.h c12 = k9.h.c();
+                                            k9.h c11 = k9.h.c();
                                             Object obj2 = qa.c.m;
-                                            string = (String) Tasks.await(((qa.c) c12.b(qa.d.class)).d());
-                                        } catch (InterruptedException | ExecutionException e7) {
-                                            throw new RuntimeException(e7);
+                                            string = (String) Tasks.await(((qa.c) c11.b(qa.d.class)).d());
+                                        } catch (InterruptedException | ExecutionException e) {
+                                            throw new RuntimeException(e);
                                         }
                                     }
                                     String str3 = string;
-                                    k9.h c13 = k9.h.c();
-                                    c13.a();
-                                    String packageName = c13.a.getPackageName();
-                                    wa.b bVar = !xa.c.L(extras2) ? wa.b.c : wa.b.b;
+                                    k9.h c12 = k9.h.c();
+                                    c12.a();
+                                    String packageName = c12.a.getPackageName();
+                                    wa.b bVar = !android.support.v4.media.c.f(extras2) ? wa.b.c : wa.b.b;
                                     string2 = extras2.getString("google.message_id");
                                     if (string2 == null) {
                                         string2 = extras2.getString("message_id");
@@ -224,61 +222,60 @@ public class FirebaseMessagingService extends g {
                                     if (extras2.containsKey("google.c.sender.id")) {
                                         try {
                                             parseLong = Long.parseLong(extras2.getString("google.c.sender.id"));
-                                        } catch (NumberFormatException e10) {
-                                            Log.w("FirebaseMessaging", "error parsing project number", e10);
+                                        } catch (NumberFormatException e7) {
+                                            Log.w("FirebaseMessaging", "error parsing project number", e7);
                                         }
-                                        ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(26)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.e(17));
+                                        ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(22)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i11, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.h(i10));
                                     }
-                                    k9.h c14 = k9.h.c();
-                                    k9.j jVar = c14.c;
-                                    c14.a();
+                                    k9.h c13 = k9.h.c();
+                                    k9.j jVar = c13.c;
+                                    c13.a();
                                     str = jVar.e;
                                     if (str != null) {
                                         try {
                                             parseLong = Long.parseLong(str);
-                                        } catch (NumberFormatException e11) {
-                                            Log.w("FirebaseMessaging", "error parsing sender ID", e11);
+                                        } catch (NumberFormatException e10) {
+                                            Log.w("FirebaseMessaging", "error parsing sender ID", e10);
                                         }
-                                        ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(26)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.e(17));
+                                        ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(22)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i11, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.h(i10));
                                     }
-                                    c14.a();
+                                    c13.a();
                                     str2 = jVar.b;
                                     if (str2.startsWith("1:")) {
                                         try {
                                             parseLong = Long.parseLong(str2);
-                                        } catch (NumberFormatException e12) {
-                                            Log.w("FirebaseMessaging", "error parsing app ID", e12);
+                                        } catch (NumberFormatException e11) {
+                                            Log.w("FirebaseMessaging", "error parsing app ID", e11);
                                         }
                                     } else {
                                         String[] split = str2.split(":");
                                         if (split.length >= 2) {
-                                            String str9 = split[c10];
+                                            String str9 = split[1];
                                             if (!str9.isEmpty()) {
                                                 try {
                                                     parseLong = Long.parseLong(str9);
-                                                } catch (NumberFormatException e13) {
-                                                    Log.w("FirebaseMessaging", "error parsing app ID", e13);
+                                                } catch (NumberFormatException e12) {
+                                                    Log.w("FirebaseMessaging", "error parsing app ID", e12);
                                                 }
                                             }
                                         }
                                         parseLong = 0;
                                     }
-                                    ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(26)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.e(17));
+                                    ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(22)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i11, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.h(i10));
                                 }
-                                ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(26)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.e(17));
-                            } catch (RuntimeException e14) {
-                                Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e14);
+                                ((l5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new i5.c("proto"), new androidx.emoji2.text.w(22)).a(new i5.a(null, new wa.e(new wa.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i11, str5, str7, str8)), i5.d.a, new i5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new j2.h(i10));
+                            } catch (RuntimeException e13) {
+                                Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e13);
                             }
-                            i10 = parseInt;
-                            c10 = 1;
+                            i11 = parseInt;
                             string = extras2.getString("google.to");
                             if (TextUtils.isEmpty(string)) {
                             }
                             String str32 = string;
-                            k9.h c132 = k9.h.c();
-                            c132.a();
-                            String packageName2 = c132.a.getPackageName();
-                            wa.b bVar2 = !xa.c.L(extras2) ? wa.b.c : wa.b.b;
+                            k9.h c122 = k9.h.c();
+                            c122.a();
+                            String packageName2 = c122.a.getPackageName();
+                            wa.b bVar2 = !android.support.v4.media.c.f(extras2) ? wa.b.c : wa.b.b;
                             string2 = extras2.getString("google.message_id");
                             if (string2 == null) {
                             }
@@ -301,13 +298,13 @@ public class FirebaseMessagingService extends g {
                             }
                             if (extras2.containsKey("google.c.sender.id")) {
                             }
-                            k9.h c142 = k9.h.c();
-                            k9.j jVar2 = c142.c;
-                            c142.a();
+                            k9.h c132 = k9.h.c();
+                            k9.j jVar2 = c132.c;
+                            c132.a();
                             str = jVar2.e;
                             if (str != null) {
                             }
-                            c142.a();
+                            c132.a();
                             str2 = jVar2.b;
                             if (str2.startsWith("1:")) {
                             }
@@ -318,11 +315,11 @@ public class FirebaseMessagingService extends g {
                         extras = new Bundle();
                     }
                     extras.remove("androidx.content.wakelockid");
-                    if (xa.c.L(extras)) {
-                        xa.c cVar = new xa.c(extras);
+                    if (android.support.v4.media.c.f(extras)) {
+                        android.support.v4.media.c cVar = new android.support.v4.media.c(extras);
                         ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.w("Firebase-Messaging-Network-Io"));
                         try {
-                            if (new aa.a(this, cVar, newSingleThreadExecutor, 11).w()) {
+                            if (new aa.a(this, cVar, newSingleThreadExecutor, 12).s()) {
                                 break;
                             } else {
                                 newSingleThreadExecutor.shutdown();
@@ -344,7 +341,7 @@ public class FirebaseMessagingService extends g {
                 if (extras == null) {
                 }
                 extras.remove("androidx.content.wakelockid");
-                if (xa.c.L(extras)) {
+                if (android.support.v4.media.c.f(extras)) {
                 }
                 onMessageReceived(new r(extras));
                 break;

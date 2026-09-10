@@ -1,11 +1,10 @@
 package j4;
 
 import b2.r0;
-import c3.h0;
 import j$.util.Objects;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -15,7 +14,7 @@ public final class b implements i {
     public final int e;
     public final String f;
     public String g;
-    public h0 h;
+    public c3.h0 h;
     public int i;
     public int j;
     public boolean k;
@@ -38,7 +37,7 @@ public final class b implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         int i11;
         String str;
@@ -437,7 +436,7 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void b() {
         switch (this.a) {
             case 0:
                 this.i = 0;
@@ -455,32 +454,32 @@ public final class b implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
+    public final void c(c3.q qVar, g0 g0Var) {
         switch (this.a) {
             case 0:
-                f0Var.a();
-                f0Var.b();
-                this.g = f0Var.e;
-                f0Var.b();
-                this.h = qVar.R1(f0Var.d, 1);
+                g0Var.a();
+                g0Var.b();
+                this.g = g0Var.e;
+                g0Var.b();
+                this.h = qVar.I(g0Var.d, 1);
                 break;
             default:
-                f0Var.a();
-                f0Var.b();
-                this.g = f0Var.e;
-                f0Var.b();
-                this.h = qVar.R1(f0Var.d, 1);
+                g0Var.a();
+                g0Var.b();
+                this.g = g0Var.e;
+                g0Var.b();
+                this.h = qVar.I(g0Var.d, 1);
                 break;
         }
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void d(boolean z10) {
         int i10 = this.a;
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void e(int i10, long j3) {
         switch (this.a) {
             case 0:
                 this.o = j3;
@@ -519,9 +518,9 @@ public final class b implements i {
         }
     }
 
-    private final void a(boolean z10) {
+    private final void f(boolean z10) {
     }
 
-    private final void c(boolean z10) {
+    private final void g(boolean z10) {
     }
 }

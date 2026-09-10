@@ -1,27 +1,43 @@
 package uf;
 
-import org.telegram.messenger.NotificationCenter;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements Runnable {
+public final class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
+    public final /* synthetic */ b b;
 
-    public /* synthetic */ a(c cVar, int i10) {
+    public /* synthetic */ a(b bVar, String str, Bundle bundle, int i10) {
         this.a = i10;
-        this.b = cVar;
+        this.b = bVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.g(false);
+                this.b.b.getClass();
+                break;
+            case 1:
+                this.b.b.getClass();
+                break;
+            case 2:
+                this.b.b.getClass();
                 break;
             default:
-                NotificationCenter.getInstance(this.b.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.onUserRingtonesUpdated, new Object[0]);
+                this.b.b.getClass();
                 break;
         }
+    }
+
+    public a(b bVar, int i10, Bundle bundle) {
+        this.a = 0;
+        this.b = bVar;
+    }
+
+    public a(b bVar, Bundle bundle) {
+        this.a = 2;
+        this.b = bVar;
     }
 }

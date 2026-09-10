@@ -1,32 +1,30 @@
 package lg;
 
-import android.graphics.Paint;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.q6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class a extends f {
-    public final f6 q;
-    public final Paint r;
-    public int s;
+public final class a {
+    public final CharSequence a;
+    public final int b = 2;
+    public final Runnable c;
+    public final float d;
+    public final float e;
+    public final q6 f;
 
-    public a(kg.a aVar, f6 f6Var) {
-        super(aVar, false, null);
-        Paint paint = new Paint();
-        this.r = paint;
-        this.s = 0;
-        this.q = f6Var;
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
+    public a(String str, Runnable runnable) {
+        this.a = str;
+        this.c = runnable;
     }
 
-    @Override // lg.f
-    public final void a() {
-        super.a();
-        this.s = i0.a.d(0.3f, j6.v0(j6.d6, this.q), this.m);
+    public a(String str) {
+        this.a = str;
+    }
+
+    public a(String str, float f7, float f10, q6 q6Var) {
+        this.a = str;
+        this.d = f7;
+        this.e = f10;
+        this.f = q6Var;
     }
 }

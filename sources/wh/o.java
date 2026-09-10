@@ -1,27 +1,24 @@
 package wh;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ w b;
 
-    public /* synthetic */ o(p pVar, int i10) {
+    public /* synthetic */ o(w wVar, int i10) {
         this.a = i10;
-        this.b = pVar;
+        this.b = wVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                p pVar = this.b;
-                pVar.post(new o(pVar, 1));
+                this.b.onBackPressed();
                 break;
             default:
-                p pVar2 = this.b;
-                pVar2.d = true;
-                pVar2.b();
+                this.b.T();
                 break;
         }
     }

@@ -1,0 +1,40 @@
+package wh;
+
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final class r3 extends org.telegram.ui.ActionBar.g1 {
+    public final int L;
+    public long M;
+    public p3 N;
+
+    public r3(Context context, int i10, f6 f6Var) {
+        super(0, context, f6Var, false, false);
+        this.L = i10;
+        setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        int v02 = j6.v0(j6.E8, f6Var);
+        int i11 = j6.F8;
+        c(v02, j6.v0(i11, f6Var));
+        e(j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
+        this.c.setTranslationX(AndroidUtilities.dp(2.0f));
+        a(2);
+        setBackground(null);
+        this.c.addOnAttachStateChangeListener(new l.d(this, 12));
+    }
+
+    @Override // org.telegram.ui.ActionBar.g1, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+    }
+}

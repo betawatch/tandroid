@@ -1,33 +1,43 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class mx extends org.telegram.ui.Components.ia {
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+public final /* synthetic */ class mx {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nx b;
+    public final /* synthetic */ View c;
+
+    public /* synthetic */ mx(nx nxVar, View view, int i10) {
+        this.a = i10;
+        this.b = nxVar;
+        this.c = view;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ia
-    public final int v1() {
-        return AndroidUtilities.dp(48.0f);
-    }
-
-    @Override // org.telegram.ui.Components.ia, org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof zh.k) {
+                    this.b.O0.E0.i((zh.k) view, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c30(10), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof zh.k) {
+                    this.b.O0.E0.i((zh.k) view2, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c30(10), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

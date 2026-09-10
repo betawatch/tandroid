@@ -1,35 +1,29 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ DownloadController b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ d2(Utilities.Callback callback, ArrayList arrayList, int i10) {
+    public /* synthetic */ d2(DownloadController downloadController, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = arrayList;
+        this.b = downloadController;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                this.b.lambda$startDownloadFile$4(this.c);
                 break;
             case 1:
-                this.b.run(this.c);
-                break;
-            case 2:
-                MediaDataController.lambda$loadStickers$92(this.b, this.c);
+                this.b.lambda$onDownloadFail$9(this.c);
                 break;
             default:
-                this.b.run(this.c);
+                this.b.lambda$onDownloadComplete$6(this.c);
                 break;
         }
     }

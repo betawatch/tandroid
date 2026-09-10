@@ -4,7 +4,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class g7 {
     public static LanguageIdentifierImpl a() {
@@ -13,7 +13,7 @@ public abstract class g7 {
         eVar.getClass();
         v7.y8 y8Var = aVar.a;
         LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, y8Var, (Executor) aVar.c.a.get());
-        fg.f fVar = new fg.f();
+        ki.f fVar = new ki.f();
         fVar.c = languageIdentifierImpl.f;
         v7.a6 a6Var = new v7.a6(1, false);
         a6Var.c = LanguageIdentifierImpl.k();

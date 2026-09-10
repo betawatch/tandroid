@@ -5,11 +5,11 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzfx extends j implements p {
     Object zza;
@@ -58,7 +58,7 @@ final class zzfx extends j implements p {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                u7.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
                 long j3 = this.zzd;
@@ -73,18 +73,18 @@ final class zzfx extends j implements p {
             } else if (i10 == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                t7.b(obj);
+                u7.b(obj);
             } else {
                 if (i10 != 2) {
                     if (i10 != 3) {
-                        t7.b(obj);
+                        u7.b(obj);
                         zzgb zzgbVar = this.zzc;
                         zzdsVar = zzdv.zzb;
                         zzgbVar.zzf = zzdsVar;
                         return Boolean.valueOf(((t) this.zze).A(i.a));
                     }
                     zzgrVar3 = (zzgr) this.zzf;
-                    t7.b(obj);
+                    u7.b(obj);
                     this.zzf = null;
                     this.zzb = 4;
                     if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
@@ -96,7 +96,7 @@ final class zzfx extends j implements p {
                     return Boolean.valueOf(((t) this.zze).A(i.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                t7.b(obj);
+                u7.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
                 zzgbVar3.zze = zzxnVar;
@@ -122,9 +122,9 @@ final class zzfx extends j implements p {
                 obj = zzfpVar2.zzn(zzxnVar2, j102, this);
             }
             return aVar;
-        } catch (zzcg e7) {
-            this.zzc.zzd = e7;
-            throw e7;
+        } catch (zzcg e) {
+            this.zzc.zzd = e;
+            throw e;
         }
     }
 }

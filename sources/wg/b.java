@@ -1,76 +1,98 @@
 package wg;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.tp;
+import qg.q0;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout {
-    public final j5 a;
-    public final ImageView b;
+public final class b extends ug.c {
+    public final tp r;
+    public TLRPC.TL_help_country s;
+    public final TextPaint v;
+    public final q0 w;
 
     public b(Context context, f6 f6Var) {
-        super(context);
-        j5 j5Var = new j5(context);
-        this.a = j5Var;
-        j5Var.setTextSize(16);
-        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i10 = j6.L6;
-        j5Var.setTextColor(j6.v0(i10, f6Var));
-        j5Var.setTag(Integer.valueOf(i10));
-        addView(j5Var);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView);
-        j5Var.k(LocaleController.getString(R.string.BoostingAddChannelOrGroup));
-        Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
-        Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
-        int v02 = j6.v0(j6.N6, f6Var);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        drawable.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        drawable2.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.k7, f6Var), mode));
-        imageView.setImageDrawable(new oq(drawable, drawable2));
-        setBackgroundColor(j6.v0(j6.h5, f6Var));
+        super(context, f6Var);
+        TextPaint textPaint = new TextPaint();
+        this.v = textPaint;
+        this.w = new q0(this, 18);
+        textPaint.setTextSize(AndroidUtilities.dp(20.0f));
+        this.f.setVisibility(8);
+        this.c.setVisibility(8);
+        tp tpVar = new tp(context, 21, f6Var);
+        this.r = tpVar;
+        tpVar.b(j6.B5, j6.j7, j6.C5);
+        tpVar.setDrawUnchecked(true);
+        tpVar.setDrawBackgroundAsArc(10);
+        addView(tpVar);
+        tpVar.a(false, false);
+        tpVar.setLayoutParams(a6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int dp;
-        int i14 = i12 - i10;
-        j5 j5Var = this.a;
-        int textHeight = ((i13 - i11) - j5Var.getTextHeight()) / 2;
-        boolean z11 = LocaleController.isRTL;
-        ImageView imageView = this.b;
-        if (z11) {
-            dp = (getMeasuredWidth() - j5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
-        } else {
-            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
+    @Override // ug.c
+    public final int a() {
+        return 22;
+    }
+
+    @Override // ug.c
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // ug.c
+    public final void c(boolean z10, boolean z11) {
+        tp tpVar = this.r;
+        if (tpVar.getVisibility() == 0) {
+            tpVar.a(z10, z11);
         }
-        j5Var.layout(dp, textHeight, j5Var.getMeasuredWidth() + dp, j5Var.getMeasuredHeight() + textHeight);
-        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(24.0f);
-        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a.measure(wl.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
-        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
+    @Override // ug.c
+    public final void d() {
+        boolean z10 = LocaleController.isRTL;
+        this.d.setLayoutParams(a6.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 52.0f, 0.0f, z10 ? 52.0f : 20.0f, 0.0f));
+        boolean z11 = LocaleController.isRTL;
+        this.e.setLayoutParams(a6.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 52.0f, 0.0f, z11 ? 52.0f : 20.0f, 0.0f));
+        boolean z12 = LocaleController.isRTL;
+        this.f.setLayoutParams(a6.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
+    }
+
+    public final void f() {
+        TLRPC.TL_help_country tL_help_country = this.s;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        CharSequence replaceWithRestrictedEmoji = Emoji.replaceWithRestrictedEmoji(LocaleController.getLanguageFlag(tL_help_country.iso2), this.v.getFontMetricsInt(), 0, this.w);
+        if (replaceWithRestrictedEmoji != null) {
+            spannableStringBuilder.append(replaceWithRestrictedEmoji).append((CharSequence) " ");
+            spannableStringBuilder.setSpan(new a(16), replaceWithRestrictedEmoji.length(), replaceWithRestrictedEmoji.length() + 1, 0);
+        } else {
+            spannableStringBuilder.append((CharSequence) " ");
+            spannableStringBuilder.setSpan(new a(34), 0, 1, 0);
+        }
+        String countryName = LocaleController.getCountryName(tL_help_country.iso2);
+        if (TextUtils.isEmpty(countryName)) {
+            countryName = tL_help_country.default_name;
+        }
+        spannableStringBuilder.append((CharSequence) countryName);
+        this.d.k(spannableStringBuilder);
+    }
+
+    public TLRPC.TL_help_country getCountry() {
+        return this.s;
+    }
+
+    @Override // ug.c
+    public int getFullHeight() {
+        return 44;
     }
 }

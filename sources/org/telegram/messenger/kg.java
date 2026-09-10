@@ -1,67 +1,87 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kg implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ kg(MessagesStorage messagesStorage, long j3, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
-        this.e = messagesStorage;
-        this.b = j3;
-        this.d = z10;
-        this.f = inputPeer;
-        this.c = j10;
+    public /* synthetic */ kg(int i10, int i11, long j3, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.PeerSettings peerSettings;
-        int i10 = this.a;
-        TLObject tLObject = this.f;
-        Object obj = this.e;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                ((MessagesStorage) obj).lambda$loadPendingTasks$15(this.b, this.d, (TLRPC.InputPeer) tLObject, this.c);
-                break;
+                this.b.lambda$loadPendingTasks$27(this.c, this.d, this.e);
+                return;
+            case 1:
+                this.b.lambda$loadPendingTasks$28(this.c, this.d, this.e);
+                return;
             default:
-                zh.s5 s5Var = (zh.s5) obj;
-                int i11 = s5Var.a;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    long j3 = this.b;
-                    long j10 = this.c;
-                    if (j3 == 0) {
-                        TLRPC.UserFull userFull = MessagesController.getInstance(i11).getUserFull(j10);
-                        if (userFull != null && (peerSettings = userFull.settings) != null) {
-                            peerSettings.flags &= -16385;
-                            peerSettings.charge_paid_message_stars = 0L;
+                int i10 = this.c;
+                long j3 = this.e;
+                SQLiteDatabase database = this.b.getDatabase();
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        database.executeFast("DELETE FROM star_gifts2").stepThis().dispose();
+                        ArrayList arrayList = this.d;
+                        if (arrayList != null) {
+                            sQLitePreparedStatement = database.executeFast("REPLACE INTO star_gifts2 VALUES(?, ?, ?, ?, ?)");
+                            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                                TL_stars.StarGift starGift = (TL_stars.StarGift) arrayList.get(i11);
+                                sQLitePreparedStatement.requery();
+                                sQLitePreparedStatement.bindLong(1, starGift.id);
+                                NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(starGift.getObjectSize());
+                                starGift.serializeToStream(nativeByteBuffer);
+                                sQLitePreparedStatement.bindByteBuffer(2, nativeByteBuffer);
+                                sQLitePreparedStatement.bindLong(3, i10);
+                                sQLitePreparedStatement.bindLong(4, j3);
+                                sQLitePreparedStatement.bindInteger(5, i11);
+                                sQLitePreparedStatement.step();
+                                nativeByteBuffer.reuse();
+                            }
                         }
-                        MessagesController.getNotificationsSettings(i11).edit().putLong(a4.a.o(j10, "dialog_bar_paying_"), 0L).apply();
-                        MessagesController.getInstance(i11).loadPeerSettings(MessagesController.getInstance(i11).getUser(Long.valueOf(j10)), MessagesController.getInstance(i11).getChat(Long.valueOf(-j10)), true);
-                        ContactsController.getInstance(i11).loadPrivacySettings(true);
-                        NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j10));
-                        break;
-                    } else {
-                        s5Var.b0(-j3, j10, this.d);
-                        break;
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
                     }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
                 }
-                break;
         }
     }
 
-    public /* synthetic */ kg(zh.s5 s5Var, TLObject tLObject, long j3, long j10, boolean z10) {
-        this.e = s5Var;
-        this.f = tLObject;
-        this.b = j3;
-        this.c = j10;
-        this.d = z10;
+    public /* synthetic */ kg(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
+        this.a = 2;
+        this.b = messagesStorage;
+        this.d = arrayList;
+        this.c = i10;
+        this.e = j3;
     }
 }

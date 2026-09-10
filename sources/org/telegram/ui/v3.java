@@ -1,455 +1,292 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class v3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.u3 {
-    public ValueAnimator E;
-    public boolean F;
-    public boolean G;
-    public boolean H;
-    public float I;
-    public boolean J;
-    public final /* synthetic */ i4 K;
-    public final AnimationNotificationsLocker a = new AnimationNotificationsLocker();
-    public org.telegram.ui.ActionBar.n2 b;
-    public final u3 c;
-    public View d;
-    public org.telegram.ui.ActionBar.i3 e;
-    public boolean f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public bi.p4 v;
-    public float w;
-    public float x;
-    public ValueAnimator y;
+public final class v3 extends org.telegram.ui.Components.aw0 implements org.telegram.ui.ActionBar.m2, org.telegram.ui.ActionBar.x3 {
+    public final org.telegram.ui.Components.d6 A0;
+    public boolean B0;
+    public final Path C0;
+    public final RectF D0;
+    public final RectF E0;
+    public final Path F0;
+    public boolean G0;
+    public final /* synthetic */ w3 H0;
+    public final Paint w0;
+    public final Paint x0;
+    public final Paint y0;
+    public final Paint z0;
 
-    public v3(i4 i4Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.K = i4Var;
-        this.b = n2Var;
-        n2Var.getResourceProvider();
-        u3 u3Var = new u3(this, n2Var.getContext());
-        this.c = u3Var;
-        new di.j4(u3Var, true, new t3(this, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v3(w3 w3Var, Context context) {
+        super(context, null);
+        this.H0 = w3Var;
+        this.w0 = new Paint(1);
+        this.x0 = new Paint(1);
+        this.y0 = new Paint(1);
+        this.z0 = new Paint(1);
+        new Paint(1);
+        this.A0 = new org.telegram.ui.Components.d6(this, 0L, 420L, org.telegram.ui.Components.wr.h);
+        this.C0 = new Path();
+        this.D0 = new RectF();
+        new RectF();
+        this.E0 = new RectF();
+        this.F0 = new Path();
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
-    public final org.telegram.ui.ActionBar.n3 a() {
-        org.telegram.ui.ActionBar.n3 n3Var = new org.telegram.ui.ActionBar.n3();
-        i4 i4Var = this.K;
-        n3Var.E = i4Var.h0.getTitle();
-        n3Var.J = i4Var;
-        m3 m3Var = i4Var.u0[0];
-        Bitmap bitmap = null;
-        n3Var.q = (m3Var == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false) : m3Var.getActionBarColor();
-        m3 m3Var2 = i4Var.u0[0];
-        n3Var.r = (m3Var2 == null || !SharedConfig.adaptableColorInBrowser) ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false) : m3Var2.getBackgroundColor();
-        n3Var.n = true;
-        n3Var.I = !this.F ? 0.0f : i4Var.u0[0].getProgress();
-        m3 m3Var3 = i4Var.u0[0];
-        n3Var.c = m3Var3;
-        if (m3Var3 != null && m3Var3.getWebView() != null) {
-            bitmap = i4Var.u0[0].getWebView().getFavicon();
-        }
-        n3Var.F = bitmap;
-        m3 m3Var4 = n3Var.c;
-        if (m3Var4 != null) {
-            n3Var.g = m3Var4.getWidth();
-            n3Var.h = n3Var.c.getHeight();
-        }
-        n3Var.i = l();
-        n3Var.D = org.telegram.ui.ActionBar.j6.I.q();
-        return n3Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean attachedToParent() {
-        return this.c.isAttachedToWindow();
-    }
-
-    @Override // org.telegram.ui.ActionBar.u3
-    public final boolean b() {
-        return this.f;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u3
-    public final boolean c(org.telegram.ui.ActionBar.i3 i3Var) {
-        this.e = i3Var;
-        if (i3Var != null) {
-            this.f = true;
-        }
-        return true;
-    }
-
-    public final ValueAnimator d(float f7) {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, f7);
-        ofFloat.addUpdateListener(new s3(this, 0));
-        return ofFloat;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        dismiss(true);
-    }
-
-    public final void e(boolean z10, lu0 lu0Var) {
-        ValueAnimator valueAnimator = this.E;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z10 ? 1.0f : 0.0f);
-        this.E = ofFloat;
-        ofFloat.addUpdateListener(new s3(this, 2));
-        this.E.addListener(new ah.r0(this, z10, lu0Var, 3));
-        this.E.setInterpolator(org.telegram.ui.Components.pr.h);
-        this.E.setDuration(250L);
-        this.E.start();
-    }
-
-    public final void f() {
-        ValueAnimator valueAnimator = this.y;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        int i10 = 1;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, 1.0f);
-        this.y = ofFloat;
-        ofFloat.addUpdateListener(new s3(this, i10));
-        this.y.addListener(new s0(this, i10));
-        this.y.setInterpolator(org.telegram.ui.Components.pr.h);
-        this.y.setDuration(320L);
-        this.y.start();
-    }
-
-    public final void g(org.telegram.ui.ActionBar.n2 n2Var) {
-        co coVar;
-        mk mkVar;
-        this.r = false;
-        this.b = n2Var;
-        n2Var.getResourceProvider();
-        if ((n2Var instanceof co) && (mkVar = (coVar = (co) n2Var).Y) != null) {
-            mkVar.P();
-            coVar.Y.n0(true, false, true);
-        }
-        org.telegram.ui.ActionBar.i3 i3Var = this.e;
-        if (i3Var == null) {
-            u3 u3Var = this.c;
-            AndroidUtilities.removeFromParent(u3Var);
-            if (n2Var.getLayoutContainer() != null) {
-                n2Var.getLayoutContainer().addView(u3Var);
-            }
-        } else if (!i3Var.e) {
-            i3Var.e = true;
-            try {
-                i3Var.show();
-            } catch (Exception e7) {
-                FileLog.e(e7);
-            }
-        }
-        i4 i4Var = this.K;
-        m3 m3Var = i4Var.u0[0];
-        if (m3Var != null && m3Var.E) {
-            if (m3Var.getWebView() != null) {
-                m3Var.getWebView().onResume();
-            }
-            m3Var.E = false;
-        }
-        m3 m3Var2 = i4Var.u0[1];
-        if (m3Var2 != null && m3Var2.E) {
-            if (m3Var2.getWebView() != null) {
-                m3Var2.getWebView().onResume();
-            }
-            m3Var2.E = false;
-        }
-        i4.b1.add(i4Var);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0028, code lost:
-    
-        if (r1 == null) goto L10;
-     */
-    @Override // org.telegram.ui.ActionBar.j2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.Components.yc getBulletinFactory() {
-        FrameLayout frameLayout;
-        i4 i4Var = this.K;
-        if (i4Var.u0[0].f()) {
-            if (i4Var.u0[0].getWebView() != null) {
-                frameLayout = i4Var.u0[0].f;
-                return new org.telegram.ui.Components.yc(frameLayout, null);
-            }
-            return null;
-        }
-        m3 m3Var = i4Var.u0[0];
-        TLRPC.WebPage webPage = m3Var.c.E;
-        frameLayout = m3Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final int getNavigationBarColor(int i10) {
-        float min = this.n ? 0.0f : Math.min(this.w, 1.0f - this.x) * (1.0f - this.I);
-        int j3 = j();
-        k0 k0Var = this.K.h0;
-        if (k0Var != null) {
-            j3 = i0.a.d(k0Var.a0, j3, k0Var.x);
-        }
-        return i0.a.d(min, i10, j3);
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final View getWindowView() {
-        return this.c;
-    }
-
-    public final void h() {
-        if (this.s != isFullyVisible()) {
-            this.s = isFullyVisible();
-            org.telegram.ui.ActionBar.n2 n2Var = this.b;
-            if (n2Var == null || !(n2Var.getParentLayout() instanceof ActionBarLayout)) {
-                u3 u3Var = this.c;
-                if (u3Var.getParent() instanceof View) {
-                    ((View) u3Var.getParent()).invalidate();
-                    return;
-                }
-                return;
-            }
-            ActionBarLayout actionBarLayout = (ActionBarLayout) this.b.getParentLayout();
-            org.telegram.ui.ActionBar.w wVar = actionBarLayout.s;
-            if (wVar != null) {
-                wVar.invalidate();
-            }
-            org.telegram.ui.ActionBar.w wVar2 = actionBarLayout.w;
-            if (wVar2 != null) {
-                wVar2.invalidate();
-            }
-        }
-    }
-
-    public final void i() {
-        org.telegram.ui.ActionBar.i3 i3Var = this.e;
-        u3 u3Var = this.c;
-        AndroidUtilities.setLightStatusBar(i3Var != null ? i3Var.b : u3Var, isAttachedLightStatusBar());
-        org.telegram.ui.ActionBar.i3 i3Var2 = this.e;
-        if (i3Var2 == null) {
-            LaunchActivity.G1.H(true, true, true);
-            AndroidUtilities.setLightNavigationBar(u3Var, AndroidUtilities.computePerceivedBrightness(getNavigationBarColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false))) >= 0.721f);
+    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        boolean z10;
+        float f7;
+        char c10;
+        w3 w3Var = this.H0;
+        j4 j4Var = w3Var.K;
+        if (this.B0) {
             return;
         }
-        int navigationBarColor = i3Var2.a.getNavigationBarColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        i3Var2.d.setColor(navigationBarColor);
-        i3Var2.c.invalidate();
-        AndroidUtilities.setNavigationBarColor(i3Var2, navigationBarColor);
-        AndroidUtilities.setLightNavigationBar(i3Var2, AndroidUtilities.computePerceivedBrightness(navigationBarColor) >= 0.721f);
-        LaunchActivity.G1.H(true, true, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean isAttachedLightStatusBar() {
-        int d;
-        float min = this.n ? 0.0f : (1.0f - this.I) * Math.min(this.w, 1.0f - this.x);
-        if (this.F && min > 0.25f) {
-            if (SharedConfig.adaptableColorInBrowser) {
-                i4 i4Var = this.K;
-                d = i0.a.d(1.0f - (i4Var.u0[0].getVisibility() == 0 ? 1.0f - (i4Var.u0[0].getTranslationX() / i4Var.u0[0].getWidth()) : 0.0f), i4Var.u0[0].getActionBarColor(), i4Var.u0[1].getActionBarColor());
-            } else {
-                d = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Pk, false);
-            }
-            if (AndroidUtilities.computePerceivedBrightness(d) >= 0.721f) {
-                return true;
-            }
+        float min = Math.min(w3Var.w, 1.0f - w3Var.x);
+        Paint paint = this.w0;
+        paint.setColor(-16777216);
+        paint.setAlpha((int) ((1.0f - w3Var.I) * 96.0f * min));
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+        int l4 = w3Var.l() - AndroidUtilities.dp(20.0f);
+        boolean z11 = l4 < org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight && min > 0.95f;
+        if (w3Var.F != z11) {
+            w3Var.F = z11;
+            w3Var.i();
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean isFullyVisible() {
-        return this.G && this.x <= 0.0f && this.w >= 1.0f && this.I <= 0.0f && !this.n && !this.h;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean isShown() {
-        u3 u3Var;
-        return !this.h && !this.r && this.w > 0.5f && (u3Var = this.c) != null && u3Var.isAttachedToWindow() && AndroidUtilities.lerp(u3Var.H0.l() - AndroidUtilities.dp(20.0f), 0, Utilities.clamp01(u3Var.A0.c)) < u3Var.getHeight() && this.I < 1.0f;
-    }
-
-    public final int j() {
-        if (!SharedConfig.adaptableColorInBrowser) {
-            return org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sk, false);
+        float e = this.A0.e(z11);
+        if (w3Var.G != (e >= 0.999f)) {
+            w3Var.G = e >= 0.999f;
+            w3Var.h();
         }
-        i4 i4Var = this.K;
-        return i0.a.d(1.0f - (i4Var.u0[0].getVisibility() != 0 ? 0.0f : 1.0f - (i4Var.u0[0].getTranslationX() / i4Var.u0[0].getWidth())), i4Var.u0[0].getBackgroundColor(), i4Var.u0[1].getBackgroundColor());
-    }
-
-    public final int k() {
-        int dp = AndroidUtilities.dp(16.0f);
-        View view = this.d;
-        return org.telegram.messenger.w1.z(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
-    }
-
-    public final int l() {
-        i4 i4Var = this.K;
-        int i10 = 0;
-        m3 m3Var = i4Var.u0[0];
-        float translationX = (m3Var == null || m3Var.getVisibility() != 0) ? 0.0f : 1.0f - (i4Var.u0[0].getTranslationX() / i4Var.u0[0].getWidth());
-        float f7 = 1.0f - translationX;
-        m3 m3Var2 = i4Var.u0[0];
-        if (m3Var2 != null && m3Var2.getVisibility() == 0) {
-            i10 = (int) (i4Var.u0[0].getAlpha() * i4Var.u0[0].getListTop() * translationX);
-        }
-        m3 m3Var3 = i4Var.u0[1];
-        if (m3Var3 == null || m3Var3.getVisibility() != 0) {
-            return i10;
-        }
-        return i10 + ((int) (i4Var.u0[1].getAlpha() * i4Var.u0[1].getListTop() * f7));
-    }
-
-    public final void m() {
-        i4 i4Var = this.K;
-        i4Var.u0[0].setLastVisible(this.J);
-        i4Var.u0[1].setLastVisible(false);
-    }
-
-    public final void n() {
-        View view = this.d;
-        if (view == null) {
-            return;
-        }
-        view.setTranslationY(Math.max(1.0f - this.w, this.n ? 0.0f : this.x) * k());
-        this.c.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean onAttachedBackPressed() {
-        i4 i4Var = this.K;
-        if (i4Var.o0) {
-            AndroidUtilities.hideKeyboard(this.c);
-            return true;
-        }
-        k0 k0Var = i4Var.h0;
-        if (k0Var.T) {
-            k0Var.h(false);
-            return true;
-        }
-        if (k0Var.W) {
-            k0Var.k(false);
-            return true;
-        }
-        if (i4Var.J()) {
-            m3 m3Var = i4Var.u0[0];
-            if (m3Var.s) {
-                if (m3Var.f() && m3Var.getWebView() != null) {
-                    m3Var.getWebView().goBack();
-                }
-                return true;
-            }
-        }
-        if (i4Var.d0.size() > 1) {
-            i4Var.G();
-            return true;
-        }
-        dismiss(false);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.u3
-    public final void release() {
-        this.r = true;
-        i4 i4Var = this.K;
-        m3 m3Var = i4Var.u0[0];
-        if (m3Var != null && m3Var.h) {
-            j3 j3Var = m3Var.e;
-            j3Var.setSwipeOffsetY((-j3Var.f) + j3Var.e);
-            i4Var.u0[0].h = false;
-        }
-        m3 m3Var2 = i4Var.u0[0];
-        if (m3Var2 != null && !m3Var2.E) {
-            if (m3Var2.getWebView() != null) {
-                m3Var2.getWebView().onPause();
-            }
-            m3Var2.E = true;
-        }
-        m3 m3Var3 = i4Var.u0[1];
-        if (m3Var3 != null && !m3Var3.E) {
-            if (m3Var3.getWebView() != null) {
-                m3Var3.getWebView().onPause();
-            }
-            m3Var3.E = true;
-        }
-        org.telegram.ui.ActionBar.i3 i3Var = this.e;
-        if (i3Var != null) {
-            i3Var.c();
-        }
-        org.telegram.ui.ActionBar.n2 n2Var = this.b;
-        if (n2Var != null) {
-            n2Var.removeSheet(this);
-            if (this.e == null) {
-                AndroidUtilities.removeFromParent(this.c);
-            }
-        }
-        bi.p4 p4Var = this.v;
-        if (p4Var != null) {
-            p4Var.run();
-            this.v = null;
-        }
-        i4.b1.remove(i4Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final void setLastVisible(boolean z10) {
-        this.J = z10;
-        i4 i4Var = this.K;
-        i4Var.u0[0].setLastVisible(z10);
-        i4Var.u0[1].setLastVisible(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final void setOnDismissListener(Runnable runnable) {
-        this.v = (bi.p4) runnable;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final boolean showDialog(Dialog dialog) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j2
-    public final void dismiss(boolean z10) {
-        if (this.h) {
-            return;
-        }
-        this.h = true;
-        this.n = z10;
-        if (z10) {
-            LaunchActivity.G1.y0.b(this);
+        int lerp = AndroidUtilities.lerp(l4, 0, Utilities.clamp01(e));
+        float max = Math.max(1.0f - w3Var.w, w3Var.x) * w3Var.k();
+        canvas.save();
+        canvas.translate(getWidth() * w3Var.I, max);
+        float f10 = lerp;
+        float width = getWidth();
+        float dp = AndroidUtilities.dp(16.0f) + getHeight();
+        RectF rectF = this.D0;
+        rectF.set(0.0f, f10, width, dp);
+        float f11 = 1.0f - e;
+        float dp2 = AndroidUtilities.dp(24.0f) * f11;
+        if (e < 1.0f) {
+            Paint paint2 = this.x0;
+            paint2.setColor(0);
+            c10 = 0;
+            z10 = z11;
+            f7 = 0.0f;
+            paint2.setShadowLayer(AndroidUtilities.dp(18.0f), 0.0f, -AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.j6.l1(min * 0.26f, -16777216));
+            canvas.drawRoundRect(rectF, dp2, dp2, paint2);
         } else {
-            e(true, new lu0(this, 10));
+            z10 = z11;
+            f7 = 0.0f;
+            c10 = 0;
         }
-        i();
-        h();
+        if (dp2 <= f7) {
+            canvas.clipRect(rectF);
+        } else {
+            Path path = this.C0;
+            path.rewind();
+            path.addRoundRect(rectF, dp2, dp2, Path.Direction.CW);
+            canvas.clipPath(path);
+        }
+        int backgroundColor = j4Var.u0[1].getBackgroundColor();
+        Paint paint3 = this.y0;
+        paint3.setColor(backgroundColor);
+        canvas.drawRect(rectF, paint3);
+        paint3.setColor(j4Var.u0[c10].getBackgroundColor());
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(rectF);
+        rectF2.left = j4Var.u0[c10].getX();
+        canvas.drawRect(rectF2, paint3);
+        j4Var.h0.s0 = z10 && AndroidUtilities.dp(20.0f) + l4 <= AndroidUtilities.statusBarHeight + j4Var.I0;
+        if (e > 0.0f) {
+            canvas.save();
+            float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, 0, e);
+            canvas.translate(0.0f, lerp2);
+            j4Var.h0.a(canvas, org.telegram.messenger.a2.C(20.0f, l4, 1) - lerp2, e, true);
+            canvas.restore();
+        }
+        canvas.translate(0.0f, -max);
+        if (!AndroidUtilities.makingGlobalBlurBitmap && (!j4Var.u0[0].f() || canvas.isHardwareAccelerated())) {
+            super.dispatchDraw(canvas);
+        }
+        canvas.translate(0.0f, max);
+        if (e < 1.0f) {
+            int d = i0.a.d(e, org.telegram.ui.ActionBar.j6.l1(0.15f, AndroidUtilities.computePerceivedBrightness(w3Var.j()) < 0.721f ? -1 : -16777216), -16777216);
+            Paint paint4 = this.z0;
+            paint4.setColor(d);
+            paint4.setAlpha((int) (paint4.getAlpha() * f11));
+            float width2 = getWidth() / 2.0f;
+            float dp3 = ((AndroidUtilities.dp(20.0f) / 2.0f) + f10) - (AndroidUtilities.dp(8.0f) * e);
+            float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(48.0f), e) / 2.0f;
+            rectF.set(width2 - lerp3, dp3 - AndroidUtilities.dp(2.0f), width2 + lerp3, dp3 + AndroidUtilities.dp(2.0f));
+            canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint4);
+        }
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.ActionBar.u3
-    public final org.telegram.ui.ActionBar.v3 getWindowView() {
-        return this.c;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y3 = motionEvent.getY();
+            w3 w3Var = this.H0;
+            if (y3 < (w3Var.F ? 0 : w3Var.l())) {
+                w3Var.dismiss(true);
+                return true;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.ActionBar.j2
-    public final void setKeyboardHeightFromParent(int i10) {
+    @Override // org.telegram.ui.Components.aw0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.x3
+    public RectF getRect() {
+        w3 w3Var = this.H0;
+        float max = (Math.max(1.0f - w3Var.w, w3Var.x) * w3Var.k()) + (w3Var.F ? 0 : w3Var.l() - AndroidUtilities.dp(20.0f));
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.E0;
+        rectF.set(0.0f, max, width, height);
+        return rectF;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.H0.n();
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onNestedPreFling(View view, float f7, float f10) {
+        boolean onNestedPreFling = super.onNestedPreFling(view, f7, f10);
+        w3 w3Var = this.H0;
+        j4 j4Var = w3Var.K;
+        if (!j4Var.O0.y()) {
+            if (!(j4Var.u0[0].c() ? !r2.b.canScrollVertically(-1) : false) || f10 >= -1000.0f) {
+                w3Var.e(false, null);
+            } else {
+                w3Var.dismiss(true);
+            }
+        }
+        if (f7 != 0.0f || f10 != 0.0f) {
+            org.telegram.ui.Cells.s9 s9Var = j4Var.O0;
+            AndroidUtilities.cancelRunOnUIThread(s9Var.g0);
+            s9Var.z = false;
+        }
+        this.G0 = true;
+        return onNestedPreFling;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedPreScroll(View view, int i10, int i11, int[] iArr) {
+        w3 w3Var = this.H0;
+        j4 j4Var = w3Var.K;
+        if (!w3Var.H) {
+            w3Var.H = i11 != 0;
+        }
+        if ((j4Var.u0[0].c() ? !r1.b.canScrollVertically(-1) : false) && !j4Var.O0.y()) {
+            iArr[1] = Math.min((int) (w3Var.k() * w3Var.x), i11);
+            w3Var.x = Utilities.clamp(w3Var.x - (i11 / w3Var.k()), 1.0f, 0.0f);
+            w3Var.n();
+            w3Var.h();
+        }
+        if (i10 == 0 && i11 == 0) {
+            return;
+        }
+        org.telegram.ui.Cells.s9 s9Var = j4Var.O0;
+        AndroidUtilities.cancelRunOnUIThread(s9Var.g0);
+        s9Var.z = false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final boolean onStartNestedScroll(View view, View view2, int i10) {
+        this.G0 = false;
+        this.H0.getClass();
+        return i10 == 2;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+        w3 w3Var = this.H0;
+        w3Var.H = false;
+        if (!this.G0 && !w3Var.K.O0.y()) {
+            if (w3Var.x > 0.25f) {
+                w3Var.dismiss(true);
+            } else {
+                w3Var.e(false, null);
+            }
+        }
+        super.onStopNestedScroll(view);
+    }
+
+    @Override // org.telegram.ui.ActionBar.x3
+    public void setDrawingFromOverlay(boolean z10) {
+        if (this.B0 != z10) {
+            this.B0 = z10;
+            invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.x3
+    public final float w(Canvas canvas, RectF rectF, float f7, RectF rectF2, float f10) {
+        rectF2.set(getRect());
+        AndroidUtilities.lerp(rectF2, rectF, f7, rectF2);
+        w3 w3Var = this.H0;
+        j4 j4Var = w3Var.K;
+        float f11 = 1.0f - f7;
+        float min = Math.min(w3Var.w, 1.0f - w3Var.x) * f11;
+        Paint paint = this.w0;
+        paint.setColor(-16777216);
+        paint.setAlpha((int) ((1.0f - w3Var.I) * min * 96.0f));
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(18.0f), f7);
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false);
+        Paint paint2 = this.y0;
+        paint2.setColor(w02);
+        Path path = this.F0;
+        path.rewind();
+        path.addRoundRect(rectF2, lerp, lerp, Path.Direction.CW);
+        canvas.drawPath(path, paint2);
+        if (getChildCount() == 1) {
+            if (w3Var.F) {
+                canvas.save();
+                canvas.clipPath(path);
+                canvas.translate(0.0f, rectF2.top);
+                j4Var.h0.draw(canvas);
+                canvas.restore();
+            }
+            View childAt = getChildAt(0);
+            canvas.save();
+            float lerp2 = AndroidUtilities.lerp(1.0f, 0.99f, f7);
+            float f12 = lerp2 - 1.0f;
+            if (Math.abs(f12) > 0.01f) {
+                canvas.scale(lerp2, lerp2, rectF2.centerX(), rectF2.centerY());
+            }
+            canvas.clipPath(path);
+            if (Math.abs(f12) > 0.01f) {
+                float f13 = 1.0f / lerp2;
+                canvas.scale(f13, f13, rectF2.centerX(), rectF2.centerY());
+            }
+            canvas.translate(0.0f, ((w3Var.F ? j4Var.h0.getMeasuredHeight() : 0) * f11) + (-w3Var.l()) + rectF2.top);
+            childAt.draw(canvas);
+            canvas.restore();
+        }
+        return lerp;
     }
 }

@@ -1,126 +1,75 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.text.InputFilter;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import bi.u2;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.i81;
+import org.telegram.ui.Components.fu;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class l extends i81 {
-    public final Path T;
-    public final Paint U;
-    public boolean V;
-    public boolean W;
-    public final boolean a0;
-    public final /* synthetic */ a1 b0;
-    public final /* synthetic */ f6 c0;
-    public final /* synthetic */ b0 d0;
-    public final /* synthetic */ n e0;
+public final class l extends LinearLayout {
+    public final fu a;
+    public final TextView b;
+    public k c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(n nVar, Context context, a1 a1Var, f6 f6Var, b0 b0Var) {
-        super(context, null);
-        this.e0 = nVar;
-        this.b0 = a1Var;
-        this.c0 = f6Var;
-        this.d0 = b0Var;
-        this.T = new Path();
-        this.U = new Paint(1);
-        this.a0 = AndroidUtilities.isTablet();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        n nVar = this.e0;
-        l lVar = nVar.b;
-        int v02 = j6.v0(j6.h5, this.c0);
-        Paint paint = this.U;
-        paint.setColor(v02);
-        if (!this.V) {
-            if (this.a0 || nVar.d) {
-                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            }
-            super.dispatchDraw(canvas);
-            return;
-        }
-        int i10 = -AndroidUtilities.dp(16.0f);
-        b0 b0Var = this.d0;
-        int dp = AndroidUtilities.dp(10.0f) + Math.max(i10, b0Var.s0 - (b0Var.e.getVisibility() == 0 ? AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight : 0));
-        a1 a1Var = this.b0;
-        int max = Math.max(0, a1Var.t0 - (a1Var.m0.c == 1.0f ? AndroidUtilities.statusBarHeight : 0));
-        int abs = Math.abs(dp - max);
-        if (lVar.getCurrentPosition() == 0) {
-            float positionAnimated = lVar.getPositionAnimated() * abs;
-            f7 = dp < max ? dp + positionAnimated : dp - positionAnimated;
+    public l(Context context, f6 f6Var) {
+        super(context);
+        setOrientation(0);
+        fu fuVar = new fu(context, f6Var);
+        this.a = fuVar;
+        fuVar.setLines(1);
+        fuVar.setSingleLine(true);
+        InputFilter[] inputFilterArr = {new j(this)};
+        fuVar.setInputType(16384);
+        fuVar.setFilters(inputFilterArr);
+        fuVar.setTextSize(1, 16.0f);
+        fuVar.setTextColor(j6.v0(j6.Ud, f6Var));
+        fuVar.setLinkTextColor(j6.v0(j6.hc, f6Var));
+        fuVar.setHighlightColor(j6.v0(j6.uf, f6Var));
+        int i10 = j6.Vd;
+        fuVar.setHintColor(j6.v0(i10, f6Var));
+        fuVar.setHintTextColor(j6.v0(i10, f6Var));
+        fuVar.setCursorColor(j6.v0(j6.Wd, f6Var));
+        fuVar.setHandlesColor(j6.v0(j6.vf, f6Var));
+        fuVar.setBackground(null);
+        fuVar.setHint(LocaleController.getString(R.string.BoostingGiveawayEnterYourPrize));
+        fuVar.addTextChangedListener(new u2(this, 18));
+        fuVar.setImeOptions(6);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(j6.v0(j6.j5, f6Var));
+        if (!LocaleController.isRTL) {
+            addView(textView, a6.t(-2, -2, 16, 20, 0, 0, 0));
+            addView(fuVar, a6.t(-1, -2, 16, 36, 0, 20, 0));
         } else {
-            float positionAnimated2 = (1.0f - lVar.getPositionAnimated()) * abs;
-            f7 = max < dp ? max + positionAnimated2 : max - positionAnimated2;
-        }
-        int i11 = (int) f7;
-        float dp2 = AndroidUtilities.dp(14.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, i11, getWidth(), AndroidUtilities.dp(8.0f) + getHeight());
-        canvas.drawRoundRect(rectF, dp2, dp2, paint);
-        canvas.save();
-        Path path = this.T;
-        path.rewind();
-        path.addRoundRect(rectF, dp2, dp2, Path.Direction.CW);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final float getAvailableTranslationX() {
-        return (this.a0 || this.e0.d) ? getMeasuredWidth() : super.getAvailableTranslationX();
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final boolean i(MotionEvent motionEvent) {
-        return this.e0.b.getCurrentPosition() == 1;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = this.W;
-        n nVar = this.e0;
-        if (z11 != nVar.isKeyboardVisible()) {
-            boolean isKeyboardVisible = nVar.isKeyboardVisible();
-            this.W = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                this.b0.X(true);
-            }
+            LinearLayout.LayoutParams t10 = a6.t(-1, -2, 16, 20, 0, 36, 0);
+            t10.weight = 1.0f;
+            addView(fuVar, t10);
+            addView(textView, a6.t(-2, -2, 16, 0, 0, 20, 0));
         }
     }
 
-    @Override // org.telegram.ui.Components.i81
-    public final void u() {
-        this.V = false;
-        this.e0.b.invalidate();
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.i81
-    public final void w(boolean z10) {
-        n nVar = this.e0;
-        l lVar = nVar.b;
-        float positionAnimated = lVar.getPositionAnimated();
-        if (positionAnimated <= 0.0f || positionAnimated >= 1.0f) {
-            this.V = false;
-        } else if (!this.V) {
-            this.V = true;
-            if (nVar.isKeyboardVisible()) {
-                AndroidUtilities.hideKeyboard(nVar.c.getContainerView());
-            }
-        }
-        lVar.invalidate();
+    public void setAfterTextChangedListener(k kVar) {
+        this.c = kVar;
+    }
+
+    public void setCount(int i10) {
+        this.b.setText(String.valueOf(i10));
     }
 }

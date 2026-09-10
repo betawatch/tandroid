@@ -10,13 +10,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class vi0 extends org.telegram.ui.Components.ll0 {
+public final class vi0 extends org.telegram.ui.Components.vl0 {
     public final ArrayList X2;
-    public final org.telegram.ui.Components.e6 Y2;
-    public final org.telegram.ui.Components.e6 Z2;
-    public final l20 a3;
+    public final org.telegram.ui.Components.d6 Y2;
+    public final org.telegram.ui.Components.d6 Z2;
+    public final m20 a3;
     public final /* synthetic */ cj0 b3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -24,10 +24,10 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
         super(context, f6Var);
         this.b3 = cj0Var;
         this.X2 = new ArrayList(10);
-        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-        this.Y2 = new org.telegram.ui.Components.e6(this, 0L, 360L, prVar);
-        this.Z2 = new org.telegram.ui.Components.e6(this, 0L, 360L, prVar);
-        this.a3 = new l20();
+        org.telegram.ui.Components.wr wrVar = org.telegram.ui.Components.wr.h;
+        this.Y2 = new org.telegram.ui.Components.d6(this, 0L, 360L, wrVar);
+        this.Z2 = new org.telegram.ui.Components.d6(this, 0L, 360L, wrVar);
+        this.a3 = new m20();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:180:0x03b9, code lost:
@@ -37,7 +37,7 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
     /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r9v35 */
     /* JADX WARN: Type inference failed for: r9v44 */
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -66,8 +66,8 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
             View childAt = vi0Var3.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.t1) {
                 org.telegram.ui.Cells.t1 t1Var2 = (org.telegram.ui.Cells.t1) childAt;
-                RectF rectF = ih.k.h;
-                ih.k.c(t1Var2, ui0Var, rectF);
+                RectF rectF = gh.k.h;
+                gh.k.c(t1Var2, ui0Var, rectF);
                 float f7 = rectF.top;
                 int i11 = (int) f7;
                 childAt.getMeasuredHeight();
@@ -348,20 +348,20 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
             arrayList6 = arrayList2;
         }
         canvas.save();
-        float e7 = this.Y2.e(canScrollVertically(-1));
-        float e10 = this.Z2.e(canScrollVertically(1));
+        float e = this.Y2.e(canScrollVertically(-1));
+        float e7 = this.Z2.e(canScrollVertically(1));
         RectF rectF2 = AndroidUtilities.rectTmp;
         rectF2.set(0.0f, getScrollY(), getWidth(), AndroidUtilities.dp(14.0f) + getScrollY());
-        l20 l20Var = this.a3;
-        l20Var.b(canvas, rectF2, 1, e7);
+        m20 m20Var = this.a3;
+        m20Var.b(canvas, rectF2, 1, e);
         rectF2.set(0.0f, (getHeight() + getScrollY()) - AndroidUtilities.dp(14.0f), getWidth(), getHeight() + getScrollY());
-        l20Var.b(canvas, rectF2, 3, e10);
+        m20Var.b(canvas, rectF2, 3, e7);
         canvas.restore();
         canvas.restore();
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         org.telegram.ui.Cells.t1 t1Var;
         cj0 cj0Var = this.b3;
@@ -408,7 +408,7 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         for (int i14 = 0; i14 < getChildCount(); i14++) {
             View childAt = getChildAt(i14);
@@ -422,7 +422,7 @@ public final class vi0 extends org.telegram.ui.Components.ll0 {
         super.onLayout(z10, i10, i11, i12, i13);
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         cj0 cj0Var = this.b3;
         int dp = AndroidUtilities.dp(cj0Var.N.isEmpty() ? -6.0f : 48.0f);

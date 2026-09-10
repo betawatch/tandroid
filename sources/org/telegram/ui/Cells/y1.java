@@ -12,11 +12,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class y1 extends LinearLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.q6 b;
+    public final org.telegram.ui.Components.o6 b;
     public final View c;
 
     public y1(z1 z1Var, Context context, int i10) {
@@ -30,31 +30,31 @@ public final class y1 extends LinearLayout {
             imageView.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
             imageView.setImageResource(i10);
         }
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, true, false);
-        this.b = q6Var;
-        q6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        q6Var.setTextColor(v02);
-        q6Var.setIncludeFontPadding(false);
-        q6Var.setTypeface(AndroidUtilities.bold());
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, false);
+        this.b = o6Var;
+        o6Var.setTextSize(AndroidUtilities.dp(13.0f));
+        o6Var.setTextColor(v02);
+        o6Var.setIncludeFontPadding(false);
+        o6Var.setTypeface(AndroidUtilities.bold());
         View view = new View(context);
         this.c = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
         if (LocaleController.isRTL) {
-            addView(view, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
-            addView(q6Var, w7.x5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
+            addView(view, w7.a6.t(16, 16, 16, 11, 0, 3, 0));
+            addView(o6Var, w7.a6.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
             View view2 = this.a;
             if (view2 != null) {
-                addView(view2, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
+                addView(view2, w7.a6.t(16, 16, 16, 0, 0, 11, 0));
             }
         } else {
             View view3 = this.a;
             if (view3 != null) {
-                addView(view3, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
+                addView(view3, w7.a6.t(16, 16, 16, 11, 0, 3, 0));
             }
-            addView(q6Var, w7.x5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
-            addView(view, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
+            addView(o6Var, w7.a6.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(view, w7.a6.t(16, 16, 16, 0, 0, 11, 0));
         }
         setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), 16, 16));
         setClickable(true);

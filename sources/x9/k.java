@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class k implements c {
     public static final Charset c = Charset.forName("UTF-8");
@@ -16,12 +16,6 @@ public final class k implements c {
         this.a = file;
     }
 
-    @Override // x9.c
-    public final void b() {
-        w9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
-        this.b = null;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
     /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
@@ -30,7 +24,7 @@ public final class k implements c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String e() {
+    public final String F() {
         hc.a aVar;
         byte[] bArr;
         File file = this.a;
@@ -38,8 +32,8 @@ public final class k implements c {
             if (this.b == null) {
                 try {
                     this.b = new j(file);
-                } catch (IOException e7) {
-                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e7);
+                } catch (IOException e) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
                 }
             }
             j jVar = this.b;
@@ -56,8 +50,8 @@ public final class k implements c {
                 byte[] bArr2 = new byte[i10];
                 try {
                     jVar.a(new e(bArr2, iArr));
-                } catch (IOException e10) {
-                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e10);
+                } catch (IOException e7) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e7);
                 }
                 aVar = new hc.a(bArr2, iArr[0]);
                 if (aVar != null) {
@@ -78,5 +72,11 @@ public final class k implements c {
         }
         if (bArr == null) {
         }
+    }
+
+    @Override // x9.c
+    public final void c() {
+        w9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
     }
 }

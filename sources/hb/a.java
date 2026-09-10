@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final TimeZone a = DesugarTimeZone.getTimeZone("UTC");
@@ -145,25 +145,25 @@ public abstract class a {
             i13 = 0;
             if (str.length() > i16) {
             }
-        } catch (IllegalArgumentException e7) {
-            e = e7;
+        } catch (IllegalArgumentException e) {
+            e = e;
             String str3 = str != null ? null : "\"" + str + '\"';
             message = e.getMessage();
             if (message != null || message.isEmpty()) {
                 message = "(" + e.getClass().getName() + ")";
             }
-            ParseException parseException = new ParseException(e2.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException = new ParseException(e2.i("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException.initCause(e);
             throw parseException;
-        } catch (IndexOutOfBoundsException e10) {
-            e = e10;
+        } catch (IndexOutOfBoundsException e7) {
+            e = e7;
             if (str != null) {
             }
             message = e.getMessage();
             if (message != null) {
             }
             message = "(" + e.getClass().getName() + ")";
-            ParseException parseException2 = new ParseException(e2.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException2 = new ParseException(e2.i("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException2.initCause(e);
             throw parseException2;
         }

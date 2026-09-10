@@ -1,11 +1,11 @@
 package k;
 
 import java.util.ArrayList;
-import m.l3;
+import m.n3;
 import r0.m0;
 import r0.n0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i extends n0 {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class i extends n0 {
                 }
                 break;
             default:
-                ((l3) this.d).a.setVisibility(0);
+                ((n3) this.d).a.setVisibility(0);
                 break;
         }
     }
@@ -68,16 +68,16 @@ public final class i extends n0 {
                 break;
             default:
                 if (!this.b) {
-                    ((l3) this.d).a.setVisibility(this.c);
+                    ((n3) this.d).a.setVisibility(this.c);
                     break;
                 }
                 break;
         }
     }
 
-    public i(l3 l3Var, int i10) {
+    public i(n3 n3Var, int i10) {
         this.a = 1;
-        this.d = l3Var;
+        this.d = n3Var;
         this.c = i10;
         this.b = false;
     }

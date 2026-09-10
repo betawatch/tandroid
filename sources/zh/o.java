@@ -1,267 +1,188 @@
 package zh;
 
-import android.content.Context;
+import j$.util.DesugarArrays;
+import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ja;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.vd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ba;
-import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class o {
-    public static volatile o[] m = new o[4];
-    public static final Object[] n = new Object[4];
-    public final int a;
-    public final HashMap b = new HashMap();
-    public final HashMap c = new HashMap();
-    public final HashMap d = new HashMap();
-    public final HashMap e = new HashMap();
-    public final HashMap f = new HashMap();
-    public final HashMap g = new HashMap();
-    public final HashMap h = new HashMap();
-    public boolean i;
-    public ArrayList j;
-    public boolean k;
-    public ArrayList l;
-
-    static {
-        for (int i10 = 0; i10 < 4; i10++) {
-            n[i10] = new Object();
-        }
+public abstract class o {
+    public static int[] a() {
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, 280, 10, -2013375, -1482439, -7666429, 500, RichMessageLayout.PART_MAX_HEIGHT_DP, 200, 7, -1214690, -1214690, -6606592, MediaDataController.MAX_LINKS_COUNT, 600, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 4, -1926647, -1926647, -6668800, 100, 300, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
     }
 
-    public o(int i10) {
-        this.a = i10;
+    public static int b(int i10, int i11, int i12) {
+        int[] iArr = MessagesController.getInstance(i10).starsGroupcallMessageLimits;
+        for (int i13 = 0; i13 < iArr.length / 7; i13++) {
+            int i14 = i13 * 7;
+            if (i11 >= iArr[i14]) {
+                return iArr[i14 + 1 + i12];
+            }
+        }
+        return 0;
     }
 
-    public static o g(int i10) {
-        o oVar;
-        o oVar2 = m[i10];
-        if (oVar2 != null) {
-            return oVar2;
-        }
-        synchronized (n[i10]) {
-            try {
-                oVar = m[i10];
-                if (oVar == null) {
-                    o[] oVarArr = m;
-                    o oVar3 = new o(i10);
-                    oVarArr[i10] = oVar3;
-                    oVar = oVar3;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ab, code lost:
+    
+        if (r6.equals("color_bg") == false) goto L42;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int[] c(TLRPC.TL_jsonArray tL_jsonArray) {
+        char c10;
+        int[] iArr = new int[tL_jsonArray.value.size() * 7];
+        for (int i10 = 0; i10 < tL_jsonArray.value.size(); i10++) {
+            TLRPC.JSONValue jSONValue = tL_jsonArray.value.get(i10);
+            if (jSONValue instanceof TLRPC.TL_jsonObject) {
+                ArrayList<TLRPC.TL_jsonObjectValue> arrayList = ((TLRPC.TL_jsonObject) jSONValue).value;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = arrayList.get(i11);
+                    i11++;
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObjectValue;
+                    TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue2.value;
+                    int i12 = 2;
+                    int i13 = -1;
+                    if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
+                        int i14 = (int) ((TLRPC.TL_jsonNumber) jSONValue2).value;
+                        String str = tL_jsonObjectValue2.key;
+                        str.getClass();
+                        switch (str.hashCode()) {
+                            case -1544802595:
+                                if (str.equals("text_length_max")) {
+                                    c10 = 0;
+                                    break;
+                                }
+                                c10 = 65535;
+                                break;
+                            case -1186480213:
+                                if (str.equals("pin_period")) {
+                                    c10 = 1;
+                                    break;
+                                }
+                                c10 = 65535;
+                                break;
+                            case 109757537:
+                                if (str.equals("stars")) {
+                                    c10 = 2;
+                                    break;
+                                }
+                                c10 = 65535;
+                                break;
+                            case 1686749675:
+                                if (str.equals("emoji_max")) {
+                                    c10 = 3;
+                                    break;
+                                }
+                                c10 = 65535;
+                                break;
+                            default:
+                                c10 = 65535;
+                                break;
+                        }
+                        switch (c10) {
+                            case 0:
+                                break;
+                            case 1:
+                                i12 = 1;
+                                break;
+                            case 2:
+                                i12 = 0;
+                                break;
+                            case 3:
+                                i12 = 3;
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        if (i12 >= 0) {
+                            iArr[(i10 * 7) + i12] = i14;
+                        }
+                    } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {
+                        String str2 = ((TLRPC.TL_jsonString) jSONValue2).value;
+                        String str3 = tL_jsonObjectValue2.key;
+                        str3.getClass();
+                        switch (str3.hashCode()) {
+                            case -1354842834:
+                                if (str3.equals("color1")) {
+                                    i12 = 0;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -1354842833:
+                                if (str3.equals("color2")) {
+                                    i12 = 1;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -628825439:
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        switch (i12) {
+                            case 0:
+                                i13 = 4;
+                                break;
+                            case 1:
+                                i13 = 5;
+                                break;
+                            case 2:
+                                i13 = 6;
+                                break;
+                        }
+                        if (i13 >= 0) {
+                            try {
+                                iArr[(i10 * 7) + i13] = (int) Long.parseLong("FF" + str2, 16);
+                            } catch (Exception e) {
+                                FileLog.e(e);
+                            }
+                        }
+                    }
                 }
-            } catch (Throwable th2) {
-                throw th2;
             }
         }
-        return oVar;
+        return iArr;
     }
 
-    public final boolean a(long j3) {
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        TLRPC.TL_payments_starsRevenueStats h = h(j3, false);
-        return (h == null || (tL_starsRevenueStatus = h.status) == null || (tL_starsRevenueStatus.available_balance.amount <= 0 && tL_starsRevenueStatus.overall_revenue.amount <= 0 && tL_starsRevenueStatus.current_balance.amount <= 0)) ? false : true;
-    }
-
-    public final boolean b(long j3) {
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        TLRPC.TL_payments_starsRevenueStats j10 = j(j3, false);
-        return (j10 == null || (tL_starsRevenueStatus = j10.status) == null || (tL_starsRevenueStatus.current_balance.amount <= 0 && tL_starsRevenueStatus.available_balance.amount <= 0 && tL_starsRevenueStatus.overall_revenue.amount <= 0)) ? false : true;
-    }
-
-    public final TL_stars.StarsAmount c(long j3) {
-        TLRPC.TL_payments_starsRevenueStats h = h(j3, false);
-        return h == null ? TL_stars.StarsAmount.ofStars(0L) : h.status.current_balance;
-    }
-
-    public final l d(long j3) {
-        Long valueOf = Long.valueOf(j3);
-        HashMap hashMap = this.g;
-        l lVar = (l) hashMap.get(valueOf);
-        if (lVar != null) {
-            return lVar;
+    public static int[] d(String str) {
+        if (str == null || str.length() == 0) {
+            return a();
         }
-        Long valueOf2 = Long.valueOf(j3);
-        l lVar2 = new l(this.a, j3);
-        hashMap.put(valueOf2, lVar2);
-        return lVar2;
-    }
-
-    public final m e(long j3) {
-        Long valueOf = Long.valueOf(j3);
-        HashMap hashMap = this.h;
-        m mVar = (m) hashMap.get(valueOf);
-        if (mVar != null) {
-            return mVar;
+        try {
+            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.h4(1)).toArray();
+        } catch (Exception e) {
+            FileLog.e(e);
+            return a();
         }
-        Long valueOf2 = Long.valueOf(j3);
-        m mVar2 = new m(this.a, j3);
-        hashMap.put(valueOf2, mVar2);
-        return mVar2;
     }
 
-    public final void f(Context context, long j3, long j10, Utilities.Callback callback) {
-        l lVar = (l) this.g.get(Long.valueOf(j3));
-        if (lVar != null) {
-            ArrayList arrayList = lVar.e;
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                if (!((TL_payments.connectedBotStarRef) arrayList.get(i10)).revoked && ((TL_payments.connectedBotStarRef) arrayList.get(i10)).bot_id == j10) {
-                    callback.run((TL_payments.connectedBotStarRef) arrayList.get(i10));
-                    return;
+    public static boolean e(int[] iArr, int[] iArr2) {
+        if (iArr2 != null && iArr.length == iArr2.length) {
+            for (int i10 = 0; i10 < iArr.length; i10++) {
+                if (iArr[i10] == iArr2[i10]) {
                 }
             }
+            return true;
         }
-        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
-        TL_payments.getConnectedStarRefBot getconnectedstarrefbot = new TL_payments.getConnectedStarRefBot();
-        int i11 = this.a;
-        getconnectedstarrefbot.peer = MessagesController.getInstance(i11).getInputPeer(j3);
-        getconnectedstarrefbot.bot = MessagesController.getInstance(i11).getInputUser(j10);
-        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new ja(this, b2Var, j10, callback, 6));
-        b2Var.g0 = true;
-        b2Var.setOnCancelListener(new ba(this, sendRequest, 9));
-        b2Var.q(200L);
+        return false;
     }
 
-    public final TLRPC.TL_payments_starsRevenueStats h(long j3, boolean z10) {
-        Long l4 = (Long) this.b.get(Long.valueOf(j3));
-        TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) this.c.get(Long.valueOf(j3));
-        if (l4 != null && System.currentTimeMillis() - l4.longValue() <= 300000 && !z10) {
-            return tL_payments_starsRevenueStats;
-        }
-        TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.j6.I.q();
-        int i10 = this.a;
-        tL_payments_getStarsRevenueStats.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueStats, new h(this, j3, 0));
-        return tL_payments_starsRevenueStats;
-    }
-
-    public final long i(long j3) {
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus;
-        TL_stars.StarsAmount starsAmount;
-        TLRPC.TL_payments_starsRevenueStats j10 = j(j3, false);
-        if (j10 == null || (tL_starsRevenueStatus = j10.status) == null || (starsAmount = tL_starsRevenueStatus.current_balance) == null) {
-            return 0L;
-        }
-        return starsAmount.amount;
-    }
-
-    public final TLRPC.TL_payments_starsRevenueStats j(long j3, boolean z10) {
-        Long l4 = (Long) this.d.get(Long.valueOf(j3));
-        TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) this.e.get(Long.valueOf(j3));
-        if (l4 != null && System.currentTimeMillis() - l4.longValue() <= 300000 && !z10) {
-            return tL_payments_starsRevenueStats;
-        }
-        TLRPC.TL_payments_getStarsRevenueStats tL_payments_getStarsRevenueStats = new TLRPC.TL_payments_getStarsRevenueStats();
-        tL_payments_getStarsRevenueStats.ton = true;
-        tL_payments_getStarsRevenueStats.dark = org.telegram.ui.ActionBar.j6.I.q();
-        int i10 = this.a;
-        tL_payments_getStarsRevenueStats.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(-j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getStarsRevenueStats, new h(this, j3, 1), null, null, 0, chatFull != null ? chatFull.stats_dc : ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
-        return tL_payments_starsRevenueStats;
-    }
-
-    public final n k(long j3) {
-        Long valueOf = Long.valueOf(j3);
-        HashMap hashMap = this.f;
-        n nVar = (n) hashMap.get(valueOf);
-        if (nVar != null) {
-            return nVar;
-        }
-        Long valueOf2 = Long.valueOf(j3);
-        n nVar2 = new n();
-        hashMap.put(valueOf2, nVar2);
-        return nVar2;
-    }
-
-    public final void l(long j3) {
-        n k10 = k(j3);
-        boolean[] zArr = k10.d;
-        for (int i10 = 0; i10 < 3; i10++) {
-            if (!zArr[i10]) {
-                k10.a[i10].clear();
-                k10.c[i10] = null;
-                zArr[i10] = false;
-                k10.e[i10] = false;
-                p(i10, j3);
-            }
-        }
-    }
-
-    public final boolean m(long j3) {
-        return j(j3, false) != null;
-    }
-
-    public final void n() {
-        if (this.i || this.j != null) {
-            return;
-        }
-        this.i = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TL_bots.getAdminedBots(), new i(this, 0));
-    }
-
-    public final void o() {
-        if (this.k || this.l != null) {
-            return;
-        }
-        this.k = true;
-        ConnectionsManager.getInstance(this.a).sendRequest(new TLRPC.TL_channels_getAdminedPublicChannels(), new i(this, 1));
-    }
-
-    public final void p(int i10, long j3) {
-        n k10 = k(j3);
-        boolean[] zArr = k10.d;
-        if (zArr[i10] || k10.e[i10]) {
-            return;
-        }
-        zArr[i10] = true;
-        TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions = new TL_stars.TL_payments_getStarsTransactions();
-        int i11 = this.a;
-        tL_payments_getStarsTransactions.peer = MessagesController.getInstance(i11).getInputPeer(j3);
-        tL_payments_getStarsTransactions.inbound = i10 == 1;
-        tL_payments_getStarsTransactions.outbound = i10 == 2;
-        String str = k10.c[i10];
-        tL_payments_getStarsTransactions.offset = str;
-        if (str == null) {
-            tL_payments_getStarsTransactions.offset = "";
-        }
-        ConnectionsManager.getInstance(i11).sendRequest(tL_payments_getStarsTransactions, new bi.s7(this, k10, i10, j3, 6));
-    }
-
-    public final void q(TL_update.TL_updateStarsRevenueStatus tL_updateStarsRevenueStatus) {
-        long peerDialogId = DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer);
-        if (peerDialogId >= 0) {
-            TLRPC.TL_payments_starsRevenueStats h = h(peerDialogId, true);
-            if (h != null) {
-                h.status = tL_updateStarsRevenueStatus.status;
-                NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(peerDialogId));
-            }
-            l(peerDialogId);
-            return;
-        }
-        ke keVar = ke.x1;
-        if (keVar == null || keVar.z0 != DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer)) {
-            return;
-        }
-        ke keVar2 = ke.x1;
-        TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus = tL_updateStarsRevenueStatus.status;
-        keVar2.g0(tL_starsRevenueStatus.current_balance instanceof TL_stars.TL_starsTonAmount, tL_starsRevenueStatus);
-        ke.x1.e0();
-    }
-
-    public final void r(long j3) {
-        Long l4 = (Long) this.b.get(Long.valueOf(j3));
-        h(j3, l4 == null || System.currentTimeMillis() - l4.longValue() > 30000);
+    public static String f(int[] iArr) {
+        return (String) DesugarArrays.stream(iArr).mapToObj(new vd(0)).collect(Collectors.joining(","));
     }
 }

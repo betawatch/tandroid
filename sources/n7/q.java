@@ -1,51 +1,24 @@
 package n7;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class q extends o {
-    public final /* synthetic */ r d;
+public final class q extends n {
+    public final /* synthetic */ r c;
 
     public q(r rVar) {
-        this.d = rVar;
+        this.c = rVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object obj2 = this.d.get(entry.getKey());
-            if (obj2 != null && obj2.equals(entry.getValue())) {
-                return true;
-            }
-        }
-        return false;
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i10) {
+        r rVar = this.c;
+        return new AbstractMap.SimpleImmutableEntry(rVar.d.c.f.get(i10), rVar.d.d.get(i10));
     }
 
-    @Override // n7.o, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return a.b(this.d.entrySet());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return t().listIterator(0);
-    }
-
-    @Override // n7.h
-    public final d0 p() {
-        return t().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d.d.size();
-    }
-
-    @Override // n7.o
-    public final m u() {
-        return new p(this);
+        return this.c.d.d.size();
     }
 }

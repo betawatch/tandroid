@@ -1,80 +1,41 @@
 package org.telegram.ui;
 
-import android.appwidget.AppWidgetManager;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ChatsWidgetProvider;
-import org.telegram.messenger.ContactsWidgetProvider;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.DownloadController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class xy extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ dz a;
+public final class xy implements DownloadController.FileDownloadProgressListener {
+    public long a;
+    public long b;
+    public final String c;
+    public final /* synthetic */ yy d;
 
-    public xy(dz dzVar) {
-        this.a = dzVar;
+    public xy(yy yyVar, String str) {
+        this.d = yyVar;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        dz dzVar = this.a;
-        int i12 = dzVar.w;
-        ArrayList arrayList = dzVar.e;
-        int i13 = dzVar.x;
-        if (i10 == -1) {
-            if (dzVar.y != null) {
-                dzVar.finishFragment();
-                return;
-            }
-            dzVar.Y();
-        }
-        if (i10 != 1 || dzVar.getParentActivity() == null) {
-            return;
-        }
-        ArrayList<MessagesStorage.TopicKey> arrayList2 = new ArrayList<>();
-        for (int i14 = 0; i14 < arrayList.size(); i14++) {
-            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
-        }
-        dzVar.getMessagesStorage().putWidgetDialogs(i13, arrayList2);
-        SharedPreferences.Editor edit = dzVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
-        i11 = ((org.telegram.ui.ActionBar.n2) dzVar).currentAccount;
-        edit.putInt("account" + i13, i11);
-        edit.putInt(TeXSymbolParser.TYPE_ATTR + i13, i12);
-        edit.commit();
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(dzVar.getParentActivity());
-        if (i12 == 0) {
-            ChatsWidgetProvider.updateWidget(dzVar.getParentActivity(), appWidgetManager, i13);
-        } else {
-            ContactsWidgetProvider.updateWidget(dzVar.getParentActivity(), appWidgetManager, i13);
-        }
-        z0 z0Var = dzVar.y;
-        if (z0Var == null) {
-            dzVar.Y();
-            return;
-        }
-        int i15 = z0Var.a;
-        Object obj = z0Var.b;
-        switch (i15) {
-            case 25:
-                ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
-                int i16 = ChatsWidgetConfigActivity.F;
-                Intent intent = new Intent();
-                intent.putExtra("appWidgetId", chatsWidgetConfigActivity.E);
-                chatsWidgetConfigActivity.setResult(-1, intent);
-                chatsWidgetConfigActivity.finish();
-                break;
-            default:
-                ContactsWidgetConfigActivity contactsWidgetConfigActivity = (ContactsWidgetConfigActivity) obj;
-                int i17 = ContactsWidgetConfigActivity.F;
-                Intent intent2 = new Intent();
-                intent2.putExtra("appWidgetId", contactsWidgetConfigActivity.E);
-                contactsWidgetConfigActivity.setResult(-1, intent2);
-                contactsWidgetConfigActivity.finish();
-                break;
-        }
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final int getObserverTag() {
+        return 0;
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j3, long j10) {
+        this.b = j3;
+        this.a = j10;
+        this.d.c();
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
     }
 }

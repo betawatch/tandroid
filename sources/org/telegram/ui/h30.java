@@ -1,31 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class h30 extends g.p {
-    public final /* synthetic */ j60 c;
+public final class h30 extends s4.s0 {
+    public final /* synthetic */ j60 a;
 
     public h30(j60 j60Var) {
-        this.c = j60Var;
+        this.a = j60Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        d60 d60Var;
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
         int i11;
-        int i12;
-        int i13 = j60.F3 ? 6 : 2;
-        if (j60.G3 || i10 < (i11 = (d60Var = this.c.P).G) || i10 >= (i12 = d60Var.H)) {
-            return i13;
+        j60 j60Var = this.a;
+        p50 p50Var = j60Var.Q;
+        if (i10 != 0) {
+            org.telegram.ui.Components.s40 s40Var = j60Var.m0;
+            if (s40Var != null) {
+                s40Var.b(true);
+            }
+            org.telegram.ui.Components.s40 s40Var2 = j60Var.n0;
+            if (s40Var2 != null) {
+                s40Var2.b(true);
+                return;
+            }
+            return;
         }
-        int i14 = i12 - i11;
-        int i15 = (i10 != i12 - 1 || (!j60.F3 && i14 % 2 == 0)) ? 1 : 2;
-        if (!j60.F3) {
-            return i15;
+        float dp = j60Var.y0 - AndroidUtilities.dp(74.0f);
+        i11 = ((org.telegram.ui.ActionBar.h3) j60Var).backgroundPaddingTop;
+        if (dp + i11 >= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() || !p50Var.canScrollVertically(1)) {
+            return;
         }
-        if (i14 == 1) {
-            return 6;
+        p50Var.getChildAt(0);
+        org.telegram.ui.Components.fl0 fl0Var = (org.telegram.ui.Components.fl0) p50Var.K(0);
+        if (fl0Var != null) {
+            View view = fl0Var.a;
+            if (view.getTop() > 0) {
+                p50Var.v0(0, view.getTop(), null);
+            }
         }
-        return i14 == 2 ? 3 : 2;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ChatObject.Call call;
+        ViewGroup viewGroup;
+        j60 j60Var = this.a;
+        if (j60Var.Q.getChildCount() <= 0 || (call = j60Var.a1) == null) {
+            return;
+        }
+        if (!call.loadingMembers && !call.membersLoadEndReached && j60Var.Y.N0() > j60Var.P.F - 5) {
+            j60Var.a1.loadMembers(false);
+        }
+        j60.J0(j60Var);
+        y50 y50Var = j60Var.U0;
+        if (y50Var != null) {
+            y50Var.invalidate();
+        }
+        viewGroup = ((org.telegram.ui.ActionBar.h3) j60Var).containerView;
+        viewGroup.invalidate();
     }
 }

@@ -13,24 +13,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class aq0 extends FrameLayout {
     public int E;
-    public lp0 F;
-    public dh.d G;
-    public dh.d H;
+    public kp0 F;
+    public bh.d G;
+    public bh.d H;
     public boolean I;
     public final Path J;
     public int K;
     public final /* synthetic */ bq0 L;
-    public final r60 a;
+    public final zp0 a;
     public final s4.c0 b;
     public final w7 c;
     public int d;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.d6 e;
     public final ArrayList f;
-    public np0 h;
+    public mp0 h;
     public final RectF n;
     public final RectF r;
     public final RectF s;
@@ -51,26 +51,26 @@ public final class aq0 extends FrameLayout {
         this.w = new Paint(1);
         this.J = new Path();
         this.K = TLObject.FLAG_31;
-        r60 r60Var = new r60(this, context, f6Var, 1);
-        this.a = r60Var;
-        r60Var.setClipToPadding(false);
-        r60Var.setClipChildren(false);
-        r60Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        r60Var.setOverScrollMode(2);
-        r60Var.setHorizontalScrollBarEnabled(false);
-        r60Var.setItemAnimator(null);
+        zp0 zp0Var = new zp0(this, context, f6Var, 0);
+        this.a = zp0Var;
+        zp0Var.setClipToPadding(false);
+        zp0Var.setClipChildren(false);
+        zp0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        zp0Var.setOverScrollMode(2);
+        zp0Var.setHorizontalScrollBarEnabled(false);
+        zp0Var.setItemAnimator(null);
         s4.c0 c0Var = new s4.c0(0, false);
         this.b = c0Var;
-        r60Var.setLayoutManager(c0Var);
+        zp0Var.setLayoutManager(c0Var);
         w7 w7Var = new w7(this, 5);
         this.c = w7Var;
-        r60Var.setAdapter(w7Var);
-        r60Var.setOnItemClickListener(new i(this, 20));
-        addView(r60Var, w7.x5.e(-1, -1, 119));
+        zp0Var.setAdapter(w7Var);
+        zp0Var.setOnItemClickListener(new i(this, 20));
+        addView(zp0Var, w7.a6.e(-1, -1, 119));
         setHorizontalScrollBarEnabled(false);
         setClipToPadding(false);
         setClipChildren(false);
-        this.e = new org.telegram.ui.Components.e6(r60Var, 0L, 320L, org.telegram.ui.Components.pr.h);
+        this.e = new org.telegram.ui.Components.d6(zp0Var, 0L, 320L, org.telegram.ui.Components.wr.h);
     }
 
     public final void a(int i10, boolean z10) {
@@ -85,16 +85,16 @@ public final class aq0 extends FrameLayout {
         }
         ArrayList arrayList = this.f;
         boolean isEmpty = arrayList.isEmpty();
-        r60 r60Var = this.a;
+        zp0 zp0Var = this.a;
         if (!isEmpty) {
             int clamp = Utilities.clamp(i10, arrayList.size() - 1, 0);
             if (z10) {
-                r60Var.x0(clamp);
+                zp0Var.x0(clamp);
             } else {
-                r60Var.u0(clamp);
+                zp0Var.u0(clamp);
             }
         }
-        r60Var.invalidate();
+        zp0Var.invalidate();
     }
 
     public final void b(int i10) {
@@ -107,8 +107,8 @@ public final class aq0 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        yf.p.g(this.G, 0, 0, getWidth(), getHeight());
-        yf.p.g(this.H, 0, 0, getWidth(), getHeight());
+        xf.p.g(this.G, 0, 0, getWidth(), getHeight());
+        xf.p.g(this.H, 0, 0, getWidth(), getHeight());
         (this.I ? this.H : this.G).draw(canvas);
         canvas.save();
         canvas.clipPath(this.J);

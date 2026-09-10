@@ -1,27 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sb implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ub b;
-    public final /* synthetic */ q0.a c;
+public interface sb {
+    void I(tb tbVar, eb ebVar, rg rgVar, rl rlVar);
 
-    public /* synthetic */ sb(q0.a aVar, ub ubVar, int i10) {
-        this.a = i10;
-        this.c = aVar;
-        this.b = ubVar;
-    }
-
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                ((gb) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-            default:
-                ((ml) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-        }
-    }
+    void k(tb tbVar, eb ebVar, cb cbVar, fb fbVar);
 }

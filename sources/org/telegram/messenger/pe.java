@@ -1,86 +1,66 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.eo;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pe implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ pe(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
+    public /* synthetic */ pe(MessagesController messagesController, TLRPC.updates_ChannelDifference updates_channeldifference, long j3, TLRPC.Chat chat, a0.i iVar, int i10, long j10) {
+        this.e = messagesController;
+        this.f = updates_channeldifference;
+        this.c = j3;
+        this.h = chat;
+        this.n = iVar;
+        this.b = i10;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeletedInternal$230(this.c);
-                break;
-            case 1:
-                this.b.lambda$markVoiceMessageContentAsRead$216(this.c);
-                break;
-            case 2:
-                this.b.lambda$emptyMessagesMedia$96(this.c);
-                break;
-            case 3:
-                this.b.lambda$emptyMessagesMedia$97(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadUserInfo$128(this.c);
-                break;
-            case 5:
-                this.b.lambda$replaceMessageIfExists$233(this.c);
-                break;
-            case 6:
-                this.b.lambda$markMessagesAsDeletedByRandoms$220(this.c);
-                break;
-            case 7:
-                this.b.lambda$deleteFromDownloadQueue$183(this.c);
-                break;
-            case 8:
-                this.b.lambda$deleteContacts$147(this.c);
-                break;
-            case 9:
-                this.b.lambda$updateMessageVerifyFlags$195(this.c);
-                break;
-            case 10:
-                this.b.lambda$putMessagesInternal$198(this.c);
-                break;
-            case 11:
-                this.b.lambda$putMessagesInternal$197(this.c);
-                break;
-            case 12:
-                this.b.lambda$markMessagesAsDeletedByRandoms$221(this.c);
-                break;
-            case 13:
-                this.b.lambda$markMessagesAsDeletedInternal$224(this.c);
-                break;
-            case 14:
-                this.b.lambda$markMessagesAsDeletedInternal$227(this.c);
-                break;
-            case 15:
-                this.b.lambda$onReactionsUpdate$105(this.c);
-                break;
-            case 16:
-                this.b.lambda$deleteDialog$88(this.c);
-                break;
-            case 17:
-                this.b.lambda$saveDialogFiltersOrder$75(this.c);
-                break;
-            case 18:
-                this.b.lambda$putMessages$236(this.c);
-                break;
-            case 19:
-                this.b.lambda$putMessages$237(this.c);
+                ((MessagesController) this.e).lambda$getChannelDifference$346((TLRPC.updates_ChannelDifference) this.f, this.c, (TLRPC.Chat) this.h, (a0.i) this.n, this.b, this.d);
                 break;
             default:
-                this.b.lambda$putWebPages$187(this.c);
+                w70 w70Var = (w70) this.e;
+                w70 w70Var2 = (w70) this.f;
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.h;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.n;
+                w70Var.u();
+                SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.b);
+                StringBuilder sb2 = new StringBuilder("sound_enabled_");
+                long j3 = this.c;
+                long j10 = this.d;
+                boolean z10 = notificationsSettings.getBoolean(a2.i(j3, j10, sb2), true);
+                notificationsSettings.edit().putBoolean(a2.i(j3, j10, new StringBuilder("sound_enabled_")), !z10).apply();
+                w70Var2.u();
+                if (org.telegram.ui.Components.wc.a(p2Var)) {
+                    org.telegram.ui.Components.wc.S(z10 ? 1 : 0, p2Var, f6Var).j();
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ pe(w70 w70Var, int i10, long j3, long j10, w70 w70Var2, eo eoVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = w70Var;
+        this.b = i10;
+        this.c = j3;
+        this.d = j10;
+        this.f = w70Var2;
+        this.h = eoVar;
+        this.n = f6Var;
     }
 }

@@ -1,37 +1,36 @@
 package bi;
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.wr;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class n8 {
-    public int a;
-    public long b;
-    public int c;
+public final /* synthetic */ class n8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r8 b;
 
-    public n8(int i10, int i11, long j3) {
-        this.c = i10;
-        this.b = j3;
-        this.a = i11;
+    public /* synthetic */ n8(r8 r8Var, int i10) {
+        this.a = i10;
+        this.b = r8Var;
     }
 
-    public boolean a(int i10, int i11) {
-        int i12 = this.c;
-        if (i12 != 1) {
-            if ((i12 == 2 || i12 == 3) && ConnectionsManager.getInstance(i10).getCurrentTime() >= this.b) {
-                return false;
-            }
-        } else if (this.a >= i11) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c();
+                break;
+            default:
+                r8 r8Var = this.b;
+                r8Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(wr.h).setDuration(280L).start();
+                r8Var.c = System.currentTimeMillis();
+                r8Var.invalidate();
+                try {
+                    r8Var.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(r8Var.h, 59500L);
+                break;
         }
-        return true;
-    }
-
-    public int b() {
-        int i10 = this.c;
-        if (i10 != 2) {
-            return i10 != 3 ? 14 : 16;
-        }
-        return 15;
     }
 }

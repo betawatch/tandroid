@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lu implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,13 +37,13 @@ public final /* synthetic */ class lu implements Utilities.Callback {
                 }
                 break;
             case 1:
-                tx txVar = (tx) this.c;
+                vx vxVar = (vx) this.c;
                 Runnable runnable = (Runnable) obj;
-                ((org.telegram.ui.ActionBar.b2) this.d).q(150L);
-                uy uyVar = txVar.b;
-                Boolean bool = uyVar.G.bot_participant;
+                ((org.telegram.ui.ActionBar.d2) this.d).q(150L);
+                wy wyVar = vxVar.b;
+                Boolean bool = wyVar.G.bot_participant;
                 if (bool != null && bool.booleanValue()) {
-                    uyVar.getMessagesController().addUserToChat(this.b, uyVar.getMessagesController().getUser(Long.valueOf(uyVar.H)), 0, null, uyVar, false, runnable, new lf(8, runnable));
+                    wyVar.getMessagesController().addUserToChat(this.b, wyVar.getMessagesController().getUser(Long.valueOf(wyVar.H)), 0, null, wyVar, false, runnable, new nf(8, runnable));
                     break;
                 } else {
                     runnable.run();

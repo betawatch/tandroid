@@ -1,72 +1,65 @@
 package m4;
 
-import android.media.session.MediaSession;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.os.SystemClock;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class r1 {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public static final String q;
-    public static final String r;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public static final String h;
     public final int a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final IBinder f;
-    public final Bundle g;
-    public final MediaSession.Token h;
+    public final Bundle b;
+    public final long c;
+    public final p1 d;
 
     static {
         String str = e2.d0.a;
-        i = Integer.toString(0, 36);
-        j = Integer.toString(1, 36);
-        k = Integer.toString(2, 36);
-        l = Integer.toString(3, 36);
-        m = Integer.toString(4, 36);
-        n = Integer.toString(5, 36);
-        o = Integer.toString(6, 36);
-        p = Integer.toString(7, 36);
-        q = Integer.toString(8, 36);
-        r = Integer.toString(9, 36);
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
+        h = Integer.toString(3, 36);
     }
 
-    public r1(int i10, String str, f1 f1Var, Bundle bundle, MediaSession.Token token) {
-        str.getClass();
-        this.a = i10;
-        this.b = 1008001300;
-        this.c = 5;
-        this.d = str;
-        this.e = "";
-        this.f = f1Var;
-        this.g = bundle;
-        this.h = token;
+    public r1(int i10) {
+        this(i10, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof r1)) {
-            return false;
+    public static r1 a(Bundle bundle) {
+        p1 p1Var;
+        int i10 = bundle.getInt(e, -1);
+        Bundle bundle2 = bundle.getBundle(f);
+        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
+        Bundle bundle3 = bundle.getBundle(h);
+        if (bundle3 != null) {
+            int i11 = bundle3.getInt(p1.d, MediaDataController.MAX_STYLE_RUNS_COUNT);
+            String string = bundle3.getString(p1.e, "");
+            Bundle bundle4 = bundle3.getBundle(p1.f);
+            if (bundle4 == null) {
+                bundle4 = Bundle.EMPTY;
+            }
+            p1Var = new p1(string, i11, bundle4);
+        } else {
+            p1Var = i10 != 0 ? new p1(i10) : null;
         }
-        r1 r1Var = (r1) obj;
-        return this.a == r1Var.a && this.b == r1Var.b && this.c == r1Var.c && TextUtils.equals(this.d, r1Var.d) && TextUtils.equals(this.e, r1Var.e) && Objects.equals(this.f, r1Var.f) && Objects.equals(this.h, r1Var.h);
+        p1 p1Var2 = p1Var;
+        if (bundle2 == null) {
+            bundle2 = Bundle.EMPTY;
+        }
+        return new r1(i10, bundle2, j3, p1Var2);
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), 0, Integer.valueOf(this.b), Integer.valueOf(this.c), this.d, this.e, null, this.f, this.h);
-    }
-
-    public final String toString() {
-        return "SessionToken {pkg=" + this.d + " type=0 libraryVersion=" + this.b + " interfaceVersion=" + this.c + " service=" + this.e + " IMediaSession=" + this.f + " extras=" + this.g + "}";
+    public r1(int i10, Bundle bundle, long j3, p1 p1Var) {
+        e2.d.b(p1Var == null || i10 < 0);
+        this.a = i10;
+        this.b = new Bundle(bundle);
+        this.c = j3;
+        if (p1Var == null && i10 < 0) {
+            p1Var = new p1(i10);
+        }
+        this.d = p1Var;
     }
 }

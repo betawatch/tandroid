@@ -1,44 +1,102 @@
 package di;
 
 import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class t3 extends View {
-    public int a;
-    public final /* synthetic */ x3 b;
+public final /* synthetic */ class t3 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ f6 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t3(x3 x3Var, Context context) {
-        super(context);
-        this.b = x3Var;
+    public /* synthetic */ t3(Object obj, Context context, int i10, long j3, f6 f6Var, int i11) {
+        this.a = i11;
+        this.b = obj;
+        this.c = context;
+        this.d = i10;
+        this.e = j3;
+        this.f = f6Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        x3 x3Var = this.b;
-        g3 g3Var = x3Var.e;
-        ArrayList arrayList = x3Var.b0;
-        int size = View.MeasureSpec.getSize(i10);
-        int i13 = this.a;
-        if (i13 != -1) {
-            setMeasuredDimension(size, i13);
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                final org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.b;
+                final TLRPC.UserFull userFull = (TLRPC.UserFull) obj;
+                final int i10 = 0;
+                final Context context = this.c;
+                final int i11 = this.d;
+                final long j3 = this.e;
+                final f6 f6Var = this.f;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.u3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                TLRPC.UserFull userFull2 = userFull;
+                                if (userFull2 != null && userFull2.starref_program != null) {
+                                    h3Var.dismiss();
+                                    h4.G0(context, i11, userFull2.starref_program, j3, f6Var, true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.UserFull userFull3 = userFull;
+                                if (userFull3 != null && userFull3.starref_program != null) {
+                                    h3Var.dismiss();
+                                    h4.G0(context, i11, userFull3.starref_program, j3, f6Var, true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final org.telegram.ui.ActionBar.h3 h3Var2 = (org.telegram.ui.ActionBar.h3) this.b;
+                final TLRPC.UserFull userFull2 = (TLRPC.UserFull) obj;
+                final int i12 = 1;
+                final Context context2 = this.c;
+                final int i13 = this.d;
+                final long j10 = this.e;
+                final f6 f6Var2 = this.f;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.u3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                TLRPC.UserFull userFull22 = userFull2;
+                                if (userFull22 != null && userFull22.starref_program != null) {
+                                    h3Var2.dismiss();
+                                    h4.G0(context2, i13, userFull22.starref_program, j10, f6Var2, true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLRPC.UserFull userFull3 = userFull2;
+                                if (userFull3 != null && userFull3.starref_program != null) {
+                                    h3Var2.dismiss();
+                                    h4.G0(context2, i13, userFull3.starref_program, j10, f6Var2, true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                ((org.telegram.ui.ActionBar.h3[]) this.b)[0].dismiss();
+                h4.H0(this.c, this.d, (TL_payments.connectedBotStarRef) obj, this.e, this.f);
+                break;
         }
-        if (x3Var.e0 == x3.j0) {
-            i12 = arrayList.size();
-        } else {
-            ArrayList arrayList2 = x3Var.f0;
-            if (arrayList2 != null) {
-                i12 = (x3Var.d0 ? arrayList.size() : 0) + arrayList2.size() + (x3Var.c0 ? 1 : 0);
-            } else {
-                i12 = 0;
-            }
-        }
-        setMeasuredDimension(size, Math.max(0, (AndroidUtilities.displaySize.y - AndroidUtilities.dp(62.0f)) - (((int) (((int) (size / g3Var.J)) * x3Var.O)) * ((int) Math.ceil(i12 / g3Var.J)))));
     }
 }

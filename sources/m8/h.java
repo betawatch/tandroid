@@ -37,7 +37,7 @@ import n6.u;
 import w7.d0;
 import w7.e0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public final class h implements Parcelable.Creator {
                 Uri iconUri = mediaDescription.getIconUri();
                 Bundle extras = mediaDescription.getExtras();
                 if (extras != null) {
-                    y.F(extras);
+                    y.i(extras);
                     try {
                         extras.isEmpty();
                     } catch (BadParcelableException unused) {

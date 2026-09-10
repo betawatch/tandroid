@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class cc0 extends f70 {
+public final class cc0 extends e70 {
     public cc0(fc0 fc0Var, Bundle bundle) {
         super(bundle);
     }
@@ -38,7 +38,7 @@ public final class cc0 extends f70 {
             TLRPC.GroupCall groupCall = groupcall.call;
             tL_inputGroupCall.id = groupCall.id;
             tL_inputGroupCall.access_hash = groupCall.access_hash;
-            org.telegram.ui.Components.voip.d2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
+            org.telegram.ui.Components.voip.e2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
             return;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
@@ -58,10 +58,10 @@ public final class cc0 extends f70 {
         TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
         tL_inputGroupCall2.id = groupCall2.id;
         tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-        org.telegram.ui.Components.voip.d2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
+        org.telegram.ui.Components.voip.e2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
     }
 
-    @Override // org.telegram.ui.f70
+    @Override // org.telegram.ui.e70
     public final void n0(HashSet hashSet) {
         if (hashSet.size() == 1) {
             TLRPC.User user = getMessagesController().getUser((Long) hashSet.iterator().next());
@@ -69,14 +69,14 @@ public final class cc0 extends f70 {
             if (userFull == null) {
                 TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
                 tL_users_getFullUser.id = getMessagesController().getInputUser(user.id);
-                getConnectionsManager().sendRequest(tL_users_getFullUser, new ro(29, this, user));
+                getConnectionsManager().sendRequest(tL_users_getFullUser, new org.telegram.ui.Components.th(24, this, user));
                 return;
             }
-            org.telegram.ui.Components.voip.d2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
+            org.telegram.ui.Components.voip.e2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
         } else {
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new bc0(0, this, hashSet));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new org.telegram.ui.Components.th(25, this, hashSet));
         }
         finishFragment();
     }

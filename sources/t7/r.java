@@ -15,7 +15,7 @@ import z7.sf;
 import z7.uf;
 import z7.wf;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class r extends b2.g {
     public final /* synthetic */ int b;
@@ -34,12 +34,12 @@ public final class r extends b2.g {
                 Context b10 = qb.g.c().b();
                 ArrayList arrayList = new ArrayList();
                 ((o) obj).getClass();
-                rb.a aVar = new rb.a(22);
-                j5.a aVar2 = j5.a.e;
+                qb.b bVar = new qb.b(22);
+                j5.a aVar = j5.a.e;
                 l5.s.b(b10);
-                l5.s.a().c(aVar2);
+                l5.s.a().c(aVar);
                 j5.a.d.contains(new i5.c("json"));
-                arrayList.add(aVar);
+                arrayList.add(bVar);
                 return new q(c10.b(), (qb.k) c10.a(qb.k.class));
             case 1:
                 v8 v8Var = (v8) obj;

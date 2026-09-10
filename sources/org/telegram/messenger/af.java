@@ -1,47 +1,56 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class af implements Runnable {
-    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ af(MessagesStorage messagesStorage, int i10, boolean z10, long j3) {
+    public /* synthetic */ af(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.d = i10;
-        this.c = z10;
-        this.e = j3;
+        this.d = j3;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeleted$231(this.e, this.d, this.c);
+                this.b.lambda$deleteUserChatHistory$86(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$removeFromDownloadQueue$182(this.c, this.d, this.e);
+                this.b.lambda$emptyMessagesMedia$99(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$deleteSavedDialog$54(this.d, this.c);
+                break;
+            case 3:
+                this.b.lambda$updateChannelUsers$125(this.d, this.c);
+                break;
+            case 4:
+                this.b.lambda$markVoiceMessageContentAsRead$217(this.c, this.d);
+                break;
+            case 5:
+                this.b.lambda$markMessagesAsDeletedInternal$226(this.c, this.d);
+                break;
+            case 6:
+                this.b.lambda$removeTopics$58(this.c, this.d);
                 break;
             default:
-                this.b.lambda$loadPendingTasks$31(this.d, this.c, this.e);
+                this.b.lambda$createTaskForSecretChat$117(this.d, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ af(MessagesStorage messagesStorage, long j3, int i10, boolean z10) {
+    public /* synthetic */ af(MessagesStorage messagesStorage, ArrayList arrayList, long j3, int i10) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.e = j3;
-        this.d = i10;
-        this.c = z10;
-    }
-
-    public /* synthetic */ af(MessagesStorage messagesStorage, boolean z10, int i10, long j3) {
-        this.b = messagesStorage;
-        this.c = z10;
-        this.d = i10;
-        this.e = j3;
+        this.c = arrayList;
+        this.d = j3;
     }
 }

@@ -1,16 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class pt0 extends ia implements bi.b9 {
-    public int d3;
-    public int e3;
+public final class pt0 extends fv0 {
+    public final /* synthetic */ iv0 G;
 
-    @Override // bi.b9
-    public final void a(int[] iArr) {
-        iArr[0] = (getPaddingTop() - AndroidUtilities.dp(2.0f)) - this.d3;
-        iArr[1] = (getMeasuredHeight() - getPaddingBottom()) - this.e3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pt0(iv0 iv0Var, Context context) {
+        super(iv0Var, context, 0, false);
+        this.G = iv0Var;
+    }
+
+    @Override // org.telegram.ui.Components.fv0, s4.h0
+    public final void l() {
+        super.l();
+        iv0 iv0Var = this.G;
+        au0 W = iv0Var.W(8);
+        if (W != null && W.r.getVisibility() == 0) {
+            iv0Var.d0.l();
+        }
+        if (W != null) {
+            rs0 rs0Var = W.w;
+            zh.a5 a5Var = this.s;
+            rs0Var.e(a5Var != null && (a5Var.k() || (iv0Var.i0() && this.s.g() > 0)), true);
+        }
     }
 }

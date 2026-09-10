@@ -54,9 +54,9 @@ public final class j implements ChronoZonedDateTime, Serializable {
         if (f7.size() == 1) {
             zoneOffset = (ZoneOffset) f7.get(0);
         } else if (f7.size() == 0) {
-            j$.time.zone.b e7 = rules.e(H);
-            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e7.d.getTotalSeconds() - e7.c.getTotalSeconds(), 0).getSeconds(), 0L);
-            zoneOffset = e7.d;
+            j$.time.zone.b e = rules.e(H);
+            fVar = fVar.I(fVar.a, 0L, 0L, Duration.j(e.d.getTotalSeconds() - e.c.getTotalSeconds(), 0).getSeconds(), 0L);
+            zoneOffset = e.d;
         } else {
             if (zoneOffset == null || !f7.contains(zoneOffset)) {
                 zoneOffset = (ZoneOffset) f7.get(0);

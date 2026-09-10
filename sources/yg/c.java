@@ -1,89 +1,61 @@
 package yg;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import ji.m4;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wl;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class c extends FrameLayout {
-    public final f6 a;
-    public final ImageView b;
-    public final TextView c;
-    public Runnable d;
-    public final g2 e;
-    public final Paint f;
+public final class c extends ReplacementSpan {
+    public final TextPaint a;
+    public final RectF b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public int f;
 
-    public c(Context context, f6 f6Var) {
-        super(context);
-        this.f = new Paint(1);
-        this.a = f6Var;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        wl.j(20.0f, 1, textView);
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i10 = j6.j5;
-        textView.setTextColor(j6.v0(i10, f6Var));
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        g2 g2Var = new g2(false);
-        this.e = g2Var;
-        imageView.setImageDrawable(g2Var);
-        g2Var.a(j6.v0(i10, f6Var));
-        g2Var.b(j6.v0(i10, f6Var));
-        g2Var.k = 220.0f;
-        addView(imageView, x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        imageView.setOnClickListener(new m4(this, 15));
+    public c(f6 f6Var) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new RectF();
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setColor(j6.v0(j6.C6, f6Var));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int v02 = j6.v0(j6.d7, this.a);
-        Paint paint = this.f;
-        paint.setColor(v02);
-        canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), paint);
+    public final void a() {
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.ReactionAddReactionsHint), this.a, AndroidUtilities.displaySize.x, LocaleController.isRTL ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineWidth(0);
+            this.e = this.c.getHeight();
+        }
     }
 
-    public int getHeaderHeight() {
-        return AndroidUtilities.dp(56.0f);
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        a();
+        Rect clipBounds = canvas.getClipBounds();
+        RectF rectF = this.b;
+        rectF.set(clipBounds);
+        canvas.saveLayerAlpha(rectF, this.f, 31);
+        canvas.translate(f7 + AndroidUtilities.dp(4.0f), (((i14 - i12) / 2.0f) + i12) - (this.e / 2.0f));
+        this.c.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getHeaderHeight(), TLObject.FLAG_30));
-    }
-
-    public void setBackImage(int i10) {
-        this.b.setImageResource(i10);
-    }
-
-    public void setCloseImageVisible(boolean z10) {
-        this.b.setVisibility(z10 ? 0 : 8);
-        boolean z11 = LocaleController.isRTL;
-        this.c.setLayoutParams(x5.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
-    }
-
-    public void setOnCloseClickListener(Runnable runnable) {
-        this.d = runnable;
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        a();
+        return (int) (AndroidUtilities.dp(8.0f) + this.d);
     }
 }

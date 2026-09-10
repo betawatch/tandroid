@@ -7,18 +7,18 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class od0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+    public final /* synthetic */ xg0 b;
     public final /* synthetic */ TLRPC.auth_SentCode c;
     public final /* synthetic */ Bundle d;
     public final /* synthetic */ boolean e;
 
-    public /* synthetic */ od0(int i10, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, wg0 wg0Var, boolean z10) {
+    public /* synthetic */ od0(int i10, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, xg0 xg0Var, boolean z10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = xg0Var;
         this.c = auth_sentcode;
         this.d = bundle;
         this.e = z10;
@@ -29,16 +29,16 @@ public final /* synthetic */ class od0 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                final wg0 wg0Var = this.b;
+                final xg0 xg0Var = this.b;
                 final TLRPC.auth_SentCode auth_sentcode = this.c;
                 final Bundle bundle = this.d;
                 if (!z10) {
                     FileLog.d("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    wg0Var.s1(bundle, auth_sentcode, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
+                    xg0Var.s1(bundle, auth_sentcode, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
                     break;
                 } else {
-                    wg0Var.k1(false, true);
-                    wg0Var.o0 = false;
+                    xg0Var.k1(false, true);
+                    xg0Var.o0 = false;
                     auth_sentcode.type.verifiedFirebase = true;
                     final int i10 = 1;
                     final boolean z11 = this.e;
@@ -47,10 +47,10 @@ public final /* synthetic */ class od0 implements RequestDelegate {
                         public final void run() {
                             switch (i10) {
                                 case 0:
-                                    wg0Var.g1(bundle, auth_sentcode, z11);
+                                    xg0Var.g1(bundle, auth_sentcode, z11);
                                     break;
                                 default:
-                                    wg0Var.g1(bundle, auth_sentcode, z11);
+                                    xg0Var.g1(bundle, auth_sentcode, z11);
                                     break;
                             }
                         }
@@ -59,16 +59,16 @@ public final /* synthetic */ class od0 implements RequestDelegate {
                 }
             default:
                 boolean z12 = tLObject instanceof TLRPC.TL_boolTrue;
-                final wg0 wg0Var2 = this.b;
+                final xg0 xg0Var2 = this.b;
                 final TLRPC.auth_SentCode auth_sentcode2 = this.c;
                 final Bundle bundle2 = this.d;
                 if (!z12) {
                     FileLog.d("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
-                    wg0Var2.s1(bundle2, auth_sentcode2, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
+                    xg0Var2.s1(bundle2, auth_sentcode2, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
                     break;
                 } else {
-                    wg0Var2.k1(false, true);
-                    wg0Var2.o0 = false;
+                    xg0Var2.k1(false, true);
+                    xg0Var2.o0 = false;
                     auth_sentcode2.type.verifiedFirebase = true;
                     final int i11 = 0;
                     final boolean z13 = this.e;
@@ -77,10 +77,10 @@ public final /* synthetic */ class od0 implements RequestDelegate {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    wg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    xg0Var2.g1(bundle2, auth_sentcode2, z13);
                                     break;
                                 default:
-                                    wg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    xg0Var2.g1(bundle2, auth_sentcode2, z13);
                                     break;
                             }
                         }

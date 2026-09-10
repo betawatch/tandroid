@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class gr0 extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.ir0 y = new org.telegram.ui.Components.ir0(4);
+public final class gr0 extends org.telegram.ui.ActionBar.p2 {
+    public static final org.telegram.ui.Components.sr0 y = new org.telegram.ui.Components.sr0(4);
     public final br0 a;
     public final br0 b;
-    public org.telegram.ui.ActionBar.v0 c;
-    public org.telegram.ui.Components.hu d;
+    public org.telegram.ui.ActionBar.w0 c;
+    public org.telegram.ui.Components.nu d;
     public boolean e;
     public final Paint f;
     public ScrollSlidingTextTabStrip h;
@@ -40,13 +40,13 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
     public boolean w;
     public int x;
 
-    public gr0(HashMap hashMap, ArrayList arrayList, int i10, boolean z10, co coVar) {
+    public gr0(HashMap hashMap, ArrayList arrayList, int i10, boolean z10, eo eoVar) {
         super(null);
         this.e = true;
         this.f = new Paint();
         this.n = new er0[2];
-        this.a = new br0(0, null, hashMap, arrayList, i10, z10, coVar, false);
-        this.b = new br0(1, null, hashMap, arrayList, i10, z10, coVar, false);
+        this.a = new br0(0, null, hashMap, arrayList, i10, z10, eoVar, false);
+        this.b = new br0(1, null, hashMap, arrayList, i10, z10, eoVar, false);
     }
 
     public static void g0(gr0 gr0Var, float f7) {
@@ -70,29 +70,29 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         gr0Var.actionBar.w();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final View createView(Context context) {
         er0[] er0VarArr;
         this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
+        org.telegram.ui.ActionBar.l lVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.j6.j5;
-        kVar.setTitleColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
+        lVar.setTitleColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         this.actionBar.C(org.telegram.ui.ActionBar.j6.w0(null, i10, false), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
-        if (d5Var != null && ((ActionBarLayout) d5Var).M0) {
+        org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
+        if (f5Var != null && ((ActionBarLayout) f5Var).M0) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setExtraHeight(AndroidUtilities.dp(44.0f));
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setClipContent(true);
-        this.actionBar.setActionBarMenuOnItemClick(new o70(this, 17));
+        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 16));
         this.hasOwnBackground = true;
-        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+        org.telegram.ui.ActionBar.w0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.d2(this, 14);
+        a2.H = new gg.m2(this, 14);
         this.c = a2;
         a2.setSearchFieldHint(LocaleController.getString(R.string.SearchImagesTitle));
         EditTextBoldCursor searchField = this.c.getSearchField();
@@ -107,8 +107,8 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         int i12 = org.telegram.ui.ActionBar.j6.Z9;
         scrollSlidingTextTabStrip2.L = i11;
         scrollSlidingTextTabStrip2.M = i12;
-        scrollSlidingTextTabStrip2.d();
-        this.actionBar.addView(this.h, w7.x5.e(-1, 44, 83));
+        scrollSlidingTextTabStrip2.e();
+        this.actionBar.addView(this.h, w7.a6.e(-1, 44, 83));
         this.h.setDelegate(new cr0(this));
         this.x = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
         dr0 dr0Var = new dr0(this, context);
@@ -116,9 +116,9 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         dr0Var.setWillNotDraw(false);
         br0 br0Var = this.a;
         br0Var.setParentFragment(this);
-        org.telegram.ui.Components.hu huVar = br0Var.d0;
-        this.d = huVar;
-        huVar.setSizeNotifierLayout(dr0Var);
+        org.telegram.ui.Components.nu nuVar = br0Var.d0;
+        this.d = nuVar;
+        nuVar.setSizeNotifierLayout(dr0Var);
         int i13 = 0;
         while (i13 < 4) {
             View view = i13 != 0 ? i13 != 1 ? i13 != 2 ? br0Var.c0 : br0Var.b0 : br0Var.a0 : br0Var.Z;
@@ -126,14 +126,14 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
             i13++;
         }
         FrameLayout frameLayout = br0Var.Z;
-        j0 j0Var = br0Var.a0;
+        k0 k0Var = br0Var.a0;
         t50 t50Var = br0Var.b0;
         View view2 = br0Var.c0;
-        org.telegram.ui.Components.hu huVar2 = br0Var.d0;
+        org.telegram.ui.Components.nu nuVar2 = br0Var.d0;
         br0 br0Var2 = this.b;
         br0Var2.Z = frameLayout;
-        br0Var2.a0 = j0Var;
-        br0Var2.d0 = huVar2;
+        br0Var2.a0 = k0Var;
+        br0Var2.d0 = nuVar2;
         br0Var2.b0 = t50Var;
         br0Var2.c0 = view2;
         br0Var2.q0 = false;
@@ -146,7 +146,7 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
             }
             er0 er0Var = new er0(this, context);
             er0VarArr[i14] = er0Var;
-            dr0Var.addView(er0Var, w7.x5.c(-1.0f, -1));
+            dr0Var.addView(er0Var, w7.a6.c(-1.0f, -1));
             if (i14 == 0) {
                 er0 er0Var2 = er0VarArr[i14];
                 er0Var2.a = br0Var;
@@ -164,17 +164,17 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
             er0 er0Var5 = er0VarArr[i14];
             er0Var5.c = er0Var5.a.getActionBar();
             er0 er0Var6 = er0VarArr[i14];
-            er0Var6.addView(er0Var6.b, w7.x5.c(-1.0f, -1));
+            er0Var6.addView(er0Var6.b, w7.a6.c(-1.0f, -1));
             er0 er0Var7 = er0VarArr[i14];
-            er0Var7.addView(er0Var7.c, w7.x5.c(-2.0f, -1));
+            er0Var7.addView(er0Var7.c, w7.a6.c(-2.0f, -1));
             er0VarArr[i14].c.setVisibility(8);
-            er0VarArr[i14].d.setOnScrollListener(new ji.l3(7, this, er0VarArr[i14].d.getOnScrollListener()));
+            er0VarArr[i14].d.setOnScrollListener(new hi.p3(7, this, er0VarArr[i14].d.getOnScrollListener()));
             i14++;
         }
-        dr0Var.addView(this.actionBar, w7.x5.c(-2.0f, -1));
-        dr0Var.addView(br0Var.Z, w7.x5.e(-1, 48, 83));
-        dr0Var.addView(br0Var.a0, w7.x5.d(60, 60.0f, 85, 0.0f, 0.0f, 12.0f, 10.0f));
-        dr0Var.addView(br0Var.b0, w7.x5.d(42, 24.0f, 85, 0.0f, 0.0f, -2.0f, 9.0f));
+        dr0Var.addView(this.actionBar, w7.a6.c(-2.0f, -1));
+        dr0Var.addView(br0Var.Z, w7.a6.e(-1, 48, 83));
+        dr0Var.addView(br0Var.a0, w7.a6.d(60, 60.0f, 85, 0.0f, 0.0f, 12.0f, 10.0f));
+        dr0Var.addView(br0Var.b0, w7.a6.d(42, 24.0f, 85, 0.0f, 0.0f, -2.0f, 9.0f));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip3 = this.h;
         if (scrollSlidingTextTabStrip3 != null) {
             scrollSlidingTextTabStrip3.a(0, LocaleController.getString(R.string.ImagesTab2), null);
@@ -197,20 +197,20 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         View view = this.fragmentView;
         int i10 = org.telegram.ui.ActionBar.j6.h5;
         arrayList.add(new org.telegram.ui.ActionBar.l6(view, 1, null, null, null, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 1, null, null, null, null, i10));
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
+        org.telegram.ui.ActionBar.l lVar = this.actionBar;
         int i11 = org.telegram.ui.ActionBar.j6.j5;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(kVar, 64, null, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(lVar, 64, null, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 128, null, null, null, null, i11));
-        org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
+        org.telegram.ui.ActionBar.l lVar2 = this.actionBar;
         int i12 = org.telegram.ui.ActionBar.j6.I5;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(kVar2, 256, null, null, null, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(lVar2, 256, null, null, null, null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, TLObject.FLAG_27, null, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 67108864, null, null, null, null, org.telegram.ui.ActionBar.j6.Vd));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.c.getSearchField(), 16777216, null, null, null, null, i11));
@@ -224,7 +224,7 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return this.e;
     }
@@ -247,7 +247,7 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         br0 br0Var = this.a;
@@ -260,7 +260,7 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onFragmentDestroy() {
         br0 br0Var = this.a;
         if (br0Var != null) {
@@ -273,7 +273,7 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onPause() {
         super.onPause();
         br0 br0Var = this.a;
@@ -286,12 +286,12 @@ public final class gr0 extends org.telegram.ui.ActionBar.n2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onResume() {
         super.onResume();
-        org.telegram.ui.ActionBar.v0 v0Var = this.c;
-        if (v0Var != null) {
-            v0Var.z(true);
+        org.telegram.ui.ActionBar.w0 w0Var = this.c;
+        if (w0Var != null) {
+            w0Var.z(true);
             getParentActivity().getWindow().setSoftInputMode(32);
         }
         br0 br0Var = this.a;

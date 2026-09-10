@@ -1,43 +1,34 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f9 b;
+public final class r8 extends org.telegram.ui.ActionBar.h3 {
+    public final /* synthetic */ d9 b;
 
-    public /* synthetic */ r8(f9 f9Var, int i10) {
-        this.a = i10;
-        this.b = f9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r8(d9 d9Var, Activity activity) {
+        super(activity, true);
+        this.b = d9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                f9 f9Var = this.b;
-                if (!f9Var.U) {
-                    if (f9Var.N <= 0.0f) {
-                        f9Var.g0(!f9Var.a.v, true, false);
-                        break;
-                    } else {
-                        if (f9Var.M != null) {
-                            f9Var.E = 1.0f;
-                            f9Var.F = true;
-                        }
-                        AndroidUtilities.hideKeyboard(f9Var.fragmentView);
-                        break;
-                    }
-                }
-                break;
-            default:
-                f9 f9Var2 = this.b;
-                f9Var2.getClass();
-                f9Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        d9 d9Var = this.b;
+        d9Var.J.v1(d9Var.Y);
+        d9Var.f = true;
+        d9Var.fragmentView.invalidate();
+        d9Var.e.animate().setListener(new org.telegram.ui.Cells.v5(this, 20)).alpha(0.0f).setDuration(200L).start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        d9 d9Var = this.b;
+        AndroidUtilities.requestAdjustResize(d9Var.getParentActivity(), d9Var.getClassGuid());
+        d9Var.S = null;
     }
 }

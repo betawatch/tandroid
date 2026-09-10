@@ -57,7 +57,7 @@ public abstract class g extends m {
         Object next;
         kotlin.jvm.internal.i.e(iterable, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(i2.g.j(i10, "Requested element count ", " is less than zero.").toString());
+            throw new IllegalArgumentException(hc.b.k(i10, "Requested element count ", " is less than zero.").toString());
         }
         o oVar = o.a;
         if (i10 == 0) {

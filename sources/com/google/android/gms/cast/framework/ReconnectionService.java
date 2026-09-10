@@ -18,7 +18,7 @@ import g6.b;
 import n6.l;
 import x6.a;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ReconnectionService extends Service {
     public static final b b = new b("ReconnectionService", null);
@@ -36,8 +36,8 @@ public class ReconnectionService extends Service {
                 IBinder readStrongBinder = Q0.readStrongBinder();
                 Q0.recycle();
                 return readStrongBinder;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "onBind", u.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onBind", u.class.getSimpleName());
             }
         }
         return null;
@@ -56,8 +56,8 @@ public class ReconnectionService extends Service {
             Parcel Q0 = yVar.Q0(yVar.O0(), 7);
             aVar = x6.b.L0(Q0.readStrongBinder());
             Q0.recycle();
-        } catch (RemoteException e7) {
-            g.c.a(e7, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
+        } catch (RemoteException e) {
+            g.c.a(e, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
             aVar = null;
         }
         l.e("Must be called from the main thread.");
@@ -68,16 +68,16 @@ public class ReconnectionService extends Service {
             Parcel Q02 = rVar.Q0(rVar.O0(), 5);
             aVar2 = x6.b.L0(Q02.readStrongBinder());
             Q02.recycle();
-        } catch (RemoteException e10) {
-            k.b.a(e10, "Unable to call %s on %s.", "getWrappedThis", r.class.getSimpleName());
+        } catch (RemoteException e7) {
+            k.b.a(e7, "Unable to call %s on %s.", "getWrappedThis", r.class.getSimpleName());
             aVar2 = null;
         }
         b bVar = e.a;
         if (aVar != null && aVar2 != null) {
             try {
                 uVar = e.b(getApplicationContext()).X0(new x6.b(this), aVar, aVar2);
-            } catch (RemoteException | d e11) {
-                e.a.a(e11, "Unable to call %s on %s.", "newReconnectionServiceImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
+            } catch (RemoteException | d e10) {
+                e.a.a(e10, "Unable to call %s on %s.", "newReconnectionServiceImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             }
         }
         this.a = uVar;
@@ -85,8 +85,8 @@ public class ReconnectionService extends Service {
             try {
                 s sVar = (s) uVar;
                 sVar.S0(sVar.O0(), 1);
-            } catch (RemoteException e12) {
-                b.a(e12, "Unable to call %s on %s.", "onCreate", u.class.getSimpleName());
+            } catch (RemoteException e11) {
+                b.a(e11, "Unable to call %s on %s.", "onCreate", u.class.getSimpleName());
             }
             super.onCreate();
         }
@@ -99,8 +99,8 @@ public class ReconnectionService extends Service {
             try {
                 s sVar = (s) uVar;
                 sVar.S0(sVar.O0(), 4);
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "onDestroy", u.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onDestroy", u.class.getSimpleName());
             }
             super.onDestroy();
         }
@@ -120,8 +120,8 @@ public class ReconnectionService extends Service {
                 int readInt = Q0.readInt();
                 Q0.recycle();
                 return readInt;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "onStartCommand", u.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "onStartCommand", u.class.getSimpleName());
             }
         }
         return 2;

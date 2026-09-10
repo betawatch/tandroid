@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.Parcelable;
 import com.google.firebase.iid.FirebaseInstanceIdReceiver;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.p2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -50,20 +50,20 @@ public final /* synthetic */ class g implements Runnable {
                     return;
                 }
                 actionBarLayout.e = null;
-                n2 n2Var = (n2) this.c;
-                if (n2Var != null) {
-                    n2Var.onTransitionAnimationStart(false, false);
+                p2 p2Var = (p2) this.c;
+                if (p2Var != null) {
+                    p2Var.onTransitionAnimationStart(false, false);
                 }
-                ((n2) this.d).onTransitionAnimationStart(true, false);
+                ((p2) this.d).onTransitionAnimationStart(true, false);
                 actionBarLayout.d0(true, true, this.b);
                 return;
         }
     }
 
-    public g(ActionBarLayout actionBarLayout, n2 n2Var, n2 n2Var2, boolean z10) {
+    public g(ActionBarLayout actionBarLayout, p2 p2Var, p2 p2Var2, boolean z10) {
         this.e = actionBarLayout;
-        this.c = n2Var;
-        this.d = n2Var2;
+        this.c = p2Var;
+        this.d = p2Var2;
         this.b = z10;
     }
 }

@@ -1,67 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class y30 extends xu0 {
-    public final /* synthetic */ b40 f2;
+public final /* synthetic */ class y30 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a40 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y30(b40 b40Var, Context context, pu0 pu0Var, b40 b40Var2, x30 x30Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, 0L, pu0Var, 0, null, null, null, 8, 0, b40Var2, x30Var, 0, f6Var, null);
-        this.f2 = b40Var;
+    public /* synthetic */ y30(a40 a40Var, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = a40Var;
+        this.c = str;
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.xu0
-    public final int getInitialTab() {
-        return 8;
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final String getStoriesHashtag() {
-        return this.f2.b;
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final String getStoriesHashtagUsername() {
-        return this.f2.c;
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final boolean t0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void D0(SparseArray sparseArray) {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void K0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void M0(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void N0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void b1(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void o0() {
-    }
-
-    @Override // org.telegram.ui.Components.xu0
-    public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a40 a40Var = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                if (a40Var.e != null) {
+                    a40Var.e = null;
+                    AndroidUtilities.runOnUIThread(new y30(a40Var, str, i10, 1));
+                    break;
+                }
+                break;
+            default:
+                a40 a40Var2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                ArrayList arrayList = null;
+                a40Var2.e = null;
+                if (!ChatObject.isChannel(a40Var2.w.V) && a40Var2.w.W != null) {
+                    arrayList = new ArrayList(a40Var2.w.W.participants.participants);
+                }
+                ArrayList arrayList2 = arrayList;
+                if (arrayList2 != null) {
+                    Utilities.searchQueue.postRunnable(new di.q((Object) a40Var2, (Object) str2, i11, arrayList2, 19));
+                } else {
+                    a40Var2.h = false;
+                }
+                a40Var2.d.g(str2, ChatObject.canAddUsers(a40Var2.w.V), false, true, false, ChatObject.isChannel(a40Var2.w.V) ? a40Var2.w.V.id : 0L, false, 2, i11);
+                break;
+        }
     }
 }

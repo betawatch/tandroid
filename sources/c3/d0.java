@@ -4,7 +4,7 @@ import b2.r0;
 import e9.a1;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -27,22 +27,22 @@ public final class d0 implements o {
         int i11 = this.a;
         e2.d.g((i11 == -1 || i10 == -1) ? false : true);
         e2.v vVar = new e2.v(i10);
-        ((l) pVar).j(vVar.a, 0, i10, false);
+        ((l) pVar).g(vVar.a, 0, i10, false);
         return vVar.D() == i11;
     }
 
     @Override // c3.o
     public final void g(q qVar) {
         this.f = qVar;
-        h0 R1 = qVar.R1(1024, 4);
-        this.g = R1;
+        h0 I = qVar.I(1024, 4);
+        this.g = I;
         b2.r rVar = new b2.r();
         String str = this.c;
         rVar.p = r0.n(str);
         rVar.q = r0.n(str);
-        i2.g.u(rVar, R1);
-        this.f.Z0();
-        this.f.P1(new e0());
+        hc.b.u(rVar, I);
+        this.f.B();
+        this.f.G(new e0());
         this.e = 1;
     }
 

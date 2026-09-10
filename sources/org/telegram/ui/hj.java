@@ -1,36 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.app.Activity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ co o;
+public final class hj extends FrameLayout {
+    public final /* synthetic */ eo a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hj(co coVar, fj fjVar) {
-        super(fjVar, -2, -2);
-        this.o = coVar;
+    public hj(eo eoVar, Activity activity) {
+        super(activity);
+        this.a = eoVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        co coVar = this.o;
-        if (coVar.Q8 != this) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+            this.a.A7(true);
         }
-        coVar.Q8 = null;
-        coVar.T8 = null;
-        coVar.S8 = null;
-        coVar.z0.R = true;
-        if (coVar.R8) {
-            coVar.g8(false, true, 0.0f);
-        } else {
-            coVar.R8 = true;
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
+        if (min == 0) {
+            min = AndroidUtilities.dp(300.0f);
         }
-        mk mkVar = coVar.Y;
-        if (mkVar == null || mkVar.getEditField() == null) {
-            return;
-        }
-        coVar.Y.getEditField().setAllowDrawCursor(true);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

@@ -1,28 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ek implements Runnable {
-    public final /* synthetic */ co a;
+public final class ek extends org.telegram.ui.Components.o21 {
+    public final /* synthetic */ eo e;
 
-    public ek(co coVar) {
-        this.a = coVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(eo eoVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, f6Var);
+        this.e = eoVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        co coVar = this.a;
-        MessageObject messageObject = coVar.d5;
-        if (messageObject == null || coVar.T8 == null) {
-            return;
+    @Override // org.telegram.ui.Components.o21, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.l lVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
-        int max = Math.max(0, messageObject.messageOwner.ttl_period - (coVar.getConnectionsManager().getCurrentTime() - coVar.d5.messageOwner.date));
-        coVar.T8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
-        AndroidUtilities.runOnUIThread(coVar.U8, 1000L);
+        eo eoVar = this.e;
+        lVar = ((org.telegram.ui.ActionBar.p2) eoVar).actionBar;
+        if (lVar.s() || eoVar.A9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

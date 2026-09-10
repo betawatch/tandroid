@@ -4,7 +4,7 @@ import android.R;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class b1 implements Runnable {
                 t1 t1Var = this.b;
                 k1 k1Var = t1Var.Jc;
                 if (k1Var != null) {
-                    k1Var.r(t1Var);
+                    k1Var.q(t1Var);
                     break;
                 }
                 break;
@@ -34,9 +34,9 @@ public final /* synthetic */ class b1 implements Runnable {
                 break;
             case 3:
                 t1 t1Var2 = this.b;
-                k2.g0 g0Var = t1Var2.w;
-                g0Var.j(t1Var2.Qd);
-                g0Var.j(t1Var2.Rd);
+                m.g3 g3Var = t1Var2.w;
+                g3Var.l(t1Var2.Qd);
+                g3Var.l(t1Var2.Rd);
                 t1Var2.H3();
                 MessageObject messageObject = t1Var2.y7;
                 if (messageObject != null) {
@@ -48,7 +48,7 @@ public final /* synthetic */ class b1 implements Runnable {
                     }
                     k1 k1Var2 = t1Var2.Jc;
                     if (k1Var2 != null) {
-                        k1Var2.T(t1Var2);
+                        k1Var2.S(t1Var2);
                         break;
                     }
                 }

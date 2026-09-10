@@ -1,14 +1,31 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ImageLoader;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class h5 {
-    public static void b(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, ImageReceiver imageReceiver) {
+public final /* synthetic */ class h5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ImageLoader.HttpFileTask b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+
+    public /* synthetic */ h5(ImageLoader.HttpFileTask httpFileTask, long j3, long j10, int i10) {
+        this.a = i10;
+        this.b = httpFileTask;
+        this.c = j3;
+        this.d = j10;
     }
 
-    public static void a(ImageReceiver.ImageReceiverDelegate imageReceiverDelegate, int i10, String str, Drawable drawable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$reportProgress$0(this.c, this.d);
+                break;
+            default:
+                this.b.lambda$reportProgress$1(this.c, this.d);
+                break;
+        }
     }
 }

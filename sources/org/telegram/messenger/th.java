@@ -1,28 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class th implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ th(int i10, long j3, String str, String str2) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = j3;
+    public /* synthetic */ th(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
+                PasskeysController.lambda$login$11(this.b, this.c);
+                break;
+            case 1:
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
+                break;
+            case 2:
+                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
                 break;
             default:
-                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
                 break;
         }
     }

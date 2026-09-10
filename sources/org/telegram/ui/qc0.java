@@ -19,9 +19,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.IMapsProvider;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.ActionBar.a2, IMapsProvider.OnCameraMoveStartedListener, hg.b, IMapsProvider.ITouchInterceptor {
+public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.ActionBar.c2, IMapsProvider.OnCameraMoveStartedListener, fg.b, IMapsProvider.ITouchInterceptor {
     public final /* synthetic */ int a;
     public final /* synthetic */ id0 b;
 
@@ -30,7 +30,7 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
         this.b = id0Var;
     }
 
-    @Override // hg.b
+    @Override // fg.b
     public void a(ArrayList arrayList) {
         switch (this.a) {
             case 5:
@@ -60,8 +60,8 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
                             hd0Var.c = tL_messageMediaVenue;
                             addMarker.setTag(hd0Var);
                             arrayList2.add(hd0Var);
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     }
                     break;
@@ -75,8 +75,8 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 1:
                 id0 id0Var = this.b;
@@ -86,8 +86,8 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
                         intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                         id0Var.getParentActivity().startActivity(intent);
                         break;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                         return;
                     }
                 }
@@ -106,7 +106,7 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r0
+    @Override // org.telegram.ui.ActionBar.s0
     public void m(int i10) {
         IMapsProvider.IMap iMap = this.b.I;
         if (iMap == null) {
@@ -151,9 +151,9 @@ public final /* synthetic */ class qc0 implements org.telegram.ui.ActionBar.r0, 
                 return;
             }
             if ((i11 == 0 || i11 == 1) && id0Var.U.getChildCount() > 0 && (childAt = id0Var.U.getChildAt(0)) != null) {
-                org.telegram.ui.Components.ll0 ll0Var = id0Var.U;
-                View F = ll0Var.F(childAt);
-                s4.c1 T = F == null ? null : ll0Var.T(F);
+                org.telegram.ui.Components.vl0 vl0Var = id0Var.U;
+                View F = vl0Var.F(childAt);
+                s4.c1 T = F == null ? null : vl0Var.T(F);
                 if (T == null || T.b() != 0) {
                     return;
                 }

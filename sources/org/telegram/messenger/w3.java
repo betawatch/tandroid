@@ -1,27 +1,30 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import org.telegram.messenger.FilesMigrationService;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w3 implements View.OnClickListener {
+public final /* synthetic */ class w3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ FileUploadOperation b;
 
-    public /* synthetic */ w3(Object obj, int i10) {
+    public /* synthetic */ w3(FileUploadOperation fileUploadOperation, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = fileUploadOperation;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((FilesMigrationService.FilesMigrationBottomSheet) this.b).lambda$new$0(view);
+                this.b.lambda$start$0();
+                break;
+            case 1:
+                this.b.lambda$cancel$3();
+                break;
+            case 2:
+                this.b.lambda$startUploadRequest$7();
                 break;
             default:
-                MessagesController.lambda$checkSensitive$445((boolean[]) this.b, view);
+                this.b.lambda$onNetworkChanged$2();
                 break;
         }
     }

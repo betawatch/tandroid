@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class v {
     /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
@@ -25,9 +25,9 @@ public abstract class v {
         ProviderInfo providerInfo;
         o0.e eVar;
         ApplicationInfo applicationInfo;
-        rb.a cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new rb.a(2);
+        qb.b cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(3) : new qb.b(3);
         PackageManager packageManager = context.getPackageManager();
-        w7.k6.a(packageManager, "Package manager required to locate emoji font provider");
+        w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -43,14 +43,14 @@ public abstract class v {
             try {
                 String str = providerInfo.authority;
                 String str2 = providerInfo.packageName;
-                Signature[] N3 = cVar.N3(packageManager, str2);
+                Signature[] L3 = cVar.L3(packageManager, str2);
                 ArrayList arrayList = new ArrayList();
-                for (Signature signature : N3) {
+                for (Signature signature : L3) {
                     arrayList.add(signature.toByteArray());
                 }
                 eVar = new o0.e(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
-            } catch (PackageManager.NameNotFoundException e7) {
-                Log.wtf("emoji2.text.DefaultEmojiConfig", e7);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.wtf("emoji2.text.DefaultEmojiConfig", e);
             }
             if (eVar != null) {
                 return null;

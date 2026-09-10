@@ -1,53 +1,44 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dp0 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class dp0 extends gp0 {
+    public int G;
+    public final /* synthetic */ bq0 H;
 
-    public /* synthetic */ dp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, Object obj2, int i10) {
-        this.a = i10;
-        this.d = notificationCenterDelegate;
-        this.e = obj;
-        this.b = tL_starGiftUnique;
-        this.c = j3;
-        this.f = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dp0(bq0 bq0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.H = bq0Var;
+        this.G = 0;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                bq0.U((bq0) this.d, (boolean[]) this.e, this.b, this.c, (zo0) this.f, (zh.a3) obj, (of.e) obj2);
-                break;
-            default:
-                zh.w3 w3Var = (zh.w3) this.d;
-                of.e eVar = (of.e) this.e;
-                yh.j0 j0Var = (yh.j0) this.f;
-                eVar.b();
-                if (((Boolean) obj).booleanValue()) {
-                    zh.j2 j2Var = w3Var.O0;
-                    if (j2Var != null) {
-                        j2Var.b(this.b, this.c, j0Var != null);
-                    }
-                    if (j0Var != null) {
-                        AndroidUtilities.runOnUIThread(new yh.d0(j0Var, 2));
-                        w3Var.skipDismissAnimation();
-                    }
-                    w3Var.dismiss();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.gp0
+    public final void a() {
+        bq0 bq0Var = this.H;
+        if (bq0Var.getParentActivity() != null) {
+            AndroidUtilities.setLightStatusBar(bq0Var.getParentActivity(), bq0Var.isLightStatusBar());
         }
+        int actionBarButtonColor = getActionBarButtonColor();
+        if (this.G != actionBarButtonColor) {
+            ImageView imageView = bq0Var.J;
+            if (imageView != null) {
+                this.G = actionBarButtonColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+            ImageView imageView2 = bq0Var.K;
+            if (imageView2 != null) {
+                this.G = actionBarButtonColor;
+                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+        }
+        bq0Var.G0();
+        bq0Var.A0();
     }
 }

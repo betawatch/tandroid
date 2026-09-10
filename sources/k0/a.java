@@ -1,25 +1,24 @@
 package k0;
 
-import a4.m;
 import android.hardware.fingerprint.FingerprintManager;
 import androidx.biometric.t;
 import androidx.biometric.u;
 import androidx.biometric.w;
 import androidx.biometric.y;
 import androidx.lifecycle.z;
-import e0.b;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
+import xa.c;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ m a;
+    public final /* synthetic */ c a;
 
-    public a(m mVar) {
-        this.a = mVar;
+    public a(c cVar) {
+        this.a = cVar;
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
@@ -54,9 +53,9 @@ public final class a extends FingerprintManager.AuthenticationCallback {
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        m mVar = this.a;
-        aa.a L = b.L(b.f(authenticationResult));
-        mVar.getClass();
+        c cVar = this.a;
+        aa.a L = e0.b.L(e0.b.f(authenticationResult));
+        cVar.getClass();
         u uVar = null;
         if (L != null) {
             Cipher cipher = (Cipher) L.c;
@@ -74,6 +73,6 @@ public final class a extends FingerprintManager.AuthenticationCallback {
                 }
             }
         }
-        ((w) ((aa.a) mVar.b).d).b(new t(uVar, 2));
+        ((w) ((aa.a) cVar.b).d).b(new t(uVar, 2));
     }
 }

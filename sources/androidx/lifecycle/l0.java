@@ -2,9 +2,9 @@ package androidx.lifecycle;
 
 import android.os.Bundle;
 import java.util.Map;
-import v7.s7;
+import v7.t7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class l0 implements t4.d {
     public final m.p a;
@@ -15,7 +15,7 @@ public final class l0 implements t4.d {
     public l0(m.p savedStateRegistry, u0 u0Var) {
         kotlin.jvm.internal.i.e(savedStateRegistry, "savedStateRegistry");
         this.a = savedStateRegistry;
-        this.d = s7.a(new k0(u0Var, 0));
+        this.d = t7.a(new k0(u0Var, 0));
     }
 
     @Override // t4.d

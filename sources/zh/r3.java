@@ -1,43 +1,29 @@
 package zh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class r3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t3 b;
+public final class r3 {
+    public final int a;
+    public final TL_stories.StoryView b;
+    public final TL_stories.StoryReaction c;
 
-    public /* synthetic */ r3(t3 t3Var, int i10) {
+    public r3(int i10) {
         this.a = i10;
-        this.b = t3Var;
+        this.b = null;
+        this.c = null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.d0 = false;
-                break;
-            case 1:
-                this.b.d0 = false;
-                break;
-            case 2:
-                this.b.N.setVisibility(4);
-                break;
-            case 3:
-                t3 t3Var = this.b;
-                t3Var.s0 = t3Var.r0;
-                t3Var.d(t3Var.U);
-                break;
-            default:
-                t3 t3Var2 = this.b;
-                t3Var2.t0 = 1.0f;
-                t3Var2.b.setScaleX(1.0f);
-                t3Var2.b.setScaleY(t3Var2.t0);
-                t3Var2.invalidate();
-                break;
-        }
+    public r3(TL_stories.StoryView storyView) {
+        this.a = 1;
+        this.b = storyView;
+        this.c = null;
+    }
+
+    public r3(TL_stories.StoryReaction storyReaction) {
+        this.a = 1;
+        this.b = null;
+        this.c = storyReaction;
     }
 }

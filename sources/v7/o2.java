@@ -1,19 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class o2 implements ia.d {
     public static final o2 a = new o2();
-    public static final ia.c b = new ia.c("durationMs", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(1))));
-    public static final ia.c c = new ia.c("errorCode", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(2))));
-    public static final ia.c d = new ia.c("isColdCall", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(3))));
-    public static final ia.c e = new ia.c("autoManageModelOnBackground", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(4))));
-    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(5))));
-    public static final ia.c g = new ia.c("isNnApiEnabled", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(6))));
-    public static final ia.c h = new ia.c("eventsCount", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(7))));
-    public static final ia.c i = new ia.c("otherErrors", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(8))));
-    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(9))));
-    public static final ia.c k = new ia.c("isAccelerated", i2.g.n(org.telegram.ui.Cells.p6.k(h.class, new e(10))));
+    public static final ia.c b = new ia.c("durationMs", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(1))));
+    public static final ia.c c = new ia.c("errorCode", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(2))));
+    public static final ia.c d = new ia.c("isColdCall", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(3))));
+    public static final ia.c e = new ia.c("autoManageModelOnBackground", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(4))));
+    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(5))));
+    public static final ia.c g = new ia.c("isNnApiEnabled", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(6))));
+    public static final ia.c h = new ia.c("eventsCount", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(7))));
+    public static final ia.c i = new ia.c("otherErrors", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(8))));
+    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(9))));
+    public static final ia.c k = new ia.c("isAccelerated", hc.b.p(org.telegram.ui.Cells.r6.k(h.class, new e(10))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

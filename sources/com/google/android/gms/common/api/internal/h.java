@@ -29,7 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -42,7 +42,7 @@ public final class h implements Handler.Callback {
     public p6.b d;
     public final Context e;
     public final k6.d f;
-    public final n4.y h;
+    public final of.b h;
     public final AtomicInteger n;
     public final AtomicInteger r;
     public final ConcurrentHashMap s;
@@ -65,7 +65,7 @@ public final class h implements Handler.Callback {
         com.google.android.gms.internal.cast.c0 c0Var = new com.google.android.gms.internal.cast.c0(looper, this);
         this.x = c0Var;
         this.f = dVar;
-        this.h = new n4.y((k6.e) dVar);
+        this.h = new of.b((k6.e) dVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.e == null) {
             u6.b.e = Boolean.valueOf(u6.b.d() && packageManager.hasSystemFeature("android.hardware.type.automotive"));
@@ -92,7 +92,7 @@ public final class h implements Handler.Callback {
     }
 
     public static Status d(b bVar, k6.a aVar) {
-        return new Status(17, e2.j("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
+        return new Status(17, e2.i("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
     }
 
     public static h g(Context context) {
@@ -193,7 +193,7 @@ public final class h implements Handler.Callback {
                         com.google.android.gms.common.api.c cVar = p0Var.b;
                         if (cVar instanceof n6.g) {
                             n6.g gVar = (n6.g) cVar;
-                            if (gVar.Q != null && !gVar.f()) {
+                            if (gVar.Q != null && !gVar.g()) {
                                 n6.e a2 = y0.a(p0Var, gVar, i10);
                                 if (a2 != null) {
                                     p0Var.n++;
@@ -294,7 +294,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (p0Var == null) {
-                    Log.wtf("GoogleApiManager", i2.g.j(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", hc.b.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;
@@ -304,7 +304,7 @@ public final class h implements Handler.Callback {
                 }
                 this.f.getClass();
                 AtomicBoolean atomicBoolean = k6.g.a;
-                p0Var.c(new Status(17, e2.j("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
+                p0Var.c(new Status(17, e2.i("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
                 return true;
             case 6:
                 if (context.getApplicationContext() instanceof Application) {

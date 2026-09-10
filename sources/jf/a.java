@@ -1,90 +1,61 @@
 package jf;
 
-import a6.m;
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
+import android.graphics.Bitmap;
 import java.io.BufferedInputStream;
-import java.io.IOException;
-import org.telegram.tgnet.SerializedData;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import lf.m;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class a {
-    public static SparseIntArray b;
-    public static final a c = new a();
-    public final SparseArray a;
+public abstract class a {
+    public String a;
+    public long b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public short g;
+    public String h;
+    public String i;
+    public short j;
+    public short k;
+    public String l;
+    public String m;
+    public String n;
+    public Bitmap o;
+    public Bitmap p;
+    public File q;
 
-    public a() {
-        this.a = new SparseArray();
-    }
-
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
+    public static a a(File file) {
+        byte b10;
         try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
+            byte[] bArr = new byte[12];
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile.readFully(bArr, 0, 8);
+            randomAccessFile.close();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
+                return new kf.a(bufferedInputStream);
             }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
+            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
+                b bVar = new b(file);
+                if (bVar.s) {
+                    return null;
+                }
+                return bVar;
             }
-            throw th2;
-        }
-    }
-
-    public final String b(Context context, int i10) {
-        if (context == null || i10 == 0) {
+            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
+                b bVar2 = new b(file);
+                if (bVar2.s) {
+                    return null;
+                }
+                return bVar2;
+            }
+            return new m(bufferedInputStream, file.length());
+        } catch (Exception unused) {
             return null;
         }
-        if (b == null) {
-            try {
-                BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                try {
-                    SerializedData serializedData = new SerializedData(bufferedInputStream);
-                    int readInt32 = serializedData.readInt32(true);
-                    SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                    for (int i11 = 0; i11 < readInt32; i11++) {
-                        sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                    }
-                    bufferedInputStream.close();
-                    b = sparseIntArray;
-                } finally {
-                }
-            } catch (IOException e7) {
-                throw new RuntimeException(e7);
-            }
-        }
-        int i12 = b.get(i10);
-        if (i12 == 0) {
-            return null;
-        }
-        return (String) this.a.get(i12);
-    }
-
-    public final String c(Context context, String str, int i10) {
-        String str2 = str != null ? (String) this.a.get(str.hashCode()) : null;
-        return (str2 != null || i10 == 0) ? str2 : b(context, i10);
-    }
-
-    public a(m mVar) {
-        SparseArray sparseArray = (SparseArray) mVar.b;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

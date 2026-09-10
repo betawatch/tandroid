@@ -6,12 +6,12 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 import c5.u;
 import d7.e;
-import v7.y6;
+import v7.z6;
 import w7.g0;
 import x6.a;
 import x6.b;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class FlagProviderImpl extends e {
     public boolean a;
@@ -31,8 +31,8 @@ public class FlagProviderImpl extends e {
         Boolean valueOf = Boolean.valueOf(z10);
         try {
             valueOf = (Boolean) g0.a(new u(sharedPreferences, str, valueOf, 4));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.booleanValue();
@@ -47,8 +47,8 @@ public class FlagProviderImpl extends e {
         Integer valueOf = Integer.valueOf(i10);
         try {
             valueOf = (Integer) g0.a(new u(sharedPreferences, str, valueOf, 5));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.intValue();
@@ -63,8 +63,8 @@ public class FlagProviderImpl extends e {
         Long valueOf = Long.valueOf(j3);
         try {
             valueOf = (Long) g0.a(new u(sharedPreferences, str, valueOf, 6));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.longValue();
@@ -77,8 +77,8 @@ public class FlagProviderImpl extends e {
         }
         try {
             return (String) g0.a(new u(this.b, str, str2, 7));
-        } catch (Exception e7) {
-            String valueOf = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
             return str2;
         }
@@ -91,11 +91,11 @@ public class FlagProviderImpl extends e {
             return;
         }
         try {
-            this.b = y6.a(context.createPackageContext("com.google.android.gms", 0));
+            this.b = z6.a(context.createPackageContext("com.google.android.gms", 0));
             this.a = true;
         } catch (PackageManager.NameNotFoundException unused) {
-        } catch (Exception e7) {
-            String valueOf = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf = String.valueOf(e.getMessage());
             Log.w("FlagProviderImpl", valueOf.length() != 0 ? "Could not retrieve sdk flags, continuing with defaults: ".concat(valueOf) : new String("Could not retrieve sdk flags, continuing with defaults: "));
         }
     }

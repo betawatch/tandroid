@@ -1,78 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ColorDrawable;
-import android.view.ViewGroup;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
+import android.content.Context;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class o7 extends g7 {
-    public org.telegram.ui.Cells.s7 n;
-    public final ArrayList r;
-    public org.telegram.ui.Components.oq s;
-    public final /* synthetic */ s7 v;
+public final class o7 extends org.telegram.ui.Cells.k7 {
+    public final /* synthetic */ j7 l0;
+    public final /* synthetic */ p7 m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o7(s7 s7Var) {
-        super(s7Var, 1);
-        this.v = s7Var;
-        this.r = new ArrayList();
+    public o7(p7 p7Var, Context context, j7 j7Var) {
+        super(context, 0, null);
+        this.m0 = p7Var;
+        this.l0 = j7Var;
     }
 
-    @Override // org.telegram.ui.g7, org.telegram.ui.f7
-    public final void F() {
-        super.F();
-        ArrayList arrayList = this.r;
-        arrayList.clear();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.e;
-            if (i10 >= arrayList2.size()) {
-                return;
-            }
-            arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0, 0L));
-            i10++;
-        }
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (this.s == null) {
-            org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.X9, false)), org.telegram.ui.ActionBar.j6.R4);
-            this.s = oqVar;
-            oqVar.w = true;
-        }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) c1Var.a;
-        ai.b bVar = ((m7) this.e.get(i10)).d;
-        Object tag = t7Var.getTag();
-        ImageReceiver imageReceiver = t7Var.c;
-        boolean z10 = bVar == tag;
-        t7Var.setTag(bVar);
-        int max = (int) Math.max(100.0f, AndroidUtilities.getRealScreenSize().x / AndroidUtilities.density);
-        int i11 = bVar.d;
-        File file = bVar.a;
-        if (i11 == 1) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(bVar.c), true);
-        } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(bVar.c), false);
-        }
-        t7Var.i(this.v.f.j.contains(bVar), z10);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        if (this.n == null) {
-            this.n = new org.telegram.ui.Cells.s7(viewGroup.getContext(), null);
-        }
-        n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
-        n7Var.setStyle(1);
-        return new org.telegram.ui.Components.vk0(n7Var);
+    @Override // org.telegram.ui.Cells.k7
+    public final void a() {
+        r7 r7Var = this.m0.n;
+        j7 j7Var = this.l0;
+        r7.b(r7Var, (yh.a) j7Var.getTag(), j7Var);
     }
 }

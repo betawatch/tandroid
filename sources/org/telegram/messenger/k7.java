@@ -1,32 +1,41 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k7 implements Comparator {
+public final /* synthetic */ class k7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ k7(ArrayList arrayList, int i10) {
+    public /* synthetic */ k7(MediaDataController mediaDataController, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = arrayList;
+        this.b = mediaDataController;
+        this.c = tLObject;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$getEmojiSuggestions$220;
-        int lambda$reorderStickers$54;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$getEmojiSuggestions$220 = MediaDataController.lambda$getEmojiSuggestions$220(this.b, (MediaDataController.KeywordResult) obj, (MediaDataController.KeywordResult) obj2);
-                return lambda$getEmojiSuggestions$220;
+                this.b.lambda$checkPremiumGiftStickers$75(this.c);
+                break;
+            case 1:
+                this.b.lambda$loadReactions$13(this.c);
+                break;
+            case 2:
+                this.b.lambda$checkTonGiftStickers$77(this.c);
+                break;
+            case 3:
+                this.b.lambda$checkDefaultTopicIcons$81(this.c);
+                break;
+            case 4:
+                this.b.lambda$clearRecentStickers$18(this.c);
+                break;
             default:
-                lambda$reorderStickers$54 = MediaDataController.lambda$reorderStickers$54(this.b, (TLRPC.TL_messages_stickerSet) obj, (TLRPC.TL_messages_stickerSet) obj2);
-                return lambda$reorderStickers$54;
+                this.b.lambda$checkGenericAnimations$79(this.c);
+                break;
         }
     }
 }

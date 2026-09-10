@@ -4,7 +4,7 @@ import android.os.RemoteException;
 import h8.j;
 import i8.g;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class d implements e {
     public final /* synthetic */ int a;
@@ -35,8 +35,8 @@ public final class d implements e {
                     g gVar = (g) aVar.c;
                     gVar.S0(gVar.O0(), 12);
                     return;
-                } catch (RemoteException e7) {
-                    throw new androidx.car.app.j(e7);
+                } catch (RemoteException e) {
+                    throw new androidx.car.app.j(e);
                 }
             default:
                 aa.a aVar2 = this.b.a;
@@ -45,8 +45,8 @@ public final class d implements e {
                     g gVar2 = (g) aVar2.c;
                     gVar2.S0(gVar2.O0(), 3);
                     return;
-                } catch (RemoteException e10) {
-                    throw new androidx.car.app.j(e10);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
         }
     }

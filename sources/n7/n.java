@@ -1,159 +1,182 @@
 package n7;
 
-import j$.util.Map;
-import java.io.Serializable;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import j$.util.List;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
+import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public abstract class n implements Map, Serializable, j$.util.Map {
-    public static final Map.Entry[] b = new Map.Entry[0];
-    public transient o a;
+public abstract class n extends i implements List, RandomAccess, j$.util.List {
+    public static final j b = new j(y.e, 0);
 
-    @Override // java.util.Map
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final o entrySet() {
-        o oVar = this.a;
-        if (oVar == null) {
-            r rVar = (r) this;
-            oVar = rVar.isEmpty() ? y.s : new q(rVar);
-            this.a = oVar;
-        }
-        return oVar;
+    public static y t(int i10, Object[] objArr) {
+        return i10 == 0 ? y.e : new y(i10, objArr);
     }
 
-    @Override // java.util.Map
-    public final void clear() {
+    public static y u(Object[] objArr) {
+        if (objArr.length == 0) {
+            return y.e;
+        }
+        Object[] objArr2 = (Object[]) objArr.clone();
+        int length = objArr2.length;
+        for (int i10 = 0; i10 < length; i10++) {
+            if (objArr2[i10] == null) {
+                throw new NullPointerException(hc.b.j(i10, "at index "));
+            }
+        }
+        return t(length, objArr2);
+    }
+
+    @Override // java.util.List
+    public final void add(int i10, Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$compute(this, obj, biFunction);
+    @Override // java.util.List
+    public final boolean addAll(int i10, Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        return Map.-CC.$default$computeIfAbsent(this, obj, function);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean contains(Object obj) {
+        return indexOf(obj) >= 0;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final boolean containsKey(Object obj) {
-        return get(obj) != null;
-    }
-
-    @Override // java.util.Map
-    public final boolean containsValue(Object obj) {
-        return ((r) this).d.contains(obj);
-    }
-
-    @Override // java.util.Map
+    @Override // java.util.Collection, java.util.List
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj instanceof java.util.Map) {
-            return ((r) this).entrySet().equals(((java.util.Map) obj).entrySet());
+        if (obj instanceof List) {
+            List list = (List) obj;
+            int size = size();
+            if (size == list.size()) {
+                if (list instanceof RandomAccess) {
+                    for (int i10 = 0; i10 < size; i10++) {
+                        if (a.h(get(i10), list.get(i10))) {
+                        }
+                    }
+                    return true;
+                }
+                j listIterator = listIterator(0);
+                Iterator it = list.iterator();
+                while (true) {
+                    if (listIterator.hasNext()) {
+                        if (!it.hasNext() || !a.h(listIterator.next(), it.next())) {
+                            break;
+                        }
+                    } else if (!it.hasNext()) {
+                        return true;
+                    }
+                }
+            }
         }
         return false;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ void forEach(BiConsumer biConsumer) {
-        Map.-CC.$default$forEach(this, biConsumer);
-    }
-
-    @Override // java.util.Map
-    public abstract Object get(Object obj);
-
-    @Override // java.util.Map, j$.util.Map
-    public final Object getOrDefault(Object obj, Object obj2) {
-        Object obj3 = get(obj);
-        return obj3 != null ? obj3 : obj2;
-    }
-
-    @Override // java.util.Map
+    @Override // java.util.Collection, java.util.List
     public final int hashCode() {
-        return a.b(entrySet());
-    }
-
-    @Override // java.util.Map
-    public final boolean isEmpty() {
-        return ((r) this).size() == 0;
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map
-    public final void putAll(java.util.Map map) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
-        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean remove(Object obj, Object obj2) {
-        return Map.-CC.$default$remove(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object replace(Object obj, Object obj2) {
-        return Map.-CC.$default$replace(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ void replaceAll(BiFunction biFunction) {
-        Map.-CC.$default$replaceAll(this, biFunction);
-    }
-
-    public final String toString() {
-        r rVar = (r) this;
-        int size = rVar.size();
-        if (size < 0) {
-            throw new IllegalArgumentException(i2.g.i(size, "size cannot be negative but was: "));
+        int size = size();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
         }
-        StringBuilder sb2 = new StringBuilder((int) Math.min(size * 8, 1073741824L));
-        sb2.append('{');
-        boolean z10 = true;
-        for (Map.Entry entry : rVar.entrySet()) {
-            if (!z10) {
-                sb2.append(", ");
+        return i10;
+    }
+
+    @Override // n7.i
+    public int i(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
+    public int indexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (obj.equals(get(i10))) {
+                return i10;
             }
-            sb2.append(entry.getKey());
-            sb2.append('=');
-            sb2.append(entry.getValue());
-            z10 = false;
         }
-        sb2.append('}');
-        return sb2.toString();
+        return -1;
     }
 
-    @Override // java.util.Map
-    public final Object remove(Object obj) {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final /* synthetic */ Iterator iterator() {
+        return listIterator(0);
+    }
+
+    public int lastIndexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        for (int size = size() - 1; size >= 0; size--) {
+            if (obj.equals(get(size))) {
+                return size;
+            }
+        }
+        return -1;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ ListIterator listIterator() {
+        return listIterator(0);
+    }
+
+    @Override // n7.i
+    public final e0 p() {
+        return listIterator(0);
+    }
+
+    public n r() {
+        return size() <= 1 ? this : new l(this);
+    }
+
+    @Override // java.util.List
+    public final Object remove(int i10) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
-        return Map.-CC.$default$replace(this, obj, obj2, obj3);
+    @Override // java.util.List, j$.util.List
+    public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
+        List.-CC.$default$replaceAll(this, unaryOperator);
+    }
+
+    @Override // java.util.List
+    /* renamed from: s, reason: merged with bridge method [inline-methods] */
+    public n subList(int i10, int i11) {
+        a.m(i10, i11, size());
+        int i12 = i11 - i10;
+        return i12 == size() ? this : i12 == 0 ? y.e : new m(this, i10, i12);
+    }
+
+    @Override // java.util.List
+    public final Object set(int i10, Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List, j$.util.List
+    public /* synthetic */ void sort(Comparator comparator) {
+        List.-CC.$default$sort(this, comparator);
+    }
+
+    @Override // java.util.List
+    /* renamed from: v, reason: merged with bridge method [inline-methods] */
+    public final j listIterator(int i10) {
+        int size = size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(a.n(i10, size, "index"));
+        }
+        return isEmpty() ? b : new j(this, i10);
     }
 }

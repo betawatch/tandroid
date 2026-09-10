@@ -1,192 +1,124 @@
 package bh;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Arrays;
+import w7.q;
+import xf.f0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c extends Drawable {
-    public final Paint a;
-    public final dh.d b;
-    public final Matrix c;
-    public LinearGradient d;
-    public final Matrix e;
-    public LinearGradient f;
-    public BitmapShader g;
-    public ComposeShader h;
-    public final Matrix i;
-    public final Paint j;
-    public Bitmap k;
-    public int l;
-    public boolean m;
-    public final Paint n;
-    public int o;
-    public boolean p;
-    public int q;
+public final class c {
+    public int d;
+    public boolean e;
+    public int f;
+    public float i;
+    public float j;
+    public final Rect a = new Rect();
+    public final float[] b = new float[8];
+    public final float[] c = new float[8];
+    public float g = 0.75f;
+    public final float h = 1.5f;
+    public final Path k = new Path();
+    public boolean l = true;
+    public final Rect m = new Rect();
+    public final Path n = new Path();
+    public final Path o = new Path();
 
-    public c(dh.d dVar) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = new Matrix();
-        this.e = new Matrix();
-        this.i = new Matrix();
-        Paint paint2 = new Paint(1);
-        this.j = paint2;
-        this.n = new Paint(1);
-        this.q = 255;
-        this.b = dVar;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint2.setFilterBitmap(true);
-        b(AndroidUtilities.dp(40.0f), false);
+    public final void a() {
+        float[] fArr = this.b;
+        this.l = f0.c(fArr);
+        Rect rect = this.a;
+        Rect rect2 = this.m;
+        rect2.set(rect);
+        int i10 = this.d;
+        rect2.inset(i10, i10);
+        Path path = this.k;
+        path.rewind();
+        float f7 = rect2.left;
+        float f10 = rect2.top;
+        float f11 = rect2.right;
+        float f12 = rect2.bottom;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(f7, f10, f11, f12, this.b, direction);
+        path.close();
+        float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
+        float[] fArr2 = d.C;
+        Arrays.fill(fArr2, 0.0f);
+        fArr2[0] = fArr[0];
+        fArr2[1] = fArr[1];
+        fArr2[2] = fArr[2];
+        fArr2[3] = fArr[3];
+        if (this.l && fArr[0] > min) {
+            fArr2[3] = min;
+            fArr2[2] = min;
+            fArr2[1] = min;
+            fArr2[0] = min;
+        }
+        Path path2 = this.n;
+        path2.rewind();
+        float f13 = rect2.left;
+        int i11 = rect2.top;
+        path2.addRoundRect(f13, i11, rect2.right, Math.min(i11 + fArr[0], rect2.bottom), fArr2, direction);
+        float f14 = rect2.left;
+        int i12 = rect2.top;
+        float f15 = i12 + this.i;
+        float f16 = rect2.right;
+        float min2 = Math.min(i12 + fArr[0], rect2.bottom);
+        Path.Direction direction2 = Path.Direction.CCW;
+        path2.addRoundRect(f14, f15, f16, min2, fArr2, direction2);
+        path2.close();
+        Arrays.fill(fArr2, 0.0f);
+        fArr2[4] = fArr[4];
+        fArr2[5] = fArr[5];
+        fArr2[6] = fArr[6];
+        fArr2[7] = fArr[7];
+        if (this.l && fArr[0] > min) {
+            fArr2[7] = min;
+            fArr2[6] = min;
+            fArr2[5] = min;
+            fArr2[4] = min;
+        }
+        Path path3 = this.o;
+        path3.rewind();
+        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom, fArr2, direction);
+        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom - this.j, fArr2, direction2);
+        path3.close();
     }
 
-    public static LinearGradient a(int i10, boolean z10) {
-        int alpha = Color.alpha(i10);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 285), i0.a.k(i10, (alpha * 176) / 285), i0.a.k(i10, (alpha * 232) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 255), i0.a.k(i10, (alpha * 176) / 255), i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
-    }
-
-    public final void b(int i10, boolean z10) {
-        if (this.l == i10 && this.m == z10) {
+    public final void b(Canvas canvas, Paint paint) {
+        if (!this.l) {
+            canvas.drawPath(this.k, paint);
             return;
         }
-        this.l = i10;
-        this.m = z10;
-        LinearGradient a2 = a(-16777216, z10);
-        this.d = a2;
-        this.a.setShader(a2);
-        this.n.setShader(null);
-        Matrix matrix = this.c;
-        matrix.reset();
-        matrix.setScale(1.0f, i10);
-        if (i10 < 0) {
-            matrix.postTranslate(0.0f, -i10);
-        }
-        this.d.setLocalMatrix(matrix);
+        Rect rect = this.m;
+        float f7 = rect.left;
+        float f10 = rect.top;
+        float f11 = rect.right;
+        float f12 = rect.bottom;
+        float f13 = this.b[0];
+        canvas.drawRoundRect(f7, f10, f11, f12, f13, f13, paint);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int height;
-        int i10;
-        boolean z10;
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.q == 0) {
+    public final void c(Canvas canvas, Paint paint, boolean z10) {
+        if (!z10) {
+            b(canvas, paint);
             return;
         }
-        dh.d dVar = this.b;
-        gh.a i11 = dVar.i();
-        while (i11 instanceof gh.e) {
-            i11 = ((gh.e) i11).a;
-        }
-        boolean z11 = this.p;
-        Matrix matrix = this.c;
-        Matrix matrix2 = this.e;
-        if (!z11 && (i11 instanceof gh.c)) {
-            int color = ((gh.c) i11).a.getColor();
-            int i12 = this.o;
-            Paint paint = this.n;
-            if (i12 != color || this.f == null) {
-                LinearGradient a2 = a(color, this.m);
-                this.f = a2;
-                this.o = color;
-                paint.setShader(a2);
-            }
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            matrix2.set(matrix);
-            matrix2.postTranslate(bounds.left, bounds.top + height);
-            this.f.setLocalMatrix(matrix2);
-            paint.setAlpha(this.q);
-            canvas.drawRect(bounds, paint);
-            return;
-        }
-        if (z11 || !(i11 instanceof gh.b) || (i10 = Build.VERSION.SDK_INT) < 28) {
-            int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.q);
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            dVar.draw(canvas);
-            canvas.translate(bounds.left, bounds.top + height);
-            canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.a);
-            canvas.restoreToCount(saveLayerAlpha);
-            return;
-        }
-        gh.b bVar = (gh.b) i11;
-        Bitmap bitmap = bVar.d;
-        if (bitmap == null) {
-            return;
-        }
-        boolean z12 = true;
-        if (this.o != -16777216 || this.f == null) {
-            this.f = a(-16777216, this.m);
-            this.o = -16777216;
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        if (this.g == null || this.k != bitmap) {
-            this.k = bitmap;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.g = bitmapShader;
-            if (i10 >= 33) {
-                bitmapShader.setFilterMode(2);
-            }
-        } else {
-            z12 = z10;
-        }
-        Paint paint2 = this.j;
-        if (z12 || this.h == null) {
-            ComposeShader composeShader = new ComposeShader(this.g, this.f, PorterDuff.Mode.DST_IN);
-            this.h = composeShader;
-            paint2.setShader(composeShader);
-        }
-        height = this.l < 0 ? bounds.height() + this.l : 0;
-        matrix2.set(matrix);
-        matrix2.postTranslate(bounds.left, bounds.top + height);
-        this.f.setLocalMatrix(matrix2);
-        Matrix matrix3 = bVar.b;
-        Matrix matrix4 = this.i;
-        matrix4.set(matrix3);
-        matrix4.postTranslate(-dVar.a, -dVar.b);
-        this.g.setLocalMatrix(matrix4);
-        paint2.setAlpha(this.q);
-        canvas.drawRect(bounds, paint2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.q;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.q = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        Rect rect = this.m;
+        float f7 = rect.top;
+        float[] fArr = this.b;
+        float a2 = q.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
+        canvas.save();
+        Rect rect2 = this.a;
+        canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);
+        float f10 = rect.left;
+        float f11 = rect.top;
+        float f12 = rect.right;
+        float f13 = fArr[0];
+        canvas.drawRoundRect(f10, f11, f12, a2, f13, f13, paint);
+        canvas.restore();
     }
 }

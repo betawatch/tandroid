@@ -1,38 +1,21 @@
 package bi;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class w8 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ TextView c;
-    public final /* synthetic */ y8 d;
+public abstract class w8 {
+    public final String a;
 
-    public w8(y8 y8Var, TextView textView, View view, TextView textView2) {
-        this.d = y8Var;
-        this.a = textView;
-        this.b = view;
-        this.c = textView2;
+    public w8(String str) {
+        this.a = str;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int[] iArr = new int[2];
-        TextView textView = this.a;
-        textView.getLocationOnScreen(iArr);
-        int dp = AndroidUtilities.dp(24.0f) + iArr[1];
-        int measuredHeight = this.b.getMeasuredHeight();
-        y8 y8Var = this.d;
-        if (dp > measuredHeight) {
-            textView.setLayoutParams(w7.x5.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(w7.x5.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
-            y8Var.requestLayout();
-        }
-        y8Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-    }
+    public abstract String a();
+
+    public abstract String b();
+
+    public abstract void c(org.telegram.ui.ActionBar.p2 p2Var);
+
+    public abstract void d(ImageReceiver imageReceiver);
 }

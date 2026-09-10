@@ -1,29 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class g11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+public final /* synthetic */ class g11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Runnable c;
 
-    public g11(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+    public /* synthetic */ g11(Runnable runnable, Runnable runnable2, int i10) {
+        this.a = i10;
+        this.b = runnable;
+        this.c = runnable2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.a;
-        if (editorAlert.c.getAdapter() == editorAlert.r) {
-            m11 m11Var = editorAlert.f.b;
-            m11Var.requestFocus();
-            AndroidUtilities.showKeyboard(m11Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k11.b(this.b);
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                    break;
+                }
+                break;
+            default:
+                this.b.run();
+                this.c.run();
+                break;
         }
-        editorAlert.b.setVisibility(8);
-        editorAlert.v.setVisibility(8);
-        editorAlert.H = false;
     }
 }

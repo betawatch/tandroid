@@ -1,37 +1,42 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class v31 implements a41 {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ org.telegram.ui.Components.yc c;
+public final /* synthetic */ class v31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ org.telegram.ui.Components.hy e;
 
-    public v31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.yc ycVar) {
-        this.a = zArr;
-        this.b = callback;
-        this.c = ycVar;
+    public /* synthetic */ v31(org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.hy hyVar, int i10) {
+        this.a = i10;
+        this.b = p2Var;
+        this.c = context;
+        this.d = f6Var;
+        this.e = hyVar;
     }
 
-    @Override // org.telegram.ui.a41
-    public final void a() {
-        Utilities.Callback callback;
-        boolean[] zArr = this.a;
-        if (!zArr[0] && (callback = this.b) != null) {
-            zArr[0] = true;
-            callback.run(Boolean.TRUE);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.wc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.c, 4), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+            case 1:
+                org.telegram.ui.Components.wc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.c, 3), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+            default:
+                org.telegram.ui.Components.wc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.c, 7), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
         }
-        AndroidUtilities.runOnUIThread(new f01(this.c, 7), 200L);
-    }
-
-    @Override // org.telegram.ui.a41
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.a41
-    public final /* synthetic */ void c() {
     }
 }

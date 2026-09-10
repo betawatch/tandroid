@@ -1,113 +1,331 @@
 package androidx.fragment.app;
 
+import android.animation.LayoutTransition;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import r0.l1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class x implements LayoutInflater.Factory2 {
-    public final i0 a;
+public final class x extends FrameLayout {
+    public final ArrayList a;
+    public final ArrayList b;
+    public View.OnApplyWindowInsetsListener c;
+    public boolean d;
 
-    public x(i0 i0Var) {
-        this.a = i0Var;
-    }
-
-    @Override // android.view.LayoutInflater.Factory
-    public final View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        return onCreateView(null, str, context, attributeSet);
-    }
-
-    @Override // android.view.LayoutInflater.Factory2
-    public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-        boolean z10;
-        o0 g10;
-        boolean equals = w.class.getName().equals(str);
-        i0 i0Var = this.a;
-        if (equals) {
-            return new w(context, attributeSet, i0Var);
-        }
-        if ("fragment".equals(str)) {
-            String attributeValue = attributeSet.getAttributeValue(null, "class");
-            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, s1.a.a);
-            if (attributeValue == null) {
-                attributeValue = obtainStyledAttributes.getString(0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(Context context, AttributeSet attrs, j0 j0Var) {
+        super(context, attrs);
+        kotlin.jvm.internal.i.e(context, "context");
+        kotlin.jvm.internal.i.e(attrs, "attrs");
+        this.a = new ArrayList();
+        this.b = new ArrayList();
+        this.d = true;
+        String classAttribute = attrs.getClassAttribute();
+        int i10 = 0;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attrs, s1.a.b, 0, 0);
+        classAttribute = classAttribute == null ? obtainStyledAttributes.getString(0) : classAttribute;
+        String string = obtainStyledAttributes.getString(1);
+        obtainStyledAttributes.recycle();
+        int id2 = getId();
+        s C = j0Var.C(id2);
+        if (classAttribute != null && C == null) {
+            if (id2 == -1) {
+                throw new IllegalStateException(a4.a.p("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
             }
-            int resourceId = obtainStyledAttributes.getResourceId(1, -1);
-            String string = obtainStyledAttributes.getString(2);
-            obtainStyledAttributes.recycle();
-            if (attributeValue != null) {
+            c0 H = j0Var.H();
+            context.getClassLoader();
+            s a2 = H.a(classAttribute);
+            kotlin.jvm.internal.i.d(a2, "fm.fragmentFactory.insta…ontext.classLoader, name)");
+            a2.N = id2;
+            a2.O = id2;
+            a2.P = string;
+            a2.J = j0Var;
+            u uVar = j0Var.w;
+            a2.K = uVar;
+            a2.U = true;
+            if ((uVar == null ? null : uVar.a) != null) {
+                a2.U = true;
+            }
+            a aVar = new a(j0Var);
+            aVar.o = true;
+            a2.V = this;
+            a2.F = true;
+            aVar.f(getId(), a2, string);
+            if (aVar.g) {
+                throw new IllegalStateException("This transaction is already being added to the back stack");
+            }
+            j0 j0Var2 = aVar.q;
+            if (j0Var2.w != null && !j0Var2.J) {
+                j0Var2.z(true);
+                a aVar2 = j0Var2.h;
+                if (aVar2 != null) {
+                    aVar2.r = false;
+                    aVar2.d();
+                    if (j0.K(3)) {
+                        Log.d("FragmentManager", "Reversing mTransitioningOp " + j0Var2.h + " as part of execSingleAction for action " + aVar);
+                    }
+                    j0Var2.h.e(false, false);
+                    j0Var2.h.a(j0Var2.L, j0Var2.M);
+                    ArrayList arrayList = j0Var2.h.a;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList.get(i11);
+                        i11++;
+                        s sVar = ((q0) obj).b;
+                        if (sVar != null) {
+                            sVar.x = false;
+                        }
+                    }
+                    j0Var2.h = null;
+                }
+                aVar.a(j0Var2.L, j0Var2.M);
+                j0Var2.b = true;
                 try {
-                    z10 = r.class.isAssignableFrom(b0.b(context.getClassLoader(), attributeValue));
-                } catch (ClassNotFoundException unused) {
-                    z10 = false;
-                }
-                if (z10) {
-                    int id2 = view != null ? view.getId() : 0;
-                    if (id2 == -1 && resourceId == -1 && string == null) {
-                        throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Must specify unique android:id, android:tag, or have a parent with an id for " + attributeValue);
-                    }
-                    r C = resourceId != -1 ? i0Var.C(resourceId) : null;
-                    if (C == null && string != null) {
-                        C = i0Var.D(string);
-                    }
-                    if (C == null && id2 != -1) {
-                        C = i0Var.C(id2);
-                    }
-                    if (C == null) {
-                        b0 H = i0Var.H();
-                        context.getClassLoader();
-                        C = H.a(attributeValue);
-                        C.y = true;
-                        C.N = resourceId != 0 ? resourceId : id2;
-                        C.O = id2;
-                        C.P = string;
-                        C.E = true;
-                        C.J = i0Var;
-                        t tVar = i0Var.w;
-                        C.K = tVar;
-                        u uVar = tVar.b;
-                        C.U = true;
-                        if ((tVar != null ? tVar.a : null) != null) {
-                            C.U = true;
-                        }
-                        g10 = i0Var.a(C);
-                        if (i0.K(2)) {
-                            Log.v("FragmentManager", "Fragment " + C + " has been inflated via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
-                        }
-                    } else {
-                        if (C.E) {
-                            throw new IllegalArgumentException(attributeSet.getPositionDescription() + ": Duplicate id 0x" + Integer.toHexString(resourceId) + ", tag " + string + ", or parent id 0x" + Integer.toHexString(id2) + " with another fragment for " + attributeValue);
-                        }
-                        C.E = true;
-                        C.J = i0Var;
-                        t tVar2 = i0Var.w;
-                        C.K = tVar2;
-                        u uVar2 = tVar2.b;
-                        C.U = true;
-                        if ((tVar2 != null ? tVar2.a : null) != null) {
-                            C.U = true;
-                        }
-                        g10 = i0Var.g(C);
-                        if (i0.K(2)) {
-                            Log.v("FragmentManager", "Retained Fragment " + C + " has been re-attached via the <fragment> tag: id=0x" + Integer.toHexString(resourceId));
-                        }
-                    }
-                    ViewGroup viewGroup = (ViewGroup) view;
-                    t1.b bVar = t1.c.a;
-                    t1.c.b(new t1.a(C, "Attempting to use <fragment> tag to add fragment " + C + " to container " + viewGroup));
-                    t1.c.a(C).getClass();
-                    C.V = viewGroup;
-                    g10.j();
-                    g10.i();
-                    throw new IllegalStateException(a4.a.p("Fragment ", attributeValue, " did not create a view."));
+                    j0Var2.W(j0Var2.L, j0Var2.M);
+                    j0Var2.d();
+                    j0Var2.h0();
+                    j0Var2.v();
+                    ((HashMap) j0Var2.c.b).values().removeAll(Collections.singleton(null));
+                } catch (Throwable th2) {
+                    j0Var2.d();
+                    throw th2;
                 }
             }
         }
-        return null;
+        ArrayList o9 = j0Var.c.o();
+        int size2 = o9.size();
+        while (i10 < size2) {
+            Object obj2 = o9.get(i10);
+            i10++;
+            int i12 = ((p0) obj2).c.O;
+            getId();
+        }
+    }
+
+    public final void a(View view) {
+        if (this.b.contains(view)) {
+            this.a.add(view);
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View child, int i10, ViewGroup.LayoutParams layoutParams) {
+        kotlin.jvm.internal.i.e(child, "child");
+        Object tag = child.getTag(R.id.fragment_container_view_tag);
+        if ((tag instanceof s ? (s) tag : null) != null) {
+            super.addView(child, i10, layoutParams);
+            return;
+        }
+        throw new IllegalStateException(("Views added to a FragmentContainerView must be associated with a Fragment. View " + child + " is not associated with a Fragment.").toString());
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final WindowInsets dispatchApplyWindowInsets(WindowInsets insets) {
+        l1 h;
+        kotlin.jvm.internal.i.e(insets, "insets");
+        l1 h10 = l1.h(null, insets);
+        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.c;
+        if (onApplyWindowInsetsListener != null) {
+            kotlin.jvm.internal.i.b(onApplyWindowInsetsListener);
+            WindowInsets onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(this, insets);
+            kotlin.jvm.internal.i.d(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
+            h = l1.h(null, onApplyWindowInsets);
+        } else {
+            h = r0.i0.h(this, h10);
+        }
+        kotlin.jvm.internal.i.d(h, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
+        if (!h.a.n()) {
+            int childCount = getChildCount();
+            for (int i10 = 0; i10 < childCount; i10++) {
+                r0.i0.b(getChildAt(i10), h);
+            }
+        }
+        return insets;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        kotlin.jvm.internal.i.e(canvas, "canvas");
+        if (this.d) {
+            ArrayList arrayList = this.a;
+            int size = arrayList.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                super.drawChild(canvas, (View) obj, getDrawingTime());
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View child, long j3) {
+        kotlin.jvm.internal.i.e(canvas, "canvas");
+        kotlin.jvm.internal.i.e(child, "child");
+        if (this.d) {
+            ArrayList arrayList = this.a;
+            if (!arrayList.isEmpty() && arrayList.contains(child)) {
+                return false;
+            }
+        }
+        return super.drawChild(canvas, child, j3);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void endViewTransition(View view) {
+        kotlin.jvm.internal.i.e(view, "view");
+        this.b.remove(view);
+        if (this.a.remove(view)) {
+            this.d = true;
+        }
+        super.endViewTransition(view);
+    }
+
+    public final <F extends s> F getFragment() {
+        v vVar;
+        s sVar;
+        j0 s10;
+        View view = this;
+        while (true) {
+            vVar = null;
+            if (view == null) {
+                sVar = null;
+                break;
+            }
+            Object tag = view.getTag(R.id.fragment_container_view_tag);
+            sVar = tag instanceof s ? (s) tag : null;
+            if (sVar != null) {
+                break;
+            }
+            Object parent = view.getParent();
+            view = parent instanceof View ? (View) parent : null;
+        }
+        if (sVar == null) {
+            Context context = getContext();
+            while (true) {
+                if (!(context instanceof ContextWrapper)) {
+                    break;
+                }
+                if (context instanceof v) {
+                    vVar = (v) context;
+                    break;
+                }
+                context = ((ContextWrapper) context).getBaseContext();
+            }
+            if (vVar == null) {
+                throw new IllegalStateException("View " + this + " is not within a subclass of FragmentActivity.");
+            }
+            s10 = vVar.s();
+        } else {
+            if (!sVar.t()) {
+                throw new IllegalStateException("The Fragment " + sVar + " that owns View " + this + " has already been destroyed. Nested fragments should always use the child FragmentManager.");
+            }
+            s10 = sVar.l();
+        }
+        return (F) s10.C(getId());
+    }
+
+    @Override // android.view.View
+    public final WindowInsets onApplyWindowInsets(WindowInsets insets) {
+        kotlin.jvm.internal.i.e(insets, "insets");
+        return insets;
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeAllViewsInLayout() {
+        int childCount = getChildCount();
+        while (true) {
+            childCount--;
+            if (-1 >= childCount) {
+                super.removeAllViewsInLayout();
+                return;
+            } else {
+                View view = getChildAt(childCount);
+                kotlin.jvm.internal.i.d(view, "view");
+                a(view);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        kotlin.jvm.internal.i.e(view, "view");
+        a(view);
+        super.removeView(view);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeViewAt(int i10) {
+        View view = getChildAt(i10);
+        kotlin.jvm.internal.i.d(view, "view");
+        a(view);
+        super.removeViewAt(i10);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeViewInLayout(View view) {
+        kotlin.jvm.internal.i.e(view, "view");
+        a(view);
+        super.removeViewInLayout(view);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeViews(int i10, int i11) {
+        int i12 = i10 + i11;
+        for (int i13 = i10; i13 < i12; i13++) {
+            View view = getChildAt(i13);
+            kotlin.jvm.internal.i.d(view, "view");
+            a(view);
+        }
+        super.removeViews(i10, i11);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void removeViewsInLayout(int i10, int i11) {
+        int i12 = i10 + i11;
+        for (int i13 = i10; i13 < i12; i13++) {
+            View view = getChildAt(i13);
+            kotlin.jvm.internal.i.d(view, "view");
+            a(view);
+        }
+        super.removeViewsInLayout(i10, i11);
+    }
+
+    public final void setDrawDisappearingViewsLast(boolean z10) {
+        this.d = z10;
+    }
+
+    @Override // android.view.ViewGroup
+    public void setLayoutTransition(LayoutTransition layoutTransition) {
+        throw new UnsupportedOperationException("FragmentContainerView does not support Layout Transitions or animateLayoutChanges=\"true\".");
+    }
+
+    @Override // android.view.View
+    public void setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener onApplyWindowInsetsListener) {
+        this.c = onApplyWindowInsetsListener;
+    }
+
+    @Override // android.view.ViewGroup
+    public final void startViewTransition(View view) {
+        kotlin.jvm.internal.i.e(view, "view");
+        if (view.getParent() == this) {
+            this.b.add(view);
+        }
+        super.startViewTransition(view);
     }
 }

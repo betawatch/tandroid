@@ -1,56 +1,49 @@
 package zh;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d4 implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ Utilities.Callback d;
+public final class d4 extends z4.a {
+    public final /* synthetic */ u7 c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ g4 e;
 
-    public /* synthetic */ d4(Utilities.Callback callback, boolean[] zArr, Utilities.Callback2 callback2) {
-        this.d = callback;
-        this.b = zArr;
-        this.c = callback2;
+    public d4(Context context, g4 g4Var, u7 u7Var) {
+        this.e = g4Var;
+        this.c = u7Var;
+        this.d = context;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Long l4 = (Long) obj;
-        Boolean bool = (Boolean) obj2;
-        switch (this.a) {
-            case 0:
-                Utilities.Callback callback = this.d;
-                if (callback != null) {
-                    callback.run(Boolean.TRUE);
-                }
-                this.b[0] = true;
-                Utilities.Callback2 callback2 = this.c;
-                if (callback2 != null) {
-                    callback2.run(bool.booleanValue() ? "paid" : "failed", l4);
-                    break;
-                }
-                break;
-            default:
-                this.b[0] = true;
-                Utilities.Callback2 callback22 = this.c;
-                if (callback22 != null) {
-                    callback22.run(bool.booleanValue() ? "paid" : "failed", l4);
-                }
-                Utilities.Callback callback3 = this.d;
-                if (callback3 != null) {
-                    callback3.run(Boolean.TRUE);
-                    break;
-                }
-                break;
-        }
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+        this.e.G.remove(obj);
     }
 
-    public /* synthetic */ d4(boolean[] zArr, Utilities.Callback2 callback2, Utilities.Callback callback) {
-        this.b = zArr;
-        this.c = callback2;
-        this.d = callback;
+    @Override // z4.a
+    public final int b() {
+        return this.e.F.size();
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        g4 g4Var = this.e;
+        c4 c4Var = new c4(this, this.c, this.d, g4Var.H, new bi.i5(this, 10));
+        c4Var.setTag(Integer.valueOf(i10));
+        c4Var.setShadowDrawable(g4Var.s);
+        c4Var.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
+        c4Var.g(g4Var.y, (f4) g4Var.F.get(i10));
+        c4Var.setListBottomPadding(g4Var.d);
+        gVar.addView(c4Var);
+        g4Var.G.add(c4Var);
+        return c4Var;
+    }
+
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

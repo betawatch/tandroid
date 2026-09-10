@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
 import v7.x5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -76,8 +76,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e7) {
-                        e = e7;
+                    } catch (Error e) {
+                        e = e;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -88,13 +88,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e10) {
-                e = e10;
+            } catch (Error | Exception e7) {
+                e = e7;
                 return new e0(e);
-            } catch (CancellationException e11) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
-            } catch (ExecutionException e12) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
+            } catch (CancellationException e10) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
+            } catch (ExecutionException e11) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
             }
         }
         if (z10) {
@@ -164,8 +164,8 @@ public final class w0 extends l0 implements g0 {
     public static void k(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e7) {
-            l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+        } catch (Exception e) {
+            l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.i("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -322,14 +322,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (ExecutionException e7) {
+            } catch (ExecutionException e) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e7.getCause());
+                sb2.append(e.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e10) {
+            } catch (Exception e7) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e10.getClass());
+                sb2.append(e7.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }

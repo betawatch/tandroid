@@ -1,92 +1,158 @@
 package bi;
 
-import android.graphics.Outline;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewOutlineProvider;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.em;
+import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.px;
+import org.telegram.ui.Components.rz;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.vv;
+import org.telegram.ui.Components.wv;
+import org.telegram.ui.gi0;
+import org.telegram.ui.sj0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class z1 extends ViewOutlineProvider {
+public final class z1 extends s4.n0 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ z1(int i10) {
+    public /* synthetic */ z1(Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
         switch (this.a) {
             case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(10.0f));
+                j2 j2Var = ((k2) this.b).e;
+                recyclerView.getClass();
+                rect.right = j2Var.E1(RecyclerView.R(view)) ? 0 : AndroidUtilities.dp(4.0f);
+                rect.bottom = AndroidUtilities.dp(4.0f);
                 break;
             case 1:
-                outline.setRoundRect(0, 0, view.getWidth(), AndroidUtilities.dp(29.0f) + view.getHeight(), AndroidUtilities.dp(29.0f));
-                break;
+                org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) this.b;
+                int b10 = recyclerView.T(view).b();
+                if (b10 == 0) {
+                    rect.left = AndroidUtilities.dp(18.0f);
+                }
+                if (b10 != tVar.getAdapter().h() - 1) {
+                    int h = tVar.getAdapter().h();
+                    if (h != 4) {
+                        rect.right = AndroidUtilities.dp(24.0f);
+                        break;
+                    } else {
+                        rect.right = em.A(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        break;
+                    }
+                } else {
+                    rect.right = AndroidUtilities.dp(18.0f);
+                    break;
+                }
             case 2:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(18.0f));
+                z zVar = ((wv) this.b).h;
+                if (!(view instanceof vv)) {
+                    zVar.getClass();
+                    if (RecyclerView.R(view) == 1) {
+                        rect.top = AndroidUtilities.dp(14.0f);
+                        break;
+                    }
+                } else {
+                    rect.left = -zVar.getPaddingLeft();
+                    rect.right = -zVar.getPaddingRight();
+                    break;
+                }
                 break;
             case 3:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(22.0f));
+                rz rzVar = (rz) this.b;
+                px pxVar = rzVar.P;
+                if (!(view instanceof org.telegram.ui.Cells.p8)) {
+                    if (!(view instanceof vl0) && !(view instanceof iy)) {
+                        if (view instanceof org.telegram.ui.Components.w9) {
+                            rect.bottom = AndroidUtilities.dp(12.0f);
+                            break;
+                        }
+                    } else {
+                        rect.left = -pxVar.getPaddingLeft();
+                        rect.right = -pxVar.getPaddingRight();
+                        if (view instanceof iy) {
+                            rect.top = AndroidUtilities.dp(8.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = AndroidUtilities.dp(5.0f);
+                    rect.right = AndroidUtilities.dp(5.0f);
+                    recyclerView.getClass();
+                    if (RecyclerView.R(view) + 1 > rzVar.R.E && !UserConfig.getInstance(rzVar.c1).isPremium() && !rzVar.U0) {
+                        rect.top = AndroidUtilities.dp(10.0f);
+                        break;
+                    }
+                }
                 break;
             case 4:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(22.0f));
+                recyclerView.getClass();
+                if (RecyclerView.R(view) == ((ArrayList) this.b).size() - 1) {
+                    rect.bottom = AndroidUtilities.dp(4.0f);
+                    break;
+                }
                 break;
             case 5:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(22.0f));
+                recyclerView.getClass();
+                if (RecyclerView.R(view) == ((gi0) this.b).c.size() - 1) {
+                    rect.bottom = AndroidUtilities.dp(4.0f);
+                    break;
+                }
                 break;
             case 6:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(22.0f));
+                super.a(rect, view, recyclerView, z0Var);
+                recyclerView.getClass();
+                int R = RecyclerView.R(view);
+                sj0 sj0Var = (sj0) this.b;
+                if (R == sj0Var.c0.size()) {
+                    rect.bottom = sj0Var.l0;
+                    break;
+                }
                 break;
             case 7:
-                outline.setRoundRect(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), view.getMeasuredWidth() - AndroidUtilities.dp(1.0f), view.getMeasuredHeight() - AndroidUtilities.dp(1.0f), AndroidUtilities.dp(6.0f));
-                break;
-            case 8:
-                int i10 = AndroidUtilities.roundMessageSize;
-                outline.setOval(0, 0, i10, i10);
-                break;
-            case 9:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), AndroidUtilities.dp(6.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(6.0f));
-                break;
-            case 10:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), AndroidUtilities.dp(6.0f) + view.getMeasuredHeight(), AndroidUtilities.dpf2(6.0f));
-                break;
-            case 11:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), AndroidUtilities.dp(6.0f) + view.getMeasuredHeight(), AndroidUtilities.dpf2(6.0f));
-                break;
-            case 12:
-                outline.setOval(0, 0, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
-                break;
-            case 13:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(12.0f));
-                break;
-            case 14:
-                outline.setRoundRect(0, AndroidUtilities.dp(50.0f), view.getWidth(), AndroidUtilities.dp(24.0f) + view.getHeight(), AndroidUtilities.dp(24.0f));
-                break;
-            case 15:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(10.0f));
-                break;
-            case 16:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / view.getScaleX()) * AndroidUtilities.dp(4.0f));
-                break;
-            case 17:
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                break;
-            case 18:
-                outline.setOval(0, 0, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
-                break;
-            case 19:
-                float dp = AndroidUtilities.dp(12.0f);
-                outline.setRoundRect(0, 0, view.getWidth(), (int) (view.getHeight() + dp), dp);
-                break;
-            case 20:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(6.0f));
-                break;
-            case 21:
-                outline.setOval(0, 0, view.getWidth(), view.getHeight());
+                recyclerView.getClass();
+                int R2 = RecyclerView.R(view);
+                up0 up0Var = (up0) this.b;
+                int i10 = up0Var.b0;
+                if (R2 >= i10) {
+                    int i11 = up0Var.f0;
+                    if (R2 < i10 + i11) {
+                        int i12 = R2 - i10;
+                        int i13 = i12 / 3;
+                        boolean z10 = i13 == 0;
+                        boolean z11 = i13 == (i11 - 1) / 3;
+                        int i14 = i12 % 3;
+                        boolean z12 = i14 == 0;
+                        boolean z13 = i14 == 2;
+                        rect.top = z10 ? AndroidUtilities.dp(8.0f) : 0;
+                        rect.bottom = z11 ? AndroidUtilities.dp(8.0f) : 0;
+                        rect.left = z12 ? AndroidUtilities.dp(10.0f) : 0;
+                        rect.right = z13 ? AndroidUtilities.dp(10.0f) : 0;
+                        break;
+                    }
+                }
                 break;
             default:
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), Math.min(view.getWidth(), view.getHeight()) / 2.0f);
+                super.a(rect, view, recyclerView, z0Var);
+                recyclerView.getClass();
+                int R3 = RecyclerView.R(view);
+                sg.c1 c1Var = (sg.c1) this.b;
+                if (R3 == c1Var.d0.size()) {
+                    rect.bottom = c1Var.p0;
+                    break;
+                }
                 break;
         }
     }

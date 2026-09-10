@@ -2,206 +2,237 @@ package qg;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import android.util.LongSparseArray;
-import android.view.MotionEvent;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import java.util.HashMap;
-import java.util.Map;
+import bi.x4;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.pr;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.w5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class t extends View {
-    public final Paint a;
-    public final int[] b;
-    public final Paint c;
-    public final LongSparseArray d;
-    public long e;
-    public final Path f;
-    public final float[] h;
-    public final HashMap n;
-    public final /* synthetic */ x r;
+    public final Path a;
+    public final CornerPathEffect b;
+    public final TextPaint c;
+    public StaticLayout d;
+    public float e;
+    public SpannableStringBuilder f;
+    public final ArrayList h;
+    public StaticLayout n;
+    public boolean r;
+    public float s;
+    public boolean v;
+    public final Paint w;
+    public final Paint x;
+    public final /* synthetic */ LimitPreviewView y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(x xVar, Context context) {
+    public t(LimitPreviewView limitPreviewView, Context context) {
         super(context);
-        this.r = xVar;
-        this.a = new Paint(1);
-        this.b = new int[]{-16735784, -16752387, -11788361, -6804548, -4707235, -180718, -38656, -152832, -211200, -198077, -2495689, -8996289};
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new LongSparseArray();
-        this.e = Long.MIN_VALUE;
-        this.f = new Path();
-        this.h = new float[8];
-        this.n = new HashMap();
-        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f));
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        for (int i10 = 0; i10 < 12; i10++) {
-            for (int i11 = 0; i11 < 10; i11++) {
-                if (i11 == 0) {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i0.a.d(i10 / 11.0f, -1, -16777216)));
-                } else {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.a.d(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.a.d(wl.c(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
-                }
-            }
-        }
+        this.y = limitPreviewView;
+        this.a = new Path();
+        this.b = new CornerPathEffect(AndroidUtilities.dp(6.0f));
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.h = new ArrayList();
+        Paint paint = new Paint();
+        this.w = paint;
+        Paint paint2 = new Paint();
+        this.x = paint2;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(22.0f));
+        textPaint.setColor(-1);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.OVERLAY));
     }
 
-    public final void a(int i10) {
-        for (Map.Entry entry : this.n.entrySet()) {
-            if (((Integer) entry.getValue()).intValue() == i10) {
-                long longValue = ((Long) entry.getKey()).longValue();
-                b((int) (longValue >> 16), (int) (longValue - (r5 << 16)));
+    public static void a(t tVar) {
+        ArrayList arrayList = tVar.h;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (((s) arrayList.get(i10)).f != null) {
                 return;
             }
         }
-        this.e = Long.MIN_VALUE;
-        invalidate();
+        arrayList.clear();
+        tVar.r = false;
+        tVar.invalidate();
     }
 
-    public final void b(int i10, int i11) {
-        long j3 = (i10 << 16) + i11;
-        this.e = j3;
-        LongSparseArray longSparseArray = this.d;
-        if (longSparseArray.get(j3) == null) {
-            longSparseArray.put(this.e, Float.valueOf(0.0f));
+    public final void b() {
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(8.0f);
+        float measuredWidth = getMeasuredWidth() * this.s;
+        float clamp = Utilities.clamp(AndroidUtilities.dp(8.0f) + measuredWidth, getMeasuredWidth(), 0.0f);
+        float clamp2 = Utilities.clamp(AndroidUtilities.dp(10.0f) + measuredWidth, getMeasuredWidth(), AndroidUtilities.dp(24.0f));
+        float clamp3 = Utilities.clamp(measuredWidth - AndroidUtilities.dp(this.s >= 0.7f ? 24.0f : 10.0f), getMeasuredWidth(), 0.0f);
+        float clamp4 = Utilities.clamp(measuredWidth - AndroidUtilities.dp(8.0f), getMeasuredWidth(), 0.0f);
+        Path path = this.a;
+        path.rewind();
+        float f7 = measuredHeight;
+        float f10 = f7 - (f7 / 2.0f);
+        path.moveTo(clamp3, f10 - AndroidUtilities.dp(2.0f));
+        path.lineTo(clamp3, f7);
+        path.lineTo(clamp4, f7);
+        path.lineTo(measuredWidth, AndroidUtilities.dp(8.0f) + measuredHeight);
+        if (this.s < 0.7f) {
+            path.lineTo(clamp, f7);
         }
-        invalidate();
-    }
-
-    public final void c(MotionEvent motionEvent) {
-        int width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / 12;
-        int height = ((getHeight() - getPaddingTop()) - getPaddingBottom()) / 10;
-        int x10 = (int) ((motionEvent.getX() - getPaddingLeft()) / width);
-        int y3 = (int) (motionEvent.getY() / height);
-        Integer num = (Integer) this.n.get(Long.valueOf((x10 << 16) + y3));
-        if (num != null) {
-            int intValue = num.intValue();
-            int i10 = x.s;
-            this.r.m(intValue, 3);
-            b(x10, y3);
-        }
+        path.lineTo(clamp2, f7);
+        path.lineTo(clamp2, f10 - AndroidUtilities.dp(2.0f));
+        path.close();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        HashMap hashMap;
-        super.onDraw(canvas);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-        canvas.save();
-        Path path = this.r.e;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
-        canvas.clipPath(path);
-        float width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / 12.0f;
-        float height = ((getHeight() - getPaddingTop()) - getPaddingBottom()) / 10.0f;
-        int i10 = 0;
-        while (true) {
-            hashMap = this.n;
-            if (i10 >= 12) {
-                break;
+        float globalXOffset;
+        float globalXOffset2;
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(8.0f);
+        LimitPreviewView limitPreviewView = this.y;
+        Paint paint = limitPreviewView.K;
+        if (limitPreviewView.J) {
+            measuredHeight = getMeasuredHeight();
+            d1 d = d1.d();
+            int measuredWidth = limitPreviewView.getMeasuredWidth();
+            int measuredHeight2 = limitPreviewView.getMeasuredHeight();
+            globalXOffset2 = limitPreviewView.getGlobalXOffset();
+            d.f(globalXOffset2 - getX(), -getTop(), measuredWidth, measuredHeight2);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.dp(3.0f), getMeasuredWidth(), measuredHeight - AndroidUtilities.dp(3.0f));
+            float f7 = measuredHeight / 2.0f;
+            d1 d10 = d1.d();
+            if (d10.c == null) {
+                d10.c = new Paint(1);
             }
-            for (int i11 = 0; i11 < 10; i11++) {
-                Integer num = (Integer) hashMap.get(Long.valueOf((i10 << 16) + i11));
-                if (num != null) {
-                    int intValue = num.intValue();
-                    Paint paint = this.a;
-                    paint.setColor(intValue);
-                    RectF rectF2 = AndroidUtilities.rectTmp;
-                    rectF2.set((i10 * width) + getPaddingLeft(), (i11 * height) + getPaddingTop(), ((i10 + 1) * width) + getPaddingLeft(), ((i11 + 1) * height) + getPaddingTop());
-                    canvas.drawRect(rectF2, paint);
-                }
+            d10.c.setColor(j6.w0(null, j6.Oh, false));
+            canvas.drawRoundRect(rectF, f7, f7, d10.c);
+        } else {
+            if (this.v) {
+                this.v = false;
+                b();
             }
-            i10++;
-        }
-        canvas.restore();
-        int i12 = 0;
-        while (true) {
-            LongSparseArray longSparseArray = this.d;
-            if (i12 >= longSparseArray.size()) {
-                return;
+            d1 d11 = d1.d();
+            int measuredWidth2 = limitPreviewView.getMeasuredWidth();
+            int measuredHeight3 = limitPreviewView.getMeasuredHeight();
+            globalXOffset = limitPreviewView.getGlobalXOffset();
+            d11.f(globalXOffset - getX(), -getTop(), measuredWidth2, measuredHeight3);
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            float f10 = measuredHeight;
+            rectF2.set(0.0f, 0.0f, getMeasuredWidth(), f10);
+            float f11 = f10 / 2.0f;
+            boolean z10 = limitPreviewView.R;
+            TextPaint textPaint = this.c;
+            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : d1.d().e());
+            Paint e = d1.d().e();
+            CornerPathEffect cornerPathEffect = this.b;
+            e.setPathEffect(cornerPathEffect);
+            if (limitPreviewView.e0 != null) {
+                textPaint.setPathEffect(cornerPathEffect);
             }
-            long keyAt = longSparseArray.keyAt(i12);
-            float floatValue = ((Float) longSparseArray.valueAt(i12)).floatValue();
-            float min = this.e == keyAt ? Math.min(1.0f, floatValue + 0.045714285f) : Math.max(0.0f, floatValue - 0.10666667f);
-            int i13 = (int) (keyAt >> 16);
-            int i14 = (int) (keyAt - (i13 << 16));
-            Integer num2 = (Integer) hashMap.get(Long.valueOf(keyAt));
-            Paint paint2 = this.c;
-            if (num2 != null) {
-                paint2.setColor(AndroidUtilities.computePerceivedBrightness(num2.intValue()) > 0.721f ? -15658735 : -1);
+            if (!limitPreviewView.R) {
+                paint = limitPreviewView.e0 != null ? textPaint : d1.d().e();
             }
-            paint2.setStrokeWidth(pr.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
-            Path path2 = this.f;
-            path2.rewind();
-            RectF rectF3 = AndroidUtilities.rectTmp;
-            float f7 = width;
-            float f10 = height;
-            HashMap hashMap2 = hashMap;
-            rectF3.set((i13 * f7) + getPaddingLeft(), (i14 * f10) + getPaddingTop(), ((i13 + 1) * f7) + getPaddingLeft(), ((i14 + 1) * f10) + getPaddingTop());
-            float dp = (i13 == 0 && i14 == 0) ? AndroidUtilities.dp(10.0f) : 0.0f;
-            float[] fArr = this.h;
-            fArr[1] = dp;
-            fArr[0] = dp;
-            float dp2 = (i13 == 11 && i14 == 0) ? AndroidUtilities.dp(10.0f) : 0.0f;
-            fArr[3] = dp2;
-            fArr[2] = dp2;
-            float dp3 = (i13 == 11 && i14 == 9) ? AndroidUtilities.dp(10.0f) : 0.0f;
-            fArr[5] = dp3;
-            fArr[4] = dp3;
-            float dp4 = (i13 == 0 && i14 == 9) ? AndroidUtilities.dp(10.0f) : 0.0f;
-            fArr[7] = dp4;
-            fArr[6] = dp4;
-            path2.addRoundRect(rectF3, fArr, Path.Direction.CW);
-            canvas.drawPath(path2, paint2);
-            if (min > 0.0f || this.e == keyAt) {
-                if (min < 1.0f) {
-                    invalidate();
-                }
-                longSparseArray.setValueAt(i12, Float.valueOf(min));
-            } else {
-                longSparseArray.removeAt(i12);
-                i12--;
+            canvas.drawPath(this.a, paint);
+            d1.d().e().setPathEffect(null);
+            if (limitPreviewView.e0 != null) {
+                textPaint.setPathEffect(null);
+            }
+            if (limitPreviewView.d0) {
                 invalidate();
             }
-            i12++;
-            width = f7;
-            height = f10;
-            hashMap = hashMap2;
+        }
+        int i10 = measuredHeight;
+        if (limitPreviewView.e0 != null) {
+            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.w, 31);
+        }
+        float measuredWidth3 = (getMeasuredWidth() - this.e) / 2.0f;
+        float height = (i10 - this.d.getHeight()) / 2.0f;
+        if (this.r) {
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(8.0f));
+            if (this.n != null) {
+                canvas.save();
+                canvas.translate(measuredWidth3, height);
+                this.n.draw(canvas);
+                canvas.restore();
+            }
+            int i11 = 0;
+            while (true) {
+                ArrayList arrayList = this.h;
+                if (i11 >= arrayList.size()) {
+                    break;
+                }
+                s sVar = (s) arrayList.get(i11);
+                canvas.save();
+                boolean z11 = sVar.a;
+                ArrayList arrayList2 = sVar.b;
+                if (z11) {
+                    canvas.translate(sVar.e + measuredWidth3, ((i10 * sVar.c) + height) - ((1 - arrayList2.size()) * i10));
+                    for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                        canvas.translate(0.0f, -i10);
+                        ((StaticLayout) arrayList2.get(i12)).draw(canvas);
+                    }
+                } else if (sVar.d) {
+                    canvas.translate(sVar.e + measuredWidth3, (height - ((i10 * 10) * sVar.c)) + ((10 - arrayList2.size()) * i10));
+                    for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+                        canvas.translate(0.0f, i10);
+                        ((StaticLayout) arrayList2.get(i13)).draw(canvas);
+                    }
+                } else {
+                    canvas.translate(sVar.e + measuredWidth3, (((i10 * 10) * sVar.c) + height) - ((10 - arrayList2.size()) * i10));
+                    for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                        canvas.translate(0.0f, -i10);
+                        ((StaticLayout) arrayList2.get(i14)).draw(canvas);
+                    }
+                }
+                canvas.restore();
+                i11++;
+            }
+            canvas.restore();
+        } else if (this.d != null) {
+            canvas.save();
+            canvas.translate(measuredWidth3, height);
+            this.d.draw(canvas);
+            canvas.restore();
+        }
+        if (limitPreviewView.e0 != null) {
+            canvas.restore();
+            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x, 31);
+            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((w5) ((org.telegram.ui.a1) limitPreviewView.e0).b).t0(getX(), getY()));
+            canvas.restore();
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x000d, code lost:
-    
-        if (r0 != 3) goto L14;
-     */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked == 1) {
-                c(motionEvent);
-            } else if (actionMasked == 2) {
-                c(motionEvent);
-            }
-            getParent().requestDisallowInterceptTouchEvent(false);
-        } else {
-            c(motionEvent);
-            getParent().requestDisallowInterceptTouchEvent(true);
+    public final void onMeasure(int i10, int i11) {
+        SpannableStringBuilder spannableStringBuilder = this.f;
+        TextPaint textPaint = this.c;
+        this.e = x4.g(spannableStringBuilder, textPaint);
+        this.d = new StaticLayout(this.f, textPaint, AndroidUtilities.dp(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.e = 0.0f;
+        for (int i12 = 0; i12 < this.d.getLineCount(); i12++) {
+            this.e = Math.max(this.e, this.d.getLineWidth(i12));
         }
-        return true;
+        setMeasuredDimension((int) (this.e + getPaddingRight() + getPaddingLeft()), AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(44.0f));
+        b();
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        if (f7 != getTranslationX()) {
+            super.setTranslationX(f7);
+            invalidate();
+        }
     }
 }

@@ -1,44 +1,39 @@
 package i2;
 
-import android.os.Bundle;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.eh0;
+import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements e2.m, p.a, GenericProvider {
+public final /* synthetic */ class y implements e2.m, m4.g1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ List b;
 
-    public /* synthetic */ y(int i10, boolean z10) {
+    public /* synthetic */ y(int i10, e9.a1 a1Var) {
         this.a = i10;
-        this.b = z10;
+        this.b = a1Var;
     }
 
-    @Override // p.a
-    public qc c(yc ycVar) {
-        return ycVar.k(this.b);
+    @Override // m4.g1
+    public Object i(m4.b0 b0Var, m4.r rVar, int i10) {
+        switch (this.a) {
+        }
+        return b0Var.l(rVar, this.b);
     }
 
     @Override // e2.m
     public void invoke(Object obj) {
         switch (this.a) {
             case 0:
-                ((b2.z0) obj).onShuffleModeEnabledChanged(this.b);
+                ((b2.z0) obj).onCues(this.b);
                 break;
             default:
-                ((b2.z0) obj).onSkipSilenceEnabledChanged(this.b);
+                ((j2.b) obj).getClass();
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        Bundle i10 = a4.a.i("afterSignup", this.b);
-        eh0 eh0Var = new eh0();
-        eh0Var.l0(i10);
-        return eh0Var;
+    public /* synthetic */ y(j2.a aVar, List list) {
+        this.a = 1;
+        this.b = list;
     }
 }

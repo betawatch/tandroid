@@ -1,45 +1,35 @@
 package ug;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import qg.x1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Chat b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ Utilities.Callback e;
+public final class o extends x1 {
+    public final /* synthetic */ r n;
 
-    public /* synthetic */ o(TLRPC.Chat chat, int i10, ArrayList arrayList, Utilities.Callback callback, int i11) {
-        this.a = i11;
-        this.b = chat;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o(r rVar, Context context) {
+        super(context);
+        this.n = rVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Chat chat = this.b;
-                ArrayList arrayList = this.d;
-                if (chat == null) {
-                    t.m(this.c, arrayList);
-                }
-                this.e.run(arrayList);
-                break;
-            default:
-                TLRPC.Chat chat2 = this.b;
-                ArrayList arrayList2 = this.d;
-                if (chat2 == null) {
-                    t.m(this.c, arrayList2);
-                }
-                this.e.run(arrayList2);
-                break;
-        }
+    @Override // qg.x1, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.n.b.setPaused(false);
+    }
+
+    @Override // qg.x1, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.n.b.setPaused(true);
+    }
+
+    @Override // qg.x1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
     }
 }

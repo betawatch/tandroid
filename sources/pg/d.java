@@ -1,38 +1,92 @@
 package pg;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.ui.Cells.f8;
-import org.telegram.ui.Components.ll0;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import v7.a7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class d extends ll0 {
-    public boolean X2;
+public abstract class d extends FrameLayout {
+    public boolean a;
+    public final c b;
+    public boolean c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.X2 = false;
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            if (getChildAt(i10) instanceof c) {
-                c cVar = (c) getChildAt(i10);
-                canvas.save();
-                canvas.translate(cVar.getX(), cVar.getY());
-                f8 f8Var = (f8) cVar;
-                if (f8Var.L) {
-                    f8Var.b(canvas, this);
-                }
-                canvas.restore();
-            }
+    public d(Context context, c cVar) {
+        super(context);
+        this.b = cVar;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (this.a && (view instanceof a2)) {
+            return true;
         }
-        super.dispatchDraw(canvas);
+        return super.drawChild(canvas, view, j3);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        if (!(view instanceof v2)) {
+            super.measureChildWithMargins(view, i10, i11, i12, i13);
+            return;
+        }
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(0, 0));
     }
 
     @Override // android.view.View
-    public final void invalidate() {
-        if (this.X2) {
-            return;
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        c cVar = this.b;
+        j b10 = cVar.b();
+        if (b10 == null) {
+            return false;
         }
-        super.invalidate();
-        this.X2 = true;
+        if (motionEvent.getPointerCount() != 1) {
+            b10.n = false;
+            b10.r = true;
+            this.c = false;
+            this.f = true;
+            invalidate();
+            return true;
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.c = false;
+            b10.n = false;
+            b10.r = false;
+            this.d = motionEvent.getX();
+            this.e = motionEvent.getY();
+            this.f = false;
+            return true;
+        }
+        if (!this.f && actionMasked == 2) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            if (this.c || a7.a(x10, y3, this.d, this.e) > AndroidUtilities.touchSlop) {
+                this.c = true;
+                b10.n = true;
+                b10.e(x10 - this.d, y3 - this.e);
+                this.d = x10;
+                this.e = y3;
+                return true;
+            }
+        } else if (actionMasked == 1 || actionMasked == 3) {
+            b10.n = false;
+            b10.r = true;
+            if (!this.c) {
+                cVar.a();
+            }
+            invalidate();
+            return false;
+        }
+        return true;
     }
 }

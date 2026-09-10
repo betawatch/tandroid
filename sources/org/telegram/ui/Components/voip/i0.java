@@ -1,25 +1,23 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.b40;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class i0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ t a;
-    public final /* synthetic */ l0 b;
+public final class i0 extends UndoView {
+    public final /* synthetic */ b40 f0;
 
-    public i0(l0 l0Var, t tVar) {
-        this.b = l0Var;
-        this.a = tVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i0(b40 b40Var, Context context) {
+        super(context);
+        this.f0 = b40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        t tVar = this.a;
-        if (tVar.getParent() != null) {
-            this.b.removeView(tVar);
-            tVar.e();
-        }
+    @Override // org.telegram.ui.Components.UndoView, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.f0.invalidate();
     }
 }

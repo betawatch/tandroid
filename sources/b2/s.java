@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -258,7 +258,7 @@ public final class s {
         int i19 = sVar.j;
         String str5 = sVar.q;
         int i20 = sVar.f;
-        d9.f fVar = new d9.f(String.valueOf(','));
+        a4.m mVar = new a4.m(String.valueOf(','));
         StringBuilder u10 = a4.a.u("id=");
         u10.append(sVar.a);
         u10.append(", mimeType=");
@@ -302,7 +302,7 @@ public final class s {
                 oVar2 = oVar;
             }
             u10.append(", drm=[");
-            fVar.a(u10, linkedHashSet.iterator());
+            mVar.O(u10, linkedHashSet.iterator());
             u10.append(']');
         } else {
             c10 = 0;
@@ -370,7 +370,7 @@ public final class s {
         int i25 = 3;
         if (!isEmpty) {
             u10.append(", labels=[");
-            fVar.a(u10, e9.q.w(i0Var, new androidx.emoji2.text.w(i25)).iterator());
+            mVar.O(u10, e9.q.w(i0Var, new androidx.emoji2.text.w(i25)).iterator());
             u10.append("]");
         }
         if (i11 != 0) {
@@ -386,7 +386,7 @@ public final class s {
             if ((i11 & 2) != 0) {
                 arrayList.add("forced");
             }
-            fVar.a(u10, arrayList.iterator());
+            mVar.O(u10, arrayList.iterator());
             u10.append("]");
         }
         if (i20 != 0) {
@@ -442,7 +442,7 @@ public final class s {
             if ((i10 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            fVar.a(u10, arrayList2.iterator());
+            mVar.O(u10, arrayList2.iterator());
             u10.append("]");
         } else {
             i10 = i20;

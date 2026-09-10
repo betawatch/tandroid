@@ -11,7 +11,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
 import com.google.android.gms.internal.vision.h3;
-import i2.q1;
+import i2.p1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
@@ -25,32 +25,33 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Cells.l7;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.ok0;
+import m.e3;
+import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Components.yk0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
     public n A;
     public int B;
-    public m2.t C;
-    public android.support.v4.media.session.c0 D;
-    public final l.d E;
+    public e3 C;
+    public android.support.v4.media.session.b0 D;
+    public final o0.b E;
     public final s0 c;
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
-    public ok0 g;
+    public yk0 g;
     public final Context h;
     public final e2.q n;
-    public final k2.g0 o;
+    public final l2.h o;
     public final boolean p;
     public final boolean q;
     public k r;
     public final j0 s;
-    public final q1 t;
+    public final p1 t;
     public z u;
     public v v;
     public v w;
@@ -69,11 +70,11 @@ public final class e {
         Log.isLoggable("GlobalMediaRouter", 3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00e3  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00f3  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00c5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -85,8 +86,8 @@ public final class e {
         qVar.c = 0;
         qVar.d = 3;
         this.n = qVar;
-        this.o = new k2.g0(this, 14);
-        this.E = new l.d(this, 17);
+        this.o = new l2.h(this, 13);
+        this.E = new o0.b(this);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
         int i10 = Build.VERSION.SDK_INT;
@@ -101,10 +102,10 @@ public final class e {
                 Intent intent2 = new Intent(context, (Class<?>) t0.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i10 >= 30 || !z10) ? null : new k(context, new mg.n(this, 10));
+                this.r = (i10 >= 30 || !z10) ? null : new k(context, new l2.g(this, 12));
                 j0 f0Var = i10 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
-                this.t = new q1(new org.telegram.ui.web.b(this, 9));
+                this.t = new p1(new org.telegram.ui.Components.voip.x(this, 18));
                 a(f0Var, true);
                 h3Var = this.r;
                 if (h3Var != null) {
@@ -123,7 +124,7 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
                     ((Context) s0Var.b).registerReceiver((androidx.mediarouter.app.g) s0Var.g, intentFilter, null, handler);
-                    handler.post((l7) s0Var.h);
+                    handler.post((l9) s0Var.h);
                     return;
                 }
                 return;
@@ -135,11 +136,11 @@ public final class e {
         Intent intent22 = new Intent(context, (Class<?>) t0.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i10 >= 30 || !z10) ? null : new k(context, new mg.n(this, 10));
+        this.r = (i10 >= 30 || !z10) ? null : new k(context, new l2.g(this, 12));
         if (i10 < 24) {
         }
         this.s = f0Var;
-        this.t = new q1(new org.telegram.ui.web.b(this, 9));
+        this.t = new p1(new org.telegram.ui.Components.voip.x(this, 18));
         a(f0Var, true);
         h3Var = this.r;
         if (h3Var != null) {
@@ -183,7 +184,7 @@ public final class e {
                 i10++;
             }
             if (i10 >= 0) {
-                Log.w("GlobalMediaRouter", p6.j("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
+                Log.w("GlobalMediaRouter", r6.j("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
                 int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
@@ -279,9 +280,9 @@ public final class e {
             }
             for (v vVar : unmodifiableList) {
                 if (!hashMap.containsKey(vVar.c)) {
-                    q e7 = vVar.c().e(vVar.b, this.d.b);
-                    e7.e();
-                    hashMap.put(vVar.c, e7);
+                    q e = vVar.c().e(vVar.b, this.d.b);
+                    e.e();
+                    hashMap.put(vVar.c, e);
                 }
             }
         }
@@ -289,19 +290,19 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         com.google.android.gms.internal.cast.q qVar2;
-        ok0 ok0Var = this.g;
-        if (ok0Var != null) {
-            ok0Var.a();
+        yk0 yk0Var = this.g;
+        if (yk0Var != null) {
+            yk0Var.a();
             this.g = null;
         }
-        ok0 ok0Var2 = new ok0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = ok0Var2;
-        if (ok0Var2.b != 3 || (qVar2 = this.f) == null) {
-            ok0Var2.b();
+        yk0 yk0Var2 = new yk0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = yk0Var2;
+        if (yk0Var2.b != 3 || (qVar2 = this.f) == null) {
+            yk0Var2.b();
             return;
         }
         v vVar3 = this.d;
-        v vVar4 = (v) ok0Var2.g;
+        v vVar4 = (v) yk0Var2.g;
         int i11 = 2;
         com.google.android.gms.internal.cast.q.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.i iVar = new c0.i();
@@ -312,23 +313,23 @@ public final class e {
         iVar.a = com.google.android.gms.internal.cast.o.class;
         try {
             iVar.a = Boolean.valueOf(qVar2.b.post(new com.google.android.gms.internal.cast.p(qVar2, vVar3, vVar4, iVar, 0)));
-        } catch (Exception e7) {
-            jVar.l(e7);
+        } catch (Exception e) {
+            jVar.l(e);
         }
-        ok0 ok0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) ok0Var3.j).get();
-        if (eVar2 == null || eVar2.g != ok0Var3) {
+        yk0 yk0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) yk0Var3.j).get();
+        if (eVar2 == null || eVar2.g != yk0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            ok0Var3.a();
+            yk0Var3.a();
         } else {
-            if (((c0.k) ok0Var3.k) != null) {
+            if (((c0.k) yk0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            ok0Var3.k = kVar;
-            org.telegram.ui.web.b bVar = new org.telegram.ui.web.b(ok0Var3, 11);
-            b bVar2 = eVar2.a;
-            Objects.requireNonNull(bVar2);
-            jVar.a(bVar, new k2.a0(bVar2, i11));
+            yk0Var3.k = kVar;
+            org.telegram.ui.Components.voip.x xVar = new org.telegram.ui.Components.voip.x(yk0Var3, 20);
+            b bVar = eVar2.a;
+            Objects.requireNonNull(bVar);
+            jVar.a(xVar, new k2.b0(bVar, i11));
         }
     }
 
@@ -369,25 +370,25 @@ public final class e {
         if (f() && (pVar = vVar.a.e) != null && pVar.b) {
             p c10 = vVar.c().c(vVar.b);
             if (c10 != null) {
-                Executor e7 = f0.e.e(this.h);
-                l.d dVar = this.E;
+                Executor e = f0.e.e(this.h);
+                o0.b bVar = this.E;
                 synchronized (c10.a) {
                     try {
-                        if (e7 == null) {
+                        if (e == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
-                        if (dVar == null) {
+                        if (bVar == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
-                        c10.b = e7;
-                        c10.c = dVar;
+                        c10.b = e;
+                        c10.c = bVar;
                         ArrayList arrayList = c10.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
                             m mVar = c10.d;
                             ArrayList arrayList2 = c10.e;
                             c10.d = null;
                             c10.e = null;
-                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, dVar, mVar, arrayList2, false, 2));
+                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, bVar, mVar, arrayList2, false, 2));
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -415,7 +416,7 @@ public final class e {
         obtainMessage.sendToTarget();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0154, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x014c, code lost:
     
         if (r26.A.b() == r1) goto L81;
      */
@@ -424,15 +425,15 @@ public final class e {
     */
     public final void k() {
         long j3;
-        l.d dVar;
+        c5.m mVar;
         ArrayList arrayList;
-        l.d dVar2 = new l.d(18);
-        q1 q1Var = this.t;
+        c5.m mVar2 = new c5.m();
+        p1 p1Var = this.t;
         long j10 = 0;
-        q1Var.a = 0L;
-        q1Var.c = false;
-        q1Var.b = SystemClock.elapsedRealtime();
-        ((Handler) q1Var.d).removeCallbacks((org.telegram.ui.web.b) q1Var.e);
+        p1Var.a = 0L;
+        p1Var.c = false;
+        p1Var.b = SystemClock.elapsedRealtime();
+        ((Handler) p1Var.d).removeCallbacks((org.telegram.ui.Components.voip.x) p1Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i10 = 0;
@@ -441,28 +442,28 @@ public final class e {
             size--;
             boolean z11 = this.p;
             if (size < 0) {
-                l.d dVar3 = dVar2;
+                c5.m mVar3 = mVar2;
                 long j11 = j10;
-                q1 q1Var2 = this.t;
-                if (q1Var2.c) {
-                    long j12 = q1Var2.a;
+                p1 p1Var2 = this.t;
+                if (p1Var2.c) {
+                    long j12 = p1Var2.a;
                     if (j12 > j11) {
-                        ((Handler) q1Var2.d).postDelayed((org.telegram.ui.web.b) q1Var2.e, j12);
+                        ((Handler) p1Var2.d).postDelayed((org.telegram.ui.Components.voip.x) p1Var2.e, j12);
                     }
                 }
-                boolean z12 = q1Var2.c;
+                boolean z12 = p1Var2.c;
                 this.B = i10;
-                r j13 = z10 ? dVar3.j() : r.c;
-                r j14 = dVar3.j();
+                r a2 = z10 ? mVar3.a() : r.c;
+                r a10 = mVar3.a();
                 if (f()) {
                     n nVar = this.A;
                     if (nVar != null) {
                         nVar.a();
-                        if (nVar.b.equals(j14)) {
+                        if (nVar.b.equals(a10)) {
                         }
                     }
-                    if (!j14.d() || z12) {
-                        this.A = new n(j14, z12);
+                    if (!a10.d() || z12) {
+                        this.A = new n(a10, z12);
                     } else if (this.A != null) {
                         this.A = null;
                     }
@@ -471,12 +472,12 @@ public final class e {
                 n nVar2 = this.z;
                 if (nVar2 != null) {
                     nVar2.a();
-                    if (nVar2.b.equals(j13) && this.z.b() == z12) {
+                    if (nVar2.b.equals(a2) && this.z.b() == z12) {
                         return;
                     }
                 }
-                if (!j13.d() || z12) {
-                    this.z = new n(j13, z12);
+                if (!a2.d() || z12) {
+                    this.z = new n(a2, z12);
                 } else if (this.z == null) {
                     return;
                 } else {
@@ -526,28 +527,28 @@ public final class e {
                             if (str == null) {
                                 throw new IllegalArgumentException("category must not be null");
                             }
-                            if (((ArrayList) dVar2.b) == null) {
-                                dVar2.b = new ArrayList();
+                            if (mVar2.a == null) {
+                                mVar2.a = new ArrayList();
                             }
-                            if (!((ArrayList) dVar2.b).contains(str)) {
-                                ((ArrayList) dVar2.b).add(str);
+                            if (!mVar2.a.contains(str)) {
+                                mVar2.a.add(str);
                             }
                         }
                     }
                     boolean z13 = (tVar.d & 1) != 0;
-                    long j15 = tVar.e;
-                    q1 q1Var3 = this.t;
+                    long j13 = tVar.e;
+                    p1 p1Var3 = this.t;
                     if (z13) {
-                        dVar = dVar2;
+                        mVar = mVar2;
                         arrayList = arrayList2;
-                        long j16 = q1Var3.b;
-                        if (j16 - j15 < 30000) {
-                            q1Var3.a = Math.max(q1Var3.a, (j15 + 30000) - j16);
-                            q1Var3.c = true;
+                        long j14 = p1Var3.b;
+                        if (j14 - j13 < 30000) {
+                            p1Var3.a = Math.max(p1Var3.a, (j13 + 30000) - j14);
+                            p1Var3.c = true;
                         }
                     } else {
-                        q1Var3.getClass();
-                        dVar = dVar2;
+                        p1Var3.getClass();
+                        mVar = mVar2;
                         arrayList = arrayList2;
                     }
                     if (z13) {
@@ -562,12 +563,12 @@ public final class e {
                     }
                     i12++;
                     j10 = j3;
-                    dVar2 = dVar;
+                    mVar2 = mVar;
                     arrayList2 = arrayList;
                 }
             }
             j10 = j10;
-            dVar2 = dVar2;
+            mVar2 = mVar2;
             arrayList2 = arrayList2;
         }
     }
@@ -575,9 +576,9 @@ public final class e {
     public final void l() {
         v vVar = this.d;
         if (vVar == null) {
-            m2.t tVar = this.C;
-            if (tVar != null) {
-                tVar.q();
+            e3 e3Var = this.C;
+            if (e3Var != null) {
+                e3Var.v();
                 return;
             }
             return;
@@ -598,37 +599,37 @@ public final class e {
             ((d) arrayList.get(0)).getClass();
             throw null;
         }
-        m2.t tVar2 = this.C;
-        if (tVar2 != null) {
+        e3 e3Var2 = this.C;
+        if (e3Var2 != null) {
             v vVar2 = this.d;
             v vVar3 = this.v;
             if (vVar3 == null) {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                tVar2.q();
+                e3Var2.v();
                 return;
             }
             int i11 = qVar.c == 1 ? 2 : 0;
             int i12 = qVar.b;
             int i13 = qVar.a;
             String str = (String) qVar.e;
-            android.support.v4.media.session.c0 c0Var = (android.support.v4.media.session.c0) tVar2.b;
-            if (c0Var != null) {
-                androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) tVar2.c;
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) e3Var2.b;
+            if (b0Var != null) {
+                androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) e3Var2.c;
                 if (pVar != null && i11 == 0 && i12 == 0) {
                     pVar.c = i13;
                     y1.g.a(pVar.c(), i13);
                     return;
                 }
                 androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p();
-                pVar2.f = tVar2;
+                pVar2.f = e3Var2;
                 pVar2.a = i11;
                 pVar2.b = i12;
                 pVar2.c = i13;
                 pVar2.d = str;
-                tVar2.c = pVar2;
-                c0Var.a.a.setPlaybackToRemote(pVar2.c());
+                e3Var2.c = pVar2;
+                b0Var.a.a.setPlaybackToRemote(pVar2.c());
             }
         }
     }

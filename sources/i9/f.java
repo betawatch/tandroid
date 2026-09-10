@@ -1,11 +1,11 @@
 package i9;
 
-import v7.k8;
+import v7.n8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class f extends k8 {
-    @Override // v7.k8
+public final class f extends n8 {
+    @Override // v7.n8
     public final boolean a(o oVar, c cVar, c cVar2) {
         synchronized (oVar) {
             try {
@@ -20,7 +20,7 @@ public final class f extends k8 {
         }
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final boolean b(o oVar, Object obj, Object obj2) {
         synchronized (oVar) {
             try {
@@ -35,7 +35,7 @@ public final class f extends k8 {
         }
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final boolean c(o oVar, n nVar, n nVar2) {
         synchronized (oVar) {
             try {
@@ -50,7 +50,7 @@ public final class f extends k8 {
         }
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final c d(o oVar) {
         c cVar;
         c cVar2 = c.d;
@@ -67,7 +67,7 @@ public final class f extends k8 {
         return cVar;
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final n e(o oVar) {
         n nVar;
         n nVar2 = n.c;
@@ -84,12 +84,12 @@ public final class f extends k8 {
         return nVar;
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final void f(n nVar, n nVar2) {
         nVar.b = nVar2;
     }
 
-    @Override // v7.k8
+    @Override // v7.n8
     public final void g(n nVar, Thread thread) {
         nVar.a = thread;
     }

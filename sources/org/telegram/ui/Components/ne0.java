@@ -1,64 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ne0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public Switch d;
-    public boolean e;
+public final /* synthetic */ class ne0 implements u0.g, c5 {
+    public final /* synthetic */ ye0 a;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.invalidate();
-        }
+    public /* synthetic */ ne0(ye0 ye0Var) {
+        this.a = ye0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-        }
+    @Override // org.telegram.ui.Components.c5
+    public void I(int i10, int i11, boolean z10) {
+        ye0 ye0Var = this.a;
+        ye0Var.K.a(ye0Var.N, z10, i10, 0L);
+        ye0Var.dismiss();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(13.0f) + this.a.getMeasuredHeight();
-        TextView textView = this.b;
-        textView.layout(textView.getLeft(), dp, textView.getRight(), textView.getMeasuredHeight() + dp);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        TextView textView = this.a;
-        measureChildWithMargins(textView, i10, 0, i11, 0);
-        TextView textView2 = this.b;
-        measureChildWithMargins(textView2, i10, 0, i11, 0);
-        measureChildWithMargins(this.c, i10, 0, i11, 0);
-        Switch r72 = this.d;
-        if (r72 != null) {
-            measureChildWithMargins(r72, i10, 0, i11, 0);
-        }
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.w1.b(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), AndroidUtilities.dp(64.0f)) + (this.e ? 1 : 0));
-    }
-
-    public void setChecked(boolean z10) {
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.c(z10, true);
-        }
+    @Override // u0.g
+    public void a(NestedScrollView nestedScrollView) {
+        this.a.H(!r2.s);
     }
 }

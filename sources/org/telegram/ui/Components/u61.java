@@ -1,166 +1,165 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class u61 extends TextureView implements TextureView.SurfaceTextureListener {
-    public g71 a;
-    public vz b;
-    public final hk0 c;
-    public int d;
-    public int e;
-    public di.n8 f;
-    public t61 h;
-    public int n;
+public final class u61 extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public final TextPaint c;
+    public final TextPaint d;
+    public final TextPaint e;
+    public final Paint f;
+    public final RectF g;
+    public final xc h;
+    public final me.b i;
+    public Runnable j;
+    public StaticLayout k;
+    public StaticLayout l;
+    public StaticLayout m;
+    public String n;
+    public String o;
+    public String p;
+    public int q;
     public int r;
-    public ja s;
+    public final int s;
+    public final int t;
+    public final int u;
+    public final int v;
+    public final int w;
+    public final int x;
+    public final int y;
 
-    public u61(Context context, g71 g71Var) {
-        super(context);
-        this.c = new hk0();
-        this.a = g71Var;
-        setSurfaceTextureListener(this);
+    public u61() {
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.d = textPaint2;
+        TextPaint textPaint3 = new TextPaint(1);
+        this.e = textPaint3;
+        this.f = new Paint(1);
+        this.g = new RectF();
+        xc xcVar = new xc((View) null);
+        this.h = xcVar;
+        this.i = new me.b(new ce.m(this));
+        this.s = AndroidUtilities.dp(62.33f);
+        this.t = AndroidUtilities.dp(12.0f);
+        this.u = AndroidUtilities.dp(30.0f);
+        this.v = AndroidUtilities.dp(15.0f);
+        this.w = AndroidUtilities.dp(7.0f);
+        this.x = AndroidUtilities.dp(12.0f);
+        this.y = AndroidUtilities.dp(2.0f);
+        this.a = ApplicationLoader.applicationContext.getDrawable(R.drawable.send_plane_26).mutate();
+        this.b = ApplicationLoader.applicationContext.getDrawable(R.drawable.large_unsupported).mutate();
+        xcVar.f = new uq0(this, 28);
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint2.setTextSize(AndroidUtilities.dp(12.0f));
+        textPaint3.setTypeface(AndroidUtilities.bold());
+        textPaint3.setTextSize(AndroidUtilities.dp(14.0f));
+        b();
     }
 
-    public final void a(float f7, float f10, float f11, float f12) {
-        hk0 hk0Var = this.c;
-        hk0Var.a = f7;
-        hk0Var.b = f10;
-        hk0Var.c = f11;
-        hk0Var.d = f12;
+    public final int a(int i10) {
+        this.q = i10;
+        String str = this.p;
+        int length = str.length();
+        TextPaint textPaint = this.e;
+        float measureText = textPaint.measureText((CharSequence) str, 0, length);
+        String str2 = this.p;
+        int ceil = (int) Math.ceil(measureText);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+        this.m = new StaticLayout(str2, textPaint, ceil, alignment, 1.0f, 0.0f, false);
+        int dp = (((i10 - this.s) - ((int) ((this.t * 2) + measureText))) - this.x) - AndroidUtilities.dp(11.0f);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        TextPaint textPaint2 = this.c;
+        this.k = new StaticLayout(TextUtils.ellipsize(this.n, textPaint2, dp, truncateAt), textPaint2, dp, alignment, 1.0f, 0.0f, false);
+        this.l = new StaticLayout(this.o, this.d, dp, alignment, 1.0f, 0.0f, false);
+        int max = (this.w * 2) + Math.max(this.l.getHeight() + this.k.getHeight() + this.y, this.u);
+        this.r = max;
+        setBounds(0, 0, this.q, max);
+        return this.r;
     }
 
-    public Bitmap getUiBlurBitmap() {
-        pa paVar;
-        vz vzVar = this.b;
-        if (vzVar == null || (paVar = vzVar.I) == null) {
-            return null;
-        }
-        synchronized (paVar.n) {
-            try {
-                if (paVar.q) {
-                    return paVar.p;
-                }
-                return null;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public final void b() {
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ic, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        this.a.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.l1(0.11f, -16777216), mode));
+        this.c.setColor(w02);
+        this.d.setColor(i0.a.k(w02, 179));
+        this.e.setColor(w02);
+        this.f.setColor(org.telegram.ui.ActionBar.j6.l1(0.11f, -16777216));
     }
 
-    public int getVideoHeight() {
-        return this.e;
-    }
-
-    public int getVideoWidth() {
-        return this.d;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int i12;
-        if (this.b != null || surfaceTexture == null || this.a == null) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.k == null || this.l == null || this.m == null) {
             return;
         }
-        vz vzVar = new vz(surfaceTexture, new kv(this, 28), this.f, this.s, i10, i11);
-        this.b = vzVar;
-        vzVar.i(this.n, this.r);
-        vz vzVar2 = this.b;
-        ja jaVar = this.s;
-        pa paVar = vzVar2.I;
-        if (paVar != null) {
-            ja jaVar2 = paVar.t;
-            if (jaVar2 != null && jaVar2.m != null) {
-                jaVar2.m = null;
-            }
-            paVar.t = jaVar;
-            if (jaVar != null && jaVar.m != paVar) {
-                jaVar.m = paVar;
-                jaVar.d();
-            }
-        }
-        int i13 = this.d;
-        if (i13 != 0 && (i12 = this.e) != 0) {
-            vz vzVar3 = this.b;
-            vzVar3.getClass();
-            vzVar3.postRunnable(new rz(vzVar3, i13, i12, 0));
-        }
-        this.b.e(true, true, false);
-        t61 t61Var = this.h;
-        if (t61Var != null) {
-            t61Var.c(this.b);
-        }
+        int i10 = getBounds().left;
+        int i11 = getBounds().right;
+        int centerY = getBounds().centerY();
+        int height = centerY - ((this.l.getHeight() + (this.k.getHeight() + this.y)) / 2);
+        canvas.save();
+        canvas.translate(this.s + i10, height);
+        this.k.draw(canvas);
+        canvas.translate(0.0f, this.k.getHeight() + r4);
+        this.l.draw(canvas);
+        canvas.restore();
+        float width = this.m.getWidth();
+        int i12 = this.t;
+        int dp = i11 - AndroidUtilities.dp(11.0f);
+        float f7 = centerY - (this.u / 2);
+        RectF rectF = this.g;
+        rectF.set(dp - ((int) (width + (i12 * 2))), f7, dp, r6 + r5);
+        float a2 = this.h.a(0.05f);
+        canvas.save();
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        org.telegram.ui.ActionBar.j6.l1(0.18f, -1);
+        int i13 = this.v;
+        canvas.drawRoundRect(rectF, i13, i13, this.f);
+        canvas.save();
+        canvas.translate(r3 + i12, ((r5 - this.m.getHeight()) / 2.0f) + f7);
+        this.m.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+        float dp2 = AndroidUtilities.dp(29.66f) + i10;
+        float f10 = centerY + 1;
+        Drawable drawable = this.b;
+        xf.p.d(drawable, dp2, f10, 17);
+        drawable.draw(canvas);
+        float dp3 = AndroidUtilities.dp(29.66f) + i10;
+        Drawable drawable2 = this.a;
+        xf.p.d(drawable2, dp3, f10, 17);
+        drawable2.draw(canvas);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        vz vzVar = this.b;
-        if (vzVar == null) {
-            return true;
-        }
-        vzVar.postRunnable(new sz(vzVar, 0));
-        this.b = null;
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        vz vzVar = this.b;
-        if (vzVar != null) {
-            vzVar.postRunnable(new rz(vzVar, i10, i11, 1));
-            this.b.e(false, true, false);
-            this.b.postRunnable(new jq0(this, 29));
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 
-    public void setDelegate(t61 t61Var) {
-        this.h = t61Var;
-        vz vzVar = this.b;
-        if (vzVar != null) {
-            if (t61Var == null) {
-                vzVar.f(null);
-            } else {
-                t61Var.c(vzVar);
-            }
-        }
-    }
-
-    public void setHDRInfo(di.n8 n8Var) {
-        this.f = n8Var;
-        vz vzVar = this.b;
-        if (vzVar != null) {
-            vzVar.postRunnable(new zu(8, vzVar, n8Var));
-        }
-    }
-
-    @Override // android.view.TextureView
-    public void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        vz vzVar = this.b;
-        if (vzVar != null) {
-            int width = getWidth();
-            int height = getHeight();
-            pa paVar = vzVar.I;
-            if (paVar == null) {
-                return;
-            }
-            Matrix matrix2 = paVar.v;
-            matrix.invert(matrix2);
-            float f7 = width;
-            float f10 = height;
-            matrix2.preScale(f7, f10);
-            matrix2.postScale(1.0f / f7, 1.0f / f10);
-            paVar.c(matrix2);
-            vzVar.e(false, false, false);
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

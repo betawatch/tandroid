@@ -11,9 +11,9 @@ import android.os.Trace;
 import android.view.Surface;
 import e2.d0;
 import java.nio.ByteBuffer;
-import k2.g0;
+import qg.q0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -101,7 +101,7 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = d0.a;
-            handler.post(new org.telegram.ui.web.b(fVar, 17));
+            handler.post(new q0(fVar, 5));
         }
         this.a.start();
     }
@@ -253,17 +253,17 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final boolean j(g0 g0Var) {
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            fVar.o = g0Var;
-        }
-        return true;
+    public final void j(Surface surface) {
+        this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final void k(Surface surface) {
-        this.a.setOutputSurface(surface);
+    public final boolean k(o0.b bVar) {
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            fVar.o = bVar;
+        }
+        return true;
     }
 
     @Override // r2.l

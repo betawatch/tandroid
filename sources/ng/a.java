@@ -1,30 +1,17 @@
 package ng;
 
-import org.telegram.ui.Components.s6;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class a {
-    public final CharSequence a;
-    public final int b = 2;
-    public final Runnable c;
-    public final float d;
-    public final float e;
-    public final s6 f;
+public abstract class a {
+    public int a;
+    public boolean b;
 
-    public a(String str, Runnable runnable) {
-        this.a = str;
-        this.c = runnable;
+    public a(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    public a(String str) {
-        this.a = str;
-    }
-
-    public a(String str, float f7, float f10, s6 s6Var) {
-        this.a = str;
-        this.d = f7;
-        this.e = f10;
-        this.f = s6Var;
+    public boolean a(a aVar) {
+        return false;
     }
 }

@@ -1,55 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hh implements Runnable {
+public final /* synthetic */ class hh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vi b;
+    public final /* synthetic */ yi b;
 
-    public /* synthetic */ hh(vi viVar, int i10) {
+    public /* synthetic */ hh(yi yiVar, int i10) {
         this.a = i10;
-        this.b = viVar;
+        this.b = yiVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean G1;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                vi viVar = this.b;
-                hu huVar = viVar.c0 ? viVar.P0 : viVar.E0;
-                viVar.M1(huVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(huVar.getText().toString().trim()));
+                this.b.b2();
                 break;
             case 1:
-                vi viVar2 = this.b;
-                nf nfVar = viVar2.h0;
-                long k10 = nfVar != null ? nfVar.k() : 0L;
-                fi fiVar = viVar2.I0;
-                viVar2.N0 = k10;
-                fiVar.setEffect(k10);
-                ni niVar = viVar2.y0;
-                if (niVar == viVar2.j0 || niVar == viVar2.q0) {
-                    G1 = viVar2.G1(0, false, 0, viVar2.s1(), k10);
-                } else {
-                    if (!niVar.I(0, false, 0, viVar2.s1(), k10)) {
-                        viVar2.dismiss();
-                    }
-                    G1 = false;
-                }
-                nf nfVar2 = viVar2.h0;
-                if (nfVar2 != null) {
-                    nfVar2.h(!G1);
-                    viVar2.h0 = null;
-                    break;
-                }
+                this.b.D0.invalidate();
                 break;
             case 2:
-                this.b.F1();
+                yi.m(this.b, valueAnimator);
+                break;
+            case 3:
+                yi yiVar = this.b;
+                yiVar.getClass();
+                yiVar.K1(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                vi.w(this.b);
+                this.b.b2();
                 break;
         }
     }

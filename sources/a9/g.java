@@ -12,10 +12,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class g {
-    public static final i0 a = new i0("PhoneskyVerificationUtils");
+    public static final j0 a = new j0("PhoneskyVerificationUtils");
 
     public static int a(Context context) {
         try {
@@ -32,9 +32,9 @@ public abstract class g {
 
     public static boolean b(Signature[] signatureArr) {
         String str;
-        i0 i0Var = a;
+        j0 j0Var = a;
         if (signatureArr == null || (signatureArr.length) == 0) {
-            i0Var.c("Play Store package is not signed -- possibly self-built package. Could not verify.", new Object[0]);
+            j0Var.c("Play Store package is not signed -- possibly self-built package. Could not verify.", new Object[0]);
             return false;
         }
         ArrayList arrayList = new ArrayList();
@@ -67,7 +67,7 @@ public abstract class g {
                 sb2.append((CharSequence) ", ");
             }
         }
-        i0Var.c(a4.a.p("Play Store package certs are not valid. Found these sha256 certs: [", sb2.toString(), "]."), new Object[0]);
+        j0Var.c(a4.a.p("Play Store package certs are not valid. Found these sha256 certs: [", sb2.toString(), "]."), new Object[0]);
         return false;
     }
 }

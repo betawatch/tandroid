@@ -1,44 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lj implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class lj extends ch.b {
+    public final /* synthetic */ int n;
+    public final /* synthetic */ eo r;
 
-    public /* synthetic */ lj(int i10, Object obj, boolean z10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ lj(eo eoVar, org.telegram.ui.ActionBar.f6 f6Var, int i10, int i11) {
+        super(i10, f6Var);
+        this.n = i11;
+        this.r = eoVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
+    @Override // ch.b, ch.a
+    public final int x() {
+        int i10;
+        int i11;
+        switch (this.n) {
             case 0:
-                co coVar = ((nj) this.c).b;
-                if (i10 > 0 && coVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.yc.a0(coVar).m(this.b ? org.telegram.ui.Components.xc.G : org.telegram.ui.Components.xc.I, i10, 0, 0, coVar.ea).j();
+                eo eoVar = this.r;
+                i10 = ((org.telegram.ui.ActionBar.p2) eoVar).currentAccount;
+                if (!dh.c.c(i10, eoVar.ea)) {
+                    break;
+                } else if (eoVar.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
+                    break;
+                } else {
                     break;
                 }
                 break;
             default:
-                mj mjVar = (mj) this.c;
-                co coVar2 = mjVar.b.b;
-                if (i10 < 50) {
-                    coVar2.qa(coVar2.d4, true);
+                eo eoVar2 = this.r;
+                i11 = ((org.telegram.ui.ActionBar.p2) eoVar2).currentAccount;
+                if (!dh.c.c(i11, eoVar2.ea)) {
+                    break;
+                } else if (eoVar2.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
                     break;
                 } else {
-                    TLRPC.Chat chat = coVar2.e;
-                    TLRPC.User user = coVar2.f;
-                    boolean z10 = this.b;
-                    org.telegram.ui.Components.e5.s(coVar2, true, chat, user, false, false, false, z10, new z0(mjVar, z10));
                     break;
                 }
+                break;
         }
+        return this.d;
     }
 }

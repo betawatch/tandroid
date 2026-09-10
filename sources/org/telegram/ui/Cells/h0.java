@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.e90;
-import org.telegram.ui.Components.l51;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.s51;
+import org.telegram.ui.Components.z51;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver E;
@@ -58,8 +58,8 @@ public abstract class h0 extends View {
     public int f;
     public int h;
     public int n;
-    public e90 r;
-    public final a90 s;
+    public n90 r;
+    public final j90 s;
     public f0 v;
     public final int w;
     public final org.telegram.ui.ActionBar.f6 x;
@@ -67,7 +67,7 @@ public abstract class h0 extends View {
 
     public h0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.s = new a90(this);
+        this.s = new j90(this);
         this.H = AndroidUtilities.dp(4.0f);
         this.w = i10;
         this.x = f6Var;
@@ -126,7 +126,7 @@ public abstract class h0 extends View {
         if (z13) {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
-                imageReceiver.setImageBitmap(new dq(new g0(getContext())));
+                imageReceiver.setImageBitmap(new kq(new g0(getContext())));
                 int dp = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
                 int dp2 = AndroidUtilities.dp(4.0f);
                 if (!this.G) {
@@ -205,7 +205,7 @@ public abstract class h0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new s51(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.j6.o2.getFontMetricsInt(), z11);
@@ -221,8 +221,8 @@ public abstract class h0 extends View {
                             if (this.e > i11 || this.F) {
                                 this.e = i11;
                             }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     } else if (this.F) {
                         this.e = i11;
@@ -233,7 +233,7 @@ public abstract class h0 extends View {
                         int i15 = this.f;
                         int i16 = (int) (dp5 * 0.5625d);
                         this.y = i16;
-                        this.f = org.telegram.messenger.w1.C(4.0f, i16, i15);
+                        this.f = org.telegram.messenger.a2.C(4.0f, i16, i15);
                         return;
                     }
                     return;
@@ -323,10 +323,10 @@ public abstract class h0 extends View {
         if (drawable == null) {
             drawable = org.telegram.ui.ActionBar.j6.O0("drawableMsgInMedia");
         }
-        org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) drawable;
-        f5Var.n((int) getY(), i10, i11);
-        f5Var.setBounds(width, 0, this.e + width, this.f);
-        f5Var.draw(canvas);
+        org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) drawable;
+        h5Var.n((int) getY(), i10, i11);
+        h5Var.setBounds(width, 0, this.e + width, this.f);
+        h5Var.draw(canvas);
         z zVar = this.J;
         if (zVar != null) {
             int i12 = this.K;
@@ -410,21 +410,21 @@ public abstract class h0 extends View {
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                             if (clickableSpanArr.length != 0) {
                                 a();
-                                this.r = new e90(clickableSpanArr[0], this.x, f7, i10, 0);
+                                this.r = new n90(clickableSpanArr[0], this.x, f7, i10, 0);
                                 try {
                                     try {
                                         int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        x80 b10 = this.r.b();
+                                        g90 b10 = this.r.b();
                                         b10.d(this.a, spanStart, 0.0f);
                                         this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
                                     }
                                     this.s.a(this.r, null);
                                     invalidate();
                                     z10 = true;
-                                } catch (Exception e10) {
-                                    e = e10;
+                                } catch (Exception e7) {
+                                    e = e7;
                                     z11 = true;
                                     a();
                                     FileLog.e(e);
@@ -439,17 +439,17 @@ public abstract class h0 extends View {
                                 a();
                             }
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         z11 = false;
                     }
                 } else {
-                    e90 e90Var = this.r;
-                    if (e90Var != null) {
+                    n90 n90Var = this.r;
+                    if (n90Var != null) {
                         try {
-                            ClickableSpan clickableSpan = (ClickableSpan) e90Var.i;
-                            if (clickableSpan instanceof l51) {
-                                String url = ((l51) clickableSpan).getURL();
+                            ClickableSpan clickableSpan = (ClickableSpan) n90Var.i;
+                            if (clickableSpan instanceof z51) {
+                                String url = ((z51) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {
@@ -460,18 +460,18 @@ public abstract class h0 extends View {
                                 }
                                 f0 f0Var = this.v;
                                 if (f0Var != null) {
-                                    ((org.telegram.ui.z0) f0Var).k(url);
+                                    ((org.telegram.ui.a1) f0Var).k(url);
                                 }
                             } else if (clickableSpan instanceof URLSpan) {
                                 f0 f0Var2 = this.v;
                                 if (f0Var2 != null) {
-                                    ((org.telegram.ui.z0) f0Var2).k(((URLSpan) clickableSpan).getURL());
+                                    ((org.telegram.ui.a1) f0Var2).k(((URLSpan) clickableSpan).getURL());
                                 }
                             } else if (clickableSpan != null) {
                                 clickableSpan.onClick(this);
                             }
-                        } catch (Exception e12) {
-                            FileLog.e(e12);
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
                         }
                         a();
                         z10 = true;

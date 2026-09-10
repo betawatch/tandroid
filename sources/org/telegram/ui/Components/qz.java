@@ -1,175 +1,154 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.animation.ObjectAnimator;
+import android.os.SystemClock;
+import android.util.Property;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class qz extends View {
-    public final Paint a;
-    public final Paint b;
-    public final Path c;
-    public int d;
-    public int e;
-    public f01[] f;
-    public RectF[] h;
-    public float n;
-    public org.telegram.ui.zo0 r;
-    public int s;
+public class qz extends s4.s0 {
+    public final int a;
+    public boolean b;
+    public final /* synthetic */ rz c;
 
-    public qz(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        this.c = new Path();
-        this.d = -1;
-        this.e = -1;
-        this.s = -1;
+    public qz(rz rzVar, int i10) {
+        this.c = rzVar;
+        this.a = i10;
     }
 
-    public final void a(float f7, int i10, int i11, Canvas canvas) {
-        f01[] f01VarArr = this.f;
-        int length = f01VarArr.length;
-        int i12 = 0;
-        float f10 = f7;
-        while (i12 < length) {
-            f01 f01Var = f01VarArr[i12];
-            int i13 = i11;
-            f01Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
-            f10 += f01Var.l() + AndroidUtilities.dp(24.0f);
-            i12++;
-            i11 = i13;
-        }
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.f == null) {
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
+        ObjectAnimator objectAnimator;
+        ez ezVar;
+        rz rzVar = this.c;
+        ObjectAnimator[] objectAnimatorArr = rzVar.R0;
+        s4.y0 y0Var = recyclerView.getLayoutManager().e;
+        if (y0Var != null && y0Var.e) {
+            this.b = true;
             return;
         }
-        int width = getWidth();
-        int height = getHeight();
-        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.w1.D(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
-        int i10 = 0;
-        while (true) {
-            f01[] f01VarArr = this.f;
-            if (i10 >= f01VarArr.length) {
-                break;
+        int i11 = this.a;
+        if (i10 != 0) {
+            if (i10 == 1) {
+                if (rzVar.J0) {
+                    rzVar.J0 = false;
+                }
+                if (i11 == 0) {
+                    ezVar = rzVar.G0;
+                } else if (i11 == 1) {
+                    ezVar = rzVar.V;
+                } else {
+                    if (i11 != 2) {
+                        throw new IllegalArgumentException(hc.b.j(i11, "Unexpected argument: "));
+                    }
+                    ezVar = rzVar.o0;
+                }
+                if (ezVar != null) {
+                    ezVar.b();
+                }
+                this.b = false;
             }
-            dp = (int) (f01VarArr[i10].l() + dp);
-            i10++;
-        }
-        float dp2 = (height - AndroidUtilities.dp(36.0f)) / 2.0f;
-        float dp3 = (AndroidUtilities.dp(36.0f) + height) / 2.0f;
-        float f7 = (width - dp) / 2.0f;
-        float dp4 = AndroidUtilities.dp(16.0f) + f7;
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, dp2, dp + f7, dp3);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.a);
-        float dp5 = f7 + AndroidUtilities.dp(16.0f);
-        for (int i11 = 0; i11 < this.f.length; i11++) {
-            this.h[i11].set(dp5 - AndroidUtilities.dp(16.0f), dp2, this.f[i11].l() + dp5 + AndroidUtilities.dp(16.0f), dp3);
-            dp5 += this.f[i11].l() + AndroidUtilities.dp(24.0f);
-        }
-        AndroidUtilities.dp(4.0f);
-        int clamp = Utilities.clamp((int) Math.floor(this.n), this.f.length - 1, 0);
-        int clamp2 = Utilities.clamp((int) Math.ceil(this.n), this.f.length - 1, 0);
-        float dp6 = this.h[clamp].left + AndroidUtilities.dp(4.0f);
-        float dp7 = this.h[clamp2].left + AndroidUtilities.dp(4.0f);
-        float f10 = this.n;
-        float lerp = AndroidUtilities.lerp(dp6, dp7, (float) (f10 - Math.floor(f10)));
-        float dp8 = this.h[clamp].right - AndroidUtilities.dp(4.0f);
-        float dp9 = this.h[clamp2].right - AndroidUtilities.dp(4.0f);
-        float f11 = this.n;
-        float lerp2 = AndroidUtilities.lerp(dp8, dp9, (float) (f11 - Math.floor(f11)));
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        rectF2.set(lerp, (height - AndroidUtilities.dp(28.0f)) / 2.0f, lerp2, (AndroidUtilities.dp(28.0f) + height) / 2.0f);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), Path.Direction.CW);
-        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), this.b);
-        a(dp4, height, this.d, canvas);
-        canvas.save();
-        canvas.clipPath(path);
-        a(dp4, height, this.e, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10 = 0;
-        if (this.f == null || this.h == null) {
-            return false;
-        }
-        while (true) {
-            RectF[] rectFArr = this.h;
-            if (i10 >= rectFArr.length) {
-                i10 = -1;
-                break;
+            if (!this.b && (objectAnimator = objectAnimatorArr[i11]) != null && objectAnimator.isRunning()) {
+                objectAnimatorArr[i11].cancel();
             }
-            if (rectFArr[i10].contains(motionEvent.getX(), motionEvent.getY())) {
-                break;
+            if (i11 == 0) {
+                if (rzVar.T0 == null) {
+                    fg.h1 h1Var = new fg.h1(rzVar, rzVar.c1, rzVar.t1.a(), rzVar.t1.f(), 1);
+                    rzVar.T0 = h1Var;
+                    h1Var.a();
+                }
+                rzVar.T0.b();
+                return;
             }
-            i10++;
+            return;
         }
-        if (i10 >= 0 && i10 != this.s) {
-            this.s = i10;
-            org.telegram.ui.zo0 zo0Var = this.r;
-            if (zo0Var != null) {
-                zo0Var.run(Integer.valueOf(i10));
+        if (!this.b) {
+            int[] iArr = rzVar.Q0;
+            sy syVar = rzVar.t1;
+            if ((syVar == null || !syVar.z()) && i11 != 0) {
+                float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
+                float f7 = iArr[i11] / (-dpf2);
+                if (f7 <= 0.0f || f7 >= 1.0f) {
+                    vl0 x10 = rzVar.x(i11);
+                    int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
+                    s4.c1 K = x10.K(0);
+                    if (K != null) {
+                        int bottom = K.a.getBottom();
+                        int i12 = iArr[i11];
+                        float f10 = (bottom - (dp + i12)) / rzVar.b1;
+                        if (f10 > 0.0f || f10 < 1.0f) {
+                            rzVar.i(i11, i12, f10 > 0.5f);
+                        }
+                    }
+                } else {
+                    HorizontalScrollView y3 = rzVar.y(i11);
+                    int i13 = f7 > 0.5f ? (int) (-Math.ceil(dpf2)) : 0;
+                    if (f7 > 0.5f) {
+                        rzVar.i(i11, i13, false);
+                    }
+                    if (i11 == 1) {
+                        rzVar.m(i13);
+                    }
+                    ObjectAnimator objectAnimator2 = objectAnimatorArr[i11];
+                    if (objectAnimator2 == null) {
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y3, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y3.getTranslationY(), i13);
+                        objectAnimatorArr[i11] = ofFloat;
+                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.s2(rzVar, i11, 3));
+                        objectAnimatorArr[i11].setDuration(200L);
+                    } else {
+                        objectAnimator2.setFloatValues(y3.getTranslationY(), i13);
+                    }
+                    objectAnimatorArr[i11].start();
+                }
             }
         }
-        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            this.s = -1;
+        if (rzVar.J0) {
+            rzVar.J0 = false;
         }
-        if (motionEvent.getAction() != 0 || i10 < 0) {
-            return super.onTouchEvent(motionEvent);
+        this.b = false;
+    }
+
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        rz rzVar = this.c;
+        int i12 = this.a;
+        rzVar.p(i12);
+        rz.e(rzVar, i12, i11);
+        if (i12 == 0) {
+            rzVar.q(false);
+        } else if (i12 == 1) {
+            rzVar.l(false);
+        } else if (i12 == 2) {
+            rz.f(rzVar, false);
         }
-        return true;
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.a.setColor(i10);
-        invalidate();
-    }
-
-    public void setSelected(float f7) {
-        if (Math.abs(f7 - this.n) > 0.001f) {
-            invalidate();
+        if (this.b) {
+            return;
         }
-        this.n = f7;
-    }
-
-    public void setSelectedColor(int i10) {
-        this.b.setColor(i10);
-        invalidate();
-    }
-
-    public void setSelectedTextColor(int i10) {
-        this.e = i10;
-        invalidate();
-    }
-
-    public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new f01[charSequenceArr.length];
-        this.h = new RectF[charSequenceArr.length];
-        for (int i10 = 0; i10 < charSequenceArr.length; i10++) {
-            this.f[i10] = new f01(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
-            this.h[i10] = new RectF();
+        float f7 = i11;
+        FrameLayout frameLayout = rzVar.n;
+        if (SystemClock.elapsedRealtime() - rzVar.F2 < ViewConfiguration.getTapTimeout()) {
+            return;
         }
-        invalidate();
-    }
-
-    public void setTextColor(int i10) {
-        this.d = i10;
-        invalidate();
+        rzVar.H += f7;
+        int dp = rzVar.h.getCurrentItem() == 0 ? AndroidUtilities.dp(38.0f) : AndroidUtilities.dp(48.0f);
+        float f10 = rzVar.H;
+        if (f10 >= dp) {
+            rzVar.O(false);
+            return;
+        }
+        if (f10 <= (-dp)) {
+            rzVar.O(true);
+        } else {
+            if ((frameLayout.getTag() != null || rzVar.H >= 0.0f) && (frameLayout.getTag() == null || rzVar.H <= 0.0f)) {
+                return;
+            }
+            rzVar.H = 0.0f;
+        }
     }
 }

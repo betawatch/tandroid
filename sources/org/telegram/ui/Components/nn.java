@@ -1,59 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class nn implements TextWatcher {
-    public final /* synthetic */ mn a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ rn c;
+public final class nn extends s4.j {
+    public final /* synthetic */ zn F;
 
-    public nn(rn rnVar, mn mnVar, int i10) {
-        this.c = rnVar;
-        this.a = mnVar;
-        this.b = i10;
+    public nn(zn znVar) {
+        this.F = znVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        tn tnVar = this.c.d;
-        mn mnVar = this.a;
-        if (mnVar.getTag() != null) {
-            return;
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        if (c1Var.b() == 0) {
+            zn znVar = this.F;
+            znVar.b.X1(znVar, 0);
         }
-        int i10 = this.b;
-        int i11 = i10 == 11 ? tnVar.n0 : tnVar.m0;
-        s4.c1 K = tnVar.s.K(i11);
-        if (K != null && tnVar.x != null) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
-            }
-            Emoji.replaceEmoji(editable, mnVar.getEditField().getPaint().getFontMetricsInt(), false);
-            tnVar.x.setDirection(1);
-            tnVar.x.setDelegate(mnVar);
-            tnVar.x.setTranslationY(K.a.getY());
-            tnVar.x.e();
-        }
-        if (i10 == 11) {
-            tnVar.O = editable;
-        } else {
-            tnVar.N = editable;
-        }
-        if (K != null) {
-            tn.L(tnVar, K.a, i11);
-        }
-        tnVar.T();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

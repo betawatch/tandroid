@@ -1,50 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class fs {
-    public int a;
-    public int b;
-    public f01 c;
-    public int d;
-    public int e;
+public final /* synthetic */ class fs implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ls b;
 
-    public static fs b(org.telegram.ui.Cells.r2 r2Var, MessagesController.DialogFilter dialogFilter) {
-        fs fsVar = new fs();
-        fsVar.a = dialogFilter.id;
-        fsVar.b = dialogFilter.color;
-        String str = dialogFilter.name;
-        if (str == null) {
-            str = "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        f01 f01Var = new f01(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        f01Var.s(r2Var);
-        fsVar.c = f01Var;
-        fsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, f01Var.a.getFontMetricsInt(), false), dialogFilter.entities, fsVar.c.a.getFontMetricsInt()));
-        fsVar.c.p(26);
-        int dp = AndroidUtilities.dp(9.32f);
-        f01 f01Var2 = fsVar.c;
-        fsVar.e = dp + ((int) f01Var2.c);
-        f01Var2.j();
-        int[] iArr = org.telegram.ui.ActionBar.j6.r8;
-        fsVar.d = org.telegram.ui.ActionBar.j6.w0(null, iArr[dialogFilter.color % iArr.length], false);
-        return fsVar;
+    public /* synthetic */ fs(ls lsVar, int i10) {
+        this.a = i10;
+        this.b = lsVar;
     }
 
-    public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.j6.A0.setColor(org.telegram.ui.ActionBar.j6.l1(org.telegram.ui.ActionBar.j6.I.q() ? 0.2f : 0.1f, this.d));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, this.e, AndroidUtilities.dp(14.66f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.j6.A0);
-        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.W(false);
+                break;
+            default:
+                ls.Q(this.b);
+                break;
+        }
     }
 }

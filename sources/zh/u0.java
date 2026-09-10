@@ -1,132 +1,86 @@
 package zh;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.ScaleGestureDetector;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.lg0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w3 b;
-
-    public /* synthetic */ u0(w3 w3Var, int i10) {
-        this.a = i10;
-        this.b = w3Var;
+public final class u0 implements ScaleGestureDetector.OnScaleGestureListener {
+    public final void a() {
+        x0 x0Var = x0.Z;
+        WindowManager.LayoutParams layoutParams = x0Var.c;
+        int n10 = (int) (x0Var.n() * x0Var.M);
+        layoutParams.width = n10;
+        x0Var.J = n10;
+        WindowManager.LayoutParams layoutParams2 = x0Var.c;
+        int m10 = (int) (x0Var.m() * x0Var.M);
+        layoutParams2.height = m10;
+        x0Var.K = m10;
+        AndroidUtilities.updateViewLayout(x0Var.b, x0Var.d, x0Var.c);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.onBackPressed();
-                break;
-            case 1:
-                this.b.w1();
-                break;
-            case 2:
-                this.b.onBackPressed();
-                break;
-            case 3:
-                this.b.a2();
-                break;
-            case 4:
-                this.b.dismiss();
-                break;
-            case 5:
-                this.b.a2();
-                break;
-            case 6:
-                this.b.onBackPressed();
-                break;
-            case 7:
-                this.b.Q1();
-                break;
-            case 8:
-                this.b.a2();
-                break;
-            case 9:
-                this.b.onBackPressed();
-                break;
-            case 10:
-                this.b.W1(true);
-                break;
-            case 11:
-                this.b.a2();
-                break;
-            case 12:
-                w3 w3Var = this.b;
-                if (!w3Var.j0.N) {
-                    w3Var.v0.a(!r7.a.q, true);
-                    break;
-                }
-                break;
-            case 13:
-                w3.T0(this.b, view);
-                break;
-            case 14:
-                this.b.W1(true);
-                break;
-            case 15:
-                float alpha = view.getAlpha();
-                w3 w3Var2 = this.b;
-                if (alpha >= 0.99f) {
-                    w3Var2.Y1();
-                    break;
-                } else {
-                    w3Var2.u1();
-                    break;
-                }
-            case 16:
-                w3.b1(this.b);
-                break;
-            case 17:
-                this.b.S1();
-                break;
-            case 18:
-                this.b.R1(view);
-                break;
-            case 19:
-                this.b.U1();
-                break;
-            case 20:
-                if (view.getAlpha() >= 1.0f) {
-                    w3 w3Var3 = this.b;
-                    di.d dVar = w3Var3.j0;
-                    dVar.g(LocaleController.getString(R.string.GiftCraftInfoButton), true, true);
-                    dVar.f(null, true);
-                    dVar.setOnClickListener(new u0(w3Var3, 22));
-                    w3Var3.e0.i(3, LocaleController.getString(R.string.GiftCraftInfoTitle), LocaleController.getString(R.string.GiftCraftInfoText), null);
-                    w3Var3.q2(3, true, null);
-                    break;
-                }
-                break;
-            case 21:
-                w3 w3Var4 = this.b;
-                w3Var4.V0 = true;
-                w3Var4.r2(false);
-                break;
-            case 22:
-                this.b.W1(false);
-                break;
-            case 23:
-                j3 j3Var = this.b.M0;
-                j3Var.h.e();
-                j3Var.i.e();
-                j3Var.j.e();
-                j3Var.k.e();
-                break;
-            case 24:
-                this.b.Q1();
-                break;
-            case 25:
-                this.b.onBackPressed();
-                break;
-            default:
-                w3 w3Var5 = this.b;
-                w3Var5.V0 = true;
-                w3Var5.r2(false);
-                break;
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+        x0 x0Var = x0.Z;
+        x0Var.M = w7.q.a(scaleGestureDetector.getScaleFactor() * x0Var.M, 0.6f, x0Var.a);
+        x0Var.J = (int) (x0Var.n() * x0Var.M);
+        x0Var.K = (int) (x0Var.m() * x0Var.M);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.d1(this, 18));
+        o1.k kVar = x0Var.P;
+        kVar.b = x0Var.N;
+        kVar.c = true;
+        kVar.u.i = scaleGestureDetector.getFocusX() >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r4 - x0Var.J) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        o1.k kVar2 = x0Var.P;
+        if (!kVar2.f) {
+            kVar2.f();
+        }
+        o1.k kVar3 = x0Var.Q;
+        kVar3.b = x0Var.O;
+        kVar3.c = true;
+        kVar3.u.i = w7.q.a(scaleGestureDetector.getFocusY() - (x0Var.K / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - x0Var.K) - AndroidUtilities.dp(16.0f));
+        o1.k kVar4 = x0Var.Q;
+        if (!kVar4.f) {
+            kVar4.f();
+        }
+        return true;
+    }
+
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final boolean onScaleBegin(ScaleGestureDetector scaleGestureDetector) {
+        x0 x0Var = x0.Z;
+        if (x0Var.E) {
+            x0Var.E = false;
+        }
+        x0Var.F = true;
+        x0Var.c.width = (int) (x0Var.n() * x0Var.a);
+        x0Var.c.height = (int) (x0Var.m() * x0Var.a);
+        AndroidUtilities.updateViewLayout(x0Var.b, x0Var.d, x0Var.c);
+        return true;
+    }
+
+    @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
+    public final void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
+        x0 x0Var = x0.Z;
+        if (!x0Var.P.f && !x0Var.Q.f) {
+            a();
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        lg0 lg0Var = new lg0(this, arrayList, 2);
+        o1.k kVar = x0Var.P;
+        if (kVar.f) {
+            kVar.a(lg0Var);
+        } else {
+            arrayList.add(kVar);
+        }
+        o1.k kVar2 = x0Var.Q;
+        if (kVar2.f) {
+            kVar2.a(lg0Var);
+        } else {
+            arrayList.add(kVar2);
         }
     }
 }

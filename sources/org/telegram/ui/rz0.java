@@ -1,72 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class rz0 extends org.telegram.ui.Components.y80 {
-    public final /* synthetic */ ProfileActivity P0;
+public final class rz0 implements oq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ rq b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.P0 = profileActivity;
+    public rz0(ProfileActivity profileActivity, TLRPC.Chat chat, rq rqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = rqVar;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.P0.B3();
+    @Override // org.telegram.ui.oq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void setTextColor(int i10) {
-        int l1;
-        super.setTextColor(i10);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-        org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[2];
-        if (j5Var != null) {
-            j5Var.setTextColor(i10);
-            j5VarArr[3].setTextColor(i10);
-        }
-        m11 m11Var = profileActivity.b6;
-        if (m11Var == null || m11Var.c == (l1 = org.telegram.ui.ActionBar.j6.l1(1.4f, org.telegram.ui.ActionBar.j6.b(-0.02f, 0.15f, i10)))) {
+    @Override // org.telegram.ui.oq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
             return;
         }
-        m11Var.c = l1;
-        m11Var.invalidateSelf();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        ProfileActivity profileActivity = this.P0;
-        profileActivity.Z3();
-        profileActivity.getClass();
-        profileActivity.r[2].setTranslationX(f7);
-        profileActivity.r[3].setTranslationX(f7);
-        org.telegram.ui.Components.hw0 hw0Var = profileActivity.T;
-        if (hw0Var != null) {
-            hw0Var.setTranslationX(f7 - profileActivity.Z3());
+        rq rqVar = this.b;
+        if (!rqVar.Q || rqVar.getParentLayout() == null) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
-        if (profileActivity.T != null) {
-            AndroidUtilities.dp(3.0f);
-            profileActivity.T.getVisibilityFactor();
-        }
-        j5VarArr[2].setTranslationY(f7);
-        j5VarArr[3].setTranslationY(f7);
-        org.telegram.ui.Components.hw0 hw0Var = profileActivity.T;
-        if (hw0Var != null) {
-            hw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
+        for (org.telegram.ui.ActionBar.p2 p2Var : rqVar.getParentLayout().getFragmentStack()) {
+            if (p2Var instanceof wb) {
+                wb wbVar = (wb) p2Var;
+                wbVar.W0();
+                AndroidUtilities.runOnUIThread(new pf0(wbVar, user, chat, 25));
+                return;
+            }
         }
     }
 }

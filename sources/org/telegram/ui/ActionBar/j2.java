@@ -1,37 +1,55 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Dialog;
-import android.view.View;
-import org.telegram.ui.Components.yc;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.nb;
+import org.telegram.ui.Components.pc;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public interface j2 {
-    boolean attachedToParent();
+public final class j2 implements nb {
+    public final /* synthetic */ p2 a;
 
-    void dismiss();
+    public j2(p2 p2Var) {
+        this.a = p2Var;
+    }
 
-    void dismiss(boolean z10);
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ boolean a() {
+        return true;
+    }
 
-    yc getBulletinFactory();
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
 
-    int getNavigationBarColor(int i10);
+    @Override // org.telegram.ui.Components.nb
+    public final int f(int i10) {
+        if (this.a.isSupportEdgeToEdge()) {
+            return AndroidUtilities.navigationBarHeight;
+        }
+        return 0;
+    }
 
-    View getWindowView();
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ boolean g(int i10) {
+        return false;
+    }
 
-    boolean isAttachedLightStatusBar();
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ int h(int i10) {
+        return 0;
+    }
 
-    boolean isFullyVisible();
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ void b(pc pcVar) {
+    }
 
-    boolean isShown();
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ void c(float f7) {
+    }
 
-    boolean onAttachedBackPressed();
-
-    void setKeyboardHeightFromParent(int i10);
-
-    void setLastVisible(boolean z10);
-
-    void setOnDismissListener(Runnable runnable);
-
-    boolean showDialog(Dialog dialog);
+    @Override // org.telegram.ui.Components.nb
+    public final /* synthetic */ void d(pc pcVar) {
+    }
 }

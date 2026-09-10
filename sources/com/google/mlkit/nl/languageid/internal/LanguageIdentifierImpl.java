@@ -8,16 +8,17 @@ import com.google.android.gms.internal.cast.p;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
-import fg.f;
+import e6.n;
+import ee.v;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import ji.u4;
 import k6.c;
-import mg.n;
+import ki.f;
+import l2.h;
 import n6.i;
 import n6.l;
 import n6.o;
@@ -37,7 +38,7 @@ import v7.j6;
 import v7.y8;
 import v7.z8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -56,9 +57,9 @@ public class LanguageIdentifierImpl implements b {
     }
 
     public static final f6 k() {
-        n nVar = new n(19, false);
-        nVar.b = Float.valueOf(-1.0f);
-        return new f6(nVar);
+        o0.b bVar = new o0.b();
+        bVar.a = Float.valueOf(-1.0f);
+        return new f6(bVar);
     }
 
     @Override // com.google.android.gms.common.api.n
@@ -100,16 +101,16 @@ public class LanguageIdentifierImpl implements b {
                 boolean z11 = z10;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e7 = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
-                    u4 u4Var = new u4(27);
-                    c5.i iVar = new c5.i();
-                    iVar.a = e7;
-                    u4Var.b = new c7(iVar);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(u4Var), i6.b);
-                    return e7;
-                } catch (RuntimeException e10) {
+                    String e = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
+                    h hVar = new h(24);
+                    v vVar = new v(1);
+                    vVar.b = e;
+                    hVar.b = new c7(vVar);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(hVar), i6.b);
+                    return e;
+                } catch (RuntimeException e7) {
                     languageIdentifierImpl.j(elapsedRealtime, z11, null, i6.c);
-                    throw e10;
+                    throw e7;
                 }
             }
         }, this.e.getToken());
@@ -151,7 +152,7 @@ public class LanguageIdentifierImpl implements b {
             if (z8Var.b.get() != -1 && elapsedRealtime3 - z8Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            z8Var.a.f(new o(0, Arrays.asList(new n6.j(i10, i11, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(z8Var, elapsedRealtime3, 7));
+            z8Var.a.f(new o(0, Arrays.asList(new n6.j(i10, i11, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new n(z8Var, elapsedRealtime3, 7));
         }
     }
 }

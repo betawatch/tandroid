@@ -8,9 +8,9 @@ import android.os.Looper;
 import android.os.RemoteException;
 import c6.y;
 import com.google.android.gms.cast.CastDevice;
-import m.p3;
+import m.r3;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class w extends n6.g {
     public static final b Y = new b("CastClientImplCxless", null);
@@ -19,8 +19,8 @@ public final class w extends n6.g {
     public final Bundle W;
     public final String X;
 
-    public w(Context context, Looper looper, p3 p3Var, CastDevice castDevice, long j3, Bundle bundle, String str, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
-        super(context, looper, 10, p3Var, kVar, lVar, 0);
+    public w(Context context, Looper looper, r3 r3Var, CastDevice castDevice, long j3, Bundle bundle, String str, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 10, r3Var, kVar, lVar, 0);
         this.U = castDevice;
         this.V = j3;
         this.W = bundle;
@@ -40,8 +40,8 @@ public final class w extends n6.g {
             } finally {
                 super.disconnect();
             }
-        } catch (RemoteException | IllegalStateException e7) {
-            Y.a(e7, "Error while disconnecting the controller interface", new Object[0]);
+        } catch (RemoteException | IllegalStateException e) {
+            Y.a(e, "Error while disconnecting the controller interface", new Object[0]);
         }
     }
 

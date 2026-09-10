@@ -1,45 +1,72 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ve0;
-import org.telegram.ui.Components.we0;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class u5 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public we0 c;
-    public AnimatorSet d;
-    public androidx.activity.i e;
+    public final TextView a;
+    public final LinearLayout b;
+    public View.OnClickListener c;
+    public int d;
+    public final int[] e;
 
-    public final void a(String str, int i10, float f7) {
-        TextView textView = this.a;
-        TextView textView2 = this.b;
-        AnimatorSet animatorSet = this.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.d = null;
+    public u5(Context context) {
+        super(context);
+        this.e = new int[]{0, -45747, -753630, -13056, -8269183, -9321002, -16747844, -10080879};
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setGravity(5);
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, w7.a6.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        for (int i10 = 0; i10 < this.e.length; i10++) {
+            RadioButton radioButton = new RadioButton(context);
+            radioButton.setSize(AndroidUtilities.dp(20.0f));
+            radioButton.setTag(Integer.valueOf(i10));
+            this.b.addView(radioButton, w7.a6.l(1.0f / this.e.length, 0, -1));
+            radioButton.setOnClickListener(new a(this, 8));
         }
-        AndroidUtilities.cancelRunOnUIThread(this.e);
-        textView2.setTag(null);
-        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
-        if (f7 > 0.0f) {
-            textView2.setText("+" + ((int) f7));
-        } else {
-            textView2.setText("" + ((int) f7));
+        addView(this.b, w7.a6.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
+    }
+
+    public final void a(int i10, String str) {
+        this.d = i10;
+        this.a.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        b(false);
+    }
+
+    public final void b(boolean z10) {
+        LinearLayout linearLayout = this.b;
+        int childCount = linearLayout.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = linearLayout.getChildAt(i10);
+            if (childAt instanceof RadioButton) {
+                RadioButton radioButton = (RadioButton) childAt;
+                int intValue = ((Integer) radioButton.getTag()).intValue();
+                int[] iArr = this.e;
+                radioButton.a(this.d == iArr[intValue], z10);
+                radioButton.b(intValue == 0 ? -1 : iArr[intValue], intValue != 0 ? iArr[intValue] : -1);
+            }
         }
-        textView2.setAlpha(0.0f);
-        textView.setAlpha(1.0f);
-        we0 we0Var = this.c;
-        we0Var.h = i10;
-        we0Var.n = 100;
-        we0Var.a((int) f7, false);
+    }
+
+    public int getCurrentColor() {
+        return this.d;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -47,13 +74,8 @@ public final class u5 extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
-    public void setSeekBarDelegate(ve0 ve0Var) {
-        this.c.setDelegate(new m9(this, ve0Var));
-    }
-
     @Override // android.view.View
-    public void setTag(Object obj) {
-        super.setTag(obj);
-        this.c.setTag(obj);
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.c = onClickListener;
     }
 }

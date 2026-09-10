@@ -1,57 +1,63 @@
 package mh;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLRPC;
-import s4.c1;
-import s4.h0;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class d extends h0 implements GroupCallMessagesController.CallMessageListener {
-    public List c;
-    public boolean d;
-    public int e;
-    public TLRPC.InputGroupCall f;
+public final class d extends FrameLayout implements a6 {
+    public final f6 a;
+    public final ImageView b;
+    public final TextView c;
 
-    @Override // s4.h0
-    public final int h() {
-        List list = this.c;
-        if (list != null) {
-            return list.size();
-        }
-        return 0;
+    public d(Context context, f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_arrow_back);
+        addView(imageView, w7.a6.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setText(LocaleController.getString(R.string.EmojiSearchBackToSearch));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, w7.a6.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
+        e();
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onNewGroupCallMessage(long j3, GroupCallMessage groupCallMessage) {
-        if (this.c == null) {
-            this.c = new ArrayList();
-        }
-        this.c.add(0, groupCallMessage);
-        o(0);
+    @Override // org.telegram.ui.ActionBar.a6
+    public final void e() {
+        int i10 = j6.Wk;
+        f6 f6Var = this.a;
+        int i11 = (int) 153.0f;
+        this.c.setTextColor(i0.a.k(j6.v0(i10, f6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(j6.v0(i10, f6Var), i11), PorterDuff.Mode.MULTIPLY);
+        ImageView imageView = this.b;
+        imageView.setColorFilter(porterDuffColorFilter);
+        imageView.setBackground(j6.f0(i0.a.k(j6.v0(i10, f6Var), (int) 25.5f), 1, -1));
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onPopGroupCallMessage() {
-        List list = this.c;
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        int size = this.c.size() - 1;
-        this.c.remove(size);
-        u(size);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // s4.h0
-    public final void v(c1 c1Var, int i10) {
-        b bVar = (b) c1Var;
-        List list = this.c;
-        if (list == null || list.size() <= i10) {
-            return;
-        }
-        ((c) bVar.a).set((GroupCallMessage) this.c.get(i10));
+    public void setOnBackClickListener(View.OnClickListener onClickListener) {
+        this.b.setOnClickListener(onClickListener);
     }
 }

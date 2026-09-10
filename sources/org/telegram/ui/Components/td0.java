@@ -1,39 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class td0 extends sd0 {
-    public final /* synthetic */ ud0 b0;
+public final class td0 extends v7.n {
+    public final /* synthetic */ be0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public td0(ud0 ud0Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.b0 = ud0Var;
+    public td0(be0 be0Var) {
+        this.a = be0Var;
     }
 
-    @Override // org.telegram.ui.Components.sd0
-    public final void f(float f7) {
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null) {
-            return;
-        }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
-        z3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+    @Override // v7.n
+    public final void a(int i10, CharSequence charSequence) {
+        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
+        this.a.m(true);
     }
 
-    @Override // org.telegram.ui.Components.sd0
-    public final void h() {
-        super/*android.app.Dialog*/.dismiss();
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null) {
-            return;
-        }
-        org.telegram.ui.ActionBar.z3 z3Var = launchActivity.z0;
-        z3Var.setScaleX(1.0f);
-        z3Var.setScaleY(1.0f);
+    @Override // v7.n
+    public final void b() {
+        FileLog.d("PasscodeView onAuthenticationFailed");
+        this.a.m(true);
+    }
+
+    @Override // v7.n
+    public final void c(androidx.biometric.t tVar) {
+        FileLog.d("PasscodeView onAuthenticationSucceeded");
+        this.a.k(true);
     }
 }

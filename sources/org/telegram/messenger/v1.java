@@ -1,26 +1,63 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v1 implements NotificationCenter.NotificationCenterDelegate {
+public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ v1(Object obj, int i10) {
+    public /* synthetic */ v1(int i10, Object obj, Object obj2) {
         this.a = i10;
         this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((ContactsLoadingObserver) this.b).lambda$new$0(i10, i11, objArr);
+                ((ContactsController) this.b).lambda$reloadContactsStatuses$59((SharedPreferences.Editor) this.c, tLObject, tL_error);
+                break;
+            case 1:
+                ((ContactsController) this.b).lambda$deleteAllContacts$9((Runnable) this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((ContactsController) this.b).lambda$addContact$52((TLRPC.User) this.c, tLObject, tL_error);
+                break;
+            case 3:
+                ((MediaDataController) this.b).lambda$removeRecentGif$24((TLRPC.TL_messages_saveGif) this.c, tLObject, tL_error);
+                break;
+            case 4:
+                ((MediaDataController) this.b).lambda$saveToRingtones$204((TLRPC.Document) this.c, tLObject, tL_error);
+                break;
+            case 5:
+                ((MediaDataController) this.b).lambda$loadAttachMenuBots$4((Runnable) this.c, tLObject, tL_error);
+                break;
+            case 6:
+                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$495((ArrayList) this.c, tLObject, tL_error);
+                break;
+            case 7:
+                ((MessagesController) this.b).lambda$changeChatTitle$317((Runnable) this.c, tLObject, tL_error);
+                break;
+            case 8:
+                ((SavedMessagesController) this.b).lambda$loadDialogs$3((ArrayList) this.c, tLObject, tL_error);
+                break;
+            case 9:
+                ((SendMessagesHelper) this.b).lambda$sendReaction$35((Runnable) this.c, tLObject, tL_error);
+                break;
+            case 10:
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$50((SendMessagesHelper.DelayedMessage) this.c, tLObject, tL_error);
                 break;
             default:
-                ((TelegramMediaSession) this.b).lambda$new$0(i10, i11, objArr);
+                ((UserNameResolver) this.b).lambda$resolve$1((String) this.c, tLObject, tL_error);
                 break;
         }
     }

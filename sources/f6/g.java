@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.text.TextUtils;
 import android.util.Log;
+import bi.u6;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import com.google.android.gms.internal.cast.a0;
 import com.google.android.gms.internal.cast.f1;
@@ -21,13 +22,12 @@ import e0.t;
 import e6.q;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n4.y;
 import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import v7.w6;
+import v7.x6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class g {
     public static final g6.b u = new g6.b("MediaNotificationProxy", null);
@@ -39,10 +39,10 @@ public final class g {
     public ArrayList f = new ArrayList();
     public int[] g;
     public final long h;
-    public final cf.c i;
+    public final u6 i;
     public final Resources j;
     public f k;
-    public y l;
+    public of.b l;
     public k m;
     public k n;
     public k o;
@@ -80,7 +80,7 @@ public final class g {
         }
         this.h = fVar.c;
         int dimensionPixelSize = resources.getDimensionPixelSize(fVar.H);
-        this.i = new cf.c(context.getApplicationContext(), new e6.b(1, dimensionPixelSize, dimensionPixelSize));
+        this.i = new u6(context.getApplicationContext(), new e6.b(1, dimensionPixelSize, dimensionPixelSize));
         if (u6.b.d() && notificationManager != null) {
             NotificationChannel notificationChannel = new NotificationChannel("cast_media_notification", context.getResources().getString(R.string.media_notification_channel_name), 2);
             notificationChannel.setShowBadge(false);
@@ -239,8 +239,8 @@ public final class g {
         if (notificationManager == null || this.k == null) {
             return;
         }
-        y yVar = this.l;
-        Bitmap bitmap = yVar == null ? null : (Bitmap) yVar.c;
+        of.b bVar = this.l;
+        Bitmap bitmap = bVar == null ? null : (Bitmap) bVar.c;
         Context context = this.a;
         t tVar = new t(context, "cast_media_notification");
         tVar.j(bitmap);
@@ -268,12 +268,12 @@ public final class g {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a10 = w6.a(context, component); a10 != null; a10 = w6.a(context, a10.getComponent())) {
+                    for (Intent a10 = x6.a(context, component); a10 != null; a10 = x6.a(context, a10.getComponent())) {
                         arrayList.add(size, a10);
                     }
-                } catch (PackageManager.NameNotFoundException e7) {
+                } catch (PackageManager.NameNotFoundException e) {
                     Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
-                    throw new IllegalArgumentException(e7);
+                    throw new IllegalArgumentException(e);
                 }
             }
             arrayList.add(intent);
@@ -289,9 +289,9 @@ public final class g {
             tVar.g = activities;
         }
         q qVar = fVar.V;
-        g6.b bVar = u;
+        g6.b bVar2 = u;
         if (qVar != null) {
-            bVar.b("actionsProvider != null", new Object[0]);
+            bVar2.b("actionsProvider != null", new Object[0]);
             int[] b10 = j.b(qVar);
             this.g = b10 == null ? null : (int[]) b10.clone();
             ArrayList a11 = j.a(qVar);
@@ -317,7 +317,7 @@ public final class g {
                 }
             }
         } else {
-            bVar.b("actionsProvider == null", new Object[0]);
+            bVar2.b("actionsProvider == null", new Object[0]);
             this.f = new ArrayList();
             ArrayList arrayList2 = fVar.a;
             int size3 = arrayList2.size();

@@ -1,18 +1,18 @@
 package androidx.emoji2.text;
 
 import android.os.Trace;
-import bi.p9;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.voip.k2;
+import org.telegram.ui.Components.voip.l2;
+import org.telegram.ui.Components.x20;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.u2;
+import org.telegram.ui.v2;
+import zh.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -43,38 +43,38 @@ public final class n implements Runnable {
                     throw th2;
                 }
             case 1:
-                Math.abs(Utilities.random.nextInt() % 3);
-                o20[] o20VarArr = p9.a;
-                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
-                AndroidUtilities.runOnUIThread(p9.o, 1000L);
-                LaunchActivity.R().getFragmentView();
                 return;
             case 2:
-                return;
-            case 3:
                 j6.j = false;
                 j6.l(false);
                 return;
-            case 4:
+            case 3:
                 j6.k = false;
                 j6.l(true);
                 return;
-            case 5:
+            case 4:
                 return;
-            case 6:
-                k2 k2Var = k2.U;
-                if (k2Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(k2Var.b.f.M);
+            case 5:
+                l2 l2Var = l2.U;
+                if (l2Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(l2Var.b.f.M);
                     return;
                 }
                 return;
+            case 6:
+                return;
             default:
+                Math.abs(Utilities.random.nextInt() % 3);
+                x20[] x20VarArr = a6.a;
+                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
+                AndroidUtilities.runOnUIThread(a6.o, 1000L);
+                LaunchActivity.R().getFragmentView();
                 return;
         }
     }
 
-    public n(u2 u2Var) {
-        this.a = 5;
+    public n(v2 v2Var) {
+        this.a = 4;
     }
 
     private final void a() {

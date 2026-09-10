@@ -1,84 +1,52 @@
 package zh;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.co;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+    public final /* synthetic */ v5 b;
     public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ u5(org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
+    public /* synthetic */ u5(v5 v5Var, long j3, int i10, int i11) {
+        this.a = i11;
+        this.b = v5Var;
         this.c = j3;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(ProfileActivity.m4(this.c));
+                long j3 = this.c;
+                int i10 = this.d;
+                MessagesStorage messagesStorage = this.b.b;
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                try {
+                    Locale locale = Locale.US;
+                    database.executeFast("DELETE FROM stories WHERE dialog_id = " + j3 + " AND story_id = " + i10).stepThis().dispose();
                     break;
+                } catch (Throwable th2) {
+                    messagesStorage.checkSQLException(th2);
+                    return;
                 }
-                break;
-            case 1:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(co.R9(this.c));
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.f3 f3Var = this.b[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                }
-                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
-                if (U3 != null) {
-                    U3.presentFragment(co.R9(this.c));
-                    break;
-                }
-                break;
-            case 3:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
-                if (U4 != null) {
-                    U4.presentFragment(co.R9(this.c));
-                    break;
-                }
-                break;
-            case 4:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U5 = LaunchActivity.U();
-                if (U5 != null) {
-                    U5.presentFragment(new fi.m(this.c));
-                    break;
-                }
-                break;
-            case 5:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U6 = LaunchActivity.U();
-                if (U6 != null) {
-                    U6.presentFragment(ProfileActivity.m4(this.c));
-                    break;
-                }
-                break;
             default:
-                this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U7 = LaunchActivity.U();
-                if (U7 != null) {
-                    U7.presentFragment(ProfileActivity.m4(this.c));
+                long j10 = this.c;
+                int i11 = this.d;
+                MessagesStorage messagesStorage2 = this.b.b;
+                SQLiteDatabase database2 = messagesStorage2.getDatabase();
+                try {
+                    Locale locale2 = Locale.US;
+                    database2.executeFast("REPLACE INTO stories_counter VALUES(" + j10 + ", 0, " + i11 + ")").stepThis().dispose();
                     break;
+                } catch (Throwable th3) {
+                    messagesStorage2.checkSQLException(th3);
                 }
-                break;
         }
     }
 }

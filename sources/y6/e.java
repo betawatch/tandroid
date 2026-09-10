@@ -22,22 +22,28 @@ import n6.l;
 import org.telegram.tgnet.TLObject;
 import t7.u;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e {
+    public static final na.d b;
+    public static final ob.a c;
     public static Boolean d = null;
     public static String e = null;
     public static boolean f = false;
     public static int g = -1;
     public static Boolean h;
+    public static final ThreadLocal i = new ThreadLocal();
+    public static final n1 j = new n1(3);
+    public static final u k = new u();
     public static j l;
     public static k m;
     public final Context a;
-    public static final ThreadLocal i = new ThreadLocal();
-    public static final n1 j = new n1(3);
-    public static final u k = new u(26);
-    public static final na.d b = new na.d();
-    public static final ob.a c = new ob.a(27);
+
+    static {
+        int i10 = 27;
+        b = new na.d(i10);
+        c = new ob.a(i10);
+    }
 
     public e(Context context) {
         this.a = context;
@@ -84,18 +90,18 @@ public final class e {
         long longValue = l4.longValue();
         try {
             n1Var.set(Long.valueOf(SystemClock.uptimeMillis()));
-            a3.l h10 = dVar.h(context, str, k);
+            a3.l p5 = dVar.p(context, str, k);
             j3 = longValue;
             try {
-                Log.i("DynamiteModule", "Considering local module " + str + ":" + h10.a + " and remote module " + str + ":" + h10.b);
-                int i10 = h10.c;
+                Log.i("DynamiteModule", "Considering local module " + str + ":" + p5.a + " and remote module " + str + ":" + p5.b);
+                int i10 = p5.c;
                 if (i10 != 0) {
                     if (i10 == -1) {
-                        if (h10.a != 0) {
+                        if (p5.a != 0) {
                             i10 = -1;
                         }
                     }
-                    if (i10 != 1 || h10.b != 0) {
+                    if (i10 != 1 || p5.b != 0) {
                         if (i10 == -1) {
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                             eVar = new e(applicationContext);
@@ -104,7 +110,7 @@ public final class e {
                                 throw new b("VersionPolicy returned invalid code:" + i10);
                             }
                             try {
-                                int i11 = h10.b;
+                                int i11 = p5.b;
                                 try {
                                     synchronized (e.class) {
                                         if (!g(context)) {
@@ -147,11 +153,11 @@ public final class e {
                                         eVar2 = new e(context2);
                                     } else {
                                         Log.i("DynamiteModule", "Selected remote version of " + str + ", version >= " + i11);
-                                        j h11 = h(context);
-                                        if (h11 == null) {
+                                        j h10 = h(context);
+                                        if (h10 == null) {
                                             throw new b("Failed to create IDynamiteLoader.");
                                         }
-                                        Parcel M0 = h11.M0(h11.O0(), 6);
+                                        Parcel M0 = h10.M0(h10.O0(), 6);
                                         int readInt = M0.readInt();
                                         M0.recycle();
                                         if (readInt >= 3) {
@@ -159,13 +165,13 @@ public final class e {
                                             if (iVar4 == null) {
                                                 throw new b("No cached result cursor holder");
                                             }
-                                            W0 = h11.X0(new x6.b(context), str, i11, new x6.b(iVar4.a));
+                                            W0 = h10.X0(new x6.b(context), str, i11, new x6.b(iVar4.a));
                                         } else if (readInt == 2) {
                                             Log.w("DynamiteModule", "IDynamite loader version = 2");
-                                            W0 = h11.Y0(new x6.b(context), str, i11);
+                                            W0 = h10.Y0(new x6.b(context), str, i11);
                                         } else {
                                             Log.w("DynamiteModule", "Dynamite loader version < 2, falling back to createModuleContext");
-                                            W0 = h11.W0(new x6.b(context), str, i11);
+                                            W0 = h10.W0(new x6.b(context), str, i11);
                                         }
                                         Object M02 = x6.b.M0(W0);
                                         if (M02 == null) {
@@ -183,8 +189,8 @@ public final class e {
                                 }
                             } catch (b e11) {
                                 Log.w("DynamiteModule", "Failed to load remote module: " + e11.getMessage());
-                                int i12 = h10.a;
-                                if (i12 == 0 || dVar.h(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
+                                int i12 = p5.a;
+                                if (i12 == 0 || dVar.p(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
                                     throw new b("Remote load failed. No local fallback found.", e11);
                                 }
                                 Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
@@ -204,7 +210,7 @@ public final class e {
                         return eVar;
                     }
                 }
-                throw new b("No acceptable module " + str + " found. Local version is " + h10.a + " and remote version is " + h10.b + ".");
+                throw new b("No acceptable module " + str + " found. Local version is " + p5.a + " and remote version is " + p5.b + ".");
             } catch (Throwable th3) {
                 th = th3;
                 if (j3 == 0) {

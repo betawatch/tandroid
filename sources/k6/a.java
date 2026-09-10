@@ -4,10 +4,9 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import n4.y;
 import w7.e0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final int a;
@@ -87,7 +86,7 @@ public final class a extends o6.a {
                     case 25:
                         return "API_INSTALL_REQUIRED";
                     default:
-                        return i2.g.j(i10, "UNKNOWN_ERROR_CODE(", ")");
+                        return hc.b.k(i10, "UNKNOWN_ERROR_CODE(", ")");
                 }
         }
     }
@@ -116,11 +115,11 @@ public final class a extends o6.a {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.y(d(this.b), "statusCode");
-        yVar.y(this.c, "resolution");
-        yVar.y(this.d, "message");
-        return yVar.toString();
+        of.b bVar = new of.b(this);
+        bVar.E(d(this.b), "statusCode");
+        bVar.E(this.c, "resolution");
+        bVar.E(this.d, "message");
+        return bVar.toString();
     }
 
     @Override // android.os.Parcelable

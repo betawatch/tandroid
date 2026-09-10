@@ -1,19 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class q50 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final long e;
+import android.content.Context;
 
-    public q50(long j3, int i10, int i11, boolean z10, long j10) {
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = j3;
-        this.e = j10;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final class q50 extends z50 {
+    public final /* synthetic */ f60 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q50(f60 f60Var, Context context) {
+        super(f60Var, context);
+        this.d = f60Var;
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        this.d.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setRotationY(float f7) {
+        super.setRotationY(f7);
+        this.d.invalidate();
     }
 }

@@ -24,10 +24,10 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import v7.o8;
-import v7.u7;
+import v7.r8;
+import v7.v7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -73,7 +73,7 @@ public class MediaRouteButton extends View {
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = u7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = v7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = p4.x.d(context2);
@@ -119,10 +119,10 @@ public class MediaRouteButton extends View {
         return null;
     }
 
-    private androidx.fragment.app.i0 getFragmentManager() {
+    private androidx.fragment.app.j0 getFragmentManager() {
         Activity activity = getActivity();
-        if (activity instanceof androidx.fragment.app.u) {
-            return ((androidx.fragment.app.u) activity).s();
+        if (activity instanceof androidx.fragment.app.v) {
+            return ((androidx.fragment.app.v) activity).s();
         }
         return null;
     }
@@ -141,7 +141,7 @@ public class MediaRouteButton extends View {
     }
 
     private boolean showDialogForType(int i10) {
-        androidx.fragment.app.i0 fragmentManager = getFragmentManager();
+        androidx.fragment.app.j0 fragmentManager = getFragmentManager();
         if (fragmentManager == null) {
             throw new IllegalStateException("The activity must be a subclass of FragmentActivity");
         }
@@ -237,7 +237,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        w7.o.a(this, string);
+        w7.p.a(this, string);
     }
 
     @Override // android.view.View
@@ -451,7 +451,7 @@ public class MediaRouteButton extends View {
         }
         if (drawable != null) {
             if (this.mButtonTint != null) {
-                drawable = o8.d(drawable.mutate());
+                drawable = r8.d(drawable.mutate());
                 drawable.setTintList(this.mButtonTint);
             }
             drawable.setCallback(this);

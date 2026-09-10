@@ -1,29 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Typeface;
+import android.widget.ImageView;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class hc extends nb {
-    public float a;
-    public gc b;
-    public x9 c;
-    public q6 d;
-    public boolean e;
+public class hc extends mb {
+    public final ImageView a;
+    public final m90 b;
 
-    @Override // org.telegram.ui.Components.ub
+    public hc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        int themedColor = getThemedColor(org.telegram.ui.ActionBar.j6.Hi);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.a6.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
+        m90 m90Var = new m90(context, null);
+        this.b = m90Var;
+        m90Var.setDisablePaddingsOffsetY(true);
+        m90Var.setSingleLine();
+        m90Var.setTextColor(themedColor);
+        m90Var.setTypeface(Typeface.SANS_SERIF);
+        m90Var.setTextSize(1, 15.0f);
+        addView(m90Var, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    }
+
+    @Override // org.telegram.ui.Components.tb
     public CharSequence getAccessibilityText() {
-        return this.d.getText();
-    }
-
-    public void setProgress(float f7) {
-        if (this.e != (f7 < 1.0f)) {
-            this.e = f7 < 1.0f;
-            this.c.animate().scaleX(this.e ? 0.78f : 1.0f).scaleY(this.e ? 0.78f : 1.0f).setDuration(320L).setInterpolator(pr.h).start();
-        }
-        this.a = f7;
-        this.b.invalidate();
-    }
-
-    public void setTextColor(int i10) {
-        this.d.setTextColor(i10);
+        return this.b.getText();
     }
 }

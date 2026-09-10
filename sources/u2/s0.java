@@ -1,76 +1,18 @@
 package u2;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class s0 implements b1 {
-    public final int a;
-    public final /* synthetic */ u0 b;
+public final class s0 extends c3.v {
+    public final /* synthetic */ w0 b;
 
-    public s0(u0 u0Var, int i10) {
-        this.b = u0Var;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s0(w0 w0Var, c3.b0 b0Var) {
+        super(b0Var);
+        this.b = w0Var;
     }
 
-    @Override // u2.b1
-    public final void b() {
-        int i10 = this.a;
-        u0 u0Var = this.b;
-        u0Var.K[i10].z();
-        y2.m mVar = u0Var.x;
-        int L3 = u0Var.d.L3(u0Var.U);
-        IOException iOException = mVar.c;
-        if (iOException != null) {
-            throw iOException;
-        }
-        y2.i iVar = mVar.b;
-        if (iVar != null) {
-            if (L3 == Integer.MIN_VALUE) {
-                L3 = iVar.a;
-            }
-            IOException iOException2 = iVar.e;
-            if (iOException2 != null && iVar.f > L3) {
-                throw iOException2;
-            }
-        }
-    }
-
-    @Override // u2.b1
-    public final boolean e() {
-        u0 u0Var = this.b;
-        return !u0Var.D() && u0Var.K[this.a].x(u0Var.e0);
-    }
-
-    @Override // u2.b1
-    public final int f(n4.y yVar, h2.h hVar, int i10) {
-        u0 u0Var = this.b;
-        if (u0Var.D()) {
-            return -3;
-        }
-        int i11 = this.a;
-        u0Var.y(i11);
-        int C = u0Var.K[i11].C(yVar, hVar, i10, u0Var.e0);
-        if (C == -3) {
-            u0Var.z(i11);
-        }
-        return C;
-    }
-
-    @Override // u2.b1
-    public final int m(long j3) {
-        u0 u0Var = this.b;
-        if (u0Var.D()) {
-            return 0;
-        }
-        int i10 = this.a;
-        u0Var.y(i10);
-        a1 a1Var = u0Var.K[i10];
-        int v = a1Var.v(j3, u0Var.e0);
-        a1Var.H(v);
-        if (v == 0) {
-            u0Var.z(i10);
-        }
-        return v;
+    @Override // c3.v, c3.b0
+    public final long l() {
+        return this.b.S;
     }
 }

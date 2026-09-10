@@ -1,48 +1,54 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ae implements TextWatcher {
-    public final /* synthetic */ ke a;
+public final class ae extends org.telegram.ui.Components.hd0 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ Object M;
 
-    public ae(ke keVar) {
-        this.a = keVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ae(Object obj, Context context, int i10) {
+        super(context, null);
+        this.L = i10;
+        this.M = obj;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ke keVar = this.a;
-        nd ndVar = keVar.i1;
-        gi.o oVar = keVar.Y0;
-        if (keVar.V0) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
+            case 0:
+                le leVar = (le) this.M;
+                org.telegram.ui.Components.r61 r61Var = leVar.a1;
+                ei.o oVar = leVar.Y0;
+                if (oVar != null && !oVar.isFocusable()) {
+                    oVar.setFocusable(true);
+                    oVar.setFocusableInTouchMode(true);
+                    int w12 = r61Var.w1(3);
+                    if (w12 >= 0 && w12 < r61Var.Y2.x.size()) {
+                        r61Var.B0();
+                        r61Var.x0(w12);
+                    }
+                    oVar.requestFocus();
+                }
+                break;
+            default:
+                xh.h hVar = (xh.h) this.M;
+                ei.o oVar2 = hVar.Q;
+                if (oVar2 != null && !oVar2.isFocusable()) {
+                    hVar.Q.setFocusable(true);
+                    hVar.Q.setFocusableInTouchMode(true);
+                    int w13 = hVar.e.w1(1);
+                    if (w13 >= 0 && w13 < hVar.e.Y2.x.size()) {
+                        hVar.e.B0();
+                        hVar.e.x0(w13);
+                    }
+                    hVar.Q.requestFocus();
+                }
+                break;
         }
-        long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        keVar.X0 = parseLong;
-        long j3 = keVar.N0.amount;
-        if (parseLong > j3) {
-            keVar.X0 = j3;
-            keVar.V0 = true;
-            oVar.setText(Long.toString(j3));
-            oVar.setSelection(oVar.getText().length());
-            keVar.V0 = false;
-        }
-        keVar.W0 = keVar.X0 == keVar.N0.amount;
-        AndroidUtilities.cancelRunOnUIThread(ndVar);
-        ndVar.run();
-        keVar.W0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

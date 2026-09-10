@@ -1,36 +1,85 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.app.Dialog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ih1 extends FrameLayout {
-    public final sg.r0 a;
+public final /* synthetic */ class ih1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mh1 b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public ih1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        LinearLayout linearLayout = new LinearLayout(context);
-        addView(linearLayout, w7.x5.e(-1, -2, 80));
-        linearLayout.setOrientation(1);
-        TextView textView = new TextView(context);
-        textView.setTextColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var), 100));
-        textView.setTextSize(1, 13.0f);
-        textView.setGravity(17);
-        textView.setText(LocaleController.getString(R.string.UnlockPremiumStickersDescription));
-        linearLayout.addView(textView, w7.x5.t(-1, -2, 0, 16, 17, 17, 16));
-        sg.r0 r0Var = new sg.r0(context, f6Var, false);
-        this.a = r0Var;
-        String string = LocaleController.getString(R.string.UnlockPremiumStickers);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").setSpan(new org.telegram.ui.Components.nq(0, context.getDrawable(R.drawable.msg_premium_normal)), 0, 1, 0);
-        spannableStringBuilder.append((CharSequence) string);
-        r0Var.d.setText(spannableStringBuilder);
-        linearLayout.addView(r0Var, w7.x5.t(-1, 48, 0, 16, 0, 16, 16));
+    public /* synthetic */ ih1(mh1 mh1Var, TLRPC.TL_error tL_error, int i10) {
+        this.a = i10;
+        this.b = mh1Var;
+        this.c = tL_error;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.TL_error tL_error = this.c;
+        mh1 mh1Var = this.b;
+        switch (i10) {
+            case 0:
+                mh1Var.w0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                        mh1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), tL_error.text);
+                        break;
+                    } else {
+                        int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                        mh1Var.G0(LocaleController.getString(R.string.TwoStepVerificationTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                        break;
+                    }
+                } else {
+                    mh1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(mh1Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new dh1(mh1Var, 3));
+                    String string = LocaleController.getString(R.string.PasswordReset);
+                    org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+                    d2Var.T = string;
+                    d2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
+                    Dialog showDialog = mh1Var.showDialog(d2Var);
+                    if (showDialog != null) {
+                        showDialog.setCanceledOnTouchOutside(false);
+                        showDialog.setCancelable(false);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                mh1Var.w0();
+                if (tL_error != null) {
+                    if (!tL_error.text.startsWith("CODE_INVALID")) {
+                        if (!tL_error.text.startsWith("FLOOD_WAIT")) {
+                            mh1Var.G0(LocaleController.getString(R.string.AppName), tL_error.text);
+                            break;
+                        } else {
+                            int intValue2 = Utilities.parseInt((CharSequence) tL_error.text).intValue();
+                            mh1Var.G0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                            break;
+                        }
+                    } else {
+                        mh1Var.y0();
+                        break;
+                    }
+                } else if (mh1Var.getParentActivity() != null) {
+                    mh1Var.u0(new eh1(mh1Var, 5));
+                    break;
+                }
+                break;
+            case 2:
+                mh1.e0(mh1Var, tL_error);
+                break;
+            default:
+                mh1.Z(mh1Var, tL_error);
+                break;
+        }
     }
 }

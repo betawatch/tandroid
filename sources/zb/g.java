@@ -1,6 +1,8 @@
 package zb;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import bi.u6;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements q9.d {
     public static final /* synthetic */ g b = new g(0);
@@ -13,14 +15,14 @@ public final /* synthetic */ class g implements q9.d {
     }
 
     @Override // q9.d
-    public final Object D(cf.c cVar) {
+    public final Object P1(u6 u6Var) {
         switch (this.a) {
             case 0:
-                return new e((qb.g) cVar.a(qb.g.class));
+                return new e((qb.g) u6Var.a(qb.g.class));
             case 1:
-                return new d((e) cVar.a(e.class), (qb.d) cVar.a(qb.d.class));
+                return new d((e) u6Var.a(e.class), (qb.d) u6Var.a(qb.d.class));
             default:
-                return new wb.b(cVar.c(d.class));
+                return new wb.b(u6Var.c(d.class));
         }
     }
 }

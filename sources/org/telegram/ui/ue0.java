@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,23 +19,23 @@ public final /* synthetic */ class ue0 implements Runnable {
         switch (this.a) {
             case 0:
                 xe0 xe0Var = this.b;
-                di.h2 h2Var = xe0Var.c;
-                h2Var.requestFocus();
+                bi.t2 t2Var = xe0Var.c;
+                t2Var.requestFocus();
                 String str = xe0Var.K;
                 if (str != null) {
                     if (str.length() > 1) {
-                        String obj = h2Var.getText().toString();
+                        String obj = t2Var.getText().toString();
                         int length = obj.length();
                         int i10 = 0;
                         while (i10 < length && obj.charAt(i10) <= ' ') {
                             i10++;
                         }
                         int length2 = xe0Var.K.length() + i10;
-                        h2Var.setSelection(Utilities.clamp(length2 + ((length2 < 0 || length2 >= obj.length() || obj.charAt(length2) != ' ') ? 0 : 1), obj.length(), 0), h2Var.getText().length());
+                        t2Var.setSelection(Utilities.clamp(length2 + ((length2 < 0 || length2 >= obj.length() || obj.charAt(length2) != ' ') ? 0 : 1), obj.length(), 0), t2Var.getText().length());
                         break;
                     }
                 }
-                h2Var.setSelection(0, h2Var.getText().length());
+                t2Var.setSelection(0, t2Var.getText().length());
                 break;
             case 1:
                 this.b.q(true);
@@ -44,11 +44,11 @@ public final /* synthetic */ class ue0 implements Runnable {
                 this.b.o(false);
                 break;
             default:
-                di.h2 h2Var2 = this.b.c;
-                if (h2Var2 != null) {
-                    h2Var2.requestFocus();
-                    h2Var2.setSelection(h2Var2.length());
-                    AndroidUtilities.showKeyboard(h2Var2);
+                bi.t2 t2Var2 = this.b.c;
+                if (t2Var2 != null) {
+                    t2Var2.requestFocus();
+                    t2Var2.setSelection(t2Var2.length());
+                    AndroidUtilities.showKeyboard(t2Var2);
                     break;
                 }
                 break;

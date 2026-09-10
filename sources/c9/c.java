@@ -17,7 +17,7 @@ import e0.t;
 import org.telegram.messenger.beta.R;
 import v7.d5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class c extends IntentService {
     private static final int CONNECTION_TIMEOUT_IN_MS = 1000;
@@ -66,8 +66,8 @@ public abstract class c extends IntentService {
                 }
             }
             return false;
-        } catch (PackageManager.NameNotFoundException e7) {
-            Log.w(TAG, "Couldn't find package name ".concat(str), e7);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.w(TAG, "Couldn't find package name ".concat(str), e);
             return false;
         }
     }
@@ -112,14 +112,14 @@ public abstract class c extends IntentService {
                             b10 = bVar.b(intent2, bundle);
                             performAction(intent2, b10, bundle);
                             message = "";
-                        } catch (RemoteException e7) {
-                            String valueOf2 = String.valueOf(e7.getMessage());
+                        } catch (RemoteException e) {
+                            String valueOf2 = String.valueOf(e.getMessage());
                             Log.e(TAG, valueOf2.length() != 0 ? "Remote exception: ".concat(valueOf2) : new String("Remote exception: "));
-                            message = e7.getMessage();
-                        } catch (Exception e10) {
-                            String valueOf3 = String.valueOf(e10.getMessage());
+                            message = e.getMessage();
+                        } catch (Exception e7) {
+                            String valueOf3 = String.valueOf(e7.getMessage());
                             Log.e(TAG, valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
-                            message = e10.getMessage();
+                            message = e7.getMessage();
                         }
                         if (intent2.hasExtra(SEND_MESSAGE_RESULT_RECEIVER)) {
                             ResultReceiver resultReceiver = (ResultReceiver) intent2.getExtras().getParcelable(SEND_MESSAGE_RESULT_RECEIVER);
@@ -226,9 +226,9 @@ public abstract class c extends IntentService {
             if ((!z11 || !z10) && System.nanoTime() - nanoTime < this.connectionTimeout * MS_TO_NS) {
                 try {
                     Thread.sleep(50L);
-                } catch (InterruptedException e7) {
+                } catch (InterruptedException e) {
                     if (this.dbg) {
-                        String valueOf = String.valueOf(e7);
+                        String valueOf = String.valueOf(e);
                         StringBuilder sb2 = new StringBuilder(valueOf.length() + 33);
                         sb2.append("Unexpected InterruptedException: ");
                         sb2.append(valueOf);

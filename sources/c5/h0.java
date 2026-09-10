@@ -20,7 +20,7 @@ import com.google.android.gms.internal.play_billing.t3;
 import com.google.android.gms.internal.play_billing.v3;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h0 extends BroadcastReceiver {
     public boolean a;
@@ -77,7 +77,7 @@ public final class h0 extends BroadcastReceiver {
         o1 d;
         try {
             if (bundle.getByteArray("FAILURE_LOGGING_PAYLOAD") == null) {
-                ((pf.b) ((f0) this.c.d)).o0(e0.b(23, i10, hVar, null, m3Var), j3, z10);
+                ((n4.y) ((f0) this.c.d)).E(e0.b(23, i10, hVar, null, m3Var), j3, z10);
                 return;
             }
             f0 f0Var = (f0) this.c.d;
@@ -89,7 +89,7 @@ public final class h0 extends BroadcastReceiver {
                 d = s1.d();
                 int i13 = o1.a;
             }
-            ((pf.b) f0Var).o0(g3.n(byteArray, d), j3, z10);
+            ((n4.y) f0Var).E(g3.n(byteArray, d), j3, z10);
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Failed parsing Api failure.");
         }
@@ -103,7 +103,7 @@ public final class h0 extends BroadcastReceiver {
     */
     public final void onReceive(Context context, Intent intent) {
         m3 m3Var;
-        h e7;
+        h e;
         long j3;
         ArrayList arrayList;
         h hVar;
@@ -137,7 +137,7 @@ public final class h0 extends BroadcastReceiver {
             com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Bundle is null.");
             f0 f0Var = (f0) gVar.d;
             h hVar2 = g0.f;
-            ((pf.b) f0Var).m0(e0.b(11, i10, hVar2, null, m3Var));
+            ((n4.y) f0Var).B(e0.b(11, i10, hVar2, null, m3Var));
             q qVar = (q) gVar.c;
             if (qVar != null) {
                 qVar.onPurchasesUpdated(hVar2, null);
@@ -160,7 +160,7 @@ public final class h0 extends BroadcastReceiver {
                     intValue = ((Integer) obj).intValue();
                     a2.c = intValue;
                     a2.a = com.google.android.gms.internal.play_billing.u.f("BillingBroadcastManager", intent.getExtras());
-                    e7 = a2.a();
+                    e = a2.a();
                 } else {
                     com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Unexpected type for bundle sub response code: ".concat(obj.getClass().getName()));
                 }
@@ -168,26 +168,26 @@ public final class h0 extends BroadcastReceiver {
             intValue = 0;
             a2.c = intValue;
             a2.a = com.google.android.gms.internal.play_billing.u.f("BillingBroadcastManager", intent.getExtras());
-            e7 = a2.a();
+            e = a2.a();
         } else {
-            e7 = com.google.android.gms.internal.play_billing.u.e("BillingBroadcastManager", intent);
+            e = com.google.android.gms.internal.play_billing.u.e("BillingBroadcastManager", intent);
         }
         long j10 = extras.getLong("billingClientTransactionId", 0L);
         boolean z10 = extras.getBoolean("wasServiceAutoReconnected", false);
         if (!m3Var.equals(m3Var3) && !m3Var.equals(m3Var2)) {
             if (m3Var.equals(m3Var4)) {
-                if (e7.a != 0) {
-                    c(extras, e7, i10, m3Var, j10, z10);
+                if (e.a != 0) {
+                    c(extras, e, i10, m3Var, j10, z10);
                     q qVar2 = (q) gVar.c;
                     com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-                    qVar2.onPurchasesUpdated(e7, com.google.android.gms.internal.play_billing.v.e);
+                    qVar2.onPurchasesUpdated(e, com.google.android.gms.internal.play_billing.v.e);
                     return;
                 }
                 gVar.getClass();
                 com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "AlternativeBillingListener and UserChoiceBillingListener is null.");
                 f0 f0Var2 = (f0) gVar.d;
                 h hVar3 = g0.f;
-                ((pf.b) f0Var2).o0(e0.b(77, i10, hVar3, null, m3Var), j10, z10);
+                ((n4.y) f0Var2).E(e0.b(77, i10, hVar3, null, m3Var), j10, z10);
                 q qVar3 = (q) gVar.c;
                 com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
                 qVar3.onPurchasesUpdated(hVar3, com.google.android.gms.internal.play_billing.v.e);
@@ -204,11 +204,11 @@ public final class h0 extends BroadcastReceiver {
             if (j11 == null) {
                 com.google.android.gms.internal.play_billing.u.g("BillingHelper", "Couldn't find single purchase data as well.");
                 arrayList = null;
-                if (e7.a != 0) {
+                if (e.a != 0) {
                     f0 f0Var3 = (f0) gVar.d;
                     i3 c10 = e0.c(i10, m3Var);
-                    pf.b bVar = (pf.b) f0Var3;
-                    bVar.getClass();
+                    n4.y yVar = (n4.y) f0Var3;
+                    yVar.getClass();
                     try {
                         h3 h3Var = (h3) c10.g();
                         t3 t3Var = (t3) c10.n().g();
@@ -218,20 +218,20 @@ public final class h0 extends BroadcastReceiver {
                         i3.p((i3) h3Var.b, (v3) t3Var.a());
                         i3 i3Var = (i3) h3Var.a();
                         if (j10 == j3) {
-                            p3Var = (p3) bVar.b;
+                            p3Var = (p3) yVar.b;
                         } else {
-                            o3 o3Var = (o3) ((p3) bVar.b).g();
+                            o3 o3Var = (o3) ((p3) yVar.b).g();
                             o3Var.c();
                             p3.r((p3) o3Var.b, j10);
                             p3Var = (p3) o3Var.a();
                         }
-                        bVar.u0(i3Var, p3Var);
+                        yVar.N(i3Var, p3Var);
                     } catch (Throwable th2) {
                         com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                     }
-                    hVar = e7;
+                    hVar = e;
                 } else {
-                    hVar = e7;
+                    hVar = e;
                     c(extras, hVar, i10, m3Var, j10, z10);
                 }
                 ((q) gVar.c).onPurchasesUpdated(hVar, arrayList);
@@ -248,7 +248,7 @@ public final class h0 extends BroadcastReceiver {
             }
         }
         arrayList = arrayList2;
-        if (e7.a != 0) {
+        if (e.a != 0) {
         }
         ((q) gVar.c).onPurchasesUpdated(hVar, arrayList);
     }

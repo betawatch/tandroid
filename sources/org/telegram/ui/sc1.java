@@ -1,16 +1,32 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class sc1 extends s4.j {
-    public final /* synthetic */ wd1 F;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-    public sc1(wd1 wd1Var) {
-        this.F = wd1Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sc1 implements e2.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ae1 b;
+
+    public /* synthetic */ sc1(ae1 ae1Var, int i10) {
+        this.a = i10;
+        this.b = ae1Var;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.u0.e1();
+    @Override // e2.h
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                ae1 ae1Var = this.b;
+                ae1Var.V1 = (TL_stories.TL_premium_boostsStatus) obj;
+                ae1Var.U1 = true;
+                ae1Var.h1(true);
+                ae1Var.T1 = false;
+                break;
+            default:
+                ae1.V(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
+        }
     }
 }

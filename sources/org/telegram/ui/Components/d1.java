@@ -1,28 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.content.DialogInterface;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d1 implements View.OnClickListener {
+public final /* synthetic */ class d1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.z1[] b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ d1(org.telegram.ui.Cells.z1[] z1VarArr, int i10) {
+    public /* synthetic */ d1(Object obj, int i10) {
         this.a = i10;
-        this.b = z1VarArr;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                int intValue = ((Integer) view.getTag()).intValue();
-                this.b[intValue].c(!r1[r3.intValue()].b(), true);
+                ((org.telegram.ui.vg) obj).run();
+                break;
+            case 1:
+                AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj);
+                break;
+            case 2:
+                AndroidUtilities.hideKeyboard((e4) obj);
+                break;
+            case 3:
+                ((ChatActivityEnterView) obj).L0 = null;
+                break;
+            case 4:
+                ((yi) obj).z2 = false;
+                break;
+            case 5:
+                fu.i((fu) obj);
+                break;
+            case 6:
+                float[] fArr = FragmentContextView.M0;
+                ((FragmentContextView) obj).c(false);
+                break;
+            case 7:
+                rn0.H = null;
+                ((View) obj).requestFocus();
+                break;
+            case 8:
+                AndroidUtilities.hideKeyboard((ln0) obj);
                 break;
             default:
-                int intValue2 = ((Integer) view.getTag()).intValue();
-                this.b[intValue2].c(!r1[r3.intValue()].b(), true);
+                ThemeEditorView themeEditorView = ((l11) obj).d;
+                themeEditorView.l = null;
+                if (themeEditorView.b != null) {
+                    AndroidUtilities.setPreferredMaxRefreshRate(themeEditorView.h, themeEditorView.a, themeEditorView.g);
+                    try {
+                        themeEditorView.h.addView(themeEditorView.a, themeEditorView.g);
+                        themeEditorView.d();
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
                 break;
         }
     }

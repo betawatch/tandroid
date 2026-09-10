@@ -11,10 +11,10 @@ import android.os.Build;
 import android.os.Looper;
 import android.view.Display;
 import android.view.ViewConfiguration;
-import bi.s8;
+import bi.af;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class d {
     public static AudioManager a;
@@ -65,7 +65,7 @@ public abstract class d {
                     Looper myLooper = Looper.myLooper();
                     if (myLooper != null && myLooper != Looper.getMainLooper()) {
                         e2.g gVar = new e2.g();
-                        e2.a.g().execute(new s8(16, applicationContext, gVar));
+                        e2.a.g().execute(new af(4, applicationContext, gVar));
                         gVar.b();
                         AudioManager audioManager2 = a;
                         audioManager2.getClass();

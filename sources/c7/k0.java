@@ -9,7 +9,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class k0 extends o6.a {
     public static final Parcelable.Creator<k0> CREATOR = new r0(8);
@@ -34,8 +34,8 @@ public final class k0 extends o6.a {
                 }
             }
             return jSONArray;
-        } catch (JSONException e7) {
-            throw new RuntimeException("Error encoding UvmEntries to JSON object", e7);
+        } catch (JSONException e) {
+            throw new RuntimeException("Error encoding UvmEntries to JSON object", e);
         }
     }
 

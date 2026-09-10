@@ -1,44 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import java.util.function.Consumer;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ah implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Consumer d;
 
-    public /* synthetic */ ah(NotificationsController notificationsController, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsController;
-        this.c = i10;
+    public /* synthetic */ ah(MessagesStorage messagesStorage, long j3, Consumer consumer, int i10) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = j3;
+        this.d = consumer;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDialogsUpdateRead$29(this.c);
-                break;
-            case 1:
-                this.b.lambda$removeDeletedHisoryFromNotifications$12(this.c);
-                break;
-            case 2:
-                this.b.lambda$processSeenStoryReactions$14(this.c);
-                break;
-            case 3:
-                this.b.lambda$processNewMessages$24(this.c);
-                break;
-            case 4:
-                this.b.lambda$processNewMessages$26(this.c);
-                break;
-            case 5:
-                this.b.lambda$setLastOnlineFromOtherDevice$5(this.c);
-                break;
-            case 6:
-                this.b.lambda$processLoadedUnreadMessages$32(this.c);
+                this.b.lambda$loadStoryAlbumsCache$270(this.c, this.d);
                 break;
             default:
-                this.b.lambda$removeDeletedMessagesFromNotifications$9(this.c);
+                this.b.lambda$loadTopics$51(this.c, this.d);
                 break;
         }
     }

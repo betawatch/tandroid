@@ -1,179 +1,119 @@
 package ce;
 
-import java.io.Serializable;
-import java.util.NoSuchElementException;
-import java.util.concurrent.CancellationException;
-import org.telegram.tgnet.TLObject;
-import v7.r7;
-import v7.t7;
-import zd.b0;
-import zd.f1;
+import ee.v;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public abstract class o {
-    public static final d9.f a = new d9.f("NONE", 1);
-    public static final d9.f b = new d9.f("PENDING", 1);
+public final class o extends de.b implements l, b {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(o.class, Object.class, "_state$volatile");
+    private volatile /* synthetic */ Object _state$volatile;
+    public int d;
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0080 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0033  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Serializable a(b bVar, c cVar, kd.c cVar2) {
-        e eVar;
+    public o(Object obj) {
+        this._state$volatile = obj;
+    }
+
+    @Override // ce.c
+    public final Object a(Object obj, kd.c cVar) {
+        d(obj);
+        return gd.i.a;
+    }
+
+    public final Object c() {
+        Object obj = e.get(this);
+        if (obj == de.e.a) {
+            return null;
+        }
+        return obj;
+    }
+
+    public final void d(Object obj) {
         int i10;
-        kotlin.jvm.internal.p pVar;
-        Throwable th2;
-        f1 f1Var;
-        CancellationException cancellationException;
-        if (cVar2 instanceof e) {
-            eVar = (e) cVar2;
-            int i11 = eVar.c;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                eVar.c = i11 - TLObject.FLAG_31;
-                Object obj = eVar.b;
-                jd.a aVar = jd.a.a;
-                i10 = eVar.c;
-                if (i10 != 0) {
-                    t7.b(obj);
-                    kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-                    try {
-                        c gVar = new g(cVar, pVar2);
-                        eVar.a = pVar2;
-                        eVar.c = 1;
-                        if (bVar.z(gVar, eVar) == aVar) {
-                            return aVar;
-                        }
-                        return null;
-                    } catch (Throwable th3) {
-                        th = th3;
-                        pVar = pVar2;
-                    }
-                } else {
-                    if (i10 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    pVar = eVar.a;
-                    try {
-                        t7.b(obj);
-                        return null;
-                    } catch (Throwable th4) {
-                        th = th4;
-                    }
-                }
-                th2 = (Throwable) pVar.a;
-                if ((th2 == null && th2.equals(th)) || ((f1Var = (f1) eVar.getContext().get(b0.b)) != null && f1Var.isCancelled() && (cancellationException = f1Var.getCancellationException()) != null && cancellationException.equals(th))) {
-                    throw th;
-                }
-                if (th2 != null) {
-                    return th;
-                }
-                if (th instanceof CancellationException) {
-                    r7.a(th2, th);
-                    throw th2;
-                }
-                r7.a(th, th2);
-                throw th;
+        q[] qVarArr;
+        v vVar;
+        if (obj == null) {
+            obj = de.e.a;
+        }
+        synchronized (this) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
+            if (kotlin.jvm.internal.i.a(atomicReferenceFieldUpdater.get(this), obj)) {
+                return;
             }
-        }
-        eVar = new e(cVar2);
-        Object obj2 = eVar.b;
-        jd.a aVar2 = jd.a.a;
-        i10 = eVar.c;
-        if (i10 != 0) {
-        }
-        th2 = (Throwable) pVar.a;
-        if (th2 == null) {
-        }
-        if (th2 != null) {
+            atomicReferenceFieldUpdater.set(this, obj);
+            int i11 = this.d;
+            if ((i11 & 1) != 0) {
+                this.d = i11 + 2;
+                return;
+            }
+            int i12 = i11 + 1;
+            this.d = i12;
+            q[] qVarArr2 = this.a;
+            while (true) {
+                if (qVarArr2 != null) {
+                    for (q qVar : qVarArr2) {
+                        if (qVar != null) {
+                            AtomicReference atomicReference = qVar.a;
+                            while (true) {
+                                Object obj2 = atomicReference.get();
+                                if (obj2 != null && obj2 != (vVar = p.b)) {
+                                    v vVar2 = p.a;
+                                    if (obj2 != vVar2) {
+                                        while (!atomicReference.compareAndSet(obj2, vVar2)) {
+                                            if (atomicReference.get() != obj2) {
+                                                break;
+                                            }
+                                        }
+                                        ((zd.m) obj2).resumeWith(gd.i.a);
+                                        break;
+                                    }
+                                    while (!atomicReference.compareAndSet(obj2, vVar)) {
+                                        if (atomicReference.get() != obj2) {
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                synchronized (this) {
+                    i10 = this.d;
+                    if (i10 == i12) {
+                        this.d = i12 + 1;
+                        return;
+                    }
+                    qVarArr = this.a;
+                }
+                qVarArr2 = qVarArr;
+                i12 = i10;
+            }
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0062 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00cd A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c5, B:17:0x00cd, B:20:0x00d4, B:21:0x00d8, B:25:0x00db, B:27:0x00fc, B:30:0x010c, B:31:0x0128, B:37:0x0138, B:33:0x012f, B:36:0x0135, B:46:0x00e1, B:49:0x00e8, B:57:0x0052, B:59:0x005d, B:60:0x00b6), top: B:7:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x010c A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c5, B:17:0x00cd, B:20:0x00d4, B:21:0x00d8, B:25:0x00db, B:27:0x00fc, B:30:0x010c, B:31:0x0128, B:37:0x0138, B:33:0x012f, B:36:0x0135, B:46:0x00e1, B:49:0x00e8, B:57:0x0052, B:59:0x005d, B:60:0x00b6), top: B:7:0x0025 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00fa  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e7  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x010b -> B:15:0x00c5). Please report as a decompilation issue!!! */
+    @Override // ce.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object b(b bVar, kd.c cVar) {
-        k kVar;
-        int i10;
-        d9.f fVar;
-        kotlin.jvm.internal.p pVar;
-        de.a e7;
-        j jVar;
-        Object obj;
-        if (cVar instanceof k) {
-            kVar = (k) cVar;
-            int i11 = kVar.d;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                kVar.d = i11 - TLObject.FLAG_31;
-                Object obj2 = kVar.c;
-                Object obj3 = jd.a.a;
-                i10 = kVar.d;
-                fVar = de.e.a;
-                if (i10 != 0) {
-                    t7.b(obj2);
-                    kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-                    pVar2.a = fVar;
-                    j jVar2 = new j(pVar2, 0);
-                    try {
-                        kVar.a = pVar2;
-                        kVar.b = jVar2;
-                        kVar.d = 1;
-                        if (bVar.z(jVar2, kVar) == obj3) {
-                            return obj3;
-                        }
-                        pVar = pVar2;
-                    } catch (de.a e10) {
-                        pVar = pVar2;
-                        e7 = e10;
-                        jVar = jVar2;
-                        if (e7.a != jVar) {
-                        }
-                        obj = pVar.a;
-                        if (obj == fVar) {
-                        }
-                    }
-                } else {
-                    if (i10 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    jVar = kVar.b;
-                    pVar = kVar.a;
-                    try {
-                        t7.b(obj2);
-                    } catch (de.a e11) {
-                        e7 = e11;
-                        if (e7.a != jVar) {
-                            throw e7;
-                        }
-                        obj = pVar.a;
-                        if (obj == fVar) {
-                        }
-                    }
-                }
-                obj = pVar.a;
-                if (obj == fVar) {
-                    return obj;
-                }
-                throw new NoSuchElementException("Expected at least one element");
-            }
-        }
-        kVar = new k(cVar);
-        Object obj22 = kVar.c;
-        Object obj32 = jd.a.a;
-        i10 = kVar.d;
-        fVar = de.e.a;
-        if (i10 != 0) {
-        }
-        obj = pVar.a;
-        if (obj == fVar) {
-        }
+    public final java.lang.Object u(ce.c r18, kd.c r19) {
+        /*
+            Method dump skipped, instructions count: 330
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: ce.o.u(ce.c, kd.c):java.lang.Object");
     }
 }

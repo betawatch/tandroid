@@ -1,39 +1,34 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class jy implements yy {
-    public final /* synthetic */ ky a;
+public final class jy {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
 
-    public jy(ky kyVar) {
-        this.a = kyVar;
+    public jy(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
     }
 
-    @Override // org.telegram.ui.Components.yy
-    public final void d() {
-        ky kyVar = this.a;
-        if (kyVar.F.V.F) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        kyVar.F.V.e(true);
-        ky.E(kyVar, new zu(5, this, arrayList), arrayList, true);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        String str = this.a.v;
-        zu zuVar = new zu(4, this, str);
-        if (Emoji.fullyConsistsOfEmojis(str)) {
-            vw0.y3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.nf(15, linkedHashSet, zuVar));
-        } else {
-            zuVar.run();
-        }
+    public jy(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

@@ -1,120 +1,16 @@
 package bi;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.go;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class y3 extends ImageReceiver {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class y3 extends g.p {
+    public final /* synthetic */ p4 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y3(View view, View view2, int i10) {
-        super(view2);
-        this.a = i10;
-        this.b = view;
+    public y3(p4 p4Var) {
+        this.c = p4Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
-    public void invalidate() {
-        switch (this.a) {
-            case 3:
-                View view = ((go) this.b).b;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                ((org.telegram.ui.Components.q5) this.b).k();
-                super.invalidate();
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver
-    public boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        Runnable runnable;
-        int i12 = this.a;
-        Object obj = this.b;
-        switch (i12) {
-            case 0:
-                o5 o5Var = (o5) obj;
-                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (i10 == 1 && (runnable = o5Var.i1) != null) {
-                    runnable.run();
-                    o5Var.i1 = null;
-                }
-                return imageBitmapByKey;
-            case 1:
-                if (drawable != null && i10 != 1) {
-                    wl.q(((ig.e1) ((i5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), pr.k, 250L);
-                }
-                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-            case 2:
-            case 3:
-            default:
-                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-            case 4:
-                org.telegram.ui.Components.q5 q5Var = (org.telegram.ui.Components.q5) obj;
-                q5Var.k();
-                boolean imageBitmapByKey2 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (q5Var.m && hasImageLoaded()) {
-                    q5Var.m = false;
-                    AndroidUtilities.runOnUIThread(new pg(q5Var, 4));
-                }
-                return imageBitmapByKey2;
-            case 5:
-                boolean imageBitmapByKey3 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                ((PhotoViewer) obj).l2();
-                return imageBitmapByKey3;
-            case 6:
-                boolean imageBitmapByKey4 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-                duration.addUpdateListener(new ki.a(this, 6));
-                duration.start();
-                return imageBitmapByKey4;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver
-    public void setRoundRadius(int[] iArr) {
-        switch (this.a) {
-            case 2:
-                super.setRoundRadius(iArr);
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.b;
-                int[] iArr2 = t1Var.R0;
-                iArr2[0] = iArr[0];
-                iArr2[1] = iArr[1];
-                int dp = AndroidUtilities.dp(6.0f);
-                iArr2[3] = dp;
-                iArr2[2] = dp;
-                rh.g gVar = t1Var.b6;
-                if (gVar != null) {
-                    gVar.b.setRoundRadius(t1Var.R0);
-                    break;
-                }
-                break;
-            default:
-                super.setRoundRadius(iArr);
-                break;
-        }
-    }
-
-    public /* synthetic */ y3(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // g.p
+    public final int i(int i10) {
+        return (i10 == 0 || i10 == 1 || i10 == this.c.f.h() - 1) ? 3 : 1;
     }
 }

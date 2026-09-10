@@ -1,56 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class kt0 extends LinearLayout {
-    public final TextView a;
-    public final ImageView b;
-    public boolean c;
+public final class kt0 extends sq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b1;
 
-    public kt0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        setOrientation(1);
-        setGravity(17);
-        addView(imageView, w7.x5.n(-2, -2));
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-        textView.setGravity(17);
-        textView.setTextSize(1, 17.0f);
-        textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
-        addView(textView, w7.x5.t(-2, -2, 17, 0, 24, 0, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kt0(Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.p2 p2Var) {
+        super(context, null, str, false, str2, false, f6Var);
+        this.b1 = p2Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-        this.c = true;
-        if (AndroidUtilities.isTablet()) {
-            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
-        } else if (rotation == 3 || rotation == 1) {
-            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
-        } else {
-            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
-        }
-        this.c = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
+    @Override // org.telegram.ui.Components.sq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        AndroidUtilities.runOnUIThread(new my(this.b1, iVar, i10, 12), 100L);
     }
 }

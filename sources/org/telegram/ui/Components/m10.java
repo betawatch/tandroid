@@ -1,75 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m10 implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class m10 extends CharacterStyle implements UpdateAppearance {
+    public int a;
+    public int b;
+    public float c;
+    public final org.telegram.ui.ActionBar.f6 d;
 
-    public /* synthetic */ m10(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public m10(int i10) {
+        this(i10, null);
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        this.a = org.telegram.ui.ActionBar.j6.l1(this.c, org.telegram.ui.ActionBar.j6.v0(this.b, this.d));
+        int color = textPaint.getColor();
         int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                final FragmentContextView fragmentContextView = (FragmentContextView) obj;
-                float[] fArr = FragmentContextView.M0;
-                final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.V);
-                fragmentContextView.H.d(playbackSpeed, false);
-                org.telegram.ui.ActionBar.b1 b1Var = fragmentContextView.H;
-                int i11 = org.telegram.ui.ActionBar.j6.G8;
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, fragmentContextView.p0));
-                org.telegram.ui.ActionBar.b1 b1Var2 = fragmentContextView.H;
-                b1Var2.N = fragmentContextView.h instanceof org.telegram.ui.co;
-                b1Var2.F.setShader(null);
-                b1Var2.h = null;
-                Bitmap bitmap = b1Var2.f;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    b1Var2.f = null;
-                }
-                fragmentContextView.F.B(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-                fragmentContextView.F.N();
-                fragmentContextView.q(false);
-                fragmentContextView.F.setDimMenu(0.3f);
-                fragmentContextView.F.M(fragmentContextView.H, null);
-                fragmentContextView.F.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.l10
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj2) {
-                        float[] fArr2 = FragmentContextView.M0;
-                        if (((Boolean) obj2).booleanValue()) {
-                            return;
-                        }
-                        MediaController mediaController = MediaController.getInstance();
-                        FragmentContextView fragmentContextView2 = FragmentContextView.this;
-                        fragmentContextView2.l(playbackSpeed, mediaController.getPlaybackSpeed(fragmentContextView2.V), false);
-                    }
-                });
-                MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
-                return true;
-            case 1:
-                sd0 sd0Var = (sd0) obj;
-                sd0Var.r.setText("");
-                di.l9.a(sd0Var.s, true);
-                Drawable drawable = sd0Var.a;
-                if (drawable instanceof dc0) {
-                    ((dc0) drawable).y();
-                }
-                return true;
-            default:
-                return hq0.n((hq0) obj);
+        if (color != i10) {
+            textPaint.setColor(i10);
         }
+    }
+
+    public m10(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.c = 1.0f;
+        this.b = i10;
+        this.d = f6Var;
     }
 }

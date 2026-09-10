@@ -1,67 +1,43 @@
 package ei;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import di.a8;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import sg.y1;
-import sg.z1;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ActionBar.d2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class d extends z1 {
-    public Paint[] n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
+public final /* synthetic */ class d implements MessagesStorage.LongCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d2 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(Context context, int i10, int i11) {
-        super(context);
-        this.r = i10;
-        this.s = i11;
-        b();
+    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, d2 d2Var, long j3, boolean z10, int i10) {
+        this.a = i10;
+        this.e = notificationCenterDelegate;
+        this.b = d2Var;
+        this.c = j3;
+        this.d = z10;
     }
 
-    @Override // sg.z1
-    public final void a() {
-        y1 y1Var = new y1(this.r);
-        this.a = y1Var;
-        y1Var.N = 106;
-        int i10 = 0;
-        y1Var.M = false;
-        y1Var.G = false;
-        y1Var.K = true;
-        y1Var.H = true;
-        y1Var.J = false;
-        y1Var.m = true;
-        y1Var.h = true;
-        if (this.s == 1) {
-            y1Var.k = AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public final void run(long j3) {
+        switch (this.a) {
+            case 0:
+                f fVar = (f) this.e;
+                fVar.getClass();
+                this.b.dismiss();
+                if (j3 != 0) {
+                    fVar.a = -j3;
+                    fVar.b = fVar.getMessagesController().getChat(Long.valueOf(j3));
+                    fVar.W(this.c, this.d);
+                    break;
+                }
+                break;
+            default:
+                k0.p((k0) this.e, this.b, this.c, this.d, j3);
+                break;
         }
-        this.n = new Paint[20];
-        while (true) {
-            Paint[] paintArr = this.n;
-            if (i10 >= paintArr.length) {
-                y1 y1Var2 = this.a;
-                y1Var2.l = new a8(this, 1);
-                y1Var2.r = 17;
-                y1Var2.s = 18;
-                y1Var2.t = 19;
-                y1Var2.P = j6.G6;
-                y1Var2.c();
-                return;
-            }
-            paintArr[i10] = new Paint(1);
-            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
-            i10++;
-        }
-    }
-
-    @Override // sg.z1
-    public final int getStarsRectWidth() {
-        return getMeasuredWidth();
     }
 }

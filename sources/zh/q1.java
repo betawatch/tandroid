@@ -1,41 +1,53 @@
 package zh;
 
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ad;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q1 implements Runnable {
+public final class q1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.tgnet.e b;
-    public final /* synthetic */ ad[] c;
-    public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ a3 b;
 
-    public /* synthetic */ q1(org.telegram.tgnet.e eVar, ad[] adVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
+    public /* synthetic */ q1(a3 a3Var, int i10) {
         this.a = i10;
-        this.b = eVar;
-        this.c = adVarArr;
-        this.d = uniqueStarGiftValueInfo;
-        this.e = str;
+        this.b = a3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        String str = this.e;
-        TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
-        ad[] adVarArr = this.c;
-        org.telegram.tgnet.e eVar = this.b;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        v1 v1Var;
+        Runnable runnable;
+        switch (this.a) {
             case 0:
-                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
+                a3 a3Var = this.b;
+                a3Var.t3 = 0.0f;
+                a3Var.r3.setAlpha(1.0f);
+                a3Var.r3.setVisibility(8);
+                a3Var.r3.n();
                 break;
             default:
-                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
+                super.onAnimationEnd(animator);
+                a3 a3Var2 = this.b;
+                a3Var2.N2.unlock();
+                a3Var2.H2 = a3Var2.o2;
+                t1 t1Var = a3Var2.b2;
+                if (t1Var != null && (runnable = t1Var.w) != null) {
+                    runnable.run();
+                    t1Var.w = null;
+                }
+                if (a3Var2.K1 && !a3Var2.v2) {
+                    u7 u7Var = ((l7) a3Var2.Q1).d;
+                    if (u7Var.x) {
+                        u7Var.x = false;
+                        u7Var.P();
+                    }
+                }
+                if (!a3Var2.v2 && (v1Var = a3Var2.d3) != null) {
+                    v1Var.setVisibility(8);
+                }
+                a3Var2.V2 = true;
+                a3Var2.invalidate();
                 break;
         }
     }

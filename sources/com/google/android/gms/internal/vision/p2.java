@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class p2 {
     public static final Class a;
@@ -312,20 +312,20 @@ public abstract class p2 {
                         r0Var.H(b3.a(str));
                         r0Var.e = b3.a.h(str, bArr, r0Var.e, r0Var.F());
                     }
-                } catch (c3 e7) {
+                } catch (c3 e) {
                     r0Var.e = i12;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
                     byte[] bytes = str.getBytes(j1.a);
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e10) {
-                        throw e10;
-                    } catch (IndexOutOfBoundsException e11) {
-                        throw new s0(e11);
+                    } catch (s0 e7) {
+                        throw e7;
+                    } catch (IndexOutOfBoundsException e10) {
+                        throw new s0(e10);
                     }
-                } catch (IndexOutOfBoundsException e12) {
-                    throw new s0(e12);
+                } catch (IndexOutOfBoundsException e11) {
+                    throw new s0(e11);
                 }
             }
             return;
@@ -352,20 +352,20 @@ public abstract class p2 {
                         r0Var.H(b3.a(str2));
                         r0Var.e = b3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (c3 e13) {
+                } catch (c3 e12) {
                     r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e13);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e14) {
-                        throw e14;
-                    } catch (IndexOutOfBoundsException e15) {
-                        throw new s0(e15);
+                    } catch (s0 e13) {
+                        throw e13;
+                    } catch (IndexOutOfBoundsException e14) {
+                        throw new s0(e14);
                     }
-                } catch (IndexOutOfBoundsException e16) {
-                    throw new s0(e16);
+                } catch (IndexOutOfBoundsException e15) {
+                    throw new s0(e15);
                 }
             } else {
                 q0 q0Var = (q0) a2;

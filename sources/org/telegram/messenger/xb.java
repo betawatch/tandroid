@@ -1,40 +1,46 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.br0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
-    public final /* synthetic */ a0.i h;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
+public final /* synthetic */ class xb implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ xb(MessagesController messagesController, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.i iVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = z10;
-        this.f = tL_messages_peerDialogs;
-        this.h = iVar;
-        this.n = tL_messages_dialogs;
+    public /* synthetic */ xb(MessagesController messagesController, int i10, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
+        this.e = messagesController;
+        this.b = i10;
+        this.f = chat;
+        this.d = user;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPinnedDialogs$366(this.c, this.d, this.e, this.f, this.h, this.n);
+                ((MessagesController) this.e).lambda$pinMessage$130(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadPinnedDialogs$365(this.c, this.d, this.e, this.f, this.h, this.n);
+                AndroidUtilities.runOnUIThread(new hi.u2((br0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
                 break;
         }
+    }
+
+    public /* synthetic */ xb(br0 br0Var, String str, int i10, boolean z10, TLRPC.User user) {
+        this.e = br0Var;
+        this.f = str;
+        this.b = i10;
+        this.c = z10;
+        this.d = user;
     }
 }

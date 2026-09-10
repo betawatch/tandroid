@@ -7,17 +7,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kr0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ cv0 c;
+    public final /* synthetic */ ev0 c;
 
-    public /* synthetic */ kr0(PhotoViewer photoViewer, cv0 cv0Var, int i10) {
+    public /* synthetic */ kr0(PhotoViewer photoViewer, ev0 ev0Var, int i10) {
         this.a = i10;
         this.b = photoViewer;
-        this.c = cv0Var;
+        this.c = ev0Var;
     }
 
     @Override // java.lang.Runnable
@@ -29,8 +29,8 @@ public final /* synthetic */ class kr0 implements Runnable {
             case 0:
                 PhotoViewer photoViewer = this.b;
                 photoViewer.h0.setImageBitmap(null);
-                cv0 cv0Var = this.c;
-                if (cv0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = cv0Var.m) != null) {
+                ev0 ev0Var = this.c;
+                if (ev0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = ev0Var.m) != null) {
                     clippingImageView.setImageBitmap(null);
                 }
                 try {
@@ -39,8 +39,8 @@ public final /* synthetic */ class kr0 implements Runnable {
                         photoViewer.V1();
                         break;
                     }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
                 break;
@@ -68,10 +68,10 @@ public final /* synthetic */ class kr0 implements Runnable {
             default:
                 PhotoViewer photoViewer3 = this.b;
                 photoViewer3.p4 = null;
-                uu0 uu0Var = photoViewer3.e0;
-                if (uu0Var != null) {
+                wu0 wu0Var = photoViewer3.e0;
+                if (wu0Var != null) {
                     int i11 = 0;
-                    uu0Var.setLayerType(0, null);
+                    wu0Var.setLayerType(0, null);
                     photoViewer3.n4 = 0;
                     photoViewer3.X1(this.c);
                     photoViewer3.e0.setScaleX(1.0f);

@@ -1,29 +1,60 @@
 package zh;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Intent;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessageChatArguments;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y1 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w3 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+public final class y1 implements kk {
+    public final /* synthetic */ a3 a;
 
-    public /* synthetic */ y1(w3 w3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10) {
-        this.a = i10;
-        this.b = w3Var;
-        this.c = tL_starGiftUnique;
+    public y1(a3 a3Var) {
+        this.a = a3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                w3.N0(this.b, this.c, b2Var);
-                break;
-            default:
-                of.f.u(this.b.getContext(), "https://fragment.com/gift/" + this.c.slug);
-                break;
+    @Override // org.telegram.ui.Components.kk
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
+        AccountInstance accountInstance;
+        a3 a3Var = this.a;
+        TL_stories.StoryItem storyItem = a3Var.O1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
         }
+        accountInstance = a3Var.getAccountInstance();
+        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, a3Var.B1, (MessageObject) null, (MessageObject) null, storyItem, (tn) null, (MessageObject) null, z10, i10, (t0.i) null, (SendMessageChatArguments) null, 0L, false, j10);
+        a3Var.k0(j10 <= 0);
+    }
+
+    @Override // org.telegram.ui.Components.kk
+    public final void w() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+            intent.setType("*/*");
+            org.telegram.ui.ActionBar.p2 p2Var = this.a.J0.f;
+            if (p2Var.getParentActivity() == null) {
+                return;
+            }
+            p2Var.getParentActivity().startActivityForResult(intent, 21);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kk
+    public final /* synthetic */ void O() {
+    }
+
+    @Override // org.telegram.ui.Components.kk
+    public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

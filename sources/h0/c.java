@@ -14,9 +14,9 @@ import java.lang.reflect.Array;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import w7.p;
+import w7.q;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -134,7 +134,7 @@ public abstract class c {
                         float f12 = 0.0f;
                         z10 = f11 < 0.0f && f11 <= 100.0f;
                         if (f7 == 1.0f || z10) {
-                            int b10 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                            int b10 = q.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                             if (z10) {
                                 iArr = trimStateSet;
                                 i11 = depth2;
@@ -168,14 +168,14 @@ public abstract class c {
                                                 float A = e2.A(f17, f18, 2.0f, f18);
                                                 float f20 = f17;
                                                 int c10 = a.b(A, f15, min).c(l.k);
-                                                float e7 = b.e(Color.red(c10));
-                                                float e10 = b.e(Color.green(c10));
-                                                float e11 = b.e(Color.blue(c10));
+                                                float e = b.e(Color.red(c10));
+                                                float e7 = b.e(Color.green(c10));
+                                                float e10 = b.e(Color.blue(c10));
                                                 float[] fArr = b.d[1];
-                                                float f21 = (e10 * fArr[1]) + (e7 * fArr[0]);
+                                                float f21 = (e7 * fArr[1]) + (e * fArr[0]);
                                                 float f22 = fArr[2];
                                                 i11 = depth2;
-                                                float y3 = e2.y(e11, f22, f21, 100.0f);
+                                                float y3 = e2.y(e10, f22, f21, 100.0f);
                                                 float cbrt = y3 <= 0.008856452f ? y3 * 903.2963f : (((float) Math.cbrt(y3)) * 116.0f) - 16.0f;
                                                 float abs = Math.abs(f11 - cbrt);
                                                 if (abs < 0.2f) {
@@ -280,7 +280,7 @@ public abstract class c {
                 }
                 if (f7 == 1.0f) {
                 }
-                int b102 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                int b102 = q.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
                 if (z10) {
                 }
                 color = (16777215 & color) | (b102 << 24);

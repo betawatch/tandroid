@@ -1,59 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ co b;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public /* synthetic */ qg(co coVar, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qg implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ qg(Object obj, int i10) {
         this.a = i10;
-        this.b = coVar;
+        this.b = obj;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Integer num = (Integer) obj;
-                co coVar = this.b;
-                coVar.getClass();
-                if (num.intValue() != 0) {
-                    coVar.Bc(true);
-                    coVar.F(num.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    coVar.l1 = 0;
-                    coVar.Bc(true);
-                    coVar.getMessagesController().markReactionsAsRead(coVar.T5, coVar.d());
-                    break;
-                }
+                eo eoVar = (eo) this.b;
+                eoVar.b9 = true;
+                eoVar.Z8 = 0;
+                eoVar.qb = 0;
+                eoVar.N4 = 0;
+                eoVar.r9();
+                eoVar.Nb(false);
+                break;
             case 1:
-                Integer num2 = (Integer) obj;
-                co coVar2 = this.b;
-                coVar2.getClass();
-                if (num2.intValue() != 0) {
-                    int i10 = coVar2.m1 - 1;
-                    coVar2.m1 = i10;
-                    if (i10 <= 0) {
-                        coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
-                    }
-                    coVar2.Ac(true);
-                    coVar2.F(num2.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    coVar2.m1 = 0;
-                    coVar2.Ac(true);
-                    coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
-                    break;
-                }
+                yo yoVar = (yo) this.b;
+                yoVar.M0 = false;
+                yoVar.b = null;
+                yoVar.N0 = false;
+                break;
+            case 2:
+                ((yp) this.b).n = null;
+                break;
             default:
-                co coVar3 = this.b;
-                coVar3.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                coVar3.f7 = booleanValue;
-                if (!booleanValue) {
-                    coVar3.r8();
+                fc0 fc0Var = (fc0) this.b;
+                if (fc0Var.h >= 0) {
+                    ConnectionsManager.getInstance(fc0Var.b).cancelRequest(fc0Var.h, true);
+                    fc0Var.h = -1;
                     break;
                 }
                 break;

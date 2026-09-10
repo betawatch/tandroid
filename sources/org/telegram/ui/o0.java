@@ -1,28 +1,51 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class o0 extends w7.h0 {
-    public final /* synthetic */ i4 a;
+public final class o0 extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public o0(i4 i4Var) {
-        this.a = i4Var;
+    public /* synthetic */ o0(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // w7.h0
-    public final void a(boolean z10) {
-        if (z10) {
-            this.a.h0.h(false);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                ((t70) this.b).c((h4) this.c, (org.telegram.ui.Components.x01) this.d);
+                break;
+            default:
+                org.telegram.ui.ActionBar.d2 d2Var = ((org.telegram.ui.ActionBar.d2[]) this.b)[0];
+                if (d2Var != null) {
+                    d2Var.dismiss();
+                }
+                nf.f.s((Context) this.c, "https://t.me/" + ((String) this.d));
+                break;
         }
     }
 
-    @Override // w7.h0
-    public final void b() {
-        if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.messenger.wl.o(R.string.TextCopied, new org.telegram.ui.Components.yc(this.a.g0, null));
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 1:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                break;
         }
     }
 }

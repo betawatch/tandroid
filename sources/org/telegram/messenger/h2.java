@@ -1,50 +1,35 @@
 package org.telegram.messenger;
 
-import android.content.Context;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.LocationController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h2 implements RequestDelegate {
+public final /* synthetic */ class h2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ h2(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ h2(Utilities.Callback callback, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = callback;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((FactCheckController) this.b).lambda$loadMissing$2((TLRPC.TL_getFactCheck) this.c, (ArrayList) this.d, (HashMap) this.e, tLObject, tL_error);
+                this.b.run(this.c);
                 break;
             case 1:
-                ((LocationController) this.b).lambda$broadcastLastKnownLocation$7((LocationController.SharingLocationInfo) this.c, (int[]) this.d, (TLRPC.TL_messages_editMessage) this.e, tLObject, tL_error);
+                this.b.run(this.c);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$didReceivedNotification$45((org.telegram.ui.ActionBar.b6) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$deleteUserChannelHistory$133((TLRPC.Chat) this.c, (TLRPC.User) this.d, (TLRPC.Chat) this.e, tLObject, tL_error);
-                break;
-            case 4:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$30((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLRPC.User) this.e, tLObject, tL_error);
+                MediaDataController.lambda$loadStickers$92(this.b, this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$sendVote$32((MessageObject) this.c, (String) this.d, (Runnable) this.e, tLObject, tL_error);
+                this.b.run(this.c);
                 break;
         }
     }

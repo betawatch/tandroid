@@ -8,7 +8,7 @@ import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class t extends s {
     public final ArrayList Q;
@@ -43,7 +43,7 @@ public abstract class t extends s {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z0(pf.e eVar, z0 z0Var, a0 a0Var, z zVar) {
+    public final void Z0(of.e eVar, z0 z0Var, a0 a0Var, z zVar) {
         int i10;
         int i11;
         int i12;
@@ -57,7 +57,7 @@ public abstract class t extends s {
         int b10;
         float c10;
         View c11;
-        pf.e eVar2 = eVar;
+        of.e eVar2 = eVar;
         z0 z0Var2 = z0Var;
         int i19 = this.q.i();
         int i20 = 0;
@@ -269,7 +269,7 @@ public abstract class t extends s {
     }
 
     @Override // s4.c0
-    public final void e1(pf.e eVar, int i10, int i11) {
+    public final void e1(of.e eVar, int i10, int i11) {
         if (i10 < 0) {
             return;
         }

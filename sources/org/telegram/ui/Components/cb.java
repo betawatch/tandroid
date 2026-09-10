@@ -1,40 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class cb implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public final /* synthetic */ class cb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pc b;
 
-    public cb(int i10, int i11) {
+    public /* synthetic */ cb(pc pcVar, int i10) {
         this.a = i10;
-        this.b = i11;
+        this.b = pcVar;
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i15) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            case 1:
+                pc pcVar = this.b;
+                FrameLayout frameLayout = pcVar.h;
+                tb tbVar = pcVar.e;
+                nb nbVar = pcVar.p;
+                if (nbVar != null && !tbVar.top) {
+                    nbVar.c(0.0f);
+                    pcVar.p.d(pcVar);
+                }
+                tbVar.transitionRunningExit = false;
+                tbVar.onExitTransitionEnd();
+                tbVar.onHide();
+                frameLayout.removeView(pcVar.f);
+                frameLayout.removeOnLayoutChangeListener(pcVar.c);
+                tbVar.onDetach();
+                Runnable runnable = pcVar.v;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            default:
+                pc pcVar2 = this.b;
+                FrameLayout frameLayout2 = pcVar2.h;
+                frameLayout2.removeView(pcVar2.f);
+                frameLayout2.removeOnLayoutChangeListener(pcVar2.c);
+                break;
         }
-    }
-
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z10) {
-        return (this.b * 2) + this.a;
     }
 }

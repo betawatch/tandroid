@@ -2,7 +2,7 @@ package y2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import di.nb;
+import bi.wc;
 import e2.t;
 import e2.u;
 import e2.x;
@@ -14,9 +14,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
-import ji.u4;
+import m.g3;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -28,10 +28,10 @@ public final class f implements c, c0 {
     public static f v;
     public final Context a;
     public final k0 b;
-    public final u4 c;
+    public final g3 c;
     public final x d;
     public final boolean e;
-    public final r f;
+    public final s f;
     public int g;
     public long h;
     public long i;
@@ -47,8 +47,8 @@ public final class f implements c, c0 {
         x xVar = x.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = k0.a(hashMap);
-        this.c = new u4(29);
-        this.f = new r();
+        this.c = new g3(27);
+        this.f = new s();
         this.d = xVar;
         this.e = true;
         if (context == null) {
@@ -76,7 +76,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            tVar2.b.execute(new nb(tVar2, 7));
+            tVar2.b.execute(new wc(tVar2, 22));
         }
     }
 

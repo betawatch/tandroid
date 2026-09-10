@@ -1,13 +1,100 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class ny0 {
-    public final f01 a;
-    public final f01 b;
+import android.content.Context;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public ny0(f01 f01Var, f01 f01Var2) {
-        this.a = f01Var;
-        this.b = f01Var2;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public abstract class ny0 {
+    public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        int i10 = UserConfig.selectedAccount;
+        Context context = p2Var.getContext();
+        bi.f3 f3Var = new bi.f3(context, f6Var, true, false);
+        f3Var.y = new fg.e2(i10, context, tL_messages_stickerSet, 9);
+        if (p2Var.visibleDialog != null) {
+            f3Var.show();
+        } else {
+            p2Var.showDialog(f3Var);
+        }
+    }
+
+    public static void b(TLRPC.StickerSet stickerSet, org.telegram.ui.ActionBar.f6 f6Var, Context context, Runnable runnable) {
+        if (stickerSet == null) {
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.StickersDeleteStickerSetTitle);
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.StickersDeleteStickerSetDescription);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new km(11, runnable, stickerSet));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.show();
+        TextView textView = (TextView) d2Var.d(-1);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var));
+        }
+    }
+
+    public static void c(TLRPC.StickerSet stickerSet, org.telegram.ui.ActionBar.f6 f6Var, Context context, Utilities.Callback2 callback2) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+        boolean z10 = stickerSet != null;
+        String string = LocaleController.getString(z10 ? R.string.EditStickerPack : R.string.NewStickerPack);
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.R = string;
+        d2Var.T = LocaleController.getString(R.string.StickersChooseNameForStickerPack);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        final ly0 ly0Var = new ly0(context);
+        int i10 = org.telegram.ui.ActionBar.j6.j5;
+        ly0Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        ly0Var.setInputType(16385);
+        ly0Var.setTextSize(1, 16.0f);
+        ly0Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        ly0Var.setHandlesColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.vf, f6Var));
+        ly0Var.setHeaderHintColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, f6Var));
+        ly0Var.setSingleLine(true);
+        ly0Var.setFocusable(true);
+        ly0Var.setFilters(new InputFilter[]{new InputFilter.LengthFilter(50), new InputFilter() { // from class: org.telegram.ui.Components.ky0
+            @Override // android.text.InputFilter
+            public final CharSequence filter(CharSequence charSequence, int i11, int i12, Spanned spanned, int i13, int i14) {
+                return (charSequence.length() <= 0 || !Character.isWhitespace(charSequence.charAt(0))) ? charSequence : (TextUtils.isEmpty(ly0.this.getText()) || i13 == 0) ? "" : charSequence;
+            }
+        }});
+        ly0Var.setLineColors(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.k6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.l6, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var));
+        ly0Var.setImeOptions(6);
+        ly0Var.setBackground(null);
+        ly0Var.requestFocus();
+        ly0Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 28.0f), 0);
+        frameLayout.addView(ly0Var);
+        NumberTextView numberTextView = new NumberTextView(context);
+        numberTextView.setCenterAlign(true);
+        numberTextView.setTextSize(15);
+        numberTextView.a(50, false);
+        numberTextView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.B6, false));
+        numberTextView.setImportantForAccessibility(2);
+        frameLayout.addView(numberTextView, w7.a6.d(26, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, 2.0f, 4.0f, 0.0f));
+        ly0Var.addTextChangedListener(new my0(numberTextView, ly0Var));
+        if (z10) {
+            ly0Var.setText(stickerSet.title);
+            ly0Var.setSelection(stickerSet.title.length());
+        }
+        alertDialog$Builder.n(frameLayout);
+        d2Var.G = 4;
+        alertDialog$Builder.k(LocaleController.getString(z10 ? R.string.Done : R.string.Create), new ca.b(ly0Var, callback2, context, z10, 5));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new pv(ly0Var, 24));
+        org.telegram.ui.ActionBar.d2 o9 = alertDialog$Builder.o();
+        o9.h0 = false;
+        ly0Var.setOnEditorActionListener(new g1(o9, 8));
     }
 }

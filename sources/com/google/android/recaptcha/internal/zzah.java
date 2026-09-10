@@ -8,10 +8,10 @@ import java.util.List;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.c0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzah extends j implements p {
     Object zza;
@@ -56,14 +56,14 @@ final class zzah extends j implements p {
         a aVar = a.a;
         int i10 = this.zzd;
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new f(u7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new f(u7.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
@@ -74,7 +74,7 @@ final class zzah extends j implements p {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                t7.b(obj);
+                u7.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
@@ -87,7 +87,7 @@ final class zzah extends j implements p {
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            t7.b(obj);
+            u7.b(obj);
         }
         if (!it.hasNext()) {
             return new f(i.a);

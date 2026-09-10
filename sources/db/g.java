@@ -20,9 +20,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
+import n4.y;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -30,15 +31,15 @@ public final class g {
     public static final q j = t.b;
     public final ThreadLocal a = new ThreadLocal();
     public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final pf.b c;
+    public final y c;
     public final gb.j d;
     public final List e;
     public final boolean f;
     public final c g;
 
     public g(fb.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
-        pf.b bVar = new pf.b(hashMap, arrayList4, false, 17);
-        this.c = bVar;
+        y yVar = new y(17, hashMap, arrayList4);
+        this.c = yVar;
         this.f = true;
         this.g = cVar;
         ArrayList arrayList5 = new ArrayList();
@@ -84,13 +85,13 @@ public final class g {
         }
         arrayList5.add(gb.b.c);
         arrayList5.add(h1.a);
-        arrayList5.add(new gb.d(bVar, 0));
-        arrayList5.add(new gb.d(bVar, 1));
-        gb.j jVar = new gb.j(bVar);
+        arrayList5.add(new gb.d(yVar, 0));
+        arrayList5.add(new gb.d(yVar, 1));
+        gb.j jVar = new gb.j(yVar);
         this.d = jVar;
         arrayList5.add(jVar);
         arrayList5.add(h1.B);
-        arrayList5.add(new x(bVar, fVar, jVar, arrayList4));
+        arrayList5.add(new x(yVar, fVar, jVar, arrayList4));
         this.e = DesugarCollections.unmodifiableList(arrayList5);
     }
 
@@ -186,7 +187,7 @@ public final class g {
                 if (aVar2 != null) {
                     Class value = aVar2.value();
                     if (v.class.isAssignableFrom(value)) {
-                        v vVar3 = (v) jVar.a.T(new kb.a(value)).h2();
+                        v vVar3 = (v) jVar.a.l(new kb.a(value)).n2();
                         v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
                         if (vVar4 != null) {
                             vVar3 = vVar4;
@@ -233,8 +234,8 @@ public final class g {
             try {
                 g(d(stringWriter));
                 return stringWriter.toString();
-            } catch (IOException e7) {
-                throw new j(e7);
+            } catch (IOException e) {
+                throw new j(e);
             }
         }
         Class cls = tLObject.getClass();
@@ -242,8 +243,8 @@ public final class g {
         try {
             f(tLObject, cls, d(stringWriter2));
             return stringWriter2.toString();
-        } catch (IOException e10) {
-            throw new j(e10);
+        } catch (IOException e7) {
+            throw new j(e7);
         }
     }
 
@@ -260,10 +261,10 @@ public final class g {
         try {
             try {
                 b10.write(bVar, obj);
-            } catch (IOException e7) {
-                throw new j(e7);
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (IOException e) {
+                throw new j(e);
+            } catch (AssertionError e7) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e7.getMessage(), e7);
             }
         } finally {
             bVar.l(i10);
@@ -286,11 +287,11 @@ public final class g {
             try {
                 try {
                     fb.d.l(kVar, bVar);
-                } catch (IOException e7) {
-                    throw new j(e7);
+                } catch (IOException e) {
+                    throw new j(e);
                 }
-            } catch (AssertionError e10) {
-                throw new AssertionError("AssertionError (GSON 2.11.0): " + e10.getMessage(), e10);
+            } catch (AssertionError e7) {
+                throw new AssertionError("AssertionError (GSON 2.11.0): " + e7.getMessage(), e7);
             }
         } finally {
             bVar.l(i10);

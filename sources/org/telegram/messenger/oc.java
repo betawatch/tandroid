@@ -1,36 +1,49 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oc implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ oc(MessagesController messagesController, long j3, TLObject tLObject) {
+    public /* synthetic */ oc(MessagesController messagesController, long j3, long j10, ArrayList arrayList) {
         this.b = messagesController;
         this.c = j3;
-        this.d = tLObject;
+        this.d = j10;
+        this.e = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteUserPhoto$114(this.d, this.c);
+                this.b.lambda$processUpdateArray$419(this.c, this.e, this.d);
+                break;
+            case 1:
+                this.b.lambda$checkUnreadPollVotesInternal2$431(this.c, this.d, 0, this.e);
                 break;
             default:
-                this.b.lambda$loadPeerSettings$79(this.c, this.d);
+                this.b.lambda$deleteMessagesByPush$370(this.e, this.c, this.d);
                 break;
         }
     }
 
-    public /* synthetic */ oc(MessagesController messagesController, TLObject tLObject, long j3) {
+    public /* synthetic */ oc(MessagesController messagesController, long j3, ArrayList arrayList, long j10) {
         this.b = messagesController;
-        this.d = tLObject;
         this.c = j3;
+        this.e = arrayList;
+        this.d = j10;
+    }
+
+    public /* synthetic */ oc(MessagesController messagesController, ArrayList arrayList, long j3, long j10) {
+        this.b = messagesController;
+        this.e = arrayList;
+        this.c = j3;
+        this.d = j10;
     }
 }

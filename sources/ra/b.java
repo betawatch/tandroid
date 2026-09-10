@@ -1,117 +1,84 @@
 package ra;
 
-import m1.j;
-import org.telegram.messenger.BuildConfig;
+import android.content.SharedPreferences;
+import android.util.Base64;
+import android.util.Log;
+import java.security.KeyFactory;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
+import k9.h;
+import k9.j;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b {
-    public final String a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final long f;
-    public final String g;
+    public static final String[] c = {"*", "FCM", "GCM", ""};
+    public final SharedPreferences a;
+    public final String b;
 
-    public b(String str, int i10, String str2, String str3, long j3, long j10, String str4) {
-        this.a = str;
-        this.b = i10;
-        this.c = str2;
-        this.d = str3;
-        this.e = j3;
-        this.f = j10;
-        this.g = str4;
-    }
-
-    public final a a() {
-        a aVar = new a(0);
-        aVar.c = this.a;
-        aVar.b = this.b;
-        aVar.d = this.c;
-        aVar.e = this.d;
-        aVar.g = Long.valueOf(this.e);
-        aVar.h = Long.valueOf(this.f);
-        aVar.f = this.g;
-        return aVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        String str = bVar.g;
-        String str2 = bVar.d;
-        String str3 = bVar.c;
-        String str4 = bVar.a;
-        String str5 = this.a;
-        if (str5 == null) {
-            if (str4 != null) {
-                return false;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
+    
+        if (r1.isEmpty() != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public b(h hVar) {
+        hVar.a();
+        this.a = hVar.a.getSharedPreferences("com.google.android.gms.appid", 0);
+        hVar.a();
+        j jVar = hVar.c;
+        String str = jVar.e;
+        if (str == null) {
+            hVar.a();
+            str = jVar.b;
+            if (str.startsWith("1:") || str.startsWith("2:")) {
+                String[] split = str.split(":");
+                if (split.length == 4) {
+                    str = split[1];
+                }
+                str = null;
             }
-        } else if (!str5.equals(str4)) {
-            return false;
         }
-        if (!j.b(this.b, bVar.b)) {
-            return false;
-        }
-        String str6 = this.c;
-        if (str6 == null) {
-            if (str3 != null) {
-                return false;
-            }
-        } else if (!str6.equals(str3)) {
-            return false;
-        }
-        String str7 = this.d;
-        if (str7 == null) {
-            if (str2 != null) {
-                return false;
-            }
-        } else if (!str7.equals(str2)) {
-            return false;
-        }
-        if (this.e != bVar.e || this.f != bVar.f) {
-            return false;
-        }
-        String str8 = this.g;
-        return str8 == null ? str == null : str8.equals(str);
+        this.b = str;
     }
 
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ j.c(this.b)) * 1000003;
-        String str2 = this.c;
-        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.d;
-        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        long j3 = this.e;
-        int i10 = (hashCode3 ^ ((int) (j3 ^ (j3 >>> 32)))) * 1000003;
-        long j10 = this.f;
-        int i11 = (i10 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        String str4 = this.g;
-        return (str4 != null ? str4.hashCode() : 0) ^ i11;
+    public final String a() {
+        String string;
+        synchronized (this.a) {
+            string = this.a.getString("|S|id", null);
+        }
+        return string;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
-        sb2.append(this.a);
-        sb2.append(", registrationStatus=");
-        int i10 = this.b;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? BuildConfig.BETA_URL : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
-        sb2.append(", authToken=");
-        sb2.append(this.c);
-        sb2.append(", refreshToken=");
-        sb2.append(this.d);
-        sb2.append(", expiresInSecs=");
-        sb2.append(this.e);
-        sb2.append(", tokenCreationEpochInSecs=");
-        sb2.append(this.f);
-        sb2.append(", fisError=");
-        return a4.a.s(sb2, this.g, "}");
+    public final String b() {
+        PublicKey publicKey;
+        synchronized (this.a) {
+            String str = null;
+            String string = this.a.getString("|S||P|", null);
+            if (string == null) {
+                return null;
+            }
+            try {
+                publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode(string, 8)));
+            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e) {
+                Log.w("ContentValues", "Invalid key stored " + e);
+                publicKey = null;
+            }
+            if (publicKey == null) {
+                return null;
+            }
+            try {
+                byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
+                digest[0] = (byte) (((digest[0] & 15) + 112) & 255);
+                str = Base64.encodeToString(digest, 0, 8, 11);
+            } catch (NoSuchAlgorithmException unused) {
+                Log.w("ContentValues", "Unexpected error, device missing required algorithms");
+            }
+            return str;
+        }
     }
 }

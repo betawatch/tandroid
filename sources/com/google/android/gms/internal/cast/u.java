@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class u {
     public static final g6.b i = new g6.b("SessionTransController", null);
@@ -73,9 +73,9 @@ public final class u {
                 default:
                     a5.a aVar = new a5.a(11, 2);
                     aVar.c = Integer.valueOf(i10);
-                    cf.c cVar = (cf.c) a1Var.b;
-                    aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-                    cf.c.y(cVar, new y6(aVar));
+                    bi.u6 u6Var = (bi.u6) a1Var.b;
+                    aVar.d = Boolean.valueOf(((d) u6Var.b).d == 2);
+                    bi.u6.D(u6Var, new y6(aVar));
                     break;
             }
         }

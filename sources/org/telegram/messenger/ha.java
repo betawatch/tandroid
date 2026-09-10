@@ -1,51 +1,50 @@
 package org.telegram.messenger;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.TranslateController;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ha implements Function {
+public final /* synthetic */ class ha implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ ha(int i10) {
+    public /* synthetic */ ha(MessagesController messagesController, long j3, ArrayList arrayList, int i10) {
         this.a = i10;
+        this.b = messagesController;
+        this.c = j3;
+        this.d = arrayList;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String valueOf;
-        String lambda$applyAppConfig$35;
-        Long lambda$new$14;
-        int[] lambda$new$15;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                valueOf = String.valueOf((Long) obj);
-                return valueOf;
+                this.b.lambda$markAllTopicsAsRead$7(this.d, this.c);
+                break;
             case 1:
-                lambda$applyAppConfig$35 = MessagesController.lambda$applyAppConfig$35((int[]) obj);
-                return lambda$applyAppConfig$35;
+                this.b.lambda$generateJoinMessage$368(this.c, this.d);
+                break;
             case 2:
-                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
-                return lambda$new$14;
+                this.b.lambda$getDifference$354(this.c, this.d);
+                break;
             case 3:
-                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
-                return lambda$new$15;
+                this.b.lambda$processUpdateArray$418(this.c, this.d);
+                break;
+            case 4:
+                this.b.lambda$deleteMessagesByPush$369(this.d, this.c);
+                break;
             default:
-                str = ((TranslateController.Language) obj).displayName;
-                return str;
+                this.b.lambda$getDifference$355(this.c, this.d);
+                break;
         }
     }
 
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
+    public /* synthetic */ ha(MessagesController messagesController, ArrayList arrayList, long j3, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.d = arrayList;
+        this.c = j3;
     }
 }

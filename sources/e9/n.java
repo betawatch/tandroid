@@ -12,7 +12,7 @@ import w7.i9;
 import w7.l8;
 import z7.lg;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -107,13 +107,13 @@ public final class n extends AbstractCollection {
                 Map a2 = jVar.a();
                 return a2 != null ? a2.values().iterator() : new x7.g(jVar, 2);
             case 4:
-                return new com.google.android.gms.internal.clearcut.f1(((d) this.b).entrySet().iterator(), 1);
+                return new com.google.android.gms.internal.clearcut.g1(((d) this.b).entrySet().iterator(), 1);
             case 5:
                 z7.d dVar = (z7.d) this.b;
                 Map a10 = dVar.a();
                 return a10 != null ? a10.values().iterator() : new z7.a(dVar, 2);
             default:
-                return new com.google.android.gms.internal.clearcut.f1(((d) this.b).entrySet().iterator(), 2);
+                return new com.google.android.gms.internal.clearcut.g1(((d) this.b).entrySet().iterator(), 2);
         }
     }
 

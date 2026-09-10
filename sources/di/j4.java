@@ -1,95 +1,71 @@
 package di;
 
-import android.graphics.Rect;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public class j4 {
-    public final View a;
-    public View b;
-    public final Utilities.Callback c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final Rect h = new Rect();
-    public final g4 i;
-    public final h4 j;
-    public int k;
-    public int l;
+public final /* synthetic */ class j4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u4 b;
 
-    public j4(View view, boolean z10, Utilities.Callback callback) {
-        g4 g4Var = new g4(this, 0);
-        this.i = g4Var;
-        h4 h4Var = new h4(this, 0);
-        this.j = h4Var;
-        this.a = view;
-        this.c = callback;
-        this.b = view;
-        if (view.isAttachedToWindow()) {
-            view.getViewTreeObserver().addOnGlobalLayoutListener(h4Var);
-            view.addOnLayoutChangeListener(g4Var);
-        }
-        view.addOnAttachStateChangeListener(new i4(this, z10, view));
+    public /* synthetic */ j4(u4 u4Var, int i10) {
+        this.a = i10;
+        this.b = u4Var;
     }
 
-    public final void a() {
-        if (this.e) {
-            if (this.l < AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight) {
-                return;
-            } else {
-                this.e = false;
-            }
-        }
-        Utilities.Callback callback = this.c;
-        if (callback != null) {
-            callback.run(Integer.valueOf(this.l));
-        }
-    }
-
-    public void b(boolean z10) {
-        this.d = z10;
-        d();
-    }
-
-    public final boolean c() {
-        return this.l > AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight || this.e;
-    }
-
-    public final void d() {
-        if (this.d) {
-            return;
-        }
-        boolean z10 = this.f;
-        View view = this.a;
-        if (z10) {
-            View view2 = this.b;
-            if (view2 != null) {
-                view = view2;
-            }
-            r0.l1 f7 = r0.i0.f(view);
-            this.l = f7 != null ? f7.a.f(8).d : 0;
-        } else {
-            Rect rect = this.h;
-            view.getWindowVisibleDisplayFrame(rect);
-            View view3 = this.b;
-            if (view3 != null) {
-                view = view3;
-            }
-            this.l = view.getHeight() - rect.bottom;
-        }
-        if (this.g) {
-            this.l = Math.max(0, this.l - AndroidUtilities.navigationBarHeight);
-        }
-        int i10 = this.k;
-        int i11 = this.l;
-        boolean z11 = i10 != i11;
-        this.k = i11;
-        if (z11) {
-            a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.ChatFull chatFull;
+        TLRPC.Peer peer;
+        switch (this.a) {
+            case 0:
+                this.b.n.R();
+                break;
+            case 1:
+                this.b.L();
+                break;
+            case 2:
+                u4 u4Var = this.b;
+                if (!u4Var.T) {
+                    TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
+                    tL_messages_prolongWebView.bot = MessagesController.getInstance(u4Var.F).getInputUser(u4Var.v);
+                    tL_messages_prolongWebView.peer = MessagesController.getInstance(u4Var.F).getInputPeer(u4Var.w);
+                    tL_messages_prolongWebView.query_id = u4Var.x;
+                    tL_messages_prolongWebView.silent = false;
+                    if (u4Var.y != 0) {
+                        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(u4Var.F).createReplyInput(u4Var.y);
+                        tL_messages_prolongWebView.reply_to = createReplyInput;
+                        if (u4Var.E != 0) {
+                            createReplyInput.monoforum_peer_id = MessagesController.getInstance(u4Var.F).getInputPeer(u4Var.E);
+                            tL_messages_prolongWebView.reply_to.flags |= 32;
+                        }
+                        tL_messages_prolongWebView.flags |= 1;
+                    } else if (u4Var.E != 0) {
+                        TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                        tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(u4Var.F).getInputPeer(u4Var.E);
+                        tL_messages_prolongWebView.flags |= 1;
+                    }
+                    if (u4Var.w < 0 && (chatFull = MessagesController.getInstance(u4Var.F).getChatFull(-u4Var.w)) != null && (peer = chatFull.default_send_as) != null) {
+                        tL_messages_prolongWebView.send_as = MessagesController.getInstance(u4Var.F).getInputPeer(peer);
+                        tL_messages_prolongWebView.flags |= 8192;
+                    }
+                    ConnectionsManager.getInstance(u4Var.F).sendRequest(tL_messages_prolongWebView, new bi.c2(u4Var, 4));
+                    break;
+                }
+                break;
+            case 3:
+                u4 u4Var2 = this.b;
+                u4Var2.b.X1(u4Var2, 0);
+                u4Var2.n.o(false, false);
+                System.currentTimeMillis();
+                break;
+            default:
+                this.b.n.o(true, false);
+                break;
         }
     }
 }

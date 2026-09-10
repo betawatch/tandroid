@@ -1,41 +1,43 @@
 package k2;
 
-import android.os.SystemClock;
+import android.media.AudioDeviceInfo;
+import android.media.AudioRouting;
+import android.media.AudioTrack;
+import android.os.Handler;
+import android.os.Looper;
+import bi.h8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class z {
-    public Exception a;
-    public long b = -9223372036854775807L;
-    public long c = -9223372036854775807L;
+    public final AudioTrack a;
+    public final h8 b;
+    public y c = new AudioRouting.OnRoutingChangedListener() { // from class: k2.y
+        @Override // android.media.AudioRouting.OnRoutingChangedListener
+        public final void onRoutingChanged(AudioRouting audioRouting) {
+            z.a(z.this, audioRouting);
+        }
+    };
 
-    public final void a(Exception exc) {
-        boolean z10;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.a == null) {
-            this.a = exc;
-        }
-        if (this.b == -9223372036854775807L) {
-            synchronized (d0.o0) {
-                z10 = d0.q0 > 0;
-            }
-            if (!z10) {
-                this.b = 200 + elapsedRealtime;
-            }
-        }
-        long j3 = this.b;
-        if (j3 == -9223372036854775807L || elapsedRealtime < j3) {
-            this.c = elapsedRealtime + 50;
+    /* JADX WARN: Type inference failed for: r3v1, types: [k2.y] */
+    public z(AudioTrack audioTrack, h8 h8Var) {
+        this.a = audioTrack;
+        this.b = h8Var;
+        audioTrack.addOnRoutingChangedListener(this.c, new Handler(Looper.myLooper()));
+    }
+
+    public static void a(z zVar, AudioRouting audioRouting) {
+        AudioDeviceInfo routedDevice;
+        if (zVar.c == null || (routedDevice = audioRouting.getRoutedDevice()) == null) {
             return;
         }
-        Exception exc2 = this.a;
-        if (exc2 != exc) {
-            exc2.addSuppressed(exc);
-        }
-        Exception exc3 = this.a;
-        this.a = null;
-        this.b = -9223372036854775807L;
-        this.c = -9223372036854775807L;
-        throw exc3;
+        zVar.b.c(routedDevice);
+    }
+
+    public final void b() {
+        y yVar = this.c;
+        yVar.getClass();
+        this.a.removeOnRoutingChangedListener(yVar);
+        this.c = null;
     }
 }

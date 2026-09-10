@@ -1,488 +1,522 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.graphics.Paint;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.view.MotionEvent;
+import android.net.Uri;
+import android.provider.ContactsContract;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ye0 extends FrameLayout {
-    public static final float N = AndroidUtilities.dp(20.0f);
-    public static final float O = AndroidUtilities.dp(30.0f);
-    public static final float P = AndroidUtilities.dp(30.0f);
-    public boolean E;
-    public boolean F;
-    public boolean G;
-    public int H;
-    public Paint I;
-    public Paint J;
-    public boolean K;
-    public xe0 L;
-    public int M;
-    public PointF a;
-    public float b;
-    public float c;
-    public iv0 d;
-    public PointF e;
-    public float f;
-    public float h;
-    public float n;
-    public RectF r;
-    public float s;
-    public float v;
-    public float w;
-    public float x;
-    public boolean y;
+public final class ye0 extends org.telegram.ui.ActionBar.h3 {
+    public static final /* synthetic */ int O = 0;
+    public final int E;
+    public final int F;
+    public final int G;
+    public final int H;
+    public final int I;
+    public final boolean J;
+    public sj K;
+    public final ArrayList L;
+    public final ArrayList M;
+    public final TLRPC.TL_userContact_old2 N;
+    public final ve0 b;
+    public final qe0 c;
+    public final LinearLayout d;
+    public final re0 e;
+    public final View f;
+    public final View h;
+    public final TextView n;
+    public final org.telegram.ui.ActionBar.p2 r;
+    public boolean s;
+    public final Paint v;
+    public int w;
+    public AnimatorSet x;
+    public AnimatorSet y;
 
-    public static float a(float f7) {
-        return (f7 * 3.1415927f) / 180.0f;
-    }
-
-    public static float b(MotionEvent motionEvent) {
-        if (motionEvent.getPointerCount() != 2) {
-            return 0.0f;
-        }
-        float x10 = motionEvent.getX(0);
-        float y3 = motionEvent.getY(0);
-        float x11 = x10 - motionEvent.getX(1);
-        float y10 = y3 - motionEvent.getY(1);
-        return (float) Math.sqrt((y10 * y10) + (x11 * x11));
-    }
-
-    private PointF getActualCenterPoint() {
-        float width = getWidth();
-        iv0 iv0Var = this.d;
-        float f7 = iv0Var.a;
-        float f10 = (this.e.x * f7) + ((width - f7) / 2.0f);
-        int i10 = !this.K ? AndroidUtilities.statusBarHeight : 0;
-        float height = getHeight();
-        float f11 = iv0Var.b;
-        float A = com.google.android.gms.internal.vision.e2.A(height, f11, 2.0f, i10);
-        float f12 = iv0Var.a;
-        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.w1.y(f12, f11, 2.0f, A));
-    }
-
-    private float getActualInnerRadius() {
-        iv0 iv0Var = this.d;
-        return Math.min(iv0Var.a, iv0Var.b) * this.f;
-    }
-
-    private float getActualOuterRadius() {
-        iv0 iv0Var = this.d;
-        return Math.min(iv0Var.a, iv0Var.b) * this.h;
-    }
-
-    public final void c(int i10, MotionEvent motionEvent) {
-        boolean z10 = this.K;
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        PointF actualCenterPoint = getActualCenterPoint();
-        float f7 = x10 - actualCenterPoint.x;
-        float f10 = y3 - actualCenterPoint.y;
-        float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
-        iv0 iv0Var = this.d;
-        float min = Math.min(iv0Var.a, iv0Var.b);
-        float f11 = this.f * min;
-        float f12 = this.h * min;
-        float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * f10) + (Math.cos(a(this.n) + 1.5707963267948966d) * f7));
-        if (i10 == 1) {
-            this.s = motionEvent.getX();
-            this.v = motionEvent.getY();
-            boolean z11 = Math.abs(f12 - f11) < N;
-            float f13 = P;
-            float f14 = z11 ? 0.0f : f13;
-            float f15 = z11 ? 0.0f : f13;
-            int i11 = this.H;
-            float f16 = O;
-            if (i11 != 0) {
-                if (i11 == 1) {
-                    if (sqrt < f16) {
-                        this.M = 2;
-                        this.a = actualCenterPoint;
-                        return;
-                    }
-                    if (sqrt > f11 - f13 && sqrt < f14 + f11) {
-                        this.M = 3;
-                        this.b = sqrt;
-                        this.c = f11;
-                        return;
-                    } else {
-                        if (sqrt <= f12 - f15 || sqrt >= f13 + f12) {
-                            return;
-                        }
-                        this.M = 4;
-                        this.b = sqrt;
-                        this.c = f12;
-                        return;
-                    }
-                }
-                return;
-            }
-            if (sqrt < f16) {
-                this.M = 2;
-                this.a = actualCenterPoint;
-                return;
-            }
-            float f17 = f11 - f13;
-            if (abs > f17 && abs < f14 + f11) {
-                this.M = 3;
-                this.b = abs;
-                this.c = f11;
-                return;
-            } else if (abs > f12 - f15 && abs < f12 + f13) {
-                this.M = 4;
-                this.b = abs;
-                this.c = f12;
-                return;
-            } else {
-                if (abs <= f17 || abs >= f12 + f13) {
-                    this.M = 6;
-                    return;
-                }
-                return;
-            }
-        }
-        if (i10 != 2) {
-            if (i10 == 3 || i10 == 4 || i10 == 5) {
-                this.M = 1;
-                return;
-            }
-            return;
-        }
-        int i12 = this.H;
-        if (i12 == 0) {
-            int c10 = m1.j.c(this.M);
-            if (c10 == 1) {
-                float f18 = x10 - this.s;
-                float f19 = y3 - this.v;
-                float width = (getWidth() - iv0Var.a) / 2.0f;
-                int i13 = !z10 ? AndroidUtilities.statusBarHeight : 0;
-                float height = getHeight();
-                float f20 = iv0Var.b;
-                float A = com.google.android.gms.internal.vision.e2.A(height, f20, 2.0f, i13);
-                PointF pointF = new PointF(Math.max(width, Math.min(iv0Var.a + width, this.a.x + f18)), Math.max(A, Math.min(f20 + A, this.a.y + f19)));
-                float f21 = pointF.x - width;
-                float f22 = iv0Var.a;
-                this.e = new PointF(f21 / f22, (((f22 - iv0Var.b) / 2.0f) + (pointF.y - A)) / f22);
-            } else if (c10 == 2) {
-                this.f = Math.min(Math.max(0.1f, (this.c + (abs - this.b)) / min), this.h - 0.02f);
-            } else if (c10 == 3) {
-                this.h = Math.max(this.f + 0.02f, (this.c + (abs - this.b)) / min);
-            } else if (c10 == 5) {
-                float f23 = x10 - this.s;
-                float f24 = y3 - this.v;
-                boolean z12 = x10 > actualCenterPoint.x;
-                boolean z13 = y3 > actualCenterPoint.y;
-                boolean z14 = Math.abs(f24) > Math.abs(f23);
-                this.n = (((((float) Math.sqrt((f24 * f24) + (f23 * f23))) * ((((z12 || z13 ? !z12 || z13 ? !(z12 && z13) ? !(!z14 ? f23 < 0.0f : f24 < 0.0f) : !(!z14 ? f23 < 0.0f : f24 > 0.0f) : !z14 ? f23 > 0.0f : f24 > 0.0f : !z14 ? f23 > 0.0f : f24 < 0.0f) ? 0 : 1) * 2) - 1)) / 3.1415927f) / 1.15f) + this.n;
-                this.s = x10;
-                this.v = y3;
-            }
-        } else if (i12 == 1) {
-            int c11 = m1.j.c(this.M);
-            if (c11 == 1) {
-                float f25 = x10 - this.s;
-                float f26 = y3 - this.v;
-                float width2 = (getWidth() - iv0Var.a) / 2.0f;
-                int i14 = !z10 ? AndroidUtilities.statusBarHeight : 0;
-                float height2 = getHeight();
-                float f27 = iv0Var.b;
-                float A2 = com.google.android.gms.internal.vision.e2.A(height2, f27, 2.0f, i14);
-                PointF pointF2 = new PointF(Math.max(width2, Math.min(iv0Var.a + width2, this.a.x + f25)), Math.max(A2, Math.min(f27 + A2, this.a.y + f26)));
-                float f28 = pointF2.x - width2;
-                float f29 = iv0Var.a;
-                this.e = new PointF(f28 / f29, (((f29 - iv0Var.b) / 2.0f) + (pointF2.y - A2)) / f29);
-            } else if (c11 == 2) {
-                this.f = Math.min(Math.max(0.1f, (this.c + (sqrt - this.b)) / min), this.h - 0.02f);
-            } else if (c11 == 3) {
-                this.h = Math.max(this.f + 0.02f, (this.c + (sqrt - this.b)) / min);
-            }
-        }
-        invalidate();
-        xe0 xe0Var = this.L;
-        if (xe0Var != null) {
-            PointF pointF3 = this.e;
-            float f30 = this.f;
-            float f31 = this.h;
-            float a2 = a(this.n) + 1.5707964f;
-            jf0 jf0Var = ((bf0) xe0Var).a;
-            jf0Var.a0 = f31;
-            jf0Var.b0 = pointF3;
-            jf0Var.c0 = f30;
-            jf0Var.d0 = a2;
-            vz vzVar = jf0Var.l0;
-            if (vzVar != null) {
-                vzVar.e(false, false, false);
-            }
-        }
-    }
-
-    public final void d(int i10, MotionEvent motionEvent) {
-        if (i10 == 1) {
-            this.w = b(motionEvent);
-            this.x = 1.0f;
-            this.M = 5;
-        } else if (i10 != 2) {
-            if (i10 == 3 || i10 == 4 || i10 == 5) {
-                this.M = 1;
-                return;
-            }
-            return;
-        }
-        float b10 = b(motionEvent);
-        float e7 = a4.a.e(b10 - this.w, AndroidUtilities.density, 0.01f, this.x);
-        this.x = e7;
-        float max = Math.max(0.1f, this.f * e7);
-        this.f = max;
-        this.h = Math.max(max + 0.02f, this.h * this.x);
-        this.x = 1.0f;
-        this.w = b10;
-        invalidate();
-        xe0 xe0Var = this.L;
-        if (xe0Var != null) {
-            PointF pointF = this.e;
-            float f7 = this.f;
-            float f10 = this.h;
-            float a2 = a(this.n) + 1.5707964f;
-            jf0 jf0Var = ((bf0) xe0Var).a;
-            jf0Var.a0 = f10;
-            jf0Var.b0 = pointF;
-            jf0Var.c0 = f7;
-            jf0Var.d0 = a2;
-            vz vzVar = jf0Var.l0;
-            if (vzVar != null) {
-                vzVar.e(false, false, false);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint;
-        Canvas canvas2 = canvas;
-        Paint paint2 = this.J;
-        RectF rectF = this.r;
-        Paint paint3 = paint2;
-        Paint paint4 = this.I;
-        super.onDraw(canvas);
-        PointF actualCenterPoint = getActualCenterPoint();
-        float actualInnerRadius = getActualInnerRadius();
-        float actualOuterRadius = getActualOuterRadius();
-        canvas2.translate(actualCenterPoint.x, actualCenterPoint.y);
-        int i10 = this.H;
-        int i11 = 0;
-        if (i10 == 0) {
-            canvas2.rotate(this.n);
-            float dp = AndroidUtilities.dp(6.0f);
-            float dp2 = AndroidUtilities.dp(12.0f);
-            float dp3 = AndroidUtilities.dp(1.5f);
-            int i12 = 0;
-            while (i12 < 30) {
-                float f7 = dp2 + dp;
-                float f10 = i12 * f7;
-                float f11 = -actualInnerRadius;
-                float f12 = f10 + dp2;
-                float f13 = dp3 - actualInnerRadius;
-                canvas2.drawRect(f10, f11, f12, f13, paint4);
-                float f14 = ((-i12) * f7) - dp;
-                float f15 = f14 - dp2;
-                canvas.drawRect(f15, f11, f14, f13, paint4);
-                float f16 = dp3 + actualInnerRadius;
-                float f17 = actualInnerRadius;
-                canvas.drawRect(f10, f17, f12, f16, paint4);
-                canvas.drawRect(f15, f17, f14, f16, paint4);
-                i12++;
-                actualInnerRadius = f17;
-                canvas2 = canvas;
-            }
-            float dp4 = AndroidUtilities.dp(6.0f);
-            while (i11 < 64) {
-                float f18 = dp4 + dp;
-                float f19 = i11 * f18;
-                float f20 = -actualOuterRadius;
-                float f21 = dp4 + f19;
-                float f22 = dp3 - actualOuterRadius;
-                canvas.drawRect(f19, f20, f21, f22, paint4);
-                float f23 = ((-i11) * f18) - dp;
-                float f24 = f23 - dp4;
-                canvas.drawRect(f24, f20, f23, f22, paint4);
-                float f25 = dp3 + actualOuterRadius;
-                float f26 = actualOuterRadius;
-                canvas.drawRect(f19, f26, f21, f25, paint4);
-                canvas.drawRect(f24, f26, f23, f25, paint4);
-                i11++;
-                actualOuterRadius = f26;
-            }
-            paint = paint4;
-        } else {
-            paint = paint4;
-            if (i10 == 1) {
-                float f27 = -actualInnerRadius;
-                rectF.set(f27, f27, actualInnerRadius, actualInnerRadius);
-                int i13 = 0;
-                while (i13 < 22) {
-                    Paint paint5 = paint3;
-                    canvas.drawArc(rectF, i13 * 16.35f, 10.2f, false, paint5);
-                    i13++;
-                    paint3 = paint5;
-                }
-                Paint paint6 = paint3;
-                float f28 = -actualOuterRadius;
-                rectF.set(f28, f28, actualOuterRadius, actualOuterRadius);
-                while (i11 < 64) {
-                    canvas.drawArc(rectF, 5.62f * i11, 3.6f, false, paint6);
-                    i11++;
-                }
-            }
-        }
-        canvas.drawCircle(0.0f, 0.0f, AndroidUtilities.dp(8.0f), paint);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0018, code lost:
-    
-        if (r2 != 6) goto L11;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v10 */
-    /* JADX WARN: Type inference failed for: r15v11 */
-    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r15v3 */
-    /* JADX WARN: Type inference failed for: r15v4 */
-    /* JADX WARN: Type inference failed for: r15v5 */
-    /* JADX WARN: Type inference failed for: r15v6 */
-    /* JADX WARN: Type inference failed for: r15v7 */
-    /* JADX WARN: Type inference failed for: r15v8 */
-    /* JADX WARN: Type inference failed for: r15v9 */
-    @Override // android.view.View
+    /* JADX WARN: Removed duplicated region for block: B:36:0x010d  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x02f9  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0265  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x015f  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x012e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ?? r15;
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked != 1) {
-                if (actionMasked != 2) {
-                    if (actionMasked != 3) {
-                        if (actionMasked != 5) {
-                        }
-                    }
-                } else {
-                    if (this.y) {
-                        c(2, motionEvent);
-                        return true;
-                    }
-                    if (this.E) {
-                        d(2, motionEvent);
-                        return true;
-                    }
-                }
-                return true;
-            }
-            if (this.y) {
-                c(3, motionEvent);
-                this.y = false;
-            } else if (this.E) {
-                this.M = 1;
-                this.E = false;
-            }
-            this.F = true;
-            this.G = true;
-            return true;
-        }
-        if (motionEvent.getPointerCount() != 1) {
-            if (this.y) {
-                c(3, motionEvent);
-                this.F = true;
-                this.y = false;
-            }
-            if (motionEvent.getPointerCount() != 2) {
-                this.M = 1;
-                this.G = true;
-                this.E = false;
-                return true;
-            }
-            if (!this.G || this.E) {
-                return true;
-            }
-            d(1, motionEvent);
-            this.E = true;
-            return true;
-        }
-        if (this.F && !this.y) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            PointF actualCenterPoint = getActualCenterPoint();
-            PointF pointF = new PointF(x10 - actualCenterPoint.x, y3 - actualCenterPoint.y);
-            float f7 = pointF.x;
-            float f10 = pointF.y;
-            float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
-            float actualInnerRadius = getActualInnerRadius();
-            float actualOuterRadius = getActualOuterRadius();
-            boolean z10 = Math.abs(actualOuterRadius - actualInnerRadius) < N;
-            float f11 = P;
-            float f12 = z10 ? 0.0f : f11;
-            float f13 = z10 ? 0.0f : f11;
-            int i10 = this.H;
-            float f14 = O;
-            if (i10 == 0) {
-                float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * pointF.y) + (Math.cos(a(this.n) + 1.5707963267948966d) * pointF.x));
-                if (sqrt < f14) {
-                    r15 = 1;
-                    this.y = true;
-                } else {
-                    r15 = 1;
-                    float f15 = actualInnerRadius - f11;
-                    if (abs <= f15 || abs >= actualInnerRadius + f12) {
-                        if (abs > actualOuterRadius - f13 && abs < actualOuterRadius + f11) {
-                            this.y = true;
-                        } else if (abs <= f15 || abs >= actualOuterRadius + f11) {
-                            r15 = 1;
-                            this.y = true;
-                        }
-                        r15 = 1;
-                    } else {
-                        this.y = true;
-                    }
-                }
+    public ye0(org.telegram.ui.ActionBar.p2 p2Var, ContactsController.Contact contact, TLRPC.User user, Uri uri, File file, String str, String str2, String str3, final org.telegram.ui.ActionBar.f6 f6Var) {
+        super(1, (Context) p2Var.getParentActivity(), f6Var, false);
+        ArrayList<TLRPC.User> loadVCardFromStream;
+        String str4;
+        String str5;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        int i10;
+        final int i11;
+        this.v = new Paint(1);
+        this.L = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        this.M = arrayList3;
+        String formatName = ContactsController.formatName(str2, str3);
+        ArrayList arrayList4 = new ArrayList();
+        ArrayList<TLRPC.RestrictionReason> arrayList5 = null;
+        if (uri != null) {
+            loadVCardFromStream = AndroidUtilities.loadVCardFromStream(uri, this.currentAccount, false, arrayList4, formatName);
+        } else if (file != null) {
+            loadVCardFromStream = AndroidUtilities.loadVCardFromStream(Uri.fromFile(file), this.currentAccount, false, arrayList4, formatName);
+            file.delete();
+            this.J = true;
+        } else {
+            if (str != null) {
+                AndroidUtilities.VcardItem vcardItem = new AndroidUtilities.VcardItem();
+                vcardItem.type = 0;
+                ArrayList<String> arrayList6 = vcardItem.vcardData;
+                String concat = "TEL;MOBILE:+".concat(str);
+                vcardItem.fullData = concat;
+                arrayList6.add(concat);
+                arrayList3.add(vcardItem);
+                this.J = true;
             } else {
-                r15 = 1;
-                r15 = 1;
-                r15 = 1;
-                r15 = 1;
-                r15 = 1;
-                r15 = 1;
-                if (i10 == 1) {
-                    if (sqrt < f14) {
-                        this.y = true;
-                    } else if (sqrt > actualInnerRadius - f11 && sqrt < actualInnerRadius + f12) {
-                        this.y = true;
-                    } else if (sqrt > actualOuterRadius - f13 && sqrt < actualOuterRadius + f11) {
-                        this.y = true;
+                String str6 = contact.key;
+                if (str6 != null) {
+                    loadVCardFromStream = AndroidUtilities.loadVCardFromStream(Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_VCARD_URI, str6), this.currentAccount, true, arrayList4, formatName);
+                } else {
+                    AndroidUtilities.VcardItem vcardItem2 = new AndroidUtilities.VcardItem();
+                    vcardItem2.type = 0;
+                    ArrayList<String> arrayList7 = vcardItem2.vcardData;
+                    String str7 = "TEL;MOBILE:+" + contact.user.phone;
+                    vcardItem2.fullData = str7;
+                    arrayList7.add(str7);
+                    arrayList3.add(vcardItem2);
+                }
+            }
+            loadVCardFromStream = null;
+        }
+        TLRPC.User user2 = (user != null || contact == null) ? user : contact.user;
+        if (loadVCardFromStream != null) {
+            for (int i12 = 0; i12 < arrayList4.size(); i12++) {
+                AndroidUtilities.VcardItem vcardItem3 = (AndroidUtilities.VcardItem) arrayList4.get(i12);
+                if (vcardItem3.type == 0) {
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 >= this.M.size()) {
+                            this.M.add(vcardItem3);
+                            break;
+                        } else {
+                            if (((AndroidUtilities.VcardItem) this.M.get(i13)).getValue(false).equals(vcardItem3.getValue(false))) {
+                                vcardItem3.checked = false;
+                                break;
+                            }
+                            i13++;
+                        }
+                    }
+                } else {
+                    this.L.add(vcardItem3);
+                }
+            }
+            if (!loadVCardFromStream.isEmpty()) {
+                TLRPC.User user3 = loadVCardFromStream.get(0);
+                arrayList5 = user3.restriction_reason;
+                if (TextUtils.isEmpty(str2)) {
+                    str4 = user3.first_name;
+                    str5 = user3.last_name;
+                    TLRPC.TL_userContact_old2 tL_userContact_old2 = new TLRPC.TL_userContact_old2();
+                    this.N = tL_userContact_old2;
+                    if (user2 == null) {
+                        tL_userContact_old2.id = user2.id;
+                        tL_userContact_old2.access_hash = user2.access_hash;
+                        tL_userContact_old2.photo = user2.photo;
+                        tL_userContact_old2.status = user2.status;
+                        tL_userContact_old2.first_name = user2.first_name;
+                        tL_userContact_old2.last_name = user2.last_name;
+                        tL_userContact_old2.phone = user2.phone;
+                        if (arrayList5 != null) {
+                            tL_userContact_old2.restriction_reason = arrayList5;
+                        }
+                    } else {
+                        tL_userContact_old2.first_name = str4;
+                        tL_userContact_old2.last_name = str5;
+                    }
+                    this.r = p2Var;
+                    final Activity parentActivity = p2Var.getParentActivity();
+                    arrayList = this.L;
+                    this.E = 1;
+                    arrayList2 = this.M;
+                    if (arrayList2.size() <= 1 || !arrayList.isEmpty()) {
+                        if (arrayList2.isEmpty()) {
+                            int i14 = this.E;
+                            this.F = i14;
+                            int size = arrayList2.size() + i14;
+                            this.E = size;
+                            this.G = size;
+                        } else {
+                            this.F = -1;
+                            this.G = -1;
+                        }
+                        if (arrayList.isEmpty()) {
+                            int i15 = this.E;
+                            this.H = i15;
+                            int size2 = arrayList.size() + i15;
+                            this.E = size2;
+                            this.I = size2;
+                        } else {
+                            this.H = -1;
+                            this.I = -1;
+                        }
+                    } else {
+                        this.F = -1;
+                        this.G = -1;
+                        this.H = -1;
+                        this.I = -1;
+                    }
+                    pe0 pe0Var = new pe0(this, parentActivity, parentActivity);
+                    pe0Var.setWillNotDraw(false);
+                    this.containerView = pe0Var;
+                    setApplyTopPadding(false);
+                    setApplyBottomPadding(false);
+                    this.b = new ve0(this);
+                    qe0 qe0Var = new qe0(this, parentActivity);
+                    this.c = qe0Var;
+                    qe0Var.setClipToPadding(false);
+                    qe0Var.setVerticalScrollBarEnabled(false);
+                    pe0Var.addView(qe0Var, w7.a6.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 77.0f));
+                    LinearLayout linearLayout = new LinearLayout(parentActivity);
+                    this.d = linearLayout;
+                    linearLayout.setOrientation(1);
+                    qe0Var.addView(linearLayout, w7.a6.x(-1, -1, 51));
+                    qe0Var.setOnScrollChangeListener(new ne0(this));
+                    i10 = this.E;
+                    for (i11 = 0; i11 < i10; i11++) {
+                        ViewGroup a2 = this.b.a(parentActivity, i11);
+                        this.d.addView(a2, w7.a6.n(-1, -2));
+                        if ((i11 >= this.F && i11 < this.G) || (i11 >= this.H && i11 < this.I)) {
+                            a2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
+                            a2.setOnClickListener(new org.telegram.ui.Cells.wa(this, i11, a2, 8));
+                            a2.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.oe0
+                                @Override // android.view.View.OnLongClickListener
+                                public final boolean onLongClick(View view) {
+                                    return ye0.n(ye0.this, i11, f6Var, parentActivity);
+                                }
+                            });
+                        }
+                    }
+                    re0 re0Var = new re0(this, parentActivity);
+                    this.e = re0Var;
+                    re0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+                    re0Var.setBackButtonImage(R.drawable.ic_ab_back);
+                    int i16 = org.telegram.ui.ActionBar.j6.j5;
+                    re0Var.C(getThemedColor(i16), false);
+                    re0Var.A(getThemedColor(org.telegram.ui.ActionBar.j6.I5), false);
+                    re0Var.setTitleColor(getThemedColor(i16));
+                    re0Var.setOccupyStatusBar(false);
+                    re0Var.setAlpha(0.0f);
+                    if (this.J) {
+                        re0Var.setTitle(LocaleController.getString(R.string.ShareContactTitle));
+                    } else {
+                        re0Var.setTitle(LocaleController.getString(R.string.AddContactPhonebookTitle));
+                    }
+                    this.containerView.addView(re0Var, w7.a6.c(-2.0f, -1));
+                    re0Var.setActionBarMenuOnItemClick(new se0(this));
+                    View view = new View(parentActivity);
+                    this.f = view;
+                    view.setAlpha(0.0f);
+                    int i17 = org.telegram.ui.ActionBar.j6.V5;
+                    view.setBackgroundColor(getThemedColor(i17));
+                    this.containerView.addView(view, w7.a6.c(1.0f, -1));
+                    View view2 = new View(parentActivity);
+                    this.h = view2;
+                    view2.setBackgroundColor(getThemedColor(i17));
+                    view2.setAlpha(0.0f);
+                    this.containerView.addView(view2, w7.a6.d(-1, 1.0f, 83, 0.0f, 0.0f, 0.0f, 77.0f));
+                    TextView textView = new TextView(parentActivity);
+                    this.n = textView;
+                    textView.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                    textView.setGravity(17);
+                    textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Sh));
+                    textView.setTextSize(1, 14.0f);
+                    if (this.J) {
+                        textView.setText(LocaleController.getString(R.string.ShareContactTitle));
+                    } else {
+                        textView.setText(LocaleController.getString(R.string.AddContactPhonebookTitle));
+                    }
+                    textView.setTypeface(AndroidUtilities.bold());
+                    int dp = AndroidUtilities.dp(8.0f);
+                    int themedColor = getThemedColor(org.telegram.ui.ActionBar.j6.Oh);
+                    int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.j6.Qh);
+                    textView.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, themedColor, themedColor2, themedColor2));
+                    pe0Var.addView(textView, w7.a6.d(-1, 48.0f, 83, 14.0f, 14.0f, 14.0f, 14.0f));
+                    textView.setOnClickListener(new u10(7, this, f6Var));
+                }
+            }
+        }
+        str4 = str2;
+        str5 = str3;
+        TLRPC.TL_userContact_old2 tL_userContact_old22 = new TLRPC.TL_userContact_old2();
+        this.N = tL_userContact_old22;
+        if (user2 == null) {
+        }
+        this.r = p2Var;
+        final Activity parentActivity2 = p2Var.getParentActivity();
+        arrayList = this.L;
+        this.E = 1;
+        arrayList2 = this.M;
+        if (arrayList2.size() <= 1) {
+        }
+        if (arrayList2.isEmpty()) {
+        }
+        if (arrayList.isEmpty()) {
+        }
+        pe0 pe0Var2 = new pe0(this, parentActivity2, parentActivity2);
+        pe0Var2.setWillNotDraw(false);
+        this.containerView = pe0Var2;
+        setApplyTopPadding(false);
+        setApplyBottomPadding(false);
+        this.b = new ve0(this);
+        qe0 qe0Var2 = new qe0(this, parentActivity2);
+        this.c = qe0Var2;
+        qe0Var2.setClipToPadding(false);
+        qe0Var2.setVerticalScrollBarEnabled(false);
+        pe0Var2.addView(qe0Var2, w7.a6.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 77.0f));
+        LinearLayout linearLayout2 = new LinearLayout(parentActivity2);
+        this.d = linearLayout2;
+        linearLayout2.setOrientation(1);
+        qe0Var2.addView(linearLayout2, w7.a6.x(-1, -1, 51));
+        qe0Var2.setOnScrollChangeListener(new ne0(this));
+        i10 = this.E;
+        while (i11 < i10) {
+        }
+        re0 re0Var2 = new re0(this, parentActivity2);
+        this.e = re0Var2;
+        re0Var2.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+        re0Var2.setBackButtonImage(R.drawable.ic_ab_back);
+        int i162 = org.telegram.ui.ActionBar.j6.j5;
+        re0Var2.C(getThemedColor(i162), false);
+        re0Var2.A(getThemedColor(org.telegram.ui.ActionBar.j6.I5), false);
+        re0Var2.setTitleColor(getThemedColor(i162));
+        re0Var2.setOccupyStatusBar(false);
+        re0Var2.setAlpha(0.0f);
+        if (this.J) {
+        }
+        this.containerView.addView(re0Var2, w7.a6.c(-2.0f, -1));
+        re0Var2.setActionBarMenuOnItemClick(new se0(this));
+        View view3 = new View(parentActivity2);
+        this.f = view3;
+        view3.setAlpha(0.0f);
+        int i172 = org.telegram.ui.ActionBar.j6.V5;
+        view3.setBackgroundColor(getThemedColor(i172));
+        this.containerView.addView(view3, w7.a6.c(1.0f, -1));
+        View view22 = new View(parentActivity2);
+        this.h = view22;
+        view22.setBackgroundColor(getThemedColor(i172));
+        view22.setAlpha(0.0f);
+        this.containerView.addView(view22, w7.a6.d(-1, 1.0f, 83, 0.0f, 0.0f, 0.0f, 77.0f));
+        TextView textView2 = new TextView(parentActivity2);
+        this.n = textView2;
+        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        textView2.setGravity(17);
+        textView2.setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Sh));
+        textView2.setTextSize(1, 14.0f);
+        if (this.J) {
+        }
+        textView2.setTypeface(AndroidUtilities.bold());
+        int dp2 = AndroidUtilities.dp(8.0f);
+        int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.j6.Oh);
+        int themedColor22 = getThemedColor(org.telegram.ui.ActionBar.j6.Qh);
+        textView2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, themedColor3, themedColor22, themedColor22));
+        pe0Var2.addView(textView2, w7.a6.d(-1, 48.0f, 83, 14.0f, 14.0f, 14.0f, 14.0f));
+        textView2.setOnClickListener(new u10(7, this, f6Var));
+    }
+
+    public static void m(ye0 ye0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        ArrayList arrayList = ye0Var.L;
+        ArrayList arrayList2 = ye0Var.M;
+        org.telegram.ui.ActionBar.p2 p2Var = ye0Var.r;
+        TLRPC.TL_userContact_old2 tL_userContact_old2 = ye0Var.N;
+        if (ye0Var.J) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ye0Var.getContext());
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.AddContactTitle);
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.CreateNewContact), LocaleController.getString(R.string.AddToExistingContact)}, new te0(ye0Var));
+            alertDialog$Builder.o();
+            return;
+        }
+        StringBuilder sb2 = !tL_userContact_old2.restriction_reason.isEmpty() ? new StringBuilder(tL_userContact_old2.restriction_reason.get(0).text) : new StringBuilder(String.format(Locale.US, "BEGIN:VCARD\nVERSION:3.0\nFN:%1$s\nEND:VCARD", ContactsController.formatName(tL_userContact_old2.first_name, tL_userContact_old2.last_name)));
+        int lastIndexOf = sb2.lastIndexOf("END:VCARD");
+        if (lastIndexOf >= 0) {
+            tL_userContact_old2.phone = null;
+            for (int size = arrayList2.size() - 1; size >= 0; size--) {
+                AndroidUtilities.VcardItem vcardItem = (AndroidUtilities.VcardItem) arrayList2.get(size);
+                if (vcardItem.checked) {
+                    if (tL_userContact_old2.phone == null) {
+                        tL_userContact_old2.phone = vcardItem.getValue(false);
+                    }
+                    for (int i10 = 0; i10 < vcardItem.vcardData.size(); i10++) {
+                        sb2.insert(lastIndexOf, vcardItem.vcardData.get(i10) + "\n");
                     }
                 }
             }
-            this.F = false;
-            if (!this.y) {
-                return r15;
+            for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
+                AndroidUtilities.VcardItem vcardItem2 = (AndroidUtilities.VcardItem) arrayList.get(size2);
+                if (vcardItem2.checked) {
+                    for (int size3 = vcardItem2.vcardData.size() - 1; size3 >= 0; size3 += -1) {
+                        sb2.insert(lastIndexOf, vcardItem2.vcardData.get(size3) + "\n");
+                    }
+                }
             }
-            c(r15, motionEvent);
-            return r15;
+            tL_userContact_old2.restriction_reason.clear();
+            TLRPC.RestrictionReason restrictionReason = new TLRPC.RestrictionReason();
+            restrictionReason.text = sb2.toString();
+            restrictionReason.reason = "";
+            restrictionReason.platform = "";
+            tL_userContact_old2.restriction_reason.add(restrictionReason);
+        }
+        boolean z10 = p2Var instanceof org.telegram.ui.eo;
+        if (z10) {
+            org.telegram.ui.eo eoVar = (org.telegram.ui.eo) p2Var;
+            if (eoVar.c()) {
+                d5.M(ye0Var.getContext(), eoVar.a(), new ne0(ye0Var), f6Var);
+                return;
+            }
+        }
+        d5.a0(ye0Var.currentAccount, 1, z10 ? ((org.telegram.ui.eo) p2Var).a() : 0L, new y2(ye0Var, 9));
+    }
+
+    public static boolean n(ye0 ye0Var, int i10, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
+        AndroidUtilities.VcardItem vcardItem;
+        int i11 = ye0Var.F;
+        if (i10 < i11 || i10 >= ye0Var.G) {
+            int i12 = ye0Var.H;
+            vcardItem = (i10 < i12 || i10 >= ye0Var.I) ? null : (AndroidUtilities.VcardItem) ye0Var.L.get(i10 - i12);
+        } else {
+            vcardItem = (AndroidUtilities.VcardItem) ye0Var.M.get(i10 - i11);
+        }
+        if (vcardItem == null) {
+            return false;
+        }
+        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", vcardItem.getValue(false)));
+        if (wc.a(ye0Var.r)) {
+            if (vcardItem.type == 3) {
+                new wc((FrameLayout) ye0Var.containerView, f6Var).k(false).j();
+                return true;
+            }
+            hc hcVar = new hc(context, f6Var);
+            int i13 = vcardItem.type;
+            if (i13 == 0) {
+                hcVar.b.setText(LocaleController.getString(R.string.PhoneCopied));
+                hcVar.a.setImageResource(R.drawable.msg_calls);
+            } else if (i13 == 1) {
+                hcVar.b.setText(LocaleController.getString(R.string.EmailCopied));
+                hcVar.a.setImageResource(R.drawable.msg_mention);
+            } else {
+                hcVar.b.setText(LocaleController.getString(R.string.TextCopied));
+                hcVar.a.setImageResource(R.drawable.msg_info);
+            }
+            if (AndroidUtilities.shouldShowClipboardToast()) {
+                pc.f((FrameLayout) ye0Var.containerView, hcVar, 1500).j();
+            }
         }
         return true;
     }
 
-    public void setDelegate(xe0 xe0Var) {
-        this.L = xe0Var;
+    public final void H(boolean z10) {
+        qe0 qe0Var = this.c;
+        View childAt = qe0Var.getChildAt(0);
+        int top = childAt.getTop() - qe0Var.getScrollY();
+        if (top < 0) {
+            top = 0;
+        }
+        boolean z11 = top <= 0;
+        re0 re0Var = this.e;
+        if ((z11 && re0Var.getTag() == null) || (!z11 && re0Var.getTag() != null)) {
+            re0Var.setTag(z11 ? r2 : null);
+            AnimatorSet animatorSet = this.x;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                this.x = null;
+            }
+            View view = this.f;
+            if (z10) {
+                AnimatorSet animatorSet2 = new AnimatorSet();
+                this.x = animatorSet2;
+                animatorSet2.setDuration(180L);
+                AnimatorSet animatorSet3 = this.x;
+                Property property = View.ALPHA;
+                animatorSet3.playTogether(ObjectAnimator.ofFloat(re0Var, (Property<re0, Float>) property, z11 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(view, (Property<View, Float>) property, z11 ? 1.0f : 0.0f));
+                this.x.addListener(new ue0(this, 0));
+                this.x.start();
+            } else {
+                re0Var.setAlpha(z11 ? 1.0f : 0.0f);
+                view.setAlpha(z11 ? 1.0f : 0.0f);
+            }
+        }
+        if (this.w != top) {
+            this.w = top;
+            this.containerView.invalidate();
+        }
+        childAt.getBottom();
+        qe0Var.getMeasuredHeight();
+        boolean z12 = childAt.getBottom() - qe0Var.getScrollY() > qe0Var.getMeasuredHeight();
+        View view2 = this.h;
+        if (!(z12 && view2.getTag() == null) && (z12 || view2.getTag() == null)) {
+            return;
+        }
+        view2.setTag(z12 ? 1 : null);
+        AnimatorSet animatorSet4 = this.y;
+        if (animatorSet4 != null) {
+            animatorSet4.cancel();
+            this.y = null;
+        }
+        if (!z10) {
+            view2.setAlpha(z12 ? 1.0f : 0.0f);
+            return;
+        }
+        AnimatorSet animatorSet5 = new AnimatorSet();
+        this.y = animatorSet5;
+        animatorSet5.setDuration(180L);
+        this.y.playTogether(ObjectAnimator.ofFloat(view2, (Property<View, Float>) View.ALPHA, z12 ? 1.0f : 0.0f));
+        this.y.addListener(new ue0(this, 1));
+        this.y.start();
     }
 
-    public void setType(int i10) {
-        this.H = i10;
-        invalidate();
+    @Override // org.telegram.ui.ActionBar.h3
+    public final boolean canDismissWithSwipe() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
+    public final void onStart() {
+        super.onStart();
+        pc.a((FrameLayout) this.containerView, new bi.fa(8));
+    }
+
+    @Override // android.app.Dialog
+    public final void onStop() {
+        super.onStop();
+        pc.h((FrameLayout) this.containerView);
     }
 }

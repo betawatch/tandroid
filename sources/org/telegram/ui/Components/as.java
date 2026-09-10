@@ -1,267 +1,169 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class as implements MessagesStorage.LongCallback, al0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ es b;
+public final class as extends ViewGroup {
+    public static final /* synthetic */ int s = 0;
+    public final yr a;
+    public EditText b;
+    public final View[] c;
+    public View d;
+    public boolean e;
+    public boolean f;
+    public final xr h;
+    public boolean n;
+    public final xr r;
 
-    public /* synthetic */ as(es esVar, int i10) {
-        this.a = i10;
-        this.b = esVar;
-    }
-
-    @Override // org.telegram.ui.Components.al0
-    public void d(float f7, float f10, int i10, View view) {
-        boolean z10;
-        es esVar = this.b;
-        h51 G = esVar.X.G(i10 - 1);
-        if (G == null) {
-            return;
-        }
-        ds dsVar = esVar.k0;
-        ds dsVar2 = esVar.j0;
-        ds dsVar3 = esVar.i0;
-        ds dsVar4 = esVar.l0;
-        TLRPC.TL_chatBannedRights tL_chatBannedRights = esVar.w0;
-        int i11 = G.d;
-        if (i11 == 103) {
-            boolean z11 = !esVar.p0;
-            esVar.p0 = z11;
-            ((org.telegram.ui.Cells.v8) view).setChecked(z11);
-            return;
-        }
-        int i12 = G.a;
-        if (i12 == 37) {
-            int i13 = i11 >>> 24;
-            int i14 = 16777215 & i11;
-            if (i13 == 0) {
-                dsVar3.e(i14);
-                return;
-            }
-            if (i13 == 1) {
-                dsVar2.e(i14);
-                esVar.U();
-                return;
-            } else if (i11 == 3) {
-                dsVar.e(i14);
-                esVar.U();
-                return;
-            } else {
-                if (i13 == 2) {
-                    dsVar4.e(i14);
-                    return;
+    public as(Context context) {
+        super(context);
+        String str;
+        this.c = new View[12];
+        this.h = new xr(this, 0);
+        this.r = new xr(this, 1);
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < 11) {
+            if (i11 != 9) {
+                switch (i11) {
+                    case 1:
+                        str = "ABC";
+                        break;
+                    case 2:
+                        str = "DEF";
+                        break;
+                    case 3:
+                        str = "GHI";
+                        break;
+                    case 4:
+                        str = "JKL";
+                        break;
+                    case 5:
+                        str = "MNO";
+                        break;
+                    case 6:
+                        str = "PQRS";
+                        break;
+                    case 7:
+                        str = "TUV";
+                        break;
+                    case 8:
+                        str = "WXYZ";
+                        break;
+                    case 9:
+                    default:
+                        str = "";
+                        break;
+                    case 10:
+                        str = "+";
+                        break;
                 }
+                String valueOf = String.valueOf(i11 != 10 ? i11 + 1 : 0);
+                this.c[i11] = new zr(context, valueOf, str);
+                this.c[i11].setOnClickListener(new org.telegram.ui.sh(24, this, valueOf));
+                addView(this.c[i11]);
+            }
+            i11++;
+        }
+        yr yrVar = new yr(this, context, new l2.h(context, new di.r4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 1)));
+        this.a = yrVar;
+        yrVar.setImageResource(R.drawable.msg_clear_input);
+        yrVar.setColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        int dp = AndroidUtilities.dp(11.0f);
+        yrVar.setPadding(dp, dp, dp, dp);
+        yrVar.setOnClickListener(new bi.d5(9));
+        this.c[11] = yrVar;
+        addView(yrVar);
+        while (true) {
+            View[] viewArr = this.c;
+            if (i10 >= viewArr.length) {
                 return;
             }
-        }
-        if (i12 != 36 && i12 != 35) {
-            if (i12 == 39) {
-                if (G.t) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(esVar.getContext());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.UserRestrictionsCantModify);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.UserRestrictionsCantModifyDisabled);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.a.show();
-                    return;
-                }
-                if (i11 == 2) {
-                    tL_chatBannedRights.invite_users = !tL_chatBannedRights.invite_users;
-                    esVar.V();
-                } else if (i11 == 3) {
-                    tL_chatBannedRights.pin_messages = !tL_chatBannedRights.pin_messages;
-                    esVar.V();
-                } else if (i11 == 4) {
-                    tL_chatBannedRights.change_info = !tL_chatBannedRights.change_info;
-                    esVar.V();
-                } else if (i11 == 5) {
-                    tL_chatBannedRights.manage_topics = !tL_chatBannedRights.manage_topics;
-                    esVar.V();
-                } else if (i11 == 0) {
-                    tL_chatBannedRights.send_plain = !tL_chatBannedRights.send_plain;
-                    esVar.V();
-                }
-                esVar.X.N(true);
-                return;
+            View view = viewArr[i10];
+            if (view != null) {
+                w7.c6.b(view, 0.02f, 1.2f);
+                view.setBackground(a(i10));
             }
-            if (i12 == 40) {
-                esVar.y0 = !esVar.y0;
-                esVar.J();
-                esVar.X.N(true);
-                esVar.s();
-                return;
-            }
-            if (i11 == 100) {
-                esVar.B0 = false;
-                boolean z12 = !esVar.C0;
-                esVar.C0 = z12;
-                esVar.D0 = z12;
-                esVar.J();
-                esVar.X.N(true);
-                esVar.s();
-                esVar.O();
-                return;
-            }
-            if (i12 == 38) {
-                boolean z13 = esVar.g0;
-                esVar.g0 = !z13;
-                boolean[] zArr = !z13 ? esVar.n0 : esVar.m0;
-                if (dsVar4.g != 0) {
-                    dsVar4.e = zArr;
-                    dsVar4.f();
-                    dsVar4.g();
-                }
-                esVar.X.N(true);
-                esVar.V();
-                return;
-            }
-            return;
-        }
-        if (i11 == 0) {
-            dsVar3.d();
-            return;
-        }
-        if (i11 == 1) {
-            dsVar2.d();
-            esVar.U();
-            return;
-        }
-        if (i11 == 3) {
-            dsVar.d();
-            esVar.U();
-            return;
-        }
-        if (i11 == 2) {
-            dsVar4.d();
-            return;
-        }
-        if (i12 == 35) {
-            if (G.t) {
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(esVar.getContext());
-                alertDialog$Builder2.a.R = LocaleController.getString(R.string.UserRestrictionsCantModify);
-                alertDialog$Builder2.a.T = LocaleController.getString(R.string.UserRestrictionsCantModifyDisabled);
-                alertDialog$Builder2.k(LocaleController.getString(R.string.OK), null);
-                alertDialog$Builder2.a.show();
-                return;
-            }
-            if (i11 == 6) {
-                z10 = true;
-                tL_chatBannedRights.send_photos = !tL_chatBannedRights.send_photos;
-                esVar.V();
-            } else {
-                z10 = true;
-                if (i11 == 7) {
-                    tL_chatBannedRights.send_videos = !tL_chatBannedRights.send_videos;
-                    esVar.V();
-                } else if (i11 == 9) {
-                    tL_chatBannedRights.send_audios = !tL_chatBannedRights.send_audios;
-                    esVar.V();
-                } else if (i11 == 8) {
-                    tL_chatBannedRights.send_docs = !tL_chatBannedRights.send_docs;
-                    esVar.V();
-                } else if (i11 == 11) {
-                    tL_chatBannedRights.send_roundvideos = !tL_chatBannedRights.send_roundvideos;
-                    esVar.V();
-                } else if (i11 == 10) {
-                    tL_chatBannedRights.send_voices = !tL_chatBannedRights.send_voices;
-                    esVar.V();
-                } else if (i11 == 15) {
-                    tL_chatBannedRights.send_reactions = !tL_chatBannedRights.send_reactions;
-                    esVar.V();
-                } else {
-                    if (i11 == 12) {
-                        boolean z14 = !tL_chatBannedRights.send_stickers;
-                        tL_chatBannedRights.send_inline = z14;
-                        tL_chatBannedRights.send_gifs = z14;
-                        tL_chatBannedRights.send_games = z14;
-                        tL_chatBannedRights.send_stickers = z14;
-                        esVar.V();
-                    } else if (i11 == 14) {
-                        if (tL_chatBannedRights.send_plain || esVar.v0.send_plain) {
-                            int i15 = 0;
-                            while (true) {
-                                if (i15 >= esVar.X.x.size()) {
-                                    break;
-                                }
-                                h51 G2 = esVar.X.G(i15);
-                                if (G2.a == 39 && G2.d == 0) {
-                                    s4.c1 K = esVar.d.K(i15 + 1);
-                                    if (K != null) {
-                                        View view2 = K.a;
-                                        float f11 = -esVar.F0;
-                                        esVar.F0 = f11;
-                                        AndroidUtilities.shakeViewSpring(view2, f11);
-                                    }
-                                } else {
-                                    i15++;
-                                }
-                            }
-                            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                            return;
-                        }
-                        tL_chatBannedRights.embed_links = !tL_chatBannedRights.embed_links;
-                        esVar.V();
-                    } else if (i11 == 13) {
-                        z10 = true;
-                        tL_chatBannedRights.send_polls = !tL_chatBannedRights.send_polls;
-                        esVar.V();
-                    } else {
-                        z10 = true;
-                        if (i11 == 101) {
-                            esVar.C0 = !esVar.C0;
-                            esVar.O();
-                        } else if (i11 == 102) {
-                            esVar.D0 = !esVar.D0;
-                            esVar.O();
-                        }
-                    }
-                    z10 = true;
-                }
-            }
-            esVar.X.N(z10);
+            i10++;
         }
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ boolean d1(View view) {
-        return false;
+    public static org.telegram.ui.Cells.z a(int i10) {
+        boolean z10 = i10 < 3;
+        int i11 = i10 % 3;
+        boolean z11 = i11 == 0;
+        boolean z12 = i11 == 2;
+        boolean z13 = i10 > 8;
+        int i12 = org.telegram.ui.ActionBar.j6.i6;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i12, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i12, false), 30);
+        float f7 = 12.0f;
+        int dp = AndroidUtilities.dp((z11 && z10) ? 24.0f : 12.0f);
+        int dp2 = AndroidUtilities.dp((z12 && z10) ? 24.0f : 12.0f);
+        int dp3 = AndroidUtilities.dp((z12 && z13) ? 24.0f : 12.0f);
+        if (z11 && z13) {
+            f7 = 24.0f;
+        }
+        return org.telegram.ui.ActionBar.j6.i0(dp, dp2, dp3, AndroidUtilities.dp(f7), w02, k10, k10);
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j3) {
-        switch (this.a) {
-            case 0:
-                es esVar = this.b;
-                esVar.getClass();
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(org.telegram.ui.co.R9(j3));
-                }
-                esVar.dismiss();
-                break;
-            default:
-                es esVar2 = this.b;
-                esVar2.getClass();
-                org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
-                if (R2 != null) {
-                    R2.presentFragment(org.telegram.ui.co.R9(j3));
-                }
-                esVar2.dismiss();
-                break;
+    @Override // android.view.View
+    public final boolean canScrollHorizontally(int i10) {
+        return true;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int y3 = org.telegram.messenger.em.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.em.y(42.0f, getHeight(), 4);
+        int i14 = 0;
+        while (true) {
+            View[] viewArr = this.c;
+            if (i14 >= viewArr.length) {
+                return;
+            }
+            int dp = AndroidUtilities.dp(6.0f) + y3;
+            int dp2 = AndroidUtilities.dp(10.0f) + (dp * (i14 % 3));
+            int dp3 = AndroidUtilities.dp(6.0f) + y10;
+            int dp4 = AndroidUtilities.dp(10.0f) + (dp3 * (i14 / 3));
+            View view = viewArr[i14];
+            if (view != null) {
+                view.layout(dp2, dp4, dp2 + y3, dp4 + y10);
+            }
+            i14++;
         }
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public /* synthetic */ void q0(View view, float f7, float f10) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        int y3 = org.telegram.messenger.em.y(32.0f, getWidth(), 3);
+        int y10 = org.telegram.messenger.em.y(42.0f, getHeight(), 4);
+        for (View view : this.c) {
+            if (view != null) {
+                view.measure(View.MeasureSpec.makeMeasureSpec(y3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(y10, TLObject.FLAG_30));
+            }
+        }
+    }
+
+    public void setDispatchBackWhenEmpty(boolean z10) {
+        this.e = z10;
+    }
+
+    public void setEditText(EditText editText) {
+        this.b = editText;
+        this.e = false;
+    }
+
+    public void setViewToFindFocus(View view) {
+        this.d = view;
     }
 }

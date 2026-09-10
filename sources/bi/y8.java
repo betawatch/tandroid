@@ -1,166 +1,82 @@
 package bi;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.text.TextPaint;
-import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.xi0;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.hj;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.v51;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class y8 extends FrameLayout {
-    public final ArrayList a;
-    public ValueAnimator b;
-    public int c;
-    public int d;
-    public final a3.d e;
+public final /* synthetic */ class y8 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i9 b;
 
-    public y8(Context context, db dbVar) {
-        super(context);
-        this.c = -1;
-        int i10 = 0;
-        this.d = 0;
-        this.e = new a3.d(this, 24);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        addView(imageView, -1, -1);
-        View view = new View(context);
-        view.setBackgroundColor(1677721600);
-        addView(view, -1, -1);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f));
-        linearLayout.setGravity(1);
-        TextView textView = new TextView(context);
-        textView.setTextColor(-1);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setText(LocaleController.getString(R.string.StoriesIntroHeader));
-        textView.setTextSize(1, 20.0f);
-        linearLayout.addView(textView, w7.x5.n(-2, -2));
-        TextView textView2 = new TextView(context);
-        textView2.setTextColor(-1761607681);
-        textView2.setText(LocaleController.getString(R.string.StoriesIntroSubHeader));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(1);
-        linearLayout.addView(textView2, w7.x5.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
-        ArrayList arrayList = new ArrayList(4);
-        this.a = arrayList;
-        arrayList.add(new x8(context, R.raw.stories_intro_go_forward, LocaleController.getString(R.string.StoriesIntroGoForwardHeader), LocaleController.getString(R.string.StoriesIntroGoForwardSubHeader)));
-        arrayList.add(new x8(context, R.raw.stories_intro_pause, LocaleController.getString(R.string.StoriesIntroPauseAndSeekHeader), LocaleController.getString(R.string.StoriesIntroPauseAndSeekSubHeader)));
-        arrayList.add(new x8(context, R.raw.stories_intro_go_back, LocaleController.getString(R.string.StoriesIntroGoBackHeader), LocaleController.getString(R.string.StoriesIntroGoBackSubHeader)));
-        arrayList.add(new x8(context, R.raw.stories_intro_go_to_next, LocaleController.getString(R.string.StoriesIntroGoToNextAuthorHeader), LocaleController.getString(R.string.StoriesIntroGoToNextAuthorSubHeader)));
-        int measuredWidth = dbVar.getMeasuredWidth() - AndroidUtilities.dp(100.0f);
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            x8 x8Var = (x8) obj;
-            TextPaint textPaint = x8Var.e;
-            String str = x8Var.a;
-            int length = str.length();
-            Rect rect = x8Var.r;
-            textPaint.getTextBounds(str, 0, length, rect);
-            int width = rect.width();
-            TextPaint textPaint2 = x8Var.f;
-            String str2 = x8Var.b;
-            textPaint2.getTextBounds(str2, 0, str2.length(), rect);
-            int max = Math.max(width, rect.width()) + AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(88.0f);
-            if (max > measuredWidth) {
-                measuredWidth = max;
-            }
-        }
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(AndroidUtilities.dp(8.0f) + measuredWidth > dbVar.getMeasuredWidth() ? dbVar.getMeasuredWidth() - AndroidUtilities.dp(8.0f) : measuredWidth, AndroidUtilities.dp(64.0f));
-        layoutParams.setMargins(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        ArrayList arrayList2 = this.a;
-        int size2 = arrayList2.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList2.get(i10);
-            i10++;
-            linearLayout.addView((x8) obj2, layoutParams);
-        }
-        TextView textView3 = new TextView(context);
-        textView3.setTextColor(-1);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setText(LocaleController.getString(R.string.StoriesIntroDismiss));
-        textView3.setTextSize(1, 14.0f);
-        linearLayout.addView(textView3, w7.x5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
-        addView(linearLayout, w7.x5.e(-1, -2, 17));
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(dbVar, 12.0f, 10));
-        bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
-        imageView.setImageDrawable(bitmapDrawable);
-        getViewTreeObserver().addOnGlobalLayoutListener(new w8(this, textView3, dbVar, textView2));
+    public /* synthetic */ y8(i9 i9Var, int i10) {
+        this.a = i10;
+        this.b = i9Var;
     }
 
-    public final void a(boolean z10) {
-        ValueAnimator valueAnimator = this.b;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.b = ofFloat;
-        if (z10) {
-            ofFloat.setStartDelay(50L);
-        }
-        this.b.setDuration(350L);
-        this.b.setInterpolator(new AccelerateDecelerateInterpolator());
-        this.b.getCurrentPlayTime();
-        this.b.addListener(new ah.b(this, 12));
-        this.b.addUpdateListener(new ah.d0(this, 13));
-        this.b.start();
-        AndroidUtilities.runOnUIThread(this.e, (((x8) this.a.get(this.d)).c.p() * 2) + 100);
-    }
-
-    public final void b() {
-        AndroidUtilities.cancelRunOnUIThread(this.e);
-        ValueAnimator valueAnimator = this.b;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.b = null;
-        }
-        int i10 = this.c;
-        ArrayList arrayList = this.a;
-        if (i10 != -1) {
-            x8 x8Var = (x8) arrayList.get(i10);
-            xi0 xi0Var = x8Var.c;
-            xi0Var.K(0);
-            xi0Var.stop();
-            x8Var.n = 0.0f;
-            x8Var.invalidate();
-        }
-        x8 x8Var2 = (x8) arrayList.get(this.d);
-        xi0 xi0Var2 = x8Var2.c;
-        xi0Var2.K(0);
-        xi0Var2.stop();
-        x8Var2.n = 0.0f;
-        x8Var2.invalidate();
-        c();
-    }
-
-    public final void c() {
-        int i10 = this.d + 1;
-        this.d = i10;
-        ArrayList arrayList = this.a;
-        if (i10 >= arrayList.size()) {
-            this.d = 0;
-        }
-        int i11 = this.c + 1;
-        this.c = i11;
-        if (i11 >= arrayList.size()) {
-            this.c = 0;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) obj;
+                j61 j61Var = (j61) obj2;
+                i9 i9Var = this.b;
+                MessagesController.SavedMusicList savedMusicList = i9Var.e0;
+                j61Var.E = 1;
+                int dp = AndroidUtilities.dp(64.0f);
+                arrayList.add(v51.C(AndroidUtilities.dp(64.0f)));
+                if (i9Var.Z || i9Var.h0) {
+                    dp += i9Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), i9Var.b0, false, false, -1);
+                }
+                if (!i9Var.Z) {
+                    if (TextUtils.isEmpty(i9Var.s0) && !i9Var.h0) {
+                        j61Var.U();
+                        v51 c10 = v51.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
+                        c10.q = true;
+                        arrayList.add(c10);
+                        j61Var.T();
+                        dp += AndroidUtilities.dp(50.0f);
+                    }
+                    if (!i9Var.h0 && savedMusicList != null) {
+                        dp += i9Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchProfile), savedMusicList.list, savedMusicList.loading, !savedMusicList.endReached, 2);
+                    }
+                    dp = dp + i9Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchChats), i9Var.c0, i9Var.w0 || i9Var.v0, i9Var.u0, 3) + i9Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchGlobal), i9Var.d0, i9Var.D0 || i9Var.C0, i9Var.B0, 4);
+                }
+                if (arrayList.size() <= ((i9Var.Z || !TextUtils.isEmpty(i9Var.s0) || i9Var.h0) ? 1 : 2)) {
+                    if (TextUtils.isEmpty(i9Var.s0)) {
+                        String string = LocaleController.getString(R.string.NoAudioFound);
+                        String string2 = LocaleController.getString(R.string.NoAudioFilesInfo);
+                        int i10 = hj.a;
+                        v51 J = v51.J(hj.class);
+                        J.l = string;
+                        J.m = string2;
+                        arrayList.add(J);
+                    } else {
+                        String string3 = LocaleController.getString(R.string.NoAudioFound);
+                        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i9Var.s0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, i9Var.s0));
+                        int i11 = hj.a;
+                        v51 J2 = v51.J(hj.class);
+                        J2.l = string3;
+                        J2.m = replaceTags;
+                        arrayList.add(J2);
+                    }
+                }
+                arrayList.add(v51.B(null));
+                arrayList.add(v51.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.l.getCurrentActionBarHeight()))));
+                break;
+            default:
+                i9.Q(this.b, (TLRPC.messages_BotResults) obj);
+                break;
         }
     }
 }

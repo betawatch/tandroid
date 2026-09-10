@@ -1,12 +1,12 @@
 package b1;
 
+import bi.af;
 import com.google.android.gms.common.api.r;
-import di.b7;
 import java.util.concurrent.Executor;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements rd.a {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class b implements rd.a {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new a1.e(12, this.c, this.d));
+                this.b.execute(new a1.e(7, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.e(13, this.c, (o) this.d));
+                this.b.execute(new a1.e(8, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -54,7 +54,7 @@ public final /* synthetic */ class b implements rd.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new b7(14, this.c, cVar));
+                this.b.execute(new af(17, this.c, cVar));
                 break;
         }
         return gd.i.a;

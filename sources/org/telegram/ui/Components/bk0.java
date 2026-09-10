@@ -1,36 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class bk0 extends ImageReceiver {
+public final /* synthetic */ class bk0 implements e2.h {
     public final /* synthetic */ int a;
+    public final /* synthetic */ pk0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bk0(int i10, View view) {
-        super(view);
+    public /* synthetic */ bk0(pk0 pk0Var, int i10) {
         this.a = i10;
+        this.b = pk0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+    @Override // e2.h
+    public final void accept(Object obj) {
+        View view = (View) obj;
         switch (this.a) {
             case 0:
-                if (drawable instanceof xi0) {
-                    ((xi0) drawable).L(0, false, true);
+                pk0 pk0Var = this.b;
+                ArrayList arrayList = pk0Var.d;
+                pk0Var.b.getClass();
+                int R = RecyclerView.R(view);
+                if (R >= 0 && R < arrayList.size() && (view instanceof nk0)) {
+                    ((nk0) view).f(((gk0) arrayList.get(R)).c, true);
+                    break;
                 }
-                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                break;
             default:
-                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (imageBitmapByKey && (drawable instanceof xi0)) {
-                    xi0 xi0Var = (xi0) drawable;
-                    xi0Var.L(0, false, true);
-                    xi0Var.stop();
+                if (view instanceof nk0) {
+                    nk0 nk0Var = (nk0) view;
+                    mk0 mk0Var = nk0Var.b;
+                    nk0Var.N = false;
+                    mk0Var.setAlpha(1.0f);
+                    if (!this.b.N0) {
+                        nk0Var.d();
+                        break;
+                    } else {
+                        mk0Var.setScaleX(nk0Var.I * (nk0Var.w ? 0.76f : 1.0f));
+                        mk0Var.setScaleY(nk0Var.I * (nk0Var.w ? 0.76f : 1.0f));
+                        break;
+                    }
                 }
-                return imageBitmapByKey;
+                break;
         }
     }
 }

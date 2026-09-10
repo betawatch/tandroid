@@ -5,7 +5,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class kf0 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ lf0 a;
@@ -25,8 +25,8 @@ public final class kf0 implements NotificationCenter.NotificationCenterDelegate 
             try {
                 lf0Var.y = (GoogleSignInAccount) w7.d9.b(intent).getResult(com.google.android.gms.common.api.f.class);
                 lf0Var.h(null);
-            } catch (com.google.android.gms.common.api.f e7) {
-                FileLog.e(e7);
+            } catch (com.google.android.gms.common.api.f e) {
+                FileLog.e(e);
             }
         }
     }

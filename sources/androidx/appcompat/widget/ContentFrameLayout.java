@@ -1,6 +1,6 @@
 package androidx.appcompat.widget;
 
-import a6.m;
+import a4.m;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -13,11 +13,11 @@ import l.l;
 import m.h;
 import m.i1;
 import m.j1;
-import m.l3;
+import m.n3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -95,7 +95,7 @@ public class ContentFrameLayout extends FrameLayout {
             if (j1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
                 actionBarOverlayLayout.f();
-                ActionMenuView actionMenuView = ((l3) actionBarOverlayLayout.e).a.a;
+                ActionMenuView actionMenuView = ((n3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (hVar = actionMenuView.J) != null) {
                     hVar.f();
                     m.d dVar = hVar.J;

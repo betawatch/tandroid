@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.car.app.hardware.common.CarZone;
 import androidx.car.app.navigation.model.Maneuver;
-import androidx.fragment.app.i0;
+import androidx.fragment.app.j0;
 import c3.h0;
 import com.google.android.gms.internal.cast.a5;
 import com.google.android.gms.internal.vision.r0;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -46,7 +46,7 @@ public abstract /* synthetic */ class a {
     public static final void b(int i10, View view, ViewGroup container) {
         kotlin.jvm.internal.i.e(view, "view");
         kotlin.jvm.internal.i.e(container, "container");
-        if (i0.K(2)) {
+        if (j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Calling apply state");
         }
         int c10 = m1.j.c(i10);
@@ -54,7 +54,7 @@ public abstract /* synthetic */ class a {
             ViewParent parent = view.getParent();
             ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
             if (viewGroup != null) {
-                if (i0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Removing view " + view + " from container " + viewGroup);
                 }
                 viewGroup.removeView(view);
@@ -63,12 +63,12 @@ public abstract /* synthetic */ class a {
             return;
         }
         if (c10 == 1) {
-            if (i0.K(2)) {
+            if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to VISIBLE");
             }
             ViewParent parent2 = view.getParent();
             if ((parent2 instanceof ViewGroup ? (ViewGroup) parent2 : null) == null) {
-                if (i0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "SpecialEffectsController: Adding view " + view + " to Container " + container);
                 }
                 container.addView(view);
@@ -77,7 +77,7 @@ public abstract /* synthetic */ class a {
             return;
         }
         if (c10 == 2) {
-            if (i0.K(2)) {
+            if (j0.K(2)) {
                 Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to GONE");
             }
             view.setVisibility(8);
@@ -86,7 +86,7 @@ public abstract /* synthetic */ class a {
         if (c10 != 3) {
             return;
         }
-        if (i0.K(2)) {
+        if (j0.K(2)) {
             Log.v("FragmentManager", "SpecialEffectsController: Setting view " + view + " to INVISIBLE");
         }
         view.setVisibility(4);

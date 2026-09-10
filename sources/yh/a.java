@@ -1,69 +1,22 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e51;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.oz0;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.z5;
-import w7.x5;
-import zh.v7;
+import c3.k0;
+import java.io.File;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final class a extends g51 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes4.dex */
+public final class a {
+    public final File a;
+    public long b;
+    public long c;
+    public int d;
+    public k0 e;
+    public MessageObject f;
+    public int g;
+    public int h;
 
-    static {
-        g51.setup(new a());
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
-        b bVar = (b) view;
-        GiftAuctionController.Auction auction = (GiftAuctionController.Auction) h51Var.H;
-        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) h51Var.G;
-        View.OnClickListener onClickListener = h51Var.D;
-        int i10 = b.c;
-        bVar.removeAllViews();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
-        spannableStringBuilder.setSpan(new z5(auction.giftDocumentId, j6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append(' ');
-        spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.Gift2AuctionsAcquiredRound2, auction.gift.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
-        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) v7.X0(false, i2.g.k(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
-        String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
-        oz0 oz0Var = new oz0(bVar.getContext(), bVar.a);
-        oz0Var.a(spannableStringBuilder).setFilled(true);
-        oz0Var.k(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), bVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new ug.r(9, bVar, onClickListener));
-        oz0Var.f(tL_StarGiftAuctionAcquiredGift.date, LocaleController.getString(R.string.Gift2AuctionsAcquiredDate));
-        oz0Var.e(LocaleController.getString(R.string.Gift2AuctionsAcquiredAcceptedBid), spannableStringBuilder2, formatString, null, null);
-        bVar.addView(oz0Var, x5.c(-2.0f, -1));
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
-        b bVar = new b(context, i10, f6Var);
-        bVar.setLayoutParams(x5.c(-2.0f, -1));
-        return bVar;
-    }
-
-    @Override // org.telegram.ui.Components.g51
-    public final boolean isClickable() {
-        return false;
+    public a(File file) {
+        this.a = file;
     }
 }

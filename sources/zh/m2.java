@@ -1,238 +1,192 @@
 package zh;
 
-import android.animation.ValueAnimator;
-import android.opengl.Matrix;
-import java.util.Arrays;
+import android.view.View;
+import bi.va;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.x9;
-import org.telegram.ui.Components.xi0;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m2 implements Runnable {
+public final /* synthetic */ class m2 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ v2 b;
 
-    public /* synthetic */ m2(Object obj, int i10) {
+    public /* synthetic */ m2(v2 v2Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = v2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:82:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0290 A[ADDED_TO_REGION, LOOP:1: B:84:0x0290->B:85:0x0292, LOOP_START, PHI: r5
-      0x0290: PHI (r5v1 int) = (r5v0 int), (r5v2 int) binds: [B:83:0x028e, B:85:0x0292] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x02be  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x028d  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        char c10;
-        boolean z10;
-        int i10;
-        char c11;
-        int i11 = this.a;
-        int i12 = 2;
-        Object obj = this.b;
-        switch (i11) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                ((n2) obj).invalidateSelf();
+                a3 a3Var = this.b.l;
+                a3.e0(a3Var, a3Var.B1);
+                v2 v2Var = a3Var.t1;
+                if (v2Var != null) {
+                    v2Var.a();
+                    break;
+                }
                 break;
             case 1:
-                q2 q2Var = (q2) obj;
-                p2 p2Var = q2Var.H;
-                int i13 = 6;
-                if (p2Var == null) {
-                    c10 = 2;
-                    if (Math.abs(q2Var.d) <= 1.0E-4f && Math.abs(q2Var.e) <= 1.0E-4f) {
-                        z10 = false;
-                        if (q2Var.G == null ? true : z10) {
-                            for (int i14 = 0; i14 < 6; i14++) {
-                                Matrix.multiplyMV(q2Var.n, 0, q2Var.c, 0, q2Var.h[i14], 0);
-                                q2Var.r[i14] = q2Var.n[c10];
-                            }
-                            Arrays.sort(q2Var.s, new bi.l7(q2Var, i13));
-                            q2Var.invalidate();
-                        }
-                        if (!q2Var.isAttachedToWindow()) {
-                            AndroidUtilities.runOnUIThread(q2Var.I, 16L);
-                            break;
-                        }
-                    } else {
-                        q2Var.a();
-                    }
-                } else {
-                    q2 q2Var2 = p2Var.a;
-                    float[] fArr = p2Var.h;
-                    if (!p2Var.e && (i10 = p2Var.c) != 0) {
-                        if (p2Var.l) {
-                            q2Var2.a();
-                        } else {
-                            int c12 = m1.j.c(((o2) p2Var.b.get(i10 - 1)).a);
-                            if (c12 == 1 || c12 == 2) {
-                                c10 = 2;
-                                q2Var2.a();
-                                int i15 = p2Var.f - 1;
-                                p2Var.f = i15;
-                                if (i15 <= 0) {
-                                    p2Var.b();
-                                }
-                            } else if (c12 == 3) {
-                                float pow = 1.0f - ((float) Math.pow(1.0f - (1.0f - (p2Var.f / p2Var.g)), 3.0d));
-                                float f7 = 1.0f - pow;
-                                if (Math.abs(p2Var.j * f7) > 1.0E-4f || Math.abs(p2Var.k * f7) > 1.0E-4f) {
-                                    float[] fArr2 = new float[16];
-                                    c11 = 1;
-                                    float f10 = p2Var.j * f7 * 0.96f;
-                                    q2Var2.getClass();
-                                    q2.b(1.0f, 0.0f, f10, fArr2);
-                                    q2Var2.getClass();
-                                    q2.d(fArr2, fArr, fArr);
-                                    float f11 = p2Var.k * f7 * 0.96f;
-                                    q2Var2.getClass();
-                                    q2.b(0.0f, 1.0f, f11, fArr2);
-                                    q2.d(fArr2, fArr, fArr);
-                                } else {
-                                    c11 = 1;
-                                }
-                                float[] fArr3 = p2Var.i;
-                                float[] fArr4 = q2Var2.c;
-                                for (int i16 = 0; i16 < 16; i16++) {
-                                    float f12 = fArr[i16];
-                                    fArr4[i16] = com.google.android.gms.internal.vision.e2.z(fArr3[i16], f12, pow, f12);
-                                }
-                                c10 = 2;
-                                float f13 = fArr4[0];
-                                float f14 = fArr4[c11];
-                                float f15 = fArr4[2];
-                                float[] fArr5 = new float[3];
-                                fArr5[0] = f13;
-                                fArr5[c11] = f14;
-                                fArr5[2] = f15;
-                                float f16 = fArr4[4];
-                                float f17 = fArr4[5];
-                                float f18 = fArr4[6];
-                                float[] fArr6 = new float[3];
-                                fArr6[0] = f16;
-                                fArr6[c11] = f17;
-                                fArr6[2] = f18;
-                                float[] fArr7 = new float[3];
-                                q2.e(fArr5);
-                                q2.c(fArr5, fArr6, fArr7);
-                                q2.e(fArr7);
-                                q2.c(fArr7, fArr5, fArr6);
-                                fArr4[0] = fArr5[0];
-                                fArr4[c11] = fArr5[c11];
-                                fArr4[2] = fArr5[2];
-                                fArr4[4] = fArr6[0];
-                                fArr4[5] = fArr6[c11];
-                                fArr4[6] = fArr6[2];
-                                fArr4[8] = fArr7[0];
-                                fArr4[9] = fArr7[c11];
-                                fArr4[10] = fArr7[2];
-                                int i17 = p2Var.f - 1;
-                                p2Var.f = i17;
-                                if (i17 <= 0) {
-                                    System.arraycopy(p2Var.i, 0, q2Var2.c, 0, 16);
-                                    q2Var2.d = 0.0f;
-                                    q2Var2.e = 0.0f;
-                                    p2Var.b();
-                                }
-                            }
-                        }
-                    }
-                    c10 = 2;
-                }
-                z10 = true;
-                if (q2Var.G == null ? true : z10) {
-                }
-                if (!q2Var.isAttachedToWindow()) {
+                a3 a3Var2 = this.b.l;
+                a3.d0(a3Var2);
+                v2 v2Var2 = a3Var2.t1;
+                if (v2Var2 != null) {
+                    v2Var2.a();
+                    break;
                 }
                 break;
             case 2:
-                ((s2) obj).invalidate();
+                a3 a3Var3 = this.b.l;
+                AndroidUtilities.addToClipboard(a3Var3.O1.e());
+                a3.j0(a3Var3);
+                v2 v2Var3 = a3Var3.t1;
+                if (v2Var3 != null) {
+                    v2Var3.a();
+                    break;
+                }
                 break;
             case 3:
-                ((w2) obj).invalidateSelf();
+                a3 a3Var4 = this.b.l;
+                a3Var4.Y0(false);
+                v2 v2Var4 = a3Var4.t1;
+                if (v2Var4 != null) {
+                    v2Var4.a();
+                    break;
+                }
                 break;
             case 4:
-                t3 t3Var = (t3) obj;
-                m2 m2Var = t3Var.i0;
-                x9[] x9VarArr = t3Var.d;
-                if (!x9VarArr[2 - t3Var.r0].getImageReceiver().hasImageLoaded()) {
-                    AndroidUtilities.cancelRunOnUIThread(m2Var);
-                    AndroidUtilities.runOnUIThread(m2Var, 150L);
+                a3 a3Var5 = this.b.l;
+                z2 z2Var = a3Var5.O1;
+                z2Var.a.translated = false;
+                v5 v5Var = MessagesController.getInstance(a3Var5.C2).getStoriesController().k;
+                TL_stories.StoryItem storyItem = z2Var.a;
+                v5Var.k(storyItem.dialogId, storyItem);
+                a3Var5.p0();
+                a3Var5.f1(false);
+                v2 v2Var5 = a3Var5.t1;
+                if (v2Var5 != null) {
+                    v2Var5.a();
                     break;
-                } else {
-                    f4.d dVar = t3Var.U;
-                    if (dVar != null && dVar.b == 1 && t3Var.isAttachedToWindow()) {
-                        AndroidUtilities.cancelRunOnUIThread(m2Var);
-                        ValueAnimator valueAnimator = t3Var.h0;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                            t3Var.h0 = null;
-                        }
-                        int i18 = 1 - t3Var.r0;
-                        t3Var.r0 = i18;
-                        xi0 lottieAnimation = x9VarArr[2 - i18].getImageReceiver().getLottieAnimation();
-                        xi0 lottieAnimation2 = x9VarArr[t3Var.r0 + 1].getImageReceiver().getLottieAnimation();
-                        if (lottieAnimation2 != null && lottieAnimation != null) {
-                            lottieAnimation2.Q(lottieAnimation.r(), false);
-                        }
-                        t3Var.W.c();
-                        int i19 = t3Var.r0 + 1;
-                        TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = t3Var.V;
-                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) t3Var.b0.c();
-                        stargiftattributebackdropArr[i19] = stargiftattributebackdrop;
-                        t3Var.e(i19, stargiftattributebackdrop);
-                        t3Var.g(1, (TL_stars.starGiftAttributePattern) t3Var.a0.c(), true);
-                        t3Var.a();
-                        float f19 = t3Var.r0;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f19, f19);
-                        t3Var.h0 = ofFloat;
-                        ofFloat.addUpdateListener(new q3(t3Var, i12));
-                        t3Var.h0.addListener(new s3(t3Var));
-                        t3Var.h0.setDuration(320L);
-                        t3Var.h0.setInterpolator(pr.h);
-                        t3Var.h0.start();
-                        break;
-                    }
                 }
                 break;
             case 5:
-                ((tg.e) obj).setPaused(true);
+                v2 v2Var6 = this.b;
+                a3 a3Var6 = v2Var6.l;
+                z2 z2Var2 = a3Var6.O1;
+                z2Var2.a.translated = true;
+                a3Var6.p0();
+                w2 w2Var = a3Var6.Q1;
+                if (w2Var != null) {
+                    u7 u7Var = ((l7) w2Var).d;
+                    u7Var.Z0 = true;
+                    u7Var.P();
+                }
+                v5 v5Var2 = MessagesController.getInstance(a3Var6.C2).getStoriesController().k;
+                TL_stories.StoryItem storyItem2 = z2Var2.a;
+                v5Var2.k(storyItem2.dialogId, storyItem2);
+                MessagesController.getInstance(a3Var6.C2).getTranslateController().translateStory(z2Var2.a, new va(new p2(v2Var6, 1), System.currentTimeMillis(), 29));
+                a3Var6.f1(false);
+                a3Var6.h3 = true;
+                a3Var6.K0.D(true);
+                v2 v2Var7 = a3Var6.t1;
+                if (v2Var7 != null) {
+                    v2Var7.a();
+                    break;
+                }
                 break;
             case 6:
-                AndroidUtilities.showKeyboard((EditTextBoldCursor) obj);
+                a3 a3Var7 = this.b.l;
+                h5 h5Var = a3Var7.O1.b;
+                if (h5Var != null) {
+                    h5Var.a();
+                    a3Var7.j1();
+                }
+                v2 v2Var8 = a3Var7.t1;
+                if (v2Var8 != null) {
+                    v2Var8.a();
+                    break;
+                }
                 break;
             case 7:
-                ((i0[]) obj)[0].dismiss();
+                a3 a3Var8 = this.b.l;
+                a3.d0(a3Var8);
+                v2 v2Var9 = a3Var8.t1;
+                if (v2Var9 != null) {
+                    v2Var9.a();
+                    break;
+                }
                 break;
             case 8:
-                ei.f fVar = (ei.f) obj;
-                fVar.getClass();
-                try {
-                    ll0 currentListView = ((v7) fVar.M0).R.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
+                a3 a3Var9 = this.b.l;
+                AndroidUtilities.addToClipboard(a3Var9.O1.e());
+                a3.j0(a3Var9);
+                v2 v2Var10 = a3Var9.t1;
+                if (v2Var10 != null) {
+                    v2Var10.a();
+                    break;
                 }
                 break;
             case 9:
-                of.f.s(((k7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                a3 a3Var10 = this.b.l;
+                a3Var10.Y0(false);
+                v2 v2Var11 = a3Var10.t1;
+                if (v2Var11 != null) {
+                    v2Var11.a();
+                    break;
+                }
+                break;
+            case 10:
+                t0 t0Var = t0.W;
+                if (t0Var != null && t0Var.n) {
+                    long j3 = t0Var.J;
+                    boolean z10 = !t0Var.I;
+                    t0Var.I = z10;
+                    NativeInstance.switchCameraCapturer(j3, z10);
+                }
+                v2 v2Var12 = this.b.l.t1;
+                if (v2Var12 != null) {
+                    v2Var12.a();
+                    break;
+                }
+                break;
+            case 11:
+                this.b.l.D3.b();
+                break;
+            case 12:
+                this.b.l.E3.b();
+                break;
+            case 13:
+                a3 a3Var11 = this.b.l;
+                a3.f0(a3Var11);
+                v2 v2Var13 = a3Var11.t1;
+                if (v2Var13 != null) {
+                    v2Var13.a();
+                    break;
+                }
+                break;
+            case 14:
+                a3 a3Var12 = this.b.l;
+                MediaDataController.getInstance(a3Var12.C2).removePeer(a3Var12.B1);
+                a3Var12.S1.i0(a3Var12.B1, true, false);
+                v2 v2Var14 = a3Var12.t1;
+                if (v2Var14 != null) {
+                    v2Var14.a();
+                    break;
+                }
                 break;
             default:
-                of.f.s(((l7) obj).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                a3 a3Var13 = this.b.l;
+                a3.e0(a3Var13, a3Var13.B1);
+                v2 v2Var15 = a3Var13.t1;
+                if (v2Var15 != null) {
+                    v2Var15.a();
+                    break;
+                }
                 break;
         }
     }

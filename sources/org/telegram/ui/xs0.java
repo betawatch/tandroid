@@ -6,10 +6,10 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.Components.r71 {
-    public final org.telegram.ui.Components.na g0;
+public final class xs0 extends org.telegram.ui.Components.e81 {
+    public final org.telegram.ui.Components.ma g0;
     public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,10 +17,10 @@ public final class xs0 extends org.telegram.ui.Components.r71 {
         super(context);
         this.h0 = photoViewer;
         new Path();
-        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
+        this.g0 = new org.telegram.ui.Components.ma(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.e81
     public final void b(Canvas canvas, RectF rectF) {
         canvas.save();
         canvas.clipRect(rectF);

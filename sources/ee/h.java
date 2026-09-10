@@ -9,7 +9,7 @@ import zd.e0;
 import zd.l0;
 import zd.w0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h extends l0 implements kd.d, id.c {
     public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "_reusableCancellableContinuation$volatile");
@@ -24,7 +24,7 @@ public final class h extends l0 implements kd.d, id.c {
         this.d = a0Var;
         this.e = cVar;
         this.f = a.c;
-        Object fold = cVar.getContext().fold(0, w.c);
+        Object fold = cVar.getContext().fold(0, x.c);
         kotlin.jvm.internal.i.b(fold);
         this.h = fold;
     }

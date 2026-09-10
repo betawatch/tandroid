@@ -1,24 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class th0 {
-    public Canvas a;
-    public Bitmap b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
+public interface th0 {
+    void a();
 
-    public final void a() {
-        this.c = true;
-        if (this.e) {
-            return;
-        }
-        this.d = true;
-        this.b.recycle();
-    }
+    void b(boolean z10);
+
+    void c();
+
+    void d();
 }

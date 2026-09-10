@@ -7,14 +7,14 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.m;
+import org.telegram.tgnet.p;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public class TL_payments {
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static abstract class StarGiftActiveAuctions extends TLObject {
         public static StarGiftActiveAuctions TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (StarGiftActiveAuctions) TLObject.TLdeserialize(StarGiftActiveAuctions.class, fromConstructor(i10), inputSerializedData, i10, z10);
@@ -31,7 +31,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_StarGiftAuctionAcquiredGifts extends TLObject {
         public static final int constructor = 2103169520;
         public ArrayList<TL_stars.TL_StarGiftAuctionAcquiredGift> gifts = new ArrayList<>();
@@ -45,8 +45,8 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.gifts = Vector.deserialize(inputSerializedData, new a(3), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new p(10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -58,7 +58,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_StarGiftAuctionState extends TLObject {
         public static final int constructor = 1798960364;
         public ArrayList<TLRPC.Chat> chats;
@@ -78,8 +78,8 @@ public class TL_payments {
             this.state = TL_stars.StarGiftAuctionState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             this.user_state = TL_stars.TL_StarGiftAuctionUserState.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             this.timeout = inputSerializedData.readInt32(z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new p(10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -94,7 +94,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_getStarGiftActiveAuctions extends TLMethod<StarGiftActiveAuctions> {
         public static final int constructor = -1513074355;
         public long hash;
@@ -111,7 +111,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_getStarGiftAuctionAcquiredGifts extends TLMethod<TL_StarGiftAuctionAcquiredGifts> {
         public static final int constructor = 1805831148;
         public long gift_id;
@@ -128,7 +128,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_getStarGiftAuctionState extends TLMethod<TL_StarGiftAuctionState> {
         public static final int constructor = 1553986774;
         public TL_stars.InputStarGiftAuction auction;
@@ -147,7 +147,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_resolveStarGiftOffer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -372344804;
         public boolean decline;
@@ -166,7 +166,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_sendStarGiftOffer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1883739327;
         public long allow_paid_stars;
@@ -197,7 +197,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_starGiftActiveAuctions extends StarGiftActiveAuctions {
         public static final int constructor = -1359565892;
         public ArrayList<TL_stars.TL_StarGiftActiveAuctionState> auctions = new ArrayList<>();
@@ -207,8 +207,8 @@ public class TL_payments {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.auctions = Vector.deserialize(inputSerializedData, new a(4), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
-            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new p(10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -220,7 +220,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class connectStarRefBot extends TLObject {
         public static final int constructor = 2127901834;
         public TLRPC.InputUser bot;
@@ -239,7 +239,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class connectedBotStarRef extends TLObject {
         public static final int constructor = 429997937;
         public long bot_id;
@@ -290,7 +290,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class connectedStarRefBots extends TLObject {
         public static final int constructor = -1730811363;
         public int count;
@@ -305,7 +305,7 @@ public class TL_payments {
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.count = inputSerializedData.readInt32(z10);
             this.connected_bots = Vector.deserialize(inputSerializedData, new a(5), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
+            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -317,7 +317,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class editConnectedStarRefBot extends TLObject {
         public static final int constructor = -453204829;
         public int flags;
@@ -341,7 +341,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class getConnectedStarRefBot extends TLObject {
         public static final int constructor = -1210476304;
         public TLRPC.InputUser bot;
@@ -360,7 +360,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class getConnectedStarRefBots extends TLObject {
         public static final int constructor = 1483318611;
         public int flags;
@@ -387,7 +387,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class getSuggestedStarRefBots extends TLObject {
         public static final int constructor = 225134839;
         public int flags;
@@ -416,7 +416,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class starRefProgram extends TLObject {
         public static final int constructor = -586389774;
         public long bot_id;
@@ -464,7 +464,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class suggestedStarRefBots extends TLObject {
         public static final int constructor = -1261053863;
         public int count;
@@ -482,7 +482,7 @@ public class TL_payments {
             this.flags = inputSerializedData.readInt32(z10);
             this.count = inputSerializedData.readInt32(z10);
             this.suggested_bots = Vector.deserialize(inputSerializedData, new a(6), z10);
-            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
+            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z10);
             }
@@ -501,7 +501,7 @@ public class TL_payments {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class TL_starGiftActiveAuctionsNotModified extends StarGiftActiveAuctions {
         public static final int constructor = -617358640;
 

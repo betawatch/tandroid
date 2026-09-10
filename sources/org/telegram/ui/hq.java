@@ -1,36 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hq implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qq b;
+    public final /* synthetic */ rq b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ hq(qq qqVar, int i10) {
+    public /* synthetic */ hq(rq rqVar, long j3, int i10) {
         this.a = i10;
-        this.b = qqVar;
+        this.b = rqVar;
+        this.c = j3;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qq qqVar = this.b;
-                qqVar.h.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                qqVar.h.invalidateSelf();
+                long j3 = this.c;
+                rq rqVar = this.b;
+                rqVar.n = j3;
+                rqVar.r = true;
+                rqVar.n0();
                 break;
             default:
-                qq qqVar2 = this.b;
-                qqVar2.getClass();
-                qqVar2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                FrameLayout frameLayout = qqVar2.e;
-                if (frameLayout != null) {
-                    frameLayout.invalidate();
-                    break;
-                }
+                rq.Z(this.b, this.c);
                 break;
         }
     }

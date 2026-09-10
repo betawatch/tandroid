@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
     public g.g a;
@@ -38,6 +38,11 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
+    public final CharSequence d() {
+        return this.c;
+    }
+
+    @Override // m.o0
     public final void dismiss() {
         g.g gVar = this.a;
         if (gVar != null) {
@@ -47,12 +52,7 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final CharSequence e() {
-        return this.c;
-    }
-
-    @Override // m.o0
-    public final Drawable h() {
+    public final Drawable e() {
         return null;
     }
 
@@ -94,9 +94,9 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
         cVar.j = this;
         cVar.m = selectedItemPosition;
         cVar.l = true;
-        g.g e7 = b0Var.e();
-        this.a = e7;
-        AlertController$RecycleListView alertController$RecycleListView = e7.f.e;
+        g.g e = b0Var.e();
+        this.a = e;
+        AlertController$RecycleListView alertController$RecycleListView = e.f.e;
         g0.d(alertController$RecycleListView, i10);
         g0.c(alertController$RecycleListView, i11);
         this.a.show();

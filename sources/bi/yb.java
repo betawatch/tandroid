@@ -1,96 +1,106 @@
 package bi;
 
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import java.io.File;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public class yb {
-    public static long g;
-    public final u8 a;
-    public final int b;
-    public final long c;
-    public int d;
-    public boolean e;
-    public final oa f = new oa(this, 4);
+public final /* synthetic */ class yb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Bitmap b;
+    public final /* synthetic */ File c;
 
-    public yb(int i10, long j3, u8 u8Var) {
-        this.b = i10;
-        this.a = u8Var;
-        this.c = j3;
+    public /* synthetic */ yb(Bitmap bitmap, File file, int i10) {
+        this.a = i10;
+        this.b = bitmap;
+        this.c = file;
     }
 
-    public void a(ArrayList arrayList) {
-        TL_stories.PeerStories y3 = this.a.y(this.c);
-        if (y3 == null || y3.stories == null) {
-            return;
-        }
-        int i10 = 0;
-        while (i10 < y3.stories.size()) {
-            i10 = com.google.android.gms.internal.vision.e2.e(y3.stories.get(i10).id, i10, 1, arrayList);
-        }
-    }
-
-    public final void b(boolean z10) {
-        if (this.e == z10) {
-            return;
-        }
-        if (z10) {
-            this.e = true;
-            c();
-        } else {
-            this.e = false;
-            AndroidUtilities.cancelRunOnUIThread(this.f);
-            ConnectionsManager.getInstance(this.b).cancelRequest(this.d, false);
-            this.d = 0;
-        }
-    }
-
-    public final void c() {
-        if (this.e) {
-            long currentTimeMillis = 10000 - (System.currentTimeMillis() - g);
-            if (currentTimeMillis > 0) {
-                oa oaVar = this.f;
-                AndroidUtilities.cancelRunOnUIThread(oaVar);
-                AndroidUtilities.runOnUIThread(oaVar, currentTimeMillis);
-                return;
-            }
-            if (this.d == 0) {
-                TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = new TL_stories.TL_stories_getStoriesViews();
-                a(tL_stories_getStoriesViews.id);
-                if (!tL_stories_getStoriesViews.id.isEmpty()) {
-                    int i10 = this.b;
-                    tL_stories_getStoriesViews.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
-                    this.d = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_getStoriesViews, new m1(4, this, tL_stories_getStoriesViews));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
+                    return;
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
-            }
-            this.d = 0;
-            this.e = false;
+            case 1:
+                Bitmap bitmap = this.b;
+                try {
+                    try {
+                        bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
+                        if (bitmap.isRecycled()) {
+                            return;
+                        }
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        if (bitmap == null || bitmap.isRecycled()) {
+                            return;
+                        }
+                    }
+                    bitmap.recycle();
+                    return;
+                } catch (Throwable th2) {
+                    if (bitmap != null && !bitmap.isRecycled()) {
+                        bitmap.recycle();
+                    }
+                    throw th2;
+                }
+            case 2:
+                Bitmap bitmap2 = this.b;
+                try {
+                    try {
+                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                    }
+                    return;
+                } finally {
+                    AndroidUtilities.recycleBitmap(bitmap2);
+                }
+            case 3:
+                try {
+                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
+                    return;
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                    return;
+                }
+            case 4:
+                try {
+                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
+                    return;
+                } catch (Exception e12) {
+                    FileLog.e(e12);
+                    return;
+                }
+            default:
+                File file = this.c;
+                Bitmap bitmap3 = this.b;
+                try {
+                    FileOutputStream fileOutputStream = new FileOutputStream(file);
+                    try {
+                        bitmap3.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
+                        fileOutputStream.close();
+                        return;
+                    } finally {
+                    }
+                } catch (Exception e13) {
+                    FileLog.e(e13);
+                    return;
+                }
         }
     }
 
-    public boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
-        if (tL_stories_storyViews != null && tL_stories_storyViews.views != null) {
-            long j3 = this.c;
-            u8 u8Var = this.a;
-            TL_stories.PeerStories y3 = u8Var.y(j3);
-            if (y3 != null && !y3.stories.isEmpty()) {
-                for (int i10 = 0; i10 < tL_stories_storyViews.views.size(); i10++) {
-                    for (int i11 = 0; i11 < y3.stories.size(); i11++) {
-                        if (y3.stories.get(i11).id == ((Integer) arrayList.get(i10)).intValue()) {
-                            y3.stories.get(i11).views = tL_stories_storyViews.views.get(i10);
-                        }
-                    }
-                }
-                h9 h9Var = u8Var.k;
-                h9Var.b.getStorageQueue().postRunnable(new e9(h9Var, y3, 1));
-                return true;
-            }
-        }
-        return false;
+    public /* synthetic */ yb(File file, Bitmap bitmap) {
+        this.a = 5;
+        this.c = file;
+        this.b = bitmap;
     }
 }

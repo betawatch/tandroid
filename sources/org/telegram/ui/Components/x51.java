@@ -1,19 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class x51 extends d61 {
-    public final /* synthetic */ y51 f3;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x51(y51 y51Var, y51 y51Var2, d dVar, w51 w51Var, w51 w51Var2) {
-        super(y51Var2, dVar, w51Var, w51Var2);
-        this.f3 = y51Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final class x51 extends URLSpan {
+    public final b11 a;
+
+    public x51(String str, b11 b11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = b11Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.f3.b = -1;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        b11 b11Var = this.a;
+        if (b11Var != null) {
+            b11Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(true);
     }
 }

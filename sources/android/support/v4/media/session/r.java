@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class r extends MediaSession.Callback {
     public final /* synthetic */ s a;
@@ -33,8 +33,8 @@ public final class r extends MediaSession.Callback {
         if (i10 >= 24) {
             try {
                 str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
-            } catch (Exception e7) {
-                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e7);
+            } catch (Exception e) {
+                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e);
             }
         }
         if (TextUtils.isEmpty(str)) {
@@ -61,7 +61,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         try {
             if (str.equals("android.support.v4.media.session.command.GET_EXTRA_BINDER")) {
@@ -105,7 +105,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         try {
             boolean equals = str.equals("android.support.v4.media.session.action.PLAY_FROM_URI");
@@ -113,24 +113,24 @@ public final class r extends MediaSession.Callback {
             if (equals) {
                 Uri uri = (Uri) bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI");
                 Bundle bundle2 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                c0.a(bundle2);
+                b0.a(bundle2);
                 sVar.onPlayFromUri(uri, bundle2);
             } else if (str.equals("android.support.v4.media.session.action.PREPARE")) {
                 sVar.onPrepare();
             } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_MEDIA_ID")) {
                 String string = bundle.getString("android.support.v4.media.session.action.ARGUMENT_MEDIA_ID");
                 Bundle bundle3 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                c0.a(bundle3);
+                b0.a(bundle3);
                 sVar.onPrepareFromMediaId(string, bundle3);
             } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_SEARCH")) {
                 String string2 = bundle.getString("android.support.v4.media.session.action.ARGUMENT_QUERY");
                 Bundle bundle4 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                c0.a(bundle4);
+                b0.a(bundle4);
                 sVar.onPrepareFromSearch(string2, bundle4);
             } else if (str.equals("android.support.v4.media.session.action.PREPARE_FROM_URI")) {
                 Uri uri2 = (Uri) bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_URI");
                 Bundle bundle5 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                c0.a(bundle5);
+                b0.a(bundle5);
                 sVar.onPrepareFromUri(uri2, bundle5);
             } else if (str.equals("android.support.v4.media.session.action.SET_CAPTIONING_ENABLED")) {
                 sVar.onSetCaptioningEnabled(bundle.getBoolean("android.support.v4.media.session.action.ARGUMENT_CAPTIONING_ENABLED"));
@@ -141,7 +141,7 @@ public final class r extends MediaSession.Callback {
             } else if (str.equals("android.support.v4.media.session.action.SET_RATING")) {
                 RatingCompat ratingCompat = (RatingCompat) bundle.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING");
                 Bundle bundle6 = bundle.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS");
-                c0.a(bundle6);
+                b0.a(bundle6);
                 sVar.onSetRating(ratingCompat, bundle6);
             } else if (str.equals("android.support.v4.media.session.action.SET_PLAYBACK_SPEED")) {
                 sVar.onSetPlaybackSpeed(bundle.getFloat("android.support.v4.media.session.action.ARGUMENT_PLAYBACK_SPEED", 1.0f));
@@ -205,7 +205,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPlayFromMediaId(str, bundle);
         a2.c(null);
@@ -217,7 +217,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPlayFromSearch(str, bundle);
         a2.c(null);
@@ -229,7 +229,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPlayFromUri(uri, bundle);
         a2.c(null);
@@ -252,7 +252,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPrepareFromMediaId(str, bundle);
         a2.c(null);
@@ -264,7 +264,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPrepareFromSearch(str, bundle);
         a2.c(null);
@@ -276,7 +276,7 @@ public final class r extends MediaSession.Callback {
         if (a2 == null) {
             return;
         }
-        c0.a(bundle);
+        b0.a(bundle);
         b(a2);
         this.a.onPrepareFromUri(uri, bundle);
         a2.c(null);
@@ -325,8 +325,8 @@ public final class r extends MediaSession.Callback {
         b(a2);
         RatingCompat ratingCompat = null;
         if (rating != null) {
-            int b10 = android.support.v4.media.c.b(rating);
-            if (!android.support.v4.media.c.e(rating)) {
+            int b10 = android.support.v4.media.d.b(rating);
+            if (!android.support.v4.media.d.e(rating)) {
                 switch (b10) {
                     case 1:
                     case 2:
@@ -340,15 +340,15 @@ public final class r extends MediaSession.Callback {
             } else {
                 switch (b10) {
                     case 1:
-                        ratingCompat = new RatingCompat(1, android.support.v4.media.c.d(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(1, android.support.v4.media.d.d(rating) ? 1.0f : 0.0f);
                         break;
                     case 2:
-                        ratingCompat = new RatingCompat(2, android.support.v4.media.c.f(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(2, android.support.v4.media.d.f(rating) ? 1.0f : 0.0f);
                         break;
                     case 3:
                     case 4:
                     case 5:
-                        float c10 = android.support.v4.media.c.c(rating);
+                        float c10 = android.support.v4.media.d.c(rating);
                         if (b10 == 3) {
                             f7 = 3.0f;
                         } else if (b10 == 4) {
@@ -368,7 +368,7 @@ public final class r extends MediaSession.Callback {
                         }
                         break;
                     case 6:
-                        float a10 = android.support.v4.media.c.a(rating);
+                        float a10 = android.support.v4.media.d.a(rating);
                         if (a10 >= 0.0f && a10 <= 100.0f) {
                             ratingCompat = new RatingCompat(6, a10);
                             break;

@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b6 implements j6 {
     public static final int[] h = new int[0];
@@ -1095,7 +1095,7 @@ public final class b6 implements j6 {
 
     @Override // com.google.android.gms.internal.cast.j6
     public final boolean c(h5 h5Var, h5 h5Var2) {
-        boolean e7;
+        boolean e;
         int i10 = 0;
         while (true) {
             int[] iArr = this.a;
@@ -1261,10 +1261,10 @@ public final class b6 implements j6 {
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     case 48:
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                        e7 = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
+                        e = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        e7 = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
+                        e = k6.e(u6.h(h5Var, j3), u6.h(h5Var2, j3));
                         break;
                     case 51:
                     case 52:
@@ -1293,7 +1293,7 @@ public final class b6 implements j6 {
                     default:
                         i10 += 3;
                 }
-                if (e7) {
+                if (e) {
                     i10 += 3;
                 }
             } else {
@@ -1669,7 +1669,7 @@ public final class b6 implements j6 {
                     break;
                 case 9:
                     if (b6Var.v(obj, i12, i13, i14, i10)) {
-                        w5Var.b(i15, unsafe.getObject(obj, j3), b6Var.o(i12));
+                        w5Var.e(i15, unsafe.getObject(obj, j3), b6Var.o(i12));
                     } else {
                         continue;
                     }
@@ -1815,7 +1815,7 @@ public final class b6 implements j6 {
                         continue;
                     } else if (!list2.isEmpty()) {
                         for (int i26 = 0; i26 < list2.size(); i26++) {
-                            w5Var.b(i25, list2.get(i26), o9);
+                            w5Var.e(i25, list2.get(i26), o9);
                         }
                     }
                     i12 += 3;
@@ -2045,7 +2045,7 @@ public final class b6 implements j6 {
                     i11 = 1048575;
                 case 60:
                     if (b6Var.i(i15, i12, obj)) {
-                        w5Var.b(i15, unsafe.getObject(obj, j3), b6Var.o(i12));
+                        w5Var.e(i15, unsafe.getObject(obj, j3), b6Var.o(i12));
                     } else {
                         continue;
                     }

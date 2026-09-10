@@ -19,6 +19,7 @@ import android.system.OsConstants;
 import android.util.Pair;
 import android.util.SparseArray;
 import b2.b1;
+import b2.f0;
 import b2.h1;
 import b2.j1;
 import b2.k1;
@@ -29,16 +30,15 @@ import b2.r;
 import b2.r1;
 import b2.s;
 import b2.s0;
-import b2.s1;
 import b2.u0;
 import b2.x1;
 import e2.d0;
 import e2.u;
-import e9.g0;
-import fi.j4;
+import fg.s1;
 import g2.v;
 import g2.w;
 import g2.x;
+import i2.n;
 import j$.util.Objects;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -49,12 +49,12 @@ import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.Executor;
 import k2.m;
-import r2.n;
+import n4.y;
 import r2.p;
-import u2.b0;
-import u2.f0;
+import u2.c0;
+import u2.g0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i implements b {
     public u0 E;
@@ -72,7 +72,7 @@ public final class i implements b {
     public int Q;
     public boolean R;
     public final Context a;
-    public final h c;
+    public final g c;
     public final PlaybackSession d;
     public String s;
     public PlaybackMetrics.Builder v;
@@ -89,9 +89,9 @@ public final class i implements b {
     public i(Context context, PlaybackSession playbackSession) {
         this.a = context.getApplicationContext();
         this.d = playbackSession;
-        h hVar = new h();
-        this.c = hVar;
-        hVar.d = this;
+        g gVar = new g();
+        this.c = gVar;
+        gVar.d = this;
     }
 
     public static i o(Context context) {
@@ -103,88 +103,133 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void a(i2.h hVar) {
-        this.O += hVar.g;
-        this.P += hVar.e;
+    public final void a(i2.g gVar) {
+        this.O += gVar.g;
+        this.P += gVar.e;
+    }
+
+    @Override // j2.b
+    public final void b(c0 c0Var) {
+        this.M = c0Var.a;
+    }
+
+    @Override // j2.b
+    public final void c(x1 x1Var) {
+        a5.a aVar = this.F;
+        if (aVar != null) {
+            s sVar = (s) aVar.d;
+            if (sVar.z == -1) {
+                r a2 = sVar.a();
+                a2.x = x1Var.a;
+                a2.y = x1Var.b;
+                this.F = new a5.a(new s(a2), aVar.b, (String) aVar.c, 9);
+            }
+        }
+    }
+
+    @Override // j2.b
+    public final void d(a aVar, c0 c0Var) {
+        g0 g0Var = aVar.d;
+        if (g0Var == null) {
+            return;
+        }
+        s sVar = c0Var.c;
+        sVar.getClass();
+        int i10 = c0Var.d;
+        k1 k1Var = aVar.b;
+        g0Var.getClass();
+        a5.a aVar2 = new a5.a(sVar, i10, this.c.d(k1Var, g0Var), 9);
+        int i11 = c0Var.b;
+        if (i11 != 0) {
+            if (i11 == 1) {
+                this.G = aVar2;
+                return;
+            } else if (i11 != 2) {
+                if (i11 != 3) {
+                    return;
+                }
+                this.H = aVar2;
+                return;
+            }
+        }
+        this.F = aVar2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x041c  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x041e  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0434  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0436  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0446  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0475  */
-    /* JADX WARN: Removed duplicated region for block: B:158:0x049f  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x04ce  */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x04e7  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0511  */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x0519  */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x052d  */
-    /* JADX WARN: Removed duplicated region for block: B:184:0x0589  */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x05b7  */
-    /* JADX WARN: Removed duplicated region for block: B:189:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x0530  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x051c  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x04d0  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x04d2  */
-    /* JADX WARN: Removed duplicated region for block: B:229:0x04d5  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x04d7  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x04d9  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x04db  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x04dd  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x04df  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x04e2  */
-    /* JADX WARN: Type inference failed for: r11v1 */
-    /* JADX WARN: Type inference failed for: r11v2, types: [a5.a] */
-    /* JADX WARN: Type inference failed for: r11v5 */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x041f  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0421  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0439  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0449  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x04a2  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x04d1  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x04ea  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0514  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x051c  */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x0530  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x0586  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x05b4  */
+    /* JADX WARN: Removed duplicated region for block: B:190:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:191:0x0533  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x051f  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x04d3  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x04d5  */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x04d8  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x04da  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x04dc  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x04de  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x04e0  */
+    /* JADX WARN: Removed duplicated region for block: B:234:0x04e2  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x04e5  */
+    /* JADX WARN: Type inference failed for: r11v10, types: [a5.a] */
+    /* JADX WARN: Type inference failed for: r11v13 */
+    /* JADX WARN: Type inference failed for: r11v9 */
     @Override // j2.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(b1 b1Var, pf.b bVar) {
-        int i10;
+    public final void e(b1 b1Var, y yVar) {
         boolean z10;
-        int i11;
+        int i10;
         q0 q0Var;
-        q0 q0Var2;
-        q0 q0Var3;
+        int i11;
         int i12;
-        int i13;
         ?? r11;
+        int i13;
         int i14;
         boolean z11;
         s sVar;
         o oVar;
         int i15;
-        if (((q) bVar.b).a.size() == 0) {
+        if (((q) yVar.b).a.size() == 0) {
             return;
         }
-        for (int i16 = 0; i16 < ((q) bVar.b).a.size(); i16++) {
-            int a2 = ((q) bVar.b).a(i16);
-            a aVar = (a) ((SparseArray) bVar.c).get(a2);
+        for (int i16 = 0; i16 < ((q) yVar.b).a.size(); i16++) {
+            int a2 = ((q) yVar.b).a(i16);
+            a aVar = (a) ((SparseArray) yVar.c).get(a2);
             aVar.getClass();
             if (a2 == 0) {
-                h hVar = this.c;
-                synchronized (hVar) {
+                g gVar = this.c;
+                synchronized (gVar) {
                     try {
-                        hVar.d.getClass();
-                        k1 k1Var = hVar.e;
-                        hVar.e = aVar.b;
-                        Iterator it = hVar.c.values().iterator();
+                        gVar.d.getClass();
+                        k1 k1Var = gVar.e;
+                        gVar.e = aVar.b;
+                        Iterator it = gVar.c.values().iterator();
                         while (it.hasNext()) {
-                            g gVar = (g) it.next();
-                            if (gVar.b(k1Var, hVar.e) && !gVar.a(aVar)) {
+                            f fVar = (f) it.next();
+                            if (fVar.b(k1Var, gVar.e) && !fVar.a(aVar)) {
                             }
                             it.remove();
-                            if (gVar.e) {
-                                if (gVar.a.equals(hVar.f)) {
-                                    hVar.a(gVar);
+                            if (fVar.e) {
+                                if (fVar.a.equals(gVar.f)) {
+                                    gVar.a(fVar);
                                 }
-                                hVar.d.t(aVar, gVar.a);
+                                gVar.d.t(aVar, fVar.a);
                             }
                         }
-                        hVar.e(aVar);
+                        gVar.e(aVar);
                     } catch (Throwable th2) {
                         throw th2;
                     }
@@ -196,15 +241,15 @@ public final class i implements b {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bVar.z(0)) {
-            a aVar2 = (a) ((SparseArray) bVar.c).get(0);
+        if (yVar.g(0)) {
+            a aVar2 = (a) ((SparseArray) yVar.c).get(0);
             aVar2.getClass();
             if (this.v != null) {
                 r(aVar2.b, aVar2.d);
             }
         }
-        if (bVar.z(2) && this.v != null) {
-            g0 listIterator = b1Var.g0().a.listIterator(0);
+        if (yVar.g(2) && this.v != null) {
+            e9.g0 listIterator = b1Var.g0().a.listIterator(0);
             loop2: while (true) {
                 if (!listIterator.hasNext()) {
                     oVar = null;
@@ -244,89 +289,31 @@ public final class i implements b {
                 builder.setDrmType(i15);
             }
         }
-        if (bVar.z(1011)) {
+        if (yVar.g(1011)) {
             this.Q++;
         }
         u0 u0Var = this.E;
         if (u0Var == null) {
-            i12 = 1;
-            i11 = 13;
+            i11 = 1;
         } else {
             int i19 = u0Var.a;
             Context context = this.a;
             boolean z12 = this.M == 4;
-            int i20 = 21;
             if (i19 == 1001) {
                 q0Var = new q0(20, 0);
             } else {
-                if (u0Var instanceof i2.o) {
-                    i2.o oVar2 = (i2.o) u0Var;
-                    z10 = oVar2.s == 1;
-                    i10 = oVar2.y;
+                if (u0Var instanceof n) {
+                    n nVar = (n) u0Var;
+                    z10 = nVar.s == 1;
+                    i10 = nVar.y;
                 } else {
-                    i10 = 0;
                     z10 = false;
+                    i10 = 0;
                 }
                 Throwable cause = u0Var.getCause();
                 cause.getClass();
-                int i21 = 27;
-                if (cause instanceof IOException) {
-                    if (cause instanceof x) {
-                        q0Var3 = new q0(5, ((x) cause).d);
-                    } else {
-                        if ((cause instanceof w) || (cause instanceof s0)) {
-                            q0Var = new q0(z12 ? 10 : 11, 0);
-                        } else {
-                            boolean z13 = cause instanceof v;
-                            if (z13 || (cause instanceof g2.d0)) {
-                                if (u.a(context).b() == 1) {
-                                    q0Var = new q0(3, 0);
-                                } else {
-                                    Throwable cause2 = cause.getCause();
-                                    q0Var = cause2 instanceof UnknownHostException ? new q0(6, 0) : cause2 instanceof SocketTimeoutException ? new q0(7, 0) : (z13 && ((v) cause).c == 1) ? new q0(4, 0) : new q0(8, 0);
-                                }
-                            } else if (i19 == 1002) {
-                                q0Var = new q0(21, 0);
-                            } else if (cause instanceof n2.f) {
-                                Throwable cause3 = cause.getCause();
-                                cause3.getClass();
-                                if (cause3 instanceof MediaDrm.MediaDrmStateException) {
-                                    int y3 = d0.y(((MediaDrm.MediaDrmStateException) cause3).getDiagnosticInfo());
-                                    switch (d0.x(y3)) {
-                                        case 6002:
-                                            i21 = 24;
-                                            break;
-                                        case 6003:
-                                            i21 = 28;
-                                            break;
-                                        case 6004:
-                                            i21 = 25;
-                                            break;
-                                        case 6005:
-                                            i21 = 26;
-                                            break;
-                                    }
-                                    q0Var3 = new q0(i21, y3);
-                                } else {
-                                    q0Var = e.g(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.w ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
-                                }
-                            } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
-                                Throwable cause4 = cause.getCause();
-                                cause4.getClass();
-                                Throwable cause5 = cause4.getCause();
-                                q0Var = ((cause5 instanceof ErrnoException) && ((ErrnoException) cause5).errno == OsConstants.EACCES) ? new q0(32, 0) : new q0(31, 0);
-                            } else {
-                                q0Var = new q0(9, 0);
-                            }
-                        }
-                        i11 = 13;
-                        this.b.execute(new j4(i20, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
-                        i12 = 1;
-                        this.R = true;
-                        this.E = null;
-                    }
-                    q0Var = q0Var3;
-                } else {
+                int i20 = 27;
+                if (!(cause instanceof IOException)) {
                     if (z10 && (i10 == 0 || i10 == 1)) {
                         q0Var = new q0(35, 0);
                     } else if (z10 && i10 == 3) {
@@ -335,68 +322,107 @@ public final class i implements b {
                         q0Var = new q0(23, 0);
                     } else {
                         if (cause instanceof p) {
-                            i11 = 13;
-                            q0Var2 = new q0(13, d0.y(((p) cause).d));
-                        } else {
-                            i11 = 13;
-                            if (cause instanceof n) {
-                                q0Var2 = new q0(14, ((n) cause).a);
-                            } else {
-                                if (cause instanceof OutOfMemoryError) {
-                                    q0Var = new q0(14, 0);
-                                } else if (cause instanceof m) {
-                                    q0Var2 = new q0(17, ((m) cause).a);
-                                } else if (cause instanceof k2.o) {
-                                    q0Var2 = new q0(18, ((k2.o) cause).a);
-                                } else if (cause instanceof MediaCodec.CryptoException) {
-                                    int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
-                                    switch (d0.x(errorCode)) {
-                                        case 6002:
-                                            i21 = 24;
-                                            break;
-                                        case 6003:
-                                            i21 = 28;
-                                            break;
-                                        case 6004:
-                                            i21 = 25;
-                                            break;
-                                        case 6005:
-                                            i21 = 26;
-                                            break;
-                                    }
-                                    q0Var2 = new q0(i21, errorCode);
-                                } else {
-                                    q0Var = new q0(22, 0);
-                                }
-                                this.b.execute(new j4(i20, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
-                                i12 = 1;
-                                this.R = true;
-                                this.E = null;
+                            q0Var = new q0(13, d0.y(((p) cause).d));
+                        } else if (cause instanceof r2.n) {
+                            q0Var = new q0(14, ((r2.n) cause).a);
+                        } else if (cause instanceof OutOfMemoryError) {
+                            q0Var = new q0(14, 0);
+                        } else if (cause instanceof m) {
+                            q0Var = new q0(17, ((m) cause).a);
+                        } else if (cause instanceof k2.o) {
+                            q0Var = new q0(18, ((k2.o) cause).a);
+                        } else if (cause instanceof MediaCodec.CryptoException) {
+                            int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
+                            switch (d0.x(errorCode)) {
+                                case 6002:
+                                    i20 = 24;
+                                    break;
+                                case 6003:
+                                    i20 = 28;
+                                    break;
+                                case 6004:
+                                    i20 = 25;
+                                    break;
+                                case 6005:
+                                    i20 = 26;
+                                    break;
                             }
+                            q0Var = new q0(i20, errorCode);
+                        } else {
+                            q0Var = new q0(22, 0);
                         }
-                        q0Var = q0Var2;
-                        this.b.execute(new j4(i20, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
-                        i12 = 1;
+                        this.b.execute(new s1(23, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
+                        i11 = 1;
                         this.R = true;
                         this.E = null;
                     }
-                    i11 = 13;
-                    this.b.execute(new j4(i20, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
-                    i12 = 1;
+                    this.b.execute(new s1(23, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
+                    i11 = 1;
+                    this.R = true;
+                    this.E = null;
+                } else if (cause instanceof x) {
+                    q0Var = new q0(5, ((x) cause).d);
+                } else {
+                    if ((cause instanceof w) || (cause instanceof s0)) {
+                        q0Var = new q0(z12 ? 10 : 11, 0);
+                    } else {
+                        boolean z13 = cause instanceof v;
+                        if (z13 || (cause instanceof g2.d0)) {
+                            if (u.a(context).b() == 1) {
+                                q0Var = new q0(3, 0);
+                            } else {
+                                Throwable cause2 = cause.getCause();
+                                q0Var = cause2 instanceof UnknownHostException ? new q0(6, 0) : cause2 instanceof SocketTimeoutException ? new q0(7, 0) : (z13 && ((v) cause).c == 1) ? new q0(4, 0) : new q0(8, 0);
+                            }
+                        } else if (i19 == 1002) {
+                            q0Var = new q0(21, 0);
+                        } else if (cause instanceof n2.f) {
+                            Throwable cause3 = cause.getCause();
+                            cause3.getClass();
+                            if (cause3 instanceof MediaDrm.MediaDrmStateException) {
+                                int y3 = d0.y(((MediaDrm.MediaDrmStateException) cause3).getDiagnosticInfo());
+                                switch (d0.x(y3)) {
+                                    case 6002:
+                                        i20 = 24;
+                                        break;
+                                    case 6003:
+                                        i20 = 28;
+                                        break;
+                                    case 6004:
+                                        i20 = 25;
+                                        break;
+                                    case 6005:
+                                        i20 = 26;
+                                        break;
+                                }
+                                q0Var = new q0(i20, y3);
+                            } else {
+                                q0Var = h.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.x ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
+                            }
+                        } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
+                            Throwable cause4 = cause.getCause();
+                            cause4.getClass();
+                            Throwable cause5 = cause4.getCause();
+                            q0Var = ((cause5 instanceof ErrnoException) && ((ErrnoException) cause5).errno == OsConstants.EACCES) ? new q0(32, 0) : new q0(31, 0);
+                        } else {
+                            q0Var = new q0(9, 0);
+                        }
+                    }
+                    this.b.execute(new s1(23, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
+                    i11 = 1;
                     this.R = true;
                     this.E = null;
                 }
             }
-            i11 = 13;
-            this.b.execute(new j4(i20, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
-            i12 = 1;
+            this.b.execute(new s1(23, this, new PlaybackErrorEvent.Builder().setTimeSinceCreatedMillis(elapsedRealtime - this.e).setErrorCode(q0Var.a).setSubErrorCode(q0Var.b).setException(u0Var).build()));
+            i11 = 1;
             this.R = true;
             this.E = null;
         }
-        if (bVar.z(2)) {
-            s1 g02 = b1Var.g0();
+        if (yVar.g(2)) {
+            b2.s1 g02 = b1Var.g0();
             boolean a10 = g02.a(2);
-            boolean a11 = g02.a(i12);
+            boolean a11 = g02.a(i11);
             boolean a12 = g02.a(3);
             if (a10 || a11 || a12) {
                 if (a10) {
@@ -404,30 +430,30 @@ public final class i implements b {
                 } else {
                     sVar = null;
                     if (!Objects.equals(this.I, null)) {
-                        int i22 = this.I == null ? 1 : 0;
+                        int i21 = this.I == null ? 1 : 0;
                         this.I = null;
-                        i13 = 10;
-                        u(1, elapsedRealtime, null, i22);
+                        i12 = 10;
+                        u(1, elapsedRealtime, null, i21);
                         if (!a11 && !Objects.equals(this.J, sVar)) {
-                            int i23 = this.J != null ? 1 : 0;
+                            int i22 = this.J != null ? 1 : 0;
                             this.J = sVar;
-                            u(0, elapsedRealtime, sVar, i23);
+                            u(0, elapsedRealtime, sVar, i22);
                         }
                         if (!a12 && !Objects.equals(this.K, sVar)) {
-                            int i24 = this.K != null ? 1 : 0;
+                            int i23 = this.K != null ? 1 : 0;
                             this.K = sVar;
-                            u(2, elapsedRealtime, sVar, i24);
+                            u(2, elapsedRealtime, sVar, i23);
                         }
                         r11 = sVar;
                         if (n(this.F)) {
                             a5.a aVar3 = this.F;
                             s sVar2 = (s) aVar3.d;
                             if (sVar2.z != -1) {
-                                int i25 = aVar3.b;
+                                int i24 = aVar3.b;
                                 if (!Objects.equals(this.I, sVar2)) {
-                                    int i26 = (this.I == null && i25 == 0) ? 1 : i25;
+                                    int i25 = (this.I == null && i24 == 0) ? 1 : i24;
                                     this.I = sVar2;
-                                    u(1, elapsedRealtime, sVar2, i26);
+                                    u(1, elapsedRealtime, sVar2, i25);
                                 }
                                 this.F = r11;
                             }
@@ -435,130 +461,130 @@ public final class i implements b {
                         if (n(this.G)) {
                             a5.a aVar4 = this.G;
                             s sVar3 = (s) aVar4.d;
-                            int i27 = aVar4.b;
+                            int i26 = aVar4.b;
                             if (!Objects.equals(this.J, sVar3)) {
-                                int i28 = (this.J == null && i27 == 0) ? 1 : i27;
+                                int i27 = (this.J == null && i26 == 0) ? 1 : i26;
                                 this.J = sVar3;
-                                u(0, elapsedRealtime, sVar3, i28);
+                                u(0, elapsedRealtime, sVar3, i27);
                             }
                             this.G = r11;
                         }
                         if (n(this.H)) {
                             a5.a aVar5 = this.H;
                             s sVar4 = (s) aVar5.d;
-                            int i29 = aVar5.b;
+                            int i28 = aVar5.b;
                             if (!Objects.equals(this.K, sVar4)) {
-                                int i30 = (this.K == null && i29 == 0) ? 1 : i29;
+                                int i29 = (this.K == null && i28 == 0) ? 1 : i28;
                                 this.K = sVar4;
-                                u(2, elapsedRealtime, sVar4, i30);
+                                u(2, elapsedRealtime, sVar4, i29);
                             }
                             this.H = r11;
                         }
                         switch (u.a(this.a).b()) {
                             case 0:
-                                i14 = 0;
+                                i13 = 0;
                                 break;
                             case 1:
-                                i14 = 9;
+                                i13 = 9;
                                 break;
                             case 2:
-                                i14 = 2;
+                                i13 = 2;
                                 break;
                             case 3:
-                                i14 = 4;
+                                i13 = 4;
                                 break;
                             case 4:
-                                i14 = 5;
+                                i13 = 5;
                                 break;
                             case 5:
-                                i14 = 6;
+                                i13 = 6;
                                 break;
                             case 6:
                             case 8:
                             default:
-                                i14 = 1;
+                                i13 = 1;
                                 break;
                             case 7:
-                                i14 = 3;
+                                i13 = 3;
                                 break;
                             case 9:
-                                i14 = 8;
+                                i13 = 8;
                                 break;
                             case 10:
-                                i14 = 7;
+                                i13 = 7;
                                 break;
                         }
-                        if (i14 != this.y) {
-                            this.y = i14;
-                            this.b.execute(new j4(20, this, new NetworkEvent.Builder().setNetworkType(i14).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
+                        if (i13 != this.y) {
+                            this.y = i13;
+                            this.b.execute(new s1(22, this, new NetworkEvent.Builder().setNetworkType(i13).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
                         }
                         if (b1Var.d() != 2) {
                             this.L = false;
                         }
                         if (b1Var.W() == null) {
                             this.N = false;
-                        } else if (bVar.z(i13)) {
+                        } else if (yVar.g(i12)) {
                             this.N = true;
                         }
                         int d = b1Var.d();
                         if (this.L) {
-                            z11 = true;
-                            i11 = 5;
+                            i14 = 5;
+                        } else if (this.N) {
+                            i14 = 13;
+                        } else if (d == 4) {
+                            i14 = 11;
                         } else {
-                            if (!this.N) {
-                                i11 = 4;
-                                if (d == 4) {
+                            i14 = 2;
+                            if (d == 2) {
+                                int i30 = this.x;
+                                if (i30 != 0 && i30 != 2 && i30 != 12) {
+                                    i14 = !b1Var.u() ? 7 : b1Var.u0() != 0 ? 10 : 6;
+                                }
+                            } else {
+                                i14 = 3;
+                                if (d != 3) {
                                     z11 = true;
-                                    i11 = 11;
-                                } else if (d == 2) {
-                                    int i31 = this.x;
-                                    if (i31 == 0 || i31 == 2 || i31 == 12) {
-                                        z11 = true;
-                                        i11 = 2;
-                                    } else if (b1Var.u()) {
-                                        z11 = true;
-                                        i11 = b1Var.u0() != 0 ? 10 : 6;
-                                    } else {
-                                        z11 = true;
-                                        i11 = 7;
+                                    i14 = (d != 1 || this.x == 0) ? this.x : 12;
+                                    if (this.x != i14) {
+                                        this.x = i14;
+                                        this.R = z11;
+                                        this.b.execute(new s1(25, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
                                     }
-                                } else if (d != 3) {
-                                    z11 = true;
-                                    i11 = (d != 1 || this.x == 0) ? this.x : 12;
-                                } else if (b1Var.u()) {
-                                    z11 = true;
-                                    i11 = b1Var.u0() != 0 ? 9 : 3;
+                                    if (yVar.g(1028)) {
+                                        return;
+                                    }
+                                    g gVar2 = this.c;
+                                    a aVar6 = (a) ((SparseArray) yVar.c).get(1028);
+                                    aVar6.getClass();
+                                    gVar2.b(aVar6);
+                                    return;
+                                }
+                                if (!b1Var.u()) {
+                                    i14 = 4;
+                                } else if (b1Var.u0() != 0) {
+                                    i14 = 9;
                                 }
                             }
-                            z11 = true;
                         }
-                        if (this.x != i11) {
-                            this.x = i11;
-                            this.R = z11;
-                            this.b.execute(new j4(23, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
+                        z11 = true;
+                        if (this.x != i14) {
                         }
-                        if (bVar.z(1028)) {
-                            h hVar2 = this.c;
-                            a aVar6 = (a) ((SparseArray) bVar.c).get(1028);
-                            aVar6.getClass();
-                            hVar2.b(aVar6);
-                            return;
+                        if (yVar.g(1028)) {
                         }
-                        return;
                     }
                 }
-                i13 = 10;
+                i12 = 10;
                 if (!a11) {
                     if (this.J != null) {
                     }
                     this.J = sVar;
-                    u(0, elapsedRealtime, sVar, i23);
+                    u(0, elapsedRealtime, sVar, i22);
                 }
                 if (!a12) {
                     if (this.K != null) {
                     }
                     this.K = sVar;
-                    u(2, elapsedRealtime, sVar, i24);
+                    u(2, elapsedRealtime, sVar, i23);
                 }
                 r11 = sVar;
                 if (n(this.F)) {
@@ -569,7 +595,7 @@ public final class i implements b {
                 }
                 switch (u.a(this.a).b()) {
                 }
-                if (i14 != this.y) {
+                if (i13 != this.y) {
                 }
                 if (b1Var.d() != 2) {
                 }
@@ -578,13 +604,14 @@ public final class i implements b {
                 int d10 = b1Var.d();
                 if (this.L) {
                 }
-                if (this.x != i11) {
+                z11 = true;
+                if (this.x != i14) {
                 }
-                if (bVar.z(1028)) {
+                if (yVar.g(1028)) {
                 }
             }
         }
-        i13 = 10;
+        i12 = 10;
         r11 = 0;
         if (n(this.F)) {
         }
@@ -594,7 +621,7 @@ public final class i implements b {
         }
         switch (u.a(this.a).b()) {
         }
-        if (i14 != this.y) {
+        if (i13 != this.y) {
         }
         if (b1Var.d() != 2) {
         }
@@ -603,64 +630,18 @@ public final class i implements b {
         int d102 = b1Var.d();
         if (this.L) {
         }
-        if (this.x != i11) {
+        z11 = true;
+        if (this.x != i14) {
         }
-        if (bVar.z(1028)) {
+        if (yVar.g(1028)) {
         }
-    }
-
-    @Override // j2.b
-    public final void c(b0 b0Var) {
-        this.M = b0Var.a;
-    }
-
-    @Override // j2.b
-    public final void d(x1 x1Var) {
-        a5.a aVar = this.F;
-        if (aVar != null) {
-            s sVar = (s) aVar.d;
-            if (sVar.z == -1) {
-                r a2 = sVar.a();
-                a2.x = x1Var.a;
-                a2.y = x1Var.b;
-                this.F = new a5.a(new s(a2), aVar.b, (String) aVar.c, 9);
-            }
-        }
-    }
-
-    @Override // j2.b
-    public final void e(a aVar, b0 b0Var) {
-        f0 f0Var = aVar.d;
-        if (f0Var == null) {
-            return;
-        }
-        s sVar = b0Var.c;
-        sVar.getClass();
-        int i10 = b0Var.d;
-        k1 k1Var = aVar.b;
-        f0Var.getClass();
-        a5.a aVar2 = new a5.a(sVar, i10, this.c.d(k1Var, f0Var), 9);
-        int i11 = b0Var.b;
-        if (i11 != 0) {
-            if (i11 == 1) {
-                this.G = aVar2;
-                return;
-            } else if (i11 != 2) {
-                if (i11 != 3) {
-                    return;
-                }
-                this.H = aVar2;
-                return;
-            }
-        }
-        this.F = aVar2;
     }
 
     @Override // j2.b
     public final void f(a aVar, int i10, long j3) {
-        f0 f0Var = aVar.d;
-        if (f0Var != null) {
-            String d = this.c.d(aVar.b, f0Var);
+        g0 g0Var = aVar.d;
+        if (g0Var != null) {
+            String d = this.c.d(aVar.b, g0Var);
             HashMap hashMap = this.r;
             Long l4 = (Long) hashMap.get(d);
             HashMap hashMap2 = this.n;
@@ -689,9 +670,9 @@ public final class i implements b {
             return false;
         }
         String str2 = (String) aVar.c;
-        h hVar = this.c;
-        synchronized (hVar) {
-            str = hVar.f;
+        g gVar = this.c;
+        synchronized (gVar) {
+            str = gVar.f;
         }
         return str2.equals(str);
     }
@@ -707,7 +688,7 @@ public final class i implements b {
             Long l10 = (Long) this.r.get(this.s);
             this.v.setNetworkBytesRead(l10 == null ? 0L : l10.longValue());
             this.v.setStreamSource((l10 == null || l10.longValue() <= 0) ? 0 : 1);
-            this.b.execute(new j4(22, this, this.v.build()));
+            this.b.execute(new s1(24, this, this.v.build()));
         }
         this.v = null;
         this.s = null;
@@ -724,10 +705,10 @@ public final class i implements b {
         return this.d.getSessionId();
     }
 
-    public final void r(k1 k1Var, f0 f0Var) {
+    public final void r(k1 k1Var, g0 g0Var) {
         int b10;
         PlaybackMetrics.Builder builder = this.v;
-        if (f0Var == null || (b10 = k1Var.b(f0Var.a)) == -1) {
+        if (g0Var == null || (b10 = k1Var.b(g0Var.a)) == -1) {
             return;
         }
         h1 h1Var = this.h;
@@ -736,9 +717,9 @@ public final class i implements b {
         int i11 = h1Var.c;
         j1 j1Var = this.f;
         k1Var.n(i11, j1Var);
-        b2.f0 f0Var2 = j1Var.c.b;
-        if (f0Var2 != null) {
-            int I = d0.I(f0Var2.a, f0Var2.b);
+        f0 f0Var = j1Var.c.b;
+        if (f0Var != null) {
+            int I = d0.I(f0Var.a, f0Var.b);
             i10 = I != 0 ? I != 1 ? I != 2 ? 1 : 4 : 5 : 3;
         }
         builder.setStreamType(i10);
@@ -750,18 +731,18 @@ public final class i implements b {
     }
 
     public final void s(a aVar, String str) {
-        f0 f0Var = aVar.d;
-        if (f0Var == null || !f0Var.b()) {
+        g0 g0Var = aVar.d;
+        if (g0Var == null || !g0Var.b()) {
             p();
             this.s = str;
             this.v = new PlaybackMetrics.Builder().setPlayerName("AndroidXMedia3").setPlayerVersion("1.8.1");
-            r(aVar.b, f0Var);
+            r(aVar.b, g0Var);
         }
     }
 
     public final void t(a aVar, String str) {
-        f0 f0Var = aVar.d;
-        if ((f0Var == null || !f0Var.b()) && str.equals(this.s)) {
+        g0 g0Var = aVar.d;
+        if ((g0Var == null || !g0Var.b()) && str.equals(this.s)) {
             p();
         }
         this.n.remove(str);
@@ -833,7 +814,7 @@ public final class i implements b {
             timeSinceCreatedMillis.setTrackState(0);
         }
         this.R = true;
-        this.b.execute(new j4(19, this, timeSinceCreatedMillis.build()));
+        this.b.execute(new s1(21, this, timeSinceCreatedMillis.build()));
     }
 
     @Override // j2.b

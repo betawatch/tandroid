@@ -8,6 +8,7 @@ import android.hardware.SensorManager;
 import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
+import bi.u6;
 import com.google.android.gms.internal.vision.e2;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
@@ -15,12 +16,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import n4.y;
 import y9.o0;
 import y9.p0;
 import y9.u0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p {
     public static final HashMap f;
@@ -28,25 +28,25 @@ public final class p {
     public final Context a;
     public final u b;
     public final a c;
-    public final y d;
+    public final of.b d;
     public final da.b e;
 
     static {
         HashMap hashMap = new HashMap();
         f = hashMap;
-        e2.o(5, hashMap, "armeabi", 6, "armeabi-v7a");
-        e2.o(9, hashMap, "arm64-v8a", 0, "x86");
+        e2.n(5, hashMap, "armeabi", 6, "armeabi-v7a");
+        e2.n(9, hashMap, "arm64-v8a", 0, "x86");
         hashMap.put("x86_64", 1);
         Locale locale = Locale.US;
         g = "Crashlytics Android SDK/18.6.0";
     }
 
-    public p(Context context, u uVar, a aVar, y yVar, da.b bVar) {
+    public p(Context context, u uVar, a aVar, of.b bVar, da.b bVar2) {
         this.a = context;
         this.b = uVar;
         this.c = aVar;
-        this.d = yVar;
-        this.e = bVar;
+        this.d = bVar;
+        this.e = bVar2;
     }
 
     public static p0 c(com.google.firebase.messaging.s sVar, int i10) {
@@ -83,8 +83,8 @@ public final class p {
     public static List d(StackTraceElement[] stackTraceElementArr, int i10) {
         ArrayList arrayList = new ArrayList();
         for (StackTraceElement stackTraceElement : stackTraceElementArr) {
-            cf.c cVar = new cf.c();
-            cVar.e = Integer.valueOf(i10);
+            u6 u6Var = new u6();
+            u6Var.e = Integer.valueOf(i10);
             long j3 = 0;
             long max = stackTraceElement.isNativeMethod() ? Math.max(stackTraceElement.getLineNumber(), 0L) : 0L;
             String str = stackTraceElement.getClassName() + "." + stackTraceElement.getMethodName();
@@ -92,14 +92,14 @@ public final class p {
             if (!stackTraceElement.isNativeMethod() && stackTraceElement.getLineNumber() > 0) {
                 j3 = stackTraceElement.getLineNumber();
             }
-            cVar.a = Long.valueOf(max);
+            u6Var.a = Long.valueOf(max);
             if (str == null) {
                 throw new NullPointerException("Null symbol");
             }
-            cVar.b = str;
-            cVar.c = fileName;
-            cVar.d = Long.valueOf(j3);
-            arrayList.add(cVar.l());
+            u6Var.b = str;
+            u6Var.c = fileName;
+            u6Var.d = Long.valueOf(j3);
+            arrayList.add(u6Var.m());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }
@@ -127,8 +127,8 @@ public final class p {
         int i11 = 2;
         try {
             registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
-        } catch (IllegalStateException e7) {
-            e = e7;
+        } catch (IllegalStateException e) {
+            e = e;
             z10 = false;
         }
         if (registerReceiver != null) {
@@ -140,8 +140,8 @@ public final class p {
                 if (intExtra2 != -1 && intExtra3 != -1) {
                     f7 = Float.valueOf(intExtra2 / intExtra3);
                 }
-            } catch (IllegalStateException e10) {
-                e = e10;
+            } catch (IllegalStateException e7) {
+                e = e7;
                 Log.e("FirebaseCrashlytics", "An error occurred getting battery state.", e);
                 f7 = null;
                 if (f7 != null) {

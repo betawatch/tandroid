@@ -1,28 +1,34 @@
 package wg;
 
-import android.text.InputFilter;
-import android.text.Spanned;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class j extends InputFilter.LengthFilter {
-    public final /* synthetic */ l a;
+public final class j extends u51 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(l lVar) {
-        super(128);
-        this.a = lVar;
+    static {
+        u51.setup(new j());
     }
 
-    @Override // android.text.InputFilter.LengthFilter, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
-        if (filter != null && filter.length() == 0) {
-            AndroidUtilities.shakeView(this.a.a);
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        }
-        return filter;
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
+        k kVar = (k) view;
+        kVar.setUser((TLRPC.User) v51Var.G);
+        kVar.c(v51Var.e, false);
+        kVar.setDivider(z10);
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
+        return new k(context, true, false, f6Var, false);
     }
 }

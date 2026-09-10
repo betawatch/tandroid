@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v8 implements bh.k {
+public final /* synthetic */ class v8 implements zg.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,11 +14,11 @@ public final /* synthetic */ class v8 implements bh.k {
         this.b = obj;
     }
 
-    @Override // bh.k
+    @Override // zg.j
     public final boolean a(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 0:
-                return ((org.telegram.ui.Components.d61) this.b).drawChild(canvas, view, j3);
+                return ((org.telegram.ui.Components.r61) this.b).drawChild(canvas, view, j3);
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 if (view == profileActivity.O) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class v8 implements bh.k {
                 }
                 return profileActivity.a.drawChild(canvas, view, j3);
             default:
-                return ((cg1) this.b).drawChild(canvas, view, j3);
+                return ((gg1) this.b).drawChild(canvas, view, j3);
         }
     }
 }

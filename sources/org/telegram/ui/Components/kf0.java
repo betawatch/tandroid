@@ -1,100 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class kf0 extends FrameLayout {
-    public final di.zc a;
-    public final di.d b;
-    public final nt c;
-    public g71 d;
-    public long e;
-    public float f;
-    public di.b4 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final /* synthetic */ class kf0 implements g71, gf0, if0 {
+    public final /* synthetic */ sf0 a;
 
-    public kf0(Context context, org.telegram.ui.ActionBar.f6 f6Var, ja jaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, f6Var);
-        kVar.setBackButtonImage(R.drawable.ic_ab_back);
-        kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.C(-1, false);
-        kVar.B(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.ic(this, 11));
-        addView(kVar, w7.x5.e(-1, -2, 55));
-        di.zc zcVar = new di.zc(context, null, null, f6Var, jaVar);
-        this.a = zcVar;
-        zcVar.X0 = true;
-        addView(zcVar, w7.x5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        di.d dVar = new di.d(context, f6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.x5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        nt ntVar = new nt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = ntVar;
-        ntVar.setOnClickListener(new bi.x(this, context, f6Var, 26));
-        addView(ntVar, w7.x5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        zcVar.setDelegate(new n7.z0(this));
-    }
-
-    public final void a(MediaController.PhotoEntry photoEntry, g71 g71Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        int i10;
-        di.d dVar = this.b;
-        dVar.a = f6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
-        }
-        this.d = g71Var;
-        long j3 = photoEntry.coverSavedPosition;
-        if (j3 >= 0) {
-            this.e = j3;
-            g71Var.L(j3, false);
-        } else {
-            this.e = g71Var.n();
-        }
-        String path = g71Var.F.getPath();
-        long p5 = g71Var.p();
-        i2.f0 f0Var = g71Var.d;
-        f0Var.B1();
-        this.a.o(false, path, p5, f0Var.Z);
-        long p10 = g71Var.p();
-        float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, g71Var.p()));
-        di.zc zcVar = this.a;
-        zcVar.setVideoLeft(max2);
-        zcVar.setVideoRight(max2 + max);
-        zcVar.Z0 = 0L;
-        zcVar.a1 = p10;
-        di.uc ucVar = zcVar.h;
-        if (ucVar != null) {
-            di.uc.a(ucVar, true);
-        }
-        zcVar.k();
-    }
-
-    public long getTime() {
-        return this.e;
-    }
-
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
+    @Override // org.telegram.ui.Components.g71
+    public void c(c00 c00Var) {
+        sf0 sf0Var = this.a;
+        sf0Var.l0 = c00Var;
+        c00Var.f(sf0Var);
     }
 }

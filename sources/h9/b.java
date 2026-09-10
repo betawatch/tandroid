@@ -6,9 +6,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 import v7.t6;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b extends AbstractList implements RandomAccess, Serializable {
     public final int[] a;
@@ -23,7 +23,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean contains(Object obj) {
-        return (obj instanceof Integer) && x7.d(((Integer) obj).intValue(), this.b, this.c, this.a) != -1;
+        return (obj instanceof Integer) && y7.d(((Integer) obj).intValue(), this.b, this.c, this.a) != -1;
     }
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
@@ -70,7 +70,7 @@ public final class b extends AbstractList implements RandomAccess, Serializable 
         int intValue = ((Integer) obj).intValue();
         int i10 = this.c;
         int i11 = this.b;
-        int d = x7.d(intValue, i11, i10, this.a);
+        int d = y7.d(intValue, i11, i10, this.a);
         if (d >= 0) {
             return d - i11;
         }

@@ -1,60 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.text.SpannableStringBuilder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ms implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+public final class ms {
+    public int a;
+    public int b;
+    public t01 c;
+    public int d;
+    public int e;
 
-    public /* synthetic */ ms(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.b = context;
-        this.c = f6Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-                String string = LocaleController.getString(R.string.AppsTabInfoText);
-                ks ksVar = new ks(b2VarArr, 0);
-                org.telegram.ui.ActionBar.f6 f6Var = this.c;
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, f6Var, ksVar));
-                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
-                while (true) {
-                    boolean find = matcher.find();
-                    Context context = this.b;
-                    if (!find) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
-                        String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string2;
-                        b2Var.T = replaceTags;
-                        alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
-                        b2VarArr[0] = alertDialog$Builder.o();
-                        break;
-                    } else {
-                        replaceTags.setSpan(new org.telegram.ui.n0(b2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
-                    }
-                }
-            default:
-                new zh.l7(this.b, this.c).show();
-                break;
+    public static ms b(org.telegram.ui.Cells.r2 r2Var, MessagesController.DialogFilter dialogFilter) {
+        ms msVar = new ms();
+        msVar.a = dialogFilter.id;
+        msVar.b = dialogFilter.color;
+        String str = dialogFilter.name;
+        if (str == null) {
+            str = "";
         }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        t01 t01Var = new t01(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        t01Var.s(r2Var);
+        msVar.c = t01Var;
+        msVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, t01Var.a.getFontMetricsInt(), false), dialogFilter.entities, msVar.c.a.getFontMetricsInt()));
+        msVar.c.p(26);
+        int dp = AndroidUtilities.dp(9.32f);
+        t01 t01Var2 = msVar.c;
+        msVar.e = dp + ((int) t01Var2.c);
+        t01Var2.j();
+        int[] iArr = org.telegram.ui.ActionBar.j6.r8;
+        msVar.d = org.telegram.ui.ActionBar.j6.w0(null, iArr[dialogFilter.color % iArr.length], false);
+        return msVar;
     }
 
-    public /* synthetic */ ms(qs qsVar, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
-        this.c = f6Var;
-        this.b = context;
+    public final void a(Canvas canvas) {
+        org.telegram.ui.ActionBar.j6.A0.setColor(org.telegram.ui.ActionBar.j6.l1(org.telegram.ui.ActionBar.j6.I.q() ? 0.2f : 0.1f, this.d));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, this.e, AndroidUtilities.dp(14.66f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.j6.A0);
+        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

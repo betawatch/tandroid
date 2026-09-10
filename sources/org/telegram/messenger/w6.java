@@ -1,41 +1,44 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ SharedPreferences e;
-    public final /* synthetic */ boolean[] f;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ w6(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = sharedPreferences;
-        this.f = zArr;
+    public /* synthetic */ w6(int i10, int i11, String str) {
+        this.a = 3;
+        this.b = i10;
+        this.c = i11;
+        this.d = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                SharedPreferences sharedPreferences = this.e;
-                boolean[] zArr = this.f;
-                this.b.lambda$loadRecentAndTopReactions$237(this.c, this.d, sharedPreferences, zArr);
+                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
+                break;
+            case 1:
+                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
+                break;
+            case 2:
+                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$43(this.b, this.c);
                 break;
             default:
-                SharedPreferences sharedPreferences2 = this.e;
-                boolean[] zArr2 = this.f;
-                this.b.lambda$loadRecentAndTopReactions$235(this.c, this.d, sharedPreferences2, zArr2);
+                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ w6(Object obj, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = obj;
+        this.b = i10;
+        this.c = i11;
     }
 }

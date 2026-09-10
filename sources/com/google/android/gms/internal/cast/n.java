@@ -12,18 +12,18 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
-    public final n4.y e;
+    public final of.b e;
     public final Map c = DesugarCollections.synchronizedMap(new HashMap());
     public final LinkedHashSet d = new LinkedHashSet();
     public final Set b = DesugarCollections.synchronizedSet(new LinkedHashSet());
     public final m a = new m(this);
 
     public n(Context context) {
-        this.e = new n4.y(10, (Object) context, false);
+        this.e = new of.b(context, 9);
     }
 
     @Override // p4.s
@@ -46,7 +46,7 @@ public final class n extends p4.s {
 
     public final void m() {
         g6.b bVar = f;
-        bVar.b(i2.g.j(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(hc.b.k(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
@@ -56,11 +56,11 @@ public final class n extends p4.s {
     }
 
     public final void n() {
-        n4.y yVar = this.e;
-        if (((p4.x) yVar.c) == null) {
-            yVar.c = p4.x.d((Context) yVar.b);
+        of.b bVar = this.e;
+        if (((p4.x) bVar.c) == null) {
+            bVar.c = p4.x.d((Context) bVar.b);
         }
-        p4.x xVar = (p4.x) yVar.c;
+        p4.x xVar = (p4.x) bVar.c;
         if (xVar != null) {
             xVar.h(this);
         }
@@ -84,11 +84,11 @@ public final class n extends p4.s {
                         this.c.put(str, new l(rVar));
                     }
                     f.b("Adding mediaRouter callback for control category " + c6.y.a(str), new Object[0]);
-                    n4.y yVar2 = this.e;
-                    if (((p4.x) yVar2.c) == null) {
-                        yVar2.c = p4.x.d((Context) yVar2.b);
+                    of.b bVar2 = this.e;
+                    if (((p4.x) bVar2.c) == null) {
+                        bVar2.c = p4.x.d((Context) bVar2.b);
                     }
-                    ((p4.x) yVar2.c).a(rVar, this, 4);
+                    ((p4.x) bVar2.c).a(rVar, this, 4);
                 }
             } catch (Throwable th2) {
                 throw th2;

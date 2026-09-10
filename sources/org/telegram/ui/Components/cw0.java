@@ -1,71 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class cw0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final class cw0 extends g60 {
+    public final /* synthetic */ ew0 d;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public cw0(ew0 ew0Var) {
+        this.d = ew0Var;
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
+    @Override // org.telegram.ui.Components.lo0
+    public final CharSequence d() {
+        ew0 ew0Var = this.d;
+        int i10 = ew0Var.I;
+        String[] strArr = ew0Var.F;
+        if (i10 < strArr.length) {
+            return strArr[i10];
+        }
+        return null;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
+    @Override // org.telegram.ui.Components.g60
+    public final int i() {
+        return this.d.F.length - 1;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
+    @Override // org.telegram.ui.Components.g60
+    public final int j() {
+        return this.d.I;
     }
 
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.bw0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
-                int i10;
-                cw0 cw0Var = cw0.this;
-                int i11 = cw0Var.a;
-                if (i11 <= 0 || (i10 = cw0Var.b) <= 0) {
-                    cw0Var.end();
-                    return;
-                }
-                int i12 = i11 - 1;
-                cw0Var.a = i12;
-                if (cw0Var.c != null) {
-                    float[] fArr = cw0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        cw0Var.end();
-                        return;
-                    }
-                    float interpolation = cw0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
-                    float[] fArr2 = cw0Var.e;
-                    float f7 = fArr2[0];
-                    cw0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
-                    cw0Var.c.onAnimationUpdate(cw0Var);
-                }
-            }
-        });
-        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+    @Override // org.telegram.ui.Components.g60
+    public final void k(int i10) {
+        this.d.setOption(i10);
     }
 }

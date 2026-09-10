@@ -1,51 +1,35 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.u6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d3 b;
+public final class c3 {
+    public final h3 a;
 
-    public /* synthetic */ c3(d3 d3Var, int i10) {
-        this.a = i10;
-        this.b = d3Var;
+    public c3(Context context, f6 f6Var) {
+        h3 h3Var = new h3(1, context, f6Var, false);
+        this.a = h3Var;
+        h3Var.fixNavigationBar();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        d3 d3Var = this.b;
-        switch (i10) {
-            case 0:
-                d3Var.y = 0.0f;
-                d3Var.G.containerView.setTranslationX(0.0f);
-                d3Var.G.container.invalidate();
-                break;
-            case 1:
-                d3Var.G.skipDismissAnimation = true;
-                d3Var.G.containerView.setTranslationX(d3Var.getMeasuredWidth());
-                d3Var.G.dismiss();
-                d3Var.G.container.invalidate();
-                break;
-            case 2:
-                d3Var.G.containerView.setTranslationY(0.0f);
-                d3Var.G.onContainerViewTranslation();
-                f3 f3Var = d3Var.G;
-                f3Var.onSmoothContainerViewLayout(f3Var.containerView.getTranslationY());
-                d3Var.invalidate();
-                break;
-            default:
-                AnimatorSet animatorSet = d3Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    d3Var.h = null;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-        }
+    public final void a() {
+        this.a.applyBottomPadding = false;
+    }
+
+    public final void b(ViewGroup viewGroup) {
+        this.a.customView = viewGroup;
+    }
+
+    public final void c(u6 u6Var) {
+        h3 h3Var = this.a;
+        h3Var.customView = u6Var;
+        h3Var.customViewGravity = 49;
+    }
+
+    public final void d() {
+        this.a.dimBehind = false;
     }
 }

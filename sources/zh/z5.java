@@ -1,34 +1,28 @@
 package zh;
 
 import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z5 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+public final class z5 {
+    public int a;
 
-    public /* synthetic */ z5(org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
+    public z5() {
+        ConnectionsManager.generateClassGuid();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b[0].dismiss();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.f3 f3Var = this.b[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                this.b[0].dismiss();
-                break;
-        }
+    public final void a(long j3, View view, x5 x5Var) {
+        int i10 = UserConfig.selectedAccount;
+        this.a = i10;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        messagesController.getStoriesController().e0(j3, true);
+        view.invalidate();
+        TL_stories.TL_stories_getPeerStories tL_stories_getPeerStories = new TL_stories.TL_stories_getPeerStories();
+        tL_stories_getPeerStories.peer = MessagesController.getInstance(this.a).getInputPeer(j3);
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_stories_getPeerStories, new org.telegram.messenger.voip.c(this, j3, view, x5Var, messagesController));
     }
 }

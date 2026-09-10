@@ -14,7 +14,7 @@ import androidx.appcompat.widget.ActionMenuView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h implements l.y {
     public int E;
@@ -39,7 +39,7 @@ public final class h implements l.y {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray H = new SparseBooleanArray();
-    public final xa.c M = new xa.c(this, 28);
+    public final a6.i M = new a6.i(this, 29);
 
     public h(Context context) {
         this.a = context;
@@ -79,7 +79,20 @@ public final class h implements l.y {
     }
 
     @Override // l.y
-    public final boolean c() {
+    public final void c(l.l lVar, boolean z10) {
+        f();
+        d dVar = this.J;
+        if (dVar != null && dVar.b()) {
+            dVar.i.dismiss();
+        }
+        l.x xVar = this.e;
+        if (xVar != null) {
+            xVar.c(lVar, z10);
+        }
+    }
+
+    @Override // l.y
+    public final boolean d() {
         ArrayList arrayList;
         int i10;
         int i11;
@@ -190,19 +203,6 @@ public final class h implements l.y {
             z10 = true;
         }
         return true;
-    }
-
-    @Override // l.y
-    public final void d(l.l lVar, boolean z10) {
-        f();
-        d dVar = this.J;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
-        }
-        l.x xVar = this.e;
-        if (xVar != null) {
-            xVar.d(lVar, z10);
-        }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -436,7 +436,7 @@ public final class h implements l.y {
                 }
                 l.x xVar = this.e;
                 if (xVar != null) {
-                    xVar.q(e0Var);
+                    xVar.u(e0Var);
                 }
                 return true;
             }

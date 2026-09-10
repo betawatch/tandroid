@@ -3,20 +3,20 @@ package o2;
 import b2.o0;
 import b2.p0;
 import java.util.Map;
-import u2.a1;
+import u2.c1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class p extends a1 {
+public final class p extends c1 {
     public final Map H;
     public b2.o I;
 
-    public p(y2.d dVar, n2.m mVar, n2.j jVar, Map map) {
-        super(dVar, mVar, jVar);
+    public p(y2.d dVar, n2.n nVar, n2.j jVar, Map map) {
+        super(dVar, nVar, jVar);
         this.H = map;
     }
 
-    @Override // u2.a1
+    @Override // u2.c1
     public final b2.s p(b2.s sVar) {
         b2.o oVar;
         b2.o oVar2 = this.I;

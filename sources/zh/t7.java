@@ -1,91 +1,134 @@
 package zh;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.h51;
+import android.view.SurfaceView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class t7 extends a81 {
-    public final Context a;
-    public final int b;
-    public final boolean c;
-    public final int d;
-    public final org.telegram.ui.ActionBar.f6 e;
-    public final long f;
-    public final ArrayList g = new ArrayList();
+public final class t7 extends VideoPlayerHolderBase {
+    public boolean a;
+    public final /* synthetic */ u7 b;
 
-    public t7(Context context, int i10, boolean z10, long j3, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.a = context;
-        this.b = i10;
-        this.c = z10;
-        this.d = i11;
-        this.e = f6Var;
-        this.f = j3;
-        i();
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        return new s7(this.a, this.c, this.f, i10, this.b, this.d, this.e);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        return this.g.size();
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final CharSequence g(int i10) {
-        int h = h(i10);
-        return h != 0 ? h != 1 ? h != 2 ? "" : LocaleController.getString(R.string.StarsTransactionsOutgoing) : LocaleController.getString(R.string.StarsTransactionsIncoming) : LocaleController.getString(R.string.StarsTransactionsAll);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        if (i10 < 0) {
-            return 0;
+    public t7(u7 u7Var, SurfaceView surfaceView, m7 m7Var) {
+        this.b = u7Var;
+        if (u7Var.a) {
+            with(surfaceView);
+        } else {
+            with(m7Var);
         }
-        ArrayList arrayList = this.g;
-        if (i10 >= arrayList.size()) {
-            return 0;
-        }
-        return ((h51) arrayList.get(i10)).z;
     }
 
-    public final void i() {
-        ArrayList arrayList = this.g;
-        arrayList.clear();
-        int i10 = this.b;
-        long j3 = this.f;
-        if (j3 == 0) {
-            s5 y3 = s5.y(i10, this.c);
-            arrayList.add(h51.C(0));
-            if (y3.O(1)) {
-                arrayList.add(h51.C(1));
-            }
-            if (y3.O(2)) {
-                arrayList.add(h51.C(2));
-                return;
-            }
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final boolean needRepeat() {
+        return this.b.m1;
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        u7 u7Var = this.b;
+        k2.v vVar = u7Var.G0;
+        if (vVar == null) {
             return;
         }
-        o g10 = o.g(i10);
-        arrayList.add(h51.C(0));
-        if (!g10.k(j3).a[1].isEmpty()) {
-            arrayList.add(h51.C(1));
-        }
-        if (g10.k(j3).a[2].isEmpty()) {
+        vVar.a = true;
+        this.firstFrameRendered = true;
+        vVar.b();
+        if (!this.paused || u7Var.C0 == null) {
             return;
         }
-        arrayList.add(h51.C(2));
+        prepareStub();
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onStateChanged(boolean z10, int i10) {
+        if (i10 == 3 || i10 == 2) {
+            if (this.firstFrameRendered && i10 == 2) {
+                this.a = true;
+                final int i11 = 0;
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: zh.s7
+                    public final /* synthetic */ t7 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                a3 t10 = this.b.b.t();
+                                if (t10 != null) {
+                                    z2 z2Var = t10.O1;
+                                    if (z2Var.a != null) {
+                                        StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
+                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(" storyId=");
+                                        hc.b.q(z2Var.a.id, sb2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                a3 t11 = this.b.b.t();
+                                if (t11 != null) {
+                                    z2 z2Var2 = t11.O1;
+                                    if (z2Var2.a != null) {
+                                        StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
+                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(" storyId=");
+                                        hc.b.q(z2Var2.a.id, sb3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+            }
+            if (this.a && i10 == 3) {
+                this.a = false;
+                final int i12 = 1;
+                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: zh.s7
+                    public final /* synthetic */ t7 b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                a3 t10 = this.b.b.t();
+                                if (t10 != null) {
+                                    z2 z2Var = t10.O1;
+                                    if (z2Var.a != null) {
+                                        StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
+                                        sb2.append(t10.getCurrentPeer());
+                                        sb2.append(" storyId=");
+                                        hc.b.q(z2Var.a.id, sb2);
+                                        break;
+                                    }
+                                }
+                                break;
+                            default:
+                                a3 t11 = this.b.b.t();
+                                if (t11 != null) {
+                                    z2 z2Var2 = t11.O1;
+                                    if (z2Var2.a != null) {
+                                        StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
+                                        sb3.append(t11.getCurrentPeer());
+                                        sb3.append(" storyId=");
+                                        hc.b.q(z2Var2.a.id, sb3);
+                                        break;
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+            }
+        }
     }
 }

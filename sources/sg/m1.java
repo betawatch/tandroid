@@ -1,30 +1,29 @@
 package sg;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.bb0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class m1 extends View {
-    public final /* synthetic */ int a;
+public final class m1 extends bi.d {
+    public final /* synthetic */ p1 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m1(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public m1(p1 p1Var, Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.h0 = p1Var;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
+    @Override // bi.d
+    public final float a(float f7, float f10) {
+        p1 p1Var = this.h0;
+        boolean z10 = p1Var.t0 == 0.0f;
+        p1Var.t0 = f7;
+        if (z10) {
+            p1Var.u0 = new bb0(p1Var, 2);
+            p1Var.g0(false);
         }
+        return f7;
     }
 }

@@ -3,11 +3,12 @@ package v2;
 import b2.s;
 import c3.h0;
 import g2.b0;
+import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
-import u2.a1;
-import v7.m7;
+import u2.c1;
+import v7.n7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class m extends a {
     public final int E;
@@ -21,33 +22,33 @@ public final class m extends a {
         this.F = sVar2;
     }
 
-    @Override // y2.j
+    @Override // y2.k
     public final void a() {
         b0 b0Var = this.r;
-        o0.a aVar = this.x;
-        e2.d.h(aVar);
-        for (a1 a1Var : (a1[]) aVar.c) {
-            if (a1Var.F != 0) {
-                a1Var.F = 0L;
-                a1Var.z = true;
+        a1 a1Var = this.x;
+        e2.d.h(a1Var);
+        for (c1 c1Var : (c1[]) a1Var.c) {
+            if (c1Var.F != 0) {
+                c1Var.F = 0L;
+                c1Var.z = true;
             }
         }
-        h0 U = aVar.U(this.E);
-        U.b(this.F);
+        h0 t02 = a1Var.t0(this.E);
+        t02.b(this.F);
         try {
             long open = b0Var.open(this.b.b(this.G));
             if (open != -1) {
                 open += this.G;
             }
             c3.l lVar = new c3.l(this.r, this.G, open);
-            for (int i10 = 0; i10 != -1; i10 = U.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
+            for (int i10 = 0; i10 != -1; i10 = t02.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
                 this.G += i10;
             }
-            U.c(this.h, 1, (int) this.G, 0, null);
-            m7.a(b0Var);
+            t02.c(this.h, 1, (int) this.G, 0, null);
+            n7.a(b0Var);
             this.H = true;
         } catch (Throwable th2) {
-            m7.a(b0Var);
+            n7.a(b0Var);
             throw th2;
         }
     }
@@ -57,7 +58,7 @@ public final class m extends a {
         return this.H;
     }
 
-    @Override // y2.j
-    public final void W() {
+    @Override // y2.k
+    public final void k() {
     }
 }

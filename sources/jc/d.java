@@ -1,11 +1,11 @@
 package jc;
 
 import cc.k;
-import i2.g;
+import hc.g;
 import java.util.Arrays;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
@@ -51,7 +51,7 @@ public abstract class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(dc.a aVar, hc.c cVar, hc.f fVar, int i10, b bVar) {
+    public static void b(dc.a aVar, hc.d dVar, g gVar, int i10, b bVar) {
         char c10;
         char c11;
         byte[][] bArr;
@@ -87,7 +87,7 @@ public abstract class d {
             throw new k();
         }
         bVar.b(8, i23, 1);
-        int i25 = fVar.a;
+        int i25 = gVar.a;
         if (i25 < 2) {
             c11 = 1;
             c10 = 0;
@@ -158,7 +158,7 @@ public abstract class d {
         if (i10 < 0 || i10 >= 8) {
             throw new k("Invalid mask pattern");
         }
-        int i41 = (cVar.a << 3) | i10;
+        int i41 = (dVar.a << 3) | i10;
         aVar2.b(i41, 5);
         aVar2.b(c(i41, 1335), 10);
         dc.a aVar3 = new dc.a();
@@ -293,7 +293,7 @@ public abstract class d {
                                     }
                                     break;
                                 default:
-                                    throw new IllegalArgumentException(g.i(i10, "Invalid mask pattern: "));
+                                    throw new IllegalArgumentException(hc.b.j(i10, "Invalid mask pattern: "));
                             }
                         }
                         bArr4[i51][i55] = (byte) i12;

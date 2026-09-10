@@ -3,9 +3,9 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class kt0 extends org.telegram.ui.Components.u00 {
+public final class kt0 extends org.telegram.ui.Components.b10 {
     public final /* synthetic */ ss0 e;
     public final /* synthetic */ PhotoViewer f;
 
@@ -16,7 +16,7 @@ public final class kt0 extends org.telegram.ui.Components.u00 {
         this.e = ss0Var;
     }
 
-    @Override // org.telegram.ui.Components.co0
+    @Override // org.telegram.ui.Components.lo0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         PhotoViewer photoViewer = this.f;
@@ -33,12 +33,12 @@ public final class kt0 extends org.telegram.ui.Components.u00 {
         return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.b10
     public final float k() {
         return this.f.q3.c();
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.b10
     public final void l(float f7) {
         this.e.b(f7);
         PhotoViewer photoViewer = this.f;

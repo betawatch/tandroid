@@ -27,11 +27,12 @@ import java.util.TreeMap;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.ui.Cells.p6;
+import m.e3;
+import org.telegram.ui.Cells.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class r implements y2.o {
+public final class r implements y2.p {
     public final o a;
     public final l b;
     public static final Pattern c = Pattern.compile("AVERAGE-BANDWIDTH=(\\d+)\\b");
@@ -1215,7 +1216,7 @@ public final class r implements y2.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static l d(o oVar, l lVar, m2.t tVar, String str) {
+    public static l d(o oVar, l lVar, e3 e3Var, String str) {
         ArrayList arrayList;
         ArrayList arrayList2;
         f fVar;
@@ -1315,7 +1316,7 @@ public final class r implements y2.o {
         boolean z16 = false;
         while (true) {
             k kVar2 = kVar;
-            if (!tVar.F()) {
+            if (!e3Var.L()) {
                 g gVar2 = gVar;
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
@@ -1386,46 +1387,46 @@ public final class r implements y2.o {
                 }
                 return new l(i16, str, arrayList19, j22, z16, j26, z13, i18, j33, i17, j31, j32, z11, z12, j26 != 0, oVar6, arrayList16, arrayList17, kVar2, hashMap4, arrayList21);
             }
-            String K2 = tVar.K();
+            String O2 = e3Var.O();
             g gVar3 = gVar;
-            if (K2.startsWith("#EXT")) {
-                arrayList15.add(K2);
+            if (O2.startsWith("#EXT")) {
+                arrayList15.add(O2);
             }
-            if (K2.startsWith("#EXT-X-PLAYLIST-TYPE")) {
-                String j41 = j(K2, O, hashMap2);
+            if (O2.startsWith("#EXT-X-PLAYLIST-TYPE")) {
+                String j41 = j(O2, O, hashMap2);
                 if ("VOD".equals(j41)) {
                     i16 = 1;
                 } else if ("EVENT".equals(j41)) {
                     i16 = 2;
                 }
-            } else if (K2.equals("#EXT-X-I-FRAMES-ONLY")) {
+            } else if (O2.equals("#EXT-X-I-FRAMES-ONLY")) {
                 kVar = kVar2;
                 gVar = gVar3;
                 z14 = true;
-            } else if (K2.startsWith("#EXT-X-START")) {
-                long parseDouble = (long) (Double.parseDouble(j(K2, a0, Collections.EMPTY_MAP)) * 1000000.0d);
-                z16 = f(K2, w0);
+            } else if (O2.startsWith("#EXT-X-START")) {
+                long parseDouble = (long) (Double.parseDouble(j(O2, a0, Collections.EMPTY_MAP)) * 1000000.0d);
+                z16 = f(O2, w0);
                 j22 = parseDouble;
-            } else if (K2.startsWith("#EXT-X-SERVER-CONTROL")) {
-                double g10 = g(K2, P, -9.223372036854776E18d);
+            } else if (O2.startsWith("#EXT-X-SERVER-CONTROL")) {
+                double g10 = g(O2, P, -9.223372036854776E18d);
                 long j42 = g10 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g10 * 1000000.0d);
-                boolean f7 = f(K2, Q);
-                double g11 = g(K2, S, -9.223372036854776E18d);
+                boolean f7 = f(O2, Q);
+                double g11 = g(O2, S, -9.223372036854776E18d);
                 long j43 = g11 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g11 * 1000000.0d);
-                double g12 = g(K2, T, -9.223372036854776E18d);
+                double g12 = g(O2, T, -9.223372036854776E18d);
                 gVar = gVar3;
-                kVar = new k(j42, f7, j43, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(K2, U));
-            } else if (K2.startsWith("#EXT-X-PART-INF")) {
-                j32 = (long) (Double.parseDouble(j(K2, M, Collections.EMPTY_MAP)) * 1000000.0d);
+                kVar = new k(j42, f7, j43, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(O2, U));
+            } else if (O2.startsWith("#EXT-X-PART-INF")) {
+                j32 = (long) (Double.parseDouble(j(O2, M, Collections.EMPTY_MAP)) * 1000000.0d);
             } else {
-                boolean startsWith = K2.startsWith("#EXT-X-MAP");
+                boolean startsWith = O2.startsWith("#EXT-X-MAP");
                 Pattern pattern = c0;
                 ArrayList arrayList26 = arrayList15;
                 HashMap hashMap5 = hashMap3;
                 Pattern pattern2 = i0;
                 if (startsWith) {
-                    String j44 = j(K2, pattern2, hashMap2);
-                    String i22 = i(K2, pattern, null, hashMap2);
+                    String j44 = j(O2, pattern2, hashMap2);
+                    String i22 = i(O2, pattern, null, hashMap2);
                     if (i22 != null) {
                         String str19 = d0.a;
                         String[] split = i22.split("@", -1);
@@ -1455,29 +1456,29 @@ public final class r implements y2.o {
                 } else {
                     LinkedHashMap linkedHashMap4 = linkedHashMap2;
                     String str21 = str13;
-                    if (K2.startsWith("#EXT-X-TARGETDURATION")) {
-                        j31 = Integer.parseInt(j(K2, J, Collections.EMPTY_MAP)) * 1000000;
-                    } else if (K2.startsWith("#EXT-X-MEDIA-SEQUENCE")) {
-                        j25 = Long.parseLong(j(K2, V, Collections.EMPTY_MAP));
+                    if (O2.startsWith("#EXT-X-TARGETDURATION")) {
+                        j31 = Integer.parseInt(j(O2, J, Collections.EMPTY_MAP)) * 1000000;
+                    } else if (O2.startsWith("#EXT-X-MEDIA-SEQUENCE")) {
+                        j25 = Long.parseLong(j(O2, V, Collections.EMPTY_MAP));
                         j33 = j25;
-                    } else if (K2.startsWith("#EXT-X-VERSION")) {
-                        i17 = Integer.parseInt(j(K2, N, Collections.EMPTY_MAP));
+                    } else if (O2.startsWith("#EXT-X-VERSION")) {
+                        i17 = Integer.parseInt(j(O2, N, Collections.EMPTY_MAP));
                     } else {
-                        if (K2.startsWith("#EXT-X-DEFINE")) {
-                            String i23 = i(K2, y0, null, hashMap2);
+                        if (O2.startsWith("#EXT-X-DEFINE")) {
+                            String i23 = i(O2, y0, null, hashMap2);
                             if (i23 != null) {
                                 String str22 = (String) oVar5.l.get(i23);
                                 if (str22 != null) {
                                     hashMap2.put(i23, str22);
                                 }
                             } else {
-                                hashMap2.put(j(K2, n0, hashMap2), j(K2, x0, hashMap2));
+                                hashMap2.put(j(O2, n0, hashMap2), j(O2, x0, hashMap2));
                             }
-                        } else if (K2.startsWith("#EXTINF")) {
-                            j28 = new BigDecimal(j(K2, W, Collections.EMPTY_MAP)).multiply(new BigDecimal(1000000L)).longValue();
-                            str11 = i(K2, X, str10, hashMap2);
-                        } else if (K2.startsWith("#EXT-X-SKIP")) {
-                            int parseInt = Integer.parseInt(j(K2, R, Collections.EMPTY_MAP));
+                        } else if (O2.startsWith("#EXTINF")) {
+                            j28 = new BigDecimal(j(O2, W, Collections.EMPTY_MAP)).multiply(new BigDecimal(1000000L)).longValue();
+                            str11 = i(O2, X, str10, hashMap2);
+                        } else if (O2.startsWith("#EXT-X-SKIP")) {
+                            int parseInt = Integer.parseInt(j(O2, R, Collections.EMPTY_MAP));
                             e2.d.g(lVar2 != null && arrayList12.isEmpty());
                             String str23 = d0.a;
                             long j47 = lVar2.k;
@@ -1543,25 +1544,25 @@ public final class r implements y2.o {
                                 linkedHashMap2 = linkedHashMap4;
                                 j27 = j48;
                             }
-                        } else if (K2.startsWith("#EXT-X-KEY")) {
-                            String j53 = j(K2, f0, hashMap2);
-                            String i29 = i(K2, g0, "identity", hashMap2);
+                        } else if (O2.startsWith("#EXT-X-KEY")) {
+                            String j53 = j(O2, f0, hashMap2);
+                            String i29 = i(O2, g0, "identity", hashMap2);
                             if ("NONE".equals(j53)) {
                                 treeMap2.clear();
                                 str13 = null;
                             } else {
-                                String i30 = i(K2, j0, null, hashMap2);
+                                String i30 = i(O2, j0, null, hashMap2);
                                 if (!"identity".equals(i29)) {
                                     if (str12 == null) {
                                         str12 = ("SAMPLE-AES-CENC".equals(j53) || "SAMPLE-AES-CTR".equals(j53)) ? "cenc" : "cbcs";
                                     }
-                                    b2.n c13 = c(K2, i29, hashMap2);
+                                    b2.n c13 = c(O2, i29, hashMap2);
                                     if (c13 != null) {
                                         treeMap2.put(i29, c13);
                                         str13 = i30;
                                     }
                                 } else if ("AES-128".equals(j53)) {
-                                    str14 = j(K2, pattern2, hashMap2);
+                                    str14 = j(O2, pattern2, hashMap2);
                                     str13 = i30;
                                     oVar5 = oVar;
                                     lVar2 = lVar;
@@ -1591,16 +1592,16 @@ public final class r implements y2.o {
                             hashMap3 = hashMap5;
                             linkedHashMap2 = linkedHashMap4;
                         } else {
-                            if (K2.startsWith("#EXT-X-BYTERANGE")) {
-                                String j54 = j(K2, b0, hashMap2);
+                            if (O2.startsWith("#EXT-X-BYTERANGE")) {
+                                String j54 = j(O2, b0, hashMap2);
                                 String str26 = d0.a;
                                 String[] split2 = j54.split("@", -1);
                                 j30 = Long.parseLong(split2[c12]);
                                 if (split2.length > 1) {
                                     j23 = Long.parseLong(split2[1]);
                                 }
-                            } else if (K2.startsWith("#EXT-X-DISCONTINUITY-SEQUENCE")) {
-                                i18 = Integer.parseInt(K2.substring(K2.indexOf(58) + 1));
+                            } else if (O2.startsWith("#EXT-X-DISCONTINUITY-SEQUENCE")) {
+                                i18 = Integer.parseInt(O2.substring(O2.indexOf(58) + 1));
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 kVar = kVar2;
@@ -1610,13 +1611,13 @@ public final class r implements y2.o {
                                 str13 = str21;
                                 linkedHashMap2 = linkedHashMap4;
                                 z13 = true;
-                            } else if (K2.equals("#EXT-X-DISCONTINUITY")) {
+                            } else if (O2.equals("#EXT-X-DISCONTINUITY")) {
                                 i19++;
-                            } else if (K2.startsWith("#EXT-X-PROGRAM-DATE-TIME")) {
+                            } else if (O2.startsWith("#EXT-X-PROGRAM-DATE-TIME")) {
                                 if (j26 == 0) {
-                                    j26 = d0.Q(d0.T(K2.substring(K2.indexOf(58) + 1))) - j24;
+                                    j26 = d0.Q(d0.T(O2.substring(O2.indexOf(58) + 1))) - j24;
                                 }
-                            } else if (K2.equals("#EXT-X-GAP")) {
+                            } else if (O2.equals("#EXT-X-GAP")) {
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 kVar = kVar2;
@@ -1626,7 +1627,7 @@ public final class r implements y2.o {
                                 str13 = str21;
                                 linkedHashMap2 = linkedHashMap4;
                                 z15 = true;
-                            } else if (K2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
+                            } else if (O2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 kVar = kVar2;
@@ -1636,7 +1637,7 @@ public final class r implements y2.o {
                                 str13 = str21;
                                 linkedHashMap2 = linkedHashMap4;
                                 z11 = true;
-                            } else if (K2.equals("#EXT-X-ENDLIST")) {
+                            } else if (O2.equals("#EXT-X-ENDLIST")) {
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 kVar = kVar2;
@@ -1646,9 +1647,9 @@ public final class r implements y2.o {
                                 str13 = str21;
                                 linkedHashMap2 = linkedHashMap4;
                                 z12 = true;
-                            } else if (K2.startsWith("#EXT-X-RENDITION-REPORT")) {
-                                long h10 = h(K2, Y);
-                                Matcher matcher2 = Z.matcher(K2);
+                            } else if (O2.startsWith("#EXT-X-RENDITION-REPORT")) {
+                                long h10 = h(O2, Y);
+                                Matcher matcher2 = Z.matcher(O2);
                                 if (matcher2.find()) {
                                     String group = matcher2.group(1);
                                     group.getClass();
@@ -1656,15 +1657,15 @@ public final class r implements y2.o {
                                 } else {
                                     i11 = -1;
                                 }
-                                arrayList14.add(new h(Uri.parse(e2.a.l(str, j(K2, pattern2, hashMap2))), h10, i11));
-                            } else if (!K2.startsWith("#EXT-X-PRELOAD-HINT")) {
-                                if (K2.startsWith("#EXT-X-PART")) {
+                                arrayList14.add(new h(Uri.parse(e2.a.l(str, j(O2, pattern2, hashMap2))), h10, i11));
+                            } else if (!O2.startsWith("#EXT-X-PRELOAD-HINT")) {
+                                if (O2.startsWith("#EXT-X-PART")) {
                                     String hexString = str14 == null ? null : str21 != null ? str21 : Long.toHexString(j25);
-                                    String j55 = j(K2, pattern2, hashMap2);
-                                    long parseDouble2 = (long) (Double.parseDouble(j(K2, K, Collections.EMPTY_MAP)) * 1000000.0d);
-                                    boolean f10 = f(K2, u0) | (z11 && arrayList13.isEmpty());
-                                    boolean f11 = f(K2, v0);
-                                    String i31 = i(K2, pattern, null, hashMap2);
+                                    String j55 = j(O2, pattern2, hashMap2);
+                                    long parseDouble2 = (long) (Double.parseDouble(j(O2, K, Collections.EMPTY_MAP)) * 1000000.0d);
+                                    boolean f10 = f(O2, u0) | (z11 && arrayList13.isEmpty());
+                                    boolean f11 = f(O2, v0);
+                                    String i31 = i(O2, pattern, null, hashMap2);
                                     if (i31 != null) {
                                         String str27 = d0.a;
                                         String[] split3 = i31.split("@", -1);
@@ -1710,13 +1711,13 @@ public final class r implements y2.o {
                                 } else {
                                     i iVar8 = iVar3;
                                     int i33 = i19;
-                                    if (K2.startsWith("#EXT-X-DATERANGE") && i(K2, A0, str10, hashMap2).equals("com.apple.hls.interstitial")) {
-                                        String j57 = j(K2, z0, hashMap2);
-                                        String i34 = i(K2, G0, null, hashMap2);
+                                    if (O2.startsWith("#EXT-X-DATERANGE") && i(O2, A0, str10, hashMap2).equals("com.apple.hls.interstitial")) {
+                                        String j57 = j(O2, z0, hashMap2);
+                                        String i34 = i(O2, G0, null, hashMap2);
                                         Uri parse = i34 != null ? Uri.parse(i34) : null;
-                                        String i35 = i(K2, H0, null, hashMap2);
+                                        String i35 = i(O2, H0, null, hashMap2);
                                         Uri parse2 = i35 != null ? Uri.parse(i35) : null;
-                                        String i36 = i(K2, B0, null, hashMap2);
+                                        String i36 = i(O2, B0, null, hashMap2);
                                         if (i36 != null) {
                                             iVar = iVar8;
                                             j14 = d0.Q(d0.T(i36));
@@ -1725,11 +1726,11 @@ public final class r implements y2.o {
                                             j14 = -9223372036854775807L;
                                         }
                                         i12 = i33;
-                                        String i37 = i(K2, D0, null, hashMap2);
+                                        String i37 = i(O2, D0, null, hashMap2);
                                         long Q2 = i37 != null ? d0.Q(d0.T(i37)) : -9223372036854775807L;
                                         ArrayList arrayList28 = new ArrayList();
                                         arrayList7 = arrayList13;
-                                        String i38 = i(K2, C0, null, hashMap2);
+                                        String i38 = i(O2, C0, null, hashMap2);
                                         if (i38 != null) {
                                             String str28 = d0.a;
                                             String[] split4 = i38.split(",", -1);
@@ -1782,20 +1783,20 @@ public final class r implements y2.o {
                                         }
                                         TreeMap treeMap3 = treeMap2;
                                         str4 = str12;
-                                        double g13 = g(K2, L, -1.0d);
+                                        double g13 = g(O2, L, -1.0d);
                                         long j58 = g13 >= 0.0d ? (long) (g13 * 1000000.0d) : -9223372036854775807L;
-                                        double g14 = g(K2, E0, -1.0d);
+                                        double g14 = g(O2, E0, -1.0d);
                                         long j59 = g14 >= 0.0d ? (long) (g14 * 1000000.0d) : -9223372036854775807L;
-                                        boolean f12 = f(K2, F0);
+                                        boolean f12 = f(O2, F0);
                                         long j60 = j59;
-                                        double g15 = g(K2, I0, Double.MIN_VALUE);
+                                        double g15 = g(O2, I0, Double.MIN_VALUE);
                                         long j61 = g15 != Double.MIN_VALUE ? (long) (g15 * 1000000.0d) : -9223372036854775807L;
-                                        double g16 = g(K2, J0, -1.0d);
+                                        double g16 = g(O2, J0, -1.0d);
                                         long j62 = g16 >= 0.0d ? (long) (g16 * 1000000.0d) : -9223372036854775807L;
                                         ArrayList arrayList29 = new ArrayList();
                                         treeMap = treeMap3;
                                         str2 = str10;
-                                        String i41 = i(K2, K0, null, hashMap2);
+                                        String i41 = i(O2, K0, null, hashMap2);
                                         if (i41 != null) {
                                             String str29 = d0.a;
                                             String[] split5 = i41.split(",", -1);
@@ -1815,7 +1816,7 @@ public final class r implements y2.o {
                                         }
                                         ArrayList arrayList30 = new ArrayList();
                                         arrayList5 = arrayList14;
-                                        String i45 = i(K2, L0, null, hashMap2);
+                                        String i45 = i(O2, L0, null, hashMap2);
                                         if (i45 != null) {
                                             String str30 = d0.a;
                                             String[] split6 = i45.split(",", -1);
@@ -1834,15 +1835,15 @@ public final class r implements y2.o {
                                                 split6 = strArr;
                                             }
                                         }
-                                        Boolean valueOf = i(K2, M0, null, hashMap2) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
-                                        String i48 = i(K2, N0, null, hashMap2);
+                                        Boolean valueOf = i(O2, M0, null, hashMap2) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
+                                        String i48 = i(O2, N0, null, hashMap2);
                                         if (i48 != null) {
                                             str5 = "RANGE";
                                             if (!i48.equals("RANGE")) {
                                                 str5 = "POINT";
                                             }
                                             arrayList6 = arrayList12;
-                                            i13 = i(K2, O0, null, hashMap2);
+                                            i13 = i(O2, O0, null, hashMap2);
                                             if (i13 != null) {
                                                 str6 = "PRIMARY";
                                                 if (!i13.equals("PRIMARY")) {
@@ -1850,7 +1851,7 @@ public final class r implements y2.o {
                                                 }
                                                 arrayList8 = new ArrayList();
                                                 str7 = str6;
-                                                String substring = K2.substring(17);
+                                                String substring = O2.substring(17);
                                                 matcher = Q0.matcher(substring);
                                                 while (matcher.find()) {
                                                     Matcher matcher3 = matcher;
@@ -1950,20 +1951,20 @@ public final class r implements y2.o {
                                                             break;
                                                         default:
                                                             bool2 = valueOf;
-                                                            String i49 = e2.i(1, 0, group2);
-                                                            String t10 = p6.t(i49, "=");
+                                                            String h11 = e2.h(1, 0, group2);
+                                                            String t10 = r6.t(h11, "=");
                                                             int length4 = t10.length() + substring.indexOf(t10);
                                                             arrayList11 = arrayList30;
                                                             String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
                                                             if (substring2.startsWith("\"")) {
-                                                                dVar = new d(0, i49, j(substring, Pattern.compile(i49 + "=\"((?:.|\f)+?)\""), hashMap2));
+                                                                dVar = new d(0, h11, j(substring, Pattern.compile(h11 + "=\"((?:.|\f)+?)\""), hashMap2));
                                                                 j21 = j62;
                                                             } else if (substring2.equals("0x") || substring2.equals("0X")) {
                                                                 j21 = j62;
-                                                                dVar = new d(1, i49, j(substring, Pattern.compile(i49 + "=(0[xX][A-F0-9]+)"), hashMap2));
+                                                                dVar = new d(1, h11, j(substring, Pattern.compile(h11 + "=(0[xX][A-F0-9]+)"), hashMap2));
                                                             } else {
                                                                 j21 = j62;
-                                                                dVar = new d(i49, Double.parseDouble(j(substring, Pattern.compile(i49 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP)));
+                                                                dVar = new d(h11, Double.parseDouble(j(substring, Pattern.compile(h11 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP)));
                                                             }
                                                             arrayList8.add(dVar);
                                                             break;
@@ -2176,8 +2177,8 @@ public final class r implements y2.o {
                                                 }
                                                 HashMap hashMap6 = eVar2.b;
                                                 if (!arrayList8.isEmpty()) {
-                                                    for (int i50 = 0; i50 < arrayList8.size(); i50++) {
-                                                        d dVar2 = (d) arrayList8.get(i50);
+                                                    for (int i49 = 0; i49 < arrayList8.size(); i49++) {
+                                                        d dVar2 = (d) arrayList8.get(i49);
                                                         String str31 = dVar2.a;
                                                         d dVar3 = (d) hashMap6.get(str31);
                                                         if (dVar3 != null) {
@@ -2221,7 +2222,7 @@ public final class r implements y2.o {
                                             str6 = null;
                                             arrayList8 = new ArrayList();
                                             str7 = str6;
-                                            String substring3 = K2.substring(17);
+                                            String substring3 = O2.substring(17);
                                             matcher = Q0.matcher(substring3);
                                             while (matcher.find()) {
                                             }
@@ -2271,13 +2272,13 @@ public final class r implements y2.o {
                                         }
                                         str5 = null;
                                         arrayList6 = arrayList12;
-                                        i13 = i(K2, O0, null, hashMap2);
+                                        i13 = i(O2, O0, null, hashMap2);
                                         if (i13 != null) {
                                         }
                                         str6 = null;
                                         arrayList8 = new ArrayList();
                                         str7 = str6;
-                                        String substring32 = K2.substring(17);
+                                        String substring32 = O2.substring(17);
                                         matcher = Q0.matcher(substring32);
                                         while (matcher.find()) {
                                         }
@@ -2334,10 +2335,10 @@ public final class r implements y2.o {
                                         iVar = iVar8;
                                         str2 = str10;
                                         linkedHashMap = linkedHashMap4;
-                                        if (!K2.startsWith("#")) {
+                                        if (!O2.startsWith("#")) {
                                             String hexString2 = str14 == null ? null : str21 != null ? str21 : Long.toHexString(j25);
                                             long j69 = j25 + 1;
-                                            String k10 = k(K2, hashMap2);
+                                            String k10 = k(O2, hashMap2);
                                             i iVar9 = (i) hashMap5.get(k10);
                                             if (j30 == -1) {
                                                 iVar2 = iVar9;
@@ -2466,10 +2467,10 @@ public final class r implements y2.o {
                                     lVar2 = lVar;
                                 }
                                 oVar5 = oVar;
-                            } else if (gVar3 == null && "PART".equals(j(K2, l0, hashMap2))) {
-                                String j73 = j(K2, pattern2, hashMap2);
-                                long h11 = h(K2, d0);
-                                long h12 = h(K2, e0);
+                            } else if (gVar3 == null && "PART".equals(j(O2, l0, hashMap2))) {
+                                String j73 = j(O2, pattern2, hashMap2);
+                                long h12 = h(O2, d0);
+                                long h13 = h(O2, e0);
                                 String hexString3 = str14 == null ? null : str21 != null ? str21 : Long.toHexString(j25);
                                 if (oVar7 != null || treeMap2.isEmpty()) {
                                     oVar2 = oVar7;
@@ -2481,7 +2482,7 @@ public final class r implements y2.o {
                                     }
                                     oVar2 = oVar12;
                                 }
-                                gVar = (h11 == -1 || h12 != -1) ? new g(j73, iVar3, 0L, i19, j27, oVar2, str14, hexString3, h11 != -1 ? h11 : 0L, h12, false, false, true) : gVar3;
+                                gVar = (h12 == -1 || h13 != -1) ? new g(j73, iVar3, 0L, i19, j27, oVar2, str14, hexString3, h12 != -1 ? h12 : 0L, h13, false, false, true) : gVar3;
                                 oVar5 = oVar;
                                 lVar2 = lVar;
                                 oVar7 = oVar2;
@@ -2567,7 +2568,7 @@ public final class r implements y2.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static o e(m2.t tVar, String str) {
+    public static o e(e3 e3Var, String str) {
         int i10;
         char c10;
         ArrayList arrayList;
@@ -2614,13 +2615,13 @@ public final class r implements y2.o {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean F2 = tVar.F();
+            boolean L2 = e3Var.L();
             Pattern pattern = i0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
             Pattern pattern2 = n0;
             boolean z14 = z12;
-            if (!F2) {
+            if (!L2) {
                 ArrayList arrayList18 = arrayList14;
                 ArrayList arrayList19 = arrayList10;
                 ArrayList arrayList20 = arrayList11;
@@ -2869,15 +2870,15 @@ public final class r implements y2.o {
                 }
                 return new o(str, arrayList22, arrayList28, arrayList19, arrayList20, arrayList29, arrayList17, sVar2, list, z14, hashMap4, arrayList23);
             }
-            String K2 = tVar.K();
-            if (K2.startsWith("#EXT")) {
-                arrayList16.add(K2);
+            String O2 = e3Var.O();
+            if (O2.startsWith("#EXT")) {
+                arrayList16.add(O2);
             }
-            boolean startsWith = K2.startsWith("#EXT-X-I-FRAME-STREAM-INF");
+            boolean startsWith = O2.startsWith("#EXT-X-I-FRAME-STREAM-INF");
             ArrayList arrayList30 = arrayList16;
-            if (K2.startsWith("#EXT-X-DEFINE")) {
-                hashMap4.put(j(K2, pattern2, hashMap4), j(K2, x0, hashMap4));
-            } else if (K2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
+            if (O2.startsWith("#EXT-X-DEFINE")) {
+                hashMap4.put(j(O2, pattern2, hashMap4), j(O2, x0, hashMap4));
+            } else if (O2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
                 arrayList7 = arrayList14;
                 arrayList6 = arrayList10;
                 arrayList5 = arrayList11;
@@ -2894,20 +2895,20 @@ public final class r implements y2.o {
                 arrayList11 = arrayList5;
                 arrayList10 = arrayList6;
                 arrayList14 = arrayList7;
-            } else if (K2.startsWith("#EXT-X-MEDIA")) {
-                arrayList14.add(K2);
-            } else if (K2.startsWith("#EXT-X-SESSION-KEY")) {
-                b2.n c11 = c(K2, i(K2, g0, "identity", hashMap4), hashMap4);
+            } else if (O2.startsWith("#EXT-X-MEDIA")) {
+                arrayList14.add(O2);
+            } else if (O2.startsWith("#EXT-X-SESSION-KEY")) {
+                b2.n c11 = c(O2, i(O2, g0, "identity", hashMap4), hashMap4);
                 if (c11 != null) {
-                    String j13 = j(K2, f0, hashMap4);
+                    String j13 = j(O2, f0, hashMap4);
                     arrayList15.add(new b2.o(("SAMPLE-AES-CENC".equals(j13) || "SAMPLE-AES-CTR".equals(j13)) ? "cenc" : "cbcs", true, c11));
                 }
-            } else if (K2.startsWith("#EXT-X-STREAM-INF") || startsWith) {
-                boolean contains = z13 | K2.contains("CLOSED-CAPTIONS=NONE");
+            } else if (O2.startsWith("#EXT-X-STREAM-INF") || startsWith) {
+                boolean contains = z13 | O2.contains("CLOSED-CAPTIONS=NONE");
                 int i26 = startsWith ? 16384 : 0;
                 arrayList3 = arrayList15;
-                int parseInt2 = Integer.parseInt(j(K2, n, Collections.EMPTY_MAP));
-                Matcher matcher = c.matcher(K2);
+                int parseInt2 = Integer.parseInt(j(O2, n, Collections.EMPTY_MAP));
+                Matcher matcher = c.matcher(O2);
                 if (matcher.find()) {
                     z10 = startsWith;
                     String group = matcher.group(1);
@@ -2918,11 +2919,11 @@ public final class r implements y2.o {
                     i11 = -1;
                 }
                 arrayList4 = arrayList12;
-                String i27 = i(K2, s, null, hashMap4);
+                String i27 = i(O2, s, null, hashMap4);
                 arrayList5 = arrayList11;
-                String i28 = i(K2, v, null, hashMap4);
+                String i28 = i(O2, v, null, hashMap4);
                 arrayList6 = arrayList10;
-                String i29 = i(K2, w, null, hashMap4);
+                String i29 = i(O2, w, null, hashMap4);
                 if (i29 != null) {
                     String str12 = d0.a;
                     String[] split2 = i29.split(",", 2)[0].split("/", -1);
@@ -2964,12 +2965,12 @@ public final class r implements y2.o {
                             if (sb2 != null) {
                             }
                         }
-                        String i32 = i(K2, x, null, hashMap4);
-                        boolean equals = TextUtils.equals(i(K2, y, null, hashMap4), "true");
-                        String i33 = i(K2, E, null, hashMap4);
-                        String i34 = i(K2, F, null, hashMap4);
-                        String i35 = i(K2, G, null, hashMap4);
-                        i13 = i(K2, H, null, hashMap4);
+                        String i32 = i(O2, x, null, hashMap4);
+                        boolean equals = TextUtils.equals(i(O2, y, null, hashMap4), "true");
+                        String i33 = i(O2, E, null, hashMap4);
+                        String i34 = i(O2, F, null, hashMap4);
+                        String i35 = i(O2, G, null, hashMap4);
+                        i13 = i(O2, H, null, hashMap4);
                         if (i13 == null) {
                             str7 = i33;
                             String[] split3 = i13.split("x", -1);
@@ -2982,20 +2983,20 @@ public final class r implements y2.o {
                         }
                         i14 = -1;
                         i15 = -1;
-                        String i36 = i(K2, I, null, hashMap4);
+                        String i36 = i(O2, I, null, hashMap4);
                         float parseFloat = i36 == null ? Float.parseFloat(i36) : -1.0f;
                         HashMap hashMap6 = hashMap3;
-                        String i37 = i(K2, d, null, hashMap4);
-                        String i38 = i(K2, e, null, hashMap4);
-                        String i39 = i(K2, f, null, hashMap4);
-                        String i40 = i(K2, h, null, hashMap4);
+                        String i37 = i(O2, d, null, hashMap4);
+                        String i38 = i(O2, e, null, hashMap4);
+                        String i39 = i(O2, f, null, hashMap4);
+                        String i40 = i(O2, h, null, hashMap4);
                         if (!z10) {
-                            m10 = e2.a.m(str8, j(K2, pattern, hashMap4));
+                            m10 = e2.a.m(str8, j(O2, pattern, hashMap4));
                         } else {
-                            if (!tVar.F()) {
+                            if (!e3Var.L()) {
                                 throw s0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            m10 = e2.a.m(str8, k(tVar.K(), hashMap4));
+                            m10 = e2.a.m(str8, k(e3Var.O(), hashMap4));
                         }
                         Uri uri2 = m10;
                         b2.r rVar2 = new b2.r();
@@ -3052,24 +3053,24 @@ public final class r implements y2.o {
                     if (sb2 != null) {
                     }
                 }
-                String i322 = i(K2, x, null, hashMap4);
-                boolean equals2 = TextUtils.equals(i(K2, y, null, hashMap4), "true");
-                String i332 = i(K2, E, null, hashMap4);
-                String i342 = i(K2, F, null, hashMap4);
-                String i352 = i(K2, G, null, hashMap4);
-                i13 = i(K2, H, null, hashMap4);
+                String i322 = i(O2, x, null, hashMap4);
+                boolean equals2 = TextUtils.equals(i(O2, y, null, hashMap4), "true");
+                String i332 = i(O2, E, null, hashMap4);
+                String i342 = i(O2, F, null, hashMap4);
+                String i352 = i(O2, G, null, hashMap4);
+                i13 = i(O2, H, null, hashMap4);
                 if (i13 == null) {
                 }
                 i14 = -1;
                 i15 = -1;
-                String i362 = i(K2, I, null, hashMap4);
+                String i362 = i(O2, I, null, hashMap4);
                 if (i362 == null) {
                 }
                 HashMap hashMap62 = hashMap3;
-                String i372 = i(K2, d, null, hashMap4);
-                String i382 = i(K2, e, null, hashMap4);
-                String i392 = i(K2, f, null, hashMap4);
-                String i402 = i(K2, h, null, hashMap4);
+                String i372 = i(O2, d, null, hashMap4);
+                String i382 = i(O2, e, null, hashMap4);
+                String i392 = i(O2, f, null, hashMap4);
+                String i402 = i(O2, h, null, hashMap4);
                 if (!z10) {
                 }
                 Uri uri22 = m10;
@@ -3184,11 +3185,11 @@ public final class r implements y2.o {
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0069 A[Catch: all -> 0x0098, LOOP:0: B:13:0x0069->B:38:0x0069, LOOP_START, TryCatch #2 {all -> 0x0098, blocks: (B:3:0x000f, B:5:0x0018, B:7:0x0020, B:10:0x0029, B:13:0x0069, B:15:0x006f, B:18:0x007a, B:57:0x0082, B:20:0x009b, B:22:0x00a3, B:24:0x00ab, B:26:0x00b3, B:28:0x00bb, B:30:0x00c3, B:32:0x00cb, B:34:0x00d3, B:36:0x00dc, B:41:0x00e0, B:75:0x0106, B:76:0x010c, B:80:0x0030, B:82:0x0036, B:87:0x003f, B:89:0x0048, B:94:0x0051, B:96:0x0057, B:98:0x005d, B:100:0x0062), top: B:2:0x000f }] */
     /* JADX WARN: Removed duplicated region for block: B:75:0x0106 A[Catch: all -> 0x0098, TRY_ENTER, TryCatch #2 {all -> 0x0098, blocks: (B:3:0x000f, B:5:0x0018, B:7:0x0020, B:10:0x0029, B:13:0x0069, B:15:0x006f, B:18:0x007a, B:57:0x0082, B:20:0x009b, B:22:0x00a3, B:24:0x00ab, B:26:0x00b3, B:28:0x00bb, B:30:0x00c3, B:32:0x00cb, B:34:0x00d3, B:36:0x00dc, B:41:0x00e0, B:75:0x0106, B:76:0x010c, B:80:0x0030, B:82:0x0036, B:87:0x003f, B:89:0x0048, B:94:0x0051, B:96:0x0057, B:98:0x005d, B:100:0x0062), top: B:2:0x000f }] */
-    @Override // y2.o
+    @Override // y2.p
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object f2(Uri uri, g2.k kVar) {
+    public final Object l2(Uri uri, g2.k kVar) {
         String trim;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(kVar));
         ArrayDeque arrayDeque = new ArrayDeque();
@@ -3220,7 +3221,7 @@ public final class r implements y2.o {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            o e7 = e(new m2.t(arrayDeque, bufferedReader), uri.toString());
+                            o e7 = e(new e3(arrayDeque, bufferedReader), uri.toString());
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -3230,7 +3231,7 @@ public final class r implements y2.o {
                     }
                 }
                 arrayDeque.add(trim);
-                l d10 = d(this.a, this.b, new m2.t(arrayDeque, bufferedReader), uri.toString());
+                l d10 = d(this.a, this.b, new e3(arrayDeque, bufferedReader), uri.toString());
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

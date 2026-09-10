@@ -1,94 +1,28 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class zf1 extends org.telegram.ui.Components.a81 {
-    public final ArrayList a;
-    public final /* synthetic */ ag1 b;
+public final class zf1 extends ng.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public zf1(ag1 ag1Var) {
-        this.b = ag1Var;
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        arrayList.add(new wf1(0));
-        wf1 wf1Var = new wf1(2);
-        wf1Var.b = 0;
-        arrayList.add(wf1Var);
-        wf1 wf1Var2 = new wf1(2);
-        wf1Var2.b = 1;
-        arrayList.add(wf1Var2);
-        wf1 wf1Var3 = new wf1(2);
-        wf1Var3.b = 2;
-        arrayList.add(wf1Var3);
-        wf1 wf1Var4 = new wf1(2);
-        wf1Var4.b = 3;
-        arrayList.add(wf1Var4);
-        wf1 wf1Var5 = new wf1(2);
-        wf1Var5.b = 4;
-        arrayList.add(wf1Var5);
+    public zf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, true);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public final void b(View view, int i10, int i11) {
-        ag1 ag1Var = this.b;
-        ag1Var.K(view, i10, ag1Var.b0, true);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final View d(int i10) {
-        int i11;
-        ag1 ag1Var = this.b;
-        eg1 eg1Var = ag1Var.t0;
-        if (i10 == 1) {
-            return ag1Var.T;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (i10 == 2) {
-            i11 = ((org.telegram.ui.ActionBar.n2) eg1Var).currentAccount;
-            org.telegram.ui.Components.vm0 vm0Var = new org.telegram.ui.Components.vm0(i11, eg1Var);
-            vm0Var.b.j(new yf1(0));
-            vm0Var.setUiCallback(ag1Var);
-            return vm0Var;
+        if (obj != null && zf1.class == obj.getClass()) {
+            zf1 zf1Var = (zf1) obj;
+            int i10 = this.a;
+            if (i10 == zf1Var.a && i10 == 0 && this.c.id == zf1Var.c.id) {
+                return true;
+            }
         }
-        x10 x10Var = new x10(eg1Var);
-        x10Var.setChatPreviewDelegate(ag1Var.r0);
-        x10Var.setUiCallback(ag1Var);
-        x10Var.b.j(new yf1(1));
-        return x10Var;
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final CharSequence g(int i10) {
-        ArrayList arrayList = this.a;
-        if (((wf1) arrayList.get(i10)).a == 0) {
-            return LocaleController.getString(R.string.SearchMessages);
-        }
-        if (((wf1) arrayList.get(i10)).a == 1) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        hg.q0 q0Var = hg.s0.c3[((wf1) arrayList.get(i10)).b];
-        String str = q0Var.c;
-        return str != null ? str : LocaleController.getString(q0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.a81
-    public final int h(int i10) {
-        ArrayList arrayList = this.a;
-        if (((wf1) arrayList.get(i10)).a == 0) {
-            return 1;
-        }
-        if (((wf1) arrayList.get(i10)).a == 1) {
-            return 2;
-        }
-        return ((wf1) arrayList.get(i10)).a + i10;
+        return false;
     }
 }

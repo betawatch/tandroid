@@ -1,25 +1,39 @@
 package bi;
 
-import j$.util.Objects;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class r extends pg.a {
-    public final long c;
+public final /* synthetic */ class r implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qd b;
 
-    public r(long j3) {
-        super(0, false);
-        this.c = j3;
+    public /* synthetic */ r(qd qdVar, int i10) {
+        this.a = i10;
+        this.b = qdVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Integer num = (Integer) obj;
+        switch (this.a) {
+            case 0:
+                int intValue = num.intValue();
+                qd qdVar = this.b;
+                qdVar.setPeriod(intValue);
+                Utilities.Callback callback = qdVar.B1;
+                if (callback != null) {
+                    callback.run(num);
+                    break;
+                }
+                break;
+            default:
+                Utilities.Callback callback2 = this.b.C1;
+                if (callback2 != null) {
+                    callback2.run(num);
+                    break;
+                }
+                break;
         }
-        return (obj instanceof r) && this.c == ((r) obj).c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.c));
     }
 }

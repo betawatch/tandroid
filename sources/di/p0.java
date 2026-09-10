@@ -1,47 +1,6 @@
 package di;
 
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
-    public final /* synthetic */ File c;
-
-    public /* synthetic */ p0(u0 u0Var, File file, int i10) {
-        this.a = i10;
-        this.b = u0Var;
-        this.c = file;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u0 u0Var = this.b;
-                if (u0Var.c && u0Var.r != null) {
-                    MediaController.saveFile(this.c.getAbsolutePath(), u0Var.getContext(), 1, null, null, new q0(u0Var, 1), false);
-                    break;
-                }
-                break;
-            case 1:
-                u0 u0Var2 = this.b;
-                o8 o8Var = u0Var2.r;
-                File file = this.c;
-                o8Var.c(file);
-                if (u0Var2.c && u0Var2.r != null) {
-                    AndroidUtilities.runOnUIThread(new p0(u0Var2, file, 2));
-                    break;
-                }
-                break;
-            default:
-                String absolutePath = this.c.getAbsolutePath();
-                u0 u0Var3 = this.b;
-                MediaController.saveFile(absolutePath, u0Var3.getContext(), 0, null, null, new q0(u0Var3, 2), false);
-                break;
-        }
-    }
+public interface p0 {
 }

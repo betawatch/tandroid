@@ -1,33 +1,34 @@
 package jc;
 
 import com.google.firebase.messaging.m;
+import hc.g;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e {
-    public final hc.e a;
+    public final hc.f a;
     public final int b;
     public final int c;
     public final int d;
     public final e e;
     public final int f;
 
-    public e(m mVar, hc.e eVar, int i10, int i11, int i12, e eVar2, hc.f fVar) {
-        this.a = eVar;
+    public e(m mVar, hc.f fVar, int i10, int i11, int i12, e eVar, g gVar) {
+        this.a = fVar;
         this.b = i10;
-        hc.e eVar3 = hc.e.h;
-        int i13 = (eVar == eVar3 || eVar2 == null) ? i11 : eVar2.c;
+        hc.f fVar2 = hc.f.h;
+        int i13 = (fVar == fVar2 || eVar == null) ? i11 : eVar.c;
         this.c = i13;
         this.d = i12;
-        this.e = eVar2;
+        this.e = eVar;
         boolean z10 = false;
-        int i14 = eVar2 != null ? eVar2.f : 0;
-        if ((eVar == eVar3 && eVar2 == null && i13 != 0) || (eVar2 != null && i13 != eVar2.c)) {
+        int i14 = eVar != null ? eVar.f : 0;
+        if ((fVar == fVar2 && eVar == null && i13 != 0) || (eVar != null && i13 != eVar.c)) {
             z10 = true;
         }
         int i15 = 4;
-        i14 = (eVar2 == null || eVar != eVar2.a || z10) ? i14 + eVar.a(fVar) + 4 : i14;
-        int ordinal = eVar.ordinal();
+        i14 = (eVar == null || fVar != eVar.a || z10) ? i14 + fVar.a(gVar) + 4 : i14;
+        int ordinal = fVar.ordinal();
         if (ordinal != 1) {
             if (ordinal != 2) {
                 if (ordinal == 4) {

@@ -1,62 +1,48 @@
 package qg;
 
-import v7.z6;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.ul0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class n1 extends o1 {
-    public final f1 f;
-    public final float g;
-    public final float h;
-    public final /* synthetic */ p1 i;
+public final class n1 extends ul0 {
+    public final /* synthetic */ v0 c;
 
-    public n1(p1 p1Var, f1 f1Var, boolean z10, boolean z11) {
-        this.i = p1Var;
-        this.b = false;
-        this.f = f1Var;
-        this.g = z10 ? -1.0f : 1.0f;
-        this.h = z11 ? -1.0f : 1.0f;
-        a();
+    public n1(v0 v0Var) {
+        this.c = v0Var;
     }
 
-    @Override // qg.o1
-    public final void a() {
-        f1 f1Var = this.f;
-        if (f1Var != null) {
-            float f7 = (this.g * f1Var.d) + f1Var.b;
-            float f10 = (this.h * f1Var.e) + f1Var.c;
-            p1 p1Var = this.i;
-            p1Var.c(f7, f10, true);
-            float[] fArr = p1Var.p;
-            float f11 = fArr[0];
-            float f12 = fArr[1];
-            this.d = f11;
-            this.e = f12;
-        }
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
     }
 
-    @Override // qg.o1
-    public final void b(float f7, float f10) {
-        this.d = f7;
-        this.e = f10;
-        f1 f1Var = this.f;
-        float f11 = ((-this.g) * f1Var.d) + f1Var.b;
-        float f12 = ((-this.h) * f1Var.e) + f1Var.c;
-        p1 p1Var = this.i;
-        p1Var.c(f7, f10, false);
-        p1Var.c(f11, f12, true);
-        float[] fArr = p1Var.p;
-        float f13 = fArr[0];
-        float f14 = fArr[1];
-        double atan2 = (3.141592653589793d - Math.atan2(f10 - f14, f7 - f13)) - f1Var.h;
-        double cos = Math.cos(atan2) * z6.a(f7, f10, f13, f14);
-        double sin = Math.sin(atan2) * z6.a(f7, f10, f13, f14);
-        f1Var.d = ((float) Math.abs(cos)) / 2.0f;
-        f1Var.e = ((float) Math.abs(sin)) / 2.0f;
-        f1Var.b = (f7 + f13) / 2.0f;
-        f1Var.c = (f10 + f14) / 2.0f;
-        for (int i10 = 0; i10 < p1Var.m.size(); i10++) {
-            ((o1) p1Var.m.get(i10)).a();
+    @Override // s4.h0
+    public final int h() {
+        return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        v0 v0Var = this.c;
+        ArrayList arrayList = v0Var.X2;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        p1 p1Var = (p1) c1Var.a;
+        p1Var.r = (TLRPC.Document) arrayList.get(i10 % arrayList.size());
+        p1Var.s = true;
+        p1Var.a(true ^ v0Var.c3, false, false);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        p1 p1Var = new p1(this.c, viewGroup.getContext());
+        p1Var.setLayoutParams(new s4.p0(-1, -2));
+        return new fl0(p1Var);
     }
 }

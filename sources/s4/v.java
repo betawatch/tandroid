@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.l2;
-import org.telegram.ui.bz;
+import org.telegram.ui.dz;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class v {
     public static final l2 b = new l2(1);
@@ -91,7 +91,7 @@ public abstract class v {
     }
 
     public boolean k() {
-        return !(this instanceof bz);
+        return !(this instanceof dz);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {
@@ -105,9 +105,9 @@ public abstract class v {
                 View childAt = recyclerView.getChildAt(i11);
                 if (childAt != view) {
                     WeakHashMap weakHashMap2 = r0.i0.a;
-                    float e7 = r0.a0.e(childAt);
-                    if (e7 > f11) {
-                        f11 = e7;
+                    float e = r0.a0.e(childAt);
+                    if (e > f11) {
+                        f11 = e;
                     }
                 }
             }

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public static final List u = Collections.EMPTY_LIST;
@@ -30,7 +30,7 @@ public abstract class c1 {
     public ArrayList m = null;
     public List n = null;
     public int o = 0;
-    public pf.e p = null;
+    public of.e p = null;
     public boolean q = false;
     public int r = 0;
     public int s = -1;

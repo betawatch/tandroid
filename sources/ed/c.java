@@ -5,7 +5,7 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.regex.Pattern;
 import t7.s;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("`+");
@@ -31,7 +31,7 @@ public final class c extends h {
         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
             int length = replace.length();
             if (s.b(' ', replace, 0, length) != length) {
-                replace = e2.i(1, 1, replace);
+                replace = e2.h(1, 1, replace);
             }
         }
         dVar.h = replace;

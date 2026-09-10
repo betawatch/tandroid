@@ -1,46 +1,64 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c21 implements MessagesController.IsInChatCheckedCallback, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ Object f;
+public final class c21 extends FrameLayout {
+    public final ImageView a;
+    public final a21 b;
+    public final /* synthetic */ ThemeEditorView.EditorAlert c;
 
-    public /* synthetic */ c21(w21 w21Var, org.telegram.ui.ActionBar.f1 f1Var, n70 n70Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
-        this.b = w21Var;
-        this.c = f1Var;
-        this.d = n70Var;
-        this.a = j3;
-        this.e = user;
-        this.f = chat;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        zh.w3.L0((zh.w3) this.b, (TL_stars.TL_starGiftUnique) this.c, (TLRPC.PaymentForm) this.d, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.e, this.a, (CharSequence) this.f, b2Var);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
-    public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new g21((w21) this.b, z10, (org.telegram.ui.ActionBar.f1) this.c, (n70) this.d, this.a, (TLRPC.User) this.e, (TLRPC.Chat) this.f));
-    }
-
-    public /* synthetic */ c21(zh.w3 w3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.PaymentForm paymentForm, TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails tL_inputInvoiceStarGiftDropOriginalDetails, long j3, CharSequence charSequence) {
-        this.b = w3Var;
-        this.c = tL_starGiftUnique;
-        this.d = paymentForm;
-        this.e = tL_inputInvoiceStarGiftDropOriginalDetails;
-        this.a = j3;
-        this.f = charSequence;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context);
+        this.c = editorAlert;
+        View view = new View(context);
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(18.0f), -854795));
+        addView(view, w7.a6.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.a6.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setScaleType(scaleType);
+        z11 z11Var = new z11();
+        imageView2.setImageDrawable(z11Var);
+        z11Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, w7.a6.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new g80(this, 21));
+        a21 a21Var = new a21(this, context);
+        this.b = a21Var;
+        a21Var.setTextSize(1, 16.0f);
+        a21Var.setHintTextColor(-6774617);
+        a21Var.setTextColor(-14540254);
+        a21Var.setBackgroundDrawable(null);
+        a21Var.setPadding(0, 0, 0, 0);
+        a21Var.setMaxLines(1);
+        a21Var.setLines(1);
+        a21Var.setSingleLine(true);
+        a21Var.setImeOptions(268435459);
+        a21Var.setHint(LocaleController.getString(R.string.Search));
+        a21Var.setCursorColor(-11491093);
+        a21Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        a21Var.setCursorWidth(1.5f);
+        addView(a21Var, w7.a6.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        a21Var.addTextChangedListener(new b21(this));
+        a21Var.setOnEditorActionListener(new g1(this, 9));
     }
 }

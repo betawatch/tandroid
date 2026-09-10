@@ -1,34 +1,31 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.f01;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class w0 extends ReplacementSpan {
-    public final RectF a = new RectF();
-    public final Paint b = new Paint(1);
-    public final f01 c = new f01(LocaleController.getString(R.string.LiveStoryBadge), 8.0f, AndroidUtilities.bold());
+public final /* synthetic */ class w0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x0 b;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(0.0f);
-        RectF rectF = this.a;
-        rectF.set(f7, dp - AndroidUtilities.dp(6.0f), this.c.l() + f7 + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(6.0f) + dp);
-        Paint paint2 = this.b;
-        paint2.setColor(-572850);
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
-        this.c.c(AndroidUtilities.dp(4.0f) + f7, dp, 1.0f, -1, canvas);
+    public /* synthetic */ w0(x0 x0Var, int i10) {
+        this.a = i10;
+        this.b = x0Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.c.l() + AndroidUtilities.dp(8.0f));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                x0 x0Var = this.b;
+                if (x0Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) x0Var.getParent()).removeView(x0Var);
+                    break;
+                }
+                break;
+            default:
+                this.b.a();
+                break;
+        }
     }
 }

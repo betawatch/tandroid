@@ -1,18 +1,14 @@
 package fg;
 
-import java.net.Socket;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
 public final class j {
-    public final int a;
-    public final Socket b;
-    public long c = 4194304;
-    public long d = 4194304;
-    public boolean e;
-
-    public j(int i10, Socket socket) {
-        this.a = i10;
-        this.b = socket;
-    }
+    public HashSet a;
+    public HashSet b;
+    public HashSet c;
+    public ArrayList d;
+    public bi.f0 e;
 }

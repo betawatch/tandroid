@@ -1,40 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ax extends ImageView {
-    public final /* synthetic */ kz a;
+public final class ax extends g.p {
+    public final /* synthetic */ rz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(kz kzVar, Context context) {
-        super(context);
-        this.a = kzVar;
+    public ax(rz rzVar) {
+        this.c = rzVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ly lyVar;
-        int action = motionEvent.getAction();
-        kz kzVar = this.a;
-        if (action == 0) {
-            kzVar.P1 = true;
-            kzVar.Q1 = false;
-            AndroidUtilities.runOnUIThread(new m8(kzVar, 350, 4), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            kzVar.P1 = false;
-            if (!kzVar.Q1 && (lyVar = kzVar.t1) != null && lyVar.k()) {
-                try {
-                    kzVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
+    @Override // g.p
+    public final int i(int i10) {
+        rz rzVar = this.c;
+        mz mzVar = rzVar.z0;
+        s4.h0 adapter = rzVar.D0.getAdapter();
+        iz izVar = rzVar.y0;
+        if (adapter != izVar) {
+            if (i10 == mzVar.x || !(mzVar.r.get(i10) == null || (mzVar.r.get(i10) instanceof TLRPC.Document))) {
+                return izVar.d;
             }
+            return 1;
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        if (i10 == 0) {
+            return izVar.d;
+        }
+        if (i10 == izVar.s || !(izVar.h.get(i10) == null || (izVar.h.get(i10) instanceof TLRPC.Document))) {
+            return izVar.d;
+        }
+        return 1;
     }
 }

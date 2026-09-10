@@ -1,87 +1,104 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SRPHelper;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class an0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bn0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+public final class an0 implements RequestDelegate {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ TL_account.getPasswordSettings c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ on0 e;
 
-    public /* synthetic */ an0(bn0 bn0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 0;
-        this.b = bn0Var;
-        this.d = tLObject;
-        this.c = tL_error;
+    public an0(on0 on0Var, boolean z10, byte[] bArr, TL_account.getPasswordSettings getpasswordsettings, String str) {
+        this.e = on0Var;
+        this.a = z10;
+        this.b = bArr;
+        this.c = getpasswordsettings;
+        this.d = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                bn0 bn0Var = this.b;
-                TLObject tLObject = this.d;
-                TLRPC.TL_error tL_error = this.c;
-                pn0 pn0Var = bn0Var.e;
-                if (tLObject instanceof Vector) {
-                    pn0Var.y = new TL_account.authorizationForm();
-                    Vector vector = (Vector) tLObject;
-                    int size = vector.objects.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        pn0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
-                    }
-                    bn0Var.a();
-                    break;
-                } else {
-                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.e5.x0(pn0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
-                    } else {
-                        pn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
-                    }
-                    pn0Var.N1(true, false);
-                    break;
-                }
-            case 1:
-                bn0 bn0Var2 = this.b;
-                TLRPC.TL_error tL_error2 = this.c;
-                TLObject tLObject2 = this.d;
-                if (tL_error2 == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    bn0Var2.e.J = password;
-                    TwoStepVerificationActivity.m0(password);
-                    bn0Var2.b();
-                    break;
-                } else {
-                    bn0Var2.getClass();
-                    break;
-                }
-            default:
-                bn0 bn0Var3 = this.b;
-                TLRPC.TL_error tL_error3 = this.c;
-                TLObject tLObject3 = this.d;
-                if (tL_error3 == null) {
-                    TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    bn0Var3.e.J = password2;
-                    TwoStepVerificationActivity.m0(password2);
-                    Utilities.globalQueue.postRunnable(new pf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
-                    break;
-                }
-                break;
+    public final void a() {
+        int i10;
+        org.telegram.ui.ActionBar.f5 f5Var;
+        org.telegram.ui.ActionBar.f5 f5Var2;
+        int i11;
+        on0 on0Var = this.e;
+        if (on0Var.Y == null) {
+            return;
         }
+        if (!this.a) {
+            i11 = ((org.telegram.ui.ActionBar.p2) on0Var).currentAccount;
+            UserConfig.getInstance(i11).savePassword(this.b, on0Var.e1);
+        }
+        AndroidUtilities.hideKeyboard(on0Var.Y[0]);
+        on0Var.f1 = true;
+        long j3 = on0Var.c;
+        on0 on0Var2 = new on0(j3 == 0 ? 8 : 0, j3, on0Var.h, on0Var.r, on0Var.d, on0Var.e, on0Var.n, on0Var.y, on0Var.J);
+        on0Var2.d1 = on0Var.d1;
+        i10 = ((org.telegram.ui.ActionBar.p2) on0Var).currentAccount;
+        ((org.telegram.ui.ActionBar.p2) on0Var2).currentAccount = i10;
+        on0Var2.e1 = on0Var.e1;
+        on0Var2.c1 = on0Var.c1;
+        on0Var2.b1 = on0Var.b1;
+        on0Var2.C1 = on0Var.C1;
+        f5Var = ((org.telegram.ui.ActionBar.p2) on0Var).parentLayout;
+        if (f5Var != null) {
+            f5Var2 = ((org.telegram.ui.ActionBar.p2) on0Var).parentLayout;
+            if (((ActionBarLayout) f5Var2).j()) {
+                on0Var.h1 = on0Var2;
+                return;
+            }
+        }
+        on0Var.presentFragment(on0Var2, true);
     }
 
-    public /* synthetic */ an0(bn0 bn0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = bn0Var;
-        this.c = tL_error;
-        this.d = tLObject;
+    public final void b() {
+        int i10;
+        TL_account.updatePasswordSettings updatepasswordsettings = new TL_account.updatePasswordSettings();
+        on0 on0Var = this.e;
+        TL_account.Password password = on0Var.J;
+        TLRPC.PasswordKdfAlgo passwordKdfAlgo = password.current_algo;
+        if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
+            updatepasswordsettings.password = SRPHelper.startCheck(this.b, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo);
+        }
+        TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
+        updatepasswordsettings.new_settings = passwordinputsettings;
+        passwordinputsettings.new_secure_settings = new TLRPC.TL_secureSecretSettings();
+        TLRPC.TL_secureSecretSettings tL_secureSecretSettings = updatepasswordsettings.new_settings.new_secure_settings;
+        tL_secureSecretSettings.secure_secret = new byte[0];
+        tL_secureSecretSettings.secure_algo = new TLRPC.TL_securePasswordKdfAlgoUnknown();
+        TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
+        passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
+        passwordinputsettings2.flags |= 4;
+        i10 = ((org.telegram.ui.ActionBar.p2) on0Var).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(this.c, new ym0(this, 1));
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10;
+        if (tL_error == null || !"SRP_ID_INVALID".equals(tL_error.text)) {
+            if (tL_error == null) {
+                Utilities.globalQueue.postRunnable(new bi.g2(this, tLObject, this.d, this.a, 24));
+                return;
+            } else {
+                AndroidUtilities.runOnUIThread(new cm0(this, this.a, tL_error, 1));
+                return;
+            }
+        }
+        TL_account.getPassword getpassword = new TL_account.getPassword();
+        i10 = ((org.telegram.ui.ActionBar.p2) this.e).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new bi.m4(9, this, this.a), 8);
     }
 }

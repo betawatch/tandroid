@@ -1,31 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class re implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
+import java.util.function.ToLongFunction;
+import org.telegram.messenger.NotificationsController;
 
-    public /* synthetic */ re(MessagesStorage messagesStorage, long j3, long j10, String str, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final /* synthetic */ class re implements ToLongFunction {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ re(int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j3;
-        this.d = j10;
-        this.e = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.ToLongFunction
+    public final long applyAsLong(Object obj) {
+        long j3;
+        long j10;
         switch (this.a) {
             case 0:
-                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
-                break;
+                return Long.parseLong((String) obj);
+            case 1:
+                j3 = ((NotificationsController.StoryNotification) obj).date;
+                return j3;
             default:
-                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
-                break;
+                j10 = ((NotificationsController.StoryNotification) obj).date;
+                return j10;
         }
     }
 }

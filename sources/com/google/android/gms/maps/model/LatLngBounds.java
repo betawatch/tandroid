@@ -5,12 +5,12 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import g8.j;
 import java.util.Arrays;
-import n4.y;
 import n6.l;
 import o6.a;
+import of.b;
 import w7.e0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new j(12);
@@ -43,10 +43,10 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.y(this.a, "southwest");
-        yVar.y(this.b, "northeast");
-        return yVar.toString();
+        b bVar = new b(this);
+        bVar.E(this.a, "southwest");
+        bVar.E(this.b, "northeast");
+        return bVar.toString();
     }
 
     @Override // android.os.Parcelable

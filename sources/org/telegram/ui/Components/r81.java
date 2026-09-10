@@ -1,16 +1,17 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.text.TextPaint;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r81 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ Object a;
+public final class r81 {
+    public int a;
+    public CharSequence b;
+    public int c;
 
-    public /* synthetic */ r81(Object obj) {
-        this.a = obj;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ((fu) this.a).a.d.r();
+    public final int a(TextPaint textPaint) {
+        int ceil = (int) Math.ceil(bi.x4.g(this.b, textPaint));
+        this.c = ceil;
+        return Math.max(0, ceil);
     }
 }

@@ -1,14 +1,15 @@
 package va;
 
-import cf.c;
+import bi.u6;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.i;
 import m9.b;
+import m9.c;
 import q9.d;
 import q9.r;
 import zd.y0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a implements d {
     public static final a b = new a(0);
@@ -22,24 +23,24 @@ public final class a implements d {
     }
 
     @Override // q9.d
-    public final Object D(c cVar) {
+    public final Object P1(u6 u6Var) {
         switch (this.a) {
             case 0:
-                Object i10 = cVar.i(new r(m9.a.class, Executor.class));
-                i.d(i10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i10);
+                Object h = u6Var.h(new r(m9.a.class, Executor.class));
+                i.d(h, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) h);
             case 1:
-                Object i11 = cVar.i(new r(m9.c.class, Executor.class));
-                i.d(i11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i11);
+                Object h10 = u6Var.h(new r(c.class, Executor.class));
+                i.d(h10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) h10);
             case 2:
-                Object i12 = cVar.i(new r(b.class, Executor.class));
-                i.d(i12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i12);
+                Object h11 = u6Var.h(new r(b.class, Executor.class));
+                i.d(h11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) h11);
             default:
-                Object i13 = cVar.i(new r(m9.d.class, Executor.class));
-                i.d(i13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i13);
+                Object h12 = u6Var.h(new r(m9.d.class, Executor.class));
+                i.d(h12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) h12);
         }
     }
 }

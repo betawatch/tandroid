@@ -17,10 +17,10 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class s50 extends Dialog {
-    public final bi.a4 a;
+    public final u7 a;
     public final t50 b;
     public Bitmap c;
     public Paint d;
@@ -35,10 +35,10 @@ public final class s50 extends Dialog {
         this.f = new Matrix();
         this.b = t50Var;
         t50Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new nf(27, this, t50Var), 14.0f);
-        bi.a4 a4Var = new bi.a4(this, context, t50Var);
-        this.a = a4Var;
-        a4Var.setOnClickListener(new a(this, 29));
+        AndroidUtilities.makeGlobalBlurBitmap(new pf(27, this, t50Var), 14.0f);
+        u7 u7Var = new u7(this, context, t50Var);
+        this.a = u7Var;
+        u7Var.setOnClickListener(new a(this, 29));
     }
 
     public final void b(float f7, r50 r50Var) {
@@ -49,10 +49,10 @@ public final class s50 extends Dialog {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
         this.n = ofFloat;
-        ofFloat.addUpdateListener(new c3(this, 16));
-        this.n.addListener(new bi.h2(this, f7, r50Var, 3));
+        ofFloat.addUpdateListener(new d3(this, 16));
+        this.n.addListener(new bi.j3(this, f7, r50Var, 2));
         this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.pr.h);
+        this.n.setInterpolator(org.telegram.ui.Components.wr.h);
         this.n.start();
     }
 
@@ -67,8 +67,8 @@ public final class s50 extends Dialog {
             WindowManager.LayoutParams attributes = getWindow().getAttributes();
             attributes.flags |= 16;
             getWindow().setAttributes(attributes);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 

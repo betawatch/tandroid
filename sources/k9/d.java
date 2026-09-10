@@ -6,12 +6,13 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import bi.u6;
 import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
 import q9.r;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements pa.b {
     public final /* synthetic */ int a;
@@ -59,7 +60,7 @@ public final /* synthetic */ class d implements pa.b {
                 q9.g gVar = (q9.g) this.c;
                 q9.a aVar2 = (q9.a) this.b;
                 q9.d dVar = aVar2.f;
-                cf.c cVar = new cf.c();
+                u6 u6Var = new u6();
                 HashSet hashSet = new HashSet();
                 HashSet hashSet2 = new HashSet();
                 HashSet hashSet3 = new HashSet();
@@ -89,13 +90,13 @@ public final /* synthetic */ class d implements pa.b {
                 if (!set2.isEmpty()) {
                     hashSet.add(r.a(ma.a.class));
                 }
-                cVar.a = DesugarCollections.unmodifiableSet(hashSet);
-                cVar.b = DesugarCollections.unmodifiableSet(hashSet2);
-                cVar.c = DesugarCollections.unmodifiableSet(hashSet3);
-                cVar.d = DesugarCollections.unmodifiableSet(hashSet4);
+                u6Var.a = DesugarCollections.unmodifiableSet(hashSet);
+                u6Var.b = DesugarCollections.unmodifiableSet(hashSet2);
+                u6Var.c = DesugarCollections.unmodifiableSet(hashSet3);
+                u6Var.d = DesugarCollections.unmodifiableSet(hashSet4);
                 DesugarCollections.unmodifiableSet(hashSet5);
-                cVar.e = gVar;
-                return dVar.D(cVar);
+                u6Var.e = gVar;
+                return dVar.P1(u6Var);
         }
     }
 

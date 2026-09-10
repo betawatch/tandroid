@@ -1,61 +1,27 @@
 package org.telegram.ui;
 
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iw implements Runnable {
+public final /* synthetic */ class iw implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uy b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ iw(uy uyVar, long j3, boolean z10, int i10) {
+    public /* synthetic */ iw(Activity activity, int i10) {
         this.a = i10;
-        this.b = uyVar;
-        this.c = j3;
-        this.d = z10;
+        this.b = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        int i10 = this.a;
-        boolean z10 = this.d;
-        long j3 = this.c;
-        uy uyVar = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                uy uyVar2 = this.b;
-                bi.u8 storiesController = uyVar2.getMessagesController().getStoriesController();
-                long j10 = this.c;
-                boolean z11 = this.d;
-                storiesController.i0(j10, z11, false);
-                o0.a aVar = new o0.a(3, (byte) 0);
-                aVar.b = new iw(uyVar2, j10, z11, 1);
-                aVar.c = new iw(uyVar2, j10, z11, 2);
-                if (j10 >= 0) {
-                    TLRPC.User user = uyVar2.getMessagesController().getUser(Long.valueOf(j10));
-                    str = ContactsController.formatName(user.first_name, null, 15);
-                    chat = user;
-                } else {
-                    TLRPC.Chat chat2 = uyVar2.getMessagesController().getChat(Long.valueOf(-j10));
-                    str = chat2.title;
-                    chat = chat2;
-                }
-                uyVar2.S = org.telegram.ui.Components.yc.X().V(Collections.singletonList(chat), uyVar2.e4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, aVar).j();
-                break;
-            case 1:
-                uyVar.getMessagesController().getStoriesController().i0(j3, !z10, false);
+                wy.B0(this.b, (Boolean) obj);
                 break;
             default:
-                uyVar.getMessagesController().getStoriesController().i0(j3, z10, true);
+                wy.s0(this.b, (Boolean) obj);
                 break;
         }
     }

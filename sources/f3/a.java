@@ -12,7 +12,7 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -42,26 +42,26 @@ public final class a implements o {
         switch (this.a) {
             case 0:
                 l lVar = (l) pVar;
-                lVar.v(4, false);
+                lVar.s(4, false);
                 v vVar = this.b;
                 vVar.G(4);
-                lVar.j(vVar.a, 0, 4, false);
+                lVar.g(vVar.a, 0, 4, false);
                 if (vVar.z() == 1718909296) {
                     vVar.G(4);
-                    lVar.j(vVar.a, 0, 4, false);
+                    lVar.g(vVar.a, 0, 4, false);
                     if (vVar.z() == 1635150182) {
                     }
                 }
                 break;
             case 1:
                 l lVar2 = (l) pVar;
-                lVar2.v(4, false);
+                lVar2.s(4, false);
                 v vVar2 = this.b;
                 vVar2.G(4);
-                lVar2.j(vVar2.a, 0, 4, false);
+                lVar2.g(vVar2.a, 0, 4, false);
                 if (vVar2.z() == 1718909296) {
                     vVar2.G(4);
-                    lVar2.j(vVar2.a, 0, 4, false);
+                    lVar2.g(vVar2.a, 0, 4, false);
                     if (vVar2.z() == 1751476579) {
                     }
                 }
@@ -70,11 +70,11 @@ public final class a implements o {
                 v vVar3 = this.b;
                 vVar3.G(4);
                 l lVar3 = (l) pVar;
-                lVar3.j(vVar3.a, 0, 4, false);
+                lVar3.g(vVar3.a, 0, 4, false);
                 if (vVar3.z() == 1380533830) {
-                    lVar3.v(4, false);
+                    lVar3.s(4, false);
                     vVar3.G(4);
-                    lVar3.j(vVar3.a, 0, 4, false);
+                    lVar3.g(vVar3.a, 0, 4, false);
                     if (vVar3.z() == 1464156752) {
                     }
                 }

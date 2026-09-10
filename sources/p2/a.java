@@ -7,7 +7,7 @@ import e2.d0;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a implements t {
     public final /* synthetic */ c a;
@@ -40,9 +40,9 @@ public final class a implements t {
             }
             y2.g gVar = new y2.g(1, 0, cVar.s.e.size(), i10);
             cVar.c.getClass();
-            k4.d K3 = rb.a.K3(gVar, b0Var);
-            if (K3 != null && K3.a == 2 && (bVar = (b) hashMap.get(uri)) != null) {
-                b.a(bVar, K3.b);
+            k4.d n32 = rb.a.n3(gVar, b0Var);
+            if (n32 != null && n32.a == 2 && (bVar = (b) hashMap.get(uri)) != null) {
+                b.a(bVar, n32.b);
             }
         }
         return false;

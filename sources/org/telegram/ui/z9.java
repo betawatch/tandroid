@@ -18,12 +18,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class z9 extends org.telegram.ui.ActionBar.n2 {
+public final class z9 extends org.telegram.ui.ActionBar.p2 {
     public y9 a;
     public y9 b;
-    public org.telegram.ui.ActionBar.v0 c;
+    public org.telegram.ui.ActionBar.w0 c;
     public org.telegram.ui.ActionBar.f6 d;
 
     public static void U(z9 z9Var) {
@@ -50,21 +50,21 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
             UserConfig.getInstance(z9Var.currentAccount).saveConfig(true);
             NotificationCenter.getInstance(z9Var.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
             NotificationCenter.getInstance(z9Var.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
-            ConnectionsManager.getInstance(z9Var.currentAccount).sendRequest(updateprofile, new bi.c7(8));
+            ConnectionsManager.getInstance(z9Var.currentAccount).sendRequest(updateprofile, new bi.g1(4));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final View createView(Context context) {
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
+        org.telegram.ui.ActionBar.l lVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.j6.f8;
         org.telegram.ui.ActionBar.f6 f6Var = this.d;
-        kVar.B(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), false);
+        lVar.A(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), false);
         this.actionBar.C(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v8, f6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.EditName));
-        this.actionBar.setActionBarMenuOnItemClick(new ah.t(this, 27));
+        this.actionBar.setActionBarMenuOnItemClick(new di.w(this, 26));
         this.c = this.actionBar.n().h(1, R.drawable.ic_ab_done, LocaleController.getString(R.string.Done), AndroidUtilities.dp(56.0f));
         TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(this.currentAccount).getClientUserId()));
         if (user == null) {
@@ -74,7 +74,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.fragmentView = linearLayout;
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         ((LinearLayout) this.fragmentView).setOrientation(1);
-        this.fragmentView.setOnTouchListener(new ci.d(2));
+        this.fragmentView.setOnTouchListener(new ai.h(2));
         y9 y9Var = new y9(this, context, 0);
         this.a = y9Var;
         y9Var.setTextSize(1, 18.0f);
@@ -102,7 +102,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.a.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.a.setCursorSize(AndroidUtilities.dp(20.0f));
         this.a.setCursorWidth(1.5f);
-        linearLayout.addView(this.a, w7.x5.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.a, w7.a6.k(24.0f, 24.0f, 24.0f, 0.0f, -1, 36));
         final int i16 = 0;
         this.a.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.x9
             public final /* synthetic */ z9 b;
@@ -150,7 +150,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         this.b.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var));
         this.b.setCursorSize(AndroidUtilities.dp(20.0f));
         this.b.setCursorWidth(1.5f);
-        linearLayout.addView(this.b, w7.x5.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
+        linearLayout.addView(this.b, w7.a6.k(24.0f, 16.0f, 24.0f, 0.0f, -1, 36));
         final int i17 = 1;
         this.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.x9
             public final /* synthetic */ z9 b;
@@ -190,12 +190,12 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.d6));
@@ -222,7 +222,7 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onResume() {
         super.onResume();
         if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true)) {
@@ -232,10 +232,10 @@ public final class z9 extends org.telegram.ui.ActionBar.n2 {
         AndroidUtilities.showKeyboard(this.a);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         if (z10) {
-            AndroidUtilities.runOnUIThread(new lu0(this, 18), 100L);
+            AndroidUtilities.runOnUIThread(new mu0(this, 18), 100L);
         }
     }
 }

@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class uf1 extends FrameLayout {
-    public TextView a;
-    public float b;
-    public boolean c;
+public final /* synthetic */ class uf1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vf1 b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.c) {
-            float f7 = this.b + 0.013333334f;
-            this.b = f7;
-            if (f7 > 1.0f) {
-                this.c = false;
-                this.b = 1.0f;
-            }
-        } else {
-            float f10 = this.b - 0.013333334f;
-            this.b = f10;
-            if (f10 < 0.0f) {
-                this.c = true;
-                this.b = 0.0f;
-            }
+    public /* synthetic */ uf1(vf1 vf1Var, int i10) {
+        this.a = i10;
+        this.b = vf1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                vf1 vf1Var = this.b;
+                vf1Var.F = null;
+                if (vf1Var.G != -1) {
+                    vf1Var.H.getNotificationCenter().onAnimationFinish(vf1Var.G);
+                    vf1Var.G = -1;
+                    break;
+                }
+                break;
+            default:
+                vf1 vf1Var2 = this.b;
+                vf1Var2.F = null;
+                if (vf1Var2.G != -1) {
+                    vf1Var2.H.getNotificationCenter().onAnimationFinish(vf1Var2.G);
+                    vf1Var2.G = -1;
+                    break;
+                }
+                break;
         }
-        this.a.setTranslationX(org.telegram.ui.Components.pr.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
-        invalidate();
     }
 }

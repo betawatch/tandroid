@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class m implements Parcelable {
     public static final Parcelable.Creator<m> CREATOR;
@@ -55,7 +55,7 @@ public final class m implements Parcelable {
     public m(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        y.F(bundle2);
+        y.i(bundle2);
     }
 
     @Override // android.os.Parcelable

@@ -1,32 +1,49 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vf implements Utilities.CallbackReturn {
+public final /* synthetic */ class vf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ eo b;
 
-    public /* synthetic */ vf(int i10, Object obj, Object obj2) {
+    public /* synthetic */ vf(eo eoVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = eoVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        MessageObject messageObject;
+        MessageObject messageObject2;
         switch (this.a) {
             case 0:
-                co coVar = (co) this.b;
-                View view = (View) this.c;
-                coVar.U7((URLSpan) obj, false, coVar.d5, view instanceof org.telegram.ui.Cells.t1 ? (org.telegram.ui.Cells.t1) view : null);
-                return Boolean.TRUE;
+                eo eoVar = this.b;
+                MessageObject messageObject3 = eoVar.d5;
+                if (messageObject3 == null) {
+                    return false;
+                }
+                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
+                    new org.telegram.ui.Components.wc(org.telegram.ui.Components.kb.a(eoVar.getParentActivity()), eoVar.ea).k(false).j();
+                }
+                return true;
+            case 1:
+                return eo.R0(this.b);
             default:
-                return sh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
+                eo eoVar2 = this.b;
+                int i10 = eoVar2.ob;
+                if (i10 == 1 && (messageObject2 = eoVar2.p5) != null) {
+                    eoVar2.E(messageObject2.getId(), 0, 0, 0, true, true);
+                    return true;
+                }
+                if (eoVar2.f5 == null || i10 != 2 || (messageObject = eoVar2.n5) == null) {
+                    return false;
+                }
+                eoVar2.E(messageObject.getId(), 0, 0, 0, true, true);
+                return true;
         }
     }
 }

@@ -1,71 +1,24 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.app.Activity;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class li implements View.OnClickListener {
-    public final /* synthetic */ gi0 a;
-    public final /* synthetic */ org.telegram.ui.Components.ll0 b;
-    public final /* synthetic */ LinearLayout c;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ co f;
+public final class li extends org.telegram.ui.Components.wv {
+    public final /* synthetic */ eo W;
 
-    public li(co coVar, gi0 gi0Var, org.telegram.ui.Components.ll0 ll0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.f = coVar;
-        this.a = gi0Var;
-        this.b = ll0Var;
-        this.c = linearLayout;
-        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.e = iArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public li(eo eoVar, org.telegram.ui.ActionBar.p2 p2Var, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(p2Var, activity, f6Var, arrayList);
+        this.W = eoVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        gi0 gi0Var = this.a;
-        ArrayList arrayList = gi0Var.b;
-        ArrayList arrayList2 = gi0Var.c;
-        co coVar = this.f;
-        if (coVar.Q8 == null || arrayList2.isEmpty()) {
-            return;
-        }
-        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            coVar.presentFragment(new ProfileActivity(bundle, null));
-            coVar.A7(true);
-            return;
-        }
-        if (SharedConfig.messageSeenHintCount > 0 && coVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(coVar.getParentActivity()), coVar.ea).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            coVar.n1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.ll0 ll0Var = this.b;
-        ll0Var.requestLayout();
-        this.c.requestLayout();
-        ll0Var.getAdapter().l();
-        this.d.getSwipeBack().e(this.e[0]);
+    @Override // org.telegram.ui.Components.wv, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        eo eoVar = this.W;
+        eoVar.getClass();
+        eoVar.g8(false, true, 0.0f);
     }
 }

@@ -1,38 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class au implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bu b;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-    public /* synthetic */ au(bu buVar, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class au implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ au(int i10, int i11, org.telegram.ui.ActionBar.p2 p2Var) {
         this.a = i10;
-        this.b = buVar;
+        this.b = i11;
+        this.c = p2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                bu buVar = this.b;
-                buVar.post(new au(buVar, 1));
-                break;
-            case 1:
-                bu buVar2 = this.b;
-                buVar2.invalidateSpoilers();
-                buVar2.b();
-                break;
-            case 2:
-                bu.a(this.b);
-                break;
-            case 3:
-                bu buVar3 = this.b;
-                buVar3.post(new au(buVar3, 4));
-                break;
-            default:
-                this.b.setSpoilersRevealed(false, true);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.c;
+        nf.e g10 = d2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new di.k1(i11, p2Var, g10, d2Var));
+    }
+
+    public /* synthetic */ au(fu fuVar, int i10, int i11) {
+        this.c = fuVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

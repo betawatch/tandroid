@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public class cj0 extends Dialog implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -42,7 +42,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
     public final ui0 G;
     public final ni0 H;
     public long I;
-    public org.telegram.ui.Components.o5 J;
+    public org.telegram.ui.Components.n5 J;
     public final vi0 K;
     public final mi0 L;
     public final yi0 M;
@@ -51,11 +51,11 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
     public final a0.i P;
     public org.telegram.ui.Cells.t1 Q;
     public int R;
-    public org.telegram.ui.Components.qf S;
+    public org.telegram.ui.Components.rf S;
     public final Paint T;
-    public org.telegram.ui.Components.d U;
-    public org.telegram.ui.Components.ce V;
-    public org.telegram.ui.Components.vg W;
+    public org.telegram.ui.Components.e U;
+    public org.telegram.ui.Components.be V;
+    public org.telegram.ui.Components.xg W;
     public pi0 X;
     public int Y;
     public ViewGroup Z;
@@ -74,9 +74,9 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean g0;
     public BitmapShader h;
     public boolean h0;
-    public final wh.g i0;
-    public final gh.b j0;
-    public final bh.b k0;
+    public final uh.g i0;
+    public final eh.b j0;
+    public final zg.a k0;
     public RectF l0;
     public boolean m0;
     public Paint n;
@@ -97,7 +97,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean x;
     public org.telegram.ui.Cells.t1 x0;
     public boolean y;
-    public org.telegram.ui.Components.f01 y0;
+    public org.telegram.ui.Components.t01 y0;
     public Paint z0;
 
     public cj0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
@@ -120,7 +120,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.d = launchActivity != null ? new kb0(launchActivity, true) : null;
         ni0 ni0Var = new ni0(this, context, i11);
         this.F = ni0Var;
-        this.i0 = wh.g.d(1, ni0Var, ni0Var);
+        this.i0 = uh.g.d(1, ni0Var, ni0Var);
         ni0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ki0
             public final /* synthetic */ cj0 b;
 
@@ -151,16 +151,16 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
                 AndroidUtilities.runOnUIThread(new ii0(cj0Var, (EditText) view2, 0), 200L);
             }
         });
-        gh.b bVar = new gh.b();
+        eh.b bVar = new eh.b();
         this.j0 = bVar;
-        bh.b bVar2 = new bh.b(bVar);
-        this.k0 = bVar2;
-        bVar2.d = new ih.k(ni0Var);
-        bVar2.e = ni0Var;
+        zg.a aVar = new zg.a(bVar);
+        this.k0 = aVar;
+        aVar.d = new gh.k(ni0Var);
+        aVar.e = ni0Var;
         ui0 ui0Var = new ui0(this, context, f6Var);
         this.G = ui0Var;
         ui0Var.setClipToPadding(false);
-        ni0Var.addView(ui0Var, w7.x5.e(-1, -1, 119));
+        ni0Var.addView(ui0Var, w7.a6.e(-1, -1, 119));
         g gVar = new g(this, 26);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.j(ni0Var, gVar);
@@ -186,7 +186,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
             }
         });
         vi0Var.setOnItemClickListener(new i(this, 17));
-        vi0Var.setOnScrollListener(new i3(this, 19));
+        vi0Var.setOnScrollListener(new j3(this, 19));
         vi0Var.setItemAnimator(new xi0(null, vi0Var, f6Var));
         yi0 yi0Var = new yi0(this);
         this.M = yi0Var;
@@ -198,10 +198,10 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         vi0Var.setAdapter(mi0Var);
         vi0Var.setVerticalScrollBarEnabled(false);
         vi0Var.setOverScrollMode(2);
-        ui0Var.addView(vi0Var, w7.x5.c(-2.0f, -1));
+        ui0Var.addView(vi0Var, w7.a6.c(-2.0f, -1));
         ni0 ni0Var2 = new ni0(this, context, i12);
         this.H = ni0Var2;
-        ni0Var.addView(ni0Var2, w7.x5.c(-1.0f, -1));
+        ni0Var.addView(ni0Var2, w7.a6.c(-1.0f, -1));
         this.a0 = new oi0(this, ni0Var2, i10);
     }
 
@@ -214,9 +214,9 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         }
     }
 
-    public final void d(org.telegram.ui.ActionBar.n2 n2Var) {
-        ah.o0 o0Var;
-        if (this.e0 != null || n2Var == null) {
+    public final void d(org.telegram.ui.ActionBar.p2 p2Var) {
+        yg.y yVar;
+        if (this.e0 != null || p2Var == null) {
             return;
         }
         int i10 = this.c;
@@ -231,7 +231,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         qi0Var.setClipChildren(false);
         this.e0.setClipToPadding(false);
         this.e0.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(22.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(22.0f));
-        this.e0.setDelegate(new si0(this, n2Var));
+        this.e0.setDelegate(new si0(this, p2Var));
         this.e0.setTop(false);
         this.e0.setClipChildren(false);
         this.e0.setClipToPadding(false);
@@ -239,8 +239,8 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.e0.setHint(LocaleController.getString(R.string.AddEffectMessageHint));
         this.e0.setBubbleOffset(AndroidUtilities.dp(-25.0f));
         this.e0.setMiniBubblesOffset(AndroidUtilities.dp(2.0f));
-        this.G.addView(this.d0, w7.x5.d(-2, 300.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
-        this.d0.addView(this.e0, w7.x5.d(-1, 116.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.G.addView(this.d0, w7.a6.d(-2, 300.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.d0.addView(this.e0, w7.a6.d(-1, 116.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         this.e0.setScaleY(0.4f);
         this.e0.setScaleX(0.4f);
         this.e0.setAlpha(0.0f);
@@ -253,21 +253,21 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         if (qi0Var2 != null && !qi0Var2.f1) {
             qi0Var2.f1 = true;
             qi0Var2.g1 = true;
-            ah.u0 u0Var = qi0Var2.x0;
-            if (u0Var != null && (o0Var = u0Var.m) != null && !o0Var.K1) {
-                o0Var.K1 = true;
-                o0Var.L1 = true;
-                g61 g61Var = o0Var.h0;
-                if (g61Var != null) {
-                    g61Var.invalidate();
+            yg.c0 c0Var = qi0Var2.x0;
+            if (c0Var != null && (yVar = c0Var.m) != null && !yVar.K1) {
+                yVar.K1 = true;
+                yVar.L1 = true;
+                i61 i61Var = yVar.h0;
+                if (i61Var != null) {
+                    i61Var.invalidate();
                 }
-                w51 w51Var = o0Var.i0;
-                if (w51Var != null) {
-                    w51Var.invalidate();
+                y51 y51Var = yVar.i0;
+                if (y51Var != null) {
+                    y51Var.invalidate();
                 }
             }
         }
-        new di.j4(this.F, false, new t3(this, 9));
+        new bi.b5(this.F, false, new u3(this, 9));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -287,9 +287,9 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         if (pi0Var != null) {
             pi0Var.invalidate();
         }
-        org.telegram.ui.Components.vg vgVar = this.W;
-        if (vgVar != null) {
-            vgVar.invalidate();
+        org.telegram.ui.Components.xg xgVar = this.W;
+        if (xgVar != null) {
+            xgVar.invalidate();
         }
         e(new hi0(this, 2), false);
         this.F.invalidate();
@@ -305,7 +305,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         }
         boolean z11 = z10 && (viewGroup = this.Z) != null && (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout);
         if (z11) {
-            org.telegram.ui.ActionBar.n1.i((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.Z);
+            org.telegram.ui.ActionBar.p1.i((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.Z);
         }
         if (!z10 && (qi0Var = this.e0) != null && this.f0) {
             qi0Var.e();
@@ -321,9 +321,9 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.y = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.E, z10 ? 1.0f : 0.0f);
         this.v0 = ofFloat;
-        ofFloat.addUpdateListener(new ah.l0(10, this, z11));
+        ofFloat.addUpdateListener(new bi.m7(8, this, z11));
         this.v0.addListener(new org.telegram.ui.ActionBar.f(this, z10, z11, runnable));
-        this.v0.setInterpolator(org.telegram.ui.Components.pr.h);
+        this.v0.setInterpolator(org.telegram.ui.Components.wr.h);
         this.v0.setDuration(350L);
         this.v0.start();
     }
@@ -398,8 +398,8 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
             return;
         }
         this.q0 = true;
-        wh.g.f(false);
-        wh.g gVar = this.i0;
+        uh.g.f(false);
+        uh.g gVar = this.i0;
         if (gVar != null) {
             gVar.b(this.F);
         }
@@ -489,7 +489,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         if (this.e0 == null || (effect = MessagesController.getInstance(this.c).getEffect(j3)) == null) {
             return;
         }
-        this.e0.setSelectedReactionAnimated(ah.j1.e(effect));
+        this.e0.setSelectedReactionAnimated(yg.p0.e(effect));
     }
 
     @Override // android.app.Dialog
@@ -532,14 +532,14 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         AndroidUtilities.setLightNavigationBar(ni0Var, !org.telegram.ui.ActionBar.j6.I.q());
     }
 
-    public final void p(org.telegram.ui.Components.n70 n70Var) {
+    public final void p(org.telegram.ui.Components.w70 w70Var) {
         int i10 = org.telegram.ui.ActionBar.j6.E8;
         org.telegram.ui.ActionBar.f6 f6Var = this.b;
-        n70Var.T(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-        n70Var.Q(this.k0, fh.b.k(f6Var), false);
-        ViewGroup viewGroup = n70Var.A;
+        w70Var.T(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
+        w70Var.R(this.k0, dh.c.k(f6Var), false);
+        ViewGroup viewGroup = w70Var.A;
         this.Z = viewGroup;
-        this.G.addView(viewGroup, w7.x5.c(-2.0f, -2));
+        this.G.addView(viewGroup, w7.a6.c(-2.0f, -2));
     }
 
     public final void q(ArrayList arrayList) {
@@ -605,8 +605,8 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
                 t1Var.R7 = false;
                 t1Var.S7 = false;
                 MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) iVar.f(messageObject2.getGroupId());
-                bi.y3 y3Var = t1Var.S0;
-                y3Var.setIgnoreImageSet(true);
+                gg.h1 h1Var = t1Var.S0;
+                h1Var.setIgnoreImageSet(true);
                 ImageReceiver imageReceiver = t1Var.m9;
                 imageReceiver.setIgnoreImageSet(true);
                 ImageReceiver imageReceiver2 = t1Var.F9;
@@ -616,7 +616,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
                 if (groupedMessages2 == null || groupedMessages2.messages.size() == 1) {
                     i10 = i15;
                     t1Var.V3(messageObject2, groupedMessages2, false, false, false, false);
-                    y3Var.setIgnoreImageSet(false);
+                    h1Var.setIgnoreImageSet(false);
                     imageReceiver.setIgnoreImageSet(false);
                     imageReceiver2.setIgnoreImageSet(false);
                     imageReceiver3.setIgnoreImageSet(false);
@@ -648,50 +648,50 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.M.i1(h > 10 ? h % 10 : 0, AndroidUtilities.dp(12.0f), true);
     }
 
-    public final org.telegram.ui.Components.vg r(org.telegram.ui.Components.vg vgVar, boolean z10, View.OnClickListener onClickListener) {
-        this.W = vgVar;
+    public final org.telegram.ui.Components.xg r(org.telegram.ui.Components.xg xgVar, boolean z10, View.OnClickListener onClickListener) {
+        this.W = xgVar;
         int[] iArr = this.o0;
-        vgVar.getLocationOnScreen(iArr);
-        pi0 pi0Var = new pi0(this, getContext(), vgVar.b, this.b, vgVar, z10);
+        xgVar.getLocationOnScreen(iArr);
+        pi0 pi0Var = new pi0(this, getContext(), xgVar.b, this.b, xgVar, z10);
         this.X = pi0Var;
         pi0Var.setScaleX(this.W.getScaleX());
         this.X.setScaleY(this.W.getScaleY());
-        org.telegram.ui.Components.vg vgVar2 = this.W;
+        org.telegram.ui.Components.xg xgVar2 = this.W;
         pi0 pi0Var2 = this.X;
-        pi0Var2.E = vgVar2.E;
-        pi0Var2.h0 = vgVar2.h0;
-        pi0Var2.c0.q(vgVar2.c0.g, false, true);
-        pi0Var2.d0 = vgVar2.d0;
-        pi0Var2.setEmoji(vgVar2.f.f[0]);
-        pi0Var2.i(vgVar2.s, vgVar2.r, true);
-        pi0Var2.P.d(vgVar2.P.c, true);
-        pi0Var2.x.d(vgVar2.x.c, true);
-        int i10 = vgVar2.I;
-        int i11 = vgVar2.J;
+        pi0Var2.E = xgVar2.E;
+        pi0Var2.h0 = xgVar2.h0;
+        pi0Var2.c0.q(xgVar2.c0.g, false, true);
+        pi0Var2.d0 = xgVar2.d0;
+        pi0Var2.setEmoji(xgVar2.f.f[0]);
+        pi0Var2.i(xgVar2.s, xgVar2.r, true);
+        pi0Var2.P.d(xgVar2.P.c, true);
+        pi0Var2.x.d(xgVar2.x.c, true);
+        int i10 = xgVar2.I;
+        int i11 = xgVar2.J;
         pi0Var2.I = i10;
         pi0Var2.J = i11;
-        float f7 = vgVar2.M;
-        float f10 = vgVar2.N;
+        float f7 = xgVar2.M;
+        float f10 = xgVar2.N;
         pi0Var2.M = f7;
         pi0Var2.N = f10;
-        this.X.P.d(vgVar.P.c, true);
+        this.X.P.d(xgVar.P.c, true);
         this.X.setOnClickListener(onClickListener);
-        this.G.addView(this.X, new ViewGroup.LayoutParams(vgVar.getWidth(), vgVar.getHeight()));
-        org.telegram.ui.Components.vg vgVar3 = this.W;
-        vgVar.getHeight();
-        this.Y = vgVar3.m();
+        this.G.addView(this.X, new ViewGroup.LayoutParams(xgVar.getWidth(), xgVar.getHeight()));
+        org.telegram.ui.Components.xg xgVar3 = this.W;
+        xgVar.getHeight();
+        this.Y = xgVar3.m();
         int i12 = iArr[0];
         int width = this.W.getWidth();
-        org.telegram.ui.Components.vg vgVar4 = this.W;
-        vgVar.getHeight();
-        iArr[0] = org.telegram.messenger.wl.D(6.0f, width - vgVar4.m(), i12);
+        org.telegram.ui.Components.xg xgVar4 = this.W;
+        xgVar.getHeight();
+        iArr[0] = org.telegram.messenger.em.D(6.0f, width - xgVar4.m(), i12);
         return this.X;
     }
 
     public final void s(long j3) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.y0 = j3 > 0 ? new org.telegram.ui.Components.f01(zh.v7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
+        this.y0 = j3 > 0 ? new org.telegram.ui.Components.t01(xh.z7.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
         if (this.z0 == null) {
             Paint paint = new Paint(1);
             this.z0 = paint;
@@ -716,23 +716,23 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
     @Override // android.app.Dialog
     public final void show() {
         if (AndroidUtilities.isSafeToShow(getContext())) {
-            wh.g.f(true);
+            uh.g.f(true);
             super.show();
             final float alpha = this.W.getAlpha();
-            org.telegram.ui.Components.vg vgVar = this.W;
-            if (vgVar != null) {
-                vgVar.setAlpha(0.0f);
+            org.telegram.ui.Components.xg xgVar = this.W;
+            if (xgVar != null) {
+                xgVar.setAlpha(0.0f);
             }
-            org.telegram.ui.Components.am0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ji0
+            org.telegram.ui.Components.km0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ji0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     cj0 cj0Var = cj0.this;
-                    gh.b bVar = cj0Var.j0;
+                    eh.b bVar = cj0Var.j0;
                     Bitmap bitmap = (Bitmap) obj;
                     Bitmap bitmap2 = (Bitmap) obj2;
-                    org.telegram.ui.Components.vg vgVar2 = cj0Var.W;
-                    if (vgVar2 != null) {
-                        vgVar2.setAlpha(alpha);
+                    org.telegram.ui.Components.xg xgVar2 = cj0Var.W;
+                    if (xgVar2 != null) {
+                        xgVar2.setAlpha(alpha);
                     }
                     cj0Var.f = bitmap;
                     Paint paint = new Paint(1);
@@ -744,7 +744,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
                     paint.setShader(bitmapShader);
                     cj0Var.r = new Matrix();
                     bVar.a(bitmap2);
-                    hh.d.c(bVar, cj0Var.F);
+                    fh.d.c(bVar, cj0Var.F);
                     ViewGroup viewGroup = cj0Var.Z;
                     if (viewGroup != null) {
                         viewGroup.invalidate();
@@ -766,7 +766,7 @@ public class cj0 extends Dialog implements NotificationCenter.NotificationCenter
         this.g0 = false;
         this.f0 = true;
         this.e0.p(null, null, true);
-        this.e0.animate().scaleY(1.0f).scaleX(1.0f).alpha(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.pr.h).start();
+        this.e0.animate().scaleY(1.0f).scaleX(1.0f).alpha(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.wr.h).start();
         this.e0.r(false);
     }
 

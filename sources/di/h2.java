@@ -1,244 +1,166 @@
 package di;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Rect;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a20;
-import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.wm0;
-import org.telegram.ui.Components.yc0;
-import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.fp;
-import org.telegram.ui.g10;
-import org.telegram.ui.j80;
-import org.telegram.ui.l80;
-import org.telegram.ui.lp;
-import org.telegram.ui.xe0;
-import org.telegram.ui.zx;
+import android.graphics.Paint;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.kb;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.eo;
+import org.telegram.ui.h41;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class h2 extends EditTextBoldCursor {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class h2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h2(Object obj, Context context, int i10) {
-        super(context);
-        this.b = i10;
-        this.c = obj;
+    public /* synthetic */ h2(n3 n3Var, int i10) {
+        this.a = i10;
+        this.b = n3Var;
     }
 
-    @Override // org.telegram.ui.Components.bu, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 6:
-                ((wm0) this.c).getClass();
-                break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i10, Rect rect) {
-        switch (this.b) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = 0;
+        n3 n3Var = this.b;
+        switch (i10) {
             case 0:
-                super.onFocusChanged(z10, i10, rect);
-                if (!z10) {
-                    AndroidUtilities.hideKeyboard(((l2) this.c).d);
+                n3.d(n3Var);
+                break;
+            case 1:
+                if (!n3Var.c0 && n3Var.J != 0) {
+                    TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
+                    tL_messages_prolongWebView.bot = MessagesController.getInstance(n3Var.G).getInputUser(n3Var.H);
+                    tL_messages_prolongWebView.peer = MessagesController.getInstance(n3Var.G).getInputPeer(n3Var.I);
+                    tL_messages_prolongWebView.query_id = n3Var.J;
+                    tL_messages_prolongWebView.silent = false;
+                    if (n3Var.K != 0) {
+                        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(n3Var.G).createReplyInput(n3Var.K);
+                        tL_messages_prolongWebView.reply_to = createReplyInput;
+                        if (n3Var.L != 0) {
+                            createReplyInput.monoforum_peer_id = MessagesController.getInstance(n3Var.G).getInputPeer(n3Var.L);
+                            tL_messages_prolongWebView.reply_to.flags |= 32;
+                        }
+                        tL_messages_prolongWebView.flags |= 1;
+                    } else if (n3Var.L != 0) {
+                        TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                        tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(n3Var.G).getInputPeer(n3Var.L);
+                        tL_messages_prolongWebView.flags |= 1;
+                    }
+                    ConnectionsManager.getInstance(n3Var.G).sendRequest(tL_messages_prolongWebView, new s2(n3Var, i11));
+                    break;
+                }
+                break;
+            case 2:
+                n3Var.D();
+                break;
+            case 3:
+                n3Var.v.requestLayout();
+                break;
+            case 4:
+                if (!n3Var.x.D()) {
+                    n3Var.q();
                     break;
                 }
                 break;
             case 5:
-                super.onFocusChanged(z10, i10, rect);
-                yc0 yc0Var = (yc0) this.c;
-                float f7 = (z10 || isFocused()) ? 1.0f : 0.0f;
-                yc0Var.b(f7, f7, true);
-                break;
-            default:
-                super.onFocusChanged(z10, i10, rect);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.b) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append((CharSequence) getText());
-                lp lpVar = (lp) this.c;
-                fp fpVar = lpVar.f;
-                if (fpVar != null && fpVar.getTextView() != null && !TextUtils.isEmpty(lpVar.f.getTextView().getText())) {
-                    sb2.append("\n");
-                    sb2.append(lpVar.f.getTextView().getText());
-                }
-                accessibilityNodeInfo.setText(sb2);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        switch (this.b) {
-            case 2:
-                org.telegram.ui.ActionBar.v0 v0Var = (org.telegram.ui.ActionBar.v0) this.c;
-                if (i10 != 67 || v0Var.e.length() != 0 || ((v0Var.h.getVisibility() != 0 || v0Var.h.length() <= 0) && !v0Var.p())) {
-                    return super.onKeyDown(i10, keyEvent);
-                }
-                if (!v0Var.p()) {
-                    v0Var.s.callOnClick();
-                    return true;
-                }
-                hg.q0 q0Var = (hg.q0) i2.g.h(1, v0Var.g0);
-                org.telegram.ui.ActionBar.g5 g5Var = v0Var.H;
-                if (g5Var != null) {
-                    g5Var.o(q0Var);
-                }
-                v0Var.C(q0Var);
-                return true;
-            case 4:
-                b20 b20Var = (b20) this.c;
-                if (i10 != 67 || b20Var.r.length() != 0 || !b20Var.e()) {
-                    return super.onKeyDown(i10, keyEvent);
-                }
-                if (!b20Var.e()) {
-                    return true;
-                }
-                hg.q0 q0Var2 = (hg.q0) i2.g.h(1, b20Var.F);
-                a20 a20Var = b20Var.H;
-                if (a20Var != null) {
-                    ((zx) a20Var).c(q0Var2);
-                }
-                b20Var.g(q0Var2);
-                return true;
-            case 7:
-                j80 j80Var = (j80) this.c;
-                l80 l80Var = j80Var.f;
-                if (i10 != 67 || j80Var.d.length() != 0 || l80Var.G.isEmpty()) {
-                    return super.onKeyDown(i10, keyEvent);
-                }
-                l80Var.f.a((m30) i2.g.h(1, l80Var.G));
-                l80Var.c.e(!l80Var.G.isEmpty(), true);
-                l80Var.c0();
-                return true;
-            default:
-                return super.onKeyDown(i10, keyEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.b) {
-            case 2:
-                super.onMeasure(i10, i11);
-                setMeasuredDimension(AndroidUtilities.dp(3.0f) + Math.max(View.MeasureSpec.getSize(i10), getMeasuredWidth()), getMeasuredHeight());
-                break;
-            case 3:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 4:
-                super.onMeasure(i10, i11);
-                setPivotX(getPaddingLeft());
-                setPivotY(getMeasuredHeight() / 2.0f);
-                break;
-        }
-    }
-
-    @Override // android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i10) {
-        switch (this.b) {
-            case 8:
-                if (i10 == 16908322 || i10 == 16908337) {
-                    ((xe0) this.c).y = true;
-                    postDelayed(new g10(this, 21), 1000L);
-                }
-                break;
-        }
-        return super.onTextContextMenuItem(i10);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 0:
-                h2 h2Var = ((l2) this.c).d;
-                if (!h2Var.isEnabled()) {
-                    break;
-                } else {
-                    if (motionEvent.getAction() == 0) {
-                        h2Var.requestFocus();
-                        AndroidUtilities.showKeyboard(h2Var);
-                    }
-                    break;
-                }
-            case 1:
-                fa faVar = (fa) this.c;
-                m30 m30Var = faVar.e;
-                if (m30Var != null) {
-                    m30Var.a();
-                    faVar.e = null;
-                }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    faVar.fullScroll(130);
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 2:
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 1 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                    break;
-                }
+                n3Var.x0 = true;
+                n3Var.k(true);
                 break;
             case 6:
-                if (isEnabled()) {
-                    if (motionEvent.getAction() == 1) {
-                        ((wm0) this.c).getClass();
-                    }
-                    break;
+                n3Var.r();
+                break;
+            case 7:
+                Paint paint = n3Var.O;
+                d3 d3Var = n3Var.v;
+                if (d3Var.getSwipeOffsetY() > 0.0f) {
+                    paint.setAlpha((int) ((1.0f - w7.q.a(d3Var.getSwipeOffsetY() / d3Var.getHeight(), 0.0f, 1.0f)) * 64.0f));
+                } else {
+                    paint.setAlpha(64);
                 }
+                n3Var.e.invalidate();
+                n3Var.x.o(false, false);
+                if (n3Var.c != null) {
+                    float f7 = (1.0f - (Math.min(d3Var.getTopActionBarOffsetY(), d3Var.getTranslationY() - d3Var.getTopActionBarOffsetY()) / d3Var.getTopActionBarOffsetY()) <= 0.5f ? 0 : 1) * 100.0f;
+                    o1.k kVar = n3Var.c;
+                    o1.l lVar = kVar.u;
+                    if (((float) lVar.i) != f7) {
+                        lVar.i = f7;
+                        kVar.f();
+                    }
+                }
+                if (n3Var.d0) {
+                    int i12 = n3Var.h.bottom;
+                } else {
+                    Math.max(0.0f, d3Var.getSwipeOffsetY());
+                }
+                System.currentTimeMillis();
+                break;
+            case 8:
+                n3Var.x.o(true, false);
                 break;
             case 9:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
-                m30 m30Var2 = usersSelectActivity.P;
-                if (m30Var2 != null) {
-                    m30Var2.a();
-                    usersSelectActivity.P = null;
+                Activity activity = n3Var.k0;
+                if (activity instanceof LaunchActivity) {
+                    ((LaunchActivity) activity).p0(eo.R9(n3Var.H));
                 }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
+                n3Var.k(true);
                 break;
             case 10:
-                yg.i iVar = (yg.i) this.c;
-                m30 m30Var3 = iVar.f;
-                if (m30Var3 != null) {
-                    m30Var3.a();
-                    iVar.f = null;
+                e3 e3Var = n3Var.x;
+                e3Var.getClass();
+                e3Var.P = System.currentTimeMillis();
+                e3Var.y("settings_button_pressed", null);
+                break;
+            case 11:
+                l3 l3Var = n3Var.y;
+                e3 e3Var2 = n3Var.x;
+                if (e3Var2.getWebView() != null) {
+                    e3Var2.getWebView().animate().cancel();
+                    e3Var2.getWebView().animate().alpha(0.0f).start();
                 }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    iVar.fullScroll(130);
-                    clearFocus();
-                    requestFocus();
-                }
+                l3Var.setLoadProgress(0.0f);
+                l3Var.setAlpha(1.0f);
+                l3Var.setVisibility(0);
+                e3Var2.setBotUser(MessagesController.getInstance(n3Var.G).getUser(Long.valueOf(n3Var.H)));
+                e3Var2.t(n3Var.G, n3Var.H);
+                NotificationCenter.getInstance(e3Var2.M).doOnIdle(new org.telegram.ui.web.t(e3Var2, 2));
+                break;
+            case 12:
+                MediaDataController.getInstance(n3Var.G).installShortcut(n3Var.H, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT);
+                break;
+            case 13:
+                nf.f.s(n3Var.getContext(), LocaleController.getString(R.string.BotWebViewToSLink));
+                break;
+            case 14:
+                int i13 = n3Var.G;
+                Context context = n3Var.getContext();
+                wc wcVar = new wc(kb.a(n3Var.getContext()), n3Var.E);
+                long j3 = n3Var.H;
+                int i14 = h41.v;
+                h41.K(i13, context, j3, false, false, new ArrayList(), wcVar, null, new byte[0], null, null);
+                break;
+            case 15:
+                n3.j(n3Var.G, n3Var.H, new h2(n3Var, 16));
+                break;
+            case 16:
+                n3Var.k(false);
+                break;
+            default:
+                n3Var.k(false);
                 break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

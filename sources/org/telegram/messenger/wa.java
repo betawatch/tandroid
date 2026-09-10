@@ -1,52 +1,87 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wa implements RequestDelegate {
+public final /* synthetic */ class wa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ wa(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ wa(MessagesController messagesController, long j3, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$478(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
+                this.b.lambda$setChannelSlowMode$93(this.c);
                 break;
             case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$28(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
+                this.b.lambda$setChatReactions$470(this.c);
                 break;
             case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
+                this.b.lambda$getChannelDifference$343(this.c);
                 break;
             case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                this.b.lambda$deleteDialog$140(this.c);
+                break;
+            case 4:
+                this.b.lambda$setDefaultBannedRole$97(this.c);
+                break;
+            case 5:
+                this.b.lambda$processUpdateArray$383(this.c);
+                break;
+            case 6:
+                this.b.lambda$getSavedReactionTags$488(this.c);
+                break;
+            case 7:
+                this.b.lambda$getChannelDifference$334(this.c);
+                break;
+            case 8:
+                this.b.lambda$getChannelDifference$335(this.c);
+                break;
+            case 9:
+                this.b.lambda$getChannelDifference$336(this.c);
+                break;
+            case 10:
+                this.b.lambda$getChannelDifference$337(this.c);
+                break;
+            case 11:
+                this.b.lambda$removeDialog$134(this.c);
+                break;
+            case 12:
+                this.b.lambda$deleteParticipantFromChat$312(this.c);
+                break;
+            case 13:
+                this.b.lambda$setParticipantBannedRole$90(this.c);
+                break;
+            case 14:
+                this.b.lambda$deleteDialog$139(this.c);
+                break;
+            case 15:
+                this.b.lambda$setBoostsToUnblockRestrictions$95(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteParticipantFromChat$315(this.c);
+                break;
+            case 17:
+                this.b.lambda$addUserToChat$298(this.c);
+                break;
+            case 18:
+                this.b.lambda$addUserToChat$309(this.c);
+                break;
+            case 19:
+                this.b.lambda$addUserToChat$307(this.c);
+                break;
+            case 20:
+                this.b.lambda$getChannelDifference$344(this.c);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$324(this.b, (String) this.d, tLObject, tL_error);
+                this.b.lambda$getChannelDifference$345(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ wa(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
     }
 }

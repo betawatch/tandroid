@@ -17,10 +17,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class e8 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.j5 a;
+    public final org.telegram.ui.ActionBar.l5 a;
     public int b;
     public int c;
     public int d;
@@ -29,7 +29,7 @@ public final class e8 extends FrameLayout {
     public int h;
     public SparseArray n;
     public SparseArray r;
-    public final l.d s;
+    public final l2.h s;
     public final SparseArray v;
     public final SparseArray w;
     public final /* synthetic */ h8 x;
@@ -43,21 +43,21 @@ public final class e8 extends FrameLayout {
         this.v = new SparseArray();
         this.w = new SparseArray();
         setWillNotDraw(false);
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
-        this.a = j5Var;
+        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
+        this.a = l5Var;
         if (h8Var.e0 == 0 && h8Var.d0) {
-            j5Var.setOnLongClickListener(new u(this, 1));
-            j5Var.setOnClickListener(new y7(this, 0));
+            l5Var.setOnLongClickListener(new v(this, 1));
+            l5Var.setOnClickListener(new y7(this, 0));
         }
-        j5Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 2, -1));
-        j5Var.setTextSize(15);
-        j5Var.setTypeface(AndroidUtilities.bold());
-        j5Var.setGravity(17);
-        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        addView(j5Var, w7.x5.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
-        l.d dVar = new l.d(context, new c8(this, context));
-        this.s = dVar;
-        ((GestureDetector) dVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
+        l5Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 2, -1));
+        l5Var.setTextSize(15);
+        l5Var.setTypeface(AndroidUtilities.bold());
+        l5Var.setGravity(17);
+        l5Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        addView(l5Var, w7.a6.d(-1, 28.0f, 0, 0.0f, 12.0f, 0.0f, 4.0f));
+        l2.h hVar = new l2.h(context, new c8(this, context));
+        this.s = hVar;
+        ((GestureDetector) hVar.b).setIsLongpressEnabled(h8Var.e0 == 0);
     }
 
     public static void a(e8 e8Var, int i10, int i11) {
@@ -131,7 +131,7 @@ public final class e8 extends FrameLayout {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
-        duration.setInterpolator(org.telegram.ui.Components.jt.e);
+        duration.setInterpolator(org.telegram.ui.Components.pt.e);
         final float f16 = f10;
         final float f17 = f15;
         final float f18 = f7;
@@ -215,7 +215,7 @@ public final class e8 extends FrameLayout {
         Canvas canvas2 = canvas;
         h8 h8Var2 = e8Var.x;
         Paint paint7 = h8Var2.w;
-        wh.h hVar = h8Var2.k0;
+        uh.h hVar = h8Var2.k0;
         Path path = h8Var2.j0;
         Paint paint8 = h8Var2.r;
         TextPaint textPaint = h8Var2.e;

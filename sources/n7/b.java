@@ -1,29 +1,20 @@
 package n7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class b extends d {
-    public static final b a = new b();
+public final class b {
+    public final Object a;
 
-    @Override // n7.d
-    public final Object a() {
-        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    public /* synthetic */ b(Object obj) {
+        this.a = obj;
     }
 
-    @Override // n7.d
-    public final boolean b() {
-        return false;
-    }
-
-    public final boolean equals(Object obj) {
-        return obj == this;
-    }
-
-    public final int hashCode() {
-        return 2040732332;
-    }
-
-    public final String toString() {
-        return "Optional.absent()";
+    public Object a() {
+        if (a.b == null) {
+            a.b = new cc.k();
+        }
+        synchronized (a.a) {
+        }
+        throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
     }
 }

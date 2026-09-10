@@ -1,66 +1,81 @@
 package zh;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.View;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hq0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.y50;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class d2 extends hq0 {
-    public final /* synthetic */ w3 b1;
+public final class d2 implements y50 {
+    public final /* synthetic */ a3 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(w3 w3Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, true, null, f6Var);
-        this.b1 = w3Var;
-        this.a0 = true;
+    public d2(a3 a3Var) {
+        this.a = a3Var;
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        yc bulletinFactory;
-        if (z10 && (bulletinFactory = getBulletinFactory()) != null) {
-            if (iVar.m() == 1) {
-                long j3 = iVar.j(0);
-                if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    qc G = bulletinFactory.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedToSavedMessages, new Object[0])));
-                    G.r = false;
-                    G.t = true;
-                    G.j();
-                } else if (j3 < 0) {
-                    qc G2 = bulletinFactory.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
-                    G2.r = false;
-                    G2.t = true;
-                    G2.j();
-                } else {
-                    qc G3 = bulletinFactory.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
-                    G3.r = false;
-                    G3.t = true;
-                    G3.j();
-                }
-            } else {
-                qc Q = bulletinFactory.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("LinkSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
-                Q.r = false;
-                Q.t = true;
-                Q.j();
-            }
-            try {
-                this.container.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
+    @Override // org.telegram.ui.Components.y50
+    public final long a() {
+        return this.a.B1;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final int getClassGuid() {
+        return this.a.z2;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final View getFragmentView() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final Activity getParentActivity() {
+        return AndroidUtilities.findActivity(this.a.getContext());
+    }
+
+    @Override // org.telegram.ui.Components.y50
+    public final void q(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j3) {
+        AccountInstance accountInstance;
+        AccountInstance accountInstance2;
+        AccountInstance accountInstance3;
+        AccountInstance accountInstance4;
+        a3 a3Var = this.a;
+        TL_stories.StoryItem storyItem = a3Var.O1.a;
+        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
+            return;
         }
+        storyItem.dialogId = a3Var.B1;
+        if (photoEntry.isVideo) {
+            if (videoEditedInfo != null) {
+                accountInstance4 = a3Var.getAccountInstance();
+                SendMessagesHelper.prepareSendingVideo(accountInstance4, photoEntry.path, videoEditedInfo, null, null, a3Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j3);
+            } else {
+                accountInstance3 = a3Var.getAccountInstance();
+                SendMessagesHelper.prepareSendingVideo(accountInstance3, photoEntry.path, null, null, null, a3Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j3);
+            }
+        } else if (photoEntry.imagePath != null) {
+            accountInstance2 = a3Var.getAccountInstance();
+            SendMessagesHelper.prepareSendingPhoto(accountInstance2, photoEntry.imagePath, photoEntry.thumbPath, null, a3Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j3);
+        } else if (photoEntry.path != null) {
+            accountInstance = a3Var.getAccountInstance();
+            SendMessagesHelper.prepareSendingPhoto(accountInstance, photoEntry.path, photoEntry.thumbPath, null, a3Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j3);
+        }
+        a3Var.k0(j3 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.hq0
-    public final void S0(View view) {
-        w3.k1(this.b1, view);
+    @Override // org.telegram.ui.Components.y50
+    public final /* synthetic */ boolean u() {
+        return false;
     }
 }

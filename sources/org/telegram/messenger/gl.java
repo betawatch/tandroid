@@ -1,34 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class gl implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ TranslateController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ gl(TranslateController translateController, long j3, String str) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final /* synthetic */ class gl implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TranslateController b;
+    public final /* synthetic */ Utilities.Callback4 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ long g;
+
+    public /* synthetic */ gl(TranslateController translateController, Utilities.Callback4 callback4, boolean z10, int i10, String str, long j3, int i11) {
+        this.a = i11;
         this.b = translateController;
-        this.c = j3;
-        this.d = str;
+        this.c = callback4;
+        this.d = z10;
+        this.e = i10;
+        this.f = str;
+        this.g = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$setDialogTranslateTo$0(this.c, (String) this.d);
+                this.b.lambda$pushToTranslate$21(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
             default:
-                this.b.lambda$invalidateTranslation$9((MessageObject) this.d, this.c);
+                this.b.lambda$pushToTranslate$20(this.c, this.d, this.e, this.f, this.g, (String) obj, (Boolean) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ gl(TranslateController translateController, MessageObject messageObject, long j3) {
-        this.b = translateController;
-        this.d = messageObject;
-        this.c = j3;
     }
 }

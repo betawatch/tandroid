@@ -1,31 +1,44 @@
 package i2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x implements e2.n, e2.m {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+import android.os.Bundle;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.fh0;
 
-    public /* synthetic */ x(f0 f0Var, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x implements e2.m, p.a, GenericProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+
+    public /* synthetic */ x(int i10, boolean z10) {
         this.a = i10;
-        this.b = f0Var;
+        this.b = z10;
     }
 
-    @Override // e2.n
-    public void c(Object obj, b2.q qVar) {
-        ((b2.z0) obj).onEvents(this.b.f, new b2.y0(qVar));
+    @Override // p.a
+    public pc c(wc wcVar) {
+        return wcVar.k(this.b);
     }
 
     @Override // e2.m
     public void invoke(Object obj) {
-        b2.z0 z0Var = (b2.z0) obj;
         switch (this.a) {
-            case 3:
-                z0Var.onAvailableCommandsChanged(this.b.N);
+            case 0:
+                ((b2.z0) obj).onShuffleModeEnabledChanged(this.b);
                 break;
             default:
-                z0Var.onPlaylistMetadataChanged(this.b.P);
+                ((b2.z0) obj).onSkipSilenceEnabledChanged(this.b);
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        Bundle i10 = a4.a.i("afterSignup", this.b);
+        fh0 fh0Var = new fh0();
+        fh0Var.l0(i10);
+        return fh0Var;
     }
 }

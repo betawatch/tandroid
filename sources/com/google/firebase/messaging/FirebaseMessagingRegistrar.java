@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import w7.o8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
@@ -31,7 +31,7 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
         a2.a(new q9.j(0, 0, i5.f.class));
         a2.a(q9.j.a(qa.d.class));
         a2.a(q9.j.a(ma.b.class));
-        a2.f = new androidx.emoji2.text.w(25);
+        a2.f = new androidx.emoji2.text.w(21);
         a2.c(1);
         return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "23.4.0"));
     }

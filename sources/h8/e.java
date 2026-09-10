@@ -1,6 +1,6 @@
 package h8;
 
-import a9.v;
+import a9.w;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -9,11 +9,11 @@ import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
 import org.telegram.messenger.BuildConfig;
-import v7.j8;
-import v7.s8;
-import v7.w7;
+import v7.c9;
+import v7.m8;
+import v7.x7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class e {
     public static boolean a = false;
@@ -26,10 +26,10 @@ public abstract class e {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            v vVar = (v) obj;
+            w wVar = (w) obj;
             Bundle bundle = new Bundle();
-            bundle.putInt("event_type", vVar.a);
-            bundle.putLong("event_timestamp", vVar.b);
+            bundle.putInt("event_type", wVar.a);
+            bundle.putLong("event_timestamp", wVar.b);
             arrayList2.add(bundle);
         }
         return arrayList2;
@@ -44,15 +44,15 @@ public abstract class e {
                     return 0;
                 }
                 try {
-                    i8.e a2 = j8.a(context);
+                    i8.e a2 = m8.a(context);
                     try {
                         i8.a W0 = a2.W0();
                         l.h(W0);
-                        w7.a = W0;
+                        x7.a = W0;
                         s7.e Y0 = a2.Y0();
-                        if (s8.a == null) {
+                        if (c9.b == null) {
                             l.i(Y0, "delegate must not be null");
-                            s8.a = Y0;
+                            c9.b = Y0;
                         }
                         a = true;
                         try {
@@ -67,17 +67,17 @@ public abstract class e {
                             s7.b.c(O0, bVar);
                             O0.writeInt(0);
                             a2.S0(O0, 10);
-                        } catch (RemoteException e7) {
-                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e7);
+                        } catch (RemoteException e) {
+                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e);
                         }
                         int i10 = b;
                         Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? BuildConfig.BETA_URL : "LATEST" : "LEGACY"));
                         return 0;
-                    } catch (RemoteException e10) {
-                        throw new androidx.car.app.j(e10);
+                    } catch (RemoteException e7) {
+                        throw new androidx.car.app.j(e7);
                     }
-                } catch (k6.f e11) {
-                    return e11.a;
+                } catch (k6.f e10) {
+                    return e10.a;
                 }
             } catch (Throwable th2) {
                 throw th2;

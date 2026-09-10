@@ -1,22 +1,36 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class a71 extends i2.m {
-    public final /* synthetic */ g71 d;
+public final class a71 extends k20 {
+    public final bi.t2 J;
+    public final /* synthetic */ b71 K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a71(Context context, g71 g71Var) {
-        super(context);
-        this.d = g71Var;
+    public a71(b71 b71Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.K = b71Var;
+        bi.t2 t2Var = this.r;
+        this.J = t2Var;
+        t2Var.setImeOptions(268435459);
+        t2Var.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
+        t2Var.addTextChangedListener(new bi.u2(this, 14));
+        t2Var.setOnEditorActionListener(new g1(this, 10));
     }
 
-    @Override // i2.m
-    public final k2.d0 a(Context context) {
-        bi.n5 n5Var = new bi.n5(context);
-        n5Var.d = new aa.a(new c2.h[]{new k2.k0(new f71(this.d))});
-        return n5Var.a();
+    @Override // org.telegram.ui.Components.k20
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.K.D(motionEvent, this.J);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

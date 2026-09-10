@@ -7,7 +7,7 @@ import i9.s;
 import id.h;
 import java.util.concurrent.CancellationException;
 import kotlin.jvm.internal.i;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.r6;
 import zd.a0;
 import zd.e0;
 import zd.e2;
@@ -17,7 +17,7 @@ import zd.m0;
 import zd.o0;
 import zd.w1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e extends a0 implements j0 {
     public final Handler c;
@@ -110,6 +110,6 @@ public final class e extends a0 implements j0 {
             return str;
         }
         String handler = this.c.toString();
-        return this.d ? p6.t(handler, ".immediate") : handler;
+        return this.d ? r6.t(handler, ".immediate") : handler;
     }
 }

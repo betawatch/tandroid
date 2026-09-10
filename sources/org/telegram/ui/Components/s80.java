@@ -1,42 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class s80 implements PopupWindow.OnDismissListener {
+public final /* synthetic */ class s80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+    public final /* synthetic */ u80 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ s80(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i10) {
+    public /* synthetic */ s80(u80 u80Var, boolean z10, int i10) {
         this.a = i10;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
+        this.b = u80Var;
+        this.c = z10;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((w80) this.e).s = null;
-                di.r6 r6Var = (di.r6) this.c;
-                r6Var.animate().cancel();
-                r6Var.animate().alpha(0.0f).setDuration(150L).setListener(new r80(this, 0));
+                AndroidUtilities.runOnUIThread(new s80(this.b, this.c, 1));
                 break;
             default:
-                ((org.telegram.ui.a00) this.e).x = null;
-                di.r6 r6Var2 = (di.r6) this.c;
-                r6Var2.animate().cancel();
-                r6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new k61(this, 23));
+                this.b.setJoinRequest(this.c);
                 break;
         }
     }

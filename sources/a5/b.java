@@ -4,8 +4,8 @@ import android.net.Uri;
 import android.webkit.WebView;
 import b5.h;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public interface b {
-    void c(WebView webView, a aVar, Uri uri, boolean z10, h hVar);
+    void b(WebView webView, a aVar, Uri uri, boolean z10, h hVar);
 }

@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -385,7 +385,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -395,7 +395,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -406,18 +406,18 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class ObserversGroup {
         private NotificationCenterDelegate delegate;
         private NotificationCenter notificationCenter;
         private final ArrayList<Observer> observers;
 
-        /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
         public static class Observer {
             private final int id;
             private final NotificationCenterDelegate observer;
@@ -456,7 +456,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
@@ -847,7 +847,7 @@ public class NotificationCenter {
             }
         }
         if (j3 != Long.MAX_VALUE) {
-            AndroidUtilities.runOnUIThread(new xg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j3)));
+            AndroidUtilities.runOnUIThread(new fh(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j3)));
         }
     }
 
@@ -863,18 +863,18 @@ public class NotificationCenter {
             if (intValue2 == -1) {
                 Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
             } else if (intValue != intValue2) {
-                StringBuilder k10 = com.google.android.gms.internal.vision.e2.k("key=", keyAt, " CHANGED: ", intValue, " -> ");
-                k10.append(intValue2);
-                Log.i("ObserverDiff", k10.toString());
+                StringBuilder n10 = hc.b.n("key=", keyAt, " CHANGED: ", intValue, " -> ");
+                n10.append(intValue2);
+                Log.i("ObserverDiff", n10.toString());
             }
         }
         for (int i11 = 0; i11 < sparseArray2.size(); i11++) {
             int keyAt2 = sparseArray2.keyAt(i11);
             if (sparseArray.get(keyAt2, -1).intValue() == -1) {
-                StringBuilder l4 = i2.g.l(keyAt2, "key=", " ADDED (size=");
-                l4.append(sparseArray2.valueAt(i11));
-                l4.append(")");
-                Log.i("ObserverDiff", l4.toString());
+                StringBuilder m10 = hc.b.m(keyAt2, "key=", " ADDED (size=");
+                m10.append(sparseArray2.valueAt(i11));
+                m10.append(")");
+                Log.i("ObserverDiff", m10.toString());
             }
         }
     }
@@ -923,7 +923,7 @@ public class NotificationCenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForExpiredNotifications$0() {
-        this.checkForExpiredNotifications = new xg(this, 1);
+        this.checkForExpiredNotifications = new fh(this, 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -946,7 +946,7 @@ public class NotificationCenter {
     }
 
     public static void listenEmojiLoading(View view) {
-        getGlobalInstance().listen(view, emojiLoaded, new z0(view, 2));
+        getGlobalInstance().listen(view, emojiLoaded, new c1(view, 2));
     }
 
     private void postNotificationDebounced(int i10, Object[] objArr) {
@@ -954,9 +954,9 @@ public class NotificationCenter {
         if (this.alreadyPostedRunnubles.indexOfKey(hashCode) >= 0) {
             return;
         }
-        x4 x4Var = new x4(this, i10, objArr, hashCode, 8);
-        this.alreadyPostedRunnubles.put(hashCode, x4Var);
-        AndroidUtilities.runOnUIThread(x4Var, 250L);
+        c5 c5Var = new c5(this, i10, objArr, hashCode, 8);
+        this.alreadyPostedRunnubles.put(hashCode, c5Var);
+        AndroidUtilities.runOnUIThread(c5Var, 250L);
     }
 
     private boolean shouldDebounce(int i10, Object[] objArr) {
@@ -991,7 +991,7 @@ public class NotificationCenter {
             return;
         }
         alreadyLogged = true;
-        FileLog.e((Throwable) new RuntimeException(i2.g.i(i10, "Total observers more than 1000, need check for memory leak. ")), true);
+        FileLog.e((Throwable) new RuntimeException(hc.b.j(i10, "Total observers more than 1000, need check for memory leak. ")), true);
     }
 
     public void addPostponeNotificationsCallback(PostponeNotificationCallback postponeNotificationCallback) {
@@ -1055,9 +1055,9 @@ public class NotificationCenter {
 
     public Runnable listen(View view, final int i10, final Utilities.Callback<Object[]> callback) {
         if (view == null || callback == null) {
-            return new u1(16);
+            return new y1(16);
         }
-        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.yg
+        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.gh
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 NotificationCenter.lambda$listen$4(i10, callback, i11, i12, objArr);
@@ -1075,7 +1075,7 @@ public class NotificationCenter {
             }
         };
         view.addOnAttachStateChangeListener(onAttachStateChangeListener);
-        return new fi.l3(this, view, onAttachStateChangeListener, notificationCenterDelegate, i10, 11);
+        return new di.o3(this, view, onAttachStateChangeListener, notificationCenterDelegate, i10, 11);
     }
 
     public void onAnimationFinish(int i10) {
@@ -1201,7 +1201,7 @@ public class NotificationCenter {
     }
 
     public void postNotificationNameOnUIThread(int i10, Object... objArr) {
-        AndroidUtilities.runOnUIThread(new q4(this, i10, objArr, 19));
+        AndroidUtilities.runOnUIThread(new v4(this, i10, objArr, 19));
     }
 
     public void removeDelayed(Runnable runnable) {
@@ -1279,7 +1279,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 
@@ -1369,9 +1369,9 @@ public class NotificationCenter {
         allowedNotifications.allowedIds = iArr;
         this.allowedNotifications.put(this.animationInProgressPointer, allowedNotifications);
         if (this.checkForExpiredNotifications == null) {
-            xg xgVar = new xg(this, i11);
-            this.checkForExpiredNotifications = xgVar;
-            AndroidUtilities.runOnUIThread(xgVar, EXPIRE_NOTIFICATIONS_TIME);
+            fh fhVar = new fh(this, i11);
+            this.checkForExpiredNotifications = fhVar;
+            AndroidUtilities.runOnUIThread(fhVar, EXPIRE_NOTIFICATIONS_TIME);
         }
         return this.animationInProgressPointer;
     }

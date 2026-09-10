@@ -1,65 +1,63 @@
 package m4;
 
 import android.os.Bundle;
-import android.os.SystemClock;
-import org.telegram.messenger.MediaDataController;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p1 {
+    public static final String d;
     public static final String e;
     public static final String f;
-    public static final String g;
-    public static final String h;
     public final int a;
-    public final Bundle b;
-    public final long c;
-    public final n1 d;
+    public final String b;
+    public final Bundle c;
 
     static {
         String str = e2.d0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
     public p1(int i10) {
-        this(i10, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
+        this("no error message provided", i10, Bundle.EMPTY);
     }
 
-    public static p1 a(Bundle bundle) {
-        n1 n1Var;
-        int i10 = bundle.getInt(e, -1);
-        Bundle bundle2 = bundle.getBundle(f);
-        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
-        Bundle bundle3 = bundle.getBundle(h);
-        if (bundle3 != null) {
-            int i11 = bundle3.getInt(n1.d, MediaDataController.MAX_STYLE_RUNS_COUNT);
-            String string = bundle3.getString(n1.e, "");
-            Bundle bundle4 = bundle3.getBundle(n1.f);
-            if (bundle4 == null) {
-                bundle4 = Bundle.EMPTY;
-            }
-            n1Var = new n1(string, i11, bundle4);
-        } else {
-            n1Var = i10 != 0 ? new n1(i10) : null;
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
         }
-        n1 n1Var2 = n1Var;
-        if (bundle2 == null) {
-            bundle2 = Bundle.EMPTY;
-        }
-        return new p1(i10, bundle2, j3, n1Var2);
+        return bundle;
     }
 
-    public p1(int i10, Bundle bundle, long j3, n1 n1Var) {
-        e2.d.b(n1Var == null || i10 < 0);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof p1)) {
+            return false;
+        }
+        p1 p1Var = (p1) obj;
+        return this.a == p1Var.a && Objects.equals(this.b, p1Var.b);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), this.b);
+    }
+
+    public p1(String str, int i10, Bundle bundle) {
+        boolean z10 = true;
+        if (i10 >= 0 && i10 != 1) {
+            z10 = false;
+        }
+        e2.d.b(z10);
         this.a = i10;
-        this.b = new Bundle(bundle);
-        this.c = j3;
-        if (n1Var == null && i10 < 0) {
-            n1Var = new n1(i10);
-        }
-        this.d = n1Var;
+        this.b = str;
+        this.c = bundle;
     }
 }

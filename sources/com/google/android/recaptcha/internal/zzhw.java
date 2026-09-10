@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzhw extends j implements p {
     Object zza;
@@ -72,7 +72,7 @@ final class zzhw extends j implements p {
             r12 = i10;
         }
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             zzhk zzhkVar5 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
@@ -88,14 +88,14 @@ final class zzhw extends j implements p {
         if (i10 != 1) {
             if (i10 == 2) {
                 ?? r14 = (zzhk) this.zzf;
-                t7.b(obj);
+                u7.b(obj);
                 i10 = r14;
                 return (String) obj;
             }
             if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar2 = zzhkVar6;
                 this.zzf = zzhkVar;
                 this.zza = null;
@@ -117,19 +117,19 @@ final class zzhw extends j implements p {
             if (i10 != 4) {
                 if (i10 != 5) {
                     String str5 = (String) this.zzf;
-                    t7.b(obj);
+                    u7.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                t7.b(obj);
+                u7.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
                 return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            t7.b(obj);
+            u7.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -150,7 +150,7 @@ final class zzhw extends j implements p {
         zzhk zzhkVar7 = (zzhk) this.zza;
         zzhk zzhkVar8 = (zzhk) this.zzf;
         try {
-            t7.b(obj);
+            u7.b(obj);
             zzhkVar4 = zzhkVar7;
             r13 = zzhkVar8;
         } catch (Exception unused2) {

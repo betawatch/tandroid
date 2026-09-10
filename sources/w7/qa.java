@@ -3,7 +3,7 @@ package w7;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class qa extends a9.o implements ListIterator {
     public final int b;
@@ -15,7 +15,7 @@ public final class qa extends a9.o implements ListIterator {
         super(7);
         int size = saVar.size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(a8.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(b8.c(i10, size, "index"));
         }
         this.b = size;
         this.c = i10;

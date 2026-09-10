@@ -1,42 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class qq extends Drawable {
-    public final Paint a = new Paint(1);
+public final class qq extends AnimatorListenerAdapter {
+    public final /* synthetic */ sq a;
 
-    public qq(View view) {
-        if (view != null) {
-            view.addOnAttachStateChangeListener(new bi.i2(this, 6));
-            if (view.isAttachedToWindow()) {
-                view.post(new wp(this, 1));
+    public qq(sq sqVar) {
+        this.a = sqVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        sq sqVar = this.a;
+        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = sqVar.v;
+        if (sqVar.K == 1) {
+            sqVar.F.setVisibility(4);
+        }
+        for (int i10 = 0; i10 < colorPicker$RadioButtonArr.length; i10++) {
+            if (colorPicker$RadioButtonArr[i10].getTag(R.id.index_tag) == null) {
+                colorPicker$RadioButtonArr[i10].setVisibility(4);
             }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    public void a() {
-    }
-
-    public void b() {
+        sqVar.y = null;
     }
 }

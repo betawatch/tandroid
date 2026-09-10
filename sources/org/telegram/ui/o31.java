@@ -1,57 +1,60 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback c;
+public final class o31 extends l71 {
+    public final /* synthetic */ q31 d2;
+    public final /* synthetic */ c71[] e2;
+    public final /* synthetic */ r31 f2;
 
-    public /* synthetic */ o31(zh.s5 s5Var, boolean[] zArr, Utilities.Callback callback) {
-        this.a = 2;
-        this.b = zArr;
-        this.c = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o31(r31 r31Var, r31 r31Var2, Activity activity, Integer num, q31 q31Var, c71[] c71VarArr) {
+        super(r31Var2, activity, false, num, 2, null);
+        this.f2 = r31Var;
+        this.d2 = q31Var;
+        this.e2 = c71VarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Utilities.Callback callback;
-        Utilities.Callback callback2;
-        Utilities.Callback callback3;
-        switch (this.a) {
-            case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0] && (callback = this.c) != null) {
-                    zArr[0] = true;
-                    callback.run(Boolean.TRUE);
-                }
-                AndroidUtilities.runOnUIThread(new q31(0), 220L);
-                break;
-            case 1:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0] && (callback2 = this.c) != null) {
-                    zArr2[0] = true;
-                    callback2.run(Boolean.FALSE);
-                    break;
-                }
-                break;
-            default:
-                boolean[] zArr3 = this.b;
-                if (!zArr3[0] && (callback3 = this.c) != null) {
-                    callback3.run("cancelled");
-                    zArr3[0] = true;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.l71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        if (l4 == null) {
+            return;
+        }
+        r31 r31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.p2) r31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
+        q31 q31Var = this.d2;
+        if (q31Var != null) {
+            q31Var.a(true);
+        }
+        c71 c71Var = this.e2[0];
+        if (c71Var != null) {
+            r31Var.n = null;
+            c71Var.dismiss();
         }
     }
 
-    public /* synthetic */ o31(boolean[] zArr, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = callback;
+    @Override // org.telegram.ui.l71
+    public final void r(u61 u61Var, yg.p0 p0Var) {
+        int i10;
+        r31 r31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.p2) r31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction(p0Var.f);
+        q31 q31Var = this.d2;
+        if (q31Var != null) {
+            q31Var.a(true);
+        }
+        c71 c71Var = this.e2[0];
+        if (c71Var != null) {
+            r31Var.n = null;
+            c71Var.dismiss();
+        }
     }
 }

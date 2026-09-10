@@ -18,7 +18,6 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import bi.i2;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -29,7 +28,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class f extends t implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -48,19 +47,17 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
     public final int d;
     public final boolean e;
     public final Handler f;
-    public final androidx.mediarouter.app.j r;
-    public final i2 s;
     public View y;
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
-    public final d v = new d(this, 0);
+    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 1);
+    public final d s = new d(this, 0);
+    public final pb.c v = new pb.c(this, 29);
     public int w = 0;
     public int x = 0;
     public boolean K = false;
 
     public f(Context context, View view, int i10, boolean z10) {
-        this.r = new androidx.mediarouter.app.j(this, r1);
-        this.s = new i2(this, r1);
         this.b = context;
         this.y = view;
         this.d = i10;
@@ -79,12 +76,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.y
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // l.y
-    public final void d(l lVar, boolean z10) {
+    public final void c(l lVar, boolean z10) {
         ArrayList arrayList = this.n;
         int size = arrayList.size();
         int i10 = 0;
@@ -135,7 +127,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         dismiss();
         x xVar2 = this.M;
         if (xVar2 != null) {
-            xVar2.d(lVar, true);
+            xVar2.c(lVar, true);
         }
         ViewTreeObserver viewTreeObserver = this.N;
         if (viewTreeObserver != null) {
@@ -146,6 +138,11 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         }
         this.E.removeOnAttachStateChangeListener(this.s);
         this.O.onDismiss();
+    }
+
+    @Override // l.y
+    public final boolean d() {
+        return false;
     }
 
     @Override // l.c0
@@ -185,7 +182,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((e) i2.g.h(1, arrayList)).a.c;
+        return ((e) hc.b.i(1, arrayList)).a.c;
     }
 
     @Override // l.c0
@@ -240,7 +237,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         l(e0Var);
         x xVar = this.M;
         if (xVar != null) {
-            xVar.q(e0Var);
+            xVar.u(e0Var);
         }
         return true;
     }
@@ -404,7 +401,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
         j2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            eVar = (e) i2.g.h(1, arrayList);
+            eVar = (e) hc.b.i(1, arrayList);
             l lVar2 = eVar.b;
             int size2 = lVar2.f.size();
             int i15 = 0;
@@ -473,7 +470,7 @@ public final class f extends t implements View.OnKeyListener, PopupWindow.OnDism
             if (i17 >= 23) {
                 f2.a(xVar, null);
             }
-            r1 r1Var2 = ((e) i2.g.h(1, arrayList)).a.c;
+            r1 r1Var2 = ((e) hc.b.i(1, arrayList)).a.c;
             int[] iArr = new int[2];
             r1Var2.getLocationOnScreen(iArr);
             Rect rect = new Rect();

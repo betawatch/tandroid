@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class t extends c {
     public RandomAccessFile a;
@@ -25,8 +25,8 @@ public final class t extends c {
                 if (randomAccessFile != null) {
                     randomAccessFile.close();
                 }
-            } catch (IOException e7) {
-                throw new s(e7, 2000);
+            } catch (IOException e) {
+                throw new s(e, 2000);
             }
         } finally {
             this.a = null;
@@ -66,23 +66,23 @@ public final class t extends c {
                 this.d = true;
                 transferStarted(mVar);
                 return this.c;
-            } catch (IOException e7) {
-                throw new s(e7, 2000);
+            } catch (IOException e) {
+                throw new s(e, 2000);
             }
-        } catch (FileNotFoundException e10) {
+        } catch (FileNotFoundException e7) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
-                throw new s(e10, ((e10.getCause() instanceof ErrnoException) && ((ErrnoException) e10.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
+                throw new s(e7, ((e7.getCause() instanceof ErrnoException) && ((ErrnoException) e7.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
             StringBuilder w10 = a4.a.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
             w10.append(fragment);
-            throw new s(w10.toString(), e10, 1004);
-        } catch (SecurityException e11) {
-            throw new s(e11, 2006);
-        } catch (RuntimeException e12) {
-            throw new s(e12, 2000);
+            throw new s(w10.toString(), e7, 1004);
+        } catch (SecurityException e10) {
+            throw new s(e10, 2006);
+        } catch (RuntimeException e11) {
+            throw new s(e11, 2000);
         }
     }
 
@@ -104,8 +104,8 @@ public final class t extends c {
                 bytesTransferred(read);
             }
             return read;
-        } catch (IOException e7) {
-            throw new s(e7, 2000);
+        } catch (IOException e) {
+            throw new s(e, 2000);
         }
     }
 }

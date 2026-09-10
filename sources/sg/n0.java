@@ -1,33 +1,80 @@
 package sg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.os.CountDownTimer;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Date;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.Cells.f4;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class n0 extends org.telegram.ui.Cells.q {
-    public y1 e;
-    public Paint f;
-    public float h;
+public final class n0 extends CountDownTimer {
+    public final /* synthetic */ u0 a;
 
-    @Override // org.telegram.ui.Cells.q, android.view.View
-    public final void draw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(10.0f);
-        y1 y1Var = this.e;
-        y1Var.c.set(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), getMeasuredWidth() - AndroidUtilities.dp(5.0f), getMeasuredHeight() - AndroidUtilities.dp(5.0f));
-        float f7 = -dp;
-        y1Var.a.set(f7, f7, getWidth() + dp, getHeight() + dp);
-        canvas.save();
-        float f10 = 1.0f - this.h;
-        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        y1Var.d(canvas);
-        canvas.restore();
-        invalidate();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.f);
-        super.draw(canvas);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n0(u0 u0Var) {
+        super(Long.MAX_VALUE, 1000L);
+        this.a = u0Var;
+    }
+
+    @Override // android.os.CountDownTimer
+    public final void onTick(long j3) {
+        u0 u0Var = this.a;
+        vl0 vl0Var = u0Var.d;
+        ArrayList arrayList = u0Var.Y;
+        ArrayList arrayList2 = new ArrayList(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
+            if (tL_myBoost.cooldown_until_date > 0) {
+                arrayList2.add(tL_myBoost);
+            }
+            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
+                tL_myBoost.cooldown_until_date = 0;
+            }
+        }
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        for (int i11 = 0; i11 < vl0Var.getChildCount(); i11++) {
+            View childAt = vl0Var.getChildAt(i11);
+            if (childAt instanceof wg.k) {
+                wg.k kVar = (wg.k) childAt;
+                if (arrayList2.contains(kVar.getBoost())) {
+                    l5 l5Var = kVar.e;
+                    f4 f4Var = kVar.d;
+                    int i12 = kVar.I.cooldown_until_date;
+                    if (i12 > 0) {
+                        kVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, wg.k.f((i12 * 1000) - System.currentTimeMillis())));
+                        f4Var.setAlpha(0.65f);
+                        l5Var.setAlpha(0.65f);
+                        kVar.i(0.3f, false);
+                    } else {
+                        kVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(kVar.I.expires * 1000))));
+                        if (f4Var.getAlpha() < 1.0f) {
+                            f4Var.animate().alpha(1.0f).start();
+                            l5Var.animate().alpha(1.0f).start();
+                            kVar.i(1.0f, true);
+                        } else {
+                            f4Var.setAlpha(1.0f);
+                            l5Var.setAlpha(1.0f);
+                            kVar.i(1.0f, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // android.os.CountDownTimer
+    public final void onFinish() {
     }
 }

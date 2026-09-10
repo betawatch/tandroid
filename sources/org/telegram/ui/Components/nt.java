@@ -1,127 +1,227 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.Paint;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class nt extends View {
-    public final f01 a;
-    public final Drawable b;
-    public final ImageReceiver c;
-    public final Rect d;
-    public final RectF e;
-    public dh.d f;
+public abstract class nt implements NotificationCenter.NotificationCenterDelegate {
+    public static mt L;
+    public boolean E;
+    public boolean G;
+    public boolean I;
+    public int J;
+    public final int K;
+    public boolean a;
+    public Bitmap b;
+    public Canvas c;
+    public Bitmap d;
+    public Canvas e;
+    public boolean f;
+    public int n;
+    public boolean r;
+    public int v;
+    public int w;
+    public int x;
+    public final DispatchQueue y;
+    public int h = 1;
+    public final Paint s = new Paint(1);
+    public final lt F = new lt(this, 0);
+    public final lt H = new lt(this, 1);
 
-    public nt(Context context, CharSequence charSequence) {
-        super(context);
-        this.d = new Rect();
-        this.e = new RectF();
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new f01(charSequence, 14.0f, AndroidUtilities.bold());
-        Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
-    }
-
-    public final void a(TLRPC.Photo photo, Object obj) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(24.0f), false, closestPhotoSizeWithSize, false);
-        this.c.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "24_24", ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), "24_24", 0L, null, obj, 0);
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.d.contains((int) motionEvent.getX(), (int) motionEvent.getY()) || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
+    public nt() {
+        if (L == null) {
+            mt mtVar = new mt();
+            mtVar.b = new DispatchQueue[2];
+            L = mtVar;
         }
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ImageReceiver imageReceiver = this.c;
-        boolean hasBitmapImage = imageReceiver.hasBitmapImage();
-        int dp = AndroidUtilities.dp(19.0f) + ((int) Math.ceil(this.a.c)) + AndroidUtilities.dp(hasBitmapImage ? 30.33f : 11.33f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        int width = (getWidth() - dp) / 2;
-        int height = getHeight() / 2;
-        int i10 = height - (dp2 / 2);
-        int i11 = dp + width;
-        Rect rect = this.d;
-        rect.set(width, i10, i11, dp2 + i10);
-        rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-        dh.d dVar = this.f;
-        if (dVar != null) {
-            dVar.setBounds(rect);
-            this.f.draw(canvas);
+        mt mtVar2 = L;
+        int i10 = mtVar2.a + 1;
+        mtVar2.a = i10;
+        if (i10 > 1) {
+            mtVar2.a = 0;
         }
-        if (hasBitmapImage) {
-            float dp3 = AndroidUtilities.dp(0.66f) + width;
-            float f7 = height;
-            float dp4 = f7 - (AndroidUtilities.dp(22.66f) / 2.0f);
-            float dp5 = AndroidUtilities.dp(23.32f) + width;
-            float dp6 = (AndroidUtilities.dp(22.66f) / 2.0f) + f7;
-            RectF rectF = this.e;
-            rectF.set(dp3, dp4, dp5, dp6);
-            imageReceiver.setImageCoords(rectF);
-            imageReceiver.draw(canvas);
+        DispatchQueue[] dispatchQueueArr = (DispatchQueue[]) mtVar2.b;
+        int i11 = mtVar2.a;
+        DispatchQueue dispatchQueue = dispatchQueueArr[i11];
+        if (dispatchQueue == null) {
+            dispatchQueue = new DispatchQueue("draw_background_queue_" + mtVar2.a);
+            dispatchQueueArr[i11] = dispatchQueue;
         }
-        this.a.c(width + r2, height, 1.0f, -1, canvas);
-        int dp7 = i11 - AndroidUtilities.dp(17.0f);
-        int dp8 = height - AndroidUtilities.dp(6.0f);
-        int dp9 = i11 - AndroidUtilities.dp(5.0f);
-        int dp10 = AndroidUtilities.dp(6.0f) + height;
-        Drawable drawable = this.b;
-        drawable.setBounds(dp7, dp8, dp9, dp10);
-        drawable.draw(canvas);
+        this.y = dispatchQueue;
+        this.K = L.a;
     }
 
-    public void setBlurredBackgroundDrawable(dh.d dVar) {
-        dVar.o(AndroidUtilities.dp(4.0f));
-        dVar.p(AndroidUtilities.dp(11.0f));
-        this.f = dVar;
-    }
-
-    public void setImage(Bitmap bitmap) {
-        this.c.setImageBitmap(bitmap);
-        invalidate();
-    }
-
-    public void setImage(String str) {
-        if (str == null) {
-            setImage((Bitmap) null);
-        } else {
-            Utilities.globalQueue.postRunnable(new uc(27, this, str));
+    public void a(Canvas canvas, long j3, int i10, int i11, float f7) {
+        if (this.E) {
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.j6.Jl);
+                return;
+            }
+            return;
         }
+        this.w = i11;
+        this.x = i10;
+        if (this.G) {
+            this.G = false;
+            Bitmap bitmap = this.d;
+            Canvas canvas2 = this.e;
+            this.d = this.b;
+            this.e = this.c;
+            this.b = bitmap;
+            this.c = canvas2;
+        }
+        Bitmap bitmap2 = this.d;
+        if (bitmap2 == null || this.I) {
+            this.I = false;
+            if (bitmap2 != null) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(this.d);
+                AndroidUtilities.recycleBitmaps(arrayList);
+                this.d = null;
+            }
+            int i12 = this.w + 0;
+            Bitmap bitmap3 = this.d;
+            if (bitmap3 != null && bitmap3.getHeight() == i12 && this.d.getWidth() == this.x) {
+                this.d.eraseColor(0);
+            } else {
+                this.d = Bitmap.createBitmap(this.x, i12, Bitmap.Config.ARGB_8888);
+                this.e = new Canvas(this.d);
+            }
+            this.e.save();
+            this.e.translate(0.0f, 0);
+            d(this.e, f7);
+            this.e.restore();
+        }
+        if (!this.f && !this.r) {
+            this.f = true;
+            i(j3);
+            this.J = this.v;
+            this.y.postRunnable(this.F);
+        }
+        Bitmap bitmap4 = this.d;
+        if (bitmap4 != null) {
+            Paint paint = this.s;
+            paint.setAlpha((int) (f7 * 255.0f));
+            canvas.save();
+            canvas.translate(0.0f, -0);
+            b(canvas, bitmap4, paint);
+            canvas.restore();
+        }
+    }
+
+    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+    }
+
+    public abstract void c(Canvas canvas);
+
+    public abstract void d(Canvas canvas, float f7);
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        if (i10 == NotificationCenter.stopAllHeavyOperations) {
+            Integer num = (Integer) objArr[0];
+            if (this.h < num.intValue()) {
+                if (num.intValue() != 512 || SharedConfig.getDevicePerformanceClass() < 2) {
+                    int intValue = num.intValue() | this.n;
+                    this.n = intValue;
+                    if (intValue == 0 || this.r) {
+                        return;
+                    }
+                    this.r = true;
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (i10 == NotificationCenter.startAllHeavyOperations) {
+            Integer num2 = (Integer) objArr[0];
+            if (this.h >= num2.intValue() || (i12 = this.n) == 0) {
+                return;
+            }
+            int i13 = (~num2.intValue()) & i12;
+            this.n = i13;
+            if (i13 == 0 && this.r) {
+                this.r = false;
+            }
+        }
+    }
+
+    public final void e() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        this.E = false;
+        int currentHeavyOperationFlags = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        this.n = currentHeavyOperationFlags;
+        if (currentHeavyOperationFlags == 0 && this.r) {
+            this.r = false;
+        }
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.stopAllHeavyOperations);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.startAllHeavyOperations);
+    }
+
+    public final void f() {
+        if (this.a) {
+            if (!this.f) {
+                j();
+            }
+            this.a = false;
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.stopAllHeavyOperations);
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.startAllHeavyOperations);
+        }
+    }
+
+    public abstract void g();
+
+    public abstract void i(long j3);
+
+    public final void j() {
+        ArrayList arrayList = new ArrayList();
+        Bitmap bitmap = this.d;
+        if (bitmap != null) {
+            arrayList.add(bitmap);
+        }
+        Bitmap bitmap2 = this.b;
+        if (bitmap2 != null) {
+            arrayList.add(bitmap2);
+        }
+        this.d = null;
+        this.b = null;
+        this.c = null;
+        this.e = null;
+        AndroidUtilities.recycleBitmaps(arrayList);
+    }
+
+    public final void k() {
+        this.I = true;
+        this.v++;
+        if (this.d != null) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.d);
+            this.d = null;
+            AndroidUtilities.recycleBitmaps(arrayList);
+        }
+    }
+
+    public final void l(int i10) {
+        this.h = 7;
+        if (this.a) {
+            this.n = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        }
+    }
+
+    public void h() {
     }
 }

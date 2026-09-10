@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 w0 w0Var = this.b;
                 t0 t0Var = w0Var.X0;
                 if (t0Var != null) {
-                    t0Var.s1(w0Var);
+                    t0Var.x1(w0Var);
                     break;
                 }
                 break;

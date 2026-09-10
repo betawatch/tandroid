@@ -9,9 +9,9 @@ import android.graphics.drawable.RippleDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import v7.u7;
+import v7.v7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class v extends ImageView {
     public final e2.c a;
@@ -41,7 +41,7 @@ public class v extends ImageView {
         }
         j6.l lVar = this.b;
         if (lVar != null) {
-            lVar.a();
+            lVar.b();
         }
     }
 
@@ -107,7 +107,7 @@ public class v extends ImageView {
         super.setImageBitmap(bitmap);
         j6.l lVar = this.b;
         if (lVar != null) {
-            lVar.a();
+            lVar.b();
         }
     }
 
@@ -119,7 +119,7 @@ public class v extends ImageView {
         }
         super.setImageDrawable(drawable);
         if (lVar != null) {
-            lVar.a();
+            lVar.b();
             if (this.c) {
                 return;
             }
@@ -142,7 +142,7 @@ public class v extends ImageView {
         if (lVar != null) {
             ImageView imageView = (ImageView) lVar.b;
             if (i10 != 0) {
-                Drawable b10 = u7.b(imageView.getContext(), i10);
+                Drawable b10 = v7.b(imageView.getContext(), i10);
                 if (b10 != null) {
                     l1.a(b10);
                 }
@@ -150,7 +150,7 @@ public class v extends ImageView {
             } else {
                 imageView.setImageDrawable(null);
             }
-            lVar.a();
+            lVar.b();
         }
     }
 
@@ -159,7 +159,7 @@ public class v extends ImageView {
         super.setImageURI(uri);
         j6.l lVar = this.b;
         if (lVar != null) {
-            lVar.a();
+            lVar.b();
         }
     }
 
@@ -186,7 +186,7 @@ public class v extends ImageView {
             c3 c3Var = (c3) lVar.c;
             c3Var.c = colorStateList;
             c3Var.b = true;
-            lVar.a();
+            lVar.b();
         }
     }
 
@@ -199,7 +199,7 @@ public class v extends ImageView {
             c3 c3Var = (c3) lVar.c;
             c3Var.d = mode;
             c3Var.a = true;
-            lVar.a();
+            lVar.b();
         }
     }
 }

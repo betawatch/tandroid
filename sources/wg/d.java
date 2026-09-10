@@ -1,38 +1,45 @@
 package wg;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
-import w7.x5;
+import org.telegram.ui.ActionBar.j6;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class d extends c {
-    public static final /* synthetic */ int s = 0;
-    public int r;
+public final class d extends FrameLayout {
+    public final f6 a;
+    public final TextView b;
 
     public d(Context context, f6 f6Var) {
-        super(context, f6Var);
-        this.d.setTypeface(AndroidUtilities.bold());
+        super(context);
+        this.a = f6Var;
+        setBackgroundColor(j6.v0(j6.e7, f6Var));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        e2.k(14.0f, 1, textView);
+        textView.setTextColor(j6.v0(j6.f7, f6Var));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        addView(textView, a6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // wg.c
-    public boolean b() {
-        return !(this instanceof e);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 
-    @Override // wg.c
-    public void d() {
-        this.c.setLayoutParams(x5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 57.0f, 0.0f, 57.0f, 0.0f));
-        boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(x5.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 109.0f, 0.0f, z10 ? 109.0f : 20.0f, 0.0f));
-        boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(x5.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 109.0f, 0.0f, z11 ? 109.0f : 20.0f, 0.0f));
-        this.f.setLayoutParams(x5.d(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 15.0f, 0.0f));
+    public void setLetter(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 
-    public int getSelectedType() {
-        return this.r;
+    public void setTextColor(int i10) {
+        this.b.setTextColor(j6.v0(i10, this.a));
     }
 }

@@ -4,26 +4,26 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public interface f6 {
-    Paint G(String str);
+    Paint F(String str);
 
-    int G0(int i10);
+    int F0(int i10);
 
-    void O0(int i10, int i11);
+    void L0(int i10, int i11);
 
     boolean a();
 
+    int e0(int i10);
+
+    int f1(int i10);
+
     Drawable getDrawable(String str);
-
-    int h0(int i10);
-
-    int h1(int i10);
 
     void l(float f7, float f10, int i10, int i11);
 
-    boolean o0();
+    boolean m0();
 
-    ColorFilter x();
+    ColorFilter w();
 }

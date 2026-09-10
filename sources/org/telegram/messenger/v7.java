@@ -1,68 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.List;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v7 implements RequestDelegate {
+public final /* synthetic */ class v7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ v7(BaseController baseController, Object obj, Object obj2, int i10) {
+    public /* synthetic */ v7(MediaDataController mediaDataController, String str, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = baseController;
-        this.c = obj;
-        this.d = obj2;
+        this.b = mediaDataController;
+        this.c = str;
+        this.d = callback;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Boolean bool = (Boolean) obj;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj2;
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$addRecentSticker$21(this.c, (TLRPC.TL_messages_faveSticker) this.d, tLObject, tL_error);
-                break;
-            case 1:
-                ((MediaDataController) this.b).lambda$addRecentSticker$22(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$createChat$258((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$createChat$261((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.d, tLObject, tL_error);
-                break;
-            case 4:
-                ((MessagesController) this.b).lambda$saveGif$146(this.c, (TLRPC.TL_messages_saveGif) this.d, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController) this.b).lambda$unpinAllMessages$129((TLRPC.Chat) this.c, (TLRPC.User) this.d, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$saveRecentSticker$147(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$toggleChatJoinToSend$280((Runnable) this.c, (Runnable) this.d, tLObject, tL_error);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$loadChannelParticipants$149((Long) this.c, (Utilities.Callback) this.d, tLObject, tL_error);
-                break;
-            case 9:
-                ((MessagesController) this.b).lambda$updateChatAbout$290((TLRPC.ChatFull) this.c, (String) this.d, tLObject, tL_error);
-                break;
-            case 10:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$58((SendMessagesHelper.DelayedMessage) this.c, (String) this.d, tLObject, tL_error);
-                break;
-            case 11:
-                ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$29((String) this.c, (List) this.d, tLObject, tL_error);
+                this.b.lambda$getStickerSet$32(this.c, this.d, bool, tL_messages_stickerSet);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$editMessage$21((org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editMessage) this.d, tLObject, tL_error);
+                this.b.lambda$getStickerSet$35(this.c, this.d, bool, tL_messages_stickerSet);
                 break;
         }
     }

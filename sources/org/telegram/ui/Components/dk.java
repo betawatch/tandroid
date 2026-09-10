@@ -1,73 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class dk extends ll0 {
-    public final /* synthetic */ int X2;
-    public final Paint Y2;
-    public final /* synthetic */ ok Z2;
+public final /* synthetic */ class dk implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ FrameLayout d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dk(ok okVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
-        this.X2 = i10;
-        switch (i10) {
-            case 1:
-                this.Z2 = okVar;
-                super(context, f6Var);
-                this.Y2 = new Paint();
-                break;
-            default:
-                this.Z2 = okVar;
-                this.Y2 = new Paint();
-                break;
-        }
+    public /* synthetic */ dk(FrameLayout frameLayout, int i10, float f7, int i11) {
+        this.a = i11;
+        this.d = frameLayout;
+        this.b = i10;
+        this.c = f7;
     }
 
-    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.X2) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                if (this.Z2.n == 2 && getChildCount() > 0) {
-                    float f7 = 2.14748365E9f;
-                    for (int i10 = 0; i10 < getChildCount(); i10++) {
-                        if (getChildAt(i10).getY() < f7) {
-                            f7 = getChildAt(i10).getY();
-                        }
-                    }
-                    this.Y2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                if (this.Z2.n == 1 && getChildCount() > 0) {
-                    float f10 = 2.14748365E9f;
-                    for (int i11 = 0; i11 < getChildCount(); i11++) {
-                        if (getChildAt(i11).getY() < f10) {
-                            f10 = getChildAt(i11).getY();
-                        }
-                    }
-                    this.Y2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
-                }
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.X2) {
-            case 0:
-                if (this.Z2.n == 0) {
+                tk tkVar = (tk) this.d;
+                ik ikVar = tkVar.r;
+                ik ikVar2 = tkVar.s;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i10 = this.b;
+                float f7 = this.c;
+                if (i10 != 1) {
+                    ikVar2.setTranslationX(f7 * floatValue);
+                    ikVar2.setAlpha(Math.max(0.0f, 1.0f - floatValue));
+                    ikVar2.invalidate();
+                    ikVar.setAlpha(floatValue);
+                    float f10 = (floatValue * 0.05f) + 0.95f;
+                    ikVar.setScaleX(f10);
+                    ikVar.setScaleY(f10);
+                    ikVar2.invalidate();
+                    break;
+                } else {
+                    ikVar.setTranslationX(f7 * floatValue);
+                    ikVar.setAlpha(1.0f - floatValue);
+                    ikVar.invalidate();
+                    ikVar2.setAlpha(floatValue);
+                    float f11 = (floatValue * 0.05f) + 0.95f;
+                    ikVar2.setScaleX(f11);
+                    ikVar2.setScaleY(f11);
                     break;
                 }
+            default:
+                yb0 yb0Var = (yb0) this.d;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f12 = 1.0f - floatValue2;
+                int i11 = (int) ((yb0Var.R * floatValue2) + (this.b * f12));
+                yb0Var.T = i11;
+                yb0Var.e((yb0Var.S * floatValue2) + (this.c * f12), i11);
                 break;
         }
-        return super.onTouchEvent(motionEvent);
     }
 }

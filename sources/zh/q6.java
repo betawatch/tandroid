@@ -1,33 +1,28 @@
 package zh;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class q6 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ boolean c;
+public final /* synthetic */ class q6 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r6 b;
 
-    public q6(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
-        this.a = f3VarArr;
-        this.b = context;
-        this.c = z10;
+    public /* synthetic */ q6(r6 r6Var, int i10) {
+        this.a = i10;
+        this.b = r6Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        of.f.s(this.b, LocaleController.getString(this.c ? R.string.StarsTransactionTONFromFragmentLink : R.string.StarsTransactionUnknownLink));
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                r6.c(this.b, (TLRPC.TL_messages_stickerSet) obj);
+                break;
+            default:
+                r6.b(this.b, (TLRPC.TL_messages_stickerSet) obj);
+                break;
+        }
     }
 }

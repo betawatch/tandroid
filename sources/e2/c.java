@@ -9,16 +9,17 @@ import android.os.Build;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.View;
-import i2.f0;
+import i2.e0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.WeakHashMap;
 import m.c3;
+import m.e3;
 import m.l1;
 import r0.i0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -47,26 +48,26 @@ public final class c {
         int i10 = this.a;
         if (i10 != 0) {
             if (i10 != -1 && priorityQueue.size() >= this.a) {
-                f2.s sVar = (f2.s) priorityQueue.peek();
+                f2.r rVar = (f2.r) priorityQueue.peek();
                 String str = d0.a;
             }
             ArrayDeque arrayDeque2 = (ArrayDeque) this.c;
             v vVar2 = arrayDeque2.isEmpty() ? new v() : (v) arrayDeque2.pop();
             vVar2.G(vVar.a());
             System.arraycopy(vVar.a, vVar.b, vVar2.a, 0, vVar2.a());
-            f2.s sVar2 = (f2.s) this.f;
-            if (sVar2 != null && j3 == sVar2.b) {
-                sVar2.a.add(vVar2);
+            f2.r rVar2 = (f2.r) this.f;
+            if (rVar2 != null && j3 == rVar2.b) {
+                rVar2.a.add(vVar2);
                 return;
             }
-            f2.s sVar3 = arrayDeque.isEmpty() ? new f2.s() : (f2.s) arrayDeque.pop();
-            ArrayList arrayList = sVar3.a;
+            f2.r rVar3 = arrayDeque.isEmpty() ? new f2.r() : (f2.r) arrayDeque.pop();
+            ArrayList arrayList = rVar3.a;
             d.b(j3 != -9223372036854775807L);
             d.g(arrayList.isEmpty());
-            sVar3.b = j3;
+            rVar3.b = j3;
             arrayList.add(vVar2);
-            priorityQueue.add(sVar3);
-            this.f = sVar3;
+            priorityQueue.add(rVar3);
+            this.f = rVar3;
             int i11 = this.a;
             if (i11 != -1) {
                 c(i11);
@@ -74,7 +75,7 @@ public final class c {
             }
             return;
         }
-        ((f2.t) this.b).a(j3, vVar);
+        ((f2.s) this.b).c(j3, vVar);
     }
 
     public void b() {
@@ -123,24 +124,24 @@ public final class c {
         ArrayList arrayList;
         PriorityQueue priorityQueue = (PriorityQueue) this.e;
         while (priorityQueue.size() > i10) {
-            f2.s sVar = (f2.s) priorityQueue.poll();
+            f2.r rVar = (f2.r) priorityQueue.poll();
             String str = d0.a;
             int i11 = 0;
             while (true) {
-                arrayList = sVar.a;
+                arrayList = rVar.a;
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                ((f2.t) this.b).a(sVar.b, (v) arrayList.get(i11));
+                ((f2.s) this.b).c(rVar.b, (v) arrayList.get(i11));
                 ((ArrayDeque) this.c).push((v) arrayList.get(i11));
                 i11++;
             }
             arrayList.clear();
-            f2.s sVar2 = (f2.s) this.f;
-            if (sVar2 != null && sVar2.b == sVar.b) {
+            f2.r rVar2 = (f2.r) this.f;
+            if (rVar2 != null && rVar2.b == rVar.b) {
                 this.f = null;
             }
-            ((ArrayDeque) this.d).push(sVar);
+            ((ArrayDeque) this.d).push(rVar);
         }
     }
 
@@ -170,10 +171,10 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        aa.a y3 = aa.a.y(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) y3.c;
+        e3 P = e3.P(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         View view2 = (View) this.b;
-        i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) y3.c, i10);
+        i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -188,9 +189,9 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                ColorStateList q6 = y3.q(1);
+                ColorStateList C = P.C(1);
                 int i13 = Build.VERSION.SDK_INT;
-                r0.a0.g(view, q6);
+                r0.a0.g(view, C);
                 if (i13 == 21) {
                     Drawable background = view.getBackground();
                     if (r0.a0.c(view) == null && r0.a0.d(view) == null) {
@@ -225,9 +226,9 @@ public final class c {
                     }
                 }
             }
-            y3.A();
+            P.Q();
         } catch (Throwable th2) {
-            y3.A();
+            P.Q();
             throw th2;
         }
     }
@@ -307,29 +308,29 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        f0 f0Var = ((i2.x) this.d).b;
+        e0 e0Var = ((i2.w) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        f0Var.B1();
-        f0Var.p1(1, 10, num);
-        f0Var.p1(2, 10, num);
-        f0Var.m.e(21, new i2.w(intValue, 1));
+        e0Var.B1();
+        e0Var.p1(1, 10, num);
+        e0Var.p1(2, 10, num);
+        e0Var.m.e(21, new i2.v(intValue, 1));
     }
 
-    public c(f2.t tVar) {
-        this.b = tVar;
+    public c(f2.s sVar) {
+        this.b = sVar;
         this.c = new ArrayDeque();
         this.d = new ArrayDeque();
         this.e = new PriorityQueue();
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, x xVar, i2.x xVar2) {
+    public c(Object obj, Looper looper, Looper looper2, x xVar, i2.w wVar) {
         this.b = xVar.a(looper, null);
         this.c = xVar.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = xVar2;
+        this.d = wVar;
     }
 }

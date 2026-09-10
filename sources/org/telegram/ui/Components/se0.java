@@ -1,28 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class se0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ue0 b;
+public final class se0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ ye0 a;
 
-    public /* synthetic */ se0(ue0 ue0Var, int i10) {
-        this.a = i10;
-        this.b = ue0Var;
+    public se0(ye0 ye0Var) {
+        this.a = ye0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s = null;
-                break;
-            default:
-                this.b.v = null;
-                break;
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        if (i10 == -1) {
+            this.a.dismiss();
         }
     }
 }

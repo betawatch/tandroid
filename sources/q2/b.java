@@ -1,60 +1,87 @@
 package q2;
 
 import android.content.Context;
-import android.os.Build;
-import b2.r0;
+import android.graphics.Point;
 import b2.s;
-import com.google.firebase.messaging.n;
+import b2.s0;
 import e2.d0;
-import n7.z0;
-import r2.k;
-import r2.l;
-import t7.u;
+import h2.h;
+import h2.j;
+import h2.l;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import v7.m7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class b implements k {
-    public final Context a;
+public final class b extends l {
+    public final Context o;
+    public final int p;
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int a(s sVar) {
-        String str = sVar.r;
-        if (str == null || !r0.k(str)) {
-            return i2.g.b(0, 0, 0, 0);
-        }
-        String str2 = sVar.r;
-        String str3 = d0.a;
-        str2.getClass();
-        switch (str2) {
-            case "image/jpeg":
-            case "image/webp":
-            case "image/bmp":
-            case "image/png":
-                return i2.g.b(4, 0, 0, 0);
-        }
-        return i2.g.b(1, 0, 0, 0);
+    public b(Context context) {
+        super(new h[1], new a[1]);
+        this.o = context;
+        this.p = -1;
     }
 
-    @Override // r2.k
-    public l p(n nVar) {
-        Context context;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 23 || (i10 < 31 && ((context = this.a) == null || i10 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen")))) {
-            return new u(20).p(nVar);
+    @Override // h2.l
+    public final h f() {
+        return new h(1, 0);
+    }
+
+    @Override // h2.l
+    public final j g() {
+        return new a(this);
+    }
+
+    @Override // h2.e
+    public final String getName() {
+        return "BitmapFactoryImageDecoder";
+    }
+
+    @Override // h2.l
+    public final h2.f h(Throwable th2) {
+        return new c("Unexpected decode error", th2);
+    }
+
+    @Override // h2.l
+    public final h2.f i(h hVar, j jVar, boolean z10) {
+        a aVar = (a) jVar;
+        ByteBuffer byteBuffer = hVar.c;
+        byteBuffer.getClass();
+        e2.d.g(byteBuffer.hasArray());
+        e2.d.b(byteBuffer.arrayOffset() == 0);
+        try {
+            int i10 = this.p;
+            if (i10 == -1) {
+                Context context = this.o;
+                if (context != null) {
+                    Point w10 = d0.w(context);
+                    int i11 = w10.x;
+                    int i12 = w10.y;
+                    s sVar = hVar.a;
+                    if (sVar != null) {
+                        int i13 = sVar.Q;
+                        if (i13 != -1) {
+                            i11 *= i13;
+                        }
+                        int i14 = sVar.R;
+                        if (i14 != -1) {
+                            i12 *= i14;
+                        }
+                    }
+                    i10 = (Math.max(i11, i12) * 2) - 1;
+                } else {
+                    i10 = 4096;
+                }
+            }
+            aVar.a = m7.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.timeUs = hVar.e;
+            return null;
+        } catch (s0 e) {
+            return new c("Could not decode image data with BitmapFactory.", e);
+        } catch (IOException e7) {
+            return new c(e7);
         }
-        int h = r0.h(((s) nVar.c).r);
-        e2.a.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + d0.G(h));
-        return new z0(14, new r2.b(h, 0), new r2.b(h, 1)).p(nVar);
     }
 }

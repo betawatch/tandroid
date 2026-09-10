@@ -1,60 +1,92 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s21 implements Runnable {
+public final class s21 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g31 b;
+    public final /* synthetic */ u21 b;
 
-    public /* synthetic */ s21(g31 g31Var, int i10) {
+    public /* synthetic */ s21(u21 u21Var, int i10) {
         this.a = i10;
-        this.b = g31Var;
+        this.b = u21Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                f31 f31Var = this.b.f;
-                if (f31Var != null) {
-                    f31Var.s.setClickable(true);
-                    break;
-                }
+                this.b.U(true);
                 break;
             case 1:
-                g31 g31Var = this.b;
-                g31Var.d0(0, g31Var.J, true);
-                org.telegram.ui.Components.xi0 animatedDrawable = g31Var.F.getAnimatedDrawable();
-                if (g31Var.I == null && animatedDrawable != null) {
-                    g31Var.I = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
-                    animatedDrawable.b();
-                    animatedDrawable.E0 = 33;
-                    animatedDrawable.a(g31Var.I);
-                    animatedDrawable.c();
+                u21 u21Var = this.b;
+                if (!u21Var.K) {
+                    EditTextBoldCursor editTextBoldCursor = u21Var.a[1];
+                    int selectionStart = editTextBoldCursor.getSelectionStart();
+                    String obj = editTextBoldCursor.getText().toString();
+                    StringBuilder sb2 = new StringBuilder(obj.length());
+                    int i10 = 0;
+                    while (i10 < obj.length()) {
+                        int i11 = i10 + 1;
+                        String substring = obj.substring(i10, i11);
+                        if ("0123456789".contains(substring)) {
+                            sb2.append(substring);
+                        }
+                        i10 = i11;
+                    }
+                    u21Var.K = true;
+                    int intValue = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
+                    if (intValue < 0 || intValue > 65535 || !obj.equals(sb2.toString())) {
+                        if (intValue < 0) {
+                            editTextBoldCursor.setText("0");
+                        } else if (intValue > 65535) {
+                            editTextBoldCursor.setText("65535");
+                        } else {
+                            editTextBoldCursor.setText(sb2.toString());
+                        }
+                    } else if (selectionStart >= 0) {
+                        editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                    }
+                    u21Var.K = false;
+                    u21Var.U(true);
                     break;
                 }
                 break;
-            case 2:
-                int i10 = R.raw.default_pattern;
-                g31 g31Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new rx0(20, g31Var2, SvgHelper.getBitmap(i10, g31Var2.w.getWidth(), g31Var2.w.getHeight(), -16777216)));
-                break;
-            case 3:
-                g31 g31Var3 = this.b;
-                o0.a aVar = g31Var3.a;
-                aVar.b = g31Var3.J.b(((org.telegram.ui.ActionBar.n2) ((g31) aVar.c)).currentAccount, g31Var3.K ? 1 : 0);
-                break;
-            case 4:
-                g31.X(this.b);
-                break;
             default:
-                g31.V(this.b);
+                this.b.U(true);
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

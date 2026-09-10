@@ -1,21 +1,23 @@
 package n2;
 
+import bi.g3;
 import e2.d0;
+import gg.a0;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
-import u2.f0;
+import u2.g0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class j {
     public final int a;
-    public final f0 b;
+    public final g0 b;
     public final CopyOnWriteArrayList c;
 
-    public j(CopyOnWriteArrayList copyOnWriteArrayList, int i10, f0 f0Var) {
+    public j(CopyOnWriteArrayList copyOnWriteArrayList, int i10, g0 g0Var) {
         this.c = copyOnWriteArrayList;
         this.a = i10;
-        this.b = f0Var;
+        this.b = g0Var;
     }
 
     /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.k] */
@@ -40,7 +42,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            d0.U(iVar.a, new ah.p(this, iVar.b, i10, 17));
+            d0.U(iVar.a, new g3(this, iVar.b, i10, 14));
         }
     }
 
@@ -48,7 +50,7 @@ public final class j {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
             i iVar = (i) it.next();
-            d0.U(iVar.a, new hg.t(this, iVar.b, exc, 24));
+            d0.U(iVar.a, new a0(this, iVar.b, exc, 16));
         }
     }
 

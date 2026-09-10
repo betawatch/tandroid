@@ -3,7 +3,7 @@ package h2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class k extends Thread {
     public final /* synthetic */ int a = 0;
@@ -21,77 +21,77 @@ public final class k extends Thread {
             case 0:
                 do {
                     try {
-                    } catch (InterruptedException e7) {
-                        throw new IllegalStateException(e7);
+                    } catch (InterruptedException e) {
+                        throw new IllegalStateException(e);
                     }
                 } while (((l) this.b).j());
                 return;
             default:
-                tg.e eVar = (tg.e) this.b;
-                eVar.x = true;
+                rg.f fVar = (rg.f) this.b;
+                fVar.x = true;
                 try {
-                    tg.e.a(eVar);
-                    int glGetError = ((tg.e) this.b).r.glGetError();
+                    rg.f.a(fVar);
+                    int glGetError = ((rg.f) this.b).r.glGetError();
                     if (glGetError != 0) {
                         FileLog.e("GL error = 0x" + Integer.toHexString(glGetError));
                     }
                     long currentTimeMillis = System.currentTimeMillis();
-                    while (((tg.e) this.b).x) {
+                    while (((rg.f) this.b).x) {
                         while (true) {
-                            tg.e eVar2 = (tg.e) this.b;
-                            tg.a aVar = eVar2.b;
+                            rg.f fVar2 = (rg.f) this.b;
+                            rg.a aVar = fVar2.b;
                             if (aVar == null) {
                                 try {
                                     Thread.sleep(100L);
                                 } catch (InterruptedException unused) {
                                 }
                             } else {
-                                if (eVar2.E) {
-                                    synchronized (eVar2) {
-                                        if (eVar2.x) {
-                                            aVar.onSurfaceCreated(eVar2.r, eVar2.n);
-                                            aVar.onSurfaceChanged(eVar2.r, eVar2.w, eVar2.v);
+                                if (fVar2.E) {
+                                    synchronized (fVar2) {
+                                        if (fVar2.x) {
+                                            aVar.onSurfaceCreated(fVar2.r, fVar2.n);
+                                            aVar.onSurfaceChanged(fVar2.r, fVar2.w, fVar2.v);
                                         }
                                     }
-                                    ((tg.e) this.b).E = false;
+                                    ((rg.f) this.b).E = false;
                                 }
                                 try {
-                                    if (!tg.e.b((tg.e) this.b)) {
+                                    if (!rg.f.b((rg.f) this.b)) {
                                         long currentTimeMillis2 = System.currentTimeMillis();
-                                        tg.e.c((tg.e) this.b, (currentTimeMillis2 - currentTimeMillis) / 1000.0f);
-                                        if (!((tg.e) this.b).P) {
-                                            ((tg.e) this.b).P = true;
-                                            AndroidUtilities.runOnUIThread(((tg.e) this.b).Q);
-                                            ((tg.e) this.b).Q = null;
+                                        rg.f.c((rg.f) this.b, (currentTimeMillis2 - currentTimeMillis) / 1000.0f);
+                                        if (!((rg.f) this.b).P) {
+                                            ((rg.f) this.b).P = true;
+                                            AndroidUtilities.runOnUIThread(((rg.f) this.b).Q);
+                                            ((rg.f) this.b).Q = null;
                                         }
                                         currentTimeMillis = currentTimeMillis2;
                                     }
                                     try {
-                                        if (tg.e.b((tg.e) this.b)) {
+                                        if (rg.f.b((rg.f) this.b)) {
                                             Thread.sleep(100L);
                                         } else {
-                                            for (long currentTimeMillis3 = System.currentTimeMillis(); currentTimeMillis3 - currentTimeMillis < ((tg.e) this.b).s; currentTimeMillis3 = System.currentTimeMillis()) {
+                                            for (long currentTimeMillis3 = System.currentTimeMillis(); currentTimeMillis3 - currentTimeMillis < ((rg.f) this.b).s; currentTimeMillis3 = System.currentTimeMillis()) {
                                             }
                                         }
                                     } catch (InterruptedException unused2) {
                                     }
-                                } catch (Exception e10) {
-                                    FileLog.e(e10);
+                                } catch (Exception e7) {
+                                    FileLog.e(e7);
                                     return;
                                 }
                             }
                         }
                     }
                     return;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    ((tg.e) this.b).x = false;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    ((rg.f) this.b).x = false;
                     return;
                 }
         }
     }
 
-    public k(tg.e eVar) {
-        this.b = eVar;
+    public k(rg.f fVar) {
+        this.b = fVar;
     }
 }

@@ -1,68 +1,59 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.net.Uri;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.f01;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class u0 extends Drawable {
-    public final float a = 0.75f;
-    public final Drawable b;
-    public final f01 c;
+public final /* synthetic */ class u0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y0 b;
 
-    public u0(Context context, int i10) {
-        this.b = context.getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
-        f01 f01Var = new f01(i2.g.i(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        this.c = f01Var;
-        f01Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    public /* synthetic */ u0(y0 y0Var, int i10) {
+        this.a = i10;
+        this.b = y0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
-        Drawable drawable = this.b;
-        drawable.setBounds(bounds);
-        drawable.draw(canvas);
-        this.c.c(bounds.centerX() - (this.c.c / 2.0f), AndroidUtilities.dp(0.15f) + bounds.centerY(), drawable.getAlpha() / 255.0f, -1, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.b.getAlpha();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return (int) (this.b.getIntrinsicHeight() * this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.b.getIntrinsicWidth() * this.a);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                Float f7 = (Float) obj;
+                x0 x0Var = this.b.n;
+                if (x0Var != null) {
+                    x0Var.setProgress(f7.floatValue());
+                    break;
+                }
+                break;
+            case 1:
+                Uri uri = (Uri) obj;
+                y0 y0Var = this.b;
+                if (y0Var.c && y0Var.r != null) {
+                    y0Var.n.b(R.raw.ic_save_to_gallery, 3500, LocaleController.getString("VideoSavedHint"));
+                    y0Var.c = false;
+                    y0Var.d();
+                    y0Var.v = uri;
+                    break;
+                }
+                break;
+            default:
+                Uri uri2 = (Uri) obj;
+                y0 y0Var2 = this.b;
+                y0Var2.c = false;
+                y0Var2.d();
+                x0 x0Var2 = y0Var2.n;
+                if (x0Var2 != null) {
+                    x0Var2.a();
+                    y0Var2.n = null;
+                }
+                x0 x0Var3 = new x0(y0Var2.getContext());
+                y0Var2.n = x0Var3;
+                x0Var3.b(R.raw.ic_save_to_gallery, 2500, LocaleController.getString("PhotoSavedHint"));
+                y0Var2.b.addView(y0Var2.n);
+                y0Var2.v = uri2;
+                break;
+        }
     }
 }

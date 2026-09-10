@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class j {
     public static final j h = new j(1, 2, 3, null, -1, -1);
@@ -40,15 +40,15 @@ public final class j {
     }
 
     public static String a(int i10) {
-        return i10 != -1 ? i10 != 1 ? i10 != 2 ? i2.g.i(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
+        return i10 != -1 ? i10 != 1 ? i10 != 2 ? hc.b.j(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
     }
 
     public static String b(int i10) {
-        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? i2.g.i(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
+        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? hc.b.j(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
     }
 
     public static String c(int i10) {
-        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? i2.g.i(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
+        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? hc.b.j(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
     }
 
     public static boolean e(j jVar) {

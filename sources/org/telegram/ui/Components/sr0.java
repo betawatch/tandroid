@@ -1,43 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class sr0 extends org.telegram.ui.d21 {
-    public final /* synthetic */ xu0 H;
+public final /* synthetic */ class sr0 implements Interpolator {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sr0(xu0 xu0Var, Context context, ov0 ov0Var, bi.f8 f8Var, rr0 rr0Var) {
-        super(context, ov0Var, f8Var, rr0Var);
-        this.H = xu0Var;
-    }
-
-    @Override // org.telegram.ui.d21
-    public final void a() {
-        wr0 wr0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.F;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        xu0 xu0Var = this.H;
-        qt0[] qt0VarArr = xu0Var.k0;
-        if (qt0VarArr != null) {
-            for (qt0 qt0Var : qt0VarArr) {
-                if (qt0Var != null && (wr0Var = qt0Var.h) != null) {
-                    int paddingLeft = wr0Var.getPaddingLeft();
-                    int Z = xu0Var.Z(qt0Var.F);
-                    int paddingRight = qt0Var.h.getPaddingRight();
-                    wr0 wr0Var2 = qt0Var.h;
-                    int Y = xu0Var.Y(xu0Var.v0());
-                    wr0Var2.e3 = Y;
-                    wr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                }
-            }
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
         }
-        xu0Var.K();
+        float f10 = f7 - 1.0f;
+        return (f10 * f10 * f10 * f10 * f10) + 1.0f;
     }
 }

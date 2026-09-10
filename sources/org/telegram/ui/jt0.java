@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import org.telegram.messenger.video.VideoFramesRewinder;
 import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class jt0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
@@ -21,7 +21,7 @@ public final class jt0 extends VideoPlayerRewinder {
         PhotoViewer photoViewer = this.a;
         PhotoViewer.k(photoViewer, obtain);
         photoViewer.z1.f(false);
-        org.telegram.ui.Components.eg0.p0.Q.f(false);
+        org.telegram.ui.Components.og0.p0.Q.f(false);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -31,7 +31,7 @@ public final class jt0 extends VideoPlayerRewinder {
         photoViewer.z1.d(!z10);
         photoViewer.z1.f(true);
         photoViewer.e0.invalidate();
-        org.telegram.ui.Components.eg0.v(z10);
+        org.telegram.ui.Components.og0.v(z10);
     }
 
     @Override // org.telegram.messenger.video.VideoPlayerRewinder
@@ -42,17 +42,17 @@ public final class jt0 extends VideoPlayerRewinder {
             photoViewer.q3.h(f7, false);
             photoViewer.r3.invalidate();
         }
-        org.telegram.ui.Components.eg0 eg0Var = org.telegram.ui.Components.eg0.p0;
-        eg0Var.Q.g(0L);
+        org.telegram.ui.Components.og0 og0Var = org.telegram.ui.Components.og0.p0;
+        og0Var.Q.g(0L);
         if (z10) {
-            eg0Var.Z = f7;
-            bi.a4 a4Var = eg0Var.b0;
-            if (a4Var != null) {
-                a4Var.invalidate();
+            og0Var.Z = f7;
+            u7 u7Var = og0Var.b0;
+            if (u7Var != null) {
+                u7Var.invalidate();
             }
-            org.telegram.ui.Components.dg0 dg0Var = eg0Var.h;
-            if (dg0Var != null) {
-                dg0Var.invalidate();
+            org.telegram.ui.Components.ng0 ng0Var = og0Var.h;
+            if (ng0Var != null) {
+                ng0Var.invalidate();
             }
         }
     }

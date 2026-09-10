@@ -1,33 +1,43 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class le implements Runnable {
+public final /* synthetic */ class le implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ le(int i10, int i11, Utilities.Callback2 callback2) {
+    public /* synthetic */ le(BaseController baseController, long j3, int i10, int i11) {
         this.a = i11;
-        this.b = i10;
-        this.c = callback2;
+        this.d = baseController;
+        this.b = j3;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MessagesController.1.lambda$getLocal$1(this.b, this.c);
+                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$506(this.b, this.c, tLObject, tL_error);
                 break;
             case 1:
-                MessagesController.4.lambda$getLocal$1(this.b, this.c);
+                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                MessagesController.5.lambda$getLocal$2(this.b, this.c);
+                AndroidUtilities.runOnUIThread(new p7((org.telegram.ui.j4) this.d, tLObject, this.c, this.b, 11));
                 break;
         }
+    }
+
+    public /* synthetic */ le(org.telegram.ui.j4 j4Var, int i10, long j3) {
+        this.a = 2;
+        this.d = j4Var;
+        this.c = i10;
+        this.b = j3;
     }
 }

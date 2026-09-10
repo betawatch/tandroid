@@ -1,92 +1,85 @@
 package ki;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
-import s4.c1;
+import b5.m;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ c1 c;
-    public final /* synthetic */ o d;
+public final /* synthetic */ class g implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k b;
 
-    public g(o oVar, c1 c1Var, View view) {
-        this.d = oVar;
-        this.c = c1Var;
-        this.b = view;
+    public /* synthetic */ g(k kVar, int i10) {
+        this.a = i10;
+        this.b = kVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(1.0f);
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                View view = this.b;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleY(1.0f);
-                view.setTranslationY(0.0f);
-                view.setTranslationY(0.0f);
-                o oVar = this.d;
-                ArrayList arrayList = oVar.y;
-                c1 c1Var = this.c;
-                if (arrayList.remove(c1Var)) {
-                    oVar.u(c1Var);
-                    oVar.G();
-                    break;
+    private final void a() {
+        k kVar = this.b;
+        kVar.e();
+        synchronized (kVar.a) {
+            try {
+                if (kVar.p) {
+                    return;
                 }
-                break;
-            default:
-                animator.removeAllListeners();
-                View view2 = this.b;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleY(1.0f);
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
-                o oVar2 = this.d;
-                ArrayList arrayList2 = oVar2.A;
-                c1 c1Var2 = this.c;
-                if (arrayList2.remove(c1Var2)) {
-                    oVar2.d(c1Var2);
-                    oVar2.G();
-                    break;
-                }
-                break;
+                AndroidUtilities.runOnUIThread(new g(kVar, 2), 1000L);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        b5.h hVar;
+        byte[] bArr;
         switch (this.a) {
             case 0:
-                this.d.getClass();
-                break;
+                k kVar = this.b;
+                b5.h hVar2 = kVar.n;
+                if (hVar2 != null) {
+                    try {
+                        if (!m.c.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        hVar2.a.postMessage("{\"t\":\"close\"}");
+                    } catch (Exception unused) {
+                    }
+                }
+                kVar.e();
+                return;
+            case 1:
+                k.b(this.b);
+                return;
+            case 2:
+                k.a(this.b);
+                return;
+            case 3:
+                a();
+                return;
             default:
-                super.onAnimationStart(animator);
-                break;
+                k kVar2 = this.b;
+                while (true) {
+                    synchronized (kVar2.a) {
+                        hVar = kVar2.n;
+                        if (!kVar2.p && hVar != null && !kVar2.l.isEmpty()) {
+                            bArr = (byte[]) kVar2.l.removeFirst();
+                            kVar2.r -= bArr.length;
+                        }
+                    }
+                    try {
+                        if (!m.a.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        hVar.a.postMessageWithPayload(new se.a(new b5.j(bArr)));
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        kVar2.f();
+                        return;
+                    }
+                }
+                return;
         }
-    }
-
-    public g(o oVar, View view, c1 c1Var) {
-        this.d = oVar;
-        this.b = view;
-        this.c = c1Var;
     }
 }

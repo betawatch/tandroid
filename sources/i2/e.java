@@ -7,21 +7,21 @@ import android.os.Looper;
 import com.google.android.gms.internal.vision.e2;
 import v7.v6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e {
-    public final d9.j a;
+    public final d9.i a;
     public final Handler b;
-    public o0 c;
+    public n0 c;
     public b2.e d;
     public int f;
     public c2.c h;
     public float g = 1.0f;
     public int e = 0;
 
-    public e(Context context, Looper looper, o0 o0Var) {
+    public e(Context context, Looper looper, n0 n0Var) {
         this.a = v6.a(new d(context, 0));
-        this.c = o0Var;
+        this.c = n0Var;
         this.b = new Handler(looper);
     }
 
@@ -34,9 +34,9 @@ public final class e {
     }
 
     public final void b(int i10) {
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            e2.z zVar = o0Var.n;
+        n0 n0Var = this.c;
+        if (n0Var != null) {
+            e2.z zVar = n0Var.n;
             zVar.getClass();
             e2.y b10 = e2.z.b();
             b10.a = zVar.a.obtainMessage(33, i10, 0);
@@ -54,9 +54,9 @@ public final class e {
             return;
         }
         this.g = f7;
-        o0 o0Var = this.c;
-        if (o0Var != null) {
-            o0Var.n.e(34);
+        n0 n0Var = this.c;
+        if (n0Var != null) {
+            n0Var.n.e(34);
         }
     }
 
@@ -119,7 +119,7 @@ public final class e {
                             eVar3.a();
                             eVar3.c(1);
                         } else if (i13 != 1) {
-                            e2.n(i13, "Unknown focus change type: ", "AudioFocusManager");
+                            e2.l(i13, "Unknown focus change type: ", "AudioFocusManager");
                         } else {
                             eVar3.c(2);
                             eVar3.b(1);

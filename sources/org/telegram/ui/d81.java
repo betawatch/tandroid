@@ -3,23 +3,19 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class d81 implements View.OnClickListener {
-    public final /* synthetic */ f81 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ g81 c;
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ j81 b;
 
-    public d81(g81 g81Var, f81 f81Var, TLRPC.TL_authorization tL_authorization) {
-        this.c = g81Var;
-        this.a = f81Var;
-        this.b = tL_authorization;
+    public d81(j81 j81Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = j81Var;
+        this.a = tL_authorization;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        this.a.d.c(!r0.h, true);
-        this.b.call_requests_disabled = !r4.d.h;
-        g81.n(this.c);
+        j81.m(this.b, this.a.ip);
     }
 }

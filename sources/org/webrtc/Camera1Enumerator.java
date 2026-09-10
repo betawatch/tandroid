@@ -4,11 +4,11 @@ import android.hardware.Camera;
 import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.r6;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
 public class Camera1Enumerator implements CameraEnumerator {
     private static final String TAG = "Camera1Enumerator";
@@ -60,17 +60,17 @@ public class Camera1Enumerator implements CameraEnumerator {
                     for (Camera.Size size : parameters.getSupportedPreviewSizes()) {
                         arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, i12, i11));
                     }
-                } catch (Exception e7) {
-                    Logging.e(TAG, "getSupportedFormats() failed on camera index " + i10, e7);
+                } catch (Exception e) {
+                    Logging.e(TAG, "getSupportedFormats() failed on camera index " + i10, e);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                StringBuilder l4 = i2.g.l(i10, "Get supported formats for camera index ", " done. Time spent: ");
-                l4.append(elapsedRealtime2 - elapsedRealtime);
-                l4.append(" ms.");
-                Logging.d(TAG, l4.toString());
+                StringBuilder m10 = hc.b.m(i10, "Get supported formats for camera index ", " done. Time spent: ");
+                m10.append(elapsedRealtime2 - elapsedRealtime);
+                m10.append(" ms.");
+                Logging.d(TAG, m10.toString());
                 return arrayList;
-            } catch (RuntimeException e10) {
-                Logging.e(TAG, "Open camera failed on camera index " + i10, e10);
+            } catch (RuntimeException e7) {
+                Logging.e(TAG, "Open camera failed on camera index " + i10, e7);
                 ArrayList arrayList2 = new ArrayList();
                 if (camera != null) {
                     camera.release();
@@ -92,7 +92,7 @@ public class Camera1Enumerator implements CameraEnumerator {
                 return i10;
             }
         }
-        throw new IllegalArgumentException(p6.i("No such camera: ", str));
+        throw new IllegalArgumentException(r6.i("No such camera: ", str));
     }
 
     private static Camera.CameraInfo getCameraInfo(int i10) {
@@ -100,8 +100,8 @@ public class Camera1Enumerator implements CameraEnumerator {
         try {
             Camera.getCameraInfo(i10, cameraInfo);
             return cameraInfo;
-        } catch (Exception e7) {
-            Logging.e(TAG, "getCameraInfo failed on index " + i10, e7);
+        } catch (Exception e) {
+            Logging.e(TAG, "getCameraInfo failed on index " + i10, e);
             return null;
         }
     }

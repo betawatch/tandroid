@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class x8 extends s4.s0 {
     public boolean a;
@@ -18,7 +18,7 @@ public final class x8 extends s4.s0 {
 
     @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
+        zg.e eVar;
         k9 k9Var = this.b;
         ArrayList arrayList = k9Var.G;
         int L0 = k9Var.c.L0();
@@ -26,7 +26,7 @@ public final class x8 extends s4.s0 {
         if (abs > 0) {
             int size = k9Var.d.Y2.x.size();
             if (!k9Var.J && !k9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(11, this, (g9) i2.g.h(1, arrayList)));
+                AndroidUtilities.runOnUIThread(new n(8, this, (g9) hc.b.i(1, arrayList)));
             }
         }
         View childAt = recyclerView.getChildAt(0);
@@ -36,10 +36,10 @@ public final class x8 extends s4.s0 {
         }
         this.a = true;
         k9Var.r.b(L0 != 0 || top < k9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (fVar = k9Var.Y) == null) {
+        if (Build.VERSION.SDK_INT < 31 || (eVar = k9Var.Y) == null) {
             return;
         }
-        fVar.f(i10, i11);
+        eVar.f(i10, i11);
         k9Var.f0();
     }
 }

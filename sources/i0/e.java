@@ -3,9 +3,9 @@ package i0;
 import android.graphics.Path;
 import android.util.Log;
 import org.telegram.messenger.voip.VoIPService;
-import v7.g8;
+import v7.j8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e {
     public char a;
@@ -490,6 +490,6 @@ public final class e {
     public e(e eVar) {
         this.a = eVar.a;
         float[] fArr = eVar.b;
-        this.b = g8.b(fArr, fArr.length);
+        this.b = j8.b(fArr, fArr.length);
     }
 }

@@ -1,110 +1,167 @@
 package j2;
 
+import android.content.SharedPreferences;
+import android.widget.EditText;
 import e2.m;
+import java.util.List;
+import m4.b0;
+import m4.e1;
+import m4.g1;
+import m4.h1;
+import m4.l1;
+import m4.r;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegateTimestamp;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.d2;
+import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements m {
+public final /* synthetic */ class c implements m, e1, g1, RequestDelegateTimestamp, c2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    @Override // e2.m
-    public final void invoke(Object obj) {
-        b bVar = (b) obj;
-        switch (this.a) {
-            case 0:
-                bVar.getClass();
-                break;
-            case 1:
-                bVar.getClass();
-                break;
-            case 2:
-                bVar.getClass();
-                break;
-            case 3:
-                bVar.getClass();
-                break;
+    public /* synthetic */ c(long j3, int i10, Object obj, int i11) {
+        this.a = i11;
+        this.c = j3;
+        this.b = i10;
+        this.d = obj;
+    }
+
+    @Override // m4.e1
+    public void e(l1 l1Var, r rVar) {
+        h1 h1Var = (h1) this.d;
+        l1Var.s(h1Var.K0(rVar, l1Var, this.b), this.c);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(d2 d2Var, int i10) {
+        int i11 = this.a;
+        Object obj = this.d;
+        int i12 = this.b;
+        long j3 = this.c;
+        switch (i11) {
             case 4:
-                bVar.getClass();
-                break;
-            case 5:
-                bVar.getClass();
-                break;
-            case 6:
-                bVar.getClass();
-                break;
-            case 7:
-                bVar.getClass();
-                break;
-            case 8:
-                bVar.getClass();
-                break;
-            case 9:
-                bVar.getClass();
-                break;
-            case 10:
-                bVar.getClass();
-                break;
-            case 11:
-                bVar.getClass();
-                break;
-            case 12:
-                bVar.getClass();
-                break;
-            case 13:
-                bVar.getClass();
-                break;
-            case 14:
-                bVar.getClass();
-                break;
-            case 15:
-                bVar.getClass();
-                break;
-            case 16:
-                bVar.getClass();
-                break;
-            case 17:
-                bVar.getClass();
-                break;
-            case 18:
-                bVar.getClass();
-                break;
-            case 19:
-                bVar.getClass();
-                break;
-            case 20:
-                bVar.getClass();
-                break;
-            case 21:
-                bVar.getClass();
-                break;
-            case 22:
-                bVar.getClass();
-                break;
-            case 23:
-                bVar.getClass();
-                break;
-            case 24:
-                bVar.getClass();
-                break;
-            case 25:
-                bVar.getClass();
-                break;
-            case 26:
-                bVar.getClass();
-                break;
-            case 27:
-                bVar.getClass();
-                break;
-            case 28:
-                bVar.getClass();
+                EditText editText = (EditText) obj;
+                if (j3 > 0) {
+                    TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
+                    String trim = editText.getText().toString().replace("\n", " ").replaceAll(" +", " ").trim();
+                    if (userFull != null) {
+                        String str = userFull.about;
+                        if ((str != null ? str : "").equals(trim)) {
+                            AndroidUtilities.hideKeyboard(editText);
+                            d2Var.dismiss();
+                            break;
+                        } else {
+                            userFull.about = trim;
+                            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j3), userFull);
+                        }
+                    }
+                    TL_account.updateProfile updateprofile = new TL_account.updateProfile();
+                    updateprofile.about = trim;
+                    updateprofile.flags |= 4;
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
+                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new bi.g1(8), 2);
+                } else {
+                    long j10 = -j3;
+                    TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j10);
+                    String obj2 = editText.getText().toString();
+                    if (chatFull != null) {
+                        String str2 = chatFull.about;
+                        if ((str2 != null ? str2 : "").equals(obj2)) {
+                            AndroidUtilities.hideKeyboard(editText);
+                            d2Var.dismiss();
+                            break;
+                        } else {
+                            chatFull.about = obj2;
+                            NotificationCenter notificationCenter = NotificationCenter.getInstance(i12);
+                            int i13 = NotificationCenter.chatInfoDidLoad;
+                            Boolean bool = Boolean.FALSE;
+                            notificationCenter.lambda$postNotificationNameOnUIThread$1(i13, chatFull, 0, bool, bool);
+                        }
+                    }
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
+                    MessagesController.getInstance(i12).updateChatAbout(j10, obj2, chatFull);
+                }
+                d2Var.dismiss();
                 break;
             default:
-                bVar.getClass();
+                Runnable runnable = (Runnable) obj;
+                SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
+                if (j3 != 0) {
+                    edit.putInt("color_" + j3, 0);
+                } else if (i12 == 1) {
+                    edit.putInt("MessagesLed", 0);
+                } else if (i12 == 0) {
+                    edit.putInt("GroupLed", 0);
+                } else if (i12 == 3) {
+                    edit.putInt("StoriesLed", 0);
+                } else if (i12 == 5 || i12 == 4) {
+                    edit.putInt("ReactionsLed", 0);
+                } else {
+                    edit.putInt("ChannelLed", 0);
+                }
+                edit.commit();
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ c(a aVar, Object obj, Object obj2, int i10) {
-        this.a = i10;
+    @Override // m4.g1
+    public Object i(b0 b0Var, r rVar, int i10) {
+        List list = (List) this.d;
+        int i11 = this.b;
+        return b0Var.q(rVar, list, i11 == -1 ? b0Var.t.l0() : i11, i11 == -1 ? b0Var.t.J0() : this.c);
+    }
+
+    @Override // e2.m
+    public void invoke(Object obj) {
+        ((b) obj).f((a) this.d, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        iv0.i((iv0) this.d, this.c, this.b, str);
+    }
+
+    public /* synthetic */ c(a aVar, int i10, long j3, long j10) {
+        this.a = 0;
+        this.d = aVar;
+        this.b = i10;
+        this.c = j3;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegateTimestamp
+    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
+        ((VoIPService) this.d).lambda$createGroupInstance$78(this.b, this.c, tLObject, tL_error, j3);
+    }
+
+    public /* synthetic */ c(Object obj, int i10, long j3, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = j3;
+    }
+
+    public /* synthetic */ c(iv0 iv0Var, long j3, int i10) {
+        this.a = 6;
+        this.d = iv0Var;
+        this.c = j3;
+        this.b = i10;
     }
 }

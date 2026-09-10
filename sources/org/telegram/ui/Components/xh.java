@@ -1,185 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class xh extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vi b;
+public final class xh implements org.telegram.ui.ar0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ yi d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xh(vi viVar, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = viVar;
+    public xh(yi yiVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = yiVar;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                canvas.save();
-                canvas.clipRect(0.0f, this.b.V1, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final void h(int i10, boolean z10, boolean z11) {
+        if (z10) {
+            return;
+        }
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty() || this.a) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                ((org.telegram.ui.eo) this.d.f0).d8(i10, arrayList, z11);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i11));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+            String str = searchImage.imagePath;
+            if (str != null) {
+                sendingMediaInfo.path = str;
+            } else {
+                sendingMediaInfo.searchImage = searchImage;
+            }
+            sendingMediaInfo.thumbPath = searchImage.thumbPath;
+            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+            CharSequence charSequence = searchImage.caption;
+            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+            sendingMediaInfo.entities = searchImage.entities;
+            sendingMediaInfo.masks = searchImage.stickers;
+            sendingMediaInfo.ttl = searchImage.ttl;
+            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+            if (botInlineResult != null && searchImage.type == 1) {
+                sendingMediaInfo.inlineResult = botInlineResult;
+                sendingMediaInfo.params = searchImage.params;
+            }
+            searchImage.date = (int) (System.currentTimeMillis() / 1000);
+            i11++;
         }
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 2:
-                vi viVar = this.b;
-                xh xhVar = viVar.D0;
-                if (viVar.C0.getAlpha() > 0.0f) {
-                    float f7 = viVar.W1;
-                    if (f7 != 0.0f && f7 != xhVar.getTop() + viVar.W1) {
-                        ValueAnimator valueAnimator = viVar.X1;
-                        if (valueAnimator != null) {
-                            valueAnimator.cancel();
-                        }
-                        float top = viVar.W1 - (xhVar.getTop() + viVar.V1);
-                        viVar.V1 = top;
-                        ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                        viVar.X1 = ofFloat;
-                        ofFloat.addUpdateListener(new l6(this, 10));
-                        viVar.X1.setInterpolator(pr.f);
-                        viVar.X1.setDuration(200L);
-                        viVar.X1.start();
-                        viVar.W1 = 0.0f;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // org.telegram.ui.ar0
+    public final void a() {
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 3:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                vi viVar = this.b;
-                ni niVar = viVar.y0;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = viVar.j0;
-                if (niVar == chatAttachAlertPhotoLayout) {
-                    accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", chatAttachAlertPhotoLayout.getSelectedItemsCount(), new Object[0]));
-                } else {
-                    ok okVar = viVar.p0;
-                    if (niVar == okVar) {
-                        accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendFiles", okVar.getSelectedItemsCount(), new Object[0]));
-                    } else {
-                        gj gjVar = viVar.l0;
-                        if (niVar == gjVar) {
-                            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendAudio", gjVar.getSelectedItemsCount(), new Object[0]));
-                        }
-                    }
-                }
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
+    @Override // org.telegram.ui.ar0
+    public final void b(Editable editable) {
     }
 
-    @Override // android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (this.b.i1.getVisibility() != 0) {
-                    return false;
-                }
-                return super.onInterceptTouchEvent(motionEvent);
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                vi viVar = this.b;
-                if (viVar.H && viVar.I != 0) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f) + (AndroidUtilities.dp(80.0f) * Integer.bitCount(viVar.I))), TLObject.FLAG_30), i11);
-                    break;
-                } else {
-                    super.onMeasure(i10, i11);
-                    break;
-                }
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                if (this.b.i1.getVisibility() != 0) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f7);
-                vi viVar = this.b;
-                viVar.a2(0);
-                viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
-                viewGroup.invalidate();
-                break;
-            case 1:
-            default:
-                super.setAlpha(f7);
-                break;
-            case 2:
-                super.setAlpha(f7);
-                invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.a) {
-            case 1:
-                super.setTranslationY(f7);
-                this.b.y0.j();
-                break;
-            default:
-                super.setTranslationY(f7);
-                break;
-        }
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ void g() {
     }
 }

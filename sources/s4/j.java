@@ -5,13 +5,14 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
+import gg.t1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.ws;
+import org.telegram.ui.Components.dt;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class j extends f1 {
     public static TimeInterpolator E;
@@ -135,14 +136,14 @@ public class j extends f1 {
         }
         ViewPropertyAnimator animate = view.animate();
         this.z.add(c1Var);
-        animate.setUpdateListener(new ah.m0(28, this, c1Var));
+        animate.setUpdateListener(new t1(26, this, c1Var));
         Interpolator interpolator = this.o;
         if (interpolator != null) {
             animate.setInterpolator(interpolator);
         } else {
             animate.setInterpolator(this.i);
         }
-        animate.setDuration(j()).setStartDelay(0L).setListener(new ws(this, c1Var, i14, view, i15, animate, 1)).start();
+        animate.setDuration(j()).setStartDelay(0L).setListener(new dt(this, c1Var, i14, view, i15, animate, 1)).start();
     }
 
     public void D(c1 c1Var) {

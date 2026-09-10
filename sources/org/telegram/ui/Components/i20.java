@@ -1,19 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public interface i20 {
-    void b1();
+public final class i20 implements Transition.TransitionListener {
+    public final /* synthetic */ k20 a;
 
-    boolean onDown(MotionEvent motionEvent);
+    public i20(k20 k20Var) {
+        this.a = k20Var;
+    }
 
-    boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+        this.a.E.unlock();
+    }
 
-    void onLongPress(MotionEvent motionEvent);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.E.unlock();
+    }
 
-    boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
+        this.a.E.lock();
+    }
 
-    boolean onSingleTapUp(MotionEvent motionEvent);
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+    }
 }

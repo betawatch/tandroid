@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -20,7 +20,7 @@ public class ImageLocation {
     public long documentId;
     public byte[] file_reference;
     public int imageType;
-    public org.telegram.ui.web.i2 instantFile;
+    public org.telegram.ui.web.j2 instantFile;
     public byte[] iv;
     public byte[] key;
     public TLRPC.TL_fileLocationToBeDeprecated location;
@@ -53,12 +53,12 @@ public class ImageLocation {
         return imageLocation;
     }
 
-    public static ImageLocation getForInstantFile(org.telegram.ui.web.i2 i2Var) {
-        if (i2Var == null) {
+    public static ImageLocation getForInstantFile(org.telegram.ui.web.j2 j2Var) {
+        if (j2Var == null) {
             return null;
         }
         ImageLocation imageLocation = new ImageLocation();
-        imageLocation.instantFile = i2Var;
+        imageLocation.instantFile = j2Var;
         return imageLocation;
     }
 
@@ -214,7 +214,7 @@ public class ImageLocation {
             if (obj3 != null) {
                 str = obj3.getClass().getSimpleName();
             }
-            com.google.android.gms.internal.vision.e2.t(str, v);
+            hc.b.v(str, v);
         }
         return strippedKeyInternal;
     }
@@ -294,9 +294,9 @@ public class ImageLocation {
         if (webFile != null) {
             return Utilities.MD5(webFile.url);
         }
-        org.telegram.ui.web.i2 i2Var = this.instantFile;
-        if (i2Var != null) {
-            return Utilities.MD5(i2Var.b);
+        org.telegram.ui.web.j2 j2Var = this.instantFile;
+        if (j2Var != null) {
+            return Utilities.MD5(j2Var.b);
         }
         TLRPC.Document document = this.document;
         if (document == null) {

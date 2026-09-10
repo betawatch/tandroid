@@ -5,9 +5,9 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class b extends j0 {
+public final class b extends k0 {
     public final /* synthetic */ IBinder h;
     public final /* synthetic */ d n;
 
@@ -16,17 +16,17 @@ public final class b extends j0 {
         this.n = dVar;
     }
 
-    @Override // a9.j0
+    @Override // a9.k0
     public final void b() {
         e eVar = (e) this.n.b;
         eVar.n = (IInterface) eVar.i.a(this.h);
-        i0 i0Var = eVar.b;
+        j0 j0Var = eVar.b;
         int i10 = 0;
-        i0Var.b("linkToDeath", new Object[0]);
+        j0Var.b("linkToDeath", new Object[0]);
         try {
             eVar.n.asBinder().linkToDeath(eVar.k, 0);
-        } catch (RemoteException e7) {
-            i0Var.a(e7, "linkToDeath failed", new Object[0]);
+        } catch (RemoteException e) {
+            j0Var.a(e, "linkToDeath failed", new Object[0]);
         }
         eVar.g = false;
         ArrayList arrayList = eVar.d;

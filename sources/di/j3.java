@@ -1,20 +1,29 @@
 package di;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class j3 extends s4.s0 {
-    public final /* synthetic */ x3 a;
+public final class j3 extends a0 {
+    public final /* synthetic */ n3 s;
 
-    public j3(x3 x3Var) {
-        this.a = x3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j3(n3 n3Var, Context context, f6 f6Var) {
+        super(context, f6Var);
+        this.s = n3Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        x3 x3Var = this.a;
-        x3Var.getClass();
-        x3Var.invalidate();
+    @Override // di.a0, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (!this.s.d0 && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
+            Point point = AndroidUtilities.displaySize;
+            i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
     }
 }

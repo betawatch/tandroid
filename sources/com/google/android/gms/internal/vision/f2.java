@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class f2 implements o2 {
     public static final int[] n = new int[0];
@@ -606,20 +606,20 @@ public final class f2 implements o2 {
             r0Var.e = i11;
             r0Var.H((h - i11) - T2);
             r0Var.e = h;
-        } catch (c3 e7) {
+        } catch (c3 e) {
             r0Var.e = i11;
-            r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
+            r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
             byte[] bytes = str.getBytes(j1.a);
             try {
                 r0Var.H(bytes.length);
                 r0Var.L(bytes, 0, bytes.length);
-            } catch (s0 e10) {
-                throw e10;
-            } catch (IndexOutOfBoundsException e11) {
-                throw new s0(e11);
+            } catch (s0 e7) {
+                throw e7;
+            } catch (IndexOutOfBoundsException e10) {
+                throw new s0(e10);
             }
-        } catch (IndexOutOfBoundsException e12) {
-            throw new s0(e12);
+        } catch (IndexOutOfBoundsException e11) {
+            throw new s0(e11);
         }
     }
 
@@ -1772,7 +1772,7 @@ public final class f2 implements o2 {
 
     /* JADX WARN: Failed to find 'out' block for switch in B:81:0x00a9. Please report as an issue. */
     @Override // com.google.android.gms.internal.vision.o2
-    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.l lVar) {
+    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
         int s10;
         Unsafe unsafe;
         Object obj2;
@@ -1795,9 +1795,9 @@ public final class f2 implements o2 {
         Object obj5 = obj;
         byte[] bArr2 = bArr;
         int i22 = i11;
-        com.google.android.gms.internal.clearcut.l lVar2 = lVar;
+        com.google.android.gms.internal.clearcut.m mVar2 = mVar;
         if (!f2Var.f) {
-            j(obj5, bArr, i10, i22, 0, lVar);
+            j(obj5, bArr, i10, i22, 0, mVar);
             return;
         }
         Unsafe unsafe4 = o;
@@ -1810,8 +1810,8 @@ public final class f2 implements o2 {
             int i28 = i23 + 1;
             int i29 = bArr2[i23];
             if (i29 < 0) {
-                i28 = e1.d(i29, bArr2, i28, lVar2);
-                i29 = lVar2.a;
+                i28 = e1.d(i29, bArr2, i28, mVar2);
+                i29 = mVar2.a;
             }
             int i30 = i28;
             int i31 = i29 >>> 3;
@@ -1917,8 +1917,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                int t10 = e1.t(bArr2, i30, lVar2);
-                                unsafe4.putLong(obj5, j3, lVar2.b);
+                                int t10 = e1.t(bArr2, i30, mVar2);
+                                unsafe4.putLong(obj5, j3, mVar2.b);
                                 i27 |= i40;
                                 i23 = t10;
                                 i25 = i35;
@@ -1940,8 +1940,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                int j10 = e1.j(bArr2, i30, lVar2);
-                                unsafe4.putInt(obj5, j3, lVar2.a);
+                                int j10 = e1.j(bArr2, i30, mVar2);
+                                unsafe4.putInt(obj5, j3, mVar2.a);
                                 i27 |= i40;
                                 i23 = j10;
                                 i25 = i35;
@@ -2006,8 +2006,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = e1.t(bArr2, i30, lVar2);
-                                y2.c.g(obj5, j3, lVar2.b != 0);
+                                i23 = e1.t(bArr2, i30, mVar2);
+                                y2.c.g(obj5, j3, mVar2.b != 0);
                                 i27 |= i40;
                                 i25 = i35;
                                 i24 = i18;
@@ -2027,8 +2027,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = (i16 & TLObject.FLAG_29) == 0 ? e1.w(bArr2, i30, lVar2) : e1.x(bArr2, i30, lVar2);
-                                unsafe4.putObject(obj5, j3, lVar2.c);
+                                i23 = (i16 & TLObject.FLAG_29) == 0 ? e1.w(bArr2, i30, mVar2) : e1.x(bArr2, i30, mVar2);
+                                unsafe4.putObject(obj5, j3, mVar2.c);
                                 i27 |= i40;
                                 i25 = i35;
                                 i24 = i18;
@@ -2048,12 +2048,12 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = e1.g(f2Var.l(i35), bArr2, i30, i22, lVar2);
+                                i23 = e1.g(f2Var.l(i35), bArr2, i30, i22, mVar2);
                                 Object object = unsafe4.getObject(obj5, j3);
                                 if (object == null) {
-                                    unsafe4.putObject(obj5, j3, lVar2.c);
+                                    unsafe4.putObject(obj5, j3, mVar2.c);
                                 } else {
-                                    unsafe4.putObject(obj5, j3, j1.b(object, lVar2.c));
+                                    unsafe4.putObject(obj5, j3, j1.b(object, mVar2.c));
                                 }
                                 i27 |= i40;
                                 i25 = i35;
@@ -2074,8 +2074,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = e1.z(bArr2, i30, lVar2);
-                                unsafe4.putObject(obj5, j3, lVar2.c);
+                                i23 = e1.z(bArr2, i30, mVar2);
+                                unsafe4.putObject(obj5, j3, mVar2.c);
                                 i27 |= i40;
                                 i25 = i35;
                                 i24 = i18;
@@ -2095,8 +2095,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = e1.j(bArr2, i30, lVar2);
-                                unsafe4.putInt(obj5, j3, lVar2.a);
+                                i23 = e1.j(bArr2, i30, mVar2);
+                                unsafe4.putInt(obj5, j3, mVar2.a);
                                 i27 |= i40;
                                 i25 = i35;
                                 i24 = i18;
@@ -2116,8 +2116,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                i23 = e1.j(bArr2, i30, lVar2);
-                                unsafe4.putInt(obj5, j3, e1.y(lVar2.a));
+                                i23 = e1.j(bArr2, i30, mVar2);
+                                unsafe4.putInt(obj5, j3, e1.y(mVar2.a));
                                 i27 |= i40;
                                 i25 = i35;
                                 i24 = i18;
@@ -2137,8 +2137,8 @@ public final class f2 implements o2 {
                                 i12 = i38;
                                 break;
                             } else {
-                                int t11 = e1.t(bArr2, i30, lVar2);
-                                long j11 = lVar2.b;
+                                int t11 = e1.t(bArr2, i30, mVar2);
+                                long j11 = mVar2.b;
                                 i18 = i31;
                                 unsafe4.putLong(obj5, j3, (j11 >>> c10) ^ (-(j11 & 1)));
                                 i27 |= i40;
@@ -2172,7 +2172,7 @@ public final class f2 implements o2 {
                             i20 = i26;
                             i31 = i18;
                             i12 = i38;
-                            i21 = f2Var.i(obj, bArr, i30, i11, i12, i31, i32, i35, j12, i37, j3, lVar);
+                            i21 = f2Var.i(obj, bArr, i30, i11, i12, i31, i32, i35, j12, i37, j3, mVar);
                             obj5 = obj;
                             i15 = i35;
                             if (i21 == i30) {
@@ -2180,7 +2180,7 @@ public final class f2 implements o2 {
                                 i14 = i21;
                             } else {
                                 i22 = i11;
-                                lVar2 = lVar;
+                                mVar2 = mVar;
                                 i24 = i31;
                                 i23 = i21;
                                 i25 = i15;
@@ -2199,13 +2199,13 @@ public final class f2 implements o2 {
                             i12 = i38;
                             obj4 = obj;
                             if (i37 != 50) {
-                                i21 = f2Var.h(obj4, bArr, i19, i11, i12, i31, i32, i36, i37, j3, i15, lVar);
+                                i21 = f2Var.h(obj4, bArr, i19, i11, i12, i31, i32, i36, i37, j3, i15, mVar);
                                 obj2 = obj4;
                                 if (i21 == i19) {
                                     i14 = i21;
                                 } else {
                                     f2Var = this;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i24 = i31;
                                     i23 = i21;
                                     obj5 = obj2;
@@ -2229,12 +2229,12 @@ public final class f2 implements o2 {
                             o1Var = o1Var.zza(size == 0 ? 10 : size << 1);
                             unsafe3.putObject(obj6, j3, o1Var);
                         }
-                        int e7 = e1.e(f2Var.l(i35), i38, bArr2, i30, i22, o1Var, lVar2);
+                        int e = e1.e(f2Var.l(i35), i38, bArr2, i30, i22, o1Var, mVar2);
                         obj5 = obj;
                         bArr2 = bArr;
                         i22 = i11;
-                        lVar2 = lVar;
-                        i23 = e7;
+                        mVar2 = mVar;
+                        i23 = e;
                         unsafe4 = unsafe3;
                         i25 = i35;
                         i24 = i18;
@@ -2253,9 +2253,9 @@ public final class f2 implements o2 {
                     i26 = i20;
                 }
             }
-            int c11 = e1.c(i12, bArr, i14, i11, C(obj2), lVar);
+            int c11 = e1.c(i12, bArr, i14, i11, C(obj2), mVar);
             bArr2 = bArr;
-            lVar2 = lVar;
+            mVar2 = mVar;
             i24 = i31;
             obj5 = obj2;
             i25 = i15;
@@ -2566,7 +2566,7 @@ public final class f2 implements o2 {
         return false;
     }
 
-    public final int h(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, int i17, com.google.android.gms.internal.clearcut.l lVar) {
+    public final int h(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, int i17, com.google.android.gms.internal.clearcut.m mVar) {
         int i18;
         int i19;
         int t10;
@@ -2597,8 +2597,8 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, lVar);
-                unsafe.putObject(obj, j3, Long.valueOf(lVar.b));
+                t10 = e1.t(bArr, i10, mVar);
+                unsafe.putObject(obj, j3, Long.valueOf(mVar.b));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 55:
@@ -2606,8 +2606,8 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.j(bArr, i10, lVar);
-                unsafe.putObject(obj, j3, Integer.valueOf(lVar.a));
+                t10 = e1.j(bArr, i10, mVar);
+                unsafe.putObject(obj, j3, Integer.valueOf(mVar.a));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 56:
@@ -2634,16 +2634,16 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, lVar);
-                unsafe.putObject(obj, j3, Boolean.valueOf(lVar.b != 0));
+                t10 = e1.t(bArr, i10, mVar);
+                unsafe.putObject(obj, j3, Boolean.valueOf(mVar.b != 0));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 59:
                 if (i14 != 2) {
                     return i10;
                 }
-                int j11 = e1.j(bArr, i10, lVar);
-                int i20 = lVar.a;
+                int j11 = e1.j(bArr, i10, mVar);
+                int i20 = mVar.a;
                 if (i20 == 0) {
                     unsafe.putObject(obj, j3, "");
                 } else {
@@ -2661,12 +2661,12 @@ public final class f2 implements o2 {
                 if (i14 != 2) {
                     return i10;
                 }
-                int g10 = e1.g(l(i17), bArr, i10, i11, lVar);
+                int g10 = e1.g(l(i17), bArr, i10, i11, mVar);
                 object = unsafe.getInt(obj, j10) == i13 ? unsafe.getObject(obj, j3) : null;
                 if (object == null) {
-                    unsafe.putObject(obj, j3, lVar.c);
+                    unsafe.putObject(obj, j3, mVar.c);
                 } else {
-                    unsafe.putObject(obj, j3, j1.b(object, lVar.c));
+                    unsafe.putObject(obj, j3, j1.b(object, mVar.c));
                 }
                 unsafe.putInt(obj, j10, i13);
                 return g10;
@@ -2674,16 +2674,16 @@ public final class f2 implements o2 {
                 if (i14 != 2) {
                     return i10;
                 }
-                t10 = e1.z(bArr, i10, lVar);
-                unsafe.putObject(obj, j3, lVar.c);
+                t10 = e1.z(bArr, i10, mVar);
+                unsafe.putObject(obj, j3, mVar.c);
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 63:
                 if (i14 != 0) {
                     return i10;
                 }
-                int j12 = e1.j(bArr, i10, lVar);
-                int i21 = lVar.a;
+                int j12 = e1.j(bArr, i10, mVar);
+                int i21 = mVar.a;
                 k1 x10 = x(i17);
                 if (x10 != null && !x10.zza(i21)) {
                     C(obj).a(i12, Long.valueOf(i21));
@@ -2697,27 +2697,27 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.j(bArr, i10, lVar);
-                unsafe.putObject(obj, j3, Integer.valueOf(e1.y(lVar.a)));
+                t10 = e1.j(bArr, i10, mVar);
+                unsafe.putObject(obj, j3, Integer.valueOf(e1.y(mVar.a)));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 67:
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, lVar);
-                long j13 = lVar.b;
+                t10 = e1.t(bArr, i10, mVar);
+                long j13 = mVar.b;
                 unsafe.putObject(obj, j3, Long.valueOf((-(j13 & 1)) ^ (j13 >>> 1)));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 68:
                 if (i14 == 3) {
-                    t10 = e1.f(l(i17), bArr, i10, i11, (i12 & (-8)) | 4, lVar);
+                    t10 = e1.f(l(i17), bArr, i10, i11, (i12 & (-8)) | 4, mVar);
                     object = unsafe.getInt(obj, j10) == i13 ? unsafe.getObject(obj, j3) : null;
                     if (object == null) {
-                        unsafe.putObject(obj, j3, lVar.c);
+                        unsafe.putObject(obj, j3, mVar.c);
                     } else {
-                        unsafe.putObject(obj, j3, j1.b(object, lVar.c));
+                        unsafe.putObject(obj, j3, j1.b(object, mVar.c));
                     }
                     unsafe.putInt(obj, j10, i13);
                     return t10;
@@ -2728,7 +2728,7 @@ public final class f2 implements o2 {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public final int i(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, long j3, int i16, long j10, com.google.android.gms.internal.clearcut.l lVar) {
+    public final int i(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, long j3, int i16, long j10, com.google.android.gms.internal.clearcut.m mVar) {
         int b10;
         Unsafe unsafe = o;
         o1 o1Var = (o1) unsafe.getObject(obj, j10);
@@ -2748,8 +2748,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j11 = e1.j(bArr, i10, lVar);
-                int i17 = lVar.a + j11;
+                int j11 = e1.j(bArr, i10, mVar);
+                int i17 = mVar.a + j11;
                 if (j11 < i17) {
                     Double.longBitsToDouble(e1.u(j11, bArr));
                     throw null;
@@ -2767,8 +2767,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j12 = e1.j(bArr, i10, lVar);
-                int i18 = lVar.a + j12;
+                int j12 = e1.j(bArr, i10, mVar);
+                int i18 = mVar.a + j12;
                 if (j12 < i18) {
                     Float.intBitsToFloat(e1.a(j12, bArr));
                     throw null;
@@ -2783,15 +2783,15 @@ public final class f2 implements o2 {
             case 38:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, lVar);
+                        e1.t(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j13 = e1.j(bArr, i10, lVar);
-                int i19 = lVar.a + j13;
+                int j13 = e1.j(bArr, i10, mVar);
+                int i19 = mVar.a + j13;
                 if (j13 < i19) {
-                    e1.t(bArr, j13, lVar);
+                    e1.t(bArr, j13, mVar);
                     throw null;
                 }
                 if (j13 == i19) {
@@ -2804,16 +2804,16 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        return e1.b(i12, bArr, i10, i11, o1Var2, lVar);
+                        return e1.b(i12, bArr, i10, i11, o1Var2, mVar);
                     }
                     return i10;
                 }
                 h1 h1Var = (h1) o1Var2;
-                int j14 = e1.j(bArr, i10, lVar);
-                int i20 = lVar.a + j14;
+                int j14 = e1.j(bArr, i10, mVar);
+                int i20 = mVar.a + j14;
                 while (j14 < i20) {
-                    j14 = e1.j(bArr, j14, lVar);
-                    h1Var.n(lVar.a);
+                    j14 = e1.j(bArr, j14, mVar);
+                    h1Var.n(mVar.a);
                 }
                 if (j14 == i20) {
                     return j14;
@@ -2830,8 +2830,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j15 = e1.j(bArr, i10, lVar);
-                int i21 = lVar.a + j15;
+                int j15 = e1.j(bArr, i10, mVar);
+                int i21 = mVar.a + j15;
                 if (j15 < i21) {
                     e1.u(j15, bArr);
                     throw null;
@@ -2846,8 +2846,8 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                 if (i14 == 2) {
                     h1 h1Var2 = (h1) o1Var2;
-                    int j16 = e1.j(bArr, i10, lVar);
-                    int i22 = lVar.a + j16;
+                    int j16 = e1.j(bArr, i10, mVar);
+                    int i22 = mVar.a + j16;
                     while (j16 < i22) {
                         h1Var2.n(e1.a(j16, bArr));
                         j16 += 4;
@@ -2862,8 +2862,8 @@ public final class f2 implements o2 {
                     h1Var3.n(e1.a(i10, bArr));
                     int i23 = i10 + 4;
                     while (i23 < i11) {
-                        int j17 = e1.j(bArr, i23, lVar);
-                        if (i12 != lVar.a) {
+                        int j17 = e1.j(bArr, i23, mVar);
+                        if (i12 != mVar.a) {
                             return i23;
                         }
                         h1Var3.n(e1.a(j17, bArr));
@@ -2876,15 +2876,15 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, lVar);
+                        e1.t(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j18 = e1.j(bArr, i10, lVar);
-                int i24 = lVar.a + j18;
+                int j18 = e1.j(bArr, i10, mVar);
+                int i24 = mVar.a + j18;
                 if (j18 < i24) {
-                    e1.t(bArr, j18, lVar);
+                    e1.t(bArr, j18, mVar);
                     throw null;
                 }
                 if (j18 == i24) {
@@ -2894,8 +2894,8 @@ public final class f2 implements o2 {
             case 26:
                 if (i14 == 2) {
                     if ((j3 & 536870912) == 0) {
-                        int j19 = e1.j(bArr, i10, lVar);
-                        int i25 = lVar.a;
+                        int j19 = e1.j(bArr, i10, mVar);
+                        int i25 = mVar.a;
                         if (i25 < 0) {
                             throw n1.b();
                         }
@@ -2906,12 +2906,12 @@ public final class f2 implements o2 {
                             j19 += i25;
                         }
                         while (j19 < i11) {
-                            int j20 = e1.j(bArr, j19, lVar);
-                            if (i12 != lVar.a) {
+                            int j20 = e1.j(bArr, j19, mVar);
+                            if (i12 != mVar.a) {
                                 return j19;
                             }
-                            j19 = e1.j(bArr, j20, lVar);
-                            int i26 = lVar.a;
+                            j19 = e1.j(bArr, j20, mVar);
+                            int i26 = mVar.a;
                             if (i26 < 0) {
                                 throw n1.b();
                             }
@@ -2924,8 +2924,8 @@ public final class f2 implements o2 {
                         }
                         return j19;
                     }
-                    int j21 = e1.j(bArr, i10, lVar);
-                    int i27 = lVar.a;
+                    int j21 = e1.j(bArr, i10, mVar);
+                    int i27 = mVar.a;
                     if (i27 < 0) {
                         throw n1.b();
                     }
@@ -2940,12 +2940,12 @@ public final class f2 implements o2 {
                         j21 = i28;
                     }
                     while (j21 < i11) {
-                        int j22 = e1.j(bArr, j21, lVar);
-                        if (i12 != lVar.a) {
+                        int j22 = e1.j(bArr, j21, mVar);
+                        if (i12 != mVar.a) {
                             return j21;
                         }
-                        j21 = e1.j(bArr, j22, lVar);
-                        int i29 = lVar.a;
+                        j21 = e1.j(bArr, j22, mVar);
+                        int i29 = mVar.a;
                         if (i29 < 0) {
                             throw n1.b();
                         }
@@ -2965,13 +2965,13 @@ public final class f2 implements o2 {
                 return i10;
             case 27:
                 if (i14 == 2) {
-                    return e1.e(l(i15), i12, bArr, i10, i11, o1Var2, lVar);
+                    return e1.e(l(i15), i12, bArr, i10, i11, o1Var2, mVar);
                 }
                 return i10;
             case 28:
                 if (i14 == 2) {
-                    int j23 = e1.j(bArr, i10, lVar);
-                    int i31 = lVar.a;
+                    int j23 = e1.j(bArr, i10, mVar);
+                    int i31 = mVar.a;
                     if (i31 < 0) {
                         throw n1.b();
                     }
@@ -2985,12 +2985,12 @@ public final class f2 implements o2 {
                         j23 += i31;
                     }
                     while (j23 < i11) {
-                        int j24 = e1.j(bArr, j23, lVar);
-                        if (i12 != lVar.a) {
+                        int j24 = e1.j(bArr, j23, mVar);
+                        if (i12 != mVar.a) {
                             return j23;
                         }
-                        j23 = e1.j(bArr, j24, lVar);
-                        int i32 = lVar.a;
+                        j23 = e1.j(bArr, j24, mVar);
+                        int i32 = mVar.a;
                         if (i32 < 0) {
                             throw n1.b();
                         }
@@ -3011,16 +3011,16 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        b10 = e1.b(i12, bArr, i10, i11, o1Var2, lVar);
+                        b10 = e1.b(i12, bArr, i10, i11, o1Var2, mVar);
                     }
                     return i10;
                 }
                 h1 h1Var4 = (h1) o1Var2;
-                b10 = e1.j(bArr, i10, lVar);
-                int i33 = lVar.a + b10;
+                b10 = e1.j(bArr, i10, mVar);
+                int i33 = mVar.a + b10;
                 while (b10 < i33) {
-                    b10 = e1.j(bArr, b10, lVar);
-                    h1Var4.n(lVar.a);
+                    b10 = e1.j(bArr, b10, mVar);
+                    h1Var4.n(mVar.a);
                 }
                 if (b10 != i33) {
                     throw n1.a();
@@ -3080,11 +3080,11 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                 if (i14 == 2) {
                     h1 h1Var5 = (h1) o1Var2;
-                    int j25 = e1.j(bArr, i10, lVar);
-                    int i36 = lVar.a + j25;
+                    int j25 = e1.j(bArr, i10, mVar);
+                    int i36 = mVar.a + j25;
                     while (j25 < i36) {
-                        j25 = e1.j(bArr, j25, lVar);
-                        h1Var5.n(e1.y(lVar.a));
+                        j25 = e1.j(bArr, j25, mVar);
+                        h1Var5.n(e1.y(mVar.a));
                     }
                     if (j25 == i36) {
                         return j25;
@@ -3093,15 +3093,15 @@ public final class f2 implements o2 {
                 }
                 if (i14 == 0) {
                     h1 h1Var6 = (h1) o1Var2;
-                    int j26 = e1.j(bArr, i10, lVar);
-                    h1Var6.n(e1.y(lVar.a));
+                    int j26 = e1.j(bArr, i10, mVar);
+                    h1Var6.n(e1.y(mVar.a));
                     while (j26 < i11) {
-                        int j27 = e1.j(bArr, j26, lVar);
-                        if (i12 != lVar.a) {
+                        int j27 = e1.j(bArr, j26, mVar);
+                        if (i12 != mVar.a) {
                             return j26;
                         }
-                        j26 = e1.j(bArr, j27, lVar);
-                        h1Var6.n(e1.y(lVar.a));
+                        j26 = e1.j(bArr, j27, mVar);
+                        h1Var6.n(e1.y(mVar.a));
                     }
                     return j26;
                 }
@@ -3110,15 +3110,15 @@ public final class f2 implements o2 {
             case 48:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, lVar);
+                        e1.t(bArr, i10, mVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j28 = e1.j(bArr, i10, lVar);
-                int i37 = lVar.a + j28;
+                int j28 = e1.j(bArr, i10, mVar);
+                int i37 = mVar.a + j28;
                 if (j28 < i37) {
-                    e1.t(bArr, j28, lVar);
+                    e1.t(bArr, j28, mVar);
                     throw null;
                 }
                 if (j28 == i37) {
@@ -3129,24 +3129,24 @@ public final class f2 implements o2 {
                 if (i14 == 3) {
                     o2 l4 = l(i15);
                     int i38 = (i12 & (-8)) | 4;
-                    int f7 = e1.f(l4, bArr, i10, i11, i38, lVar);
+                    int f7 = e1.f(l4, bArr, i10, i11, i38, mVar);
                     o2 o2Var = l4;
                     int i39 = i11;
-                    com.google.android.gms.internal.clearcut.l lVar2 = lVar;
-                    o1Var2.add(lVar2.c);
+                    com.google.android.gms.internal.clearcut.m mVar2 = mVar;
+                    o1Var2.add(mVar2.c);
                     while (f7 < i39) {
-                        int j29 = e1.j(bArr, f7, lVar2);
-                        if (i12 != lVar2.a) {
+                        int j29 = e1.j(bArr, f7, mVar2);
+                        if (i12 != mVar2.a) {
                             return f7;
                         }
                         o2 o2Var2 = o2Var;
                         int i40 = i39;
-                        com.google.android.gms.internal.clearcut.l lVar3 = lVar2;
-                        f7 = e1.f(o2Var2, bArr, j29, i40, i38, lVar3);
-                        o1Var2.add(lVar3.c);
+                        com.google.android.gms.internal.clearcut.m mVar3 = mVar2;
+                        f7 = e1.f(o2Var2, bArr, j29, i40, i38, mVar3);
+                        o1Var2.add(mVar3.c);
                         o2Var = o2Var2;
                         i39 = i40;
-                        lVar2 = lVar3;
+                        mVar2 = mVar3;
                     }
                     return f7;
                 }
@@ -3163,7 +3163,7 @@ public final class f2 implements o2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int j(Object obj, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.l lVar) {
+    public final int j(Object obj, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.m mVar) {
         int i13;
         Unsafe unsafe;
         int[] iArr;
@@ -3196,7 +3196,7 @@ public final class f2 implements o2 {
         Object obj6 = obj;
         byte[] bArr2 = bArr;
         int i30 = i11;
-        com.google.android.gms.internal.clearcut.l lVar2 = lVar;
+        com.google.android.gms.internal.clearcut.m mVar2 = mVar;
         Unsafe unsafe5 = o;
         int i31 = i10;
         int i32 = -1;
@@ -3210,8 +3210,8 @@ public final class f2 implements o2 {
                 int i37 = i31 + 1;
                 int i38 = bArr2[i31];
                 if (i38 < 0) {
-                    i37 = e1.d(i38, bArr2, i37, lVar2);
-                    i38 = lVar2.a;
+                    i37 = e1.d(i38, bArr2, i37, mVar2);
+                    i38 = mVar2.a;
                 }
                 int i39 = i38 >>> 3;
                 int i40 = i37;
@@ -3270,7 +3270,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3309,7 +3309,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3335,8 +3335,8 @@ public final class f2 implements o2 {
                                 unsafe2 = unsafe5;
                                 i25 = i40;
                                 if (i41 == 0) {
-                                    i27 = e1.t(bArr, i25, lVar2);
-                                    unsafe2.putLong(obj6, j3, lVar2.b);
+                                    i27 = e1.t(bArr, i25, mVar2);
+                                    unsafe2.putLong(obj6, j3, mVar2.b);
                                     int i502 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3349,7 +3349,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3375,8 +3375,8 @@ public final class f2 implements o2 {
                                 unsafe2 = unsafe5;
                                 i25 = i40;
                                 if (i41 == 0) {
-                                    i27 = e1.j(bArr, i25, lVar2);
-                                    unsafe2.putInt(obj6, j3, lVar2.a);
+                                    i27 = e1.j(bArr, i25, mVar2);
+                                    unsafe2.putInt(obj6, j3, mVar2.a);
                                     int i5022 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3389,7 +3389,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3439,7 +3439,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3470,7 +3470,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3496,8 +3496,8 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 0) {
-                                    i27 = e1.t(bArr, i28, lVar2);
-                                    y2.c.g(obj6, j3, lVar2.b != 0);
+                                    i27 = e1.t(bArr, i28, mVar2);
+                                    y2.c.g(obj6, j3, mVar2.b != 0);
                                     int i5022222 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3510,7 +3510,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3536,8 +3536,8 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 2) {
-                                    i27 = (i45 & TLObject.FLAG_29) == 0 ? e1.w(bArr, i28, lVar2) : e1.x(bArr, i28, lVar2);
-                                    unsafe2.putObject(obj6, j3, lVar2.c);
+                                    i27 = (i45 & TLObject.FLAG_29) == 0 ? e1.w(bArr, i28, mVar2) : e1.x(bArr, i28, mVar2);
+                                    unsafe2.putObject(obj6, j3, mVar2.c);
                                     int i50222222 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3550,7 +3550,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3576,11 +3576,11 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 2) {
-                                    int g10 = e1.g(f2Var2.l(i15), bArr, i28, i11, lVar2);
+                                    int g10 = e1.g(f2Var2.l(i15), bArr, i28, i11, mVar2);
                                     if ((i36 & i23) == 0) {
-                                        unsafe2.putObject(obj6, j3, lVar2.c);
+                                        unsafe2.putObject(obj6, j3, mVar2.c);
                                     } else {
-                                        unsafe2.putObject(obj6, j3, j1.b(unsafe2.getObject(obj6, j3), lVar2.c));
+                                        unsafe2.putObject(obj6, j3, j1.b(unsafe2.getObject(obj6, j3), mVar2.c));
                                     }
                                     i29 = g10;
                                     unsafe3 = unsafe2;
@@ -3594,7 +3594,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3620,8 +3620,8 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 2) {
-                                    i27 = e1.z(bArr, i28, lVar2);
-                                    unsafe2.putObject(obj6, j3, lVar2.c);
+                                    i27 = e1.z(bArr, i28, mVar2);
+                                    unsafe2.putObject(obj6, j3, mVar2.c);
                                     int i502222222 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3634,7 +3634,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3660,8 +3660,8 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 0) {
-                                    i27 = e1.j(bArr, i28, lVar2);
-                                    int i51 = lVar2.a;
+                                    i27 = e1.j(bArr, i28, mVar2);
+                                    int i51 = mVar2.a;
                                     k1 x10 = f2Var2.x(i15);
                                     if (x10 == null || x10.zza(i51)) {
                                         unsafe2.putInt(obj6, j3, i51);
@@ -3677,7 +3677,7 @@ public final class f2 implements o2 {
                                         unsafe = unsafe3;
                                         i31 = i26;
                                         bArr2 = bArr;
-                                        lVar2 = lVar;
+                                        mVar2 = mVar;
                                         i32 = i20;
                                         f2Var2 = f2Var;
                                         obj6 = obj2;
@@ -3694,7 +3694,7 @@ public final class f2 implements o2 {
                                         i30 = i11;
                                         obj2 = obj6;
                                         bArr2 = bArr;
-                                        lVar2 = lVar;
+                                        mVar2 = mVar;
                                         i32 = i20;
                                         f2Var2 = f2Var;
                                         obj6 = obj2;
@@ -3721,8 +3721,8 @@ public final class f2 implements o2 {
                                 i15 = s10;
                                 unsafe2 = unsafe5;
                                 if (i41 == 0) {
-                                    i27 = e1.j(bArr, i28, lVar2);
-                                    unsafe2.putInt(obj6, j3, e1.y(lVar2.a));
+                                    i27 = e1.j(bArr, i28, mVar2);
+                                    unsafe2.putInt(obj6, j3, e1.y(mVar2.a));
                                     int i50222222222 = i27;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
@@ -3735,7 +3735,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3757,7 +3757,7 @@ public final class f2 implements o2 {
                             case 16:
                                 i14 = i44;
                                 i24 = i39;
-                                com.google.android.gms.internal.clearcut.l lVar3 = lVar2;
+                                com.google.android.gms.internal.clearcut.m mVar3 = mVar2;
                                 i28 = i40;
                                 if (i41 != 0) {
                                     i15 = s10;
@@ -3773,8 +3773,8 @@ public final class f2 implements o2 {
                                     obj2 = obj5;
                                     break;
                                 } else {
-                                    i27 = e1.t(bArr, i28, lVar3);
-                                    long j10 = lVar3.b;
+                                    i27 = e1.t(bArr, i28, mVar3);
+                                    long j10 = mVar3.b;
                                     i15 = s10;
                                     unsafe2 = unsafe5;
                                     unsafe2.putLong(obj6, j3, (j10 >>> 1) ^ (-(j10 & 1)));
@@ -3790,7 +3790,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3817,12 +3817,12 @@ public final class f2 implements o2 {
                                 } else {
                                     i14 = i44;
                                     i24 = i39;
-                                    com.google.android.gms.internal.clearcut.l lVar4 = lVar2;
-                                    i29 = e1.f(f2Var2.l(s10), bArr, i40, i11, (i39 << 3) | 4, lVar4);
+                                    com.google.android.gms.internal.clearcut.m mVar4 = mVar2;
+                                    i29 = e1.f(f2Var2.l(s10), bArr, i40, i11, (i39 << 3) | 4, mVar4);
                                     if ((i36 & i23) == 0) {
-                                        unsafe5.putObject(obj6, j3, lVar4.c);
+                                        unsafe5.putObject(obj6, j3, mVar4.c);
                                     } else {
-                                        unsafe5.putObject(obj6, j3, j1.b(unsafe5.getObject(obj6, j3), lVar4.c));
+                                        unsafe5.putObject(obj6, j3, j1.b(unsafe5.getObject(obj6, j3), mVar4.c));
                                     }
                                     i15 = s10;
                                     unsafe2 = unsafe5;
@@ -3837,7 +3837,7 @@ public final class f2 implements o2 {
                                     unsafe = unsafe3;
                                     i31 = i26;
                                     bArr2 = bArr;
-                                    lVar2 = lVar;
+                                    mVar2 = mVar;
                                     i32 = i20;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
@@ -3878,12 +3878,12 @@ public final class f2 implements o2 {
                                 obj2 = obj;
                                 i20 = i39;
                                 i30 = i11;
-                                i31 = e1.e(f2Var2.l(i15), i14, bArr, i40, i11, o1Var, lVar2);
+                                i31 = e1.e(f2Var2.l(i15), i14, bArr, i40, i11, o1Var, mVar2);
                                 unsafe = unsafe6;
                                 i22 = i35;
                                 f2Var = f2Var2;
                                 bArr2 = bArr;
-                                lVar2 = lVar;
+                                mVar2 = mVar;
                                 i32 = i20;
                                 f2Var2 = f2Var;
                                 obj6 = obj2;
@@ -3906,7 +3906,7 @@ public final class f2 implements o2 {
                             unsafe = unsafe6;
                             i13 = i35;
                             i17 = i36;
-                            h = f2Var2.i(obj, bArr, i40, i11, i14, i20, i41, i15, j11, i46, j3, lVar);
+                            h = f2Var2.i(obj, bArr, i40, i11, i14, i20, i41, i15, j11, i46, j3, mVar);
                             i14 = i14;
                             i15 = i15;
                             f2Var = f2Var2;
@@ -3919,7 +3919,7 @@ public final class f2 implements o2 {
                                 i30 = i11;
                                 i31 = h;
                                 bArr2 = bArr;
-                                lVar2 = lVar;
+                                mVar2 = mVar;
                                 i32 = i20;
                                 f2Var2 = f2Var;
                                 obj6 = obj2;
@@ -3939,7 +3939,7 @@ public final class f2 implements o2 {
                             i19 = i40;
                             if (i46 != 50) {
                                 i20 = i16;
-                                h = f2Var2.h(obj3, bArr, i19, i11, i18, i20, i41, i45, i46, j3, i15, lVar);
+                                h = f2Var2.h(obj3, bArr, i19, i11, i18, i20, i41, i45, i46, j3, i15, mVar);
                                 f2Var = f2Var2;
                                 obj2 = obj3;
                                 i14 = i18;
@@ -3958,10 +3958,10 @@ public final class f2 implements o2 {
                 }
                 if (i14 != i12 || i12 == 0) {
                     i30 = i11;
-                    i31 = e1.c(i14, bArr, i21, i11, C(obj2), lVar);
+                    i31 = e1.c(i14, bArr, i21, i11, C(obj2), mVar);
                     i22 = i13;
                     bArr2 = bArr;
-                    lVar2 = lVar;
+                    mVar2 = mVar;
                     i32 = i20;
                     f2Var2 = f2Var;
                     obj6 = obj2;
@@ -5040,43 +5040,43 @@ public final class f2 implements o2 {
                     case 35:
                         int D = p2.D((List) unsafe.getObject(obj, j3));
                         if (D > 0) {
-                            i16 = e2.d(D, r0.y(i19), D, i16);
+                            i16 = e2.c(D, r0.y(i19), D, i16);
                         }
                         break;
                     case 36:
                         int A = p2.A((List) unsafe.getObject(obj, j3));
                         if (A > 0) {
-                            i16 = e2.d(A, r0.y(i19), A, i16);
+                            i16 = e2.c(A, r0.y(i19), A, i16);
                         }
                         break;
                     case 37:
                         int c10 = p2.c((List) unsafe.getObject(obj, j3));
                         if (c10 > 0) {
-                            i16 = e2.d(c10, r0.y(i19), c10, i16);
+                            i16 = e2.c(c10, r0.y(i19), c10, i16);
                         }
                         break;
                     case 38:
                         int k10 = p2.k((List) unsafe.getObject(obj, j3));
                         if (k10 > 0) {
-                            i16 = e2.d(k10, r0.y(i19), k10, i16);
+                            i16 = e2.c(k10, r0.y(i19), k10, i16);
                         }
                         break;
                     case Maneuver.TYPE_DESTINATION /* 39 */:
                         int t10 = p2.t((List) unsafe.getObject(obj, j3));
                         if (t10 > 0) {
-                            i16 = e2.d(t10, r0.y(i19), t10, i16);
+                            i16 = e2.c(t10, r0.y(i19), t10, i16);
                         }
                         break;
                     case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                         int D2 = p2.D((List) unsafe.getObject(obj, j3));
                         if (D2 > 0) {
-                            i16 = e2.d(D2, r0.y(i19), D2, i16);
+                            i16 = e2.c(D2, r0.y(i19), D2, i16);
                         }
                         break;
                     case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                         int A2 = p2.A((List) unsafe.getObject(obj, j3));
                         if (A2 > 0) {
-                            i16 = e2.d(A2, r0.y(i19), A2, i16);
+                            i16 = e2.c(A2, r0.y(i19), A2, i16);
                         }
                         break;
                     case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
@@ -5084,43 +5084,43 @@ public final class f2 implements o2 {
                         Class cls9 = p2.a;
                         int size8 = list9.size();
                         if (size8 > 0) {
-                            i16 = e2.d(size8, r0.y(i19), size8, i16);
+                            i16 = e2.c(size8, r0.y(i19), size8, i16);
                         }
                         break;
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                         int v = p2.v((List) unsafe.getObject(obj, j3));
                         if (v > 0) {
-                            i16 = e2.d(v, r0.y(i19), v, i16);
+                            i16 = e2.c(v, r0.y(i19), v, i16);
                         }
                         break;
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                         int r10 = p2.r((List) unsafe.getObject(obj, j3));
                         if (r10 > 0) {
-                            i16 = e2.d(r10, r0.y(i19), r10, i16);
+                            i16 = e2.c(r10, r0.y(i19), r10, i16);
                         }
                         break;
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                         int A3 = p2.A((List) unsafe.getObject(obj, j3));
                         if (A3 > 0) {
-                            i16 = e2.d(A3, r0.y(i19), A3, i16);
+                            i16 = e2.c(A3, r0.y(i19), A3, i16);
                         }
                         break;
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                         int D3 = p2.D((List) unsafe.getObject(obj, j3));
                         if (D3 > 0) {
-                            i16 = e2.d(D3, r0.y(i19), D3, i16);
+                            i16 = e2.c(D3, r0.y(i19), D3, i16);
                         }
                         break;
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                         int x10 = p2.x((List) unsafe.getObject(obj, j3));
                         if (x10 > 0) {
-                            i16 = e2.d(x10, r0.y(i19), x10, i16);
+                            i16 = e2.c(x10, r0.y(i19), x10, i16);
                         }
                         break;
                     case 48:
                         int p5 = p2.p((List) unsafe.getObject(obj, j3));
                         if (p5 > 0) {
-                            i16 = e2.d(p5, r0.y(i19), p5, i16);
+                            i16 = e2.c(p5, r0.y(i19), p5, i16);
                         }
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -5560,7 +5560,7 @@ public final class f2 implements o2 {
                 case 35:
                     int D4 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D4 > 0) {
-                        i26 = e2.d(D4, r0.y(i28), D4, i26);
+                        i26 = e2.c(D4, r0.y(i28), D4, i26);
                         break;
                     } else {
                         break;
@@ -5568,7 +5568,7 @@ public final class f2 implements o2 {
                 case 36:
                     int A6 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A6 > 0) {
-                        i26 = e2.d(A6, r0.y(i28), A6, i26);
+                        i26 = e2.c(A6, r0.y(i28), A6, i26);
                         break;
                     } else {
                         break;
@@ -5576,7 +5576,7 @@ public final class f2 implements o2 {
                 case 37:
                     int c11 = p2.c((List) unsafe2.getObject(obj, j10));
                     if (c11 > 0) {
-                        i26 = e2.d(c11, r0.y(i28), c11, i26);
+                        i26 = e2.c(c11, r0.y(i28), c11, i26);
                         break;
                     } else {
                         break;
@@ -5584,7 +5584,7 @@ public final class f2 implements o2 {
                 case 38:
                     int k13 = p2.k((List) unsafe2.getObject(obj, j10));
                     if (k13 > 0) {
-                        i26 = e2.d(k13, r0.y(i28), k13, i26);
+                        i26 = e2.c(k13, r0.y(i28), k13, i26);
                         break;
                     } else {
                         break;
@@ -5592,7 +5592,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int t12 = p2.t((List) unsafe2.getObject(obj, j10));
                     if (t12 > 0) {
-                        i26 = e2.d(t12, r0.y(i28), t12, i26);
+                        i26 = e2.c(t12, r0.y(i28), t12, i26);
                         break;
                     } else {
                         break;
@@ -5600,7 +5600,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int D5 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D5 > 0) {
-                        i26 = e2.d(D5, r0.y(i28), D5, i26);
+                        i26 = e2.c(D5, r0.y(i28), D5, i26);
                         break;
                     } else {
                         break;
@@ -5608,7 +5608,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     int A7 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A7 > 0) {
-                        i26 = e2.d(A7, r0.y(i28), A7, i26);
+                        i26 = e2.c(A7, r0.y(i28), A7, i26);
                         break;
                     } else {
                         break;
@@ -5618,7 +5618,7 @@ public final class f2 implements o2 {
                     Class cls19 = p2.a;
                     int size17 = list19.size();
                     if (size17 > 0) {
-                        i26 = e2.d(size17, r0.y(i28), size17, i26);
+                        i26 = e2.c(size17, r0.y(i28), size17, i26);
                         break;
                     } else {
                         break;
@@ -5626,7 +5626,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int v9 = p2.v((List) unsafe2.getObject(obj, j10));
                     if (v9 > 0) {
-                        i26 = e2.d(v9, r0.y(i28), v9, i26);
+                        i26 = e2.c(v9, r0.y(i28), v9, i26);
                         break;
                     } else {
                         break;
@@ -5634,7 +5634,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int r11 = p2.r((List) unsafe2.getObject(obj, j10));
                     if (r11 > 0) {
-                        i26 = e2.d(r11, r0.y(i28), r11, i26);
+                        i26 = e2.c(r11, r0.y(i28), r11, i26);
                         break;
                     } else {
                         break;
@@ -5642,7 +5642,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     int A8 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A8 > 0) {
-                        i26 = e2.d(A8, r0.y(i28), A8, i26);
+                        i26 = e2.c(A8, r0.y(i28), A8, i26);
                         break;
                     } else {
                         break;
@@ -5650,7 +5650,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int D6 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D6 > 0) {
-                        i26 = e2.d(D6, r0.y(i28), D6, i26);
+                        i26 = e2.c(D6, r0.y(i28), D6, i26);
                         break;
                     } else {
                         break;
@@ -5658,7 +5658,7 @@ public final class f2 implements o2 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int x11 = p2.x((List) unsafe2.getObject(obj, j10));
                     if (x11 > 0) {
-                        i26 = e2.d(x11, r0.y(i28), x11, i26);
+                        i26 = e2.c(x11, r0.y(i28), x11, i26);
                         break;
                     } else {
                         break;
@@ -5666,7 +5666,7 @@ public final class f2 implements o2 {
                 case 48:
                     int p10 = p2.p((List) unsafe2.getObject(obj, j10));
                     if (p10 > 0) {
-                        i26 = e2.d(p10, r0.y(i28), p10, i26);
+                        i26 = e2.c(p10, r0.y(i28), p10, i26);
                         break;
                     } else {
                         break;

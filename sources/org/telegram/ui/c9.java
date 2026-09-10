@@ -8,18 +8,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c9 extends org.telegram.ui.Components.hq0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b1;
+public final class c9 extends org.telegram.ui.Components.sq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.h3 b1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.f3 f3Var) {
+    public c9(Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.h3 h3Var) {
         super(context, null, str, false, str2, false, f6Var);
-        this.b1 = f3Var;
+        this.b1 = h3Var;
     }
 
-    @Override // org.telegram.ui.Components.hq0
+    @Override // org.telegram.ui.Components.sq0
     public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         String formatString;
         if (z10) {
@@ -29,7 +29,7 @@ public final class c9 extends org.telegram.ui.Components.hq0 {
                 long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
                 formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
             }
-            org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.yc(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
+            org.telegram.ui.Components.pc Q = new org.telegram.ui.Components.wc(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
             Q.r = false;
             Q.j();
         }

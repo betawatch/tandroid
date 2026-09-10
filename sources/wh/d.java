@@ -1,46 +1,113 @@
 package wh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.uq;
+import w7.a6;
+import xh.z7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final class d extends FrameLayout {
+    public final bi.d a;
+    public final o6 b;
+    public final o6 c;
+    public final GiftAuctionController.Auction d;
+    public final Paint e;
+    public final xf.n f;
+    public final uq h;
+    public final uq[] n;
 
-    public /* synthetic */ d(g gVar, int i10) {
-        this.a = i10;
-        this.b = gVar;
+    public d(Context context, GiftAuctionController.Auction auction) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new xf.n(new th.e(this, 3));
+        this.h = new uq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new uq[1];
+        this.d = auction;
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
+        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
+        paint.setColor(j6.w0(null, j6.d6, false));
+        bi.d dVar = new bi.d(context, null, true);
+        this.a = dVar;
+        dVar.d.o(false, true, true);
+        kj0 kj0Var = new kj0(context);
+        o6 o6Var = new o6(context, false, false, false);
+        this.b = o6Var;
+        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        o6Var.setTypeface(AndroidUtilities.bold());
+        o6Var.setTextColor(j6.w0(null, j6.G6, false));
+        o6 o6Var2 = new o6(context, false, false, false);
+        this.c = o6Var2;
+        o6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        TLRPC.Document document = auction.gift.sticker;
+        if (document != null) {
+            kj0Var.g(44, 44, document);
+        }
+        addView(o6Var, a6.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
+        addView(o6Var2, a6.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
+        addView(kj0Var, a6.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(dVar, a6.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
+        b(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g gVar = this.b;
-                if (gVar.j.isEmpty()) {
-                    gVar.i = true;
-                    g.n = null;
-                    f fVar = gVar.f;
-                    if (fVar != null) {
-                        fVar.a = false;
-                        gVar.f = null;
-                    }
-                    gVar.d.removeView(gVar.e);
-                    if (gVar.d.getParent() instanceof ViewGroup) {
-                        ((ViewGroup) gVar.d.getParent()).removeView(gVar.d);
-                        break;
-                    }
-                }
-                break;
-            default:
-                ArrayList arrayList = this.b.j;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((View) arrayList.get(i10)).invalidate();
-                }
-                break;
+    public final void a(long j3, boolean z10) {
+        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j3, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
+        this.a.g(spannableStringBuilder, z10, true);
+    }
+
+    public final void b(boolean z10) {
+        GiftAuctionController.Auction auction = this.d;
+        if (auction.auctionStateActive != null) {
+            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
+        String l4 = hc.b.l(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        boolean isOutbid = auction.getBidStatus().isOutbid();
+        uq[] uqVarArr = this.n;
+        o6 o6Var = this.c;
+        if (isOutbid) {
+            o6Var.c(z7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, l4)), 0.66f, uqVarArr), z10, true);
+            o6Var.setTextColor(j6.w0(null, j6.q7, false));
+        } else {
+            o6Var.c(z7.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, l4, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, uqVarArr), z10, true);
+            o6Var.setTextColor(j6.w0(null, j6.G6, false));
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

@@ -1,34 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class e10 extends CharacterStyle implements UpdateAppearance {
-    public int a;
-    public int b;
-    public float c;
-    public final org.telegram.ui.ActionBar.f6 d;
+public final /* synthetic */ class e10 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g10 b;
 
-    public e10(int i10) {
-        this(i10, null);
+    public /* synthetic */ e10(g10 g10Var, int i10) {
+        this.a = i10;
+        this.b = g10Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        this.a = org.telegram.ui.ActionBar.j6.l1(this.c, org.telegram.ui.ActionBar.j6.v0(this.b, this.d));
-        int color = textPaint.getColor();
-        int i10 = this.a;
-        if (color != i10) {
-            textPaint.setColor(i10);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                g10 g10Var = this.b;
+                g10Var.getClass();
+                g10Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g10Var.invalidate();
+                break;
+            case 1:
+                g10 g10Var2 = this.b;
+                g10Var2.getClass();
+                g10Var2.s = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                g10Var2.invalidate();
+                break;
+            default:
+                g10 g10Var3 = this.b;
+                g10Var3.getClass();
+                g10Var3.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g10Var3.invalidate();
+                break;
         }
-    }
-
-    public e10(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.c = 1.0f;
-        this.b = i10;
-        this.d = f6Var;
     }
 }

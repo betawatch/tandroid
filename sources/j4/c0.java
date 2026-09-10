@@ -1,109 +1,95 @@
 package j4;
 
-import b2.r0;
-import c3.h0;
-import java.util.List;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class c0 {
-    public final /* synthetic */ int a;
-    public final List b;
-    public final h0[] c;
-    public final e2.c d;
+public final class c0 implements h0 {
+    public final b0 a;
+    public final e2.v b = new e2.v(32);
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
 
-    public c0(int i10, List list) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = list;
-                this.c = new h0[list.size()];
-                e2.c cVar = new e2.c(new fi.f(this, 20));
-                this.d = cVar;
-                cVar.k(3);
-                break;
-            default:
-                this.b = list;
-                this.c = new h0[list.size()];
-                this.d = new e2.c(new fi.f(this, 19));
-                break;
-        }
+    public c0(b0 b0Var) {
+        this.a = b0Var;
     }
 
-    public void a(long j3, e2.v vVar) {
-        if (vVar.a() < 9) {
-            return;
+    @Override // j4.h0
+    public final void a(int i10, e2.v vVar) {
+        boolean z10 = (i10 & 1) != 0;
+        int x10 = z10 ? vVar.b + vVar.x() : -1;
+        if (this.f) {
+            if (!z10) {
+                return;
+            }
+            this.f = false;
+            vVar.J(x10);
+            this.d = 0;
         }
-        int j10 = vVar.j();
-        int j11 = vVar.j();
-        int x10 = vVar.x();
-        if (j10 == 434 && j11 == 1195456820 && x10 == 3) {
-            this.d.a(j3, vVar);
-        }
-    }
-
-    public final void b(c3.q qVar, f0 f0Var) {
-        switch (this.a) {
-            case 0:
-                int i10 = 0;
-                while (true) {
-                    h0[] h0VarArr = this.c;
-                    if (i10 >= h0VarArr.length) {
-                        break;
+        while (vVar.a() > 0) {
+            int i11 = this.d;
+            e2.v vVar2 = this.b;
+            if (i11 < 3) {
+                if (i11 == 0) {
+                    int x11 = vVar.x();
+                    vVar.J(vVar.b - 1);
+                    if (x11 == 255) {
+                        this.f = true;
+                        return;
+                    }
+                }
+                int min = Math.min(vVar.a(), 3 - this.d);
+                vVar.h(this.d, min, vVar2.a);
+                int i12 = this.d + min;
+                this.d = i12;
+                if (i12 == 3) {
+                    vVar2.J(0);
+                    vVar2.I(3);
+                    vVar2.K(1);
+                    int x12 = vVar2.x();
+                    int x13 = vVar2.x();
+                    this.e = (x12 & 128) != 0;
+                    int i13 = (((x12 & 15) << 8) | x13) + 3;
+                    this.c = i13;
+                    byte[] bArr = vVar2.a;
+                    if (bArr.length < i13) {
+                        vVar2.c(Math.min(4098, Math.max(i13, bArr.length * 2)));
+                    }
+                }
+            } else {
+                int min2 = Math.min(vVar.a(), this.c - this.d);
+                vVar.h(this.d, min2, vVar2.a);
+                int i14 = this.d + min2;
+                this.d = i14;
+                int i15 = this.c;
+                if (i14 != i15) {
+                    continue;
+                } else {
+                    if (!this.e) {
+                        vVar2.I(i15);
                     } else {
-                        f0Var.a();
-                        f0Var.b();
-                        h0 R1 = qVar.R1(f0Var.d, 3);
-                        b2.s sVar = (b2.s) this.b.get(i10);
-                        String str = sVar.r;
-                        e2.d.a("Invalid closed caption MIME type provided: " + str, "application/cea-608".equals(str) || "application/cea-708".equals(str));
-                        String str2 = sVar.a;
-                        if (str2 == null) {
-                            f0Var.b();
-                            str2 = f0Var.e;
+                        if (e2.d0.n(0, i15, -1, vVar2.a) != 0) {
+                            this.f = true;
+                            return;
                         }
-                        b2.r rVar = new b2.r();
-                        rVar.a = str2;
-                        rVar.p = r0.n("video/mp2t");
-                        rVar.q = r0.n(str);
-                        rVar.e = sVar.e;
-                        rVar.d = sVar.d;
-                        rVar.N = sVar.O;
-                        rVar.t = sVar.u;
-                        i2.g.u(rVar, R1);
-                        h0VarArr[i10] = R1;
-                        i10++;
+                        vVar2.I(this.c - 4);
                     }
+                    vVar2.J(0);
+                    this.a.a(vVar2);
+                    this.d = 0;
                 }
-                break;
-            default:
-                int i11 = 0;
-                while (true) {
-                    h0[] h0VarArr2 = this.c;
-                    if (i11 >= h0VarArr2.length) {
-                        break;
-                    } else {
-                        f0Var.a();
-                        f0Var.b();
-                        h0 R12 = qVar.R1(f0Var.d, 3);
-                        b2.s sVar2 = (b2.s) this.b.get(i11);
-                        String str3 = sVar2.r;
-                        e2.d.a("Invalid closed caption MIME type provided: " + str3, "application/cea-608".equals(str3) || "application/cea-708".equals(str3));
-                        b2.r rVar2 = new b2.r();
-                        f0Var.b();
-                        rVar2.a = f0Var.e;
-                        rVar2.p = r0.n("video/mp2t");
-                        rVar2.q = r0.n(str3);
-                        rVar2.e = sVar2.e;
-                        rVar2.d = sVar2.d;
-                        rVar2.N = sVar2.O;
-                        rVar2.t = sVar2.u;
-                        i2.g.u(rVar2, R12);
-                        h0VarArr2[i11] = R12;
-                        i11++;
-                    }
-                }
-                break;
+            }
         }
+    }
+
+    @Override // j4.h0
+    public final void b() {
+        this.f = true;
+    }
+
+    @Override // j4.h0
+    public final void c(e2.b0 b0Var, c3.q qVar, g0 g0Var) {
+        this.a.c(b0Var, qVar, g0Var);
+        this.f = true;
     }
 }

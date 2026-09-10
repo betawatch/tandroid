@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class i50 extends org.telegram.ui.Components.l30 {
+public final class i50 extends org.telegram.ui.Components.v30 {
     public final /* synthetic */ m50 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,7 +21,7 @@ public final class i50 extends org.telegram.ui.Components.l30 {
         this.n = m50Var;
     }
 
-    @Override // org.telegram.ui.Components.l30
+    @Override // org.telegram.ui.Components.v30
     public final void n(int i10) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         alertDialog$Builder.a.I = org.telegram.ui.ActionBar.j6.pg;
@@ -56,20 +56,20 @@ public final class i50 extends org.telegram.ui.Components.l30 {
         editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
         editTextBoldCursor.setCursorWidth(1.5f);
         editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-        linearLayout.addView(editTextBoldCursor, w7.x5.t(-1, 36, 51, 24, 0, 24, 12));
-        editTextBoldCursor.setOnEditorActionListener(new xz(alertDialog$Builder, 2));
+        linearLayout.addView(editTextBoldCursor, w7.a6.t(-1, 36, 51, 24, 0, 24, 12));
+        editTextBoldCursor.setOnEditorActionListener(new zz(alertDialog$Builder, 2));
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fg, false);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.i(w02);
-        b2Var.setOnShowListener(new h50(this, b2Var, editTextBoldCursor, 1));
-        b2Var.setOnDismissListener(new yz(2, editTextBoldCursor));
-        alertDialog$Builder.k(LocaleController.getString(R.string.Start), new hg.c2(this, editTextBoldCursor, i10, 10));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new wz(2, editTextBoldCursor));
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.i(w02);
+        d2Var.setOnShowListener(new h50(this, d2Var, editTextBoldCursor, 1));
+        d2Var.setOnDismissListener(new a00(2, editTextBoldCursor));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Start), new fg.e2(this, editTextBoldCursor, i10, 10));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new yz(2, editTextBoldCursor));
         int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ug, false);
-        org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-        b2Var2.i(w03);
-        b2Var2.show();
-        b2Var2.o(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+        org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
+        d2Var2.i(w03);
+        d2Var2.show();
+        d2Var2.o(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
         editTextBoldCursor.requestFocus();
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -88,7 +88,7 @@ final class zztv<T> implements zzug<T> {
     private static Field zzC(Class cls, String str) {
         try {
             return cls.getDeclaredField(str);
-        } catch (NoSuchFieldException e7) {
+        } catch (NoSuchFieldException e) {
             Field[] declaredFields = cls.getDeclaredFields();
             for (Field field : declaredFields) {
                 if (str.equals(field.getName())) {
@@ -99,7 +99,7 @@ final class zztv<T> implements zzug<T> {
             String arrays = Arrays.toString(declaredFields);
             StringBuilder w10 = a.w("Field ", str, " for ", name, " not found. Known fields are ");
             w10.append(arrays);
-            throw new RuntimeException(w10.toString(), e7);
+            throw new RuntimeException(w10.toString(), e);
         }
     }
 
@@ -1062,14 +1062,14 @@ final class zztv<T> implements zzug<T> {
             switch (zzt) {
                 case 0:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 1:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1110,7 +1110,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 5:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1118,7 +1118,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 6:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1126,7 +1126,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 7:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 1, i16);
+                        i16 = e2.b(i19 << 3, 1, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1177,7 +1177,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 11:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(unsafe.getInt(obj2, j3), zzqv.zzA(i19 << 3), i16);
+                        i16 = e2.b(unsafe.getInt(obj2, j3), zzqv.zzA(i19 << 3), i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1196,7 +1196,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 13:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1204,7 +1204,7 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 14:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1213,7 +1213,7 @@ final class zztv<T> implements zzug<T> {
                 case 15:
                     if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
                         int i24 = unsafe.getInt(obj2, j3);
-                        i16 = e2.c((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i16);
+                        i16 = e2.b((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i16);
                     }
                     zztvVar = this;
                     i13 += 3;
@@ -1345,7 +1345,7 @@ final class zztv<T> implements zzug<T> {
                                 Object zzc2 = zzteVar.zzc();
                                 if (zzc2 instanceof zzqm) {
                                     int zzd2 = ((zzqm) zzc2).zzd();
-                                    zzA6 = e2.c(zzd2, zzd2, zzA6);
+                                    zzA6 = e2.b(zzd2, zzd2, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) zzc2) + zzA6;
                                 }
@@ -1355,7 +1355,7 @@ final class zztv<T> implements zzug<T> {
                                 Object obj3 = list5.get(i31);
                                 if (obj3 instanceof zzqm) {
                                     int zzd3 = ((zzqm) obj3).zzd();
-                                    zzA6 = e2.c(zzd3, zzd3, zzA6);
+                                    zzA6 = e2.b(zzd3, zzd3, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) obj3) + zzA6;
                                 }
@@ -1384,7 +1384,7 @@ final class zztv<T> implements zzug<T> {
                             Object obj4 = list6.get(i33);
                             if (obj4 instanceof zztd) {
                                 int zza3 = ((zztd) obj4).zza();
-                                zzA7 = e2.c(zza3, zza3, zzA7);
+                                zzA7 = e2.b(zza3, zza3, zzA7);
                             } else {
                                 zzA7 = zzqv.zzy((zzts) obj4, zzx) + zzA7;
                             }
@@ -1402,7 +1402,7 @@ final class zztv<T> implements zzug<T> {
                         zzA6 = zzqv.zzA(i19 << 3) * size5;
                         for (int i35 = 0; i35 < list7.size(); i35++) {
                             int zzd4 = ((zzqm) list7.get(i35)).zzd();
-                            zzA6 = e2.c(zzd4, zzd4, zzA6);
+                            zzA6 = e2.b(zzd4, zzd4, zzA6);
                         }
                         i16 += zzA6;
                         i13 += 3;
@@ -1731,14 +1731,14 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 51:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 52:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1787,21 +1787,21 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 56:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 57:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 58:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 1, i16);
+                        i16 = e2.b(i19 << 3, 1, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1860,7 +1860,7 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 62:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(zzp(obj2, j3), zzqv.zzA(i19 << 3), i16);
+                        i16 = e2.b(zzp(obj2, j3), zzqv.zzA(i19 << 3), i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1881,14 +1881,14 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 64:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 4, i16);
+                        i16 = e2.b(i19 << 3, 4, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.c(i19 << 3, 8, i16);
+                        i16 = e2.b(i19 << 3, 8, i16);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1896,7 +1896,7 @@ final class zztv<T> implements zzug<T> {
                 case 66:
                     if (zztvVar.zzR(obj2, i19, i13)) {
                         int zzp3 = zzp(obj2, j3);
-                        i16 = e2.c((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i16);
+                        i16 = e2.b((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i16);
                     }
                     i13 += 3;
                     obj2 = obj;

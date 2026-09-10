@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Map a;
@@ -37,15 +37,15 @@ public abstract class b {
                 } finally {
                 }
             }
-        } catch (IOException e7) {
-            throw new IllegalStateException("Failed reading data for HTML named character references", e7);
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed reading data for HTML named character references", e);
         }
     }
 
     public static String a(String str) {
         Matcher matcher = b.matcher(str);
         if (!matcher.find()) {
-            String str2 = (String) a.get(e2.i(1, 1, str));
+            String str2 = (String) a.get(e2.h(1, 1, str));
             return str2 != null ? str2 : str;
         }
         try {

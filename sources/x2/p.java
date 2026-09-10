@@ -6,13 +6,13 @@ import android.text.TextUtils;
 import android.util.Pair;
 import b2.l1;
 import b2.m1;
-import b2.q1;
+import b2.o1;
 import e2.d0;
 import e9.a1;
 import e9.i0;
 import e9.w;
 import e9.y0;
-import i2.o0;
+import i2.n0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,27 +20,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.f11;
-import u2.o1;
+import u2.q1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p extends u {
-    public static final y0 l = new w(new f11(13));
+    public static final y0 l = new w(new sg.p(4));
     public final Object d;
     public final Context e;
-    public final rb.a f;
+    public final t7.u f;
     public i g;
     public Thread h;
     public k i;
     public b2.e j;
     public Boolean k;
 
-    public p(Context context, rb.a aVar) {
+    public p(Context context, t7.u uVar) {
         i iVar = i.x0;
         this.d = new Object();
         this.e = context != null ? context.getApplicationContext() : null;
-        this.f = aVar;
+        this.f = uVar;
         if (iVar != null) {
             this.g = iVar;
         } else {
@@ -55,9 +54,9 @@ public final class p extends u {
         }
     }
 
-    public static void c(o1 o1Var, i iVar, HashMap hashMap) {
-        for (int i10 = 0; i10 < o1Var.a; i10++) {
-            m1 m1Var = (m1) iVar.D.get(o1Var.a(i10));
+    public static void c(q1 q1Var, i iVar, HashMap hashMap) {
+        for (int i10 = 0; i10 < q1Var.a; i10++) {
+            m1 m1Var = (m1) iVar.D.get(q1Var.a(i10));
             if (m1Var != null) {
                 l1 l1Var = m1Var.a;
                 m1 m1Var2 = (m1) hashMap.get(Integer.valueOf(l1Var.c));
@@ -95,7 +94,7 @@ public final class p extends u {
         if ((i10 & 3584) == 0) {
             return false;
         }
-        b2.o1 o1Var = iVar.u;
+        o1 o1Var = iVar.u;
         if (o1Var.c && (i10 & 2048) == 0) {
             return false;
         }
@@ -118,15 +117,15 @@ public final class p extends u {
         int i13 = 0;
         while (i13 < i12) {
             if (i10 == tVar2.b[i13]) {
-                o1 o1Var = tVar2.c[i13];
-                for (int i14 = 0; i14 < o1Var.a; i14++) {
-                    l1 a2 = o1Var.a(i14);
-                    a1 b10 = mVar.b(i13, a2, iArr[i13][i14]);
+                q1 q1Var = tVar2.c[i13];
+                for (int i14 = 0; i14 < q1Var.a; i14++) {
+                    l1 a2 = q1Var.a(i14);
+                    a1 e = mVar.e(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];
                     int i16 = 0;
                     while (i16 < i15) {
-                        n nVar = (n) b10.get(i16);
+                        n nVar = (n) e.get(i16);
                         int a10 = nVar.a();
                         if (zArr[i16] || a10 == 0) {
                             i11 = i12;
@@ -138,7 +137,7 @@ public final class p extends u {
                                 arrayList2.add(nVar);
                                 int i17 = i16 + 1;
                                 while (i17 < i15) {
-                                    n nVar2 = (n) b10.get(i17);
+                                    n nVar2 = (n) e.get(i17);
                                     int i18 = i12;
                                     if (nVar2.a() == 2 && nVar.b(nVar2)) {
                                         arrayList2.add(nVar2);
@@ -195,7 +194,7 @@ public final class p extends u {
     }
 
     @Override // x2.u
-    public final void b(q1 q1Var) {
+    public final void b(b2.q1 q1Var) {
         if (q1Var instanceof i) {
             k((i) q1Var);
         }
@@ -214,7 +213,7 @@ public final class p extends u {
 
     public final void f() {
         boolean z10;
-        o0 o0Var;
+        n0 n0Var;
         k kVar;
         synchronized (this.d) {
             try {
@@ -223,10 +222,10 @@ public final class p extends u {
                 throw th2;
             }
         }
-        if (!z10 || (o0Var = this.a) == null) {
+        if (!z10 || (n0Var = this.a) == null) {
             return;
         }
-        o0Var.n.e(10);
+        n0Var.n.e(10);
     }
 
     public final void h() {
@@ -248,9 +247,9 @@ public final class p extends u {
         if (iVar.s0 && this.e == null) {
             e2.a.n("DefaultTrackSelector", "Audio channel count constraints cannot be applied without reference to Context. Build the track selector instance with one of the non-deprecated constructors that take a Context argument.");
         }
-        o0 o0Var = this.a;
-        if (o0Var != null) {
-            o0Var.n.e(10);
+        n0 n0Var = this.a;
+        if (n0Var != null) {
+            n0Var.n.e(10);
         }
     }
 }

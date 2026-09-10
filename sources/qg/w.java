@@ -1,69 +1,40 @@
 package qg;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.s2;
-import org.telegram.ui.lm0;
-import w7.x5;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class w extends LinearLayout {
-    public final v a;
-    public final v b;
-    public final v c;
-    public final EditTextBoldCursor d;
-    public boolean e;
-    public final /* synthetic */ x f;
+public final /* synthetic */ class w implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(x xVar, Context context) {
-        super(context);
-        this.f = xVar;
-        setOrientation(1);
-        setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        v vVar = new v(xVar, context);
-        this.a = vVar;
-        vVar.a(0);
-        addView(vVar, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar2 = new v(xVar, context);
-        this.b = vVar2;
-        vVar2.a(1);
-        addView(vVar2, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        v vVar3 = new v(xVar, context);
-        this.c = vVar3;
-        vVar3.a(2);
-        addView(vVar3, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(21);
-        addView(linearLayout, x5.c(64.0f, -1));
-        TextView textView = new TextView(context);
-        textView.setTextColor(-1711276033);
-        textView.setTextSize(1, 16.0f);
-        textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersHexColor).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, x5.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.d = editTextBoldCursor;
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setBackground(j6.b0(AndroidUtilities.dp(10.0f), 436207615));
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setTextColor(-1);
-        editTextBoldCursor.setGravity(17);
-        editTextBoldCursor.setSingleLine();
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
-        editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new lm0(this));
-        editTextBoldCursor.setOnFocusChangeListener(new ah.v0(this, 3));
-        editTextBoldCursor.setOnEditorActionListener(new s2(5));
-        linearLayout.addView(editTextBoldCursor, x5.n(72, 36));
+    public /* synthetic */ w(k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = k0Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.x1(9, this.b, tLObject));
+                break;
+            case 1:
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                k0 k0Var = this.b;
+                if (!z10) {
+                    k0Var.getClass();
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(k0Var.H0);
+                    break;
+                }
+            default:
+                k0.U(this.b, tLObject, tL_error);
+                break;
+        }
     }
 }

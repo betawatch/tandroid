@@ -1,33 +1,41 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.os.SystemClock;
+import org.telegram.messenger.SharedConfig;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SavedMessagesController b;
+    public final /* synthetic */ SharedConfig.ProxyInfo b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ zh(SavedMessagesController savedMessagesController, int i10) {
+    public /* synthetic */ zh(SharedConfig.ProxyInfo proxyInfo, long j3, int i10) {
         this.a = i10;
-        this.b = savedMessagesController;
+        this.b = proxyInfo;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j3 = this.c;
+        SharedConfig.ProxyInfo proxyInfo = this.b;
+        switch (i10) {
             case 0:
-                this.b.update();
-                break;
-            case 1:
-                this.b.saveCache();
-                break;
-            case 2:
-                this.b.lambda$deleteCache$12();
-                break;
-            case 3:
-                this.b.lambda$saveCache$10();
+                ProxyRotationController.lambda$new$0(proxyInfo, j3);
                 break;
             default:
-                this.b.lambda$loadDialogs$1();
+                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
+                proxyInfo.checking = false;
+                if (j3 == -1) {
+                    proxyInfo.available = false;
+                    proxyInfo.ping = 0L;
+                } else {
+                    proxyInfo.ping = j3;
+                    proxyInfo.available = true;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
                 break;
         }
     }

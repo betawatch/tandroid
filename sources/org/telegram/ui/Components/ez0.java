@@ -1,37 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ez0 extends ViewGroup.MarginLayoutParams {
-    public gz0 a;
-    public gz0 b;
+public final class ez0 extends dd0 {
+    public final /* synthetic */ fz0 w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ez0() {
-        super(-2, -2);
-        gz0 gz0Var = gz0.e;
-        this.a = gz0Var;
-        this.b = gz0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = gz0Var;
-        this.b = gz0Var;
+    public ez0(fz0 fz0Var, Context context) {
+        super(context, 13, null);
+        this.w0 = fz0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || ez0.class != obj.getClass()) {
-            return false;
-        }
-        ez0 ez0Var = (ez0) obj;
-        return this.b.equals(ez0Var.b) && this.a.equals(ez0Var.a);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    @Override // org.telegram.ui.Components.dd0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float dp = AndroidUtilities.dp(31.0f);
+        fz0 fz0Var = this.w0;
+        fz0Var.d.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h7, false));
+        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, fz0Var.d);
+        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
+        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, fz0Var.d);
     }
 }

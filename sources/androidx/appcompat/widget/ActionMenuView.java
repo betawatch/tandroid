@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import a4.m;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -13,22 +14,23 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import k2.g0;
 import l.a0;
 import l.k;
 import l.l;
 import l.n;
 import m.g;
+import m.g3;
 import m.h;
 import m.i;
 import m.j;
-import m.s3;
+import m.u3;
 import m.v1;
 import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
+import t7.u;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ActionMenuView extends w1 implements k, a0 {
     public l F;
@@ -36,7 +38,7 @@ public class ActionMenuView extends w1 implements k, a0 {
     public int H;
     public boolean I;
     public h J;
-    public xa.c K;
+    public g3 K;
     public boolean L;
     public int M;
     public final int N;
@@ -125,12 +127,12 @@ public class ActionMenuView extends w1 implements k, a0 {
             Context context = getContext();
             l lVar = new l(context);
             this.F = lVar;
-            lVar.e = new g0(this, 1);
+            lVar.e = new m(this, 27);
             h hVar = new h(context);
             this.J = hVar;
             hVar.w = true;
             hVar.x = true;
-            hVar.e = new na.d();
+            hVar.e = new u();
             this.F.b(hVar, this.G);
             h hVar2 = this.J;
             hVar2.n = this;
@@ -213,7 +215,7 @@ public class ActionMenuView extends w1 implements k, a0 {
         int dividerWidth = getDividerWidth();
         int i16 = i12 - i10;
         int paddingRight = (i16 - getPaddingRight()) - getPaddingLeft();
-        boolean a2 = s3.a(this);
+        boolean a2 = u3.a(this);
         int i17 = 0;
         int i18 = 0;
         for (int i19 = 0; i19 < childCount; i19++) {

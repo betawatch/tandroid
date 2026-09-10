@@ -1,14 +1,73 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ik {
-    public int a;
-    public String b;
-    public String c = "";
-    public String d = "";
-    public String e;
-    public File f;
+public final class ik extends vl0 {
+    public final /* synthetic */ int X2;
+    public final Paint Y2;
+    public final /* synthetic */ tk Z2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ik(tk tkVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, f6Var);
+        this.X2 = i10;
+        switch (i10) {
+            case 1:
+                this.Z2 = tkVar;
+                super(context, f6Var);
+                this.Y2 = new Paint();
+                break;
+            default:
+                this.Z2 = tkVar;
+                this.Y2 = new Paint();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.X2) {
+            case 0:
+                if (this.Z2.n == 2 && getChildCount() > 0) {
+                    float f7 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f7) {
+                            f7 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.Y2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.Z2.n == 1 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i11 = 0; i11 < getChildCount(); i11++) {
+                        if (getChildAt(i11).getY() < f10) {
+                            f10 = getChildAt(i11).getY();
+                        }
+                    }
+                    this.Y2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.X2) {
+            case 0:
+                if (this.Z2.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
 }

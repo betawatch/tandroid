@@ -3,10 +3,9 @@ package r7;
 import android.os.Parcel;
 import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationResult;
-import ji.u4;
-import k2.g0;
+import m.g3;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i extends b8.b implements g8.n {
     public static final /* synthetic */ int c = 0;
@@ -23,7 +22,7 @@ public final class i extends b8.b implements g8.n {
         if (i10 == 1) {
             LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
             d.b(parcel);
-            oVar.e().a(new mg.n(locationResult, 12));
+            oVar.e().a(new g3(locationResult, 16));
             return true;
         }
         if (i10 != 2) {
@@ -35,12 +34,12 @@ public final class i extends b8.b implements g8.n {
         }
         LocationAvailability locationAvailability = (LocationAvailability) d.a(parcel, LocationAvailability.CREATOR);
         d.b(parcel);
-        oVar.e().a(new g0(locationAvailability, 18));
+        oVar.e().a(new o0.b(locationAvailability));
         return true;
     }
 
     public final void L0() {
-        this.b.e().a(new u4(this, 20));
+        this.b.e().a(new l2.g(this, 17));
     }
 
     public final void M0(com.google.android.gms.common.api.internal.p pVar) {

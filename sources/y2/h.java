@@ -1,15 +1,35 @@
 package y2;
 
-import java.io.IOException;
+import android.view.View;
+import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public interface h {
-    k4.d g(j jVar, long j3, long j10, IOException iOException, int i10);
+public final /* synthetic */ class h implements e2.h {
+    public final /* synthetic */ int a;
 
-    void h(j jVar, long j3, long j10, int i10);
+    public /* synthetic */ h(int i10) {
+        this.a = i10;
+    }
 
-    void i(j jVar, long j3, long j10);
-
-    void w(j jVar, long j3, long j10, boolean z10);
+    @Override // e2.h
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((ExecutorService) obj).shutdown();
+                break;
+            case 1:
+                View view = (View) obj;
+                view.setAlpha(1.0f);
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                break;
+            case 2:
+                ((View) obj).setTranslationY(0.0f);
+                break;
+            default:
+                ((zh.k) ((View) obj)).invalidate();
+                break;
+        }
+    }
 }

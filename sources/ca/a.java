@@ -2,13 +2,13 @@ package ca;
 
 import androidx.emoji2.text.w;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a {
-    public static final z9.b b = new z9.b();
+    public static final z9.c b = new z9.c();
     public static final String c = a("hts/cahyiseot-agolai.o/1frlglgc/aclg", "tp:/rsltcrprsp.ogepscmv/ieo/eaybtho");
     public static final String d = a("AzSBpY4F0rHiHFdinTvM", "IayrSTFL9eJ69YeSUO2");
-    public static final w e = new w(20);
+    public static final w e = new w(16);
     public final c a;
 
     public a(c cVar) {

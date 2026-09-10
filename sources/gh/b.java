@@ -1,103 +1,38 @@
 package gh;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import dh.f;
+import android.graphics.RectF;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.Components.ls;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
-    public int n;
+public final /* synthetic */ class b implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
 
-    public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+    public /* synthetic */ b(int i10) {
+        this.a = i10;
     }
 
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                RectF rectF = e.H;
+                break;
+            case 1:
+                int i10 = ls.G0;
+                break;
+            default:
+                Boolean bool = (Boolean) obj;
+                HashSet<Long> hashSet = (HashSet) obj2;
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    sharedInstance.convertToConferenceCall(bool.booleanValue(), hashSet);
+                    break;
+                }
+                break;
         }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            c();
-        }
-    }
-
-    public final void b(int i10, int i11) {
-        if (this.h == i10 && this.n == i11) {
-            return;
-        }
-        this.h = i10;
-        this.n = i11;
-        c();
-    }
-
-    public final void c() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
-        }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i10 = this.h;
-        int i11 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i10 <= 0 || i11 <= 0) {
-            return;
-        }
-        float f7 = i10;
-        float f10 = width;
-        float f11 = i11;
-        float f12 = height;
-        float max = Math.max(f7 / f10, f11 / f12);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
-    }
-
-    @Override // gh.a
-    public final dh.d k() {
-        return new f(this);
-    }
-
-    @Override // gh.a
-    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
-        }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f7, f10);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f7, f10, f11, f12, this.a);
-    }
-
-    @Override // gh.a
-    public final /* synthetic */ void e() {
     }
 }

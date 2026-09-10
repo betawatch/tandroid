@@ -1,37 +1,26 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import org.telegram.messenger.MessagesController;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ MessagesController.DialogPhotos b;
 
-    public /* synthetic */ ve(int i10, long j3, long j10, MessagesStorage messagesStorage) {
+    public /* synthetic */ ve(MessagesController.DialogPhotos dialogPhotos, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j3;
-        this.d = j10;
+        this.b = dialogPhotos;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$clearUserPhoto$93(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$saveChatInviter$132(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$setDialogFlags$37(this.c, this.d);
-                break;
-            case 3:
-                this.b.lambda$removeTopic$57(this.c, this.d);
+                this.b.lambda$loadCache$5();
                 break;
             default:
-                this.b.lambda$deleteUserChatHistory$87(this.c, this.d);
+                this.b.lambda$saveCache$6();
                 break;
         }
     }

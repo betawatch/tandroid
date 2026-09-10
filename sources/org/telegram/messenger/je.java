@@ -1,30 +1,51 @@
 package org.telegram.messenger;
 
-import java.util.function.ToLongFunction;
-import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class je implements ToLongFunction {
+public final /* synthetic */ class je implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ je(int i10) {
-        this.a = i10;
+    public /* synthetic */ je(int i10, int i11, int i12, long j3, MessagesController messagesController, boolean z10) {
+        this.a = i12;
+        this.b = messagesController;
+        this.c = j3;
+        this.d = i10;
+        this.e = i11;
+        this.f = z10;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
-        long j3;
-        long j10;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
             case 0:
-                return Long.parseLong((String) obj);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$242(this.c, this.d, this.e, this.f);
+                break;
             case 1:
-                j3 = ((NotificationsController.StoryNotification) obj).date;
-                return j3;
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
+                break;
             default:
-                j10 = ((NotificationsController.StoryNotification) obj).date;
-                return j10;
+                int i11 = ChatActivityEnterView.m5;
+                ((ChatActivityEnterView) notificationCenterDelegate).T0(this.d, this.f, this.e, false, this.c);
+                break;
         }
+    }
+
+    public /* synthetic */ je(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j3) {
+        this.a = 2;
+        this.b = chatActivityEnterView;
+        this.f = z10;
+        this.d = i10;
+        this.e = i11;
+        this.c = j3;
     }
 }

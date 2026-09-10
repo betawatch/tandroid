@@ -1,24 +1,26 @@
 package be;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import ee.v;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final h a = new h(-1, null, null, 0);
     public static final int b = ee.a.j(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
     public static final int c = ee.a.j(10000, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
-    public static final d9.f d = new d9.f("BUFFERED", 1);
-    public static final d9.f e = new d9.f("SHOULD_BUFFER", 1);
-    public static final d9.f f = new d9.f("S_RESUMING_BY_RCV", 1);
-    public static final d9.f g = new d9.f("RESUMING_BY_EB", 1);
-    public static final d9.f h = new d9.f("POISONED", 1);
-    public static final d9.f i = new d9.f("DONE_RCV", 1);
-    public static final d9.f j = new d9.f("INTERRUPTED_SEND", 1);
-    public static final d9.f k = new d9.f("INTERRUPTED_RCV", 1);
-    public static final d9.f l = new d9.f("CHANNEL_CLOSED", 1);
-    public static final d9.f m = new d9.f("SUSPEND", 1);
-    public static final d9.f n = new d9.f("SUSPEND_NO_WAITER", 1);
-    public static final d9.f o = new d9.f("FAILED", 1);
-    public static final d9.f p = new d9.f("CLOSE_HANDLER_CLOSED", 1);
-    public static final d9.f q = new d9.f("CLOSE_HANDLER_INVOKED", 1);
-    public static final d9.f r = new d9.f("NO_CLOSE_CAUSE", 1);
+    public static final v d = new v("BUFFERED", 0);
+    public static final v e = new v("SHOULD_BUFFER", 0);
+    public static final v f = new v("S_RESUMING_BY_RCV", 0);
+    public static final v g = new v("RESUMING_BY_EB", 0);
+    public static final v h = new v("POISONED", 0);
+    public static final v i = new v("DONE_RCV", 0);
+    public static final v j = new v("INTERRUPTED_SEND", 0);
+    public static final v k = new v("INTERRUPTED_RCV", 0);
+    public static final v l = new v("CHANNEL_CLOSED", 0);
+    public static final v m = new v("SUSPEND", 0);
+    public static final v n = new v("SUSPEND_NO_WAITER", 0);
+    public static final v o = new v("FAILED", 0);
+    public static final v p = new v("CLOSE_HANDLER_CLOSED", 0);
+    public static final v q = new v("CLOSE_HANDLER_INVOKED", 0);
+    public static final v r = new v("NO_CLOSE_CAUSE", 0);
 }

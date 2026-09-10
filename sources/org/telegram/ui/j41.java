@@ -1,107 +1,116 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class j41 extends org.telegram.ui.Components.ul0 {
+    public final Context c;
+    public final boolean d;
+    public final /* synthetic */ k41 e;
 
-    public /* synthetic */ j41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public j41(k41 k41Var, Context context, boolean z10) {
+        this.e = k41Var;
+        this.c = context;
+        this.d = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ((k41) this.b).dismiss();
-                break;
-            case 1:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
-                if (saveToGallerySettingsActivity.d) {
-                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
-                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
-                }
-                saveToGallerySettingsActivity.finishFragment();
-                break;
-            case 2:
-                ((u41) this.b).dismiss();
-                break;
-            case 3:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                MessageObject messageObject = secretMediaViewer.h0;
-                if (messageObject != null) {
-                    TLRPC.Message message = messageObject.messageOwner;
-                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        di.f4 f4Var = secretMediaViewer.r;
-                        if (f4Var.V) {
-                            f4Var.e(true);
-                            break;
-                        } else {
-                            secretMediaViewer.l();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 4:
-                t71 t71Var = (t71) this.b;
-                if (t71Var.a0 instanceof TLRPC.User) {
-                    di.d dVar = t71Var.h0;
-                    if (!dVar.N) {
-                        dVar.setLoading(true);
-                        t71Var.T((TLRPC.User) t71Var.a0, null, null);
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                u81.a((u81) this.b);
-                break;
-            case 6:
-                ((le1) this.b).c(true);
-                break;
-            case 7:
-                ((le1) ((hw0) this.b).c).c(true);
-                break;
-            case 8:
-                te1 te1Var = (te1) this.b;
-                ArrayList arrayList = te1Var.f;
-                HashSet hashSet = te1Var.w;
-                if (!hashSet.isEmpty()) {
-                    TLRPC.User user = te1Var.getMessagesController().getUser(Long.valueOf(te1Var.getUserConfig().getClientUserId()));
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
-                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
-                        }
-                    }
-                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        te1Var.getMessagesController().putChat(chat, false);
-                        te1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
-                    }
-                    te1Var.finishFragment();
-                    break;
-                }
-                break;
-            default:
-                mj1 mj1Var = (mj1) this.b;
-                mj1Var.a.c(!r0.b(), true);
-                mj1Var.c.setEnabled(mj1Var.a.b());
-                mj1Var.c.animate().alpha(mj1Var.a.b() ? 1.0f : 0.5f).start();
-                break;
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        boolean z10 = this.d;
+        k41 k41Var = this.e;
+        if (!z10) {
+            return k41Var.h.size() + (k41Var.e >= 0 ? 1 : 0);
         }
+        ArrayList arrayList = k41Var.f;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return (!this.d && i10 == this.e.e) ? 1 : 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0031, code lost:
+    
+        if (r8 == (r3.f.size() - 1)) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0033, code lost:
+    
+        r8 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0057, code lost:
+    
+        if (r8 == (r3.h.size() - 1)) goto L16;
+     */
+    @Override // s4.h0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.c1 c1Var, int i10) {
+        boolean z10;
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
+            }
+            return;
+        }
+        org.telegram.ui.Cells.y8 y8Var = (org.telegram.ui.Cells.y8) view;
+        boolean z11 = this.d;
+        k41 k41Var = this.e;
+        TranslateController.Language language = null;
+        if (!z11) {
+            int i12 = k41Var.e;
+            if (i12 >= 0 && i10 > i12) {
+                i10--;
+            }
+            if (i10 >= 0 && i10 < k41Var.h.size()) {
+                language = (TranslateController.Language) k41Var.h.get(i10);
+            }
+            z10 = false;
+        } else if (i10 >= 0 && i10 < k41Var.f.size()) {
+            language = (TranslateController.Language) k41Var.f.get(i10);
+        }
+        if (language == null) {
+            return;
+        }
+        String str = language.ownDisplayName;
+        if (str == null) {
+            str = language.displayName;
+        }
+        y8Var.b(str, language.displayName, false, !z10);
+        y8Var.setChecked(k41Var.r.contains(language.code));
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 == 0) {
+            view = new org.telegram.ui.Cells.y8(context);
+        } else if (i10 != 2) {
+            view = new org.telegram.ui.Cells.c7(context, (org.telegram.ui.Cells.r6) null);
+        } else {
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = m4Var;
+        }
+        return new org.telegram.ui.Components.fl0(view);
     }
 }

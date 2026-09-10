@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class g2 implements o2 {
     public final l0 a;
@@ -49,7 +49,7 @@ public final class g2 implements o2 {
     }
 
     @Override // com.google.android.gms.internal.vision.o2
-    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.l lVar) {
+    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
         f1 f1Var = (f1) obj;
         if (f1Var.zzb == r2.f) {
             f1Var.zzb = r2.b();

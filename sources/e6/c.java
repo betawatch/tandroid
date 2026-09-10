@@ -2,10 +2,10 @@ package e6;
 
 import android.os.Looper;
 import android.util.SparseIntArray;
+import bi.b3;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.cast.c0;
-import di.p2;
 import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -24,7 +24,7 @@ public final class c {
     public final ArrayList g;
     public final ArrayDeque h;
     public final c0 i;
-    public final p2 j;
+    public final b3 j;
     public BasePendingResult k;
     public BasePendingResult l;
     public final Set m = DesugarCollections.synchronizedSet(new HashSet());
@@ -39,7 +39,7 @@ public final class c {
         this.h = new ArrayDeque(20);
         this.i = new c0(Looper.getMainLooper(), 0);
         int i10 = 1;
-        this.j = new p2(this, i10);
+        this.j = new b3(this, i10);
         hVar.p(new d6.c0(this, i10));
         this.f = new s(this);
         this.b = e();
@@ -122,15 +122,15 @@ public final class c {
     }
 
     public final long e() {
-        c6.q e7 = this.c.e();
-        if (e7 == null) {
+        c6.q e = this.c.e();
+        if (e == null) {
             return 0L;
         }
-        MediaInfo mediaInfo = e7.a;
+        MediaInfo mediaInfo = e.a;
         int i10 = mediaInfo == null ? -1 : mediaInfo.b;
-        int i11 = e7.e;
-        int i12 = e7.f;
-        int i13 = e7.w;
+        int i11 = e.e;
+        int i12 = e.f;
+        int i13 = e.w;
         if (i11 == 1) {
             if (i12 != 1) {
                 if (i12 != 2) {
@@ -145,7 +145,7 @@ public final class c {
                 return 0L;
             }
         }
-        return e7.b;
+        return e.b;
     }
 
     public final void f() {

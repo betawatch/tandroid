@@ -1,13 +1,38 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public interface oy {
-    boolean B();
+public final /* synthetic */ class oy implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ py b;
 
-    boolean K(uy uyVar);
+    public /* synthetic */ oy(py pyVar, int i10) {
+        this.a = i10;
+        this.b = pyVar;
+    }
 
-    boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                py pyVar = this.b;
+                wy wyVar = pyVar.E0;
+                Context context = pyVar.getContext();
+                i10 = ((org.telegram.ui.ActionBar.p2) wyVar).currentAccount;
+                wyVar.showDialog(new qg.k0(3, i10, context, wyVar, null));
+                break;
+            default:
+                wy wyVar2 = this.b.E0;
+                sx sxVar = wyVar2.M0;
+                if (sxVar != null) {
+                    sxVar.dismiss();
+                    wyVar2.M0 = null;
+                    break;
+                }
+                break;
+        }
+    }
 }

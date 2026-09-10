@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -19,14 +19,14 @@ public final class q implements Runnable {
     public ArrayList d;
 
     public static c1 c(RecyclerView recyclerView, int i10, long j3) {
-        int E = recyclerView.e.E();
-        for (int i11 = 0; i11 < E; i11++) {
-            c1 U = RecyclerView.U(recyclerView.e.D(i11));
+        int K = recyclerView.e.K();
+        for (int i11 = 0; i11 < K; i11++) {
+            c1 U = RecyclerView.U(recyclerView.e.J(i11));
             if (U.c == i10 && !U.h()) {
                 return null;
             }
         }
-        pf.e eVar = recyclerView.b;
+        of.e eVar = recyclerView.b;
         try {
             try {
                 recyclerView.g0();
@@ -42,7 +42,7 @@ public final class q implements Runnable {
                 return j10;
             } catch (Exception e7) {
                 FileLog.e(e7);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b(recyclerView, 27));
+                AndroidUtilities.runOnUIThread(new qg.q0(recyclerView, 8));
                 recyclerView.h0(false);
                 return null;
             }
@@ -109,7 +109,7 @@ public final class q implements Runnable {
         for (int i16 = 0; i16 < arrayList.size() && (recyclerView = (pVar = (p) arrayList.get(i16)).d) != null; i16++) {
             c1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j3);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
-                if (recyclerView2.Q && recyclerView2.e.E() != 0) {
+                if (recyclerView2.Q && recyclerView2.e.K() != 0) {
                     recyclerView2.o0();
                 }
                 a0.h hVar3 = recyclerView2.s0;

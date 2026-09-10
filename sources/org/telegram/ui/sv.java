@@ -1,33 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sv implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class sv implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uy b;
+    public final /* synthetic */ wy b;
 
-    public /* synthetic */ sv(uy uyVar, int i10) {
+    public /* synthetic */ sv(wy wyVar, int i10) {
         this.a = i10;
-        this.b = uyVar;
+        this.b = wyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                uy uyVar = this.b;
-                uyVar.getClass();
-                uyVar.z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                wy.j0(this.b);
                 break;
             case 1:
-                this.b.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                wy wyVar = this.b;
+                if (wyVar.S3 != null) {
+                    wyVar.getMessagesController().removeSuggestion(0L, wyVar.S3);
+                    wyVar.S3 = null;
+                    wyVar.L4();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.b4(true);
                 break;
             default:
-                uy uyVar2 = this.b;
-                uyVar2.getClass();
-                uyVar2.F4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.b4(true);
                 break;
         }
     }

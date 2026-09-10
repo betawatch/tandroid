@@ -2,7 +2,7 @@ package b2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class k1 {
     public static final g1 a = new g1();
@@ -35,11 +35,11 @@ public abstract class k1 {
         if (m(i12, j1Var, 0L).o != i10) {
             return i10 + 1;
         }
-        int e7 = e(i12, i11, z10);
-        if (e7 == -1) {
+        int e = e(i12, i11, z10);
+        if (e == -1) {
             return -1;
         }
-        return m(e7, j1Var, 0L).n;
+        return m(e, j1Var, 0L).n;
     }
 
     public int e(int i10, int i11, boolean z10) {
@@ -77,9 +77,9 @@ public abstract class k1 {
                                     int a2 = a(true);
                                     if (a2 == k1Var.a(true) && (c10 = c(true)) == k1Var.c(true)) {
                                         while (a2 != c10) {
-                                            int e7 = e(a2, 0, true);
-                                            if (e7 == k1Var.e(a2, 0, true)) {
-                                                a2 = e7;
+                                            int e = e(a2, 0, true);
+                                            if (e == k1Var.e(a2, 0, true)) {
+                                                a2 = e;
                                             }
                                         }
                                     }

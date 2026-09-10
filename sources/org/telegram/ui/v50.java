@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v50 implements org.telegram.ui.Components.w5 {
+public final /* synthetic */ class v50 implements org.telegram.ui.Components.v5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class v50 implements org.telegram.ui.Components.w5 
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.w5
+    @Override // org.telegram.ui.Components.v5
     public final void invalidate() {
         switch (this.a) {
             case 0:
@@ -24,10 +24,10 @@ public final /* synthetic */ class v50 implements org.telegram.ui.Components.w5 
                 }
                 break;
             default:
-                s61 s61Var = (s61) this.b;
-                s61Var.getClass();
-                if (!ah.y0.b && s61Var.getParent() != null) {
-                    ((View) s61Var.getParent()).invalidate();
+                u61 u61Var = (u61) this.b;
+                u61Var.getClass();
+                if (!yg.f0.b && u61Var.getParent() != null) {
+                    ((View) u61Var.getParent()).invalidate();
                     break;
                 }
                 break;

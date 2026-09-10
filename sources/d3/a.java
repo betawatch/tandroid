@@ -19,14 +19,13 @@ import e2.d0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import i2.g;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -68,7 +67,7 @@ public final class a implements o {
 
     public final int a(p pVar) {
         boolean z10;
-        pVar.q();
+        pVar.p();
         byte[] bArr = this.a;
         pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
@@ -92,16 +91,16 @@ public final class a implements o {
     }
 
     public final boolean d(p pVar) {
-        pVar.q();
+        pVar.p();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
         pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.r(bArr.length);
+            pVar.q(bArr.length);
             return true;
         }
-        pVar.q();
+        pVar.p();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
         pVar.b(0, bArr3.length, bArr4);
@@ -109,17 +108,17 @@ public final class a implements o {
             return false;
         }
         this.d = true;
-        pVar.r(bArr3.length);
+        pVar.q(bArr3.length);
         return true;
     }
 
     @Override // c3.o
     public final void g(q qVar) {
         this.l = qVar;
-        h0 R1 = qVar.R1(0, 1);
-        this.m = R1;
-        this.n = R1;
-        qVar.Z0();
+        h0 I = qVar.I(0, 1);
+        this.m = I;
+        this.n = I;
+        qVar.B();
     }
 
     @Override // c3.o
@@ -183,7 +182,7 @@ public final class a implements o {
             rVar.r = i12;
             rVar.I = 1;
             rVar.J = i11;
-            g.u(rVar, h0Var);
+            hc.b.u(rVar, h0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
@@ -209,11 +208,11 @@ public final class a implements o {
                         c5.b0 b0Var3 = yVar.a;
                         c5.b0 b0Var4 = yVar.b;
                         if (b0Var4.b == 0 && j3 > 0) {
-                            b0Var3.c(0L);
-                            b0Var4.c(0L);
+                            b0Var3.b(0L);
+                            b0Var4.b(0L);
                         }
-                        b0Var3.c(position);
-                        b0Var4.c(j3);
+                        b0Var3.b(position);
+                        b0Var4.b(j3);
                     }
                     if (this.p && Math.abs(this.q - j3) < 20000) {
                         this.p = false;
@@ -243,14 +242,14 @@ public final class a implements o {
                 }
                 b0 b0Var5 = this.o;
                 if (b0Var5 != null) {
-                    this.l.P1(b0Var5);
+                    this.l.G(b0Var5);
                 }
             }
             if (i13 == -1) {
                 b0 b0Var6 = this.o;
                 if (b0Var6 instanceof y) {
                     ((y) b0Var6).c = this.k + this.e;
-                    this.l.P1(b0Var6);
+                    this.l.G(b0Var6);
                     this.m.getClass();
                 }
             }

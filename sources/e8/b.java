@@ -9,10 +9,10 @@ import android.os.Looper;
 import android.text.TextUtils;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.p3;
+import m.r3;
 import v8.p;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b extends n6.g {
     public final Context U;
@@ -21,8 +21,8 @@ public final class b extends n6.g {
     public final int X;
     public final boolean Y;
 
-    public b(Context context, Looper looper, p3 p3Var, k kVar, l lVar, int i10) {
-        super(context, looper, 4, p3Var, kVar, lVar, 0);
+    public b(Context context, Looper looper, r3 r3Var, k kVar, l lVar, int i10) {
+        super(context, looper, 4, r3Var, kVar, lVar, 0);
         this.U = context;
         this.V = i10;
         this.W = null;

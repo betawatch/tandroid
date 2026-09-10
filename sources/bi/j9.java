@@ -1,216 +1,87 @@
 package bi;
 
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Components.wr;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public class j9 {
-    public int A;
-    public boolean D;
-    public final boolean E;
-    public float G;
-    public zc H;
-    public org.telegram.ui.ActionBar.f6 J;
-    public float K;
-    public boolean L;
-    public float M;
-    public boolean N;
-    public float O;
-    public float P;
-    public s8 Q;
-    public View R;
-    public int c;
-    public TL_stories.StoryItem d;
-    public boolean l;
-    public boolean m;
-    public int n;
-    public boolean o;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public long s;
-    public float t;
-    public boolean v;
-    public boolean w;
-    public long x;
-    public int y;
-    public int z;
-    public boolean a = true;
-    public boolean b = true;
-    public float e = 1.0f;
-    public float f = 0.0f;
-    public float g = 0.0f;
-    public float h = 0.0f;
-    public float i = 0.0f;
-    public float j = 0.0f;
-    public boolean k = true;
-    public float u = 1.0f;
-    public float B = 1.0f;
-    public boolean C = false;
-    public final RectF F = new RectF();
-    public boolean I = false;
+public final class j9 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.Components.g9 b;
+    public final org.telegram.ui.Components.w9 c;
+    public final TextView d;
+    public ViewPropertyAnimator e;
 
-    public j9(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
-        this.E = z10;
-        this.J = f6Var;
+    public j9(Activity activity, int i10) {
+        super(activity);
+        this.a = i10;
+        this.b = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
+        this.c = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
+        addView(w9Var, w7.a6.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(activity);
+        this.d = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(-1);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setSingleLine();
+        textView.setLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, w7.a6.d(-1, -2.0f, 51, 53.0f, 11.33f, 12.0f, 0.0f));
+        TextView textView2 = new TextView(activity);
+        textView2.setTextSize(1, 12.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.l1(0.85f, -1));
+        addView(textView2, w7.a6.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
+        textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.LiveStoryPeerChange), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.33f), 1.0f));
+        set(null);
     }
 
-    public final boolean a(MotionEvent motionEvent, View view) {
-        TLRPC.TL_recentStory tL_recentStory;
-        TLRPC.TL_recentStory tL_recentStory2;
-        TLRPC.User user;
-        TLRPC.TL_recentStory tL_recentStory3;
-        boolean z10;
-        TLRPC.TL_recentStory tL_recentStory4;
-        this.R = view;
-        u8 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
-        boolean z11 = false;
-        if (motionEvent.getAction() == 0) {
-            if (this.F.contains(motionEvent.getX(), motionEvent.getY())) {
-                TLRPC.Chat chat = null;
-                if (this.x > 0) {
-                    user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(this.x));
-                } else {
-                    user = null;
-                    chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-this.x));
-                }
-                if (c(chat, user)) {
-                    z10 = true;
-                } else if (this.r) {
-                    z10 = !storiesController.h.isEmpty();
-                } else {
-                    if (this.x <= 0 ? MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (chat != null && !chat.stories_unavailable && (tL_recentStory3 = chat.stories_max_id) != null && tL_recentStory3.max_id > 0) : MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController().I(this.x) || (user != null && !user.stories_unavailable && (tL_recentStory4 = user.stories_max_id) != null && tL_recentStory4.max_id > 0)) {
-                        z11 = true;
-                    }
-                    z10 = z11;
-                }
-                if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z10) {
-                    zc zcVar = this.H;
-                    if (zcVar == null) {
-                        this.H = new zc(view, 1.5f, 5.0f);
-                    } else {
-                        zcVar.a = view;
-                    }
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                    this.H.c(true);
-                    this.N = true;
-                    this.O = motionEvent.getX();
-                    this.P = motionEvent.getY();
-                    if (this.I) {
-                        s8 s8Var = this.Q;
-                        if (s8Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(s8Var);
-                        }
-                        s8 s8Var2 = new s8(9, this, view);
-                        this.Q = s8Var2;
-                        AndroidUtilities.runOnUIThread(s8Var2, ViewConfiguration.getLongPressTimeout());
-                    }
-                }
-                return this.N;
-            }
+    public final void a(boolean z10, boolean z11) {
+        ViewPropertyAnimator viewPropertyAnimator = this.e;
+        if (viewPropertyAnimator != null) {
+            viewPropertyAnimator.cancel();
+            this.e = null;
         }
-        if (motionEvent.getAction() == 2 && this.N) {
-            if (Math.abs(this.O - motionEvent.getX()) > AndroidUtilities.touchSlop || Math.abs(this.P - motionEvent.getY()) > AndroidUtilities.touchSlop) {
-                zc zcVar2 = this.H;
-                if (zcVar2 != null) {
-                    zcVar2.a = view;
-                    zcVar2.c(false);
-                }
-                s8 s8Var3 = this.Q;
-                if (s8Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(s8Var3);
-                }
-                view.getParent().requestDisallowInterceptTouchEvent(false);
-                this.N = false;
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            zc zcVar3 = this.H;
-            if (zcVar3 != null) {
-                zcVar3.a = view;
-                zcVar3.c(false);
-            }
-            if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
-                MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-                u8 storiesController2 = messagesController.getStoriesController();
-                if (this.r) {
-                    f(0L);
-                } else if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-                    if (storiesController2.I(this.x)) {
-                        f(this.x);
-                    } else {
-                        long j3 = this.x;
-                        if (j3 > 0) {
-                            TLRPC.User user2 = messagesController.getUser(Long.valueOf(j3));
-                            if (user2 != null && !user2.stories_unavailable && (tL_recentStory2 = user2.stories_max_id) != null && tL_recentStory2.max_id > 0) {
-                                new o9().a(this.x, view, this);
-                            }
-                        } else {
-                            TLRPC.Chat chat2 = messagesController.getChat(Long.valueOf(-j3));
-                            if (chat2 != null && !chat2.stories_unavailable && (tL_recentStory = chat2.stories_max_id) != null && tL_recentStory.max_id > 0) {
-                                new o9().a(this.x, view, this);
-                            }
-                        }
-                    }
-                }
-            }
-            ViewParent parent = view.getParent();
-            if (parent instanceof ViewGroup) {
-                ((ViewGroup) parent).requestDisallowInterceptTouchEvent(false);
-            }
-            this.N = false;
-            s8 s8Var4 = this.Q;
-            if (s8Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(s8Var4);
-            }
+        if (!z11) {
+            setVisibility(z10 ? 0 : 8);
+            setAlpha(z10 ? 1.0f : 0.0f);
+        } else {
+            setVisibility(0);
+            ViewPropertyAnimator duration = animate().alpha(z10 ? 1.0f : 0.0f).setInterpolator(wr.h).withEndAction(new ai.j(4, this, z10)).setDuration(320L);
+            this.e = duration;
+            duration.start();
         }
-        return this.N;
     }
 
-    public final float b() {
-        zc zcVar = this.H;
-        if (zcVar == null) {
-            return 1.0f;
-        }
-        return zcVar.a(0.08f);
-    }
-
-    public boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return false;
-    }
-
-    public boolean d(long j3) {
-        return false;
-    }
-
-    public void f(long j3) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null || this.R == null) {
+    public void set(TLRPC.InputPeer inputPeer) {
+        int i10 = this.a;
+        long clientUserId = inputPeer == null ? UserConfig.getInstance(i10).getClientUserId() : DialogObject.getPeerDialogId(inputPeer);
+        TextView textView = this.d;
+        org.telegram.ui.Components.w9 w9Var = this.c;
+        org.telegram.ui.Components.g9 g9Var = this.b;
+        if (clientUserId >= 0) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(clientUserId));
+            g9Var.r(user);
+            w9Var.e(user, g9Var);
+            textView.setText(UserObject.getUserName(user));
             return;
         }
-        R.getOrCreateStoryViewer().getClass();
-        ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? d9.a((ll0) parent) : null);
-    }
-
-    public final void g() {
-        this.H = null;
-        this.N = false;
-    }
-
-    public void e() {
+        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-clientUserId));
+        g9Var.q(chat);
+        w9Var.e(chat, g9Var);
+        textView.setText(chat == null ? "" : chat.title);
     }
 }

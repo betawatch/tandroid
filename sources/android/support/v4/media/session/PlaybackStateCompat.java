@@ -9,10 +9,10 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
-    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new b0(4);
+    public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new a0(4);
     public final int a;
     public final long b;
     public final long c;
@@ -47,15 +47,15 @@ public final class PlaybackStateCompat implements Parcelable {
         if (playbackState == null) {
             return null;
         }
-        List<PlaybackState.CustomAction> j3 = d0.j(playbackState);
+        List<PlaybackState.CustomAction> j3 = c0.j(playbackState);
         if (j3 != null) {
             ArrayList arrayList2 = new ArrayList(j3.size());
             for (PlaybackState.CustomAction customAction2 : j3) {
                 if (customAction2 != null) {
                     PlaybackState.CustomAction customAction3 = customAction2;
-                    Bundle l4 = d0.l(customAction3);
-                    c0.a(l4);
-                    customAction = new CustomAction(d0.f(customAction3), d0.o(customAction3), d0.m(customAction3), l4);
+                    Bundle l4 = c0.l(customAction3);
+                    b0.a(l4);
+                    customAction = new CustomAction(c0.f(customAction3), c0.o(customAction3), c0.m(customAction3), l4);
                     customAction.e = customAction3;
                 } else {
                     customAction = null;
@@ -67,10 +67,10 @@ public final class PlaybackStateCompat implements Parcelable {
             arrayList = null;
         }
         if (Build.VERSION.SDK_INT >= 22) {
-            bundle = e0.a(playbackState);
-            c0.a(bundle);
+            bundle = d0.a(playbackState);
+            b0.a(bundle);
         }
-        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(d0.r(playbackState), d0.q(playbackState), d0.i(playbackState), d0.p(playbackState), d0.g(playbackState), 0, d0.k(playbackState), d0.n(playbackState), arrayList, d0.h(playbackState), bundle);
+        PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(c0.r(playbackState), c0.q(playbackState), c0.i(playbackState), c0.p(playbackState), c0.g(playbackState), 0, c0.k(playbackState), c0.n(playbackState), arrayList, c0.h(playbackState), bundle);
         playbackStateCompat.w = playbackState;
         return playbackStateCompat;
     }
@@ -118,9 +118,9 @@ public final class PlaybackStateCompat implements Parcelable {
         parcel.writeInt(this.f);
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static final class CustomAction implements Parcelable {
-        public static final Parcelable.Creator<CustomAction> CREATOR = new g0();
+        public static final Parcelable.Creator<CustomAction> CREATOR = new f0();
         public final String a;
         public final CharSequence b;
         public final int c;
@@ -155,7 +155,7 @@ public final class PlaybackStateCompat implements Parcelable {
             this.a = parcel.readString();
             this.b = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             this.c = parcel.readInt();
-            this.d = parcel.readBundle(c0.class.getClassLoader());
+            this.d = parcel.readBundle(b0.class.getClassLoader());
         }
     }
 
@@ -169,7 +169,7 @@ public final class PlaybackStateCompat implements Parcelable {
         this.h = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.r = parcel.createTypedArrayList(CustomAction.CREATOR);
         this.s = parcel.readLong();
-        this.v = parcel.readBundle(c0.class.getClassLoader());
+        this.v = parcel.readBundle(b0.class.getClassLoader());
         this.f = parcel.readInt();
     }
 }

@@ -1,54 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c4 implements gg.a {
-    public i6 a;
-    public TLRPC.TL_theme b;
-    public TLRPC.TL_chatThemeUniqueGift c;
-    public int d;
-    public int e = -1;
-    public SparseIntArray f;
-    public String g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
+public final class c4 {
+    public static final c4 a;
+    public static final c4 b;
+    public static final c4 c;
+    public static final /* synthetic */ c4[] d;
 
-    public final long a() {
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme != null) {
-            return tL_theme.id;
-        }
-        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-        if (tL_chatThemeUniqueGift != null) {
-            return tL_chatThemeUniqueGift.gift.gift_id;
-        }
-        return 0L;
+    static {
+        c4 c4Var = new c4("NONE", 0);
+        a = c4Var;
+        c4 c4Var2 = new c4("VERTICAL", 1);
+        b = c4Var2;
+        c4 c4Var3 = new c4("FULL", 2);
+        c = c4Var3;
+        d = new c4[]{c4Var, c4Var2, c4Var3};
     }
 
-    public final TLRPC.ThemeSettings b(int i10) {
-        ArrayList<TLRPC.ThemeSettings> arrayList;
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme == null) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-            if (tL_chatThemeUniqueGift != null) {
-                arrayList = tL_chatThemeUniqueGift.theme_settings;
-            }
-            return null;
-        }
-        arrayList = tL_theme.settings;
-        if (arrayList != null && i10 >= 0 && arrayList.size() > i10) {
-            return arrayList.get(i10);
-        }
-        return null;
+    public static c4 valueOf(String str) {
+        return (c4) Enum.valueOf(c4.class, str);
+    }
+
+    public static c4[] values() {
+        return (c4[]) d.clone();
     }
 }

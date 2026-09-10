@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class r0 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -48,8 +48,8 @@ public final class r0 implements Parcelable.Creator {
                 }
                 try {
                     return e0.a(readString);
-                } catch (d0 e7) {
-                    throw new RuntimeException(e7);
+                } catch (d0 e) {
+                    throw new RuntimeException(e);
                 }
             case 2:
                 int z11 = w7.d0.z(parcel);
@@ -67,8 +67,8 @@ public final class r0 implements Parcelable.Creator {
             case 3:
                 try {
                     return f0.a(parcel.readString());
-                } catch (g0 e10) {
-                    throw new RuntimeException(e10);
+                } catch (g0 e7) {
+                    throw new RuntimeException(e7);
                 }
             case 4:
                 int z12 = w7.d0.z(parcel);
@@ -90,8 +90,8 @@ public final class r0 implements Parcelable.Creator {
             case 5:
                 try {
                     return e.a(parcel.readString());
-                } catch (d e11) {
-                    throw new RuntimeException(e11);
+                } catch (d e10) {
+                    throw new RuntimeException(e10);
                 }
             case 6:
                 int z13 = w7.d0.z(parcel);
@@ -109,8 +109,8 @@ public final class r0 implements Parcelable.Creator {
             case 7:
                 try {
                     return j0.a(parcel.readString());
-                } catch (t0 e12) {
-                    throw new RuntimeException(e12);
+                } catch (t0 e11) {
+                    throw new RuntimeException(e11);
                 }
             case 8:
                 int z15 = w7.d0.z(parcel);
@@ -262,7 +262,7 @@ public final class r0 implements Parcelable.Creator {
                     }
                 }
                 w7.d0.m(parcel, z21);
-                return new u0(bArr2 == null ? null : n7.s0.t(bArr2.length, bArr2), bArr3 != null ? n7.s0.t(bArr3.length, bArr3) : null);
+                return new u0(bArr2 == null ? null : n7.t0.t(bArr2.length, bArr2), bArr3 != null ? n7.t0.t(bArr3.length, bArr3) : null);
             case 14:
                 int z22 = w7.d0.z(parcel);
                 boolean z23 = false;
@@ -279,7 +279,7 @@ public final class r0 implements Parcelable.Creator {
                     }
                 }
                 w7.d0.m(parcel, z22);
-                return new v0(z23, bArr4 != null ? n7.s0.t(bArr4.length, bArr4) : null);
+                return new v0(z23, bArr4 != null ? n7.t0.t(bArr4.length, bArr4) : null);
             case 15:
                 int z24 = w7.d0.z(parcel);
                 byte[] bArr5 = null;
@@ -375,8 +375,8 @@ public final class r0 implements Parcelable.Creator {
             case 19:
                 try {
                     return o.a(parcel.readInt());
-                } catch (n e13) {
-                    throw new RuntimeException(e13);
+                } catch (n e12) {
+                    throw new RuntimeException(e12);
                 }
             case 20:
                 int z28 = w7.d0.z(parcel);
@@ -429,8 +429,8 @@ public final class r0 implements Parcelable.Creator {
             case 23:
                 try {
                     return r.a(parcel.readInt());
-                } catch (q e14) {
-                    throw new IllegalArgumentException(e14);
+                } catch (q e13) {
+                    throw new IllegalArgumentException(e13);
                 }
             case 24:
                 int z31 = w7.d0.z(parcel);

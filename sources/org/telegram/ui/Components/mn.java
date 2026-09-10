@@ -1,73 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.content.Intent;
 import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class mn extends org.telegram.ui.Cells.c6 {
-    public final /* synthetic */ int F;
-    public final /* synthetic */ rn G;
+public final class mn implements kk {
+    public final /* synthetic */ Utilities.Callback a;
+    public final /* synthetic */ in b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mn(rn rnVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(context, i10, null, f6Var);
-        this.G = rnVar;
-        this.F = i11;
+    public mn(Utilities.Callback callback, org.telegram.ui.ActionBar.p2 p2Var, in inVar) {
+        this.a = callback;
+        this.b = inVar;
+        this.c = p2Var;
     }
 
-    @Override // org.telegram.ui.Cells.c6
-    public final void g(org.telegram.ui.Cells.b6 b6Var, ActionMode actionMode) {
-        tn tnVar = this.G.d;
-        if (!tnVar.n && this.F == 11 && b6Var.isFocused() && b6Var.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) tnVar.b.f0).h, false, true, true, true);
+    @Override // org.telegram.ui.Components.kk
+    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new qh.c((String) arrayList.get(0)));
+        }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.kk
+    public final void l(long j3, ArrayList arrayList, boolean z10, int i10) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new qh.d((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)));
+        }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.kk
+    public final void w() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.c.getParentActivity().startActivityForResult(intent, 28);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    @Override // org.telegram.ui.Cells.c6
-    public final void i(boolean z10) {
-        tn.M(this.G.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final void j(org.telegram.ui.Cells.c6 c6Var) {
-        tn.N(this.G.d, c6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final void k(org.telegram.ui.Cells.b6 b6Var) {
-        this.G.d.b.t1(b6Var, true);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final boolean l(ArrayList arrayList) {
-        tn tnVar = this.G.d;
-        if (arrayList.isEmpty()) {
-            return false;
-        }
-        org.telegram.ui.Cells.b6 b6Var = this.d;
-        b6Var.getText().replace(b6Var.getSelectionStart(), b6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-        int i10 = 0;
-        while (!arrayList.isEmpty() && i10 < tnVar.J) {
-            for (int length = tnVar.K.length - 1; length > i10; length--) {
-                CharSequence[] charSequenceArr = tnVar.K;
-                charSequenceArr[length] = charSequenceArr[length - 1];
-            }
-            tnVar.K[i10] = (CharSequence) arrayList.remove(0);
-            tnVar.M++;
-            i10++;
-        }
-        tnVar.h0();
-        tnVar.k0 = (tnVar.t0 + i10) - 1;
-        tnVar.s.setItemAnimator(tnVar.v);
-        tnVar.r.l();
-        return true;
+    @Override // org.telegram.ui.Components.kk
+    public final /* synthetic */ void O() {
     }
 }

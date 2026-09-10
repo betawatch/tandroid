@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -140,8 +140,8 @@ public final class n implements h {
                         a(hVar2);
                     } catch (ClassNotFoundException unused) {
                         e2.a.n("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e7) {
-                        throw new RuntimeException("Error instantiating RTMP extension", e7);
+                    } catch (Exception e) {
+                        throw new RuntimeException("Error instantiating RTMP extension", e);
                     }
                     if (this.h == null) {
                         this.h = hVar;

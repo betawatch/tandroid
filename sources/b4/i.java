@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i implements m {
     public static final byte[] n = {0, 7, 8, 15};
@@ -428,12 +428,7 @@ public final class i implements m {
     }
 
     @Override // z3.m
-    public final int U() {
-        return 2;
-    }
-
-    @Override // z3.m
-    public final void e0(byte[] bArr, int i10, int i11, l lVar, e2.h hVar) {
+    public final void A(byte[] bArr, int i10, int i11, l lVar, e2.h hVar) {
         h hVar2;
         z3.a aVar;
         ArrayList arrayList;
@@ -716,8 +711,13 @@ public final class i implements m {
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d p(int i10, int i11, byte[] bArr) {
+    public final /* synthetic */ z3.d k(int i10, int i11, byte[] bArr) {
         return w.f.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int n() {
+        return 2;
     }
 
     @Override // z3.m

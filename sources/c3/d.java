@@ -3,7 +3,7 @@ package c3;
 import b2.s0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class d {
     public final ArrayList a;
@@ -75,7 +75,7 @@ public final class d {
                 arrayList.add(bArr4);
             }
             if (x11 > 0) {
-                f2.o j3 = f2.p.j(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
+                f2.n j3 = f2.o.j(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
                 int i22 = j3.e;
                 int i23 = j3.f;
                 int i24 = j3.h + 8;
@@ -112,8 +112,8 @@ public final class d {
                 f7 = 1.0f;
             }
             return new d(arrayList, x10, i10, i11, i12, i13, i14, i15, i16, i17, f7, str);
-        } catch (ArrayIndexOutOfBoundsException e7) {
-            throw s0.a(e7, "Error parsing AVC config");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw s0.a(e, "Error parsing AVC config");
         }
     }
 }

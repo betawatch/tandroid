@@ -1,64 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class yz0 extends ov0 {
-    public final org.telegram.ui.l20 w0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 x0;
-    public final /* synthetic */ wz0 y0;
+public final class yz0 extends FrameLayout {
+    public final b01 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yz0(Context context, org.telegram.ui.ActionBar.f6 f6Var, wz0 wz0Var) {
-        super(context, null);
-        this.x0 = f6Var;
-        this.y0 = wz0Var;
-        this.w0 = new org.telegram.ui.l20();
-    }
-
-    @Override // org.telegram.ui.Components.ov0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ov0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.y0) {
-            return super.drawChild(canvas, view, j3);
+    public yz0(b01 b01Var, View view, boolean z10) {
+        super(b01Var.getContext());
+        this.d = false;
+        this.e = true;
+        this.a = b01Var;
+        setWillNotDraw(false);
+        if (!z10) {
+            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, AndroidUtilities.dp(45.0f), getHeight());
-        this.w0.b(canvas, rectF, 0, 1.0f);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
+        addView(view, w7.a6.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.ui.Components.ov0
-    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
-        return this.x0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30);
-        wz0 wz0Var = this.y0;
-        wz0Var.measure(makeMeasureSpec, i11);
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), wz0Var.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10 = this.b;
+        b01 b01Var = this.a;
+        if (z10 || this.c) {
+            canvas2 = canvas;
+            float dp = AndroidUtilities.dp(10.0f);
+            float[] fArr = b01Var.c;
+            boolean z11 = this.b;
+            float f7 = (z11 && this.d) ? dp : 0.0f;
+            fArr[1] = f7;
+            fArr[0] = f7;
+            float f10 = (z11 && this.e) ? dp : 0.0f;
+            fArr[3] = f10;
+            fArr[2] = f10;
+            boolean z12 = this.c;
+            float f11 = (z12 && this.e) ? dp : 0.0f;
+            fArr[5] = f11;
+            fArr[4] = f11;
+            if (!z12 || !this.d) {
+                dp = 0.0f;
+            }
+            fArr[7] = dp;
+            fArr[6] = dp;
+            b01Var.b.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = b01Var.h;
+            rectF.set(f12, f12, getWidth() - b01Var.h, (b01Var.h * AndroidUtilities.dp(this.c ? -1.0f : 1.0f)) + getHeight());
+            if (!this.e) {
+                rectF.right += b01Var.f;
+            }
+            b01Var.b.addRoundRect(rectF, b01Var.c, Path.Direction.CW);
+            canvas2.drawPath(b01Var.b, b01Var.e);
+        } else {
+            float f13 = b01Var.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f13, f13, getWidth() - b01Var.h, getHeight() + b01Var.h, b01Var.e);
+        }
+        super.onDraw(canvas2);
     }
 }

@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class SmsReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,7 +42,7 @@ public class SmsReceiver extends BroadcastReceiver {
                     if (string != null) {
                         sharedPreferences.edit().putString("sms_hash_code", string + "|" + replace).commit();
                     }
-                    AndroidUtilities.runOnUIThread(new s1(replace, 5));
+                    AndroidUtilities.runOnUIThread(new w1(replace, 5));
                 }
             }
         } catch (Throwable th2) {

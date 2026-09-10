@@ -1,14 +1,14 @@
 package t9;
 
 import android.util.Log;
-import di.s9;
+import bi.bb;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Cells.p6;
+import org.telegram.tgnet.j;
+import org.telegram.ui.Cells.r6;
 import q9.p;
-import rg.p2;
 import y9.b1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -17,7 +17,7 @@ public final class a {
 
     public a(p pVar) {
         this.a = pVar;
-        pVar.a(new p2(this, 3));
+        pVar.a(new j(this, 29));
     }
 
     public final b a(String str) {
@@ -36,10 +36,10 @@ public final class a {
     }
 
     public final void d(String str, long j3, b1 b1Var) {
-        String i10 = p6.i("Deferring native open session: ", str);
+        String i10 = r6.i("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", i10, null);
         }
-        this.a.a(new s9(str, j3, b1Var, 9));
+        this.a.a(new bb(str, j3, b1Var, 9));
     }
 }

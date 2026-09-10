@@ -1,35 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xn0 implements RequestDelegate {
+public final /* synthetic */ class xn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xo0 b;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ xn0(xo0 xo0Var, int i10) {
+    public /* synthetic */ xn0(long j3, int i10) {
         this.a = i10;
-        this.b = xo0Var;
+        this.b = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ej0(13, this.b, tL_error));
+                org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(eo.R9(this.b));
+                    break;
+                }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new wn0(this.b, tL_error, tLObject, 0));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new qn0(this.b, tLObject, 2));
+                org.telegram.ui.ActionBar.p2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(eo.R9(this.b));
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new qn0(this.b, tLObject, 0));
+                org.telegram.ui.ActionBar.p2 U3 = LaunchActivity.U();
+                if (U3 != null) {
+                    U3.presentFragment(eo.R9(this.b));
+                    break;
+                }
                 break;
         }
     }

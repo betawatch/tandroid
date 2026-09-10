@@ -26,15 +26,14 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import k2.g0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import s4.g1;
-import u2.x0;
-import v7.x7;
+import u2.z0;
+import v7.y7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -91,10 +90,10 @@ public abstract class c {
         int i23;
         int i24;
         int i25;
-        x0 x0Var;
+        z0 z0Var;
         String str5;
         String str6;
-        x0 x0Var2;
+        z0 z0Var2;
         int i26;
         int i27;
         int i28;
@@ -250,7 +249,7 @@ public abstract class c {
             str2 = "audio/raw";
             i17 = 2;
         }
-        x0 x0Var3 = null;
+        z0 z0Var3 = null;
         String str9 = null;
         List list2 = null;
         z zVar = null;
@@ -280,7 +279,7 @@ public abstract class c {
                 String str11 = format;
                 vVar3.h(0, D2, bArr);
                 list2 = list2 == null ? i0.z(bArr) : i0.A(bArr, (byte[]) list2.get(0));
-                x0Var = x0Var3;
+                z0Var = z0Var3;
                 str9 = str11;
                 str6 = str2;
                 i25 = i46;
@@ -294,7 +293,7 @@ public abstract class c {
                     vVar3.h(0, x11, bArr2);
                     list2 = list2 == null ? i0.z(bArr2) : i0.A((byte[]) list2.get(0), bArr2);
                 }
-                x0Var = x0Var3;
+                z0Var = z0Var3;
                 str6 = str2;
                 i25 = i46;
                 str4 = str8;
@@ -325,7 +324,7 @@ public abstract class c {
                     vVar3.J(i46 + 8);
                     vVar3.K(4);
                     z zVar2 = new z(vVar3.z(), vVar3.z());
-                    x0Var = x0Var3;
+                    z0Var = z0Var3;
                     str6 = str2;
                     i25 = i46;
                     zVar = zVar2;
@@ -797,7 +796,7 @@ public abstract class c {
                                 if (j3 <= 0) {
                                     throw s0.a(null, "Invalid sample rate for Dolby TrueHD MLP stream: " + j3);
                                 }
-                                x0Var = x0Var3;
+                                z0Var = z0Var3;
                                 y3 = j3;
                                 i17 = i47;
                                 str9 = str10;
@@ -848,7 +847,7 @@ public abstract class c {
                                         vVar4.J(20);
                                         Pair create = Pair.create(Integer.valueOf(vVar4.B()), Integer.valueOf(x12));
                                         int intValue = ((Integer) create.first).intValue();
-                                        x0Var = x0Var3;
+                                        z0Var = z0Var3;
                                         i16 = ((Integer) create.second).intValue();
                                         y3 = intValue;
                                         i17 = i47;
@@ -867,7 +866,7 @@ public abstract class c {
                                             long x13 = vVar3.x();
                                             j12 |= (x13 & 127) << (i92 * 7);
                                             if ((x13 & 128) == 0) {
-                                                int b13 = x7.b(j12);
+                                                int b13 = y7.b(j12);
                                                 byte[] bArr7 = new byte[b13];
                                                 vVar3.h(0, b13, bArr7);
                                                 byte[] bArr8 = e2.e.a;
@@ -898,7 +897,7 @@ public abstract class c {
                                                 Object[] objArr4 = {Integer.valueOf(x14), Integer.valueOf(x15), v};
                                                 String str13 = d0.a;
                                                 String format3 = String.format(Locale.US, "iamf.%03X.%03X.%s", objArr4);
-                                                x0Var = x0Var3;
+                                                z0Var = z0Var3;
                                                 list2 = i0.z(bArr7);
                                                 i17 = i47;
                                                 j10 = j10;
@@ -911,14 +910,14 @@ public abstract class c {
                                                 i46 = i25 + j10;
                                                 i44 = i94;
                                                 i45 = i12;
-                                                x0Var3 = x0Var;
+                                                z0Var3 = z0Var;
                                                 str2 = str6;
                                                 str8 = str4;
                                                 c10 = 0;
                                                 vVar3 = vVar;
                                             }
                                         }
-                                        int b132 = x7.b(j12);
+                                        int b132 = y7.b(j12);
                                         byte[] bArr72 = new byte[b132];
                                         vVar3.h(0, b132, bArr72);
                                         byte[] bArr82 = e2.e.a;
@@ -939,7 +938,7 @@ public abstract class c {
                                         Object[] objArr42 = {Integer.valueOf(x142), Integer.valueOf(x152), v};
                                         String str132 = d0.a;
                                         String format32 = String.format(Locale.US, "iamf.%03X.%03X.%s", objArr42);
-                                        x0Var = x0Var3;
+                                        z0Var = z0Var3;
                                         list2 = i0.z(bArr72);
                                         i17 = i47;
                                         j10 = j10;
@@ -952,7 +951,7 @@ public abstract class c {
                                         i46 = i25 + j10;
                                         i44 = i942;
                                         i45 = i12;
-                                        x0Var3 = x0Var;
+                                        z0Var3 = z0Var;
                                         str2 = str6;
                                         str8 = str4;
                                         c10 = 0;
@@ -972,7 +971,7 @@ public abstract class c {
                                             i17 = i47;
                                             i29 = -1;
                                         }
-                                        x0Var = x0Var3;
+                                        z0Var = z0Var3;
                                         str9 = str10;
                                         if (i17 != i29) {
                                             str6 = "audio/raw";
@@ -991,13 +990,13 @@ public abstract class c {
                                     i46 = i25 + j10;
                                     i44 = i9422;
                                     i45 = i12;
-                                    x0Var3 = x0Var;
+                                    z0Var3 = z0Var;
                                     str2 = str6;
                                     str8 = str4;
                                     c10 = 0;
                                     vVar3 = vVar;
                                 }
-                                x0Var = x0Var3;
+                                z0Var = z0Var3;
                                 i17 = i47;
                                 str9 = str10;
                                 j10 = j10;
@@ -1010,13 +1009,13 @@ public abstract class c {
                             i46 = i25 + j10;
                             i44 = i94222;
                             i45 = i12;
-                            x0Var3 = x0Var;
+                            z0Var3 = z0Var;
                             str2 = str6;
                             str8 = str4;
                             c10 = 0;
                             vVar3 = vVar;
                         }
-                        x0Var = x0Var3;
+                        z0Var = z0Var3;
                         i16 = i27;
                         y3 = i28;
                         i17 = i47;
@@ -1028,7 +1027,7 @@ public abstract class c {
                         i46 = i25 + j10;
                         i44 = i942222;
                         i45 = i12;
-                        x0Var3 = x0Var;
+                        z0Var3 = z0Var;
                         str2 = str6;
                         str8 = str4;
                         c10 = 0;
@@ -1036,7 +1035,7 @@ public abstract class c {
                     }
                     i28 = y3;
                     i21 = i44;
-                    x0Var = x0Var3;
+                    z0Var = z0Var3;
                     i16 = i27;
                     y3 = i28;
                     i17 = i47;
@@ -1048,7 +1047,7 @@ public abstract class c {
                     i46 = i25 + j10;
                     i44 = i9422222;
                     i45 = i12;
-                    x0Var3 = x0Var;
+                    z0Var3 = z0Var;
                     str2 = str6;
                     str8 = str4;
                     c10 = 0;
@@ -1078,7 +1077,7 @@ public abstract class c {
                     }
                 }
                 if (i24 != -1) {
-                    x0 c11 = c(i24, vVar3);
+                    z0 c11 = c(i24, vVar3);
                     str5 = (String) c11.c;
                     byte[] bArr9 = (byte[]) c11.d;
                     if (bArr9 != null) {
@@ -1094,14 +1093,14 @@ public abstract class c {
                             int i96 = 0;
                             while (true) {
                                 if (vVar5.a() > 0) {
-                                    x0Var2 = c11;
+                                    z0Var2 = c11;
                                     if ((vVar5.a[vVar5.b] & 255) == 255) {
                                         i96 += 255;
                                         vVar5.K(1);
-                                        c11 = x0Var2;
+                                        c11 = z0Var2;
                                     }
                                 } else {
-                                    x0Var2 = c11;
+                                    z0Var2 = c11;
                                 }
                             }
                             int x18 = vVar5.x() + i96;
@@ -1117,7 +1116,7 @@ public abstract class c {
                             i16 = i20;
                             str9 = str10;
                         } else {
-                            x0Var2 = c11;
+                            z0Var2 = c11;
                             if (MediaController.AUDIO_MIME_TYPE.equals(str5)) {
                                 c3.a n10 = c3.b.n(new a4.h(bArr9, bArr9.length), false);
                                 y3 = n10.b;
@@ -1130,15 +1129,15 @@ public abstract class c {
                             }
                             list = i0.z(bArr9);
                         }
-                        x0Var = x0Var2;
+                        z0Var = z0Var2;
                     } else {
-                        x0Var = c11;
+                        z0Var = c11;
                         y3 = i22;
                         i16 = i20;
                         str9 = str10;
                     }
                 } else {
-                    x0Var = x0Var3;
+                    z0Var = z0Var3;
                     y3 = i22;
                     i16 = i20;
                     str9 = str10;
@@ -1151,7 +1150,7 @@ public abstract class c {
                 i46 = i25 + j10;
                 i44 = i94222222;
                 i45 = i12;
-                x0Var3 = x0Var;
+                z0Var3 = z0Var;
                 str2 = str6;
                 str8 = str4;
                 c10 = 0;
@@ -1162,7 +1161,7 @@ public abstract class c {
             i46 = i25 + j10;
             i44 = i942222222;
             i45 = i12;
-            x0Var3 = x0Var;
+            z0Var3 = z0Var;
             str2 = str6;
             str8 = str4;
             c10 = 0;
@@ -1187,21 +1186,21 @@ public abstract class c {
         rVar5.t = list4;
         rVar5.u = oVar2;
         rVar5.d = str;
-        if (x0Var3 != null) {
-            x0 x0Var4 = x0Var3;
-            rVar5.h = x7.e(x0Var4.a);
-            rVar5.i = x7.e(x0Var4.b);
+        if (z0Var3 != null) {
+            z0 z0Var4 = z0Var3;
+            rVar5.h = y7.e(z0Var4.a);
+            rVar5.i = y7.e(z0Var4.b);
         } else {
             z zVar3 = zVar;
             if (zVar3 != null) {
-                rVar5.h = x7.e(zVar3.a);
-                rVar5.i = x7.e(zVar3.b);
+                rVar5.h = y7.e(zVar3.a);
+                rVar5.i = y7.e(zVar3.b);
             }
         }
         a0Var.d = new s(rVar5);
     }
 
-    public static x0 c(int i10, v vVar) {
+    public static z0 c(int i10, v vVar) {
         vVar.J(i10 + 12);
         vVar.K(1);
         d(vVar);
@@ -1218,9 +1217,9 @@ public abstract class c {
         }
         vVar.K(1);
         d(vVar);
-        String e7 = r0.e(vVar.x());
-        if ("audio/mpeg".equals(e7) || "audio/vnd.dts".equals(e7) || "audio/vnd.dts.hd".equals(e7)) {
-            return new x0(e7, null, -1L, -1L);
+        String e = r0.e(vVar.x());
+        if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
+            return new z0(e, null, -1L, -1L);
         }
         vVar.K(4);
         long z10 = vVar.z();
@@ -1233,7 +1232,7 @@ public abstract class c {
         if (j3 <= 0) {
             j3 = -1;
         }
-        return new x0(e7, bArr, j3, z10 > 0 ? z10 : -1L);
+        return new z0(e, bArr, j3, z10 > 0 ? z10 : -1L);
     }
 
     public static int d(v vVar) {
@@ -1250,16 +1249,16 @@ public abstract class c {
         return (i10 >> 24) & 255;
     }
 
-    public static p0 f(f2.d dVar) {
-        f2.b bVar;
-        f2.e e7 = dVar.e(1751411826);
-        f2.e e10 = dVar.e(1801812339);
-        f2.e e11 = dVar.e(1768715124);
-        if (e7 != null && e10 != null && e11 != null) {
-            v vVar = e7.c;
+    public static p0 f(f2.c cVar) {
+        f2.a aVar;
+        f2.d e = cVar.e(1751411826);
+        f2.d e7 = cVar.e(1801812339);
+        f2.d e10 = cVar.e(1768715124);
+        if (e != null && e7 != null && e10 != null) {
+            v vVar = e.c;
             vVar.J(16);
             if (vVar.j() == 1835299937) {
-                v vVar2 = e10.c;
+                v vVar2 = e7.c;
                 vVar2.J(12);
                 int j3 = vVar2.j();
                 String[] strArr = new String[j3];
@@ -1268,7 +1267,7 @@ public abstract class c {
                     vVar2.K(4);
                     strArr[i10] = vVar2.v(j10 - 8, StandardCharsets.UTF_8);
                 }
-                v vVar3 = e11.c;
+                v vVar3 = e10.c;
                 vVar3.J(8);
                 ArrayList arrayList = new ArrayList();
                 while (vVar3.a() > 8) {
@@ -1276,14 +1275,14 @@ public abstract class c {
                     int j11 = vVar3.j();
                     int j12 = vVar3.j() - 1;
                     if (j12 < 0 || j12 >= j3) {
-                        e2.n(j12, "Skipped metadata with unknown key index: ", "BoxParsers");
+                        e2.l(j12, "Skipped metadata with unknown key index: ", "BoxParsers");
                     } else {
                         String str = strArr[j12];
                         int i12 = i11 + j11;
                         while (true) {
                             int i13 = vVar3.b;
                             if (i13 >= i12) {
-                                bVar = null;
+                                aVar = null;
                                 break;
                             }
                             int j13 = vVar3.j();
@@ -1293,13 +1292,13 @@ public abstract class c {
                                 int i14 = j13 - 16;
                                 byte[] bArr = new byte[i14];
                                 vVar3.h(0, i14, bArr);
-                                bVar = new f2.b(str, bArr, j15, j14);
+                                aVar = new f2.a(str, bArr, j15, j14);
                                 break;
                             }
                             vVar3.J(i13 + j13);
                         }
-                        if (bVar != null) {
-                            arrayList.add(bVar);
+                        if (aVar != null) {
+                            arrayList.add(aVar);
                         }
                     }
                     vVar3.J(i11 + j11);
@@ -1312,7 +1311,7 @@ public abstract class c {
         return null;
     }
 
-    public static f2.g g(v vVar) {
+    public static f2.f g(v vVar) {
         long r10;
         long r11;
         vVar.J(8);
@@ -1323,7 +1322,7 @@ public abstract class c {
             r10 = vVar.r();
             r11 = vVar.r();
         }
-        return new f2.g(r10, r11, vVar.z());
+        return new f2.f(r10, r11, vVar.z());
     }
 
     public static Pair h(v vVar, int i10, int i11) {
@@ -1374,9 +1373,9 @@ public abstract class c {
                         vVar.J(i18);
                         int j12 = vVar.j();
                         if (vVar.j() == 1952804451) {
-                            int e7 = e(vVar.j());
+                            int e = e(vVar.j());
                             vVar.K(1);
-                            if (e7 == 0) {
+                            if (e == 0) {
                                 vVar.K(1);
                                 i13 = 0;
                                 i12 = 0;
@@ -1424,12 +1423,12 @@ public abstract class c {
 
     /* JADX WARN: Removed duplicated region for block: B:131:0x02f5  */
     /* JADX WARN: Removed duplicated region for block: B:187:0x040c  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0cd9  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0cdf  */
-    /* JADX WARN: Removed duplicated region for block: B:392:0x0826  */
-    /* JADX WARN: Removed duplicated region for block: B:396:0x0846  */
-    /* JADX WARN: Removed duplicated region for block: B:458:0x0971  */
-    /* JADX WARN: Removed duplicated region for block: B:461:0x0974  */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x0cd7  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0cdd  */
+    /* JADX WARN: Removed duplicated region for block: B:392:0x0824  */
+    /* JADX WARN: Removed duplicated region for block: B:396:0x0844  */
+    /* JADX WARN: Removed duplicated region for block: B:458:0x096f  */
+    /* JADX WARN: Removed duplicated region for block: B:461:0x0972  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1449,7 +1448,7 @@ public abstract class c {
         int i18;
         String str5;
         a0 a0Var;
-        fg.f fVar;
+        ki.f fVar;
         int i19;
         String str6;
         String str7;
@@ -1473,7 +1472,7 @@ public abstract class c {
         int i33;
         String str9;
         int i34;
-        mg.n nVar;
+        o0.b bVar;
         int i35;
         b2.o oVar3;
         int i36;
@@ -1551,7 +1550,7 @@ public abstract class c {
                     int i45 = -1;
                     List list = null;
                     int i46 = -1;
-                    fg.f fVar2 = null;
+                    ki.f fVar2 = null;
                     int i47 = 8;
                     boolean z11 = false;
                     ByteBuffer byteBuffer = null;
@@ -1563,7 +1562,7 @@ public abstract class c {
                     int i51 = -1;
                     String str14 = null;
                     z zVar = null;
-                    x0 x0Var = null;
+                    z0 z0Var = null;
                     while (i14 - i12 < j11) {
                         vVar2.J(i14);
                         int i52 = vVar2.b;
@@ -1680,7 +1679,7 @@ public abstract class c {
                                 } else if (j14 == 1986361461) {
                                     vVar2.J(i52 + 8);
                                     int i72 = vVar2.b;
-                                    mg.n nVar2 = null;
+                                    o0.b bVar2 = null;
                                     while (i72 - i52 < j13) {
                                         vVar2.J(i72);
                                         int j15 = vVar2.j();
@@ -1694,7 +1693,7 @@ public abstract class c {
                                                     i33 = i72;
                                                     str9 = str12;
                                                     i34 = i45;
-                                                    nVar = null;
+                                                    bVar = null;
                                                     break;
                                                 }
                                                 vVar2.J(i74);
@@ -1707,12 +1706,12 @@ public abstract class c {
                                                     i33 = i72;
                                                     str9 = str12;
                                                     i34 = i45;
-                                                    nVar = new mg.n(new ac.d((x10 & 1) == 1, (x10 & 2) == 2, (x10 & 8) == 8), 21);
+                                                    bVar = new o0.b(new ac.d((x10 & 1) == 1, (x10 & 2) == 2, (x10 & 8) == 8));
                                                 } else {
                                                     i74 = i75 + j16;
                                                 }
                                             }
-                                            nVar2 = nVar;
+                                            bVar2 = bVar;
                                         } else {
                                             i33 = i72;
                                             str9 = str12;
@@ -1726,9 +1725,9 @@ public abstract class c {
                                     int i76 = i42;
                                     str5 = str12;
                                     int i77 = i45;
-                                    g0 g0Var = nVar2 == null ? null : new g0(nVar2, 24);
-                                    if (g0Var != null) {
-                                        ac.d dVar = (ac.d) ((mg.n) g0Var.b).b;
+                                    l2.g gVar = bVar2 == null ? null : new l2.g(bVar2, 22);
+                                    if (gVar != null) {
+                                        ac.d dVar = (ac.d) ((o0.b) gVar.b).a;
                                         boolean z12 = dVar.c;
                                         if (fVar2 == null || ((i0) fVar2.a).size() < 2) {
                                             i31 = i18;
@@ -1786,9 +1785,9 @@ public abstract class c {
                                             c3.b.c("initializationData must already be set from hvcC or avcC atom", false);
                                         }
                                         vVar2.J(i52 + 8);
-                                        f2.a a12 = f2.a.a(vVar2);
-                                        if (a12 != null) {
-                                            str6 = a12.a;
+                                        c5.i d = c5.i.d(vVar2);
+                                        if (d != null) {
+                                            str6 = d.a;
                                             str17 = "video/dolby-vision";
                                         } else {
                                             str6 = str14;
@@ -2106,14 +2105,14 @@ public abstract class c {
                                                     str7 = "video/3gpp";
                                                 } else if (j14 == 1702061171) {
                                                     c3.b.c(null, str8 == null);
-                                                    x0 c10 = c(i52, vVar2);
+                                                    z0 c10 = c(i52, vVar2);
                                                     String str19 = (String) c10.c;
                                                     byte[] bArr8 = (byte[]) c10.d;
                                                     if (bArr8 != null) {
                                                         list = i0.z(bArr8);
                                                     }
                                                     i18 = i80;
-                                                    x0Var = c10;
+                                                    z0Var = c10;
                                                     str7 = str19;
                                                 } else if (j14 == 1651798644) {
                                                     vVar2.J(i52 + 8);
@@ -2325,13 +2324,13 @@ public abstract class c {
                         rVar.G = new b2.j(i43, i123, i46, byteBuffer != null ? byteBuffer.array() : null, i121, i124);
                         z zVar2 = zVar;
                         if (zVar2 != null) {
-                            rVar.h = x7.e(zVar2.a);
-                            rVar.i = x7.e(zVar2.b);
+                            rVar.h = y7.e(zVar2.a);
+                            rVar.i = y7.e(zVar2.b);
                         } else {
-                            x0 x0Var2 = x0Var;
-                            if (x0Var2 != null) {
-                                rVar.h = x7.e(x0Var2.a);
-                                rVar.i = x7.e(x0Var2.b);
+                            z0 z0Var2 = z0Var;
+                            if (z0Var2 != null) {
+                                rVar.h = y7.e(z0Var2.a);
+                                rVar.i = y7.e(z0Var2.b);
                             }
                         }
                         a0Var2 = a0Var3;
@@ -2350,7 +2349,7 @@ public abstract class c {
                 int i452 = -1;
                 List list2 = null;
                 int i462 = -1;
-                fg.f fVar22 = null;
+                ki.f fVar22 = null;
                 int i472 = 8;
                 boolean z112 = false;
                 ByteBuffer byteBuffer4 = null;
@@ -2362,7 +2361,7 @@ public abstract class c {
                 int i512 = -1;
                 String str142 = null;
                 z zVar3 = null;
-                x0 x0Var3 = null;
+                z0 z0Var3 = null;
                 while (i14 - i12 < j11) {
                 }
                 int i1212 = i422;
@@ -2423,7 +2422,7 @@ public abstract class c {
                                     int i129 = 0;
                                     while (i129 < bArr11.length - 3) {
                                         byte[] bArr12 = bArr11;
-                                        int c11 = x7.c(bArr11[i129], bArr11[i129 + 1], bArr11[i129 + 2], bArr12[i129 + 3]);
+                                        int c11 = y7.c(bArr11[i129], bArr11[i129 + 1], bArr11[i129 + 2], bArr12[i129 + 3]);
                                         int i130 = (c11 >> 16) & 255;
                                         int i131 = ((c11 >> 8) & 255) - 128;
                                         int i132 = (c11 & 255) - 128;
@@ -2433,14 +2432,14 @@ public abstract class c {
                                         i39 = i39;
                                     }
                                     i36 = i39;
-                                    StringBuilder k10 = e2.k("size: ", i127, "x", i128, "\npalette: ");
-                                    d9.f fVar3 = new d9.f(", ");
+                                    StringBuilder n10 = hc.b.n("size: ", i127, "x", i128, "\npalette: ");
+                                    a4.m mVar = new a4.m(", ");
                                     Iterator it = arrayList.iterator();
                                     StringBuilder sb2 = new StringBuilder();
-                                    fVar3.a(sb2, it);
-                                    k10.append(sb2.toString());
-                                    k10.append("\n");
-                                    String sb3 = k10.toString();
+                                    mVar.O(sb2, it);
+                                    n10.append(sb2.toString());
+                                    n10.append("\n");
+                                    String sb3 = n10.toString();
                                     String str21 = d0.a;
                                     a1Var = i0.z(sb3.getBytes(StandardCharsets.UTF_8));
                                     str10 = "application/vobsub";
@@ -2544,7 +2543,7 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList j(f2.d dVar, w wVar, long j3, b2.o oVar, boolean z10, boolean z11, d9.e eVar) {
+    public static ArrayList j(f2.c cVar, w wVar, long j3, b2.o oVar, boolean z10, boolean z11, d9.e eVar) {
         long j10;
         long j11;
         ArrayList arrayList;
@@ -2556,7 +2555,7 @@ public abstract class c {
         int i12;
         int i13;
         String str;
-        f2.e e7;
+        f2.d e;
         int i14;
         long[] jArr;
         long[] jArr2;
@@ -2564,7 +2563,7 @@ public abstract class c {
         s sVar2;
         d9.e eVar2;
         o oVar2;
-        f2.d d;
+        f2.c d;
         Pair create;
         int i15;
         long j14;
@@ -2614,23 +2613,23 @@ public abstract class c {
         int i32;
         int i33;
         r rVar2;
-        f2.d dVar2 = dVar;
+        f2.c cVar2 = cVar;
         ArrayList arrayList4 = new ArrayList();
         int i34 = 0;
-        for (ArrayList arrayList5 = dVar2.e; i34 < arrayList5.size(); arrayList5 = arrayList) {
-            f2.d dVar3 = (f2.d) arrayList5.get(i34);
-            if (dVar3.b != 1953653099) {
+        for (ArrayList arrayList5 = cVar2.e; i34 < arrayList5.size(); arrayList5 = arrayList) {
+            f2.c cVar3 = (f2.c) arrayList5.get(i34);
+            if (cVar3.b != 1953653099) {
                 arrayList = arrayList5;
                 arrayList3 = arrayList4;
                 i14 = i34;
             } else {
-                f2.e e10 = dVar2.e(1836476516);
-                e10.getClass();
-                f2.d d10 = dVar3.d(1835297121);
+                f2.d e7 = cVar2.e(1836476516);
+                e7.getClass();
+                f2.c d10 = cVar3.d(1835297121);
                 d10.getClass();
-                f2.e e11 = d10.e(1751411826);
-                e11.getClass();
-                v vVar2 = e11.c;
+                f2.d e10 = d10.e(1751411826);
+                e10.getClass();
+                v vVar2 = e10.c;
                 vVar2.J(16);
                 int j19 = vVar2.j();
                 int i35 = j19 == 1936684398 ? 1 : j19 == 1986618469 ? 2 : (j19 == 1952807028 || j19 == 1935832172 || j19 == 1937072756 || j19 == 1668047728 || j19 == 1937072752) ? 3 : j19 == 1835365473 ? 5 : -1;
@@ -2640,16 +2639,16 @@ public abstract class c {
                     oVar2 = null;
                     eVar2 = eVar;
                 } else {
-                    f2.e e12 = dVar3.e(1953196132);
-                    e12.getClass();
-                    v vVar3 = e12.c;
+                    f2.d e11 = cVar3.e(1953196132);
+                    e11.getClass();
+                    v vVar3 = e11.c;
                     vVar3.J(8);
-                    int e13 = e(vVar3.j());
-                    vVar3.K(e13 != 0 ? 16 : 8);
+                    int e12 = e(vVar3.j());
+                    vVar3.K(e12 != 0 ? 16 : 8);
                     int j20 = vVar3.j();
                     vVar3.K(4);
                     int i36 = vVar3.b;
-                    int i37 = e13 == 0 ? 4 : 8;
+                    int i37 = e12 == 0 ? 4 : 8;
                     int i38 = 0;
                     while (true) {
                         j10 = -9223372036854775807L;
@@ -2658,7 +2657,7 @@ public abstract class c {
                             break;
                         }
                         if (vVar3.a[i36 + i38] != -1) {
-                            j11 = e13 == 0 ? vVar3.z() : vVar3.C();
+                            j11 = e12 == 0 ? vVar3.z() : vVar3.C();
                         } else {
                             i38++;
                         }
@@ -2687,7 +2686,7 @@ public abstract class c {
                             g1Var.d = u10;
                             g1Var.e = u11;
                             j12 = j3 != -9223372036854775807L ? j11 : j3;
-                            long j25 = g(e10.c).c;
+                            long j25 = g(e7.c).c;
                             if (j12 != -9223372036854775807L) {
                                 j13 = j25;
                                 Y = -9223372036854775807L;
@@ -2696,19 +2695,19 @@ public abstract class c {
                                 j13 = j25;
                                 Y = d0.Y(j12, 1000000L, j13, RoundingMode.DOWN);
                             }
-                            f2.d d11 = d10.d(1835626086);
+                            f2.c d11 = d10.d(1835626086);
                             d11.getClass();
-                            f2.d d12 = d11.d(1937007212);
+                            f2.c d12 = d11.d(1937007212);
                             d12.getClass();
-                            f2.e e14 = d10.e(1835296868);
-                            e14.getClass();
-                            v vVar4 = e14.c;
+                            f2.d e13 = d10.e(1835296868);
+                            e13.getClass();
+                            v vVar4 = e13.c;
                             vVar4.J(8);
-                            int e15 = e(vVar4.j());
-                            vVar4.K(e15 != 0 ? 8 : 16);
+                            int e14 = e(vVar4.j());
+                            vVar4.K(e14 != 0 ? 8 : 16);
                             long z14 = vVar4.z();
                             int i39 = vVar4.b;
-                            i11 = e15 != 0 ? 4 : 8;
+                            i11 = e14 != 0 ? 4 : 8;
                             i12 = 0;
                             while (true) {
                                 if (i12 < i11) {
@@ -2716,7 +2715,7 @@ public abstract class c {
                                     break;
                                 }
                                 if (vVar4.a[i39 + i12] != -1) {
-                                    long z15 = e15 == 0 ? vVar4.z() : vVar4.C();
+                                    long z15 = e14 == 0 ? vVar4.z() : vVar4.C();
                                     if (z15 != 0) {
                                         String str3 = d0.a;
                                         j10 = d0.Y(z15, 1000000L, z14, RoundingMode.DOWN);
@@ -2736,29 +2735,29 @@ public abstract class c {
                                 }
                             }
                             str = new String(cArr);
-                            e7 = d12.e(1937011556);
-                            if (e7 != null) {
+                            e = d12.e(1937011556);
+                            if (e != null) {
                                 throw s0.a(null, "Malformed sample table (stbl) missing sample description (stsd)");
                             }
-                            a0 i40 = i(e7.c, g1Var, str, oVar, z11);
-                            if (z10 || (d = dVar3.d(1701082227)) == null) {
+                            a0 i40 = i(e.c, g1Var, str, oVar, z11);
+                            if (z10 || (d = cVar3.d(1701082227)) == null) {
                                 i14 = i34;
                             } else {
-                                f2.e e16 = d.e(1701606260);
-                                if (e16 == null) {
+                                f2.d e15 = d.e(1701606260);
+                                if (e15 == null) {
                                     i14 = i34;
                                     create = null;
                                 } else {
-                                    v vVar5 = e16.c;
+                                    v vVar5 = e15.c;
                                     vVar5.J(8);
-                                    int e17 = e(vVar5.j());
+                                    int e16 = e(vVar5.j());
                                     int B = vVar5.B();
                                     long[] jArr11 = new long[B];
                                     long[] jArr12 = new long[B];
                                     int i41 = 0;
                                     while (i41 < B) {
-                                        jArr11[i41] = e17 == 1 ? vVar5.C() : vVar5.z();
-                                        if (e17 == 1) {
+                                        jArr11[i41] = e16 == 1 ? vVar5.C() : vVar5.z();
+                                        if (e16 == 1) {
                                             j14 = vVar5.r();
                                             i15 = i34;
                                         } else {
@@ -2787,10 +2786,10 @@ public abstract class c {
                                     } else {
                                         int i42 = g1Var.b;
                                         if (i42 != 0) {
-                                            f2.c cVar = new f2.c(i42);
+                                            f2.b bVar2 = new f2.b(i42);
                                             b2.r a10 = sVar.a();
                                             p0 p0Var = ((s) i40.d).l;
-                                            a10.k = p0Var != null ? p0Var.a(cVar) : new p0(cVar);
+                                            a10.k = p0Var != null ? p0Var.a(bVar2) : new p0(bVar2);
                                             sVar2 = new s(a10);
                                         } else {
                                             sVar2 = sVar;
@@ -2822,22 +2821,22 @@ public abstract class c {
                     g1Var2.e = u112;
                     if (j3 != -9223372036854775807L) {
                     }
-                    long j252 = g(e10.c).c;
+                    long j252 = g(e7.c).c;
                     if (j12 != -9223372036854775807L) {
                     }
-                    f2.d d112 = d10.d(1835626086);
+                    f2.c d112 = d10.d(1835626086);
                     d112.getClass();
-                    f2.d d122 = d112.d(1937007212);
+                    f2.c d122 = d112.d(1937007212);
                     d122.getClass();
-                    f2.e e142 = d10.e(1835296868);
-                    e142.getClass();
-                    v vVar42 = e142.c;
+                    f2.d e132 = d10.e(1835296868);
+                    e132.getClass();
+                    v vVar42 = e132.c;
                     vVar42.J(8);
-                    int e152 = e(vVar42.j());
-                    vVar42.K(e152 != 0 ? 8 : 16);
+                    int e142 = e(vVar42.j());
+                    vVar42.K(e142 != 0 ? 8 : 16);
                     long z142 = vVar42.z();
                     int i392 = vVar42.b;
-                    if (e152 != 0) {
+                    if (e142 != 0) {
                     }
                     i12 = 0;
                     while (true) {
@@ -2851,8 +2850,8 @@ public abstract class c {
                     while (i13 < 3) {
                     }
                     str = new String(cArr2);
-                    e7 = d122.e(1937011556);
-                    if (e7 != null) {
+                    e = d122.e(1937011556);
+                    if (e != null) {
                     }
                 }
                 o oVar3 = (o) eVar2.apply(oVar2);
@@ -2860,22 +2859,22 @@ public abstract class c {
                     arrayList3 = arrayList4;
                 } else {
                     s sVar3 = oVar3.g;
-                    f2.d d13 = dVar3.d(1835297121);
+                    f2.c d13 = cVar3.d(1835297121);
                     d13.getClass();
-                    f2.d d14 = d13.d(1835626086);
+                    f2.c d14 = d13.d(1835626086);
                     d14.getClass();
-                    f2.d d15 = d14.d(1937007212);
+                    f2.c d15 = d14.d(1937007212);
                     d15.getClass();
-                    f2.e e18 = d15.e(1937011578);
-                    if (e18 != null) {
-                        bVar = new b4.d(e18, sVar3);
+                    f2.d e17 = d15.e(1937011578);
+                    if (e17 != null) {
+                        bVar = new b4.d(e17, sVar3);
                     } else {
-                        f2.e e19 = d15.e(1937013298);
-                        if (e19 == null) {
+                        f2.d e18 = d15.e(1937013298);
+                        if (e18 == null) {
                             throw s0.a(null, "Track has no sample table size information");
                         }
                         e2.q qVar = new e2.q();
-                        v vVar6 = e19.c;
+                        v vVar6 = e18.c;
                         qVar.e = vVar6;
                         vVar6.J(12);
                         qVar.b = vVar6.B() & 255;
@@ -2896,25 +2895,25 @@ public abstract class c {
                             }
                         }
                         s sVar4 = oVar3.g;
-                        f2.e e20 = d15.e(1937007471);
-                        if (e20 == null) {
-                            e20 = d15.e(1668232756);
-                            e20.getClass();
+                        f2.d e19 = d15.e(1937007471);
+                        if (e19 == null) {
+                            e19 = d15.e(1668232756);
+                            e19.getClass();
                             z12 = true;
                         } else {
                             z12 = false;
                         }
-                        v vVar7 = e20.c;
-                        f2.e e21 = d15.e(1937011555);
+                        v vVar7 = e19.c;
+                        f2.d e20 = d15.e(1937011555);
+                        e20.getClass();
+                        v vVar8 = e20.c;
+                        f2.d e21 = d15.e(1937011827);
                         e21.getClass();
-                        v vVar8 = e21.c;
-                        f2.e e22 = d15.e(1937011827);
-                        e22.getClass();
-                        v vVar9 = e22.c;
-                        f2.e e23 = d15.e(1937011571);
-                        v vVar10 = e23 != null ? e23.c : null;
-                        f2.e e24 = d15.e(1668576371);
-                        v vVar11 = e24 != null ? e24.c : null;
+                        v vVar9 = e21.c;
+                        f2.d e22 = d15.e(1937011571);
+                        v vVar10 = e22 != null ? e22.c : null;
+                        f2.d e23 = d15.e(1668576371);
+                        v vVar11 = e23 != null ? e23.c : null;
                         a aVar = new a(vVar8, vVar7, z12);
                         vVar9.J(12);
                         int B2 = vVar9.B() - 1;
@@ -3016,7 +3015,7 @@ public abstract class c {
                                     int i66 = 0;
                                     i21 = 0;
                                     i22 = 0;
-                                    b bVar2 = bVar;
+                                    b bVar3 = bVar;
                                     i23 = B3;
                                     i24 = 0;
                                     int i67 = 0;
@@ -3070,7 +3069,7 @@ public abstract class c {
                                             i22 = i70 - 1;
                                         }
                                         jArr3[i24] = j15;
-                                        int c11 = bVar2.c();
+                                        int c11 = bVar3.c();
                                         iArr[i24] = c11;
                                         j30 += c11;
                                         if (c11 > i66) {
@@ -3128,8 +3127,8 @@ public abstract class c {
                                         StringBuilder sb2 = new StringBuilder("Inconsistent stbl box for track ");
                                         jArr6 = jArr5;
                                         iArr4 = iArr2;
-                                        i2.g.v(sb2, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                                        i2.g.v(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                                        hc.b.w(sb2, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                                        hc.b.w(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                                         sb2.append(i19);
                                         sb2.append(", remainingSamplesAtTimestampOffset ");
                                         sb2.append(i22);
@@ -3365,7 +3364,7 @@ public abstract class c {
                         int i662 = 0;
                         i21 = 0;
                         i22 = 0;
-                        b bVar22 = bVar;
+                        b bVar32 = bVar;
                         i23 = B3;
                         i24 = 0;
                         int i672 = 0;
@@ -3391,8 +3390,8 @@ public abstract class c {
                         StringBuilder sb22 = new StringBuilder("Inconsistent stbl box for track ");
                         jArr6 = jArr5;
                         iArr4 = iArr2;
-                        i2.g.v(sb22, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                        i2.g.v(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                        hc.b.w(sb22, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                        hc.b.w(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                         sb22.append(i19);
                         sb22.append(", remainingSamplesAtTimestampOffset ");
                         sb22.append(i22);
@@ -3423,7 +3422,7 @@ public abstract class c {
                 }
             }
             i34 = i14 + 1;
-            dVar2 = dVar;
+            cVar2 = cVar;
             arrayList4 = arrayList3;
         }
         return arrayList4;
@@ -3827,12 +3826,12 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p0 k(f2.e eVar) {
+    public static p0 k(f2.d dVar) {
         p0 p0Var;
         p0 b10;
         p0 p0Var2;
         int i10;
-        v vVar = eVar.c;
+        v vVar = dVar.c;
         int i11 = 8;
         vVar.J(8);
         boolean z10 = false;
@@ -3924,10 +3923,10 @@ public abstract class c {
                     String v = vVar.v(u10, StandardCharsets.UTF_8);
                     int max = Math.max(v.lastIndexOf(43), v.lastIndexOf(45));
                     try {
-                        f2.f fVar = new f2.f(Float.parseFloat(v.substring(0, max)), Float.parseFloat(v.substring(max, v.length() - 1)));
+                        f2.e eVar = new f2.e(Float.parseFloat(v.substring(0, max)), Float.parseFloat(v.substring(max, v.length() - 1)));
                         o0[] o0VarArr = new o0[1];
                         try {
-                            o0VarArr[0] = fVar;
+                            o0VarArr[0] = eVar;
                             p0Var = new p0(o0VarArr);
                         } catch (IndexOutOfBoundsException | NumberFormatException unused) {
                             p0Var = null;

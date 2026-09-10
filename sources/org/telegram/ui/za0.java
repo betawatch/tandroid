@@ -6,21 +6,21 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class za0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ab0 b;
     public final /* synthetic */ AccountInstance c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 e;
 
-    public /* synthetic */ za0(ab0 ab0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+    public /* synthetic */ za0(ab0 ab0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.p2 p2Var, int i10) {
         this.a = i10;
         this.b = ab0Var;
         this.c = accountInstance;
         this.d = j3;
-        this.e = n2Var;
+        this.e = p2Var;
     }
 
     @Override // java.lang.Runnable
@@ -37,7 +37,7 @@ public final /* synthetic */ class za0 implements Runnable {
                 ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
                 TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
                 accountInstance.getMessagesController().getInputPeer(j3);
-                org.telegram.ui.Components.voip.d2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
+                org.telegram.ui.Components.voip.e2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
                 break;
         }
     }

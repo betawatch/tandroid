@@ -1,16 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public interface or {
-    void a(TLRPC.User user);
+public final class or extends org.telegram.ui.Components.w20 {
+    public final /* synthetic */ wr b;
 
-    void b(long j3);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public or(wr wrVar, Activity activity, wr wrVar2) {
+        super(activity, wrVar2);
+        this.b = wrVar;
+    }
 
-    void c(long j3, TLObject tLObject);
+    @Override // org.telegram.ui.Components.w20
+    public final void n() {
+        wr wrVar = this.b;
+        wrVar.getMessagesController().convertToGigaGroup(wrVar.getParentActivity(), wrVar.r, wrVar, new a1(this, 24));
+    }
 
-    void d(long j3);
+    @Override // org.telegram.ui.Components.w20
+    public final void m() {
+    }
 }

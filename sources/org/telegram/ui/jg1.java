@@ -1,30 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class jg1 extends pg.a {
-    public final TLRPC.TL_forumTopic c;
+public final /* synthetic */ class jg1 implements org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ lg1 a;
 
-    public jg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    public /* synthetic */ jg1(lg1 lg1Var) {
+        this.a = lg1Var;
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        og1 og1Var = this.a.a;
+        Iterator it = og1Var.e.iterator();
+        while (it.hasNext()) {
+            og1.U(og1Var, ((Integer) it.next()).intValue());
         }
-        if (obj == null || jg1.class != obj.getClass()) {
-            return false;
-        }
-        jg1 jg1Var = (jg1) obj;
-        if (this.a != jg1Var.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = jg1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
+        og1Var.e.clear();
+        og1Var.V();
     }
 }

@@ -1,41 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class y51 extends org.telegram.ui.ActionBar.n2 {
-    public x51 a;
-    public int b;
-    public int c;
+public final class y51 extends MetricAffectingSpan {
+    public final CharSequence a;
+    public final int b;
+    public final int c;
+    public final byte d;
+    public final b11 e;
 
-    public y51() {
-        super(null);
-        this.b = -1;
+    public y51(CharSequence charSequence, int i10, int i11, byte b10, b11 b11Var) {
+        this.a = charSequence;
+        this.b = i10;
+        this.c = i11;
+        this.d = b10;
+        this.e = b11Var;
     }
 
-    public abstract void U(ArrayList arrayList, v51 v51Var);
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        byte b10 = this.d;
+        if (b10 == 2) {
+            textPaint.setColor(-1);
+        } else if (b10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ec, false));
+        }
+        b11 b11Var = this.e;
+        if (b11Var != null) {
+            b11Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+            textPaint.setUnderlineText(false);
+        }
+    }
 
-    public abstract CharSequence V();
-
-    public abstract void W(h51 h51Var, View view);
-
-    public abstract boolean X(h51 h51Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public View createView(Context context) {
-        i2.g.x(false, this.actionBar);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(V());
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ic(this, 14));
-        ig.q1 q1Var = new ig.q1(context, null, 1);
-        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        x51 x51Var = new x51(this, this, new d(this, 22), new w51(this), new w51(this));
-        this.a = x51Var;
-        q1Var.addView(x51Var, w7.x5.c(-1.0f, -1));
-        this.fragmentView = q1Var;
-        return q1Var;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        b11 b11Var = this.e;
+        if (b11Var != null) {
+            b11Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+        }
     }
 }

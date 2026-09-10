@@ -1,651 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.media.MediaMetadataRetriever;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.ParcelFileDescriptor;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.net.Uri;
+import java.io.File;
+import java.net.URLEncoder;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class r71 extends View {
-    public static final Object f0 = new Object();
-    public q71 E;
-    public final ArrayList F;
-    public o71 G;
-    public long H;
-    public int I;
-    public int J;
-    public int K;
-    public float L;
-    public float M;
-    public final RectF N;
-    public int O;
-    public int P;
-    public final Paint Q;
-    public final ArrayList R;
-    public final Rect S;
-    public final Paint T;
-    public final Paint U;
-    public final Paint V;
-    public final Paint W;
-    public long a;
-    public final Paint a0;
-    public int b;
-    public final Paint b0;
-    public int c;
-    public final e6 c0;
-    public float d;
-    public final Path d0;
-    public float e;
-    public boolean e0;
-    public float f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public float s;
-    public float v;
-    public boolean w;
-    public ParcelFileDescriptor x;
-    public MediaMetadataRetriever y;
+public final class r71 {
+    public int a;
+    public boolean b;
+    public long c;
+    public Uri d;
+    public long e;
+    public Uri f;
+    public TLRPC.Document g;
+    public TLRPC.Document h;
+    public int i;
+    public int j;
+    public long k;
+    public double l;
+    public String m;
 
-    public r71(Context context) {
-        super(context);
-        this.e = 1.0f;
-        this.s = 0.5f;
-        this.F = new ArrayList();
-        this.L = 1.0f;
-        this.M = 0.0f;
-        this.N = new RectF();
-        this.P = 0;
-        this.Q = new Paint(3);
-        ArrayList arrayList = new ArrayList();
-        this.R = arrayList;
-        Rect rect = new Rect();
-        this.S = rect;
-        Paint paint = new Paint(1);
-        this.T = paint;
-        Paint paint2 = new Paint(1);
-        this.U = paint2;
-        Paint paint3 = new Paint(1);
-        this.V = paint3;
-        Paint paint4 = new Paint(1);
-        this.W = paint4;
-        Paint paint5 = new Paint(1);
-        this.a0 = paint5;
-        Paint paint6 = new Paint(1);
-        this.b0 = paint6;
-        this.c0 = new e6(0.0f, this, 0L, 200L, pr.j);
-        this.d0 = new Path();
-        paint.setColor(-1);
-        paint2.setColor(-256);
-        paint3.setColor(637534208);
-        paint4.setColor(1291845632);
-        paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint6.setColor(-16777216);
-        arrayList.add(rect);
+    public static Uri a(int i10, int i11, TLRPC.Document document) {
+        StringBuilder m10 = hc.b.m(i10, "?account=", "&id=");
+        m10.append(document.id);
+        m10.append("&hash=");
+        m10.append(document.access_hash);
+        m10.append("&dc=");
+        m10.append(document.dc_id);
+        m10.append("&size=");
+        m10.append(document.size);
+        m10.append("&mime=");
+        m10.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+        m10.append("&rid=");
+        m10.append(i11);
+        m10.append("&name=");
+        m10.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
+        m10.append("&reference=");
+        byte[] bArr = document.file_reference;
+        if (bArr == null) {
+            bArr = new byte[0];
+        }
+        m10.append(Utilities.bytesToHex(bArr));
+        return Uri.parse("tg://" + MessageObject.getFileName(document) + m10.toString());
     }
 
-    public final void a() {
-        Bitmap bitmap;
-        synchronized (f0) {
-            try {
-                ParcelFileDescriptor parcelFileDescriptor = this.x;
-                if (parcelFileDescriptor != null) {
-                    parcelFileDescriptor.close();
-                    this.x = null;
+    public static r71 d(int i10, TLRPC.Document document, TLRPC.Document document2, int i11, boolean z10) {
+        TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
+        String str;
+        r71 r71Var = new r71();
+        int i12 = 0;
+        while (true) {
+            if (i12 >= document.attributes.size()) {
+                tL_documentAttributeVideo = null;
+                break;
+            }
+            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i12);
+            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
+                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) documentAttribute;
+                break;
+            }
+            i12++;
+        }
+        String lowerCase = (tL_documentAttributeVideo == null || (str = tL_documentAttributeVideo.video_codec) == null) ? null : str.toLowerCase();
+        r71Var.a = i10;
+        r71Var.g = document;
+        r71Var.c = document.id;
+        r71Var.d = a(i10, i11, document);
+        if (document2 != null) {
+            r71Var.h = document2;
+            r71Var.e = document2.id;
+            r71Var.f = a(i10, i11, document2);
+            File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(document2, null, false, z10);
+            if (pathToAttach == null || !pathToAttach.exists()) {
+                File pathToAttach2 = FileLoader.getInstance(i10).getPathToAttach(document2, null, true, z10);
+                if (pathToAttach2 != null && pathToAttach2.exists()) {
+                    r71Var.f = Uri.fromFile(pathToAttach2);
                 }
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } else {
+                r71Var.f = Uri.fromFile(pathToAttach);
             }
-            try {
-                MediaMetadataRetriever mediaMetadataRetriever = this.y;
-                if (mediaMetadataRetriever != null) {
-                    mediaMetadataRetriever.release();
-                    this.y = null;
+        }
+        r71Var.m = lowerCase;
+        long j3 = document.size;
+        r71Var.k = j3;
+        if (tL_documentAttributeVideo != null) {
+            double d = tL_documentAttributeVideo.duration;
+            r71Var.i = tL_documentAttributeVideo.w;
+            r71Var.j = tL_documentAttributeVideo.h;
+            r71Var.l = j3 / d;
+        }
+        File pathToAttach3 = FileLoader.getInstance(i10).getPathToAttach(document, null, false, z10);
+        if (pathToAttach3 != null && pathToAttach3.exists()) {
+            r71Var.d = Uri.fromFile(pathToAttach3);
+            return r71Var;
+        }
+        File pathToAttach4 = FileLoader.getInstance(i10).getPathToAttach(document, null, true, z10);
+        if (pathToAttach4 != null && pathToAttach4.exists()) {
+            r71Var.d = Uri.fromFile(pathToAttach4);
+        }
+        return r71Var;
+    }
+
+    public final boolean b() {
+        Uri uri = this.d;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    }
+
+    public final boolean c() {
+        Uri uri = this.f;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    }
+
+    public final void e(boolean z10) {
+        if (!b() && this.g != null) {
+            File pathToAttach = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, false, z10);
+            if (pathToAttach == null || !pathToAttach.exists()) {
+                File pathToAttach2 = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, true, z10);
+                if (pathToAttach2 != null && pathToAttach2.exists()) {
+                    this.d = Uri.fromFile(pathToAttach2);
                 }
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } else {
+                this.d = Uri.fromFile(pathToAttach);
             }
         }
-        for (int i10 = 0; i10 < this.F.size(); i10++) {
-            p71 p71Var = (p71) this.F.get(i10);
-            if (p71Var != null && (bitmap = p71Var.a) != null) {
-                bitmap.recycle();
-            }
-        }
-        this.F.clear();
-        o71 o71Var = this.G;
-        if (o71Var != null) {
-            o71Var.cancel(true);
-            this.G = null;
-        }
-    }
-
-    public abstract void b(Canvas canvas, RectF rectF);
-
-    public final void c(float f7, float f10, Canvas canvas, Paint paint) {
-        float dpf2 = AndroidUtilities.dpf2(12.0f);
-        float dp = AndroidUtilities.dp(2.0f);
-        float dp2 = AndroidUtilities.dp(46.0f) + dp;
-        float f11 = (1.0f - f10) * ((dp2 - dp) / 2.0f);
-        float f12 = dp + f11;
-        float f13 = dp2 - f11;
-        Paint paint2 = this.V;
-        paint2.setAlpha((int) (38.0f * f10));
-        paint.setAlpha((int) (f10 * 255.0f));
-        float measuredWidth = (((getMeasuredWidth() - (dpf2 * 2.0f)) - AndroidUtilities.dp(20.0f)) * f7) + dpf2 + AndroidUtilities.dp(10.0f);
-        float dpf22 = measuredWidth - AndroidUtilities.dpf2(1.5f);
-        float dpf23 = AndroidUtilities.dpf2(1.5f) + measuredWidth;
-        RectF rectF = this.N;
-        rectF.set(dpf22, f12, dpf23, f13);
-        rectF.inset(-AndroidUtilities.dpf2(0.66f), -AndroidUtilities.dpf2(0.66f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint2);
-        rectF.set(measuredWidth - AndroidUtilities.dpf2(1.5f), f12, AndroidUtilities.dpf2(1.5f) + measuredWidth, f13);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
-    }
-
-    public final void d(int i10) {
-        int i11;
-        if (this.y == null) {
+        if (c() || this.h == null) {
             return;
         }
-        if (i10 == 0) {
-            this.J = AndroidUtilities.dp(38.0f);
-            this.K = Math.max(1, (int) Math.ceil((getMeasuredWidth() - AndroidUtilities.dp(32.0f)) / (this.J * Utilities.clamp((this.b == 0 || (i11 = this.c) == 0) ? 1.0f : r1 / i11, 1.3333334f, 0.5625f))));
-            this.I = (int) Math.ceil((getMeasuredWidth() - AndroidUtilities.dp(32.0f)) / this.K);
-            this.H = this.a / this.K;
-        }
-        o71 o71Var = new o71(this);
-        this.G = o71Var;
-        o71Var.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, Integer.valueOf(i10), null, null);
-    }
-
-    public float getLeftProgress() {
-        return this.d;
-    }
-
-    public long getLength() {
-        return Math.max(1L, this.a);
-    }
-
-    public float getProgress() {
-        return this.s;
-    }
-
-    public float getRightProgress() {
-        return this.e;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        float f14;
-        Canvas canvas2;
-        float dpf2 = AndroidUtilities.dpf2(12.0f);
-        float measuredWidth = getMeasuredWidth() - (dpf2 * 2.0f);
-        float dp = AndroidUtilities.dp(10.0f) + dpf2 + ((int) ((measuredWidth - AndroidUtilities.dp(20.0f)) * this.d));
-        float dp2 = AndroidUtilities.dp(10.0f) + dpf2 + ((int) ((measuredWidth - AndroidUtilities.dp(20.0f)) * this.e));
-        float dp3 = AndroidUtilities.dp(6.0f);
-        float dp4 = dp3 + AndroidUtilities.dp(38.0f);
-        ArrayList arrayList = this.F;
-        boolean isEmpty = arrayList.isEmpty();
-        Path path = this.d0;
-        if (isEmpty && this.G == null) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(dpf2, dp3, measuredWidth + dpf2, dp4);
-            canvas.save();
-            path.rewind();
-            path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-            canvas.clipPath(path);
-            b(canvas, rectF);
-            canvas.restore();
-            d(0);
-            f12 = dp;
-            f14 = dp3;
-            f13 = dp2;
-            f7 = 2.0f;
-            f10 = 10.0f;
-            f11 = 6.0f;
-        } else {
-            canvas.save();
-            path.rewind();
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            float f15 = measuredWidth + dpf2;
-            rectF2.set(dpf2, dp3, f15, dp4);
-            f7 = 2.0f;
-            f10 = 10.0f;
-            f11 = 6.0f;
-            path.addRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-            canvas.clipPath(path);
-            boolean z10 = arrayList.size() < this.K;
-            this.e0 = z10;
-            if (!z10) {
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= arrayList.size()) {
-                        break;
-                    }
-                    if (((p71) arrayList.get(i10)).a == null) {
-                        this.e0 = true;
-                        break;
-                    }
-                    i10++;
-                }
-            }
-            if (this.e0) {
-                RectF rectF3 = AndroidUtilities.rectTmp;
-                rectF3.set(dpf2, dp3, AndroidUtilities.dp(4.0f) + f15, dp4);
-                b(canvas, rectF3);
-            }
-            int i11 = 0;
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                p71 p71Var = (p71) arrayList.get(i12);
-                Bitmap bitmap = p71Var.a;
-                if (bitmap != null) {
-                    float f16 = (this.I * i11) + dpf2;
-                    float dp5 = AndroidUtilities.dp(6.0f);
-                    float f17 = p71Var.b;
-                    if (f17 != 1.0f) {
-                        float f18 = f17 + 0.045714285f;
-                        p71Var.b = f18;
-                        if (f18 > 1.0f) {
-                            p71Var.b = 1.0f;
-                        } else {
-                            invalidate();
-                        }
-                        int interpolation = (int) (pr.h.getInterpolation(p71Var.b) * 255.0f);
-                        Paint paint = this.Q;
-                        paint.setAlpha(interpolation);
-                        canvas.drawBitmap(bitmap, f16, dp5, paint);
-                    } else {
-                        canvas.drawBitmap(bitmap, f16, dp5, (Paint) null);
-                    }
-                }
-                i11++;
-            }
-            float dp6 = AndroidUtilities.dp(46.0f);
-            Paint paint2 = this.W;
-            canvas.drawRect(dpf2, dp3, dp, dp6, paint2);
-            f12 = dp;
-            canvas.drawRect(dp2, dp3, f15, dp4, paint2);
-            f13 = dp2;
-            f14 = dp3;
-            canvas.restore();
-        }
-        boolean z11 = this.w;
-        Paint paint3 = this.T;
-        if (z11) {
-            canvas2 = canvas;
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-            float dpf22 = f12 - AndroidUtilities.dpf2(f10);
-            float dpf23 = AndroidUtilities.dpf2(f10) + f13;
-            RectF rectF4 = this.N;
-            rectF4.set(dpf22, f14, dpf23, dp4);
-            paint3.setAlpha(255);
-            canvas2.drawRoundRect(rectF4, AndroidUtilities.dpf2(f11), AndroidUtilities.dpf2(f11), paint3);
-            rectF4.set(f12, AndroidUtilities.dpf2(f7) + f14, f13, dp4 - AndroidUtilities.dpf2(f7));
-            canvas2.drawRect(rectF4, this.a0);
-            canvas2.restore();
-            float dp7 = AndroidUtilities.dp(f7);
-            float dp8 = AndroidUtilities.dp(f10);
-            float dpf24 = f12 - ((AndroidUtilities.dpf2(f10) - dp7) / f7);
-            float f19 = (((dp4 - f14) - dp8) / f7) + f14;
-            float f20 = dp8 + f19;
-            rectF4.set(dpf24, f19, dpf24 - dp7, f20);
-            float dpf25 = AndroidUtilities.dpf2(f11);
-            float dpf26 = AndroidUtilities.dpf2(f11);
-            Paint paint4 = this.b0;
-            canvas2.drawRoundRect(rectF4, dpf25, dpf26, paint4);
-            float dpf27 = ((AndroidUtilities.dpf2(f10) - dp7) / f7) + f13;
-            rectF4.set(dpf27, f19, dp7 + dpf27, f20);
-            canvas2.drawRoundRect(rectF4, AndroidUtilities.dpf2(f11), AndroidUtilities.dpf2(f11), paint4);
-        }
-        float d = this.c0.d(0.0f, false);
-        if (d > 0.0f) {
-            c(this.e, d, canvas2, paint3);
-        }
-        c(this.s, 1.0f - d, canvas2, paint3);
-        if (this.w) {
-            c(this.f, 1.0f, canvas2, this.U);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.S.set(i10, 0, i12, getMeasuredHeight());
-            setSystemGestureExclusionRects(this.R);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ArrayList arrayList;
-        Bitmap bitmap;
-        super.onMeasure(i10, i11);
-        int size = View.MeasureSpec.getSize(i10);
-        if (this.O != size) {
-            int i12 = 0;
-            while (true) {
-                arrayList = this.F;
-                if (i12 >= arrayList.size()) {
-                    break;
-                }
-                p71 p71Var = (p71) arrayList.get(i12);
-                if (p71Var != null && (bitmap = p71Var.a) != null) {
-                    bitmap.recycle();
-                }
-                i12++;
-            }
-            arrayList.clear();
-            o71 o71Var = this.G;
-            if (o71Var != null) {
-                o71Var.cancel(true);
-                this.G = null;
-            }
-            invalidate();
-            this.O = size;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent != null) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(44.0f);
-            float f7 = measuredWidth;
-            int dp = AndroidUtilities.dp(22.0f) + ((int) (this.d * f7));
-            int dp2 = AndroidUtilities.dp(22.0f) + ((int) (this.s * f7));
-            int dp3 = AndroidUtilities.dp(22.0f) + ((int) (this.e * f7));
-            if (motionEvent.getAction() == 0) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-                if (this.y != null) {
-                    int dp4 = AndroidUtilities.dp(16.0f);
-                    int dp5 = AndroidUtilities.dp(8.0f);
-                    if (dp3 != dp && dp2 - dp5 <= x10 && x10 <= dp5 + dp2 && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                        q71 q71Var = this.E;
-                        if (q71Var != null) {
-                            ((com.google.android.gms.common.api.internal.v) q71Var).c(2);
-                        }
-                        this.r = true;
-                        this.v = (int) (x10 - dp2);
-                        invalidate();
-                        return true;
-                    }
-                    if (dp - dp4 <= x10 && x10 <= Math.min(dp + dp4, dp3) && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                        q71 q71Var2 = this.E;
-                        if (q71Var2 != null) {
-                            ((com.google.android.gms.common.api.internal.v) q71Var2).c(0);
-                        }
-                        this.h = true;
-                        this.v = (int) (x10 - dp);
-                        invalidate();
-                        return true;
-                    }
-                    if (dp3 - dp4 <= x10 && x10 <= dp4 + dp3 && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                        q71 q71Var3 = this.E;
-                        if (q71Var3 != null) {
-                            ((com.google.android.gms.common.api.internal.v) q71Var3).c(1);
-                        }
-                        this.n = true;
-                        this.v = (int) (x10 - dp3);
-                        invalidate();
-                        return true;
-                    }
-                    if (dp <= x10 && x10 <= dp3 && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                        q71 q71Var4 = this.E;
-                        if (q71Var4 != null) {
-                            ((com.google.android.gms.common.api.internal.v) q71Var4).c(2);
-                        }
-                        this.r = true;
-                        float dp6 = (x10 - AndroidUtilities.dp(16.0f)) / f7;
-                        this.s = dp6;
-                        q71 q71Var5 = this.E;
-                        if (q71Var5 != null) {
-                            com.google.android.gms.common.api.internal.v vVar = (com.google.android.gms.common.api.internal.v) q71Var5;
-                            PhotoViewer photoViewer = (PhotoViewer) vVar.d;
-                            if (photoViewer.F2 != null) {
-                                if (photoViewer.c2 == 1) {
-                                    vVar.j(0);
-                                }
-                                vVar.h(dp6);
-                            }
-                        }
-                        this.v = 0.0f;
-                        invalidate();
-                        return true;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.h) {
-                    q71 q71Var6 = this.E;
-                    if (q71Var6 != null) {
-                        ((com.google.android.gms.common.api.internal.v) q71Var6).d(0);
-                    }
-                    this.h = false;
-                    return true;
-                }
-                if (this.n) {
-                    q71 q71Var7 = this.E;
-                    if (q71Var7 != null) {
-                        ((com.google.android.gms.common.api.internal.v) q71Var7).d(1);
-                    }
-                    this.n = false;
-                    return true;
-                }
-                if (this.r) {
-                    q71 q71Var8 = this.E;
-                    if (q71Var8 != null) {
-                        ((com.google.android.gms.common.api.internal.v) q71Var8).d(2);
-                    }
-                    this.r = false;
-                }
-            } else if (motionEvent.getAction() == 2) {
-                if (this.r) {
-                    float dp7 = (((int) (x10 - this.v)) - AndroidUtilities.dp(16.0f)) / f7;
-                    this.s = dp7;
-                    float f10 = this.d;
-                    if (dp7 < f10) {
-                        this.s = f10;
-                    } else {
-                        float f11 = this.e;
-                        if (dp7 > f11) {
-                            this.s = f11;
-                        }
-                    }
-                    q71 q71Var9 = this.E;
-                    if (q71Var9 != null) {
-                        float f12 = this.s;
-                        com.google.android.gms.common.api.internal.v vVar2 = (com.google.android.gms.common.api.internal.v) q71Var9;
-                        PhotoViewer photoViewer2 = (PhotoViewer) vVar2.d;
-                        if (photoViewer2.F2 != null) {
-                            if (photoViewer2.c2 == 1) {
-                                vVar2.j(0);
-                            }
-                            vVar2.h(f12);
-                        }
-                    }
-                    invalidate();
-                    return true;
-                }
-                if (this.h) {
-                    int i10 = (int) (x10 - this.v);
-                    if (i10 < AndroidUtilities.dp(16.0f)) {
-                        dp3 = AndroidUtilities.dp(16.0f);
-                    } else if (i10 <= dp3) {
-                        dp3 = i10;
-                    }
-                    float dp8 = (dp3 - AndroidUtilities.dp(16.0f)) / f7;
-                    this.d = dp8;
-                    float f13 = this.e;
-                    float f14 = f13 - dp8;
-                    float f15 = this.L;
-                    if (f14 > f15) {
-                        this.e = dp8 + f15;
-                    } else {
-                        float f16 = this.M;
-                        if (f16 != 0.0f && f14 < f16) {
-                            float f17 = f13 - f16;
-                            this.d = f17;
-                            if (f17 < 0.0f) {
-                                this.d = 0.0f;
-                            }
-                        }
-                    }
-                    float f18 = this.d;
-                    float f19 = this.s;
-                    if (f18 > f19) {
-                        this.s = f18;
-                    } else {
-                        float f20 = this.e;
-                        if (f20 < f19) {
-                            this.s = f20;
-                        }
-                    }
-                    q71 q71Var10 = this.E;
-                    if (q71Var10 != null) {
-                        com.google.android.gms.common.api.internal.v vVar3 = (com.google.android.gms.common.api.internal.v) q71Var10;
-                        PhotoViewer photoViewer3 = (PhotoViewer) vVar3.d;
-                        g71 g71Var = photoViewer3.F2;
-                        if (g71Var != null) {
-                            if (g71Var.y()) {
-                                photoViewer3.H2 = false;
-                                photoViewer3.F2.B();
-                                photoViewer3.e0.invalidate();
-                            }
-                            vVar3.j(1);
-                            vVar3.h(f18);
-                            photoViewer3.q3.h(0.0f, false);
-                            photoViewer3.R7.setProgress(f18);
-                            photoViewer3.B3();
-                        }
-                    }
-                    invalidate();
-                    return true;
-                }
-                if (this.n) {
-                    int i11 = (int) (x10 - this.v);
-                    if (i11 >= dp) {
-                        dp = i11 > AndroidUtilities.dp(16.0f) + measuredWidth ? AndroidUtilities.dp(16.0f) + measuredWidth : i11;
-                    }
-                    float dp9 = (dp - AndroidUtilities.dp(16.0f)) / f7;
-                    this.e = dp9;
-                    float f21 = this.d;
-                    float f22 = dp9 - f21;
-                    float f23 = this.L;
-                    if (f22 > f23) {
-                        this.d = dp9 - f23;
-                    } else {
-                        float f24 = this.M;
-                        if (f24 != 0.0f && f22 < f24) {
-                            float f25 = f21 + f24;
-                            this.e = f25;
-                            if (f25 > 1.0f) {
-                                this.e = 1.0f;
-                            }
-                        }
-                    }
-                    float f26 = this.d;
-                    float f27 = this.s;
-                    if (f26 > f27) {
-                        this.s = f26;
-                    } else {
-                        float f28 = this.e;
-                        if (f28 < f27) {
-                            this.s = f28;
-                        }
-                    }
-                    q71 q71Var11 = this.E;
-                    if (q71Var11 != null) {
-                        ((com.google.android.gms.common.api.internal.v) q71Var11).f(this.e);
-                    }
-                    invalidate();
-                    return true;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public void setDelegate(q71 q71Var) {
-        this.E = q71Var;
-    }
-
-    public void setMaxProgressDiff(float f7) {
-        this.L = f7;
-        float f10 = this.e;
-        float f11 = this.d;
-        if (f10 - f11 > f7) {
-            this.e = f11 + f7;
-            invalidate();
-        }
-    }
-
-    public void setMinProgressDiff(float f7) {
-        this.M = f7;
-    }
-
-    public void setMode(int i10) {
-        if (this.P == i10) {
+        File pathToAttach3 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, false, z10);
+        if (pathToAttach3 != null && pathToAttach3.exists()) {
+            this.f = Uri.fromFile(pathToAttach3);
             return;
         }
-        this.P = i10;
-        invalidate();
-    }
-
-    public void setProgress(float f7) {
-        if (this.w && (f7 <= 0.0f || f7 >= 1.0f)) {
-            f7 = this.f;
+        File pathToAttach4 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, true, z10);
+        if (pathToAttach4 == null || !pathToAttach4.exists()) {
+            return;
         }
-        long j3 = this.a;
-        float f10 = j3 != 0 ? 240.0f / j3 : 0.0f;
-        float f11 = this.s;
-        if (f7 < f11 && f7 <= this.d + f10 && f11 + f10 >= this.e) {
-            this.c0.d(1.0f, true);
-        }
-        this.s = f7;
-        invalidate();
-    }
-
-    public void setRightProgress(float f7) {
-        this.e = f7;
-        q71 q71Var = this.E;
-        if (q71Var != null) {
-            ((com.google.android.gms.common.api.internal.v) q71Var).c(1);
-        }
-        q71 q71Var2 = this.E;
-        if (q71Var2 != null) {
-            ((com.google.android.gms.common.api.internal.v) q71Var2).f(this.e);
-        }
-        q71 q71Var3 = this.E;
-        if (q71Var3 != null) {
-            ((com.google.android.gms.common.api.internal.v) q71Var3).d(1);
-        }
-        invalidate();
+        this.f = Uri.fromFile(pathToAttach4);
     }
 }

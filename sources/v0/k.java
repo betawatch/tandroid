@@ -12,7 +12,7 @@ import w7.b9;
 import w7.u7;
 import w7.v7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -29,10 +29,10 @@ public final class k implements OutcomeReceiver {
                 CreateCredentialException error = (CreateCredentialException) th2;
                 kotlin.jvm.internal.i.e(error, "error");
                 Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                mg.n nVar = (mg.n) this.b;
+                je.b bVar = (je.b) this.b;
                 String type = error.getType();
                 kotlin.jvm.internal.i.d(type, "getType(...)");
-                nVar.onError(b9.a(error.getMessage(), type));
+                bVar.onError(b9.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
@@ -53,10 +53,10 @@ public final class k implements OutcomeReceiver {
                 CreateCredentialResponse response = (CreateCredentialResponse) obj;
                 kotlin.jvm.internal.i.e(response, "response");
                 Log.i("CredManProvService", "Create Result returned from framework: ");
-                mg.n nVar = (mg.n) this.b;
+                je.b bVar = (je.b) this.b;
                 Bundle data = response.getData();
                 kotlin.jvm.internal.i.d(data, "getData(...)");
-                nVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                bVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
@@ -74,7 +74,7 @@ public final class k implements OutcomeReceiver {
         }
     }
 
-    public k(mg.n nVar, e eVar, l lVar) {
-        this.b = nVar;
+    public k(je.b bVar, e eVar, l lVar) {
+        this.b = bVar;
     }
 }

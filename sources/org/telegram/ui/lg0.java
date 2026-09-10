@@ -1,47 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vg0 b;
+    public final /* synthetic */ wg0 b;
 
-    public /* synthetic */ lg0(vg0 vg0Var, int i10) {
+    public /* synthetic */ lg0(wg0 wg0Var, int i10) {
         this.a = i10;
-        this.b = vg0Var;
+        this.b = wg0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                vg0 vg0Var = this.b;
-                ck0 ck0Var = vg0Var.a;
-                wg0 wg0Var = vg0Var.V;
-                sg0 sg0Var = vg0Var.b;
-                if (sg0Var != null) {
-                    if (wg0Var.c0) {
+                wg0 wg0Var = this.b;
+                ck0 ck0Var = wg0Var.a;
+                xg0 xg0Var = wg0Var.V;
+                tg0 tg0Var = wg0Var.b;
+                if (tg0Var != null) {
+                    if (xg0Var.c0) {
                         ck0Var.clearFocus();
-                        sg0Var.clearFocus();
+                        tg0Var.clearFocus();
                     } else if (ck0Var.length() != 0) {
-                        sg0Var.requestFocus();
-                        if (!vg0Var.R) {
-                            sg0Var.setSelection(sg0Var.length());
+                        tg0Var.requestFocus();
+                        if (!wg0Var.R) {
+                            tg0Var.setSelection(tg0Var.length());
                         }
-                        wg0.T0(wg0Var, sg0Var);
+                        xg0.T0(xg0Var, tg0Var);
                     } else {
                         ck0Var.requestFocus();
-                        wg0.T0(wg0Var, ck0Var);
+                        xg0.T0(xg0Var, ck0Var);
                     }
                 }
-                if (wg0Var.F == 0) {
-                    vg0Var.u(false);
+                if (xg0Var.F == 0) {
+                    wg0Var.u(false);
                     break;
                 }
                 break;
             case 1:
-                vg0 vg0Var2 = this.b;
-                vg0Var2.postDelayed(new lg0(vg0Var2, 2), 200L);
+                wg0 wg0Var2 = this.b;
+                wg0Var2.postDelayed(new lg0(wg0Var2, 2), 200L);
                 break;
             case 2:
                 this.b.h(null);
@@ -50,8 +50,8 @@ public final /* synthetic */ class lg0 implements Runnable {
                 this.b.u(true);
                 break;
             default:
-                vg0 vg0Var3 = this.b;
-                wg0.T0(vg0Var3.V, vg0Var3.b);
+                wg0 wg0Var3 = this.b;
+                xg0.T0(wg0Var3.V, wg0Var3.b);
                 break;
         }
     }

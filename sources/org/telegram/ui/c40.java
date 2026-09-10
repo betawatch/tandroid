@@ -1,23 +1,29 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c40 extends org.telegram.ui.Components.oh0 {
-    public final /* synthetic */ j60 s1;
+public final class c40 extends r4 {
+    public final /* synthetic */ j60 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c40(j60 j60Var, LaunchActivity launchActivity, f50 f50Var, p50 p50Var, b40 b40Var) {
-        super(launchActivity, f50Var, p50Var, b40Var);
-        this.s1 = j60Var;
+    public c40(j60 j60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.U = j60Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.ui.r4, org.telegram.ui.Components.th0
+    public final void c() {
+        j60 j60Var = this.U;
+        AccountInstance accountInstance = j60Var.d;
+        d40 d40Var = j60Var.b;
+        long dialogId = d40Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
+            d40Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+        }
     }
 }

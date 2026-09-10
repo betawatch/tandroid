@@ -5,10 +5,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.c0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzer extends j implements p {
     int zza;
@@ -37,9 +37,9 @@ final class zzer extends j implements p {
         a aVar = a.a;
         try {
             if (this.zza != 0) {
-                t7.b(obj);
+                u7.b(obj);
             } else {
-                t7.b(obj);
+                u7.b(obj);
                 zzfp zzfpVar = this.zzb;
                 zzif zzj = zzfp.zzj(zzfpVar);
                 zzcy zzg = zzfp.zzg(zzfpVar);
@@ -51,8 +51,8 @@ final class zzer extends j implements p {
                 }
             }
             return (zzyg) obj;
-        } catch (Exception e7) {
-            throw zzfp.zzd(this.zzb, e7);
+        } catch (Exception e) {
+            throw zzfp.zzd(this.zzb, e);
         }
     }
 }

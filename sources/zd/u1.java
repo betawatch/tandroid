@@ -6,11 +6,10 @@ import java.util.IdentityHashMap;
 import java.util.Set;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import v7.n8;
-import v7.r7;
-import v7.t8;
+import v7.q8;
+import v7.s7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class u1 implements f1, r, y1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(u1.class, Object.class, "_state$volatile");
@@ -103,7 +102,7 @@ public class u1 implements f1, r, y1 {
                     k1Var.a(th2);
                 } catch (Throwable th3) {
                     if (jVar != null) {
-                        r7.a(jVar, th3);
+                        s7.a(jVar, th3);
                     } else {
                         jVar = new androidx.car.app.j("Exception in completion handler " + k1Var + " for " + this, th3);
                     }
@@ -299,7 +298,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return n8.a(this, gVar);
+        return q8.a(this, gVar);
     }
 
     @Override // zd.f1
@@ -378,7 +377,7 @@ public class u1 implements f1, r, y1 {
                 return e0.u(u10);
             }
         } while (I(u10) < 0);
-        l1 l1Var = new l1(t8.b(cVar), this);
+        l1 l1Var = new l1(w7.g.b(cVar), this);
         l1Var.s();
         l1Var.v(new j(e0.n(this, false, new p0(l1Var, 3), 3), 2));
         Object r10 = l1Var.r();
@@ -394,7 +393,7 @@ public class u1 implements f1, r, y1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean i(Object obj) {
-        d9.f fVar;
+        ee.v vVar;
         Object obj2 = e0.d;
         if (s()) {
             do {
@@ -412,7 +411,7 @@ public class u1 implements f1, r, y1 {
                 Object u11 = u();
                 if (!(u11 instanceof n1)) {
                     if (!(u11 instanceof a1)) {
-                        fVar = e0.g;
+                        vVar = e0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -430,7 +429,7 @@ public class u1 implements f1, r, y1 {
                                 }
                             }
                             E(t10, th2);
-                            fVar = e0.d;
+                            vVar = e0.d;
                             break loop1;
                         }
                         continue;
@@ -447,7 +446,7 @@ public class u1 implements f1, r, y1 {
                 } else {
                     synchronized (u11) {
                         if (n1.d.get((n1) u11) == e0.h) {
-                            fVar = e0.g;
+                            vVar = e0.g;
                         } else {
                             boolean d = ((n1) u11).d();
                             if (th2 == null) {
@@ -458,12 +457,12 @@ public class u1 implements f1, r, y1 {
                             if (b10 != null) {
                                 E(((n1) u11).a, b10);
                             }
-                            fVar = e0.d;
+                            vVar = e0.d;
                         }
                     }
                 }
             }
-            obj2 = fVar;
+            obj2 = vVar;
         }
         if (obj2 != e0.d && obj2 != e0.e) {
             if (obj2 == e0.g) {
@@ -517,7 +516,7 @@ public class u1 implements f1, r, y1 {
                 return iVar;
             }
         } while (I(u10) < 0);
-        m mVar = new m(1, t8.b(cVar));
+        m mVar = new m(1, w7.g.b(cVar));
         mVar.s();
         mVar.v(new j(e0.n(this, false, new p0(mVar, 4), 3), 2));
         Object r10 = mVar.r();
@@ -569,7 +568,7 @@ public class u1 implements f1, r, y1 {
                         k1Var.a(th2);
                     } catch (Throwable th4) {
                         if (jVar != null) {
-                            r7.a(jVar, th4);
+                            s7.a(jVar, th4);
                         } else {
                             jVar = new androidx.car.app.j("Exception in completion handler " + k1Var + " for " + this, th4);
                         }
@@ -584,7 +583,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return n8.b(this, gVar);
+        return q8.b(this, gVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -628,7 +627,7 @@ public class u1 implements f1, r, y1 {
                     i10++;
                     Throwable th3 = (Throwable) obj2;
                     if (th3 != q6 && th3 != q6 && !(th3 instanceof CancellationException) && newSetFromMap.add(th3)) {
-                        r7.a(q6, th3);
+                        s7.a(q6, th3);
                     }
                 }
             }
@@ -662,7 +661,7 @@ public class u1 implements f1, r, y1 {
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return n8.c(this, hVar);
+        return q8.c(this, hVar);
     }
 
     public final Throwable q(n1 n1Var, ArrayList arrayList) {

@@ -1,31 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class vp extends z4.g {
-    public up w0;
+public final class vp extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp b;
 
-    public vp(Context context) {
-        super(context);
-        b(new tp((oh0) this));
+    public /* synthetic */ vp(wp wpVar, int i10) {
+        this.a = i10;
+        this.b = wpVar;
     }
 
-    @Override // z4.g
-    @Deprecated
-    public void setAdapter(z4.a aVar) {
-        if (!(aVar instanceof up)) {
-            throw new IllegalArgumentException();
-        }
-        setAdapter((up) aVar);
-    }
-
-    public void setAdapter(up upVar) {
-        this.w0 = upVar;
-        super.setAdapter((z4.a) upVar);
-        if (upVar != null) {
-            x(upVar.j(), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                wp wpVar = this.b;
+                wpVar.d = null;
+                rg rgVar = new rg(this, 29);
+                wpVar.e = rgVar;
+                AndroidUtilities.runOnUIThread(rgVar, 3000L);
+                break;
+            default:
+                wp wpVar2 = this.b;
+                wpVar2.setVisibility(4);
+                wpVar2.getClass();
+                wpVar2.getClass();
+                wpVar2.d = null;
+                break;
         }
     }
 }

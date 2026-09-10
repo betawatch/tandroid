@@ -1,40 +1,81 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ma implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ na b;
+public final class ma extends s4.v {
+    public final /* synthetic */ ra d;
 
-    public /* synthetic */ ma(na naVar, int i10) {
-        this.a = i10;
-        this.b = naVar;
+    public ma(ra raVar) {
+        this.d = raVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                na naVar = this.b;
-                naVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                naVar.n = floatValue;
-                naVar.f.setTranslationX(floatValue * AndroidUtilities.dp(16.0f));
-                naVar.d.setAlpha(naVar.n);
-                break;
-            default:
-                na naVar2 = this.b;
-                naVar2.getClass();
-                naVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i10 = org.telegram.ui.ActionBar.j6.z6;
-                org.telegram.ui.ActionBar.f6 f6Var = naVar2.b;
-                int d = i0.a.d(naVar2.E, org.telegram.ui.ActionBar.j6.v0(i10, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, f6Var));
-                naVar2.e.b(d);
-                naVar2.f.setTextColor(d);
-                break;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        View view = c1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        return (c1Var.f == 4 && ((oa) c1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        if (c1Var.f != c1Var2.f) {
+            return false;
         }
+        View view = c1Var2.a;
+        if ((view instanceof oa) && !((oa) view).G) {
+            return false;
+        }
+        ia iaVar = this.d.c;
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        int i10 = b10 - 4;
+        int i11 = b11 - 4;
+        ra raVar = iaVar.c;
+        ArrayList arrayList = raVar.v;
+        if (i10 < arrayList.size() && i11 < arrayList.size()) {
+            if (b10 != b11) {
+                raVar.d = true;
+            }
+            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
+            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
+            arrayList.set(i11, tL_username);
+            iaVar.p(b10, b11);
+            int size = arrayList.size() + 3;
+            if (b10 == size || b11 == size) {
+                iaVar.n(b10, 3);
+                iaVar.n(b11, 3);
+            }
+        }
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        ra raVar = this.d;
+        if (i10 == 0) {
+            ra.Y(raVar);
+        } else {
+            raVar.b.I0(false);
+            c1Var.a.setPressed(true);
+        }
+        if (c1Var != null) {
+            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

@@ -1,12 +1,11 @@
 package j4;
 
 import b2.r0;
-import c3.h0;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -15,14 +14,14 @@ public final class e implements i {
     public final int e;
     public final String f;
     public String g;
-    public h0 h;
-    public h0 i;
+    public c3.h0 h;
+    public c3.h0 i;
     public boolean m;
     public boolean n;
     public int q;
     public boolean r;
     public int t;
-    public h0 v;
+    public c3.h0 v;
     public long w;
     public final a4.h b = new a4.h(new byte[7], 7);
     public final e2.v c = new e2.v(Arrays.copyOf(x, 10));
@@ -43,7 +42,7 @@ public final class e implements i {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // j4.i
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         byte b10;
         int i11;
@@ -194,7 +193,7 @@ public final class e implements i {
                     if (i30 == 10) {
                         this.i.d(10, vVar2);
                         vVar2.J(6);
-                        h0 h0Var = this.i;
+                        c3.h0 h0Var = this.i;
                         int w10 = vVar2.w() + 10;
                         this.j = 4;
                         this.k = 10;
@@ -245,7 +244,7 @@ public final class e implements i {
                         if (this.m) {
                             i37 = i36 - 9;
                         }
-                        h0 h0Var2 = this.h;
+                        c3.h0 h0Var2 = this.h;
                         long j3 = this.s;
                         this.j = 4;
                         this.k = 0;
@@ -294,7 +293,7 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void b() {
         this.u = -9223372036854775807L;
         this.n = false;
         this.j = 0;
@@ -303,36 +302,36 @@ public final class e implements i {
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
-        f0Var.a();
-        f0Var.b();
-        this.g = f0Var.e;
-        f0Var.b();
-        h0 R1 = qVar.R1(f0Var.d, 1);
-        this.h = R1;
-        this.v = R1;
+    public final void c(c3.q qVar, g0 g0Var) {
+        g0Var.a();
+        g0Var.b();
+        this.g = g0Var.e;
+        g0Var.b();
+        c3.h0 I = qVar.I(g0Var.d, 1);
+        this.h = I;
+        this.v = I;
         if (!this.a) {
             this.i = new c3.n();
             return;
         }
-        f0Var.a();
-        f0Var.b();
-        h0 R12 = qVar.R1(f0Var.d, 5);
-        this.i = R12;
+        g0Var.a();
+        g0Var.b();
+        c3.h0 I2 = qVar.I(g0Var.d, 5);
+        this.i = I2;
         b2.r rVar = new b2.r();
-        f0Var.b();
-        rVar.a = f0Var.e;
+        g0Var.b();
+        rVar.a = g0Var.e;
         rVar.p = r0.n(this.f);
         rVar.q = r0.n("application/id3");
-        i2.g.u(rVar, R12);
+        hc.b.u(rVar, I2);
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void e(int i10, long j3) {
         this.u = j3;
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void d(boolean z10) {
     }
 }

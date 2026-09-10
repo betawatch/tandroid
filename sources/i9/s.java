@@ -20,19 +20,19 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.v8;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.co;
-import org.telegram.ui.gz;
-import org.telegram.ui.pr;
-import org.telegram.ui.rr;
-import org.telegram.ui.sm;
-import org.telegram.ui.vr;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.eo;
+import org.telegram.ui.iz;
+import org.telegram.ui.qr;
+import org.telegram.ui.sr;
+import org.telegram.ui.tm;
+import org.telegram.ui.wr;
 import s4.c1;
 import s4.m0;
-import v7.l8;
+import v7.o8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class s implements Runnable {
     public final /* synthetic */ int a;
@@ -62,10 +62,10 @@ public final class s implements Runnable {
     private final void b() {
         try {
             c();
-        } catch (Error e7) {
-            synchronized (((r9.j) this.c).b) {
-                ((r9.j) this.c).c = 1;
-                throw e7;
+        } catch (Error e) {
+            synchronized (((r9.i) this.c).b) {
+                ((r9.i) this.c).c = 1;
+                throw e;
             }
         }
     }
@@ -97,7 +97,7 @@ public final class s implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
     
-        r9.j.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
+        r9.i.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
     
@@ -115,19 +115,19 @@ public final class s implements Runnable {
         boolean z11 = false;
         while (true) {
             try {
-                synchronized (((r9.j) this.c).b) {
+                synchronized (((r9.i) this.c).b) {
                     if (!z10) {
-                        r9.j jVar = (r9.j) this.c;
-                        if (jVar.c != 4) {
-                            jVar.d++;
-                            jVar.c = 4;
+                        r9.i iVar = (r9.i) this.c;
+                        if (iVar.c != 4) {
+                            iVar.d++;
+                            iVar.c = 4;
                             z10 = true;
                         }
                     }
-                    Runnable runnable = (Runnable) ((r9.j) this.c).b.poll();
+                    Runnable runnable = (Runnable) ((r9.i) this.c).b.poll();
                     this.b = runnable;
                     if (runnable == null) {
-                        ((r9.j) this.c).c = 1;
+                        ((r9.i) this.c).c = 1;
                     }
                 }
                 if (!z11) {
@@ -173,10 +173,10 @@ public final class s implements Runnable {
                     }
                 }
                 try {
-                    rVar.onSuccess(l8.a(wVar));
+                    rVar.onSuccess(o8.a(wVar));
                     return;
-                } catch (ExecutionException e7) {
-                    rVar.h(e7.getCause());
+                } catch (ExecutionException e) {
+                    rVar.h(e.getCause());
                     return;
                 } catch (Throwable th3) {
                     rVar.h(th3);
@@ -230,7 +230,7 @@ public final class s implements Runnable {
                 c5.h hVar3 = g0.i;
                 cVar3.y(24, 9, hVar3);
                 com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-                pVar2.b(hVar3, com.google.android.gms.internal.play_billing.v.e);
+                pVar2.a(hVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 7:
                 c6.e0 e0Var = ((c6.d0) this.b).b;
@@ -327,9 +327,9 @@ public final class s implements Runnable {
                         e0.g.e.invoke(obj3, obj2, Boolean.FALSE);
                     }
                     return;
-                } catch (RuntimeException e10) {
-                    if (e10.getClass() == RuntimeException.class && e10.getMessage() != null && e10.getMessage().startsWith("Unable to stop")) {
-                        throw e10;
+                } catch (RuntimeException e7) {
+                    if (e7.getClass() == RuntimeException.class && e7.getMessage() != null && e7.getMessage().startsWith("Unable to stop")) {
+                        throw e7;
                     }
                     return;
                 } catch (Throwable th4) {
@@ -433,6 +433,18 @@ public final class s implements Runnable {
                 vVar3.d0 = false;
                 return;
             case 16:
+                ii.n nVar = (ii.n) this.c;
+                ArrayList arrayList = (ArrayList) this.b;
+                int size = arrayList.size();
+                while (i11 < size) {
+                    Object obj4 = arrayList.get(i11);
+                    i11++;
+                    nVar.B((s4.h) obj4);
+                }
+                arrayList.clear();
+                nVar.v.remove(arrayList);
+                return;
+            case 17:
                 j6.j jVar = (j6.j) this.b;
                 IBinder iBinder = (IBinder) this.c;
                 synchronized (jVar) {
@@ -440,32 +452,20 @@ public final class s implements Runnable {
                         jVar.a("Null service connection");
                     } else {
                         try {
-                            jVar.c = new n4.y(iBinder);
+                            jVar.c = new of.b(iBinder);
                             jVar.a = 2;
                             ((ScheduledExecutorService) jVar.f.c).execute(new j6.h(jVar, i10));
-                        } catch (RemoteException e11) {
-                            jVar.a(e11.getMessage());
+                        } catch (RemoteException e10) {
+                            jVar.a(e10.getMessage());
                         }
                     }
                 }
                 return;
-            case 17:
+            case 18:
                 a();
                 return;
-            case 18:
-                ki.o oVar2 = (ki.o) this.c;
-                ArrayList arrayList = (ArrayList) this.b;
-                int size = arrayList.size();
-                while (i11 < size) {
-                    Object obj4 = arrayList.get(i11);
-                    i11++;
-                    oVar2.B((s4.h) obj4);
-                }
-                arrayList.clear();
-                oVar2.v.remove(arrayList);
-                return;
             case 19:
-                xa.c cVar6 = (xa.c) this.b;
+                pb.c cVar6 = (pb.c) this.b;
                 Typeface typeface = (Typeface) this.c;
                 e2.a0 a0Var2 = (e2.a0) cVar6.b;
                 if (a0Var2 != null) {
@@ -477,19 +477,19 @@ public final class s implements Runnable {
                 ((c5.z) this.b).accept(this.c);
                 return;
             case 21:
-                co coVar = ((sm) this.c).c;
-                if (this == coVar.J5) {
-                    coVar.Ya((CharSequence) this.b, false);
-                    coVar.J5 = null;
+                eo eoVar = ((tm) this.c).c;
+                if (this == eoVar.J5) {
+                    eoVar.Ya((CharSequence) this.b, false);
+                    eoVar.J5 = null;
                     return;
                 }
                 return;
             case 22:
-                v8 v8Var = (v8) this.b;
-                boolean z20 = v8Var.d.h;
-                v8Var.setChecked(!z20);
-                vr vrVar = ((rr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = vrVar.E;
+                w8 w8Var = (w8) this.b;
+                boolean z20 = w8Var.d.h;
+                w8Var.setChecked(!z20);
+                wr wrVar = ((sr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = wrVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -504,14 +504,14 @@ public final class s implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(vrVar.c);
-                pr w02 = vrVar.w0();
-                vrVar.B0();
-                vrVar.A0(w02);
+                AndroidUtilities.updateVisibleRows(wrVar.c);
+                qr w02 = wrVar.w0();
+                wrVar.B0();
+                wrVar.A0(w02);
                 return;
             case 23:
-                ((qc) this.b).j();
-                ((gz) this.c).E = null;
+                ((pc) this.b).j();
+                ((iz) this.c).E = null;
                 return;
             case 24:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;
@@ -532,11 +532,11 @@ public final class s implements Runnable {
                 try {
                     taskCompletionSource.setResult(callable.call());
                     return;
-                } catch (mb.a e12) {
-                    taskCompletionSource.setException(e12);
+                } catch (mb.a e11) {
+                    taskCompletionSource.setException(e11);
                     return;
-                } catch (Exception e13) {
-                    taskCompletionSource.setException(new mb.a("Internal error has occurred when executing ML Kit tasks", e13));
+                } catch (Exception e12) {
+                    taskCompletionSource.setException(new mb.a("Internal error has occurred when executing ML Kit tasks", e12));
                     return;
                 }
             case 26:
@@ -599,12 +599,12 @@ public final class s implements Runnable {
     public String toString() {
         switch (this.a) {
             case 0:
-                aa.a aVar = new aa.a(s.class.getSimpleName(), 12);
+                aa.a aVar = new aa.a(s.class.getSimpleName(), 13);
                 r rVar = (r) this.c;
-                pf.b bVar = new pf.b(13, false);
-                ((pf.b) aVar.d).c = bVar;
-                aVar.d = bVar;
-                bVar.b = rVar;
+                n4.y yVar = new n4.y(13, false);
+                ((n4.y) aVar.d).c = yVar;
+                aVar.d = yVar;
+                yVar.b = rVar;
                 return aVar.toString();
             case 28:
                 Runnable runnable = (Runnable) this.b;
@@ -612,7 +612,7 @@ public final class s implements Runnable {
                     return "SequentialExecutorWorker{running=" + runnable + "}";
                 }
                 StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
-                int i10 = ((r9.j) this.c).c;
+                int i10 = ((r9.i) this.c).c;
                 sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
                 sb2.append("}");
                 return sb2.toString();
@@ -627,9 +627,9 @@ public final class s implements Runnable {
         this.b = obj2;
     }
 
-    public s(r9.j jVar) {
+    public s(r9.i iVar) {
         this.a = 28;
-        this.c = jVar;
+        this.c = iVar;
     }
 
     public s(s4.y yVar, s4.u uVar, int i10) {

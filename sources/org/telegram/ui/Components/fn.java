@@ -1,52 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class fn implements fk {
-    public final /* synthetic */ Utilities.Callback a;
-    public final /* synthetic */ bn b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+public final class fn extends org.telegram.ui.tu0 {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ zn c;
 
-    public fn(Utilities.Callback callback, org.telegram.ui.ActionBar.n2 n2Var, bn bnVar) {
-        this.a = callback;
-        this.b = bnVar;
-        this.c = n2Var;
+    public fn(zn znVar, int i10) {
+        this.c = znVar;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
-        if (!arrayList.isEmpty()) {
-            this.a.run(new sh.c((String) arrayList.get(0)));
-        }
-        this.b.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.fk
-    public final void l(long j3, ArrayList arrayList, boolean z10, int i10) {
-        if (!arrayList.isEmpty()) {
-            this.a.run(new sh.d((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)));
-        }
-        this.b.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.fk
-    public final void w() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.c.getParentActivity().startActivityForResult(intent, 28);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
+    public final void D() {
+        if (this.a) {
+            this.c.b0(this.b);
         }
     }
 
-    @Override // org.telegram.ui.Components.fk
-    public final /* synthetic */ void O() {
+    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
+    public final void I() {
+        this.c.e0(this.b, null);
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
+    public final void V() {
+        this.a = true;
+    }
+
+    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
+    public final boolean z() {
+        return false;
     }
 }

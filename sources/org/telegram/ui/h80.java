@@ -1,129 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Timer;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.FileLog;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class h80 extends org.telegram.ui.Components.kl0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public Timer f;
-    public boolean h;
-    public final /* synthetic */ l80 n;
+public final class h80 implements TextWatcher {
+    public final /* synthetic */ i80 a;
 
-    public h80(l80 l80Var, Context context) {
-        this.n = l80Var;
-        this.c = context;
+    public h80(i80 i80Var) {
+        this.a = i80Var;
     }
 
-    @Override // s4.h0
-    public final void A(s4.c1 c1Var) {
-        View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.o4) {
-            ((org.telegram.ui.Cells.o4) view).a.getImageReceiver().cancelLoadImage();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f != 2;
-    }
-
-    public final void E(String str) {
-        try {
-            Timer timer = this.f;
-            if (timer != null) {
-                timer.cancel();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        k80 k80Var = this.a.f;
+        if (k80Var.d.d.length() != 0) {
+            k80Var.E = true;
+            k80Var.y = true;
+            g80 g80Var = k80Var.s;
+            if (!g80Var.h) {
+                g80Var.h = true;
+                g80Var.l();
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-        if (str == null) {
-            this.d.clear();
-            this.e.clear();
-            l();
-        } else {
-            Timer timer2 = new Timer();
-            this.f = timer2;
-            timer2.schedule(new g80(this, str), 200L, 300L);
-        }
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.h ? this.d.size() : this.n.w.size() + 2;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (this.h) {
-            return 0;
-        }
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == 1 ? 2 : 0;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        l80 l80Var = this.n;
-        h80 h80Var = l80Var.s;
-        if (h80Var == null || l80Var.E) {
+            k80Var.s.E(k80Var.d.d.toString());
+            k80Var.h.setFastScrollVisible(false);
+            k80Var.h.setVerticalScrollBarEnabled(true);
+            k80Var.r.e(true, true);
+            k80Var.r.setStickerType(1);
+            k80Var.r.d.setText(LocaleController.getString(R.string.NoResult));
+            k80Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
             return;
         }
-        l80Var.r.setVisibility(h80Var.h() == 2 ? 0 : 4);
+        k80Var.E = false;
+        k80Var.y = false;
+        g80 g80Var2 = k80Var.s;
+        if (g80Var2.h) {
+            g80Var2.h = false;
+            g80Var2.l();
+        }
+        k80Var.s.E(null);
+        k80Var.h.setFastScrollVisible(true);
+        k80Var.h.setVerticalScrollBarEnabled(false);
+        k80Var.r.e(false, true);
+        k80Var.r.setStickerType(0);
+        k80Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
+        k80Var.r.e.setText("");
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        ContactsController.Contact contact;
-        CharSequence charSequence;
-        if (c1Var.f == 0) {
-            org.telegram.ui.Cells.o4 o4Var = (org.telegram.ui.Cells.o4) c1Var.a;
-            boolean z10 = this.h;
-            l80 l80Var = this.n;
-            if (z10) {
-                contact = (ContactsController.Contact) this.d.get(i10);
-                charSequence = (CharSequence) this.e.get(i10);
-            } else {
-                contact = (ContactsController.Contact) l80Var.w.get(i10 - 2);
-                charSequence = null;
-            }
-            o4Var.f = contact;
-            o4Var.h = charSequence;
-            o4Var.a();
-            boolean containsKey = l80Var.F.containsKey(contact.key);
-            org.telegram.ui.Components.mp mpVar = o4Var.e;
-            if (mpVar != null) {
-                mpVar.a(containsKey, false);
-            }
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(context);
-            int i11 = org.telegram.ui.ActionBar.j6.G6;
-            r8Var.e(i11, i11);
-            r8Var.s(LocaleController.getString(R.string.ShareTelegram2), "", false, R.drawable.msg_shareout, false);
-            view = r8Var;
-        } else {
-            view = i10 == 2 ? new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.p6) null) : new org.telegram.ui.Cells.o4(context, true);
-        }
-        return new org.telegram.ui.Components.vk0(view);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

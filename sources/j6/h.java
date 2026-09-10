@@ -9,9 +9,8 @@ import android.util.Log;
 import i9.s;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import n4.y;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +55,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     k kVar = (k) jVar.d.poll();
                     jVar.e.put(kVar.a, kVar);
-                    ((ScheduledExecutorService) jVar.f.c).schedule(new s(17, jVar, kVar), 30L, TimeUnit.SECONDS);
+                    ((ScheduledExecutorService) jVar.f.c).schedule(new s(18, jVar, kVar), 30L, TimeUnit.SECONDS);
                     if (Log.isLoggable("MessengerIpcClient", 3)) {
                         Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(kVar)));
                     }
@@ -74,12 +73,12 @@ public final /* synthetic */ class h implements Runnable {
                     bundle.putBundle("data", kVar.d);
                     obtain.setData(bundle);
                     try {
-                        y yVar = jVar.c;
-                        Messenger messenger2 = (Messenger) yVar.b;
+                        of.b bVar = jVar.c;
+                        Messenger messenger2 = (Messenger) bVar.b;
                         if (messenger2 != null) {
                             messenger2.send(obtain);
                         } else {
-                            f fVar = (f) yVar.c;
+                            f fVar = (f) bVar.c;
                             if (fVar == null) {
                                 throw new IllegalStateException("Both messengers are null");
                             }
@@ -87,8 +86,8 @@ public final /* synthetic */ class h implements Runnable {
                             messenger3.getClass();
                             messenger3.send(obtain);
                         }
-                    } catch (RemoteException e7) {
-                        jVar.a(e7.getMessage());
+                    } catch (RemoteException e) {
+                        jVar.a(e.getMessage());
                     }
                 } finally {
                 }

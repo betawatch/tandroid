@@ -1,28 +1,36 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u7 implements Runnable {
+public final /* synthetic */ class u7 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ u7(MediaDataController mediaDataController, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public /* synthetic */ u7(MediaDataController mediaDataController, int i10, int i11) {
+        this.a = i11;
         this.b = mediaDataController;
-        this.c = arrayList;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRepliesOfDraftReplies$0(this.c);
+                this.b.lambda$loadArchivedStickersCount$72(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$loadRecents$50(this.c, tLObject, tL_error);
+                break;
+            case 2:
+                this.b.lambda$loadRecents$51(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$broadcastPinnedMessage$168(this.c);
+                this.b.lambda$fetchEmojiStatuses$233(this.c, tLObject, tL_error);
                 break;
         }
     }

@@ -5,8 +5,9 @@ import android.os.Parcelable;
 import com.google.android.gms.internal.cast.p;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import java.util.concurrent.Executor;
-import m.p3;
+import m.r3;
 import n6.l;
+import n7.a1;
 import qb.m;
 import z7.ce;
 import z7.fb;
@@ -15,7 +16,7 @@ import z7.hb;
 import z7.wf;
 import z7.yf;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class d {
     public static zzd a(ac.e eVar) {
@@ -24,13 +25,13 @@ public abstract class d {
         Executor executor = (Executor) bVar.b.a.get();
         wf b10 = yf.b();
         zzd zzdVar = new zzd(fVar, executor);
-        p3 p3Var = new p3();
-        p3Var.c = fb.b;
-        o0.a aVar = new o0.a(28, (byte) 0);
-        aVar.c = eVar.a();
-        aVar.b = gb.b;
-        p3Var.d = new ce(aVar);
-        m.a.execute(new p(b10, new a5.a(p3Var, 1), hb.N4, b10.c(), 8));
+        r3 r3Var = new r3();
+        r3Var.c = fb.b;
+        a1 a1Var = new a1(29, (byte) 0);
+        a1Var.c = eVar.a();
+        a1Var.b = gb.b;
+        r3Var.d = new ce(a1Var);
+        m.a.execute(new p(b10, new a5.a(r3Var, 1), hb.N4, b10.c(), 8));
         return zzdVar;
     }
 

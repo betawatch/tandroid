@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements r2.u {
     public final /* synthetic */ int a;
@@ -32,8 +32,16 @@ public final /* synthetic */ class b0 implements r2.u {
     }
 
     @Override // r2.u
-    public boolean K0() {
-        return true;
+    public boolean T(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureRequired(str);
+    }
+
+    @Override // r2.u
+    public int V() {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c).length;
     }
 
     public Object a() {
@@ -50,15 +58,7 @@ public final /* synthetic */ class b0 implements r2.u {
         return obj;
     }
 
-    @Override // r2.u
-    public MediaCodecInfo b(int i10) {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c)[i10];
-    }
-
-    public void c(long j3) {
+    public void b(long j3) {
         int i10 = this.b;
         long[] jArr = (long[]) this.c;
         if (i10 == jArr.length) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class b0 implements r2.u {
         jArr2[i11] = j3;
     }
 
-    public void d(long[] jArr) {
+    public void c(long[] jArr) {
         int length = this.b + jArr.length;
         long[] jArr2 = (long[]) this.c;
         if (length > jArr2.length) {
@@ -78,6 +78,14 @@ public final /* synthetic */ class b0 implements r2.u {
         }
         System.arraycopy(jArr, 0, (long[]) this.c, this.b, jArr.length);
         this.b = length;
+    }
+
+    @Override // r2.u
+    public MediaCodecInfo d(int i10) {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c)[i10];
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -156,19 +164,24 @@ public final /* synthetic */ class b0 implements r2.u {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder l4 = i2.g.l(i10, "Invalid index ", ", size is ");
-        l4.append(this.b);
-        throw new IndexOutOfBoundsException(l4.toString());
+        StringBuilder m10 = hc.b.m(i10, "Invalid index ", ", size is ");
+        m10.append(this.b);
+        throw new IndexOutOfBoundsException(m10.toString());
     }
 
     public synchronized List g() {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
+    @Override // r2.u
+    public boolean g0() {
+        return true;
+    }
+
     public long h(c3.l lVar) {
         e2.v vVar = (e2.v) this.c;
         int i10 = 0;
-        lVar.j(vVar.a, 0, 1, false);
+        lVar.g(vVar.a, 0, 1, false);
         int i11 = vVar.a[0] & 255;
         if (i11 == 0) {
             return Long.MIN_VALUE;
@@ -180,7 +193,7 @@ public final /* synthetic */ class b0 implements r2.u {
             i13++;
         }
         int i14 = i11 & (~i12);
-        lVar.j(vVar.a, 1, i13, false);
+        lVar.g(vVar.a, 1, i13, false);
         while (i10 < i13) {
             i10++;
             i14 = (vVar.a[i10] & 255) + (i14 << 8);
@@ -230,30 +243,12 @@ public final /* synthetic */ class b0 implements r2.u {
                 U0.recycle();
                 throw th2;
             }
-        } catch (Exception e7) {
+        } catch (Exception e) {
             d0Var.F(95, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e7);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
             h4Var.a(0);
             return "billingOverrideService.getBillingOverride";
         }
-    }
-
-    @Override // r2.u
-    public boolean p(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
-    }
-
-    @Override // r2.u
-    public boolean q0(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureRequired(str);
-    }
-
-    @Override // r2.u
-    public int r0() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
     }
 
     public String toString() {
@@ -263,6 +258,11 @@ public final /* synthetic */ class b0 implements r2.u {
             default:
                 return super.toString();
         }
+    }
+
+    @Override // r2.u
+    public boolean w(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
     }
 
     public /* synthetic */ b0(Object obj, int i10, int i11) {
@@ -324,9 +324,9 @@ public final /* synthetic */ class b0 implements r2.u {
 
     public b0(Context context) {
         this.a = 3;
-        int e7 = g.g.e(context, 0);
-        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e7)));
-        this.b = e7;
+        int e = g.g.e(context, 0);
+        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e)));
+        this.b = e;
     }
 
     public b0(boolean z10, boolean z11, boolean z12) {

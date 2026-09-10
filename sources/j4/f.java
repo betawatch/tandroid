@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -22,59 +22,59 @@ public final class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public g0 a(int i10, j6.l lVar) {
+    public h0 a(int i10, j6.l lVar) {
         String str = (String) lVar.b;
         if (i10 != 2) {
             if (i10 == 3 || i10 == 4) {
-                return new w(new u(str, lVar.d(), "video/mp2t"));
+                return new x(new u(str, lVar.d(), "video/mp2t"));
             }
             if (i10 == 21) {
-                return new w(new h());
+                return new x(new h());
             }
             if (i10 == 27) {
                 if (c(4)) {
                     return null;
                 }
-                return new w(new q(new c0(0, b(lVar)), c(1), c(8)));
+                return new x(new q(new d0(0, b(lVar)), c(1), c(8)));
             }
             if (i10 == 36) {
-                return new w(new s(new c0(0, b(lVar))));
+                return new x(new s(new d0(0, b(lVar))));
             }
             if (i10 == 45) {
-                return new w(new v());
+                return new x(new v());
             }
             if (i10 == 89) {
-                return new w(new h((List) lVar.c));
+                return new x(new h((List) lVar.c));
             }
             if (i10 == 172) {
-                return new w(new b(lVar.d(), 1, str, "video/mp2t"));
+                return new x(new b(lVar.d(), 1, str, "video/mp2t"));
             }
             if (i10 == 257) {
-                return new b0(new aa.a("application/vnd.dvb.ait", 19));
+                return new c0(new aa.a("application/vnd.dvb.ait", 20));
             }
             if (i10 != 138) {
                 if (i10 == 139) {
-                    return new w(new g(str, lVar.d(), 5408));
+                    return new x(new g(str, lVar.d(), 5408));
                 }
                 switch (i10) {
                     case 15:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new e(lVar.d(), str, "video/mp2t", false));
+                        return new x(new e(lVar.d(), str, "video/mp2t", false));
                     case 16:
-                        return new w(new n(new c0(1, b(lVar))));
+                        return new x(new n(new d0(1, b(lVar))));
                     case 17:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new t(str, lVar.d()));
+                        return new x(new t(str, lVar.d()));
                     default:
                         switch (i10) {
                             case 128:
                                 break;
                             case 129:
-                                return new w(new b(lVar.d(), 0, str, "video/mp2t"));
+                                return new x(new b(lVar.d(), 0, str, "video/mp2t"));
                             case 130:
                                 if (!c(64)) {
                                     return null;
@@ -86,7 +86,7 @@ public final class f {
                                         if (c(16)) {
                                             return null;
                                         }
-                                        return new b0(new aa.a("application/x-scte35", 19));
+                                        return new c0(new aa.a("application/x-scte35", 20));
                                     case 135:
                                         break;
                                     case 136:
@@ -97,9 +97,9 @@ public final class f {
                         }
                 }
             }
-            return new w(new g(str, lVar.d(), 4096));
+            return new x(new g(str, lVar.d(), 4096));
         }
-        return new w(new k(new c0(1, b(lVar)), "video/mp2t"));
+        return new x(new k(new d0(1, b(lVar)), "video/mp2t"));
     }
 
     public List b(j6.l lVar) {

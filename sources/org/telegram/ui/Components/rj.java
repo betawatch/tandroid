@@ -1,35 +1,42 @@
 package org.telegram.ui.Components;
 
+import j$.util.Objects;
+import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rj implements wj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
+public final class rj {
+    public final int a;
+    public final long b;
 
-    public /* synthetic */ rj(int i10, TLRPC.User user) {
+    public rj(int i10, long j3) {
         this.a = i10;
-        this.b = user;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final String run() {
-        gf.b c10;
-        StringBuilder sb2;
-        String str;
-        switch (this.a) {
-            case 0:
-                c10 = gf.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
-            default:
-                c10 = gf.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
+    public static rj a(Object obj) {
+        if (obj instanceof ContactsController.Contact) {
+            return new rj(2, ((ContactsController.Contact) obj).contact_id);
         }
-        return org.telegram.messenger.w1.j(sb2, str, c10);
+        if (obj instanceof TLRPC.User) {
+            return new rj(1, ((TLRPC.User) obj).id);
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || rj.class != obj.getClass()) {
+            return false;
+        }
+        rj rjVar = (rj) obj;
+        return this.b == rjVar.b && this.a == rjVar.a;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(m1.j.a(this.a), Long.valueOf(this.b));
     }
 }

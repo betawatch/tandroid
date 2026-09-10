@@ -1,73 +1,86 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
-import org.telegram.messenger.Emoji;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class xb extends d90 {
-    public final /* synthetic */ int L;
+public class xb extends mb {
+    public final kj0 a;
+    public TextView b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xb(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public xb(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context, f6Var);
-        this.L = i10;
+        kj0 kj0Var = new kj0(context);
+        this.a = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(kj0Var, w7.a6.h(56.0f, 48.0f, 8388627));
+        wb wbVar = new wb(context, 0, null);
+        wbVar.setDisablePaddingsOffset(true);
+        this.b = wbVar;
+        NotificationCenter.listenEmojiLoading(wbVar);
+        this.b.setSingleLine();
+        this.b.setTypeface(Typeface.SANS_SERIF);
+        this.b.setTextSize(1, 15.0f);
+        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        addView(this.b, w7.a6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Gi));
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.j6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.j6.Fi));
     }
 
-    @Override // org.telegram.ui.Components.d90
-    public int a() {
-        switch (this.L) {
-            case 4:
-                return 3;
-            default:
-                return super.a();
+    public final void c(int i10, int i11, int i12, String... strArr) {
+        kj0 kj0Var = this.a;
+        kj0Var.f(i10, i11, i12, null);
+        for (String str : strArr) {
+            kj0Var.h(this.c, str);
         }
     }
 
-    @Override // android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 3:
-                if (getAlpha() < 0.9f) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
+    public final void d(int i10, String... strArr) {
+        c(i10, 32, 32, strArr);
+    }
+
+    public final void e(TLRPC.Document document, String... strArr) {
+        kj0 kj0Var = this.a;
+        kj0Var.setAutoRepeat(true);
+        kj0Var.g(36, 36, document);
+        for (String str : strArr) {
+            kj0Var.h(this.c, str);
         }
     }
 
-    @Override // org.telegram.ui.Components.d90, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.L) {
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.Components.tb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 
-    @Override // org.telegram.ui.Components.d90, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.L) {
-            case 0:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 1:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 2:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-        }
+    @Override // org.telegram.ui.Components.tb
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
+    }
+
+    public void setIconPaddingBottom(int i10) {
+        this.a.setLayoutParams(w7.a6.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+    }
+
+    public void setTextColor(int i10) {
+        this.c = i10;
+        this.b.setTextColor(i10);
+    }
+
+    public xb(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(context, f6Var);
+        setBackground(i10);
+        setTextColor(i11);
     }
 }

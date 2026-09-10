@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ff0 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,16 +21,16 @@ public final /* synthetic */ class ff0 implements Runnable {
                 hf0 hf0Var = gf0Var.d;
                 if (gf0Var.b) {
                     boolean z10 = hf0Var.K;
-                    org.telegram.ui.Components.xi0 xi0Var = hf0Var.J;
-                    jd jdVar = hf0Var.n;
+                    org.telegram.ui.Components.hj0 hj0Var = hf0Var.J;
+                    kd kdVar = hf0Var.n;
                     if (z10 && System.currentTimeMillis() - gf0Var.a >= 10000) {
-                        jdVar.setAnimation(xi0Var);
-                        xi0Var.L(0, false, false);
-                        xi0Var.u0 = new ff0(gf0Var, 1);
-                        jdVar.d();
+                        kdVar.setAnimation(hj0Var);
+                        hj0Var.N(0, false, false);
+                        hj0Var.u0 = new ff0(gf0Var, 1);
+                        kdVar.d();
                         gf0Var.a = System.currentTimeMillis();
                     }
-                    jdVar.postDelayed(gf0Var.c, 1000L);
+                    kdVar.postDelayed(gf0Var.c, 1000L);
                     break;
                 }
                 break;
@@ -39,9 +39,9 @@ public final /* synthetic */ class ff0 implements Runnable {
                 break;
             default:
                 hf0 hf0Var2 = this.b.d;
-                org.telegram.ui.Components.xi0 xi0Var2 = hf0Var2.I;
-                xi0Var2.L(0, false, false);
-                hf0Var2.n.setAnimation(xi0Var2);
+                org.telegram.ui.Components.hj0 hj0Var2 = hf0Var2.I;
+                hj0Var2.N(0, false, false);
+                hf0Var2.n.setAnimation(hj0Var2);
                 break;
         }
     }

@@ -1,99 +1,165 @@
 package zh;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
+import android.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.zc0;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class w6 implements TextWatcher {
-    public boolean a;
-    public int b = 2;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ zc0 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ di.d h;
-    public final /* synthetic */ TextView n;
+public class w6 extends View {
+    public boolean E;
+    public long F;
+    public final Path G;
+    public final k5 H;
+    public final org.telegram.ui.Components.d6 a;
+    public final TL_stories.MediaArea b;
+    public final Paint c;
+    public final Paint d;
+    public LinearGradient e;
+    public LinearGradient f;
+    public final Matrix h;
+    public final org.telegram.ui.Cells.z n;
+    public final xc r;
+    public final boolean s;
+    public final boolean v;
+    public final boolean w;
+    public final boolean x;
+    public final boolean y;
 
-    public w6(EditTextBoldCursor editTextBoldCursor, zc0 zc0Var, long j3, boolean z10, di.d dVar, TextView textView) {
-        this.c = editTextBoldCursor;
-        this.d = zc0Var;
-        this.e = j3;
-        this.f = z10;
-        this.h = dVar;
-        this.n = textView;
+    public w6(Context context, View view, TL_stories.MediaArea mediaArea) {
+        super(context);
+        boolean z10 = true;
+        this.c = new Paint(1);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.h = new Matrix();
+        org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.j6.f0(1174405119, 2, -1);
+        this.n = f02;
+        this.r = new xc(this);
+        this.s = false;
+        this.v = false;
+        this.E = false;
+        this.G = new Path();
+        this.H = new k5(this, 7);
+        this.b = mediaArea;
+        boolean z11 = mediaArea instanceof TL_stories.TL_mediaAreaGeoPoint;
+        this.s = z11 || (mediaArea instanceof TL_stories.TL_mediaAreaVenue) || (mediaArea instanceof TL_stories.TL_mediaAreaUrl);
+        this.v = z11 || (mediaArea instanceof TL_stories.TL_mediaAreaVenue);
+        if (!z11 && !(mediaArea instanceof TL_stories.TL_mediaAreaVenue) && (mediaArea.coordinates.flags & 1) == 0) {
+            z10 = false;
+        }
+        this.w = z10;
+        this.y = z10;
+        this.x = z10;
+        this.a = new org.telegram.ui.Components.d6(view, 0L, 120L, new LinearInterpolator());
+        paint.setStyle(Paint.Style.STROKE);
+        f02.setCallback(this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        long j3;
-        zc0 zc0Var = this.d;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
-        }
-        try {
-            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        } catch (Exception unused) {
-            j3 = 0;
-        }
-        try {
-            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
-                this.a = true;
-                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
-                editTextBoldCursor.setText(Long.toString(j3));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                int i10 = -this.b;
-                this.b = i10;
-                AndroidUtilities.shakeViewSpring(zc0Var, i10);
-            }
-        } catch (Exception unused2) {
-            this.a = true;
-            long j10 = this.e;
-            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
-            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-            this.a = false;
-            if (!this.f) {
-            }
-            zc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-            TextView textView = this.n;
-            if (j3 != 0) {
-            }
-        }
-        this.a = false;
-        if (!this.f) {
-            this.h.setEnabled(j3 > 0);
-        }
-        zc0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.n;
-        if (j3 != 0) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
-        } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
+    public final void b(Canvas canvas) {
+        if (this.y) {
+            float innerRadius = getInnerRadius();
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            Path path = this.G;
+            path.rewind();
+            path.addRoundRect(rectF, innerRadius, innerRadius, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+            int width = getWidth();
+            int height = getHeight();
+            org.telegram.ui.Cells.z zVar = this.n;
+            zVar.setBounds(0, 0, width, height);
+            zVar.draw(canvas);
+            canvas.restore();
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        org.telegram.ui.Cells.z zVar = this.n;
+        xc xcVar = this.r;
+        if (action == 0) {
+            if (getParent() instanceof View) {
+                View view = (View) getParent();
+                Objects.requireNonNull(view);
+                xcVar.f = new ru(1, view);
+            }
+            xcVar.c(true);
+            zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
+            zVar.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            xcVar.c(false);
+            zVar.setState(new int[0]);
+        }
+        super.dispatchTouchEvent(motionEvent);
+        return true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public float getInnerRadius() {
+        TL_stories.MediaArea mediaArea;
+        TL_stories.MediaAreaCoordinates mediaAreaCoordinates;
+        return (!(getParent() instanceof View) || (mediaArea = this.b) == null || (mediaAreaCoordinates = mediaArea.coordinates) == null) ? getMeasuredHeight() * 0.2f : (mediaAreaCoordinates.flags & 1) != 0 ? (float) (((mediaAreaCoordinates.radius / 100.0d) * getWidth()) / getScaleX()) : getMeasuredHeight() * 0.2f;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float innerRadius = getInnerRadius();
+        b(canvas);
+        if (this.v && this.E && this.e != null) {
+            float measuredWidth = getMeasuredWidth() * 0.7f;
+            float currentTimeMillis = (System.currentTimeMillis() - this.F) / 600.0f;
+            float measuredWidth2 = ((getMeasuredWidth() + measuredWidth) * currentTimeMillis) - measuredWidth;
+            if (currentTimeMillis >= 1.0f) {
+                this.E = false;
+                return;
+            }
+            Matrix matrix = this.h;
+            matrix.reset();
+            matrix.postScale(measuredWidth / 40.0f, 1.0f);
+            matrix.postTranslate(measuredWidth2, 0.0f);
+            this.e.setLocalMatrix(matrix);
+            LinearGradient linearGradient = this.e;
+            Paint paint = this.c;
+            paint.setShader(linearGradient);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, innerRadius, innerRadius, paint);
+            this.f.setLocalMatrix(matrix);
+            LinearGradient linearGradient2 = this.f;
+            Paint paint2 = this.d;
+            paint2.setShader(linearGradient2);
+            float dpf2 = AndroidUtilities.dpf2(1.5f);
+            paint2.setStrokeWidth(dpf2);
+            float f7 = dpf2 / 2.0f;
+            rectF.inset(f7, f7);
+            float f10 = innerRadius - f7;
+            canvas.drawRoundRect(rectF, f10, f10, paint2);
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.n || super.verifyDrawable(drawable);
+    }
+
+    public void a(Canvas canvas) {
     }
 }

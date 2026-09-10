@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h1 extends k1 {
     public final e b;
@@ -20,8 +20,8 @@ public final class h1 extends k1 {
     public final void a(Status status) {
         try {
             this.b.o(status);
-        } catch (IllegalStateException e7) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e7);
+        } catch (IllegalStateException e) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e);
         }
     }
 
@@ -29,8 +29,8 @@ public final class h1 extends k1 {
     public final void b(Exception exc) {
         try {
             this.b.o(new Status(10, a4.a.C(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
-        } catch (IllegalStateException e7) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e7);
+        } catch (IllegalStateException e) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e);
         }
     }
 
@@ -42,14 +42,14 @@ public final class h1 extends k1 {
             eVar.getClass();
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e7) {
+            } catch (DeadObjectException e) {
+                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
+                throw e;
+            } catch (RemoteException e7) {
                 eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
-                throw e7;
-            } catch (RemoteException e10) {
-                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
-        } catch (RuntimeException e11) {
-            b(e11);
+        } catch (RuntimeException e10) {
+            b(e10);
         }
     }
 

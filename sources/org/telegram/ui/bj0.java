@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class bj0 extends org.telegram.ui.Cells.t1 {
     public int Fe;
@@ -34,7 +34,7 @@ public final class bj0 extends org.telegram.ui.Cells.t1 {
         if (this.He == (getMessageObject() == null ? 0 : getMessageObject().getId())) {
             if (!this.Ie.w0) {
                 setTranslationY(-(i11 - this.Fe));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.pr.h).start();
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.wr.h).start();
             }
             this.Fe = getTop();
             this.Ge = getBottom();
@@ -43,7 +43,7 @@ public final class bj0 extends org.telegram.ui.Cells.t1 {
     }
 
     @Override // org.telegram.ui.Cells.t1
-    public final wh.g w3() {
-        return wh.g.d(1, this, this.Ie.F);
+    public final uh.g w3() {
+        return uh.g.d(1, this, this.Ie.F);
     }
 }

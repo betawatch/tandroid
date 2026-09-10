@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class vb0 extends org.telegram.ui.Cells.i3 {
     public boolean x;
@@ -45,10 +45,10 @@ public final class vb0 extends org.telegram.ui.Cells.i3 {
             TextView textView = xb0Var.s;
             int i11 = xb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
             BillingController billingController = BillingController.getInstance();
-            i10 = ((org.telegram.ui.ActionBar.n2) xb0Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.p2) xb0Var).currentAccount;
             textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

@@ -1,99 +1,92 @@
 package a3;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Trace;
-import androidx.fragment.app.t0;
-import bi.a2;
-import bi.f7;
-import bi.g4;
-import bi.gb;
-import bi.h5;
-import bi.i9;
-import bi.ja;
-import bi.l4;
-import bi.n6;
-import bi.o5;
+import android.view.ViewGroup;
+import androidx.fragment.app.u0;
+import bi.b3;
+import bi.be;
+import bi.c3;
+import bi.f3;
+import bi.h2;
+import bi.j4;
+import bi.k1;
+import bi.m8;
+import bi.nb;
+import bi.o1;
+import bi.o2;
+import bi.o4;
 import bi.ob;
-import bi.pb;
-import bi.q7;
-import bi.r1;
-import bi.s1;
-import bi.s6;
-import bi.t1;
-import bi.t9;
-import bi.u8;
-import bi.y8;
-import di.b1;
-import di.o9;
+import bi.oc;
+import bi.q0;
+import bi.q2;
+import bi.sc;
+import bi.u2;
+import bi.w1;
+import bi.x2;
+import bi.y6;
+import bi.z0;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.a90;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.co;
-import org.telegram.ui.lx;
-import org.telegram.ui.uy;
-import sg.a1;
-import v7.h8;
-import v7.i8;
-import w7.z7;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.vr0;
+import org.telegram.ui.Components.yi;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
+import qg.a1;
+import v7.k8;
+import v7.l8;
+import w7.a8;
+import yg.p0;
+import zh.s4;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ d(androidx.fragment.app.k kVar, t0 t0Var) {
-        this.a = 9;
-        this.b = kVar;
+    public /* synthetic */ d(androidx.fragment.app.l lVar, u0 u0Var) {
+        this.a = 8;
+        this.b = lVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10 = false;
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 2;
+        int i14 = 0;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.K();
+                ((f) this.b).g.C();
                 return;
             case 1:
                 ((w) this.b).k--;
                 return;
             case 2:
-                ah.g0 g0Var = (ah.g0) ((a6.m) this.b).b;
-                ah.f0 f0Var = g0Var.b;
-                if (f0Var != null) {
-                    f0Var.d();
-                }
-                g0Var.a.z7(true);
+                ((yi) this.b).hide();
                 return;
             case 3:
-                ((ValueAnimator) this.b).start();
+                ai.a0 a0Var = (ai.a0) this.b;
+                vr0 vr0Var = a0Var.W;
+                s4 s4Var = a0Var.a;
+                vr0Var.a(s4Var == null ? "" : s4Var.E);
                 return;
             case 4:
-                n2 n2Var = ((ah.o0) this.b).f2.r;
-                if (n2Var instanceof co) {
-                    n2Var.showDialog(new a1(n2Var, 11, false));
-                    return;
-                }
-                n2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.showDialog(new a1(n2Var, 11, false));
-                    return;
-                }
-                return;
-            case 5:
                 ((androidx.activity.m) this.b).invalidateOptionsMenu();
                 return;
-            case 6:
+            case 5:
                 androidx.activity.l lVar = (androidx.activity.l) this.b;
                 Runnable runnable = lVar.b;
                 if (runnable != null) {
@@ -102,10 +95,10 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
                 return;
-            case 7:
+            case 6:
                 androidx.activity.n.a((androidx.activity.n) this.b);
                 return;
-            case 8:
+            case 7:
                 androidx.emoji2.text.q qVar = (androidx.emoji2.text.q) this.b;
                 synchronized (qVar.d) {
                     try {
@@ -114,33 +107,33 @@ public final /* synthetic */ class d implements Runnable {
                         }
                         try {
                             o0.i d = qVar.d();
-                            int i10 = d.e;
-                            if (i10 == 2) {
+                            int i15 = d.e;
+                            if (i15 == 2) {
                                 synchronized (qVar.d) {
                                 }
                             }
-                            if (i10 != 0) {
-                                throw new RuntimeException("fetchFonts result is not OK. (" + i10 + ")");
+                            if (i15 != 0) {
+                                throw new RuntimeException("fetchFonts result is not OK. (" + i15 + ")");
                             }
                             try {
-                                int i11 = n0.g.a;
+                                int i16 = n0.g.a;
                                 Trace.beginSection("EmojiCompat.FontRequestEmojiCompatConfig.buildTypeface");
-                                na.d dVar = qVar.c;
+                                t7.u uVar = qVar.c;
                                 Context context = qVar.a;
-                                dVar.getClass();
+                                uVar.getClass();
                                 o0.i[] iVarArr = {d};
-                                h8 h8Var = i0.f.a;
-                                z7.a("TypefaceCompat.createFromFontInfo");
+                                k8 k8Var = i0.f.a;
+                                a8.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.f.a.b(context, iVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e7 = i8.e(qVar.a, d.a);
-                                    if (e7 == null || b10 == null) {
+                                    MappedByteBuffer e = l8.e(qVar.a, d.a);
+                                    if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }
                                     try {
                                         Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(b10, v7.x.a(e7));
+                                        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(b10, v7.x.a(e));
                                         Trace.endSection();
                                         synchronized (qVar.d) {
                                             try {
@@ -154,7 +147,7 @@ public final /* synthetic */ class d implements Runnable {
                                         qVar.b();
                                         return;
                                     } finally {
-                                        int i12 = n0.g.a;
+                                        int i17 = n0.g.a;
                                     }
                                 } finally {
                                     Trace.endSection();
@@ -178,20 +171,20 @@ public final /* synthetic */ class d implements Runnable {
                     } finally {
                     }
                 }
-            case 9:
-                androidx.fragment.app.k this$0 = (androidx.fragment.app.k) this.b;
+            case 8:
+                androidx.fragment.app.l this$0 = (androidx.fragment.app.l) this.b;
                 kotlin.jvm.internal.i.e(this$0, "this$0");
                 kotlin.jvm.internal.i.e(null, "$operation");
                 this$0.a(null);
                 return;
-            case 10:
-                Iterator it = ((androidx.fragment.app.i0) this.b).n.iterator();
+            case 9:
+                Iterator it = ((androidx.fragment.app.j0) this.b).n.iterator();
                 if (it.hasNext()) {
                     it.next().getClass();
                     throw new ClassCastException();
                 }
                 return;
-            case 11:
+            case 10:
                 androidx.lifecycle.e0 e0Var = (androidx.lifecycle.e0) this.b;
                 androidx.lifecycle.v vVar = e0Var.f;
                 if (e0Var.b == 0) {
@@ -204,127 +197,152 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
                 return;
+            case 11:
+                ((bi.j) this.b).c.W = false;
+                return;
             case 12:
-                uy uyVar = ((lx) this.b).O0;
-                if (uyVar.L && uyVar.X3().G()) {
-                    uyVar.E0.h();
-                    return;
-                } else {
-                    uyVar.x4(true, true);
-                    return;
-                }
+                ((bi.n) this.b).invalidateSelf();
+                return;
             case 13:
-                ((r1) this.b).a.t(false);
+                ((bi.i0) this.b).g = -1L;
                 return;
             case 14:
-                t1 t1Var = ((s1) this.b).a;
-                NotificationCenter.getInstance(t1Var.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(t1Var.g()));
+                q0 q0Var = (q0) this.b;
+                pg.i iVar = q0Var.b.H;
+                if (iVar != null) {
+                    iVar.b();
+                }
+                q0Var.b.k();
                 return;
             case 15:
-                a2 a2Var = (a2) this.b;
-                a2Var.H = false;
-                a2Var.p(false);
-                a2Var.T = false;
+                ((z0) this.b).a(false);
                 return;
             case 16:
-                ((g4) this.b).a.Q0();
+                y6 y6Var = (y6) this.b;
+                pc.e();
+                a1 a1Var = new a1((p2) new o1(y6Var), 14, false);
+                a1Var.setOnDismissListener(new k1(i14));
+                a1Var.show();
                 return;
             case 17:
-                o5 o5Var = ((l4) this.b).x;
-                h5 h5Var = o5Var.Q1;
-                if (h5Var != null) {
-                    if (o5Var.T1 || o5Var.U1 || o5Var.V1) {
-                        if (o5Var.O1.e) {
-                            ((ob) o5Var.M2.c).loopBack();
-                            return;
-                        } else {
-                            o5Var.W0 = 0L;
-                            return;
-                        }
-                    }
-                    pb pbVar = ((gb) h5Var).d;
-                    if (pbVar.n0.getCurrentPeerView().d1(true) || pbVar.n0.E(true)) {
-                        return;
-                    }
-                    pbVar.q(true);
-                    return;
-                }
+                ((h2) this.b).G();
                 return;
             case 18:
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                bi.p2 p2Var = (bi.p2) this.b;
+                ArrayList arrayList = p2Var.v;
+                ArrayList arrayList2 = p2Var.s;
+                q2 q2Var = p2Var.N;
+                f3 f3Var = q2Var.s;
+                i10 = ((h3) f3Var).currentAccount;
+                MediaDataController mediaDataController = MediaDataController.getInstance(i10);
+                String str = p2Var.H;
+                if ("premium".equalsIgnoreCase(str)) {
+                    ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(7);
+                    p2Var.x = 0;
+                    arrayList2.clear();
+                    arrayList.clear();
+                    p2Var.y.clear();
+                    p2Var.n.clear();
+                    p2Var.x++;
+                    arrayList2.add(null);
+                    arrayList.add(0L);
+                    arrayList2.addAll(recentStickers);
+                    p2Var.x = recentStickers.size() + p2Var.x;
+                    p2Var.I = p2Var.H;
+                    p2Var.l();
+                    w1.v1(q2Var.b, 0, 0);
+                    q2Var.f.c(false);
+                    q2Var.e.n(false);
                     return;
                 }
+                if (q2Var.a == 1 && Emoji.fullyConsistsOfEmojis(p2Var.H)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = p2Var.H;
+                    tL_messages_getStickers.hash = 0L;
+                    i12 = ((h3) f3Var).currentAccount;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new o2(i14, p2Var, str));
+                    return;
+                }
+                String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+                String[] strArr = p2Var.J;
+                if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
+                    i11 = ((h3) f3Var).currentAccount;
+                    MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
+                }
+                p2Var.J = currentKeyboardLanguage;
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, p2Var.H, false, new androidx.car.app.utils.a((Object) p2Var, str, (Object) mediaDataController, i13), null, false, false, false, true, 50, false);
                 return;
             case 19:
-                ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                int i13 = ProfileStoriesView.s0;
-                profileStoriesView.getClass();
-                AndroidUtilities.vibrateCursor(profileStoriesView);
+                x2 x2Var = (x2) ((u2) this.b).b;
+                if (x2Var.h) {
+                    return;
+                }
+                x2Var.n.setVisibility(8);
                 return;
             case 20:
-                s6.a(((n6) this.b).d);
+                c3 c3Var = (c3) ((b3) this.b).b;
+                ArrayList arrayList3 = c3Var.o;
+                if (arrayList3.isEmpty()) {
+                    return;
+                }
+                c3Var.l.d(0.0f, true);
+                int i18 = c3Var.k + 1;
+                c3Var.k = i18;
+                if (i18 > arrayList3.size() - 1) {
+                    c3Var.k = 0;
+                }
+                yg.g0 g0Var = c3Var.j;
+                g0Var.e((p0) arrayList3.get(c3Var.k));
+                c3Var.j = c3Var.i;
+                c3Var.i = g0Var;
+                c3Var.p.invalidate();
                 return;
             case 21:
-                f7 f7Var = (f7) this.b;
-                if (f7Var.isShowing()) {
-                    f7Var.q(true);
-                    return;
-                }
+                ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
                 return;
             case 22:
-                ((o9) this.b).run();
+                ((j4) this.b).b(null);
                 return;
             case 23:
-                b1 b1Var = (b1) this.b;
-                b1Var.c(b1Var.b);
-                b1Var.c = false;
+                ((o4) this.b).E();
                 return;
             case 24:
-                y8 y8Var = (y8) this.b;
-                y8Var.c();
-                y8Var.a(true);
+                oc ocVar = (oc) this.b;
+                if (ocVar.I) {
+                    ocVar.I = false;
+                    ocVar.invalidate();
+                    return;
+                }
                 return;
             case 25:
-                ((q7) this.b).accept(null);
+                m8 m8Var = ((bi.l8) this.b).p;
+                m8Var.Q = System.currentTimeMillis();
+                m8Var.R = 0L;
+                m8Var.r0 = true;
+                ((sc) m8Var.a).a.J0.a(0L, true);
+                m8Var.invalidate();
                 return;
             case 26:
-                ((i9) this.b).onDetachedFromWindow();
+                bi.t tVar = (bi.t) this.b;
+                if (tVar.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) tVar.getParent()).removeView(tVar);
+                    return;
+                }
                 return;
             case 27:
-                t9 t9Var = (t9) this.b;
-                ArrayList arrayList = t9Var.c;
-                if (arrayList != null) {
-                    t9Var.a.z1 = arrayList;
-                }
-                o5 o5Var2 = t9Var.a;
-                long j3 = t9Var.b;
-                if (o5Var2.B1 == j3 && o5Var2.z1 == null) {
+                bi.d dVar = (bi.d) this.b;
+                if (dVar != null) {
+                    dVar.setLoading(false);
                     return;
                 }
-                o5Var2.B1 = j3;
-                o5Var2.j1();
-                o5Var2.i1();
-                o5Var2.f1(true);
-                TL_stories.PeerStories peerStories = o5Var2.J0.Q0;
-                if (peerStories != null) {
-                    o5Var2.S1.S(peerStories, true);
-                    return;
-                }
-                u8 u8Var = o5Var2.S1;
-                TL_stories.PeerStories y3 = u8Var.y(j3);
-                if (y3 == null) {
-                    y3 = u8Var.z(j3);
-                    z10 = true;
-                }
-                u8Var.S(y3, z10);
                 return;
             case 28:
-                ((a90) this.b).d(true);
+                ((ob) ((nb) this.b).n).fullScroll(130);
                 return;
             default:
-                ((ja) this.b).requestLayout();
+                be beVar = (be) this.b;
+                beVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
+                beVar.w0.B(AndroidUtilities.emptyMotionEvent());
                 return;
         }
     }

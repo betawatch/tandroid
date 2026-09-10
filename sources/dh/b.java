@@ -1,112 +1,157 @@
 package dh;
 
-import android.graphics.Outline;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import di.i;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.qb0;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.voip.q2;
-import org.telegram.ui.Components.voip.s1;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import ch.d;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class b extends ViewOutlineProvider {
+public final /* synthetic */ class b implements d, f6 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ f6 b;
 
-    public /* synthetic */ b(Object obj, int i10) {
+    public /* synthetic */ b(int i10, f6 f6Var) {
         this.a = i10;
-        this.b = obj;
+        this.b = f6Var;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        k kVar;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                c cVar = ((d) obj).h;
-                d.h(outline, cVar.m, cVar.b);
-                break;
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                vi viVar = chatAttachAlertPhotoLayout.b;
-                float f7 = viVar.G0[1];
-                i iVar = viVar.B2;
-                int min = (int) Math.min((viVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
-                if (chatAttachAlertPhotoLayout.b0) {
-                    min = view.getMeasuredHeight();
-                } else if (chatAttachAlertPhotoLayout.d0) {
-                    min = AndroidUtilities.lerp(min, view.getMeasuredHeight(), chatAttachAlertPhotoLayout.e0);
-                }
-                boolean z10 = chatAttachAlertPhotoLayout.d0;
-                if (!z10) {
-                    if (!z10 && !chatAttachAlertPhotoLayout.b0) {
-                        int dp = AndroidUtilities.dp(16.0f);
-                        boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                        outline.setRoundRect((int) 0.0f, (int) chatAttachAlertPhotoLayout.W, view.getMeasuredWidth() + dp, Math.min(min, view.getMeasuredHeight()) + dp, dp);
-                        break;
-                    } else {
-                        outline.setRect(0, 0, view.getMeasuredWidth(), Math.min(min, view.getMeasuredHeight()));
-                        break;
-                    }
-                } else {
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    float f10 = chatAttachAlertPhotoLayout.n1;
-                    boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                    float f11 = 1.0f - chatAttachAlertPhotoLayout.e0;
-                    rectF.set((0.0f * f11) + f10, (f11 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, chatAttachAlertPhotoLayout.l1);
-                    outline.setRect((int) rectF.left, (int) rectF.top, (int) rectF.right, Math.min(min, (int) rectF.bottom));
-                    break;
-                }
-            case 2:
-                int i11 = ((w50) obj).N0;
-                outline.setOval(0, 0, i11, i11);
-                break;
-            case 3:
-                outline.setRoundRect(0, ((qb0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
-                break;
-            case 4:
-                s1 s1Var = (s1) obj;
-                float f12 = s1Var.Q;
-                if (f12 < 0.0f) {
-                    if (!s1Var.M) {
-                        outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-                        break;
-                    } else {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), s1Var.M ? AndroidUtilities.dp(4.0f) : 0.0f);
-                        break;
-                    }
-                } else if (f12 >= 1.0f) {
-                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), s1Var.Q);
-                    break;
-                } else {
-                    outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-                    break;
-                }
-            case 5:
-                q2 q2Var = (q2) obj;
-                if (q2Var.b >= 1.0f) {
-                    outline.setRoundRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N), q2Var.b);
-                    break;
-                } else {
-                    outline.setRect((int) q2Var.O, (int) q2Var.N, (int) (view.getMeasuredWidth() - q2Var.O), (int) (view.getMeasuredHeight() - q2Var.N));
-                    break;
-                }
-            default:
-                int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
-                outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
-                break;
+    @Override // org.telegram.ui.ActionBar.f6
+    public Paint F(String str) {
+        return j6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public int F0(int i10) {
+        if (i10 == j6.G8) {
+            return -14145495;
         }
+        if (i10 == j6.E8) {
+            return -1;
+        }
+        if (i10 == j6.h5) {
+            return -14737633;
+        }
+        if (i10 == j6.j5) {
+            return -592138;
+        }
+        if (i10 == j6.r5) {
+            return -8553091;
+        }
+        if (i10 == j6.He) {
+            return -16777216;
+        }
+        if (i10 == j6.Ke) {
+            return -1610612736;
+        }
+        if (i10 == j6.Ne || i10 == j6.Re || i10 == j6.Me) {
+            return -9539985;
+        }
+        if (i10 == j6.G6) {
+            return -1;
+        }
+        int i11 = j6.Mh;
+        if (i10 == i11) {
+            return -11754001;
+        }
+        if (i10 == j6.i6) {
+            return 536870911;
+        }
+        if (i10 == j6.Fh || i10 == j6.Eh || i10 == j6.Gh) {
+            return -1;
+        }
+        if (i10 == j6.Hh) {
+            return 352321535;
+        }
+        if (i10 == j6.Je || i10 == i11) {
+            return -7895161;
+        }
+        if (i10 == j6.Ie) {
+            return 780633991;
+        }
+        if (i10 == j6.a7) {
+            return -15921907;
+        }
+        if (i10 == j6.m7) {
+            return -12500671;
+        }
+        if (i10 == j6.l7) {
+            return -13133079;
+        }
+        if (i10 == j6.n7) {
+            return -1;
+        }
+        if (i10 == j6.d6) {
+            return -15198183;
+        }
+        if (i10 == j6.d7) {
+            return -16777216;
+        }
+        f6 f6Var = this.b;
+        return f6Var != null ? f6Var.F0(i10) : j6.w0(null, i10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public boolean a() {
+        return j6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public int e0(int i10) {
+        return F0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public int f1(int i10) {
+        return F0(i10);
+    }
+
+    @Override // ch.d
+    public int g(f6 f6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.Sd, f6Var));
+                }
+                return i0.a.k(j6.v0(j6.Sd, f6Var), 255);
+            case 1:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
+                }
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
+            default:
+                if (c.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
+                }
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public void l(float f7, float f10, int i10, int i11) {
+        j6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ boolean m0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public ColorFilter w() {
+        return j6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ void L0(int i10, int i11) {
     }
 }

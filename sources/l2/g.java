@@ -1,729 +1,1110 @@
 package l2;
 
+import a9.r;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.media.AudioAttributes;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import android.util.SparseArray;
-import b2.e0;
-import b2.f0;
-import b2.k0;
-import b2.l0;
+import android.text.style.CharacterStyle;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import androidx.profileinstaller.ProfileInstallReceiver;
+import b2.s0;
 import com.google.android.gms.internal.cast.b5;
-import g2.c0;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import e2.d0;
+import g.z;
 import j$.util.Objects;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import ji.u4;
-import m2.u;
-import u2.d0;
-import u2.t;
-import v7.p7;
-import y2.p;
+import java.util.logging.Level;
+import m.e3;
+import m.x0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotInlineKeyboard;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.em;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.k1;
+import org.telegram.ui.Cells.ka;
+import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.t9;
+import org.telegram.ui.Components.hq0;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.km0;
+import org.telegram.ui.Components.og0;
+import org.telegram.ui.Components.t20;
+import org.telegram.ui.Components.u20;
+import org.telegram.ui.Components.y5;
+import org.telegram.ui.Components.yi;
+import org.telegram.ui.j71;
+import org.telegram.ui.rv0;
+import pg.n2;
+import pg.v1;
+import r0.l1;
+import u2.u;
+import w7.x8;
+import y8.e0;
+import zh.a3;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class g extends u2.a {
-    public y2.m A;
-    public c0 B;
-    public b5 C;
-    public Handler D;
-    public e0 E;
-    public Uri F;
-    public final Uri G;
-    public m2.c H;
-    public boolean I;
-    public long J;
-    public long K;
-    public long L;
-    public int M;
-    public long N;
-    public int O;
-    public k0 P;
-    public final boolean h;
-    public final g2.g i;
-    public final a5.a j;
-    public final qb.b k;
-    public final n2.m l;
-    public final rb.a m;
-    public final fg.f n;
-    public final long o;
-    public final long p;
-    public final a5.a q;
-    public final y2.o r;
-    public final l.d s;
-    public final Object t;
-    public final SparseArray u;
-    public final c v;
-    public final c w;
-    public final u4 x;
-    public final y2.n y;
-    public g2.h z;
+public class g implements y2.i, x0, n5.b, k1, zg.g, i71, r0.n, v1, r4.c, com.google.android.gms.common.api.internal.o, OnCompleteListener, j71, hq0 {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    static {
-        l0.a("media3.exoplayer.dash");
+    public /* synthetic */ g(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Type inference failed for: r2v11, types: [l2.c] */
-    /* JADX WARN: Type inference failed for: r2v12, types: [l2.c] */
-    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, qb.b bVar, n2.m mVar, rb.a aVar2, long j3, long j10) {
-        this.P = k0Var;
-        this.E = k0Var.c;
-        f0 f0Var = k0Var.b;
-        f0Var.getClass();
-        Uri uri = f0Var.a;
-        this.F = uri;
-        this.G = uri;
-        this.H = null;
-        this.i = gVar;
-        this.r = oVar;
-        this.j = aVar;
-        this.l = mVar;
-        this.m = aVar2;
-        this.o = j3;
-        this.p = j10;
-        this.k = bVar;
-        this.n = new fg.f(5);
-        this.h = false;
-        this.q = b(null);
-        this.t = new Object();
-        this.u = new SparseArray();
-        this.x = new u4(this, 3);
-        this.N = -9223372036854775807L;
-        this.L = -9223372036854775807L;
-        this.s = new l.d(this, 1);
-        this.y = new xa.c(this, 27);
-        final int i10 = 0;
-        this.v = new Runnable(this) { // from class: l2.c
-            public final /* synthetic */ g b;
-
-            {
-                this.b = this;
+    /* JADX WARN: Removed duplicated region for block: B:121:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0271  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public boolean B(MotionEvent motionEvent) {
+        boolean z10;
+        MotionEvent motionEvent2;
+        MotionEvent motionEvent3;
+        boolean onFling;
+        u20 u20Var;
+        boolean z11;
+        t20 t20Var = (t20) this.b;
+        int i10 = t20.w;
+        u20 u20Var2 = t20Var.f;
+        androidx.mediarouter.app.c cVar = t20Var.e;
+        int action = motionEvent.getAction();
+        if (t20Var.v == null) {
+            t20Var.v = VelocityTracker.obtain();
+        }
+        t20Var.v.addMovement(motionEvent);
+        int i11 = action & 255;
+        boolean z12 = i11 == 6;
+        int actionIndex = z12 ? motionEvent.getActionIndex() : -1;
+        int pointerCount = motionEvent.getPointerCount();
+        float f7 = 0.0f;
+        float f10 = 0.0f;
+        for (int i12 = 0; i12 < pointerCount; i12++) {
+            if (actionIndex != i12) {
+                f7 = motionEvent.getX(i12) + f7;
+                f10 = motionEvent.getY(i12) + f10;
             }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        this.b.A();
-                        break;
-                    default:
-                        this.b.y(false);
-                        break;
+        }
+        float f11 = z12 ? pointerCount - 1 : pointerCount;
+        float f12 = f7 / f11;
+        float f13 = f10 / f11;
+        if (i11 == 0) {
+            if (t20Var.g != null && u20Var2.a()) {
+                boolean hasMessages = cVar.hasMessages(3);
+                if (hasMessages) {
+                    cVar.removeMessages(3);
+                }
+                MotionEvent motionEvent4 = t20Var.m;
+                if (motionEvent4 != null && (motionEvent3 = t20Var.n) != null && hasMessages && t20Var.l && motionEvent.getEventTime() - motionEvent3.getEventTime() <= 220) {
+                    int x10 = ((int) motionEvent4.getX()) - ((int) motionEvent.getX());
+                    int y3 = ((int) motionEvent4.getY()) - ((int) motionEvent.getY());
+                    if ((y3 * y3) + (x10 * x10) < t20Var.b) {
+                        t20Var.o = true;
+                        z10 = t20Var.g.onDoubleTap(t20Var.m) | t20Var.g.onDoubleTapEvent(motionEvent);
+                        t20Var.p = f12;
+                        t20Var.r = f12;
+                        t20Var.q = f13;
+                        t20Var.s = f13;
+                        motionEvent2 = t20Var.m;
+                        if (motionEvent2 != null) {
+                            motionEvent2.recycle();
+                        }
+                        t20Var.m = MotionEvent.obtain(motionEvent);
+                        t20Var.k = true;
+                        t20Var.l = true;
+                        t20Var.h = true;
+                        t20Var.j = false;
+                        t20Var.i = false;
+                        if (t20Var.t) {
+                            cVar.removeMessages(2);
+                            cVar.sendEmptyMessageAtTime(2, t20Var.m.getDownTime() + i10 + t20Var.u);
+                        }
+                        cVar.sendEmptyMessageAtTime(1, t20Var.m.getDownTime() + i10);
+                        return u20Var2.onDown(motionEvent) | z10;
+                    }
+                }
+                cVar.sendEmptyMessageDelayed(3, 220L);
+            }
+            z10 = false;
+            t20Var.p = f12;
+            t20Var.r = f12;
+            t20Var.q = f13;
+            t20Var.s = f13;
+            motionEvent2 = t20Var.m;
+            if (motionEvent2 != null) {
+            }
+            t20Var.m = MotionEvent.obtain(motionEvent);
+            t20Var.k = true;
+            t20Var.l = true;
+            t20Var.h = true;
+            t20Var.j = false;
+            t20Var.i = false;
+            if (t20Var.t) {
+            }
+            cVar.sendEmptyMessageAtTime(1, t20Var.m.getDownTime() + i10);
+            return u20Var2.onDown(motionEvent) | z10;
+        }
+        if (i11 == 1) {
+            t20Var.h = false;
+            MotionEvent obtain = MotionEvent.obtain(motionEvent);
+            if (t20Var.o) {
+                onFling = t20Var.g.onDoubleTapEvent(motionEvent);
+            } else {
+                if (t20Var.j) {
+                    cVar.removeMessages(3);
+                    t20Var.j = false;
+                } else if (t20Var.k) {
+                    boolean onSingleTapUp = u20Var2.onSingleTapUp(motionEvent);
+                    if (t20Var.i && (u20Var = t20Var.g) != null) {
+                        u20Var.onSingleTapConfirmed(motionEvent);
+                    }
+                    onFling = onSingleTapUp;
+                } else {
+                    VelocityTracker velocityTracker = t20Var.v;
+                    int pointerId = motionEvent.getPointerId(0);
+                    velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, t20Var.d);
+                    float yVelocity = velocityTracker.getYVelocity(pointerId);
+                    float xVelocity = velocityTracker.getXVelocity(pointerId);
+                    if (Math.abs(yVelocity) > t20Var.c || Math.abs(xVelocity) > t20Var.c) {
+                        onFling = u20Var2.onFling(t20Var.m, motionEvent, xVelocity, yVelocity);
+                    }
+                }
+                onFling = false;
+            }
+            MotionEvent motionEvent5 = t20Var.n;
+            if (motionEvent5 != null) {
+                motionEvent5.recycle();
+            }
+            t20Var.n = obtain;
+            VelocityTracker velocityTracker2 = t20Var.v;
+            if (velocityTracker2 != null) {
+                velocityTracker2.recycle();
+                t20Var.v = null;
+            }
+            t20Var.o = false;
+            t20Var.i = false;
+            cVar.removeMessages(1);
+            cVar.removeMessages(2);
+            return onFling;
+        }
+        if (i11 != 2) {
+            if (i11 == 3) {
+                cVar.removeMessages(1);
+                cVar.removeMessages(2);
+                cVar.removeMessages(3);
+                t20Var.v.recycle();
+                t20Var.v = null;
+                t20Var.o = false;
+                t20Var.h = false;
+                t20Var.k = false;
+                t20Var.l = false;
+                t20Var.i = false;
+                if (t20Var.j) {
+                    t20Var.j = false;
+                    return false;
+                }
+            } else if (i11 == 5) {
+                t20Var.p = f12;
+                t20Var.r = f12;
+                t20Var.q = f13;
+                t20Var.s = f13;
+                cVar.removeMessages(1);
+                cVar.removeMessages(2);
+                cVar.removeMessages(3);
+                t20Var.o = false;
+                t20Var.k = false;
+                t20Var.l = false;
+                t20Var.i = false;
+                if (t20Var.j) {
+                    t20Var.j = false;
+                    return false;
+                }
+            } else if (i11 == 6) {
+                t20Var.p = f12;
+                t20Var.r = f12;
+                t20Var.q = f13;
+                t20Var.s = f13;
+                t20Var.v.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, t20Var.d);
+                int actionIndex2 = motionEvent.getActionIndex();
+                int pointerId2 = motionEvent.getPointerId(actionIndex2);
+                float xVelocity2 = t20Var.v.getXVelocity(pointerId2);
+                float yVelocity2 = t20Var.v.getYVelocity(pointerId2);
+                for (int i13 = 0; i13 < pointerCount; i13++) {
+                    if (i13 != actionIndex2) {
+                        int pointerId3 = motionEvent.getPointerId(i13);
+                        if ((t20Var.v.getYVelocity(pointerId3) * yVelocity2) + (t20Var.v.getXVelocity(pointerId3) * xVelocity2) < 0.0f) {
+                            t20Var.v.clear();
+                            return false;
+                        }
+                    }
                 }
             }
-        };
-        final int i11 = 1;
-        this.w = new Runnable(this) { // from class: l2.c
-            public final /* synthetic */ g b;
-
-            {
-                this.b = this;
+        } else if (!t20Var.j) {
+            float f14 = t20Var.p - f12;
+            float f15 = t20Var.q - f13;
+            if (t20Var.o) {
+                return t20Var.g.onDoubleTapEvent(motionEvent);
             }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        this.b.A();
-                        break;
-                    default:
-                        this.b.y(false);
-                        break;
+            if (t20Var.k) {
+                int i14 = (int) (f12 - t20Var.r);
+                int i15 = (int) (f13 - t20Var.s);
+                int i16 = (i15 * i15) + (i14 * i14);
+                if (i16 > t20Var.a) {
+                    z11 = u20Var2.onScroll(t20Var.m, motionEvent, f14, f15);
+                    t20Var.p = f12;
+                    t20Var.q = f13;
+                    t20Var.k = false;
+                    cVar.removeMessages(3);
+                    cVar.removeMessages(1);
+                    cVar.removeMessages(2);
+                } else {
+                    z11 = false;
                 }
+                if (i16 > t20Var.a) {
+                    t20Var.l = false;
+                }
+                return z11;
             }
-        };
-    }
-
-    public static boolean u(m2.h hVar) {
-        List list = hVar.c;
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            int i11 = ((m2.a) list.get(i10)).b;
-            if (i11 == 1 || i11 == 2) {
-                return true;
+            if (Math.abs(f14) >= 1.0f || Math.abs(f15) >= 1.0f) {
+                boolean onScroll = u20Var2.onScroll(t20Var.m, motionEvent, f14, f15);
+                t20Var.p = f12;
+                t20Var.q = f13;
+                return onScroll;
             }
         }
         return false;
     }
 
-    public final void A() {
-        Uri uri;
-        this.D.removeCallbacks(this.v);
-        if (this.A.c()) {
-            return;
+    @Override // y2.i
+    public void C(y2.k kVar, long j3, long j10, boolean z10) {
+        ((i) this.b).w((y2.q) kVar, j10);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean E1(t1 t1Var, TLRPC.Chat chat) {
+        return false;
+    }
+
+    public byte F() {
+        int read = ((com.google.firebase.messaging.d) this.b).read();
+        if (read >= 0) {
+            return (byte) read;
         }
-        if (this.A.d()) {
-            this.I = true;
-            return;
+        throw new EOFException();
+    }
+
+    public int G() {
+        return ((F() & 255) << 24) | ((F() & 255) << 16) | ((F() & 255) << 8) | (F() & 255);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean G1() {
+        return false;
+    }
+
+    public int I() {
+        return ((F() & Byte.MAX_VALUE) << 21) | ((F() & Byte.MAX_VALUE) << 14) | ((F() & Byte.MAX_VALUE) << 7) | (F() & Byte.MAX_VALUE);
+    }
+
+    public g J(int i10) {
+        if (i10 == 16) {
+            i10 = 12;
         }
-        synchronized (this.t) {
-            uri = this.F;
+        ((AudioAttributes.Builder) this.b).setUsage(i10);
+        return this;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public void L1(t1 t1Var, TLRPC.WebPage webPage, String str, boolean z10) {
+        nf.f.s(t1Var.getContext(), str);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean M0(long j3) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ CharacterStyle M1(t1 t1Var) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean N(t1 t1Var, TLRPC.TodoItem todoItem, boolean z10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public void N1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
+        ka kaVar = (ka) this.b;
+        org.telegram.ui.Cells.g gVar = kaVar.v;
+        if (kaVar.a()) {
+            kaVar.s = 2;
+            AndroidUtilities.cancelRunOnUIThread(gVar);
+            AndroidUtilities.runOnUIThread(gVar, 5000L);
         }
-        this.I = false;
-        Map map = Collections.EMPTY_MAP;
-        e2.d.i(uri, "The uri must be set.");
-        p pVar = new p(this.z, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
-        l.d dVar = this.s;
-        this.m.getClass();
-        this.A.f(pVar, dVar, 3);
     }
 
-    @Override // u2.a
-    public final boolean a(k0 k0Var) {
-        k0 i10 = i();
-        f0 f0Var = i10.b;
-        f0Var.getClass();
-        f0 f0Var2 = k0Var.b;
-        return f0Var2 != null && f0Var2.a.equals(f0Var.a) && f0Var2.e.equals(f0Var.e) && Objects.equals(f0Var2.c, f0Var.c) && i10.c.equals(k0Var.c);
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean O() {
+        return false;
     }
 
-    @Override // u2.a
-    public final d0 c(u2.f0 f0Var, y2.d dVar, long j3) {
-        int intValue = ((Integer) f0Var.a).intValue() - this.O;
-        a5.a b10 = b(f0Var);
-        n2.j jVar = new n2.j(this.d.c, 0, f0Var);
-        int i10 = this.O + intValue;
-        m2.c cVar = this.H;
-        c0 c0Var = this.B;
-        long j10 = this.L;
-        j2.k kVar = this.g;
-        e2.d.h(kVar);
-        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, jVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar);
-        this.u.put(i10, bVar);
-        return bVar;
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean O1(t1 t1Var, MessageObject messageObject) {
+        return false;
     }
 
-    @Override // u2.a
-    public final synchronized k0 i() {
-        return this.P;
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean P(t1 t1Var) {
+        return false;
     }
 
-    @Override // u2.a
-    public final void k() {
-        this.y.b();
-    }
-
-    @Override // u2.a
-    public final void m(c0 c0Var) {
-        this.B = c0Var;
-        Looper myLooper = Looper.myLooper();
-        j2.k kVar = this.g;
-        e2.d.h(kVar);
-        n2.m mVar = this.l;
-        mVar.B(myLooper, kVar);
-        mVar.b();
-        if (this.h) {
-            y(false);
-            return;
+    @Override // org.telegram.ui.Cells.k1
+    public void P0(int i10, t1 t1Var) {
+        ka kaVar = (ka) this.b;
+        org.telegram.ui.Cells.g gVar = kaVar.v;
+        if (kaVar.a()) {
+            kaVar.s = 2;
+            t1Var.invalidate();
+            AndroidUtilities.cancelRunOnUIThread(gVar);
+            AndroidUtilities.runOnUIThread(gVar, 5000L);
         }
-        this.z = this.i.createDataSource();
-        this.A = new y2.m("DashMediaSource");
-        this.D = e2.d0.o(null);
-        A();
     }
 
-    @Override // u2.a
-    public final void o(d0 d0Var) {
-        b bVar = (b) d0Var;
-        o oVar = bVar.x;
-        oVar.r = true;
-        oVar.d.removeCallbacksAndMessages(null);
-        for (v2.h hVar : bVar.H) {
-            hVar.C(bVar);
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean Q() {
+        return false;
+    }
+
+    @Override // r0.n
+    public l1 Q0(View view, l1 l1Var) {
+        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        km0 km0Var = (km0) this.b;
+        km0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        km0Var.s.requestLayout();
+        return l1.b;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ int U() {
+        return 0;
+    }
+
+    @Override // pg.v1
+    public void V(float f7) {
+        ((n2) this.b).setOutlineWidth(f7);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean V1(t1 t1Var, TLRPC.PollAnswer pollAnswer) {
+        return false;
+    }
+
+    public /* bridge */ void W(int i10) {
+        J(i10);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean W0(t1 t1Var, boolean z10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ gh.a X() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ rv0 X1() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean Y(t1 t1Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean Y1(long j3) {
+        return false;
+    }
+
+    public void Z(long j3) {
+        long j10 = 0;
+        while (j10 < j3) {
+            long skip = ((com.google.firebase.messaging.d) this.b).skip(j3 - j10);
+            if (skip <= 0) {
+                throw new EOFException();
+            }
+            j10 += skip;
         }
-        bVar.G = null;
-        this.u.remove(bVar.a);
     }
 
-    @Override // u2.a
-    public final void q() {
-        this.I = false;
-        this.z = null;
-        y2.m mVar = this.A;
-        if (mVar != null) {
-            mVar.e(null);
-            this.A = null;
+    @Override // org.telegram.ui.Cells.k1
+    public void Z1(t1 t1Var, int i10, float f7, float f10, boolean z10) {
+        ka kaVar = (ka) this.b;
+        org.telegram.ui.Cells.g gVar = kaVar.v;
+        if (kaVar.a()) {
+            kaVar.s = 0;
+            t1Var.invalidate();
+            AndroidUtilities.cancelRunOnUIThread(gVar);
+            AndroidUtilities.runOnUIThread(gVar, 5000L);
         }
-        this.J = 0L;
-        this.K = 0L;
-        this.F = this.G;
-        this.C = null;
-        Handler handler = this.D;
-        if (handler != null) {
-            handler.removeCallbacksAndMessages(null);
-            this.D = null;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean a2(t1 t1Var, TLRPC.TodoItem todoItem) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean b0(t1 t1Var, TLRPC.User user) {
+        return false;
+    }
+
+    public n4.a c() {
+        return new n4.a(((AudioAttributes.Builder) this.b).build());
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public boolean c1(int i10, t1 t1Var) {
+        return i10 == ((ka) this.b).s;
+    }
+
+    @Override // zg.g
+    public void d(Canvas canvas) {
+        yi yiVar = (yi) this.b;
+        canvas.drawColor(yiVar.getThemedColor(j6.d6));
+        if (SharedConfig.chatBlurEnabled()) {
+            yiVar.C2.b(canvas, -2);
         }
-        this.L = -9223372036854775807L;
-        this.M = 0;
-        this.N = -9223372036854775807L;
-        this.u.clear();
-        fg.f fVar = this.n;
-        ((HashMap) fVar.a).clear();
-        ((HashMap) fVar.b).clear();
-        ((HashMap) fVar.c).clear();
-        this.l.release();
     }
 
-    @Override // u2.a
-    public final synchronized void t(k0 k0Var) {
-        this.P = k0Var;
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean d0() {
+        return false;
     }
 
-    public final void v() {
-        boolean z10;
-        y2.m mVar = this.A;
-        d dVar = new d(this);
-        synchronized (z2.c.b) {
-            z10 = z2.c.c;
+    @Override // org.telegram.ui.Cells.k1
+    public boolean e() {
+        return ((ka) this.b).a();
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean f() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ String g(t1 t1Var) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean g1(MessageObject messageObject) {
+        return em.a(messageObject);
+    }
+
+    @Override // fd.a
+    public Object get() {
+        switch (this.a) {
+            case 3:
+                return new e3((Context) ((r) this.b).a, new rb.a(23), new qb.b(23), 3);
+            default:
+                return new s5.i((Context) ((fd.a) this.b).get(), "com.google.android.datatransport.events", Integer.valueOf(s5.i.d).intValue());
         }
-        if (z10) {
-            dVar.a();
-            return;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.o
+    public void h(Object obj) {
+        com.google.android.gms.common.api.internal.n nVar;
+        androidx.activity.o oVar = ((r7.i) this.b).b;
+        synchronized (oVar) {
+            oVar.b = false;
+            nVar = ((com.google.android.gms.common.api.internal.p) oVar.c).c;
         }
-        if (mVar == null) {
-            mVar = new y2.m("SntpClient");
+        if (nVar != null) {
+            ((r7.c) oVar.d).c(nVar, 2441);
         }
-        mVar.f(new na.d(), new z2.b(dVar), 1);
     }
 
-    public final void w(p pVar, long j3) {
-        long j10 = pVar.a;
-        Uri uri = pVar.d.c;
-        t tVar = new t(j3);
-        this.m.getClass();
-        this.q.n(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ int h0(t1 t1Var) {
+        return 0;
     }
 
-    public final void x(IOException iOException) {
-        e2.a.f("DashMediaSource", "Failed to resolve time offset.", iOException);
-        this.L = System.currentTimeMillis() - SystemClock.elapsedRealtime();
-        y(true);
+    @Override // org.telegram.ui.Components.i71
+    public void invalidate() {
+        ((og0) this.b).h.invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x0379, code lost:
-    
-        if (r15.a == (-9223372036854775807L)) goto L190;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x016f, code lost:
-    
-        r11 = r19;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0239  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x03bb  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x0403  */
-    /* JADX WARN: Removed duplicated region for block: B:248:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x03f5  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x03c0  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x03c5  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x01d2 A[SYNTHETIC] */
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean j2(t1 t1Var, TL_iv.PageBlock pageBlock) {
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
+    @Override // y2.i
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void y(boolean z10) {
-        long j3;
-        long j10;
+    public k4.d k(y2.k kVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
-        boolean z11;
-        m2.c cVar;
-        boolean z12;
-        long j12;
-        long j13;
-        long j14;
-        int i10;
-        long j15;
-        long j16;
-        long j17;
-        long j18;
-        long j19;
-        float f7;
-        float f10;
-        float f11;
-        float f12;
-        long Q;
-        long min;
-        boolean z13;
-        h d;
-        boolean z14 = false;
-        int i11 = 0;
-        while (true) {
-            SparseArray sparseArray = this.u;
-            if (i11 >= sparseArray.size()) {
-                break;
-            }
-            int keyAt = sparseArray.keyAt(i11);
-            if (keyAt >= this.O) {
-                b bVar = (b) sparseArray.valueAt(i11);
-                m2.c cVar2 = this.H;
-                int i12 = keyAt - this.O;
-                bVar.K = cVar2;
-                bVar.L = i12;
-                o oVar = bVar.x;
-                oVar.n = z14;
-                oVar.f = cVar2;
-                Iterator it = oVar.e.entrySet().iterator();
-                while (it.hasNext()) {
-                    if (((Long) ((Map.Entry) it.next()).getKey()).longValue() < oVar.f.h) {
-                        it.remove();
-                    }
-                }
-                v2.h[] hVarArr = bVar.H;
-                if (hVarArr != null) {
-                    for (v2.h hVar : hVarArr) {
-                        k kVar = hVar.e;
-                        i[] iVarArr = kVar.i;
-                        try {
-                            kVar.k = cVar2;
-                            kVar.l = i12;
-                            long d10 = cVar2.d(i12);
-                            ArrayList a2 = kVar.a();
-                            for (int i13 = 0; i13 < iVarArr.length; i13++) {
-                                try {
-                                    iVarArr[i13] = iVarArr[i13].a(d10, (m2.m) a2.get(kVar.j.h(i13)));
-                                } catch (u2.b e7) {
-                                    e = e7;
-                                    kVar.m = e;
-                                }
-                            }
-                        } catch (u2.b e10) {
-                            e = e10;
-                        }
-                    }
-                    bVar.G.b(bVar);
-                }
-                bVar.M = cVar2.b(i12).d;
-                for (l lVar : bVar.I) {
-                    Iterator it2 = bVar.M.iterator();
-                    while (true) {
-                        if (it2.hasNext()) {
-                            m2.g gVar = (m2.g) it2.next();
-                            if (gVar.a().equals(lVar.e.a())) {
-                                lVar.a(gVar, cVar2.d && i12 == cVar2.m.size() + (-1));
-                            }
-                        }
-                    }
+        y2.q qVar = (y2.q) kVar;
+        i iVar = (i) this.b;
+        long j12 = qVar.a;
+        Uri uri = qVar.d.c;
+        u uVar = new u(j10);
+        int i11 = qVar.c;
+        iVar.m.getClass();
+        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.m)) {
+            int i12 = g2.j.b;
+            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
+                if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
                 }
             }
-            i11++;
-            z14 = false;
+            j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+            k4.d dVar = j11 != -9223372036854775807L ? y2.n.f : new k4.d(0, j11, false);
+            iVar.q.q(uVar, i11, iOException, !dVar.a());
+            return dVar;
         }
-        m2.h b10 = this.H.b(0);
-        int size = this.H.m.size() - 1;
-        m2.h b11 = this.H.b(size);
-        long d11 = this.H.d(size);
-        long Q2 = e2.d0.Q(e2.d0.A(this.L));
-        long d12 = this.H.d(0);
-        long j20 = b10.b;
-        List list = b10.c;
-        long Q3 = e2.d0.Q(j20);
-        boolean u10 = u(b10);
-        long j21 = Q3;
-        int i14 = 0;
-        while (true) {
-            long j22 = Q3;
-            if (i14 >= list.size()) {
-                j3 = 0;
-                j10 = j21;
-                break;
-            }
-            m2.a aVar = (m2.a) list.get(i14);
-            j3 = 0;
-            List list2 = aVar.c;
-            int i15 = aVar.b;
-            boolean z15 = (i15 == 1 || i15 == 2) ? false : true;
-            if ((!u10 || !z15) && !list2.isEmpty()) {
-                h d13 = ((m2.m) list2.get(0)).d();
-                if (d13 != null && d13.y(d12, Q2) != 0) {
-                    j21 = Math.max(j21, d13.a(d13.e(d12, Q2)) + j22);
-                }
-            }
-            i14++;
-            Q3 = j22;
+        j11 = -9223372036854775807L;
+        if (j11 != -9223372036854775807L) {
         }
-        long j23 = b11.b;
-        List list3 = b11.c;
-        long Q4 = e2.d0.Q(j23);
-        boolean u11 = u(b11);
-        long j24 = Long.MAX_VALUE;
-        int i16 = 0;
-        while (true) {
-            if (i16 >= list3.size()) {
-                j11 = j24;
-                break;
-            }
-            m2.a aVar2 = (m2.a) list3.get(i16);
-            boolean z16 = u11;
-            List list4 = aVar2.c;
-            int i17 = aVar2.b;
-            long j25 = Q4;
-            if (i17 != 1 && i17 != 2) {
-                z13 = true;
-                if ((z16 || !z13) && !list4.isEmpty()) {
-                    d = ((m2.m) list4.get(0)).d();
-                    if (d != null) {
-                        j11 = j25 + d11;
-                        break;
-                    }
-                    long y3 = d.y(d11, Q2);
-                    if (y3 == j3) {
-                        j11 = j25;
-                        break;
-                    } else {
-                        long e11 = (d.e(d11, Q2) + y3) - 1;
-                        j24 = Math.min(j24, d.c(e11, d11) + d.a(e11) + j25);
-                    }
-                }
-                i16++;
-                u11 = z16;
-                Q4 = j25;
-            }
-            z13 = false;
-            if (z16) {
-            }
-            d = ((m2.m) list4.get(0)).d();
-            if (d != null) {
-            }
+        iVar.q.q(uVar, i11, iOException, !dVar.a());
+        return dVar;
+    }
+
+    @Override // y2.i
+    public void l(y2.k kVar, long j3, long j10, int i10) {
+        u uVar;
+        y2.q qVar = (y2.q) kVar;
+        i iVar = (i) this.b;
+        if (i10 == 0) {
+            long j11 = qVar.a;
+            uVar = new u(qVar.b);
+        } else {
+            long j12 = qVar.a;
+            Uri uri = qVar.d.c;
+            uVar = new u(j10);
         }
-        if (this.H.d) {
-            for (int i18 = 0; i18 < list3.size(); i18++) {
-                h d14 = ((m2.m) ((m2.a) list3.get(i18)).c.get(0)).d();
-                if (d14 != null && !d14.t()) {
-                }
-            }
-            z11 = true;
-            if (z11) {
-                long j26 = this.H.f;
-                if (j26 != -9223372036854775807L) {
-                    j10 = Math.max(j10, j11 - e2.d0.Q(j26));
-                }
-            }
-            long j27 = j11 - j10;
-            cVar = this.H;
-            if (cVar.d) {
-                z12 = z11;
-                j12 = -9223372036854775807L;
-                j13 = -9223372036854775807L;
-                j14 = j3;
-            } else {
-                e2.d.g(cVar.a != -9223372036854775807L);
-                long Q5 = (Q2 - e2.d0.Q(this.H.a)) - j10;
-                e0 e0Var = i().c;
-                long e02 = e2.d0.e0(Q5);
-                long j28 = e0Var.c;
-                if (j28 != -9223372036854775807L) {
-                    j15 = Math.min(e02, j28);
-                } else {
-                    b2.d0 d0Var = this.H.j;
-                    if (d0Var != null) {
-                        long j29 = d0Var.c;
-                        if (j29 != -9223372036854775807L) {
-                            j15 = Math.min(e02, j29);
-                        }
-                    }
-                    j15 = e02;
-                }
-                long e03 = e2.d0.e0(Q5 - j27);
-                if (e03 < j3 && j15 > j3) {
-                    e03 = j3;
-                }
-                j12 = -9223372036854775807L;
-                long j30 = this.H.c;
-                if (j30 != -9223372036854775807L) {
-                    e03 = Math.min(e03 + j30, e02);
-                }
-                long j31 = e03;
-                long j32 = e0Var.b;
-                if (j32 != -9223372036854775807L) {
-                    j31 = e2.d0.i(j32, j31, e02);
-                } else {
-                    b2.d0 d0Var2 = this.H.j;
-                    if (d0Var2 != null) {
-                        long j33 = d0Var2.b;
-                        if (j33 != -9223372036854775807L) {
-                            j31 = e2.d0.i(j33, j31, e02);
-                        }
-                    }
-                }
-                long j34 = j31;
-                long j35 = j34 > j15 ? j34 : j15;
-                long j36 = this.E.a;
-                if (j36 == -9223372036854775807L) {
-                    m2.c cVar3 = this.H;
-                    b2.d0 d0Var3 = cVar3.j;
-                    if (d0Var3 != null) {
-                        long j37 = d0Var3.a;
-                        if (j37 != -9223372036854775807L) {
-                            j36 = j37;
-                        }
-                    }
-                    j36 = cVar3.g;
-                    if (j36 == -9223372036854775807L) {
-                        j36 = this.o;
-                    }
-                }
-                if (j36 < j34) {
-                    j36 = j34;
-                }
-                long j38 = this.p;
-                if (j36 > j35) {
-                    j16 = 2;
-                    j17 = j34;
-                    j18 = Q5;
-                    j19 = e2.d0.i(e2.d0.e0(Q5 - Math.min(j38, j27 / 2)), j34, j35);
-                } else {
-                    j16 = 2;
-                    j17 = j34;
-                    j18 = Q5;
-                    j19 = j36;
-                }
-                z12 = z11;
-                long j39 = j35;
-                float f13 = e0Var.d;
-                if (f13 == -3.4028235E38f) {
-                    b2.d0 d0Var4 = this.H.j;
-                    f13 = d0Var4 != null ? d0Var4.d : -3.4028235E38f;
-                }
-                float f14 = e0Var.e;
-                if (f14 == -3.4028235E38f) {
-                    b2.d0 d0Var5 = this.H.j;
-                    f14 = d0Var5 != null ? d0Var5.e : -3.4028235E38f;
-                }
-                if (f13 == -3.4028235E38f && f14 == -3.4028235E38f) {
-                    b2.d0 d0Var6 = this.H.j;
-                    if (d0Var6 != null) {
-                        f7 = f13;
-                        f10 = f14;
-                    }
-                    f12 = 1.0f;
-                    f11 = 1.0f;
-                    b2.d0 d0Var7 = new b2.d0();
-                    d0Var7.a = j19;
-                    d0Var7.b = j17;
-                    d0Var7.c = j39;
-                    d0Var7.d = f12;
-                    d0Var7.e = f11;
-                    this.E = new e0(d0Var7);
-                    long e04 = e2.d0.e0(j10) + this.H.a;
-                    Q = j18 - e2.d0.Q(this.E.a);
-                    min = Math.min(j38, j27 / j16);
-                    if (Q >= min) {
-                        j14 = min;
-                        j13 = e04;
-                    } else {
-                        j13 = e04;
-                        j14 = Q;
-                    }
-                } else {
-                    f7 = f13;
-                    f10 = f14;
-                }
-                f12 = f7;
-                f11 = f10;
-                b2.d0 d0Var72 = new b2.d0();
-                d0Var72.a = j19;
-                d0Var72.b = j17;
-                d0Var72.c = j39;
-                d0Var72.d = f12;
-                d0Var72.e = f11;
-                this.E = new e0(d0Var72);
-                long e042 = e2.d0.e0(j10) + this.H.a;
-                Q = j18 - e2.d0.Q(this.E.a);
-                min = Math.min(j38, j27 / j16);
-                if (Q >= min) {
-                }
-            }
-            long Q6 = j10 - e2.d0.Q(b10.b);
-            m2.c cVar4 = this.H;
-            n(new e(cVar4.a, j13, this.L, this.O, Q6, j27, j14, cVar4, i(), !this.H.d ? this.E : null));
-            if (this.h) {
-                Handler handler = this.D;
-                c cVar5 = this.w;
-                handler.removeCallbacks(cVar5);
-                if (z12) {
-                    Handler handler2 = this.D;
-                    m2.c cVar6 = this.H;
-                    long A = e2.d0.A(this.L);
-                    int size2 = cVar6.m.size() - 1;
-                    m2.h b12 = cVar6.b(size2);
-                    long j40 = b12.b;
-                    List list5 = b12.c;
-                    long Q7 = e2.d0.Q(j40);
-                    long d15 = cVar6.d(size2);
-                    long Q8 = e2.d0.Q(A);
-                    long Q9 = e2.d0.Q(cVar6.a);
-                    long Q10 = e2.d0.Q(cVar6.e);
-                    if (Q10 == j12 || Q10 >= 5000000) {
-                        Q10 = 5000000;
-                    }
-                    int i19 = 0;
-                    while (i19 < list5.size()) {
-                        List list6 = ((m2.a) list5.get(i19)).c;
-                        if (list6.isEmpty()) {
-                            i10 = i19;
-                        } else {
-                            i10 = i19;
-                            h d16 = ((m2.m) list6.get(0)).d();
-                            if (d16 != null) {
-                                long f15 = (d16.f(d15, Q8) + (Q9 + Q7)) - Q8;
-                                if (f15 > j3 && (f15 < Q10 - 100000 || (f15 > Q10 && f15 < Q10 + 100000))) {
-                                    Q10 = f15;
-                                }
-                            }
-                        }
-                        i19 = i10 + 1;
-                    }
-                    handler2.postDelayed(cVar5, p7.b(Q10, 1000L, RoundingMode.CEILING));
-                }
-                if (this.I) {
-                    A();
-                    return;
-                }
-                if (z10) {
-                    m2.c cVar7 = this.H;
-                    if (cVar7.d) {
-                        long j41 = cVar7.e;
-                        if (j41 != j12) {
-                            if (j41 == j3) {
-                                j41 = 5000;
-                            }
-                            this.D.postDelayed(this.v, Math.max(j3, (this.J + j41) - SystemClock.elapsedRealtime()));
-                            return;
-                        }
-                        return;
-                    }
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        z11 = false;
-        if (z11) {
-        }
-        long j272 = j11 - j10;
-        cVar = this.H;
-        if (cVar.d) {
-        }
-        long Q62 = j10 - e2.d0.Q(b10.b);
-        m2.c cVar42 = this.H;
-        n(new e(cVar42.a, j13, this.L, this.O, Q62, j272, j14, cVar42, i(), !this.H.d ? this.E : null));
-        if (this.h) {
+        iVar.q.r(uVar, qVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public boolean l0() {
+        return e();
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean o0(y5 y5Var) {
+        return false;
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        e0 e0Var = (e0) this.b;
+        if (task.isSuccessful()) {
+            x8.m.M0(e0Var, true, (byte[]) task.getResult());
+        } else {
+            Log.e("WearableLS", "Failed to resolve future, sending null response", task.getException());
+            x8.m.M0(e0Var, false, null);
         }
     }
 
-    public final void z(u uVar, y2.o oVar) {
-        g2.h hVar = this.z;
-        Uri parse = Uri.parse(uVar.c);
-        Map map = Collections.EMPTY_MAP;
-        e2.d.i(parse, "The uri must be set.");
-        this.A.f(new p(hVar, new g2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, oVar), new d(this), 1);
+    @Override // y2.i
+    public void p(y2.k kVar, long j3, long j10) {
+        int i10;
+        long j11;
+        y2.q qVar = (y2.q) kVar;
+        i iVar = (i) this.b;
+        long j12 = qVar.a;
+        Uri uri = qVar.d.c;
+        u uVar = new u(j10);
+        iVar.m.getClass();
+        iVar.q.o(uVar, qVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        m2.c cVar = (m2.c) qVar.f;
+        m2.c cVar2 = iVar.H;
+        int size = cVar2 == null ? 0 : cVar2.m.size();
+        long j13 = cVar.b(0).b;
+        int i11 = 0;
+        while (i11 < size && iVar.H.b(i11).b < j13) {
+            i11++;
+        }
+        if (cVar.d) {
+            if (size - i11 > cVar.m.size()) {
+                e2.a.n("DashMediaSource", "Loaded out of sync manifest");
+            } else {
+                j11 = -9223372036854775807L;
+                long j14 = iVar.N;
+                if (j14 != -9223372036854775807L) {
+                    i10 = i11;
+                    if (cVar.h * 1000 <= j14) {
+                        e2.a.n("DashMediaSource", "Loaded stale dynamic manifest: " + cVar.h + ", " + iVar.N);
+                    }
+                } else {
+                    i10 = i11;
+                }
+                iVar.M = 0;
+            }
+            int i12 = iVar.M;
+            iVar.M = i12 + 1;
+            if (i12 < iVar.m.o3(qVar.c)) {
+                iVar.D.postDelayed(iVar.v, Math.min((iVar.M - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000));
+                return;
+            } else {
+                iVar.C = new b5();
+                return;
+            }
+        }
+        i10 = i11;
+        j11 = -9223372036854775807L;
+        iVar.H = cVar;
+        iVar.I = cVar.d & iVar.I;
+        iVar.J = j3 - j10;
+        iVar.K = j3;
+        iVar.O += i10;
+        synchronized (iVar.t) {
+            try {
+                if (qVar.b.a.equals(iVar.F)) {
+                    Uri uri2 = iVar.H.k;
+                    if (uri2 == null) {
+                        uri2 = x8.a(qVar.d.c);
+                    }
+                    iVar.F = uri2;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        m2.c cVar3 = iVar.H;
+        if (!cVar3.d || iVar.L != j11) {
+            iVar.y(true);
+            return;
+        }
+        lf.g gVar = cVar3.i;
+        if (gVar == null) {
+            iVar.v();
+            return;
+        }
+        String str = gVar.b;
+        if (Objects.equals(str, "urn:mpeg:dash:utc:direct:2014") || Objects.equals(str, "urn:mpeg:dash:utc:direct:2012")) {
+            try {
+                iVar.L = d0.T(gVar.c) - iVar.K;
+                iVar.y(true);
+                return;
+            } catch (s0 e) {
+                iVar.x(e);
+                return;
+            }
+        }
+        if (Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2012")) {
+            iVar.z(gVar, new f());
+            return;
+        }
+        if (Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2012")) {
+            iVar.z(gVar, new ob.a(12));
+        } else if (Objects.equals(str, "urn:mpeg:dash:utc:ntp:2014") || Objects.equals(str, "urn:mpeg:dash:utc:ntp:2012")) {
+            iVar.v();
+        } else {
+            iVar.x(new IOException("Unsupported UTC timing scheme"));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.hq0
+    public void s0() {
+        a3.j0((a3) this.b);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean t2(int i10) {
+        return false;
+    }
+
+    @Override // zg.g
+    public void u(z zVar) {
+        zVar.a(((yi) this.b).getThemedColor(j6.d6));
+        zVar.b(SharedConfig.chatBlurEnabled());
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ String v(long j3) {
+        return null;
+    }
+
+    @Override // r4.c
+    public void w() {
+        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
+    }
+
+    @Override // r4.c
+    public void x(int i10, Object obj) {
+        String str;
+        switch (i10) {
+            case 1:
+                str = "RESULT_INSTALL_SUCCESS";
+                break;
+            case 2:
+                str = "RESULT_ALREADY_INSTALLED";
+                break;
+            case 3:
+                str = "RESULT_UNSUPPORTED_ART_VERSION";
+                break;
+            case 4:
+                str = "RESULT_NOT_WRITABLE";
+                break;
+            case 5:
+                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
+                break;
+            case 6:
+                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
+                break;
+            case 7:
+                str = "RESULT_IO_EXCEPTION";
+                break;
+            case 8:
+                str = "RESULT_PARSE_EXCEPTION";
+                break;
+            case 9:
+            default:
+                str = "";
+                break;
+            case 10:
+                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
+                break;
+            case 11:
+                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
+                break;
+        }
+        if (i10 == 6 || i10 == 7 || i10 == 8) {
+            Log.e("ProfileInstaller", str, (Throwable) obj);
+        } else {
+            Log.d("ProfileInstaller", str);
+        }
+        ((ProfileInstallReceiver) this.b).setResultCode(i10);
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean x0(MessageObject messageObject) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ t9 x2() {
+        return null;
+    }
+
+    public void y() {
+        ArrayList arrayList = (ArrayList) this.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            if (obj != null) {
+                throw new ClassCastException();
+            }
+            try {
+                throw null;
+            } catch (Exception e) {
+                yc.i.d.log(Level.WARNING, "could not delete file ", (Throwable) e);
+            }
+        }
+        arrayList.clear();
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ boolean z1() {
+        return false;
+    }
+
+    public g(Context context, u20 u20Var) {
+        this.a = 8;
+        this.b = new t20(context, u20Var);
+    }
+
+    public g(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 24:
+                File file = new File(System.getProperty("java.io.tmpdir"));
+                if (!file.exists()) {
+                    file.mkdirs();
+                }
+                this.b = new ArrayList();
+                break;
+            default:
+                this.b = new AudioAttributes.Builder();
+                break;
+        }
+    }
+
+    @Override // pg.v1
+    public float get() {
+        return ((n2) this.b).F;
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void A0() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void Q1() {
+    }
+
+    @Override // org.telegram.ui.Components.hq0
+    public /* synthetic */ void T() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void j() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void j1() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void o() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void o2() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void r() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void v2() {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void A(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void B1(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void E(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public void E0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void G0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void H(MessageObject.TextLayoutBlock textLayoutBlock) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void I0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void I1(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void K(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void K1(MessageObject messageObject) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void M(MessageObject messageObject) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void N0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void S(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void X0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void Z0(t1 t1Var) {
+    }
+
+    @Override // m.x0
+    public void a(int i10) {
+    }
+
+    @Override // m.x0
+    public void b(int i10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void c0(int i10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void c2(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void i0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void k2(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void n(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void n0(String str) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void q(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void s(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void t(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void z(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void z0(t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void C1(t1 t1Var, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void D(t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void F1(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void L(int i10, t1 t1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void R0(t1 t1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void S1(t1 t1Var, ai.j jVar) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void T1(t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void e2(t1 t1Var, long j3) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void l1(t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void o1(t1 t1Var, TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void B0(t1 t1Var, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void C0(t1 t1Var, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void V0(t1 t1Var, CharacterStyle characterStyle, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void f0(t1 t1Var, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void q0(t1 t1Var, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void t1(t1 t1Var, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void w2(t1 t1Var, int i10, int i11) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void U1(t1 t1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void m(t1 t1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void u0(t1 t1Var, TLRPC.User user, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void w0(t1 t1Var, float f7, float f10, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void i(t1 t1Var, ArrayList arrayList, int i10, int i11, int i12) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void r2(t1 t1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f7, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.k1
+    public /* synthetic */ void R(t1 t1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
     }
 }

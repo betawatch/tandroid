@@ -1,48 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ls0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class ls0 extends org.telegram.ui.eo {
+    public boolean Qc;
+    public final /* synthetic */ int Rc;
+    public final /* synthetic */ iv0 Sc;
 
-    public /* synthetic */ ls0(ViewGroup viewGroup, Object obj, int i10) {
-        this.c = i10;
-        this.e = viewGroup;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ls0(iv0 iv0Var, Bundle bundle, int i10) {
+        super(bundle);
+        this.Sc = iv0Var;
+        this.Rc = i10;
+        this.Qc = true;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        switch (this.c) {
-            case 0:
-                qt0 qt0Var = (qt0) this.d;
-                s4.h0 adapter = qt0Var.r.getAdapter();
-                xu0 xu0Var = (xu0) this.e;
-                ru0 ru0Var = xu0Var.I;
-                if (adapter == ru0Var) {
-                    if (ru0Var.j(i10) == 2) {
-                        return qt0Var.s.J;
-                    }
-                    return 1;
-                }
-                if (xu0.v(xu0Var, adapter) == -1) {
-                    return 1;
-                }
-                ((uu0) adapter).getClass();
-                return 1;
-            default:
-                ci.h hVar = (ci.h) this.d;
-                v51 v51Var = ((d61) this.e).Y2;
-                if (v51Var == null) {
-                    return hVar.J;
-                }
-                h51 G = v51Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? hVar.J : i11;
+    @Override // org.telegram.ui.eo, org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        iv0 iv0Var = this.Sc;
+        tu0 tu0Var = iv0Var.S;
+        if (this.Qc) {
+            if (this.j0 != null) {
+                la("");
+                this.j0.H(tu0Var.w, false);
+            }
+            org.telegram.ui.al alVar = this.o1;
+            if (alVar != null) {
+                alVar.e(tu0Var.x, false);
+            }
+            iv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), tu0Var.x, tu0Var.w, tu0Var.n, tu0Var.h, this.Rc, tu0Var.v, tu0Var.s);
+            this.Qc = false;
         }
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

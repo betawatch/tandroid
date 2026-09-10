@@ -4,9 +4,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bf0 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class bf0 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ hf0 b;
 
@@ -15,8 +15,8 @@ public final /* synthetic */ class bf0 implements org.telegram.ui.ActionBar.a2 {
         this.b = hf0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
                 hf0 hf0Var = this.b;
@@ -31,13 +31,13 @@ public final /* synthetic */ class bf0 implements org.telegram.ui.ActionBar.a2 {
                 break;
             case 2:
                 hf0 hf0Var3 = this.b;
-                wg0 wg0Var = hf0Var3.O;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wg0Var.getParentActivity());
+                xg0 xg0Var = hf0Var3.O;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xg0Var.getParentActivity());
                 alertDialog$Builder.a.R = LocaleController.getString("TermsOfService", R.string.TermsOfService);
                 alertDialog$Builder.a.T = LocaleController.getString("TosDecline", R.string.TosDecline);
                 alertDialog$Builder.k(LocaleController.getString("SignUp", R.string.SignUp), new bf0(hf0Var3, 3));
                 alertDialog$Builder.h(LocaleController.getString("Decline", R.string.Decline), new bf0(hf0Var3, 4));
-                wg0Var.showDialog(alertDialog$Builder.a);
+                xg0Var.showDialog(alertDialog$Builder.a);
                 break;
             case 3:
                 hf0 hf0Var4 = this.b;

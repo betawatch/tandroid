@@ -1,6 +1,7 @@
 package ge;
 
 import ee.r;
+import ee.v;
 import java.io.Closeable;
 import java.lang.Thread;
 import java.util.ArrayList;
@@ -10,16 +11,16 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.locks.LockSupport;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.r6;
 import zd.e0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class c implements Executor, Closeable {
     public static final /* synthetic */ AtomicLongFieldUpdater n = AtomicLongFieldUpdater.newUpdater(c.class, "parkedWorkersStack$volatile");
     public static final /* synthetic */ AtomicLongFieldUpdater r = AtomicLongFieldUpdater.newUpdater(c.class, "controlState$volatile");
     public static final /* synthetic */ AtomicIntegerFieldUpdater s = AtomicIntegerFieldUpdater.newUpdater(c.class, "_isTerminated$volatile");
-    public static final d9.f v = new d9.f("NOT_IN_STACK", 1);
+    public static final v v = new v("NOT_IN_STACK", 0);
     private volatile /* synthetic */ int _isTerminated$volatile;
     public final int a;
     public final int b;
@@ -37,16 +38,16 @@ public final class c implements Executor, Closeable {
         this.c = j3;
         this.d = str;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i2.g.j(i10, "Core pool size ", " should be at least 1").toString());
+            throw new IllegalArgumentException(hc.b.k(i10, "Core pool size ", " should be at least 1").toString());
         }
         if (i11 < i10) {
             throw new IllegalArgumentException(a4.a.l(i11, i10, "Max pool size ", " should be greater than or equals to core pool size ").toString());
         }
         if (i11 > 2097150) {
-            throw new IllegalArgumentException(i2.g.j(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
+            throw new IllegalArgumentException(hc.b.k(i11, "Max pool size ", " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (j3 <= 0) {
-            throw new IllegalArgumentException(p6.h(j3, "Idle worker keep alive time ", " must be positive").toString());
+            throw new IllegalArgumentException(r6.h(j3, "Idle worker keep alive time ", " must be positive").toString());
         }
         this.e = new f();
         this.f = new f();
@@ -289,7 +290,7 @@ public final class c implements Executor, Closeable {
     }
 
     public final boolean e() {
-        d9.f fVar;
+        v vVar;
         int i10;
         while (true) {
             long j3 = n.get(this);
@@ -300,8 +301,8 @@ public final class c implements Executor, Closeable {
                 long j10 = (2097152 + j3) & (-2097152);
                 Object c10 = aVar.c();
                 while (true) {
-                    fVar = v;
-                    if (c10 == fVar) {
+                    vVar = v;
+                    if (c10 == vVar) {
                         i10 = -1;
                         break;
                     }
@@ -318,7 +319,7 @@ public final class c implements Executor, Closeable {
                 }
                 if (i10 >= 0) {
                     if (n.compareAndSet(this, j3, i10 | j10)) {
-                        aVar.h(fVar);
+                        aVar.h(vVar);
                     } else {
                         continue;
                     }
@@ -393,9 +394,9 @@ public final class c implements Executor, Closeable {
         int i17 = this.a;
         sb5.append(i17);
         sb5.append(", max = ");
-        i2.g.v(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
-        i2.g.v(sb5, i11, ", parked = ", i12, ", dormant = ");
-        i2.g.v(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
+        hc.b.w(sb5, this.b, "}, Worker States {CPU = ", i10, ", blocking = ");
+        hc.b.w(sb5, i11, ", parked = ", i12, ", dormant = ");
+        hc.b.w(sb5, i13, ", terminated = ", i14, "}, running workers queues = ");
         sb5.append(arrayList);
         sb5.append(", global CPU queue size = ");
         sb5.append(this.e.c());

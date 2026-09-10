@@ -1,47 +1,52 @@
 package qg;
 
-import android.graphics.RectF;
+import android.app.Activity;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import bi.d5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.h3;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.ActionBar.z5;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class f1 {
-    public final l a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public boolean l;
-
-    public f1(l lVar) {
-        this.a = lVar;
-    }
-
-    public final void a(RectF rectF) {
-        l lVar = this.a;
-        if (lVar.o() == 4) {
-            float f7 = this.b;
-            float f10 = this.k;
-            float f11 = this.c;
-            rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
-            rectF.union(this.d, this.e);
-            rectF.union(this.i, this.j);
-        } else {
-            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
-            float f12 = this.b;
-            float f13 = max * 1.42f;
-            float f14 = this.c;
-            rectF.set(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
-            if (lVar.o() == 3) {
-                rectF.union(this.i, this.j);
-            }
-        }
-        float f15 = (-this.f) - 3.0f;
-        rectF.inset(f15, f15);
+public final class f1 extends h3 {
+    public f1(p2 p2Var) {
+        super(p2Var.getParentActivity(), false);
+        Activity parentActivity = p2Var.getParentActivity();
+        LinearLayout f7 = org.telegram.messenger.a2.f(parentActivity, 1);
+        TextView textView = new TextView(parentActivity);
+        textView.setGravity(8388611);
+        int i10 = j6.j5;
+        org.telegram.messenger.a2.q(textView, j6.w0(null, i10, false), 1, 20.0f);
+        f7.addView(textView, a6.d(-1, -2.0f, 0, 21.0f, 16.0f, 21.0f, 0.0f));
+        TextView textView2 = new TextView(parentActivity);
+        textView2.setGravity(8388611);
+        textView2.setTextSize(1, 16.0f);
+        textView2.setTextColor(j6.w0(null, i10, false));
+        f7.addView(textView2, a6.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+        TextView textView3 = new TextView(parentActivity);
+        textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        textView3.setGravity(17);
+        org.telegram.messenger.a2.q(textView3, j6.w0(null, j6.Sh, false), 1, 14.0f);
+        textView3.setBackground(z5.f(new float[]{8.0f}, j6.Oh));
+        textView3.setText(LocaleController.getString(R.string.InstallOfficialApp));
+        textView3.setOnClickListener(new d5(22));
+        FrameLayout frameLayout = new FrameLayout(parentActivity);
+        frameLayout.addView(textView3, a6.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
+        frameLayout.setBackgroundColor(getThemedColor(j6.h5));
+        f7.addView(frameLayout, a6.q(-1, 68, 80));
+        org.telegram.messenger.a2.n(R.string.SubscribeToPremiumOfficialAppNeeded, textView);
+        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SubscribeToPremiumOfficialAppNeededDescription)));
+        ScrollView scrollView = new ScrollView(parentActivity);
+        scrollView.addView(f7);
+        setCustomView(scrollView);
     }
 }

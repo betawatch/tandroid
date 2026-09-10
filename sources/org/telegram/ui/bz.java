@@ -1,72 +1,44 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class bz extends s4.v {
-    public boolean d;
-    public final /* synthetic */ dz e;
+public final class bz implements org.telegram.ui.Components.ml0 {
+    public final Rect a = new Rect();
+    public final /* synthetic */ fz b;
 
-    public bz(dz dzVar) {
-        this.e = dzVar;
+    public bz(fz fzVar) {
+        this.b = fzVar;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        c1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        return c1Var.f != 3 ? s4.v.l(0, 0) : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        if (c1Var.f != c1Var2.f) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        dz dzVar = this.e;
-        az azVar = dzVar.a;
-        dz dzVar2 = azVar.d;
-        int i10 = dzVar2.n;
-        ArrayList arrayList = dzVar2.e;
-        int i11 = b10 - i10;
-        int i12 = b11 - i10;
-        int i13 = dzVar2.r - i10;
-        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
-            Long l4 = (Long) arrayList.get(i11);
-            arrayList.set(i11, (Long) arrayList.get(i12));
-            arrayList.set(i12, l4);
-            azVar.p(b10, b11);
-            ((org.telegram.ui.Cells.f4) c1Var.a).setDrawDivider(b11 != dzVar.r - 1);
-            ((org.telegram.ui.Cells.f4) c1Var2.a).setDrawDivider(b10 != dzVar.r - 1);
-            this.d = true;
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        dz dzVar = this.e;
-        if (i10 != 0) {
-            dzVar.b.I0(false);
-            c1Var.a.setPressed(true);
-        } else if (this.d) {
-            cz czVar = dzVar.f;
-            if (czVar != null) {
-                czVar.a();
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean c(float f7, float f10, int i10, View view) {
+        fz fzVar = this.b;
+        if (fzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
+            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
+            Rect rect = this.a;
+            imageView.getHitRect(rect);
+            if (!rect.contains((int) f7, (int) f10)) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fzVar.getParentActivity());
+                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new az(this, i10, 0));
+                fzVar.showDialog(alertDialog$Builder.a);
+                return true;
             }
-            this.d = false;
         }
+        return false;
     }
 
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.ml0
+    public final void h() {
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public final void p(float f7) {
     }
 }

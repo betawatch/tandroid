@@ -97,8 +97,8 @@ public abstract class ZoneId implements Serializable {
                 return I(substring, M);
             }
             return I(substring, M);
-        } catch (b e7) {
-            throw new b("Invalid ID for offset-based ZoneId: ".concat(str), e7);
+        } catch (b e) {
+            throw new b("Invalid ID for offset-based ZoneId: ".concat(str), e);
         }
     }
 

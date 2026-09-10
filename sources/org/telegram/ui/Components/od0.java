@@ -1,47 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class od0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ di.l9 b;
-
-    public /* synthetic */ od0(di.l9 l9Var, int i10) {
-        this.a = i10;
-        this.b = l9Var;
+public final class od0 extends pg.b {
+    @Override // org.telegram.ui.Components.hu, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                di.l9 l9Var = this.b;
-                AnimatorSet animatorSet = (AnimatorSet) l9Var.e;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    l9Var.e = null;
-                    break;
-                }
-                break;
-            case 1:
-                di.l9 l9Var2 = this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) l9Var2.e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    l9Var2.e = null;
-                    break;
-                }
-                break;
-            default:
-                di.l9 l9Var3 = this.b;
-                AnimatorSet animatorSet3 = (AnimatorSet) l9Var3.e;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    l9Var3.e = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

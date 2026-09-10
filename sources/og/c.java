@@ -1,51 +1,57 @@
 package og;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class c extends Drawable {
-    public Drawable a;
-    public float b;
-    public int c;
-
-    public final void a(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-        }
+public final class c extends m {
+    @Override // og.m
+    public final float a() {
+        return 0.3f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Rect bounds = getBounds();
-        float f7 = this.b;
-        if (f7 == 1.0f) {
-            drawable.setBounds(bounds);
-        } else {
-            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f7)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f7)), (int) (((bounds.width() / 2.0f) * f7) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f7) + bounds.centerY()));
-        }
-        drawable.draw(canvas);
+    @Override // og.m
+    public final float b() {
+        return (float) Math.toRadians(0.0d);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // og.m
+    public final int c() {
+        return -10742;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    @Override // og.m
+    public final float d() {
+        return 0.5f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    @Override // og.m
+    public final int e() {
+        return R.raw.photo_marker;
+    }
+
+    @Override // og.m
+    public final float f() {
+        return 0.45f;
+    }
+
+    @Override // og.m
+    public final float g() {
+        return 0.4f;
+    }
+
+    @Override // og.m
+    public final float h() {
+        return 1.5f;
+    }
+
+    @Override // og.m
+    public final float k() {
+        return 0.04f;
+    }
+
+    @Override // og.m
+    public final int l() {
+        return R.drawable.paint_elliptical_brush;
     }
 }

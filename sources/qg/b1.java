@@ -1,17 +1,21 @@
 package qg;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public interface b1 {
-    void a();
+public final class b1 extends BitmapDrawable {
+    public int[] a;
+    public Drawable b;
 
-    void b();
+    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
 
-    void c();
-
-    boolean d();
-
-    void e();
-
-    void f();
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(int i10, PorterDuff.Mode mode) {
+    }
 }

@@ -1,39 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class el extends TextView {
-    public final /* synthetic */ int a;
-    public float b;
-    public float c;
+public final class el extends s4.s0 {
+    public final /* synthetic */ ll a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ el(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public el(ll llVar) {
+        this.a = llVar;
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        switch (this.a) {
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        fl0 fl0Var;
+        ll llVar = this.a;
+        bi.y1 y1Var = llVar.P;
+        yi yiVar = llVar.b;
+        boolean z10 = i10 != 0;
+        llVar.L = z10;
+        if (!z10 && llVar.J != null) {
+            llVar.J = null;
         }
-        return this.b;
+        if (i10 == 0) {
+            int dp = AndroidUtilities.dp(13.0f);
+            int backgroundPaddingTop = yiVar.getBackgroundPaddingTop();
+            if (((yiVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() || (fl0Var = (fl0) y1Var.K(0)) == null) {
+                return;
+            }
+            View view = fl0Var.a;
+            if (view.getTop() > llVar.A0 - llVar.z0) {
+                y1Var.v0(0, view.getTop() - (llVar.A0 - llVar.z0), null);
+            }
+        }
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        switch (this.a) {
-            case 0:
-                this.b = f7;
-                setTranslationY(this.c + f7);
-                break;
-            default:
-                this.b = f7;
-                setTranslationY(this.c + f7);
-                break;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ll llVar = this.a;
+        llVar.e0();
+        if (llVar.J != null) {
+            llVar.K += i11;
         }
+        llVar.b.X1(llVar, i11);
     }
 }

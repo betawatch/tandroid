@@ -1,43 +1,69 @@
 package org.telegram.ui.web;
 
-import bi.k9;
 import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t implements Utilities.Callback {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d1 b;
-    public final /* synthetic */ k9 c;
+    public final /* synthetic */ c1 b;
 
-    public /* synthetic */ t(d1 d1Var, k9 k9Var, int i10) {
+    public /* synthetic */ t(c1 c1Var, int i10) {
         this.a = i10;
-        this.b = d1Var;
-        this.c = k9Var;
+        this.b = c1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.y(this.c, "location_requested", (JSONObject) obj);
+                h0 h0Var = this.b.c;
+                if (h0Var != null) {
+                    h0Var.b();
+                }
+                LaunchActivity.L();
                 break;
             case 1:
-                this.b.y(this.c, "location_requested", (JSONObject) obj);
+                c1 c1Var = this.b;
+                a1 a1Var = c1Var.I0;
+                di.z0 z0Var = c1Var.k0;
+                z0Var.getClass();
+                JSONObject jSONObject = new JSONObject();
+                try {
+                    jSONObject.put("available", z0Var.d());
+                    if (z0Var.d()) {
+                        jSONObject.put("access_requested", z0Var.d);
+                        if (z0Var.d) {
+                            jSONObject.put("access_granted", z0Var.e && z0Var.a());
+                        }
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                c1Var.z(a1Var, "location_checked", jSONObject);
                 break;
             default:
-                d1 d1Var = this.b;
-                d1Var.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                k9 k9Var = this.c;
-                if (!booleanValue) {
-                    d1Var.y(k9Var, "home_screen_failed", d1.B("UNSUPPORTED", "error"));
-                    break;
-                } else {
-                    d1Var.y(k9Var, "home_screen_added", null);
+                c1 c1Var2 = this.b;
+                if (c1Var2.S) {
+                    c1Var2.S = false;
+                    h0 h0Var2 = c1Var2.c;
+                    if (h0Var2 != null) {
+                        h0Var2.t(false);
+                    }
+                }
+                c1Var2.c();
+                c1Var2.N = false;
+                c1Var2.P = 0L;
+                c1Var2.T = false;
+                y0 y0Var = c1Var2.a;
+                if (y0Var != null) {
+                    y0Var.onResume();
+                    c1Var2.a.reload();
                     break;
                 }
+                break;
         }
     }
 }

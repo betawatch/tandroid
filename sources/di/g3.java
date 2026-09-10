@@ -1,23 +1,35 @@
 package di;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes4.dex */
-public final class g3 extends s4.s {
-    public final /* synthetic */ x3 Q;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g3(x3 x3Var) {
-        super(3);
-        this.Q = x3Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g3 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i3 b;
+
+    public /* synthetic */ g3(i3 i3Var, int i10) {
+        this.a = i10;
+        this.b = i3Var;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final void b0(pf.e eVar, s4.z0 z0Var) {
-        super.b0(eVar, z0Var);
-        x3 x3Var = this.Q;
-        if (x3Var.U) {
-            x3Var.U = false;
-            x3Var.a();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                n3 n3Var = this.b.d;
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    MessagesController.getInstance(n3Var.G).processUpdates((TLRPC.TL_updates) tLObject, false);
+                }
+                AndroidUtilities.runOnUIThread(new h2(n3Var, 17));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new a3.k0(this.b, tLObject, tL_error, 16));
+                break;
         }
     }
 }

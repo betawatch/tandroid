@@ -9,16 +9,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.u70 {
+public final /* synthetic */ class g50 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.d80 {
     public final /* synthetic */ m50 a;
 
     public /* synthetic */ g50(m50 m50Var) {
         this.a = m50Var;
     }
 
-    @Override // org.telegram.ui.Components.u70
+    @Override // org.telegram.ui.Components.d80
     public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
         j60 j60Var = this.a.b;
         ChatObject.Call call = j60Var.a1;
@@ -63,12 +63,12 @@ public final /* synthetic */ class g50 implements org.telegram.ui.ActionBar.a2, 
         TL_phone.saveDefaultGroupCallJoinAs savedefaultgroupcalljoinas = new TL_phone.saveDefaultGroupCallJoinAs();
         savedefaultgroupcalljoinas.peer = MessagesController.getInputPeer(j60Var.Z0);
         savedefaultgroupcalljoinas.join_as = inputPeer;
-        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new bi.c7(8));
+        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new bi.g1(4));
         j60Var.I1();
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         m50 m50Var = this.a;
         j60 j60Var = m50Var.b;
         ChatObject.Call call = j60Var.a1;

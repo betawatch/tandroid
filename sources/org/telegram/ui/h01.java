@@ -1,32 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class h01 implements nq {
-    public final /* synthetic */ uy a;
-    public final /* synthetic */ i01 b;
+public final class h01 extends id0 {
+    public final /* synthetic */ int R0;
 
-    public h01(i01 i01Var, uy uyVar) {
-        this.b = i01Var;
-        this.a = uyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ h01(int i10, int i11) {
+        super(i10);
+        this.R0 = i11;
     }
 
-    @Override // org.telegram.ui.nq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        i01 i01Var = this.b;
-        i01Var.b.N1 = true;
-        this.a.removeSelfFromStack();
-        NotificationCenter notificationCenter = i01Var.b.getNotificationCenter();
-        ProfileActivity profileActivity = i01Var.b;
-        int i11 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(profileActivity, i11);
-        i01Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.nq
-    public final void a(TLRPC.User user) {
+    @Override // org.telegram.ui.id0
+    public final boolean h0() {
+        switch (this.R0) {
+        }
+        return true;
     }
 }

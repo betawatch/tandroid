@@ -1,32 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.DispatchQueue;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b00 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class b00 implements SurfaceTexture.OnFrameAvailableListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i00 b;
+    public final /* synthetic */ DispatchQueue b;
 
-    public /* synthetic */ b00(i00 i00Var, int i10) {
+    public /* synthetic */ b00(DispatchQueue dispatchQueue, int i10) {
         this.a = i10;
-        this.b = i00Var;
+        this.b = dispatchQueue;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i00 i00Var = this.b;
-                i00Var.x = floatValue;
-                i00Var.invalidate();
+                ((c00) this.b).e(false, true, true);
                 break;
             default:
-                i00 i00Var2 = this.b;
-                i00Var2.getClass();
-                i00Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i00Var2.invalidate();
+                ((x50) this.b).requestRender(true, false);
                 break;
         }
     }

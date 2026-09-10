@@ -8,9 +8,9 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 import android.util.SparseArray;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
@@ -50,11 +50,11 @@ public final class m0 implements IBinder.DeathRecipient {
             return true;
         } catch (DeadObjectException unused) {
             return false;
-        } catch (RemoteException e7) {
+        } catch (RemoteException e) {
             if (i10 == 2) {
                 return false;
             }
-            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e7);
+            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e);
             return false;
         }
     }
@@ -65,16 +65,16 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i10, int i11) {
-        Bundle e7 = p6.e(i11, "volume");
+        Bundle e = r6.e(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(7, i12, i10, null, e7);
+        b(7, i12, i10, null, e);
     }
 
     public final void d(int i10, int i11) {
-        Bundle e7 = p6.e(i11, "volume");
+        Bundle e = r6.e(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(8, i12, i10, null, e7);
+        b(8, i12, i10, null, e);
     }
 }

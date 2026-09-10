@@ -1,76 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class q31 extends q6 {
-    public final Paint s;
-    public final a90 v;
-    public final /* synthetic */ s31 w;
+public final class q31 extends Drawable {
+    public final hj0 a;
+    public int b;
+    public final TextPaint c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q31(s31 s31Var, Context context) {
-        super(context, false, false, false);
-        this.w = s31Var;
-        this.s = new Paint(1);
-        this.v = new a90();
+    public q31(TextPaint textPaint) {
+        hi.s0 s0Var = new hi.s0(this, 5);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        hj0 hj0Var = new hj0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = hj0Var;
+        hj0Var.setCallback(s0Var);
+        hj0Var.K(1);
+        hj0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        hj0Var.J(true);
+        hj0Var.start();
     }
 
-    @Override // org.telegram.ui.Components.q6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i10 = this.b;
+        hj0 hj0Var = this.a;
+        if (color != i10) {
+            hj0Var.a0 = true;
+            hj0Var.Q(color, "Comp 1");
+            hj0Var.o();
+            hj0Var.J(true);
+            hj0Var.U(0L);
+            this.b = color;
         }
-        u31 u31Var = this.w.h;
-        int i10 = org.telegram.ui.ActionBar.j6.Pi;
-        String[] strArr = u31.R;
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.1175f, u31Var.getThemedColor(i10));
-        Paint paint = this.s;
-        paint.setColor(l1);
-        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.v.f(canvas)) {
-            invalidate();
-        }
-        super.onDraw(canvas);
+        hj0Var.draw(canvas);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        u31 u31Var = this.w.h;
-        int action = motionEvent.getAction();
-        a90 a90Var = this.v;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
-                }
-                a90Var.d(true);
-                invalidate();
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        f6Var = ((org.telegram.ui.ActionBar.f3) u31Var).resourcesProvider;
-        e90 e90Var = new e90(null, f6Var, motionEvent.getX(), motionEvent.getY(), 0);
-        e90Var.d(org.telegram.ui.ActionBar.j6.l1(0.1175f, u31Var.getThemedColor(org.telegram.ui.ActionBar.j6.Pi)));
-        x80 b10 = e90Var.b();
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        }
-        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
-        a90Var.a(e90Var, null);
-        invalidate();
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

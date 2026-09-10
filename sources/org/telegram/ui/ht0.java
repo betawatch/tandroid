@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class ht0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,15 +22,15 @@ public final class ht0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.vi viVar;
+        org.telegram.ui.Components.yi yiVar;
         int i10 = this.a;
         PhotoViewer photoViewer = this.b;
         switch (i10) {
             case 0:
                 photoViewer.p6 = null;
-                org.telegram.ui.Components.ue0 ue0Var = photoViewer.C1;
-                if (ue0Var != null) {
-                    if (ue0Var.b.j()) {
+                org.telegram.ui.Components.df0 df0Var = photoViewer.C1;
+                if (df0Var != null) {
+                    if (df0Var.b.j()) {
                         photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.j6.zf), PorterDuff.Mode.MULTIPLY));
                     } else {
                         photoViewer.a1.setColorFilter((ColorFilter) null);
@@ -50,21 +50,21 @@ public final class ht0 extends AnimatorListenerAdapter {
             case 3:
                 photoViewer.L1.n0(false);
                 zt0 zt0Var = photoViewer.L1;
-                zt0Var.u1.setTypeface(qg.s0.e(zt0Var.P1).j);
+                zt0Var.u1.setTypeface(og.x0.e(zt0Var.P1).j);
                 zt0Var.Z0.setVisibility(0);
                 zt0Var.W0.setVisibility(0);
                 zt0Var.X0.setVisibility(0);
-                org.telegram.ui.Components.gd0 gd0Var = photoViewer.y4;
-                int childCount = gd0Var.getChildCount();
+                org.telegram.ui.Components.pd0 pd0Var = photoViewer.y4;
+                int childCount = pd0Var.getChildCount();
                 for (int i11 = 0; i11 < childCount; i11++) {
-                    gd0Var.getChildAt(i11).setVisibility(4);
+                    pd0Var.getChildAt(i11).setVisibility(4);
                 }
                 photoViewer.p6 = null;
                 photoViewer.u4 = 3;
                 photoViewer.f1().L.b(photoViewer.u4 != 0);
-                di.j4 j4Var = photoViewer.K1;
-                if (j4Var != null) {
-                    j4Var.b(photoViewer.u4 != 3);
+                bi.b5 b5Var = photoViewer.K1;
+                if (b5Var != null) {
+                    b5Var.b(photoViewer.u4 != 3);
                 }
                 photoViewer.o6 = -1;
                 float r22 = photoViewer.r2(false);
@@ -75,8 +75,8 @@ public final class ht0 extends AnimatorListenerAdapter {
                 photoViewer.w3(r22);
                 photoViewer.t2 = true;
                 photoViewer.e0.invalidate();
-                av0 av0Var = photoViewer.d;
-                if (av0Var == null || !av0Var.O()) {
+                cv0 cv0Var = photoViewer.d;
+                if (cv0Var == null || !cv0Var.O()) {
                     photoViewer.R1();
                     break;
                 }
@@ -90,21 +90,21 @@ public final class ht0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new rl0(this, 20));
+                AndroidUtilities.runOnUIThread(new ql0(this, 20));
                 break;
             case 6:
                 photoViewer.m6 = 1.0f;
                 Runnable runnable = photoViewer.p4;
                 if (runnable != null) {
-                    co coVar = photoViewer.l4;
-                    if (coVar == null && (viVar = photoViewer.a2) != null) {
-                        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
-                        if (n2Var instanceof co) {
-                            coVar = (co) n2Var;
+                    eo eoVar = photoViewer.l4;
+                    if (eoVar == null && (yiVar = photoViewer.a2) != null) {
+                        org.telegram.ui.ActionBar.p2 p2Var = yiVar.f0;
+                        if (p2Var instanceof eo) {
+                            eoVar = (eo) p2Var;
                         }
                     }
-                    if (coVar != null) {
-                        coVar.h8(runnable);
+                    if (eoVar != null) {
+                        eoVar.h8(runnable);
                         break;
                     } else {
                         runnable.run();

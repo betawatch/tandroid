@@ -1,34 +1,36 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d41 b;
+public final class b41 implements d41 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ org.telegram.ui.Components.hy d;
 
-    public /* synthetic */ b41(d41 d41Var, int i10) {
-        this.a = i10;
-        this.b = d41Var;
+    public b41(org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.hy hyVar) {
+        this.a = p2Var;
+        this.b = context;
+        this.c = f6Var;
+        this.d = hyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d41 d41Var = this.b;
-                e41 e41Var = d41Var.v;
-                if (d41Var.a != 0) {
-                    e41Var.onBackPressed();
-                    break;
-                } else {
-                    e41Var.dismiss();
-                    break;
-                }
-            default:
-                AndroidUtilities.showKeyboard(this.b.n.b);
-                break;
-        }
+    @Override // org.telegram.ui.d41
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new v31(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.d41
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new ey0(23, this.a, this.d), 200L);
+    }
+
+    @Override // org.telegram.ui.d41
+    public final void c() {
+        org.telegram.ui.ActionBar.p2 p2Var = this.a;
+        p2Var.showDialog(new qg.a1(p2Var, 3, true));
     }
 }

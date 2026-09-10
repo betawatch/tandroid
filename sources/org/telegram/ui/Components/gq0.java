@@ -1,58 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public abstract class gq0 extends FrameLayout {
-    public org.telegram.ui.ActionBar.j5 a;
-    public org.telegram.ui.ActionBar.j5 b;
-    public di.eb c;
-    public int d;
-    public AnimatorSet e;
-    public Paint f;
-    public RectF h;
-
-    public final void a(int i10) {
-        if (this.d == i10) {
-            return;
-        }
-        this.d = i10;
-        AnimatorSet animatorSet = this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.e = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.c, (Property<di.eb, Float>) View.TRANSLATION_X, this.d == 0 ? 0.0f : r0.getMeasuredWidth()));
-        this.e.setDuration(180L);
-        this.e.setInterpolator(pr.g);
-        this.e.addListener(new r80(this, 15));
-        this.e.start();
-        ((tp0) this).n.Z0();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
-        ((FrameLayout.LayoutParams) this.b.getLayoutParams()).width = size;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.a.getLayoutParams();
-        layoutParams.width = size;
-        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
-        di.eb ebVar = this.c;
-        ((FrameLayout.LayoutParams) ebVar.getLayoutParams()).width = size;
-        AnimatorSet animatorSet = this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        ebVar.setTranslationX(this.d == 0 ? 0.0f : r2.width);
-        super.onMeasure(i10, i11);
-    }
+public final class gq0 {
+    public final TLRPC.TL_dialog a = new TLRPC.TL_dialog();
+    public TLObject b;
+    public int c;
+    public CharSequence d;
 }

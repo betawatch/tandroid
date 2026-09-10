@@ -1,42 +1,118 @@
 package di;
 
 import android.content.Context;
-import android.view.View;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.ig1;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class v3 extends org.telegram.ui.Components.x9 {
-    public final /* synthetic */ int G;
+public final /* synthetic */ class v3 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v3(Context context, int i10) {
-        super(context);
-        this.G = i10;
+    public /* synthetic */ v3(int i10, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.h3 h3Var, f6 f6Var) {
+        this.b = i10;
+        this.d = connectedbotstarref;
+        this.e = h3Var;
+        this.f = context;
+        this.c = j3;
+        this.g = f6Var;
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.G) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        SpannableStringBuilder replaceTags;
+        int i11 = this.a;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.d;
+        switch (i11) {
             case 0:
-                int size = View.MeasureSpec.getSize(i10);
-                setMeasuredDimension(size, size);
+                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj4;
+                Context context = (Context) obj3;
+                f6 f6Var = (f6) obj2;
+                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
+                int i12 = this.b;
+                long j3 = this.c;
+                if (connectedbotstarref2 != null) {
+                    h3Var.dismiss();
+                    h4.H0(context, i12, connectedbotstarref2, j3, f6Var);
+                    break;
+                } else {
+                    TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(connectedbotstarref.bot_id));
+                    if (user != null) {
+                        MessagesController.getInstance(i12).loadFullUser(user, 0, true, new t3(h3Var, context, i12, j3, f6Var, 1));
+                        break;
+                    }
+                }
                 break;
             default:
-                super.onMeasure(i10, i11);
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
+                int[] iArr = (int[]) obj3;
+                ArrayList arrayList = (ArrayList) obj2;
+                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
+                ig1 ig1Var = ((sf1) obj5).b;
+                if (tL_messages_invitedUsers2 != null) {
+                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
+                }
+                int i13 = iArr[0] + 1;
+                iArr[0] = i13;
+                if (i13 == this.b) {
+                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
+                    long j10 = this.c;
+                    if (!isEmpty) {
+                        TLRPC.Chat chat = ig1Var.getMessagesController().getChat(Long.valueOf(j10));
+                        i10 = ((org.telegram.ui.ActionBar.p2) ig1Var).currentAccount;
+                        org.telegram.ui.Components.d5.f(i10, chat, tL_messages_invitedUsers);
+                        break;
+                    } else {
+                        wc a02 = wc.a0(ig1Var);
+                        TLRPC.Chat chat2 = ig1Var.getMessagesController().getChat(Long.valueOf(j10));
+                        a02.getClass();
+                        if (arrayList.size() == 0) {
+                            replaceTags = null;
+                        } else if (arrayList.size() != 1) {
+                            replaceTags = ChatObject.isChannelAndNotMegaGroup(chat2) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedMembersToChannel", arrayList.size(), new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedSubscribersToChannel", arrayList.size(), new Object[0]));
+                        } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
+                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
+                        } else {
+                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
+                        }
+                        a02.V(arrayList, replaceTags, null, null).j();
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.G) {
-            case 1:
-                super.setAlpha(f7);
-                setVisibility(f7 > 0.0f ? 0 : 4);
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
-        }
+    public /* synthetic */ v3(sf1 sf1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j3) {
+        this.d = sf1Var;
+        this.e = tL_messages_invitedUsers;
+        this.f = iArr;
+        this.b = i10;
+        this.g = arrayList;
+        this.c = j3;
     }
 }

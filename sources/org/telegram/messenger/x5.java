@@ -1,39 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ boolean[] c;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ x5(org.telegram.ui.ActionBar.b2 b2Var, boolean[] zArr, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x5 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LocationController b;
+
+    public /* synthetic */ x5(LocationController locationController, int i10) {
         this.a = i10;
-        this.b = b2Var;
-        this.c = zArr;
+        this.b = locationController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MediaController.lambda$saveFile$45(this.c, this.b);
+                this.b.lambda$removeSharingLocation$19(tLObject, tL_error);
                 break;
             case 1:
-                MediaController.lambda$saveFile$49(this.b, this.c);
-                break;
-            case 2:
-                MediaController.lambda$saveFile$52(this.c, this.b);
+                this.b.lambda$removeAllLocationSharings$22(tLObject, tL_error);
                 break;
             default:
-                MediaController.lambda$saveFile$54(this.b, this.c);
+                this.b.lambda$markLiveLoactionsAsRead$27(tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ x5(boolean[] zArr, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        this.a = i10;
-        this.c = zArr;
-        this.b = b2Var;
     }
 }

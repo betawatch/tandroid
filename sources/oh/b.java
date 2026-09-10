@@ -1,53 +1,33 @@
 package oh;
 
-import android.content.Context;
-import android.os.Build;
-import le.e;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.pr;
-import yf.j0;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class b extends di.d implements le.d {
-    public final le.b h0;
-    public final f6 i0;
+public final class b {
+    public static final b a;
+    public static final b b;
+    public static final b c;
+    public static final b d;
+    public static final /* synthetic */ b[] e;
 
-    public b(Context context, f6 f6Var) {
-        super(context, f6Var, true);
-        this.h0 = new le.b(0, this, pr.h, 320L, true);
-        this.i0 = f6Var;
-        e();
-        setOutlineProvider(j0.b);
+    static {
+        b bVar = new b("STATE_FULLY_HIDDEN", 0);
+        a = bVar;
+        b bVar2 = new b("STATE_ANIMATING_TO_FULLY_HIDDEN", 1);
+        b = bVar2;
+        b bVar3 = new b("STATE_ANIMATING_TO_FULLY_VISIBLE", 2);
+        c = bVar3;
+        b bVar4 = new b("STATE_FULLY_VISIBLE", 3);
+        d = bVar4;
+        e = new b[]{bVar, bVar2, bVar3, bVar4};
     }
 
-    @Override // le.d
-    public final void E(int i10, float f7, float f10, e eVar) {
-        f6 f6Var = this.i0;
-        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
-        float f11 = this.h0.e;
-        setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
-        setColor(i0.a.d(f11, m(j6.d6), m(j6.Oh)));
-        setTextColor(i0.a.d(f11, m(j6.q7), m(j6.Sh)));
-        if (Build.VERSION.SDK_INT >= 28) {
-            if (a2) {
-                setOutlineAmbientShadowColor(553648127);
-                setOutlineSpotShadowColor(553648127);
-            } else {
-                setOutlineAmbientShadowColor(1610612736);
-                setOutlineSpotShadowColor(1610612736);
-            }
-        }
+    public static b valueOf(String str) {
+        return (b) Enum.valueOf(b.class, str);
     }
 
-    public final int m(int i10) {
-        f6 f6Var = this.i0;
-        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
-    }
-
-    @Override // le.d
-    public final /* synthetic */ void z(float f7, int i10) {
+    public static b[] values() {
+        return (b[]) e.clone();
     }
 }

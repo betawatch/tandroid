@@ -8,14 +8,14 @@ import java.util.List;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import wd.b;
 import wd.d;
 import zd.b0;
 import zd.e0;
 import zd.f1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzfb extends j implements p {
     int zza;
@@ -68,7 +68,7 @@ final class zzfb extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                u7.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -81,19 +81,19 @@ final class zzfb extends j implements p {
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        t7.b(obj);
+                        u7.b(obj);
                         return i.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    t7.b(obj);
+                    u7.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                t7.b(obj);
+                u7.b(obj);
             }
             this.zze = null;
             this.zza = 2;
-        } catch (zzcg e7) {
+        } catch (zzcg e) {
             zzfp zzfpVar2 = this.zzb;
             f1 f1Var = (f1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
             if (f1Var != null && (children = f1Var.getChildren()) != null) {
@@ -108,10 +108,10 @@ final class zzfb extends j implements p {
                 throw new IllegalStateException(("Current context doesn't contain Job in it: " + c10).toString());
             }
             List a2 = d.a(f1Var2.getChildren());
-            this.zze = e7;
+            this.zze = e;
             this.zza = 3;
             if (e0.o(a2, this) != aVar) {
-                throw e7;
+                throw e;
             }
         }
     }

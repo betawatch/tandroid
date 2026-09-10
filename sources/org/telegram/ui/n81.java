@@ -1,38 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n81 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class n81 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ n81(SessionsActivity sessionsActivity, int i10) {
+    public /* synthetic */ n81(SessionsActivity sessionsActivity, boolean z10, int i10) {
         this.a = i10;
         this.b = sessionsActivity;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
+                this.b.k0(this.c);
+                break;
             default:
-                SessionsActivity.W(this.b);
+                this.b.k0(this.c);
                 break;
         }
     }

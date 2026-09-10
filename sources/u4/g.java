@@ -10,7 +10,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
-import n7.z0;
+import n7.a1;
+import og.u0;
 import w7.ga;
 import w7.ha;
 import w7.oa;
@@ -19,7 +20,7 @@ import w9.m;
 import w9.o;
 import w9.r;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class g implements Callable {
     public final /* synthetic */ int a;
@@ -43,8 +44,8 @@ public final class g implements Callable {
             case 0:
                 return (h) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
             case 1:
-                z0 z0Var = (z0) obj;
-                m mVar = (m) z0Var.c;
+                u0 u0Var = (u0) obj;
+                m mVar = (m) u0Var.c;
                 Boolean bool = (Boolean) obj2;
                 if (bool.booleanValue()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
@@ -58,7 +59,7 @@ public final class g implements Callable {
                     }
                     rVar.h.trySetResult(null);
                     Executor executor = (Executor) mVar.e.b;
-                    return ((Task) z0Var.b).onSuccessTask(executor, new o0.a(this, executor, z10, 22));
+                    return ((Task) u0Var.b).onSuccessTask(executor, new a1(this, executor, z10, 23));
                 }
                 if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                     Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
@@ -96,9 +97,9 @@ public final class g implements Callable {
                 }
                 haVar.a();
                 try {
-                    Object e7 = mobileVisionBase.b.e(aVar);
+                    Object e = mobileVisionBase.b.e(aVar);
                     haVar.close();
-                    return e7;
+                    return e;
                 } catch (Throwable th2) {
                     try {
                         haVar.close();

@@ -4,10 +4,11 @@ import b2.q0;
 import c5.b0;
 import cc.k;
 import dc.h;
+import hc.g;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -18,9 +19,9 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void a(String str, hc.e eVar, dc.a aVar, Charset charset) {
+    public static void a(String str, hc.f fVar, dc.a aVar, Charset charset) {
         int i10;
-        int ordinal = eVar.ordinal();
+        int ordinal = fVar.ordinal();
         int i11 = 0;
         if (ordinal == 1) {
             int length = str.length();
@@ -77,7 +78,7 @@ public abstract class c {
             return;
         }
         if (ordinal != 6) {
-            throw new k("Invalid mode: " + eVar);
+            throw new k("Invalid mode: " + fVar);
         }
         Charset charset2 = h.b;
         if (charset2 == null) {
@@ -124,9 +125,9 @@ public abstract class c {
         return true;
     }
 
-    public static boolean c(int i10, hc.f fVar, hc.c cVar) {
-        int i11 = fVar.d;
-        b0 b0Var = fVar.c[cVar.ordinal()];
+    public static boolean c(int i10, g gVar, hc.d dVar) {
+        int i11 = gVar.d;
+        b0 b0Var = gVar.c[dVar.ordinal()];
         int i12 = b0Var.b;
         int i13 = 0;
         for (q0 q0Var : (q0[]) b0Var.c) {

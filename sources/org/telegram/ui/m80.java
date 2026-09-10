@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class m80 extends a6 {
-    public final /* synthetic */ uy f;
+public final class m80 extends b6 {
+    public final /* synthetic */ wy f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m80(Bundle bundle, uy uyVar) {
+    public m80(Bundle bundle, wy wyVar) {
         super(bundle);
-        this.f = uyVar;
+        this.f = wyVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.p2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         super.onTransitionAnimationEnd(z10, z11);
         if (!z10 || z11) {

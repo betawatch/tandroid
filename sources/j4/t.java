@@ -2,18 +2,17 @@ package j4;
 
 import b2.r0;
 import b2.s0;
-import c3.h0;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
     public final int b;
     public final e2.v c;
     public final a4.h d;
-    public h0 e;
+    public c3.h0 e;
     public String f;
     public b2.s g;
     public int h;
@@ -50,7 +49,7 @@ public final class t implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(e2.v vVar) {
+    public final void a(e2.v vVar) {
         int i10;
         boolean h;
         e2.d.h(this.e);
@@ -216,27 +215,27 @@ public final class t implements i {
     }
 
     @Override // j4.i
-    public final void d() {
+    public final void b() {
         this.h = 0;
         this.l = -9223372036854775807L;
         this.m = false;
     }
 
     @Override // j4.i
-    public final void e(c3.q qVar, f0 f0Var) {
-        f0Var.a();
-        f0Var.b();
-        this.e = qVar.R1(f0Var.d, 1);
-        f0Var.b();
-        this.f = f0Var.e;
+    public final void c(c3.q qVar, g0 g0Var) {
+        g0Var.a();
+        g0Var.b();
+        this.e = qVar.I(g0Var.d, 1);
+        g0Var.b();
+        this.f = g0Var.e;
     }
 
     @Override // j4.i
-    public final void g(int i10, long j3) {
+    public final void e(int i10, long j3) {
         this.l = j3;
     }
 
     @Override // j4.i
-    public final void f(boolean z10) {
+    public final void d(boolean z10) {
     }
 }

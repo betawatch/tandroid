@@ -6,7 +6,7 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class xt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final class xt0 extends AnimatorListenerAdapter {
                 frameLayout.setVisibility(0);
                 frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
                 ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
-                org.telegram.messenger.wl.q(translationY, prVar, 320L);
-                yt0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(prVar).setDuration(320L).start();
+                org.telegram.ui.Components.wr wrVar = org.telegram.ui.Components.wr.h;
+                org.telegram.messenger.em.q(translationY, wrVar, 320L);
+                yt0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(wrVar).setDuration(320L).start();
                 photoViewer.u4 = this.b;
                 photoViewer.q6 = null;
                 photoViewer.o6 = -1;

@@ -5,9 +5,9 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import v7.x7;
+import v7.y7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class q1 {
     public static final q1 F = new q1(new p1());
@@ -297,11 +297,11 @@ public class q1 {
             m1Var.getClass();
             Bundle bundle3 = new Bundle();
             bundle3.putBundle(m1.c, m1Var.a.c());
-            bundle3.putIntArray(m1.d, x7.f(m1Var.b));
+            bundle3.putIntArray(m1.d, y7.f(m1Var.b));
             arrayList.add(bundle3);
         }
         bundle.putParcelableArrayList(c0, arrayList);
-        bundle.putIntArray(d0, x7.f(this.E));
+        bundle.putIntArray(d0, y7.f(this.E));
         return bundle;
     }
 

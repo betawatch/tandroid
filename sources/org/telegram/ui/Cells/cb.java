@@ -1,40 +1,20 @@
 package org.telegram.ui.Cells;
 
-import android.view.View;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.t01;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cb implements View.OnLongClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class cb {
+    public final t01 a;
+    public t01 b;
+    public final boolean c;
+    public final RectF d = new RectF();
 
-    public /* synthetic */ cb(eb ebVar, db dbVar, int i10) {
-        this.c = ebVar;
-        this.d = dbVar;
-        this.b = i10;
-    }
-
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        switch (this.a) {
-            case 0:
-                eb ebVar = (eb) this.c;
-                db dbVar = (db) this.d;
-                return ebVar.b(dbVar.h, this.b);
-            default:
-                zh.j5 j5Var = (zh.j5) this.c;
-                Runnable runnable = (Runnable) this.d;
-                j5Var.f(this.b, true);
-                runnable.run();
-                return true;
-        }
-    }
-
-    public /* synthetic */ cb(zh.j5 j5Var, int i10, Runnable runnable) {
-        this.c = j5Var;
-        this.b = i10;
-        this.d = runnable;
+    public cb(CharSequence charSequence, CharSequence charSequence2, boolean z10) {
+        this.a = new t01(charSequence, 12.0f, null);
+        this.b = new t01(charSequence2, 12.0f, AndroidUtilities.bold());
+        this.c = z10;
     }
 }

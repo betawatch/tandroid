@@ -13,10 +13,10 @@ import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AutoCompleteTextView;
-import v7.u7;
+import v7.v7;
 import w7.q7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class l extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -29,11 +29,11 @@ public class l extends AutoCompleteTextView implements u0.k {
         super(context, attributeSet, i10);
         b3.a(context);
         a3.a(this, getContext());
-        aa.a y3 = aa.a.y(getContext(), attributeSet, d, i10);
-        if (((TypedArray) y3.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(y3.r(0));
+        e3 P = e3.P(getContext(), attributeSet, d, i10);
+        if (((TypedArray) P.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(P.E(0));
         }
-        y3.A();
+        P.Q();
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, i10);
@@ -108,7 +108,7 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
@@ -155,7 +155,7 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(u7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(v7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

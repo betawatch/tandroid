@@ -1,42 +1,36 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class nh1 extends org.telegram.ui.Cells.i3 {
-    public final /* synthetic */ int x;
-    public final /* synthetic */ UserInfoActivity y;
+public final class nh1 extends FrameLayout {
+    public final qg.s0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, str, false, false, -1, f6Var);
-        this.x = i10;
-        this.y = userInfoActivity;
-    }
-
-    @Override // org.telegram.ui.Cells.i3
-    public final void b(Editable editable) {
-        switch (this.x) {
-            case 0:
-                this.y.b0(true);
-                break;
-            case 1:
-                this.y.b0(true);
-                break;
-            default:
-                UserInfoActivity userInfoActivity = this.y;
-                userInfoActivity.b0(true);
-                userInfoActivity.e0();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, str, true, false, i10, f6Var);
-        this.x = 2;
-        this.y = userInfoActivity;
+    public nh1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        LinearLayout linearLayout = new LinearLayout(context);
+        addView(linearLayout, w7.a6.e(-1, -2, 80));
+        linearLayout.setOrientation(1);
+        TextView textView = new TextView(context);
+        textView.setTextColor(i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var), 100));
+        textView.setTextSize(1, 13.0f);
+        textView.setGravity(17);
+        textView.setText(LocaleController.getString(R.string.UnlockPremiumStickersDescription));
+        linearLayout.addView(textView, w7.a6.t(-1, -2, 0, 16, 17, 17, 16));
+        qg.s0 s0Var = new qg.s0(context, f6Var, false);
+        this.a = s0Var;
+        String string = LocaleController.getString(R.string.UnlockPremiumStickers);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) "d ").setSpan(new org.telegram.ui.Components.uq(0, context.getDrawable(R.drawable.msg_premium_normal)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) string);
+        s0Var.d.setText(spannableStringBuilder);
+        linearLayout.addView(s0Var, w7.a6.t(-1, 48, 0, 16, 0, 16, 16));
     }
 }

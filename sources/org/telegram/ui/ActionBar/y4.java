@@ -1,20 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class y4 extends ActionBarLayout {
-    public final /* synthetic */ n s1;
+public interface y4 {
+    void addStyle(int i10, int i11, int i12);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y4(Activity activity, n nVar) {
-        super(activity, false);
-        this.s1 = nVar;
-    }
+    int getCurrentStyle(int i10, int i11);
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.d5
-    public final f3 getBottomSheet() {
-        return ((f3[]) this.s1.b)[0];
-    }
+    void removeStyle(int i10, int i11, int i12);
 }

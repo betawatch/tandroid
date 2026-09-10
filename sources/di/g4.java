@@ -1,29 +1,26 @@
 package di;
 
-import android.view.View;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.m90;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g4 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g4 extends org.telegram.ui.Cells.m4 {
+    public final m90 r;
 
-    public /* synthetic */ g4(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        switch (this.a) {
-            case 0:
-                ((j4) this.b).d();
-                break;
-            default:
-                lg.c cVar = (lg.c) this.b;
-                cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
-                cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
-                break;
-        }
+    public g4(Context context, f6 f6Var) {
+        super(context, f6Var);
+        m90 m90Var = new m90(context, f6Var);
+        this.r = m90Var;
+        m90Var.setTextSize(1, 14.0f);
+        m90Var.setTextColor(j6.v0(j6.z6, f6Var));
+        m90Var.setLinkTextColor(j6.v0(j6.L6, f6Var));
+        m90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        addView(m90Var, a6.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
     }
 }

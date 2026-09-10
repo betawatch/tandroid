@@ -1,5 +1,6 @@
 package h3;
 
+import a1.c;
 import a4.h;
 import b2.p0;
 import b2.r;
@@ -19,12 +20,11 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import fi.f;
-import i2.g;
 import java.util.Arrays;
 import java.util.List;
+import n4.y;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -46,15 +46,15 @@ public final class b implements o {
     public final boolean b(p pVar) {
         c3.b.s(pVar, false);
         v vVar = new v(4);
-        ((l) pVar).j(vVar.a, 0, 4, false);
+        ((l) pVar).g(vVar.a, 0, 4, false);
         return vVar.z() == 1716281667;
     }
 
     @Override // c3.o
     public final void g(q qVar) {
         this.e = qVar;
-        this.f = qVar.R1(0, 1);
-        qVar.Z0();
+        this.f = qVar.I(0, 1);
+        qVar.B();
     }
 
     @Override // c3.o
@@ -89,10 +89,10 @@ public final class b implements o {
         int i11 = this.g;
         if (i11 == 0) {
             boolean z11 = !this.c;
-            pVar.q();
-            long k10 = pVar.k();
+            pVar.p();
+            long h = pVar.h();
             p0 s10 = c3.b.s(pVar, z11);
-            pVar.r((int) (pVar.k() - k10));
+            pVar.q((int) (pVar.h() - h));
             this.h = s10;
             this.g = 1;
             return 0;
@@ -100,7 +100,7 @@ public final class b implements o {
         byte[] bArr = this.a;
         if (i11 == 1) {
             pVar.b(0, bArr.length, bArr);
-            pVar.q();
+            pVar.p();
             this.g = 2;
             return 0;
         }
@@ -120,11 +120,11 @@ public final class b implements o {
             u uVar2 = this.i;
             boolean z12 = false;
             while (!z12) {
-                pVar.q();
+                pVar.p();
                 byte[] bArr2 = new byte[i12];
                 h hVar = new h(bArr2, i12);
                 pVar.b(0, i12, bArr2);
-                boolean h = hVar.h();
+                boolean h10 = hVar.h();
                 int i15 = hVar.i(r10);
                 int i16 = hVar.i(24) + i12;
                 if (i15 == 0) {
@@ -160,14 +160,14 @@ public final class b implements o {
                             }
                             uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, p0Var2);
                         } else {
-                            pVar.r(i16);
+                            pVar.q(i16);
                         }
                         uVar2 = uVar;
                     }
                 }
                 String str = d0.a;
                 this.i = uVar2;
-                z12 = h;
+                z12 = h10;
                 i12 = 4;
                 i13 = 3;
                 r10 = 7;
@@ -179,7 +179,7 @@ public final class b implements o {
             h0 h0Var = this.f;
             r a2 = c10.a();
             a2.p = r0.n("audio/flac");
-            g.u(a2, h0Var);
+            hc.b.u(a2, h0Var);
             h0 h0Var2 = this.f;
             this.i.b();
             h0Var2.getClass();
@@ -188,15 +188,15 @@ public final class b implements o {
         }
         long j11 = 0;
         if (i11 == 4) {
-            pVar.q();
+            pVar.p();
             v vVar5 = new v(2);
             pVar.b(0, 2, vVar5.a);
             int D = vVar5.D();
             if ((D >> 2) != 16382) {
-                pVar.q();
+                pVar.p();
                 throw s0.a(null, "First frame does not start with sync code.");
             }
-            pVar.q();
+            pVar.p();
             this.k = D;
             q qVar = this.e;
             String str2 = d0.a;
@@ -204,8 +204,8 @@ public final class b implements o {
             long length = pVar.getLength();
             this.i.getClass();
             u uVar3 = this.i;
-            pf.b bVar = uVar3.k;
-            if (bVar != null && ((long[]) bVar.b).length > 0) {
+            y yVar = uVar3.k;
+            if (yVar != null && ((long[]) yVar.b).length > 0) {
                 tVar = new t(uVar3, position, 0);
                 i10 = 0;
             } else if (length == -1 || uVar3.j <= 0) {
@@ -214,7 +214,7 @@ public final class b implements o {
             } else {
                 int i17 = this.k;
                 int i18 = uVar3.c;
-                f fVar = new f(uVar3, 3);
+                c cVar = new c(uVar3, 27);
                 a5.a aVar = new a5.a(uVar3, i17);
                 long b10 = uVar3.b();
                 long j12 = uVar3.j;
@@ -227,11 +227,11 @@ public final class b implements o {
                     int i20 = uVar3.a;
                     j3 = 64 + (((((i20 != uVar3.b || i20 <= 0) ? 4096L : i20) * uVar3.g) * uVar3.h) / 8);
                 }
-                a aVar2 = new a(fVar, aVar, b10, j12, position, length, j3, Math.max(6, i18));
+                a aVar2 = new a(cVar, aVar, b10, j12, position, length, j3, Math.max(6, i18));
                 this.l = aVar2;
                 tVar = aVar2.a;
             }
-            qVar.P1(tVar);
+            qVar.G(tVar);
             this.g = 5;
             return i10;
         }
@@ -246,25 +246,25 @@ public final class b implements o {
         }
         if (this.n == -1) {
             u uVar4 = this.i;
-            pVar.q();
-            pVar.l(1);
+            pVar.p();
+            pVar.j(1);
             byte[] bArr4 = new byte[1];
             pVar.b(0, 1, bArr4);
             boolean z13 = (bArr4[0] & 1) == 1;
-            pVar.l(2);
+            pVar.j(2);
             r10 = z13 ? 7 : 6;
             v vVar6 = new v(r10);
             byte[] bArr5 = vVar6.a;
             int i21 = 0;
             while (i21 < r10) {
-                int h10 = pVar.h(i21, r10 - i21, bArr5);
-                if (h10 == -1) {
+                int e = pVar.e(i21, r10 - i21, bArr5);
+                if (e == -1) {
                     break;
                 }
-                i21 += h10;
+                i21 += e;
             }
             vVar6.I(i21);
-            pVar.q();
+            pVar.p();
             try {
                 long E = vVar6.E();
                 if (!z13) {

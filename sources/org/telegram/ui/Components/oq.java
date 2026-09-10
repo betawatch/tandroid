@@ -1,169 +1,224 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public class oq extends Drawable implements Drawable.Callback {
-    public Drawable a;
-    public final Drawable b;
-    public final int c;
-    public final int d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public boolean r;
-    public int s;
-    public int v;
-    public boolean w;
-    public float x;
+public final class oq extends EditTextBoldCursor {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    public oq(Drawable drawable, Drawable drawable2, int i10, int i11) {
-        this.a = drawable;
-        this.b = drawable2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ oq(FrameLayout frameLayout, Context context, int i10, int i11) {
+        super(context);
+        this.b = i11;
+        this.d = frameLayout;
         this.c = i10;
-        this.d = i11;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
+    }
+
+    @Override // android.view.View
+    public boolean getGlobalVisibleRect(Rect rect, Point point) {
+        switch (this.b) {
+            case 1:
+                boolean globalVisibleRect = super.getGlobalVisibleRect(rect, point);
+                rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
+                return globalVisibleRect;
+            default:
+                return super.getGlobalVisibleRect(rect, point);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(this.x, 0.0f);
-        if (this.r) {
-            Rect bounds = getBounds();
-            setBounds(bounds.centerX() - (getIntrinsicWidth() / 2), bounds.centerY() - (getIntrinsicHeight() / 2), (getIntrinsicWidth() / 2) + bounds.centerX(), (getIntrinsicHeight() / 2) + bounds.centerY());
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.b) {
+            case 1:
+                super.invalidate();
+                ((sq) this.d).E[this.c - 1].invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
         }
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            this.a.draw(canvas);
-        }
-        Drawable drawable2 = this.b;
-        if (drawable2 != null) {
-            boolean z10 = this.w;
-            int i10 = this.d;
-            int i11 = this.c;
-            if (z10) {
-                Rect bounds2 = getBounds();
-                if (i11 != 0) {
-                    drawable2.setBounds(bounds2.left + i11, bounds2.top + i10, bounds2.right - i11, bounds2.bottom - i10);
-                } else {
-                    drawable2.setBounds(bounds2);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        oq oqVar;
+        char c10;
+        ez ezVar;
+        View view;
+        s4.c0 c0Var;
+        vl0 vl0Var;
+        oq oqVar2;
+        sy syVar;
+        int i10 = this.b;
+        int i11 = this.c;
+        FrameLayout frameLayout = this.d;
+        int i12 = 1;
+        switch (i10) {
+            case 0:
+                sq sqVar = (sq) frameLayout;
+                if (getAlpha() == 1.0f && motionEvent.getAction() == 0) {
+                    if (!sqVar.E[i11 + 1].isFocused()) {
+                        sqVar.E[i11 + 1].requestFocus();
+                        break;
+                    } else {
+                        AndroidUtilities.showKeyboard(sqVar.E[i11 + 1]);
+                        break;
+                    }
                 }
-            } else if (this.e != 0) {
-                int centerX = (getBounds().centerX() - (this.e / 2)) + i11 + this.s;
-                int centerY = getBounds().centerY();
-                int i12 = this.f;
-                int i13 = (centerY - (i12 / 2)) + i10 + this.v;
-                drawable2.setBounds(centerX, i13, this.e + centerX, i12 + i13);
-            } else {
-                int centerX2 = (getBounds().centerX() - (drawable2.getIntrinsicWidth() / 2)) + i11;
-                int centerY2 = (getBounds().centerY() - (drawable2.getIntrinsicHeight() / 2)) + i10;
-                drawable2.setBounds(centerX2, centerY2, drawable2.getIntrinsicWidth() + centerX2, drawable2.getIntrinsicHeight() + centerY2);
-            }
-            drawable2.draw(canvas);
+                break;
+            case 1:
+                if (getAlpha() == 1.0f) {
+                    if (!isFocused()) {
+                        requestFocus();
+                        break;
+                    } else {
+                        AndroidUtilities.showKeyboard(this);
+                        break;
+                    }
+                }
+                break;
+            default:
+                ez ezVar2 = (ez) frameLayout;
+                rz rzVar = ezVar2.G;
+                oq oqVar3 = ezVar2.d;
+                if (!oqVar3.isEnabled()) {
+                    break;
+                } else {
+                    if (motionEvent.getAction() == 0) {
+                        int i13 = 2;
+                        if (rzVar.t1.z()) {
+                            oqVar = oqVar3;
+                        } else {
+                            vl0 vl0Var2 = rzVar.D0;
+                            vl0 vl0Var3 = rzVar.P;
+                            wy wyVar = rzVar.j0;
+                            vl0 vl0Var4 = rzVar.h0;
+                            AnimatorSet animatorSet = rzVar.M0;
+                            if (animatorSet != null) {
+                                animatorSet.cancel();
+                                rzVar.M0 = null;
+                            }
+                            rzVar.I0 = false;
+                            rzVar.q0 = false;
+                            rzVar.c0 = false;
+                            int i14 = 0;
+                            while (i14 < 3) {
+                                if (i14 == 0) {
+                                    ezVar = rzVar.V;
+                                    view = rzVar.I;
+                                    c10 = 0;
+                                    c0Var = rzVar.Q;
+                                    vl0Var = vl0Var3;
+                                } else {
+                                    c10 = 0;
+                                    if (i14 == i12) {
+                                        ezVar = rzVar.o0;
+                                        view = rzVar.p0;
+                                        c0Var = rzVar.i0;
+                                        vl0Var = vl0Var4;
+                                    } else {
+                                        ezVar = rzVar.G0;
+                                        view = rzVar.B0;
+                                        c0Var = rzVar.E0;
+                                        vl0Var = vl0Var2;
+                                    }
+                                }
+                                if (ezVar == null) {
+                                    oqVar2 = oqVar3;
+                                } else if (ezVar2 == ezVar && (syVar = rzVar.t1) != null && syVar.A()) {
+                                    AnimatorSet animatorSet2 = new AnimatorSet();
+                                    rzVar.M0 = animatorSet2;
+                                    Property property = View.TRANSLATION_Y;
+                                    if (view == null || i14 == i13) {
+                                        oqVar2 = oqVar3;
+                                        float[] fArr = new float[1];
+                                        fArr[c10] = i14 == 2 ? 0.0f : -AndroidUtilities.dp(36.0f);
+                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(vl0Var, (Property<vl0, Float>) property, fArr);
+                                        float[] fArr2 = new float[1];
+                                        fArr2[c10] = AndroidUtilities.dp(0.0f);
+                                        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(ezVar, (Property<ez, Float>) property, fArr2);
+                                        Animator[] animatorArr = new Animator[2];
+                                        animatorArr[c10] = ofFloat;
+                                        animatorArr[1] = ofFloat2;
+                                        animatorSet2.playTogether(animatorArr);
+                                    } else {
+                                        oqVar2 = oqVar3;
+                                        float[] fArr3 = new float[1];
+                                        fArr3[c10] = -AndroidUtilities.dp(40.0f);
+                                        ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr3);
+                                        float[] fArr4 = new float[1];
+                                        fArr4[c10] = -AndroidUtilities.dp(36.0f);
+                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(vl0Var, (Property<vl0, Float>) property, fArr4);
+                                        float[] fArr5 = new float[1];
+                                        fArr5[c10] = AndroidUtilities.dp(0.0f);
+                                        ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(ezVar, (Property<ez, Float>) property, fArr5);
+                                        Animator[] animatorArr2 = new Animator[3];
+                                        animatorArr2[c10] = ofFloat3;
+                                        animatorArr2[1] = ofFloat4;
+                                        animatorArr2[2] = ofFloat5;
+                                        animatorSet2.playTogether(animatorArr2);
+                                    }
+                                    rzVar.M0.setDuration(220L);
+                                    rzVar.M0.setInterpolator(wr.f);
+                                    rzVar.M0.addListener(new bi.u3(22, rzVar, vl0Var));
+                                    rzVar.M0.start();
+                                } else {
+                                    oqVar2 = oqVar3;
+                                    ezVar.setTranslationY(AndroidUtilities.dp(0.0f));
+                                    if (view != null && i14 != 2) {
+                                        view.setTranslationY(-AndroidUtilities.dp(40.0f));
+                                    }
+                                    if (vl0Var == vl0Var2) {
+                                        vl0Var.setPadding(0, 0, 0, rzVar.q2);
+                                    } else if (vl0Var == vl0Var3) {
+                                        vl0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), rzVar.q2);
+                                    } else if (vl0Var == vl0Var4) {
+                                        vl0Var.setPadding(0, rzVar.b1, 0, rzVar.q2);
+                                    }
+                                    if (vl0Var == vl0Var4) {
+                                        boolean z10 = rzVar.n0.x.size() > 0;
+                                        wyVar.K = z10;
+                                        if (z10) {
+                                            wyVar.G("", true);
+                                            if (vl0Var4.getAdapter() != wyVar) {
+                                                vl0Var4.setAdapter(wyVar);
+                                            }
+                                        }
+                                    }
+                                    c0Var.h1(0, 0);
+                                    i14++;
+                                    i12 = 1;
+                                    i13 = 2;
+                                    oqVar3 = oqVar2;
+                                }
+                                i14++;
+                                i12 = 1;
+                                i13 = 2;
+                                oqVar3 = oqVar2;
+                            }
+                            oqVar = oqVar3;
+                            rzVar.O(false);
+                        }
+                        rzVar.t1.i(i11 == 1 ? 2 : 1);
+                        oqVar.requestFocus();
+                        AndroidUtilities.showKeyboard(oqVar);
+                    }
+                    break;
+                }
         }
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable.ConstantState getConstantState() {
-        return this.b.getConstantState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        int i10 = this.n;
-        return i10 != 0 ? i10 : this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        int i10 = this.h;
-        return i10 != 0 ? i10 : this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        int i10 = this.n;
-        return i10 != 0 ? i10 : this.a.getMinimumHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        int i10 = this.h;
-        return i10 != 0 ? i10 : this.a.getMinimumWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.b.getOpacity();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int[] getState() {
-        return this.b.getState();
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean isStateful() {
-        return this.b.isStateful();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void jumpToCurrentState() {
-        this.b.jumpToCurrentState();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean onStateChange(int[] iArr) {
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean setState(int[] iArr) {
-        this.b.setState(iArr);
-        return true;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    public oq(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable2 != null) {
-            drawable2.setCallback(this);
-        }
+        return super.onTouchEvent(motionEvent);
     }
 }

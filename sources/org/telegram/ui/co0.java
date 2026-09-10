@@ -3,32 +3,32 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class co0 implements vo0 {
-    public final /* synthetic */ xo0 a;
+public final class co0 implements uo0 {
+    public final /* synthetic */ wo0 a;
 
-    public co0(xo0 xo0Var) {
-        this.a = xo0Var;
+    public co0(wo0 wo0Var) {
+        this.a = wo0Var;
     }
 
-    @Override // org.telegram.ui.vo0
+    @Override // org.telegram.ui.uo0
     public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
         return false;
     }
 
-    @Override // org.telegram.ui.vo0
+    @Override // org.telegram.ui.uo0
     public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        xo0 xo0Var = this.a;
-        xo0Var.I0 = tL_payments_validateRequestedInfo;
-        xo0Var.B0(tL_payments_validateRequestedInfo.info);
+        wo0 wo0Var = this.a;
+        wo0Var.I0 = tL_payments_validateRequestedInfo;
+        wo0Var.B0(tL_payments_validateRequestedInfo.info);
     }
 
-    @Override // org.telegram.ui.vo0
+    @Override // org.telegram.ui.uo0
     public final /* synthetic */ void a(TL_account.Password password) {
     }
 
-    @Override // org.telegram.ui.vo0
+    @Override // org.telegram.ui.uo0
     public final /* synthetic */ void b() {
     }
 }

@@ -1,36 +1,29 @@
 package eh;
 
-import b2.z0;
-import e2.m;
-import org.telegram.ui.ActionBar.f6;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import bh.f;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements d, m {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class c implements a {
+    public final Paint a = new Paint(1);
 
-    public /* synthetic */ c(int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
+    public final void a(int i10) {
+        this.a.setColor(i10);
     }
 
-    @Override // eh.d
-    public int f(f6 f6Var, boolean z10) {
-        return z10 ? this.b : this.c;
+    @Override // eh.a
+    public final bh.d k() {
+        return new f(this);
     }
 
-    @Override // e2.m
-    public void invoke(Object obj) {
-        switch (this.a) {
-            case 1:
-                ((z0) obj).onSurfaceSizeChanged(this.b, this.c);
-                break;
-            default:
-                ((z0) obj).onSurfaceSizeChanged(this.b, this.c);
-                break;
-        }
+    @Override // eh.a
+    public final void u(Canvas canvas, float f7, float f10, float f11, float f12) {
+        canvas.drawRect(f7, f10, f11, f12, this.a);
+    }
+
+    @Override // eh.a
+    public final /* synthetic */ void b() {
     }
 }

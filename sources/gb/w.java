@@ -4,9 +4,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashMap;
-import v7.m8;
+import v7.p8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class w extends t {
     public static final HashMap e;
@@ -30,11 +30,11 @@ public final class w extends t {
     public w(Class cls, v vVar) {
         super(vVar);
         this.d = new HashMap();
-        m8 m8Var = ib.c.a;
-        Constructor b10 = m8Var.b(cls);
+        p8 p8Var = ib.c.a;
+        Constructor b10 = p8Var.b(cls);
         this.b = b10;
         ib.c.f(b10);
-        String[] c10 = m8Var.c(cls);
+        String[] c10 = p8Var.c(cls);
         for (int i10 = 0; i10 < c10.length; i10++) {
             this.d.put(c10[i10], Integer.valueOf(i10));
         }
@@ -57,7 +57,7 @@ public final class w extends t {
         try {
             return constructor.newInstance(objArr);
         } catch (IllegalAccessException e7) {
-            m8 m8Var = ib.c.a;
+            p8 p8Var = ib.c.a;
             throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
         } catch (IllegalArgumentException e10) {
             e = e10;

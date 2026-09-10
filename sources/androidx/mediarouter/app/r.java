@@ -7,7 +7,7 @@ import android.os.Message;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class r implements IBinder.DeathRecipient {
     public final android.support.v4.media.session.e a = new android.support.v4.media.session.e(this);
@@ -57,18 +57,18 @@ public final class r implements IBinder.DeathRecipient {
         switch (this.d) {
             case 0:
                 u uVar = (u) this.e;
-                pf.b bVar = uVar.i0;
+                of.b bVar = uVar.i0;
                 if (bVar != null) {
-                    bVar.k0(uVar.j0);
+                    bVar.q0(uVar.j0);
                     uVar.i0 = null;
                     break;
                 }
                 break;
             default:
                 o0 o0Var = (o0) this.e;
-                pf.b bVar2 = o0Var.Z;
+                of.b bVar2 = o0Var.Z;
                 if (bVar2 != null) {
-                    bVar2.k0(o0Var.a0);
+                    bVar2.q0(o0Var.a0);
                     o0Var.Z = null;
                     break;
                 }

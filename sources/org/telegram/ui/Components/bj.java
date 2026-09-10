@@ -1,56 +1,153 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class bj implements TextWatcher {
-    public final /* synthetic */ gj a;
+public final /* synthetic */ class bj implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jj b;
+    public final /* synthetic */ MessagesController c;
+    public final /* synthetic */ int d;
 
-    public bj(gj gjVar) {
-        this.a = gjVar;
+    public /* synthetic */ bj(jj jjVar, MessagesController messagesController, int i10, int i11) {
+        this.a = i11;
+        this.b = jjVar;
+        this.c = messagesController;
+        this.d = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        gj gjVar = this.a;
-        wi wiVar = gjVar.g0;
-        TextUtils.isEmpty(gjVar.E);
-        gjVar.E = editable.toString().trim();
-        wi wiVar2 = gjVar.b0;
-        AndroidUtilities.cancelRunOnUIThread(wiVar2);
-        if (!TextUtils.isEmpty(gjVar.E)) {
-            String str = gjVar.E;
-            gjVar.a0 = str != null && str.length() >= 0;
-            if (!TextUtils.equals(gjVar.W, gjVar.E)) {
-                gjVar.M.clear();
-                gjVar.c0 = 0;
-                gjVar.d0 = false;
-            }
-            AndroidUtilities.runOnUIThread(wiVar2, 1500L);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio;
+        TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2;
+        switch (this.a) {
+            case 0:
+                TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) obj;
+                jj jjVar = this.b;
+                jjVar.e0 = -1;
+                jjVar.n0 = false;
+                if (messages_botresults != null) {
+                    this.c.putUsers(messages_botresults.users, false);
+                    ArrayList<TLRPC.BotInlineResult> arrayList = messages_botresults.results;
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        TLRPC.BotInlineResult botInlineResult = arrayList.get(i10);
+                        i10++;
+                        TLRPC.BotInlineResult botInlineResult2 = botInlineResult;
+                        if (botInlineResult2 instanceof TLRPC.TL_botInlineMediaResult) {
+                            TLRPC.TL_botInlineMediaResult tL_botInlineMediaResult = (TLRPC.TL_botInlineMediaResult) botInlineResult2;
+                            if (tL_botInlineMediaResult.document != null) {
+                                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                                tL_message.out = true;
+                                int i11 = jjVar.m0;
+                                jjVar.m0 = i11 - 1;
+                                tL_message.id = i11;
+                                tL_message.peer_id = new TLRPC.TL_peerUser();
+                                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                                tL_message.from_id = tL_peerUser;
+                                TLRPC.Peer peer = tL_message.peer_id;
+                                int i12 = this.d;
+                                long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+                                tL_peerUser.user_id = clientUserId;
+                                peer.user_id = clientUserId;
+                                tL_message.date = (int) (System.currentTimeMillis() / 1000);
+                                tL_message.message = "";
+                                TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+                                tL_message.media = tL_messageMediaDocument;
+                                tL_messageMediaDocument.flags |= 3;
+                                tL_messageMediaDocument.document = tL_botInlineMediaResult.document;
+                                tL_message.flags |= 768;
+                                MediaController.AudioEntry audioEntry = new MediaController.AudioEntry();
+                                MessageObject messageObject = new MessageObject(i12, tL_message, false, true);
+                                audioEntry.messageObject = messageObject;
+                                TLRPC.Document document = messageObject.getDocument();
+                                if (document != null) {
+                                    int i13 = 0;
+                                    while (true) {
+                                        if (i13 >= document.attributes.size()) {
+                                            tL_documentAttributeAudio = null;
+                                        } else if (document.attributes.get(i13) instanceof TLRPC.TL_documentAttributeAudio) {
+                                            tL_documentAttributeAudio = (TLRPC.TL_documentAttributeAudio) document.attributes.get(i13);
+                                        } else {
+                                            i13++;
+                                        }
+                                    }
+                                    if (tL_documentAttributeAudio != null) {
+                                        audioEntry.author = tL_documentAttributeAudio.performer;
+                                        audioEntry.title = tL_documentAttributeAudio.title;
+                                        audioEntry.duration = (int) tL_documentAttributeAudio.duration;
+                                        jjVar.N.add(audioEntry);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    jjVar.l0 = messages_botresults.next_offset;
+                    jjVar.h0 = !TextUtils.isEmpty(r13);
+                    jjVar.P();
+                    break;
+                }
+                break;
+            default:
+                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
+                jj jjVar2 = this.b;
+                ArrayList arrayList2 = jjVar2.M;
+                jjVar2.V = -1;
+                boolean z10 = false;
+                jjVar2.a0 = false;
+                if (messages_messages != null) {
+                    ArrayList<TLRPC.User> arrayList3 = messages_messages.users;
+                    MessagesController messagesController = this.c;
+                    messagesController.putUsers(arrayList3, false);
+                    messagesController.putChats(messages_messages.chats, false);
+                    ArrayList<TLRPC.Message> arrayList4 = messages_messages.messages;
+                    int size2 = arrayList4.size();
+                    int i14 = 0;
+                    while (i14 < size2) {
+                        TLRPC.Message message = arrayList4.get(i14);
+                        i14++;
+                        MediaController.AudioEntry audioEntry2 = new MediaController.AudioEntry();
+                        MessageObject messageObject2 = new MessageObject(this.d, message, false, true);
+                        audioEntry2.messageObject = messageObject2;
+                        TLRPC.Document document2 = messageObject2.getDocument();
+                        if (document2 != null) {
+                            int i15 = 0;
+                            while (true) {
+                                if (i15 >= document2.attributes.size()) {
+                                    tL_documentAttributeAudio2 = null;
+                                } else if (document2.attributes.get(i15) instanceof TLRPC.TL_documentAttributeAudio) {
+                                    tL_documentAttributeAudio2 = (TLRPC.TL_documentAttributeAudio) document2.attributes.get(i15);
+                                } else {
+                                    i15++;
+                                }
+                            }
+                            if (tL_documentAttributeAudio2 != null) {
+                                audioEntry2.author = tL_documentAttributeAudio2.performer;
+                                audioEntry2.title = tL_documentAttributeAudio2.title;
+                                audioEntry2.duration = (int) tL_documentAttributeAudio2.duration;
+                                arrayList2.add(audioEntry2);
+                            }
+                        }
+                    }
+                    int i16 = messages_messages.next_rate;
+                    jjVar2.c0 = i16;
+                    if (i16 != 0 || (messages_messages.count > 0 && arrayList2.size() < messages_messages.count)) {
+                        z10 = true;
+                    }
+                    jjVar2.d0 = z10;
+                    jjVar2.P();
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.cancelRunOnUIThread(wiVar);
-        if (!TextUtils.isEmpty(gjVar.E)) {
-            String str2 = gjVar.E;
-            gjVar.n0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(gjVar.b.J1).config.musicSearchUsername.get())) ? false : true;
-            if (!TextUtils.equals(gjVar.f0, gjVar.E)) {
-                gjVar.N.clear();
-                gjVar.h0 = false;
-            }
-            AndroidUtilities.runOnUIThread(wiVar, 1500L);
-        }
-        gjVar.P();
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

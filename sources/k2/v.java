@@ -1,37 +1,40 @@
 package k2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class v {
-    public final b2.s a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final c2.e i;
-    public final boolean j;
-    public final boolean k;
-    public final boolean l;
+    public boolean a;
+    public Object b;
+    public Object d;
+    public Object g;
+    public Object c = b.c;
+    public Object e = f0.a;
+    public Object f = u.a;
 
-    public v(b2.s sVar, int i10, int i11, int i12, int i13, int i14, int i15, int i16, c2.e eVar, boolean z10, boolean z11, boolean z12) {
-        this.a = sVar;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = i15;
-        this.h = i16;
-        this.i = eVar;
-        this.j = z10;
-        this.k = z11;
-        this.l = z12;
+    public v(Context context) {
+        this.b = context;
     }
 
-    public final k a() {
-        return new k(this.g, this.e, this.f, this.h, this.l, this.c == 1);
+    public e0 a() {
+        e2.d.g(!this.a);
+        this.a = true;
+        if (((aa.a) this.d) == null) {
+            this.d = new aa.a(new c2.h[0]);
+        }
+        if (((n4.y) this.g) == null) {
+            this.g = new n4.y((Context) this.b, 26);
+        }
+        return new e0(this);
+    }
+
+    public void b() {
+        ArrayList arrayList = (ArrayList) this.g;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((View) arrayList.get(i10)).invalidate();
+        }
     }
 }

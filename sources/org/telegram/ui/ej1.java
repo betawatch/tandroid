@@ -1,46 +1,24 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ej1 extends org.telegram.ui.ActionBar.g5 {
-    public final /* synthetic */ WallpapersListActivity f;
+public final /* synthetic */ class ej1 implements org.telegram.ui.ActionBar.c2, zd1 {
+    public final /* synthetic */ WallpapersListActivity a;
 
-    public ej1(WallpapersListActivity wallpapersListActivity) {
-        this.f = wallpapersListActivity;
+    public /* synthetic */ ej1(WallpapersListActivity wallpapersListActivity) {
+        this.a = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void k() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        jj1 jj1Var = wallpapersListActivity.J;
-        jj1Var.n = null;
-        jj1Var.E(null, true);
-        wallpapersListActivity.L.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+    @Override // org.telegram.ui.zd1
+    public void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        int[][] iArr = WallpapersListActivity.k0;
+        this.a.removeSelfFromStack();
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.H.setAdapter(wallpapersListActivity.I);
-        wallpapersListActivity.H.invalidate();
-        wallpapersListActivity.J.E(null, true);
-        wallpapersListActivity.L.setSearchFieldCaption(null);
-        k();
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void n() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.H.setAdapter(wallpapersListActivity.J);
-        wallpapersListActivity.H.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
-        this.f.J.E(editText.getText().toString(), false);
+    @Override // org.telegram.ui.ActionBar.c2
+    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        WallpapersListActivity.U(this.a);
     }
 }

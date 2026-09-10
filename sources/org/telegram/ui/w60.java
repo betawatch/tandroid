@@ -1,48 +1,40 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w60 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f70 b;
+public final class w60 extends org.telegram.ui.Components.o20 {
+    public final /* synthetic */ e70 r;
 
-    public /* synthetic */ w60(f70 f70Var, int i10) {
-        this.a = i10;
-        this.b = f70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w60(e70 e70Var, Context context, int i10) {
+        super(context, i10);
+        this.r = e70Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                f70 f70Var = this.b;
-                f70Var.f.r.clearFocus();
-                f70Var.f.r.requestFocus();
-                AndroidUtilities.showKeyboard(f70Var.f.r);
-                break;
-            case 1:
-                this.b.o0();
-                break;
-            case 2:
-                f70 f70Var2 = this.b;
-                f70Var2.n0(f70Var2.l0());
-                break;
-            case 3:
-                f70 f70Var3 = this.b;
-                f70Var3.n0(f70Var3.l0());
-                break;
-            default:
-                f70 f70Var4 = this.b;
-                f70Var4.X = null;
-                f70Var4.Z.b();
-                f70Var4.h.b();
-                f70Var4.k0();
-                f70Var4.r0();
-                f70Var4.s0();
-                break;
+    @Override // org.telegram.ui.Components.o20
+    public final void a(org.telegram.ui.Components.w30 w30Var) {
+        super.a(w30Var);
+        e70.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.o20
+    public final void b() {
+        super.b();
+        e70.Z(this.r);
+    }
+
+    @Override // org.telegram.ui.Components.o20
+    public final void c(org.telegram.ui.Components.w30 w30Var) {
+        e70 e70Var = this.r;
+        if (w30Var == e70Var.X) {
+            e70Var.X = null;
         }
+        if (w30Var == e70Var.Y) {
+            e70Var.Y = null;
+        }
+        super.c(w30Var);
+        e70.Z(e70Var);
     }
 }

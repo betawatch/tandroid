@@ -1,35 +1,49 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.Build;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class pc0 extends co0 {
-    public final /* synthetic */ vc0 d;
+public final class pc0 {
+    public final Shader.TileMode a;
+    public final Matrix b = new Matrix();
+    public boolean c;
+    public BitmapShader d;
+    public WeakReference e;
 
-    public pc0(vc0 vc0Var) {
-        this.d = vc0Var;
+    public pc0(Shader.TileMode tileMode) {
+        this.a = tileMode;
     }
 
-    @Override // org.telegram.ui.Components.co0
-    public final boolean a() {
+    public final void a(boolean z10) {
+        BitmapShader bitmapShader;
+        if (this.c != z10) {
+            this.c = z10;
+            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
+                return;
+            }
+            bitmapShader.setFilterMode(z10 ? 1 : 2);
+        }
+    }
+
+    public final boolean b(Bitmap bitmap) {
+        WeakReference weakReference = this.e;
+        if (weakReference != null && weakReference.get() == bitmap) {
+            return false;
+        }
+        this.e = new WeakReference(bitmap);
+        Shader.TileMode tileMode = this.a;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        this.d = bitmapShader;
+        bitmapShader.setLocalMatrix(this.b);
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d.setFilterMode(this.c ? 1 : 2);
+        }
         return true;
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final void c(boolean z10) {
-        this.d.a(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.co0
-    public final CharSequence d() {
-        vc0 vc0Var = this.d;
-        Utilities.CallbackReturn callbackReturn = vc0Var.s0;
-        return callbackReturn != null ? (CharSequence) callbackReturn.run(Integer.valueOf(vc0Var.G)) : vc0Var.d(vc0Var.G);
     }
 }

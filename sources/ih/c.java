@@ -1,29 +1,114 @@
 package ih;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import bi.d5;
+import bi.u6;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.lj;
+import w7.a6;
+import w7.c6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+public final class c extends LinearLayout {
+    public static final /* synthetic */ int e = 0;
+    public final f6 a;
+    public final u6 b;
+    public final u6 c;
+    public float d;
 
-    public /* synthetic */ c(e eVar, int i10) {
-        this.a = i10;
-        this.b = eVar;
+    public c(Context context, f6 f6Var, lj ljVar, zg.a aVar) {
+        super(context);
+        u6 u6Var = new u6(this);
+        this.b = u6Var;
+        u6 u6Var2 = new u6(this);
+        this.c = u6Var2;
+        this.a = f6Var;
+        hh.a c10 = hh.a.c(context, ljVar, f6Var, aVar);
+        u6Var.a = c10;
+        c10.setOnClickListener(new d5(4));
+        c6.b((hh.a) u6Var.a, 0.065f, 2.0f);
+        hh.a c11 = hh.a.c(context, ljVar, f6Var, aVar);
+        u6Var2.a = c11;
+        c11.setOnClickListener(new d5(4));
+        c6.b((hh.a) u6Var2.a, 0.065f, 2.0f);
+        a(u6Var, LocaleController.getString(R.string.Reply), R.drawable.input_reply, false);
+        a(u6Var2, LocaleController.getString(R.string.Forward), R.drawable.input_forward, true);
+        setOrientation(0);
+        setClipChildren(false);
+        addView((hh.a) u6Var.a, a6.m(1.0f, 0, 56, 1, -1, 0));
+        addView((hh.a) u6Var2.a, a6.m(1.0f, 0, 56, -1, 1, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.a();
-                break;
-            default:
-                e eVar = this.b;
-                AndroidUtilities.runOnUIThread(eVar.y, 400L);
-                eVar.c();
-                break;
+    public final void a(u6 u6Var, String str, int i10, boolean z10) {
+        TextView textView = new TextView(getContext());
+        textView.setText(str);
+        textView.setGravity(16);
+        textView.setTextSize(1, 15.0f);
+        textView.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
+        textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+        int i11 = j6.Xk;
+        f6 f6Var = this.a;
+        textView.setTextColor(j6.v0(i11, f6Var));
+        textView.setTypeface(AndroidUtilities.bold());
+        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.Wk, f6Var), PorterDuff.Mode.MULTIPLY));
+        Drawable drawable = z10 ? mutate : null;
+        if (z10) {
+            mutate = null;
+        }
+        textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
+        u6Var.b = textView;
+        ((hh.a) u6Var.a).addView(textView, a6.e(-2, -2, 17));
+    }
+
+    public final void b(u6 u6Var) {
+        float f7 = this.d * ((le.b) u6Var.c).e;
+        float f10 = (1.0f - f7) * (-AndroidUtilities.dp(54.0f));
+        float interpolation = (1.0f - ke.a.a.getInterpolation(f7)) * (getMeasuredWidth() / 2.0f);
+        if (u6Var == this.b) {
+            interpolation *= -1.0f;
+        }
+        ((hh.a) u6Var.a).setTranslationX(interpolation);
+        ((hh.a) u6Var.a).setTranslationY(f10);
+        ((hh.a) u6Var.a).setAlpha(f7);
+        ((hh.a) u6Var.a).setVisibility(f7 > 0.0f ? 0 : 4);
+    }
+
+    public View getForwardButton() {
+        return (hh.a) this.c.a;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        b(this.c);
+        b(this.b);
+    }
+
+    public void setForwardButtonOnClickListener(View.OnClickListener onClickListener) {
+        ((hh.a) this.c.a).setOnClickListener(onClickListener);
+    }
+
+    public void setReplyButtonOnClickListener(View.OnClickListener onClickListener) {
+        ((hh.a) this.b.a).setOnClickListener(onClickListener);
+    }
+
+    public void setTotalVisibilityFactor(float f7) {
+        if (this.d != f7) {
+            this.d = f7;
+            b(this.c);
+            b(this.b);
         }
     }
 }

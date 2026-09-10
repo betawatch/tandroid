@@ -1,90 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.os.Build;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class ey extends org.telegram.ui.Components.yn0 {
-    public final yf.z Y0;
-    public final yf.z Z0;
-    public final /* synthetic */ uy a1;
+public final class ey implements org.telegram.ui.Components.c5 {
+    public final /* synthetic */ wy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ey(uy uyVar, Activity activity, uy uyVar2, int i10, int i11, int i12, long j3, zx zxVar) {
-        super(activity, uyVar2, i10, i11, i12, j3, zxVar);
-        this.a1 = uyVar;
-        this.Y0 = new yf.z(2);
-        this.Z0 = new yf.z(8);
+    public ey(wy wyVar) {
+        this.a = wyVar;
     }
 
-    public final void S(int i10, int i11) {
-        uy uyVar;
-        bh.f fVar;
-        if (Build.VERSION.SDK_INT < 31 || (fVar = (uyVar = this.a1).l4) == null) {
+    @Override // org.telegram.ui.Components.c5
+    public final void I(int i10, int i11, boolean z10) {
+        wy wyVar = this.a;
+        ArrayList arrayList = wyVar.I2;
+        wyVar.K2 = i10;
+        wyVar.L2 = i11;
+        if (wyVar.C2 == null || arrayList.isEmpty()) {
             return;
         }
-        fVar.f(i10, i11);
-        uyVar.m3();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.k kVar;
-        super.dispatchDraw(canvas);
-        uy uyVar = this.a1;
-        if (uyVar.a0 != null || uyVar.X2 != 0) {
-            int dp = AndroidUtilities.dp(54.0f);
-            kVar = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
-            int dp2 = ((AndroidUtilities.dp(uyVar.a) + kVar.getMeasuredHeight()) - AndroidUtilities.dp(2.0f)) - (uyVar.X2 != 0 ? dp : 0);
-            org.telegram.ui.Components.js jsVar = uyVar.J1;
-            int c10 = dp2 + (jsVar != null ? (int) jsVar.c(AndroidUtilities.dp(7.0f)) : 0);
-            int l1 = org.telegram.ui.ActionBar.j6.l1(0.7f, uyVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-            yf.z zVar = this.Y0;
-            zVar.b(l1);
-            zVar.c(c10, 0);
-            zVar.setBounds(0, 0, getMeasuredWidth(), c10 + dp);
-            zVar.draw(canvas);
+        ArrayList arrayList2 = new ArrayList();
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
         }
-        if (uyVar.g4 > AndroidUtilities.dp(32.0f)) {
-            int l12 = org.telegram.ui.ActionBar.j6.l1(0.9f, uyVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6));
-            yf.z zVar2 = this.Z0;
-            zVar2.b(l12);
-            zVar2.setBounds(0, getMeasuredHeight() - uyVar.g4, getMeasuredWidth(), getMeasuredHeight());
-            zVar2.draw(canvas);
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.a1.m3();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        v41 v41Var = this.a1.Z;
-        if (v41Var != null) {
-            v41Var.setTranslationY(f7);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final void w(boolean z10) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            uy uyVar = this.a1;
-            if (uyVar.l4 != null) {
-                uyVar.m3();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.i81
-    public final void x(int i10) {
-        org.telegram.ui.Components.xn0 xn0Var = this.T;
-        this.a1.c5(xn0Var != null && xn0Var.h(i10) == 2);
+        wyVar.C2.v(wyVar, arrayList2, wyVar.B1.getFieldText(), false, z10, i10, i11, null);
     }
 }

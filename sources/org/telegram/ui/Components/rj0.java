@@ -1,50 +1,27 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rj0 implements e2.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fk0 b;
+public final class rj0 extends vl0 {
+    public final /* synthetic */ zj0 X2;
 
-    public /* synthetic */ rj0(fk0 fk0Var, int i10) {
-        this.a = i10;
-        this.b = fk0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rj0(zj0 zj0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.X2 = zj0Var;
     }
 
-    @Override // e2.h
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                fk0 fk0Var = this.b;
-                ArrayList arrayList = fk0Var.d;
-                fk0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof dk0)) {
-                    ((dk0) view).f(((wj0) arrayList.get(R)).c, true);
-                    break;
-                }
-                break;
-            default:
-                if (view instanceof dk0) {
-                    dk0 dk0Var = (dk0) view;
-                    ck0 ck0Var = dk0Var.b;
-                    dk0Var.N = false;
-                    ck0Var.setAlpha(1.0f);
-                    if (!this.b.N0) {
-                        dk0Var.d();
-                        break;
-                    } else {
-                        ck0Var.setScaleX(dk0Var.I * (dk0Var.w ? 0.76f : 1.0f));
-                        ck0Var.setScaleY(dk0Var.I * (dk0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        zj0 zj0Var = this.X2;
+        db0 db0Var = zj0Var.J;
+        if (db0Var != null) {
+            db0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
         }
+        super.onMeasure(i10, i11);
+        zj0Var.j();
     }
 }

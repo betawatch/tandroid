@@ -10,7 +10,7 @@ import ud.e;
 import w7.t7;
 import xd.a;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class zzkp implements zzjt {
     public static final zzkp zza = new zzkp();
@@ -74,7 +74,7 @@ public final class zzkp implements zzjt {
                 int length2 = charArray.length;
                 ArrayList arrayList2 = new ArrayList(length2);
                 while (i10 < length2) {
-                    i10 = e2.e(charArray[i10] ^ ((Number) obj2).intValue(), i10, 1, arrayList2);
+                    i10 = e2.d(charArray[i10] ^ ((Number) obj2).intValue(), i10, 1, arrayList2);
                 }
                 return g.l(arrayList2);
             }
@@ -101,7 +101,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList5 = new ArrayList(length3);
             int i11 = 0;
             while (i11 < length3) {
-                i11 = e2.e(iArr[i11] ^ ((Number) obj).intValue(), i11, 1, arrayList5);
+                i11 = e2.d(iArr[i11] ^ ((Number) obj).intValue(), i11, 1, arrayList5);
             }
             return arrayList5.toArray(new Integer[0]);
         }
@@ -111,7 +111,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList6 = new ArrayList(length4);
             int i12 = 0;
             while (i12 < length4) {
-                i12 = e2.g(jArr[i12] ^ ((Number) obj).longValue(), arrayList6, i12, 1);
+                i12 = e2.f(jArr[i12] ^ ((Number) obj).longValue(), arrayList6, i12, 1);
             }
             return arrayList6.toArray(new Long[0]);
         }
@@ -140,7 +140,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList9 = new ArrayList(length5);
             int i13 = 0;
             while (i13 < length5) {
-                i13 = e2.e(iArr2[i13] ^ ((Number) obj2).intValue(), i13, 1, arrayList9);
+                i13 = e2.d(iArr2[i13] ^ ((Number) obj2).intValue(), i13, 1, arrayList9);
             }
             return arrayList9.toArray(new Integer[0]);
         }
@@ -151,7 +151,7 @@ public final class zzkp implements zzjt {
             ArrayList arrayList10 = new ArrayList(length6);
             int i14 = 0;
             while (i14 < length6) {
-                i14 = e2.g(jArr2[i14] ^ ((Number) obj2).longValue(), arrayList10, i14, 1);
+                i14 = e2.f(jArr2[i14] ^ ((Number) obj2).longValue(), arrayList10, i14, 1);
             }
             return arrayList10.toArray(new Long[0]);
         }

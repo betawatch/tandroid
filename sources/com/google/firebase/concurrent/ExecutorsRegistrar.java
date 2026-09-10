@@ -15,15 +15,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import m9.b;
 import m9.c;
 import m9.d;
-import org.telegram.ui.sw0;
+import org.telegram.ui.js0;
 import q9.f;
 import q9.n;
 import q9.r;
 import r9.a;
-import r9.i;
-import w7.o6;
+import w7.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final n a = new n(new f(2));
@@ -46,18 +45,16 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         r rVar = new r(m9.a.class, ScheduledExecutorService.class);
-        int i10 = 0;
-        int i11 = 1;
         r[] rVarArr = {new r(m9.a.class, ExecutorService.class), new r(m9.a.class, Executor.class)};
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         HashSet hashSet3 = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            o6.a(rVar2, "Null interface");
+            r6.a(rVar2, "Null interface");
         }
         Collections.addAll(hashSet, rVarArr);
-        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new sw0(28), hashSet3);
+        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new js0(24), hashSet3);
         r rVar3 = new r(b.class, ScheduledExecutorService.class);
         r[] rVarArr2 = {new r(b.class, ExecutorService.class), new r(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
@@ -65,10 +62,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(rVar3);
         for (r rVar4 : rVarArr2) {
-            o6.a(rVar4, "Null interface");
+            r6.a(rVar4, "Null interface");
         }
         Collections.addAll(hashSet4, rVarArr2);
-        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new sw0(29), hashSet6);
+        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new js0(25), hashSet6);
         r rVar5 = new r(c.class, ScheduledExecutorService.class);
         r[] rVarArr3 = {new r(c.class, ExecutorService.class), new r(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
@@ -76,12 +73,12 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(rVar5);
         for (r rVar6 : rVarArr3) {
-            o6.a(rVar6, "Null interface");
+            r6.a(rVar6, "Null interface");
         }
         Collections.addAll(hashSet7, rVarArr3);
-        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new i(i10), hashSet9);
+        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new js0(26), hashSet9);
         i0 b10 = q9.a.b(new r(d.class, Executor.class));
-        b10.f = new i(i11);
+        b10.f = new js0(27);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

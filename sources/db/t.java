@@ -2,7 +2,7 @@ package db;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class t {
     public static final p a;
@@ -22,10 +22,10 @@ public abstract class t {
                         return valueOf;
                     }
                     throw new lb.c("JSON forbids NaN and infinities: " + valueOf + "; at path " + aVar.j());
-                } catch (NumberFormatException e7) {
+                } catch (NumberFormatException e) {
                     StringBuilder v = a4.a.v("Cannot parse ", str, "; at path ");
                     v.append(aVar.j());
-                    throw new androidx.car.app.j(v.toString(), e7);
+                    throw new androidx.car.app.j(v.toString(), e);
                 }
             }
 
@@ -47,10 +47,10 @@ public abstract class t {
                 String v = aVar.v();
                 try {
                     return fb.d.i(v);
-                } catch (NumberFormatException e7) {
+                } catch (NumberFormatException e) {
                     StringBuilder v9 = a4.a.v("Cannot parse ", v, "; at path ");
                     v9.append(aVar.j());
-                    throw new androidx.car.app.j(v9.toString(), e7);
+                    throw new androidx.car.app.j(v9.toString(), e);
                 }
             }
         }};

@@ -1,34 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.DialogInterface;
+import android.app.Activity;
+import android.content.Intent;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a2 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class a2 implements org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ Intent c;
 
-    public /* synthetic */ a2(int i10, Runnable runnable) {
+    public /* synthetic */ a2(Activity activity, Intent intent, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = activity;
+        this.c = intent;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.ui.ActionBar.c2
+    public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.startActivity(this.c);
                 break;
             default:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                this.b.startActivity(this.c);
                 break;
         }
     }

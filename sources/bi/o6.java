@@ -1,69 +1,56 @@
 package bi;
 
-import java.util.function.ToIntFunction;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements ToIntFunction {
-    public final /* synthetic */ int a;
+public final class o6 extends FrameLayout {
+    public final /* synthetic */ ad a;
 
-    public /* synthetic */ o6(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o6(ad adVar, Context context) {
+        super(context);
+        this.a = adVar;
+        setWillNotDraw(false);
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
-        switch (this.a) {
-            case 0:
-                return -((TL_stories.StoryView) obj).date;
-            case 1:
-                return ((TL_stories.StoryItem) obj).date;
-            case 2:
-                return -((TL_stories.StoryItem) i2.g.h(1, ((TL_stories.PeerStories) obj).stories)).date;
-            case 3:
-                return ((Integer) ((Object[]) obj)[1]).intValue();
-            case 4:
-                return ((MessageObject) obj).getId();
-            case 5:
-                return -((TLRPC.TL_forumTopic) obj).top_message;
-            case 6:
-                return ((TLRPC.Message) obj).id;
-            case 7:
-                return ((TLRPC.Message) obj).id;
-            case 8:
-                return ((org.telegram.ui.Components.f6) obj).d;
-            case 9:
-                return ((org.telegram.ui.Components.f6) obj).e;
-            case 10:
-                ad.c cVar = (ad.c) obj;
-                return cVar.d - cVar.b;
-            case 11:
-                TLRPC.MessagePeerReaction messagePeerReaction = (TLRPC.MessagePeerReaction) obj;
-                int i10 = messagePeerReaction.date;
-                return (i10 <= 0 || messagePeerReaction.reaction != null) ? TLObject.FLAG_31 : -i10;
-            case 12:
-                TLRPC.MessagePeerReaction messagePeerReaction2 = (TLRPC.MessagePeerReaction) obj;
-                int i11 = messagePeerReaction2.date;
-                return (i11 <= 0 || messagePeerReaction2.reaction != null) ? TLObject.FLAG_31 : -i11;
-            case 13:
-                return ((yf.d) obj).a;
-            case 14:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 15:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
-            case 16:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 17:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
-            case 18:
-                return ((TL_stars.StarGift) obj).birthday ? -1 : 0;
-            default:
-                return ((TL_stars.StarGift) obj).sold_out ? 1 : 0;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        ad adVar = this.a;
+        Paint paint = adVar.r1;
+        pg.o1 o1Var = adVar.l1;
+        paint.setAlpha((int) ((1.0f - adVar.t1) * o1Var.getAlpha() * 20.0f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        o1Var.b(rectF);
+        float translationY = o1Var.getTranslationY() + adVar.T0.getTranslationY() + o1Var.getTop() + r4.getTop();
+        float f7 = rectF.left;
+        pg.t1 t1Var = adVar.m1;
+        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), adVar.t1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), adVar.t1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), adVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), adVar.t1));
+        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, adVar.t1));
+        Paint paint2 = adVar.s1;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * adVar.t1));
+        canvas.drawRoundRect(rectF, dp, dp, paint2);
+        paint2.setAlpha(alpha);
+        canvas.drawRoundRect(rectF, dp, dp, paint);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            ad adVar = this.a;
+            if (adVar.u1) {
+                adVar.P0(false);
+                return true;
+            }
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

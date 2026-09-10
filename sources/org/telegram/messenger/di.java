@@ -1,33 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes.dex */
-public final /* synthetic */ class di implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ long c;
+import android.text.Spanned;
+import java.util.Comparator;
+import org.telegram.messenger.RichMessageLayout;
 
-    public /* synthetic */ di(SecretChatHelper secretChatHelper, long j3, int i10) {
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes.dex */
+public final /* synthetic */ class di implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
+
+    public /* synthetic */ di(Spanned spanned, int i10) {
         this.a = i10;
-        this.b = secretChatHelper;
-        this.c = j3;
+        this.b = spanned;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
         switch (this.a) {
             case 0:
-                this.b.lambda$processDecryptedObject$12(this.c);
-                break;
-            case 1:
-                this.b.lambda$processDecryptedObject$10(this.c);
-                break;
-            case 2:
-                this.b.lambda$processDecryptedObject$11(this.c);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.y9) obj, (org.telegram.ui.Cells.y9) obj2);
+                return lambda$withReplacements$0;
             default:
-                this.b.lambda$processUpdateEncryption$3(this.c);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

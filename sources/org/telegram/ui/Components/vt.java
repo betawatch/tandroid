@@ -1,37 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vt implements DialogInterface.OnShowListener {
+public final /* synthetic */ class vt implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ vt(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ vt(int i10, View view) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = view;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                gi.o oVar = (gi.o) this.b;
-                oVar.requestFocus();
-                AndroidUtilities.showKeyboard(oVar);
-                break;
-            case 1:
-                gi.o oVar2 = (gi.o) this.b;
-                oVar2.requestFocus();
-                AndroidUtilities.showKeyboard(oVar2);
+                org.telegram.ui.ActionBar.k4 k4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (k4Var != null) {
+                    k4Var.e();
+                    break;
+                }
                 break;
             default:
-                f4 f4Var = (f4) this.b;
-                f4Var.requestFocus();
-                AndroidUtilities.showKeyboard(f4Var);
+                ((u70) this.b).invalidate();
                 break;
         }
+        return true;
     }
 }

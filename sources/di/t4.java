@@ -1,365 +1,384 @@
 package di;
 
-import android.content.ContentUris;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.graphics.Point;
+import android.graphics.RenderNode;
 import android.os.Build;
-import android.provider.MediaStore;
-import android.text.TextUtils;
-import android.util.Size;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.view.View;
-import java.io.File;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import bi.ec;
+import bi.wc;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pr;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.sv0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class t4 extends View {
-    public final org.telegram.ui.Components.e6 E;
-    public final ImageReceiver a;
-    public final Paint b;
-    public final Paint c;
-    public final org.telegram.ui.Components.p6 d;
-    public boolean e;
-    public boolean f;
-    public View.OnClickListener h;
-    public final org.telegram.ui.Components.zc n;
-    public int r;
-    public String s;
-    public float v;
-    public float w;
-    public float x;
-    public final org.telegram.ui.Components.e6 y;
+public abstract class t4 extends FrameLayout {
+    public static final sv0 b0 = new sv0(new dh.a(13), new dh.a(14));
+    public Runnable E;
+    public s4 F;
+    public o1.k G;
+    public int H;
+    public GenericProvider I;
+    public boolean J;
+    public boolean K;
+    public boolean L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public boolean P;
+    public float Q;
+    public float R;
+    public boolean S;
+    public final float T;
+    public final boolean U;
+    public long V;
+    public float W;
+    public Object a;
+    public float a0;
+    public final l2.h b;
+    public boolean c;
+    public boolean d;
+    public float e;
+    public float f;
+    public float h;
+    public float n;
+    public float r;
+    public boolean s;
+    public o1.k v;
+    public boolean w;
+    public org.telegram.ui.web.y0 x;
+    public Runnable y;
 
-    public t4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public t4(Context context) {
         super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.a = imageReceiver;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, false, false, false);
-        this.d = p6Var;
-        this.n = new org.telegram.ui.Components.zc(this);
-        this.r = -1;
-        pr prVar = pr.h;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 320L, prVar);
-        this.E = new org.telegram.ui.Components.e6(this, 0L, 320L, prVar);
-        p6Var.setCallback(this);
-        p6Var.r(-1);
-        p6Var.b = 17;
-        p6Var.t(AndroidUtilities.dp(16.0f));
-        p6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        p6Var.G = AndroidUtilities.displaySize.x;
-        p6Var.k(0.65f, 480L, prVar);
-        p6Var.v = 0.35f;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-1);
-        paint2.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var));
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        w7.z5.a(this);
+        this.e = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+        this.f = 0.0f;
+        this.h = -1.0f;
+        this.n = -2.14748365E9f;
+        this.I = new dh.a(15);
+        this.M = true;
+        this.R = 0.0f;
+        this.S = false;
+        this.T = AndroidUtilities.dp(60.0f);
+        this.U = true;
+        this.b = new l2.h(context, new r4(this, ViewConfiguration.get(context).getScaledTouchSlop(), 0));
+        Point point = AndroidUtilities.displaySize;
+        this.H = AndroidUtilities.dp(point.x > point.y ? 8.0f : 64.0f);
     }
 
-    public final void a(int i10, int i11, final o8 o8Var) {
-        String str;
-        if (this.r != i10) {
-            this.s = null;
-            this.a.clearImage();
-            this.r = i10;
-        }
-        this.d.q(Integer.toString(i11 + 1), false, true);
-        File file = o8Var.O0;
-        if (file != null) {
-            if (TextUtils.equals(this.s, file.getPath())) {
-                return;
-            }
-            this.s = o8Var.O0.getPath();
-            final int i12 = 0;
-            Utilities.searchQueue.postRunnable(new Runnable(this) { // from class: di.q4
-                public final /* synthetic */ t4 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i12) {
-                        case 0:
-                            BitmapFactory.Options options = new BitmapFactory.Options();
-                            options.inJustDecodeBounds = true;
-                            o8 o8Var2 = o8Var;
-                            BitmapFactory.decodeFile(o8Var2.O0.getPath(), options);
-                            int dp = AndroidUtilities.dp(94.0f);
-                            AndroidUtilities.dp(112.0f);
-                            o8.C(options, dp);
-                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options.inDither = true;
-                            options.inJustDecodeBounds = false;
-                            final Bitmap decodeFile = BitmapFactory.decodeFile(o8Var2.O0.getPath(), options);
-                            final int i13 = 1;
-                            final t4 t4Var = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.r4
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i13) {
-                                        case 0:
-                                            t4Var.a.setImageBitmap(decodeFile);
-                                            break;
-                                        default:
-                                            t4Var.a.setImageBitmap(decodeFile);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        default:
-                            BitmapFactory.Options options2 = new BitmapFactory.Options();
-                            options2.inJustDecodeBounds = true;
-                            o8 o8Var3 = o8Var;
-                            BitmapFactory.decodeFile(o8Var3.L.getPath(), options2);
-                            int dp2 = AndroidUtilities.dp(94.0f);
-                            AndroidUtilities.dp(112.0f);
-                            o8.C(options2, dp2);
-                            options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options2.inDither = true;
-                            options2.inJustDecodeBounds = false;
-                            final Bitmap decodeFile2 = BitmapFactory.decodeFile(o8Var3.L.getPath(), options2);
-                            final int i14 = 0;
-                            final t4 t4Var2 = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.r4
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i14) {
-                                        case 0:
-                                            t4Var2.a.setImageBitmap(decodeFile2);
-                                            break;
-                                        default:
-                                            t4Var2.a.setImageBitmap(decodeFile2);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                    }
-                }
-            });
-            return;
-        }
-        if (!o8Var.K) {
-            File file2 = o8Var.L;
-            if (file2 == null || TextUtils.equals(this.s, file2.getPath())) {
-                return;
-            }
-            this.s = o8Var.L.getPath();
-            final int i13 = 1;
-            Utilities.searchQueue.postRunnable(new Runnable(this) { // from class: di.q4
-                public final /* synthetic */ t4 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i13) {
-                        case 0:
-                            BitmapFactory.Options options = new BitmapFactory.Options();
-                            options.inJustDecodeBounds = true;
-                            o8 o8Var2 = o8Var;
-                            BitmapFactory.decodeFile(o8Var2.O0.getPath(), options);
-                            int dp = AndroidUtilities.dp(94.0f);
-                            AndroidUtilities.dp(112.0f);
-                            o8.C(options, dp);
-                            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options.inDither = true;
-                            options.inJustDecodeBounds = false;
-                            final Bitmap decodeFile = BitmapFactory.decodeFile(o8Var2.O0.getPath(), options);
-                            final int i132 = 1;
-                            final t4 t4Var = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.r4
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i132) {
-                                        case 0:
-                                            t4Var.a.setImageBitmap(decodeFile);
-                                            break;
-                                        default:
-                                            t4Var.a.setImageBitmap(decodeFile);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        default:
-                            BitmapFactory.Options options2 = new BitmapFactory.Options();
-                            options2.inJustDecodeBounds = true;
-                            o8 o8Var3 = o8Var;
-                            BitmapFactory.decodeFile(o8Var3.L.getPath(), options2);
-                            int dp2 = AndroidUtilities.dp(94.0f);
-                            AndroidUtilities.dp(112.0f);
-                            o8.C(options2, dp2);
-                            options2.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                            options2.inDither = true;
-                            options2.inJustDecodeBounds = false;
-                            final Bitmap decodeFile2 = BitmapFactory.decodeFile(o8Var3.L.getPath(), options2);
-                            final int i14 = 0;
-                            final t4 t4Var2 = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.r4
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i14) {
-                                        case 0:
-                                            t4Var2.a.setImageBitmap(decodeFile2);
-                                            break;
-                                        default:
-                                            t4Var2.a.setImageBitmap(decodeFile2);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                    }
-                }
-            });
-            return;
-        }
-        Bitmap bitmap = o8Var.M0;
-        if (bitmap == null) {
-            bitmap = null;
-        }
-        if (bitmap == null && (str = o8Var.N) != null && str.startsWith("vthumb://")) {
-            if (TextUtils.equals(this.s, o8Var.N)) {
-                return;
-            }
-            String str2 = o8Var.N;
-            this.s = str2;
-            long parseLong = Long.parseLong(str2.substring(9));
-            if (bitmap == null && Build.VERSION.SDK_INT >= 29) {
-                try {
-                    bitmap = getContext().getContentResolver().loadThumbnail(o8Var.K ? ContentUris.withAppendedId(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, parseLong) : ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, parseLong), new Size(AndroidUtilities.dp(94.0f), AndroidUtilities.dp(112.0f)), null);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        this.a.setImageBitmap(bitmap);
+    public final void a(boolean z10, boolean z11) {
+        this.O = z10;
+        this.P = z11;
     }
 
-    public final void b(boolean z10, boolean z11) {
-        if (this.e == z10) {
-            return;
+    public final boolean b(boolean z10) {
+        org.telegram.ui.web.y0 y0Var = this.x;
+        if (y0Var == null || !y0Var.N) {
+            return true;
         }
-        this.e = z10;
-        if (!z11) {
-            this.y.a(z10);
-        }
-        invalidate();
+        return z10 ? this.O : this.P;
     }
 
-    @Override // android.view.View
+    public final void c() {
+        setTranslationY(Math.max(this.e, this.f + this.r));
+        AndroidUtilities.cancelRunOnUIThread(new wc(this, 21));
+        AndroidUtilities.runOnUIThread(new wc(this, 21));
+        Runnable runnable = this.y;
+        if (runnable != null) {
+            runnable.run();
+        }
+        pc pcVar = pc.w;
+        if (pcVar != null) {
+            pcVar.l();
+        }
+    }
+
+    public final boolean d() {
+        return this.c;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float dp = AndroidUtilities.dp(2.0f);
-        float dp2 = AndroidUtilities.dp(4.0f);
-        float dp3 = AndroidUtilities.dp(94.0f);
-        float dp4 = AndroidUtilities.dp(112.0f);
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(dp, dp2, dp3, dp4);
-        imageReceiver.draw(canvas);
-        float dp5 = AndroidUtilities.dp(1.5f);
-        Paint paint = this.b;
-        paint.setStrokeWidth(dp5);
-        float e7 = this.y.e(this.e);
-        if (e7 > 0.0f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(96.0f), AndroidUtilities.dp(116.0f));
-            paint.setAlpha((int) (e7 * 255.0f));
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
+        Canvas canvas2;
+        if (!canvas.isHardwareAccelerated()) {
+            super.dispatchDraw(canvas);
+            return;
         }
-        this.v = (getWidth() - AndroidUtilities.dp(17.163f)) - AndroidUtilities.dp(3.0f);
-        this.w = AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(17.833f);
-        this.x = AndroidUtilities.dp(12.833f);
-        float e10 = this.E.e(this.f);
-        float a2 = this.n.a(0.075f);
-        canvas.save();
-        canvas.scale(a2, a2, this.v, this.w);
-        if (e10 > 0.0f) {
-            Paint paint2 = this.c;
-            paint2.setAlpha((int) (e10 * 255.0f));
-            canvas.drawCircle(this.v, this.w, this.x, paint2);
+        Object obj = this.a;
+        if (obj != null) {
+            RenderNode c10 = org.telegram.messenger.b.c(obj);
+            c10.setPosition(0, 0, getWidth(), getHeight());
+            canvas2 = c10.beginRecording();
+        } else {
+            canvas2 = canvas;
         }
-        paint.setAlpha(255);
-        canvas.drawCircle(this.v, this.w, this.x - AndroidUtilities.dp(1.0f), paint);
-        if (e10 > 0.0f) {
-            float f7 = this.v;
-            float f10 = this.x;
-            float f11 = f7 - f10;
-            float f12 = this.w;
-            float f13 = f7 + f10;
-            org.telegram.ui.Components.p6 p6Var = this.d;
-            p6Var.l(f11, f12, f13, f12);
-            p6Var.w = (int) (e10 * 255.0f);
-            p6Var.draw(canvas);
+        super.dispatchDraw(canvas2);
+        Object obj2 = this.a;
+        if (obj2 != null) {
+            RenderNode c11 = org.telegram.messenger.b.c(obj2);
+            c11.endRecording();
+            canvas.drawRenderNode(c11);
         }
-        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(98.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z10 = motionEvent.getX() >= this.v - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getX() <= this.v + ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() >= this.w - ((float) AndroidUtilities.dp(14.0f)) && motionEvent.getY() <= this.w + ((float) AndroidUtilities.dp(14.0f));
-        int action = motionEvent.getAction();
-        org.telegram.ui.Components.zc zcVar = this.n;
-        if (action == 0) {
-            zcVar.c(z10);
-        } else if (motionEvent.getAction() == 1) {
-            if (zcVar.h && z10 && (onClickListener = this.h) != null) {
-                onClickListener.onClick(this);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (!this.c || motionEvent.getActionIndex() == 0) {
+            if (motionEvent.getAction() == 0) {
+                this.V = motionEvent.getEventTime();
+                this.W = motionEvent.getX();
+                this.a0 = motionEvent.getY();
+                this.S = false;
+                this.R = 0.0f;
+                if (this.N) {
+                    this.O = false;
+                    this.P = false;
+                }
             }
-            zcVar.c(false);
-        } else if (motionEvent.getAction() == 3) {
-            zcVar.c(false);
+            MotionEvent obtain = MotionEvent.obtain(motionEvent);
+            int actionIndex = motionEvent.getActionIndex();
+            if (Build.VERSION.SDK_INT >= 29) {
+                obtain.setLocation(motionEvent.getRawX(actionIndex), motionEvent.getRawY(actionIndex));
+            } else {
+                obtain.setLocation(motionEvent.getX(actionIndex) + (motionEvent.getRawX() - motionEvent.getX()), motionEvent.getY(actionIndex) + (motionEvent.getRawY() - motionEvent.getY()));
+            }
+            boolean onTouchEvent = ((GestureDetector) this.b.b).onTouchEvent(obtain);
+            obtain.recycle();
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                boolean z10 = this.c;
+                this.d = false;
+                this.c = false;
+                if (!this.J || this.L) {
+                    if (this.w) {
+                        this.w = false;
+                    } else if (this.M && (!this.N || (this.r != (-this.f) + this.e && b(false)))) {
+                        float f7 = this.r;
+                        int i10 = this.H;
+                        float f10 = -i10;
+                        boolean z11 = this.U;
+                        if (f7 <= f10) {
+                            if (z11) {
+                                e((-this.f) + this.e);
+                            }
+                        } else if (f7 <= f10 || f7 > i10) {
+                            float distance = AndroidUtilities.distance(motionEvent.getX(), motionEvent.getY(), this.W, this.a0);
+                            long eventTime = motionEvent.getEventTime() - this.V;
+                            if (this.F != null && (eventTime > 250 || distance > AndroidUtilities.dp(200.0f))) {
+                                this.F.j(!z10);
+                            } else if (z11) {
+                                e((-this.f) + this.e);
+                            }
+                        } else if (z11) {
+                            e(0.0f);
+                        }
+                    }
+                }
+            }
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if ((!dispatchTouchEvent && !onTouchEvent && motionEvent.getAction() == 0) || dispatchTouchEvent || onTouchEvent) {
+                return true;
+            }
         }
-        return zcVar.h || super.onTouchEvent(motionEvent);
+        return false;
     }
 
-    public void setOnCheckboxClick(View.OnClickListener onClickListener) {
-        this.h = onClickListener;
+    public final void e(float f7) {
+        f(f7, false, null);
     }
 
-    public void setPosition(int i10) {
-        this.d.q(i10 < 0 ? "" : Integer.toString(i10 + 1), true, true);
+    public final void f(float f7, boolean z10, Runnable runnable) {
+        o1.k kVar;
+        if (this.J && !z10) {
+            f7 = (-getOffsetY()) + getTopActionBarOffsetY();
+        }
+        if (this.r == f7 || ((kVar = this.G) != null && ((float) kVar.u.i) == f7)) {
+            if (runnable != null) {
+                runnable.run();
+            }
+            Runnable runnable2 = this.E;
+            if (runnable2 != null) {
+                runnable2.run();
+                return;
+            }
+            return;
+        }
+        this.n = f7;
+        o1.k kVar2 = this.v;
+        if (kVar2 != null) {
+            kVar2.c();
+        }
+        o1.k kVar3 = this.G;
+        if (kVar3 != null) {
+            kVar3.c();
+        }
+        o1.k kVar4 = new o1.k(this, b0, f7);
+        kVar4.u = r6.l(f7, 1200.0f, 1.0f);
+        kVar4.a(new q4(0, this, runnable));
+        this.G = kVar4;
+        kVar4.f();
+    }
+
+    public float getOffsetY() {
+        return this.f;
+    }
+
+    public Object getRenderNode() {
+        if (this.a == null && Build.VERSION.SDK_INT >= 31) {
+            this.a = ah.b.c();
+        }
+        return this.a;
+    }
+
+    public float getSwipeOffsetY() {
+        return this.r;
+    }
+
+    public float getTopActionBarOffsetY() {
+        return this.e;
     }
 
     @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        Point point = AndroidUtilities.displaySize;
+        this.H = AndroidUtilities.dp(point.x > point.y ? 8.0f : 64.0f);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void requestDisallowInterceptTouchEvent(boolean z10) {
+        super.requestDisallowInterceptTouchEvent(z10);
+        if (z10) {
+            this.d = true;
+            this.c = false;
+        }
+    }
+
+    public void setAllowFullSizeSwipe(boolean z10) {
+        this.L = z10;
+    }
+
+    public void setAllowSwipes(boolean z10) {
+        if (this.M != z10) {
+            this.M = z10;
+        }
+    }
+
+    public void setDelegate(s4 s4Var) {
+        this.F = s4Var;
+    }
+
+    public void setForceOffsetY(float f7) {
+        this.f = f7;
+        c();
+    }
+
+    public void setFullSize(boolean z10) {
+        if (this.J != z10) {
+            this.J = z10;
+            if (!z10) {
+                e(0.0f);
+            } else if (this.K) {
+                e(getTopActionBarOffsetY() + (-getOffsetY()));
+            }
+        }
+    }
+
+    public void setIsKeyboardVisible(GenericProvider<Void, Boolean> genericProvider) {
+        this.I = genericProvider;
+    }
+
+    public void setOffsetY(final float f7) {
+        if (this.n != -2.14748365E9f) {
+            this.h = f7;
+            return;
+        }
+        o1.k kVar = this.v;
+        if (kVar != null) {
+            kVar.c();
+        }
+        final float f10 = this.f;
+        final float f11 = f7 - f10;
+        final boolean z10 = Math.abs((this.r + f10) - this.e) <= ((float) AndroidUtilities.dp(1.0f));
+        if (this.s) {
+            this.f = f7;
+            if (z10) {
+                this.r = w7.q.a(this.r - Math.max(0.0f, f11), (-this.f) + this.e, (getHeight() - this.f) + this.e);
+            }
+            c();
+            return;
+        }
+        o1.k kVar2 = this.v;
+        if (kVar2 != null) {
+            kVar2.c();
+        }
+        o1.k kVar3 = new o1.k(new o1.j(f10));
+        kVar3.u = r6.l(f7, 1400.0f, 1.0f);
+        kVar3.b(new o1.g() { // from class: di.p4
+            @Override // o1.g
+            public final void a(o1.h hVar, float f12, float f13) {
+                t4 t4Var = t4.this;
+                t4Var.f = f12;
+                float f14 = f11;
+                float f15 = f10;
+                float f16 = f14 == 0.0f ? 1.0f : (f12 - f15) / f14;
+                if (z10) {
+                    t4Var.r = w7.q.a(t4Var.r - (Math.max(0.0f, f14) * f16), (-t4Var.f) + t4Var.e, (t4Var.getHeight() - t4Var.f) + t4Var.e);
+                }
+                o1.k kVar4 = t4Var.G;
+                if (kVar4 != null) {
+                    o1.l lVar = kVar4.u;
+                    if (((float) lVar.i) == (-f15) + t4Var.e) {
+                        lVar.i = (-f7) + r1;
+                    }
+                }
+                t4Var.c();
+            }
+        });
+        kVar3.a(new ec(this, f7, 1));
+        this.v = kVar3;
+        kVar3.f();
+    }
+
+    public void setScrollEndListener(Runnable runnable) {
+        this.E = runnable;
+    }
+
+    public void setScrollListener(Runnable runnable) {
+        this.y = runnable;
+    }
+
+    public void setShouldWaitWebViewScroll(boolean z10) {
+        this.N = z10;
+    }
+
+    public void setSwipeOffsetAnimationDisallowed(boolean z10) {
+        this.s = z10;
+    }
+
+    public void setSwipeOffsetY(float f7) {
+        this.r = f7;
+        c();
+    }
+
+    public void setTopActionBarOffsetY(float f7) {
+        this.e = f7;
+        c();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+    }
+
+    public void setWebView(org.telegram.ui.web.y0 y0Var) {
+        this.x = y0Var;
     }
 }

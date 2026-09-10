@@ -1,25 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
-/* loaded from: classes3.dex */
-public final class b61 extends g.p {
-    public final /* synthetic */ a61 c;
-    public final /* synthetic */ d61 d;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-    public b61(d61 d61Var, a61 a61Var) {
-        this.d = d61Var;
-        this.c = a61Var;
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* loaded from: classes3.dex */
+public final class b61 extends URLSpan {
+    public final b11 a;
+    public boolean b;
+
+    public b61(String str, b11 b11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = b11Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        v51 v51Var = this.d.Y2;
-        a61 a61Var = this.c;
-        if (v51Var == null) {
-            return a61Var.J;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
         }
-        h51 G = v51Var.G(i10);
-        return (G == null || (i11 = G.u) == -1) ? a61Var.J : i11;
+        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        b11 b11Var = this.a;
+        if (b11Var != null) {
+            b11Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
+        }
     }
 }

@@ -2,7 +2,7 @@ package c5;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements q0.a {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class z implements q0.a {
                 if (gVar == null) {
                     gVar = new o0.g(-3);
                 }
-                ((o0.a) this.b).H(gVar);
+                ((of.b) this.b).l0(gVar);
                 return;
             default:
                 o0.g gVar2 = (o0.g) obj;

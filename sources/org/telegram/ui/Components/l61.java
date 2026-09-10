@@ -1,114 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.IUpdateLayout;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class l61 extends IUpdateLayout {
-    public FrameLayout a;
-    public RadialProgress2 b;
-    public org.telegram.ui.Cells.w1 c;
-    public final Activity d;
-    public final ViewGroup e;
+public final class l61 extends r61 {
+    public final /* synthetic */ m61 f3;
 
-    public l61(Activity activity, ViewGroup viewGroup) {
-        super(activity, viewGroup);
-        this.d = activity;
-        this.e = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l61(m61 m61Var, m61 m61Var2, e eVar, k61 k61Var, k61 k61Var2) {
+        super(m61Var2, eVar, k61Var, k61Var2);
+        this.f3 = m61Var;
     }
 
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void createUpdateUI(int i10) {
-        ViewGroup viewGroup = this.e;
-        if (viewGroup == null || this.a != null) {
-            return;
-        }
-        Activity activity = this.d;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        frameLayout.setVisibility(4);
-        this.a.setTranslationY(AndroidUtilities.dp(44.0f));
-        this.a.setBackground(org.telegram.ui.ActionBar.j6.f0(1090519039, 2, -1));
-        viewGroup.addView(this.a, w7.x5.e(-1, 44, 83));
-        this.a.setOnClickListener(new di.o4(this, i10, 14));
-        org.telegram.ui.Cells.w1 w1Var = new org.telegram.ui.Cells.w1(this, activity);
-        this.c = w1Var;
-        w1Var.setTextSize(AndroidUtilities.dp(15.0f));
-        this.c.setTypeface(AndroidUtilities.bold());
-        this.c.setTextColor(-1);
-        this.c.setGravity(17);
-        this.a.addView(this.c, w7.x5.g());
-        this.c.c(LocaleController.getString(R.string.AppUpdateBeta), false, true);
-        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
-        this.b = radialProgress2;
-        int i11 = org.telegram.ui.ActionBar.j6.Oh;
-        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-        this.b.q(0, 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
-        this.b.setCircleRadius(AndroidUtilities.dp(11.0f));
-        this.b.setAsMini();
-    }
-
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateAppUpdateViews(int i10, boolean z10) {
-        if (this.e == null) {
-            return;
-        }
-        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
-            FrameLayout frameLayout = this.a;
-            if (frameLayout == null || frameLayout.getTag() == null) {
-                return;
-            }
-            this.a.setTag(null);
-            if (z10) {
-                this.a.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(pr.g).setListener(new k61(this, 0)).setDuration(180L).start();
-                return;
-            } else {
-                this.a.setTranslationY(AndroidUtilities.dp(44.0f));
-                this.a.setVisibility(4);
-                return;
-            }
-        }
-        createUpdateUI(i10);
-        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
-        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
-            this.b.setIcon(15, true, z10);
-            this.c.c(LocaleController.getString(R.string.AppUpdateNow), z10, true);
-        } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
-            this.b.setIcon(3, true, z10);
-            this.b.o(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
-            this.c.c(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z10, true);
-        } else {
-            this.b.setIcon(2, true, z10);
-            this.c.c(LocaleController.getString(R.string.AppUpdateBeta), z10, true);
-        }
-        if (this.a.getTag() != null) {
-            return;
-        }
-        this.a.setVisibility(0);
-        this.a.setTag(1);
-        if (z10) {
-            this.a.animate().translationY(0.0f).setInterpolator(pr.g).setListener(null).setDuration(180L).start();
-        } else {
-            this.a.setTranslationY(0.0f);
-        }
-    }
-
-    @Override // org.telegram.ui.IUpdateLayout
-    public final void updateFileProgress(Object[] objArr) {
-        if (this.a == null || this.c == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
-            return;
-        }
-        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
-        this.b.o(downloadingUpdateProgress, true);
-        this.c.setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
-        this.a.invalidate();
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.f3.b = -1;
     }
 }

@@ -1,29 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController.ErrorDelegate b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ fb(MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = errorDelegate;
-        this.c = tL_error;
+    public /* synthetic */ fb(q0.a aVar, int i10, int i11) {
+        this.a = i11;
+        this.b = aVar;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                MessagesController.lambda$getNextReactionMentionInternal$1(this.b, this.c);
                 break;
             default:
-                this.b.run(this.c);
+                MessagesController.lambda$getNextReactionMentionInternal$2(this.b, this.c);
                 break;
         }
     }

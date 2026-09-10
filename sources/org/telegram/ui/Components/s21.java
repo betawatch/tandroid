@@ -1,30 +1,38 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class s21 {
-    public static final s21 a;
-    public static final s21 b;
-    public static final s21 c;
-    public static final /* synthetic */ s21[] d;
+public final /* synthetic */ class s21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k31 b;
 
-    static {
-        s21 s21Var = new s21("TOP", 0);
-        a = s21Var;
-        s21 s21Var2 = new s21("LEFT", 1);
-        b = s21Var2;
-        s21 s21Var3 = new s21("BOTTOM", 2);
-        c = s21Var3;
-        d = new s21[]{s21Var, s21Var2, s21Var3};
+    public /* synthetic */ s21(k31 k31Var, int i10) {
+        this.a = i10;
+        this.b = k31Var;
     }
 
-    public static s21 valueOf(String str) {
-        return (s21) Enum.valueOf(s21.class, str);
-    }
-
-    public static s21[] values() {
-        return (s21[]) d.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                k31 k31Var = this.b;
+                a31 a31Var = k31Var.G;
+                a31Var.v1(true);
+                y21 y21Var = k31Var.s;
+                y21Var.v1(true);
+                k31Var.J.a(true, true);
+                AndroidUtilities.updateVisibleRows(y21Var);
+                AndroidUtilities.updateVisibleRows(a31Var);
+                break;
+            default:
+                k31 k31Var2 = this.b;
+                if (k31Var2.k()) {
+                    k31Var2.l();
+                    break;
+                }
+                break;
+        }
     }
 }

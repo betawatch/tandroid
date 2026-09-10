@@ -1,130 +1,27 @@
 package sg;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import com.google.android.gms.internal.vision.e2;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.s3;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.kl0;
-import org.telegram.ui.v51;
-import w7.x5;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class d extends kl0 {
-    public final f6 c;
-    public final int d;
-    public final int e;
-    public final ArrayList f;
-    public final c1 h;
-    public int n;
-    public c r;
-    public final boolean s;
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AtomicBoolean b;
 
-    public d(int i10, f6 f6Var) {
-        ArrayList arrayList = new ArrayList();
-        this.f = arrayList;
-        this.s = true;
-        this.c = f6Var;
-        c1 c1Var = new c1(j6.Lj, j6.Mj, j6.Nj, j6.Oj, f6Var);
-        this.h = c1Var;
-        c1Var.o = 0.0f;
-        c1Var.p = 0.0f;
-        c1Var.q = 1.0f;
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
-        arrayList.add(new e(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
-        arrayList.add(new e(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
-        arrayList.add(new e(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
-        arrayList.add(new e(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
-        arrayList.add(new e(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
-        arrayList.add(new e(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
-        this.d = 1;
-        this.e = 1;
-        this.d = arrayList.size() + 1;
+    public /* synthetic */ d(AtomicBoolean atomicBoolean, int i10) {
+        this.a = i10;
+        this.b = atomicBoolean;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.set(true);
+                break;
+            default:
+                this.b.set(true);
+                break;
         }
-        return i10 == 0 ? 2 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            f fVar = (f) c1Var.a;
-            int i11 = i10 - this.e;
-            ArrayList arrayList = this.f;
-            fVar.a((e) arrayList.get(i11));
-            LimitPreviewView limitPreviewView = fVar.c;
-            limitPreviewView.F = ((e) arrayList.get(i11)).e;
-            limitPreviewView.c = this.n;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.v51] */
-    /* JADX WARN: Type inference failed for: r1v7, types: [sg.f] */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        s3 s3Var;
-        Context context = viewGroup.getContext();
-        f6 f6Var = this.c;
-        if (i10 != 1) {
-            if (i10 != 2) {
-                ?? fVar = new f(context, f6Var);
-                fVar.c.setParentViewForGradien(this.r);
-                fVar.c.setStaticGradinet(this.h);
-                s3Var = fVar;
-            } else {
-                s3Var = new s3(context, 16);
-            }
-        } else if (this.s) {
-            ?? v51Var = new v51(context, 10);
-            LinearLayout f7 = wl.f(context, 0);
-            ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(d1.c(context.getDrawable(R.drawable.other_2x_large), d1.d().a));
-            f7.addView(imageView, x5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
-            TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(R.string.DoubledLimits));
-            textView.setGravity(17);
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(j6.v0(j6.G6, f6Var));
-            textView.setTypeface(AndroidUtilities.bold());
-            f7.addView(textView, x5.e(-2, -2, 16));
-            v51Var.addView(f7, x5.e(-2, -2, 17));
-            s3Var = v51Var;
-        } else {
-            s3Var = new s3(context, 64);
-        }
-        return e2.l(s3Var, s3Var, -1, -2);
     }
 }

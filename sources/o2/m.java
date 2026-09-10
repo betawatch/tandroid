@@ -4,13 +4,12 @@ import com.google.android.gms.internal.cast.b5;
 import e2.d0;
 import java.util.ArrayList;
 import java.util.Iterator;
-import n4.y;
-import u2.b1;
-import v7.x7;
+import u2.d1;
+import v7.y7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class m implements b1 {
+public final class m implements d1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -20,7 +19,23 @@ public final class m implements b1 {
         this.a = i10;
     }
 
+    @Override // u2.d1
     public final void a() {
+        int i10 = this.c;
+        q qVar = this.b;
+        if (i10 == -2) {
+            qVar.e();
+            throw new b5(a4.a.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
+        }
+        if (i10 == -1) {
+            qVar.E();
+        } else if (i10 != -3) {
+            qVar.E();
+            qVar.L[i10].z();
+        }
+    }
+
+    public final void b() {
         e2.d.b(this.c == -1);
         q qVar = this.b;
         qVar.e();
@@ -43,28 +58,12 @@ public final class m implements b1 {
         this.c = i11;
     }
 
-    @Override // u2.b1
-    public final void b() {
-        int i10 = this.c;
-        q qVar = this.b;
-        if (i10 == -2) {
-            qVar.e();
-            throw new b5(a4.a.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
-        }
-        if (i10 == -1) {
-            qVar.D();
-        } else if (i10 != -3) {
-            qVar.D();
-            qVar.L[i10].z();
-        }
-    }
-
     public final boolean c() {
         int i10 = this.c;
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.b1
+    @Override // u2.d1
     public final boolean e() {
         if (this.c == -3) {
             return true;
@@ -74,71 +73,11 @@ public final class m implements b1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        return !qVar.B() && qVar.L[i10].x(qVar.j0);
+        return !qVar.A() && qVar.L[i10].x(qVar.j0);
     }
 
-    @Override // u2.b1
-    public final int f(y yVar, h2.h hVar, int i10) {
-        b2.s sVar;
-        if (this.c == -3) {
-            hVar.addFlag(4);
-            return -4;
-        }
-        if (c()) {
-            int i11 = this.c;
-            q qVar = this.b;
-            ArrayList arrayList = qVar.y;
-            if (!qVar.B()) {
-                int i12 = 0;
-                if (!arrayList.isEmpty()) {
-                    int i13 = 0;
-                    loop0: while (i13 < arrayList.size() - 1) {
-                        int i14 = ((j) arrayList.get(i13)).v;
-                        int length = qVar.L.length;
-                        for (int i15 = 0; i15 < length; i15++) {
-                            if (qVar.d0[i15] && qVar.L[i15].B() == i14) {
-                                break loop0;
-                            }
-                        }
-                        i13++;
-                    }
-                    d0.V(0, i13, arrayList);
-                    j jVar = (j) arrayList.get(0);
-                    b2.s sVar2 = jVar.d;
-                    if (!sVar2.equals(qVar.W)) {
-                        qVar.v.j(qVar.b, sVar2, jVar.e, jVar.f, jVar.h);
-                    }
-                    qVar.W = sVar2;
-                }
-                if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
-                    int C = qVar.L[i11].C(yVar, hVar, i10, qVar.j0);
-                    if (C == -5) {
-                        b2.s sVar3 = (b2.s) yVar.c;
-                        sVar3.getClass();
-                        if (i11 == qVar.R) {
-                            int b10 = x7.b(qVar.L[i11].B());
-                            while (i12 < arrayList.size() && ((j) arrayList.get(i12)).v != b10) {
-                                i12++;
-                            }
-                            if (i12 < arrayList.size()) {
-                                sVar = ((j) arrayList.get(i12)).d;
-                            } else {
-                                sVar = qVar.V;
-                                sVar.getClass();
-                            }
-                            sVar3 = sVar3.d(sVar);
-                        }
-                        yVar.c = sVar3;
-                    }
-                    return C;
-                }
-            }
-        }
-        return -3;
-    }
-
-    @Override // u2.b1
-    public final int m(long j3) {
+    @Override // u2.d1
+    public final int g(long j3) {
         Object next;
         Object obj;
         if (!c()) {
@@ -146,7 +85,7 @@ public final class m implements b1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        if (qVar.B()) {
+        if (qVar.A()) {
             return 0;
         }
         p pVar = qVar.L[i10];
@@ -154,7 +93,7 @@ public final class m implements b1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = i2.g.h(1, arrayList);
+                obj = hc.b.i(1, arrayList);
             }
             obj = null;
         } else {
@@ -173,5 +112,65 @@ public final class m implements b1 {
         }
         pVar.H(v);
         return v;
+    }
+
+    @Override // u2.d1
+    public final int t(of.b bVar, h2.h hVar, int i10) {
+        b2.s sVar;
+        if (this.c == -3) {
+            hVar.addFlag(4);
+            return -4;
+        }
+        if (c()) {
+            int i11 = this.c;
+            q qVar = this.b;
+            ArrayList arrayList = qVar.y;
+            if (!qVar.A()) {
+                int i12 = 0;
+                if (!arrayList.isEmpty()) {
+                    int i13 = 0;
+                    loop0: while (i13 < arrayList.size() - 1) {
+                        int i14 = ((j) arrayList.get(i13)).v;
+                        int length = qVar.L.length;
+                        for (int i15 = 0; i15 < length; i15++) {
+                            if (qVar.d0[i15] && qVar.L[i15].B() == i14) {
+                                break loop0;
+                            }
+                        }
+                        i13++;
+                    }
+                    d0.V(0, i13, arrayList);
+                    j jVar = (j) arrayList.get(0);
+                    b2.s sVar2 = jVar.d;
+                    if (!sVar2.equals(qVar.W)) {
+                        qVar.v.i(qVar.b, sVar2, jVar.e, jVar.f, jVar.h);
+                    }
+                    qVar.W = sVar2;
+                }
+                if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
+                    int C = qVar.L[i11].C(bVar, hVar, i10, qVar.j0);
+                    if (C == -5) {
+                        b2.s sVar3 = (b2.s) bVar.c;
+                        sVar3.getClass();
+                        if (i11 == qVar.R) {
+                            int b10 = y7.b(qVar.L[i11].B());
+                            while (i12 < arrayList.size() && ((j) arrayList.get(i12)).v != b10) {
+                                i12++;
+                            }
+                            if (i12 < arrayList.size()) {
+                                sVar = ((j) arrayList.get(i12)).d;
+                            } else {
+                                sVar = qVar.V;
+                                sVar.getClass();
+                            }
+                            sVar3 = sVar3.d(sVar);
+                        }
+                        bVar.c = sVar3;
+                    }
+                    return C;
+                }
+            }
+        }
+        return -3;
     }
 }

@@ -5,9 +5,8 @@ import android.media.MediaExtractor;
 import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
-import com.google.android.gms.internal.vision.e2;
-import di.n8;
-import di.t;
+import bi.q9;
+import bi.x;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class MediaCodecVideoConvertor {
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
@@ -35,14 +34,14 @@ public class MediaCodecVideoConvertor {
     private Muxer muxer;
     private String outputMimeType;
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public class ConversionCanceledException extends RuntimeException {
         public ConversionCanceledException() {
             super("canceled conversion");
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class ConvertVideoParams {
         int account;
         long avatarStartTime;
@@ -51,7 +50,7 @@ public class MediaCodecVideoConvertor {
         String blurPath;
         File cacheFile;
         MediaController.VideoConvertorListener callback;
-        t collage;
+        x collage;
         ArrayList<VideoEditedInfo.Part> collageParts;
         MediaController.CropState cropState;
         long duration;
@@ -59,7 +58,7 @@ public class MediaCodecVideoConvertor {
         int framerate;
         Integer gradientBottomColor;
         Integer gradientTopColor;
-        n8 hdrInfo;
+        q9 hdrInfo;
         boolean isDark;
         boolean isPhoto;
         boolean isRound;
@@ -135,7 +134,7 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class MixedSoundInfo {
         final String audioFile;
         public long audioOffset;
@@ -148,14 +147,14 @@ public class MediaCodecVideoConvertor {
         }
     }
 
-    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<ag.a> arrayList2) {
+    private static void applyAudioInputs(ArrayList<MixedSoundInfo> arrayList, ArrayList<zf.a> arrayList2) {
         if (arrayList == null) {
             return;
         }
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             MixedSoundInfo mixedSoundInfo = arrayList.get(i10);
             try {
-                ag.c cVar = new ag.c(mixedSoundInfo.audioFile);
+                zf.c cVar = new zf.c(mixedSoundInfo.audioFile);
                 AudioDecoder audioDecoder = cVar.b;
                 cVar.a = Math.max(0.0f, Math.min(mixedSoundInfo.volume, 1.0f));
                 long j3 = mixedSoundInfo.startTime;
@@ -176,8 +175,8 @@ public class MediaCodecVideoConvertor {
                     audioDecoder.setEndTimeUs(j10 + j11);
                 }
                 arrayList2.add(cVar);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
     }
@@ -190,7 +189,7 @@ public class MediaCodecVideoConvertor {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v183 ??), method size: 7788
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r1v183 ?? I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), method size: 7788
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -250,22 +249,22 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder k10 = e2.k("source size ", i10, "x", i11, "    dest size ");
-        i2.g.v(k10, i12, "x", i13, "   rotated ");
-        k10.append(z11);
-        k10.append("   ratio ");
-        k10.append(f10);
-        k10.append("x");
-        k10.append(f12);
-        k10.append("   samples ");
-        k10.append(min);
-        k10.append("x");
-        k10.append(min2);
-        k10.append("   kernel scale ");
-        k10.append(f13);
-        k10.append("x");
-        k10.append(f14);
-        FileLog.d(k10.toString());
+        StringBuilder n10 = hc.b.n("source size ", i10, "x", i11, "    dest size ");
+        hc.b.w(n10, i12, "x", i13, "   rotated ");
+        n10.append(z11);
+        n10.append("   ratio ");
+        n10.append(f10);
+        n10.append("x");
+        n10.append(f12);
+        n10.append("   samples ");
+        n10.append(min);
+        n10.append("x");
+        n10.append(min2);
+        n10.append("   kernel scale ");
+        n10.append(f13);
+        n10.append("x");
+        n10.append(f14);
+        FileLog.d(n10.toString());
         String glslFloat = glslFloat(f15);
         String glslFloat2 = glslFloat(f16);
         String glslFloat3 = glslFloat(f13);
@@ -328,9 +327,9 @@ public class MediaCodecVideoConvertor {
                 String str = (String) arrayList.remove(0);
                 mediaFormat.setString("mime", str);
                 return MediaCodec.createDecoderByType(str);
-            } catch (Exception e7) {
+            } catch (Exception e) {
                 if (exc == null) {
-                    exc = e7;
+                    exc = e;
                 }
             }
         }
@@ -359,7 +358,7 @@ public class MediaCodecVideoConvertor {
         return sb2.toString();
     }
 
-    private static String hdrFragmentShader(int i10, int i11, int i12, int i13, boolean z10, n8 n8Var, int i14, boolean z11) {
+    private static String hdrFragmentShader(int i10, int i11, int i12, int i13, boolean z10, q9 q9Var, int i14, boolean z11) {
         if (!z10) {
             return createFragmentShader(i10, i11, i12, i13, false, i14, z11);
         }
@@ -385,22 +384,22 @@ public class MediaCodecVideoConvertor {
         if ((min2 & 1) == 0) {
             f16 += 0.01f;
         }
-        StringBuilder k10 = e2.k("HDR source size ", i10, "x", i11, "    dest size ");
-        i2.g.v(k10, i12, "x", i13, "   rotated ");
-        k10.append(z11);
-        k10.append("   ratio ");
-        k10.append(f10);
-        k10.append("x");
-        k10.append(f12);
-        k10.append("   samples ");
-        k10.append(min);
-        k10.append("x");
-        k10.append(min2);
-        k10.append("   kernel scale ");
-        k10.append(f13);
-        k10.append("x");
-        k10.append(f14);
-        FileLog.d(k10.toString());
+        StringBuilder n10 = hc.b.n("HDR source size ", i10, "x", i11, "    dest size ");
+        hc.b.w(n10, i12, "x", i13, "   rotated ");
+        n10.append(z11);
+        n10.append("   ratio ");
+        n10.append(f10);
+        n10.append("x");
+        n10.append(f12);
+        n10.append("   samples ");
+        n10.append(min);
+        n10.append("x");
+        n10.append(min2);
+        n10.append("   kernel scale ");
+        n10.append(f13);
+        n10.append("x");
+        n10.append(f14);
+        FileLog.d(n10.toString());
         String glslFloat = glslFloat(f15);
         String glslFloat2 = glslFloat(f16);
         String glslFloat3 = glslFloat(f13);
@@ -408,7 +407,7 @@ public class MediaCodecVideoConvertor {
         String glslFloat5 = glslFloat(min * min2);
         String glslFloat6 = glslFloat(1.0f / f7);
         String glslFloat7 = glslFloat(1.0f / f11);
-        String readRes = n8Var.a() == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : AndroidUtilities.readRes(R.raw.hdr2sdr_pq);
+        String readRes = q9Var.a() == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : AndroidUtilities.readRes(R.raw.hdr2sdr_pq);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(readRes);
         sb2.append("\nvarying vec2 vTextureCoord;\nconst float offsetX = ");
@@ -462,8 +461,8 @@ public class MediaCodecVideoConvertor {
             i11 = muxer.addTrack(trackFormat, false);
             try {
                 i19 = trackFormat.getInteger("max-input-size");
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 i19 = 0;
             }
             if (j3 > 0) {
@@ -486,8 +485,8 @@ public class MediaCodecVideoConvertor {
                 i12 = muxer.addTrack(trackFormat2, true);
                 try {
                     i10 = Math.max(trackFormat2.getInteger("max-input-size"), i10);
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 if (j3 > 0) {
                     mediaExtractor.seekTo(j3, 0);
@@ -648,7 +647,7 @@ public class MediaCodecVideoConvertor {
         return this.endPresentationTime;
     }
 
-    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
     public static class Muxer {
         public final MediaMuxer mediaMuxer;
         public final MP4Builder mp4Builder;

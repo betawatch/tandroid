@@ -1,86 +1,69 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.widget.Scroller;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class yc1 implements org.telegram.ui.Components.eo0, org.telegram.ui.Components.i20 {
-    public final /* synthetic */ wd1 a;
+public final class yc1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final RectF b;
+    public final /* synthetic */ ae1 c;
 
-    public /* synthetic */ yc1(wd1 wd1Var) {
-        this.a = wd1Var;
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public void X(float f7, boolean z10) {
-        wd1 wd1Var = this.a;
-        wd1Var.l1 = f7;
-        wd1Var.k1();
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public /* synthetic */ int l0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.i20
-    public boolean onDown(MotionEvent motionEvent) {
-        Scroller scroller = this.a.c;
-        if (scroller == null) {
-            return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yc1(ae1 ae1Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = ae1Var;
+                super(context);
+                this.b = new RectF();
+                break;
+            default:
+                this.c = ae1Var;
+                this.b = new RectF();
+                break;
         }
-        scroller.abortAnimation();
-        return true;
     }
 
-    @Override // org.telegram.ui.Components.i20
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        wd1 wd1Var = this.a;
-        Scroller scroller = wd1Var.c;
-        if (scroller == null) {
-            return true;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                float measuredWidth = getMeasuredWidth();
+                float measuredHeight = getMeasuredHeight();
+                RectF rectF = this.b;
+                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+                ae1 ae1Var = this.c;
+                yc1 yc1Var = ae1Var.D0;
+                pd1 pd1Var = ae1Var.x0;
+                ad1 ad1Var = ae1Var.a;
+                org.telegram.ui.ActionBar.j6.s(yc1Var, pd1Var, ad1Var);
+                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ad1Var.F("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.j6.a1()) {
+                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ad1Var.F("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
+            default:
+                float measuredWidth2 = getMeasuredWidth();
+                float measuredHeight2 = getMeasuredHeight();
+                RectF rectF2 = this.b;
+                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
+                ae1 ae1Var2 = this.c;
+                yc1 yc1Var2 = ae1Var2.E0;
+                pd1 pd1Var2 = ae1Var2.x0;
+                ad1 ad1Var2 = ae1Var2.a;
+                org.telegram.ui.ActionBar.j6.s(yc1Var2, pd1Var2, ad1Var2);
+                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ad1Var2.F("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.j6.a1()) {
+                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, ad1Var2.F("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
         }
-        scroller.abortAnimation();
-        wd1Var.c.fling((int) wd1Var.X1, 0, Math.round(-f7), Math.round(f10), 0, (int) wd1Var.W1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-        wd1Var.x0.postInvalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.i20
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
-        wd1 wd1Var = this.a;
-        Scroller scroller = wd1Var.c;
-        if (scroller != null) {
-            scroller.abortAnimation();
-        }
-        wd1Var.X1 = Utilities.clamp(wd1Var.X1 + f7, wd1Var.W1, 0.0f);
-        wd1Var.V0();
-        wd1Var.x0.invalidate();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.i20
-    public boolean onSingleTapUp(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.eo0
-    public void B() {
-    }
-
-    @Override // org.telegram.ui.Components.i20
-    public void b1() {
-    }
-
-    @Override // org.telegram.ui.Components.i20
-    public void onLongPress(MotionEvent motionEvent) {
     }
 }

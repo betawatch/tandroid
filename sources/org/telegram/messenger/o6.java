@@ -1,71 +1,58 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ MediaController b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ MessageSuggestionParams h;
+    public final /* synthetic */ MessageObject n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ TL_stories.StoryItem s;
+    public final /* synthetic */ Object v;
 
-    public /* synthetic */ o6(int i10, Object obj, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = obj;
+    public /* synthetic */ o6(MediaController mediaController, int i10, int i11, long j3, long j10, MessageSuggestionParams messageSuggestionParams, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, SendMessageChatArguments sendMessageChatArguments) {
+        this.b = mediaController;
+        this.c = i10;
+        this.d = i11;
+        this.e = j3;
+        this.f = j10;
+        this.h = messageSuggestionParams;
+        this.n = messageObject;
+        this.r = messageObject2;
+        this.s = storyItem;
+        this.v = sendMessageChatArguments;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.4) this.c).lambda$onCallStateChanged$0(this.b);
-                break;
-            case 1:
-                MessagesController.1.lambda$setLocal$2(this.b, (TLRPC.TL_help_appConfig) this.c);
-                break;
-            case 2:
-                MessagesController.4.lambda$setLocal$2(this.b, (TLRPC.messages_AvailableEffects) this.c);
-                break;
-            case 3:
-                MessagesController.5.lambda$setLocal$1(this.b, (TL_account.TL_webBrowserSettings) this.c);
-                break;
-            case 4:
-                AutoDeleteMediaTask.lambda$run$1(this.b, (File) this.c);
-                break;
-            case 5:
-                FileLoader.lambda$deleteFiles$16((ArrayList) this.c, this.b);
-                break;
-            case 6:
-                ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
-                break;
-            case 7:
-                MediaController.lambda$saveFile$47((org.telegram.ui.ActionBar.b2) this.c, this.b);
-                break;
-            case 8:
-                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
-                break;
-            case 9:
-                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
-                break;
-            case 10:
-                SendMessagesHelper.lambda$handleError$119(this.b, (AccountInstance) this.c);
+                this.b.lambda$prepareResumedRecording$25(this.c, (MediaDataController.DraftVoice) this.v, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
             default:
-                Utilities.lambda$doCallbacks$0(this.b, (Utilities.Callback[]) this.c);
+                this.b.lambda$startRecording$37(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, (SendMessageChatArguments) this.v);
                 break;
         }
     }
 
-    public /* synthetic */ o6(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public /* synthetic */ o6(MediaController mediaController, int i10, MediaDataController.DraftVoice draftVoice, int i11, long j3, long j10, MessageSuggestionParams messageSuggestionParams, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem) {
+        this.b = mediaController;
+        this.c = i10;
+        this.v = draftVoice;
+        this.d = i11;
+        this.e = j3;
+        this.f = j10;
+        this.h = messageSuggestionParams;
+        this.n = messageObject;
+        this.r = messageObject2;
+        this.s = storyItem;
     }
 }

@@ -1,65 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PointF;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class jw0 {
-    public final o5 a;
-    public Drawable b;
+public class jw0 extends s4.d0 {
+    public final wr r;
+    public int s;
+    public float t;
 
-    public jw0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+    public jw0(Context context) {
+        super(context);
+        this.r = wr.f;
+        this.t = 1.0f;
     }
 
-    public final o5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
-        o5 o5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new oq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
-            }
-            this.b = drawable;
-            o5Var.g(drawable, z10);
-            o5Var.k(null);
-            return o5Var;
+    @Override // s4.d0, s4.y0
+    public final void g(View view, s4.x0 x0Var) {
+        int j3 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
+        if (m10 > 0) {
+            x0Var.b(-j3, -k10, m10, this.r);
         }
-        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
-            o5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
-            o5Var.k(Integer.valueOf(i10));
-            return o5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new oq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
-            }
-            this.b = drawable2;
-            o5Var.g(drawable2, z10);
-            o5Var.k(null);
-            return o5Var;
-        }
-        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
-            o5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
-            o5Var.k(Integer.valueOf(i10));
-            return o5Var;
-        }
-        if (user == null || !user.premium) {
-            o5Var.g(null, z10);
-            o5Var.k(null);
-            return o5Var;
-        }
-        o5Var.g(sg.d1.d().e, z10);
-        o5Var.k(Integer.valueOf(i10));
-        return o5Var;
+        AndroidUtilities.runOnUIThread(new uq0(this, 8), Math.max(0, m10));
     }
 
-    public jw0(int i10, View view) {
-        this.a = new o5(AndroidUtilities.dp(i10), view);
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return super.k(i10, view) - this.s;
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return Math.round(Math.min(super.m(i10), 500) * this.t);
+    }
+
+    @Override // s4.d0
+    public final int n(int i10) {
+        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
+    }
+
+    @Override // s4.d0
+    public final void q(s4.x0 x0Var) {
+        PointF a2 = a(this.a);
+        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+            x0Var.d = this.a;
+            h();
+            return;
+        }
+        s4.y0.b(a2);
+        this.k = a2;
+        this.o = (int) (a2.x * 10000.0f);
+        this.p = (int) (a2.y * 10000.0f);
+        x0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

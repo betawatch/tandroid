@@ -1,134 +1,85 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ig1;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class hk extends kl0 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public final Context f;
-    public final /* synthetic */ ok h;
+public final class hk extends jx0 {
+    public final /* synthetic */ int K = 2;
+    public final /* synthetic */ Object L;
 
-    public hk(ok okVar, Context context) {
-        this.h = okVar;
-        this.f = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hk(tk tkVar, Context context, a10 a10Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, a10Var, 1, f6Var);
+        this.L = tkVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 1;
-    }
-
-    public final ik E(int i10) {
-        int f7;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        if (i10 < size) {
-            return (ik) arrayList.get(i10);
-        }
-        if (!this.d.isEmpty()) {
-            return null;
-        }
-        ArrayList arrayList2 = this.e;
-        if (arrayList2.isEmpty() || i10 == size || i10 == size + 1 || (f7 = com.google.android.gms.internal.vision.e2.f(2, i10, arrayList)) >= arrayList2.size()) {
-            return null;
-        }
-        return (ik) arrayList2.get(f7);
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        int size = this.c.size();
-        if (this.d.isEmpty()) {
-            ArrayList arrayList = this.e;
-            if (!arrayList.isEmpty()) {
-                size += arrayList.size() + 2;
-            }
-        }
-        return size + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == h() - 1) {
-            return 3;
-        }
-        int size = this.c.size();
-        if (i10 == size) {
-            return 2;
-        }
-        return i10 == size + 1 ? 0 : 1;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        this.h.T();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        ok okVar = this.h;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
-            if (okVar.c0) {
-                l4Var.setText(LocaleController.getString(R.string.RecentFilesAZ));
-                return;
-            } else {
-                l4Var.setText(LocaleController.getString(R.string.RecentFiles));
-                return;
-            }
-        }
-        if (i11 != 1) {
-            return;
-        }
-        ik E = E(i10);
-        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
-        int i12 = E.a;
-        if (i12 != 0) {
-            j7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
-        } else {
-            j7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
-        }
-        File file = E.f;
-        if (file != null) {
-            j7Var.b(okVar.R.containsKey(file.toString()), !okVar.U);
-        } else {
-            j7Var.b(false, !okVar.U);
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
-        View view;
-        org.telegram.ui.ActionBar.f6 f6Var = this.h.a;
-        Context context = this.f;
-        if (i10 == 0) {
-            l4Var = new org.telegram.ui.Cells.l4(context, f6Var);
-        } else {
-            if (i10 != 1) {
-                if (i10 != 2) {
-                    view = new View(context);
-                    view.setTag(-33024);
+    @Override // org.telegram.ui.Components.jx0
+    public void e(boolean z10, boolean z11) {
+        switch (this.K) {
+            case 1:
+                ig1 ig1Var = (ig1) this.L;
+                super.e(z10, z11);
+                if (!z11) {
+                    ig1Var.n.a.animate().cancel();
+                    ig1Var.n.a.setAlpha(z10 ? 0.0f : 1.0f);
+                    break;
                 } else {
-                    view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.p6) null);
+                    ig1Var.n.a.animate().alpha(z10 ? 0.0f : 1.0f).start();
+                    break;
                 }
-                return new vk0(view);
-            }
-            l4Var = new org.telegram.ui.Cells.j7(context, 1, f6Var);
+            default:
+                super.e(z10, z11);
+                break;
         }
-        view = l4Var;
-        return new vk0(view);
+    }
+
+    @Override // android.view.View
+    public float getTranslationY() {
+        switch (this.K) {
+            case 0:
+                return super.getTranslationY() - ((tk) this.L).M;
+            default:
+                return super.getTranslationY();
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.K) {
+            case 2:
+                zh.z3 z3Var = ((zh.v3) this.L).d;
+                super.onMeasure(i10, org.telegram.messenger.em.d(z3Var.e, z3Var.n - z3Var.r.getPaddingTop(), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        switch (this.K) {
+            case 0:
+                super.setTranslationY(f7 + ((tk) this.L).M);
+                break;
+            default:
+                super.setTranslationY(f7);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hk(int i10, Context context, zh.b bVar, zh.v3 v3Var) {
+        super(context, null, i10, bVar);
+        this.L = v3Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hk(ig1 ig1Var, Context context, a10 a10Var) {
+        super(context, a10Var, 0, null);
+        this.L = ig1Var;
     }
 }

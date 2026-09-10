@@ -1,33 +1,44 @@
 package bi;
 
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class h4 extends ta {
-    public final /* synthetic */ pb H;
-    public final /* synthetic */ o5 I;
+public final class h4 extends tp {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ ViewGroup e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h4(o5 o5Var, Context context, l4 l4Var, org.telegram.ui.ActionBar.f6 f6Var, pb pbVar) {
-        super(context, l4Var, f6Var);
-        this.I = o5Var;
-        this.H = pbVar;
+    public /* synthetic */ h4(ViewGroup viewGroup, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, 21, f6Var);
+        this.d = i10;
+        this.e = viewGroup;
     }
 
-    @Override // bi.ta
-    public final void b(boolean z10) {
-        h5 h5Var = this.I.Q1;
-        if (h5Var != null) {
-            pb pbVar = ((gb) h5Var).d;
-            pbVar.i1 = z10;
-            pbVar.P();
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.d) {
+            case 0:
+                super.invalidate();
+                ((j4) this.e).invalidate();
+                break;
+            case 1:
+                super.invalidate();
+                ((org.telegram.ui.Cells.r2) this.e).invalidate();
+                break;
+            default:
+                super.invalidate();
+                ((org.telegram.ui.web.i) this.e).invalidate();
+                break;
         }
     }
 
-    @Override // bi.ta
-    public final Bitmap getPlayingBitmap() {
-        return this.I.getPlayingBitmap();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h4(j4 j4Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 24, f6Var);
+        this.d = 0;
+        this.e = j4Var;
     }
 }

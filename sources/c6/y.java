@@ -1,6 +1,6 @@
 package c6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class y {
     public static final k6.c a;
@@ -26,9 +26,9 @@ public abstract class y {
     }
 
     public static String a(String str) {
-        if (str != null) {
-            return n4.y.N(new n4.y(8, str, (Object) null));
+        if (str == null) {
+            throw new IllegalArgumentException("applicationId cannot be null");
         }
-        throw new IllegalArgumentException("applicationId cannot be null");
+        return of.b.t0(new of.b(str, null, false, 7));
     }
 }

@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.uy;
+import org.telegram.ui.wy;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                h90 h90Var = hVar.d;
-                if (h90Var != null) {
-                    hVar.h.E.l(h90Var, true);
+                q90 q90Var = hVar.d;
+                if (q90Var != null) {
+                    hVar.h.E.l(q90Var, true);
                     break;
                 }
                 break;
@@ -41,37 +41,37 @@ public final /* synthetic */ class g implements Runnable {
                 ((a2) this.b).a();
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard(((yh.s4) this.b).b.getEditText());
+                AndroidUtilities.hideKeyboard(((wh.t4) this.b).b.getEditText());
                 break;
             case 4:
                 AndroidUtilities.hideKeyboard(((i3) this.b).b);
                 break;
             case 5:
-                h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof ll0)) {
-                    h6Var.callOnClick();
+                j6 j6Var = (j6) this.b;
+                if (!(j6Var.getParent() instanceof vl0)) {
+                    j6Var.callOnClick();
                     break;
                 } else {
-                    ((ll0) h6Var.getParent()).getOnItemClickListener().a(RecyclerView.R(h6Var), h6Var);
+                    ((vl0) j6Var.getParent()).getOnItemClickListener().d(RecyclerView.R(j6Var), j6Var);
                     break;
                 }
             case 6:
-                ((t7) this.b).h();
+                ((u7) this.b).h();
                 break;
             case 7:
-                da daVar = (da) this.b;
-                daVar.C.invalidate();
-                daVar.U();
+                fa faVar = (fa) this.b;
+                faVar.C.invalidate();
+                faVar.U();
                 break;
             case 8:
-                ((n9) this.b).b.U();
+                ((p9) this.b).b.U();
                 break;
             case 9:
-                ia iaVar = (ia) this.b;
-                iaVar.s = -1;
+                ka kaVar = (ka) this.b;
+                kaVar.s = -1;
                 int i10 = 0;
                 while (true) {
-                    t1[] t1VarArr = iaVar.e;
+                    t1[] t1VarArr = kaVar.e;
                     if (i10 >= t1VarArr.length) {
                         break;
                     } else {
@@ -83,14 +83,14 @@ public final /* synthetic */ class g implements Runnable {
                     }
                 }
             case 10:
-                uy uyVar = (uy) this.b;
-                qc.e();
-                uyVar.presentFragment(new SessionsActivity(0));
+                wy wyVar = (wy) this.b;
+                pc.e();
+                wyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
-                f3Var.setCanDismissWithSwipe(true);
-                f3Var.setCanDismissWithTouchOutside(true);
+                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) this.b;
+                h3Var.setCanDismissWithSwipe(true);
+                h3Var.setCanDismissWithTouchOutside(true);
                 break;
         }
     }

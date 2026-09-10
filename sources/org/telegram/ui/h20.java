@@ -1,87 +1,41 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class h20 extends s4.v {
-    public final /* synthetic */ FiltersSetupActivity d;
+public final class h20 extends FrameLayout {
+    public org.telegram.ui.ActionBar.l5 a;
+    public ImageView b;
 
-    public h20(FiltersSetupActivity filtersSetupActivity) {
-        this.d = filtersSetupActivity;
-    }
-
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        View view = c1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        return c1Var.f != 2 ? s4.v.l(0, 0) : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean k() {
-        return true;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        MessagesController.DialogFilter dialogFilter;
-        MessagesController.DialogFilter dialogFilter2;
-        if (c1Var.f != c1Var2.f) {
-            return false;
-        }
-        e20 e20Var = this.d.b;
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        FiltersSetupActivity filtersSetupActivity = e20Var.e;
-        int i10 = filtersSetupActivity.r;
-        ArrayList arrayList = filtersSetupActivity.n;
-        if (b10 >= i10 && b11 >= i10) {
-            c20 c20Var = (c20) arrayList.get(b10);
-            c20 c20Var2 = (c20) arrayList.get(b11);
-            if (c20Var != null && c20Var2 != null && (dialogFilter = c20Var.d) != null && (dialogFilter2 = c20Var2.d) != null) {
-                int i11 = dialogFilter.order;
-                dialogFilter.order = dialogFilter2.order;
-                dialogFilter2.order = i11;
-                ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
-                try {
-                    arrayList2.set(b10 - filtersSetupActivity.r, c20Var2.d);
-                    arrayList2.set(b11 - filtersSetupActivity.r, c20Var.d);
-                } catch (Exception unused) {
-                }
-                filtersSetupActivity.e = true;
-                filtersSetupActivity.Z(true);
-            }
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        if (i10 != 0) {
-            this.d.a.I0(false);
-            c1Var.a.setPressed(true);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        ImageView imageView = this.b;
+        int i14 = i12 - i10;
+        org.telegram.ui.ActionBar.l5 l5Var = this.a;
+        int textHeight = ((i13 - i11) - l5Var.getTextHeight()) / 2;
+        if (LocaleController.isRTL) {
+            dp = (getMeasuredWidth() - l5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         } else {
-            AndroidUtilities.cancelRunOnUIThread(new g10(this, 4));
-            AndroidUtilities.runOnUIThread(new g10(this, 4), 320L);
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         }
-        if (c1Var != null) {
-            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
+        l5Var.layout(dp, textHeight, l5Var.getMeasuredWidth() + dp, l5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        AndroidUtilities.dp(48.0f);
+        this.a.measure(org.telegram.messenger.em.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

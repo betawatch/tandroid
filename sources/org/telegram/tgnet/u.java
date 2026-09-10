@@ -1,31 +1,81 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements Utilities.CallbackReturn {
+public final /* synthetic */ class u implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ InputSerializedData b;
 
-    public /* synthetic */ u(int i10, InputSerializedData inputSerializedData) {
+    public /* synthetic */ u(int i10) {
         this.a = i10;
-        this.b = inputSerializedData;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        int i10 = this.a;
-        boolean booleanValue = ((Boolean) obj).booleanValue();
-        switch (i10) {
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+        switch (this.a) {
             case 0:
-                return Long.valueOf(this.b.readInt64(booleanValue));
+                return TLRPC.Message.TLdeserialize(inputSerializedData, i10, z10);
             case 1:
-                return Integer.valueOf(this.b.readInt32(booleanValue));
+                return TLRPC.TL_forumTopic.TLdeserialize(inputSerializedData, i10, z10);
             case 2:
-                return this.b.readString(booleanValue);
+                return TLRPC.TL_chatAdminWithInvites.TLdeserialize(inputSerializedData, i10, z10);
+            case 3:
+                return TLRPC.TL_chatInviteImporter.TLdeserialize(inputSerializedData, i10, z10);
+            case 4:
+                return TLRPC.DialogFilter.TLdeserialize(inputSerializedData, i10, z10);
+            case 5:
+                return TLRPC.Dialog.TLdeserialize(inputSerializedData, i10, z10);
+            case 6:
+                return TLRPC.EmojiGroup.TLdeserialize(inputSerializedData, i10, z10);
+            case 7:
+                return TLRPC.ExportedChatInvite.TLdeserialize(inputSerializedData, i10, z10);
+            case 8:
+                return TLRPC.TL_stickerPack.TLdeserialize(inputSerializedData, i10, z10);
+            case 9:
+                return TLRPC.DialogPeer.TLdeserialize(inputSerializedData, i10, z10);
+            case 10:
+                return TLRPC.TL_emojiLanguage.TLdeserialize(inputSerializedData, i10, z10);
+            case 11:
+                return TLRPC.TL_readParticipantDate.TLdeserialize(inputSerializedData, i10, z10);
+            case 12:
+                return TLRPC.TL_messages_searchCounter.TLdeserialize(inputSerializedData, i10, z10);
+            case 13:
+                return TLRPC.TL_dialogFilterSuggested.TLdeserialize(inputSerializedData, i10, z10);
+            case 14:
+                return TLRPC.TL_highScore.TLdeserialize(inputSerializedData, i10, z10);
+            case 15:
+                return TLRPC.TL_missingInvitee.TLdeserialize(inputSerializedData, i10, z10);
+            case 16:
+                return TLRPC.TL_messageViews.TLdeserialize(inputSerializedData, i10, z10);
+            case 17:
+                return TLRPC.InlineQueryPeerType.TLdeserialize(inputSerializedData, i10, z10);
+            case 18:
+                return TLRPC.TL_quickReply.TLdeserialize(inputSerializedData, i10, z10);
+            case 19:
+                return TLRPC.savedDialog.TLdeserialize(inputSerializedData, i10, z10);
+            case 20:
+                return TLRPC.TL_savedReactionTag.TLdeserialize(inputSerializedData, i10, z10);
+            case 21:
+                return TLRPC.TL_searchResultsCalendarPeriod.TLdeserialize(inputSerializedData, i10, z10);
+            case 22:
+                return TLRPC.TL_searchResultPosition.TLdeserialize(inputSerializedData, i10, z10);
+            case 23:
+                return TLRPC.TL_sponsoredMessage.TLdeserialize(inputSerializedData, i10, z10);
+            case 24:
+                return TLRPC.TL_stickerKeyword.TLdeserialize(inputSerializedData, i10, z10);
+            case 25:
+                return TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, i10, z10);
+            case 26:
+                return TL_iv.RichMessage.TLdeserialize(inputSerializedData, i10, z10);
+            case 27:
+                return TLRPC.MessagePeerVote.TLdeserialize(inputSerializedData, i10, z10);
+            case 28:
+                return TLRPC.TL_bankCardOpenUrl.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                return this.b.readByteArray(booleanValue);
+                return TLRPC.TL_premiumGiftCodeOption.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 }

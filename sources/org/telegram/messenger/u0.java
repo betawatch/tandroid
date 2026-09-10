@@ -1,53 +1,79 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.gi0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ u0(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z10;
+    public /* synthetic */ u0(int i10, bi.d dVar, org.telegram.ui.ActionBar.h3 h3Var, long j3) {
+        this.a = 3;
+        this.b = i10;
+        this.d = dVar;
+        this.e = h3Var;
+        this.c = j3;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((ChatObject.Call) this.c).lambda$loadMembers$3(this.b, (TL_phone.getGroupParticipants) this.d, tLObject, tL_error);
+                ((ChatMessagesMetadataController) this.d).lambda$loadStoriesForMessages$2(this.b, (MessageObject) this.e, this.c, tLObject, tL_error);
                 break;
             case 1:
-                ((MediaDataController) this.c).lambda$loadAvatarConstructor$242((SharedPreferences) this.d, this.b, tLObject, tL_error);
+                ((MediaDataController) this.d).lambda$loadStickers$101(this.b, (Utilities.Callback) this.e, this.c, tLObject, tL_error);
                 break;
             case 2:
-                ((MediaDataController) this.c).lambda$loadStickersByEmojiOrName$85((String) this.d, this.b, tLObject, tL_error);
+                ((MessagesController) this.d).lambda$checkPromoInfoInternal$167(this.b, (TLRPC.TL_help_promoData) this.e, this.c, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.c).lambda$getBlockedPeers$113(this.b, (TLRPC.TL_contacts_getBlocked) this.d, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new di.s3(tLObject, this.b, (bi.d) this.d, (org.telegram.ui.ActionBar.h3) this.e, this.c, tL_error));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new di.s3((gi0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new k0((xh.p) this.d, (xh.o) this.e, this.b, tLObject, this.c, 10));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new p7((bi.d) this.d, (org.telegram.ui.ActionBar.h3[]) this.e, this.b, this.c, 14));
                 break;
             default:
-                ((MessagesController.CommonChatsList) this.c).lambda$load$1((int[]) this.d, this.b, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new k0((zh.i5) this.d, tLObject, this.b, (String) this.e, this.c, 12));
                 break;
         }
     }
 
-    public /* synthetic */ u0(Object obj, boolean z10, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = z10;
-        this.d = tLObject;
+    public /* synthetic */ u0(Object obj, int i10, Object obj2, long j3, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.e = obj2;
+        this.c = j3;
+    }
+
+    public /* synthetic */ u0(Object obj, Object obj2, int i10, long j3, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.e = obj2;
+        this.b = i10;
+        this.c = j3;
+    }
+
+    public /* synthetic */ u0(gi0 gi0Var, long j3, int i10, TLRPC.Chat chat) {
+        this.a = 4;
+        this.d = gi0Var;
+        this.c = j3;
+        this.b = i10;
+        this.e = chat;
     }
 }

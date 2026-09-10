@@ -3,7 +3,7 @@ package org.telegram.ui.Cells;
 import android.view.ViewGroup;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback {
                 ((r2) this.b).d0(true);
                 break;
             default:
-                ((m4) this.b).c(true);
+                ((n4) this.b).c(true);
                 break;
         }
     }

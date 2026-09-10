@@ -1,36 +1,40 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fa implements RequestDelegate {
+public final /* synthetic */ class fa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
 
-    public /* synthetic */ fa(BaseController baseController, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = i10;
+    public /* synthetic */ fa(MessagesController messagesController, long j3, int i10, boolean z10, int i11, int i12, int i13) {
+        this.a = i13;
+        this.b = messagesController;
+        this.c = j3;
+        this.d = i10;
+        this.e = z10;
+        this.f = i11;
+        this.h = i12;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$migrateDialogs$216(this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((MessagesController) this.b).lambda$loadPinnedDialogs$367(this.c, tLObject, tL_error);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$201(this.c, tLObject, tL_error);
+                int i10 = this.f;
+                int i11 = this.h;
+                int i12 = this.d;
+                this.b.lambda$markDialogAsRead$243(this.c, i12, this.e, i10, i11);
                 break;
             default:
-                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
+                int i13 = this.f;
+                int i14 = this.h;
+                int i15 = this.d;
+                this.b.lambda$markDialogAsRead$244(this.c, i15, this.e, i13, i14);
                 break;
         }
     }

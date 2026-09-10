@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -66,9 +66,9 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                     O02.writeLong(incrementAndGet);
                     fVar2.T0(O02, 9);
                     return;
-                } catch (RemoteException e7) {
+                } catch (RemoteException e) {
                     hashMap.remove(Long.valueOf(incrementAndGet));
-                    taskCompletionSource2.setException(e7);
+                    taskCompletionSource2.setException(e);
                     return;
                 }
         }

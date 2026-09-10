@@ -1,6 +1,15 @@
 package di;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class z extends ad {
+public final class z {
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public String e;
+    public long f;
+    public int g;
+    public int h;
+    public String i;
 }

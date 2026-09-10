@@ -1,83 +1,29 @@
 package org.telegram.ui;
 
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class wa1 {
-    public String A;
-    public boolean B;
-    public boolean C;
-    public String D;
-    public String E;
-    public String F;
-    public boolean G;
-    public boolean H;
-    public String a;
-    public String b;
-    public String c;
-    public boolean d;
-    public String e;
-    public String f;
-    public String g;
-    public boolean h;
-    public String i;
-    public String j;
-    public String k;
-    public boolean l;
-    public String m;
-    public String n;
-    public String o;
-    public String p;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public String t;
-    public String u;
-    public String v;
-    public boolean w;
-    public boolean x;
-    public String y;
-    public String z;
+public final class wa1 extends rq {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ fb1 e1;
+    public final /* synthetic */ ya1 f1;
 
-    public static com.google.firebase.messaging.s a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
-        String str;
-        double d = tL_statsAbsValueAndPrev.current;
-        double d10 = tL_statsAbsValueAndPrev.previous;
-        int i10 = (int) (d - d10);
-        float abs = d10 == 0.0d ? 0.0f : Math.abs((i10 / ((float) d10)) * 100.0f);
-        String formatWholeNumber = AndroidUtilities.formatWholeNumber((int) tL_statsAbsValueAndPrev.current, 0);
-        boolean z10 = true;
-        str = "";
-        if (i10 != 0 && abs != 0.0f) {
-            int i11 = (int) abs;
-            if (abs == i11) {
-                Locale locale = Locale.ENGLISH;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i10 > 0 ? "+" : "");
-                sb2.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = sb2.toString() + " (" + i11 + "%)";
-            } else {
-                Locale locale2 = Locale.ENGLISH;
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append(i10 > 0 ? "+" : "");
-                sb3.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wa1(ya1 ya1Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, fb1 fb1Var) {
+        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = ya1Var;
+        this.d1 = zArr;
+        this.e1 = fb1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            fb1 fb1Var = this.e1;
+            if (org.telegram.ui.Components.wc.a(fb1Var)) {
+                org.telegram.ui.Components.wc.C(fb1Var, this.f1.a.first_name).j();
             }
         }
-        boolean z11 = i10 >= 0;
-        if (i10 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
-            z10 = false;
-        }
-        Boolean valueOf = Boolean.valueOf(z11);
-        Boolean valueOf2 = Boolean.valueOf(z10);
-        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(8, false);
-        sVar.b = formatWholeNumber;
-        sVar.e = str;
-        sVar.c = valueOf;
-        sVar.d = valueOf2;
-        return sVar;
     }
 }

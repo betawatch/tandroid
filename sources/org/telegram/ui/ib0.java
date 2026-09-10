@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class ib0 implements OnBackAnimationCallback {
     public boolean b;
@@ -93,8 +93,8 @@ public final class ib0 implements OnBackAnimationCallback {
                     }
                 }
                 if (!actionBarLayout2.d1 && !actionBarLayout2.c1 && !actionBarLayout2.a0 && !actionBarLayout2.Q && !actionBarLayout2.j() && actionBarLayout2.O0.size() > 1 && !actionBarLayout2.y() && ((sVar = actionBarLayout2.G) == null || !sVar.hasShownSheet())) {
-                    org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) org.telegram.ui.Cells.p6.g(1, actionBarLayout2.O0);
-                    if (n2Var.onBackPressed(false) && !n2Var.hasShownSheet() && n2Var.canBeginSlide()) {
+                    org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) org.telegram.ui.Cells.r6.g(1, actionBarLayout2.O0);
+                    if (p2Var.onBackPressed(false) && !p2Var.hasShownSheet() && p2Var.canBeginSlide()) {
                         actionBarLayout2.e1 = false;
                         actionBarLayout2.d1 = true;
                         actionBarLayout2.c1 = true;
@@ -104,7 +104,7 @@ public final class ib0 implements OnBackAnimationCallback {
                         if (activity != null && activity.getCurrentFocus() != null) {
                             AndroidUtilities.hideKeyboard(activity.getCurrentFocus());
                         }
-                        n2Var.onBeginSlide();
+                        p2Var.onBeginSlide();
                         if (!this.b) {
                             this.a.lock();
                             this.b = true;
@@ -117,7 +117,7 @@ public final class ib0 implements OnBackAnimationCallback {
         if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
             return;
         }
-        float interpolation = org.telegram.ui.Components.pr.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
+        float interpolation = org.telegram.ui.Components.wr.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
         actionBarLayout.e1 = max > 0.0f;
         actionBarLayout.s.setTranslationX(interpolation);
         actionBarLayout.setInnerTranslationX(interpolation);

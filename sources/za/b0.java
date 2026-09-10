@@ -1,50 +1,32 @@
 package za;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.os.Build;
-import ji.u4;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b0 {
-    public static final b0 a = new b0();
-    public static final u4 b;
+    public final k0 a;
+    public final b b;
 
-    static {
-        ka.d dVar = new ka.d();
-        dVar.j(a0.class, g.a);
-        dVar.j(j0.class, h.a);
-        dVar.j(j.class, e.a);
-        dVar.j(b.class, d.a);
-        dVar.j(a.class, c.a);
-        dVar.j(p.class, f.a);
-        dVar.d = true;
-        b = new u4(dVar, 2);
+    public b0(k0 k0Var, b bVar) {
+        this.a = k0Var;
+        this.b = bVar;
     }
 
-    public static b a(k9.h hVar) {
-        hVar.a();
-        Context context = hVar.a;
-        kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
-        String packageName = context.getPackageName();
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
-        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
-        hVar.a();
-        String str = hVar.c.b;
-        kotlin.jvm.internal.i.d(str, "firebaseApp.options.applicationId");
-        String MODEL = Build.MODEL;
-        kotlin.jvm.internal.i.d(MODEL, "MODEL");
-        String RELEASE = Build.VERSION.RELEASE;
-        kotlin.jvm.internal.i.d(RELEASE, "RELEASE");
-        kotlin.jvm.internal.i.d(packageName, "packageName");
-        String str2 = packageInfo.versionName;
-        String str3 = str2 == null ? valueOf : str2;
-        String MANUFACTURER = Build.MANUFACTURER;
-        kotlin.jvm.internal.i.d(MANUFACTURER, "MANUFACTURER");
-        hVar.a();
-        p b10 = q.b(context);
-        hVar.a();
-        return new b(str, new a(packageName, str3, valueOf, b10, q.a(context)));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b0)) {
+            return false;
+        }
+        b0 b0Var = (b0) obj;
+        return this.a.equals(b0Var.a) && this.b.equals(b0Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((this.a.hashCode() + (k.b.hashCode() * 31)) * 31);
+    }
+
+    public final String toString() {
+        return "SessionEvent(eventType=" + k.b + ", sessionData=" + this.a + ", applicationInfo=" + this.b + ')';
     }
 }

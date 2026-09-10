@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     }
 
     @Override // s4.e0
-    public void D(int i10, int i11) {
+    public void C(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).p(i10, i11);
     }
 
     @Override // s4.e0
-    public void P0(int i10, int i11) {
+    public void O0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).t(i10, i11);
     }
@@ -108,16 +108,6 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         return this.b;
     }
 
-    @Override // androidx.lifecycle.a0
-    public void f0(Object obj) {
-        this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
-    }
-
     public boolean h(int i10, CharSequence charSequence) {
         if (charSequence == null || i10 < 0 || charSequence.length() - i10 < 0) {
             throw new IllegalArgumentException();
@@ -164,21 +154,31 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(17));
+            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.h(10));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
     }
 
     @Override // s4.e0
-    public void k0(int i10, int i11) {
+    public void j0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).s(i10, i11);
     }
 
     @Override // s4.e0
-    public void m1(int i10, int i11) {
+    public void k1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void r0(Object obj) {
+        this.b = true;
+        pb.c cVar = (pb.c) this.c;
+        cVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     public String toString() {
@@ -203,7 +203,7 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
                 sb2.append(" }");
                 return sb2.toString();
             case 8:
-                return ((a6.m) this.c).toString();
+                return ((pb.c) this.c).toString();
             default:
                 return super.toString();
         }
@@ -236,10 +236,10 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         this.b = z10;
     }
 
-    public p(a6.d dVar, a6.m mVar) {
+    public p(a6.d dVar, pb.c cVar) {
         this.a = 8;
         this.b = false;
-        this.c = mVar;
+        this.c = cVar;
     }
 
     public p(StringBuilder sb2) {

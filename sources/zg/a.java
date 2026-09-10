@@ -1,80 +1,72 @@
 package zg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.os.Build;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.Iterator;
+import sg.f0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class a extends Drawable {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final RectF c;
-    public final Drawable d;
-    public float e;
-    public String f;
+public final class a {
+    public final eh.a a;
+    public pe.b b;
+    public pe.b c;
+    public gh.k d;
+    public ViewGroup e;
+    public boolean f;
 
-    public a(Context context) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.c = new RectF();
-        textPaint.setColor(-1);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        textPaint2.setColor(-6915073);
-        this.d = context.getDrawable(R.drawable.mini_boost_badge);
+    public a(eh.a aVar) {
+        this.a = aVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        float f7 = bounds.left;
-        float f10 = bounds.top;
-        float f11 = bounds.right;
-        float f12 = bounds.bottom;
-        RectF rectF = this.c;
-        rectF.set(f7, f10, f11, f12);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b);
-        int dp = AndroidUtilities.dp(2.0f) + bounds.left;
-        int dp2 = AndroidUtilities.dp(1.0f) + bounds.top;
-        int dp3 = AndroidUtilities.dp(2.0f) + bounds.left;
-        Drawable drawable = this.d;
-        drawable.setBounds(dp, dp2, drawable.getIntrinsicWidth() + dp3, drawable.getIntrinsicHeight() + AndroidUtilities.dp(1.0f) + getBounds().top);
-        drawable.draw(canvas);
-        String str = this.f;
-        if (str != null) {
-            canvas.drawText(str, AndroidUtilities.dp(16.5f) + bounds.left, AndroidUtilities.dp(13.0f) + bounds.top, this.a);
+    public final bh.d a(View view) {
+        return c(view, null, false);
+    }
+
+    public final bh.d b(View view, ch.a aVar) {
+        return c(view, aVar, false);
+    }
+
+    public final bh.d c(View view, ch.a aVar, boolean z10) {
+        ViewGroup viewGroup;
+        bh.d k10 = this.a.k();
+        if (this.f && Build.VERSION.SDK_INT >= 33 && (k10 instanceof bh.e)) {
+            bh.e eVar = (bh.e) k10;
+            eVar.N = new f(eVar.I);
+        }
+        k10.n(aVar);
+        pe.b bVar = this.c;
+        if (bVar != null && view != null) {
+            bVar.add(view);
+        }
+        gh.k kVar = this.d;
+        if (kVar != null && (viewGroup = this.e) != null && view != null) {
+            kVar.d(view, viewGroup, new f0(14, k10, view), z10);
+        }
+        pe.b bVar2 = this.b;
+        if (bVar2 != null) {
+            bVar2.add(k10);
+        }
+        return k10;
+    }
+
+    public final void d() {
+        pe.b bVar = this.c;
+        if (bVar != null) {
+            Iterator it = bVar.iterator();
+            while (it.hasNext()) {
+                ((View) it.next()).invalidate();
+            }
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
+    public final void e(pe.b bVar) {
+        this.c = bVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (AndroidUtilities.dp(23.0f) + this.e);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -1;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void f(gh.k kVar, ViewGroup viewGroup) {
+        this.d = kVar;
+        this.e = viewGroup;
     }
 }

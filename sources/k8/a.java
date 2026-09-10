@@ -43,7 +43,7 @@ public final class a extends o6.a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = e2.e(iArr[i10], i10, 1, arrayList);
+            i10 = e2.d(iArr[i10], i10, 1, arrayList);
         }
         Collections.sort(arrayList);
         return arrayList;

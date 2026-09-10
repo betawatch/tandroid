@@ -15,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -152,8 +152,8 @@ public class r1 extends ListView {
                     if (field != null) {
                         try {
                             z11 = field.getBoolean(this);
-                        } catch (IllegalAccessException e7) {
-                            e7.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
                         }
                     }
                     z11 = false;
@@ -167,8 +167,8 @@ public class r1 extends ListView {
                         if (field2 != null) {
                             try {
                                 field2.set(this, Boolean.valueOf(z14));
-                            } catch (IllegalAccessException e10) {
-                                e10.printStackTrace();
+                            } catch (IllegalAccessException e7) {
+                                e7.printStackTrace();
                             }
                         }
                     }
@@ -301,7 +301,7 @@ public class r1 extends ListView {
         }
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 10 && this.w == null) {
-            androidx.activity.i iVar = new androidx.activity.i(this, 24);
+            androidx.activity.i iVar = new androidx.activity.i(this, 21);
             this.w = iVar;
             post(iVar);
         }
@@ -322,10 +322,10 @@ public class r1 extends ListView {
                         n1.a.invoke(this, Integer.valueOf(pointToPosition), childAt, Boolean.FALSE, -1, -1);
                         n1.b.invoke(this, Integer.valueOf(pointToPosition));
                         n1.c.invoke(this, Integer.valueOf(pointToPosition));
-                    } catch (IllegalAccessException e7) {
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e7) {
                         e7.printStackTrace();
-                    } catch (InvocationTargetException e10) {
-                        e10.printStackTrace();
                     }
                 }
             }

@@ -1,41 +1,32 @@
 package zh;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.x9;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class h3 extends e3 {
-    public final boolean c;
-    public final ImageReceiver d;
+public final class h3 extends vl0 implements q5 {
+    public final /* synthetic */ z3 X2;
+    public final /* synthetic */ z3 Y2;
 
-    public h3(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = true;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.d = imageReceiver;
-        v7.Z0(imageReceiver, stargiftattributemodel.document, 160);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h3(z3 z3Var, Context context, b bVar) {
+        super(context, bVar);
+        this.Y2 = z3Var;
+        this.X2 = z3Var;
     }
 
-    @Override // zh.e3
-    public final void a() {
-        if (this.c) {
-            this.d.onDetachedFromWindow();
-        }
+    @Override // zh.q5
+    public final void a(int[] iArr) {
+        iArr[0] = AndroidUtilities.dp(this.X2.e);
+        iArr[1] = getMeasuredHeight();
     }
 
-    @Override // zh.e3
-    public final boolean b() {
-        return this.d.getLottieAnimation() != null;
-    }
-
-    public h3(x9 x9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = false;
-        this.d = x9Var.getImageReceiver();
+    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.Y2.n = View.MeasureSpec.getSize(i11);
+        super.onMeasure(i10, i11);
     }
 }

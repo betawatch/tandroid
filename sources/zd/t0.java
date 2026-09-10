@@ -1,6 +1,6 @@
 package zd;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public abstract class t0 implements Runnable, Comparable, o0 {
     private volatile Object _heap;
@@ -11,10 +11,10 @@ public abstract class t0 implements Runnable, Comparable, o0 {
         this.a = j3;
     }
 
-    public final ee.x a() {
+    public final ee.y a() {
         Object obj = this._heap;
-        if (obj instanceof ee.x) {
-            return (ee.x) obj;
+        if (obj instanceof ee.y) {
+            return (ee.y) obj;
         }
         return null;
     }
@@ -70,15 +70,15 @@ public abstract class t0 implements Runnable, Comparable, o0 {
         synchronized (this) {
             try {
                 Object obj = this._heap;
-                d9.f fVar = e0.b;
-                if (obj == fVar) {
+                ee.v vVar = e0.b;
+                if (obj == vVar) {
                     return;
                 }
                 u0 u0Var = obj instanceof u0 ? (u0) obj : null;
                 if (u0Var != null) {
                     u0Var.c(this);
                 }
-                this._heap = fVar;
+                this._heap = vVar;
             } catch (Throwable th2) {
                 throw th2;
             }

@@ -1,6 +1,7 @@
 package ie;
 
 import ee.t;
+import ee.v;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
@@ -8,7 +9,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.l;
 import zd.m;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class i {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(i.class, Object.class, "head$volatile");
@@ -88,10 +89,10 @@ public class i {
                 int i10 = (int) (andIncrement % j.f);
                 while (!atomicReferenceArray.compareAndSet(i10, null, cVar)) {
                     if (atomicReferenceArray.get(i10) != null) {
-                        d9.f fVar2 = j.b;
-                        d9.f fVar3 = j.c;
-                        while (!atomicReferenceArray.compareAndSet(i10, fVar2, fVar3)) {
-                            if (atomicReferenceArray.get(i10) != fVar2) {
+                        v vVar = j.b;
+                        v vVar2 = j.c;
+                        while (!atomicReferenceArray.compareAndSet(i10, vVar, vVar2)) {
+                            if (atomicReferenceArray.get(i10) != vVar) {
                                 break;
                             }
                         }
@@ -171,13 +172,13 @@ public class i {
                     int i13 = 0;
                     while (true) {
                         if (i13 >= i12) {
-                            d9.f fVar = j.b;
-                            d9.f fVar2 = j.d;
+                            v vVar = j.b;
+                            v vVar2 = j.d;
                             while (true) {
-                                if (atomicReferenceArray.compareAndSet(i11, fVar, fVar2)) {
+                                if (atomicReferenceArray.compareAndSet(i11, vVar, vVar2)) {
                                     z11 = true;
                                     break;
-                                } else if (atomicReferenceArray.get(i11) != fVar) {
+                                } else if (atomicReferenceArray.get(i11) != vVar) {
                                     break;
                                 }
                             }
@@ -193,7 +194,7 @@ public class i {
                         throw new IllegalStateException(("unexpected: " + andSet).toString());
                     }
                     l lVar = (l) andSet;
-                    d9.f b11 = lVar.b(this.a, gd.i.a);
+                    v b11 = lVar.b(this.a, gd.i.a);
                     if (b11 != null) {
                         lVar.e(b11);
                     }

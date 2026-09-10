@@ -1,16 +1,13 @@
 package lb;
 
-import com.google.android.gms.internal.vision.e2;
-import i2.g;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
 import org.telegram.messenger.BuildConfig;
-import t7.u;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -29,7 +26,7 @@ public class a implements Closeable {
     public int w = 1;
 
     static {
-        u.c = new u(12);
+        rb.a.b = new rb.a(12);
     }
 
     public a(Reader reader) {
@@ -219,7 +216,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder v = a4.a.v("Expected ", str, " but was ");
-        v.append(g.E(x()));
+        v.append(hc.b.E(x()));
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -682,7 +679,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(g.i(i12, "Unknown scope value: "));
+                    throw new AssertionError(hc.b.j(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -730,9 +727,9 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder k10 = e2.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
-        k10.append(h());
-        return k10.toString();
+        StringBuilder n10 = hc.b.n(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        n10.append(h());
+        return n10.toString();
     }
 
     public boolean n() {

@@ -14,16 +14,16 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 import kotlin.jvm.internal.i;
 import org.telegram.messenger.MessageObject;
-import v7.s7;
+import v7.t7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
         int i10 = zzby.zza;
-        this.zza = s7.a(zzhb.zza);
+        this.zza = t7.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
@@ -222,8 +222,8 @@ public final class zzhc implements zzha {
             httpURLConnection.connect();
             httpURLConnection.getOutputStream().write(bArr);
             return httpURLConnection.getResponseCode() == 200;
-        } catch (Exception e7) {
-            e7.getMessage();
+        } catch (Exception e) {
+            e.getMessage();
             return false;
         }
     }

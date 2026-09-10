@@ -14,10 +14,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.z0;
-import org.telegram.ui.Cells.p6;
+import n7.a1;
+import org.telegram.ui.Cells.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class h implements cf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -35,14 +35,14 @@ public final class h implements cf.a {
     public final BitSet a;
     public final BitSet b;
     public final HashMap c;
-    public final z0 d;
+    public final a1 d;
     public String e;
     public int f;
     public b g;
     public f6.f h;
 
-    public h(z0 z0Var) {
-        List list = (List) z0Var.b;
+    public h(a1 a1Var) {
+        List list = (List) a1Var.b;
         HashMap hashMap = new HashMap();
         c(Arrays.asList(new ze.a(0), new ze.a(1)), hashMap);
         c(list, hashMap);
@@ -65,7 +65,7 @@ public final class h implements cf.a {
         bitSet2.set(60);
         bitSet2.set(38);
         this.a = bitSet2;
-        this.d = z0Var;
+        this.d = a1Var;
     }
 
     public static void b(char c10, ef.a aVar, HashMap hashMap) {
@@ -80,25 +80,25 @@ public final class h implements cf.a {
         Iterator it = iterable.iterator();
         while (it.hasNext()) {
             ef.a aVar = (ef.a) it.next();
-            char e7 = aVar.e();
+            char e = aVar.e();
             char a2 = aVar.a();
-            if (e7 == a2) {
-                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e7));
+            if (e == a2) {
+                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e));
                 if (aVar2 == null || aVar2.e() != aVar2.a()) {
-                    b(e7, aVar, hashMap);
+                    b(e, aVar, hashMap);
                 } else {
                     if (aVar2 instanceof n) {
                         nVar = (n) aVar2;
                     } else {
-                        n nVar2 = new n(e7);
+                        n nVar2 = new n(e);
                         nVar2.f(aVar2);
                         nVar = nVar2;
                     }
                     nVar.f(aVar);
-                    hashMap.put(Character.valueOf(e7), nVar);
+                    hashMap.put(Character.valueOf(e), nVar);
                 }
             } else {
-                b(e7, aVar, hashMap);
+                b(e, aVar, hashMap);
                 b(a2, aVar, hashMap);
             }
         }
@@ -197,7 +197,7 @@ public final class h implements cf.a {
                             Matcher matcher = t.matcher(str4);
                             int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                             if (end > 0) {
-                                sVar2.g = e2.i(end, 0, str4);
+                                sVar2.g = e2.h(end, 0, str4);
                             }
                             gVar = end >= 2 ? new bf.g(1) : new bf.g(2);
                             pVar2 = gVar;
@@ -233,16 +233,16 @@ public final class h implements cf.a {
                     String d11 = d(o);
                     if (d11 != null) {
                         i10 = 1;
-                        String i12 = e2.i(1, 1, d11);
-                        kVar = new bf.k(1, p6.i("mailto:", i12), null);
-                        kVar.b(new s(i12));
+                        String h = e2.h(1, 1, d11);
+                        kVar = new bf.k(1, r6.i("mailto:", h), null);
+                        kVar.b(new s(h));
                     } else {
                         i10 = 1;
                         String d12 = d(p);
                         if (d12 != null) {
-                            String i13 = e2.i(1, 1, d12);
-                            kVar = new bf.k(1, i13, null);
-                            kVar.b(new s(i13));
+                            String h10 = e2.h(1, 1, d12);
+                            kVar = new bf.k(1, h10, null);
+                            kVar.b(new s(h10));
                         } else {
                             pVar2 = null;
                             if (pVar2 == null) {
@@ -262,11 +262,11 @@ public final class h implements cf.a {
                 } else if (g10 != '`') {
                     switch (g10) {
                         case '[':
-                            int i14 = this.f;
-                            this.f = i14 + 1;
+                            int i12 = this.f;
+                            this.f = i12 + 1;
                             s sVar4 = new s("[");
                             f6.f fVar3 = this.h;
-                            f6.f fVar4 = new f6.f(sVar4, i14, fVar3, this.g, false);
+                            f6.f fVar4 = new f6.f(sVar4, i12, fVar3, this.g, false);
                             if (fVar3 != null) {
                                 fVar3.d = true;
                             }
@@ -281,11 +281,11 @@ public final class h implements cf.a {
                             } else {
                                 if (this.f < this.e.length()) {
                                     String str5 = this.e;
-                                    int i15 = this.f;
-                                    if (k.matcher(str5.substring(i15, i15 + 1)).matches()) {
+                                    int i13 = this.f;
+                                    if (k.matcher(str5.substring(i13, i13 + 1)).matches()) {
                                         String str6 = this.e;
-                                        int i16 = this.f;
-                                        s sVar5 = new s(str6.substring(i16, i16 + 1));
+                                        int i14 = this.f;
+                                        s sVar5 = new s(str6.substring(i14, i14 + 1));
                                         this.f++;
                                         pVar2 = sVar5;
                                         break;
@@ -296,8 +296,8 @@ public final class h implements cf.a {
                             pVar2 = sVar;
                             break;
                         case ']':
-                            int i17 = this.f + 1;
-                            this.f = i17;
+                            int i15 = this.f + 1;
+                            this.f = i15;
                             f6.f fVar5 = this.h;
                             if (fVar5 != null) {
                                 s sVar6 = (s) fVar5.e;
@@ -318,8 +318,8 @@ public final class h implements cf.a {
                                         if (str3 != null) {
                                             d(pattern);
                                             String str7 = this.e;
-                                            int i18 = this.f;
-                                            if (s.matcher(str7.substring(i18 - 1, i18)).matches()) {
+                                            int i16 = this.f;
+                                            if (s.matcher(str7.substring(i16 - 1, i16)).matches()) {
                                                 int d14 = se.b.d(this.f, this.e);
                                                 if (d14 == -1) {
                                                     str2 = null;
@@ -336,7 +336,7 @@ public final class h implements cf.a {
                                                 this.f++;
                                                 z10 = true;
                                             } else {
-                                                this.f = i17;
+                                                this.f = i15;
                                             }
                                         } else {
                                             str2 = null;
@@ -348,17 +348,17 @@ public final class h implements cf.a {
                                         str3 = null;
                                     }
                                     if (!z10) {
-                                        int i19 = this.f;
-                                        if (i19 < this.e.length() && this.e.charAt(this.f) == '[') {
-                                            int i20 = this.f + 1;
-                                            int c10 = se.b.c(i20, this.e);
-                                            int i21 = c10 - i20;
-                                            if (c10 != -1 && i21 <= 999 && c10 < this.e.length() && this.e.charAt(c10) == ']') {
+                                        int i17 = this.f;
+                                        if (i17 < this.e.length() && this.e.charAt(this.f) == '[') {
+                                            int i18 = this.f + 1;
+                                            int c10 = se.b.c(i18, this.e);
+                                            int i19 = c10 - i18;
+                                            if (c10 != -1 && i19 <= 999 && c10 < this.e.length() && this.e.charAt(c10) == ']') {
                                                 this.f = c10 + 1;
                                             }
                                         }
-                                        int i22 = this.f - i19;
-                                        String substring3 = i22 > 2 ? this.e.substring(i19, i22 + i19) : !fVar5.d ? this.e.substring(fVar5.a, i17) : null;
+                                        int i20 = this.f - i17;
+                                        String substring3 = i20 > 2 ? this.e.substring(i17, i20 + i17) : !fVar5.d ? this.e.substring(fVar5.a, i15) : null;
                                         if (substring3 != null) {
                                             Pattern pattern2 = af.a.a;
                                             bf.m mVar = (bf.m) ((Map) this.d.c).get(af.a.c.matcher(substring3.substring(1, substring3.length() - 1).trim().toLowerCase(Locale.ROOT)).replaceAll(" "));
@@ -370,7 +370,7 @@ public final class h implements cf.a {
                                         }
                                     }
                                     if (!z10) {
-                                        this.f = i17;
+                                        this.f = i15;
                                         this.h = (f6.f) this.h.f;
                                         sVar = new s("]");
                                         pVar2 = sVar;
@@ -415,17 +415,17 @@ public final class h implements cf.a {
                         default:
                             if (this.b.get(g10)) {
                                 ef.a aVar = (ef.a) this.c.get(Character.valueOf(g10));
-                                int i23 = this.f;
-                                int i24 = 0;
+                                int i21 = this.f;
+                                int i22 = 0;
                                 while (g() == g10) {
-                                    i24++;
+                                    i22++;
                                     this.f++;
                                 }
-                                if (i24 < aVar.c()) {
-                                    this.f = i23;
+                                if (i22 < aVar.c()) {
+                                    this.f = i21;
                                     n1Var = r32;
                                 } else {
-                                    String substring4 = i23 == 0 ? "\n" : this.e.substring(i23 - 1, i23);
+                                    String substring4 = i21 == 0 ? "\n" : this.e.substring(i21 - 1, i21);
                                     char g11 = g();
                                     String valueOf = g11 != 0 ? String.valueOf(g11) : "\n";
                                     Pattern pattern3 = i;
@@ -444,22 +444,22 @@ public final class h implements cf.a {
                                         z11 = z15 && g10 == aVar.a();
                                         z12 = z16;
                                     }
-                                    this.f = i23;
-                                    n1Var = new n1(i24, z12, z11);
+                                    this.f = i21;
+                                    n1Var = new n1(i22, z12, z11);
                                 }
                                 if (n1Var != null) {
-                                    int i25 = n1Var.a;
-                                    int i26 = this.f;
-                                    int i27 = i26 + i25;
-                                    this.f = i27;
-                                    s sVar7 = new s(this.e.substring(i26, i27));
+                                    int i23 = n1Var.a;
+                                    int i24 = this.f;
+                                    int i25 = i24 + i23;
+                                    this.f = i25;
+                                    s sVar7 = new s(this.e.substring(i24, i25));
                                     boolean z17 = n1Var.c;
                                     boolean z18 = n1Var.b;
                                     b bVar = this.g;
                                     b bVar2 = new b(sVar7, g10, z17, z18, bVar);
                                     this.g = bVar2;
-                                    bVar2.g = i25;
-                                    bVar2.h = i25;
+                                    bVar2.g = i23;
+                                    bVar2.h = i23;
                                     if (bVar != null) {
                                         bVar.f = bVar2;
                                     }
@@ -469,19 +469,19 @@ public final class h implements cf.a {
                                 pVar2 = r32;
                                 break;
                             } else {
-                                int i28 = this.f;
+                                int i26 = this.f;
                                 int length = this.e.length();
                                 while (true) {
-                                    int i29 = this.f;
-                                    if (i29 != length) {
-                                        if (!this.a.get(this.e.charAt(i29))) {
+                                    int i27 = this.f;
+                                    if (i27 != length) {
+                                        if (!this.a.get(this.e.charAt(i27))) {
                                             this.f++;
                                         }
                                     }
                                 }
-                                int i30 = this.f;
-                                if (i28 != i30) {
-                                    pVar2 = new s(this.e.substring(i28, i30));
+                                int i28 = this.f;
+                                if (i26 != i28) {
+                                    pVar2 = new s(this.e.substring(i26, i28));
                                     break;
                                 }
                                 pVar2 = r32;
@@ -491,21 +491,21 @@ public final class h implements cf.a {
                 } else {
                     String d15 = d(n);
                     if (d15 != null) {
-                        int i31 = this.f;
+                        int i29 = this.f;
                         do {
                             d = d(m);
                             if (d == null) {
-                                this.f = i31;
+                                this.f = i29;
                                 r32 = new s(d15);
                                 pVar2 = r32;
                             }
                         } while (!d.equals(d15));
                         bf.d dVar = new bf.d(0);
-                        String replace = this.e.substring(i31, this.f - d15.length()).replace('\n', ' ');
+                        String replace = this.e.substring(i29, this.f - d15.length()).replace('\n', ' ');
                         if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
                             int length2 = replace.length();
                             if (t7.s.b(' ', replace, 0, length2) != length2) {
-                                replace = e2.i(1, 1, replace);
+                                replace = e2.h(1, 1, replace);
                             }
                         }
                         dVar.h = replace;
@@ -576,12 +576,12 @@ public final class h implements cf.a {
             if (!bVar2.d || aVar == null) {
                 bVar2 = bVar2.f;
             } else {
-                char e7 = aVar.e();
+                char e = aVar.e();
                 b bVar4 = bVar2.e;
                 int i10 = 0;
                 boolean z11 = false;
                 while (bVar4 != null && bVar4 != bVar && bVar4 != hashMap.get(Character.valueOf(c10))) {
-                    if (bVar4.c && bVar4.b == e7) {
+                    if (bVar4.c && bVar4.b == e) {
                         i10 = aVar.b(bVar4, bVar2);
                         z11 = true;
                         if (i10 > 0) {
@@ -597,8 +597,8 @@ public final class h implements cf.a {
                     s sVar2 = bVar4.a;
                     bVar4.g -= i10;
                     bVar2.g -= i10;
-                    sVar2.g = e2.i(i10, 0, sVar2.g);
-                    sVar.g = e2.i(i10, 0, sVar.g);
+                    sVar2.g = e2.h(i10, 0, sVar2.g);
+                    sVar.g = e2.h(i10, 0, sVar.g);
                     b bVar5 = bVar2.e;
                     while (bVar5 != null && bVar5 != bVar4) {
                         b bVar6 = bVar5.e;

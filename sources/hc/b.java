@@ -1,296 +1,509 @@
 package hc;
 
-import dc.h;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
+import android.media.MediaMetadataRetriever;
+import androidx.car.app.hardware.common.CarZone;
+import androidx.car.app.navigation.model.Maneuver;
+import b2.r;
+import b2.s;
+import c3.h0;
+import com.google.android.gms.internal.cast.k4;
+import com.google.android.gms.internal.vision.e2;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import m1.j;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.c2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
-
-    public static void a(b4.d dVar, StringBuilder sb2, int i10, boolean z10) {
-        while (i10 > 1) {
-            if (dVar.d() < 11) {
-                throw cc.c.a();
-            }
-            int e7 = dVar.e(11);
-            sb2.append(f(e7 / 45));
-            sb2.append(f(e7 % 45));
-            i10 -= 2;
-        }
-        if (i10 == 1) {
-            if (dVar.d() < 6) {
-                throw cc.c.a();
-            }
-            sb2.append(f(dVar.e(6)));
-        }
-        if (z10) {
-            for (int length = sb2.length(); length < sb2.length(); length++) {
-                if (sb2.charAt(length) == '%') {
-                    if (length < sb2.length() - 1) {
-                        int i11 = length + 1;
-                        if (sb2.charAt(i11) == '%') {
-                            sb2.deleteCharAt(i11);
-                        }
-                    }
-                    sb2.setCharAt(length, (char) 29);
-                }
-            }
-        }
+public abstract /* synthetic */ class b {
+    public static void A(int i10, AlertDialog$Builder alertDialog$Builder, c2 c2Var) {
+        alertDialog$Builder.k(LocaleController.getString(i10), c2Var);
+        alertDialog$Builder.o();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0128 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x00da  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void b(b4.d dVar, StringBuilder sb2, int i10, dc.c cVar, ArrayList arrayList) {
-        Charset forName;
-        boolean z10;
-        byte b10;
-        if (i10 * 8 > dVar.d()) {
-            throw cc.c.a();
-        }
-        byte[] bArr = new byte[i10];
-        int i11 = 0;
-        for (int i12 = 0; i12 < i10; i12++) {
-            bArr[i12] = (byte) dVar.e(8);
-        }
-        if (cVar == null) {
-            Charset charset = h.b;
-            boolean z11 = true;
-            if (i10 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
-                boolean z12 = charset != null;
-                boolean z13 = i10 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
-                boolean z14 = z12;
-                int i13 = 0;
-                boolean z15 = true;
-                int i14 = 0;
-                int i15 = 0;
-                int i16 = 0;
-                int i17 = 0;
-                int i18 = 0;
-                int i19 = 0;
-                int i20 = 0;
-                int i21 = 0;
-                int i22 = 0;
-                int i23 = 0;
-                while (i15 < i10 && (z11 || z14 || z15)) {
-                    Charset charset2 = charset;
-                    byte b11 = bArr[i15];
-                    boolean z16 = z11;
-                    int i24 = b11 & 255;
-                    if (z15) {
-                        if (i16 <= 0) {
-                            z10 = z15;
-                            if ((b11 & 128) != 0) {
-                                if ((b11 & 64) != 0) {
-                                    int i25 = i16 + 1;
-                                    if ((b11 & 32) == 0) {
-                                        i18++;
-                                    } else {
-                                        i25 = i16 + 2;
-                                        if ((b11 & 16) == 0) {
-                                            i19++;
-                                        } else {
-                                            i16 += 3;
-                                            if ((b11 & 8) == 0) {
-                                                i20++;
-                                            }
-                                        }
-                                    }
-                                    i16 = i25;
-                                }
-                            }
-                        } else if ((b11 & 128) != 0) {
-                            i16--;
-                            if (z16) {
-                                if (i24 > 127 && i24 < 160) {
-                                    z16 = false;
-                                } else if (i24 > 159 && (i24 < 192 || i24 == 215 || i24 == 247)) {
-                                    i21++;
-                                }
-                            }
-                            if (z14) {
-                                if (i17 > 0) {
-                                    if (i24 >= 64 && i24 != 127 && i24 <= 252) {
-                                        i17--;
-                                    }
-                                    z14 = false;
-                                } else {
-                                    if (i24 != 128 && i24 != 160 && i24 <= 239) {
-                                        if (i24 <= 160 || i24 >= 224) {
-                                            if (i24 > 127) {
-                                                i17++;
-                                                int i26 = i22 + 1;
-                                                if (i26 > i13) {
-                                                    i13 = i26;
-                                                    i22 = i13;
-                                                } else {
-                                                    i22 = i26;
-                                                }
-                                            } else {
-                                                i22 = 0;
-                                            }
-                                            i23 = 0;
-                                        } else {
-                                            i14++;
-                                            int i27 = i23 + 1;
-                                            if (i27 > i11) {
-                                                i11 = i27;
-                                                i23 = i11;
-                                            } else {
-                                                i23 = i27;
-                                            }
-                                            i22 = 0;
-                                        }
-                                    }
-                                    z14 = false;
-                                }
-                            }
-                            i15++;
-                            charset = charset2;
-                            z11 = z16;
-                        }
-                        z15 = false;
-                        if (z16) {
-                        }
-                        if (z14) {
-                        }
-                        i15++;
-                        charset = charset2;
-                        z11 = z16;
-                    } else {
-                        z10 = z15;
-                    }
-                    z15 = z10;
-                    if (z16) {
-                    }
-                    if (z14) {
-                    }
-                    i15++;
-                    charset = charset2;
-                    z11 = z16;
-                }
-                Charset charset3 = charset;
-                boolean z17 = z11;
-                boolean z18 = z15;
-                boolean z19 = (!z18 || i16 <= 0) ? z18 : false;
-                boolean z20 = (!z14 || i17 <= 0) ? z14 : false;
-                if (!z19 || (!z13 && i18 + i19 + i20 <= 0)) {
-                    if (!z20 || (!h.d && i11 < 3 && i13 < 3)) {
-                        if (z17 && z20) {
-                            if ((i11 != 2 || i14 != 2) && i21 * 10 < i10) {
-                                forName = StandardCharsets.ISO_8859_1;
-                            }
-                        } else if (z17) {
-                            forName = StandardCharsets.ISO_8859_1;
-                        } else if (!z20) {
-                            forName = z19 ? StandardCharsets.UTF_8 : h.a;
-                        }
-                    }
-                    forName = charset3;
-                } else {
-                    forName = StandardCharsets.UTF_8;
-                }
-            } else {
-                forName = StandardCharsets.UTF_16;
-            }
-        } else {
-            forName = Charset.forName(cVar.name());
-        }
-        sb2.append(new String(bArr, forName));
-        arrayList.add(bArr);
+    public static int B(int i10, int i11, int i12, int i13) {
+        return ((i10 - i11) * i12) + i13;
     }
 
-    public static void c(b4.d dVar, StringBuilder sb2, int i10) {
-        if (h.c == null) {
-            throw cc.c.a();
-        }
-        if (i10 * 13 > dVar.d()) {
-            throw cc.c.a();
-        }
-        byte[] bArr = new byte[i10 * 2];
-        int i11 = 0;
-        while (i10 > 0) {
-            int e7 = dVar.e(13);
-            int i12 = (e7 % 96) | ((e7 / 96) << 8);
-            int i13 = i12 + (i12 < 2560 ? 41377 : 42657);
-            bArr[i11] = (byte) ((i13 >> 8) & 255);
-            bArr[i11 + 1] = (byte) (i13 & 255);
-            i11 += 2;
-            i10--;
-        }
-        sb2.append(new String(bArr, h.c));
+    public static int C(int i10, int i11, int i12, int i13) {
+        return ((i10 - i11) / i12) + i13;
     }
 
-    public static void d(b4.d dVar, StringBuilder sb2, int i10) {
-        if (h.b == null) {
-            throw cc.c.a();
-        }
-        if (i10 * 13 > dVar.d()) {
-            throw cc.c.a();
-        }
-        byte[] bArr = new byte[i10 * 2];
-        int i11 = 0;
-        while (i10 > 0) {
-            int e7 = dVar.e(13);
-            int i12 = (e7 % 192) | ((e7 / 192) << 8);
-            int i13 = i12 + (i12 < 7936 ? 33088 : 49472);
-            bArr[i11] = (byte) (i13 >> 8);
-            bArr[i11 + 1] = (byte) i13;
-            i11 += 2;
-            i10--;
-        }
-        sb2.append(new String(bArr, h.b));
-    }
-
-    public static void e(b4.d dVar, StringBuilder sb2, int i10) {
-        while (i10 >= 3) {
-            if (dVar.d() < 10) {
-                throw cc.c.a();
-            }
-            int e7 = dVar.e(10);
-            if (e7 >= 1000) {
-                throw cc.c.a();
-            }
-            sb2.append(f(e7 / 100));
-            sb2.append(f((e7 / 10) % 10));
-            sb2.append(f(e7 % 10));
-            i10 -= 3;
-        }
-        if (i10 == 2) {
-            if (dVar.d() < 7) {
-                throw cc.c.a();
-            }
-            int e10 = dVar.e(7);
-            if (e10 >= 100) {
-                throw cc.c.a();
-            }
-            sb2.append(f(e10 / 10));
-            sb2.append(f(e10 % 10));
+    public static void D(n2.g gVar, n2.g gVar2) {
+        if (gVar == gVar2) {
             return;
         }
-        if (i10 == 1) {
-            if (dVar.d() < 4) {
-                throw cc.c.a();
-            }
-            int e11 = dVar.e(4);
-            if (e11 >= 10) {
-                throw cc.c.a();
-            }
-            sb2.append(f(e11));
+        if (gVar2 != null) {
+            gVar2.b(null);
+        }
+        if (gVar != null) {
+            gVar.a(null);
         }
     }
 
-    public static char f(int i10) {
-        char[] cArr = a;
-        if (i10 < cArr.length) {
-            return cArr[i10];
+    public static /* synthetic */ String E(int i10) {
+        switch (i10) {
+            case 1:
+                return "BEGIN_ARRAY";
+            case 2:
+                return "END_ARRAY";
+            case 3:
+                return "BEGIN_OBJECT";
+            case 4:
+                return "END_OBJECT";
+            case 5:
+                return "NAME";
+            case 6:
+                return "STRING";
+            case 7:
+                return "NUMBER";
+            case 8:
+                return "BOOLEAN";
+            case 9:
+                return "NULL";
+            case 10:
+                return "END_DOCUMENT";
+            default:
+                return BuildConfig.BETA_URL;
         }
-        throw cc.c.a();
+    }
+
+    public static boolean a(int i10, int i11, int i12) {
+        switch (i10) {
+            case 1:
+                if (((i11 + i12) & 1) == 0) {
+                }
+                break;
+            case 2:
+                if ((i11 & 1) == 0) {
+                }
+                break;
+            case 3:
+                if (i12 % 3 == 0) {
+                }
+                break;
+            case 4:
+                if ((i11 + i12) % 3 == 0) {
+                }
+                break;
+            case 5:
+                if ((((i12 / 3) + (i11 / 2)) & 1) == 0) {
+                }
+                break;
+            case 6:
+                if ((i11 * i12) % 6 == 0) {
+                }
+                break;
+            case 7:
+                if ((i11 * i12) % 6 < 3) {
+                }
+                break;
+            default:
+                if (((((i11 * i12) % 3) + i11 + i12) & 1) == 0) {
+                }
+                break;
+        }
+        return true;
+    }
+
+    public static int b(int i10) {
+        int[] d = j.d(126);
+        if (i10 < 0 || i10 >= d.length) {
+            return 0;
+        }
+        return d[i10];
+    }
+
+    public static int c(int i10, int i11, int i12, int i13) {
+        return i10 | i11 | i12 | 128 | i13;
+    }
+
+    public static /* synthetic */ String d(int i10) {
+        switch (i10) {
+            case 1:
+                return "Blues";
+            case 2:
+                return "Classic Rock";
+            case 3:
+                return "Country";
+            case 4:
+                return "Dance";
+            case 5:
+                return "Disco";
+            case 6:
+                return "Funk";
+            case 7:
+                return "Grunge";
+            case 8:
+                return "Hip-Hop";
+            case 9:
+                return "Jazz";
+            case 10:
+                return "Metal";
+            case 11:
+                return "New Age";
+            case 12:
+                return "Oldies";
+            case 13:
+                return "Other";
+            case 14:
+                return "Pop";
+            case 15:
+                return "R&B";
+            case 16:
+                return "Rap";
+            case 17:
+                return "Reggae";
+            case 18:
+                return "Rock";
+            case 19:
+                return "Techno";
+            case 20:
+                return "Industrial";
+            case 21:
+                return "Alternative";
+            case 22:
+                return "Ska";
+            case 23:
+                return "Death Metal";
+            case 24:
+                return "Pranks";
+            case 25:
+                return "Soundtrack";
+            case 26:
+                return "Euro-Techno";
+            case 27:
+                return "Ambient";
+            case 28:
+                return "Trip-Hop";
+            case 29:
+                return "Vocal";
+            case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                return "Jazz+Funk";
+            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                return "Fusion";
+            case 32:
+                return "Trance";
+            case 33:
+                return "Classical";
+            case 34:
+                return "Instrumental";
+            case 35:
+                return "Acid";
+            case 36:
+                return "House";
+            case 37:
+                return "Game";
+            case 38:
+                return "Sound Clip";
+            case Maneuver.TYPE_DESTINATION /* 39 */:
+                return "Gospel";
+            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                return "Noise";
+            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                return "AlternRock";
+            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                return "Bass";
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                return "Soul";
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                return "Punk";
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                return "Space";
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                return "Meditative";
+            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                return "Instrumental Pop";
+            case 48:
+                return "Instrumental Rock";
+            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                return "Ethnic";
+            case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                return "Gothic";
+            case 51:
+                return "Darkwave";
+            case 52:
+                return "Techno-Industrial";
+            case 53:
+                return "Electronic";
+            case 54:
+                return "Pop-Folk";
+            case 55:
+                return "Eurodance";
+            case 56:
+                return "Dream";
+            case 57:
+                return "Southern Rock";
+            case 58:
+                return "Comedy";
+            case 59:
+                return "Cult";
+            case 60:
+                return "Gangsta";
+            case 61:
+                return "Top 40";
+            case 62:
+                return "Christian Rap";
+            case 63:
+                return "Pop/Funk";
+            case 64:
+                return "Jungle";
+            case VoIPService.CALL_MIN_LAYER /* 65 */:
+                return "Native American";
+            case 66:
+                return "Cabaret";
+            case 67:
+                return "New Wave";
+            case 68:
+                return "Psychadelic";
+            case 69:
+                return "Rave";
+            case 70:
+                return "Showtunes";
+            case 71:
+                return "Trailer";
+            case 72:
+                return "Lo-Fi";
+            case 73:
+                return "Tribal";
+            case 74:
+                return "Acid Punk";
+            case 75:
+                return "Acid Jazz";
+            case 76:
+                return "Polka";
+            case 77:
+                return "Retro";
+            case 78:
+                return "Musical";
+            case 79:
+                return "Rock & Roll";
+            case 80:
+                return "Hard Rock";
+            case 81:
+                return "Folk";
+            case 82:
+                return "Folk-Rock";
+            case 83:
+                return "National Folk";
+            case 84:
+                return "Swing";
+            case 85:
+                return "Fast Fusion";
+            case 86:
+                return "Bebop";
+            case 87:
+                return "Latin";
+            case 88:
+                return "Revival";
+            case 89:
+                return "Celtic";
+            case 90:
+                return "Bluegrass";
+            case 91:
+                return "Avantgarde";
+            case 92:
+                return "Gothic Rock";
+            case 93:
+                return "Progressive Rock";
+            case 94:
+                return "Psychedelic Rock";
+            case 95:
+                return "Symphonic Rock";
+            case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
+                return "Slow Rock";
+            case 97:
+                return "Big Band";
+            case 98:
+                return "Chorus";
+            case 99:
+                return "Easy Listening";
+            case 100:
+                return "Acoustic";
+            case 101:
+                return "Humour";
+            case 102:
+                return "Speech";
+            case 103:
+                return "Chanson";
+            case 104:
+                return "Opera";
+            case 105:
+                return "Chamber Music";
+            case 106:
+                return "Sonata";
+            case 107:
+                return "Symphony";
+            case 108:
+                return "Booty Bass";
+            case 109:
+                return "Primus";
+            case 110:
+                return "Porn Groove";
+            case 111:
+                return "Satire";
+            case 112:
+                return "Slow Jam";
+            case 113:
+                return "Club";
+            case 114:
+                return "Tango";
+            case 115:
+                return "Samba";
+            case 116:
+                return "Folklore";
+            case 117:
+                return "Ballad";
+            case 118:
+                return "Power Ballad";
+            case 119:
+                return "Rhythmic Soul";
+            case 120:
+                return "Freestyle";
+            case 121:
+                return "Duet";
+            case 122:
+                return "Punk Rock";
+            case 123:
+                return "Drum Solo";
+            case 124:
+                return "A capella";
+            case 125:
+                return "Euro-House";
+            case 126:
+                return "Dance Hall";
+            default:
+                throw null;
+        }
+    }
+
+    public static boolean e(int i10, boolean z10) {
+        int i11 = i10 & 7;
+        if (i11 != 4) {
+            return z10 && i11 == 3;
+        }
+        return true;
+    }
+
+    public static double f(double d, double d10, double d11) {
+        return (Math.cos(d) * d10) + d11;
+    }
+
+    public static int g(float f7, int i10, int i11) {
+        return Math.max(i11, i10 - AndroidUtilities.dp(f7));
+    }
+
+    public static int h(int i10, int i11, int i12, int i13) {
+        return Math.max(i13, Math.min(Math.max(i10, i11), i12));
+    }
+
+    public static Object i(int i10, ArrayList arrayList) {
+        return arrayList.get(arrayList.size() - i10);
+    }
+
+    public static String j(int i10, String str) {
+        return str + i10;
+    }
+
+    public static String k(int i10, String str, String str2) {
+        return str + i10 + str2;
+    }
+
+    public static String l(long j3, char c10, StringBuilder sb2) {
+        sb2.append(LocaleController.formatNumber(j3, c10));
+        return sb2.toString();
+    }
+
+    public static StringBuilder m(int i10, String str, String str2) {
+        StringBuilder sb2 = new StringBuilder(str);
+        sb2.append(i10);
+        sb2.append(str2);
+        return sb2;
+    }
+
+    public static StringBuilder n(String str, int i10, String str2, int i11, String str3) {
+        StringBuilder sb2 = new StringBuilder(str);
+        sb2.append(i10);
+        sb2.append(str2);
+        sb2.append(i11);
+        sb2.append(str3);
+        return sb2;
+    }
+
+    public static HashMap o(Class cls, la.a aVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, aVar);
+        return hashMap;
+    }
+
+    public static Map p(HashMap hashMap) {
+        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+    }
+
+    public static void q(int i10, StringBuilder sb2) {
+        sb2.append(i10);
+        FileLog.d(sb2.toString());
+    }
+
+    public static void r(int i10, HashMap hashMap, String str, int i11, String str2) {
+        hashMap.put(Integer.valueOf(i10), str);
+        hashMap.put(Integer.valueOf(i11), str2);
+    }
+
+    public static void s(int i10, AlertDialog$Builder alertDialog$Builder, c2 c2Var) {
+        alertDialog$Builder.h(LocaleController.getString(i10), c2Var);
+        alertDialog$Builder.o();
+    }
+
+    public static /* synthetic */ void t(MediaMetadataRetriever mediaMetadataRetriever) {
+        if (mediaMetadataRetriever instanceof AutoCloseable) {
+            mediaMetadataRetriever.close();
+        } else if (mediaMetadataRetriever instanceof ExecutorService) {
+            k4.b();
+        } else {
+            if (!e2.u(mediaMetadataRetriever)) {
+                throw new IllegalArgumentException();
+            }
+            mediaMetadataRetriever.release();
+        }
+    }
+
+    public static void u(r rVar, h0 h0Var) {
+        h0Var.b(new s(rVar));
+    }
+
+    public static void v(String str, StringBuilder sb2) {
+        sb2.append(str);
+        FileLog.d(sb2.toString());
+    }
+
+    public static void w(StringBuilder sb2, int i10, String str, int i11, String str2) {
+        sb2.append(i10);
+        sb2.append(str);
+        sb2.append(i11);
+        sb2.append(str2);
+    }
+
+    public static void x(StringBuilder sb2, long j3) {
+        sb2.append(j3);
+        FileLog.d(sb2.toString());
+    }
+
+    public static int y(int i10, int i11, int i12, int i13) {
+        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
+    }
+
+    public static Object z(int i10, ArrayList arrayList) {
+        return arrayList.remove(arrayList.size() - i10);
     }
 }

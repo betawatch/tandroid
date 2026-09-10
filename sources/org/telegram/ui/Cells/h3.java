@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.xe0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class h3 implements TextWatcher {
     public final /* synthetic */ int a = 1;
@@ -56,7 +56,7 @@ public final class h3 implements TextWatcher {
                 break;
             default:
                 xe0 xe0Var = (xe0) this.d;
-                di.h2 h2Var = xe0Var.c;
+                bi.t2 t2Var = xe0Var.c;
                 if (!this.b) {
                     xe0Var.q(true);
                     AndroidUtilities.cancelRunOnUIThread(xe0Var.V);
@@ -67,12 +67,12 @@ public final class h3 implements TextWatcher {
                     if (!xe0Var.p(editable.toString())) {
                         xe0Var.s(true);
                         this.b = true;
-                        boolean z10 = h2Var.getSelectionEnd() >= h2Var.getText().length();
+                        boolean z10 = t2Var.getSelectionEnd() >= t2Var.getText().length();
                         if (!xe0Var.y) {
                             String str = xe0Var.K;
-                            h2Var.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
+                            t2Var.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
                             if (z10) {
-                                h2Var.setSelection(h2Var.getText().length());
+                                t2Var.setSelection(t2Var.getText().length());
                             }
                         }
                         this.b = false;

@@ -7,7 +7,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class bu0 extends Fade {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final class bu0 extends Fade {
             case 0:
                 Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
                 if (this.b && !this.c && view == this.d.Q1) {
-                    onAppear.addListener(new gk0(this, 8));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new c3(this, 20));
+                    onAppear.addListener(new org.telegram.ui.Components.voip.v2(this, 25));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new d3(this, 20));
                 }
                 return onAppear;
             default:
@@ -55,8 +55,8 @@ public final class bu0 extends Fade {
             case 1:
                 Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
                 if (!this.b && this.c && view == this.d.Q1) {
-                    onDisappear.addListener(new gk0(this, 9));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new c3(this, 21));
+                    onDisappear.addListener(new org.telegram.ui.Components.voip.v2(this, 26));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new d3(this, 21));
                 }
                 return onDisappear;
             default:

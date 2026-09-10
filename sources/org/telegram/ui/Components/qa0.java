@@ -1,161 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class qa0 extends Drawable {
-    public Paint a;
-    public Paint b;
-    public long c;
-    public float d;
-    public boolean e;
-    public boolean f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public long l;
-    public org.telegram.ui.Cells.t1 m;
+public final class qa0 extends uz {
+    public final tv0 X;
+    public final /* synthetic */ xa0 Y;
 
-    public final void a() {
-        Rect bounds = getBounds();
-        float centerX = bounds.centerX();
-        float centerY = bounds.centerY();
-        int i10 = bounds.left;
-        float f7 = (i10 - centerX) * (i10 - centerX);
-        int i11 = bounds.top;
-        this.g = (float) Math.ceil(Math.sqrt(com.google.android.gms.internal.vision.e2.z(i11, centerY, i11 - centerY, f7)));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qa0(xa0 xa0Var) {
+        super(100, false);
+        this.Y = xa0Var;
+        this.X = new tv0();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
-    
-        if (r7 >= 0.0f) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
-    
-        if (r7 >= 0.0f) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00b9  */
-    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        float f7;
-        org.telegram.ui.Cells.t1 t1Var;
-        Paint paint = this.a;
-        float f10 = this.d;
-        if (f10 == 1.0f) {
-            Rect bounds = getBounds();
-            Paint paint2 = this.b;
-            if (paint2 != null) {
-                paint = paint2;
-            }
-            canvas.drawRect(bounds, paint);
-        } else if (f10 != 0.0f) {
-            float interpolation = this.e ? pr.h.getInterpolation(f10) : 1.0f - pr.h.getInterpolation(1.0f - f10);
-            Rect bounds2 = getBounds();
-            float centerX = bounds2.centerX();
-            float centerY = bounds2.centerY();
-            float f11 = this.j;
-            if (f11 >= 0.0f) {
-                f7 = this.k;
-            }
-            f11 = this.h;
-            if (f11 >= 0.0f) {
-                f7 = this.i;
-            }
-            f7 = centerY;
-            f11 = centerX;
-            float f12 = 1.0f - interpolation;
-            float z10 = com.google.android.gms.internal.vision.e2.z(f11, centerX, f12, centerX);
-            float z11 = com.google.android.gms.internal.vision.e2.z(f7, centerY, f12, centerY);
-            float f13 = this.g * interpolation;
-            Paint paint3 = this.b;
-            if (paint3 != null) {
-                paint = paint3;
-            }
-            canvas.drawCircle(z10, z11, f13, paint);
+    @Override // s4.o0
+    public final int A() {
+        xa0 xa0Var = this.Y;
+        return (xa0Var.f.I() == null && xa0Var.f.U == null) ? B() : B() - 1;
+    }
+
+    @Override // org.telegram.ui.Components.uz
+    public final tv0 D1(int i10) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        tv0 tv0Var = this.X;
+        int i11 = 0;
+        tv0Var.c = false;
+        xa0 xa0Var = this.Y;
+        if (i10 == 0) {
+            tv0Var.a = this.m;
+            tv0Var.b = xa0Var.e.h;
+            tv0Var.c = true;
+            return tv0Var;
         }
-        if (!this.f) {
-            return;
+        int i12 = i10 - 1;
+        if (xa0Var.f.I() == null && xa0Var.f.U == null) {
+            i10 = i12;
         }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = elapsedRealtime - this.c;
-        if (j3 > 20) {
-            j3 = 17;
-        }
-        this.c = elapsedRealtime;
-        if (this.e) {
-            float f14 = (j3 / 240.0f) + this.d;
-            this.d = f14;
-            if (f14 >= 1.0f) {
-                this.d = 1.0f;
-                this.h = -1.0f;
-                this.i = -1.0f;
-                this.j = -1.0f;
-                this.k = -1.0f;
-                this.f = false;
-            }
-            t1Var = this.m;
-            if (t1Var == null) {
-                t1Var.invalidate();
-                if (t1Var.getParent() != null) {
-                    ((ViewGroup) t1Var.getParent()).invalidate();
-                    return;
+        tv0Var.a = 0.0f;
+        tv0Var.b = 0.0f;
+        Object J = xa0Var.f.J(i10);
+        if (J instanceof TLRPC.BotInlineResult) {
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
+            TLRPC.Document document = botInlineResult.document;
+            if (document != null) {
+                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+                tv0Var.a = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.w : 100.0f;
+                tv0Var.b = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.h : 100.0f;
+                while (i11 < botInlineResult.document.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i11);
+                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                        tv0Var.a = documentAttribute.w;
+                        tv0Var.b = documentAttribute.h;
+                        break;
+                    }
+                    i11++;
                 }
-                return;
+            } else if (botInlineResult.content != null) {
+                while (i11 < botInlineResult.content.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i11);
+                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        tv0Var.a = documentAttribute2.w;
+                        tv0Var.b = documentAttribute2.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else if (botInlineResult.thumb != null) {
+                while (i11 < botInlineResult.thumb.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i11);
+                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
+                        tv0Var.a = documentAttribute3.w;
+                        tv0Var.b = documentAttribute3.h;
+                        break;
+                    }
+                    i11++;
+                }
+            } else {
+                TLRPC.Photo photo = botInlineResult.photo;
+                if (photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize())) != null) {
+                    tv0Var.a = closestPhotoSizeWithSize.w;
+                    tv0Var.b = closestPhotoSizeWithSize.h;
+                }
             }
-            return;
         }
-        float f15 = this.d - (j3 / 240.0f);
-        this.d = f15;
-        if (f15 <= 0.0f) {
-            this.d = 0.0f;
-            this.h = -1.0f;
-            this.i = -1.0f;
-            this.j = -1.0f;
-            this.k = -1.0f;
-            this.f = false;
-        }
-        t1Var = this.m;
-        if (t1Var == null) {
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        super.setBounds(i10, i11, i12, i13);
-        a();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(Rect rect) {
-        super.setBounds(rect);
-        a();
+        return tv0Var;
     }
 }

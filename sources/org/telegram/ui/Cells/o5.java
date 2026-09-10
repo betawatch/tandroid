@@ -1,121 +1,83 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.hm;
-import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class o5 extends org.telegram.ui.Components.x9 {
-    public final Paint G;
-    public long H;
-    public Drawable I;
-    public Drawable J;
-    public final /* synthetic */ s5 K;
+public final class o5 extends FrameLayout {
+    public final /* synthetic */ t5 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5(s5 s5Var, Context context) {
+    public o5(t5 t5Var, Context context) {
         super(context);
-        this.K = s5Var;
-        this.G = new Paint(1);
+        this.a = t5Var;
     }
 
-    @Override // org.telegram.ui.Components.x9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Bitmap bitmap;
-        MediaController.PhotoEntry photoEntry;
-        Drawable drawable;
-        org.telegram.ui.Components.q5 q5Var = this.e;
-        ImageReceiver imageReceiver = q5Var != null ? q5Var.k : this.a;
-        if (imageReceiver == null) {
-            return;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        float measuredWidth;
+        float measuredHeight;
+        int i10;
+        t5 t5Var = this.a;
+        p5 p5Var = t5Var.a;
+        if (t5Var.M == null || view != p5Var) {
+            return super.drawChild(canvas, view, j3);
         }
-        if (this.c == -1 || this.d == -1) {
-            imageReceiver.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
-            this.b.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
-        } else {
-            float width = (getWidth() - this.c) / 2;
-            int height = getHeight();
-            imageReceiver.setImageCoords(width, (height - r5) / 2, this.c, this.d);
-            ImageReceiver imageReceiver2 = this.b;
-            float width2 = (getWidth() - this.c) / 2;
-            int height2 = getHeight();
-            imageReceiver2.setImageCoords(width2, (height2 - r6) / 2, this.c, this.d);
-        }
-        imageReceiver.draw(canvas);
-        s5 s5Var = this.K;
-        if (s5Var.N) {
-            Rect rect = s5.a0;
-            MediaController.PhotoEntry photoEntry2 = s5Var.G;
-            if (photoEntry2 == null || !photoEntry2.isAttachSpoilerRevealed) {
-                this.b.draw(canvas);
-                if (s5Var.M == null) {
-                    if (s5Var.L == null) {
-                        wh.h hVar = new wh.h();
-                        s5Var.L = hVar;
-                        hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (t5Var.N) {
+            Rect rect = t5.a0;
+            MediaController.PhotoEntry photoEntry = t5Var.G;
+            if (photoEntry == null || !photoEntry.isAttachSpoilerRevealed) {
+                t5Var.M.c(canvas, t5Var.b, p5Var.getMeasuredWidth(), p5Var.getMeasuredHeight(), 1.0f, false);
+                MediaController.PhotoEntry photoEntry2 = t5Var.G;
+                if (photoEntry2 != null && photoEntry2.starsAmount > 0 && p5Var.y != null) {
+                    Path path = p5Var.E;
+                    if (path == null) {
+                        p5Var.E = new Path();
+                    } else {
+                        path.rewind();
                     }
-                    s5Var.L.setBounds(0, 0, getWidth(), getHeight());
-                    s5Var.L.draw(canvas);
+                    int i11 = p5Var.c;
+                    if (i11 == -1 || (i10 = p5Var.d) == -1) {
+                        measuredWidth = p5Var.getMeasuredWidth();
+                        measuredHeight = p5Var.getMeasuredHeight();
+                    } else {
+                        measuredWidth = i11;
+                        measuredHeight = i10;
+                    }
+                    float dp = p5Var.y.c + AndroidUtilities.dp(18.0f);
+                    float dp2 = AndroidUtilities.dp(28.0f);
+                    float f7 = (measuredWidth - dp) / 2.0f;
+                    float f10 = measuredHeight / 2.0f;
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    float f11 = dp2 / 2.0f;
+                    rectF.set(f7, f10 - f11, dp + f7, f10 + f11);
+                    p5Var.E.addRoundRect(rectF, f11, f11, Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(p5Var.E);
+                    ImageReceiver imageReceiver = p5Var.b;
+                    if (imageReceiver != null && p5Var.s) {
+                        imageReceiver.setColorFilter(p5Var.F);
+                        float alpha = p5Var.b.getAlpha();
+                        p5Var.b.setAlpha(1.0f);
+                        p5Var.b.draw(canvas);
+                        p5Var.b.setAlpha(alpha);
+                        p5Var.b.setColorFilter(null);
+                    }
+                    p5Var.y.c(f7 + AndroidUtilities.dp(9.0f), f10, 1.0f, -1, canvas);
+                    canvas.restore();
                 }
-                invalidate();
             }
         }
-        float f7 = s5Var.T;
-        if (f7 != 1.0f && s5Var.R != null) {
-            int interpolation = (int) (pr.f.getInterpolation(1.0f - f7) * 255.0f);
-            Paint paint = this.G;
-            paint.setAlpha(interpolation);
-            canvas.drawBitmap(s5Var.R, 0.0f, 0.0f, paint);
-            long min = Math.min(16L, System.currentTimeMillis() - this.H);
-            Float f10 = s5Var.S;
-            s5Var.T = Math.min(1.0f, (min / (f10 == null ? 250.0f : f10.floatValue())) + s5Var.T);
-            this.H = System.currentTimeMillis();
-            invalidate();
-            if (s5Var.M != null) {
-                s5Var.b.invalidate();
-            }
-        } else if (f7 == 1.0f && (bitmap = s5Var.R) != null) {
-            bitmap.recycle();
-            s5Var.R = null;
-            s5Var.S = null;
-            invalidate();
-        }
-        if (s5Var.s) {
-            q5 q5Var2 = s5Var.U;
-            if ((q5Var2 == null || !((hm) ((org.telegram.ui.Components.t) q5Var2).b).s) && (photoEntry = s5Var.G) != null && photoEntry.isLivePhoto()) {
-                if (s5Var.G.isUnalivePhoto()) {
-                    if (this.J == null) {
-                        this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();
-                    }
-                    drawable = this.J;
-                } else {
-                    if (this.I == null) {
-                        this.I = getContext().getResources().getDrawable(R.drawable.media_live_on).mutate();
-                    }
-                    drawable = this.I;
-                }
-                drawable.setBounds((int) (imageReceiver.getImageX() + AndroidUtilities.dp(8.0f)), (int) (imageReceiver.getImageY() + AndroidUtilities.dp(8.0f)), (int) (imageReceiver.getImageX() + AndroidUtilities.dp(30.0f)), (int) (imageReceiver.getImageY() + AndroidUtilities.dp(26.0f)));
-                drawable.draw(canvas);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        s5 s5Var = this.K;
-        MediaController.PhotoEntry photoEntry = s5Var.G;
-        s5Var.h(photoEntry != null && photoEntry.hasSpoiler);
+        return drawChild;
     }
 }

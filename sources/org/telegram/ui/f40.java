@@ -1,23 +1,31 @@
 package org.telegram.ui;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class f40 extends View {
+public final class f40 implements z4.e {
     public final /* synthetic */ j60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f40(j60 j60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
+    public f40(j60 j60Var) {
         this.a = j60Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            this.a.S0();
-        }
+    @Override // z4.e
+    public final void a(int i10) {
+        j60 j60Var = this.a;
+        j60Var.b.D0.k(i10);
+        c40 c40Var = j60Var.D2;
+        c40Var.J = c40Var.L;
+        c40Var.K = c40Var.M;
+        c40Var.N = 0.0f;
+        c40Var.O = 1;
+        c40Var.invalidate();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
     }
 }

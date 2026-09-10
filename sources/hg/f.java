@@ -1,29 +1,48 @@
 package hg;
 
-import org.telegram.ui.ty;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+public final class f {
+    public Bitmap a;
+    public Canvas b;
+    public final RectF c = new RectF();
+    public final Paint d;
+    public final f6 e;
+    public int f;
+    public boolean g;
 
-    public /* synthetic */ f(m mVar, int i10) {
-        this.a = i10;
-        this.b = mVar;
+    public f(f6 f6Var) {
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.f = 0;
+        this.g = true;
+        paint.setColor(0);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.e = f6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                for (ty tyVar : this.b.R.e0) {
-                    ((s4.c0) tyVar.a.getLayoutManager()).u = false;
-                }
-                break;
-            default:
-                this.b.J();
-                break;
+    public final Bitmap a(int i10, int i11) {
+        int i12 = (i10 + i11) << 10;
+        if (i12 != this.f || this.g) {
+            this.g = false;
+            this.f = i12;
+            this.a = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
+            this.b = new Canvas(this.a);
+            RectF rectF = this.c;
+            rectF.set(0.0f, 0.0f, i11, i10);
+            this.b.drawColor(j6.v0(j6.d6, this.e));
+            this.b.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.d);
         }
+        return this.a;
     }
 }

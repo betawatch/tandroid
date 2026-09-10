@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class k implements c3.o, b0 {
     public j[] A;
@@ -72,11 +72,11 @@ public final class k implements c3.o, b0 {
         this.i = new ArrayList();
         this.f = new v(16);
         this.g = new ArrayDeque();
-        this.c = new v(f2.p.a);
+        this.c = new v(f2.o.a);
         this.d = new v(6);
         this.e = new v();
         this.p = -1;
-        this.z = c3.q.m;
+        this.z = c3.q.p;
         this.A = new j[0];
     }
 
@@ -131,21 +131,21 @@ public final class k implements c3.o, b0 {
         }
         for (j jVar : this.A) {
             r rVar = jVar.b;
-            int e7 = d0.e(rVar.f, j10, false);
+            int e = d0.e(rVar.f, j10, false);
             while (true) {
-                if (e7 < 0) {
-                    e7 = -1;
+                if (e < 0) {
+                    e = -1;
                     break;
-                } else if ((rVar.g[e7] & 1) != 0) {
+                } else if ((rVar.g[e] & 1) != 0) {
                     break;
                 } else {
-                    e7--;
+                    e--;
                 }
             }
-            if (e7 == -1) {
-                e7 = rVar.a(j10);
+            if (e == -1) {
+                e = rVar.a(j10);
             }
-            jVar.e = e7;
+            jVar.e = e;
             c3.i0 i0Var = jVar.d;
             if (i0Var != null) {
                 i0Var.b = false;
@@ -189,27 +189,27 @@ public final class k implements c3.o, b0 {
         if (i12 != -1) {
             r rVar = jVarArr2[i12].b;
             long[] jArr = rVar.f;
-            int e7 = d0.e(jArr, j3, false);
+            int e = d0.e(jArr, j3, false);
             while (true) {
-                if (e7 < 0) {
-                    e7 = -1;
+                if (e < 0) {
+                    e = -1;
                     break;
                 }
-                if ((rVar.g[e7] & 1) != 0) {
+                if ((rVar.g[e] & 1) != 0) {
                     break;
                 }
-                e7--;
+                e--;
             }
-            if (e7 == -1) {
-                e7 = rVar.a(j3);
+            if (e == -1) {
+                e = rVar.a(j3);
             }
             long[] jArr2 = rVar.c;
-            if (e7 == -1) {
+            if (e == -1) {
                 return new a0(c0Var, c0Var);
             }
-            j11 = jArr[e7];
-            j10 = jArr2[e7];
-            if (j11 < j3 && e7 < rVar.b - 1 && (a2 = rVar.a(j3)) != -1 && a2 != e7) {
+            j11 = jArr[e];
+            j10 = jArr2[e];
+            if (j11 < j3 && e < rVar.b - 1 && (a2 = rVar.a(j3)) != -1 && a2 != e) {
                 j12 = jArr[a2];
                 j14 = jArr2[a2];
                 long j15 = j10;
@@ -224,17 +224,17 @@ public final class k implements c3.o, b0 {
                         long[] jArr3 = rVar2.c;
                         int[] iArr = rVar2.g;
                         long[] jArr4 = rVar2.f;
-                        int e10 = d0.e(jArr4, j11, z10);
+                        int e7 = d0.e(jArr4, j11, z10);
                         while (true) {
-                            if (e10 < 0) {
+                            if (e7 < 0) {
                                 i11 = -1;
                                 break;
                             }
-                            if ((iArr[e10] & 1) != 0) {
-                                i11 = e10;
+                            if ((iArr[e7] & 1) != 0) {
+                                i11 = e7;
                                 break;
                             }
-                            e10--;
+                            e7--;
                         }
                         if (i11 == i13) {
                             i11 = rVar2.a(j11);
@@ -247,21 +247,21 @@ public final class k implements c3.o, b0 {
                         }
                         if (j12 != -9223372036854775807L) {
                             z10 = false;
-                            int e11 = d0.e(jArr4, j12, false);
+                            int e10 = d0.e(jArr4, j12, false);
                             while (true) {
-                                if (e11 < 0) {
-                                    e11 = -1;
+                                if (e10 < 0) {
+                                    e10 = -1;
                                     break;
                                 }
-                                if ((iArr[e11] & 1) != 0) {
+                                if ((iArr[e10] & 1) != 0) {
                                     break;
                                 }
-                                e11--;
+                                e10--;
                             }
-                            if (e11 == -1) {
-                                e11 = rVar2.a(j12);
+                            if (e10 == -1) {
+                                e10 = rVar2.a(j12);
                             }
-                            j14 = e11 == -1 ? j13 : Math.min(jArr3[e11], j13);
+                            j14 = e10 == -1 ? j13 : Math.min(jArr3[e10], j13);
                         } else {
                             j14 = j13;
                             z10 = false;
@@ -320,7 +320,7 @@ public final class k implements c3.o, b0 {
         char c12;
         char c13;
         boolean z10;
-        f2.d dVar;
+        f2.c cVar;
         boolean z11;
         while (true) {
             int i15 = this.k;
@@ -339,14 +339,14 @@ public final class k implements c3.o, b0 {
                         this.l = vVar3.j();
                     } else {
                         if (this.E == 2 && (i16 & 2) != 0) {
-                            h0 R1 = this.z.R1(0, 4);
+                            h0 I = this.z.I(0, 4);
                             r3.a aVar = this.F;
                             p0 p0Var = aVar == null ? null : new p0(aVar);
                             b2.r rVar = new b2.r();
                             rVar.k = p0Var;
-                            i2.g.u(rVar, R1);
-                            this.z.Z0();
-                            this.z.P1(new t(-9223372036854775807L));
+                            hc.b.u(rVar, I);
+                            this.z.B();
+                            this.z.G(new t(-9223372036854775807L));
                         }
                         z11 = false;
                         if (z11) {
@@ -361,8 +361,8 @@ public final class k implements c3.o, b0 {
                     this.m = vVar3.C();
                 } else if (j10 == 0) {
                     long length = pVar.getLength();
-                    if (length == -1 && (dVar = (f2.d) arrayDeque.peek()) != null) {
-                        length = dVar.c;
+                    if (length == -1 && (cVar = (f2.c) arrayDeque.peek()) != null) {
+                        length = cVar.c;
                     }
                     if (length != -1) {
                         this.m = (length - pVar.getPosition()) + this.n;
@@ -383,10 +383,10 @@ public final class k implements c3.o, b0 {
                         vVar2.G(8);
                         pVar.b(0, 8, vVar2.a);
                         c.a(vVar2);
-                        pVar.r(vVar2.b);
-                        pVar.q();
+                        pVar.q(vVar2.b);
+                        pVar.p();
                     }
-                    arrayDeque.push(new f2.d(this.l, j14));
+                    arrayDeque.push(new f2.c(this.l, j14));
                     if (this.m == this.n) {
                         n(j14);
                     } else {
@@ -543,16 +543,16 @@ public final class k implements c3.o, b0 {
                                         int i25 = lVar.b - (l4 + 8);
                                         if (c13 == 2192) {
                                             ArrayList arrayList2 = new ArrayList();
-                                            List x10 = m.e.x(vVar6.v(i25, charset));
-                                            for (int i26 = 0; i26 < x10.size(); i26++) {
-                                                List x11 = m.d.x((CharSequence) x10.get(i26));
-                                                if (x11.size() != 3) {
+                                            List w10 = m.e.w(vVar6.v(i25, charset));
+                                            for (int i26 = 0; i26 < w10.size(); i26++) {
+                                                List w11 = m.d.w((CharSequence) w10.get(i26));
+                                                if (w11.size() != 3) {
                                                     throw s0.a(null, null);
                                                 }
                                                 try {
-                                                    arrayList2.add(new r3.b(Long.parseLong((String) x11.get(0)), Long.parseLong((String) x11.get(1)), 1 << (Integer.parseInt((String) x11.get(2)) - 1)));
-                                                } catch (NumberFormatException e7) {
-                                                    throw s0.a(e7, null);
+                                                    arrayList2.add(new r3.b(Long.parseLong((String) w11.get(0)), Long.parseLong((String) w11.get(1)), 1 << (Integer.parseInt((String) w11.get(2)) - 1)));
+                                                } catch (NumberFormatException e) {
+                                                    throw s0.a(e, null);
                                                 }
                                             }
                                             this.i.add(new r3.c(arrayList2));
@@ -662,7 +662,7 @@ public final class k implements c3.o, b0 {
                         i32 -= 8;
                     }
                     int i35 = i32;
-                    pVar.r((int) j24);
+                    pVar.q((int) j24);
                     String str2 = sVar2.r;
                     String str3 = sVar2.r;
                     if (!Objects.equals(str2, MediaController.VIDEO_MIME_TYPE) ? !Objects.equals(str3, "video/hevc") || (i16 & 128) == 0 : (i16 & 32) == 0) {
@@ -682,11 +682,11 @@ public final class k implements c3.o, b0 {
                         while (this.r < i37) {
                             int i38 = this.s;
                             if (i38 == 0) {
-                                if (this.t || f2.p.d(sVar2) + i34 > iArr[i31] - this.q) {
+                                if (this.t || f2.o.d(sVar2) + i34 > iArr[i31] - this.q) {
                                     i12 = i34;
                                     i13 = 0;
                                 } else {
-                                    i13 = f2.p.d(sVar2);
+                                    i13 = f2.o.d(sVar2);
                                     i12 = i34 + i13;
                                 }
                                 pVar.readFully(bArr, i36, i12);
@@ -706,7 +706,7 @@ public final class k implements c3.o, b0 {
                                 if (i39 > 0) {
                                     h0Var.d(i39, vVar8);
                                     this.r += i39;
-                                    if (f2.p.c(bArr, i39, sVar2)) {
+                                    if (f2.o.c(bArr, i39, sVar2)) {
                                         this.t = true;
                                     }
                                 }
@@ -791,14 +791,14 @@ public final class k implements c3.o, b0 {
                         }
                         this.E = i43;
                     } else if (!arrayDeque.isEmpty()) {
-                        ((f2.d) arrayDeque.peek()).d.add(new f2.e(this.l, vVar10));
+                        ((f2.c) arrayDeque.peek()).d.add(new f2.d(this.l, vVar10));
                     }
                 } else {
                     if (!this.u && this.l == 1835295092) {
                         this.E = 1;
                     }
                     if (j27 < 262144) {
-                        pVar.r((int) j27);
+                        pVar.q((int) j27);
                     } else {
                         sVar.a = pVar.getPosition() + j27;
                         z10 = true;
@@ -842,33 +842,33 @@ public final class k implements c3.o, b0 {
         p0 p0Var4;
         int i11;
         int i12;
-        f2.b b10;
+        f2.a b10;
         while (true) {
             ArrayDeque arrayDeque3 = this.g;
-            if (arrayDeque3.isEmpty() || ((f2.d) arrayDeque3.peek()).c != j3) {
+            if (arrayDeque3.isEmpty() || ((f2.c) arrayDeque3.peek()).c != j3) {
                 break;
             }
-            f2.d dVar = (f2.d) arrayDeque3.pop();
-            if (dVar.b == 1836019574) {
-                f2.d d = dVar.d(1835365473);
+            f2.c cVar = (f2.c) arrayDeque3.pop();
+            if (cVar.b == 1836019574) {
+                f2.c d = cVar.d(1835365473);
                 ArrayList arrayList2 = new ArrayList();
                 int i13 = this.b;
                 if (d != null) {
                     p0Var = c.f(d);
                     if (this.x) {
                         e2.d.h(p0Var);
-                        f2.b b11 = n.b(p0Var, "auxiliary.tracks.interleaved");
+                        f2.a b11 = n.b(p0Var, "auxiliary.tracks.interleaved");
                         if (b11 != null && b11.b[0] == 0) {
                             this.y = this.w + 16;
                         }
-                        f2.b b12 = n.b(p0Var, "auxiliary.tracks.map");
+                        f2.a b12 = n.b(p0Var, "auxiliary.tracks.map");
                         e2.d.h(b12);
                         ArrayList d10 = b12.d();
                         ArrayList arrayList3 = new ArrayList(d10.size());
                         int i14 = 0;
                         while (i14 < d10.size()) {
                             int intValue = ((Integer) d10.get(i14)).intValue();
-                            i14 = e2.e(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? 0 : 4 : 3 : 2 : 1, i14, 1, arrayList3);
+                            i14 = e2.d(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? 0 : 4 : 3 : 2 : 1, i14, 1, arrayList3);
                         }
                         arrayList2 = arrayList3;
                     } else if (p0Var != null && (i13 & 64) != 0 && (b10 = n.b(p0Var, "auxiliary.tracks.offset")) != null) {
@@ -890,17 +890,17 @@ public final class k implements c3.o, b0 {
                 boolean z11 = this.E == 1;
                 ArrayList arrayList5 = arrayList2;
                 w wVar = new w();
-                f2.e e7 = dVar.e(1969517665);
-                if (e7 != null) {
-                    p0 k10 = c.k(e7);
+                f2.d e = cVar.e(1969517665);
+                if (e != null) {
+                    p0 k10 = c.k(e);
                     wVar.b(k10);
                     p0Var2 = k10;
                 } else {
                     p0Var2 = null;
                 }
-                f2.e e10 = dVar.e(1836476516);
-                e10.getClass();
-                p0 p0Var5 = new p0(c.g(e10.c));
+                f2.d e7 = cVar.e(1836476516);
+                e7.getClass();
+                p0 p0Var5 = new p0(c.g(e7.c));
                 if ((i13 & 1) != 0) {
                     p0Var3 = p0Var5;
                     z10 = true;
@@ -909,7 +909,7 @@ public final class k implements c3.o, b0 {
                     z10 = false;
                 }
                 p0 p0Var6 = p0Var3;
-                ArrayList j10 = c.j(dVar, wVar, -9223372036854775807L, null, z10, z11, new t0.a(18));
+                ArrayList j10 = c.j(cVar, wVar, -9223372036854775807L, null, z10, z11, new u2.c(11));
                 if (this.x) {
                     boolean z12 = arrayList5.size() == j10.size();
                     Locale locale = Locale.US;
@@ -939,14 +939,14 @@ public final class k implements c3.o, b0 {
                         int i20 = oVar.b;
                         str = c10;
                         b2.s sVar = oVar.g;
-                        h0 R1 = qVar.R1(i17, i20);
-                        j jVar = new j(oVar, rVar, R1);
+                        h0 I = qVar.I(i17, i20);
+                        j jVar = new j(oVar, rVar, I);
                         p0Var4 = p0Var;
                         long j12 = oVar.e;
                         if (j12 == -9223372036854775807L) {
                             j12 = rVar.h;
                         }
-                        R1.getClass();
+                        I.getClass();
                         j11 = Math.max(j11, j12);
                         int i21 = "audio/true-hd".equals(sVar.r) ? i19 * 16 : i19 + 30;
                         b2.r a2 = sVar.a();
@@ -970,7 +970,7 @@ public final class k implements c3.o, b0 {
                         ArrayList arrayList6 = this.i;
                         n.m(i20, p0Var4, a2, p0Var7, arrayList6.isEmpty() ? null : new p0(arrayList6), p0Var2, p0Var6);
                         a2.p = r0.n(str);
-                        i2.g.u(a2, R1);
+                        hc.b.u(a2, I);
                         if (i20 == 2 && i15 == -1) {
                             i15 = arrayList4.size();
                         }
@@ -1025,13 +1025,13 @@ public final class k implements c3.o, b0 {
                     }
                 }
                 this.B = jArr;
-                this.z.Z0();
-                this.z.P1(this);
+                this.z.B();
+                this.z.G(this);
                 arrayDeque.clear();
                 if (this.v) {
                 }
             } else if (!arrayDeque3.isEmpty()) {
-                ((f2.d) arrayDeque3.peek()).e.add(dVar);
+                ((f2.c) arrayDeque3.peek()).e.add(cVar);
             }
         }
         if (this.k != 2) {

@@ -1,43 +1,48 @@
 package f2;
 
-import b2.m0;
-import b2.o0;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class c implements o0 {
-    public final int a;
+public final class c extends dd.k {
+    public final long c;
+    public final ArrayList d;
+    public final ArrayList e;
 
-    public c(int i10) {
-        this.a = i10;
+    public c(int i10, long j3) {
+        super(i10, 1);
+        this.c = j3;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ b2.s a() {
-        return null;
-    }
-
-    @Override // b2.o0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final c d(int i10) {
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        for (int i11 = 0; i11 < size; i11++) {
+            c cVar = (c) arrayList.get(i11);
+            if (cVar.b == i10) {
+                return cVar;
+            }
         }
-        return (obj instanceof c) && this.a == ((c) obj).a;
+        return null;
     }
 
-    public final int hashCode() {
-        return this.a;
+    public final d e(int i10) {
+        ArrayList arrayList = this.d;
+        int size = arrayList.size();
+        for (int i11 = 0; i11 < size; i11++) {
+            d dVar = (d) arrayList.get(i11);
+            if (dVar.b == i10) {
+                return dVar;
+            }
+        }
+        return null;
     }
 
+    @Override // dd.k
     public final String toString() {
-        return "Mp4AlternateGroup: " + this.a;
-    }
-
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+        return dd.k.a(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
     }
 }

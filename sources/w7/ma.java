@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final q9.n a;
@@ -24,7 +24,7 @@ public final class ma implements ja {
     }
 
     @Override // w7.ja
-    public final void a(o0.a aVar) {
+    public final void a(n7.a1 a1Var) {
         f fVar;
         ia.d dVar;
         ia iaVar = this.b;
@@ -32,11 +32,11 @@ public final class ma implements ja {
         l5.r rVar = (l5.r) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        v7.a6 a6Var = (v7.a6) aVar.b;
-        ((v7.c8) aVar.c).h = false;
-        v7.c8 c8Var = (v7.c8) aVar.c;
-        c8Var.f = Boolean.FALSE;
-        a6Var.b = new l9(c8Var);
+        v7.a6 a6Var = (v7.a6) a1Var.b;
+        ((v7.d8) a1Var.c).h = false;
+        v7.d8 d8Var = (v7.d8) a1Var.c;
+        d8Var.f = Boolean.FALSE;
+        a6Var.b = new l9(d8Var);
         try {
             pa.b();
             k7 k7Var = new k7(a6Var);
@@ -55,9 +55,9 @@ public final class ma implements ja {
                 throw new ia.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            rVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(17));
-        } catch (UnsupportedEncodingException e7) {
-            throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e7);
+            rVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.h(10));
+        } catch (UnsupportedEncodingException e) {
+            throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
         }
     }
 }

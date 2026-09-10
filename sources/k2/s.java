@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class s {
     public long A;
@@ -19,7 +19,7 @@ public final class s {
     public boolean G;
     public long H;
     public e2.x I;
-    public final xa.c a;
+    public final pb.c a;
     public final long[] b;
     public AudioTrack c;
     public int d;
@@ -46,7 +46,7 @@ public final class s {
     public int y;
     public long z;
 
-    public s(xa.c cVar) {
+    public s(pb.c cVar) {
         this.a = cVar;
         try {
             this.o = AudioTrack.class.getMethod("getLatency", null);
@@ -180,7 +180,7 @@ public final class s {
                         i11 = i18;
                     }
                     if (timestamp) {
-                        xa.c cVar = rVar.c;
+                        pb.c cVar = rVar.c;
                         long j15 = audioTimestamp2.nanoTime / j3;
                         i12 = i11;
                         long z11 = e2.d0.z(nanoTime - (qVar.b.nanoTime / j3), f10) + e2.d0.W(i12, qVar.e);
@@ -198,10 +198,10 @@ public final class s {
                             sb2.append(", ");
                             sb2.append(c11);
                             sb2.append(", ");
-                            d0 d0Var = (d0) cVar.b;
-                            sb2.append(d0Var.l());
+                            e0 e0Var = (e0) cVar.b;
+                            sb2.append(e0Var.l());
                             sb2.append(", ");
-                            sb2.append(d0Var.m());
+                            sb2.append(e0Var.m());
                             e2.a.n("DefaultAudioSink", sb2.toString());
                             i13 = 4;
                             rVar.a(4);
@@ -220,10 +220,10 @@ public final class s {
                                 sb3.append(", ");
                                 sb3.append(c11);
                                 sb3.append(", ");
-                                d0 d0Var2 = (d0) cVar.b;
-                                sb3.append(d0Var2.l());
+                                e0 e0Var2 = (e0) cVar.b;
+                                sb3.append(e0Var2.l());
                                 sb3.append(", ");
-                                sb3.append(d0Var2.m());
+                                sb3.append(e0Var2.m());
                                 e2.a.n("DefaultAudioSink", sb3.toString());
                                 i13 = 4;
                                 rVar.a(4);
@@ -319,9 +319,9 @@ public final class s {
                                 long D2 = e2.d0.D(e2.d0.e0(j21 - j26), this.i);
                                 this.I.getClass();
                                 long currentTimeMillis = System.currentTimeMillis() - e2.d0.e0(D2);
-                                n nVar = ((d0) this.a.b).t;
+                                n nVar = ((e0) this.a.b).t;
                                 if (nVar != null) {
-                                    nVar.b(currentTimeMillis);
+                                    nVar.e(currentTimeMillis);
                                 }
                             }
                         }
@@ -446,9 +446,9 @@ public final class s {
             this.I.getClass();
             long currentTimeMillis = System.currentTimeMillis() - e2.d0.e0(D);
             this.k = -9223372036854775807L;
-            n nVar = ((d0) this.a.b).t;
+            n nVar = ((e0) this.a.b).t;
             if (nVar != null) {
-                nVar.b(currentTimeMillis);
+                nVar.e(currentTimeMillis);
             }
         }
     }

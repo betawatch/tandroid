@@ -5,11 +5,11 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.t7;
+import v7.u7;
 import zd.e0;
 import zd.t;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 final class zzlh extends j implements p {
     Object zza;
@@ -46,11 +46,11 @@ final class zzlh extends j implements p {
         a aVar = a.a;
         int i10 = this.zzb;
         try {
-        } catch (zzcg e7) {
-            ((t) this.zzc.zzz()).L(e7);
+        } catch (zzcg e) {
+            ((t) this.zzc.zzz()).L(e);
         }
         if (i10 == 0) {
-            t7.b(obj);
+            u7.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzib zzp = zzly.zzp(this.zzc);
             zzxn zzxnVar = this.zzd;
@@ -65,7 +65,7 @@ final class zzlh extends j implements p {
         }
         if (i10 != 1) {
             zzhkVar3 = (zzhk) this.zze;
-            t7.b(obj);
+            u7.b(obj);
             zzly zzlyVar = this.zzc;
             zzD = zzlyVar.zzD();
             e0.q(zzD.zzb(), new zzlg(zzlyVar, zzhkVar3, (String) obj, null));
@@ -73,7 +73,7 @@ final class zzlh extends j implements p {
         }
         zzhk zzhkVar4 = (zzhk) this.zza;
         zzhk zzhkVar5 = (zzhk) this.zze;
-        t7.b(obj);
+        u7.b(obj);
         zzhkVar2 = zzhkVar4;
         zzhkVar = zzhkVar5;
         this.zze = zzhkVar;

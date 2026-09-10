@@ -1,38 +1,25 @@
 package bi;
 
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l8 b;
+public final class g8 {
+    public final String a;
+    public final PointF[] b;
+    public final float c;
+    public final float d;
 
-    public /* synthetic */ g8(l8 l8Var, int i10) {
-        this.a = i10;
-        this.b = l8Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        l8 l8Var = this.b;
-        switch (i10) {
-            case 0:
-                NotificationCenter.getInstance(l8Var.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, l8Var);
-                break;
-            case 1:
-                l8Var.u = false;
-                l8Var.w = true;
-                NotificationCenter.getInstance(l8Var.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, l8Var, Boolean.FALSE);
-                break;
-            case 2:
-                l8Var.z = false;
-                break;
-            default:
-                l8Var.k.clear();
-                l8Var.d(true);
-                break;
+    public g8(String str, PointF[] pointFArr) {
+        this.a = str;
+        this.b = pointFArr;
+        float f7 = 0.0f;
+        float f10 = 0.0f;
+        for (PointF pointF : pointFArr) {
+            f7 += pointF.x;
+            f10 += pointF.y;
         }
+        this.c = f7 / pointFArr.length;
+        this.d = f10 / pointFArr.length;
     }
 }

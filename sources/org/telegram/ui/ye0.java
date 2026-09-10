@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ye0 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class ye0 implements Runnable {
         switch (this.a) {
             case 0:
                 af0 af0Var = this.b;
-                org.telegram.ui.Components.aj0 aj0Var = af0Var.e;
-                aj0Var.getAnimatedDrawable().L(0, false, false);
-                aj0Var.d();
+                org.telegram.ui.Components.kj0 kj0Var = af0Var.e;
+                kj0Var.getAnimatedDrawable().N(0, false, false);
+                kj0Var.d();
                 de0 de0Var = af0Var.a;
                 if (de0Var != null) {
                     de0Var.f[0].requestFocus();
@@ -30,11 +30,11 @@ public final /* synthetic */ class ye0 implements Runnable {
                 int i10 = 0;
                 af0Var2.w = false;
                 while (true) {
-                    gs[] gsVarArr = af0Var2.a.f;
-                    if (i10 >= gsVarArr.length) {
+                    hs[] hsVarArr = af0Var2.a.f;
+                    if (i10 >= hsVarArr.length) {
                         break;
                     } else {
-                        gsVarArr[i10].i(0.0f);
+                        hsVarArr[i10].i(0.0f);
                         i10++;
                     }
                 }
@@ -52,11 +52,11 @@ public final /* synthetic */ class ye0 implements Runnable {
                 de0Var2.e = false;
                 de0Var2.f[0].requestFocus();
                 while (true) {
-                    gs[] gsVarArr2 = de0Var2.f;
-                    if (i11 >= gsVarArr2.length) {
+                    hs[] hsVarArr2 = de0Var2.f;
+                    if (i11 >= hsVarArr2.length) {
                         break;
                     } else {
-                        gsVarArr2[i11].i(0.0f);
+                        hsVarArr2[i11].i(0.0f);
                         i11++;
                     }
                 }

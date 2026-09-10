@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
@@ -17,16 +17,12 @@ public final class RLottieNative {
         this.a = iArr;
     }
 
-    public static RLottieNative a(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, HashMap hashMap) {
+    public static RLottieNative a(String str, String str2, int[] iArr, int[] iArr2, int i10, HashMap hashMap) {
         String[] strArr;
         int[] iArr3;
         String str3;
-        int i13;
-        int i14;
-        boolean z12;
         int[] iArr4;
-        boolean z13;
-        int i15;
+        int i11;
         String str4;
         int[] iArr5 = new int[3];
         Trace.beginSection("RLottieNative#create");
@@ -44,28 +40,20 @@ public final class RLottieNative {
             iArr3 = null;
             str4 = str;
             str3 = str2;
-            i13 = i10;
-            i14 = i11;
-            z12 = z10;
             iArr4 = iArr2;
-            z13 = z11;
-            i15 = i12;
+            i11 = i10;
         } else {
             int[] iArr6 = new int[strArr.length];
-            for (int i16 = 0; i16 < strArr.length; i16++) {
-                iArr6[i16] = ((Integer) hashMap.get(strArr[i16])).intValue();
+            for (int i12 = 0; i12 < strArr.length; i12++) {
+                iArr6[i12] = ((Integer) hashMap.get(strArr[i12])).intValue();
             }
             iArr3 = iArr6;
             str3 = str2;
-            i13 = i10;
-            i14 = i11;
-            z12 = z10;
             iArr4 = iArr2;
-            z13 = z11;
-            i15 = i12;
+            i11 = i10;
             str4 = str;
         }
-        long nCreate = nCreate(str4, str3, i13, i14, iArr5, z12, iArr4, z13, i15, strArr, iArr3);
+        long nCreate = nCreate(str4, str3, iArr5, iArr4, i11, strArr, iArr3);
         Trace.endSection();
         if (nCreate == 0) {
             return null;
@@ -107,7 +95,7 @@ public final class RLottieNative {
         return null;
     }
 
-    private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, String[] strArr, int[] iArr3);
+    private static native long nCreate(String str, String str2, int[] iArr, int[] iArr2, int i10, String[] strArr, int[] iArr3);
 
     private static native long nCreateWithJson(String str, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 

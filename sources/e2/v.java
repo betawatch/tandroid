@@ -5,11 +5,11 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import v7.a8;
 import v7.t6;
-import v7.x7;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -25,7 +25,7 @@ public final class v {
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return x7.c((byte) 0, z7.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), z7.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), z7.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return y7.c((byte) 0, a8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), a8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), a8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
@@ -55,7 +55,7 @@ public final class v {
         if (j3 >= 0) {
             return j3;
         }
-        throw new IllegalStateException(i2.g.i(j3, "Top bit not zero: "));
+        throw new IllegalStateException(hc.b.j(j3, "Top bit not zero: "));
     }
 
     public final long C() {
@@ -261,7 +261,7 @@ public final class v {
                 t6.b(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = x7.b(g10 & 255) + this.b;
+                        this.b = y7.b(g10 & 255) + this.b;
                         return c10;
                     }
                 }
@@ -397,7 +397,7 @@ public final class v {
         if (l4 >= 0) {
             return l4;
         }
-        throw new IllegalStateException(i2.g.i(l4, "Top bit not zero: "));
+        throw new IllegalStateException(hc.b.j(l4, "Top bit not zero: "));
     }
 
     public final int q() {

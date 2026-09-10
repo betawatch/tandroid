@@ -1,91 +1,38 @@
 package di;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.KeyEvent;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.oa0;
-import org.telegram.ui.Components.vi;
+import android.view.View;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.r61;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final class i extends oa0 {
-    public final /* synthetic */ int V;
-    public final /* synthetic */ KeyEvent.Callback W;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, j3, 0L, n2Var, f6Var);
-        this.V = i10;
-        this.W = callback;
+public final class i extends u51 {
+    static {
+        u51.setup(new i());
     }
 
-    @Override // org.telegram.ui.Components.oa0
-    public void f(Canvas canvas, Rect rect, float f7) {
-        switch (this.V) {
-            case 0:
-                m mVar = (m) this.W;
-                Paint paint = mVar.e;
-                RectF rectF = mVar.z0;
-                rectF.set(rect);
-                if (!mVar.g()) {
-                    Paint c10 = mVar.T.c(1.0f);
-                    if (c10 != null) {
-                        canvas.drawRoundRect(rectF, f7, f7, c10);
-                        paint.setAlpha(80);
-                        canvas.drawRoundRect(rectF, f7, f7, paint);
-                        break;
-                    } else {
-                        paint.setAlpha(128);
-                        canvas.drawRoundRect(rectF, f7, f7, paint);
-                        break;
-                    }
-                } else {
-                    mVar.h(mVar.T, canvas, mVar.z0, f7, false, -mVar.M.getX(), -mVar.M.getY(), false);
-                    break;
-                }
-            default:
-                super.f(canvas, rect, f7);
-                break;
-        }
+    public static v51 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
+        v51 J = v51.J(i.class);
+        J.d = i10;
+        J.z = i11;
+        J.k = i12;
+        J.l = charSequence;
+        J.m = str;
+        return J;
     }
 
-    @Override // org.telegram.ui.Components.oa0
-    public boolean h() {
-        switch (this.V) {
-            case 0:
-                return true;
-            default:
-                return super.h();
-        }
+    @Override // org.telegram.ui.Components.u51
+    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
+        ((j) view).a(v51Var.z, v51Var.k, v51Var.l, v51Var.m);
     }
 
-    @Override // org.telegram.ui.Components.oa0
-    public void i() {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((vi) this.W).j0;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.oa0
-    public void n(boolean z10) {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((vi) this.W).j0;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.u51
+    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
+        return new j(context, f6Var);
     }
 }

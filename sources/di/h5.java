@@ -1,48 +1,196 @@
 package di;
 
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.ui.Components.pv0;
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.text.SpannableStringBuilder;
+import bi.wa;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.m5;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h5 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pv0 b;
-
-    public /* synthetic */ h5(pv0 pv0Var, int i10) {
-        this.a = i10;
-        this.b = pv0Var;
+public abstract class h5 {
+    public static void a(int i10, long j3, org.telegram.ui.web.r rVar) {
+        TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
+        TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(j3);
+        if (userFull == null) {
+            MessagesController.getInstance(i10).loadFullUser(user, 0, true, new v4(rVar, i10, user, 0));
+        } else {
+            b(i10, user, userFull, rVar);
+        }
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.n1 n1Var;
-        org.telegram.ui.ActionBar.n1 n1Var2;
-        switch (this.a) {
-            case 0:
-                q6 q6Var = (q6) this.b;
-                q6Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (n1Var = q6Var.H1) != null && n1Var.isShowing()) {
-                    view.getHitRect(q6Var.J1);
-                    if (!q6Var.J1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        q6Var.H1.d(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                rg.o0 o0Var = (rg.o0) this.b;
-                o0Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = o0Var.R1) != null && n1Var2.isShowing()) {
-                    view.getHitRect(o0Var.T1);
-                    if (!o0Var.T1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        o0Var.R1.d(true);
-                        break;
-                    }
-                }
-                break;
+    public static void b(final int i10, final TLRPC.User user, final TLRPC.UserFull userFull, final org.telegram.ui.web.r rVar) {
+        if (userFull.bot_can_manage_emoji_status) {
+            rVar.run(Boolean.FALSE, "allowed");
+            return;
         }
-        return false;
+        Context findActivity = AndroidUtilities.findActivity(LaunchActivity.G1);
+        if (findActivity == null) {
+            findActivity = ApplicationLoader.applicationContext;
+        }
+        final Context context = findActivity;
+        TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+        final boolean[] zArr = new boolean[1];
+        final boolean[] zArr2 = new boolean[1];
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, null);
+        g5 g5Var = new g5(currentUser);
+        int w02 = j6.w0(null, j6.L5, false);
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.b0 = g5Var;
+        d2Var.c0 = w02;
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusPermissionRequest, UserObject.getUserName(user), UserObject.getUserName(user)));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BotEmojiStatusPermissionAllow), new org.telegram.ui.ActionBar.c2() { // from class: di.z4
+            @Override // org.telegram.ui.ActionBar.c2
+            public final void f(org.telegram.ui.ActionBar.d2 d2Var2, int i11) {
+                int i12 = i10;
+                boolean isPremium = UserConfig.getInstance(i12).isPremium();
+                boolean[] zArr3 = zArr2;
+                boolean[] zArr4 = zArr;
+                org.telegram.ui.web.r rVar2 = rVar;
+                if (!isPremium) {
+                    new qg.a1((org.telegram.ui.ActionBar.p2) new e5(null), 12, false).show();
+                    if (zArr3[0] || zArr4[0]) {
+                        return;
+                    }
+                    zArr4[0] = true;
+                    rVar2.run(Boolean.TRUE, "cancelled");
+                    return;
+                }
+                zArr3[0] = true;
+                TLRPC.User user2 = user;
+                h5.e(context, i12, user2.id);
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                toggleuseremojistatuspermission.bot = MessagesController.getInstance(i12).getInputUser(user2);
+                toggleuseremojistatuspermission.enabled = true;
+                ConnectionsManager.getInstance(i12).sendRequest(toggleuseremojistatuspermission, new wa(zArr4, rVar2, userFull, 2));
+            }
+        });
+        alertDialog$Builder.h(LocaleController.getString(R.string.BotEmojiStatusPermissionDecline), null);
+        org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
+        d2Var2.show();
+        d2Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: di.a5
+            @Override // android.content.DialogInterface.OnDismissListener
+            public final void onDismiss(DialogInterface dialogInterface) {
+                if (zArr2[0]) {
+                    return;
+                }
+                boolean[] zArr3 = zArr;
+                if (zArr3[0]) {
+                    return;
+                }
+                zArr3[0] = true;
+                h5.e(context, i10, user.id);
+                rVar.run(Boolean.TRUE, "cancelled");
+            }
+        });
+    }
+
+    public static void c() {
+        Context context = ApplicationLoader.applicationContext;
+        if (context == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < 4; i10++) {
+            context.getSharedPreferences("botemojistatus_" + i10, 0).edit().clear().apply();
+        }
+    }
+
+    public static boolean d(Activity activity, int i10, long j3) {
+        if (activity == null) {
+            return false;
+        }
+        return org.telegram.messenger.a2.v("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i10, 0), false);
+    }
+
+    public static void e(Context context, int i10, long j3) {
+        if (context == null) {
+            return;
+        }
+        context.getSharedPreferences("botemojistatus_" + i10, 0).edit().putBoolean("requested_" + j3, true).apply();
+    }
+
+    public static void f(final int i10, final TLRPC.User user, long j3, final int i11, final org.telegram.ui.web.r rVar) {
+        TLRPC.Document f7 = p5.f(i10, j3);
+        if (f7 != null) {
+            g(i10, user, f7, i11, new w4(rVar, f7, 1));
+        } else {
+            p5.h(i10).b(j3, new m5() { // from class: di.x4
+                @Override // org.telegram.ui.Components.m5
+                public final void a(TLRPC.Document document) {
+                    AndroidUtilities.runOnUIThread(new b5(i10, user, document, i11, rVar));
+                }
+            });
+        }
+    }
+
+    public static void g(int i10, TLRPC.User user, TLRPC.Document document, int i11, Utilities.Callback callback) {
+        SpannableStringBuilder replaceTags;
+        if (document instanceof TLRPC.TL_documentEmpty) {
+            callback.run("SUGGESTED_EMOJI_INVALID");
+            return;
+        }
+        Context findActivity = AndroidUtilities.findActivity(LaunchActivity.G1);
+        if (findActivity == null) {
+            findActivity = ApplicationLoader.applicationContext;
+        }
+        ConnectionsManager.getInstance(i10).getCurrentTime();
+        TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+        boolean[] zArr = new boolean[1];
+        boolean[] zArr2 = new boolean[1];
+        if (i11 > 0) {
+            int i12 = i11 / 86400;
+            int i13 = (i11 - (86400 * i12)) / 3600;
+            int round = Math.round((r8 - (i13 * 3600)) / 60.0f);
+            StringBuilder sb2 = new StringBuilder();
+            if (i12 > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(LocaleController.formatPluralString("BotEmojiStatusSetRequestForDay", i12, new Object[0]));
+            }
+            if (i13 > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(LocaleController.formatPluralString("BotEmojiStatusSetRequestForHour", i13, new Object[0]));
+            }
+            if (round > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(LocaleController.formatPluralString("BotEmojiStatusSetRequestForMinute", round, new Object[0]));
+            }
+            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusSetRequestFor, UserObject.getUserName(user), sb2));
+        } else {
+            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotEmojiStatusSetRequest, UserObject.getUserName(user)));
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(findActivity, 0, null);
+        g5 g5Var = new g5(currentUser, document);
+        int w02 = j6.w0(null, j6.L5, false);
+        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+        d2Var.b0 = g5Var;
+        d2Var.c0 = w02;
+        d2Var.T = replaceTags;
+        alertDialog$Builder.k(LocaleController.getString(R.string.BotEmojiStatusConfirm), new y4(i10, zArr2, document, i11, zArr, callback));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
+        d2Var2.show();
+        d2Var2.setOnDismissListener(new w0(zArr2, zArr, callback));
     }
 }

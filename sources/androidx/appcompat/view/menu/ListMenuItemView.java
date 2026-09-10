@@ -1,6 +1,5 @@
 package androidx.appcompat.view.menu;
 
-import aa.a;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -18,14 +17,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import f.a;
 import java.util.WeakHashMap;
 import l.l;
 import l.n;
 import l.z;
+import m.e3;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements z, AbsListView.SelectionBoundsAdjuster {
     public final boolean E;
@@ -348,16 +349,16 @@ public class ListMenuItemView extends LinearLayout implements z, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
-        a y3 = a.y(getContext(), attributeSet, f.a.r, i10);
-        this.s = y3.r(5);
-        TypedArray typedArray = (TypedArray) y3.c;
+        e3 P = e3.P(getContext(), attributeSet, a.r, i10);
+        this.s = P.E(5);
+        TypedArray typedArray = (TypedArray) P.c;
         this.v = typedArray.getResourceId(1, -1);
         this.x = typedArray.getBoolean(7, false);
         this.w = context;
-        this.y = y3.r(8);
+        this.y = P.E(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.E = obtainStyledAttributes.hasValue(0);
-        y3.A();
+        P.Q();
         obtainStyledAttributes.recycle();
     }
 }

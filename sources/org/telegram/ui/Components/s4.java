@@ -1,13 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
+import android.content.Context;
+import android.os.Vibrator;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class s4 extends d90 {
-    @Override // org.telegram.ui.Components.d90, android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+public final class s4 extends mq {
+    public final /* synthetic */ Context b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s4(Context context) {
+        super(255);
+        this.b = context;
+    }
+
+    @Override // org.telegram.ui.Components.mq, android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        Vibrator vibrator;
+        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
+        if (filter != null && charSequence != null && filter.length() != charSequence.length() && (vibrator = (Vibrator) this.b.getSystemService("vibrator")) != null) {
+            vibrator.vibrate(200L);
+        }
+        return filter;
     }
 }

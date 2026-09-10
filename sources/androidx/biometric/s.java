@@ -2,15 +2,12 @@ package androidx.biometric;
 
 import a3.k0;
 import android.content.Context;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Build;
 import android.os.CancellationSignal;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import v7.t8;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class s implements androidx.emoji2.text.k, v0.h {
     public final Context a;
@@ -21,9 +18,6 @@ public final class s implements androidx.emoji2.text.k, v0.h {
                 this.a = context.getApplicationContext();
                 break;
             case 2:
-                this.a = context;
-                break;
-            case 3:
                 kotlin.jvm.internal.i.e(context, "context");
                 this.a = context;
                 break;
@@ -40,47 +34,21 @@ public final class s implements androidx.emoji2.text.k, v0.h {
         threadPoolExecutor.execute(new k0(this, wVar, threadPoolExecutor, 3));
     }
 
-    public void b(aa.a aVar, b2.p pVar, a4.m mVar) {
-        CancellationSignal cancellationSignal;
-        FingerprintManager g10;
-        if (pVar != null) {
-            synchronized (pVar) {
-                try {
-                    if (((CancellationSignal) pVar.c) == null) {
-                        CancellationSignal cancellationSignal2 = new CancellationSignal();
-                        pVar.c = cancellationSignal2;
-                        if (pVar.b) {
-                            cancellationSignal2.cancel();
-                        }
-                    }
-                    cancellationSignal = (CancellationSignal) pVar.c;
-                } finally {
-                }
-            }
-        } else {
-            cancellationSignal = null;
-        }
-        if (Build.VERSION.SDK_INT < 23 || (g10 = e0.b.g(this.a)) == null) {
-            return;
-        }
-        e0.b.a(g10, e0.b.M(aVar), cancellationSignal, new k0.a(mVar));
-    }
-
-    public Object c(Context context, v0.e eVar, id.c cVar) {
-        zd.m mVar = new zd.m(1, t8.b(cVar));
+    public Object b(Context context, v0.e eVar, id.c cVar) {
+        zd.m mVar = new zd.m(1, w7.g.b(cVar));
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new v0.g(cancellationSignal));
-        mg.n nVar = new mg.n(mVar, 18);
-        a3.b bVar = new a3.b(2);
+        je.b bVar = new je.b(mVar);
+        a3.b bVar2 = new a3.b(2);
         kotlin.jvm.internal.i.e(context, "context");
-        v0.j b10 = k6.h.b(new k6.h(this.a, 2), eVar);
+        v0.j b10 = k0.b.b(new k0.b(this.a), eVar);
         if (b10 == null) {
-            nVar.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+            bVar.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
         } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            nVar.onError(new w0.c("createCredential is not supported on this device", 3));
+            bVar.onError(new w0.c("createCredential is not supported on this device", 3));
         } else {
-            b10.onCreateCredential(context, eVar, cancellationSignal, bVar, nVar);
+            b10.onCreateCredential(context, eVar, cancellationSignal, bVar2, bVar);
         }
         Object r10 = mVar.r();
         jd.a aVar = jd.a.a;

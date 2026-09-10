@@ -9,12 +9,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import i2.g;
 import j7.c;
-import n7.j;
+import n7.k;
 import v7.f5;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -68,12 +67,12 @@ public final class b extends Binder implements IInterface {
                     return false;
                 }
                 Parcelable.Creator<Status> creator = Status.CREATOR;
-                int i12 = j.a;
+                int i12 = k.a;
                 Status createFromParcel = parcel.readInt() == 0 ? null : creator.createFromParcel(parcel);
                 PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(g.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(hc.b.j(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
                 f5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
@@ -91,7 +90,7 @@ public final class b extends Binder implements IInterface {
                 Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
                 int dataAvail2 = parcel.dataAvail();
                 if (dataAvail2 > 0) {
-                    throw new BadParcelableException(g.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(hc.b.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
                 f5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;

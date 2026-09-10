@@ -2,12 +2,12 @@ package q9;
 
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
-import org.telegram.ui.sw0;
+import org.telegram.ui.js0;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public interface e {
-    public static final sw0 A = new sw0(14);
+    public static final js0 A = new js0(14);
 
-    List b(ComponentRegistrar componentRegistrar);
+    List a(ComponentRegistrar componentRegistrar);
 }

@@ -1,56 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class se implements Runnable {
+public final /* synthetic */ class se implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ Utilities.Callback4 b;
 
-    public /* synthetic */ se(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
+    public /* synthetic */ se(Utilities.Callback4 callback4, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.d = j3;
-        this.c = arrayList;
+        this.b = callback4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteUserChatHistory$86(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$emptyMessagesMedia$99(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$deleteSavedDialog$54(this.d, this.c);
-                break;
-            case 3:
-                this.b.lambda$updateChannelUsers$125(this.d, this.c);
-                break;
-            case 4:
-                this.b.lambda$markVoiceMessageContentAsRead$217(this.c, this.d);
-                break;
-            case 5:
-                this.b.lambda$markMessagesAsDeletedInternal$226(this.c, this.d);
-                break;
-            case 6:
-                this.b.lambda$removeTopics$58(this.c, this.d);
+                MessagesController.1.lambda$getRemote$0(this.b, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$createTaskForSecretChat$117(this.d, this.c);
+                MessagesController.4.lambda$getRemote$0(this.b, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ se(MessagesStorage messagesStorage, ArrayList arrayList, long j3, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = j3;
     }
 }

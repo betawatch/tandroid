@@ -1,11 +1,10 @@
 package org.telegram.messenger.voip;
 
-import ah.j1;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -19,7 +18,7 @@ public class GroupCallMessage {
     public final TLRPC.TL_textWithEntities message;
     public final long randomId;
     public final long reactionAnimatedEmojiId;
-    public final j1 visibleReaction;
+    public final yg.p0 visibleReaction;
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
@@ -29,7 +28,7 @@ public class GroupCallMessage {
     public GroupCallMessage(int i10, long j3, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
         long j11;
         TLRPC.TL_availableReaction tL_availableReaction;
-        j1 c10;
+        yg.p0 c10;
         this.currentAccount = i10;
         this.fromId = j3;
         this.randomId = j10;
@@ -40,12 +39,12 @@ public class GroupCallMessage {
             if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
                 j11 = ((TLRPC.TL_messageEntityCustomEmoji) messageEntity).document_id;
                 if (j11 == 0) {
-                    c10 = new j1();
+                    c10 = new yg.p0();
                     c10.g = j11;
                     c10.h = j11;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? j1.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? yg.p0.c(tL_availableReaction) : null;
                 }
                 this.reactionAnimatedEmojiId = j11;
                 this.visibleReaction = c10;
@@ -59,19 +58,19 @@ public class GroupCallMessage {
     }
 
     public boolean isOut() {
-        return w7.b0.a(this.flags, 1);
+        return w7.c0.a(this.flags, 1);
     }
 
     public boolean isSendConfirmed() {
-        return w7.b0.a(this.flags, 8);
+        return w7.c0.a(this.flags, 8);
     }
 
     public boolean isSendDelayed() {
-        return w7.b0.a(this.flags, 2);
+        return w7.c0.a(this.flags, 2);
     }
 
     public boolean isSendError() {
-        return w7.b0.a(this.flags, 4);
+        return w7.c0.a(this.flags, 4);
     }
 
     public void notifyStateUpdate() {
@@ -86,19 +85,19 @@ public class GroupCallMessage {
     }
 
     public void setIsOut(boolean z10) {
-        this.flags = w7.b0.b(this.flags, 1, z10);
+        this.flags = w7.c0.b(this.flags, 1, z10);
     }
 
     public void setIsSendConfirmed(boolean z10) {
-        this.flags = w7.b0.b(this.flags, 8, z10);
+        this.flags = w7.c0.b(this.flags, 8, z10);
     }
 
     public void setIsSendDelayed(boolean z10) {
-        this.flags = w7.b0.b(this.flags, 2, z10);
+        this.flags = w7.c0.b(this.flags, 2, z10);
     }
 
     public void setIsSendError(boolean z10) {
-        this.flags = w7.b0.b(this.flags, 4, z10);
+        this.flags = w7.c0.b(this.flags, 4, z10);
     }
 
     public void subscribeToStateUpdates(Runnable runnable) {

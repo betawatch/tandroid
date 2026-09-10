@@ -6,10 +6,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import ji.k5;
-import w7.o6;
+import w7.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -46,7 +45,7 @@ public final class a {
         i0Var.g = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            o6.a(rVar2, "Null interface");
+            r6.a(rVar2, "Null interface");
         }
         Collections.addAll((HashSet) i0Var.c, rVarArr);
         return i0Var;
@@ -58,10 +57,10 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(r.a(cls));
         for (Class cls2 : clsArr) {
-            o6.a(cls2, "Null interface");
+            r6.a(cls2, "Null interface");
             hashSet.add(r.a(cls2));
         }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new k5(obj, 16), hashSet3);
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new org.telegram.tgnet.j(obj, 17), hashSet3);
     }
 
     public final String toString() {

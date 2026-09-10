@@ -1,15 +1,9 @@
 package i2;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final j2.k a;
-    public final long b;
-    public final float c;
-
-    public p0(j2.k kVar, long j3, float f7, boolean z10, long j10) {
-        this.a = kVar;
-        this.b = j3;
-        this.c = f7;
-    }
+    public long a = -9223372036854775807L;
+    public float b = -3.4028235E38f;
+    public long c = -9223372036854775807L;
 }

@@ -1,42 +1,42 @@
 package org.telegram.ui;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final class xb1 implements LocationListener {
-    public final /* synthetic */ ThemeActivity a;
+public final /* synthetic */ class xb1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    public xb1(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    public /* synthetic */ xb1(ThemeActivity themeActivity, int i10) {
+        this.a = i10;
+        this.b = themeActivity;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        ThemeActivity themeActivity = this.a;
-        if (location == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemeActivity themeActivity = this.b;
+                themeActivity.b.d1(new tb1(themeActivity, 0), 700, true);
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.j6.x, org.telegram.ui.ActionBar.j6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
+                    }
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new r91(3, themeActivity2, str));
+                break;
         }
-        themeActivity.K0 = false;
-        LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
-        locationManager.removeUpdates(themeActivity.Q0);
-        locationManager.removeUpdates(themeActivity.R0);
-        themeActivity.B0(location, false);
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderDisabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onProviderEnabled(String str) {
-    }
-
-    @Override // android.location.LocationListener
-    public final void onStatusChanged(String str, int i10, Bundle bundle) {
     }
 }

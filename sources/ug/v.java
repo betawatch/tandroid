@@ -1,71 +1,32 @@
 package ug;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
+import android.widget.FrameLayout;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.q6;
-import org.telegram.ui.Components.rv0;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
+import w7.a6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements d5, rv0, wg.f, wg.k {
-    public final /* synthetic */ b0 a;
+public final class v extends FrameLayout {
+    public final ew0 a;
 
-    public /* synthetic */ v(b0 b0Var) {
-        this.a = b0Var;
+    public v(Context context, f6 f6Var) {
+        super(context);
+        View view = new View(context);
+        addView(view, a6.n(-1, -1));
+        view.setBackgroundColor(j6.v0(j6.h5, f6Var));
+        ew0 ew0Var = new ew0(context, f6Var);
+        this.a = ew0Var;
+        addView(ew0Var, a6.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        setBackground(j6.V0(getContext(), R.drawable.greydivider_top, j6.b7));
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        b0 b0Var = this.a;
-        b0Var.m0 = i10 * 1000;
-        b0Var.a0(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.rv0
-    public void i(int i10) {
-        b0 b0Var = this.a;
-        int i11 = b0Var.h0;
-        int i12 = wg.d.s;
-        if (i11 == 2) {
-            b0Var.n0 = i10;
-        } else {
-            b0Var.o0 = i10;
-        }
-        b0Var.q0.a.b(b0Var.V(), true);
-        if (b0Var.h0 == 3) {
-            b0Var.a0(true, true);
-        } else {
-            b0Var.a0(false, false);
-        }
-        vg.b bVar = b0Var.g0;
-        int V = b0Var.V();
-        for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
-            View childAt = bVar.f.getChildAt(i13);
-            if (childAt instanceof wg.x) {
-                q6 q6Var = ((wg.x) childAt).r;
-                String formatPluralString = V <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", V, Integer.valueOf(V));
-                q6Var.a();
-                q6Var.c(formatPluralString, true, true);
-            }
-            if (childAt instanceof wg.g) {
-                wg.g gVar = (wg.g) childAt;
-                int F = bVar.F(gVar.getChat());
-                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(gVar.v);
-                if (gVar.w) {
-                    gVar.setSubtitle(F >= 1 ? LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", F, new Object[0]) : LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup));
-                } else {
-                    gVar.setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", V, new Object[0]));
-                }
-            }
-        }
-        bVar.m(8);
-        bVar.q(bVar.e.size() - 12, 12);
-    }
-
-    @Override // org.telegram.ui.Components.rv0
-    public /* synthetic */ void l() {
+    public void setCallBack(dw0 dw0Var) {
+        this.a.setCallback(dw0Var);
     }
 }

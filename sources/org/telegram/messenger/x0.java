@@ -1,30 +1,53 @@
 package org.telegram.messenger;
 
+import android.content.SharedPreferences;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x0 implements Runnable {
+public final /* synthetic */ class x0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatObject.Call b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ x0(ChatObject.Call call, TLObject tLObject, int i10) {
+    public /* synthetic */ x0(Object obj, Object obj2, boolean z10, int i10) {
         this.a = i10;
-        this.b = call;
-        this.c = tLObject;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$reloadGroupCall$8(this.c);
+                ((ChatObject.Call) this.c).lambda$loadMembers$3(this.b, (TL_phone.getGroupParticipants) this.d, tLObject, tL_error);
+                break;
+            case 1:
+                ((MediaDataController) this.c).lambda$loadAvatarConstructor$242((SharedPreferences) this.d, this.b, tLObject, tL_error);
+                break;
+            case 2:
+                ((MediaDataController) this.c).lambda$loadStickersByEmojiOrName$85((String) this.d, this.b, tLObject, tL_error);
+                break;
+            case 3:
+                ((MessagesController) this.c).lambda$getBlockedPeers$113(this.b, (TLRPC.TL_contacts_getBlocked) this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadGroupCall$10(this.c);
+                ((MessagesController.CommonChatsList) this.c).lambda$load$1((int[]) this.d, this.b, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ x0(Object obj, boolean z10, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
+        this.d = tLObject;
     }
 }

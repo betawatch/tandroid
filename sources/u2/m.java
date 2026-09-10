@@ -1,40 +1,102 @@
 package u2;
 
-import java.util.List;
+import android.os.Handler;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
-public final class m implements d1 {
-    public final d1 a;
-    public final e9.i0 b;
+public abstract class m extends a {
+    public final HashMap h = new HashMap();
+    public Handler i;
+    public g2.c0 j;
 
-    public m(d1 d1Var, List list) {
-        this.a = d1Var;
-        this.b = e9.i0.v(list);
+    @Override // u2.a
+    public final void e() {
+        for (l lVar : this.h.values()) {
+            lVar.a.d(lVar.b);
+        }
     }
 
-    @Override // u2.d1
-    public final boolean c() {
-        return this.a.c();
+    @Override // u2.a
+    public final void g() {
+        for (l lVar : this.h.values()) {
+            lVar.a.f(lVar.b);
+        }
     }
 
-    @Override // u2.d1
-    public final long d() {
-        return this.a.d();
+    @Override // u2.a
+    public void k() {
+        Iterator it = this.h.values().iterator();
+        while (it.hasNext()) {
+            ((l) it.next()).a.k();
+        }
     }
 
-    @Override // u2.d1
-    public final boolean p(i2.r0 r0Var) {
-        return this.a.p(r0Var);
+    @Override // u2.a
+    public void q() {
+        HashMap hashMap = this.h;
+        for (l lVar : hashMap.values()) {
+            a aVar = lVar.a;
+            k kVar = lVar.c;
+            aVar.p(lVar.b);
+            aVar.s(kVar);
+            aVar.r(kVar);
+        }
+        hashMap.clear();
     }
 
-    @Override // u2.d1
-    public final long s() {
-        return this.a.s();
+    public abstract g0 u(Object obj, g0 g0Var);
+
+    public abstract void x(Object obj, a aVar, b2.k1 k1Var);
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v2, types: [u2.h0, u2.j] */
+    public final void y(final Integer num, a aVar) {
+        HashMap hashMap = this.h;
+        e2.d.b(!hashMap.containsKey(num));
+        ?? r12 = new h0() { // from class: u2.j
+            @Override // u2.h0
+            public final void a(a aVar2, b2.k1 k1Var) {
+                m.this.x(num, aVar2, k1Var);
+            }
+        };
+        k kVar = new k(this, num);
+        hashMap.put(num, new l(aVar, r12, kVar));
+        Handler handler = this.i;
+        handler.getClass();
+        aVar.getClass();
+        a5.a aVar2 = aVar.c;
+        aVar2.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar2.d;
+        l0 l0Var = new l0();
+        l0Var.a = handler;
+        l0Var.b = kVar;
+        copyOnWriteArrayList.add(l0Var);
+        Handler handler2 = this.i;
+        handler2.getClass();
+        n2.j jVar = aVar.d;
+        jVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
+        n2.i iVar = new n2.i();
+        iVar.a = handler2;
+        iVar.b = kVar;
+        copyOnWriteArrayList2.add(iVar);
+        g2.c0 c0Var = this.j;
+        j2.k kVar2 = this.g;
+        e2.d.h(kVar2);
+        aVar.l(r12, c0Var, kVar2);
+        if (this.b.isEmpty()) {
+            aVar.d(r12);
+        }
     }
 
-    @Override // u2.d1
-    public final void u(long j3) {
-        this.a.u(j3);
+    public long v(Object obj, long j3) {
+        return j3;
+    }
+
+    public int w(int i10, Object obj) {
+        return i10;
     }
 }

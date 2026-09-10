@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -74,8 +74,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                         z10 = false;
                         try {
                             iVar = (db.i) gb.h1.z.read(aVar3);
-                        } catch (EOFException e7) {
-                            e = e7;
+                        } catch (EOFException e) {
+                            e = e;
                             if (!z10) {
                                 throw new db.j(e);
                             }
@@ -84,8 +84,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                             if (iVar instanceof db.l) {
                             }
                         }
-                    } catch (EOFException e10) {
-                        e = e10;
+                    } catch (EOFException e7) {
+                        e = e7;
                         z10 = true;
                     }
                     iVar.getClass();
@@ -104,17 +104,17 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                     if (uVar == null) {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new kb.a(Class.forName(n10)));
-                        } catch (ClassNotFoundException e11) {
-                            throw new androidx.car.app.j(org.telegram.ui.Cells.p6.i("Cannot find class ", n10), e11);
+                        } catch (ClassNotFoundException e10) {
+                            throw new androidx.car.app.j(org.telegram.ui.Cells.r6.i("Cannot find class ", n10), e10);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
-                } catch (NumberFormatException e12) {
+                } catch (NumberFormatException e11) {
+                    throw new db.j(e11);
+                } catch (lb.c e12) {
                     throw new db.j(e12);
-                } catch (lb.c e13) {
+                } catch (IOException e13) {
                     throw new db.j(e13);
-                } catch (IOException e14) {
-                    throw new db.j(e14);
                 }
             }
 

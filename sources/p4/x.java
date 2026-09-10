@@ -9,9 +9,10 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.l7;
+import m.e3;
+import org.telegram.ui.Cells.l9;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -71,17 +72,17 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        m2.t tVar = eVar.C;
-        if (tVar != null) {
-            android.support.v4.media.session.c0 c0Var = (android.support.v4.media.session.c0) tVar.b;
-            if (c0Var != null) {
-                return c0Var.a.c;
+        e3 e3Var = eVar.C;
+        if (e3Var != null) {
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) e3Var.b;
+            if (b0Var != null) {
+                return b0Var.a.c;
             }
             return null;
         }
-        android.support.v4.media.session.c0 c0Var2 = eVar.D;
-        if (c0Var2 != null) {
-            return c0Var2.a.c;
+        android.support.v4.media.session.b0 b0Var2 = eVar.D;
+        if (b0Var2 != null) {
+            return b0Var2.a.c;
         }
         return null;
     }
@@ -108,12 +109,12 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new mg.n(c10, 10));
+                k kVar = new k(c10.h, new l2.g(c10, 12));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
                 s0 s0Var = c10.c;
-                ((Handler) s0Var.d).post((l7) s0Var.h);
+                ((Handler) s0Var.d).post((l9) s0Var.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -137,7 +138,7 @@ public final class x {
                 }
                 c10.r = null;
                 s0 s0Var2 = c10.c;
-                ((Handler) s0Var2.d).post((l7) s0Var2.h);
+                ((Handler) s0Var2.d).post((l9) s0Var2.h);
             }
         }
         bVar.b(769, zVar);

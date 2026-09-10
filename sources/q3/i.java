@@ -15,13 +15,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.sw0;
+import org.telegram.ui.js0;
 import v7.r6;
 
-/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
+/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
 /* loaded from: classes.dex */
 public final class i extends w7.l {
-    public static final sw0 b = new sw0(13);
+    public static final js0 b = new js0(13);
     public final g a;
 
     public i(g gVar) {
@@ -200,11 +200,11 @@ public final class i extends w7.l {
             return null;
         }
         if (gVar != null) {
-            boolean c10 = gVar.c(i16, x10, x11, x12, x13);
+            boolean b10 = gVar.b(i16, x10, x11, x12, x13);
             i16 = i16;
             r12 = x10;
             i12 = x11;
-            if (!c10) {
+            if (!b10) {
                 vVar.J(i18);
                 return null;
             }
@@ -256,8 +256,8 @@ public final class i extends w7.l {
                 th = th3;
                 vVar3 = vVar;
             }
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e) {
+            e = e;
             int i19 = i17;
             i17 = i12;
             i12 = i19;
@@ -271,8 +271,8 @@ public final class i extends w7.l {
             if (r122 == 0) {
             }
             return r122;
-        } catch (OutOfMemoryError e10) {
-            e = e10;
+        } catch (OutOfMemoryError e7) {
+            e = e7;
             int i192 = i17;
             i17 = i12;
             i12 = i192;
@@ -299,8 +299,8 @@ public final class i extends w7.l {
             if (r12 != 80 || i12 != 82 || x12 != 73 || x13 != 86) {
                 th2 = null;
                 try {
-                } catch (Exception e11) {
-                    e = e11;
+                } catch (Exception e10) {
+                    e = e10;
                     int i20 = i17;
                     i17 = i12;
                     i12 = i20;
@@ -313,8 +313,8 @@ public final class i extends w7.l {
                     if (r122 == 0) {
                     }
                     return r122;
-                } catch (OutOfMemoryError e12) {
-                    e = e12;
+                } catch (OutOfMemoryError e11) {
+                    e = e11;
                     int i202 = i17;
                     i17 = i12;
                     i12 = i202;
@@ -381,8 +381,8 @@ public final class i extends w7.l {
                                 bVar = e(vVar, i12, i16, z10, i11, gVar);
                                 i16 = i10;
                                 r12 = vVar;
-                            } catch (Exception e13) {
-                                e = e13;
+                            } catch (Exception e12) {
+                                e = e12;
                                 i16 = i10;
                                 vVar2 = vVar;
                                 vVar2.J(i18);
@@ -390,8 +390,8 @@ public final class i extends w7.l {
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e14) {
-                                e = e14;
+                            } catch (OutOfMemoryError e13) {
+                                e = e13;
                                 i16 = i10;
                                 vVar2 = vVar;
                                 vVar2.J(i18);
@@ -432,16 +432,16 @@ public final class i extends w7.l {
                                         r12 = vVar4;
                                     }
                                 }
-                            } catch (Exception e15) {
-                                e = e15;
+                            } catch (Exception e14) {
+                                e = e14;
                                 vVar2 = r12;
                                 vVar2.J(i18);
                                 r122 = th2;
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e16) {
-                                e = e16;
+                            } catch (OutOfMemoryError e15) {
+                                e = e15;
                                 vVar2 = r12;
                                 vVar2.J(i18);
                                 r122 = th2;
@@ -778,7 +778,7 @@ public final class i extends w7.l {
                             w10 -= 10;
                         }
                     } else {
-                        e2.n(x10, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
+                        e2.l(x10, "Skipped ID3 tag with unsupported majorVersion=", "Id3Decoder");
                     }
                     hVar = new h(x10, x10 >= 4 && (x11 & 128) != 0, w10);
                 }
@@ -795,7 +795,7 @@ public final class i extends w7.l {
                 vVar.I(i12 + i14);
                 if (!x(vVar, i11, i13, false)) {
                     if (i11 != 4 || !x(vVar, 4, i13, true)) {
-                        e2.n(i11, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
+                        e2.l(i11, "Failed to validate ID3 tag with majorVersion=", "Id3Decoder");
                         return null;
                     }
                     z10 = true;
