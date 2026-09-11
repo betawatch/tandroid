@@ -1,27 +1,48 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class yc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable[] c;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-    public /* synthetic */ yc(boolean[] zArr, Runnable[] runnableArr, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = runnableArr;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class yc implements Utilities.Callback {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ Runnable g;
+
+    public /* synthetic */ yc(MessagesController messagesController, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, TLRPC.Chat chat, Runnable runnable) {
+        this.b = messagesController;
+        this.d = tL_messages_invitedUsers;
+        this.e = iArr;
+        this.c = i10;
+        this.f = chat;
+        this.g = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$ensureMessagesLoaded$461(this.b, this.c);
+                this.b.lambda$openApp$500((boolean[]) this.d, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.c, (c3) this.g, (TL_bots.BotInfo) obj);
                 break;
             default:
-                PasskeysController.lambda$login$12(this.b, this.c);
+                this.b.lambda$addUsersToChat$297((TLRPC.TL_messages_invitedUsers) this.d, (int[]) this.e, this.c, (TLRPC.Chat) this.f, this.g, (TLRPC.TL_messages_invitedUsers) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ yc(MessagesController messagesController, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i10, c3 c3Var) {
+        this.b = messagesController;
+        this.d = zArr;
+        this.e = botInfoArr;
+        this.f = user;
+        this.c = i10;
+        this.g = c3Var;
     }
 }

@@ -1,59 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class un implements TextWatcher {
-    public final /* synthetic */ tn a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ xn c;
+public final class un extends ni {
+    public final mz n;
+    public final ll0 r;
+    public final int s;
+    public final org.telegram.ui.w7 v;
+    public int w;
 
-    public un(xn xnVar, tn tnVar, int i10) {
-        this.c = xnVar;
-        this.a = tnVar;
-        this.b = i10;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        zn znVar = this.c.d;
-        tn tnVar = this.a;
-        if (tnVar.getTag() != null) {
-            return;
-        }
-        int i10 = this.b;
-        int i11 = i10 == 11 ? znVar.n0 : znVar.m0;
-        s4.c1 K = znVar.s.K(i11);
-        if (K != null && znVar.x != null) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
-            }
-            Emoji.replaceEmoji(editable, tnVar.getEditField().getPaint().getFontMetricsInt(), false);
-            znVar.x.setDirection(1);
-            znVar.x.setDelegate(tnVar);
-            znVar.x.setTranslationY(K.a.getY());
-            znVar.x.e();
-        }
-        if (i10 == 11) {
-            znVar.O = editable;
+    public un(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
+        super(context, f6Var, viVar);
+        this.s = i10;
+        mz mzVar = new mz(context, f6Var);
+        this.n = mzVar;
+        mzVar.setText(LocaleController.getString(R.string.NoPhotos));
+        mzVar.setOnTouchListener(null);
+        mzVar.setTextSize(16);
+        addView(mzVar, w7.x5.c(-2.0f, -1));
+        mzVar.a(R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        TLRPC.Chat k12 = this.b.k1();
+        if (i10 == 1) {
+            mzVar.setText(ChatObject.getRestrictedErrorText(k12, 7));
+        } else if (i10 == 3) {
+            mzVar.setText(ChatObject.getRestrictedErrorText(k12, 18));
+        } else if (i10 == 4) {
+            mzVar.setText(ChatObject.getRestrictedErrorText(k12, 19));
         } else {
-            znVar.N = editable;
+            mzVar.setText(ChatObject.getRestrictedErrorText(k12, 22));
         }
-        if (K != null) {
-            zn.L(znVar, K.a, i11);
-        }
-        znVar.T();
+        mzVar.c();
+        ll0 ll0Var = new ll0(context, f6Var);
+        this.r = ll0Var;
+        ll0Var.setSectionsType(2);
+        ll0Var.setVerticalScrollBarEnabled(false);
+        ll0Var.setLayoutManager(new s4.c0());
+        ll0Var.setClipToPadding(false);
+        org.telegram.ui.w7 w7Var = new org.telegram.ui.w7(this, 4);
+        this.v = w7Var;
+        ll0Var.setAdapter(w7Var);
+        ll0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+        ll0Var.setOnScrollListener(new ah.e0(this, 24));
+        addView(ll0Var, w7.x5.c(-1.0f, -1));
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.ni
+    public int getCurrentItemTop() {
+        ll0 ll0Var = this.r;
+        if (ll0Var.getChildCount() <= 0) {
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        int i10 = 0;
+        View childAt = ll0Var.getChildAt(0);
+        vk0 vk0Var = (vk0) ll0Var.G(childAt);
+        int top = childAt.getTop() - AndroidUtilities.dp(8.0f);
+        if (top > 0 && vk0Var != null && vk0Var.b() == 0) {
+            i10 = top;
+        }
+        if (top < 0 || vk0Var == null || vk0Var.b() != 0) {
+            top = i10;
+        }
+        int measuredHeight = (getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f);
+        this.n.setTranslationY(((measuredHeight - r1.getMeasuredHeight()) / 2) + top);
+        return AndroidUtilities.dp(12.0f) + top;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.ni
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(4.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public int getListTopPadding() {
+        return this.r.getPaddingTop();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        this.b.getSheetContainer().invalidate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.ni
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void y(int i10, int i11) {
+        int i12;
+        int i13;
+        ll0 ll0Var;
+        int max = Math.max(0, i11 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
+        if (this.w != max) {
+            this.w = max;
+            this.v.l();
+        }
+        if (!AndroidUtilities.isTablet()) {
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                i12 = (int) (i11 / 3.5f);
+                int dp = i12 - AndroidUtilities.dp(52.0f);
+                i13 = dp >= 0 ? dp : 0;
+                ll0Var = this.r;
+                if (ll0Var.getPaddingTop() == i13) {
+                    ll0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                    return;
+                }
+                return;
+            }
+        }
+        i12 = (i11 / 5) * 2;
+        int dp2 = i12 - AndroidUtilities.dp(52.0f);
+        if (dp2 >= 0) {
+        }
+        ll0Var = this.r;
+        if (ll0Var.getPaddingTop() == i13) {
+        }
     }
 }

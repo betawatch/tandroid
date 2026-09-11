@@ -15,7 +15,7 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.GraphicsEnvironment;
 import ru.noties.jlatexmath.awt.Toolkit;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class TeXFormula {
     public static final int BOLD = 2;
@@ -41,7 +41,7 @@ public class TeXFormula {
     public static String[] symbolFormulaMappings = new String[65536];
     public static Map<Character.UnicodeBlock, FontInfos> externalFontMap = new HashMap();
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class FontInfos {
         String sansserif;
         String serif;
@@ -52,7 +52,7 @@ public class TeXFormula {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public class TeXIconBuilder {
         private Integer align;
         private Color fgcolor;
@@ -204,8 +204,8 @@ public class TeXFormula {
     public static void addSymbolMappings(String str) {
         try {
             addSymbolMappings(new FileInputStream(str), str);
-        } catch (FileNotFoundException e) {
-            throw new ResourceParseException(str, e);
+        } catch (FileNotFoundException e7) {
+            throw new ResourceParseException(str, e7);
         }
     }
 

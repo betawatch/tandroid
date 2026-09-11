@@ -1,42 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s01 extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public TextView a;
-    public r01 b;
-    public TLRPC.TL_help_termsOfService c;
-    public int d;
+public final /* synthetic */ class s01 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Runnable c;
 
-    public final void a() {
-        r01 r01Var = this.b;
-        int i10 = this.d;
-        org.telegram.ui.wa0 wa0Var = (org.telegram.ui.wa0) r01Var;
-        wa0Var.getClass();
-        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
-        UserConfig.getInstance(i10).saveConfig(false);
-        LaunchActivity launchActivity = wa0Var.a;
-        ArrayList arrayList = launchActivity.d0;
-        if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.p2) hc.b.i(1, arrayList)).onResume();
-        }
-        launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.i10(wa0Var, 15)).start();
-        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
-        tL_help_acceptTermsOfService.id = this.c.id;
-        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new bi.g1(12));
+    public /* synthetic */ s01(Runnable runnable, Runnable runnable2, int i10) {
+        this.a = i10;
+        this.b = runnable;
+        this.c = runnable2;
     }
 
-    public void setDelegate(r01 r01Var) {
-        this.b = r01Var;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                w01.b(this.b);
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    AndroidUtilities.runOnUIThread(runnable);
+                    break;
+                }
+                break;
+            default:
+                this.b.run();
+                this.c.run();
+                break;
+        }
     }
 }

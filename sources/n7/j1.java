@@ -1,14 +1,8 @@
 package n7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class j1 implements i1 {
-    public static final b a;
-
-    static {
-        int i10 = p.c;
-        Object[] objArr = z.r;
-        new c0("FIDO");
-        a = new b(Boolean.FALSE);
-    }
+public final class j1 {
+    public static final j1 b = new j1();
+    public final f a = new f(new l1());
 }

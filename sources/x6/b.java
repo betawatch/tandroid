@@ -2,10 +2,11 @@ package x6;
 
 import android.os.IBinder;
 import android.os.IInterface;
+import i2.g;
 import java.lang.reflect.Field;
 import n6.l;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b extends b8.b implements a {
     public final Object b;
@@ -38,7 +39,7 @@ public final class b extends b8.b implements a {
             }
         }
         if (i10 != 1) {
-            throw new IllegalArgumentException(hc.b.j(declaredFields.length, "Unexpected number of IObjectWrapper declared fields: "));
+            throw new IllegalArgumentException(g.i(declaredFields.length, "Unexpected number of IObjectWrapper declared fields: "));
         }
         l.h(field);
         if (field.isAccessible()) {
@@ -47,10 +48,10 @@ public final class b extends b8.b implements a {
         field.setAccessible(true);
         try {
             return field.get(asBinder);
-        } catch (IllegalAccessException e) {
-            throw new IllegalArgumentException("Could not access the field in remoteBinder.", e);
-        } catch (NullPointerException e7) {
-            throw new IllegalArgumentException("Binder object is null.", e7);
+        } catch (IllegalAccessException e7) {
+            throw new IllegalArgumentException("Could not access the field in remoteBinder.", e7);
+        } catch (NullPointerException e10) {
+            throw new IllegalArgumentException("Binder object is null.", e10);
         }
     }
 }

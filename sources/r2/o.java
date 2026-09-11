@@ -6,6 +6,7 @@ import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
 import b2.r0;
+import com.google.android.gms.internal.vision.e2;
 import e2.d0;
 import e9.a1;
 import e9.f0;
@@ -16,7 +17,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.z6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -120,7 +121,7 @@ public final class o {
         return new o(str, str2, str3, codecCapabilities, z10, z11, z12, z14, z16, z15);
     }
 
-    public final i2.h b(b2.s sVar, b2.s sVar2) {
+    public final i2.i b(b2.s sVar, b2.s sVar2) {
         b2.s sVar3;
         b2.s sVar4;
         int i10;
@@ -148,7 +149,7 @@ public final class o {
                 i11 |= 2;
             }
             if (i11 == 0) {
-                return new i2.h(this.a, sVar, sVar2, sVar.b(sVar2) ? 3 : 2, 0);
+                return new i2.i(this.a, sVar, sVar2, sVar.b(sVar2) ? 3 : 2, 0);
             }
             sVar3 = sVar;
             sVar4 = sVar2;
@@ -173,7 +174,7 @@ public final class o {
                     int intValue = ((Integer) b10.first).intValue();
                     int intValue2 = ((Integer) b11.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
-                        return new i2.h(this.a, sVar3, sVar4, 3, 0);
+                        return new i2.i(this.a, sVar3, sVar4, 3, 0);
                     }
                 }
             }
@@ -184,10 +185,10 @@ public final class o {
                 i11 |= 2;
             }
             if (i11 == 0) {
-                return new i2.h(this.a, sVar3, sVar4, 1, 0);
+                return new i2.i(this.a, sVar3, sVar4, 1, 0);
             }
         }
-        return new i2.h(this.a, sVar3, sVar4, 0, i11);
+        return new i2.i(this.a, sVar3, sVar4, 0, i11);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:134:? A[RETURN, SYNTHETIC] */
@@ -227,7 +228,7 @@ public final class o {
                         f0 u10 = i0.u();
                         int i13 = 0;
                         while (i13 < bArr.length) {
-                            int b11 = f2.o.b(bArr, i13, bArr.length, zArr);
+                            int b11 = f2.p.b(bArr, i13, bArr.length, zArr);
                             if (b11 != bArr.length) {
                                 u10.b(Integer.valueOf(b11));
                             }
@@ -238,13 +239,13 @@ public final class o {
                         while (i15 < i14.d) {
                             if (((Integer) i14.get(i15)).intValue() + i12 < length) {
                                 a4.h hVar = new a4.h(bArr, ((Integer) i14.get(i15)).intValue() + i12, length);
-                                a3.l e = f2.o.e(hVar);
-                                if (e.a == 33 && e.b == 0) {
+                                a3.k e7 = f2.p.e(hVar);
+                                if (e7.a == 33 && e7.b == 0) {
                                     hVar.t(4);
                                     int i16 = hVar.i(3);
                                     hVar.s();
                                     pair = null;
-                                    f2.h f7 = f2.o.f(hVar, true, i16, null);
+                                    f2.i f7 = f2.p.f(hVar, true, i16, null);
                                     str = e2.e.a(f7.a, f7.c, f7.d, f7.f, f7.b, f7.e);
                                     break loop0;
                                 }
@@ -420,9 +421,9 @@ public final class o {
             int b10 = (i12 < 29 || ((bool = z6.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
             if (b10 != 2) {
                 if (b10 == 1) {
-                    StringBuilder n10 = hc.b.n("sizeAndRate.cover, ", i10, "x", i11, "@");
-                    n10.append(d);
-                    h(n10.toString());
+                    StringBuilder k10 = e2.k("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    k10.append(d);
+                    h(k10.toString());
                     return false;
                 }
             }
@@ -432,9 +433,9 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder n11 = hc.b.n("sizeAndRate.rotated, ", i10, "x", i11, "@");
-                    n11.append(d);
-                    StringBuilder w10 = a4.a.w("AssumedSupport [", n11.toString(), "] [", str, ", ");
+                    StringBuilder k11 = e2.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    k11.append(d);
+                    StringBuilder w10 = a4.a.w("AssumedSupport [", k11.toString(), "] [", str, ", ");
                     w10.append(this.b);
                     w10.append("] [");
                     w10.append(d0.a);
@@ -443,9 +444,9 @@ public final class o {
                     return true;
                 }
             }
-            StringBuilder n12 = hc.b.n("sizeAndRate.support, ", i10, "x", i11, "@");
-            n12.append(d);
-            h(n12.toString());
+            StringBuilder k12 = e2.k("sizeAndRate.support, ", i10, "x", i11, "@");
+            k12.append(d);
+            h(k12.toString());
             return false;
         }
         return true;

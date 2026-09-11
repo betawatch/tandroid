@@ -13,27 +13,27 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
     public final /* synthetic */ ViewGroup.LayoutParams b;
     public final /* synthetic */ float c;
-    public final /* synthetic */ ev0 d;
+    public final /* synthetic */ cv0 d;
     public final /* synthetic */ float e;
-    public final /* synthetic */ cv0 f;
+    public final /* synthetic */ av0 f;
     public final /* synthetic */ ArrayList h;
     public final /* synthetic */ Integer n;
     public final /* synthetic */ PhotoViewer r;
 
-    public eu0(PhotoViewer photoViewer, ClippingImageView[] clippingImageViewArr, ViewGroup.LayoutParams layoutParams, float f7, ev0 ev0Var, float f10, cv0 cv0Var, ArrayList arrayList, Integer num) {
+    public eu0(PhotoViewer photoViewer, ClippingImageView[] clippingImageViewArr, ViewGroup.LayoutParams layoutParams, float f7, cv0 cv0Var, float f10, av0 av0Var, ArrayList arrayList, Integer num) {
         this.r = photoViewer;
         this.a = clippingImageViewArr;
         this.b = layoutParams;
         this.c = f7;
-        this.d = ev0Var;
+        this.d = cv0Var;
         this.e = f10;
-        this.f = cv0Var;
+        this.f = av0Var;
         this.h = arrayList;
         this.n = num;
     }
@@ -82,22 +82,22 @@ public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
             photoViewer.b6 = 0.0f;
             photoViewer.f6 = 0.0f;
         }
-        ev0 ev0Var = this.d;
-        int abs = (int) Math.abs(this.c - ev0Var.a.getImageX());
-        float imageY = ev0Var.a.getImageY();
+        cv0 cv0Var = this.d;
+        int abs = (int) Math.abs(this.c - cv0Var.a.getImageX());
+        float imageY = cv0Var.a.getImageY();
         float f14 = this.e;
         int abs2 = (int) Math.abs(f14 - imageY);
-        if (ev0Var.a.isAspectFit()) {
+        if (cv0Var.a.isAspectFit()) {
             abs = 0;
         }
         int[] iArr = new int[2];
-        ev0Var.d.getLocationInWindow(iArr);
-        float f15 = ev0Var.c + f14;
-        int i11 = (int) ((iArr[1] - f15) + ev0Var.j);
+        cv0Var.d.getLocationInWindow(iArr);
+        float f15 = cv0Var.c + f14;
+        int i11 = (int) ((iArr[1] - f15) + cv0Var.j);
         if (i11 < 0) {
             i11 = 0;
         }
-        int height = (int) (((f15 + layoutParams.height) - (ev0Var.d.getHeight() + r10)) + ev0Var.i);
+        int height = (int) (((f15 + layoutParams.height) - (cv0Var.d.getHeight() + r10)) + cv0Var.i);
         if (height < 0) {
             height = 0;
         }
@@ -109,7 +109,7 @@ public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
         fArr[c10][3] = photoViewer.h0.getTranslationY();
         float[] fArr2 = fArr[c10];
         float f16 = abs;
-        float f17 = ev0Var.k;
+        float f17 = cv0Var.k;
         fArr2[4] = f16 * f17;
         fArr2[5] = max * f17;
         fArr2[6] = max2 * f17;
@@ -118,7 +118,7 @@ public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
             fArr[c10][i12 + 7] = radius != null ? radius[i12] : 0.0f;
         }
         float[] fArr3 = fArr[c10];
-        float f18 = ev0Var.k;
+        float f18 = cv0Var.k;
         fArr3[11] = abs2 * f18;
         fArr3[12] = f16 * f18;
         float[] fArr4 = fArr[1];
@@ -141,10 +141,10 @@ public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
         backgroundDrawable.setAlpha(0);
         photoViewer.e0.setAlpha(0.0f);
         photoViewer.j0.setAlpha(0.0f);
-        ac0 ac0Var = new ac0(this, clippingImageViewArr, this.h, this.n, this.f, 11);
-        photoViewer.p4 = ac0Var;
+        h90 h90Var = new h90(this, clippingImageViewArr, this.h, this.n, this.f, 15);
+        photoViewer.p4 = h90Var;
         if (photoViewer.l2) {
-            ac0Var.run();
+            h90Var.run();
             photoViewer.p4 = null;
             photoViewer.e0.setAlpha(1.0f);
             backgroundDrawable.setAlpha(255);
@@ -158,39 +158,39 @@ public final class eu0 implements ViewTreeObserver.OnPreDrawListener {
             AnimatorSet animatorSet = new AnimatorSet();
             ArrayList arrayList = new ArrayList((photoViewer.c2 != 1 ? 2 : 3) + clippingImageViewArr.length + (clippingImageViewArr.length > 1 ? 1 : 0));
             for (int i13 = 0; i13 < clippingImageViewArr.length; i13++) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i13], org.telegram.ui.Components.r6.f, 0.0f, 1.0f);
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(clippingImageViewArr[i13], org.telegram.ui.Components.t6.f, 0.0f, 1.0f);
                 if (i13 == 0) {
-                    ofFloat.addUpdateListener(new d3(this, 23));
+                    ofFloat.addUpdateListener(new c3(this, 23));
                 }
                 arrayList.add(ofFloat);
             }
             if (clippingImageViewArr.length > 1) {
                 arrayList.add(ObjectAnimator.ofFloat(photoViewer.h0, (Property<ClippingImageView, Float>) View.ALPHA, 0.0f, 1.0f));
             }
-            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.r6.d, 0, 255));
-            wu0 wu0Var = photoViewer.e0;
+            arrayList.add(ObjectAnimator.ofInt(backgroundDrawable, org.telegram.ui.Components.t6.d, 0, 255));
+            uu0 uu0Var = photoViewer.e0;
             Property property = View.ALPHA;
-            arrayList.add(ObjectAnimator.ofFloat(wu0Var, (Property<wu0, Float>) property, 0.0f, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(uu0Var, (Property<uu0, Float>) property, 0.0f, 1.0f));
             arrayList.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f));
             if (photoViewer.c2 == 1) {
-                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.df0, Float>) property, 0.0f, 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ue0, Float>) property, 0.0f, 1.0f));
             }
             animatorSet.playTogether(arrayList);
             animatorSet.setDuration(200L);
-            animatorSet.addListener(new org.telegram.ui.Components.voip.v2(this, 27));
+            animatorSet.addListener(new gk0(this, 10));
             photoViewer.e0.setLayerType(2, null);
             photoViewer.y2(false);
             photoViewer.o4 = System.currentTimeMillis();
-            AndroidUtilities.runOnUIThread(new ak0(22, this, animatorSet));
+            AndroidUtilities.runOnUIThread(new ej0(25, this, animatorSet));
         }
-        backgroundDrawable.d = new ak0(23, this, ev0Var);
-        eo eoVar = photoViewer.l4;
-        if (eoVar == null || eoVar.getFragmentView() == null) {
+        backgroundDrawable.d = new ej0(26, this, cv0Var);
+        co coVar = photoViewer.l4;
+        if (coVar == null || coVar.getFragmentView() == null) {
             return true;
         }
-        eo eoVar2 = photoViewer.l4;
-        eoVar2.Q7();
-        UndoView undoView = eoVar2.y3;
+        co coVar2 = photoViewer.l4;
+        coVar2.Q7();
+        UndoView undoView = coVar2.y3;
         if (undoView != null) {
             z10 = true;
             undoView.e(1, false);

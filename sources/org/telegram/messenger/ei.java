@@ -1,36 +1,31 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.Window;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.t71;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ei implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class ei implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ ei(int i10, Object obj, Object obj2) {
+    public /* synthetic */ ei(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = secretChatHelper;
+        this.c = encryptedChat;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
+                this.b.lambda$processAcceptedSecretChat$18(this.c);
                 break;
             case 1:
-                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
+                this.b.lambda$acceptSecretChat$21(this.c);
                 break;
             default:
-                ((MediaController) this.b).lambda$cleanupPlayer$10((t71) this.c, valueAnimator);
+                this.b.lambda$applyPeerLayer$9(this.c);
                 break;
         }
     }

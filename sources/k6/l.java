@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import n6.x;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class l extends b8.b implements x {
     public final int b;
@@ -21,8 +21,8 @@ public abstract class l extends b8.b implements x {
     public static byte[] L0(String str) {
         try {
             return str.getBytes("ISO-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            throw new AssertionError(e);
+        } catch (UnsupportedEncodingException e7) {
+            throw new AssertionError(e7);
         }
     }
 
@@ -51,8 +51,8 @@ public abstract class l extends b8.b implements x {
                 if (((l) xVar).b == this.b) {
                     return Arrays.equals(M0(), (byte[]) x6.b.M0(new x6.b(((l) xVar).M0())));
                 }
-            } catch (RemoteException e) {
-                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e);
+            } catch (RemoteException e7) {
+                Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e7);
             }
         }
         return false;

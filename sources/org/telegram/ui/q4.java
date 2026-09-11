@@ -16,9 +16,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class q4 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
+public final class q4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public p4 a;
     public p4 b;
     public p4 c;
@@ -56,7 +56,7 @@ public final class q4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         fade.setDuration(150L);
         transitionSet.addTransition(new Fade(2).setDuration(150L)).addTransition(changeBounds).addTransition(fade);
         transitionSet.setOrdering(0);
-        transitionSet.setInterpolator((TimeInterpolator) org.telegram.ui.Components.wr.f);
+        transitionSet.setInterpolator((TimeInterpolator) org.telegram.ui.Components.pr.f);
         TransitionManager.beginDelayedTransition(this.f, transitionSet);
         int i11 = 0;
         while (true) {
@@ -119,7 +119,7 @@ public final class q4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         if (!z10 || (i10 = ((p4) view).e) <= 0) {
             return;
         }
-        org.telegram.ui.Components.wc.a0(this).Q(R.raw.fire_on, 36, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i10 * 60)))).j();
+        org.telegram.ui.Components.yc.a0(this).Q(R.raw.fire_on, 36, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i10 * 60)))).j();
     }
 
     public final void X() {
@@ -135,35 +135,35 @@ public final class q4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.AutoDeleteMessages));
-        this.actionBar.setActionBarMenuOnItemClick(new di.w(this, 20));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.t(this, 21));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        zd zdVar = new zd(getParentActivity());
-        org.telegram.ui.Components.io0 io0Var = new org.telegram.ui.Components.io0(getParentActivity(), zdVar, this.resourceProvider, true);
-        zdVar.setOrientation(1);
-        io0Var.addView(zdVar);
-        frameLayout.addView(io0Var);
-        this.actionBar.setAdaptiveBackground(io0Var);
+        yd ydVar = new yd(getParentActivity());
+        org.telegram.ui.Components.zn0 zn0Var = new org.telegram.ui.Components.zn0(getParentActivity(), ydVar, this.resourceProvider, true);
+        ydVar.setOrientation(1);
+        zn0Var.addView(ydVar);
+        frameLayout.addView(zn0Var);
+        this.actionBar.setAdaptiveBackground(zn0Var);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.kx0 kx0Var = new org.telegram.ui.Components.kx0(context, this.currentAccount);
-        kx0Var.setStickerNum(10);
-        frameLayout2.addView(kx0Var, w7.a6.e(130, 130, 17));
+        org.telegram.ui.Components.yw0 yw0Var = new org.telegram.ui.Components.yw0(context, this.currentAccount);
+        yw0Var.setStickerNum(10);
+        frameLayout2.addView(yw0Var, w7.x5.e(130, 130, 17));
         frameLayout2.setTag(-33024);
-        zdVar.addView(frameLayout2, w7.a6.n(-1, 170));
+        ydVar.addView(frameLayout2, w7.x5.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         this.f.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        zdVar.addView(this.f, w7.a6.n(-1, -2));
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(getParentActivity());
-        m4Var.setText(LocaleController.getString(R.string.MessageLifetime));
-        this.f.addView(m4Var);
+        ydVar.addView(this.f, w7.x5.n(-1, -2));
+        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(getParentActivity());
+        l4Var.setText(LocaleController.getString(R.string.MessageLifetime));
+        this.f.addView(l4Var);
         p4 p4Var = new p4(getParentActivity(), null);
         this.a = p4Var;
         p4Var.c(LocaleController.getString(R.string.ShortMessageLifetimeForever), false, true);
@@ -201,14 +201,14 @@ public final class q4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         arrayList.add(this.d);
         arrayList.add(this.e);
         X();
-        org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(context, 12, this.resourceProvider);
-        f9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new n4(this)));
-        zdVar.addView(f9Var, w7.a6.n(-1, -2));
+        org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context, 12, this.resourceProvider);
+        e9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new n4(this)));
+        ydVar.addView(e9Var, w7.x5.n(-1, -2));
         V(this.n, false);
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         int globalTTl = getUserConfig().getGlobalTTl();
         this.n = globalTTl;
@@ -220,13 +220,13 @@ public final class q4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onPause() {
         super.onPause();
         int i10 = 0;

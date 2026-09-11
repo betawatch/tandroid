@@ -26,10 +26,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.lc0;
-import org.telegram.ui.Components.v9;
+import org.telegram.ui.Components.dc0;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class i6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -69,7 +69,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
     public String g0;
     public boolean h;
     public String h0;
-    public c6 i0;
+    public b6 i0;
     public int j0;
     public boolean n;
     public int r;
@@ -242,8 +242,8 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                 i6Var.G = jSONObject.getBoolean("loaded");
             }
             return i6Var;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -322,12 +322,12 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                 Canvas canvas = new Canvas(createBitmap);
                 int i10 = this.v;
                 if (i10 != 0) {
-                    patternColor = lc0.g(this.r, this.s, i10, this.w);
+                    patternColor = dc0.g(this.r, this.s, i10, this.w);
                 } else {
                     int i11 = this.s;
                     if (i11 != 0) {
                         patternColor = AndroidUtilities.getAverageColor(this.r, i11);
-                        GradientDrawable gradientDrawable = new GradientDrawable(v9.d(this.x), new int[]{this.r, this.s});
+                        GradientDrawable gradientDrawable = new GradientDrawable(w9.d(this.x), new int[]{this.r, this.s});
                         gradientDrawable.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
                         gradientDrawable.draw(canvas);
                     } else {
@@ -366,7 +366,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
             }
             if (str.equals(this.g0)) {
                 this.g0 = null;
-                Utilities.globalQueue.postRunnable(new m4.w(29, this, (File) objArr[1]));
+                Utilities.globalQueue.postRunnable(new c6(2, this, (File) objArr[1]));
                 return;
             }
             if (str.equals(FileLoader.getAttachFileName(this.F.document))) {
@@ -391,7 +391,7 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                     TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                     tL_inputWallPaperSlug.slug = k02.e;
                     getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    ConnectionsManager.getInstance(k02.E).sendRequest(getwallpaper, new bi.o2(16, this, k02));
+                    ConnectionsManager.getInstance(k02.E).sendRequest(getwallpaper, new bi.m1(21, this, k02));
                 }
             }
         }
@@ -498,54 +498,54 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         h6Var2.p = h6Var.p;
         h6Var2.q = h6Var.q;
         h6Var2.b = this;
-        c6 c6Var = this.i0;
-        if (c6Var != null) {
-            c6 c6Var2 = new c6();
-            c6Var2.a = "";
-            c6Var2.b = "";
-            c6Var2.c = "";
-            c6Var2.c = c6Var.c;
-            c6Var2.d = c6Var.d;
-            c6Var2.e = c6Var.e;
-            c6Var2.f = c6Var.f;
-            c6Var2.g = c6Var.g;
-            c6Var2.h = c6Var.h;
-            c6Var2.i = c6Var.i;
-            c6Var2.j = c6Var.j;
-            c6Var2.k = c6Var.k;
-            c6Var2.p = this;
-            c6Var2.q = h6Var2;
-            if (TextUtils.isEmpty(c6Var.a)) {
-                c6Var2.a = "";
+        b6 b6Var = this.i0;
+        if (b6Var != null) {
+            b6 b6Var2 = new b6();
+            b6Var2.a = "";
+            b6Var2.b = "";
+            b6Var2.c = "";
+            b6Var2.c = b6Var.c;
+            b6Var2.d = b6Var.d;
+            b6Var2.e = b6Var.e;
+            b6Var2.f = b6Var.f;
+            b6Var2.g = b6Var.g;
+            b6Var2.h = b6Var.h;
+            b6Var2.i = b6Var.i;
+            b6Var2.j = b6Var.j;
+            b6Var2.k = b6Var.k;
+            b6Var2.p = this;
+            b6Var2.q = h6Var2;
+            if (TextUtils.isEmpty(b6Var.a)) {
+                b6Var2.a = "";
             } else {
                 try {
-                    File file = new File(ApplicationLoader.getFilesDirFixed(), c6Var.a);
+                    File file = new File(ApplicationLoader.getFilesDirFixed(), b6Var.a);
                     File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                    String j3 = c6Var2.p.j(c6Var2.q, false);
-                    c6Var2.a = j3;
+                    String j3 = b6Var2.p.j(b6Var2.q, false);
+                    b6Var2.a = j3;
                     AndroidUtilities.copyFile(file, new File(filesDirFixed, j3));
-                } catch (Exception e) {
-                    c6Var2.a = "";
-                    FileLog.e(e);
-                }
-            }
-            if (TextUtils.isEmpty(c6Var.b)) {
-                c6Var2.b = "";
-            } else if (c6Var.b.equals(c6Var.a)) {
-                c6Var2.b = c6Var2.a;
-            } else {
-                try {
-                    File file2 = new File(ApplicationLoader.getFilesDirFixed(), c6Var.b);
-                    File filesDirFixed2 = ApplicationLoader.getFilesDirFixed();
-                    String j10 = c6Var2.p.j(c6Var2.q, true);
-                    c6Var2.b = j10;
-                    AndroidUtilities.copyFile(file2, new File(filesDirFixed2, j10));
                 } catch (Exception e7) {
-                    c6Var2.b = "";
+                    b6Var2.a = "";
                     FileLog.e(e7);
                 }
             }
-            h6Var2.y = c6Var2;
+            if (TextUtils.isEmpty(b6Var.b)) {
+                b6Var2.b = "";
+            } else if (b6Var.b.equals(b6Var.a)) {
+                b6Var2.b = b6Var2.a;
+            } else {
+                try {
+                    File file2 = new File(ApplicationLoader.getFilesDirFixed(), b6Var.b);
+                    File filesDirFixed2 = ApplicationLoader.getFilesDirFixed();
+                    String j10 = b6Var2.p.j(b6Var2.q, true);
+                    b6Var2.b = j10;
+                    AndroidUtilities.copyFile(file2, new File(filesDirFixed2, j10));
+                } catch (Exception e10) {
+                    b6Var2.b = "";
+                    FileLog.e(e10);
+                }
+            }
+            h6Var2.y = b6Var2;
         }
         this.Z = this.Y;
         h6Var2.a = i10;
@@ -629,27 +629,27 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
                 return;
             }
             JSONObject jSONObject = new JSONObject(string);
-            c6 c6Var = new c6();
-            c6Var.a = jSONObject.getString("wall");
-            c6Var.b = jSONObject.getString("owall");
-            c6Var.d = jSONObject.getInt("pColor");
-            c6Var.e = jSONObject.getInt("pGrColor");
-            c6Var.f = jSONObject.optInt("pGrColor2");
-            c6Var.g = jSONObject.optInt("pGrColor3");
-            c6Var.h = jSONObject.getInt("pGrAngle");
-            c6Var.c = jSONObject.getString("wallSlug");
-            c6Var.i = jSONObject.getBoolean("wBlur");
-            c6Var.j = jSONObject.getBoolean("wMotion");
-            c6Var.k = (float) jSONObject.getDouble("pIntensity");
-            c6Var.p = this;
-            c6Var.q = h6Var;
+            b6 b6Var = new b6();
+            b6Var.a = jSONObject.getString("wall");
+            b6Var.b = jSONObject.getString("owall");
+            b6Var.d = jSONObject.getInt("pColor");
+            b6Var.e = jSONObject.getInt("pGrColor");
+            b6Var.f = jSONObject.optInt("pGrColor2");
+            b6Var.g = jSONObject.optInt("pGrColor3");
+            b6Var.h = jSONObject.getInt("pGrAngle");
+            b6Var.c = jSONObject.getString("wallSlug");
+            b6Var.i = jSONObject.getBoolean("wBlur");
+            b6Var.j = jSONObject.getBoolean("wMotion");
+            b6Var.k = (float) jSONObject.getDouble("pIntensity");
+            b6Var.p = this;
+            b6Var.q = h6Var;
             if (h6Var != null) {
-                h6Var.y = c6Var;
+                h6Var.y = b6Var;
             } else {
-                this.i0 = c6Var;
+                this.i0 = b6Var;
             }
             if (jSONObject.has("wallId") && jSONObject.getLong("wallId") == 1000001) {
-                c6Var.c = "d";
+                b6Var.c = "d";
             }
         } catch (Throwable th2) {
             FileLog.e(th2);
@@ -678,23 +678,23 @@ public final class i6 implements NotificationCenter.NotificationCenterDelegate {
         }
     }
 
-    public final void v(c6 c6Var) {
-        if (this.i0 == c6Var) {
+    public final void v(b6 b6Var) {
+        if (this.i0 == b6Var) {
             return;
         }
         h6 k10 = k(false);
-        c6 c6Var2 = this.i0;
-        if (c6Var2 != null) {
-            c6.a(c6Var2);
+        b6 b6Var2 = this.i0;
+        if (b6Var2 != null) {
+            b6.a(b6Var2);
         }
-        if (c6Var != null) {
-            c6Var.q = k10;
-            c6Var.p = this;
-            c6Var.c();
+        if (b6Var != null) {
+            b6Var.q = k10;
+            b6Var.p = this;
+            b6Var.c();
         }
-        this.i0 = c6Var;
+        this.i0 = b6Var;
         if (k10 != null) {
-            k10.y = c6Var;
+            k10.y = b6Var;
         }
     }
 

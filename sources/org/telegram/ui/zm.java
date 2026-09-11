@@ -1,23 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class zm extends org.telegram.ui.Components.vl0 implements zh.q5 {
-    public final /* synthetic */ eo X2;
+public final /* synthetic */ class zm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ on b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zm(eo eoVar, Context context, bo boVar) {
-        super(context, boVar);
-        this.X2 = eoVar;
+    public /* synthetic */ zm(on onVar, int i10) {
+        this.a = i10;
+        this.b = onVar;
     }
 
-    @Override // zh.q5
-    public final void a(int[] iArr) {
-        eo eoVar = this.X2;
-        iArr[0] = ((int) eoVar.s9) - AndroidUtilities.dp(4.0f);
-        iArr[1] = org.telegram.messenger.a2.z(3.0f, eoVar.x0.getPaddingBottom(), eoVar.x0.getMeasuredHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                co coVar = this.b.a;
+                coVar.d5 = null;
+                coVar.e5 = null;
+                break;
+            case 1:
+                on onVar = this.b;
+                onVar.getClass();
+                co coVar2 = onVar.a;
+                new sg.a1((org.telegram.ui.ActionBar.n2) coVar2, 8, true).show();
+                coVar2.getMessagesController().pressTranscribeButton();
+                break;
+            case 2:
+                on onVar2 = this.b;
+                onVar2.getClass();
+                co coVar3 = onVar2.a;
+                new sg.a1((org.telegram.ui.ActionBar.n2) coVar3, 8, true).show();
+                coVar3.getMessagesController().pressTranscribeButton();
+                break;
+            case 3:
+                on onVar3 = this.b;
+                onVar3.getClass();
+                co coVar4 = onVar3.a;
+                new sg.a1((org.telegram.ui.ActionBar.n2) coVar4, 8, true).show();
+                coVar4.getMessagesController().pressTranscribeButton();
+                break;
+            case 4:
+                this.b.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
+                break;
+            case 5:
+                co coVar5 = this.b.a;
+                coVar5.d5 = null;
+                coVar5.e5 = null;
+                break;
+            case 6:
+                this.b.a.Y.H0();
+                break;
+            case 7:
+                this.b.a.Y.H0();
+                break;
+            case 8:
+                co coVar6 = this.b.a;
+                ThemeActivity themeActivity = new ThemeActivity(0);
+                themeActivity.T0 = true;
+                coVar6.presentFragment(themeActivity);
+                break;
+            default:
+                co coVar7 = this.b.a;
+                coVar7.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) coVar7, 39, false));
+                break;
+        }
     }
 }

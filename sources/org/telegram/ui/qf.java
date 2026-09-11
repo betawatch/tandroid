@@ -1,26 +1,244 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qf implements DialogInterface.OnShowListener {
+public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ eo b;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ qf(eo eoVar, int i10) {
+    public /* synthetic */ qf(co coVar, int i10) {
         this.a = i10;
-        this.b = eoVar;
+        this.b = coVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.f1 f1Var;
+        mk mkVar;
+        View sendButton;
+        View sendButton2;
         switch (this.a) {
             case 0:
-                this.b.Nb(false);
+                this.b.A7(true);
+                break;
+            case 1:
+                this.b.A7(true);
+                break;
+            case 2:
+                co coVar = this.b;
+                coVar.A7(false);
+                sg.a1 a1Var = new sg.a1((org.telegram.ui.ActionBar.n2) coVar, 24, true);
+                a1Var.setDimBehind(false);
+                a1Var.setOnHideListener(new jg(coVar, 1));
+                a1Var.show();
+                break;
+            case 3:
+                co.P0(this.b);
+                break;
+            case 4:
+                co.m0(this.b);
+                break;
+            case 5:
+                co coVar2 = this.b;
+                if (coVar2.getUserConfig().isPremium()) {
+                    coVar2.Mb = null;
+                    coVar2.Qc(true);
+                    org.telegram.ui.Components.yc.a0(coVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                    coVar2.getMessagesController().disableAds(true);
+                    break;
+                } else {
+                    coVar2.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) coVar2, 3, true));
+                    break;
+                }
+            case 6:
+                mk mkVar2 = this.b.Y;
+                if (mkVar2 != null) {
+                    mkVar2.q0(true);
+                    break;
+                }
+                break;
+            case 7:
+                AndroidUtilities.removeFromParent(this.b.K0);
+                break;
+            case 8:
+                this.b.Y.H0();
+                break;
+            case 9:
+                co coVar3 = this.b;
+                coVar3.qa = null;
+                coVar3.pa = -1;
+                View view = coVar3.fragmentView;
+                if (view != null) {
+                    view.requestLayout();
+                    break;
+                }
+                break;
+            case 10:
+                co coVar4 = this.b;
+                ArrayList arrayList = coVar4.u6;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    MessageObject messageObject = (MessageObject) arrayList.get(i10);
+                    if (messageObject.messageOwner.mentioned && !messageObject.isContentUnread()) {
+                        messageObject.setContentIsRead();
+                    }
+                }
+                coVar4.l6 = 0;
+                coVar4.getMessagesController().markMentionsAsRead(coVar4.T5, coVar4.d());
+                coVar4.m6 = true;
+                coVar4.Kb(false);
+                org.telegram.ui.ActionBar.n1 n1Var = coVar4.Q8;
+                if (n1Var != null) {
+                    n1Var.dismiss();
+                    break;
+                }
+                break;
+            case 11:
+                co coVar5 = this.b;
+                ArrayList arrayList2 = coVar5.u6;
+                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                    ((MessageObject) arrayList2.get(i11)).markReactionsAsRead();
+                }
+                coVar5.l1 = 0;
+                coVar5.Bc(true);
+                coVar5.getMessagesController().markReactionsAsRead(coVar5.T5, coVar5.d());
+                org.telegram.ui.ActionBar.n1 n1Var2 = coVar5.Q8;
+                if (n1Var2 != null) {
+                    n1Var2.dismiss();
+                    break;
+                }
+                break;
+            case 12:
+                co coVar6 = this.b;
+                ArrayList arrayList3 = coVar6.u6;
+                for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                    ((MessageObject) arrayList3.get(i12)).markPollVotesAsRead();
+                }
+                coVar6.m1 = 0;
+                coVar6.Ac(true);
+                coVar6.getMessagesController().markPollVotesAsRead(coVar6.T5, coVar6.d());
+                org.telegram.ui.ActionBar.n1 n1Var3 = coVar6.Q8;
+                if (n1Var3 != null) {
+                    n1Var3.dismiss();
+                    break;
+                }
+                break;
+            case 13:
+                co.n1(this.b);
+                break;
+            case 14:
+                org.telegram.ui.Components.yc.a0(this.b).M(LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessTitle), LocaleController.getString(R.string.BoostingRemoveRestrictionsSuccessSubTitle), R.raw.chats_infotip).j();
+                break;
+            case 15:
+                this.b.hc(false);
+                break;
+            case 16:
+                co coVar7 = this.b;
+                coVar7.G5 = null;
+                coVar7.j8();
+                break;
+            case 17:
+                co coVar8 = this.b;
+                coVar8.G5 = null;
+                coVar8.j8();
+                break;
+            case 18:
+                this.b.S6();
+                break;
+            case 19:
+                this.b.finishFragment();
+                break;
+            case 20:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 21:
+                AndroidUtilities.removeFromParent(this.b.L0);
+                break;
+            case 22:
+                co coVar9 = this.b;
+                coVar9.C4 = null;
+                coVar9.o9();
+                coVar9.r9();
+                break;
+            case 23:
+                co coVar10 = this.b;
+                qk qkVar = coVar10.t8;
+                if (qkVar != null && qkVar.getParent() != null) {
+                    coVar10.x0.e1();
+                    coVar10.v8.setDrawingReady(false);
+                    coVar10.t8.setTag(null);
+                    coVar10.X0.removeView(coVar10.t8);
+                    break;
+                }
+                break;
+            case 24:
+                co coVar11 = this.b;
+                coVar11.o9 = false;
+                coVar11.e9(true);
+                break;
+            case 25:
+                co coVar12 = this.b;
+                org.telegram.ui.ActionBar.f1[] f1VarArr = coVar12.S8;
+                if (f1VarArr != null && f1VarArr.length > 0 && (f1Var = f1VarArr[0]) != null) {
+                    f1Var.requestFocus();
+                    coVar12.S8[0].performAccessibilityAction(64, null);
+                    coVar12.S8[0].sendAccessibilityEvent(8);
+                    break;
+                }
+                break;
+            case 26:
+                co coVar13 = this.b;
+                if (coVar13.getParentActivity() != null && coVar13.fragmentView != null && (mkVar = coVar13.Y) != null && (sendButton = mkVar.getSendButton()) != null && coVar13.Y.getEditField() != null && coVar13.Y.getEditField().getText().length() >= 5) {
+                    SharedConfig.increaseScheduledOrNoSoundHintShowed();
+                    if (coVar13.g2 == null) {
+                        ij ijVar = new ij(4, 0, coVar13.getParentActivity(), coVar13.ea, false);
+                        coVar13.g2 = ijVar;
+                        ijVar.a();
+                        coVar13.g2.setAlpha(0.0f);
+                        coVar13.g2.setVisibility(4);
+                        coVar13.g2.setText(LocaleController.getString(R.string.ScheduledOrNoSoundHint));
+                        coVar13.X0.addView(coVar13.g2, w7.x5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+                    }
+                    coVar13.g2.f(sendButton, true);
+                    coVar13.h2 = true;
+                    break;
+                }
+                break;
+            case 27:
+                co coVar14 = this.b;
+                if (coVar14.getParentActivity() != null && coVar14.fragmentView != null && coVar14.Y != null && coVar14.Ea == null && coVar14.getMessagesController().getSendPaidMessagesStars(coVar14.a()) <= 0 && (sendButton2 = coVar14.Y.getSendButton()) != null && coVar14.Y.getEditField() != null && coVar14.Y.getEditField().getText().length() != 0) {
+                    SharedConfig.increaseScheduledHintShowed();
+                    if (coVar14.i2 == null) {
+                        org.telegram.ui.Components.i40 i40Var = new org.telegram.ui.Components.i40(4, coVar14.getParentActivity(), coVar14.ea, false);
+                        coVar14.i2 = i40Var;
+                        i40Var.a();
+                        coVar14.i2.setAlpha(0.0f);
+                        coVar14.i2.setVisibility(4);
+                        coVar14.i2.setText(LocaleController.getString(R.string.ScheduledHint));
+                        coVar14.X0.addView(coVar14.i2, w7.x5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+                    }
+                    coVar14.i2.f(sendButton2, true);
+                    coVar14.j2 = true;
+                    break;
+                }
+                break;
+            case 28:
+                this.b.g8(false, true, 0.0f);
                 break;
             default:
-                this.b.Nb(false);
+                co coVar15 = this.b;
+                coVar15.A0.M.clear();
+                om omVar = coVar15.A0;
+                omVar.L = false;
+                omVar.O(true);
+                coVar15.Pb(false);
                 break;
         }
     }

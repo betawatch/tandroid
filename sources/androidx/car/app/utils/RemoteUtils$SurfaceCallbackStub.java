@@ -1,12 +1,12 @@
 package androidx.car.app.utils;
 
-import a3.k0;
+import a3.j0;
 import android.graphics.Rect;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     private final o mLifecycle;
@@ -58,17 +58,17 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onClick(float f7, float f10) {
-        j.a(new k0(this.mLifecycle, new f(this, f7, f10, 0), "onClick", 1));
+        j.a(new j0(this.mLifecycle, new f(this, f7, f10, 0), "onClick", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onFling(float f7, float f10) {
-        j.a(new k0(this.mLifecycle, new f(this, f7, f10, 2), "onFling", 1));
+        j.a(new j0(this.mLifecycle, new f(this, f7, f10, 2), "onFling", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScale(final float f7, final float f10, final float f11) {
-        j.a(new k0(this.mLifecycle, new c() { // from class: androidx.car.app.utils.h
+        j.a(new j0(this.mLifecycle, new c() { // from class: androidx.car.app.utils.h
             @Override // androidx.car.app.utils.c
             public final Object a() {
                 Object lambda$onScale$6;
@@ -80,7 +80,7 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScroll(float f7, float f10) {
-        j.a(new k0(this.mLifecycle, new f(this, f7, f10, 1), "onScroll", 1));
+        j.a(new j0(this.mLifecycle, new f(this, f7, f10, 1), "onScroll", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback

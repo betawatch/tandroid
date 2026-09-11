@@ -7,7 +7,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class u0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,21 +24,21 @@ public final class u0 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                j4 j4Var = (j4) this.c;
-                j4Var.u0[1].b();
-                j4Var.u0[1].setVisibility(8);
-                j4Var.O0.T(j4Var.u0[0].b);
-                org.telegram.ui.Cells.s9 s9Var = j4Var.O0;
-                n3[] n3VarArr = j4Var.u0;
-                s9Var.E0 = n3VarArr[0].d;
+                i4 i4Var = (i4) this.c;
+                i4Var.u0[1].b();
+                i4Var.u0[1].setVisibility(8);
+                i4Var.O0.T(i4Var.u0[0].b);
+                org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
+                m3[] m3VarArr = i4Var.u0;
+                q9Var.E0 = m3VarArr[0].d;
                 int i10 = this.b;
-                n3VarArr[i10].setBackgroundDrawable(null);
-                j4Var.u0[i10].setLayerType(0, null);
-                j4Var.v0 = null;
-                j4Var.f0.f = false;
+                m3VarArr[i10].setBackgroundDrawable(null);
+                i4Var.u0[i10].setLayerType(0, null);
+                i4Var.v0 = null;
+                i4Var.f0.f = false;
                 break;
             case 1:
-                ((fv) this.c).c.d.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
+                ((ev) this.c).c.d.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
                 super.onAnimationEnd(animator);
                 break;
             case 2:

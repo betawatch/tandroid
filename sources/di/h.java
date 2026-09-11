@@ -1,205 +1,102 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.animation.ObjectAnimator;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.em;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class h extends TextView {
-    public final /* synthetic */ int a;
+public final class h implements TextWatcher {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public h(m mVar) {
+        this.c = mVar;
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.dispatchDraw(canvas);
-                canvas.drawCircle(AndroidUtilities.dp(3.5f), AndroidUtilities.dp(11.5f), AndroidUtilities.dp(2.5f), getPaint());
-                break;
-            case 1:
-            default:
-                super.dispatchDraw(canvas);
-                break;
-            case 2:
-                if (getPaddingLeft() > 0) {
-                    canvas.drawCircle((getPaddingLeft() - AndroidUtilities.dp(2.5f)) / 2.0f, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.5f), getPaint());
-                }
-                super.dispatchDraw(canvas);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        m mVar = this.c;
+        e eVar = mVar.c0;
+        org.telegram.ui.Components.q6 q6Var = mVar.v;
+        mVar.w = Character.codePointCount(editable, 0, editable.length());
+        int captionLimit = mVar.getCaptionLimit();
+        if (mVar.w + 25 > captionLimit) {
+            str = "" + (captionLimit - mVar.w);
+        } else {
+            str = null;
+        }
+        q6Var.a();
+        q6Var.setText(str);
+        q6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
+            int i10 = -mVar.N;
+            mVar.N = i10;
+            AndroidUtilities.shakeViewSpring(q6Var, i10);
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
+        int i11 = mVar.w;
+        this.a = i11;
+        boolean z10 = i11 > captionLimit;
+        if (z10 != this.b) {
+            mVar.q(z10);
+        }
+        this.b = z10;
+        if (!mVar.V) {
+            AndroidUtilities.cancelRunOnUIThread(eVar);
+            AndroidUtilities.runOnUIThread(eVar, 1500L);
+        }
+        mVar.V = false;
+        AndroidUtilities.runOnUIThread(new bi.oa(this, 11));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        ObjectAnimator objectAnimator = mVar.g0;
+        if (objectAnimator == null || !objectAnimator.isRunning()) {
+            mVar.a0 = mVar.f.getEditText().getScrollY();
+            mVar.W = true;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 13:
-                return Button.class.getName();
-            case 14:
-                return Button.class.getName();
-            case 15:
-                return Button.class.getName();
-            case 16:
-                return Button.class.getName();
-            case 17:
-                return Button.class.getName();
-            case 18:
-                return Button.class.getName();
-            case 19:
-                return Button.class.getName();
-            case 20:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        g gVar = mVar.f;
+        if (gVar.getEditText().suppressOnTextChanged) {
+            return;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 3:
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.j4.r1);
-                super.onDraw(canvas);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+        if (mVar.M == null) {
+            i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new bi.b(), 0);
+            mVar.M = iVar;
+            mVar.T = new org.telegram.ui.Components.na(mVar.O, iVar, 0, false);
+            mVar.M.p(new a6.i(mVar, 15));
+            bh.b bVar = mVar.h0;
+            if (bVar != null) {
+                i iVar2 = mVar.M;
+                dh.d c10 = bVar.c(iVar2, null, false);
+                c10.n(fh.b.i(mVar.a));
+                iVar2.setBackgroundDrawable(c10);
+            }
+            mVar.b.addView(mVar.M, w7.x5.e(-1, -1, 83));
+            mVar.w();
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 8:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(220.0f)), View.MeasureSpec.getMode(i10)), i11);
-                break;
-            case 9:
-                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
-                    Layout layout = getLayout();
-                    int i12 = 0;
-                    for (int i13 = 0; i13 < layout.getLineCount(); i13++) {
-                        i12 = Math.max(i12, (int) Math.ceil(layout.getLineWidth(i13)));
-                    }
-                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i12, TLObject.FLAG_30);
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 10:
-                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
-                    Layout layout2 = getLayout();
-                    int i14 = 0;
-                    for (int i15 = 0; i15 < layout2.getLineCount(); i15++) {
-                        i14 = Math.max(i14, (int) Math.ceil(layout2.getLineWidth(i15)));
-                    }
-                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i14, TLObject.FLAG_30);
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 11:
-                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
-                    Layout layout3 = getLayout();
-                    int i16 = 0;
-                    for (int i17 = 0; i17 < layout3.getLineCount(); i17++) {
-                        i16 = Math.max(i16, (int) Math.ceil(layout3.getLineWidth(i17)));
-                    }
-                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i16, TLObject.FLAG_30);
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 12:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), (int) (AndroidUtilities.displaySize.x * 0.45f)), TLObject.FLAG_31), i11);
-                break;
-            case 13:
-            case 14:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 20:
-            case 23:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 21:
-                super.onMeasure(i10, i11);
-                try {
-                    Layout layout4 = getLayout();
-                    if (layout4.getLineCount() <= 1) {
-                        break;
-                    } else {
-                        int i18 = 0;
-                        for (int lineCount = layout4.getLineCount() - 1; lineCount >= 0; lineCount--) {
-                            i18 = Math.max(i18, Math.round(layout4.getPaint().measureText(getText(), layout4.getLineStart(lineCount), layout4.getLineEnd(lineCount))));
-                        }
-                        super.onMeasure(Math.min(i18 + getPaddingLeft() + getPaddingRight(), getMeasuredWidth()) | TLObject.FLAG_30, 1073741824 | getMeasuredHeight());
-                        break;
-                    }
-                } catch (Exception unused) {
-                    return;
-                }
-            case 22:
-                super.onMeasure(i10, i11);
-                break;
-            case 24:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
-                break;
-            case 25:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
-                break;
-            case 26:
-                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
-                    i10 = em.d(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-                }
-                super.onMeasure(i10, i11);
-                break;
-            case 27:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 28:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
-                break;
-            case 29:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.a) {
-            case 1:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 2:
-            case 3:
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-            case 4:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 5:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 6:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 7:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
+        if (mVar.M.getAdapter() != null) {
+            hg.k1 adapter = mVar.M.getAdapter();
+            MessagesController.getInstance(mVar.U).getUser(Long.valueOf(mVar.x));
+            TLRPC.Chat chat = MessagesController.getInstance(mVar.U).getChat(Long.valueOf(-mVar.x));
+            adapter.getClass();
+            adapter.l0 = chat;
+            mVar.M.getAdapter().U(charSequence, gVar.getEditText().getSelectionStart(), null, false, false);
         }
     }
 }

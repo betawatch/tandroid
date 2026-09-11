@@ -1,45 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class lz0 extends s4.c0 {
-    public final /* synthetic */ ProfileActivity I;
+public final class lz0 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ mz0 b1;
 
-    public lz0(ProfileActivity profileActivity) {
-        this.I = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lz0(mz0 mz0Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.b1 = mz0Var;
     }
 
-    @Override // s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        ProfileActivity profileActivity = this.I;
-        View m10 = profileActivity.c.m(0);
-        if (m10 != null && !profileActivity.F0) {
-            int top = m10.getTop() - profileActivity.T3();
-            boolean z10 = profileActivity.o2;
-            if (z10 || top <= i10) {
-                if (z10) {
-                    if (i10 >= top) {
-                        profileActivity.o2 = false;
-                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.p2) {
-                        i10 /= 2;
-                    }
-                }
-            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.n2 && !AndroidUtilities.isTablet()) || profileActivity.I0)) {
-                profileActivity.o2 = profileActivity.J2 == null;
-            }
-            i10 = top;
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new rx0(this, iVar, i10, 13), 250L);
         }
-        if (!profileActivity.O1 || profileActivity.a.O0) {
-            return super.o0(i10, eVar, z0Var);
-        }
-        return 0;
-    }
-
-    @Override // s4.c0, s4.o0
-    public final boolean y0() {
-        return this.I.q0 != null;
     }
 }

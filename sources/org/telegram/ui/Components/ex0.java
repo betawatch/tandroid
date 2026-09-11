@@ -1,57 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ex0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback4 b;
+public final /* synthetic */ class ex0 implements org.telegram.ui.ActionBar.r0, MessagesStorage.StringCallback {
+    public final /* synthetic */ ux0 a;
 
-    public /* synthetic */ ex0(Utilities.Callback4 callback4, int i10) {
-        this.a = i10;
-        this.b = callback4;
+    public /* synthetic */ ex0(ux0 ux0Var) {
+        this.a = ux0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
-                Utilities.Callback4 callback4 = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
-                        callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    callback4.run(bool, null, 0L, bool);
-                    break;
-                }
-            default:
-                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
-                Utilities.Callback4 callback42 = this.b;
-                if (!z11) {
-                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
-                        callback42.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
-                        callback42.run(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    callback42.run(bool2, null, 0L, bool2);
-                    break;
-                }
-        }
+    @Override // org.telegram.ui.ActionBar.r0
+    public void m(int i10) {
+        ux0.C(this.a, i10);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new w40(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
     }
 }

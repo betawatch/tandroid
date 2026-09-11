@@ -1,20 +1,42 @@
 package org.telegram.ui;
 
 import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class kc extends qg.k0 {
-    public final /* synthetic */ int W0;
+public final class kc extends j71 {
+    public final /* synthetic */ ec d2;
+    public final /* synthetic */ a71[] e2;
+    public final /* synthetic */ bd f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc(cd cdVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var, int i12) {
-        super(i10, i11, activity, cdVar, f6Var);
-        this.W0 = i12;
+    public kc(bd bdVar, bd bdVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12, ec ecVar, a71[] a71VarArr) {
+        super(bdVar2, activity, true, num, i10, true, f6Var, i11, i12);
+        this.f2 = bdVar;
+        this.d2 = ecVar;
+        this.e2 = a71VarArr;
     }
 
-    @Override // qg.k0
-    public final int o1() {
-        return this.W0;
+    @Override // org.telegram.ui.j71
+    public final long getDialogId() {
+        return this.f2.a;
+    }
+
+    @Override // org.telegram.ui.j71
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.j71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.d2.run(Long.valueOf(l4 == null ? 0L : l4.longValue()), num, tL_starGiftUnique);
+        a71 a71Var = this.e2[0];
+        if (a71Var != null) {
+            this.f2.Q = null;
+            a71Var.dismiss();
+        }
     }
 }

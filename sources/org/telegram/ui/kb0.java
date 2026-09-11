@@ -3,19 +3,19 @@ package org.telegram.ui;
 import android.view.Window;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class kb0 implements xf.l0 {
+public final class kb0 implements yf.k0 {
     public final /* synthetic */ int a = 0;
     public boolean b;
     public boolean c;
     public final Object d;
 
-    public kb0(xf.m0 m0Var) {
-        this.d = m0Var;
+    public kb0(yf.l0 l0Var) {
+        this.d = l0Var;
     }
 
-    @Override // xf.l0
+    @Override // yf.k0
     public final void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -25,9 +25,9 @@ public final class kb0 implements xf.l0 {
                     if (launchActivity != null) {
                         int i10 = launchActivity.A1 + (z10 ? 1 : -1);
                         launchActivity.A1 = i10;
-                        k0 k0Var = launchActivity.w0;
-                        if (k0Var != null) {
-                            k0Var.setVisibility(i10 > 0 ? 8 : 0);
+                        j0 j0Var = launchActivity.w0;
+                        if (j0Var != null) {
+                            j0Var.setVisibility(i10 > 0 ? 8 : 0);
                         }
                         launchActivity.getWindow();
                         break;
@@ -35,18 +35,18 @@ public final class kb0 implements xf.l0 {
                 }
                 break;
             default:
-                xf.m0 m0Var = (xf.m0) this.d;
+                yf.l0 l0Var = (yf.l0) this.d;
                 if (this.b != z10 && !this.c) {
                     this.b = z10;
                     if (z10) {
-                        m0Var.a++;
+                        l0Var.a++;
                     } else {
-                        m0Var.a--;
+                        l0Var.a--;
                     }
-                    boolean z11 = m0Var.a > 0;
-                    if (m0Var.b != z11) {
-                        m0Var.b = z11;
-                        Window window = (Window) ((WeakReference) m0Var.c.b).get();
+                    boolean z11 = l0Var.a > 0;
+                    if (l0Var.b != z11) {
+                        l0Var.b = z11;
+                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
                         if (window != null) {
                             window.getDecorView().setVisibility(z11 ? 8 : 0);
                             break;
@@ -57,7 +57,7 @@ public final class kb0 implements xf.l0 {
         }
     }
 
-    @Override // xf.l0
+    @Override // yf.k0
     public final void destroy() {
         switch (this.a) {
             case 0:

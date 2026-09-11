@@ -1,38 +1,40 @@
 package zh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class e6 extends FrameLayout {
-    public a3 a;
-    public long b;
-    public ArrayList c;
-    public boolean d;
-    public final /* synthetic */ k7 e;
+public final /* synthetic */ class e6 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e6(k7 k7Var, Context context) {
-        super(context);
-        this.e = k7Var;
+    public /* synthetic */ e6(j7 j7Var, int i10) {
+        this.a = i10;
+        this.b = j7Var;
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            invalidate();
-            this.a.setIsVisible(z10);
-            this.e.A();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.d) {
-            super.dispatchDraw(canvas);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.n2 R2;
+        switch (this.a) {
+            case 0:
+                if (this.b.f > 0 && (R = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new v7(), l2Var);
+                    break;
+                }
+                break;
+            default:
+                if (this.b.f > 0 && (R2 = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
+                    l2Var2.a = true;
+                    R2.showAsSheet(new v7(), l2Var2);
+                    break;
+                }
+                break;
         }
     }
 }

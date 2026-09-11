@@ -1,39 +1,11 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q81 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class q81 {
+    public final /* synthetic */ SessionsActivity a;
 
-    public /* synthetic */ q81(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            default:
-                SessionsActivity.W(this.b);
-                break;
-        }
+    public q81(SessionsActivity sessionsActivity) {
+        this.a = sessionsActivity;
     }
 }

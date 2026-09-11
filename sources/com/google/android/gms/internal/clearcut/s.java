@@ -1,16 +1,20 @@
 package com.google.android.gms.internal.clearcut;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /* loaded from: classes.dex */
 public abstract class s {
-    public static final r a = new r();
-    public static final r b;
+    public static final /* synthetic */ int a = 0;
 
     static {
-        r rVar = null;
-        try {
-            rVar = (r) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
-        } catch (Exception unused) {
+        s.class.getClassLoader();
+    }
+
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
         }
-        b = rVar;
+        return (Parcelable) creator.createFromParcel(parcel);
     }
 }

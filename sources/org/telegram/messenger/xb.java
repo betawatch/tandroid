@@ -1,46 +1,66 @@
 package org.telegram.messenger;
 
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.br0;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xb implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class xb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Cloneable c;
+    public final /* synthetic */ Cloneable d;
+    public final /* synthetic */ Cloneable e;
+    public final /* synthetic */ Cloneable f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Cloneable r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Cloneable v;
 
-    public /* synthetic */ xb(MessagesController messagesController, int i10, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
-        this.e = messagesController;
-        this.b = i10;
-        this.f = chat;
-        this.d = user;
-        this.c = z10;
+    public /* synthetic */ xb(MessagesController messagesController, LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, a0.i iVar, a0.i iVar2, a0.i iVar3, a0.i iVar4, a0.i iVar5, LongSparseIntArray longSparseIntArray3, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = longSparseIntArray;
+        this.d = longSparseIntArray2;
+        this.e = sparseIntArray;
+        this.f = iVar;
+        this.h = iVar2;
+        this.n = iVar3;
+        this.r = iVar4;
+        this.s = iVar5;
+        this.v = longSparseIntArray3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.e).lambda$pinMessage$130(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$processUpdateArray$416((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.i) this.f, (a0.i) this.h, (a0.i) this.n, (a0.i) this.r, (a0.i) this.s, (LongSparseIntArray) this.v);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$processUpdateArray$417((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.i) this.f, (a0.i) this.h, (a0.i) this.n, (a0.i) this.r, (a0.i) this.s, (LongSparseIntArray) this.v);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new hi.u2((br0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
+                NotificationsSettingsActivity.U((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
                 break;
         }
     }
 
-    public /* synthetic */ xb(br0 br0Var, String str, int i10, boolean z10, TLRPC.User user) {
-        this.e = br0Var;
-        this.f = str;
-        this.b = i10;
-        this.c = z10;
-        this.d = user;
+    public /* synthetic */ xb(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
+        this.a = 2;
+        this.b = notificationsSettingsActivity;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.v = arrayList3;
+        this.e = arrayList4;
+        this.f = arrayList5;
+        this.h = arrayList6;
+        this.n = arrayList7;
+        this.r = arrayList8;
+        this.s = runnable;
     }
 }

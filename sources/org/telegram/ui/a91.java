@@ -1,41 +1,20 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a91 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
-    public final /* synthetic */ k91 a;
+public final class a91 extends l11 {
+    public final /* synthetic */ i91 G;
 
-    public /* synthetic */ a91(k91 k91Var) {
-        this.a = k91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a91(i91 i91Var, i91 i91Var2, Context context) {
+        super(context, i91Var2);
+        this.G = i91Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.d;
-        k91 k91Var = this.a;
-        k91Var.S = i10;
-        k91Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, k91Var.S + k91Var.T);
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(k91.U(this.a, (org.telegram.ui.Components.v51) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        k91.f0(this.a, (org.telegram.ui.Components.v51) obj);
+    @Override // s4.h0
+    public final void l() {
+        this.G.c.Y2.N(true);
     }
 }

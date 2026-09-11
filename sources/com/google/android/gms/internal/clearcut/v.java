@@ -1,40 +1,40 @@
 package com.google.android.gms.internal.clearcut;
 
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class v {
-    public static final /* synthetic */ int[] a;
-    public static final /* synthetic */ int[] b;
+public final class v implements o0 {
+    public static final v b = new v(0);
+    public final /* synthetic */ int a;
 
-    static {
-        int[] iArr = new int[e0.values().length];
-        b = iArr;
-        try {
-            iArr[e0.n.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public /* synthetic */ v(int i10) {
+        this.a = i10;
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.o0
+    public final boolean zza(Class cls) {
+        switch (this.a) {
+            case 0:
+                return y.class.isAssignableFrom(cls);
+            default:
+                return false;
         }
-        try {
-            b[e0.s.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            int[] iArr2 = b;
-            e0 e0Var = e0.a;
-            iArr2[6] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        int[] iArr3 = new int[m1.j.d(4).length];
-        a = iArr3;
-        try {
-            iArr3[3] = 1;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[1] = 2;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[0] = 3;
-        } catch (NoSuchFieldError unused6) {
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.o0
+    public final x0 zzb(Class cls) {
+        switch (this.a) {
+            case 0:
+                if (!y.class.isAssignableFrom(cls)) {
+                    String name = cls.getName();
+                    throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
+                }
+                try {
+                    return (x0) y.d(cls.asSubclass(y.class)).a(3);
+                } catch (Exception e7) {
+                    String name2 = cls.getName();
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e7);
+                }
+            default:
+                throw new IllegalStateException("This should never be called.");
         }
     }
 }

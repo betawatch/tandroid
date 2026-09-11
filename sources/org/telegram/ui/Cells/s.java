@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pt;
+import org.telegram.ui.Components.jt;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class s extends LinearLayout {
     public static final /* synthetic */ int f = 0;
@@ -42,7 +42,7 @@ public final class s extends LinearLayout {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(f10, f7).setDuration(250L);
-        duration.setInterpolator(pt.e);
+        duration.setInterpolator(jt.e);
         duration.addUpdateListener(new r(this, 0));
         duration.start();
     }

@@ -3,9 +3,10 @@ package k6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
+import n4.y;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new g8.j(18);
@@ -41,10 +42,10 @@ public final class c extends o6.a {
     }
 
     public final String toString() {
-        of.b bVar = new of.b(this);
-        bVar.E(this.a, "name");
-        bVar.E(Long.valueOf(b()), "version");
-        return bVar.toString();
+        y yVar = new y(this);
+        yVar.y(this.a, "name");
+        yVar.y(Long.valueOf(b()), "version");
+        return yVar.toString();
     }
 
     @Override // android.os.Parcelable

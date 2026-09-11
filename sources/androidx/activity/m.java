@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
-import androidx.fragment.app.b0;
-import androidx.fragment.app.e0;
+import androidx.fragment.app.a0;
+import androidx.fragment.app.d0;
 import androidx.lifecycle.h0;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
@@ -27,11 +27,10 @@ import java.util.LinkedHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.e3;
 import org.telegram.messenger.beta.R;
-import w7.a8;
+import w7.z7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -40,7 +39,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public boolean H;
     public boolean I;
     public final f0 b;
-    public final e3 c;
+    public final m2.t c;
     public final androidx.lifecycle.v d;
     public final o e;
     public t0 f;
@@ -57,7 +56,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public m() {
         f0 f0Var = new f0(1);
         this.b = f0Var;
-        this.c = new e3(new a3.d(this, 4));
+        this.c = new m2.t(new a3.c(this, 5));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         o oVar = new o(this);
@@ -247,7 +246,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         getMenuInflater();
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.k();
+            ((a0) it.next()).a.k();
         }
         return true;
     }
@@ -260,7 +259,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         if (i10 == 0) {
             Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
             while (it.hasNext()) {
-                if (((b0) it.next()).a.p()) {
+                if (((a0) it.next()).a.p()) {
                     return true;
                 }
             }
@@ -292,7 +291,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public final void onPanelClosed(int i10, Menu menu) {
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.q();
+            ((a0) it.next()).a.q();
         }
         super.onPanelClosed(i10, menu);
     }
@@ -316,7 +315,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         super.onPreparePanel(i10, view, menu);
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.t();
+            ((a0) it.next()).a.t();
         }
         return true;
     }
@@ -402,15 +401,15 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         decorView5.setTag(R.id.report_drawn, this);
     }
 
-    public final androidx.activity.result.c r(androidx.activity.result.b bVar, e0 e0Var) {
-        return this.w.c("activity_rq#" + this.v.getAndIncrement(), this, e0Var, bVar);
+    public final androidx.activity.result.c r(androidx.activity.result.b bVar, d0 d0Var) {
+        return this.w.c("activity_rq#" + this.v.getAndIncrement(), this, d0Var, bVar);
     }
 
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (a8.b()) {
-                a8.a("reportFullyDrawn() for ComponentActivity");
+            if (z7.b()) {
+                z7.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             o oVar = this.s;

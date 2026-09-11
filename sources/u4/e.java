@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import m.e3;
+import m2.t;
 import org.xmlpull.v1.XmlSerializer;
 import w9.o;
 import x8.m;
@@ -24,7 +24,7 @@ import y8.k0;
 import y8.v0;
 import zd.y0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final class e implements Runnable {
                 ArrayList arrayList = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList);
                 File file = shortcutInfoCompatSaverImpl.f;
-                e3 e3Var = new e3(file);
-                File file2 = (File) e3Var.c;
+                t tVar = new t(file);
+                File file2 = (File) tVar.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    FileOutputStream W = e3Var.W();
+                    FileOutputStream Q = tVar.Q();
                     try {
-                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(W);
+                        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(Q);
                         XmlSerializer newSerializer = Xml.newSerializer();
                         newSerializer.setOutput(bufferedOutputStream, "UTF_8");
                         newSerializer.startDocument(null, Boolean.TRUE);
@@ -68,9 +68,9 @@ public final class e implements Runnable {
                         newSerializer.endTag(null, "share_targets");
                         newSerializer.endDocument();
                         bufferedOutputStream.flush();
-                        W.flush();
+                        Q.flush();
                         try {
-                            W.getFD().sync();
+                            Q.getFD().sync();
                             z10 = true;
                         } catch (IOException unused) {
                         }
@@ -78,15 +78,15 @@ public final class e implements Runnable {
                             Log.e("AtomicFile", "Failed to sync file output stream");
                         }
                         try {
-                            W.close();
-                        } catch (IOException e) {
-                            Log.e("AtomicFile", "Failed to close file output stream", e);
+                            Q.close();
+                        } catch (IOException e7) {
+                            Log.e("AtomicFile", "Failed to close file output stream", e7);
                         }
-                        e3.T(file2, file);
+                        t.N(file2, file);
                         return;
-                    } catch (Exception e7) {
-                        e = e7;
-                        fileOutputStream = W;
+                    } catch (Exception e10) {
+                        e = e10;
+                        fileOutputStream = Q;
                         Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, e);
                         if (fileOutputStream != null) {
                             try {
@@ -96,8 +96,8 @@ public final class e implements Runnable {
                             }
                             try {
                                 fileOutputStream.close();
-                            } catch (IOException e10) {
-                                Log.e("AtomicFile", "Failed to close file output stream", e10);
+                            } catch (IOException e11) {
+                                Log.e("AtomicFile", "Failed to close file output stream", e11);
                             }
                             if (!file2.delete()) {
                                 Log.e("AtomicFile", "Failed to delete new file " + file2);
@@ -105,8 +105,8 @@ public final class e implements Runnable {
                         }
                         throw new RuntimeException("Failed to write to file " + file, e);
                     }
-                } catch (Exception e11) {
-                    e = e11;
+                } catch (Exception e12) {
+                    e = e12;
                 }
             case 1:
                 l lVar = (l) this.c;
@@ -114,8 +114,8 @@ public final class e implements Runnable {
                     ((l) this.b).get();
                     lVar.k(null);
                     return;
-                } catch (Exception e12) {
-                    lVar.l(e12);
+                } catch (Exception e13) {
+                    lVar.l(e13);
                     return;
                 }
             case 2:
@@ -127,8 +127,8 @@ public final class e implements Runnable {
                     fVar.putAll(d.c(shortcutInfoCompatSaverImpl2.f, shortcutInfoCompatSaverImpl2.a));
                     shortcutInfoCompatSaverImpl2.e(new ArrayList(fVar.values()));
                     return;
-                } catch (Exception e13) {
-                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e13);
+                } catch (Exception e14) {
+                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e14);
                     return;
                 }
             case 3:
@@ -150,8 +150,8 @@ public final class e implements Runnable {
                     ((Runnable) this.c).run();
                     ((l) this.b).k(null);
                     return;
-                } catch (Exception e14) {
-                    ((l) this.b).l(e14);
+                } catch (Exception e15) {
+                    ((l) this.b).l(e15);
                     return;
                 }
             case 5:

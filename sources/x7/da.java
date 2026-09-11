@@ -8,7 +8,7 @@ import z7.hb;
 import z7.lg;
 import z7.wf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -56,7 +56,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (faVar.c(o7Var, elapsedRealtime)) {
                     faVar.i.put(o7Var, Long.valueOf(elapsedRealtime));
-                    qb.m.a.execute(new sg.a1(faVar, 4));
+                    qb.m.a.execute(new rg.b0(faVar, 7));
                     return;
                 }
                 return;
@@ -90,7 +90,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
                 if (wfVar.d(hbVar, elapsedRealtime2)) {
                     wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
-                    qb.m.a.execute(new sg.a1(wfVar));
+                    qb.m.a.execute(new rg.b0(wfVar));
                     return;
                 }
                 return;

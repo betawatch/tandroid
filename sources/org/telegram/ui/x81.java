@@ -1,38 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x81 implements Runnable {
+public final /* synthetic */ class x81 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k91 b;
+    public final /* synthetic */ i91 b;
 
-    public /* synthetic */ x81(k91 k91Var, int i10) {
+    public /* synthetic */ x81(i91 i91Var, int i10) {
         this.a = i10;
-        this.b = k91Var;
+        this.b = i91Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.c.Y2.N(true);
+                i91 i91Var = this.b;
+                of.f.s(i91Var.getParentActivity(), i91Var.getMessagesController().premiumManageSubscriptionUrl);
+                i91Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
                 break;
             case 1:
-                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                i91 i91Var2 = this.b;
+                i91Var2.getClass();
+                i91Var2.presentFragment(new h(3));
                 break;
             case 2:
-                k91 k91Var = this.b;
-                k91Var.c.postOnAnimation(new x81(k91Var, 3));
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
                 break;
             case 3:
-                this.b.i0();
+                i91 i91Var3 = this.b;
+                i91Var3.getClass();
+                i91Var3.presentFragment(new hh1(8, null));
+                break;
+            case 4:
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                i91.W(this.b);
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
+                i91.Z(this.b);
                 break;
         }
     }

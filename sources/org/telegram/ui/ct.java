@@ -1,54 +1,54 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ct extends s4.s0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final class ct implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
 
-    public ct(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public ct(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
-            return;
-        }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
-        }
-        this.b = true;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        zg.e eVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.F) {
-            boolean z10 = i11 > 0;
-            if (i11 != 0 && this.a && (z10 || this.b)) {
-                contactsActivity.x = !z10;
-                ContactsActivity.e0(contactsActivity);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        try {
+            String obj = editable.toString();
+            if (obj.isEmpty()) {
+                return;
             }
-            this.a = true;
+            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
+            EditTextBoldCursor editTextBoldCursor = this.a;
+            if (intValue < 0) {
+                editTextBoldCursor.setText("0");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (intValue > 300) {
+                editTextBoldCursor.setText("300");
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                return;
+            }
+            if (obj.equals("" + intValue)) {
+                return;
+            }
+            editTextBoldCursor.setText("" + intValue);
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (eVar = contactsActivity.t0) != null) {
-            eVar.f(i10, i11);
-            contactsActivity.g0();
-        }
-        ContactsActivity.d0(contactsActivity);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

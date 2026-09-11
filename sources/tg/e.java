@@ -1,363 +1,545 @@
 package tg;
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.graphics.SurfaceTexture;
+import android.opengl.GLUtils;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.TextureView;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.OvershootInterpolator;
+import bi.t5;
 import com.google.android.gms.internal.vision.e2;
-import java.util.Date;
+import h2.i;
+import java.util.ArrayList;
+import java.util.Collections;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.egl.EGLContext;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.w71;
-import org.telegram.ui.web.y1;
-import s4.c1;
-import u2.k0;
-import ug.c0;
-import ug.d0;
-import ug.r;
-import ug.t;
+import org.telegram.messenger.EmuDetector;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.voip.w;
+import sg.z1;
+import zh.w7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class e extends ul0 {
-    public final f6 c;
-    public boolean d;
-    public p2 e;
-    public TLRPC.TL_payments_checkedGiftCode f;
-    public String h;
-    public FrameLayout n;
+public class e extends TextureView implements TextureView.SurfaceTextureListener {
+    public boolean E;
+    public boolean F;
+    public i G;
+    public final int H;
+    public final long I;
+    public final int J;
+    public int K;
+    public final ArrayList L;
+    public boolean M;
+    public z1 N;
+    public final int O;
+    public volatile boolean P;
+    public volatile w7 Q;
+    public final GestureDetector R;
+    public ValueAnimator S;
+    public AnimatorSet T;
+    public final c U;
+    public final b V;
+    public final b W;
+    public boolean a;
+    public final b a0;
+    public a b;
+    public SurfaceTexture c;
+    public EGLDisplay d;
+    public EGLSurface e;
+    public EGLContext f;
+    public EGL10 h;
+    public EGLConfig n;
+    public GL10 r;
+    public int s;
+    public int v;
+    public int w;
+    public boolean x;
+    public boolean y;
 
-    public e(f6 f6Var) {
-        this.c = f6Var;
+    /* JADX WARN: Type inference failed for: r2v3, types: [tg.b] */
+    /* JADX WARN: Type inference failed for: r2v4, types: [tg.b] */
+    /* JADX WARN: Type inference failed for: r2v5, types: [tg.b] */
+    public e(Context context, int i10, int i11) {
+        super(context);
+        int i12 = 0;
+        this.x = false;
+        this.y = true;
+        this.E = false;
+        this.F = false;
+        this.L = new ArrayList();
+        this.T = new AnimatorSet();
+        final int i13 = 0;
+        this.U = new c(this, 0);
+        this.V = new ValueAnimator.AnimatorUpdateListener(this) { // from class: tg.b
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                switch (i13) {
+                    case 0:
+                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    case 1:
+                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    default:
+                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                }
+            }
+        };
+        final int i14 = 1;
+        this.W = new ValueAnimator.AnimatorUpdateListener(this) { // from class: tg.b
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                switch (i14) {
+                    case 0:
+                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    case 1:
+                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    default:
+                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                }
+            }
+        };
+        final int i15 = 2;
+        this.a0 = new ValueAnimator.AnimatorUpdateListener(this) { // from class: tg.b
+            public final /* synthetic */ e b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                switch (i15) {
+                    case 0:
+                        this.b.b.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    case 1:
+                        this.b.b.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                    default:
+                        this.b.b.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                        break;
+                }
+            }
+        };
+        this.O = i11;
+        this.J = (i11 == 1 || i11 == 4 || i11 == 3) ? 1 : 5;
+        this.I = i11 == 4 ? 0L : 2000L;
+        setOpaque(false);
+        setRenderer(new a(context, i10, i11));
+        this.H = (int) AndroidUtilities.screenRefreshRate;
+        setSurfaceTextureListener(this);
+        GestureDetector gestureDetector = new GestureDetector(context, new t5(1, this));
+        this.R = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(true);
+        while (i12 < this.J) {
+            i12 = e2.e(i12, i12, 1, this.L);
+        }
+        Collections.shuffle(this.L);
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(c1 c1Var) {
+    public static void a(e eVar) {
+        EGL10 egl10 = (EGL10) EGLContext.getEGL();
+        eVar.h = egl10;
+        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
+        eVar.d = eglGetDisplay;
+        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
+            throw new RuntimeException("eglGetDisplay failed " + GLUtils.getEGLErrorString(eVar.h.eglGetError()));
+        }
+        if (!eVar.h.eglInitialize(eglGetDisplay, new int[2])) {
+            throw new RuntimeException("eglInitialize failed " + GLUtils.getEGLErrorString(eVar.h.eglGetError()));
+        }
+        int[] iArr = new int[1];
+        EGLConfig[] eGLConfigArr = new EGLConfig[1];
+        int[] iArr2 = EmuDetector.with(eVar.getContext()).detect() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12344};
+        eVar.n = null;
+        if (!eVar.h.eglChooseConfig(eVar.d, iArr2, eGLConfigArr, 1, iArr)) {
+            throw new IllegalArgumentException("eglChooseConfig failed " + GLUtils.getEGLErrorString(eVar.h.eglGetError()));
+        }
+        if (iArr[0] > 0) {
+            eVar.n = eGLConfigArr[0];
+        }
+        EGLConfig eGLConfig = eVar.n;
+        if (eGLConfig == null) {
+            throw new RuntimeException("eglConfig not initialized");
+        }
+        eVar.f = eVar.h.eglCreateContext(eVar.d, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, 12344});
+        eVar.f();
+        eVar.e = eVar.h.eglCreateWindowSurface(eVar.d, eVar.n, eVar.c, null);
+        eVar.f();
+        EGLSurface eGLSurface = eVar.e;
+        if (eGLSurface == null || eGLSurface == EGL10.EGL_NO_SURFACE) {
+            int eglGetError = eVar.h.eglGetError();
+            if (eglGetError == 12299) {
+                FileLog.e("eglCreateWindowSurface returned EGL10.EGL_BAD_NATIVE_WINDOW");
+                return;
+            } else {
+                throw new RuntimeException("eglCreateWindowSurface failed " + GLUtils.getEGLErrorString(eglGetError));
+            }
+        }
+        if (!eVar.h.eglMakeCurrent(eVar.d, eGLSurface, eGLSurface, eVar.f)) {
+            throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(eVar.h.eglGetError()));
+        }
+        eVar.f();
+        eVar.r = (GL10) eVar.f.getGL();
+        eVar.f();
+    }
+
+    public static boolean b(e eVar) {
+        boolean z10;
+        synchronized (eVar) {
+            z10 = eVar.y;
+        }
+        return z10 || eVar.b == null;
+    }
+
+    public static void c(e eVar, float f7) {
+        synchronized (eVar) {
+            try {
+                eVar.e();
+                a aVar = eVar.b;
+                if (aVar != null) {
+                    aVar.D = f7;
+                    aVar.onDrawFrame(eVar.r);
+                }
+                int glGetError = eVar.r.glGetError();
+                if (glGetError != 0) {
+                    FileLog.e("GL error = 0x" + Integer.toHexString(glGetError));
+                }
+                eVar.h.eglSwapBuffers(eVar.d, eVar.e);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void d() {
+        ValueAnimator valueAnimator = this.S;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.S.cancel();
+            this.S = null;
+        }
+        AnimatorSet animatorSet = this.T;
+        if (animatorSet != null) {
+            animatorSet.removeAllListeners();
+            this.T.cancel();
+            this.T = null;
+        }
+    }
+
+    public final void e() {
+        if (this.f.equals(this.h.eglGetCurrentContext()) && this.e.equals(this.h.eglGetCurrentSurface(12377))) {
+            return;
+        }
+        f();
+        EGL10 egl10 = this.h;
+        EGLDisplay eGLDisplay = this.d;
+        EGLSurface eGLSurface = this.e;
+        if (egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.f)) {
+            f();
+        } else {
+            throw new RuntimeException("eglMakeCurrent failed " + GLUtils.getEGLErrorString(this.h.eglGetError()));
+        }
+    }
+
+    public final void f() {
+        if (this.h.eglGetError() != 12288) {
+            FileLog.e("cannot swap buffers!");
+        }
+    }
+
+    public final void h(long j3) {
+        c cVar = this.U;
+        AndroidUtilities.cancelRunOnUIThread(cVar);
+        if (this.F) {
+            return;
+        }
+        AndroidUtilities.runOnUIThread(cVar, j3);
+    }
+
+    public final void i() {
+        d();
+        a aVar = this.b;
+        float f7 = aVar.d;
+        float f10 = aVar.g;
+        float f11 = aVar.e;
+        float f12 = f7 + f10;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+        this.S = ofFloat;
+        ofFloat.addUpdateListener(new w(this, f7, f11, f10, 2));
+        this.S.setDuration(600L);
+        this.S.setInterpolator(new OvershootInterpolator());
+        this.S.start();
+        z1 z1Var = this.N;
+        if (z1Var != null) {
+            float abs = Math.abs(f12);
+            float f13 = abs < 60.0f ? 5.0f : abs < 180.0f ? 9.0f : 15.0f;
+            AnimatorSet animatorSet = new AnimatorSet();
+            ki.a aVar2 = new ki.a(z1Var, 18);
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, f13);
+            ofFloat2.addUpdateListener(aVar2);
+            ofFloat2.setDuration(600L);
+            ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f13, 1.0f);
+            ofFloat3.addUpdateListener(aVar2);
+            ofFloat3.setDuration(2000L);
+            animatorSet.playTogether(ofFloat2, ofFloat3);
+            animatorSet.start();
+        }
+        h(this.I);
+    }
+
+    public final void j(long j3) {
+        a aVar = this.b;
+        if (aVar != null) {
+            aVar.d = -180.0f;
+            AndroidUtilities.runOnUIThread(new c(this, 1), j3);
+        }
+    }
+
+    public void k() {
+        if (this.M) {
+            int i10 = this.K;
+            ArrayList arrayList = this.L;
+            int intValue = ((Integer) arrayList.get(i10)).intValue();
+            int i11 = this.K + 1;
+            this.K = i11;
+            if (i11 >= arrayList.size()) {
+                Collections.shuffle(arrayList);
+                this.K = 0;
+            }
+            b bVar = this.a0;
+            b bVar2 = this.W;
+            if (intValue == 0) {
+                int abs = Math.abs(Utilities.random.nextInt() % 4);
+                this.T = new AnimatorSet();
+                int i12 = this.O;
+                if (i12 == 4) {
+                    float f7 = this.b.d;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 360.0f + f7);
+                    ofFloat.addUpdateListener(bVar2);
+                    ofFloat.setDuration(12000L);
+                    ofFloat.setInterpolator(new LinearInterpolator());
+                    this.T.playTogether(ofFloat);
+                } else if (abs != 0 || i12 == 1 || i12 == 3) {
+                    int i13 = (i12 == 1 || i12 == 3) ? 360 : 485;
+                    if (abs == 2) {
+                        i13 = -i13;
+                    }
+                    float f10 = i13;
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.b.g, f10);
+                    ofFloat2.addUpdateListener(bVar2);
+                    ofFloat2.setDuration(3000L);
+                    ofFloat2.setInterpolator(pr.h);
+                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f10, 0.0f);
+                    ofFloat3.addUpdateListener(bVar2);
+                    ofFloat3.setDuration(1000L);
+                    ofFloat3.setStartDelay(3000L);
+                    ofFloat3.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    this.T.playTogether(ofFloat2, ofFloat3);
+                } else {
+                    float f11 = 48;
+                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.b.g, f11);
+                    ofFloat4.addUpdateListener(bVar);
+                    ofFloat4.setDuration(2300L);
+                    ofFloat4.setInterpolator(pr.h);
+                    ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f11, 0.0f);
+                    ofFloat5.addUpdateListener(bVar);
+                    ofFloat5.setDuration(500L);
+                    ofFloat5.setStartDelay(2300L);
+                    ofFloat5.setInterpolator(AndroidUtilities.overshootInterpolator);
+                    this.T.playTogether(ofFloat4, ofFloat5);
+                }
+                this.T.addListener(new d(this, 1));
+                this.T.start();
+                return;
+            }
+            if (intValue == 1) {
+                this.T = new AnimatorSet();
+                ValueAnimator ofFloat6 = ValueAnimator.ofFloat(this.b.d, 360.0f);
+                ofFloat6.addUpdateListener(bVar2);
+                ofFloat6.setDuration(8000L);
+                ofFloat6.setInterpolator(pr.f);
+                this.T.playTogether(ofFloat6);
+                this.T.addListener(new d(this, 0));
+                this.T.start();
+                return;
+            }
+            if (intValue != 2) {
+                this.T = new AnimatorSet();
+                ValueAnimator ofFloat7 = ValueAnimator.ofFloat(this.b.d, 180.0f);
+                ofFloat7.addUpdateListener(bVar2);
+                ofFloat7.setDuration(600L);
+                pr prVar = pr.f;
+                ofFloat7.setInterpolator(prVar);
+                ValueAnimator ofFloat8 = ValueAnimator.ofFloat(180.0f, 360.0f);
+                ofFloat8.addUpdateListener(bVar2);
+                ofFloat8.setDuration(600L);
+                ofFloat8.setStartDelay(2000L);
+                ofFloat8.setInterpolator(prVar);
+                this.T.playTogether(ofFloat7, ofFloat8);
+                this.T.addListener(new d(this, 2));
+                this.T.start();
+                return;
+            }
+            this.T = new AnimatorSet();
+            ValueAnimator ofFloat9 = ValueAnimator.ofFloat(this.b.d, 184.0f);
+            ofFloat9.addUpdateListener(bVar2);
+            ofFloat9.setDuration(600L);
+            pr prVar2 = pr.g;
+            ofFloat9.setInterpolator(prVar2);
+            ValueAnimator ofFloat10 = ValueAnimator.ofFloat(this.b.g, 50.0f);
+            ofFloat10.addUpdateListener(bVar);
+            ofFloat10.setDuration(600L);
+            ofFloat10.setInterpolator(prVar2);
+            ValueAnimator ofFloat11 = ValueAnimator.ofFloat(180.0f, 0.0f);
+            ofFloat11.addUpdateListener(bVar2);
+            ofFloat11.setDuration(800L);
+            ofFloat11.setStartDelay(10000L);
+            ofFloat11.setInterpolator(AndroidUtilities.overshootInterpolator);
+            ValueAnimator ofFloat12 = ValueAnimator.ofFloat(60.0f, 0.0f);
+            ofFloat12.addUpdateListener(bVar);
+            ofFloat12.setDuration(800L);
+            ofFloat12.setStartDelay(10000L);
+            ofFloat12.setInterpolator(AndroidUtilities.overshootInterpolator);
+            ValueAnimator ofFloat13 = ValueAnimator.ofFloat(0.0f, 2.0f, -3.0f, 2.0f, -1.0f, 2.0f, -3.0f, 2.0f, -1.0f, 0.0f);
+            ofFloat13.addUpdateListener(this.V);
+            ofFloat13.setDuration(10000L);
+            ofFloat13.setInterpolator(new LinearInterpolator());
+            this.T.playTogether(ofFloat9, ofFloat10, ofFloat11, ofFloat12, ofFloat13);
+            this.T.addListener(new d(this, 3));
+            this.T.start();
+        }
+    }
+
+    @Override // android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.M = true;
+        this.E = true;
+        h(this.I);
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        d();
+        a aVar = this.b;
+        if (aVar != null) {
+            aVar.d = 0.0f;
+            aVar.g = 0.0f;
+            aVar.e = 0.0f;
+        }
+        this.M = false;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        this.G = new i(this);
+        this.c = surfaceTexture;
+        this.w = i10;
+        this.v = i11;
+        this.s = Math.max(0, ((int) ((1.0f / this.H) * 1000.0f)) - 1);
+        this.G.start();
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        this.P = false;
+        if (this.G != null) {
+            this.x = false;
+            this.G = null;
+        }
         return false;
     }
 
-    public abstract void E();
-
-    public abstract void F(TLObject tLObject);
-
-    @Override // s4.h0
-    public final int h() {
-        return 5;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                i11 = 3;
-                if (i10 != 3) {
-                    i11 = 4;
-                    if (i10 != 4) {
-                        return 5;
-                    }
-                }
-            }
-        }
-        return i11;
-    }
-
-    @Override // s4.h0
-    public final void v(c1 c1Var, int i10) {
-        int i11;
-        char c10;
-        String formatPluralString;
-        c0 c0Var;
-        int i12 = c1Var.f;
-        View view = c1Var.a;
-        int i13 = 10;
-        if (i12 == 0) {
-            r rVar = (r) view;
-            if (this.d) {
-                rVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                rVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllows", R.string.BoostingLinkAllows, new Object[0])));
-            } else {
-                rVar.c.setText(LocaleController.formatString("BoostingUsedGiftLink", R.string.BoostingUsedGiftLink, new Object[0]));
-                rVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", R.string.BoostingLinkUsed, new Object[0])));
-            }
-            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = this.f;
-            if (tL_payments_checkedGiftCode.boost != null) {
-                long j3 = tL_payments_checkedGiftCode.to_id;
-                final y1 y1Var = new y1(this, i13);
-                rVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(R.string.BoostingLinkAllowsToUser));
-                final TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j3));
-                final int i14 = 0;
-                rVar.d.setText(AndroidUtilities.replaceCharSequence("%1$s", replaceTags, AndroidUtilities.replaceSingleTag("**" + UserObject.getUserName(user) + "**", j6.gc, 2, new Runnable() { // from class: ug.n
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i14) {
-                            case 0:
-                                y1Var.run(user);
-                                break;
-                            default:
-                                y1Var.run(user);
-                                break;
-                        }
-                    }
-                }, rVar.e)));
-            }
-            if (this.f.to_id == -1) {
-                rVar.c.setText(LocaleController.formatString("BoostingGiftLink", R.string.BoostingGiftLink, new Object[0]));
-                rVar.d.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", R.string.BoostingLinkAllowsAnyone, new Object[0])));
-                return;
-            }
-            return;
-        }
-        int i15 = 1;
-        if (i12 == 1) {
-            t tVar = (t) view;
-            tVar.setSlug(this.h);
-            if (this.f.boost != null && this.h == null) {
-                tVar.a(new c(this, 0));
-            }
-            String str = this.h;
-            if ((str == null || str.isEmpty()) && this.f.to_id == -1) {
-                tVar.a(new c(this, 0));
-                return;
-            }
-            return;
-        }
-        int i16 = 8;
-        if (i12 != 2) {
-            if (i12 != 3) {
-                if (i12 != 4) {
-                    return;
-                }
-                ug.a aVar = (ug.a) view;
-                aVar.setOkStyle(this.d);
-                aVar.setOnClickListener(new w71(16, this, aVar));
-                TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode2 = this.f;
-                if (tL_payments_checkedGiftCode2.boost != null || tL_payments_checkedGiftCode2.flags == -1) {
-                    aVar.e = false;
-                    bi.d dVar = aVar.a;
-                    dVar.setShowZero(false);
-                    dVar.setEnabled(true);
-                    dVar.g(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
-                    aVar.setOnClickListener(new org.telegram.ui.web.c(this, i16));
-                    return;
-                }
-                return;
-            }
-            d0 d0Var = (d0) view;
-            d0Var.setTextGravity(17);
-            d0Var.setTextColor(j6.w0(null, j6.G6, false));
-            d0Var.setTopPadding(14);
-            d0Var.setBottomPadding(15);
-            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode3 = this.f;
-            if (tL_payments_checkedGiftCode3.boost == null) {
-                if (this.d) {
-                    d0Var.setText(AndroidUtilities.replaceSingleTag(tL_payments_checkedGiftCode3.to_id == -1 ? LocaleController.getString(R.string.BoostingSendLinkToAnyone) : LocaleController.getString(R.string.BoostingSendLinkToFriends), j6.gc, 0, new c(this, i15), this.c));
-                    return;
-                } else {
-                    Date date = new Date(this.f.used_date * 1000);
-                    d0Var.setText(LocaleController.formatString("BoostingUsedLinkDate", R.string.BoostingUsedLinkDate, LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date), LocaleController.getInstance().getFormatterDay().format(date))));
-                    return;
-                }
-            }
-            String str2 = this.h;
-            if (str2 == null || str2.isEmpty()) {
-                d0Var.setText(LocaleController.getString(R.string.BoostingLinkNotActivated));
-                return;
-            } else {
-                d0Var.setFixedSize(14);
-                d0Var.setText(null);
-                return;
-            }
-        }
-        c0 c0Var2 = (c0) view;
-        final TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode4 = this.f;
-        final y1 y1Var2 = new y1(this, i13);
-        w9 w9Var = c0Var2.h;
-        FrameLayout frameLayout = c0Var2.w;
-        w9 w9Var2 = c0Var2.f;
-        TextView textView = c0Var2.a;
-        TextView textView2 = c0Var2.b;
-        f6 f6Var = c0Var2.n;
-        Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
-        c0Var2.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
-        TextView textView3 = c0Var2.d;
-        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, f6Var));
-        TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_payments_checkedGiftCode4.from_id)));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        if (tL_payments_checkedGiftCode4.via_giveaway) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) "**");
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.BoostingGiveaway));
-            spannableStringBuilder.append((CharSequence) "**");
-            final int i17 = 0;
-            textView3.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder.toString(), j6.gc, 0, new Runnable() { // from class: ug.z
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i17) {
-                        case 0:
-                            y1Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                        default:
-                            y1Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                    }
-                }
-            }, f6Var));
-            textView3.setOnClickListener(new w71(18, y1Var2, tL_payments_checkedGiftCode4));
-        } else {
-            textView3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingYouWereSelected : R.string.BoostingYouWereSelectedGroup));
-            textView3.setOnClickListener(null);
-        }
-        int i18 = tL_payments_checkedGiftCode4.months;
-        if (i18 == 12) {
-            i11 = 1;
-            formatPluralString = LocaleController.formatPluralString("Years", 1, new Object[0]);
-            c10 = 0;
-        } else {
-            i11 = 1;
-            c10 = 0;
-            formatPluralString = LocaleController.formatPluralString("Months", i18, new Object[0]);
-        }
-        TextView textView4 = c0Var2.c;
-        int i19 = R.string.BoostingTelegramPremiumFor;
-        String str3 = formatPluralString;
-        Object[] objArr = new Object[i11];
-        objArr[c10] = str3;
-        textView4.setText(LocaleController.formatString("BoostingTelegramPremiumFor", i19, objArr));
-        if (chat != null) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            spannableStringBuilder2.append((CharSequence) "**");
-            spannableStringBuilder2.append((CharSequence) chat.title);
-            spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new k0(2, y1Var2, chat), f6Var), textView.getPaint().getFontMetricsInt(), false));
-            w9Var2.e(chat, new g9(chat));
-            frameLayout.setOnClickListener(new w71(19, y1Var2, chat));
-            c0Var = c0Var2;
-        } else {
-            c0Var = c0Var2;
-            final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
-            final int i20 = 0;
-            textView.setText(Emoji.replaceEmoji(UserObject.getFirstName(user2), textView.getPaint().getFontMetricsInt(), false));
-            w9Var2.e(user2, new g9(0, user2));
-            frameLayout.setOnClickListener(new View.OnClickListener() { // from class: ug.a0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i20) {
-                        case 0:
-                            y1Var2.run(user2);
-                            break;
-                        default:
-                            y1Var2.run(user2);
-                            break;
-                    }
-                }
-            });
-        }
-        if (tL_payments_checkedGiftCode4.to_id == -1 && tL_payments_checkedGiftCode4.via_giveaway) {
-            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-            spannableStringBuilder3.append((CharSequence) "**");
-            spannableStringBuilder3.append((CharSequence) LocaleController.getString(R.string.BoostingIncompleteGiveaway));
-            spannableStringBuilder3.append((CharSequence) "**");
-            final int i21 = 1;
-            textView3.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder3.toString(), j6.gc, 0, new Runnable() { // from class: ug.z
-                @Override // java.lang.Runnable
-                public final void run() {
-                    switch (i21) {
-                        case 0:
-                            y1Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                        default:
-                            y1Var2.run(tL_payments_checkedGiftCode4);
-                            break;
-                    }
-                }
-            }, f6Var));
-            textView2.setText(LocaleController.getString(R.string.BoostingNoRecipient));
-            textView2.setTextColor(j6.v0(j6.j5, f6Var));
-            ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
-            ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
-            w9Var.setVisibility(8);
-        } else {
-            final TLRPC.User user3 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
-            if (user3 != null) {
-                SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
-                spannableStringBuilder4.append((CharSequence) "**");
-                spannableStringBuilder4.append((CharSequence) UserObject.getFirstName(user3));
-                spannableStringBuilder4.append((CharSequence) "**");
-                final int i22 = 1;
-                textView2.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder4.toString(), j6.gc, 0, new Runnable() { // from class: ug.n
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i22) {
-                            case 0:
-                                y1Var2.run(user3);
-                                break;
-                            default:
-                                y1Var2.run(user3);
-                                break;
-                        }
-                    }
-                }, f6Var), textView2.getPaint().getFontMetricsInt(), false));
-                w9Var.e(user3, new g9(0, user3));
-                c0Var.x.setOnClickListener(new View.OnClickListener() { // from class: ug.a0
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view2) {
-                        switch (i22) {
-                            case 0:
-                                y1Var2.run(user3);
-                                break;
-                            default:
-                                y1Var2.run(user3);
-                                break;
-                        }
-                    }
-                });
-            }
-        }
-        if (tL_payments_checkedGiftCode4.boost != null) {
-            c0Var.y.setVisibility(8);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        this.w = i10;
+        this.v = i11;
+        a aVar = this.b;
+        if (aVar != null) {
+            aVar.onSurfaceChanged(this.r, i10, i11);
         }
     }
 
-    @Override // s4.h0
-    public final c1 x(ViewGroup viewGroup, int i10) {
-        View tVar;
-        Context context = viewGroup.getContext();
-        f6 f6Var = this.c;
-        if (i10 == 1) {
-            tVar = new t(context, f6Var);
-        } else if (i10 == 2) {
-            tVar = new c0(context, f6Var);
-        } else if (i10 == 3) {
-            tVar = new d0(context, f6Var);
-        } else if (i10 != 4) {
-            tVar = i10 != 5 ? new r(context, f6Var) : new View(context);
-        } else {
-            tVar = new ug.a(context, f6Var);
-            tVar.setPadding(0, 0, 0, AndroidUtilities.dp(14.0f));
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            this.a = false;
+            i();
+            getParent().requestDisallowInterceptTouchEvent(false);
         }
-        return e2.j(tVar, tVar, -1, -2);
+        return this.R.onTouchEvent(motionEvent);
+    }
+
+    public void setBackgroundBitmap(Bitmap bitmap) {
+        a aVar = this.b;
+        f fVar = aVar.c;
+        if (fVar != null) {
+            fVar.V = bitmap;
+        }
+        aVar.o = bitmap;
+    }
+
+    public void setDialogVisible(boolean z10) {
+        this.F = z10;
+        if (!z10) {
+            h(this.I);
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(this.U);
+            i();
+        }
+    }
+
+    public synchronized void setPaused(boolean z10) {
+        this.y = z10;
+    }
+
+    public synchronized void setRenderer(a aVar) {
+        this.b = aVar;
+        this.E = true;
+    }
+
+    public void setStarParticlesView(z1 z1Var) {
+        this.N = z1Var;
+    }
+
+    public void g() {
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

@@ -1,145 +1,165 @@
 package di;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import bi.wc;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.em;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.wr;
-import org.telegram.ui.Components.zp;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class l0 extends Drawable {
-    public final ImageView a;
-    public final Paint b;
+public final class l0 extends View {
+    public final Paint a;
+    public final Path b;
     public final RectF c;
-    public final long d;
-    public final Drawable e;
-    public boolean f;
-    public float g;
-    public boolean h;
-    public final d6 i;
-    public final d6 j;
-    public final d6 k;
-    public hj0 l;
+    public final /* synthetic */ m0 d;
 
-    public l0(Context context, ImageView imageView) {
-        Paint paint = new Paint(1);
-        this.b = paint;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(m0 m0Var, Context context) {
+        super(context);
+        this.d = m0Var;
+        this.a = new Paint(1);
+        this.b = new Path();
         this.c = new RectF();
-        this.h = false;
-        wc wcVar = new wc(this, 13);
-        wr wrVar = wr.h;
-        this.i = new d6(wcVar, 320L, wrVar, 0);
-        this.j = new d6(new wc(this, 13), 320L, wrVar, 0);
-        this.k = new d6(new wc(this, 13), 320L, wrVar, 0);
-        this.a = imageView;
-        this.d = System.currentTimeMillis();
-        this.e = context.getResources().getDrawable(R.drawable.search_files_filled).mutate();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
+        new Matrix();
+        new Matrix();
+        new Matrix();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    private float getContainerHeight() {
+        boolean z10 = getContext() instanceof BubbleActivity;
+        g0 g0Var = this.d.h;
+        return ((getHeight() - (g0Var.E + (!z10 ? AndroidUtilities.statusBarHeight : 0))) - g0Var.y) - AndroidUtilities.dp(32.0f);
+    }
+
+    private float getContainerWidth() {
+        return getWidth() - AndroidUtilities.dp(32.0f);
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int currentWidth;
+        int currentHeight;
+        boolean z10;
+        MediaController.CropState cropState;
         float f7;
         float f10;
-        hj0 hj0Var;
-        Canvas canvas2 = canvas;
-        Rect bounds = getBounds();
-        int centerX = bounds.centerX();
-        int centerY = bounds.centerY();
-        float e = this.k.e(this.h);
-        if (e < 1.0f) {
-            float f11 = 1.0f - e;
-            float f12 = (0.4f * f11) + 0.6f;
-            canvas2.save();
-            float f13 = centerX;
-            float f14 = centerY;
-            canvas2.scale(f12, f12, f13, f14);
-            Drawable drawable = this.e;
-            drawable.setBounds(em.w(2, centerX, drawable), em.e(2, centerY, drawable), em.B(2, centerX, drawable), em.z(2, centerY, drawable));
-            drawable.setAlpha((int) (f11 * 255.0f));
-            drawable.draw(canvas2);
-            float dp = AndroidUtilities.dp(14.0f);
-            int l1 = j6.l1(0.2f * f11, -1);
-            Paint paint = this.b;
-            paint.setColor(l1);
-            canvas2.drawCircle(f13, f14, dp, paint);
-            float f15 = f11 * 1.0f;
-            paint.setColor(j6.l1(f15, -1));
-            float f16 = f13 - dp;
-            f7 = 255.0f;
-            float f17 = f14 - dp;
-            float f18 = f13 + dp;
-            float f19 = f14 + dp;
-            RectF rectF = this.c;
-            rectF.set(f16, f17, f18, f19);
-            float e7 = this.i.e(this.f);
-            paint.setColor(j6.l1((1.0f - e7) * f11 * 0.15f, -1));
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = this.d;
-            canvas2.drawArc(rectF, (-(((((currentTimeMillis - j3) % 600) / 600.0f) - 1.0f) * 360.0f)) - 90.0f, -90.0f, false, paint);
-            float currentTimeMillis2 = ((System.currentTimeMillis() - j3) * 0.45f) % 5400.0f;
-            float max = Math.max(0.0f, ((1520.0f * currentTimeMillis2) / 5400.0f) - 20.0f);
-            for (int i10 = 0; i10 < 4; i10++) {
-                u1.a aVar = zp.h;
-                aVar.getInterpolation((currentTimeMillis2 - (i10 * 1350)) / 667.0f);
-                max += aVar.getInterpolation((currentTimeMillis2 - (r10 + 667)) / 667.0f) * 250.0f;
-            }
-            f10 = 0.0f;
-            paint.setColor(j6.l1(f15, -1));
-            canvas2 = canvas;
-            canvas2.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, this.j.d(this.g, false)) * (-360.0f) * e7, false, paint);
-            invalidateSelf();
-            canvas2.restore();
-        } else {
-            f7 = 255.0f;
-            f10 = 0.0f;
-        }
-        if (e <= f10 || (hj0Var = this.l) == null) {
+        m0 m0Var = this.d;
+        g0 g0Var = m0Var.h;
+        int[] iArr = m0Var.x;
+        d7 d7Var = m0Var.a;
+        if (m0Var.b == null) {
             return;
         }
-        int i11 = hj0Var.b / 2;
-        int i12 = hj0Var.c / 2;
-        hj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
-        this.l.setAlpha((int) (e * f7));
-        this.l.draw(canvas2);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(40.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(40.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        canvas.save();
+        Paint paint = this.a;
+        paint.setColor(-16777216);
+        paint.setAlpha((int) (m0Var.s * 255.0f));
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+        if (m0Var.s < 1.0f) {
+            Path path = this.b;
+            path.rewind();
+            float width = d7Var.getWidth();
+            float height = d7Var.getHeight();
+            RectF rectF = this.c;
+            rectF.set(0.0f, 0.0f, width, height);
+            int[] iArr2 = m0Var.w;
+            rectF.offset(iArr2[0], iArr2[1]);
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+            AndroidUtilities.lerp(rectF, rectF2, m0Var.s, rectF);
+            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), 0, m0Var.s);
+            path.addRoundRect(rectF, lerp, lerp, Path.Direction.CW);
+            canvas.clipPath(path);
+        }
+        float f11 = m0Var.s;
+        float f12 = 1.0f - f11;
+        int[] iArr3 = m0Var.v;
+        canvas.translate((-iArr3[0]) * f12, (-iArr3[1]) * f12);
+        if (f12 > 0.0f) {
+            if (m0Var.E) {
+                m0Var.b.getLocationOnScreen(iArr);
+            }
+            canvas.translate(iArr[0] * f12, iArr[1] * f12);
+            MediaController.CropState cropState2 = m0Var.b.G0;
+            if (cropState2 != null) {
+                f10 = cropState2.cropPw;
+                f7 = cropState2.cropPh;
+            } else {
+                f7 = 1.0f;
+                f10 = 1.0f;
+            }
+            float lerp2 = AndroidUtilities.lerp(1.0f, (m0Var.b.getScaleX() * (r9.getWidth() / f10)) / d7Var.getWidth(), f12);
+            canvas.scale(lerp2, lerp2);
+            canvas.rotate(m0Var.b.getRotation() * f12);
+            canvas.translate(((m0Var.b.getContentWidth() * f10) / 2.0f) * f12, ((m0Var.b.getContentHeight() * f7) / 2.0f) * f12);
+        }
+        canvas.translate(((getContainerWidth() / 2.0f) + AndroidUtilities.dp(16.0f)) * f11, (((getContainerHeight() + AndroidUtilities.dp(32.0f)) / 2.0f) + g0Var.E + (!(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0)) * f11);
+        if (f12 > 0.0f) {
+            float contentWidth = m0Var.b.getContentWidth();
+            float contentHeight = m0Var.b.getContentHeight();
+            MediaController.CropState cropState3 = m0Var.b.G0;
+            float f13 = cropState3 != null ? cropState3.cropPw : 1.0f;
+            float f14 = cropState3 != null ? cropState3.cropPh : 1.0f;
+            float lerp3 = (AndroidUtilities.lerp(1.0f, f13, f12) * contentWidth) / 2.0f;
+            float lerp4 = (AndroidUtilities.lerp(1.0f, f14, f12) * contentHeight) / 2.0f;
+            float lerp5 = AndroidUtilities.lerp(1.0f, 4.0f, f11);
+            canvas.clipRect((-lerp3) * lerp5, (-lerp4) * lerp5, lerp3 * lerp5, lerp4 * lerp5);
+        }
+        currentWidth = m0Var.getCurrentWidth();
+        mg.g gVar = m0Var.y;
+        currentHeight = m0Var.getCurrentHeight();
+        int i10 = gVar.i;
+        if (i10 == 90 || i10 == 270) {
+            currentHeight = currentWidth;
+            currentWidth = currentHeight;
+        }
+        float z11 = com.google.android.gms.internal.vision.e2.z(gVar.l, 1.0f, f12, 1.0f);
+        float f15 = currentWidth;
+        float containerWidth = getContainerWidth() / f15;
+        float f16 = currentHeight;
+        if (containerWidth * f16 > getContainerHeight()) {
+            containerWidth = getContainerHeight() / f16;
+        }
+        canvas.translate(gVar.d * 1.0f, gVar.e * 1.0f);
+        float f17 = (gVar.f / z11) * containerWidth;
+        rg.z1 z1Var = m0Var.b;
+        float lerp6 = (z1Var == null || (cropState = z1Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
+        canvas.scale(lerp6, lerp6);
+        canvas.translate(gVar.b * f15 * 1.0f, gVar.c * f16 * 1.0f);
+        float d = m0Var.d.d(i10, false) + m0Var.b.getOrientation() + gVar.g;
+        MediaController.CropState cropState4 = m0Var.b.G0;
+        canvas.rotate(cropState4 == null ? AndroidUtilities.lerp(0.0f, d, m0Var.s) : AndroidUtilities.lerp(cropState4.cropRotate + cropState4.transformRotation, d, m0Var.s));
+        canvas.rotate(m0Var.b.getOrientation());
+        org.telegram.ui.Components.e6 e6Var = m0Var.c;
+        if (m0Var.E) {
+            MediaController.CropState cropState5 = m0Var.b.G0;
+            if (cropState5 != null && cropState5.mirrored) {
+                z10 = true;
+            }
+            z10 = false;
+        } else {
+            mg.o oVar = g0Var.L;
+            if (oVar != null) {
+                z10 = oVar.j;
+            }
+            z10 = false;
+        }
+        canvas.scale(AndroidUtilities.lerp(1.0f, -1.0f, e6Var.e(z10)), 1.0f);
+        canvas.translate((-m0Var.b.getContentWidth()) / 2.0f, (-m0Var.b.getContentHeight()) / 2.0f);
+        rg.z1 z1Var2 = m0Var.b;
+        Paint paint2 = z1Var2.F0;
+        Bitmap bitmap = z1Var2.A0;
+        if (bitmap != null) {
+            paint2.setAlpha(255);
+            canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint2);
+        }
+        canvas.restore();
     }
 }

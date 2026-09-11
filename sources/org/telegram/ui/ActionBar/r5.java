@@ -1,75 +1,17 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import org.telegram.ui.ae1;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class r5 extends h5 {
-    public final /* synthetic */ int R = 1;
-    public final /* synthetic */ Object S;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(ae1 ae1Var, int i10, boolean z10) {
-        super(i10, true, z10, null);
-        this.S = ae1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public int g(int i10) {
-        switch (this.R) {
-            case 0:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.S;
-                int indexOfKey = sparseIntArray.indexOfKey(i10);
-                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : j6.nl[i10];
-            default:
-                return super.g(i10);
+public final class r5 extends w7.i0 {
+    @Override // w7.i0
+    public final void b(int i10, int i11) {
+        Point point = AndroidUtilities.displaySize;
+        if ((point.x <= point.y) == (i10 <= i11)) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public int h(int i10) {
-        switch (this.R) {
-            case 0:
-                return ((SparseIntArray) this.S).get(i10);
-            default:
-                return super.h(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public void n(int i10, int i11, int i12) {
-        switch (this.R) {
-            case 1:
-                if (!((ae1) this.S).d2) {
-                    super.n(i10, i11, i12);
-                    break;
-                }
-                break;
-            default:
-                super.n(i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
-        switch (this.R) {
-            case 1:
-                if (!((ae1) this.S).d2) {
-                    super.o(i10, i11, i12, i13, i14, i15, z10, z11);
-                    break;
-                }
-                break;
-            default:
-                super.o(i10, i11, i12, i13, i14, i15, z10, z11);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.S = sparseIntArray;
     }
 }

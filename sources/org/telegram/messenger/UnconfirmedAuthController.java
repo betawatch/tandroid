@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class UnconfirmedAuthController {
     private final int currentAccount;
@@ -26,7 +26,7 @@ public class UnconfirmedAuthController {
     private boolean saveAfterFetch;
     private boolean savingCache;
     public final ArrayList<UnconfirmedAuth> auths = new ArrayList<>();
-    private final Runnable checkExpiration = new zl(this, 2);
+    private final Runnable checkExpiration = new ql(this, 2);
     private boolean debug = false;
 
     public UnconfirmedAuthController(int i10) {
@@ -103,17 +103,17 @@ public class UnconfirmedAuthController {
                             if (unconfirmedAuth.bot && !arrayList2.contains(Long.valueOf(unconfirmedAuth.bot_id))) {
                                 arrayList2.add(Long.valueOf(unconfirmedAuth.bot_id));
                             }
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                     }
                 }
                 MessagesStorage.getInstance(this.currentAccount).getUsersInternal(arrayList2, arrayList);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             sQLiteCursor.dispose();
-            AndroidUtilities.runOnUIThread(new ii(this, arrayList, hashSet, arrayList3));
+            AndroidUtilities.runOnUIThread(new zh(this, arrayList, hashSet, arrayList3));
         } catch (Throwable th2) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
@@ -130,7 +130,7 @@ public class UnconfirmedAuthController {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0056, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.zl(r7, 1));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.ql(r7, 1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x005f, code lost:
     
@@ -163,8 +163,8 @@ public class UnconfirmedAuthController {
                     sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
                     sQLitePreparedStatement.step();
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         } finally {
             if (sQLitePreparedStatement != null) {
@@ -181,7 +181,7 @@ public class UnconfirmedAuthController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$updateList$6(final boolean[] zArr, final int i10, boolean z10, UnconfirmedAuth unconfirmedAuth, final Runnable runnable) {
-        Utilities.Callback<Boolean> callback = new Utilities.Callback() { // from class: org.telegram.messenger.yl
+        Utilities.Callback<Boolean> callback = new Utilities.Callback() { // from class: org.telegram.messenger.pl
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 UnconfirmedAuthController.lambda$updateList$5(zArr, i10, runnable, (Boolean) obj);
@@ -249,14 +249,14 @@ public class UnconfirmedAuthController {
         Utilities.Callback[] callbackArr = new Utilities.Callback[arrayList2.size()];
         for (final int i10 = 0; i10 < arrayList2.size(); i10++) {
             final UnconfirmedAuth unconfirmedAuth = (UnconfirmedAuth) arrayList2.get(i10);
-            callbackArr[i10] = new Utilities.Callback() { // from class: org.telegram.messenger.xl
+            callbackArr[i10] = new Utilities.Callback() { // from class: org.telegram.messenger.ol
                 @Override // org.telegram.messenger.Utilities.Callback
                 public final void run(Object obj) {
                     UnconfirmedAuthController.lambda$updateList$6(zArr, i10, z10, unconfirmedAuth, (Runnable) obj);
                 }
             };
         }
-        Utilities.raceCallbacks(new bi.e2(this, zArr, arrayList2, z10, callback, 11), callbackArr);
+        Utilities.raceCallbacks(new di.u1(this, zArr, arrayList2, z10, callback, 11), callbackArr);
         if (z10) {
             HashSet hashSet = new HashSet();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
@@ -327,7 +327,7 @@ public class UnconfirmedAuthController {
             return;
         }
         this.fetchingCache = true;
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new zl(this, 0));
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new ql(this, 0));
     }
 
     public void saveCache() {
@@ -338,7 +338,7 @@ public class UnconfirmedAuthController {
             this.saveAfterFetch = true;
         } else {
             this.savingCache = true;
-            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new zl(this, 3));
+            MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new ql(this, 3));
         }
     }
 
@@ -358,7 +358,7 @@ public class UnconfirmedAuthController {
         saveCache();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public class UnconfirmedAuth extends TLObject {
         public boolean bot;
         public long bot_id;
@@ -404,7 +404,7 @@ public class UnconfirmedAuthController {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$confirm$2(Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new am(this, callback, tLObject, tL_error, 0));
+            AndroidUtilities.runOnUIThread(new rl(this, callback, tLObject, tL_error, 0));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -413,7 +413,7 @@ public class UnconfirmedAuthController {
             if (z10) {
                 MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
             }
-            gg.f.a(UnconfirmedAuthController.this.currentAccount).b();
+            ig.f.a(UnconfirmedAuthController.this.currentAccount).b();
             if (callback != null) {
                 callback.run(Boolean.valueOf((z10 && tL_error == null) || UnconfirmedAuthController.this.debug));
                 UnconfirmedAuthController.this.debug = false;
@@ -422,7 +422,7 @@ public class UnconfirmedAuthController {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$deny$4(Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new am(this, callback, tLObject, tL_error));
+            AndroidUtilities.runOnUIThread(new rl(this, callback, tLObject, tL_error));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -435,19 +435,19 @@ public class UnconfirmedAuthController {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$deny$6(Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-            AndroidUtilities.runOnUIThread(new am(this, callback, tLObject, tL_error, 2));
+            AndroidUtilities.runOnUIThread(new rl(this, callback, tLObject, tL_error, 2));
         }
 
         public void confirm(Utilities.Callback<Boolean> callback) {
             if (this.bot) {
                 TL_account.confirmBotConnection confirmbotconnection = new TL_account.confirmBotConnection();
                 confirmbotconnection.bot_id = MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).getInputUser(this.bot_id);
-                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequestTyped(confirmbotconnection, new f1(4, this, callback));
+                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequestTyped(confirmbotconnection, new c1(4, this, callback));
             } else {
                 TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
                 changeauthorizationsettings.hash = this.hash;
                 changeauthorizationsettings.confirmed = true;
-                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(changeauthorizationsettings, new bm(this, callback, 2));
+                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(changeauthorizationsettings, new sl(this, callback, 2));
             }
         }
 
@@ -455,13 +455,13 @@ public class UnconfirmedAuthController {
             if (!this.bot) {
                 TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
                 resetauthorization.hash = this.hash;
-                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(resetauthorization, new bm(this, callback, 1));
+                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(resetauthorization, new sl(this, callback, 1));
             } else {
                 TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
                 updateconnectedbot.deleted = true;
                 updateconnectedbot.bot = MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).getInputUser(this.bot_id);
                 updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(updateconnectedbot, new bm(this, callback, 0));
+                ConnectionsManager.getInstance(UnconfirmedAuthController.this.currentAccount).sendRequest(updateconnectedbot, new sl(this, callback, 0));
             }
         }
 

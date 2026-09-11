@@ -1,51 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class q40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s40 b;
+public final class q40 implements org.telegram.ui.jq0 {
+    public final /* synthetic */ u40 a;
 
-    public /* synthetic */ q40(s40 s40Var, int i10) {
-        this.a = i10;
-        this.b = s40Var;
+    public q40(u40 u40Var) {
+        this.a = u40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                s40 s40Var = this.b;
-                s40Var.f = null;
-                if (!s40Var.H) {
-                    dq dqVar = new dq(this, 21);
-                    s40Var.h = dqVar;
-                    AndroidUtilities.runOnUIThread(dqVar, s40Var.n == 0 ? 10000L : 2000L);
-                    break;
-                }
-                break;
-            case 1:
-                s40 s40Var2 = this.b;
-                s40Var2.f = null;
-                if (!s40Var2.H) {
-                    dq dqVar2 = new dq(this, 22);
-                    s40Var2.h = dqVar2;
-                    AndroidUtilities.runOnUIThread(dqVar2, s40Var2.E);
-                    break;
-                }
-                break;
-            default:
-                s40 s40Var3 = this.b;
-                s40Var3.setVisibility(4);
-                s40Var3.getClass();
-                s40Var3.e = null;
-                s40Var3.d = null;
-                s40Var3.f = null;
-                break;
+    @Override // org.telegram.ui.jq0
+    public final void a(ArrayList arrayList) {
+        u40.b(this.a, false, arrayList);
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("image/*");
+            this.a.a.startActivityForResult(intent, 14);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

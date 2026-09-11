@@ -1,116 +1,79 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.co;
+import org.telegram.ui.h41;
+import org.telegram.ui.ug1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kj implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
+public final /* synthetic */ class kj implements ug1, org.telegram.ui.Components.d5, LanguageDetector.StringCallback {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ TLObject r;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ kj(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, boolean z10, boolean z11, TLRPC.Message message, ArrayList arrayList2, ArrayList arrayList3, int i10) {
-        this.e = sendMessagesHelper;
-        this.f = arrayList;
-        this.c = z10;
-        this.d = z11;
-        this.r = message;
-        this.h = arrayList2;
-        this.n = arrayList3;
-        this.b = i10;
+    public /* synthetic */ kj(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TL_keyboard.KeyboardButtonProto keyboardButtonProto, co coVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+        this.b = sendMessagesHelper;
+        this.a = z10;
+        this.c = messageObject;
+        this.d = keyboardButtonProto;
+        this.e = twoStepVerificationActivity;
+        this.f = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        TLRPC.TL_username tL_username;
-        switch (this.a) {
-            case 0:
-                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$96((ArrayList) this.f, this.c, this.d, (TLRPC.Message) this.r, (ArrayList) this.h, (ArrayList) this.n, this.b);
-                break;
-            default:
-                org.telegram.ui.ga gaVar = (org.telegram.ui.ga) this.e;
-                String str = (String) this.f;
-                TLObject tLObject = (TLObject) this.h;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.n;
-                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) this.r;
-                org.telegram.ui.ra raVar = gaVar.a;
-                ArrayList arrayList = raVar.w;
-                ArrayList arrayList2 = raVar.v;
-                arrayList.remove(str);
-                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                int i11 = this.b;
-                boolean z11 = this.c;
-                if (z10) {
-                    raVar.i0(i11, z11, false);
-                } else {
-                    boolean z12 = this.d;
-                    if (tL_error == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
-                        raVar.j0(tL_username2, z12, true);
-                    } else {
-                        tL_username2.active = z11;
-                        raVar.i0(i11, z11, false);
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(raVar.getParentActivity(), 0, raVar.getResourceProvider());
-                        alertDialog$Builder.a.R = LocaleController.getString(R.string.UsernameActivateErrorTitle);
-                        alertDialog$Builder.a.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(gaVar, tL_username2, z12, 4));
-                        alertDialog$Builder.o();
-                    }
-                }
-                i10 = ((org.telegram.ui.ActionBar.p2) raVar).currentAccount;
-                TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(raVar.g0()));
-                raVar.getMessagesController().updateUsernameActiveness(user, tL_username2.username, tL_username2.active);
-                if (raVar.x != 0 && arrayList2 != null) {
-                    int size = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        Object obj = arrayList2.get(i12);
-                        i12++;
-                        if (((TLRPC.TL_username) obj).active) {
-                            break;
-                        }
-                    }
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < size2) {
-                            Object obj2 = arrayList2.get(i13);
-                            i13++;
-                            tL_username = (TLRPC.TL_username) obj2;
-                            if (tL_username.editable) {
-                            }
-                        } else {
-                            tL_username = null;
-                        }
-                    }
-                    if (tL_username != null) {
-                        raVar.j0(tL_username, true, false);
-                        raVar.getMessagesController().updateUsernameActiveness(user, tL_username.username, tL_username.active);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
+        TLRPC.Document document = (TLRPC.Document) this.c;
+        String str = (String) this.d;
+        MessageObject.SendAnimationData sendAnimationData = (MessageObject.SendAnimationData) this.f;
+        int i12 = ChatActivityEnterView.m5;
+        chatActivityEnterView.a(document, str, this.e, sendAnimationData, this.a, z10, i10, i11);
     }
 
-    public /* synthetic */ kj(org.telegram.ui.ga gaVar, String str, TLObject tLObject, int i10, boolean z10, TLRPC.TL_error tL_error, TLRPC.TL_username tL_username, boolean z11) {
-        this.e = gaVar;
-        this.f = str;
-        this.h = tLObject;
-        this.b = i10;
-        this.c = z10;
-        this.n = tL_error;
-        this.r = tL_username;
-        this.d = z11;
+    @Override // org.telegram.ui.ug1
+    public void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((SendMessagesHelper) this.b).lambda$sendCallback$40(this.a, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d, (TwoStepVerificationActivity) this.e, (co) this.f, tL_inputCheckPasswordSRP);
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = (ProfileActivity) this.b;
+        String[] strArr = (String[]) this.c;
+        boolean[] zArr = (boolean[]) this.d;
+        String str2 = (String) this.e;
+        hg.e1 e1Var = (hg.e1) this.f;
+        strArr[0] = str;
+        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !h41.Y().contains(str)) || ((chat = profileActivity.E2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        e1Var.run();
+    }
+
+    public /* synthetic */ kj(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.c = document;
+        this.d = str;
+        this.e = obj;
+        this.f = sendAnimationData;
+        this.a = z10;
+    }
+
+    public /* synthetic */ kj(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, hg.e1 e1Var) {
+        this.b = profileActivity;
+        this.c = strArr;
+        this.d = zArr;
+        this.e = str;
+        this.a = z10;
+        this.f = e1Var;
     }
 }

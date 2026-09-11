@@ -9,12 +9,12 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class d9 {
-    public static com.google.android.gms.internal.clearcut.v0 a(Context context, GoogleSignInOptions googleSignInOptions) {
+    public static com.google.android.gms.internal.clearcut.u0 a(Context context, GoogleSignInOptions googleSignInOptions) {
         n6.l.h(googleSignInOptions);
-        return new com.google.android.gms.internal.clearcut.v0(context, w5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
+        return new com.google.android.gms.internal.clearcut.u0(context, w5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
     }
 
     public static Task b(Intent intent) {

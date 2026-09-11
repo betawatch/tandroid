@@ -1,29 +1,44 @@
 package zh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class r1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ w3 b;
+    public final /* synthetic */ co c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ r1(int i10, View view) {
+    public /* synthetic */ r1(w3 w3Var, co coVar, long j3, int i10) {
         this.a = i10;
-        this.b = view;
+        this.b = w3Var;
+        this.c = coVar;
+        this.d = j3;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        long j3 = this.d;
+        co coVar = this.c;
+        w3 w3Var = this.b;
+        switch (i10) {
             case 0:
-                AndroidUtilities.removeFromParent(this.b);
+                qc M = yc.a0(coVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, w3Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M.t = true;
+                M.j();
                 break;
             default:
-                AndroidUtilities.removeFromParent(this.b);
+                qc M2 = yc.a0(coVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, w3Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M2.t = true;
+                M2.j();
                 break;
         }
     }

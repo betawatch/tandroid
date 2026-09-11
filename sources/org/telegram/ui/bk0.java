@@ -4,14 +4,14 @@ import android.content.Context;
 import android.widget.TextView;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class bk0 extends TextView {
-    public final ut a;
+    public final tt a;
 
     public bk0(Context context) {
         super(context);
-        this.a = new ut(1, this);
+        this.a = new tt(1, this);
     }
 
     @Override // android.widget.TextView, android.view.View

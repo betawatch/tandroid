@@ -1,33 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class t8 extends sq {
-    public final /* synthetic */ int f0;
+public final class t8 extends org.telegram.ui.ActionBar.f3 {
+    public final /* synthetic */ f9 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t8(Context context, boolean z10, rq rqVar, int i10) {
-        super(context, z10, rqVar);
-        this.f0 = i10;
+    public t8(f9 f9Var, Activity activity) {
+        super(activity, true);
+        this.b = f9Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.f0) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        f9 f9Var = this.b;
+        f9Var.J.v1(f9Var.Y);
+        f9Var.f = true;
+        f9Var.fragmentView.invalidate();
+        f9Var.e.animate().setListener(new j6(this, 3)).alpha(0.0f).setDuration(200L).start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        f9 f9Var = this.b;
+        AndroidUtilities.requestAdjustResize(f9Var.getParentActivity(), f9Var.getClassGuid());
+        f9Var.S = null;
     }
 }

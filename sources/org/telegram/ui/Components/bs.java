@@ -1,83 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import java.lang.ref.WeakReference;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs implements View.OnTouchListener {
+public final /* synthetic */ class bs implements Predicate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ TLObject b;
 
-    public /* synthetic */ bs(Object obj, int i10) {
+    public /* synthetic */ bs(int i10, TLObject tLObject) {
         this.a = i10;
-        this.b = obj;
+        this.b = tLObject;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        r70 r70Var;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.p1 p1Var = ((ds) this.b).a;
-                if (motionEvent.getActionMasked() != 1 || p1Var == null || !p1Var.isShowing()) {
-                    return false;
-                }
-                Rect rect = AndroidUtilities.rectTmp2;
-                view.getHitRect(rect);
-                if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                    return false;
-                }
-                p1Var.d(true);
-                return false;
-            case 1:
-                w70 w70Var = (w70) ((WeakReference) this.b).get();
-                if (w70Var == null || (r70Var = w70Var.m) == null || !r70Var.isShowing()) {
-                    view.setOnTouchListener(null);
-                    return false;
-                }
-                if (view.getParent() != null) {
-                    view.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                int actionMasked = motionEvent.getActionMasked();
-                if (actionMasked == 2) {
-                    w70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                } else if (actionMasked == 1) {
-                    w70Var.b0((int) motionEvent.getRawX(), (int) motionEvent.getRawY());
-                    View view2 = w70Var.p0;
-                    if (view2 != null) {
-                        w70Var.p0 = null;
-                        view2.setPressed(false);
-                        view2.performClick();
-                    }
-                    view.setOnTouchListener(null);
-                    w70Var.o0 = null;
-                } else if (actionMasked == 3) {
-                    View view3 = w70Var.p0;
-                    if (view3 != null) {
-                        view3.setPressed(false);
-                        w70Var.p0 = null;
-                    }
-                    view.setOnTouchListener(null);
-                    w70Var.o0 = null;
-                }
-                return true;
-            case 2:
-                xa0 xa0Var = (xa0) this.b;
-                xa0Var.getClass();
-                return org.telegram.ui.tt.q().s(motionEvent, xa0Var.getListView(), xa0Var.w, null, xa0Var.a);
-            case 3:
-                yb0 yb0Var = (yb0) this.b;
-                yb0Var.getClass();
-                if (motionEvent.getAction() == 1) {
-                    yb0Var.c0.a(true);
-                }
-                return true;
+                return MessageObject.peersEqual((TLRPC.InputPeer) this.b, ((MessageObject) obj).messageOwner.from_id);
             default:
-                return hy0.v((hy0) this.b, motionEvent);
+                MessageObject messageObject = (MessageObject) obj;
+                TLObject tLObject = this.b;
+                return !(tLObject instanceof TLRPC.User) ? !((tLObject instanceof TLRPC.Chat) && messageObject.messageOwner.from_id.user_id == ((TLRPC.Chat) tLObject).id) : messageObject.messageOwner.from_id.user_id != ((TLRPC.User) tLObject).id;
         }
     }
 }

@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable[] c;
 
-    public /* synthetic */ pc(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
+    public /* synthetic */ pc(boolean[] zArr, Runnable[] runnableArr, int i10) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = tL_updatePeerBlocked;
+        this.b = zArr;
+        this.c = runnableArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$391(this.c);
+                MessagesController.lambda$ensureMessagesLoaded$461(this.b, this.c);
                 break;
             default:
-                this.b.lambda$processUpdateArray$390(this.c);
+                PasskeysController.lambda$login$12(this.b, this.c);
                 break;
         }
     }

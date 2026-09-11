@@ -1,50 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class xp0 implements fg.f0 {
-    public final /* synthetic */ sq0 a;
+public final class xp0 extends org.telegram.ui.Cells.f7 {
+    public final /* synthetic */ zp0 N;
 
-    public xp0(sq0 sq0Var) {
-        this.a = sq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xp0(zp0 zp0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, 0, f6Var);
+        this.N = zp0Var;
     }
 
-    @Override // fg.f0
-    public final void a(a0.i iVar, ArrayList arrayList) {
-        int i10;
-        int i11;
-        int i12;
-        int i13 = 0;
-        while (i13 < arrayList.size()) {
-            TLObject tLObject = ((fg.g0) arrayList.get(i13)).a;
-            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
-                arrayList.remove(i13);
-                i13--;
-            }
-            i13++;
-        }
-        sq0 sq0Var = this.a;
-        sq0Var.E0 = arrayList;
-        for (int i14 = 0; i14 < sq0Var.E0.size(); i14++) {
-            fg.g0 g0Var = (fg.g0) sq0Var.E0.get(i14);
-            TLObject tLObject2 = g0Var.a;
-            if (tLObject2 instanceof TLRPC.User) {
-                i12 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-                MessagesController.getInstance(i12).putUser((TLRPC.User) g0Var.a, true);
-            } else if (tLObject2 instanceof TLRPC.Chat) {
-                i11 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-                MessagesController.getInstance(i11).putChat((TLRPC.Chat) g0Var.a, true);
-            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
-                i10 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) g0Var.a, true);
-            }
-        }
-        sq0Var.M.l();
+    @Override // org.telegram.ui.Cells.f7
+    public final String a() {
+        return this.N.f.a0 ? LocaleController.getString(R.string.RepostToStory) : LocaleController.getString(R.string.FwdMyStory);
     }
 }

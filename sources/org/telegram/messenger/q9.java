@@ -1,30 +1,108 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q9 implements Utilities.Callback {
+public final /* synthetic */ class q9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.StickerSet c;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ q9(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+    public /* synthetic */ q9(MessagesController messagesController, int i10) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = stickerSet;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleStickerSetInternal$115(this.c, (ArrayList) obj);
+                this.b.lambda$new$18();
+                break;
+            case 1:
+                this.b.lambda$new$39();
+                break;
+            case 2:
+                this.b.requestIsUserContactBlocked();
+                break;
+            case 3:
+                this.b.lambda$new$505();
+                break;
+            case 4:
+                this.b.lambda$updateTimerProc$158();
+                break;
+            case 5:
+                this.b.lambda$updateTimerProc$161();
+                break;
+            case 6:
+                this.b.lambda$applyAppConfig$36();
+                break;
+            case 7:
+                this.b.lambda$applyAppConfig$37();
+                break;
+            case 8:
+                this.b.lambda$processUpdates$380();
+                break;
+            case 9:
+                this.b.lambda$migrateDialogs$213();
+                break;
+            case 10:
+                this.b.lambda$loadRemoteFilters$26();
+                break;
+            case 11:
+                this.b.lambda$loadRemoteFilters$27();
+                break;
+            case 12:
+                this.b.lambda$loadRemoteFilters$28();
+                break;
+            case 13:
+                this.b.lambda$loadRemoteFilters$29();
+                break;
+            case 14:
+                this.b.lambda$cleanup$52();
+                break;
+            case 15:
+                this.b.lambda$cleanup$53();
+                break;
+            case 16:
+                this.b.lambda$cleanup$54();
+                break;
+            case 17:
+                this.b.lambda$toggleChannelInvitesHistory$287();
+                break;
+            case 18:
+                this.b.lambda$removeWebBrowserException$514();
+                break;
+            case 19:
+                this.b.lambda$checkPromoInfoInternal$166();
+                break;
+            case 20:
+                this.b.lambda$toggleChatJoinToSend$279();
+                break;
+            case 21:
+                this.b.lambda$migrateDialogs$215();
+                break;
+            case 22:
+                this.b.lambda$scheduleTranscriptionUpdate$38();
+                break;
+            case 23:
+                this.b.lambda$processUpdateArray$409();
+                break;
+            case 24:
+                this.b.lambda$processUpdateArray$410();
+                break;
+            case 25:
+                this.b.lambda$processUpdateArray$411();
+                break;
+            case 26:
+                this.b.lambda$registerForPush$323();
+                break;
+            case 27:
+                this.b.lambda$updateEmojiStatusUntil$474();
+                break;
+            case 28:
+                this.b.lambda$toggleChannelForum$285();
                 break;
             default:
-                this.b.lambda$toggleStickerSetInternal$112(this.c, (ArrayList) obj);
+                this.b.lambda$toggleChannelSignatures$283();
                 break;
         }
     }

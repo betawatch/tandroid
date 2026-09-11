@@ -1,115 +1,123 @@
 package bi;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.text.TextUtils;
-import android.util.SparseArray;
-import android.view.TextureView;
+import j$.util.function.Consumer$-CC;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i8 b;
+public final class f8 {
+    public final int a;
+    public final long b;
+    public final boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public boolean i;
+    public final /* synthetic */ u8 j;
 
-    public /* synthetic */ f8(i8 i8Var, int i10) {
+    public f8(int i10, long j3, u8 u8Var) {
+        this.j = u8Var;
         this.a = i10;
-        this.b = i8Var;
+        this.b = j3;
+        this.c = j3 == UserConfig.getInstance(i10).getClientUserId();
+        d();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        r8.n nVar;
-        switch (this.a) {
-            case 0:
-                i8 i8Var = this.b;
-                if (i8Var.a.get() != null && i8Var.f != null && !i8Var.b.get()) {
-                    TextureView textureView = i8Var.f.getTextureView();
-                    if (textureView != null) {
-                        int width = textureView.getWidth();
-                        int height = textureView.getHeight();
-                        if (width > 720 || height > 720) {
-                            float f7 = width;
-                            float f10 = height;
-                            float min = Math.min(720.0f / f7, 720.0f / f10);
-                            width = (int) (f7 * min);
-                            height = (int) (f10 * min);
-                        }
-                        int max = Math.max(1, width);
-                        int max2 = Math.max(1, height);
-                        Bitmap bitmap = i8Var.g;
-                        if (bitmap == null || max != bitmap.getWidth() || max2 != i8Var.g.getHeight()) {
-                            i8Var.g = Bitmap.createBitmap(max, max2, Bitmap.Config.ARGB_8888);
-                        }
-                        textureView.getBitmap(i8Var.g);
-                        Bitmap bitmap2 = i8Var.g;
-                        String str = i8Var.e;
-                        g8 g8Var = null;
-                        if (bitmap2 != null && (nVar = (r8.n) i8Var.a.get()) != null && nVar.b.k()) {
-                            int width2 = bitmap2.getWidth();
-                            int height2 = bitmap2.getHeight();
-                            m.e3 e3Var = new m.e3(20);
-                            int width3 = bitmap2.getWidth();
-                            int height3 = bitmap2.getHeight();
-                            e3Var.d = bitmap2;
-                            a3.l lVar = (a3.l) e3Var.b;
-                            lVar.a = width3;
-                            lVar.b = height3;
-                            SparseArray Z0 = nVar.Z0(e3Var);
-                            for (int i11 = 0; i11 < Z0.size(); i11++) {
-                                r8.m mVar = (r8.m) Z0.valueAt(i11);
-                                String str2 = mVar.b;
-                                Point[] pointArr = mVar.e;
-                                if (str2 != null) {
-                                    String trim = str2.trim();
-                                    if (!trim.startsWith(str)) {
-                                        if (!trim.startsWith("https://" + str)) {
-                                            if (!trim.startsWith("http://" + str)) {
-                                            }
-                                        }
-                                    }
-                                    PointF[] pointFArr = new PointF[pointArr.length];
-                                    for (int i12 = 0; i12 < pointArr.length; i12++) {
-                                        Point point = pointArr[i12];
-                                        pointFArr[i12] = new PointF(point.x / width2, point.y / height2);
-                                    }
-                                    g8Var = new g8(trim, pointFArr);
-                                }
-                            }
-                        }
-                        g8 g8Var2 = i8Var.d;
-                        if ((g8Var2 != null) == (g8Var != null)) {
-                            if (g8Var != null && g8Var2 != null) {
-                                PointF[] pointFArr2 = g8Var.b;
-                                PointF[] pointFArr3 = g8Var2.b;
-                                if (TextUtils.equals(g8Var.a, g8Var2.a)) {
-                                    if (pointFArr2 != pointFArr3) {
-                                        if (pointFArr2.length == pointFArr3.length) {
-                                            while (i10 < pointFArr2.length) {
-                                                i10 = (Math.abs(pointFArr2[i10].x - pointFArr3[i10].x) <= 0.001f && Math.abs(pointFArr2[i10].y - pointFArr3[i10].y) <= 0.001f) ? i10 + 1 : 0;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        i8Var.d = g8Var;
-                        AndroidUtilities.runOnUIThread(new a1.e(19, i8Var, g8Var));
-                    }
-                    if (!i8Var.b.get()) {
-                        Utilities.globalQueue.cancelRunnable(i8Var.h);
-                        Utilities.globalQueue.postRunnable(i8Var.h, i8Var.b());
-                        break;
-                    }
+    public final boolean a() {
+        return (this.c || this.j.i(this.b)) && this.f && this.h.size() < MessagesController.getInstance(this.a).config.storiesAlbumsLimit.get();
+    }
+
+    public final m8 b(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i11 >= arrayList.size()) {
+                return null;
+            }
+            m8 m8Var = (m8) arrayList.get(i11);
+            if (i10 == m8Var.a) {
+                return m8Var;
+            }
+            i11++;
+        }
+    }
+
+    public final int c(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i11 >= arrayList.size()) {
+                return -1;
+            }
+            if (i10 == ((m8) arrayList.get(i11)).a) {
+                return i11;
+            }
+            i11++;
+        }
+    }
+
+    public final void d() {
+        if (this.e || this.f) {
+            return;
+        }
+        this.e = true;
+        boolean z10 = this.d;
+        long j3 = this.b;
+        int i10 = this.a;
+        if (!z10) {
+            MessagesStorage.getInstance(i10).loadStoryAlbumsCache(j3, new Consumer() { // from class: bi.e8
+                @Override // java.util.function.Consumer
+                /* renamed from: accept */
+                public final void x(Object obj) {
+                    AndroidUtilities.runOnUIThread(new a1.e(25, f8.this, (List) obj));
                 }
-                break;
-            default:
-                this.b.c.run(null);
-                break;
+
+                public /* synthetic */ Consumer andThen(Consumer consumer) {
+                    return Consumer$-CC.$default$andThen(this, consumer);
+                }
+            });
+            return;
+        }
+        TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
+        tL_getAlbums.peer = MessagesController.getInstance(i10).getInputPeer(j3);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_getAlbums, new v7(this, 2));
+    }
+
+    public final void e() {
+        TL_stories.TL_reorderAlbums tL_reorderAlbums = new TL_stories.TL_reorderAlbums();
+        int i10 = this.a;
+        tL_reorderAlbums.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
+        tL_reorderAlbums.order = new ArrayList<>();
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            tL_reorderAlbums.order.add(Integer.valueOf(((m8) obj).a));
+        }
+        ConnectionsManager.getInstance(i10).sendRequest(tL_reorderAlbums, null);
+    }
+
+    public final void f(boolean z10) {
+        int i10 = this.a;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        ArrayList arrayList = this.h;
+        long j3 = this.b;
+        messagesStorage.saveStoryAlbumsCache(j3, arrayList);
+        if (z10) {
+            NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(j3), this);
         }
     }
 }

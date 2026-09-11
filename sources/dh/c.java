@@ -1,257 +1,124 @@
 package dh;
 
-import android.graphics.Color;
-import androidx.emoji2.text.w;
-import ch.e;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.q;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import java.util.Arrays;
+import w7.p;
+import yf.f0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class c {
-    public static e a(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(4);
-        eVar.d(385875968, 402653183);
-        eVar.c(385875968, 402653183);
-        eVar.b(285212672, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
+public final class c {
+    public int d;
+    public boolean e;
+    public int f;
+    public float i;
+    public float j;
+    public final Rect a = new Rect();
+    public final float[] b = new float[8];
+    public final float[] c = new float[8];
+    public float g = 0.75f;
+    public final float h = 1.5f;
+    public final Path k = new Path();
+    public boolean l = true;
+    public final Rect m = new Rect();
+    public final Path n = new Path();
+    public final Path o = new Path();
 
-    public static e b(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new b(0, f6Var);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.5f);
-        float dpf22 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static boolean c(int i10, f6 f6Var) {
-        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
-        boolean chatBlurEnabled = SharedConfig.chatBlurEnabled();
-        if (chatBlurEnabled && !a2 && MessagesController.getInstance(i10).config.disableBlurInLightTheme.get()) {
-            chatBlurEnabled = false;
+    public final void a() {
+        float[] fArr = this.b;
+        this.l = f0.c(fArr);
+        Rect rect = this.a;
+        Rect rect2 = this.m;
+        rect2.set(rect);
+        int i10 = this.d;
+        rect2.inset(i10, i10);
+        Path path = this.k;
+        path.rewind();
+        float f7 = rect2.left;
+        float f10 = rect2.top;
+        float f11 = rect2.right;
+        float f12 = rect2.bottom;
+        Path.Direction direction = Path.Direction.CW;
+        path.addRoundRect(f7, f10, f11, f12, this.b, direction);
+        path.close();
+        float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
+        float[] fArr2 = d.C;
+        Arrays.fill(fArr2, 0.0f);
+        fArr2[0] = fArr[0];
+        fArr2[1] = fArr[1];
+        fArr2[2] = fArr[2];
+        fArr2[3] = fArr[3];
+        if (this.l && fArr[0] > min) {
+            fArr2[3] = min;
+            fArr2[2] = min;
+            fArr2[1] = min;
+            fArr2[0] = min;
         }
-        if (chatBlurEnabled && a2 && MessagesController.getInstance(i10).config.disableBlurInDarkTheme.get()) {
-            return false;
+        Path path2 = this.n;
+        path2.rewind();
+        float f13 = rect2.left;
+        int i11 = rect2.top;
+        path2.addRoundRect(f13, i11, rect2.right, Math.min(i11 + fArr[0], rect2.bottom), fArr2, direction);
+        float f14 = rect2.left;
+        int i12 = rect2.top;
+        float f15 = i12 + this.i;
+        float f16 = rect2.right;
+        float min2 = Math.min(i12 + fArr[0], rect2.bottom);
+        Path.Direction direction2 = Path.Direction.CCW;
+        path2.addRoundRect(f14, f15, f16, min2, fArr2, direction2);
+        path2.close();
+        Arrays.fill(fArr2, 0.0f);
+        fArr2[4] = fArr[4];
+        fArr2[5] = fArr[5];
+        fArr2[6] = fArr[6];
+        fArr2[7] = fArr[7];
+        if (this.l && fArr[0] > min) {
+            fArr2[7] = min;
+            fArr2[6] = min;
+            fArr2[5] = min;
+            fArr2[4] = min;
         }
-        return chatBlurEnabled;
+        Path path3 = this.o;
+        path3.rewind();
+        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom, fArr2, direction);
+        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom - this.j, fArr2, direction2);
+        path3.close();
     }
 
-    public static e d(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(8);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_30, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.5f);
-        float dpf24 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e e(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new w(24);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.3333333f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(1.0f);
-        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e f(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(3);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e g(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new w(25);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(939524096, 0);
-        eVar.n = AndroidUtilities.dpf2(3.5f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e h(f6 f6Var) {
-        return g(f6Var);
-    }
-
-    public static e i(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(7);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e j(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(5);
-        eVar.d(-1, 553648127);
-        eVar.c(0, 553648127);
-        eVar.b(1207959552, 83886079);
-        eVar.n = AndroidUtilities.dpf2(0.6666667f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.67f);
-        float dpf22 = AndroidUtilities.dpf2(0.67f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e k(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(2);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(637534208, 0);
-        eVar.n = AndroidUtilities.dpf2(4.0f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e l(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.d(0, 687865855);
-        eVar.c(0, 352321535);
-        eVar.b(805306368, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(4.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static int m(float f7, int i10, int i11) {
-        float a2 = q.a(f7, 0.0f, 1.0f);
-        if (a2 <= 0.0f) {
-            return Color.argb(0, 0, 0, 0);
+    public final void b(Canvas canvas, Paint paint) {
+        if (!this.l) {
+            canvas.drawPath(this.k, paint);
+            return;
         }
-        if (a2 >= 1.0f) {
-            return Color.argb(255, Color.red(i11), Color.green(i11), Color.blue(i11));
+        Rect rect = this.m;
+        float f7 = rect.left;
+        float f10 = rect.top;
+        float f11 = rect.right;
+        float f12 = rect.bottom;
+        float f13 = this.b[0];
+        canvas.drawRoundRect(f7, f10, f11, f12, f13, f13, paint);
+    }
+
+    public final void c(Canvas canvas, Paint paint, boolean z10) {
+        if (!z10) {
+            b(canvas, paint);
+            return;
         }
-        int red = Color.red(i10);
-        int green = Color.green(i10);
-        int blue = Color.blue(i10);
-        float f10 = 1.0f - a2;
-        return Color.argb(q.b(Math.round(a2 * 255.0f), 0, 255), q.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), q.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), q.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
-    }
-
-    public static e n(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new w(26);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e o(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new b(2, f6Var);
-        eVar.d(-1, 553648127);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.55f);
-        float dpf22 = AndroidUtilities.dpf2(0.55f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e p(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new a(6);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
-    }
-
-    public static e q(f6 f6Var) {
-        e eVar = new e(f6Var);
-        eVar.e = new b(1, f6Var);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
+        Rect rect = this.m;
+        float f7 = rect.top;
+        float[] fArr = this.b;
+        float a2 = p.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
+        canvas.save();
+        Rect rect2 = this.a;
+        canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);
+        float f10 = rect.left;
+        float f11 = rect.top;
+        float f12 = rect.right;
+        float f13 = fArr[0];
+        canvas.drawRoundRect(f10, f11, f12, a2, f13, f13, paint);
+        canvas.restore();
     }
 }

@@ -2,15 +2,15 @@ package x7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e7 {
     public final d7 a;
     public final Integer b;
 
-    public /* synthetic */ e7(og.u0 u0Var) {
-        this.a = (d7) u0Var.b;
-        this.b = (Integer) u0Var.c;
+    public /* synthetic */ e7(o0.a aVar) {
+        this.a = (d7) aVar.b;
+        this.b = (Integer) aVar.c;
     }
 
     public final boolean equals(Object obj) {

@@ -1,48 +1,57 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class k51 extends s4.s0 {
-    public final /* synthetic */ r51 a;
+public final class k51 extends MetricAffectingSpan {
+    public final CharSequence a;
+    public final int b;
+    public final int c;
+    public final byte d;
+    public final n01 e;
 
-    public k51(r51 r51Var) {
-        this.a = r51Var;
+    public k51(CharSequence charSequence, int i10, int i11, byte b10, n01 n01Var) {
+        this.a = charSequence;
+        this.b = i10;
+        this.c = i11;
+        this.d = b10;
+        this.e = n01Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        s4.s0 s0Var = this.a.y;
-        if (s0Var != null) {
-            s0Var.a(recyclerView, i10);
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        byte b10 = this.d;
+        if (b10 == 2) {
+            textPaint.setColor(-1);
+        } else if (b10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ec, false));
+        }
+        n01 n01Var = this.e;
+        if (n01Var != null) {
+            n01Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
+            textPaint.setUnderlineText(false);
         }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        r51 r51Var = this.a;
-        q51 q51Var = r51Var.s;
-        h51 h51Var = r51Var.n;
-        s4.s0 s0Var = r51Var.y;
-        if (s0Var != null) {
-            s0Var.b(h51Var, i10, i11);
-        }
-        if (i11 <= 0 || h51Var.getAdapter() != q51Var || !r51Var.J || q51Var.r || q51Var.s) {
-            return;
-        }
-        if (r51Var.r.N0() >= ((q51Var.w + 1) - ((q51Var.v + 1) * 10)) - 1) {
-            r51 r51Var2 = q51Var.x;
-            if (!r51Var2.J || q51Var.r || q51Var.s) {
-                return;
-            }
-            q51Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = q51Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(r51Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new z1(q51Var, 17));
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(SharedConfig.fontSize - 1));
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        n01 n01Var = this.e;
+        if (n01Var != null) {
+            n01Var.a(textPaint);
+        } else {
+            textPaint.setTypeface(Typeface.MONOSPACE);
         }
     }
 }

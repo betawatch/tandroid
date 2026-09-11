@@ -4,7 +4,7 @@ import c3.a0;
 import c3.c0;
 import e2.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h implements f {
     public final long a;
@@ -34,13 +34,13 @@ public final class h implements f {
         long[] jArr = this.g;
         e2.d.h(jArr);
         double d = (j10 * 256.0d) / this.e;
-        int e = d0.e(jArr, (long) d, true);
+        int e7 = d0.e(jArr, (long) d, true);
         long j11 = this.c;
-        long j12 = (e * j11) / 100;
-        long j13 = jArr[e];
-        int i10 = e + 1;
+        long j12 = (e7 * j11) / 100;
+        long j13 = jArr[e7];
+        int i10 = e7 + 1;
         long j14 = (j11 * i10) / 100;
-        return Math.round((j13 == (e == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j13) / (r0 - j13)) * (j14 - j12)) + j12;
+        return Math.round((j13 == (e7 == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j13) / (r0 - j13)) * (j14 - j12)) + j12;
     }
 
     @Override // v3.f

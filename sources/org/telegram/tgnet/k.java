@@ -1,29 +1,29 @@
 package org.telegram.tgnet;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.os.AsyncTask;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ NativeByteBuffer b;
+    public final /* synthetic */ AsyncTask c;
 
-    public /* synthetic */ k(int i10, TLRPC.Updates updates, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = updates;
+    public /* synthetic */ k(AsyncTask asyncTask, NativeByteBuffer nativeByteBuffer, int i10) {
+        this.a = i10;
+        this.c = asyncTask;
+        this.b = nativeByteBuffer;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ConnectionsManager.lambda$onUnparsedMessageReceived$12(this.b, this.c);
+                ((ConnectionsManager.GoogleDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
                 break;
             default:
-                MessagesController.getInstance(this.b).processUpdates(this.c, false);
+                ((ConnectionsManager.MozillaDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
                 break;
         }
     }

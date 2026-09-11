@@ -1,81 +1,132 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.util.TypedValue;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public class p40 extends EditTextBoldCursor {
-    public final TextPaint b;
-    public String c;
-    public final Rect d;
+public final class p40 implements ti {
+    public final /* synthetic */ u40 a;
 
-    public p40(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        this.d = new Rect();
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+    public p40(u40 u40Var) {
+        this.a = u40Var;
     }
 
-    public String getHintText() {
-        return this.c;
+    @Override // org.telegram.ui.Components.ti
+    public final void B(hh hhVar) {
+        hhVar.run();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.hu, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.c != null && length() < this.c.length()) {
-            int i10 = 0;
-            float f7 = 0.0f;
-            while (i10 < this.c.length()) {
-                int length = length();
-                TextPaint textPaint = this.b;
-                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
-                if (i10 < length()) {
-                    f7 += measureText;
-                    canvas2 = canvas;
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean D0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void H() {
+        AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void l0(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        vi viVar;
+        u40 u40Var = this.a;
+        org.telegram.ui.ActionBar.n2 n2Var = u40Var.a;
+        if (n2Var == null || n2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
+            return;
+        }
+        if (i10 != 8 && i10 != 7) {
+            viVar.dismissWithButtonClick(i10);
+            if (i10 == 0) {
+                u40Var.m();
+                return;
+            }
+            return;
+        }
+        HashMap<Object, Object> selectedPhotos = viVar.j0.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = u40Var.c.j0.getSelectedPhotosOrder();
+        ArrayList arrayList = new ArrayList();
+        boolean z14 = false;
+        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
+            Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            if (obj instanceof MediaController.PhotoEntry) {
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                String str = photoEntry.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
                 } else {
-                    int color = textPaint.getColor();
-                    canvas.save();
-                    String str = this.c;
-                    textPaint.getTextBounds(str, 0, str.length(), this.d);
-                    i(i10);
-                    canvas2 = canvas;
-                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
-                    f7 += measureText;
-                    canvas2.restore();
-                    textPaint.setColor(color);
+                    sendingMediaInfo.path = photoEntry.path;
                 }
-                i10++;
-                canvas = canvas2;
+                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
+                sendingMediaInfo.coverPath = photoEntry.coverPath;
+                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
+                sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
+                sendingMediaInfo.isVideo = photoEntry.isVideo;
+                sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
+                sendingMediaInfo.discardLivePhoto = true;
+                CharSequence charSequence = photoEntry.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = photoEntry.entities;
+                sendingMediaInfo.masks = photoEntry.stickers;
+                sendingMediaInfo.ttl = photoEntry.ttl;
+                TLRPC.VideoSize videoSize = photoEntry.emojiMarkup;
+                sendingMediaInfo.emojiMarkup = videoSize;
+                z14 = videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup;
+            } else if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str2 = searchImage.imagePath;
+                if (str2 != null) {
+                    sendingMediaInfo.path = str2;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                sendingMediaInfo.coverPath = searchImage.coverPath;
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                CharSequence charSequence2 = searchImage.caption;
+                sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+                TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+                if (botInlineResult != null && searchImage.type == 1) {
+                    sendingMediaInfo.inlineResult = botInlineResult;
+                    sendingMediaInfo.params = searchImage.params;
+                }
+                searchImage.date = (int) (System.currentTimeMillis() / 1000);
             }
         }
-        super.onDraw(canvas);
+        u40.b(u40Var, z14, arrayList);
+        if (i10 != 8) {
+            u40Var.c.dismiss(true);
+        }
     }
 
-    @Override // org.telegram.ui.Components.hu, android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        invalidate();
+    @Override // org.telegram.ui.Components.ti
+    public final boolean q() {
+        return false;
     }
 
-    public void setHintText(String str) {
-        this.c = str;
-        invalidate();
-        setText(getText());
+    @Override // org.telegram.ui.Components.ti
+    public final void x() {
+        this.a.r();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i10, float f7) {
-        super.setTextSize(i10, f7);
-        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void K(Object obj) {
     }
 
-    public void i(int i10) {
+    @Override // org.telegram.ui.Components.ti
+    public final void X(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void E0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

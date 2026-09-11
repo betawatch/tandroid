@@ -1,84 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class am extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+public final class am implements ml0 {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    public /* synthetic */ am(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
-        this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+    public am(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.m0 = null;
-                break;
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-                chatAttachAlertPhotoLayout.f1.unlock();
-                chatAttachAlertPhotoLayout.d0 = false;
-                im imVar = chatAttachAlertPhotoLayout.P;
-                if (imVar != null) {
-                    imVar.invalidateOutline();
-                    chatAttachAlertPhotoLayout.P.invalidate();
-                }
-                if (chatAttachAlertPhotoLayout.b0) {
-                    chatAttachAlertPhotoLayout.b.Z1.K0();
-                }
-                im imVar2 = chatAttachAlertPhotoLayout.P;
-                if (imVar2 != null) {
-                    imVar2.setSystemUiVisibility(1028);
-                }
-                yl ylVar = chatAttachAlertPhotoLayout.E;
-                if (ylVar != null) {
-                    ylVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = this.b;
-                q91 q91Var = chatAttachAlertPhotoLayout2.l0;
-                chatAttachAlertPhotoLayout2.f1.unlock();
-                chatAttachAlertPhotoLayout2.i1 = false;
-                chatAttachAlertPhotoLayout2.b.getWindow().clearFlags(128);
-                chatAttachAlertPhotoLayout2.setCameraOpenProgress(0.0f);
-                chatAttachAlertPhotoLayout2.d0 = false;
-                yl ylVar2 = chatAttachAlertPhotoLayout2.E;
-                if (ylVar2 != null) {
-                    ylVar2.invalidate();
-                }
-                im imVar3 = chatAttachAlertPhotoLayout2.P;
-                if (imVar3 != null) {
-                    imVar3.invalidateOutline();
-                    chatAttachAlertPhotoLayout2.P.invalidate();
-                }
-                chatAttachAlertPhotoLayout2.b0 = false;
-                bi.ld ldVar = chatAttachAlertPhotoLayout2.j0;
-                if (ldVar != null) {
-                    ldVar.setVisibility(8);
-                }
-                if (q91Var != null) {
-                    q91Var.setVisibility(8);
-                    q91Var.setTag(null);
-                }
-                yl ylVar3 = chatAttachAlertPhotoLayout2.r;
-                if (ylVar3 != null) {
-                    ylVar3.setVisibility(8);
-                }
-                im imVar4 = chatAttachAlertPhotoLayout2.P;
-                if (imVar4 != null) {
-                    imVar4.setFpsLimit(30);
-                    chatAttachAlertPhotoLayout2.P.setSystemUiVisibility(1024);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.ml0
+    public final void a(boolean z10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        chatAttachAlertPhotoLayout.L = z10 ? 1 : 0;
+        chatAttachAlertPhotoLayout.E.c1(true);
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean b(int i10) {
+        return this.a.G.j(i10) == 0;
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public final void c(View view, boolean z10) {
+        if (z10 == this.a.K && (view instanceof org.telegram.ui.Cells.s5)) {
+            org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+            s5Var.w.c(s5Var);
         }
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public final boolean d(int i10) {
+        MediaController.PhotoEntry M = this.a.G.M(i10);
+        return M != null && ChatAttachAlertPhotoLayout.s1.containsKey(Integer.valueOf(M.imageId));
     }
 }

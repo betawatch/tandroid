@@ -8,9 +8,9 @@ import android.os.Build;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class l50 implements org.telegram.ui.Components.ok0 {
+public final class l50 implements org.telegram.ui.Components.ek0 {
     public final Path a = new Path();
     public final Paint b;
     public final /* synthetic */ j60 c;
@@ -22,26 +22,16 @@ public final class l50 implements org.telegram.ui.Components.ok0 {
         paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final void l(View view, yg.p0 p0Var, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.ek0
+    public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = p0Var.f;
+        String str = j1Var.f;
         if (str == null) {
             str = "👍";
         }
         TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
         tL_textWithEntities.text = str;
-        long j3 = p0Var.g;
+        long j3 = j1Var.g;
         if (j3 != 0) {
             tL_messageEntityCustomEmoji.document_id = j3;
             tL_messageEntityCustomEmoji.offset = 0;
@@ -50,13 +40,13 @@ public final class l50 implements org.telegram.ui.Components.ok0 {
         }
         j60 j60Var = this.c;
         j60Var.A1(tL_textWithEntities);
-        j40 j40Var = j60Var.H;
-        if (j40Var.m()) {
-            j40Var.j();
+        i40 i40Var = j60Var.H;
+        if (i40Var.m()) {
+            i40Var.j();
         } else {
-            j40Var.d();
+            i40Var.d();
         }
-        yg.c0 reactionsWindow = j60Var.K.getReactionsWindow();
+        ah.u0 reactionsWindow = j60Var.K.getReactionsWindow();
         if (reactionsWindow == null || reactionsWindow.q) {
             return;
         }
@@ -64,8 +54,8 @@ public final class l50 implements org.telegram.ui.Components.ok0 {
         j60Var.K.n();
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.ek0
+    public final void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint = this.b;
         if (f7 > 0.0f) {
             canvas.drawRoundRect(rectF, f7, f7, paint);
@@ -95,12 +85,22 @@ public final class l50 implements org.telegram.ui.Components.ok0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final boolean t() {
+    @Override // org.telegram.ui.Components.ek0
+    public final boolean S() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void s() {
+    @Override // org.telegram.ui.Components.ek0
+    public final boolean n() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ void J() {
     }
 }

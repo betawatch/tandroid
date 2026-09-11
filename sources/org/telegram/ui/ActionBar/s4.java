@@ -1,23 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s4 implements View.OnClickListener {
-    public final /* synthetic */ x4 a;
+public final class s4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v4 b;
 
-    public s4(x4 x4Var) {
-        this.a = x4Var;
+    public /* synthetic */ s4(v4 v4Var, int i10) {
+        this.a = i10;
+        this.b = v4Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        MenuItem.OnMenuItemClickListener onMenuItemClickListener;
-        if (!(view.getTag() instanceof MenuItem) || (onMenuItemClickListener = this.a.K) == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new q(this, 13));
+                break;
+            default:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new q(this, 14));
+                break;
         }
-        onMenuItemClickListener.onMenuItemClick((MenuItem) view.getTag());
     }
 }

@@ -8,9 +8,9 @@ import android.os.SystemClock;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class o50 extends org.telegram.ui.ActionBar.l5 {
+public final class o50 extends org.telegram.ui.ActionBar.j5 {
     public LinearGradient M0;
     public int N0;
     public final Matrix O0;
@@ -30,7 +30,7 @@ public final class o50 extends org.telegram.ui.ActionBar.l5 {
         this.P0 = -1.0f;
     }
 
-    @Override // org.telegram.ui.ActionBar.l5
+    @Override // org.telegram.ui.ActionBar.j5
     public final void d(int i10) {
         super.d(i10);
         int textWidth = getTextWidth();
@@ -51,7 +51,7 @@ public final class o50 extends org.telegram.ui.ActionBar.l5 {
     /* JADX WARN: Removed duplicated region for block: B:12:0x0062  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x00c8  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0090  */
-    @Override // org.telegram.ui.ActionBar.l5, android.view.View
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -91,13 +91,13 @@ public final class o50 extends org.telegram.ui.ActionBar.l5 {
                     this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
                 }
                 float f12 = j3;
-                a2 = org.telegram.ui.Cells.r6.a(f12 * 0.02f, j60Var.O0, 1.0f * f12, this.S0);
+                a2 = org.telegram.ui.Cells.p6.a(f12 * 0.02f, j60Var.O0, 1.0f * f12, this.S0);
                 this.S0 = a2;
                 f11 = this.R0;
                 if (a2 > f11) {
                     this.S0 = f11;
                 }
-                float interpolation = org.telegram.ui.Components.wr.g.getInterpolation(this.S0 / f11);
+                float interpolation = org.telegram.ui.Components.pr.g.getInterpolation(this.S0 / f11);
                 float f13 = this.T0;
                 float f14 = this.Q0;
                 matrix.postTranslate(((((this.P0 - f14) * interpolation) + f14) * f13) - (f13 / 2.0f), 0.0f);
@@ -123,12 +123,12 @@ public final class o50 extends org.telegram.ui.ActionBar.l5 {
             this.Q0 = this.P0;
             this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
             float f122 = j3;
-            a2 = org.telegram.ui.Cells.r6.a(f122 * 0.02f, j60Var.O0, 1.0f * f122, this.S0);
+            a2 = org.telegram.ui.Cells.p6.a(f122 * 0.02f, j60Var.O0, 1.0f * f122, this.S0);
             this.S0 = a2;
             f11 = this.R0;
             if (a2 > f11) {
             }
-            float interpolation2 = org.telegram.ui.Components.wr.g.getInterpolation(this.S0 / f11);
+            float interpolation2 = org.telegram.ui.Components.pr.g.getInterpolation(this.S0 / f11);
             float f132 = this.T0;
             float f142 = this.Q0;
             matrix2.postTranslate(((((this.P0 - f142) * interpolation2) + f142) * f132) - (f132 / 2.0f), 0.0f);

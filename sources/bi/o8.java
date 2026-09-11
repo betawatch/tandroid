@@ -1,45 +1,108 @@
 package bi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraView;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o8 implements CameraView.CameraViewDelegate, CameraController.VideoTakeCallback {
-    public final /* synthetic */ r8 a;
+public final class o8 extends l8 {
+    public final ArrayList C;
 
-    public /* synthetic */ o8(r8 r8Var) {
-        this.a = r8Var;
+    public o8(int i10, ArrayList arrayList) {
+        super(i10, 0L, 3, -1, null);
+        this.C = new ArrayList();
+        F(arrayList);
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public void onCameraInit() {
-        r8 r8Var = this.a;
-        q8 q8Var = r8Var.a;
-        if (r8Var.c > 0) {
-            return;
+    public final void F(ArrayList arrayList) {
+        int i10;
+        ArrayList arrayList2 = this.i;
+        arrayList2.size();
+        int i11 = 0;
+        int i12 = 0;
+        while (true) {
+            int size = arrayList.size();
+            i10 = this.c;
+            if (i11 >= size) {
+                break;
+            }
+            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i11);
+            if (storyItem != null) {
+                storyItem.messageId = arrayList2.size();
+                MessageObject messageObject = new MessageObject(i10, storyItem);
+                messageObject.generateThumbs(false);
+                ArrayList arrayList3 = new ArrayList();
+                arrayList3.add(Integer.valueOf(arrayList2.size()));
+                this.C.add(arrayList3);
+                arrayList2.add(messageObject);
+                i12++;
+            }
+            i11++;
         }
-        CameraController.getInstance().recordVideo(q8Var.getCameraSessionObject(), r8Var.b, false, new o8(r8Var), new n8(r8Var, 1), q8Var, true);
+        if (i12 > 0) {
+            NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this);
+        }
     }
 
-    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
-    public void onFinishVideoRecording(String str, long j3) {
-        long currentTimeMillis = System.currentTimeMillis();
-        r8 r8Var = this.a;
-        r8Var.d = currentTimeMillis;
-        AndroidUtilities.cancelRunOnUIThread(r8Var.h);
-        if (r8Var.x) {
-            return;
+    @Override // bi.l8
+    public final MessageObject f(int i10) {
+        if (i10 < 0) {
+            return null;
         }
-        if (j3 <= 1000) {
-            r8Var.a(false);
-            return;
+        ArrayList arrayList = this.i;
+        if (i10 >= arrayList.size()) {
+            return null;
         }
-        r8Var.a.destroy(true, null);
-        od odVar = r8Var.n;
-        if (odVar != null) {
-            odVar.run(r8Var.b, str, Long.valueOf(j3));
-        }
+        return (MessageObject) arrayList.get(i10);
+    }
+
+    @Override // bi.l8
+    public final int g() {
+        return this.i.size();
+    }
+
+    @Override // bi.l8
+    public final ArrayList h() {
+        return new ArrayList(this.C);
+    }
+
+    @Override // bi.l8
+    public final int i() {
+        return this.i.size();
+    }
+
+    @Override // bi.l8
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final boolean l() {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final boolean q(int i10, List list, boolean z10) {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final boolean r(int i10) {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final void j() {
+    }
+
+    @Override // bi.l8
+    public final void s() {
+    }
+
+    @Override // bi.l8
+    public final void x() {
     }
 }

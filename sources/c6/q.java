@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -430,9 +430,9 @@ public final class q extends o6.a {
                                 optLong *= 1000;
                             }
                             cVar = new c(j142, j152, a102, a112, optLong);
-                        } catch (JSONException e) {
+                        } catch (JSONException e7) {
                             g6.b bVar3 = c.f;
-                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e);
+                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e7);
                         }
                         cVar2 = this.I;
                         if ((cVar2 == null && cVar != null) || (cVar2 != null && !cVar2.equals(cVar))) {
@@ -473,8 +473,8 @@ public final class q extends o6.a {
                                         bVar22.b("Unknown HDR type: %s", string3);
                                         i15 = 0;
                                         uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
-                                    } catch (JSONException e7) {
-                                        e = e7;
+                                    } catch (JSONException e10) {
+                                        e = e10;
                                         bVar22.a(e, "Error while creating a VideoInfo instance from JSON", new Object[0]);
                                         uVar = null;
                                         uVar2 = this.J;
@@ -500,8 +500,8 @@ public final class q extends o6.a {
                                     i15 = 0;
                                     uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
                                 }
-                            } catch (JSONException e10) {
-                                e = e10;
+                            } catch (JSONException e11) {
+                                e = e11;
                             }
                         }
                         uVar2 = this.J;
@@ -678,7 +678,7 @@ public final class q extends o6.a {
                                     i19 = i18;
                                     mVar = null;
                                 }
-                                Integer a15 = w7.a(jSONObject5.optString("repeatMode"));
+                                Integer a15 = v7.a(jSONObject5.optString("repeatMode"));
                                 int intValue = a15 != null ? a15.intValue() : 0;
                                 JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                 if (optJSONArray3 != null) {
@@ -811,7 +811,7 @@ public final class q extends o6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a16 = w7.a(jSONObject2.getString("repeatMode"));
+                Integer a16 = v7.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a16 == null ? this.F : a16.intValue();
                 if (this.F != intValue2) {
                     this.F = intValue2;
@@ -836,9 +836,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o t02 = new xa.c(mediaInfo).t0();
-                                t02.b(jSONObject6);
-                                arrayList7.add(t02);
+                                o B = new xa.c(mediaInfo).B();
+                                B.b(jSONObject6);
+                                arrayList7.add(B);
                             }
                             z10 = true;
                         }

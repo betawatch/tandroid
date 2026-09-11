@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class BotInlineKeyboard {
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum BackgroundColor {
         NONE,
         PRIMARY,
@@ -16,7 +16,7 @@ public class BotInlineKeyboard {
         DANGER
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Builder {
         private final ArrayList<Button[]> buttons = new ArrayList<>();
         private int separators;
@@ -88,7 +88,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static abstract class Button {
         public BackgroundColor getColor() {
             return BackgroundColor.NONE;
@@ -105,7 +105,7 @@ public class BotInlineKeyboard {
         public abstract String getText();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ButtonBot extends Button {
         public final TL_keyboard.KeyboardInlineButton button;
 
@@ -145,7 +145,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ButtonCustom extends Button {
         public static final int GIFT_OFFER_ACCEPT = 6;
         public static final int GIFT_OFFER_DECLINE = 5;
@@ -176,7 +176,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class KeyboardSourceArray implements Source {
         private final Button[][] buttons;
         private final int separators;
@@ -203,7 +203,7 @@ public class BotInlineKeyboard {
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
         public final /* synthetic */ boolean isEmpty() {
-            return n0.a(this);
+            return m0.a(this);
         }
 
         private KeyboardSourceArray(Button[][] buttonArr, int i10) {
@@ -212,7 +212,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Source {
         Button getButton(int i10, int i11);
 

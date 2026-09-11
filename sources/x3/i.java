@@ -3,9 +3,9 @@ package x3;
 import c3.h0;
 import c3.q;
 import e2.v;
-import n7.a1;
+import n7.z0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class i {
     public h0 b;
@@ -20,7 +20,7 @@ public abstract class i {
     public boolean l;
     public boolean m;
     public final e a = new e();
-    public a1 j = new a1(25, (byte) 0);
+    public z0 j = new z0(25, false);
 
     public void a(long j3) {
         this.g = j3;
@@ -28,11 +28,11 @@ public abstract class i {
 
     public abstract long b(v vVar);
 
-    public abstract boolean c(v vVar, long j3, a1 a1Var);
+    public abstract boolean c(v vVar, long j3, z0 z0Var);
 
     public void d(boolean z10) {
         if (z10) {
-            this.j = new a1(25, (byte) 0);
+            this.j = new z0(25, false);
             this.f = 0L;
             this.h = 0;
         } else {

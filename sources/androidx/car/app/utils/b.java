@@ -1,5 +1,6 @@
 package androidx.car.app.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
@@ -14,57 +15,74 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
-import androidx.lifecycle.n;
 import androidx.lifecycle.o;
 import b2.k0;
 import b2.n0;
 import b2.x0;
-import bi.e8;
-import bi.r9;
-import bi.tb;
-import bi.wa;
-import di.h4;
-import di.y1;
+import bi.a5;
+import bi.b8;
+import bi.c5;
+import bi.f5;
+import bi.f8;
+import bi.l5;
+import bi.m8;
+import bi.n5;
+import bi.o5;
+import bi.ob;
+import bi.pb;
+import bi.u8;
+import bi.x4;
+import com.google.android.gms.internal.vision.e2;
+import di.d7;
+import di.ka;
+import di.kc;
+import di.o8;
+import di.pc;
 import e9.i0;
-import fg.s1;
-import gg.b0;
-import gg.j2;
-import gg.k2;
-import hi.s;
+import fi.e4;
+import fi.v1;
 import i9.c0;
 import i9.w;
+import ig.a2;
+import ig.b2;
+import ig.y;
 import java.io.File;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import k2.e0;
+import ji.b5;
+import ji.k5;
+import k2.d0;
+import k2.k;
+import k2.n;
+import m4.a0;
+import m4.b1;
 import m4.d1;
 import m4.f1;
 import m4.h1;
-import m4.j0;
 import m4.j1;
-import m4.k;
-import m4.l0;
-import m4.l1;
-import m4.o1;
+import m4.m1;
 import m4.p;
-import m4.t1;
+import m4.r;
+import m4.r1;
 import n4.l;
 import n4.m;
 import n4.v;
 import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
@@ -76,29 +94,27 @@ import org.telegram.messenger.camera.CameraSession;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.h3;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ia;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.h8;
-import org.telegram.ui.o6;
-import org.telegram.ui.p6;
-import org.telegram.ui.q6;
-import org.telegram.ui.web.r;
-import v7.o8;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.web.s;
+import v7.l8;
+import w7.u;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -107,28 +123,51 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ b(r9 r9Var, String str, int[][] iArr, Utilities.Callback callback) {
-        this.a = 2;
-        this.b = r9Var;
+    public /* synthetic */ b(o8 o8Var, String str, int[][] iArr, Utilities.Callback callback) {
+        this.a = 6;
+        this.b = o8Var;
         this.d = str;
         this.c = iArr;
         this.e = callback;
     }
 
     private final void a() {
-        ki.f fVar = (ki.f) this.b;
-        AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
-        m4.e eVar = (m4.e) this.d;
-        AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.e;
-        synchronized (fVar.a) {
-            try {
-                if (atomicBoolean.get()) {
-                    atomicBoolean2.set(true);
-                } else {
-                    fVar.m(eVar);
+        AudioTrack audioTrack = (AudioTrack) this.b;
+        n nVar = (n) this.c;
+        Handler handler = (Handler) this.d;
+        k kVar = (k) this.e;
+        try {
+            audioTrack.flush();
+            audioTrack.release();
+            if (nVar != null && handler.getLooper().getThread().isAlive()) {
+                handler.post(new b5(4, nVar, kVar));
+            }
+            synchronized (d0.o0) {
+                try {
+                    int i10 = d0.q0 - 1;
+                    d0.q0 = i10;
+                    if (i10 == 0) {
+                        d0.p0.shutdown();
+                        d0.p0 = null;
+                    }
+                } finally {
                 }
-            } catch (Throwable th2) {
-                throw th2;
+            }
+        } catch (Throwable th2) {
+            if (nVar != null && handler.getLooper().getThread().isAlive()) {
+                handler.post(new b5(4, nVar, kVar));
+            }
+            synchronized (d0.o0) {
+                try {
+                    int i11 = d0.q0 - 1;
+                    d0.q0 = i11;
+                    if (i11 == 0) {
+                        d0.p0.shutdown();
+                        d0.p0 = null;
+                    }
+                    throw th2;
+                } finally {
+                }
             }
         }
     }
@@ -170,7 +209,7 @@ public final /* synthetic */ class b implements Runnable {
         CharSequence charSequence;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        j0 j0Var = (j0) this.b;
+        m4.i0 i0Var2 = (m4.i0) this.b;
         AtomicInteger atomicInteger = (AtomicInteger) this.c;
         ArrayList arrayList3 = (ArrayList) this.d;
         if (atomicInteger.incrementAndGet() == arrayList3.size()) {
@@ -180,14 +219,14 @@ public final /* synthetic */ class b implements Runnable {
                 w wVar = (w) arrayList5.get(i10);
                 if (wVar != null) {
                     try {
-                        bitmap = (Bitmap) o8.a(wVar);
-                    } catch (CancellationException | ExecutionException e) {
+                        bitmap = (Bitmap) l8.a(wVar);
+                    } catch (CancellationException | ExecutionException e7) {
                         synchronized (e2.a.b) {
-                            Log.d("MediaSessionLegacyStub", e2.a.a("Failed to get bitmap", e));
+                            Log.d("MediaSessionLegacyStub", e2.a.a("Failed to get bitmap", e7));
                         }
                     }
                     k0 k0Var = (k0) arrayList3.get(i10);
-                    int i11 = k.a;
+                    int i11 = m4.k.a;
                     String str = !k0Var.a.equals("") ? null : k0Var.a;
                     n0 n0Var = k0Var.d;
                     Bitmap bitmap2 = bitmap == null ? bitmap : null;
@@ -215,7 +254,7 @@ public final /* synthetic */ class b implements Runnable {
                             num2.getClass();
                             arrayList = arrayList3;
                             arrayList2 = arrayList5;
-                            bundle4.putLong("android.media.extra.BT_FOLDER_TYPE", k.a(num2.intValue()));
+                            bundle4.putLong("android.media.extra.BT_FOLDER_TYPE", m4.k.a(num2.intValue()));
                         }
                         if (z11) {
                             num.getClass();
@@ -347,7 +386,7 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 bitmap = null;
                 k0 k0Var2 = (k0) arrayList3.get(i10);
-                int i112 = k.a;
+                int i112 = m4.k.a;
                 if (!k0Var2.a.equals("")) {
                 }
                 n0 n0Var2 = k0Var2.d;
@@ -385,226 +424,493 @@ public final /* synthetic */ class b implements Runnable {
                 i10++;
                 arrayList3 = arrayList;
             }
-            l0.D(((l0) j0Var.e).k, arrayList4);
+            m4.k0.D(((m4.k0) i0Var2.e).k, arrayList4);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00f4, code lost:
+    
+        return;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final void c() {
-        boolean z10;
-        TLRPC.WallPaperSettings wallPaperSettings;
-        TLObject tLObject = (TLObject) this.b;
-        h6 h6Var = (h6) this.c;
-        i6 i6Var = (i6) this.d;
-        TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) this.e;
-        j6.A--;
-        if (tLObject instanceof TLRPC.TL_theme) {
-            TLRPC.TL_theme tL_theme2 = (TLRPC.TL_theme) tLObject;
-            TLRPC.ThemeSettings themeSettings = tL_theme2.settings.size() > 0 ? tL_theme2.settings.get(0) : null;
-            if (h6Var == null || themeSettings == null) {
-                TLRPC.Document document = tL_theme2.document;
-                if (document != null && document.id != tL_theme.document.id) {
-                    if (h6Var != null) {
-                        h6Var.r = tL_theme2;
-                    } else {
-                        i6Var.F = tL_theme2;
-                        i6Var.G = false;
-                        i6Var.g0 = null;
-                        i6Var.h0 = null;
-                        NotificationCenter.getInstance(i6Var.E).addObserver(i6Var, NotificationCenter.fileLoaded);
-                        NotificationCenter.getInstance(i6Var.E).addObserver(i6Var, NotificationCenter.fileLoadFailed);
-                        FileLoader fileLoader = FileLoader.getInstance(i6Var.E);
-                        TLRPC.TL_theme tL_theme3 = i6Var.F;
-                        fileLoader.loadFile(tL_theme3.document, tL_theme3, 1, 1);
-                    }
-                }
-            } else {
-                if (i6.a(h6Var, themeSettings)) {
-                    z10 = false;
-                } else {
-                    File d = h6Var.d();
-                    if (d != null) {
-                        d.delete();
-                    }
-                    i6.i(h6Var, themeSettings);
-                    i6 i6Var2 = j6.I;
-                    if (i6Var2 == i6Var && i6Var2.Y == h6Var.a) {
-                        j6.n1(false, false);
-                        j6.J(ApplicationLoader.applicationContext, false);
-                        NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                        int i10 = NotificationCenter.needSetDayNightTheme;
-                        i6 i6Var3 = j6.I;
-                        globalInstance.lambda$postNotificationNameOnUIThread$1(i10, i6Var3, Boolean.valueOf(j6.J == i6Var3), null, -1);
-                    }
-                    e6.a(true);
-                    z10 = true;
-                }
-                TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-                h6Var.q = (wallPaper == null || (wallPaperSettings = wallPaper.settings) == null || !wallPaperSettings.motion) ? false : true;
-                r5 = z10;
-            }
-            if (j6.A != 0) {
-                j6.B = (int) (System.currentTimeMillis() / 1000);
-                j6.s1(r5, false);
+        f1 f1Var = (f1) this.b;
+        r rVar = (r) this.c;
+        a0 a0Var = (a0) this.d;
+        m4.i iVar = (m4.i) this.e;
+        f1Var.getClass();
+        fg.f fVar = f1Var.b;
+        boolean z10 = false;
+        try {
+            f1Var.c.remove(rVar);
+            if (a0Var.j()) {
+                u.a(iVar);
                 return;
             }
-            return;
-        }
-        r5 = false;
-        if (j6.A != 0) {
+            b1 b1Var = (b1) rVar.d;
+            e2.d.h(b1Var);
+            IBinder asBinder = b1Var.a.asBinder();
+            p m10 = a0Var.m(rVar);
+            if (fVar.B(rVar)) {
+                e2.a.n("MediaSessionStub", "Controller " + rVar + " has sent connection request multiple times");
+            }
+            fVar.b(asBinder, rVar, m10.a, m10.b);
+            com.google.android.gms.common.api.internal.v y3 = fVar.y(rVar);
+            if (y3 == null) {
+                e2.a.n("MediaSessionStub", "Ignoring connection request from unknown controller info");
+                u.a(iVar);
+                return;
+            }
+            j1 j1Var = a0Var.t;
+            h1 h1Var = a0Var.s;
+            x0 x0Var = m10.b;
+            h1 H0 = f1Var.H0(h1Var);
+            MediaSession.Token token = ((n4.r) a0Var.h.k.b).c.b;
+            i0 i0Var = m10.c;
+            if (i0Var == null) {
+                i0Var = a0Var.y;
+            }
+            i0 i0Var2 = m10.d;
+            if (i0Var2 == null) {
+                i0Var2 = a0Var.z;
+            }
+            i0 i0Var3 = a0Var.r;
+            m1 m1Var = m10.a;
+            x0 t10 = j1Var.t();
+            r1 r1Var = a0Var.j.a;
+            r1Var.getClass();
+            m4.g gVar = new m4.g(f1Var, i0Var, i0Var2, i0Var3, m1Var, x0Var, t10, new Bundle(r1Var.g), a0Var.A, H0, token);
+            if (a0Var.j()) {
+                u.a(iVar);
+                return;
+            }
+            try {
+                ((m4.h) iVar).G0(y3.e(), gVar.a(rVar.c));
+                z10 = true;
+            } catch (RemoteException unused) {
+            }
+            if (z10 && (!a0Var.x || !a0.k(rVar))) {
+                a0Var.e.getClass();
+            }
+        } finally {
+            if (0 == 0) {
+                u.a(iVar);
+            }
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:169:0x0362, code lost:
+    private final void e() {
+        a0 a0Var = (a0) this.b;
+        d1 d1Var = (d1) this.c;
+        r rVar = (r) this.d;
+        List list = (List) this.e;
+        if (a0Var.j()) {
+            return;
+        }
+        d1Var.a(a0Var.t, rVar, list);
+    }
+
+    private final void f() {
+        CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
+    }
+
+    private final void g() {
+        CameraController.lambda$close$5((Runnable) this.b, (CameraSession) this.c, (CountDownLatch) this.d, (Runnable) this.e);
+    }
+
+    private final void h() {
+        ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (n70) this.e);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:335:0x08a2, code lost:
     
-        if (r5 == null) goto L154;
+        if (r6 != null) goto L297;
      */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01f8  */
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x08a4, code lost:
+    
+        r6.dispose();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x08ba, code lost:
+    
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new bi.g8(r2, 2));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x08c3, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x08b7, code lost:
+    
+        if (r6 != null) goto L297;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x014a, code lost:
+    
+        if (r10 == null) goto L68;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:406:0x09f6  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        float f7;
-        long j3;
-        long j10;
-        long j11;
+        o8 o8Var;
+        File file;
         ArrayList arrayList;
-        char c10 = 2;
-        int i10 = 5;
+        TL_stories.StoryItem storyItem;
+        long j3;
+        ob obVar;
+        char c10;
+        n2 U;
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        float f7;
+        long j10;
+        int[][] iArr;
+        long j11;
+        long j12;
+        ArrayList arrayList2;
+        int i10 = 6;
+        char c11 = 2;
+        r10 = null;
         SQLiteCursor sQLiteCursor = null;
-        boolean z10 = true;
-        boolean z11 = false;
+        int i11 = 0;
         switch (this.a) {
             case 0:
                 o oVar = (o) this.b;
                 IOnDoneCallback iOnDoneCallback = (IOnDoneCallback) this.c;
                 String str = (String) this.d;
                 c cVar = (c) this.e;
-                if (oVar != null && ((androidx.lifecycle.v) oVar).c.compareTo(n.c) >= 0) {
+                if (oVar != null && ((androidx.lifecycle.v) oVar).c.compareTo(androidx.lifecycle.n.c) >= 0) {
                     i.b(iOnDoneCallback, str, cVar);
                     return;
                 }
                 i.f(iOnDoneCallback, str, new IllegalStateException("Lifecycle is not at least created when dispatching " + cVar));
                 return;
             case 1:
-                e8 e8Var = (e8) this.b;
-                Bitmap[] bitmapArr = (Bitmap[]) this.c;
-                r9 r9Var = (r9) this.d;
-                boolean[] zArr = (boolean[]) this.e;
-                ia iaVar = e8Var.G;
-                Bitmap bitmap = e8Var.a;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    e8Var.a.recycle();
-                }
-                Bitmap bitmap2 = bitmapArr[0];
-                e8Var.a = bitmap2;
-                if (r9Var != null && !r9Var.c && r9Var.K && bitmap2 != null) {
-                    r9Var.k0 = bitmap2.getWidth();
-                    r9Var.l0 = e8Var.a.getHeight();
-                    r9Var.A();
-                }
-                if (zArr[0] && r9Var != null && iaVar != null && e8Var.a != null) {
-                    iaVar.e();
-                    iaVar.f(r9Var.b(e8Var.a, 0.2f), false);
-                    tb tbVar = e8Var.v;
-                    if (tbVar != null) {
-                        tbVar.run();
+                f5 f5Var = (f5) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) this.d;
+                Utilities.Callback callback = (Utilities.Callback) this.e;
+                o5 o5Var = f5Var.l;
+                if (tLObject instanceof TL_stories.TL_stories_stories) {
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    MessagesController.getInstance(o5Var.C2).putUsers(tL_stories_stories.users, false);
+                    MessagesController.getInstance(o5Var.C2).putChats(tL_stories_stories.chats, false);
+                    for (int i12 = 0; i12 < tL_stories_stories.stories.size(); i12++) {
+                        if (tL_stories_stories.stories.get(i12).id == storyItem2.id) {
+                            callback.run(tL_stories_stories.stories.get(i12).media.document);
+                            return;
+                        }
                     }
                 }
-                e8Var.r();
-                e8Var.invalidate();
+                callback.run(null);
                 return;
             case 2:
-                r9 r9Var2 = (r9) this.b;
+                f5 f5Var2 = (f5) this.b;
+                Activity activity = (Activity) this.c;
+                pb pbVar = (pb) this.d;
+                l5 l5Var = (l5) this.e;
+                pc E = pc.E(activity, f5Var2.l.C2);
+                n5 n5Var = f5Var2.l.M2;
+                long j13 = (n5Var == null || (obVar = (ob) n5Var.c) == null) ? 0L : obVar.currentPosition;
+                di.b1 b1Var = MessagesController.getInstance(f5Var2.l.C2).getStoriesController().w;
+                TL_stories.StoryItem storyItem3 = f5Var2.l.O1.a;
+                long j14 = storyItem3.dialogId;
+                ArrayList arrayList3 = b1Var.b;
+                int size = arrayList3.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList3.get(i13);
+                    i13++;
+                    o8 o8Var2 = (o8) obj;
+                    if (o8Var2.g && storyItem3.id == o8Var2.f) {
+                        j3 = j14;
+                        if (j3 == o8Var2.e) {
+                            TLRPC.MessageMedia messageMedia = storyItem3.media;
+                            TLRPC.Document document = messageMedia.document;
+                            if (document != null) {
+                                arrayList = arrayList3;
+                                storyItem = storyItem3;
+                                if (document.id != o8Var2.H) {
+                                    continue;
+                                }
+                            } else {
+                                arrayList = arrayList3;
+                                storyItem = storyItem3;
+                            }
+                            TLRPC.Photo photo = messageMedia.photo;
+                            if (photo == null || photo.id == o8Var2.I) {
+                                o8Var2.h = true;
+                                o8Var = o8Var2;
+                                if (o8Var != null || o8Var.u || (file = o8Var.L) == null || !file.exists()) {
+                                    o8Var = o8.n(f5Var2.l.O1.h(), f5Var2.l.O1.a);
+                                    o8Var.e = f5Var2.l.B1;
+                                }
+                                o8 g10 = o8Var.g();
+                                if (f5Var2.l.I0()) {
+                                    o5 o5Var2 = f5Var2.l;
+                                    g10.J0 = o5Var2.B1;
+                                    g10.L0 = MessagesController.toInputMedia(o5Var2.O1.a.media);
+                                    bi.l8 l8Var = pbVar.O0;
+                                    if (l8Var instanceof b8) {
+                                        g10.K0 = ((b8) l8Var).E;
+                                    }
+                                }
+                                E.S(kc.d(pbVar), g10, j13);
+                                E.Q = new x4(f5Var2, 3);
+                                E.R = new a5(f5Var2, l5Var, 1);
+                                return;
+                            }
+                        } else {
+                            arrayList = arrayList3;
+                            storyItem = storyItem3;
+                        }
+                    } else {
+                        arrayList = arrayList3;
+                        storyItem = storyItem3;
+                        j3 = j14;
+                    }
+                    storyItem3 = storyItem;
+                    arrayList3 = arrayList;
+                    j14 = j3;
+                }
+                o8Var = null;
+                if (o8Var != null) {
+                }
+                o8Var = o8.n(f5Var2.l.O1.h(), f5Var2.l.O1.a);
+                o8Var.e = f5Var2.l.B1;
+                o8 g102 = o8Var.g();
+                if (f5Var2.l.I0()) {
+                }
+                E.S(kc.d(pbVar), g102, j13);
+                E.Q = new x4(f5Var2, 3);
+                E.R = new a5(f5Var2, l5Var, 1);
+                return;
+            case 3:
+                f8 f8Var = (f8) this.b;
+                TLObject tLObject2 = (TLObject) this.c;
+                Utilities.Callback callback2 = (Utilities.Callback) this.d;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
+                f8Var.i = false;
+                if (tLObject2 instanceof TL_stories.TL_storyAlbum) {
+                    m8 a2 = m8.a((TL_stories.TL_storyAlbum) tLObject2);
+                    f8Var.h.add(a2);
+                    f8Var.f(true);
+                    if (callback2 != null) {
+                        callback2.run(a2);
+                        return;
+                    }
+                    return;
+                }
+                if (tL_error == null || (U = LaunchActivity.U()) == null) {
+                    c10 = 0;
+                } else {
+                    c10 = 0;
+                    yc.a0(U).d0(tL_error, false);
+                }
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(f8Var.a);
+                int i14 = NotificationCenter.storyAlbumsCollectionsUpdate;
+                Object[] objArr = new Object[2];
+                objArr[c10] = Long.valueOf(f8Var.b);
+                objArr[1] = f8Var;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i14, objArr);
+                return;
+            case 4:
+                bi.l8 l8Var2 = (bi.l8) this.b;
+                ArrayList arrayList4 = (ArrayList) this.c;
+                MessagesStorage messagesStorage = (MessagesStorage) this.d;
+                ArrayList arrayList5 = (ArrayList) this.e;
+                int i15 = l8Var2.f;
+                StringBuilder sb2 = new StringBuilder("StoriesList ");
+                int i16 = l8Var2.e;
+                sb2.append(i16);
+                sb2.append("{");
+                long j15 = l8Var2.d;
+                sb2.append(j15);
+                sb2.append("} saveCache {");
+                sb2.append(u8.a(arrayList4));
+                e2.t("}", sb2);
+                try {
+                    SQLiteDatabase database = messagesStorage.getDatabase();
+                    SQLitePreparedStatement executeFast = database.executeFast("REPLACE INTO profile_stories VALUES(?, ?, ?, ?, ?, ?)");
+                    try {
+                        Locale locale = Locale.US;
+                        database.executeFast("DELETE FROM profile_stories_albums_links WHERE dialog_id = " + j15 + " AND album_id = " + i15).stepThis().dispose();
+                        sQLitePreparedStatement = database.executeFast("REPLACE INTO profile_stories_albums_links VALUES(?, ?, ?, ?)");
+                        for (int i17 = 0; i17 < arrayList4.size(); i17++) {
+                            try {
+                                TL_stories.StoryItem storyItem4 = ((MessageObject) arrayList4.get(i17)).storyItem;
+                                if (storyItem4 != null) {
+                                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyItem4.getObjectSize());
+                                    storyItem4.serializeToStream(nativeByteBuffer);
+                                    executeFast.requery();
+                                    executeFast.bindLong(1, j15);
+                                    executeFast.bindInteger(2, storyItem4.id);
+                                    executeFast.bindByteBuffer(3, nativeByteBuffer);
+                                    executeFast.bindInteger(4, i16);
+                                    executeFast.bindInteger(5, l8Var2.m.contains(Integer.valueOf(storyItem4.id)) ? 1 : 0);
+                                    executeFast.bindInteger(6, arrayList5.indexOf(Integer.valueOf(storyItem4.id)) + 1);
+                                    executeFast.step();
+                                    nativeByteBuffer.reuse();
+                                    sQLitePreparedStatement.requery();
+                                    sQLitePreparedStatement.bindLong(1, j15);
+                                    sQLitePreparedStatement.bindInteger(2, i15);
+                                    sQLitePreparedStatement.bindInteger(3, storyItem4.id);
+                                    sQLitePreparedStatement.bindInteger(4, i17);
+                                    sQLitePreparedStatement.step();
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                sQLitePreparedStatement2 = executeFast;
+                                try {
+                                    messagesStorage.checkSQLException(th);
+                                    if (sQLitePreparedStatement2 != null) {
+                                        sQLitePreparedStatement2.dispose();
+                                        break;
+                                    }
+                                } catch (Throwable th3) {
+                                    if (sQLitePreparedStatement2 != null) {
+                                        sQLitePreparedStatement2.dispose();
+                                    }
+                                    if (sQLitePreparedStatement != null) {
+                                        sQLitePreparedStatement.dispose();
+                                    }
+                                    throw th3;
+                                }
+                            }
+                        }
+                        if (executeFast != null) {
+                            executeFast.dispose();
+                            break;
+                        }
+                    } catch (Throwable th4) {
+                        th = th4;
+                        sQLitePreparedStatement2 = executeFast;
+                        sQLitePreparedStatement = null;
+                    }
+                } catch (Throwable th5) {
+                    th = th5;
+                    sQLitePreparedStatement = null;
+                    sQLitePreparedStatement2 = null;
+                }
+                break;
+            case 5:
+                d7 d7Var = (d7) this.b;
+                Bitmap[] bitmapArr = (Bitmap[]) this.c;
+                o8 o8Var3 = (o8) this.d;
+                boolean[] zArr = (boolean[]) this.e;
+                ja jaVar = d7Var.G;
+                Bitmap bitmap = d7Var.a;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    d7Var.a.recycle();
+                }
+                Bitmap bitmap2 = bitmapArr[0];
+                d7Var.a = bitmap2;
+                if (o8Var3 != null && !o8Var3.c && o8Var3.K && bitmap2 != null) {
+                    o8Var3.k0 = bitmap2.getWidth();
+                    o8Var3.l0 = d7Var.a.getHeight();
+                    o8Var3.A();
+                }
+                if (zArr[0] && o8Var3 != null && jaVar != null && d7Var.a != null) {
+                    jaVar.e();
+                    jaVar.f(o8Var3.b(d7Var.a, 0.2f), false);
+                    ka kaVar = d7Var.v;
+                    if (kaVar != null) {
+                        kaVar.run();
+                    }
+                }
+                d7Var.r();
+                d7Var.invalidate();
+                return;
+            case 6:
+                o8 o8Var4 = (o8) this.b;
                 String str2 = (String) this.d;
-                int[][] iArr = (int[][]) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.e;
-                r9Var2.getClass();
+                int[][] iArr2 = (int[][]) this.c;
+                Utilities.Callback callback3 = (Utilities.Callback) this.e;
+                o8Var4.getClass();
                 VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
                 videoEditedInfo.isStory = true;
-                videoEditedInfo.fromCamera = r9Var2.c1;
-                videoEditedInfo.originalWidth = r9Var2.k0;
-                videoEditedInfo.originalHeight = r9Var2.l0;
-                videoEditedInfo.resultWidth = r9Var2.i0;
-                videoEditedInfo.resultHeight = r9Var2.j0;
-                File file = r9Var2.P0;
-                videoEditedInfo.paintPath = file == null ? null : file.getPath();
-                File file2 = r9Var2.W0;
-                videoEditedInfo.messagePath = file2 == null ? null : file2.getPath();
-                File file3 = r9Var2.X0;
-                videoEditedInfo.messageVideoMaskPath = file3 == null ? null : file3.getPath();
-                File file4 = r9Var2.Y0;
-                videoEditedInfo.backgroundPath = file4 == null ? null : file4.getPath();
+                videoEditedInfo.fromCamera = o8Var4.c1;
+                videoEditedInfo.originalWidth = o8Var4.k0;
+                videoEditedInfo.originalHeight = o8Var4.l0;
+                videoEditedInfo.resultWidth = o8Var4.i0;
+                videoEditedInfo.resultHeight = o8Var4.j0;
+                File file2 = o8Var4.P0;
+                videoEditedInfo.paintPath = file2 == null ? null : file2.getPath();
+                File file3 = o8Var4.W0;
+                videoEditedInfo.messagePath = file3 == null ? null : file3.getPath();
+                File file4 = o8Var4.X0;
+                videoEditedInfo.messageVideoMaskPath = file4 == null ? null : file4.getPath();
+                File file5 = o8Var4.Y0;
+                videoEditedInfo.backgroundPath = file5 == null ? null : file5.getPath();
                 int extractRealEncoderBitrate = MediaController.extractRealEncoderBitrate(videoEditedInfo.resultWidth, videoEditedInfo.resultHeight, videoEditedInfo.bitrate, true);
-                if (!r9Var2.K || str2 == null || r9Var2.v()) {
-                    File file5 = r9Var2.Z0;
-                    if (file5 != null) {
-                        videoEditedInfo.originalPath = file5.getAbsolutePath();
+                if (!o8Var4.K || str2 == null || o8Var4.v()) {
+                    File file6 = o8Var4.Z0;
+                    if (file6 != null) {
+                        videoEditedInfo.originalPath = file6.getAbsolutePath();
                     } else {
                         videoEditedInfo.originalPath = str2;
                     }
                     videoEditedInfo.isPhoto = true;
-                    videoEditedInfo.collage = r9Var2.S;
-                    if (r9Var2.v()) {
-                        int i11 = 0;
-                        boolean z12 = false;
-                        while (i11 < r9Var2.T.size()) {
-                            r9 r9Var3 = (r9) r9Var2.T.get(i11);
-                            if (r9Var3.K) {
-                                r9Var3.k0 = Math.max(r9Var3.k0, iArr[i11][1]);
-                                r9Var3.l0 = Math.max(r9Var3.l0, iArr[i11][c10]);
-                                r9Var3.h0 = Math.max(r9Var3.h0, iArr[i11][4]);
-                                z12 = true;
+                    videoEditedInfo.collage = o8Var4.S;
+                    if (o8Var4.v()) {
+                        int i18 = 0;
+                        boolean z10 = false;
+                        while (i18 < o8Var4.T.size()) {
+                            o8 o8Var5 = (o8) o8Var4.T.get(i18);
+                            if (o8Var5.K) {
+                                o8Var5.k0 = Math.max(o8Var5.k0, iArr2[i18][1]);
+                                o8Var5.l0 = Math.max(o8Var5.l0, iArr2[i18][c11]);
+                                iArr = iArr2;
+                                o8Var5.h0 = Math.max(o8Var5.h0, iArr2[i18][4]);
+                                z10 = true;
+                            } else {
+                                iArr = iArr2;
                             }
-                            i11++;
-                            c10 = 2;
+                            i18++;
+                            iArr2 = iArr;
+                            c11 = 2;
                         }
-                        f7 = 8.0f;
-                        ArrayList<VideoEditedInfo.Part> parts = VideoEditedInfo.Part.toParts(r9Var2);
+                        ArrayList<VideoEditedInfo.Part> parts = VideoEditedInfo.Part.toParts(o8Var4);
                         videoEditedInfo.collageParts = parts;
-                        if (z12) {
-                            int size = parts.size();
-                            int i12 = 0;
+                        if (z10) {
+                            int size2 = parts.size();
                             VideoEditedInfo.Part part = null;
-                            long j12 = 0;
-                            while (i12 < size) {
-                                VideoEditedInfo.Part part2 = parts.get(i12);
-                                i12++;
+                            int i19 = 0;
+                            long j16 = 0;
+                            while (i19 < size2) {
+                                VideoEditedInfo.Part part2 = parts.get(i19);
+                                i19++;
                                 VideoEditedInfo.Part part3 = part2;
-                                long j13 = j12;
                                 if (part3.isVideo) {
-                                    long j14 = part3.duration;
-                                    if (j14 > j13) {
-                                        j12 = j14;
+                                    long j17 = part3.duration;
+                                    if (j17 > j16) {
+                                        j16 = j17;
                                         part = part3;
                                     }
                                 }
-                                j12 = j13;
                             }
+                            f7 = 8.0f;
                             if (part != null) {
                                 float f10 = part.duration;
                                 float f11 = part.right;
                                 float f12 = part.left;
-                                long j15 = (long) ((f11 - f12) * f10);
-                                r9Var2.h0 = j15;
-                                videoEditedInfo.originalDuration = j15;
-                                videoEditedInfo.estimatedDuration = j15;
-                                j3 = -(part.offset + ((long) (f12 * f10)));
-                                part.offset = j3;
-                                ArrayList<VideoEditedInfo.Part> arrayList2 = videoEditedInfo.collageParts;
-                                int size2 = arrayList2.size();
-                                int i13 = 0;
-                                while (i13 < size2) {
-                                    VideoEditedInfo.Part part4 = arrayList2.get(i13);
-                                    i13++;
+                                long j18 = (long) ((f11 - f12) * f10);
+                                o8Var4.h0 = j18;
+                                videoEditedInfo.originalDuration = j18;
+                                videoEditedInfo.estimatedDuration = j18;
+                                j10 = -(part.offset + ((long) (f12 * f10)));
+                                part.offset = j10;
+                                ArrayList<VideoEditedInfo.Part> arrayList6 = videoEditedInfo.collageParts;
+                                int size3 = arrayList6.size();
+                                int i20 = 0;
+                                while (i20 < size3) {
+                                    VideoEditedInfo.Part part4 = arrayList6.get(i20);
+                                    i20++;
                                     VideoEditedInfo.Part part5 = part4;
                                     if (part5.isVideo && part5 != part) {
-                                        part5.offset += j3;
+                                        part5.offset += j10;
                                     }
                                 }
                                 videoEditedInfo.startTime = -1L;
@@ -614,35 +920,36 @@ public final /* synthetic */ class b implements Runnable {
                                 videoEditedInfo.volume = 1.0f;
                                 videoEditedInfo.bitrate = -1;
                                 videoEditedInfo.framerate = 30;
-                                videoEditedInfo.estimatedSize = (long) (((r9Var2.h0 / 1000.0f) * extractRealEncoderBitrate) / f7);
+                                videoEditedInfo.estimatedSize = (long) (((o8Var4.h0 / 1000.0f) * extractRealEncoderBitrate) / f7);
                                 videoEditedInfo.filterState = null;
                             }
                         } else {
-                            long j16 = r9Var2.S0;
-                            r9Var2.h0 = j16;
-                            videoEditedInfo.originalDuration = j16;
-                            videoEditedInfo.estimatedDuration = j16;
+                            long j19 = o8Var4.S0;
+                            o8Var4.h0 = j19;
+                            videoEditedInfo.originalDuration = j19;
+                            videoEditedInfo.estimatedDuration = j19;
+                            f7 = 8.0f;
                         }
                     } else {
                         f7 = 8.0f;
-                        if (r9Var2.o0 != null) {
-                            long j17 = (long) ((r9Var2.t0 - r9Var2.s0) * r9Var2.q0);
-                            r9Var2.h0 = j17;
-                            videoEditedInfo.originalDuration = j17;
-                            videoEditedInfo.estimatedDuration = j17;
-                        } else if (r9Var2.y != null) {
-                            long j18 = (long) ((r9Var2.F - r9Var2.E) * r9Var2.C);
-                            r9Var2.h0 = j18;
-                            videoEditedInfo.originalDuration = j18;
-                            videoEditedInfo.estimatedDuration = j18;
+                        if (o8Var4.o0 != null) {
+                            long j20 = (long) ((o8Var4.t0 - o8Var4.s0) * o8Var4.q0);
+                            o8Var4.h0 = j20;
+                            videoEditedInfo.originalDuration = j20;
+                            videoEditedInfo.estimatedDuration = j20;
+                        } else if (o8Var4.y != null) {
+                            long j21 = (long) ((o8Var4.F - o8Var4.E) * o8Var4.C);
+                            o8Var4.h0 = j21;
+                            videoEditedInfo.originalDuration = j21;
+                            videoEditedInfo.estimatedDuration = j21;
                         } else {
-                            long j19 = r9Var2.S0;
-                            r9Var2.h0 = j19;
-                            videoEditedInfo.originalDuration = j19;
-                            videoEditedInfo.estimatedDuration = j19;
+                            long j22 = o8Var4.S0;
+                            o8Var4.h0 = j22;
+                            videoEditedInfo.originalDuration = j22;
+                            videoEditedInfo.estimatedDuration = j22;
                         }
                     }
-                    j3 = 0;
+                    j10 = 0;
                     videoEditedInfo.startTime = -1L;
                     videoEditedInfo.endTime = -1L;
                     videoEditedInfo.muted = true;
@@ -650,77 +957,77 @@ public final /* synthetic */ class b implements Runnable {
                     videoEditedInfo.volume = 1.0f;
                     videoEditedInfo.bitrate = -1;
                     videoEditedInfo.framerate = 30;
-                    videoEditedInfo.estimatedSize = (long) (((r9Var2.h0 / 1000.0f) * extractRealEncoderBitrate) / f7);
+                    videoEditedInfo.estimatedSize = (long) (((o8Var4.h0 / 1000.0f) * extractRealEncoderBitrate) / f7);
                     videoEditedInfo.filterState = null;
                 } else {
                     videoEditedInfo.originalPath = str2;
                     videoEditedInfo.isPhoto = false;
-                    videoEditedInfo.framerate = Math.min(59, iArr[0][7]);
+                    videoEditedInfo.framerate = Math.min(59, iArr2[0][7]);
                     int videoBitrate = MediaController.getVideoBitrate(str2);
                     if (videoBitrate == -1) {
-                        videoBitrate = iArr[0][3];
+                        videoBitrate = iArr2[0][3];
                     }
                     videoEditedInfo.originalBitrate = videoBitrate;
-                    if (videoBitrate >= 1000000 || (arrayList = r9Var2.T0) == null || arrayList.isEmpty()) {
-                        int i14 = videoEditedInfo.originalBitrate;
-                        if (i14 < 500000) {
+                    if (videoBitrate >= 1000000 || (arrayList2 = o8Var4.T0) == null || arrayList2.isEmpty()) {
+                        int i21 = videoEditedInfo.originalBitrate;
+                        if (i21 < 500000) {
                             videoEditedInfo.bitrate = 2500000;
                             videoEditedInfo.originalBitrate = -1;
                         } else {
-                            videoEditedInfo.bitrate = Utilities.clamp(i14, 3000000, 500000);
+                            videoEditedInfo.bitrate = Utilities.clamp(i21, 3000000, 500000);
                         }
                     } else {
                         videoEditedInfo.bitrate = 2000000;
                         videoEditedInfo.originalBitrate = -1;
                     }
-                    StringBuilder sb2 = new StringBuilder("story bitrate, original = ");
-                    sb2.append(videoEditedInfo.originalBitrate);
-                    sb2.append(" => ");
-                    hc.b.q(videoEditedInfo.bitrate, sb2);
-                    int i15 = iArr[0][4];
-                    long j20 = i15;
-                    r9Var2.h0 = j20;
-                    videoEditedInfo.originalDuration = j20 * 1000;
-                    float f13 = j20;
-                    long j21 = ((long) (r9Var2.Z * f13)) * 1000;
-                    videoEditedInfo.startTime = j21;
-                    long j22 = ((long) (r9Var2.a0 * f13)) * 1000;
-                    videoEditedInfo.endTime = j22;
-                    videoEditedInfo.estimatedDuration = j22 - j21;
-                    videoEditedInfo.volume = r9Var2.P;
-                    videoEditedInfo.muted = r9Var2.Y;
-                    videoEditedInfo.estimatedSize = (long) a4.a.A(i15 / 1000.0f, extractRealEncoderBitrate, 8.0f, r2[5]);
-                    videoEditedInfo.estimatedSize = Math.max(r9Var2.L.length(), videoEditedInfo.estimatedSize);
-                    videoEditedInfo.filterState = r9Var2.a1;
-                    File file6 = r9Var2.Q0;
-                    videoEditedInfo.blurPath = file6 == null ? null : file6.getPath();
-                    j3 = 0;
+                    StringBuilder sb3 = new StringBuilder("story bitrate, original = ");
+                    sb3.append(videoEditedInfo.originalBitrate);
+                    sb3.append(" => ");
+                    i2.g.o(videoEditedInfo.bitrate, sb3);
+                    int i22 = iArr2[0][4];
+                    long j23 = i22;
+                    o8Var4.h0 = j23;
+                    videoEditedInfo.originalDuration = j23 * 1000;
+                    float f13 = j23;
+                    long j24 = ((long) (o8Var4.Z * f13)) * 1000;
+                    videoEditedInfo.startTime = j24;
+                    long j25 = ((long) (o8Var4.a0 * f13)) * 1000;
+                    videoEditedInfo.endTime = j25;
+                    videoEditedInfo.estimatedDuration = j25 - j24;
+                    videoEditedInfo.volume = o8Var4.P;
+                    videoEditedInfo.muted = o8Var4.Y;
+                    videoEditedInfo.estimatedSize = (long) a4.a.A(i22 / 1000.0f, extractRealEncoderBitrate, 8.0f, r5[5]);
+                    videoEditedInfo.estimatedSize = Math.max(o8Var4.L.length(), videoEditedInfo.estimatedSize);
+                    videoEditedInfo.filterState = o8Var4.a1;
+                    File file7 = o8Var4.Q0;
+                    videoEditedInfo.blurPath = file7 != null ? file7.getPath() : null;
+                    j10 = 0;
                 }
-                videoEditedInfo.account = r9Var2.a;
-                videoEditedInfo.wallpaperPeerId = r9Var2.z0;
-                videoEditedInfo.isDark = r9Var2.y0;
+                videoEditedInfo.account = o8Var4.a;
+                videoEditedInfo.wallpaperPeerId = o8Var4.z0;
+                videoEditedInfo.isDark = o8Var4.y0;
                 videoEditedInfo.avatarStartTime = -1L;
-                MediaController.CropState cropState = r9Var2.m0;
+                MediaController.CropState cropState = o8Var4.m0;
                 if (cropState != null) {
                     videoEditedInfo.cropState = cropState.clone();
                 } else {
                     videoEditedInfo.cropState = new MediaController.CropState();
                 }
                 videoEditedInfo.cropState.useMatrix = new Matrix();
-                videoEditedInfo.cropState.useMatrix.set(r9Var2.n0);
-                videoEditedInfo.mediaEntities = r9Var2.T0;
-                videoEditedInfo.gradientTopColor = Integer.valueOf(r9Var2.A0);
-                videoEditedInfo.gradientBottomColor = Integer.valueOf(r9Var2.B0);
+                videoEditedInfo.cropState.useMatrix.set(o8Var4.n0);
+                videoEditedInfo.mediaEntities = o8Var4.T0;
+                videoEditedInfo.gradientTopColor = Integer.valueOf(o8Var4.A0);
+                videoEditedInfo.gradientBottomColor = Integer.valueOf(o8Var4.B0);
                 videoEditedInfo.forceFragmenting = true;
-                videoEditedInfo.hdrInfo = r9Var2.d1;
+                videoEditedInfo.hdrInfo = o8Var4.d1;
                 videoEditedInfo.mixedSoundInfos.clear();
-                if (r9Var2.v() && !r9Var2.Y) {
-                    ArrayList<VideoEditedInfo.Part> arrayList3 = videoEditedInfo.collageParts;
-                    int size3 = arrayList3.size();
-                    int i16 = 0;
-                    while (i16 < size3) {
-                        VideoEditedInfo.Part part6 = arrayList3.get(i16);
-                        i16++;
+                if (o8Var4.v() && !o8Var4.Y) {
+                    ArrayList<VideoEditedInfo.Part> arrayList7 = videoEditedInfo.collageParts;
+                    int size4 = arrayList7.size();
+                    int i23 = 0;
+                    while (i23 < size4) {
+                        VideoEditedInfo.Part part6 = arrayList7.get(i23);
+                        i23++;
                         VideoEditedInfo.Part part7 = part6;
                         if (part7.isVideo && part7.volume > 0.0f && !part7.muted) {
                             MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo = new MediaCodecVideoConvertor.MixedSoundInfo(part7.path);
@@ -734,90 +1041,95 @@ public final /* synthetic */ class b implements Runnable {
                         }
                     }
                 }
-                File file7 = r9Var2.o0;
-                if (file7 != null) {
-                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo2 = new MediaCodecVideoConvertor.MixedSoundInfo(file7.getAbsolutePath());
-                    mixedSoundInfo2.volume = r9Var2.u0;
-                    float f16 = r9Var2.s0;
-                    float f17 = r9Var2.q0;
-                    long j23 = ((long) (f16 * f17)) * 1000;
-                    mixedSoundInfo2.audioOffset = j23;
-                    if (r9Var2.K) {
-                        mixedSoundInfo2.startTime = ((long) (r9Var2.r0 - (r9Var2.Z * r9Var2.h0))) * 1000;
-                        j11 = 0;
+                File file8 = o8Var4.o0;
+                if (file8 != null) {
+                    MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo2 = new MediaCodecVideoConvertor.MixedSoundInfo(file8.getAbsolutePath());
+                    mixedSoundInfo2.volume = o8Var4.u0;
+                    float f16 = o8Var4.s0;
+                    float f17 = o8Var4.q0;
+                    long j26 = ((long) (f16 * f17)) * 1000;
+                    mixedSoundInfo2.audioOffset = j26;
+                    if (o8Var4.K) {
+                        mixedSoundInfo2.startTime = ((long) (o8Var4.r0 - (o8Var4.Z * o8Var4.h0))) * 1000;
+                        j12 = 0;
                     } else {
-                        j11 = 0;
+                        j12 = 0;
                         mixedSoundInfo2.startTime = 0L;
                     }
-                    long j24 = mixedSoundInfo2.startTime + j3;
-                    mixedSoundInfo2.startTime = j24;
-                    if (j24 < j11) {
-                        mixedSoundInfo2.audioOffset = j23 - j24;
-                        mixedSoundInfo2.startTime = j11;
+                    long j27 = mixedSoundInfo2.startTime + j10;
+                    mixedSoundInfo2.startTime = j27;
+                    if (j27 < j12) {
+                        mixedSoundInfo2.audioOffset = j26 - j27;
+                        mixedSoundInfo2.startTime = j12;
                     }
-                    mixedSoundInfo2.duration = ((long) ((r9Var2.t0 - f16) * f17)) * 1000;
+                    mixedSoundInfo2.duration = ((long) ((o8Var4.t0 - f16) * f17)) * 1000;
                     videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo2);
                 }
-                String str3 = r9Var2.y;
+                String str3 = o8Var4.y;
                 if (str3 != null) {
                     MediaCodecVideoConvertor.MixedSoundInfo mixedSoundInfo3 = new MediaCodecVideoConvertor.MixedSoundInfo(str3);
-                    mixedSoundInfo3.volume = r9Var2.G;
-                    float f18 = r9Var2.E;
-                    float f19 = r9Var2.C;
-                    long j25 = ((long) (f18 * f19)) * 1000;
-                    mixedSoundInfo3.audioOffset = j25;
-                    if (r9Var2.K) {
-                        mixedSoundInfo3.startTime = ((long) (r9Var2.D - (r9Var2.Z * r9Var2.h0))) * 1000;
-                        j10 = 0;
+                    mixedSoundInfo3.volume = o8Var4.G;
+                    float f18 = o8Var4.E;
+                    float f19 = o8Var4.C;
+                    long j28 = ((long) (f18 * f19)) * 1000;
+                    mixedSoundInfo3.audioOffset = j28;
+                    if (o8Var4.K) {
+                        mixedSoundInfo3.startTime = ((long) (o8Var4.D - (o8Var4.Z * o8Var4.h0))) * 1000;
+                        j11 = 0;
                     } else {
-                        j10 = 0;
+                        j11 = 0;
                         mixedSoundInfo3.startTime = 0L;
                     }
-                    long j26 = mixedSoundInfo3.startTime + j3;
-                    mixedSoundInfo3.startTime = j26;
-                    if (j26 < j10) {
-                        mixedSoundInfo3.audioOffset = j25 - j26;
-                        mixedSoundInfo3.startTime = j10;
+                    long j29 = mixedSoundInfo3.startTime + j10;
+                    mixedSoundInfo3.startTime = j29;
+                    if (j29 < j11) {
+                        mixedSoundInfo3.audioOffset = j28 - j29;
+                        mixedSoundInfo3.startTime = j11;
                     }
-                    mixedSoundInfo3.duration = ((long) ((r9Var2.F - f18) * f19)) * 1000;
+                    mixedSoundInfo3.duration = ((long) ((o8Var4.F - f18) * f19)) * 1000;
                     videoEditedInfo.mixedSoundInfos.add(mixedSoundInfo3);
                 }
-                callback.run(videoEditedInfo);
+                callback3.run(videoEditedInfo);
                 return;
-            case 3:
-                bi.d dVar = (bi.d) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                h3 h3Var = (h3) this.d;
-                y1 y1Var = (y1) this.e;
+            case 7:
+                fg.f fVar = (fg.f) this.b;
+                ((ArrayDeque) fVar.a).addLast(new fg.e((k5) this.c, (fg.b) this.d, (RequestTimeDelegate) this.e));
+                fVar.L();
+                return;
+            case 8:
+                di.d dVar = (di.d) this.b;
+                TLObject tLObject3 = (TLObject) this.c;
+                f3 f3Var = (f3) this.d;
+                v1 v1Var = (v1) this.e;
                 dVar.setLoading(false);
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    h3Var.dismiss();
-                    y1Var.run(Boolean.FALSE);
+                if (tLObject3 instanceof TLRPC.TL_boolTrue) {
+                    f3Var.dismiss();
+                    v1Var.run(Boolean.FALSE);
                     return;
                 }
                 return;
-            case 4:
+            case 9:
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.b;
-                h3 h3Var2 = (h3) this.c;
+                f3 f3Var2 = (f3) this.c;
                 f6 f6Var = (f6) this.d;
                 TLRPC.User user = (TLRPC.User) this.e;
                 AndroidUtilities.addToClipboard(connectedbotstarref.url);
-                new wc(h3Var2.topBulletinContainer, f6Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, di.m.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
+                new yc(f3Var2.topBulletinContainer, f6Var).M(LocaleController.getString(R.string.AffiliateProgramLinkCopiedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AffiliateProgramLinkCopiedText, fi.m.G0(connectedbotstarref.commission_permille), UserObject.getUserName(user))), R.raw.copy).j();
                 return;
-            case 5:
-                h4.x0((h4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);
+            case 10:
+                e4.x0((e4) this.b, (Context) this.c, (TLRPC.User) this.d, (TL_payments.connectedBotStarRef) this.e);
                 return;
-            case 6:
-                TLObject tLObject2 = (TLObject) this.b;
+            case 11:
+                TLObject tLObject4 = (TLObject) this.b;
                 boolean[] zArr2 = (boolean[]) this.c;
-                r rVar = (r) this.d;
+                s sVar = (s) this.d;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) this.e;
-                if (!(tLObject2 instanceof TLRPC.TL_boolTrue)) {
+                if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     if (zArr2[0]) {
                         return;
                     }
                     zArr2[0] = true;
-                    rVar.run(Boolean.TRUE, "cancelled");
+                    sVar.run(Boolean.TRUE, "cancelled");
                     return;
                 }
                 userFull.bot_can_manage_emoji_status = true;
@@ -825,14 +1137,14 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
                 zArr2[0] = true;
-                rVar.run(Boolean.TRUE, "allowed");
+                sVar.run(Boolean.TRUE, "allowed");
                 return;
-            case 7:
-                fg.c cVar2 = (fg.c) this.b;
+            case 12:
+                hg.c cVar2 = (hg.c) this.b;
                 Location location = (Location) this.c;
                 String str4 = (String) this.d;
-                ArrayList arrayList4 = (ArrayList) this.e;
-                ArrayList arrayList5 = cVar2.r;
+                ArrayList arrayList8 = (ArrayList) this.e;
+                ArrayList arrayList9 = cVar2.r;
                 cVar2.n = false;
                 if (location == null) {
                     cVar2.F = 0;
@@ -841,26 +1153,26 @@ public final /* synthetic */ class b implements Runnable {
                     cVar2.J = false;
                     cVar2.x = str4;
                 }
-                arrayList5.clear();
-                arrayList5.addAll(arrayList4);
+                arrayList9.clear();
+                arrayList9.addAll(arrayList8);
                 cVar2.l();
                 return;
-            case 8:
-                fg.c cVar3 = (fg.c) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
+            case 13:
+                hg.c cVar3 = (hg.c) this.b;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
                 String str5 = (String) this.d;
-                TLObject tLObject3 = (TLObject) this.e;
-                ArrayList arrayList6 = cVar3.s;
-                if (tL_error == null) {
+                TLObject tLObject5 = (TLObject) this.e;
+                ArrayList arrayList10 = cVar3.s;
+                if (tL_error2 == null) {
                     cVar3.F = 0;
                     cVar3.h = false;
-                    arrayList6.clear();
+                    arrayList10.clear();
                     cVar3.J = false;
                     cVar3.x = str5;
-                    TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject3;
-                    int size4 = messages_botresults.results.size();
-                    for (int i17 = 0; i17 < size4; i17++) {
-                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i17);
+                    TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject5;
+                    int size5 = messages_botresults.results.size();
+                    while (i11 < size5) {
+                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i11);
                         if ("venue".equals(botInlineResult.type)) {
                             TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
                             if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaVenue) {
@@ -875,31 +1187,32 @@ public final /* synthetic */ class b implements Runnable {
                                 tL_messageMediaVenue.provider = tL_botInlineMessageMediaVenue.provider;
                                 tL_messageMediaVenue.query_id = messages_botresults.query_id;
                                 tL_messageMediaVenue.result_id = botInlineResult.id;
-                                arrayList6.add(tL_messageMediaVenue);
+                                arrayList10.add(tL_messageMediaVenue);
                             }
                         }
+                        i11++;
                     }
                 }
-                fg.b bVar = cVar3.y;
+                hg.b bVar = cVar3.y;
                 if (bVar != null) {
-                    bVar.a(arrayList6);
+                    bVar.a(arrayList10);
                 }
                 cVar3.l();
                 return;
-            case 9:
-                AndroidUtilities.runOnUIThread(new b((fg.m) this.b, (Runnable) this.d, (ArrayList) this.e, s4.o.c((fg.g) this.c, true), 10));
+            case 14:
+                AndroidUtilities.runOnUIThread(new b((hg.m) this.b, (Runnable) this.d, (ArrayList) this.e, s4.o.c((hg.g) this.c, true), 15));
                 return;
-            case 10:
-                fg.m mVar = (fg.m) this.b;
+            case 15:
+                hg.m mVar = (hg.m) this.b;
                 Runnable runnable = (Runnable) this.c;
-                ArrayList arrayList7 = (ArrayList) this.d;
+                ArrayList arrayList11 = (ArrayList) this.d;
                 s4.k kVar = (s4.k) this.e;
                 if (mVar.Z) {
                     mVar.Z = false;
                     if (runnable != null) {
                         runnable.run();
                     }
-                    mVar.M = arrayList7;
+                    mVar.M = arrayList11;
                     kVar.b(mVar);
                     if (mVar.a0) {
                         mVar.a0 = false;
@@ -909,225 +1222,111 @@ public final /* synthetic */ class b implements Runnable {
                     return;
                 }
                 return;
-            case 11:
-                b0 b0Var = (b0) this.b;
-                TLObject tLObject4 = (TLObject) this.c;
+            case 16:
+                y yVar = (y) this.b;
+                TLObject tLObject6 = (TLObject) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
                 Runnable runnable2 = (Runnable) this.e;
-                ArrayList arrayList8 = b0Var.b;
-                if (tLObject4 instanceof TL_account.TL_businessChatLink) {
-                    TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) tLObject4;
-                    int indexOf = arrayList8.indexOf(tL_businessChatLink);
+                ArrayList arrayList12 = yVar.b;
+                if (tLObject6 instanceof TL_account.TL_businessChatLink) {
+                    TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) tLObject6;
+                    int indexOf = arrayList12.indexOf(tL_businessChatLink);
                     if (indexOf != -1) {
-                        arrayList8.set(indexOf, tL_businessChatLink2);
-                        NotificationCenter.getInstance(b0Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                        arrayList12.set(indexOf, tL_businessChatLink2);
+                        NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                         if (runnable2 != null) {
                             runnable2.run();
                         }
-                        b0Var.f();
+                        yVar.f();
                         return;
                     }
                     return;
                 }
                 return;
-            case 12:
-                k2 k2Var = (k2) this.b;
-                MessagesStorage messagesStorage = (MessagesStorage) this.c;
-                j2 j2Var = (j2) this.d;
+            case 17:
+                b2 b2Var = (b2) this.b;
+                MessagesStorage messagesStorage2 = (MessagesStorage) this.c;
+                a2 a2Var = (a2) this.d;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-                ArrayList arrayList9 = new ArrayList();
+                ArrayList arrayList13 = new ArrayList();
                 try {
                     try {
-                        sQLiteCursor = messagesStorage.getDatabase().queryFinalized("SELECT id FROM quick_replies_messages WHERE topic_id = ?", Integer.valueOf(j2Var.a));
+                        sQLiteCursor = messagesStorage2.getDatabase().queryFinalized("SELECT id FROM quick_replies_messages WHERE topic_id = ?", Integer.valueOf(a2Var.a));
                         while (sQLiteCursor.next()) {
-                            arrayList9.add(Integer.valueOf(sQLiteCursor.intValue(0)));
+                            arrayList13.add(Integer.valueOf(sQLiteCursor.intValue(0)));
                         }
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                         break;
                     }
                     sQLiteCursor.dispose();
-                    AndroidUtilities.runOnUIThread(new b(k2Var, arrayList9, j2Var, tL_messages_sendQuickReplyMessages, 13));
+                    AndroidUtilities.runOnUIThread(new b(b2Var, arrayList13, a2Var, tL_messages_sendQuickReplyMessages, 18));
                     return;
-                } catch (Throwable th2) {
+                } catch (Throwable th6) {
                     if (sQLiteCursor != null) {
                         sQLiteCursor.dispose();
                     }
-                    throw th2;
+                    throw th6;
                 }
-            case 13:
-                k2 k2Var2 = (k2) this.b;
-                ArrayList<Integer> arrayList10 = (ArrayList) this.c;
-                j2 j2Var2 = (j2) this.d;
+            case 18:
+                b2 b2Var2 = (b2) this.b;
+                ArrayList<Integer> arrayList14 = (ArrayList) this.c;
+                a2 a2Var2 = (a2) this.d;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages2 = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-                int i18 = k2Var2.a;
-                if (arrayList10.isEmpty() || arrayList10.size() < j2Var2.a()) {
+                int i24 = b2Var2.a;
+                if (arrayList14.isEmpty() || arrayList14.size() < a2Var2.a()) {
                     TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-                    tL_messages_getQuickReplyMessages.shortcut_id = j2Var2.a;
-                    ConnectionsManager.getInstance(i18).sendRequest(tL_messages_getQuickReplyMessages, new wa(k2Var2, arrayList10, tL_messages_sendQuickReplyMessages2, i10));
+                    tL_messages_getQuickReplyMessages.shortcut_id = a2Var2.a;
+                    ConnectionsManager.getInstance(i24).sendRequest(tL_messages_getQuickReplyMessages, new c5(b2Var2, arrayList14, tL_messages_sendQuickReplyMessages2, i10));
                     return;
                 } else {
-                    tL_messages_sendQuickReplyMessages2.id = arrayList10;
-                    for (int i19 = 0; i19 < arrayList10.size(); i19++) {
+                    tL_messages_sendQuickReplyMessages2.id = arrayList14;
+                    while (i11 < arrayList14.size()) {
                         tL_messages_sendQuickReplyMessages2.random_id.add(Long.valueOf(Utilities.random.nextLong()));
+                        i11++;
                     }
-                    ConnectionsManager.getInstance(i18).sendRequest(tL_messages_sendQuickReplyMessages2, null);
+                    ConnectionsManager.getInstance(i24).sendRequest(tL_messages_sendQuickReplyMessages2, null);
                     return;
                 }
-            case 14:
-                s sVar = (s) this.b;
-                hi.a aVar = (hi.a) this.c;
+            case 19:
+                ji.r rVar = (ji.r) this.b;
+                ji.a aVar = (ji.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
-                w70 w70Var = (w70) this.e;
-                sVar.r.U4(aVar, pageBlock);
-                w70Var.u();
+                n70 n70Var = (n70) this.e;
+                rVar.r.U4(aVar, pageBlock);
+                n70Var.u();
                 return;
-            case 15:
-                AudioTrack audioTrack = (AudioTrack) this.b;
-                k2.n nVar = (k2.n) this.c;
-                Handler handler = (Handler) this.d;
-                k2.k kVar2 = (k2.k) this.e;
-                int i20 = 27;
-                try {
-                    audioTrack.flush();
-                    audioTrack.release();
-                    if (nVar != null && handler.getLooper().getThread().isAlive()) {
-                        handler.post(new s1(i20, nVar, kVar2));
-                    }
-                    synchronized (e0.o0) {
-                        try {
-                            int i21 = e0.q0 - 1;
-                            e0.q0 = i21;
-                            if (i21 == 0) {
-                                e0.p0.shutdown();
-                                e0.p0 = null;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                } catch (Throwable th3) {
-                    if (nVar != null && handler.getLooper().getThread().isAlive()) {
-                        handler.post(new s1(i20, nVar, kVar2));
-                    }
-                    synchronized (e0.o0) {
-                        try {
-                            int i22 = e0.q0 - 1;
-                            e0.q0 = i22;
-                            if (i22 == 0) {
-                                e0.p0.shutdown();
-                                e0.p0 = null;
-                            }
-                            throw th3;
-                        } finally {
-                        }
-                    }
-                }
-            case 16:
-                ki.f fVar = (ki.f) this.b;
-                ((ArrayDeque) fVar.a).addLast(new ki.e((org.telegram.tgnet.j) this.c, (ki.b) this.d, (RequestTimeDelegate) this.e));
-                fVar.I();
-                return;
-            case 17:
+            case 20:
                 a();
                 return;
-            case 18:
+            case 21:
+                fg.f fVar2 = (fg.f) this.b;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
+                m4.e eVar = (m4.e) this.d;
+                AtomicBoolean atomicBoolean2 = (AtomicBoolean) this.e;
+                synchronized (fVar2.a) {
+                    try {
+                        if (atomicBoolean.get()) {
+                            atomicBoolean2.set(true);
+                        } else {
+                            fVar2.n(eVar);
+                        }
+                    } finally {
+                    }
+                }
+                return;
+            case 22:
                 b();
                 return;
-            case 19:
-                h1 h1Var = (h1) this.b;
-                m4.r rVar2 = (m4.r) this.c;
-                m4.b0 b0Var2 = (m4.b0) this.d;
-                m4.i iVar = (m4.i) this.e;
-                h1Var.getClass();
-                ki.f fVar2 = h1Var.b;
-                try {
-                    h1Var.c.remove(rVar2);
-                    if (!b0Var2.j()) {
-                        d1 d1Var = (d1) rVar2.d;
-                        e2.d.h(d1Var);
-                        IBinder asBinder = d1Var.a.asBinder();
-                        p m10 = b0Var2.m(rVar2);
-                        if (fVar2.z(rVar2)) {
-                            try {
-                                e2.a.n("MediaSessionStub", "Controller " + rVar2 + " has sent connection request multiple times");
-                            } catch (Throwable th4) {
-                                th = th4;
-                                if (!z11) {
-                                }
-                                throw th;
-                            }
-                        }
-                        fVar2.b(asBinder, rVar2, m10.a, m10.b);
-                        com.google.android.gms.common.api.internal.v w10 = fVar2.w(rVar2);
-                        if (w10 == null) {
-                            e2.a.n("MediaSessionStub", "Ignoring connection request from unknown controller info");
-                        } else {
-                            l1 l1Var = b0Var2.t;
-                            j1 j1Var = b0Var2.s;
-                            x0 x0Var = m10.b;
-                            j1 H0 = h1Var.H0(j1Var);
-                            MediaSession.Token token = ((n4.r) b0Var2.h.k.b).c.b;
-                            i0 i0Var = m10.c;
-                            if (i0Var == null) {
-                                i0Var = b0Var2.y;
-                            }
-                            i0 i0Var2 = m10.d;
-                            if (i0Var2 == null) {
-                                i0Var2 = b0Var2.z;
-                            }
-                            i0 i0Var3 = b0Var2.r;
-                            o1 o1Var = m10.a;
-                            x0 t10 = l1Var.t();
-                            t1 t1Var = b0Var2.j.a;
-                            t1Var.getClass();
-                            try {
-                                m4.g gVar = new m4.g(h1Var, i0Var, i0Var2, i0Var3, o1Var, x0Var, t10, new Bundle(t1Var.g), b0Var2.A, H0, token);
-                                if (!b0Var2.j()) {
-                                    try {
-                                        ((m4.h) iVar).G0(w10.e(), gVar.a(rVar2.c));
-                                    } catch (RemoteException unused) {
-                                        z10 = false;
-                                    }
-                                    if (z10) {
-                                        try {
-                                            if (!b0Var2.x || !m4.b0.k(rVar2)) {
-                                                b0Var2.e.getClass();
-                                            }
-                                        } catch (Throwable th5) {
-                                            th = th5;
-                                            z11 = z10;
-                                            if (!z11) {
-                                            }
-                                            throw th;
-                                        }
-                                    }
-                                    if (z10) {
-                                        return;
-                                    }
-                                }
-                            } catch (Throwable th6) {
-                                th = th6;
-                                z11 = false;
-                                if (!z11) {
-                                    w7.v.a(iVar);
-                                }
-                                throw th;
-                            }
-                        }
-                    }
-                    w7.v.a(iVar);
-                    return;
-                } catch (Throwable th7) {
-                    th = th7;
-                }
-                break;
-            case 20:
-                m4.b0 b0Var3 = (m4.b0) this.b;
+            case 23:
+                c();
+                return;
+            case 24:
+                a0 a0Var = (a0) this.b;
                 c0 c0Var = (c0) this.c;
                 e2.h hVar = (e2.h) this.d;
                 w wVar = (w) this.e;
-                if (b0Var3.j()) {
+                if (a0Var.j()) {
                     c0Var.m(null);
                     return;
                 }
@@ -1135,60 +1334,24 @@ public final /* synthetic */ class b implements Runnable {
                     hVar.accept(wVar);
                     c0Var.m(null);
                     return;
-                } catch (Throwable th8) {
-                    c0Var.n(th8);
+                } catch (Throwable th7) {
+                    c0Var.n(th7);
                     return;
                 }
-            case 21:
-                m4.b0 b0Var4 = (m4.b0) this.b;
-                f1 f1Var = (f1) this.c;
-                m4.r rVar3 = (m4.r) this.d;
-                List list = (List) this.e;
-                if (b0Var4.j()) {
-                    return;
-                }
-                f1Var.a(b0Var4.t, rVar3, list);
-                return;
-            case 22:
-                CameraController.lambda$openRound$9((CameraSession) this.b, (Runnable) this.c, (SurfaceTexture) this.d, (Runnable) this.e);
-                return;
-            case 23:
-                CameraController.lambda$close$5((Runnable) this.b, (CameraSession) this.c, (CountDownLatch) this.d, (Runnable) this.e);
-                return;
-            case 24:
-                ((VideoAds) this.b).lambda$show$14((Context) this.c, (TLRPC.TL_sponsoredMessage) this.d, (w70) this.e);
-                return;
             case 25:
-                ((Utilities.Callback) this.b).run(j6.Q0((File) this.c, (String) this.d, (String[]) this.e));
+                e();
                 return;
             case 26:
-                c();
+                f();
                 return;
             case 27:
-                p6 p6Var = (p6) this.b;
-                q6 q6Var = (q6) this.c;
-                float[] fArr = (float[]) this.d;
-                boolean[] zArr3 = (boolean[]) this.e;
-                p6Var.getClass();
-                q6Var.a(fArr[0]);
-                if (zArr3[0]) {
-                    p6Var.d.w0(true);
-                    return;
-                }
+                g();
                 return;
             case 28:
-                p6 p6Var2 = (p6) this.b;
-                boolean[] zArr4 = (boolean[]) this.c;
-                long[] jArr = (long[]) this.d;
-                o6 o6Var = (o6) this.e;
-                if (zArr4[0]) {
-                    return;
-                }
-                jArr[0] = System.currentTimeMillis();
-                p6Var2.d.showDialog(o6Var);
+                h();
                 return;
             default:
-                h8.U((h8) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d, (Calendar) this.e);
+                ((Utilities.Callback) this.b).run(j6.Q0((File) this.c, (String) this.d, (String[]) this.e));
                 return;
         }
     }

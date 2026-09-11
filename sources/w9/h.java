@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -46,8 +46,8 @@ public abstract class h {
         if (closeable != null) {
             try {
                 closeable.close();
-            } catch (IOException e) {
-                Log.e("FirebaseCrashlytics", str, e);
+            } catch (IOException e7) {
+                Log.e("FirebaseCrashlytics", str, e7);
             }
         }
     }
@@ -119,8 +119,8 @@ public abstract class h {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
             messageDigest.update(bytes);
             return f(messageDigest.digest());
-        } catch (NoSuchAlgorithmException e) {
-            Log.e("FirebaseCrashlytics", "Could not create hashing algorithm: SHA-1, returning empty string.", e);
+        } catch (NoSuchAlgorithmException e7) {
+            Log.e("FirebaseCrashlytics", "Could not create hashing algorithm: SHA-1, returning empty string.", e7);
             return "";
         }
     }

@@ -2,10 +2,11 @@ package g8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public static final Parcelable.Creator<k> CREATOR = new j(2);
@@ -36,11 +37,11 @@ public final class k extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder n10 = hc.b.n("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
-        n10.append(this.d);
-        n10.append(" system time ms: ");
-        n10.append(this.c);
-        return n10.toString();
+        StringBuilder k10 = e2.k("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
+        k10.append(this.d);
+        k10.append(" system time ms: ");
+        k10.append(this.c);
+        return k10.toString();
     }
 
     @Override // android.os.Parcelable

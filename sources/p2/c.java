@@ -6,25 +6,26 @@ import android.os.SystemClock;
 import b2.r0;
 import b2.s0;
 import e2.d0;
+import g2.u;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import ji.u4;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.js0;
-import u2.u;
+import org.telegram.ui.sw0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class c implements y2.i {
-    public static final js0 E = new js0(10);
-    public final l2.h a;
+public final class c implements y2.h {
+    public static final sw0 E = new sw0(9);
+    public final u4 a;
     public final s b;
     public final rb.a c;
     public a5.a f;
-    public y2.n h;
+    public y2.m h;
     public Handler n;
     public o2.l r;
     public o s;
@@ -35,20 +36,10 @@ public final class c implements y2.i {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(l2.h hVar, rb.a aVar, s sVar) {
-        this.a = hVar;
+    public c(u4 u4Var, rb.a aVar, s sVar) {
+        this.a = u4Var;
         this.b = sVar;
         this.c = aVar;
-    }
-
-    @Override // y2.i
-    public final void C(y2.k kVar, long j3, long j10, boolean z10) {
-        y2.q qVar = (y2.q) kVar;
-        long j11 = qVar.a;
-        Uri uri = qVar.d.c;
-        u uVar = new u(j10);
-        this.c.getClass();
-        this.f.m(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final l a(Uri uri, boolean z10) {
@@ -122,19 +113,19 @@ public final class c implements y2.i {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0054  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x005c  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x005f  */
-    @Override // y2.i
+    @Override // y2.h
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d k(y2.k kVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d g(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
-        y2.q qVar = (y2.q) kVar;
-        long j12 = qVar.a;
-        Uri uri = qVar.d.c;
-        u uVar = new u(j10);
-        int i11 = qVar.c;
+        y2.p pVar = (y2.p) jVar;
+        long j12 = pVar.a;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        int i11 = pVar.c;
         this.c.getClass();
-        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.m)) {
+        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof u) && !(iOException instanceof y2.l)) {
             int i12 = g2.j.b;
             for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
                 if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
@@ -142,40 +133,40 @@ public final class c implements y2.i {
             }
             j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             boolean z10 = j11 == -9223372036854775807L;
-            this.f.q(uVar, i11, iOException, z10);
-            return !z10 ? y2.n.f : new k4.d(0, j11, false);
+            this.f.q(tVar, i11, iOException, z10);
+            return !z10 ? y2.m.f : new k4.d(0, j11, false);
         }
         j11 = -9223372036854775807L;
         if (j11 == -9223372036854775807L) {
         }
-        this.f.q(uVar, i11, iOException, z10);
+        this.f.q(tVar, i11, iOException, z10);
         if (!z10) {
         }
     }
 
-    @Override // y2.i
-    public final void l(y2.k kVar, long j3, long j10, int i10) {
-        u uVar;
-        y2.q qVar = (y2.q) kVar;
+    @Override // y2.h
+    public final void h(y2.j jVar, long j3, long j10, int i10) {
+        u2.t tVar;
+        y2.p pVar = (y2.p) jVar;
         if (i10 == 0) {
-            long j11 = qVar.a;
-            uVar = new u(qVar.b);
+            long j11 = pVar.a;
+            tVar = new u2.t(pVar.b);
         } else {
-            long j12 = qVar.a;
-            Uri uri = qVar.d.c;
-            uVar = new u(j10);
+            long j12 = pVar.a;
+            Uri uri = pVar.d.c;
+            tVar = new u2.t(j10);
         }
-        this.f.r(uVar, qVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+        this.f.r(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
-    @Override // y2.i
-    public final void p(y2.k kVar, long j3, long j10) {
+    @Override // y2.h
+    public final void i(y2.j jVar, long j3, long j10) {
         o oVar;
-        y2.q qVar = (y2.q) kVar;
-        p pVar = (p) qVar.f;
-        boolean z10 = pVar instanceof l;
+        y2.p pVar = (y2.p) jVar;
+        p pVar2 = (p) pVar.f;
+        boolean z10 = pVar2 instanceof l;
         if (z10) {
-            String str = pVar.a;
+            String str = pVar2.a;
             o oVar2 = o.n;
             Uri parse = Uri.parse(str);
             b2.r rVar = new b2.r();
@@ -185,7 +176,7 @@ public final class c implements y2.i {
             List list = Collections.EMPTY_LIST;
             oVar = new o("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
         } else {
-            oVar = (o) pVar;
+            oVar = (o) pVar2;
         }
         this.s = oVar;
         this.v = ((n) oVar.e.get(0)).a;
@@ -196,15 +187,25 @@ public final class c implements y2.i {
             Uri uri = (Uri) list2.get(i10);
             this.d.put(uri, new b(this, uri));
         }
-        Uri uri2 = qVar.d.c;
-        u uVar = new u(j10);
+        Uri uri2 = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
         b bVar = (b) this.d.get(this.v);
         if (z10) {
-            bVar.f((l) pVar, uVar);
+            bVar.f((l) pVar2, tVar);
         } else {
             bVar.c(false);
         }
         this.c.getClass();
-        this.f.o(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // y2.h
+    public final void w(y2.j jVar, long j3, long j10, boolean z10) {
+        y2.p pVar = (y2.p) jVar;
+        long j11 = pVar.a;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        this.c.getClass();
+        this.f.n(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

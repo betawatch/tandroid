@@ -1,59 +1,27 @@
 package com.google.android.gms.internal.clearcut;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /* loaded from: classes.dex */
-public final class i0 extends h0 {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
-
-    @Override // com.google.android.gms.internal.clearcut.h0
+public final class i0 extends g0 {
+    @Override // com.google.android.gms.internal.clearcut.g0
     public final void a(Object obj, long j3) {
-        Object unmodifiableList;
-        List list = (List) k1.k(obj, j3);
-        if (list instanceof g0) {
-            unmodifiableList = ((g0) list).k();
-        } else if (c.isAssignableFrom(list.getClass())) {
-            return;
-        } else {
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        k1.d(obj, j3, unmodifiableList);
+        ((j) ((b0) j1.k(obj, j3))).a = false;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.android.gms.internal.clearcut.h0
+    @Override // com.google.android.gms.internal.clearcut.g0
     public final void b(Object obj, long j3, Object obj2) {
-        f0 f0Var;
-        List list = (List) k1.k(obj2, j3);
-        int size = list.size();
-        List list2 = (List) k1.k(obj, j3);
-        if (list2.isEmpty()) {
-            list2 = list2 instanceof g0 ? new f0(size) : new ArrayList(size);
-            k1.d(obj, j3, list2);
-        } else {
-            if (c.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList = new ArrayList(list2.size() + size);
-                arrayList.addAll(list2);
-                f0Var = arrayList;
-            } else if (list2 instanceof e1) {
-                f0 f0Var2 = new f0(list2.size() + size);
-                f0Var2.addAll((e1) list2);
-                f0Var = f0Var2;
+        b0 b0Var = (b0) j1.k(obj, j3);
+        b0 b0Var2 = (b0) j1.k(obj2, j3);
+        int size = b0Var.size();
+        int size2 = b0Var2.size();
+        if (size > 0 && size2 > 0) {
+            if (!((j) b0Var).a) {
+                b0Var = b0Var.f(size2 + size);
             }
-            k1.d(obj, j3, f0Var);
-            list2 = f0Var;
+            b0Var.addAll(b0Var2);
         }
-        int size2 = list2.size();
-        int size3 = list.size();
-        if (size2 > 0 && size3 > 0) {
-            list2.addAll(list);
+        if (size > 0) {
+            b0Var2 = b0Var;
         }
-        if (size2 > 0) {
-            list = list2;
-        }
-        k1.d(obj, j3, list);
+        j1.d(obj, j3, b0Var2);
     }
 }

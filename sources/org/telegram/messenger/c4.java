@@ -1,33 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-    public /* synthetic */ c4(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ BaseController c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ c4(GiftAuctionController giftAuctionController, long j3, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
+        this.c = giftAuctionController;
+        this.b = j3;
+        this.d = tL_StarGiftAuctionState;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                FingerprintController.generateNewKey(z10);
-                break;
-            case 1:
-                FingerprintController.lambda$generateNewKey$0(z10);
-                break;
-            case 2:
-                LiteMode.lambda$onPowerSaverApplied$0(z10);
+                ((GiftAuctionController) this.c).lambda$subscribeToGiftAuctionStateInternal$0(this.b, (TL_payments.TL_StarGiftAuctionState) this.d, (ArrayList) obj);
                 break;
             default:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
+                ((TranslateController) this.c).lambda$checkTranslation$4((MessageObject) this.d, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ c4(TranslateController translateController, MessageObject messageObject, long j3) {
+        this.c = translateController;
+        this.d = messageObject;
+        this.b = j3;
     }
 }

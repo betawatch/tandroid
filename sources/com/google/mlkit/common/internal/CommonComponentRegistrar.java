@@ -14,41 +14,41 @@ import qb.k;
 import t7.u;
 import w7.h7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
         i0 a2 = a.a(rb.a.class);
         a2.a(j.a(g.class));
-        a2.f = new ob.a(14);
+        a2.f = new b(14);
         a b10 = a2.b();
         i0 a10 = a.a(h.class);
-        a10.f = new b(14);
+        a10.f = new rb.a(14);
         a b11 = a10.b();
         i0 a11 = a.a(c.class);
         a11.a(new j(2, 0, pb.b.class));
-        a11.f = new rb.a(14);
+        a11.f = new u(14);
         a b12 = a11.b();
         i0 a12 = a.a(d.class);
         a12.a(new j(1, 1, h.class));
-        a12.f = new u();
+        a12.f = new na.d();
         a b13 = a12.b();
         i0 a13 = a.a(qb.a.class);
-        a13.f = new na.d(15);
+        a13.f = new ob.a(15);
         a b14 = a13.b();
         i0 a14 = a.a(b.class);
         a14.a(j.a(qb.a.class));
-        a14.f = new ob.a(15);
+        a14.f = new b(15);
         a b15 = a14.b();
         i0 a15 = a.a(ob.a.class);
         a15.a(j.a(g.class));
-        a15.f = new b(15);
+        a15.f = new rb.a(15);
         a b16 = a15.b();
         i0 a16 = a.a(pb.b.class);
         a16.b = 1;
         a16.a(new j(1, 1, ob.a.class));
-        a16.f = new rb.a(15);
+        a16.f = new u(15);
         a b17 = a16.b();
         t7.b bVar = t7.d.b;
         Object[] objArr = {k.b, b10, b11, b12, b13, b14, b15, b16, b17};

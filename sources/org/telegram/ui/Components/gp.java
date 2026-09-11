@@ -1,23 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.ui.ae1;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class gp extends ae1 {
-    public final /* synthetic */ int k2;
+public final class gp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ lp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gp(Object obj, Bitmap bitmap, boolean z10, int i10) {
-        super(obj, bitmap, z10);
-        this.k2 = i10;
+    public gp(lp lpVar, ChatThemeController chatThemeController) {
+        this.b = lpVar;
+        this.a = chatThemeController;
     }
 
-    @Override // org.telegram.ui.ae1
-    public final boolean U0() {
-        switch (this.k2) {
-        }
-        return true;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        List<org.telegram.ui.ActionBar.d4> emojiThemes = this.a.getEmojiThemes(7);
+        lp lpVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.f3) lpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new uc(21, this, emojiThemes));
+        lpVar.b0 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

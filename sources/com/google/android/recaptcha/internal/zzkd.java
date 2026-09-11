@@ -9,7 +9,7 @@ import ud.e;
 import w7.t7;
 import xd.a;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzkd implements zzjt {
     public static final zzkd zza = new zzkd();
@@ -292,8 +292,8 @@ public final class zzkd implements zzjt {
         }
         try {
             zzizVar.zzc().zze(i10, zzb(zza2, zza3));
-        } catch (ArithmeticException e) {
-            throw new zzdm(4, 6, e);
+        } catch (ArithmeticException e7) {
+            throw new zzdm(4, 6, e7);
         }
     }
 }

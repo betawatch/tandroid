@@ -3,53 +3,53 @@ package r2;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class g extends h2.h {
-    public long r;
-    public int s;
-    public int v;
+public final class g extends h2.g {
+    public long v;
+    public int w;
+    public int x;
 
-    @Override // h2.h, h2.a
-    public final void clear() {
-        super.clear();
-        this.s = 0;
+    @Override // h2.g
+    public final void i() {
+        super.i();
+        this.w = 0;
     }
 
-    public final boolean e(h2.h hVar) {
+    public final boolean n(h2.g gVar) {
         ByteBuffer byteBuffer;
-        e2.d.b(!hVar.getFlag(TLObject.FLAG_30));
-        e2.d.b(!hVar.hasSupplementalData());
-        e2.d.b(!hVar.isEndOfStream());
-        if (f()) {
-            if (this.s >= this.v) {
+        e2.d.b(!gVar.c(TLObject.FLAG_30));
+        e2.d.b(!gVar.c(TLObject.FLAG_28));
+        e2.d.b(!gVar.c(4));
+        if (o()) {
+            if (this.w >= this.x) {
                 return false;
             }
-            ByteBuffer byteBuffer2 = hVar.c;
-            if (byteBuffer2 != null && (byteBuffer = this.c) != null) {
+            ByteBuffer byteBuffer2 = gVar.e;
+            if (byteBuffer2 != null && (byteBuffer = this.e) != null) {
                 if (byteBuffer2.remaining() + byteBuffer.position() > 3072000) {
                     return false;
                 }
             }
         }
-        int i10 = this.s;
-        this.s = i10 + 1;
+        int i10 = this.w;
+        this.w = i10 + 1;
         if (i10 == 0) {
-            this.e = hVar.e;
-            if (hVar.isKeyFrame()) {
-                setFlags(1);
+            this.h = gVar.h;
+            if (gVar.c(1)) {
+                this.b = 1;
             }
         }
-        ByteBuffer byteBuffer3 = hVar.c;
+        ByteBuffer byteBuffer3 = gVar.e;
         if (byteBuffer3 != null) {
-            b(byteBuffer3.remaining());
-            this.c.put(byteBuffer3);
+            l(byteBuffer3.remaining());
+            this.e.put(byteBuffer3);
         }
-        this.r = hVar.e;
+        this.v = gVar.h;
         return true;
     }
 
-    public final boolean f() {
-        return this.s > 0;
+    public final boolean o() {
+        return this.w > 0;
     }
 }

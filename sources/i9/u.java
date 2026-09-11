@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u implements w {
     public static final u b = new u(null);
@@ -20,8 +20,8 @@ public final class u implements w {
     public final void a(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e) {
-            c.a().log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e);
+        } catch (Exception e7) {
+            c.a().log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e7);
         }
     }
 

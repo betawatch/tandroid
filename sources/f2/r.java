@@ -1,15 +1,15 @@
 package f2;
 
-import java.util.ArrayList;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class r implements Comparable {
-    public long b = -9223372036854775807L;
-    public final ArrayList a = new ArrayList();
+public final class r {
+    public final int a;
+    public final ByteBuffer b;
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        return Long.compare(this.b, ((r) obj).b);
+    public r(int i10, ByteBuffer byteBuffer) {
+        this.a = i10;
+        this.b = byteBuffer;
     }
 }

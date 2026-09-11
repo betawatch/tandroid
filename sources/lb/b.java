@@ -11,9 +11,8 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class b implements Closeable, Flushable {
     public static final Pattern w = Pattern.compile("-?(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?(?:[eE][-+]?[0-9]+)?");
@@ -203,7 +202,7 @@ public class b implements Closeable, Flushable {
             t();
         }
         a();
-        this.a.write(BuildConfig.BETA_URL);
+        this.a.write("null");
         return this;
     }
 

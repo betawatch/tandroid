@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -135,7 +135,7 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) hc.b.i(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) i2.g.h(1, arrayList);
         n state1 = this.c;
         kotlin.jvm.internal.i.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {

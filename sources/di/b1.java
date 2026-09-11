@@ -1,78 +1,194 @@
 package di;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import bi.wc;
-import org.json.JSONObject;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class b1 implements SensorEventListener {
-    public long a;
-    public float[] b;
-    public float[] c;
-    public final /* synthetic */ d1 d;
+public final class b1 {
+    public final int a;
+    public final ArrayList b = new ArrayList();
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public File g;
 
-    public b1(d1 d1Var) {
-        this.d = d1Var;
+    public b1(int i10) {
+        this.a = i10;
+        if (this.e || this.f) {
+            return;
+        }
+        this.f = true;
+        x0 x0Var = new x0(this, 0);
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        messagesStorage.getStorageQueue().postRunnable(new y0((Object) messagesStorage, true, (Object) x0Var, 0));
     }
 
-    public final void a() {
-        if (this.b == null || this.c == null) {
+    public final void a(a1 a1Var) {
+        String str;
+        StringBuilder sb2;
+        long j3;
+        int i10 = this.a;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        StringBuilder sb3 = new StringBuilder("StoryDraft append ");
+        sb3.append(a1Var.a);
+        sb3.append(" (edit=");
+        sb3.append(a1Var.G);
+        if (a1Var.G) {
+            StringBuilder sb4 = new StringBuilder(", storyId=");
+            sb4.append(a1Var.H);
+            sb4.append(", ");
+            if (a1Var.J != 0) {
+                sb2 = new StringBuilder("documentId=");
+                j3 = a1Var.J;
+            } else {
+                sb2 = new StringBuilder("photoId=");
+                j3 = a1Var.K;
+            }
+            sb2.append(j3);
+            sb4.append(sb2.toString());
+            sb4.append(", expireDate=");
+            sb4.append(a1Var.L);
+            str = sb4.toString();
+        } else {
+            str = "";
+        }
+        sb3.append(str);
+        sb3.append(", now=");
+        sb3.append(System.currentTimeMillis());
+        sb3.append(")");
+        FileLog.d(sb3.toString());
+        messagesStorage.getStorageQueue().postRunnable(new z0(messagesStorage, a1Var, 1));
+        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+    }
+
+    public final void b(o8 o8Var) {
+        ArrayList arrayList = new ArrayList(1);
+        arrayList.add(o8Var);
+        c(arrayList);
+    }
+
+    public final void c(ArrayList arrayList) {
+        String str;
+        StringBuilder sb2;
+        long j3;
+        if (arrayList == null) {
             return;
         }
-        d1 d1Var = this.d;
-        if (d1Var.k == null) {
-            return;
-        }
-        this.a = System.currentTimeMillis();
-        float[] fArr = new float[9];
-        if (SensorManager.getRotationMatrix(fArr, new float[9], this.b, this.c)) {
-            SensorManager.getOrientation(fArr, new float[3]);
-            try {
-                JSONObject jSONObject = new JSONObject();
-                jSONObject.put("absolute", true);
-                jSONObject.put("alpha", -r2[0]);
-                jSONObject.put("beta", -r2[1]);
-                jSONObject.put("gamma", r2[2]);
-                d1Var.k.d("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
-            } catch (Exception unused) {
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            o8 o8Var = (o8) arrayList.get(i10);
+            if (o8Var != null) {
+                StringBuilder sb3 = new StringBuilder("StoryDraft delete ");
+                sb3.append(o8Var.b);
+                sb3.append(" (edit=");
+                sb3.append(o8Var.g);
+                if (o8Var.g) {
+                    StringBuilder sb4 = new StringBuilder(", storyId=");
+                    sb4.append(o8Var.f);
+                    sb4.append(", ");
+                    if (o8Var.H != 0) {
+                        sb2 = new StringBuilder("documentId=");
+                        j3 = o8Var.H;
+                    } else {
+                        sb2 = new StringBuilder("photoId=");
+                        j3 = o8Var.I;
+                    }
+                    sb2.append(j3);
+                    sb4.append(sb2.toString());
+                    sb4.append(", expireDate=");
+                    sb4.append(o8Var.J);
+                    str = sb4.toString();
+                } else {
+                    str = "";
+                }
+                sb3.append(str);
+                sb3.append(", now=");
+                sb3.append(System.currentTimeMillis());
+                sb3.append(")");
+                FileLog.d(sb3.toString());
+                arrayList2.add(Long.valueOf(o8Var.b));
+                o8Var.i(true);
             }
         }
-    }
-
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        d1 d1Var = this.d;
-        wc wcVar = d1Var.q;
-        if (wcVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(wcVar);
-            d1Var.q = null;
-        }
-        if (d1Var.l || d1Var.k == null) {
+        if (arrayList2.isEmpty()) {
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis() - this.a;
-        if (sensorEvent.sensor.getType() == 1) {
-            this.b = sensorEvent.values;
-        }
-        if (sensorEvent.sensor.getType() == 2) {
-            this.c = sensorEvent.values;
-        }
-        long j3 = d1Var.h;
-        if (currentTimeMillis >= j3) {
-            a();
-            return;
-        }
-        wc wcVar2 = new wc(this, 17);
-        d1Var.q = wcVar2;
-        AndroidUtilities.runOnUIThread(wcVar2, j3 - currentTimeMillis);
+        this.b.removeAll(arrayList);
+        int i11 = this.a;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i11);
+        messagesStorage.getStorageQueue().postRunnable(new w0(0, arrayList2, messagesStorage));
+        NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    public final void d(o8 o8Var) {
+        if (o8Var == null) {
+            return;
+        }
+        e(o8Var);
+        ArrayList arrayList = this.b;
+        arrayList.remove(o8Var);
+        if (!o8Var.w) {
+            arrayList.add(0, o8Var);
+        }
+        a1 a1Var = new a1(o8Var);
+        int i10 = this.a;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        messagesStorage.getStorageQueue().postRunnable(new z0(messagesStorage, a1Var, 0));
+        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+    }
+
+    public final void e(o8 o8Var) {
+        if (o8Var == null) {
+            return;
+        }
+        if (o8Var.b == 0) {
+            o8Var.b = Utilities.random.nextLong();
+        }
+        o8Var.d = System.currentTimeMillis();
+        o8Var.c = true;
+        if (o8Var.M) {
+            o8Var.L = f(o8Var.L);
+        } else if (o8Var.L != null) {
+            File x10 = o8.x(this.a, o8Var.K);
+            try {
+                AndroidUtilities.copyFile(o8Var.L, x10);
+                o8Var.L = f(x10);
+                o8Var.M = true;
+            } catch (IOException e7) {
+                FileLog.e(e7);
+            }
+        }
+        o8Var.Z0 = f(o8Var.Z0);
+        o8Var.P0 = f(o8Var.P0);
+        o8Var.O0 = f(o8Var.O0);
+    }
+
+    public final File f(File file) {
+        if (file == null) {
+            return null;
+        }
+        if (this.g == null) {
+            File file2 = new File(FileLoader.getDirectory(4), "drafts");
+            this.g = file2;
+            if (!file2.exists()) {
+                this.g.mkdir();
+            }
+        }
+        if (!file.getAbsolutePath().startsWith(this.g.getAbsolutePath())) {
+            File file3 = new File(this.g, file.getName());
+            if (file.renameTo(file3)) {
+                return file3;
+            }
+        }
+        return file;
     }
 }

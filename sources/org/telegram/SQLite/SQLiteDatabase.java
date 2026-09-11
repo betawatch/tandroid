@@ -3,9 +3,9 @@ package org.telegram.SQLite;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
@@ -40,9 +40,9 @@ public class SQLiteDatabase {
             try {
                 commitTransaction();
                 closedb(this.sqliteHandle);
-            } catch (SQLiteException e) {
+            } catch (SQLiteException e7) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.e(e.getMessage(), e);
+                    FileLog.e(e7.getMessage(), e7);
                 }
             }
             this.isOpen = false;
@@ -80,7 +80,7 @@ public class SQLiteDatabase {
 
     public void explainQuery(String str, Object... objArr) {
         checkOpened();
-        SQLiteCursor query = new SQLitePreparedStatement(this, r6.i("EXPLAIN QUERY PLAN ", str)).query(objArr);
+        SQLiteCursor query = new SQLitePreparedStatement(this, p6.i("EXPLAIN QUERY PLAN ", str)).query(objArr);
         while (query.next()) {
             int columnCount = query.getColumnCount();
             StringBuilder sb2 = new StringBuilder();

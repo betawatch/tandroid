@@ -1,140 +1,33 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s2 extends View {
-    public StaticLayout a;
-    public final RectF b;
-    public final Paint c;
-    public final Paint d;
-    public String e;
-    public final TextPaint f;
-    public int h;
-    public boolean n;
-    public final Drawable r;
-    public final x s;
+public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t2 b;
 
-    public s2(Activity activity) {
-        super(activity);
-        this.b = new RectF();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        TextPaint textPaint = new TextPaint(1);
-        this.f = textPaint;
-        this.h = 4;
-        this.n = false;
-        this.s = new x(this, 7);
-        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(-1);
-        paint.setColor(i0.a.k(-1, TLRPC.LAYER));
-        paint2.setColor(i0.a.k(-1, 102));
-        Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
-        this.r = drawable;
-        drawable.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+    public /* synthetic */ s2(t2 t2Var, int i10) {
+        this.a = i10;
+        this.b = t2Var;
     }
 
-    public final void a() {
-        x xVar = this.s;
-        removeCallbacks(xVar);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                t2 t2Var = this.b;
+                t2Var.getClass();
+                t2Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var.a(t2Var.R, t2Var.S);
+                break;
+            default:
+                t2 t2Var2 = this.b;
+                t2Var2.getClass();
+                t2Var2.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var2.invalidate();
+                break;
         }
-        String formatLongDuration = AndroidUtilities.formatLongDuration((int) (sharedInstance.getCallDuration() / 1000));
-        String str = this.e;
-        if (str == null || !str.equals(formatLongDuration)) {
-            this.e = formatLongDuration;
-            if (this.a == null) {
-                requestLayout();
-            }
-            String str2 = this.e;
-            TextPaint textPaint = this.f;
-            this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        }
-        postDelayed(xVar, 300L);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        StaticLayout staticLayout = this.a;
-        int i10 = 0;
-        int dp = staticLayout == null ? 0 : AndroidUtilities.dp(21.0f) + staticLayout.getWidth();
-        canvas.save();
-        canvas.translate((getMeasuredWidth() - dp) / 2.0f, 0.0f);
-        canvas.save();
-        if (this.n) {
-            canvas.translate(-AndroidUtilities.dp(7.0f), -AndroidUtilities.dp(3.0f));
-            this.r.draw(canvas);
-        } else {
-            canvas.translate(0.0f, (getMeasuredHeight() - AndroidUtilities.dp(11.0f)) / 2.0f);
-            while (i10 < 4) {
-                int i11 = i10 + 1;
-                Paint paint = i11 > this.h ? this.d : this.c;
-                float f7 = i10;
-                float dpf2 = AndroidUtilities.dpf2(4.16f) * f7;
-                float dpf22 = AndroidUtilities.dpf2(2.75f) * (3 - i10);
-                float dpf23 = AndroidUtilities.dpf2(2.75f) + (AndroidUtilities.dpf2(4.16f) * f7);
-                float dp2 = AndroidUtilities.dp(11.0f);
-                RectF rectF = this.b;
-                rectF.set(dpf2, dpf22, dpf23, dp2);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.7f), AndroidUtilities.dpf2(0.7f), paint);
-                i10 = i11;
-            }
-        }
-        canvas.restore();
-        if (staticLayout != null) {
-            canvas.translate(AndroidUtilities.dp(21.0f), 0.0f);
-            staticLayout.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        StaticLayout staticLayout = this.a;
-        if (staticLayout != null) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), staticLayout.getHeight());
-        } else {
-            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(15.0f));
-        }
-    }
-
-    public void setSignalBarCount(int i10) {
-        this.h = i10;
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        if (getVisibility() != i10) {
-            if (i10 == 0) {
-                this.e = "00:00";
-                String str = this.e;
-                TextPaint textPaint = this.f;
-                this.a = new StaticLayout(str, textPaint, (int) textPaint.measureText(str), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                a();
-            } else {
-                this.e = null;
-                this.a = null;
-            }
-        }
-        super.setVisibility(i10);
     }
 }

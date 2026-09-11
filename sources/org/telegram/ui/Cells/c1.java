@@ -2,10 +2,10 @@ package org.telegram.ui.Cells;
 
 import android.util.Property;
 import android.view.View;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.lv0;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.jv0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class c1 extends Property {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final class c1 extends Property {
             case 1:
                 return Integer.valueOf(Math.round(((View) obj).getTranslationY()));
             case 2:
-                return Float.valueOf(((pk0) obj).v);
+                return Float.valueOf(((fk0) obj).v);
             default:
-                return Float.valueOf(((lv0) obj).a);
+                return Float.valueOf(((jv0) obj).a);
         }
     }
 
@@ -40,10 +40,10 @@ public final class c1 extends Property {
                 ((View) obj).setTranslationY(((Integer) obj2).intValue());
                 break;
             case 2:
-                ((pk0) obj).setTransitionProgress(((Float) obj2).floatValue());
+                ((fk0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             default:
-                ((lv0) obj).b(((Float) obj2).floatValue());
+                ((jv0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

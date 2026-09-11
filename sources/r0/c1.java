@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import w7.w6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class c1 extends i1 {
     public static boolean i = false;
@@ -69,8 +69,8 @@ public abstract class c1 extends i1 {
                 if (rect != null) {
                     return i0.c.b(rect.left, rect.top, rect.right, rect.bottom);
                 }
-            } catch (ReflectiveOperationException e) {
-                Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
+            } catch (ReflectiveOperationException e7) {
+                Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e7.getMessage(), e7);
             }
         }
         return null;
@@ -85,8 +85,8 @@ public abstract class c1 extends i1 {
             m = Class.forName("android.view.ViewRootImpl").getDeclaredField("mAttachInfo");
             l.setAccessible(true);
             m.setAccessible(true);
-        } catch (ReflectiveOperationException e) {
-            Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e.getMessage(), e);
+        } catch (ReflectiveOperationException e7) {
+            Log.e("WindowInsetsCompat", "Failed to get visible insets. (Reflection error). " + e7.getMessage(), e7);
         }
         i = true;
     }
@@ -206,10 +206,10 @@ public abstract class c1 extends i1 {
                     }
                     if (i10 == 128) {
                         l1 l1Var = this.f;
-                        i e = l1Var != null ? l1Var.a.e() : e();
-                        if (e != null) {
+                        i e7 = l1Var != null ? l1Var.a.e() : e();
+                        if (e7 != null) {
                             int i14 = Build.VERSION.SDK_INT;
-                            return i0.c.b(i14 >= 28 ? b5.d.l(e.a) : 0, i14 >= 28 ? b5.d.n(e.a) : 0, i14 >= 28 ? b5.d.m(e.a) : 0, i14 >= 28 ? b5.d.k(e.a) : 0);
+                            return i0.c.b(i14 >= 28 ? b5.d.l(e7.a) : 0, i14 >= 28 ? b5.d.n(e7.a) : 0, i14 >= 28 ? b5.d.m(e7.a) : 0, i14 >= 28 ? b5.d.k(e7.a) : 0);
                         }
                     }
                 }

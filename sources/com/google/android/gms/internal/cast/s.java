@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -16,74 +16,19 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void A(d6.f fVar, String str) {
-        c6.k kVar;
-        g6.b bVar = u.i;
-        u uVar = this.a;
-        int i10 = 1;
-        bVar.b("onSessionStarted with transferType = %d", Integer.valueOf(uVar.e));
-        if (uVar.a.y && uVar.e == 2) {
-            if (uVar.h == null) {
-                bVar.b("skip restoring session state due to null SessionState", new Object[0]);
-            } else {
-                e6.h a2 = uVar.a();
-                if (a2 == null) {
-                    bVar.b("skip restoring session state due to null RemoteMediaClient", new Object[0]);
-                } else {
-                    bVar.b("resume SessionState to current session", new Object[0]);
-                    c6.r rVar = uVar.h;
-                    if (rVar != null && (kVar = rVar.a) != null) {
-                        e6.h.k.b("resume SessionState", new Object[0]);
-                        n6.l.e("Must be called from the main thread.");
-                        if (a2.w()) {
-                            e6.h.x(new e6.k(a2, kVar, i10));
-                        } else {
-                            e6.h.t();
-                        }
-                    }
-                }
-            }
-        }
-        uVar.c();
+    public /* bridge */ /* synthetic */ void d(d6.f fVar, String str) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void B(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void f(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void b(d6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void c(d6.f fVar, int i10) {
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void d(d6.f fVar, boolean z10) {
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        u uVar = this.a;
-        uVar.getClass();
-        g6.b bVar = u.i;
-        Log.w(bVar.a, bVar.d("Fail to store SessionState", new Object[0]), exc);
-        uVar.b(100);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        u uVar = this.a;
-        uVar.h = (c6.r) obj;
-        c0.i iVar = uVar.g;
-        if (iVar != null) {
-            iVar.a();
-        }
-    }
-
-    @Override // d6.h
-    public void p(d6.f fVar, int i10) {
+    public void j(d6.f fVar, int i10) {
         g6.b bVar = u.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
         u uVar = this.a;
@@ -124,14 +69,69 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void r(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        u uVar = this.a;
+        uVar.getClass();
+        g6.b bVar = u.i;
+        Log.w(bVar.a, bVar.d("Fail to store SessionState", new Object[0]), exc);
+        uVar.b(100);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        u uVar = this.a;
+        uVar.h = (c6.r) obj;
+        c0.i iVar = uVar.g;
+        if (iVar != null) {
+            iVar.a();
+        }
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void t(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void u(d6.f fVar, String str) {
+        c6.k kVar;
+        g6.b bVar = u.i;
+        u uVar = this.a;
+        int i10 = 1;
+        bVar.b("onSessionStarted with transferType = %d", Integer.valueOf(uVar.e));
+        if (uVar.a.y && uVar.e == 2) {
+            if (uVar.h == null) {
+                bVar.b("skip restoring session state due to null SessionState", new Object[0]);
+            } else {
+                e6.h a2 = uVar.a();
+                if (a2 == null) {
+                    bVar.b("skip restoring session state due to null RemoteMediaClient", new Object[0]);
+                } else {
+                    bVar.b("resume SessionState to current session", new Object[0]);
+                    c6.r rVar = uVar.h;
+                    if (rVar != null && (kVar = rVar.a) != null) {
+                        e6.h.k.b("resume SessionState", new Object[0]);
+                        n6.l.e("Must be called from the main thread.");
+                        if (a2.w()) {
+                            e6.h.x(new e6.k(a2, kVar, i10));
+                        } else {
+                            e6.h.t();
+                        }
+                    }
+                }
+            }
+        }
+        uVar.c();
     }
 
     @Override // d6.h
     public /* bridge */ /* synthetic */ void v(d6.f fVar, int i10) {
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void z(d6.f fVar) {
     }
 }

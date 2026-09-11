@@ -1,16 +1,12 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class wn0 extends s4.j {
-    public final /* synthetic */ org.telegram.ui.gy F;
+public final class wn0 {
+    public final int a;
+    public int b;
 
-    public wn0(org.telegram.ui.gy gyVar) {
-        this.F = gyVar;
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.invalidate();
+    public wn0(int i10) {
+        this.a = i10;
     }
 }

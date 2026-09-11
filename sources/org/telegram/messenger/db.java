@@ -1,52 +1,39 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class db implements RequestDelegate {
+public final /* synthetic */ class db implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ db(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ db(long j3, Runnable runnable, MessagesController messagesController) {
+        this.a = 1;
+        this.b = messagesController;
+        this.c = runnable;
+        this.d = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$478(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
+                this.b.lambda$setUserAdminRole$105(this.d, this.c);
                 break;
             case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$28(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                this.b.lambda$setCustomChatReactions$467(this.c, this.d);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$324(this.b, (String) this.d, tLObject, tL_error);
+                this.b.lambda$setUserAdminRole$99(this.d, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ db(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
+    public /* synthetic */ db(MessagesController messagesController, long j3, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.d = j3;
+        this.c = runnable;
     }
 }

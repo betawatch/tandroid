@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -51,8 +51,8 @@ public final class v extends o6.a {
                 this.v = b10.v;
                 this.w = str2;
                 return;
-            } catch (JSONException e) {
-                throw new IllegalArgumentException(e);
+            } catch (JSONException e7) {
+                throw new IllegalArgumentException(e7);
             }
         }
         n6.l.h(yVar);
@@ -71,8 +71,8 @@ public final class v extends o6.a {
         if (str != null) {
             try {
                 this.s = e.a(str);
-            } catch (d e7) {
-                throw new IllegalArgumentException(e7);
+            } catch (d e10) {
+                throw new IllegalArgumentException(e10);
             }
         } else {
             this.s = null;
@@ -117,7 +117,7 @@ public final class v extends o6.a {
         ArrayList arrayList2;
         JSONArray jSONArray2;
         String str2;
-        n7.e eVar2;
+        n7.d dVar;
         JSONObject jSONObject2 = jSONObject.getJSONObject("rp");
         String str3 = "id";
         y yVar = new y(jSONObject2.getString("id"), jSONObject2.getString("name"), jSONObject2.has("icon") ? jSONObject2.optString("icon") : null);
@@ -130,12 +130,12 @@ public final class v extends o6.a {
         for (int i11 = 0; i11 < jSONArray3.length(); i11++) {
             JSONObject jSONObject4 = jSONArray3.getJSONObject(i11);
             try {
-                eVar2 = new n7.f(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
+                dVar = new n7.e(new x(jSONObject4.getString(TeXSymbolParser.TYPE_ATTR), jSONObject4.getInt("alg")));
             } catch (IllegalArgumentException unused) {
-                eVar2 = n7.c.a;
+                dVar = n7.b.a;
             }
-            if (eVar2.b()) {
-                arrayList3.add(eVar2.a());
+            if (dVar.b()) {
+                arrayList3.add(dVar.a());
             }
         }
         Double valueOf = jSONObject.has("timeout") ? Double.valueOf(jSONObject.getDouble("timeout") / 1000.0d) : null;
@@ -255,8 +255,8 @@ public final class v extends o6.a {
         if (jSONObject.has("attestation")) {
             try {
                 eVar = e.a(jSONObject.getString("attestation"));
-            } catch (d e) {
-                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e);
+            } catch (d e7) {
+                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e7);
                 eVar = e.b;
             }
         } else {
@@ -354,8 +354,8 @@ public final class v extends o6.a {
             this.s = b10.s;
             this.v = b10.v;
             this.w = str;
-        } catch (JSONException e) {
-            throw new IllegalArgumentException(e);
+        } catch (JSONException e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 }

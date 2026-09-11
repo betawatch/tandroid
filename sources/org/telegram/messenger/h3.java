@@ -1,56 +1,46 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoader;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
     public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
+    public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ h3(FileLoader.1 r22, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, FileUploadOperation fileUploadOperation) {
-        this.e = r22;
-        this.c = z10;
-        this.b = str;
-        this.d = z11;
-        this.f = inputFile;
-        this.h = inputEncryptedFile;
-        this.n = bArr;
-        this.r = bArr2;
-        this.s = fileUploadOperation;
+    public /* synthetic */ h3(FilePathDatabase filePathDatabase, long j3, int i10, int i11, String str, int i12) {
+        this.f = filePathDatabase;
+        this.c = j3;
+        this.b = i10;
+        this.d = i11;
+        this.h = str;
+        this.e = i12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
+                ((FilePathDatabase) this.f).lambda$putPath$1(this.c, this.b, this.d, (String) this.h, this.e);
                 break;
             default:
-                ((MessagesController) this.e).lambda$openApp$498((org.telegram.ui.ActionBar.p2) this.f, (nf.e) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
+                ((MessagesStorage) this.f).lambda$updateRepliesCount$194(this.b, this.c, this.d, (ArrayList) this.h, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ h3(MessagesController messagesController, org.telegram.ui.ActionBar.p2 p2Var, nf.e eVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
-        this.e = messagesController;
-        this.f = p2Var;
-        this.h = eVar;
-        this.n = zArr;
-        this.r = user;
-        this.b = str;
-        this.c = z10;
-        this.d = z11;
-        this.s = botInfoArr;
+    public /* synthetic */ h3(MessagesStorage messagesStorage, int i10, long j3, int i11, ArrayList arrayList, int i12) {
+        this.f = messagesStorage;
+        this.b = i10;
+        this.c = j3;
+        this.d = i11;
+        this.h = arrayList;
+        this.e = i12;
     }
 }

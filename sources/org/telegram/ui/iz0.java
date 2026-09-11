@@ -1,76 +1,45 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class iz0 implements org.telegram.ui.ActionBar.t0, nv0, org.telegram.ui.Components.n8 {
-    public final /* synthetic */ ProfileActivity a;
+public final class iz0 extends s4.c0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    public /* synthetic */ iz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public iz0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // org.telegram.ui.nv0
-    public void D0(MessageObject messageObject) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.a.I0(true);
-        r01 r01Var = profileActivity.O;
-        if (r01Var != null && r01Var.getCurrentListView() != null) {
-            profileActivity.O.getCurrentListView().I0(true);
+    @Override // s4.c0, s4.o0
+    public final int o0(int i10, pf.e eVar, s4.z0 z0Var) {
+        ProfileActivity profileActivity = this.I;
+        View m10 = profileActivity.c.m(0);
+        if (m10 != null && !profileActivity.F0) {
+            int top = m10.getTop() - profileActivity.T3();
+            boolean z10 = profileActivity.o2;
+            if (z10 || top <= i10) {
+                if (z10) {
+                    if (i10 >= top) {
+                        profileActivity.o2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.p2) {
+                        i10 /= 2;
+                    }
+                }
+            } else if (!profileActivity.n0.X0.isEmpty() && profileActivity.e0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.n2 && !AndroidUtilities.isTablet()) || profileActivity.I0)) {
+                profileActivity.o2 = profileActivity.J2 == null;
+            }
+            i10 = top;
         }
-        profileActivity.d1.setBackgroundColor(i0.a.d(0.1f, profileActivity.P3(profileActivity.V4.f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, profileActivity.z0)));
-    }
-
-    @Override // org.telegram.ui.nv0
-    public void G(MessageObject messageObject) {
-        org.telegram.ui.Components.ph0 ph0Var = this.a.m0;
-        if (ph0Var == null || !ph0Var.a) {
-            return;
+        if (!profileActivity.O1 || profileActivity.a.O0) {
+            return super.o0(i10, eVar, z0Var);
         }
-        ph0Var.O.d(0.0f, true);
-        ph0Var.invalidate();
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.n8
-    public void U0(int i10, int i11) {
-        ProfileActivity profileActivity = this.a;
-        long a2 = profileActivity.a();
-        profileActivity.getMessagesController().setDialogHistoryTTL(a2, i10);
-        if (profileActivity.v2 == null && profileActivity.u2 == null) {
-            return;
-        }
-        UndoView undoView = profileActivity.M;
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(a2));
-        TLRPC.UserFull userFull = profileActivity.v2;
-        undoView.k(a2, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : profileActivity.u2.ttl_period), null, null);
-    }
-
-    @Override // org.telegram.ui.Components.n8
-    public void dismiss() {
-        this.a.T0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.ActionBar.t0
-    public void e() {
-        org.telegram.ui.Components.km0.d(new b5(this.a, 18));
-    }
-
-    @Override // org.telegram.ui.nv0
-    public /* synthetic */ TextureView g0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.n8
-    public void i1() {
-        this.a.presentFragment(new q4());
-        dismiss();
-    }
-
-    @Override // org.telegram.ui.ActionBar.t0
-    public void c() {
+    @Override // s4.c0, s4.o0
+    public final boolean y0() {
+        return this.I.q0 != null;
     }
 }

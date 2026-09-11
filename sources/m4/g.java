@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class g {
     public static final String l;
@@ -24,12 +24,12 @@ public final class g {
     public static final String x;
     public static final String y;
     public final j a;
-    public final o1 b;
+    public final m1 b;
     public final b2.x0 c;
     public final b2.x0 d;
     public final Bundle e;
     public final Bundle f;
-    public final j1 g;
+    public final h1 g;
     public final e9.i0 h;
     public final e9.i0 i;
     public final MediaSession.Token j;
@@ -54,17 +54,17 @@ public final class g {
         y = Integer.toString(12, 36);
     }
 
-    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, o1 o1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, j1 j1Var, MediaSession.Token token) {
+    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, m1 m1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, h1 h1Var, MediaSession.Token token) {
         this.a = jVar;
         this.h = i0Var;
         this.i = i0Var2;
         this.k = i0Var3;
-        this.b = o1Var;
+        this.b = m1Var;
         this.c = x0Var;
         this.d = x0Var2;
         this.e = bundle;
         this.f = bundle2;
-        this.g = j1Var;
+        this.g = h1Var;
         this.j = token;
     }
 
@@ -116,21 +116,21 @@ public final class g {
             }
             bundle.putParcelableArrayList(q, arrayList4);
         }
-        o1 o1Var = this.b;
-        o1Var.getClass();
+        m1 m1Var = this.b;
+        m1Var.getClass();
         Bundle bundle2 = new Bundle();
         ArrayList<? extends Parcelable> arrayList5 = new ArrayList<>();
-        e9.o1 it4 = o1Var.a.iterator();
+        e9.o1 it4 = m1Var.a.iterator();
         while (it4.hasNext()) {
-            n1 n1Var = (n1) it4.next();
-            n1Var.getClass();
+            l1 l1Var = (l1) it4.next();
+            l1Var.getClass();
             Bundle bundle3 = new Bundle();
-            bundle3.putInt(n1.f, n1Var.a);
-            bundle3.putString(n1.g, n1Var.b);
-            bundle3.putBundle(n1.h, n1Var.c);
+            bundle3.putInt(l1.f, l1Var.a);
+            bundle3.putString(l1.g, l1Var.b);
+            bundle3.putBundle(l1.h, l1Var.c);
             arrayList5.add(bundle3);
         }
-        bundle2.putParcelableArrayList(o1.b, arrayList5);
+        bundle2.putParcelableArrayList(m1.b, arrayList5);
         bundle.putBundle(r, bundle2);
         String str2 = s;
         b2.x0 x0Var = this.c;
@@ -140,7 +140,7 @@ public final class g {
         bundle.putBundle(str3, x0Var2.b());
         bundle.putBundle(u, this.e);
         bundle.putBundle(v, this.f);
-        bundle.putBundle(w, this.g.e(w7.u.a(x0Var, x0Var2), false, false).f(i10));
+        bundle.putBundle(w, this.g.e(w7.t.a(x0Var, x0Var2), false, false).f(i10));
         bundle.putInt(x, 5);
         MediaSession.Token token = this.j;
         if (token != null) {

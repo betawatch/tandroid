@@ -1,44 +1,70 @@
 package ph;
 
-import android.text.TextUtils;
-import java.io.File;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class a {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final MessageObject d;
-    public final String e;
-    public boolean f;
-    public boolean g;
+public enum a {
+    f(R.raw.tab_contacts),
+    h(R.raw.tab_calls),
+    n(R.raw.tab_chats),
+    r(R.raw.tab_settings),
+    s("CHECKLIST", R.raw.tab_checklist_reverse),
+    v("COLORS", R.raw.tab_colors_reverse),
+    w("FILES", R.raw.tab_files_reverse),
+    x("GALLERY", R.raw.tab_gallery_reverse),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7("GIFT", R.raw.tab_gift_reverse),
+    y("LOCATION", R.raw.tab_location_reverse),
+    E("STICKER", R.raw.tab_sticker_reverse),
+    F("EMOJI", R.raw.tab_emoji_reverse),
+    G("MODELS", R.raw.tab_models_reverse),
+    H("MUSIC", R.raw.tab_music_reverse),
+    I("POLL", R.raw.tab_poll_reverse),
+    J("SYMBOLS", R.raw.tab_symbols_reverse),
+    K("REPLIES", R.raw.tab_reply_reverse),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0("WALLET", R.raw.tab_wallet_reverse),
+    L,
+    M("ARTICLE", R.raw.tab_article_reverse),
+    N(R.raw.boosts, 25, 49),
+    O(R.raw.monetize, 19, 45);
 
-    public a(int i10, MessageObject messageObject, TLRPC.Document document, String str) {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+
+    a(int i10, int i11, int i12) {
         this.a = i10;
-        this.d = messageObject;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? FileLoader.getAttachFileName(document) : str;
-        a();
+        this.b = i10;
+        this.d = i11;
+        this.e = i12;
+        this.c = -1;
     }
 
-    public final void a() {
-        boolean z10 = false;
-        String str = this.c;
-        boolean exists = str != null ? new File(str).exists() : false;
-        int i10 = this.a;
-        if (!exists) {
-            exists = FileLoader.getInstance(i10).getPathToAttach(this.b).exists();
-        }
-        this.f = exists;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && FileLoader.getInstance(i10).isLoadingFile(str2)) {
-            z10 = true;
-        }
-        this.g = z10;
+    a(int i10) {
+        this.c = i10;
+        this.a = -1;
+        this.b = -1;
+        this.d = -1;
+        this.e = -1;
+    }
+
+    a(int i10) {
+        this.a = i10;
+        this.b = i10;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
+    }
+
+    a(String str, int i10) {
+        this.a = r2;
+        this.b = i10;
+        this.d = -1;
+        this.e = -1;
+        this.c = -1;
     }
 }

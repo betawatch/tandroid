@@ -8,15 +8,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d implements db.v {
     public final /* synthetic */ int a;
-    public final n4.y b;
+    public final pf.b b;
 
-    public /* synthetic */ d(n4.y yVar, int i10) {
+    public /* synthetic */ d(pf.b bVar, int i10) {
         this.a = i10;
-        this.b = yVar;
+        this.b = bVar;
     }
 
     @Override // db.v
@@ -24,7 +24,7 @@ public final class d implements db.v {
         Class cls;
         Type[] actualTypeArguments;
         int i10 = this.a;
-        n4.y yVar = this.b;
+        pf.b bVar = this.b;
         cls = Object.class;
         switch (i10) {
             case 0:
@@ -39,7 +39,7 @@ public final class d implements db.v {
                 fb.d.b(Collection.class.isAssignableFrom(cls2));
                 Type j3 = fb.d.j(type, cls2, fb.d.g(type, cls2, Collection.class), new HashMap());
                 cls = j3 instanceof ParameterizedType ? ((ParameterizedType) j3).getActualTypeArguments()[0] : Object.class;
-                return new c(gVar, cls, gVar.b(new kb.a(cls)), yVar.l(aVar));
+                return new c(gVar, cls, gVar.b(new kb.a(cls)), bVar.T(aVar));
             default:
                 Type type2 = aVar.b;
                 Class cls3 = aVar.a;
@@ -59,9 +59,9 @@ public final class d implements db.v {
                 Type type3 = actualTypeArguments[0];
                 db.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new kb.a(type3));
                 db.u b11 = gVar.b(new kb.a(actualTypeArguments[1]));
-                fb.n l4 = yVar.l(aVar);
+                fb.n T = bVar.T(aVar);
                 Type[] typeArr = actualTypeArguments;
-                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, l4);
+                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, T);
         }
     }
 }

@@ -14,18 +14,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class w50 {
     public final int a;
     public Emoji.EmojiDrawable c;
-    public org.telegram.ui.Components.p5 d;
+    public org.telegram.ui.Components.q5 d;
     public boolean e;
     public boolean f;
     public long g;
     public String l;
     public final Drawable[] b = new Drawable[6];
-    public final m20 h = new m20();
+    public final l20 h = new l20();
     public final HashSet i = new HashSet();
     public boolean j = false;
     public final v50 k = new v50(this, 0);
@@ -53,16 +53,16 @@ public final class w50 {
             this.j = z10;
             v50 v50Var = this.k;
             if (isEmpty) {
-                org.telegram.ui.Components.p5 p5Var = this.d;
-                if (p5Var != null) {
-                    p5Var.p(v50Var);
+                org.telegram.ui.Components.q5 q5Var = this.d;
+                if (q5Var != null) {
+                    q5Var.p(v50Var);
                     return;
                 }
                 return;
             }
-            org.telegram.ui.Components.p5 p5Var2 = this.d;
-            if (p5Var2 != null) {
-                p5Var2.b(v50Var);
+            org.telegram.ui.Components.q5 q5Var2 = this.d;
+            if (q5Var2 != null) {
+                q5Var2.b(v50Var);
             }
         }
     }
@@ -157,14 +157,14 @@ public final class w50 {
         float f15 = rectF2.left;
         float f16 = rectF2.top;
         rectF2.set(f15, f16, rectF2.right, f16 + dp);
-        m20 m20Var = this.h;
-        m20Var.b(canvas, rectF2, 1, 1.0f);
+        l20 l20Var = this.h;
+        l20Var.b(canvas, rectF2, 1, 1.0f);
         rectF2.set(rectF);
         rectF2.inset(f14, f14);
         float f17 = rectF2.left;
         float f18 = rectF2.bottom;
         rectF2.set(f17, f18 - dp, rectF2.right, f18);
-        m20Var.b(canvas, rectF2, 3, 1.0f);
+        l20Var.b(canvas, rectF2, 3, 1.0f);
         canvas.restore();
         return !z11;
     }
@@ -177,7 +177,7 @@ public final class w50 {
         int productionAccount = UserConfig.getProductionAccount();
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName.short_name = "StaticEmoji";
-        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(productionAccount).getStickerSet(tL_inputStickerSetShortName, 0, false, true, new u3(this, 6));
+        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(productionAccount).getStickerSet(tL_inputStickerSetShortName, 0, false, true, new t3(this, 6));
         if (stickerSet == null) {
             return;
         }
@@ -199,9 +199,9 @@ public final class w50 {
             }
         }
         if (document != null) {
-            org.telegram.ui.Components.p5 p5Var = this.d;
-            p5Var.e = document;
-            p5Var.j(false);
+            org.telegram.ui.Components.q5 q5Var = this.d;
+            q5Var.e = document;
+            q5Var.j(false);
         } else {
             FileLog.e("emoji \"" + this.l + "\" not found in addemoji/" + tL_inputStickerSetShortName.short_name);
         }

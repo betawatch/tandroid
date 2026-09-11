@@ -1,30 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class mx extends s4.d0 {
-    public final /* synthetic */ int r;
+public final class mx extends g.p {
+    public final /* synthetic */ kz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mx(Context context, int i10) {
-        super(context);
-        this.r = i10;
+    public mx(kz kzVar) {
+        this.c = kzVar;
     }
 
-    @Override // s4.d0
-    public final int i(int i10, int i11, int i12, int i13, int i14) {
-        return super.i(i10, i11, i12, i13, i14) + this.r;
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 16;
-    }
-
-    @Override // s4.d0
-    public final int p() {
-        return -1;
+    @Override // g.p
+    public final int i(int i10) {
+        kz kzVar = this.c;
+        tx txVar = kzVar.R;
+        lx lxVar = kzVar.Q;
+        s4.h0 adapter = kzVar.P.getAdapter();
+        ky kyVar = kzVar.S;
+        if (adapter == kyVar) {
+            int j3 = kyVar.j(i10);
+            if (j3 == 1 || j3 == 3 || j3 == 2 || j3 == 4 || j3 == 5) {
+                return lxVar.J;
+            }
+        } else if ((kzVar.d0 && i10 == 0) || i10 == txVar.d || i10 == txVar.c || i10 == txVar.f || txVar.r.indexOfKey(i10) >= 0 || txVar.v.indexOfKey(i10) >= 0) {
+            return lxVar.J;
+        }
+        return 1;
     }
 }

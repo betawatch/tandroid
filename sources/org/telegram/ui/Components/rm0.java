@@ -1,27 +1,16 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class rm0 {
-    public static final rm0 a;
-    public static final rm0 b;
-    public static final /* synthetic */ rm0[] c;
+public final class rm0 extends FrameLayout {
+    public org.telegram.ui.Cells.j7 a;
 
-    static {
-        rm0 rm0Var = new rm0("LINE", 0);
-        a = rm0Var;
-        rm0 rm0Var2 = new rm0("TAB", 1);
-        b = rm0Var2;
-        c = new rm0[]{rm0Var, rm0Var2};
-    }
-
-    public static rm0 valueOf(String str) {
-        return (rm0) Enum.valueOf(rm0.class, str);
-    }
-
-    public static rm0[] values() {
-        return (rm0[]) c.clone();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.a.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
     }
 }

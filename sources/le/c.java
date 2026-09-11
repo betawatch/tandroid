@@ -2,9 +2,9 @@ package le;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.voip.t1;
+import org.telegram.ui.Components.voip.s1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class c extends AnimatorListenerAdapter {
             if (eVar.g) {
                 eVar.g = false;
             }
-            eVar.b.B(eVar.e, eVar.a);
+            eVar.b.z(eVar.e, eVar.a);
         }
     }
 
@@ -49,12 +49,12 @@ public final class c extends AnimatorListenerAdapter {
                 a();
                 break;
             default:
-                t1 t1Var = (t1) this.d;
-                t1Var.O = false;
-                t1Var.M = true;
-                t1Var.W = this.b;
-                t1Var.a0 = this.c;
-                t1Var.requestLayout();
+                s1 s1Var = (s1) this.d;
+                s1Var.O = false;
+                s1Var.M = true;
+                s1Var.W = this.b;
+                s1Var.a0 = this.c;
+                s1Var.requestLayout();
                 break;
         }
     }

@@ -1,44 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
 import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class iy0 extends ul0 {
-    public final Context c;
-    public final /* synthetic */ jy0 d;
+public final class iy0 extends ll0 {
+    public boolean X2;
+    public boolean Y2;
+    public final /* synthetic */ my0 Z2;
 
-    public iy0(jy0 jy0Var, Activity activity) {
-        this.d = jy0Var;
-        this.c = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iy0(my0 my0Var, Context context) {
+        super(context, null);
+        this.Z2 = my0Var;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10, int i11) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.X2 == canScrollHorizontally && this.Y2 == canScrollHorizontally2) {
+            return;
+        }
+        ah.y yVar = this.Z2.d;
+        if (yVar != null) {
+            yVar.invalidate();
+        }
+        this.X2 = canScrollHorizontally;
+        this.Y2 = canScrollHorizontally2;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) c1Var.a;
-        ArrayList arrayList = this.d.c;
-        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
-        wVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(82.0f)));
-        return new fl0(wVar);
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.qt previewDelegate;
+        org.telegram.ui.st q6 = org.telegram.ui.st.q();
+        my0 my0Var = this.Z2;
+        iy0 iy0Var = my0Var.e;
+        previewDelegate = my0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, iy0Var, previewDelegate, this.p2);
     }
 }

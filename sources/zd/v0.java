@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class v0 extends w0 implements j0 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(v0.class, Object.class, "_queue$volatile");
@@ -48,7 +48,7 @@ public abstract class v0 extends w0 implements j0 {
         if (!j()) {
             u0 u0Var = (u0) n.get(this);
             Runnable runnable = null;
-            if (u0Var != null && ee.y.b.get(u0Var) != 0) {
+            if (u0Var != null && ee.x.b.get(u0Var) != 0) {
                 long nanoTime = System.nanoTime();
                 do {
                     synchronized (u0Var) {
@@ -188,7 +188,7 @@ public abstract class v0 extends w0 implements j0 {
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0024, code lost:
     
-        if ((ee.y.b.get(r0) == 0) == false) goto L29;
+        if ((ee.x.b.get(r0) == 0) == false) goto L29;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -256,13 +256,13 @@ public abstract class v0 extends w0 implements j0 {
         t0 d;
         c2.a.set(null);
         r.set(this, 1);
-        ee.v vVar = e0.c;
+        d9.f fVar = e0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj != null) {
                 if (!(obj instanceof ee.n)) {
-                    if (obj != vVar) {
+                    if (obj != fVar) {
                         ee.n nVar = new ee.n(8, true);
                         nVar.a((Runnable) obj);
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, nVar)) {
@@ -277,7 +277,7 @@ public abstract class v0 extends w0 implements j0 {
                 ((ee.n) obj).b();
                 break;
             }
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, vVar)) {
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, fVar)) {
                 if (atomicReferenceFieldUpdater.get(this) != null) {
                     break;
                 }
@@ -293,7 +293,7 @@ public abstract class v0 extends w0 implements j0 {
                 return;
             }
             synchronized (u0Var) {
-                d = ee.y.b.get(u0Var) > 0 ? u0Var.d(0) : null;
+                d = ee.x.b.get(u0Var) > 0 ? u0Var.d(0) : null;
             }
             if (d == null) {
                 return;

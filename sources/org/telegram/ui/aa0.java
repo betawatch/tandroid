@@ -1,105 +1,40 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedPrefsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aa0 implements Runnable {
-    public final /* synthetic */ LaunchActivity a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ TLRPC.TL_messages_botApp e;
-    public final /* synthetic */ AtomicBoolean f;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ boolean v;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Chat d;
 
-    public /* synthetic */ aa0(LaunchActivity launchActivity, org.telegram.ui.ActionBar.p2 p2Var, int i10, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z10, boolean z11, boolean z12, boolean z13) {
-        this.a = launchActivity;
-        this.b = p2Var;
-        this.c = i10;
-        this.d = user;
-        this.e = tL_messages_botApp;
-        this.f = atomicBoolean;
-        this.h = str;
-        this.n = z10;
-        this.r = z11;
-        this.s = z12;
-        this.v = z13;
+    public /* synthetic */ aa0(co coVar, long j3, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = coVar;
+        this.c = j3;
+        this.d = chat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.TL_attachMenuBot tL_attachMenuBot;
-        Pattern pattern = LaunchActivity.B1;
-        org.telegram.ui.ActionBar.p2 p2Var = this.b;
-        if (p2Var == null || !LaunchActivity.C1) {
-            return;
-        }
-        LaunchActivity launchActivity = this.a;
-        if (launchActivity.isFinishing() || launchActivity.isDestroyed()) {
-            return;
-        }
-        TLRPC.User user = this.d;
-        long j3 = user.id;
-        TLRPC.TL_messages_botApp tL_messages_botApp = this.e;
-        TLRPC.BotApp botApp = tL_messages_botApp.app;
-        boolean z10 = this.f.get();
-        int i10 = this.c;
-        String str = this.h;
-        boolean z11 = this.n;
-        boolean z12 = this.r;
-        di.j5 b10 = di.j5.b(i10, j3, j3, null, null, 3, 0, 0L, botApp, z10, str, user, 0, z11, z12);
-        if (launchActivity.P() == null || launchActivity.P().k(b10) == null) {
-            SharedPrefsHelper.setWebViewConfirmShown(launchActivity.O, user.id, true);
-            di.n3 n3Var = new di.n3(launchActivity, p2Var.getResourceProvider());
-            di.e3 e3Var = n3Var.x;
-            if (e3Var != null) {
-                e3Var.setWasOpenedByLinkIntent(this.s);
-            }
-            n3Var.w(!z11);
-            if (z12) {
-                n3Var.x(true, false, n3Var.e0);
-            }
-            n3Var.A0 = false;
-            n3Var.k0 = launchActivity;
-            n3Var.s(p2Var, b10);
-            n3Var.show();
-            if (tL_messages_botApp.inactive || this.v) {
-                TLRPC.User user2 = MessagesController.getInstance(n3Var.G).getUser(Long.valueOf(n3Var.H));
-                ArrayList<TLRPC.TL_attachMenuBot> arrayList = MediaDataController.getInstance(n3Var.G).getAttachMenuBots().bots;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= size) {
-                        tL_attachMenuBot = null;
-                        break;
-                    }
-                    TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
-                    i11++;
-                    tL_attachMenuBot = tL_attachMenuBot2;
-                    if (tL_attachMenuBot.bot_id == n3Var.H) {
-                        break;
-                    }
-                }
-                if (tL_attachMenuBot == null) {
-                    return;
-                }
-                boolean z13 = tL_attachMenuBot.show_in_side_menu;
-                AndroidUtilities.runOnUIThread(new bi.af(12, n3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
-            }
+        int i10 = this.a;
+        TLRPC.Chat chat = this.d;
+        long j3 = this.c;
+        co coVar = this.b;
+        switch (i10) {
+            case 0:
+                Pattern pattern = LaunchActivity.B1;
+                org.telegram.ui.Components.yc.a0(coVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j3, chat.title)), R.raw.stars_send).k(true);
+                break;
+            default:
+                org.telegram.ui.Components.yc.a0(coVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j3, chat.title)), R.raw.stars_send).k(true);
+                break;
         }
     }
 }

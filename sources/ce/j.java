@@ -1,8 +1,8 @@
 package ce;
 
-import za.z;
+import za.y;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j implements c {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class j implements c {
                 ((kotlin.jvm.internal.p) this.b).a = obj;
                 throw new de.a(this);
             default:
-                ((z) this.b).c.set((za.m) obj);
+                ((y) this.b).c.set((za.m) obj);
                 return gd.i.a;
         }
     }

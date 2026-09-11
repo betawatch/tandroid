@@ -1,87 +1,33 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import android.util.SparseArray;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.text.Collator;
+import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.h90;
-import org.telegram.ui.n90;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ Serializable i;
-    public final /* synthetic */ Object j;
-    public final /* synthetic */ Object k;
-    public final /* synthetic */ Object l;
-    public final /* synthetic */ Cloneable m;
+public final /* synthetic */ class j1 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Collator b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ j1(ContactsController contactsController, HashMap hashMap, SparseArray sparseArray, boolean[] zArr, HashMap hashMap2, TLRPC.TL_contacts_importContacts tL_contacts_importContacts, int i10, HashMap hashMap3, boolean z10, HashMap hashMap4, ArrayList arrayList, HashMap hashMap5) {
-        this.d = contactsController;
-        this.e = hashMap;
-        this.j = sparseArray;
-        this.k = zArr;
-        this.f = hashMap2;
-        this.l = tL_contacts_importContacts;
-        this.c = i10;
-        this.g = hashMap3;
-        this.b = z10;
-        this.h = hashMap4;
-        this.m = arrayList;
-        this.i = hashMap5;
+    public /* synthetic */ j1(Object obj, Collator collator, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = collator;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        Cloneable cloneable = this.m;
-        Object obj = this.l;
-        Object obj2 = this.k;
-        Object obj3 = this.j;
-        Serializable serializable = this.i;
-        Serializable serializable2 = this.h;
-        Object obj4 = this.g;
-        Serializable serializable3 = this.f;
-        Object obj5 = this.e;
-        Object obj6 = this.d;
-        switch (i10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$buildContactsSectionsArrays$43;
+        int lambda$processLoadedContacts$30;
+        switch (this.a) {
             case 0:
-                ((ContactsController) obj6).lambda$performSyncPhoneBook$20((HashMap) obj5, (SparseArray) obj3, (boolean[]) obj2, (HashMap) serializable3, (TLRPC.TL_contacts_importContacts) obj, this.c, (HashMap) obj4, this.b, (HashMap) serializable2, (ArrayList) cloneable, (HashMap) serializable, tLObject, tL_error);
-                break;
+                lambda$buildContactsSectionsArrays$43 = ((ContactsController) this.c).lambda$buildContactsSectionsArrays$43(this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
+                return lambda$buildContactsSectionsArrays$43;
             default:
-                Pattern pattern = LaunchActivity.B1;
-                boolean z10 = this.b;
-                AndroidUtilities.runOnUIThread(new n90((LaunchActivity) obj6, (h90) obj5, tLObject, z10, (Long) serializable3, (nf.e) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.p2) obj, this.c, (Bundle) cloneable));
-                break;
+                lambda$processLoadedContacts$30 = ContactsController.lambda$processLoadedContacts$30((a0.i) this.c, this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
+                return lambda$processLoadedContacts$30;
         }
-    }
-
-    public /* synthetic */ j1(LaunchActivity launchActivity, h90 h90Var, boolean z10, Long l4, nf.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.p2 p2Var, int i10, Bundle bundle) {
-        this.d = launchActivity;
-        this.e = h90Var;
-        this.b = z10;
-        this.f = l4;
-        this.g = eVar;
-        this.h = l10;
-        this.i = num;
-        this.j = num2;
-        this.k = bArr;
-        this.l = p2Var;
-        this.c = i10;
-        this.m = bundle;
     }
 }

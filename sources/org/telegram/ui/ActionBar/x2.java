@@ -1,54 +1,80 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class x2 implements Runnable {
+public final class x2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Dialog c;
 
-    public /* synthetic */ x2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ x2(Dialog dialog, int i10, int i11) {
+        this.a = i11;
+        this.c = dialog;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                h3 h3Var = (h3) this.b;
-                if (h3Var.startAnimationRunnable == this) {
-                    z10 = h3Var.dismissed;
-                    if (!z10) {
-                        h3Var.startAnimationRunnable = null;
-                        h3.access$2400(h3Var);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                if (actionBarLayout.d == this) {
-                    actionBarLayout.d = null;
-                    actionBarLayout.d0(false, true, false);
-                    break;
-                }
-                break;
-            case 2:
-                r1 r1Var = (r1) this.b;
-                ValueAnimator valueAnimator = r1Var.m;
-                if (valueAnimator != null && !valueAnimator.isRunning()) {
-                    r1Var.m.start();
+                f3 f3Var = (f3) this.c;
+                AnimatorSet animatorSet = f3Var.currentSheetAnimation;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    f3Var.currentSheetAnimation = null;
+                    f3Var.currentSheetAnimationType = 0;
                     break;
                 }
                 break;
             default:
-                x4 x4Var = (x4) this.b;
-                x4Var.k();
-                x4Var.j();
-                x4Var.f.setAlpha(1.0f);
+                AnimatorSet[] animatorSetArr = ((b2) this.c).F;
+                int i10 = this.b;
+                AnimatorSet animatorSet2 = animatorSetArr[i10];
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    animatorSetArr[i10] = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        DialogInterface.OnClickListener onClickListener;
+        DialogInterface.OnClickListener onClickListener2;
+        int i10 = this.a;
+        int i11 = this.b;
+        Dialog dialog = this.c;
+        switch (i10) {
+            case 0:
+                f3 f3Var = (f3) dialog;
+                AnimatorSet animatorSet = f3Var.currentSheetAnimation;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    f3Var.currentSheetAnimation = null;
+                    f3Var.currentSheetAnimationType = 0;
+                    onClickListener = f3Var.onClickListener;
+                    if (onClickListener != null) {
+                        onClickListener2 = f3Var.onClickListener;
+                        onClickListener2.onClick(f3Var, i11);
+                    }
+                    AndroidUtilities.runOnUIThread(new q(this, 8));
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            default:
+                AnimatorSet[] animatorSetArr = ((b2) dialog).F;
+                AnimatorSet animatorSet2 = animatorSetArr[i11];
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    animatorSetArr[i11] = null;
+                    break;
+                }
                 break;
         }
     }

@@ -1,23 +1,23 @@
 package x2;
 
-import u2.q1;
+import u2.o1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class t {
     public final int a;
     public final int[] b;
-    public final q1[] c;
+    public final o1[] c;
     public final int[] d;
     public final int[][][] e;
-    public final q1 f;
+    public final o1 f;
 
-    public t(int[] iArr, q1[] q1VarArr, int[] iArr2, int[][][] iArr3, q1 q1Var) {
+    public t(int[] iArr, o1[] o1VarArr, int[] iArr2, int[][][] iArr3, o1 o1Var) {
         this.b = iArr;
-        this.c = q1VarArr;
+        this.c = o1VarArr;
         this.e = iArr3;
         this.d = iArr2;
-        this.f = q1Var;
+        this.f = o1Var;
         this.a = iArr.length;
     }
 }

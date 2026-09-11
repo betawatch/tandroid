@@ -1,26 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.SharedConfig;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dz0 implements zc0, bd0 {
-    public final /* synthetic */ fz0 a;
+public final class dz0 {
+    public final int a;
+    public final int b;
 
-    @Override // org.telegram.ui.Components.zc0
-    public String k(int i10) {
-        return this.a.h[i10];
+    public dz0(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.bd0
-    public void q(dd0 dd0Var, int i10) {
-        fz0 fz0Var = this.a;
-        fz0Var.b();
-        SharedConfig.updateChatListSwipeSetting(i10);
-        fz0Var.invalidate();
-        try {
-            dd0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || dz0.class != obj.getClass()) {
+            return false;
+        }
+        dz0 dz0Var = (dz0) obj;
+        return this.b == dz0Var.b && this.a == dz0Var.a;
+    }
+
+    public final int hashCode() {
+        return (this.a * 31) + this.b;
     }
 }

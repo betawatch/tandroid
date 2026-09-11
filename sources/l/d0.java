@@ -13,19 +13,21 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import bi.i2;
 import java.util.WeakHashMap;
 import m.j2;
 import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d0 extends t implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
     public boolean F;
     public boolean G;
     public int H;
+    public int I = 0;
     public boolean J;
     public final Context b;
     public final l c;
@@ -34,15 +36,17 @@ public final class d0 extends t implements PopupWindow.OnDismissListener, View.O
     public final int f;
     public final int h;
     public final j2 n;
+    public final androidx.mediarouter.app.j r;
+    public final i2 s;
     public PopupWindow.OnDismissListener v;
     public View w;
     public View x;
     public x y;
-    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 2);
-    public final d s = new d(this, 1);
-    public int I = 0;
 
     public d0(Context context, l lVar, View view, int i10, boolean z10) {
+        int i11 = 2;
+        this.r = new androidx.mediarouter.app.j(this, i11);
+        this.s = new i2(this, i11);
         this.b = context;
         this.c = lVar;
         this.e = z10;
@@ -61,20 +65,20 @@ public final class d0 extends t implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.y
-    public final void c(l lVar, boolean z10) {
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // l.y
+    public final void d(l lVar, boolean z10) {
         if (lVar != this.c) {
             return;
         }
         dismiss();
         x xVar = this.y;
         if (xVar != null) {
-            xVar.c(lVar, z10);
+            xVar.d(lVar, z10);
         }
-    }
-
-    @Override // l.y
-    public final boolean d() {
-        return false;
     }
 
     @Override // l.c0
@@ -209,7 +213,7 @@ public final class d0 extends t implements PopupWindow.OnDismissListener, View.O
             }
             x xVar2 = this.y;
             if (xVar2 != null) {
-                xVar2.u(e0Var);
+                xVar2.q(e0Var);
             }
             return true;
         }

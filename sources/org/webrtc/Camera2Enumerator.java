@@ -20,7 +20,7 @@ import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -56,8 +56,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     private CameraCharacteristics getCameraCharacteristics(String str) {
         try {
             return this.cameraManager.getCameraCharacteristics(str);
-        } catch (AndroidException e) {
-            Logging.e(TAG, "Camera access exception: " + e);
+        } catch (AndroidException e7) {
+            Logging.e(TAG, "Camera access exception: " + e7);
             return null;
         }
     }
@@ -110,8 +110,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     public String[] getDeviceNames() {
         try {
             return this.cameraManager.getCameraIdList();
-        } catch (AndroidException e) {
-            Logging.e(TAG, "Camera access exception: " + e);
+        } catch (AndroidException e7) {
+            Logging.e(TAG, "Camera access exception: " + e7);
             return new String[0];
         }
     }
@@ -170,8 +170,8 @@ public class Camera2Enumerator implements CameraEnumerator {
                         cachedSupportedFormats.put(str, arrayList);
                         Logging.d(TAG, "Get supported formats for camera index " + str + " done. Time spent: " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms.");
                         return arrayList;
-                    } catch (Exception e) {
-                        Logging.e(TAG, "getCameraCharacteristics()", e);
+                    } catch (Exception e7) {
+                        Logging.e(TAG, "getCameraCharacteristics()", e7);
                         return new ArrayList();
                     }
                 }

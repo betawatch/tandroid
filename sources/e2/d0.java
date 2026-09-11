@@ -1,6 +1,6 @@
 package e2;
 
-import a3.k0;
+import a3.j0;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,7 +20,7 @@ import android.view.WindowManager;
 import b2.b1;
 import b2.r0;
 import b2.s0;
-import bi.af;
+import di.b7;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.math.BigDecimal;
@@ -49,11 +49,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
-import v7.o7;
-import v7.q7;
+import v7.n7;
+import v7.p7;
 import v7.r6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final String a;
@@ -162,7 +162,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? hc.b.k(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? i2.g.j(i10, "custom (", ")") : "?";
         }
     }
 
@@ -494,17 +494,17 @@ public abstract class d0 {
         RoundingMode roundingMode = RoundingMode.DOWN;
         int i10 = 0;
         if (j3 >= 1000000 && j3 % 1000000 == 0) {
-            long b10 = q7.b(j3, 1000000L, RoundingMode.UNNECESSARY);
+            long b10 = p7.b(j3, 1000000L, RoundingMode.UNNECESSARY);
             while (i10 < jArr.length) {
-                jArr[i10] = q7.b(jArr[i10], b10, roundingMode);
+                jArr[i10] = p7.b(jArr[i10], b10, roundingMode);
                 i10++;
             }
             return;
         }
         if (j3 < 1000000 && 1000000 % j3 == 0) {
-            long b11 = q7.b(1000000L, j3, RoundingMode.UNNECESSARY);
+            long b11 = p7.b(1000000L, j3, RoundingMode.UNNECESSARY);
             while (i10 < jArr.length) {
-                jArr[i10] = q7.d(jArr[i10], b11);
+                jArr[i10] = p7.d(jArr[i10], b11);
                 i10++;
             }
             return;
@@ -514,14 +514,14 @@ public abstract class d0 {
             long j11 = jArr[i11];
             if (j11 != 0) {
                 if (j3 >= j11 && j3 % j11 == 0) {
-                    jArr[i11] = q7.b(1000000L, q7.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
+                    jArr[i11] = p7.b(1000000L, p7.b(j3, j11, RoundingMode.UNNECESSARY), roundingMode);
                 } else if (j3 >= j11 || j11 % j3 != 0) {
                     j10 = j3;
                     jArr[i11] = Z(j11, 1000000L, j10, roundingMode);
                     i11++;
                     j3 = j10;
                 } else {
-                    jArr[i11] = q7.d(1000000L, q7.b(j11, j3, RoundingMode.UNNECESSARY));
+                    jArr[i11] = p7.d(1000000L, p7.b(j11, j3, RoundingMode.UNNECESSARY));
                 }
             }
             j10 = j3;
@@ -534,7 +534,7 @@ public abstract class d0 {
         if (j3 == 0 || j10 == 0) {
             return 0L;
         }
-        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? Z(j3, j10, j11, roundingMode) : q7.d(j10, q7.b(j3, j11, RoundingMode.UNNECESSARY)) : q7.b(j10, q7.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : q7.d(j3, q7.b(j10, j11, RoundingMode.UNNECESSARY)) : q7.b(j3, q7.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
+        return (j11 < j10 || j11 % j10 != 0) ? (j11 >= j10 || j10 % j11 != 0) ? (j11 < j3 || j11 % j3 != 0) ? (j11 >= j3 || j3 % j11 != 0) ? Z(j3, j10, j11, roundingMode) : p7.d(j10, p7.b(j3, j11, RoundingMode.UNNECESSARY)) : p7.b(j10, p7.b(j11, j3, RoundingMode.UNNECESSARY), roundingMode) : p7.d(j3, p7.b(j10, j11, RoundingMode.UNNECESSARY)) : p7.b(j3, p7.b(j11, j10, RoundingMode.UNNECESSARY), roundingMode);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -553,20 +553,20 @@ public abstract class d0 {
     public static long Z(long j3, long j10, long j11, RoundingMode roundingMode) {
         double d10;
         long j12;
-        long d11 = q7.d(j3, j10);
+        long d11 = p7.d(j3, j10);
         if (d11 != Long.MAX_VALUE && d11 != Long.MIN_VALUE) {
-            return q7.b(d11, j11, roundingMode);
+            return p7.b(d11, j11, roundingMode);
         }
-        long c10 = q7.c(Math.abs(j10), Math.abs(j11));
+        long c10 = p7.c(Math.abs(j10), Math.abs(j11));
         RoundingMode roundingMode2 = RoundingMode.UNNECESSARY;
-        long b10 = q7.b(j10, c10, roundingMode2);
-        long b11 = q7.b(j11, c10, roundingMode2);
-        long c11 = q7.c(Math.abs(j3), Math.abs(b11));
-        long b12 = q7.b(j3, c11, roundingMode2);
-        long b13 = q7.b(b11, c11, roundingMode2);
-        long d12 = q7.d(b12, b10);
+        long b10 = p7.b(j10, c10, roundingMode2);
+        long b11 = p7.b(j11, c10, roundingMode2);
+        long c11 = p7.c(Math.abs(j3), Math.abs(b11));
+        long b12 = p7.b(j3, c11, roundingMode2);
+        long b13 = p7.b(b11, c11, roundingMode2);
+        long d12 = p7.d(b12, b10);
         if (d12 != Long.MAX_VALUE && d12 != Long.MIN_VALUE) {
-            return q7.b(d12, b13, roundingMode);
+            return p7.b(d12, b13, roundingMode);
         }
         double d13 = b12 * (b10 / b13);
         if (d13 > 9.223372036854776E18d) {
@@ -576,7 +576,7 @@ public abstract class d0 {
             return Long.MIN_VALUE;
         }
         int i10 = g9.c.a;
-        if (!o7.b(d13)) {
+        if (!n7.b(d13)) {
             throw new ArithmeticException("input is infinite or NaN");
         }
         switch (g9.b.a[roundingMode.ordinal()]) {
@@ -740,10 +740,10 @@ public abstract class d0 {
 
     public static i9.c0 d0(i9.w wVar, i9.p pVar) {
         i9.c0 c0Var = new i9.c0();
-        af afVar = new af(23, c0Var, wVar);
+        b7 b7Var = new b7(20, c0Var, wVar);
         i9.q qVar = i9.q.a;
-        c0Var.a(afVar, qVar);
-        wVar.a(new k0(wVar, c0Var, pVar, 19), qVar);
+        c0Var.a(b7Var, qVar);
+        wVar.a(new j0(wVar, c0Var, pVar, 22), qVar);
         return c0Var;
     }
 

@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class id1 extends w7.x5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class id1 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ kd1 b1;
 
-    public /* synthetic */ id1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public id1(kd1 kd1Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.b1 = kd1Var;
     }
 
-    @Override // w7.x5
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((zi1) this.b).v.invalidate();
-                break;
-        }
-    }
-
-    @Override // w7.x5
-    public void b(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                Point point = AndroidUtilities.displaySize;
-                if ((point.x <= point.y) == (i10 <= i11)) {
-                    ((ae1) this.b).x0.invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = iVar.m();
+            kd1 kd1Var = this.b1;
+            if (m10 == 1) {
+                kd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
+            } else {
+                kd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+            }
         }
     }
 }

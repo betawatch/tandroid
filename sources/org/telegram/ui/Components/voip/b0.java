@@ -3,27 +3,37 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class b0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ m0 a;
+    public final /* synthetic */ t a;
+    public final /* synthetic */ l0 b;
 
-    public b0(m0 m0Var) {
-        this.a = m0Var;
+    public b0(l0 l0Var, t tVar) {
+        this.b = l0Var;
+        this.a = tVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        m0 m0Var = this.a;
-        m0Var.N0 = null;
-        m0Var.y.E = false;
-        t tVar = m0Var.E;
-        if (tVar != null) {
-            if (tVar.getParent() != null) {
-                m0Var.removeView(m0Var.E);
-                m0Var.E.e();
-            }
-            m0Var.E = null;
+        l0 l0Var = this.b;
+        l0Var.x.unlock();
+        l0Var.r = null;
+        this.a.r = false;
+        if (!l0Var.b) {
+            l0Var.d();
+            l0Var.y = null;
+            l0Var.d = 0L;
         }
+        l0Var.c = l0Var.b ? 1.0f : 0.0f;
+        l0Var.l();
+        l0Var.i(false);
+        if (l0Var.b) {
+            return;
+        }
+        l0Var.k0.setVisibility(8);
+        l0Var.l0.setVisibility(8);
+        l0Var.e0.setVisibility(8);
+        l0Var.f0.setVisibility(8);
     }
 }

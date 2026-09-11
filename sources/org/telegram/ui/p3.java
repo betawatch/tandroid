@@ -1,194 +1,46 @@
 package org.telegram.ui;
 
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.content.Context;
 import android.view.View;
-import java.io.File;
-import java.util.List;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class p3 implements yu0 {
-    public final TLRPC.WebPage a;
-    public final List b;
-    public final /* synthetic */ j4 c;
+public final class p3 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public boolean c;
+    public final boolean d;
+    public final /* synthetic */ i4 e;
 
-    public p3(j4 j4Var, TLRPC.WebPage webPage, List list) {
-        this.c = j4Var;
-        this.a = webPage;
-        this.b = list;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p3(i4 i4Var, Context context, boolean z10) {
+        super(context);
+        this.e = i4Var;
+        this.d = z10;
+        setTag(90);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setText(LocaleController.getString(z10 ? R.string.PreviewFeedbackAuto : R.string.PreviewFeedback2));
+        textView.setTextSize(1, 12.0f);
+        textView.setGravity(17);
+        textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        addView(textView, w7.x5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 12.0f);
+        textView2.setGravity(19);
+        textView2.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        addView(textView2, w7.x5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.yu0
-    public final boolean a(int i10) {
-        return i10 < this.b.size() && i10 >= 0 && g4.g(this.a, get(i10));
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final File b(int i10) {
-        TLRPC.Document a2;
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        if (i10 < this.b.size() && i10 >= 0) {
-            TL_iv.PageBlock pageBlock = get(i10);
-            boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-            TLRPC.WebPage webPage = this.a;
-            if (z10) {
-                TLRPC.Photo e = g4.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-                if (e != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e.sizes, AndroidUtilities.getPhotoSize())) != null) {
-                    return g4.c(closestPhotoSizeWithSize);
-                }
-            } else if ((pageBlock instanceof TL_iv.pageBlockVideo) && (a2 = g4.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) != null) {
-                return g4.c(a2);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final String c(int i10) {
-        TLObject d = d(i10);
-        if (d instanceof TLRPC.Photo) {
-            d = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) d).sizes, AndroidUtilities.getPhotoSize());
-        }
-        return FileLoader.getAttachFileName(d);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TLObject d(int i10) {
-        if (i10 < this.b.size() && i10 >= 0) {
-            TL_iv.PageBlock pageBlock = get(i10);
-            boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-            TLRPC.WebPage webPage = this.a;
-            if (z10) {
-                return g4.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-            }
-            if (pageBlock instanceof TL_iv.pageBlockVideo) {
-                return g4.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final boolean e(int i10) {
-        if (i10 < this.b.size() && i10 >= 0 && !g4.g(this.a, get(i10))) {
-            h4 h4Var = this.c.u0[0].c;
-            TL_iv.PageBlock pageBlock = get(i10);
-            h4Var.getClass();
-            if (h4.I(pageBlock) == 5) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        if (!(tLObject instanceof TLRPC.Photo)) {
-            if (!(tLObject instanceof TLRPC.Document) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Document) tLObject).thumbs, 90)) == null) {
-                return null;
-            }
-            int i10 = closestPhotoSizeWithSize.size;
-            iArr[0] = i10;
-            if (i10 == 0) {
-                iArr[0] = -1;
-            }
-            return closestPhotoSizeWithSize;
-        }
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize());
-        if (closestPhotoSizeWithSize2 == null) {
-            iArr[0] = -1;
-            return null;
-        }
-        int i11 = closestPhotoSizeWithSize2.size;
-        iArr[0] = i11;
-        if (i11 == 0) {
-            iArr[0] = -1;
-        }
-        return closestPhotoSizeWithSize2;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final Object g() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TL_iv.PageBlock get(int i10) {
-        return (TL_iv.PageBlock) this.b.get(i10);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final List getAll() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final void h(TL_iv.PageBlock pageBlock) {
-        j4 j4Var = this.c;
-        int childCount = j4Var.u0[0].b.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = j4Var.u0[0].b.getChildAt(i10);
-            if (childAt instanceof r2) {
-                r2 r2Var = (r2) childAt;
-                int indexOf = r2Var.d.items.indexOf(pageBlock);
-                if (indexOf != -1) {
-                    r2Var.a.x(indexOf, false);
-                    return;
-                }
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0089 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x002c  */
-    @Override // org.telegram.ui.yu0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final CharSequence i(int i10) {
-        SpannableStringBuilder spannableStringBuilder;
-        TL_iv.PageBlock pageBlock = get(i10);
-        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            String str = ((TL_iv.pageBlockPhoto) pageBlock).url;
-            if (!TextUtils.isEmpty(str)) {
-                spannableStringBuilder = new SpannableStringBuilder(str);
-                spannableStringBuilder.setSpan(new o3(this, str, 0), 0, str.length(), 34);
-                if (spannableStringBuilder == null) {
-                    return spannableStringBuilder;
-                }
-                j4 j4Var = this.c;
-                j4Var.getClass();
-                TL_iv.RichText w10 = j4.w(2, pageBlock);
-                CharSequence C = j4.C(j4Var, this.a, null, w10, w10, pageBlock, -AndroidUtilities.dp(100.0f));
-                if (!(C instanceof Spannable)) {
-                    return C;
-                }
-                Spannable spannable = (Spannable) C;
-                org.telegram.ui.Components.x01[] x01VarArr = (org.telegram.ui.Components.x01[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.x01.class);
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(C.toString());
-                if (x01VarArr != null && x01VarArr.length > 0) {
-                    for (int i11 = 0; i11 < x01VarArr.length; i11++) {
-                        spannableStringBuilder2.setSpan(new o3(this, x01VarArr[i11].b, 1), spannable.getSpanStart(x01VarArr[i11]), spannable.getSpanEnd(x01VarArr[i11]), 33);
-                    }
-                }
-                return spannableStringBuilder2;
-            }
-        }
-        spannableStringBuilder = null;
-        if (spannableStringBuilder == null) {
-        }
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final int j() {
-        return this.b.size();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
     }
 }

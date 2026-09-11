@@ -1,23 +1,22 @@
 package g2;
 
-import android.content.Context;
 import org.telegram.ui.LaunchActivity;
 import v7.v6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i {
-    public static final d9.i d = v6.a(new a3.s(2));
+    public static final d9.j d = v6.a(new a3.r(2));
     public final i9.x a;
-    public final n4.y b;
+    public final pf.b b;
     public final int c;
 
     public i(LaunchActivity launchActivity) {
         i9.x xVar = (i9.x) d.get();
         e2.d.h(xVar);
-        n4.y yVar = new n4.y((Context) launchActivity, 18);
+        pf.b bVar = new pf.b(launchActivity, 18);
         this.a = xVar;
-        this.b = yVar;
+        this.b = bVar;
         this.c = -1;
     }
 }

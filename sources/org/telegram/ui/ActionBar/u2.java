@@ -1,56 +1,45 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
 import android.view.View;
-import bi.fa;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.pc;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class u2 extends f3 {
-    public final /* synthetic */ h3 H;
+public final class u2 extends TextView {
+    public final /* synthetic */ f3 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u2(h3 h3Var, Context context) {
-        super(h3Var, context);
-        this.H = h3Var;
+    public u2(f3 f3Var, Context context) {
+        super(context);
+        this.a = f3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.H.mainContainerDispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        try {
-            return super.drawChild(canvas, view, j3);
-        } catch (Exception e) {
-            FileLog.e(e);
-            return true;
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        boolean z10;
+        View view;
+        View view2;
+        super.onMeasure(i10, i11);
+        f3 f3Var = this.a;
+        z10 = f3Var.multipleLinesTitle;
+        if (z10) {
+            int measuredHeight = getMeasuredHeight();
+            view = f3Var.customView;
+            if (view != null) {
+                view2 = f3Var.customView;
+                ((ViewGroup.MarginLayoutParams) view2.getLayoutParams()).topMargin = measuredHeight;
+            } else if (f3Var.containerView != null) {
+                for (int i12 = 1; i12 < f3Var.containerView.getChildCount(); i12++) {
+                    View childAt = f3Var.containerView.getChildAt(i12);
+                    if (childAt instanceof y2) {
+                        ((ViewGroup.MarginLayoutParams) childAt.getLayoutParams()).topMargin = measuredHeight;
+                        measuredHeight = AndroidUtilities.dp(48.0f) + measuredHeight;
+                    }
+                }
+            }
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        pc.a(this, new fa(5));
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        h3 h3Var = this.H;
-        h3Var.lastInsets = null;
-        h3Var.container.requestApplyInsets();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        pc.h(this);
     }
 }

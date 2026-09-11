@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f extends w {
     private static final f DEFAULT_INSTANCE;
@@ -66,16 +66,16 @@ public final class f extends w {
                 return (f) wVar;
             }
             throw new b0(new androidx.car.app.j().getMessage());
-        } catch (IOException e) {
-            if (e.getCause() instanceof b0) {
-                throw ((b0) e.getCause());
-            }
-            throw new b0(e.getMessage());
-        } catch (RuntimeException e7) {
+        } catch (IOException e7) {
             if (e7.getCause() instanceof b0) {
                 throw ((b0) e7.getCause());
             }
-            throw e7;
+            throw new b0(e7.getMessage());
+        } catch (RuntimeException e10) {
+            if (e10.getCause() instanceof b0) {
+                throw ((b0) e10.getCause());
+            }
+            throw e10;
         }
     }
 

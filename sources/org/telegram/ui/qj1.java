@@ -1,50 +1,198 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewParent;
+import android.webkit.CookieManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qj1 {
-    public org.telegram.ui.Cells.z1 a;
-    public org.telegram.ui.ActionBar.d2 b;
-    public TextView c;
+public final class qj1 extends org.telegram.ui.ActionBar.n2 {
+    public WebView a;
+    public org.telegram.ui.ActionBar.v0 b;
+    public org.telegram.ui.Components.sq c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final String h;
+    public final MessageObject n;
+    public final String r;
+    public w5 s;
 
-    public static void a(Context context, e2.h hVar, Runnable runnable) {
-        qj1 qj1Var = new qj1();
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.TermsOfUse);
-        LinearLayout f7 = org.telegram.messenger.em.f(context, 1);
-        TextView textView = new TextView(context);
-        textView.setLetterSpacing(0.025f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
-        textView.setTextSize(1, 14.0f);
-        f7.addView(textView, w7.a6.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(context, 1, null);
-        qj1Var.a = z1Var;
-        z1Var.getTextView().getLayoutParams().width = -1;
-        qj1Var.a.getTextView().setTextSize(1, 14.0f);
-        f7.addView(qj1Var.a, w7.a6.t(-1, 48, 3, 8, 0, 8, 0));
-        boolean[] zArr = new boolean[1];
-        org.telegram.messenger.a2.n(R.string.BotWebAppDisclaimerSubtitle, textView);
-        qj1Var.a.e(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new qv(context, 8)), "", false, false, false);
-        alertDialog$Builder.n(f7);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new fz0(16, hVar, zArr));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new js0(6));
-        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-        qj1Var.b = d2Var;
-        d2Var.show();
-        TextView textView2 = (TextView) qj1Var.b.d(-1);
-        qj1Var.c = textView2;
-        textView2.setEnabled(false);
-        qj1Var.c.setAlpha(0.5f);
-        qj1Var.a.setOnClickListener(new m41(qj1Var, 9));
-        qj1Var.a.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), 7, -1));
-        qj1Var.b.setOnDismissListener(new org.telegram.ui.Components.o2(zArr, runnable));
+    public qj1(String str, String str2, String str3, String str4, MessageObject messageObject) {
+        super(null);
+        this.s = new w5(this, 15);
+        this.d = str;
+        this.e = str2;
+        this.f = str3;
+        this.n = messageObject;
+        this.r = str4;
+        StringBuilder sb2 = new StringBuilder("https://");
+        sb2.append(MessagesController.getInstance(this.currentAccount).linkPrefix);
+        sb2.append("/");
+        sb2.append(str2);
+        sb2.append(TextUtils.isEmpty(str4) ? "" : org.telegram.ui.Cells.p6.i("?game=", str4));
+        this.h = sb2.toString();
+    }
+
+    public static void V(String str, MessageObject messageObject, Activity activity, String str2, String str3) {
+        String str4;
+        String str5 = "";
+        try {
+            SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("botshare", 0);
+            String string = sharedPreferences.getString("" + messageObject.getId(), null);
+            StringBuilder sb2 = new StringBuilder(string != null ? string : "");
+            StringBuilder sb3 = new StringBuilder("tgShareScoreUrl=" + URLEncoder.encode("tgb://share_game_score?hash=", "UTF-8"));
+            if (string == null) {
+                char[] charArray = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+                for (int i10 = 0; i10 < 20; i10++) {
+                    sb2.append(charArray[Utilities.random.nextInt(charArray.length)]);
+                }
+            }
+            sb3.append((CharSequence) sb2);
+            int indexOf = str.indexOf(35);
+            if (indexOf < 0) {
+                str4 = str + "#" + ((Object) sb3);
+            } else {
+                String substring = str.substring(indexOf + 1);
+                if (substring.indexOf(61) < 0 && substring.indexOf(63) < 0) {
+                    str4 = substring.length() > 0 ? str + "?" + ((Object) sb3) : str + ((Object) sb3);
+                }
+                str4 = str + "&" + ((Object) sb3);
+            }
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putInt(((Object) sb2) + "_date", (int) (System.currentTimeMillis() / 1000));
+            SerializedData serializedData = new SerializedData(messageObject.messageOwner.getObjectSize());
+            messageObject.messageOwner.serializeToStream(serializedData);
+            edit.putString(((Object) sb2) + "_m", Utilities.bytesToHex(serializedData.toByteArray()));
+            String str6 = ((Object) sb2) + "_link";
+            StringBuilder sb4 = new StringBuilder();
+            sb4.append("https://");
+            sb4.append(MessagesController.getInstance(messageObject.currentAccount).linkPrefix);
+            sb4.append("/");
+            sb4.append(str3);
+            if (!TextUtils.isEmpty(str2)) {
+                str5 = "?game=" + str2;
+            }
+            sb4.append(str5);
+            edit.putString(str6, sb4.toString());
+            edit.commit();
+            of.f.o(activity, str4, false);
+            serializedData.cleanup();
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new nj1(this));
+        org.telegram.ui.ActionBar.z n10 = this.actionBar.n();
+        this.b = n10.g(1, R.drawable.share, AndroidUtilities.dp(54.0f));
+        n10.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp));
+        this.actionBar.setTitle(this.f);
+        this.actionBar.setSubtitle("@" + this.e);
+        org.telegram.ui.Components.sq sqVar = new org.telegram.ui.Components.sq(context, 1);
+        this.c = sqVar;
+        this.b.addView(sqVar, w7.x5.c(-1.0f, -1));
+        this.c.setAlpha(0.0f);
+        this.c.setScaleX(0.1f);
+        this.c.setScaleY(0.1f);
+        this.c.setVisibility(4);
+        AndroidUtilities.checkAndroidTheme(context, true);
+        WebView webView = new WebView(context);
+        this.a = webView;
+        webView.getSettings().setJavaScriptEnabled(true);
+        this.a.getSettings().setDomStorageEnabled(true);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        this.a.setLayerType(2, null);
+        this.a.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.TEXT_AUTOSIZING);
+        this.a.getSettings().setMediaPlaybackRequiresUserGesture(false);
+        this.a.getSettings().setMixedContentMode(0);
+        CookieManager.getInstance().setAcceptThirdPartyCookies(this.a, true);
+        this.a.addJavascriptInterface(new pj1(this), "TelegramWebviewProxy");
+        this.a.setWebViewClient(new fg.i(this, 2));
+        frameLayout.addView(this.a, w7.x5.c(-1.0f, -1));
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.j6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.j6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.j6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, TLObject.FLAG_31, null, null, null, null, org.telegram.ui.ActionBar.j6.G8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, TLObject.FLAG_30, null, null, null, null, org.telegram.ui.ActionBar.j6.E8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 1073741832, null, null, null, null, org.telegram.ui.ActionBar.j6.F8));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.j6.D7));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.j6.E7));
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        AndroidUtilities.checkAndroidTheme(getParentActivity(), false);
+        AndroidUtilities.cancelRunOnUIThread(this.s);
+        this.a.setLayerType(0, null);
+        this.s = null;
+        try {
+            ViewParent parent = this.a.getParent();
+            if (parent != null) {
+                ((FrameLayout) parent).removeView(this.a);
+            }
+            this.a.stopLoading();
+            this.a.loadUrl("about:blank");
+            this.a.destroy();
+            this.a = null;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        AndroidUtilities.cancelRunOnUIThread(this.s);
+        this.s.run();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        WebView webView;
+        if (!z10 || z11 || (webView = this.a) == null) {
+            return;
+        }
+        webView.loadUrl(this.d);
     }
 }

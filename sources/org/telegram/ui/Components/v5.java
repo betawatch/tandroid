@@ -1,7 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public interface v5 {
-    void invalidate();
+public final class v5 {
+    public ArrayList a;
+    public HashMap b;
+    public ArrayList c;
+
+    public final void a() {
+        ArrayList arrayList = this.a;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((u5) arrayList.get(i10)).d.spanDrawn = false;
+        }
+    }
+
+    public final void b(int i10) {
+        u5 u5Var = (u5) this.a.remove(i10);
+        HashMap hashMap = this.b;
+        x5 x5Var = (x5) hashMap.get(u5Var.c);
+        if (x5Var == null) {
+            throw new RuntimeException("!!!");
+        }
+        ArrayList arrayList = x5Var.b;
+        arrayList.remove(u5Var);
+        x5Var.a();
+        if (arrayList.isEmpty()) {
+            hashMap.remove(u5Var.c);
+            this.c.remove(x5Var);
+        }
+        q5 q5Var = u5Var.f;
+        if (q5Var != null) {
+            q5Var.p(u5Var);
+        }
+    }
 }

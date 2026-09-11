@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface IOnDoneCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IOnDoneCallback".replace('$', '.');
@@ -14,12 +14,12 @@ public interface IOnDoneCallback extends IInterface {
 
     void onSuccess(w.b bVar);
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static abstract class Stub extends Binder implements IOnDoneCallback {
         static final int TRANSACTION_onFailure = 3;
         static final int TRANSACTION_onSuccess = 2;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Proxy implements IOnDoneCallback {
             private IBinder mRemote;
 
@@ -118,7 +118,7 @@ public interface IOnDoneCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Default implements IOnDoneCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

@@ -1,19 +1,58 @@
 package org.telegram.ui;
 
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class h1 extends g.p {
-    public final /* synthetic */ l1 c;
+public final class h1 extends s4.h0 {
+    public final /* synthetic */ k1 c;
 
-    public h1(l1 l1Var) {
-        this.c = l1Var;
+    public h1(k1 k1Var) {
+        this.c = k1Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        l1 l1Var = this.c;
-        return ((MessageObject.GroupedMessagePosition) l1Var.v.b.get(l1Var.s.items.get((r1.size() - i10) - 1))).spanSize;
+    @Override // s4.h0
+    public final int h() {
+        TL_iv.pageBlockCollage pageblockcollage = this.c.s;
+        if (pageblockcollage == null) {
+            return 0;
+        }
+        return pageblockcollage.items.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
+        return arrayList.get((arrayList.size() - i10) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        k1 k1Var = this.c;
+        j1 j1Var = k1Var.v;
+        ArrayList<TL_iv.PageBlock> arrayList = k1Var.s.items;
+        TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i10) - 1);
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 == 0) {
+            d2 d2Var = (d2) view;
+            d2Var.R = (MessageObject.GroupedMessagePosition) j1Var.b.get(pageBlock);
+            d2Var.a((TL_iv.pageBlockPhoto) pageBlock, k1Var.w.E.cached_page, false, true);
+        } else {
+            x2 x2Var = (x2) view;
+            x2Var.T = (MessageObject.GroupedMessagePosition) j1Var.b.get(pageBlock);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            x2Var.b(pageblockvideo, (y2) k1Var.x.y.f(pageblockvideo.video_id), false, true);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        k1 k1Var = this.c;
+        return new org.telegram.ui.Components.vk0(i10 != 0 ? new x2(k1Var.getContext(), k1Var.x, k1Var.w, 2) : new d2(k1Var.getContext(), k1Var.x, k1Var.w, 2));
     }
 }

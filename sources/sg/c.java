@@ -1,41 +1,40 @@
 package sg;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fb1;
-import org.telegram.ui.w5;
-import xh.x3;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ TLRPC.Chat b;
+public final class c extends b {
+    public d d;
 
-    public /* synthetic */ c(TLRPC.Chat chat) {
-        this.b = chat;
+    @Override // sg.b
+    public final s4.h0 a() {
+        d dVar = new d(UserConfig.selectedAccount, this.a);
+        this.d = dVar;
+        dVar.r = this;
+        return dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Chat chat = this.b;
-                if (chat != null) {
-                    n2 n2Var = new n2();
-                    n2Var.a = true;
-                    LaunchActivity.R().showAsSheet(new w5(-chat.id), n2Var);
-                    break;
-                }
-                break;
-            default:
-                x3.d2(fb1.d0(this.b, true));
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        d dVar = this.d;
+        Context context = getContext();
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        ArrayList arrayList = dVar.f;
+        f fVar = new f(context, dVar.c);
+        int i12 = 0;
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            fVar.a((e) arrayList.get(i13));
+            fVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
+            ((e) arrayList.get(i13)).e = i12;
+            i12 += fVar.getMeasuredHeight();
         }
-    }
-
-    public /* synthetic */ c(x3 x3Var, TLRPC.Chat chat) {
-        this.b = chat;
+        dVar.n = i12;
     }
 }

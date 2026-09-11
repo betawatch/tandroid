@@ -1,68 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.Components.UndoView;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class an implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pn b;
+    public final /* synthetic */ on b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ an(pn pnVar, int i10) {
+    public /* synthetic */ an(on onVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = pnVar;
+        this.b = onVar;
+        this.c = messageObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                eo eoVar = this.b.a;
-                eoVar.d5 = null;
-                eoVar.e5 = null;
+                on onVar = this.b;
+                co coVar = onVar.a;
+                coVar.Q7();
+                UndoView undoView = coVar.y3;
+                if (undoView != null) {
+                    int i10 = (coVar.Y.getVisibility() != 0 || coVar.R.getVisibility() == 0) ? 17 : 16;
+                    MessageObject messageObject = this.c;
+                    undoView.k(0L, i10, messageObject.getDiceEmoji(), null, null, new an(onVar, messageObject, 2));
+                    break;
+                }
                 break;
             case 1:
-                pn pnVar = this.b;
-                pnVar.getClass();
-                eo eoVar2 = pnVar.a;
-                new qg.a1((org.telegram.ui.ActionBar.p2) eoVar2, 8, true).show();
-                eoVar2.getMessagesController().pressTranscribeButton();
-                break;
-            case 2:
-                pn pnVar2 = this.b;
-                pnVar2.getClass();
-                eo eoVar3 = pnVar2.a;
-                new qg.a1((org.telegram.ui.ActionBar.p2) eoVar3, 8, true).show();
-                eoVar3.getMessagesController().pressTranscribeButton();
-                break;
-            case 3:
-                pn pnVar3 = this.b;
-                pnVar3.getClass();
-                eo eoVar4 = pnVar3.a;
-                new qg.a1((org.telegram.ui.ActionBar.p2) eoVar4, 8, true).show();
-                eoVar4.getMessagesController().pressTranscribeButton();
-                break;
-            case 4:
-                this.b.a.presentFragment(new PremiumPreviewFragment(0, "similar_channels"));
-                break;
-            case 5:
-                eo eoVar5 = this.b.a;
-                eoVar5.d5 = null;
-                eoVar5.e5 = null;
-                break;
-            case 6:
-                this.b.a.Y.H0();
-                break;
-            case 7:
-                this.b.a.Y.H0();
-                break;
-            case 8:
-                eo eoVar6 = this.b.a;
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.T0 = true;
-                eoVar6.presentFragment(themeActivity);
+                co coVar2 = this.b.a;
+                coVar2.wb = this.c.getId();
+                coVar2.xb = 0;
                 break;
             default:
-                eo eoVar7 = this.b.a;
-                eoVar7.showDialog(new qg.a1((org.telegram.ui.ActionBar.p2) eoVar7, 39, false));
+                co coVar3 = this.b.a;
+                if (coVar3.f7()) {
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), coVar3.T5, coVar3.n5, coVar3.X3, null, false, null, null, null, true, 0, 0, null, false);
+                    of2.sendMessageChatArguments = coVar3.C8();
+                    coVar3.getSendMessagesHelper().sendMessage(of2);
+                    break;
+                }
                 break;
         }
     }

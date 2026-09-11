@@ -1,21 +1,10 @@
 package a9;
 
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public abstract class f0 extends s implements g0 {
-    @Override // a9.s
-    public final boolean a(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        if (i10 != 2) {
-            return false;
-        }
-        Parcelable.Creator creator = Bundle.CREATOR;
-        Bundle bundle = (Bundle) v.a(parcel);
-        v.b(parcel);
-        b(bundle);
-        return true;
-    }
+public interface f0 extends IInterface {
+    void b(Bundle bundle);
 }

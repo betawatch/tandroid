@@ -5,7 +5,7 @@ import b2.r0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -18,7 +18,7 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final n4.y k;
+    public final pf.b k;
     public final p0 l;
 
     public u(byte[] bArr, int i10) {
@@ -118,7 +118,7 @@ public final class u {
         return new b2.s(rVar);
     }
 
-    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, n4.y yVar, p0 p0Var) {
+    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, pf.b bVar, p0 p0Var) {
         this.a = i10;
         this.b = i11;
         this.c = i12;
@@ -129,7 +129,7 @@ public final class u {
         this.h = i16;
         this.i = a(i16);
         this.j = j3;
-        this.k = yVar;
+        this.k = bVar;
         this.l = p0Var;
     }
 }

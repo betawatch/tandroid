@@ -1,20 +1,31 @@
 package org.telegram.ui.Cells;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class r4 extends FrameLayout {
-    public TextView a;
+    public final int a;
 
-    public void setCellHeight(int i10) {
-        setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(54.0f), i10));
+    public r4(Context context) {
+        this(context, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(54.0f));
     }
 
-    public void setLetter(String str) {
-        this.a.setText(str.toUpperCase());
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    }
+
+    public r4(Context context, int i10, int i11) {
+        super(context);
+        this.a = i11;
+        RadialProgressView radialProgressView = new RadialProgressView(context, null);
+        radialProgressView.setSize(i10);
+        addView(radialProgressView, w7.x5.e(-2, -2, 17));
     }
 }

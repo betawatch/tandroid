@@ -1,138 +1,140 @@
 package org.telegram.ui.Components;
 
+import android.R;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Point;
+import android.view.ActionMode;
+import android.view.Menu;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.ui.ec1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qn extends View {
-    public final /* synthetic */ int a;
+public final class qn extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ rn F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qn(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public qn(rn rnVar, Context context, int i10, kn knVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, knVar, f6Var);
+        this.F = rnVar;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 8:
-                super.onDraw(canvas);
-                canvas.drawLine(0.0f, AndroidUtilities.dp(14.0f), 2.0f, getMeasuredHeight() - AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.j6.k0);
-                break;
-            case 15:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-                break;
-            case 16:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-                break;
-            case 17:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-                break;
-            case 18:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-                break;
-            case 26:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean d() {
+        tn tnVar = this.F.d;
+        ec1 ec1Var = tnVar.s;
+        View F = ec1Var.F(this);
+        s4.c1 T = F == null ? null : ec1Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = tnVar.M;
+            if (i10 == tnVar.J && b10 == (tnVar.t0 + i10) - 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean f(org.telegram.ui.Cells.c6 c6Var) {
+        int b10;
+        tn tnVar = this.F.d;
+        ec1 ec1Var = tnVar.s;
+        View F = ec1Var.F(c6Var);
+        s4.c1 T = F == null ? null : ec1Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
+        }
+        return tnVar.L[b10 - tnVar.t0];
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(org.telegram.ui.Cells.b6 b6Var, ActionMode actionMode) {
+        tn tnVar = this.F.d;
+        if (tnVar.n && b6Var.isFocused() && b6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) tnVar.b.f0).h, false, true, true, true);
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
-                break;
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(81.0f), TLObject.FLAG_30));
-                break;
-            case 5:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(8.0f), TLObject.FLAG_30));
-                break;
-            case 6:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 7:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 8:
-            case 15:
-            case 16:
-            case 17:
-            case 18:
-            case 26:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 9:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 10:
-                Point point = AndroidUtilities.displaySize;
-                int i12 = point.x;
-                int i13 = point.y;
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (i13 * (i12 < i13 ? 0.56f : 0.3f)), TLObject.FLAG_30));
-                break;
-            case 11:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(5.0f), TLObject.FLAG_30));
-                break;
-            case 12:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 13:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-                break;
-            case 14:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(org.telegram.ui.j60.F3 ? 0.0f : 8.0f), TLObject.FLAG_30));
-                break;
-            case 19:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
-                break;
-            case 20:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f));
-                break;
-            case 21:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(7.33f), TLObject.FLAG_30));
-                break;
-            case 22:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-                break;
-            case 23:
-                super.onMeasure(i10, i11);
-                setPivotX(getMeasuredWidth() / 2);
-                setPivotY(getMeasuredHeight());
-                break;
-            case 24:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 25:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-                break;
-            case 27:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(6.0f), TLObject.FLAG_30));
-                break;
-            case 28:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-                break;
-            case 29:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
-                break;
+    @Override // org.telegram.ui.Cells.c6
+    public final void h(org.telegram.ui.Cells.c6 c6Var, boolean z10) {
+        int b10;
+        tn tnVar = this.F.d;
+        if (z10 && tnVar.c0 && !tnVar.b0) {
+            Arrays.fill(tnVar.L, false);
+            tnVar.s.getChildCount();
+            for (int i10 = tnVar.t0; i10 < tnVar.t0 + tnVar.M; i10++) {
+                s4.c1 K = tnVar.s.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.c6) {
+                        ((org.telegram.ui.Cells.c6) view).r.a(false, true);
+                    }
+                }
+            }
         }
+        super.h(c6Var, z10);
+        ec1 ec1Var = tnVar.s;
+        View F = ec1Var.F(c6Var);
+        s4.c1 T = F == null ? null : ec1Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            tnVar.L[b10 - tnVar.t0] = z10;
+        }
+        tnVar.T();
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        tn.M(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        tn.N(this.F.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void k(org.telegram.ui.Cells.b6 b6Var) {
+        this.F.d.b.t1(b6Var, true);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean l(ArrayList arrayList) {
+        tn tnVar = this.F.d;
+        if (!arrayList.isEmpty()) {
+            tnVar.s.getClass();
+            int R = RecyclerView.R(this) - tnVar.t0;
+            if (R >= 0) {
+                org.telegram.ui.Cells.b6 b6Var = this.d;
+                b6Var.getText().replace(b6Var.getSelectionStart(), b6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < tnVar.J) {
+                    for (int length = tnVar.K.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = tnVar.K;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    tnVar.K[i10] = (CharSequence) arrayList.remove(0);
+                    tnVar.M++;
+                    i10++;
+                }
+                tnVar.h0();
+                tnVar.k0 = (tnVar.t0 + i10) - 1;
+                tnVar.s.setItemAnimator(tnVar.v);
+                tnVar.r.l();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean o() {
+        return this.F.d.c0;
     }
 }

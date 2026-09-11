@@ -1,49 +1,39 @@
 package v7;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.RemoteException;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class c9 {
     public static t7.r a;
-    public static s7.e b;
 
-    public static a6.i a(Bitmap bitmap) {
-        n6.l.i(bitmap, "image must not be null");
-        try {
-            s7.e eVar = b;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel O0 = cVar.O0();
-            s7.b.b(O0, bitmap);
-            Parcel N0 = cVar.N0(O0, 6);
-            x6.a L0 = x6.b.L0(N0.readStrongBinder());
-            N0.recycle();
-            return new a6.i(L0);
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
-        }
+    public static void a(sl0 sl0Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        sl0Var.q(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, f6Var), f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q());
     }
 
-    public static a6.i b(int i10) {
-        try {
-            s7.e eVar = b;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel O0 = cVar.O0();
-            O0.writeInt(i10);
-            Parcel N0 = cVar.N0(O0, 1);
-            x6.a L0 = x6.b.L0(N0.readStrongBinder());
-            N0.recycle();
-            return new a6.i(L0);
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
+    public static int b(ji.a aVar) {
+        if (aVar == null) {
+            return 0;
         }
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(com.google.android.gms.internal.vision.e2.w(r4, 1, 24, 28)) : 0);
     }
 
-    public static synchronized y8 c(v8 v8Var) {
+    public static int c(ji.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(com.google.android.gms.internal.vision.e2.w(r3, 1, 16, 12));
+    }
+
+    public static int d(ji.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(com.google.android.gms.internal.vision.e2.w(r3, 1, 16, 8));
+    }
+
+    public static synchronized y8 e(v8 v8Var) {
         y8 y8Var;
         synchronized (c9.class) {
             try {

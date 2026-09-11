@@ -1,35 +1,33 @@
 package zh;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class w0 extends ViewGroup {
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (x0.Z.W) {
-            return;
-        }
-        super.draw(canvas);
+public final /* synthetic */ class w0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+
+    public /* synthetic */ w0(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        x0 x0Var = x0.Z;
-        if (x0Var.e.getParent() == this) {
-            x0Var.e.layout(0, 0, x0Var.J, x0Var.K);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        x0 x0Var = x0.Z;
-        if (x0Var.e.getParent() == this) {
-            x0Var.e.measure(View.MeasureSpec.makeMeasureSpec(x0Var.J, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(x0Var.K, TLObject.FLAG_30));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.run((TL_stars.StarGift) obj);
+                break;
+            default:
+                Boolean bool = (Boolean) obj;
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(bool);
+                    break;
+                }
+                break;
         }
     }
 }

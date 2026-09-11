@@ -1,43 +1,50 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class le implements RequestDelegate {
+public final /* synthetic */ class le implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ le(BaseController baseController, long j3, int i10, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.b = j3;
-        this.c = i10;
+    public /* synthetic */ le(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$506(this.b, this.c, tLObject, tL_error);
+                MessagesController.5.lambda$getRemote$0((Utilities.Callback4) this.b, (TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
+                ((AiTonesController) this.b).lambda$request$0((TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                ((ChatThemeController) this.b).lambda$setDialogTheme$4((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                ((GiftAuctionController) this.b).lambda$requestUserAuctions$10((TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 4:
+                ((MediaDataController) this.b).lambda$loadHints$148((TLRPC.contacts_TopPeers) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 5:
+                MessagesController.lambda$getNextReactionMentionInternal$3((q0.a) this.b, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 6:
+                MessagesController.lambda$createCommunity$255((Utilities.Callback2) this.b, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new p7((org.telegram.ui.j4) this.d, tLObject, this.c, this.b, 11));
+                ((SendMessagesHelper) this.b).lambda$deletePollOption$27((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ le(org.telegram.ui.j4 j4Var, int i10, long j3) {
-        this.a = 2;
-        this.d = j4Var;
-        this.c = i10;
-        this.b = j3;
     }
 }

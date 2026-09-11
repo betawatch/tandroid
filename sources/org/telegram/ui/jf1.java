@@ -1,24 +1,26 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
 import android.view.View;
-import java.util.HashSet;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jf1 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
+public final class jf1 implements View.OnClickListener {
+    public final /* synthetic */ eg1 a;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                HashSet hashSet = ig1.n1;
-                break;
-            default:
-                int[][] iArr = WallpapersListActivity.k0;
-                break;
+    public jf1(eg1 eg1Var) {
+        this.a = eg1Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        eg1 eg1Var = this.a;
+        if (eg1Var.M == 1) {
+            org.telegram.ui.Components.e5.j0(eg1Var, -eg1Var.a, null, eg1Var.g(), null, false, eg1Var.J, new va(this, 5), eg1Var.getResourceProvider());
+            return;
         }
-        return true;
+        eg1Var.getMessagesController().addUserToChat(eg1Var.a, eg1Var.getUserConfig().getCurrentUser(), 0, null, eg1Var, false, new cf1(eg1Var, 2), new df1(eg1Var));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
+        eg1Var.O0(false);
     }
 }

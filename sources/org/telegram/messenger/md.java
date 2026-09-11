@@ -1,58 +1,25 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class md implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+import java.util.function.IntFunction;
 
-    public /* synthetic */ md(MessagesController messagesController, int i10) {
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class md implements IntFunction {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ md(int i10) {
         this.a = i10;
-        this.b = messagesController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
+        int[][] lambda$new$16;
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedDeleteTask$87();
-                break;
-            case 1:
-                this.b.lambda$markAllTopicsAsRead$5();
-                break;
-            case 2:
-                this.b.lambda$hidePromoDialog$136();
-                break;
-            case 3:
-                this.b.removePromoDialog();
-                break;
-            case 4:
-                this.b.lambda$putUsers$57();
-                break;
-            case 5:
-                this.b.lambda$didReceivedNotification$42();
-                break;
-            case 6:
-                this.b.lambda$addWebBrowserException$512();
-                break;
-            case 7:
-                this.b.lambda$markAllTopicsAsRead$6();
-                break;
-            case 8:
-                this.b.lambda$removeWebBrowserException$514();
-                break;
-            case 9:
-                this.b.lambda$new$13();
-                break;
-            case 10:
-                this.b.loadAppConfig();
-                break;
-            case 11:
-                this.b.lambda$new$17();
-                break;
+                return String.valueOf(i10);
             default:
-                this.b.lambda$new$0();
-                break;
+                lambda$new$16 = MessagesController.lambda$new$16(i10);
+                return lambda$new$16;
         }
     }
 }

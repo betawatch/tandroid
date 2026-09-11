@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.WindowManager;
 import b2.e1;
 import b2.i0;
 import b2.j0;
@@ -9,12 +10,11 @@ import b2.l1;
 import b2.m1;
 import b2.r0;
 import b2.r1;
-import bi.p4;
-import bi.u6;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingRegistrar;
+import di.x3;
 import e2.d0;
 import e9.a1;
 import e9.f0;
@@ -24,21 +24,20 @@ import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import v7.y7;
+import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.Components.fv0;
+import org.telegram.ui.Components.gv0;
+import v7.x7;
 import y9.e2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities.Callback2Return, i5.e, Continuation, q9.d, ch.d {
+public final /* synthetic */ class w implements d9.e, NativeInstance.AudioLevelsCallback, fv0, gv0, a2, i5.e, Continuation, q9.d, GenericProvider {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w(int i10) {
@@ -46,15 +45,15 @@ public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities
     }
 
     @Override // q9.d
-    public Object P1(u6 u6Var) {
+    public Object D(cf.c cVar) {
         FirebaseMessaging lambda$getComponents$0;
-        lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(u6Var);
+        lambda$getComponents$0 = FirebaseMessagingRegistrar.lambda$getComponents$0(cVar);
         return lambda$getComponents$0;
     }
 
     public Constructor a() {
         switch (this.a) {
-            case 14:
+            case 18:
                 if (Boolean.TRUE.equals(Class.forName("androidx.media3.decoder.flac.FlacLibrary").getMethod("isAvailable", null).invoke(null, null))) {
                     return Class.forName("androidx.media3.decoder.flac.FlacExtractor").asSubclass(c3.o.class).getConstructor(Integer.TYPE);
                 }
@@ -255,7 +254,7 @@ public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities
                 l1 l1Var = new l1(bundle8.getString(l1.g, ""), (b2.s[]) j3.toArray(new b2.s[0]));
                 int[] intArray = bundle7.getIntArray(m1.d);
                 intArray.getClass();
-                return new m1(l1Var, y7.a(intArray));
+                return new m1(l1Var, x7.a(intArray));
             case 9:
                 r1 r1Var = (r1) obj;
                 r1Var.getClass();
@@ -265,17 +264,17 @@ public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities
                 bundle9.putBooleanArray(r1.h, r1Var.e);
                 bundle9.putBoolean(r1.i, r1Var.c);
                 return bundle9;
-            case 16:
+            case 20:
                 ca.a.b.getClass();
-                return z9.c.a.a((e2) obj).getBytes(Charset.forName("UTF-8"));
-            case 22:
+                return z9.b.a.y((e2) obj).getBytes(Charset.forName("UTF-8"));
+            case 26:
                 wa.e eVar = (wa.e) obj;
                 eVar.getClass();
                 aa.a aVar = com.google.firebase.messaging.q.a;
                 aVar.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    aVar.j(eVar, byteArrayOutputStream);
+                    aVar.l(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -284,47 +283,59 @@ public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities
         }
     }
 
-    @Override // ch.d
-    public int g(f6 f6Var, boolean z10) {
+    @Override // org.telegram.ui.Components.gv0
+    public void b(Object obj, float f7) {
+        bi.a2 a2Var = (bi.a2) obj;
         switch (this.a) {
-            case 24:
-                return dh.c.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.d6, f6Var), j6.v0(j6.Sd, f6Var));
-            case 25:
-                if (!LiteMode.isEnabled(256)) {
-                    return j6.w0(null, j6.G8, false);
-                }
-                return j6.l1(z10 ? 0.85f : 0.825f, j6.w0(null, j6.G8, false));
-            case 26:
-                return dh.c.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.d6, f6Var), j6.v0(j6.Zk, f6Var));
-            case 27:
-                return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.Fi, f6Var));
-            case 28:
-                return 855638016;
+            case 12:
+                WindowManager.LayoutParams layoutParams = a2Var.c;
+                a2Var.N = f7;
+                layoutParams.x = (int) f7;
+                AndroidUtilities.updateViewLayout(a2Var.b, a2Var.d, layoutParams);
+                break;
             default:
-                return TLObject.FLAG_30;
+                WindowManager.LayoutParams layoutParams2 = a2Var.c;
+                a2Var.O = f7;
+                layoutParams2.y = (int) f7;
+                AndroidUtilities.updateViewLayout(a2Var.b, a2Var.d, layoutParams2);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 15:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fv0
+    public float get(Object obj) {
+        bi.a2 a2Var = (bi.a2) obj;
+        switch (this.a) {
+            case 11:
+                return a2Var.N;
+            default:
+                return a2Var.O;
         }
     }
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        MediaController.AlbumEntry albumEntry = p4.j0;
+        MediaController.AlbumEntry albumEntry = x3.j0;
         return 0;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        Integer num = (Integer) obj2;
-        if (((Integer) obj).intValue() == 0) {
-            return num.intValue() == 0 ? LocaleController.getString(R.string.LiveStoryPricePerCommentFree) : LocaleController.formatPluralStringComma("Stars", num.intValue());
-        }
-        return "" + num;
     }
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
         int i10;
         switch (this.a) {
-            case 18:
+            case 22:
                 i10 = 403;
                 break;
             default:
@@ -332,5 +343,9 @@ public final /* synthetic */ class w implements d9.e, GenericProvider, Utilities
                 break;
         }
         return Integer.valueOf(i10);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
     }
 }

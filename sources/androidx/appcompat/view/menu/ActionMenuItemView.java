@@ -21,9 +21,9 @@ import l.z;
 import m.i;
 import m.z0;
 import org.telegram.tgnet.TLObject;
-import w7.p;
+import w7.o;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i {
     public boolean E;
@@ -91,9 +91,9 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            p.a(this, z12 ? null : this.n.e);
+            o.a(this, z12 ? null : this.n.e);
         } else {
-            p.a(this, charSequence2);
+            o.a(this, charSequence2);
         }
     }
 

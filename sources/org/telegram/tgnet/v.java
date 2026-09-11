@@ -1,57 +1,33 @@
 package org.telegram.tgnet;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements Vector.TLDeserializer {
+public final /* synthetic */ class v implements Utilities.Callback {
     public final /* synthetic */ int a;
+    public final /* synthetic */ OutputSerializedData b;
 
-    public /* synthetic */ v(int i10) {
+    public /* synthetic */ v(OutputSerializedData outputSerializedData, int i10) {
         this.a = i10;
+        this.b = outputSerializedData;
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                return TLRPC.TL_paymentFormMethod.TLdeserialize(inputSerializedData, i10, z10);
+                this.b.writeInt64(((Long) obj).longValue());
+                break;
             case 1:
-                return TLRPC.TL_paymentSavedCredentialsCard.TLdeserialize(inputSerializedData, i10, z10);
+                this.b.writeInt32(((Integer) obj).intValue());
+                break;
             case 2:
-                return TLRPC.TL_shippingOption.TLdeserialize(inputSerializedData, i10, z10);
-            case 3:
-                return TLRPC.Photo.TLdeserialize(inputSerializedData, i10, z10);
-            case 4:
-                return TLRPC.PollAnswerVoters.TLdeserialize(inputSerializedData, i10, z10);
-            case 5:
-                return TL_keyboard.KeyboardInlineButtonRow.TLdeserialize(inputSerializedData, i10, z10);
-            case 6:
-                return TL_keyboard.KeyboardButtonRow.TLdeserialize(inputSerializedData, i10, z10);
-            case 7:
-                return TLRPC.TL_messageReportOption.TLdeserialize(inputSerializedData, i10, z10);
-            case 8:
-                return TLRPC.SecureRequiredType.TLdeserialize(inputSerializedData, i10, z10);
-            case 9:
-                return TLRPC.SecureFile.TLdeserialize(inputSerializedData, i10, z10);
-            case 10:
-                return TLRPC.TL_themeSettings.TLdeserialize(inputSerializedData, i10, z10);
-            case 11:
-                return TLRPC.TL_topPeer.TLdeserialize(inputSerializedData, i10, z10);
-            case 12:
-                return TLRPC.Update.TLdeserialize(inputSerializedData, i10, z10);
-            case 13:
-                return TLRPC.EncryptedMessage.TLdeserialize(inputSerializedData, i10, z10);
-            case 14:
-                return TLRPC.TL_fileHash.TLdeserialize(inputSerializedData, i10, z10);
-            case 15:
-                return TLRPC.TL_premiumGiftOption.TLdeserialize(inputSerializedData, i10, z10);
-            case 16:
-                return TLRPC.WebPageAttribute.TLdeserialize(inputSerializedData, i10, z10);
+                this.b.writeByteArray((byte[]) obj);
+                break;
             default:
-                return Vector.Int.TLDeserialize(inputSerializedData, i10, z10);
+                this.b.writeString((String) obj);
+                break;
         }
     }
 }

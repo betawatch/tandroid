@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class n6 {
     public static void a(String str, Bundle bundle) {
@@ -43,19 +43,19 @@ public abstract class n6 {
             if (string6 != null) {
                 try {
                     bundle2.putInt("_nmt", Integer.parseInt(string6));
-                } catch (NumberFormatException e) {
-                    Log.w("FirebaseMessaging", "Error while parsing timestamp in GCM event", e);
+                } catch (NumberFormatException e7) {
+                    Log.w("FirebaseMessaging", "Error while parsing timestamp in GCM event", e7);
                 }
             }
             String string7 = bundle.containsKey("google.c.a.udt") ? bundle.getString("google.c.a.udt") : null;
             if (string7 != null) {
                 try {
                     bundle2.putInt("_ndt", Integer.parseInt(string7));
-                } catch (NumberFormatException e7) {
-                    Log.w("FirebaseMessaging", "Error while parsing use_device_time in GCM event", e7);
+                } catch (NumberFormatException e10) {
+                    Log.w("FirebaseMessaging", "Error while parsing use_device_time in GCM event", e10);
                 }
             }
-            String str2 = android.support.v4.media.c.f(bundle) ? "display" : "data";
+            String str2 = xa.c.L(bundle) ? "display" : "data";
             if ("_nr".equals(str) || "_nf".equals(str)) {
                 bundle2.putString("_nmc", str2);
             }

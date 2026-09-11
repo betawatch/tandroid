@@ -1,45 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class o50 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f60 b;
+public interface o50 {
+    long a();
 
-    public /* synthetic */ o50(f60 f60Var, int i10) {
-        this.a = i10;
-        this.b = f60Var;
-    }
+    boolean c();
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                f60 f60Var = this.b;
-                if (animator.equals(f60Var.G)) {
-                    f60Var.G = null;
-                    break;
-                }
-                break;
-            case 1:
-                f60 f60Var2 = this.b;
-                if (f60Var2.b1 != null) {
-                    f60Var2.b1 = null;
-                    break;
-                }
-                break;
-            default:
-                f60 f60Var3 = this.b;
-                if (animator.equals(f60Var3.W)) {
-                    f60Var3.h(true);
-                    f60Var3.W0 = false;
-                    f60Var3.setVisibility(4);
-                    break;
-                }
-                break;
-        }
-    }
+    int getClassGuid();
+
+    View getFragmentView();
+
+    Activity getParentActivity();
+
+    void q(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j3);
+
+    boolean v();
 }

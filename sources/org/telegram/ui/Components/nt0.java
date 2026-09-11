@@ -1,24 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nt0 extends org.telegram.ui.go {
-    public final /* synthetic */ iv0 f;
+public final /* synthetic */ class nt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ot0 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt0(iv0 iv0Var, Context context, org.telegram.ui.ActionBar.f5 f5Var, Bundle bundle) {
-        super(context, f5Var, bundle);
-        this.f = iv0Var;
+    public /* synthetic */ nt0(ot0 ot0Var, String str, int i10) {
+        this.a = i10;
+        this.b = ot0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.go
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.w0 w0Var = this.f.n0;
-        if (w0Var != null) {
-            w0Var.setShowSearchProgress(z10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ot0 ot0Var = this.b;
+                String str = this.c;
+                ot0Var.getClass();
+                AndroidUtilities.runOnUIThread(new nt0(ot0Var, str, 1));
+                break;
+            default:
+                ot0 ot0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                ot0Var2.f = null;
+                if (!ChatObject.isChannel(ot0Var2.n) && ot0Var2.s.d1 != null) {
+                    arrayList = new ArrayList(ot0Var2.s.d1.participants.participants);
+                }
+                ot0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new er0(ot0Var2, str2, arrayList, 3));
+                } else {
+                    ot0Var2.r = 1;
+                }
+                ot0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(ot0Var2.n) ? ot0Var2.n.id : 0L, false, 2, 1);
+                break;
         }
     }
 }

@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class q50 implements org.telegram.ui.Components.d50 {
+public final class q50 implements org.telegram.ui.Components.t40 {
     public float a;
     public TLRPC.FileLocation b;
     public TLRPC.FileLocation c;
@@ -20,15 +20,15 @@ public final class q50 implements org.telegram.ui.Components.d50 {
         this.e = j3;
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final void C(float f7) {
         this.f.b.O(this.d, f7);
         a(f7);
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        AndroidUtilities.runOnUIThread(new ei.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
+        AndroidUtilities.runOnUIThread(new gi.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
     }
 
     public final void a(float f7) {
@@ -54,31 +54,31 @@ public final class q50 implements org.telegram.ui.Components.d50 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.d50
-    public final /* synthetic */ ev0 getCloseIntoObject() {
+    @Override // org.telegram.ui.Components.t40
+    public final /* synthetic */ cv0 getCloseIntoObject() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final /* synthetic */ boolean t() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d50
+    @Override // org.telegram.ui.Components.t40
     public final /* synthetic */ void P() {
     }
 
-    @Override // org.telegram.ui.Components.d50
-    public final void K(boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.t40
+    public final void L(boolean z10, boolean z11) {
     }
 }

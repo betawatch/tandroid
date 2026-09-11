@@ -1,75 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gq implements org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
+public final /* synthetic */ class gq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rq b;
+    public final /* synthetic */ qq b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ gq(rq rqVar, int i10) {
+    public /* synthetic */ gq(qq qqVar, long j3, int i10) {
         this.a = i10;
-        this.b = rqVar;
+        this.b = qqVar;
+        this.c = j3;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.r0(true);
+                long j3 = this.c;
+                qq qqVar = this.b;
+                qqVar.n = j3;
+                qqVar.r = true;
+                qqVar.n0();
                 break;
-            case 1:
-                rq rqVar = this.b;
-                rqVar.t0(true);
-                jq jqVar = new jq(rqVar, 0);
-                if (!rqVar.K && !rqVar.L) {
-                    rqVar.getMessagesController().addUserToChat(rqVar.w.id, rqVar.v, 0, rqVar.Y0, rqVar, true, jqVar, new gq(rqVar, 3));
-                    break;
-                } else {
-                    rqVar.getMessagesController().setUserAdminRole(rqVar.w.id, rqVar.v, rqVar.K ? rqVar.M : rq.o0(false), rqVar.S, false, rqVar, rqVar.Z0, rqVar.K, rqVar.Y0, jqVar, new gq(rqVar, 2));
-                    break;
-                }
-                break;
-            case 2:
-            case 3:
             default:
-                rq rqVar2 = this.b;
-                rqVar2.getClass();
-                rqVar2.presentFragment(new mh1(6, null));
+                qq.Z(this.b, this.c);
                 break;
-            case 4:
-                this.b.finishFragment();
-                break;
-            case 5:
-                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                rq rqVar3 = this.b;
-                oe oeVar = new oe(12, rqVar3, twoStepVerificationActivity);
-                twoStepVerificationActivity.Z = 0;
-                twoStepVerificationActivity.b0 = oeVar;
-                rqVar3.presentFragment(twoStepVerificationActivity);
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j3) {
-        rq.U(this.b, j3);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 2:
-                this.b.t0(false);
-                return true;
-            case 3:
-                this.b.t0(false);
-                return true;
-            default:
-                return rq.W(this.b, tL_error);
         }
     }
 }

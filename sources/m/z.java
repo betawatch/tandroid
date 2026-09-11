@@ -8,10 +8,10 @@ import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.RadioButton;
 import org.telegram.messenger.beta.R;
-import v7.v7;
-import w7.o6;
+import v7.u7;
+import w7.l6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class z extends RadioButton implements u0.k {
     public final p a;
@@ -168,7 +168,7 @@ public final class z extends RadioButton implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((o6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((l6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
@@ -219,6 +219,6 @@ public final class z extends RadioButton implements u0.k {
 
     @Override // android.widget.CompoundButton
     public void setButtonDrawable(int i10) {
-        setButtonDrawable(v7.b(getContext(), i10));
+        setButtonDrawable(u7.b(getContext(), i10));
     }
 }

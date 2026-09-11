@@ -1,110 +1,143 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class cx extends wx {
-    public static final /* synthetic */ int H0 = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 E0;
-    public final /* synthetic */ boolean F0;
-    public final /* synthetic */ rz G0;
+public final class cx implements z4.e {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ kz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(rz rzVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.ActionBar.p2 p2Var, boolean z10) {
-        super(rzVar, context, f6Var);
-        this.G0 = rzVar;
-        this.E0 = p2Var;
-        this.F0 = z10;
+    public cx(kz kzVar, boolean z10) {
+        this.b = kzVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.sm0
-    public final void j() {
-        dx dxVar = this.G0.C0;
-        if (dxVar != null) {
-            dxVar.invalidate();
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        float f10;
+        kz kzVar = this.b;
+        xy xyVar = kzVar.G0;
+        xy xyVar2 = kzVar.o0;
+        xy xyVar3 = kzVar.V;
+        yw ywVar = kzVar.C0;
+        tw twVar = kzVar.D0;
+        rx rxVar = kzVar.p0;
+        nw nwVar = kzVar.h0;
+        kx kxVar = kzVar.P;
+        boolean z10 = true;
+        if (kzVar.x0 == null || kzVar.g0 == null) {
+            f10 = 0.0f;
+        } else {
+            if (i10 == 0) {
+                kxVar.setVisibility(0);
+                f10 = 0.0f;
+                nwVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                rxVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                twVar.setVisibility(8);
+                if (ywVar != null) {
+                    ywVar.setVisibility(8);
+                }
+            } else {
+                f10 = 0.0f;
+                if (i10 == 1) {
+                    kxVar.setVisibility(8);
+                    nwVar.setVisibility(0);
+                    rxVar.setVisibility(0);
+                    twVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                    if (ywVar != null) {
+                        ywVar.setVisibility(f7 != 0.0f ? 0 : 8);
+                    }
+                } else if (i10 == 2) {
+                    kxVar.setVisibility(8);
+                    nwVar.setVisibility(8);
+                    rxVar.setVisibility(8);
+                    twVar.setVisibility(0);
+                    if (ywVar != null) {
+                        ywVar.setVisibility(0);
+                    }
+                }
+            }
         }
+        kzVar.getMeasuredWidth();
+        kzVar.getPaddingLeft();
+        kzVar.getPaddingRight();
+        ly lyVar = kzVar.t1;
+        if (lyVar != null) {
+            if (i10 == 1) {
+                lyVar.s(i11 == 0 ? 0 : 2);
+            } else if (i10 == 2) {
+                lyVar.s(3);
+            } else {
+                lyVar.s(0);
+            }
+        }
+        kzVar.O(true);
+        int currentItem = kzVar.h.getCurrentItem();
+        xy xyVar4 = currentItem == 0 ? xyVar3 : currentItem == 1 ? xyVar2 : xyVar;
+        String obj = xyVar4.d.getText().toString();
+        int i12 = 0;
+        while (i12 < 3) {
+            xy xyVar5 = i12 == 0 ? xyVar3 : i12 == 1 ? xyVar2 : xyVar;
+            if (xyVar5 != null) {
+                hq hqVar = xyVar5.d;
+                if (xyVar5 != xyVar4 && hqVar != null && !hqVar.getText().toString().equals(obj)) {
+                    hqVar.setText(obj);
+                    hqVar.setSelection(obj.length());
+                }
+            }
+            i12++;
+        }
+        if ((i10 != 0 || f7 <= f10) && i10 != 1) {
+            z10 = false;
+        }
+        kz.c(kzVar, z10);
+        kzVar.a0();
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.sm0
-    public final void o(int i10, int i11) {
-        rz rzVar = this.G0;
-        org.telegram.ui.Cells.l9 l9Var = rzVar.f2;
-        int i12 = rzVar.E1;
-        int i13 = i10 - i12;
-        int i14 = i11 - i12;
-        int i15 = rzVar.c1;
-        MediaDataController mediaDataController = MediaDataController.getInstance(i15);
-        ArrayList arrayList = rzVar.d1;
-        arrayList.add(i14, (TLRPC.TL_messages_stickerSet) arrayList.remove(i13));
-        int i16 = 1;
-        Collections.sort(mediaDataController.getStickerSets(0), new tl(this, i16));
-        ArrayList arrayList2 = rzVar.H2;
-        if (arrayList2 != null) {
-            arrayList2.clear();
-            rzVar.H2.addAll(arrayList);
+    @Override // z4.e
+    public final void b(int i10) {
+        kz kzVar = this.b;
+        zw zwVar = kzVar.h;
+        boolean z10 = false;
+        if (zwVar != null) {
+            int currentItem = zwVar.getCurrentItem();
+            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
+            if (kzVar.A1 != i11) {
+                kzVar.A1 = i11;
+                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
+            }
         }
-        rzVar.F();
-        AndroidUtilities.cancelRunOnUIThread(l9Var);
-        AndroidUtilities.runOnUIThread(l9Var, 1500L);
-        MediaDataController.getInstance(i15).calcNewHash(0);
-        TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
-        tL_messages_reorderStickerSets.masks = false;
-        tL_messages_reorderStickerSets.emojis = false;
-        for (int i17 = rzVar.e0; i17 < arrayList.size(); i17 = com.google.android.gms.internal.vision.e2.f(((TLRPC.TL_messages_stickerSet) arrayList.get(i17)).set.id, tL_messages_reorderStickerSets.order, i17, 1)) {
+        kzVar.N(i10 == 0, true);
+        if (i10 == 2 && (this.a || kzVar.v0)) {
+            z10 = true;
         }
-        ConnectionsManager.getInstance(i15).sendRequest(tL_messages_reorderStickerSets, new bi.g1(9));
-        NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);
-        rzVar.Z(true);
-        if (SharedConfig.updateStickersOrderOnSend) {
-            SharedConfig.toggleUpdateStickersOrderOnSend();
-            org.telegram.ui.ActionBar.p2 p2Var = this.E0;
-            if (p2Var != null) {
-                wc.a0(p2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new rd(i16, p2Var)).j();
+        kzVar.S(z10, true);
+        if (kzVar.t1.z()) {
+            if (i10 == 0) {
+                kw kwVar = kzVar.V;
+                if (kwVar != null) {
+                    kwVar.d.requestFocus();
+                    return;
+                }
                 return;
             }
-            FrameLayout frameLayout = rzVar.r;
-            if (frameLayout != null) {
-                new wc(frameLayout, rzVar.Z1).M(LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), R.raw.filter_reorder).j();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sm0
-    public final void p() {
-        rz rzVar = this.G0;
-        rzVar.a0();
-        dx dxVar = rzVar.C0;
-        if (dxVar != null) {
-            dxVar.invalidate();
-        }
-        invalidate();
-        sy syVar = rzVar.t1;
-        if (syVar != null) {
-            syVar.u();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            if (this.F0) {
+            if (i10 == 1) {
+                qw qwVar = kzVar.o0;
+                if (qwVar != null) {
+                    qwVar.d.requestFocus();
+                    return;
+                }
                 return;
             }
-            this.G0.x0.invalidate();
+            ww wwVar = kzVar.G0;
+            if (wwVar != null) {
+                wwVar.d.requestFocus();
+            }
         }
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

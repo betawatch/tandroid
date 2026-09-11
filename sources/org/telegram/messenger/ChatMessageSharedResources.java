@@ -3,14 +3,14 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class ChatMessageSharedResources {
     public Drawable chat_msgAvatarLiveLocationDrawable;
     public Drawable chat_redLocationIcon;
     public Context context;
-    public org.telegram.ui.r3 inRichMessageResources;
-    public org.telegram.ui.r3 outRichMessageResources;
+    public org.telegram.ui.q3 inRichMessageResources;
+    public org.telegram.ui.q3 outRichMessageResources;
 
     public ChatMessageSharedResources(Context context) {
         this.context = context;

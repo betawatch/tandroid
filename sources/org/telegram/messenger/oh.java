@@ -1,32 +1,44 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.PasskeysController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oh implements Runnable {
+public final /* synthetic */ class oh implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ LongSparseIntArray c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ oh(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, int i10) {
+    public /* synthetic */ oh(Object obj, Object obj2, long j3, int i10) {
         this.a = i10;
-        this.b = notificationsController;
-        this.c = longSparseIntArray;
-        this.d = arrayList;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDialogsUpdateRead$30(this.c, this.d);
+                PasskeysController.1.lambda$onResult$0((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback3) this.d, this.b, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                ((BotForumHelper) this.c).lambda$performSendBotTopicCreate$5(this.b, (String) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$removeDeletedHisoryFromNotifications$13(this.c, this.d);
+                ((GiftAuctionController) this.c).lambda$getOrRequestAuction$12((Utilities.Callback2) this.d, this.b, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ oh(BotForumHelper botForumHelper, long j3, String str) {
+        this.a = 1;
+        this.c = botForumHelper;
+        this.b = j3;
+        this.d = str;
     }
 }

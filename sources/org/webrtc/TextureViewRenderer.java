@@ -10,14 +10,14 @@ import android.view.View;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.of;
+import org.telegram.messenger.ef;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -139,7 +139,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        hc.b.w(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        i2.g.v(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -188,7 +188,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                 if (runnable != null) {
                     AndroidUtilities.cancelRunOnUIThread(runnable);
                 }
-                fg.n nVar = new fg.n(this, i11, i12, 14);
+                hg.n nVar = new hg.n(this, i11, i12, 14);
                 this.updateScreenRunnable = nVar;
                 postOrRun(nVar);
             } catch (Throwable th2) {
@@ -315,9 +315,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    of ofVar = new of(this, i10, i11, i19, i18, 2);
-                    this.updateScreenRunnable = ofVar;
-                    postOrRun(ofVar);
+                    ef efVar = new ef(this, i10, i11, i19, i18, 2);
+                    this.updateScreenRunnable = efVar;
+                    postOrRun(efVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -568,7 +568,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;

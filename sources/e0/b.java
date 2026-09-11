@@ -27,16 +27,17 @@ import android.widget.CompoundButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
-import bi.h8;
+import di.g7;
 import java.io.InputStream;
 import java.math.RoundingMode;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
+import ji.u4;
 import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void A(TextView textView, PorterDuff.Mode mode) {
@@ -63,8 +64,8 @@ public abstract class b {
         popupWindow.setOverlapAnchor(z10);
     }
 
-    public static void G(AudioTrack audioTrack, a6.i iVar) {
-        audioTrack.setPreferredDevice(iVar == null ? null : (AudioDeviceInfo) iVar.b);
+    public static void G(AudioTrack audioTrack, u4 u4Var) {
+        audioTrack.setPreferredDevice(u4Var == null ? null : (AudioDeviceInfo) u4Var.b);
     }
 
     public static void H(PopupWindow popupWindow, int i10) {
@@ -192,12 +193,12 @@ public abstract class b {
         return new Notification.Action.Builder(icon, charSequence, pendingIntent);
     }
 
-    public static long c(AudioTrack audioTrack, k2.w wVar) {
-        if (wVar.c == 0) {
-            return e2.d0.W(wVar.e, audioTrack.getBufferSizeInFrames());
+    public static long c(AudioTrack audioTrack, k2.v vVar) {
+        if (vVar.c == 0) {
+            return e2.d0.W(vVar.e, audioTrack.getBufferSizeInFrames());
         }
         long bufferSizeInFrames = audioTrack.getBufferSizeInFrames();
-        int i10 = c3.b.i(wVar.g);
+        int i10 = c3.b.i(vVar.g);
         e2.d.g(i10 != -2147483647);
         return e2.d0.Y(bufferSizeInFrames, 1000000L, i10, RoundingMode.DOWN);
     }
@@ -243,13 +244,13 @@ public abstract class b {
 
     public static boolean l(Context context) {
         try {
-            FingerprintManager c10 = u2.c.c(context.getSystemService("fingerprint"));
-            if (c10 == null) {
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return c10.hasEnrolledFingerprints();
-        } catch (Exception e) {
-            FileLog.e(e);
+            return a2.hasEnrolledFingerprints();
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return false;
         }
     }
@@ -262,13 +263,13 @@ public abstract class b {
         return textPaint.hasGlyph(str);
     }
 
-    public static boolean o(AudioManager audioManager, a6.i iVar) {
+    public static boolean o(AudioManager audioManager, u4 u4Var) {
         AudioDeviceInfo[] audioDeviceInfoArr;
-        if (iVar == null) {
+        if (u4Var == null) {
             audioManager.getClass();
             audioDeviceInfoArr = audioManager.getDevices(2);
         } else {
-            audioDeviceInfoArr = new AudioDeviceInfo[]{(AudioDeviceInfo) iVar.b};
+            audioDeviceInfoArr = new AudioDeviceInfo[]{(AudioDeviceInfo) u4Var.b};
         }
         e9.l0 l0Var = new e9.l0(4);
         Integer[] numArr = {8, 7};
@@ -298,13 +299,13 @@ public abstract class b {
 
     public static boolean p(Context context) {
         try {
-            FingerprintManager c10 = u2.c.c(context.getSystemService("fingerprint"));
-            if (c10 == null) {
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
                 return false;
             }
-            return c10.isHardwareDetected();
-        } catch (Exception e) {
-            FileLog.e(e);
+            return a2.isHardwareDetected();
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return false;
         }
     }
@@ -314,7 +315,7 @@ public abstract class b {
     }
 
     public static boolean r(Throwable th2) {
-        return j2.h.f(th2);
+        return j2.e.g(th2);
     }
 
     public static int s(AppOpsManager appOpsManager, String str, String str2) {
@@ -334,44 +335,44 @@ public abstract class b {
     }
 
     public static void w(k2.p pVar, Object obj) {
-        a6.i iVar;
-        AudioDeviceInfo c10 = j2.h.c(obj);
-        k2.e0 e0Var = (k2.e0) pVar;
-        if (c10 == null) {
-            iVar = null;
+        u4 u4Var;
+        AudioDeviceInfo d = j2.e.d(obj);
+        k2.d0 d0Var = (k2.d0) pVar;
+        if (d == null) {
+            u4Var = null;
         } else {
-            e0Var.getClass();
-            iVar = new a6.i(c10, 27);
+            d0Var.getClass();
+            u4Var = new u4(d, 1);
         }
-        e0Var.c0 = iVar;
-        h8 h8Var = e0Var.z;
-        if (h8Var != null) {
-            h8Var.c(c10);
+        d0Var.c0 = u4Var;
+        g7 g7Var = d0Var.z;
+        if (g7Var != null) {
+            g7Var.c(d);
         }
-        AudioTrack audioTrack = e0Var.x;
+        AudioTrack audioTrack = d0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, e0Var.c0);
+            G(audioTrack, d0Var.c0);
         }
     }
 
     public static void x(k2.p pVar, Object obj) {
-        a6.i iVar;
-        AudioDeviceInfo c10 = j2.h.c(obj);
-        k2.e0 e0Var = (k2.e0) pVar;
-        if (c10 == null) {
-            iVar = null;
+        u4 u4Var;
+        AudioDeviceInfo d = j2.e.d(obj);
+        k2.d0 d0Var = (k2.d0) pVar;
+        if (d == null) {
+            u4Var = null;
         } else {
-            e0Var.getClass();
-            iVar = new a6.i(c10, 27);
+            d0Var.getClass();
+            u4Var = new u4(d, 1);
         }
-        e0Var.c0 = iVar;
-        h8 h8Var = e0Var.z;
-        if (h8Var != null) {
-            h8Var.c(c10);
+        d0Var.c0 = u4Var;
+        g7 g7Var = d0Var.z;
+        if (g7Var != null) {
+            g7Var.c(d);
         }
-        AudioTrack audioTrack = e0Var.x;
+        AudioTrack audioTrack = d0Var.x;
         if (audioTrack != null) {
-            G(audioTrack, e0Var.c0);
+            G(audioTrack, d0Var.c0);
         }
     }
 

@@ -8,12 +8,12 @@ import jd.a;
 import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
 import rd.l;
+import v7.s7;
 import v7.t7;
-import v7.u7;
 import zd.e0;
 import zd.s;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -27,7 +27,7 @@ public final class zzgb implements zzdw {
         zzdu zzduVar;
         this.zza = zzfpVar;
         int i10 = zzby.zza;
-        this.zzc = t7.a(zzfv.zza);
+        this.zzc = s7.a(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -63,7 +63,7 @@ public final class zzgb implements zzdw {
                 Object obj2 = a.a;
                 i10 = zzfrVar.zzc;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
@@ -76,7 +76,7 @@ public final class zzgb implements zzdw {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzcsVar = zzfrVar.zzd;
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));

@@ -4,28 +4,15 @@ import android.os.IBinder;
 import android.os.IInterface;
 
 /* loaded from: classes.dex */
-public final class a2 extends n6.g {
-    @Override // n6.g, com.google.android.gms.common.api.c
-    public final int l() {
-        return 11925000;
+public final class a2 implements IInterface {
+    public final IBinder a;
+
+    public a2(IBinder iBinder) {
+        this.a = iBinder;
     }
 
-    @Override // n6.g
-    public final /* synthetic */ IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.clearcut.internal.IClearcutLoggerService");
-        return queryLocalInterface instanceof b2 ? (b2) queryLocalInterface : new b2(iBinder);
-    }
-
-    @Override // n6.g
-    public final String v() {
-        return "com.google.android.gms.clearcut.internal.IClearcutLoggerService";
-    }
-
-    @Override // n6.g
-    public final String w() {
-        return "com.google.android.gms.clearcut.service.START";
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

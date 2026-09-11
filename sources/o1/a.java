@@ -4,11 +4,12 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import m.e3;
-import org.telegram.ui.Components.i11;
-import org.telegram.ui.Components.k11;
+import k2.g0;
+import m2.t;
+import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -26,7 +27,7 @@ public final class a implements Choreographer.FrameCallback {
         boolean z10;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((l2.g) ((e3) this.b).b).b;
+                b bVar = (b) ((g0) ((t) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -106,21 +107,21 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 if (arrayList.size() > 0) {
                     if (bVar.d == null) {
-                        bVar.d = new e3(bVar.c);
+                        bVar.d = new t(bVar.c);
                     }
-                    e3 e3Var = bVar.d;
-                    ((Choreographer) e3Var.c).postFrameCallback((a) e3Var.d);
+                    t tVar = bVar.d;
+                    ((Choreographer) tVar.c).postFrameCallback((a) tVar.d);
                     break;
                 }
                 break;
             default:
-                i11 i11Var = ((k11) this.b).a;
-                if (i11Var != null) {
-                    Handler handler = i11Var.getHandler();
-                    if (handler != null && i11Var.b.get()) {
+                u01 u01Var = ((w01) this.b).a;
+                if (u01Var != null) {
+                    Handler handler = u01Var.getHandler();
+                    if (handler != null && u01Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((k11) this.b).a.S) {
+                    if (((w01) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

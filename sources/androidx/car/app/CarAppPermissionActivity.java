@@ -6,9 +6,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import androidx.car.app.IOnRequestPermissionsListener;
-import androidx.fragment.app.e0;
+import androidx.fragment.app.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class CarAppPermissionActivity extends androidx.activity.m {
     public static final /* synthetic */ int J = 0;
@@ -44,7 +44,7 @@ public class CarAppPermissionActivity extends androidx.activity.m {
         IOnRequestPermissionsListener asInterface = IOnRequestPermissionsListener.Stub.asInterface(extras.getBinder("androidx.car.app.action.EXTRA_ON_REQUEST_PERMISSIONS_RESULT_LISTENER_KEY"));
         String[] stringArray = extras.getStringArray("androidx.car.app.action.EXTRA_PERMISSIONS_KEY");
         if (asInterface != null && stringArray != null) {
-            r(new b(2, this, asInterface), new e0(1)).a(stringArray);
+            r(new b(2, this, asInterface), new d0(1)).a(stringArray);
         } else {
             Log.e("CarApp", "Intent to request permissions is missing the callback binder");
             finish();

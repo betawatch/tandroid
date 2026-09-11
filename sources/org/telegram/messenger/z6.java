@@ -1,65 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z6 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class z6 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ z6(MediaController.MediaLoader mediaLoader, boolean z10, TLRPC.PhotoSize photoSize, MessageObject messageObject, TLRPC.Photo photo, boolean z11, TLRPC.Document document) {
-        this.d = mediaLoader;
-        this.b = z10;
-        this.e = photoSize;
-        this.f = messageObject;
-        this.h = photo;
-        this.c = z11;
-        this.n = document;
+    public /* synthetic */ z6(MediaDataController mediaDataController, String str, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MediaController.MediaLoader) this.d).lambda$processLivePhotoMessage$5(this.b, (TLRPC.PhotoSize) this.e, (MessageObject) this.f, (TLRPC.Photo) this.h, this.c, (TLRPC.Document) this.n);
-                break;
-            case 1:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$225((Integer) this.e, (ArrayList) this.f, this.b, this.c, (ArrayList[]) this.h, (Runnable) this.n);
+                this.b.lambda$verifyAnimatedStickerMessageInternal$70(this.c, tLObject, tL_error);
                 break;
             default:
-                ((MessagesController) this.d).lambda$addUserToChat$302((MessagesController.ErrorDelegate) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.p2) this.h, (TLObject) this.n, this.b, this.c);
+                this.b.lambda$fetchStickerSetInternal$42(this.c, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ z6(MediaDataController mediaDataController, Integer num, ArrayList arrayList, boolean z10, boolean z11, ArrayList[] arrayListArr, Runnable runnable) {
-        this.d = mediaDataController;
-        this.e = num;
-        this.f = arrayList;
-        this.b = z10;
-        this.c = z11;
-        this.h = arrayListArr;
-        this.n = runnable;
-    }
-
-    public /* synthetic */ z6(MessagesController messagesController, MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.p2 p2Var, TLObject tLObject, boolean z10, boolean z11) {
-        this.d = messagesController;
-        this.e = errorDelegate;
-        this.f = tL_error;
-        this.h = p2Var;
-        this.n = tLObject;
-        this.b = z10;
-        this.c = z11;
     }
 }

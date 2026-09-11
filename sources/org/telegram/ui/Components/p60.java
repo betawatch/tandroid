@@ -1,34 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class p60 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.h3[] a;
-    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
+public final class p60 extends org.telegram.ui.Cells.za {
+    public final TextView a0;
+    public final TextView b0;
 
-    public p60(org.telegram.ui.ActionBar.h3[] h3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
-        this.a = h3VarArr;
-        this.b = tL_chatInviteImporter;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(ProfileActivity.m4(this.b.user_id));
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    public p60(Context context) {
+        super(context, 6, 0, true);
+        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+        TextView textView = new TextView(context);
+        this.a0 = textView;
+        org.telegram.messenger.w1.q(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);
+        f7.addView(textView, w7.x5.q(-2, -2, 5));
+        TextView textView2 = new TextView(context);
+        this.b0 = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        f7.addView(textView2, w7.x5.t(-2, -2, 5, 0, 1, 0, 0));
+        addView(f7, w7.x5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

@@ -12,14 +12,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public abstract class v3 extends FrameLayout {
-    public org.telegram.ui.Components.w9 a;
-    public org.telegram.ui.ActionBar.l5 b;
-    public org.telegram.ui.ActionBar.l5 c;
+    public org.telegram.ui.Components.x9 a;
+    public org.telegram.ui.ActionBar.j5 b;
+    public org.telegram.ui.ActionBar.j5 c;
     public ImageView d;
-    public org.telegram.ui.Components.g9 e;
+    public org.telegram.ui.Components.i9 e;
     public TLRPC.User f;
     public Paint h;
     public int n;

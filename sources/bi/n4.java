@@ -1,41 +1,68 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
+import android.view.KeyEvent;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class n4 extends org.telegram.ui.Components.w9 {
-    public final /* synthetic */ int G;
+public final /* synthetic */ class n4 implements e2.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n4(Context context, int i10) {
-        super(context);
-        this.G = i10;
+    public /* synthetic */ n4(KeyEvent.Callback callback, Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = callback;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.G) {
+    @Override // e2.h
+    public final void accept(Object obj) {
+        int i10 = this.a;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        KeyEvent.Callback callback = this.b;
+        switch (i10) {
             case 0:
-                int size = View.MeasureSpec.getSize(i10);
-                setMeasuredDimension(size, size);
+                s4 s4Var = (s4) callback;
+                z9 z9Var = (z9) obj4;
+                pb pbVar = (pb) obj3;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) obj2;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
+                if (storyItem == null) {
+                    qc Q = new yc(s4Var.z0.c1, f6Var).Q(R.raw.story_bomb2, 36, LocaleController.getString(R.string.StoryNotFound));
+                    Q.a = 3;
+                    Q.k(true);
+                    break;
+                } else {
+                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                    if (R != null) {
+                        storyItem.dialogId = z9Var.b.longValue();
+                        pb createOverlayStoryViewer = R.createOverlayStoryViewer();
+                        createOverlayStoryViewer.F(s4Var.getContext(), storyItem, null);
+                        createOverlayStoryViewer.o1 = new p4(pbVar, 0);
+                        pbVar.P();
+                        break;
+                    }
+                }
                 break;
             default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.G) {
-            case 1:
-                super.setAlpha(f7);
-                setVisibility(f7 > 0.0f ? 0 : 4);
-                break;
-            default:
-                super.setAlpha(f7);
+                ((ug.t0) callback).dismiss();
+                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
                 break;
         }
     }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -50,7 +50,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ByteArrayHexAdapter extends db.u {
         @Override // db.u
         public byte[] read(lb.a aVar) {
@@ -78,14 +78,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TLObjectDeserializer implements db.o {
         private TLObjectDeserializer() {
         }
@@ -107,7 +107,7 @@ public class FileLog {
                             if (obj != null) {
                                 Class<?> cls = obj.getClass();
                                 if (!cls.isInstance(DispatchQueue.class)) {
-                                    if (!cls.isInstance(org.telegram.ui.Components.c6.class)) {
+                                    if (!cls.isInstance(org.telegram.ui.Components.d6.class)) {
                                         if (!cls.isInstance(ColorStateList.class)) {
                                             if (cls.isInstance(Context.class)) {
                                             }
@@ -115,14 +115,14 @@ public class FileLog {
                                     }
                                 }
                             }
-                            lVar.o(field.getName(), ((a6.i) nVar).I(obj));
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                            lVar.o(field.getName(), ((a4.m) nVar).k0(obj));
+                        } catch (IllegalAccessException e7) {
+                            e7.printStackTrace();
                         }
                     }
                 }
-            } catch (Exception e7) {
-                e7.printStackTrace();
+            } catch (Exception e10) {
+                e10.printStackTrace();
             }
             return lVar;
         }
@@ -161,7 +161,7 @@ public class FileLog {
             exclusionStrategy = new db.a() { // from class: org.telegram.messenger.FileLog.1
                 @Override // db.a
                 public boolean shouldSkipClass(Class<?> cls) {
-                    return cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.c6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
+                    return cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.d6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
 
                 @Override // db.a
@@ -271,7 +271,7 @@ public class FileLog {
             }
             try {
                 final String str = "req -> " + simpleName + " : " + gson.e(tLObject);
-                String str2 = BuildConfig.BETA_URL;
+                String str2 = "null";
                 if (tLObject2 != null) {
                     str2 = "res -> " + tLObject2.getClass().getSimpleName() + " : " + gson.e(tLObject2);
                 } else if (tL_error != null) {
@@ -279,7 +279,7 @@ public class FileLog {
                 }
                 final String str3 = str2;
                 final long currentTimeMillis = System.currentTimeMillis();
-                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.k3
+                getInstance().logQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.f3
                     @Override // java.lang.Runnable
                     public final void run() {
                         FileLog.lambda$dumpResponseAndRequest$0(j3, j10, i11, i10, currentTimeMillis, str, str3, tL_error);
@@ -300,7 +300,7 @@ public class FileLog {
                 sb2.append(tLObject.getClass().getSimpleName());
                 sb2.append(" : ");
                 sb2.append(gsonDisabled ? tLObject : gson.e(tLObject));
-                getInstance().logQueue.postRunnable(new b5(System.currentTimeMillis(), j3, i10, sb2.toString()));
+                getInstance().logQueue.postRunnable(new v4(System.currentTimeMillis(), j3, i10, sb2.toString()));
             } catch (Throwable unused) {
             }
         }
@@ -311,7 +311,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str, th2);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new f2(7, str, th2));
+                getInstance().logQueue.postRunnable(new b2(7, str, th2));
             }
         }
     }
@@ -394,8 +394,8 @@ public class FileLog {
         String format = fastDateFormat.format(System.currentTimeMillis());
         try {
             logsDir = AndroidUtilities.getLogsDir();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
         if (logsDir == null) {
             return;
@@ -413,8 +413,8 @@ public class FileLog {
             this.tlStreamWriter = outputStreamWriter2;
             outputStreamWriter2.write("-----start log " + format + "-----\n");
             this.tlStreamWriter.flush();
-        } catch (Exception e7) {
-            e7.printStackTrace();
+        } catch (Exception e10) {
+            e10.printStackTrace();
         }
         this.initied = true;
     }
@@ -424,9 +424,9 @@ public class FileLog {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " D/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (AndroidUtilities.isENOSPC(e)) {
+        } catch (Exception e7) {
+            e7.printStackTrace();
+            if (AndroidUtilities.isENOSPC(e7)) {
                 LaunchActivity.E(1);
             }
         }
@@ -454,8 +454,8 @@ public class FileLog {
             Log.d(mtproto_tag, str);
             Log.d(mtproto_tag, str2);
             Log.d(mtproto_tag, " ");
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -470,8 +470,8 @@ public class FileLog {
             Log.d(mtproto_tag, "msgId=" + j10 + " account=" + i10);
             Log.d(mtproto_tag, str);
             Log.d(mtproto_tag, " ");
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -485,8 +485,8 @@ public class FileLog {
                 getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " E/tmessages: \tat " + stackTraceElement + "\n");
             }
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -495,8 +495,8 @@ public class FileLog {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " E/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -515,8 +515,8 @@ public class FileLog {
                 }
             }
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -535,8 +535,8 @@ public class FileLog {
                 }
             }
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             System.exit(2);
@@ -548,8 +548,8 @@ public class FileLog {
         try {
             getInstance().streamWriter.write(getInstance().dateFormat.format(System.currentTimeMillis()) + " W/tmessages: " + str + "\n");
             getInstance().streamWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -562,7 +562,7 @@ public class FileLog {
             ensureInitied();
             Log.w(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new w1(str, 1));
+                getInstance().logQueue.postRunnable(new s1(str, 1));
             }
         }
     }
@@ -572,8 +572,8 @@ public class FileLog {
             dumpedHeap = System.currentTimeMillis();
             try {
                 Debug.dumpHprofData(new File(AndroidUtilities.getLogsDir(), getInstance().dateFormat.format(System.currentTimeMillis()) + "_heap.hprof").getAbsolutePath());
-            } catch (Exception e) {
-                e(e);
+            } catch (Exception e7) {
+                e(e7);
             }
         }
     }
@@ -583,7 +583,7 @@ public class FileLog {
             ensureInitied();
             Log.d(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new w1(str, 3));
+                getInstance().logQueue.postRunnable(new s1(str, 3));
             }
         }
     }
@@ -599,7 +599,7 @@ public class FileLog {
             ensureInitied();
             th2.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new j3(1, th2));
+                getInstance().logQueue.postRunnable(new e3(1, th2));
                 return;
             }
             th2.printStackTrace();
@@ -614,7 +614,7 @@ public class FileLog {
             ensureInitied();
             Log.e(tag, str);
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new w1(str, 2));
+                getInstance().logQueue.postRunnable(new s1(str, 2));
             }
         }
     }
@@ -637,15 +637,15 @@ public class FileLog {
                 for (int i10 = 0; i10 < databaseFiles.size(); i10++) {
                     try {
                         AndroidUtilities.copyFile(databaseFiles.get(i10), new File(file, databaseFiles.get(i10).getName()));
-                    } catch (IOException e) {
-                        e(e);
+                    } catch (IOException e7) {
+                        e(e7);
                     }
                 }
             }
             ensureInitied();
             th2.printStackTrace();
             if (getInstance().streamWriter != null) {
-                getInstance().logQueue.postRunnable(new j3(0, th2));
+                getInstance().logQueue.postRunnable(new e3(0, th2));
             } else {
                 th2.printStackTrace();
             }

@@ -1,30 +1,56 @@
 package org.telegram.messenger;
 
-import java.util.function.ToLongFunction;
-import org.telegram.messenger.NotificationsController;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class re implements ToLongFunction {
+public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ re(int i10) {
+    public /* synthetic */ re(MessagesStorage messagesStorage, long j3, ArrayList arrayList, int i10) {
         this.a = i10;
+        this.b = messagesStorage;
+        this.d = j3;
+        this.c = arrayList;
     }
 
-    @Override // java.util.function.ToLongFunction
-    public final long applyAsLong(Object obj) {
-        long j3;
-        long j10;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return Long.parseLong((String) obj);
+                this.b.lambda$deleteUserChatHistory$86(this.c, this.d);
+                break;
             case 1:
-                j3 = ((NotificationsController.StoryNotification) obj).date;
-                return j3;
+                this.b.lambda$emptyMessagesMedia$99(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$deleteSavedDialog$54(this.d, this.c);
+                break;
+            case 3:
+                this.b.lambda$updateChannelUsers$125(this.d, this.c);
+                break;
+            case 4:
+                this.b.lambda$markVoiceMessageContentAsRead$217(this.c, this.d);
+                break;
+            case 5:
+                this.b.lambda$markMessagesAsDeletedInternal$226(this.c, this.d);
+                break;
+            case 6:
+                this.b.lambda$removeTopics$58(this.c, this.d);
+                break;
             default:
-                j10 = ((NotificationsController.StoryNotification) obj).date;
-                return j10;
+                this.b.lambda$createTaskForSecretChat$117(this.d, this.c);
+                break;
         }
+    }
+
+    public /* synthetic */ re(MessagesStorage messagesStorage, ArrayList arrayList, long j3, int i10) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = arrayList;
+        this.d = j3;
     }
 }

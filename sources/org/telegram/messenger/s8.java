@@ -1,51 +1,94 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.Timer;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ a0.i d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ s8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j3, a0.i iVar, Runnable runnable) {
-        this.f = mediaDataController;
-        this.h = task;
-        this.n = timer;
-        this.c = arrayList;
-        this.b = j3;
-        this.d = iVar;
-        this.e = runnable;
+    public /* synthetic */ s8(Object obj, boolean z10, long j3, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.d = z10;
+        this.c = j3;
+        this.e = obj2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
+                ((MediaDataController) this.b).lambda$loadFeaturedStickers$57((TLObject) this.e, this.d, this.c);
+                break;
+            case 1:
+                ((MediaDataController) this.b).lambda$processLoadedFeaturedStickers$60((ArrayList) this.e, this.c, this.d);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$processUpdates$376(this.d, this.c, (ArrayList) this.e);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$getChannelRecommendations$481((TLObject) this.e, this.d, this.c);
+                break;
+            case 4:
+                ((MessagesController) this.b).lambda$processLoadedChannelAdmins$66(this.c, (a0.i) this.e, this.d);
+                break;
+            case 5:
+                ((MessagesStorage) this.b).lambda$createTaskForMid$115(this.d, this.c, (ArrayList) this.e);
+                break;
+            case 6:
+                ((MessagesStorage) this.b).lambda$loadPendingTasks$24((org.telegram.ui.ActionBar.b6) this.e, this.d, this.c);
+                break;
+            case 7:
+                ((VideoPlayerHolderBase) this.b).lambda$seekTo$12(this.c, this.d, (Runnable) this.e);
+                break;
+            case 8:
+                org.telegram.ui.z6.U((org.telegram.ui.z6) this.b, this.d, this.c, (org.telegram.ui.n6) this.e);
                 break;
             default:
-                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                profileActivity.getMessagesController().getStoriesController().o0(this.c, (ArrayList) this.e, this.d, null);
                 break;
         }
     }
 
-    public /* synthetic */ s8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j3, ArrayList arrayList, a0.i iVar, HashSet hashSet, Runnable runnable) {
-        this.f = topicsController;
-        this.h = tL_messages_savedDialogs;
-        this.b = j3;
-        this.c = arrayList;
-        this.d = iVar;
-        this.n = hashSet;
+    public /* synthetic */ s8(BaseController baseController, Object obj, boolean z10, long j3, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.e = obj;
+        this.d = z10;
+        this.c = j3;
+    }
+
+    public /* synthetic */ s8(MediaDataController mediaDataController, ArrayList arrayList, long j3, boolean z10) {
+        this.a = 1;
+        this.b = mediaDataController;
+        this.e = arrayList;
+        this.c = j3;
+        this.d = z10;
+    }
+
+    public /* synthetic */ s8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, long j3, Cloneable cloneable, boolean z10, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
+        this.c = j3;
+        this.e = cloneable;
+        this.d = z10;
+    }
+
+    public /* synthetic */ s8(VideoPlayerHolderBase videoPlayerHolderBase, long j3, boolean z10, Runnable runnable) {
+        this.a = 7;
+        this.b = videoPlayerHolderBase;
+        this.c = j3;
+        this.d = z10;
         this.e = runnable;
     }
 }

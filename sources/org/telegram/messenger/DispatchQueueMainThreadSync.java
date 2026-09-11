@@ -6,7 +6,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class DispatchQueueMainThreadSync extends Thread {
     private static int indexPointer;
@@ -88,14 +88,14 @@ public class DispatchQueueMainThreadSync extends Thread {
 
     public void recycle() {
         checkThread();
-        postRunnable(new g1(this, 18));
+        postRunnable(new d1(this, 18));
         this.isRecycled = true;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new b2(this, 1));
+        this.handler = new Handler(Looper.myLooper(), new x1(this, 1));
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync.1
             @Override // java.lang.Runnable
             public void run() {
@@ -135,7 +135,7 @@ public class DispatchQueueMainThreadSync extends Thread {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public class PostponedTask {
         long delay;
         Message message;

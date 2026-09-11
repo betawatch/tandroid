@@ -1,46 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class d1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i1 b;
+public final class d1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ h1 a;
 
-    public /* synthetic */ d1(i1 i1Var, int i10) {
-        this.a = i10;
-        this.b = i1Var;
+    public d1(h1 h1Var) {
+        this.a = h1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.b.L = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        h1 h1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = h1Var.Y;
+        if (pVar != null) {
+            pVar.run();
+            h1Var.Y = null;
         }
     }
 
-    @Override // android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator, boolean z10) {
-        View view;
-        switch (this.a) {
-            case 0:
-                pf.e eVar = this.b.O;
-                if (eVar != null && (view = eVar.j) != null) {
-                    eVar.e(view);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator, z10);
-                break;
-        }
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

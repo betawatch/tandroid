@@ -1,117 +1,63 @@
 package ug;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.em;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.d6;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.wr;
-import w7.a6;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class w extends FrameLayout {
-    public final RadioButton a;
-    public final Drawable b;
-    public final Drawable c;
-    public final o6 d;
-    public final o6 e;
-    public final TextView f;
-    public final SpannableString h;
-    public final SpannableString n;
-    public TL_stars.TL_starsGiveawayOption r;
-    public int s;
-    public final d6 v;
+public final /* synthetic */ class w implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    public w(Context context, f6 f6Var) {
-        super(context);
-        this.v = new d6(this, 0L, 500L, wr.h);
-        Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.h5, f6Var), PorterDuff.Mode.SRC_IN));
-        this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
-        setWillNotDraw(false);
-        o6 o6Var = new o6(context, false, false, false);
-        this.d = o6Var;
-        o6Var.setTextColor(j6.v0(j6.G6, f6Var));
-        o6Var.setTypeface(AndroidUtilities.bold());
-        o6Var.setTextSize(AndroidUtilities.dp(16.0f));
-        addView(o6Var, a6.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
-        SpannableString spannableString = new SpannableString("x");
-        this.h = spannableString;
-        spannableString.setSpan(new r90(AndroidUtilities.dp(90.0f), o6Var), 0, 1, 33);
-        o6 o6Var2 = new o6(context, false, true, true);
-        this.e = o6Var2;
-        int i10 = j6.z6;
-        o6Var2.setTextColor(j6.v0(i10, f6Var));
-        o6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(o6Var2, a6.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
-        SpannableString spannableString2 = new SpannableString("x");
-        this.n = spannableString2;
-        spannableString2.setSpan(new r90(AndroidUtilities.dp(70.0f), o6Var2), 0, 1, 33);
-        TextView textView = new TextView(context);
-        this.f = textView;
-        em.n(i10, f6Var, textView, 1, 16.0f);
-        textView.setGravity(5);
-        addView(textView, a6.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
-        RadioButton radioButton = new RadioButton(context);
-        this.a = radioButton;
-        radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(j6.v0(j6.j7, f6Var), j6.v0(j6.E5, f6Var));
-        addView(radioButton, a6.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
+    public /* synthetic */ w(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
     }
 
-    public TL_stars.TL_starsGiveawayOption getOption() {
-        return this.r;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.v.d(this.s, false);
-        float dp = AndroidUtilities.dp(24.0f);
-        float dp2 = AndroidUtilities.dp(24.0f);
-        float dp3 = AndroidUtilities.dp(2.5f);
-        float dp4 = AndroidUtilities.dp(64.0f);
-        float dp5 = AndroidUtilities.dp(8.0f);
-        for (int ceil = ((int) Math.ceil(d)) - 1; ceil >= 0; ceil--) {
-            float clamp = Utilities.clamp(d - ceil, 1.0f, 0.0f);
-            float f7 = (((ceil - 1) - (1.0f - clamp)) * dp3 * 1.0f) + dp4;
-            int i10 = (int) f7;
-            int i11 = (int) dp5;
-            int i12 = (int) (f7 + dp);
-            int i13 = (int) (dp5 + dp2);
-            Drawable drawable = this.b;
-            drawable.setBounds(i10, i11, i12, i13);
-            int i14 = (int) (clamp * 255.0f);
-            drawable.setAlpha(i14);
-            drawable.draw(canvas);
-            Drawable drawable2 = this.c;
-            drawable2.setBounds(i10, i11, i12, i13);
-            drawable2.setAlpha(i14);
-            drawable2.draw(canvas);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                b0 b0Var = this.b;
+                b0Var.dismiss();
+                AndroidUtilities.runOnUIThread(new u(b0Var, 2), 220L);
+                break;
+            case 1:
+                b0 b0Var2 = this.b;
+                b0Var2.q0.b(false);
+                j.j(b0Var2.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 2:
+                b0 b0Var3 = this.b;
+                b0Var3.n0 = b0Var3.Y.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
+                b0Var3.a0(true, true);
+                b0Var3.Z(true);
+                break;
+            case 3:
+                b0 b0Var4 = this.b;
+                b0Var4.dismiss();
+                AndroidUtilities.runOnUIThread(new u(b0Var4, 1), 220L);
+                break;
+            case 4:
+                b0 b0Var5 = this.b;
+                b0Var5.q0.b(false);
+                j.j(b0Var5.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 5:
+                b0 b0Var6 = this.b;
+                ArrayList arrayList = b0Var6.f0;
+                arrayList.clear();
+                arrayList.addAll((List) obj);
+                b0Var6.a0(true, true);
+                break;
+            default:
+                b0 b0Var7 = this.b;
+                b0Var7.q0.b(false);
+                j.j(b0Var7.getContext(), (TLRPC.TL_error) obj);
+                break;
         }
-        this.d.setTranslationX((dp3 * d) + AndroidUtilities.dp(22.0f));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class y7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,18 +42,18 @@ public final class y7 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.pc.e();
+                org.telegram.ui.Components.qc.e();
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
             case 2:
-                if (((w81) this.b).a.getImageReceiver().getLottieAnimation() != null && !((w81) this.b).a.getImageReceiver().getLottieAnimation().l0) {
-                    ((w81) this.b).a.getImageReceiver().getLottieAnimation().N(0, false, false);
-                    ((w81) this.b).a.getImageReceiver().getLottieAnimation().H(false);
+                if (((u81) this.b).a.getImageReceiver().getLottieAnimation() != null && !((u81) this.b).a.getImageReceiver().getLottieAnimation().l0) {
+                    ((u81) this.b).a.getImageReceiver().getLottieAnimation().L(0, false, false);
+                    ((u81) this.b).a.getImageReceiver().getLottieAnimation().F(false);
                     break;
                 }
                 break;
             default:
-                ((ig1) this.b).H0(true);
+                ((eg1) this.b).H0(true);
                 break;
         }
     }

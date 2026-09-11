@@ -1,115 +1,172 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ni extends org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ oi x;
+public abstract class ni extends FrameLayout {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final vi b;
+    public ll0 c;
+    public ll0 d;
+    public int e;
+    public boolean f;
+    public boolean h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ni(oi oiVar, oi oiVar2) {
-        super(oiVar2);
-        this.x = oiVar;
+    public ni(Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
+        super(context);
+        this.a = f6Var;
+        this.b = viVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final boolean b() {
-        rz rzVar;
-        yi yiVar = this.x.B0;
-        if (!yiVar.isDismissed() && yiVar.s1) {
-            qi qiVar = yiVar.y0;
-            if (qiVar != yiVar.m0 && qiVar != yiVar.n0 && !yiVar.m1().m()) {
-                return true;
-            }
-            qi qiVar2 = yiVar.y0;
-            zn znVar = yiVar.m0;
-            if (qiVar2 == znVar && ((rzVar = znVar.E) == null || rzVar.getVisibility() != 0)) {
-                return true;
-            }
-            qi qiVar3 = yiVar.y0;
-            zn znVar2 = yiVar.n0;
-            if (qiVar3 == znVar2) {
-                rz rzVar2 = znVar2.E;
-                return rzVar2 == null || rzVar2.getVisibility() != 0;
-            }
-        }
+    public boolean C(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void e(float f7, float f10, boolean z10) {
-        oi oiVar = this.x;
-        yi yiVar = oiVar.B0;
-        yiVar.l2 = f7;
-        float f11 = yiVar.d2;
-        if (f11 > 0.0f) {
-            yiVar.l2 = com.google.android.gms.internal.vision.e2.z(1.0f, f10, f11 - yiVar.e2, f7);
-        }
-        yiVar.X0.setTranslationY(yiVar.l2);
-        yiVar.a1.setTranslationY(yiVar.l2);
-        org.telegram.ui.ActionBar.w0 w0Var = yiVar.e1;
-        if (w0Var != null) {
-            w0Var.setTranslationY(yiVar.l2);
-        }
-        org.telegram.ui.ActionBar.w0 w0Var2 = yiVar.c1;
-        if (w0Var2 != null) {
-            w0Var2.setTranslationY(yiVar.a1.getTranslationY());
-        }
-        bi.x4 x4Var = yiVar.d1;
-        if (x4Var != null) {
-            x4Var.setTranslationY(yiVar.a1.getTranslationY());
-        }
-        yiVar.f1.setTranslationY(yiVar.l2);
-        yiVar.a2(0);
-        yiVar.setCurrentPanTranslationY(yiVar.l2);
-        oiVar.invalidate();
-        yiVar.D0.invalidate();
-        yiVar.U1();
-        qi qiVar = yiVar.y0;
-        if (qiVar != null) {
-            qiVar.k(yiVar.l2);
-        }
+    public boolean I(int i10, boolean z10, int i11, boolean z11, long j3) {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void f() {
-        boolean z10;
-        yi yiVar = this.x.B0;
-        yiVar.X1(yiVar.y0, 0);
-        yiVar.c2 = yiVar.b2[0];
-        yiVar.y0.v();
-        if (!(yiVar.y0 instanceof di.u4) || yiVar.D1) {
-            return;
-        }
-        z10 = ((org.telegram.ui.ActionBar.h3) yiVar).keyboardVisible;
-        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
-        for (int i10 = 0; i10 < yiVar.x0.size(); i10++) {
-            ((di.u4) yiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-        }
+    public boolean J() {
+        return !(this instanceof fi.r4);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(int i10, boolean z10) {
-        int i11;
-        oi oiVar = this.x;
-        yi yiVar = oiVar.B0;
-        int i12 = yiVar.c2;
-        if (i12 <= 0 || i12 == (i11 = yiVar.b2[0]) || !z10) {
-            yiVar.d2 = -1.0f;
-        } else {
-            yiVar.d2 = i12;
-            yiVar.e2 = i11;
-        }
-        oiVar.invalidate();
-        ai aiVar = yiVar.x1;
-        if ((yiVar.y0 instanceof di.u4) && !yiVar.D1) {
-            if (z10) {
-                aiVar.setVisibility(8);
-            } else {
-                aiVar.setVisibility(0);
-            }
-        }
-        yiVar.y0.w(i10, z10);
+    public boolean b() {
+        return true;
+    }
+
+    public boolean c() {
+        return true;
+    }
+
+    public boolean e() {
+        return false;
+    }
+
+    public boolean f() {
+        return false;
+    }
+
+    public boolean g() {
+        return false;
+    }
+
+    public int getButtonsHideOffset() {
+        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
+    }
+
+    public int getCurrentItemTop() {
+        return 0;
+    }
+
+    public int getCustomActionBarBackground() {
+        return 0;
+    }
+
+    public int getCustomBackground() {
+        return 0;
+    }
+
+    public int getFirstOffset() {
+        return 0;
+    }
+
+    public ch.a getIBlur3Capture() {
+        return null;
+    }
+
+    public int getListTopPadding() {
+        return 0;
+    }
+
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    public ArrayList<org.telegram.ui.ActionBar.l6> getThemeDescriptions() {
+        return null;
+    }
+
+    public int h() {
+        return 0;
+    }
+
+    public boolean i() {
+        return false;
+    }
+
+    public boolean l(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean n() {
+        return false;
+    }
+
+    public boolean p() {
+        return true;
+    }
+
+    public abstract void y(int i10, int i11);
+
+    public void A() {
+    }
+
+    public void B(int i10) {
+    }
+
+    public void D(ni niVar) {
+    }
+
+    public void F() {
+    }
+
+    public void G() {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void d() {
+    }
+
+    public void j() {
+    }
+
+    public void k(float f7) {
+    }
+
+    public void m() {
+    }
+
+    public void o(int i10) {
+    }
+
+    public void q() {
+    }
+
+    public void r() {
+    }
+
+    public void s(float f7) {
+    }
+
+    public void t(int i10) {
+    }
+
+    public void u() {
+    }
+
+    public void v() {
+    }
+
+    public void x() {
+    }
+
+    public void w(int i10, boolean z10) {
     }
 }

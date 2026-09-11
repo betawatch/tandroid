@@ -1,32 +1,70 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wf implements Utilities.CallbackReturn {
+public final /* synthetic */ class wf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ TLRPC.InputPeer n;
+    public final /* synthetic */ int[] r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ vf v;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ wf(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ wf(co coVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, vf vfVar, int i11) {
+        this.a = i11;
+        this.b = coVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = str;
+        this.f = str2;
+        this.h = str3;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = obj;
+        this.s = z10;
+        this.v = vfVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                eo eoVar = (eo) this.b;
-                View view = (View) this.c;
-                eoVar.U7((URLSpan) obj, false, eoVar.d5, view instanceof org.telegram.ui.Cells.t1 ? (org.telegram.ui.Cells.t1) view : null);
-                return Boolean.TRUE;
+                co.U0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
+                break;
+            case 1:
+                co.c0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                break;
             default:
-                return qh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
+                co.w0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
+                break;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ wf(co coVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, vf vfVar) {
+        this.a = 2;
+        this.b = coVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.h = strArr;
+        this.e = str;
+        this.f = str2;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = charSequence;
+        this.s = z10;
+        this.v = vfVar;
     }
 }

@@ -1,28 +1,21 @@
 package m;
 
-import android.view.View;
-import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-import j$.util.Objects;
-import org.telegram.messenger.MediaController;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public abstract class h3 {
-    public static OnBackInvokedDispatcher a(View view) {
-        return view.findOnBackInvokedDispatcher();
+public final class h3 extends ViewGroup.MarginLayoutParams {
+    public int a;
+    public int b;
+
+    public h3(h3 h3Var) {
+        super((ViewGroup.MarginLayoutParams) h3Var);
+        this.a = 0;
+        this.a = h3Var.a;
     }
 
-    public static OnBackInvokedCallback b(Runnable runnable) {
-        Objects.requireNonNull(runnable);
-        return new androidx.activity.r(runnable, 3);
-    }
-
-    public static void c(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).registerOnBackInvokedCallback(MediaController.VIDEO_BITRATE_480, (OnBackInvokedCallback) obj2);
-    }
-
-    public static void d(Object obj, Object obj2) {
-        ((OnBackInvokedDispatcher) obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+    public h3(ViewGroup.LayoutParams layoutParams) {
+        super(layoutParams);
+        this.a = 0;
     }
 }

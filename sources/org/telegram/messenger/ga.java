@@ -1,44 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ga implements Utilities.Callback2 {
+public final /* synthetic */ class ga implements Function {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ ga(MessagesController messagesController, int i10) {
+    public /* synthetic */ ga(int i10) {
         this.a = i10;
-        this.b = messagesController;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    public /* synthetic */ Function andThen(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        String valueOf;
+        String lambda$applyAppConfig$35;
+        Long lambda$new$14;
+        int[] lambda$new$15;
+        String str;
         switch (this.a) {
             case 0:
-                this.b.lambda$updateWebBrowserSettings$517((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
-                break;
+                valueOf = String.valueOf((Long) obj);
+                return valueOf;
             case 1:
-                this.b.lambda$removeWebBrowserException$515((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
+                lambda$applyAppConfig$35 = MessagesController.lambda$applyAppConfig$35((int[]) obj);
+                return lambda$applyAppConfig$35;
             case 2:
-                this.b.lambda$addWebBrowserException$513((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
+                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
+                return lambda$new$14;
             case 3:
-                this.b.lambda$loadStakeDiceInfo$507((TLRPC.EmojiGameInfo) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 4:
-                this.b.lambda$deleteReactionsFromMessage$132((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 5:
-                this.b.lambda$loadWebBrowserConfig$509((Long) obj, (TL_account.TL_webBrowserSettings) obj2);
-                break;
+                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
+                return lambda$new$15;
             default:
-                this.b.lambda$clearAllWebBrowserExceptions$516((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
-                break;
+                str = ((TranslateController.Language) obj).displayName;
+                return str;
         }
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

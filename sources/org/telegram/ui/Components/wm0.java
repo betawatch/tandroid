@@ -1,128 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class wm0 extends HorizontalScrollView {
-    public boolean a;
-    public LinearLayout b;
-    public ValueAnimator c;
-    public boolean d;
-    public int e;
-    public ValueAnimator f;
+public abstract class wm0 extends FrameLayout {
+    public final View a;
+    public final ImageView b;
+    public final ImageView c;
+    public final di.j2 d;
+    public final di.h2 e;
+    public final org.telegram.ui.ActionBar.f6 f;
 
-    public wm0(Context context) {
+    public wm0(Context context, float f7, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.e = -1;
+        this.f = f6Var;
+        View view = new View(context);
+        this.a = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.O5, f6Var)));
+        addView(view, w7.x5.i(-1.0f, 36.0f, 8388659, f7, 11.0f, f7, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Q5, f6Var), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.x5.i(36.0f, 36.0f, 8388659, f7 + 2.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(scaleType);
+        di.j2 j2Var = new di.j2(3, this);
+        this.d = j2Var;
+        imageView2.setImageDrawable(j2Var);
+        j2Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, w7.x5.i(36.0f, 36.0f, 8388661, f7, 11.0f, f7, 0.0f));
+        imageView2.setOnClickListener(new x70(this, 12));
+        di.h2 h2Var = new di.h2(this, context, 6);
+        this.e = h2Var;
+        h2Var.setTextSize(1, 16.0f);
+        h2Var.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.P5, f6Var));
+        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.R5, f6Var));
+        h2Var.setBackgroundDrawable(null);
+        h2Var.setPadding(0, 0, 0, 0);
+        h2Var.setMaxLines(1);
+        h2Var.setLines(1);
+        h2Var.setSingleLine(true);
+        h2Var.setGravity(w7.x5.y() | 16);
+        h2Var.setImeOptions(268435459);
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Mh, f6Var));
+        h2Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        h2Var.setCursorWidth(1.5f);
+        float f10 = f7 + 2.0f;
+        addView(h2Var, w7.x5.i(-1.0f, 40.0f, 8388659, f10 + 38.0f, 9.0f, f10 + 30.0f, 0.0f));
+        h2Var.addTextChangedListener(new di.i2(this, 11));
+        h2Var.setOnEditorActionListener(new f1(this, 5));
     }
 
-    public final void a(int i10) {
-        if (this.e == i10) {
-            return;
-        }
-        this.e = i10;
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (getScrollX() == i10) {
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i10);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new q70(this, 14));
-        this.f.setInterpolator(wr.h);
-        this.f.setDuration(250L);
-        this.f.addListener(new rm(this, 29));
-        this.f.start();
+    public abstract void a(String str);
+
+    public eq getProgressDrawable() {
+        return this.d;
     }
 
-    public final void b(int i10, int i11) {
-        int measuredWidth;
-        if (getChildCount() <= 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(50.0f);
-        if (i10 < getScrollX() + dp) {
-            measuredWidth = i10 - dp;
-        } else {
-            if (i11 <= (getMeasuredWidth() - dp) + getScrollX()) {
-                return;
-            } else {
-                measuredWidth = (i11 - getMeasuredWidth()) + dp;
-            }
-        }
-        a(w7.q.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+    public View getSearchBackground() {
+        return this.a;
     }
 
-    public final void c() {
-        p5 p5Var;
-        gg.h1 h1Var;
-        hj0 hj0Var;
-        ValueAnimator valueAnimator;
-        int childCount = this.b.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = this.b.getChildAt(i10);
-            if (childAt instanceof cw) {
-                cw cwVar = (cw) childAt;
-                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
-                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!cwVar.y && z10 && (hj0Var = cwVar.e) != null && !hj0Var.l0 && !z11) {
-                    cwVar.e.S(0.0f, true);
-                    cwVar.e.start();
-                }
-                if (cwVar.y != z10) {
-                    cwVar.y = z10;
-                    if (z10) {
-                        cwVar.invalidate();
-                        qg.e1 e1Var = cwVar.f;
-                        if (e1Var != null) {
-                            e1Var.invalidate();
-                        }
-                        qg.e1 e1Var2 = cwVar.f;
-                        if (e1Var2 != null && (p5Var = cwVar.w) != null && (h1Var = p5Var.k) != null) {
-                            e1Var2.setImageReceiver(h1Var);
-                        }
-                        w9 w9Var = cwVar.d;
-                        if (w9Var != null) {
-                            w9Var.invalidate();
-                        }
-                    } else {
-                        cwVar.b();
-                    }
-                    cwVar.c();
-                }
-            }
-        }
+    public EditTextBoldCursor getSearchEditText() {
+        return this.e;
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        c();
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        if ((Math.abs(i11 - i13) < 2 || i11 >= getMeasuredHeight() || i11 == 0) && !this.a) {
-            requestDisallowInterceptTouchEvent(false);
-        }
-        c();
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
-            motionEvent.getAction();
-        }
-        return super.onTouchEvent(motionEvent);
+    public void setHint(String str) {
+        this.e.setHint(str);
     }
 }

@@ -8,10 +8,10 @@ import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -386,8 +386,8 @@ public class PredefMacros {
     public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -720,8 +720,8 @@ public class PredefMacros {
     public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -858,8 +858,8 @@ public class PredefMacros {
                 return strArr[0].charAt(0) == 'h' ? new SpaceAtom(unit, parseFloat, 0.0f, 0.0f) : new SpaceAtom(unit, 0.0f, parseFloat, 0.0f);
             }
             throw new ParseException("Unknown unit \"" + strArr[1].substring(i10) + "\" !");
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -1251,7 +1251,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(r6.i("Invalid name for the command :", str));
+            throw new ParseException(p6.i("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1410,7 +1410,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(r6.i("Invalid name for the command :", str));
+            throw new ParseException(p6.i("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());

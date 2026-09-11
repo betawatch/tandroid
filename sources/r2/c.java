@@ -11,9 +11,9 @@ import android.os.Trace;
 import android.view.Surface;
 import e2.d0;
 import java.nio.ByteBuffer;
-import qg.q0;
+import k2.g0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -68,8 +68,8 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void b(int i10, h2.d dVar, long j3, int i11) {
-        this.c.b(i10, dVar, j3, i11);
+    public final void b(int i10, h2.c cVar, long j3, int i11) {
+        this.c.b(i10, cVar, j3, i11);
     }
 
     @Override // r2.l
@@ -78,8 +78,8 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void d(a3.m mVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, mVar, 0), handler);
+    public final void d(a3.l lVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, lVar, 0), handler);
     }
 
     @Override // r2.l
@@ -101,7 +101,7 @@ public final class c implements l {
             fVar.l++;
             Handler handler = fVar.c;
             String str = d0.a;
-            handler.post(new q0(fVar, 5));
+            handler.post(new org.telegram.ui.web.b(fVar, 17));
         }
         this.a.start();
     }
@@ -253,17 +253,17 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void j(Surface surface) {
-        this.a.setOutputSurface(surface);
+    public final boolean j(g0 g0Var) {
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            fVar.o = g0Var;
+        }
+        return true;
     }
 
     @Override // r2.l
-    public final boolean k(o0.b bVar) {
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            fVar.o = bVar;
-        }
-        return true;
+    public final void k(Surface surface) {
+        this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l

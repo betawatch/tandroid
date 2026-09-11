@@ -17,9 +17,9 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import v7.v7;
+import v7.u7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e extends ArrayAdapter implements AdapterView.OnItemClickListener {
     public final LayoutInflater a;
@@ -32,10 +32,10 @@ public final class e extends ArrayAdapter implements AdapterView.OnItemClickList
         super(context, 0, arrayList);
         this.a = LayoutInflater.from(context);
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{R.attr.mediaRouteDefaultIconDrawable, R.attr.mediaRouteTvIconDrawable, R.attr.mediaRouteSpeakerIconDrawable, R.attr.mediaRouteSpeakerGroupIconDrawable});
-        this.b = v7.b(context, obtainStyledAttributes.getResourceId(0, 0));
-        this.c = v7.b(context, obtainStyledAttributes.getResourceId(1, 0));
-        this.d = v7.b(context, obtainStyledAttributes.getResourceId(2, 0));
-        this.e = v7.b(context, obtainStyledAttributes.getResourceId(3, 0));
+        this.b = u7.b(context, obtainStyledAttributes.getResourceId(0, 0));
+        this.c = u7.b(context, obtainStyledAttributes.getResourceId(1, 0));
+        this.d = u7.b(context, obtainStyledAttributes.getResourceId(2, 0));
+        this.e = u7.b(context, obtainStyledAttributes.getResourceId(3, 0));
         obtainStyledAttributes.recycle();
     }
 
@@ -79,8 +79,8 @@ public final class e extends ArrayAdapter implements AdapterView.OnItemClickList
             if (uri != null) {
                 try {
                     createFromStream = Drawable.createFromStream(getContext().getContentResolver().openInputStream(uri), null);
-                } catch (IOException e) {
-                    Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e);
+                } catch (IOException e7) {
+                    Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e7);
                 }
             }
             int i12 = vVar.n;

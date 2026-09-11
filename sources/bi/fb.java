@@ -1,55 +1,38 @@
 package bi;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class fb extends s4.j {
-    public final /* synthetic */ kb F;
+public final class fb extends c0 {
+    public final /* synthetic */ pb Q0;
 
-    public fb(kb kbVar) {
-        this.F = kbVar;
-    }
-
-    @Override // s4.j
-    public final void M() {
-        ViewGroup viewGroup;
-        kb kbVar = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) kbVar.W).containerView;
-        viewGroup.invalidate();
-        kbVar.e.invalidate();
-    }
-
-    @Override // s4.j
-    public final void O() {
-        ViewGroup viewGroup;
-        kb kbVar = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) kbVar.W).containerView;
-        viewGroup.invalidate();
-        kbVar.e.invalidate();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        kb kbVar = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) kbVar.W).containerView;
-        viewGroup.invalidate();
-        kbVar.e.invalidate();
-        kbVar.f.invalidate();
-    }
-
-    @Override // s4.j
-    public final void Q() {
-        ViewGroup viewGroup;
-        kb kbVar = this.F;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) kbVar.W).containerView;
-        viewGroup.invalidate();
-        kbVar.e.invalidate();
-    }
-
-    @Override // s4.f1
-    public final boolean t(s4.c1 c1Var) {
-        return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fb(pb pbVar, int i10, Context context, pb pbVar2, b bVar) {
+        super(context);
+        this.Q0 = pbVar;
+        this.A0 = new ArrayList();
+        this.D0 = true;
+        this.M0 = new androidx.activity.i(this, 9);
+        this.O0 = -1;
+        this.y0 = i10;
+        this.H0 = new l5(context);
+        this.N0 = pbVar2;
+        r9 r9Var = new r9(this, context, pbVar2, bVar);
+        this.z0 = r9Var;
+        setAdapter(r9Var);
+        a1.c cVar = new a1.c(this, 8);
+        boolean z10 = this.m0 == null;
+        this.m0 = cVar;
+        setChildrenDrawingOrderEnabled(true);
+        this.o0 = 1;
+        this.n0 = 2;
+        if (z10) {
+            s();
+        }
+        setOffscreenPageLimit(0);
+        b(new s9(this, pbVar2));
+        setOverScrollMode(2);
     }
 }

@@ -1,64 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nv extends View {
-    public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public gg.h1 b;
-    public y5 c;
-    public ValueAnimator d;
-    public float e;
+public final /* synthetic */ class nv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ov b;
 
-    public TLRPC.Document getDocument() {
-        y5 y5Var = this.c;
-        if (y5Var == null) {
-            return null;
-        }
-        TLRPC.Document document = y5Var.document;
-        if (document != null) {
-            return document;
-        }
-        return p5.f(UserConfig.selectedAccount, y5Var.getDocumentId());
+    public /* synthetic */ nv(ov ovVar, int i10) {
+        this.a = i10;
+        this.b = ovVar;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z10) {
-            super.setPressed(z10);
-            invalidate();
-            if (z10 && (valueAnimator = this.d) != null) {
-                valueAnimator.removeAllListeners();
-                this.d.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f7 = this.e;
-            if (f7 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
-                this.d = ofFloat;
-                ofFloat.addUpdateListener(new j6(this, 17));
-                this.d.addListener(new rm(this, 8));
-                this.d.setInterpolator(new OvershootInterpolator(5.0f));
-                this.d.setDuration(350L);
-                this.d.start();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.f.dismiss();
+                break;
+            default:
+                rv rvVar = this.b.f;
+                rvVar.dismiss();
+                org.telegram.ui.ActionBar.n2 n2Var = rvVar.c;
+                if (n2Var != null && n2Var.getParentActivity() != null) {
+                    org.telegram.messenger.w1.p(R.string.AddEmojiNotFound, yc.a0(n2Var), null);
+                    break;
+                }
+                break;
         }
     }
 }

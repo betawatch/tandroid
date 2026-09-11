@@ -1,95 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ki1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zi1 b;
+public final class ki1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ui1 a;
 
-    public /* synthetic */ ki1(zi1 zi1Var, int i10) {
-        this.a = i10;
-        this.b = zi1Var;
+    public ki1(ui1 ui1Var) {
+        this.a = ui1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        VoIPService sharedInstance;
-        switch (this.a) {
-            case 0:
-                if (VoIPService.getSharedInstance() != null) {
-                    zi1 zi1Var = this.b;
-                    AndroidUtilities.cancelRunOnUIThread(zi1Var.S0);
-                    zi1Var.R0 = false;
-                    VoIPService.getSharedInstance().hangUp();
-                    break;
-                }
-                break;
-            case 1:
-                zi1 zi1Var2 = this.b;
-                if (zi1Var2.n0 && zi1Var2.m0 && System.currentTimeMillis() - zi1Var2.K0 > 500) {
-                    AndroidUtilities.cancelRunOnUIThread(zi1Var2.S0);
-                    zi1Var2.R0 = false;
-                    zi1Var2.K0 = System.currentTimeMillis();
-                    zi1Var2.Z.setRelativePosition(zi1Var2.Y);
-                    zi1Var2.a0 = true;
-                    zi1Var2.H0 = true;
-                    zi1Var2.q0 = zi1Var2.p0;
-                    zi1Var2.H();
-                    break;
-                }
-                break;
-            case 2:
-                zi1 zi1Var3 = this.b;
-                if (zi1Var3.H0 && System.currentTimeMillis() - zi1Var3.K0 > 500) {
-                    AndroidUtilities.cancelRunOnUIThread(zi1Var3.S0);
-                    zi1Var3.R0 = false;
-                    zi1Var3.K0 = System.currentTimeMillis();
-                    zi1Var3.Y.setRelativePosition(zi1Var3.Z);
-                    zi1Var3.a0 = false;
-                    zi1Var3.H0 = false;
-                    zi1Var3.q0 = zi1Var3.p0;
-                    zi1Var3.H();
-                    break;
-                }
-                break;
-            case 3:
-                long currentTimeMillis = System.currentTimeMillis();
-                zi1 zi1Var4 = this.b;
-                if (currentTimeMillis - zi1Var4.K0 >= 500) {
-                    zi1Var4.K0 = System.currentTimeMillis();
-                    boolean z10 = zi1Var4.C0;
-                    if (!z10 && zi1Var4.B0) {
-                        zi1Var4.m(!z10);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                long currentTimeMillis2 = System.currentTimeMillis();
-                zi1 zi1Var5 = this.b;
-                if (currentTimeMillis2 - zi1Var5.K0 >= 500) {
-                    zi1Var5.K0 = System.currentTimeMillis();
-                    if (zi1Var5.B0) {
-                        zi1Var5.m(!zi1Var5.C0);
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                zi1 zi1Var6 = this.b;
-                if (zi1Var6.K.getTag() != null && (sharedInstance = VoIPService.getSharedInstance()) != null) {
-                    zi1Var6.B();
-                    sharedInstance.toggleSpeakerphoneOrShowRouteSheet(zi1Var6.b, false, Integer.valueOf(sharedInstance.isBluetoothOn() ? 2 : sharedInstance.isSpeakerphoneOn() ? 0 : 1));
-                    break;
-                }
-                break;
-            default:
-                this.b.p();
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ui1 ui1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = ui1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            ui1Var.l1 = null;
         }
+        AndroidUtilities.runOnUIThread(new f01(this, 22));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

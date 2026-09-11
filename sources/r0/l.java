@@ -3,7 +3,7 @@ package r0;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface l {
     void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12);
@@ -12,7 +12,7 @@ public interface l {
 
     void n(int i10, View view);
 
-    boolean o(View view, View view2, int i10, int i11);
+    boolean p(View view, View view2, int i10, int i11);
 
-    void r(View view, View view2, int i10, int i11);
+    void s(View view, View view2, int i10, int i11);
 }

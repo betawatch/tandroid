@@ -1,69 +1,24 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class kx extends o51 {
-    public final /* synthetic */ rz b;
+public final class kx extends wx {
+    public final /* synthetic */ kz g3;
 
-    public kx(rz rzVar) {
-        this.b = rzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kx(kz kzVar, Context context) {
+        super(kzVar, context);
+        this.g3 = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.o51
-    public final boolean a() {
-        return this.b.t1.b();
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final String[] b() {
-        return this.b.W0;
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final boolean c() {
-        return this.b.t1.c();
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final boolean d(h51 h51Var, MotionEvent motionEvent) {
-        org.telegram.ui.tt q6 = org.telegram.ui.tt.q();
-        rz rzVar = this.b;
-        rzVar.getMeasuredHeight();
-        return q6.r(motionEvent, h51Var, rzVar.g2, rzVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final boolean e(h51 h51Var, k kVar, MotionEvent motionEvent) {
-        org.telegram.ui.tt q6 = org.telegram.ui.tt.q();
-        rz rzVar = this.b;
-        rzVar.getMeasuredHeight();
-        return q6.s(motionEvent, h51Var, kVar, rzVar.g2, rzVar.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
-        this.b.t1.m(null, document, null, obj, null, z10, i10);
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        rz rzVar = this.b;
-        rzVar.t1.r(stickerSetCovered);
-        if (z10) {
-            rzVar.Z(true);
+    @Override // org.telegram.ui.Components.wx, org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.g3.f) {
+            return false;
         }
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.t1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.o51
-    public final void i(String[] strArr) {
-        this.b.W0 = strArr;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

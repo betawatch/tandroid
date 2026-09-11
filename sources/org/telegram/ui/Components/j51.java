@@ -1,33 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class j51 extends g.p {
-    public final /* synthetic */ r51 c;
+public final class j51 extends URLSpan {
+    public final n01 a;
 
-    public j51(r51 r51Var) {
-        this.c = r51Var;
+    public j51(String str, n01 n01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = n01Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        r51 r51Var = this.c;
-        s4.h0 adapter = r51Var.n.getAdapter();
-        q51 q51Var = r51Var.s;
-        if (adapter == q51Var) {
-            if ((q51Var.d.get(i10) instanceof Integer) || i10 >= q51Var.w) {
-                return q51Var.v;
-            }
-            return 1;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        of.f.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        n01 n01Var = this.a;
+        if (n01Var != null) {
+            n01Var.a(textPaint);
         }
-        fg.h2 h2Var = r51Var.v;
-        SparseArray sparseArray = h2Var.s;
-        if (i10 == h2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
-            return h2Var.e.a();
-        }
-        return 1;
+        textPaint.setUnderlineText(true);
     }
 }

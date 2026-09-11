@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -43,10 +43,10 @@ public final class d implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            pVar.j(w10);
+            pVar.l(w10);
         }
-        pVar.p();
-        pVar.j(i10);
+        pVar.q();
+        pVar.l(i10);
         if (this.h == -1) {
             this.h = i10;
         }
@@ -62,29 +62,29 @@ public final class d implements c3.o {
         do {
             e2.v vVar = this.d;
             c3.l lVar = (c3.l) pVar;
-            lVar.g(vVar.a, 0, 2, false);
+            lVar.j(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & 65526) == 65520) {
                 i11++;
                 if (i11 >= 4 && i12 > 188) {
                     return true;
                 }
-                lVar.g(vVar.a, 0, 4, false);
+                lVar.j(vVar.a, 0, 4, false);
                 a4.h hVar = this.e;
                 hVar.q(14);
                 int i13 = hVar.i(13);
                 if (i13 <= 6) {
                     i10++;
                     lVar.f = 0;
-                    lVar.s(i10, false);
+                    lVar.v(i10, false);
                 } else {
-                    lVar.s(i13 - 6, false);
+                    lVar.v(i13 - 6, false);
                     i12 += i13;
                 }
             } else {
                 i10++;
                 lVar.f = 0;
-                lVar.s(i10, false);
+                lVar.v(i10, false);
             }
             i11 = 0;
             i12 = 0;
@@ -95,14 +95,14 @@ public final class d implements c3.o {
     @Override // c3.o
     public final void g(c3.q qVar) {
         this.f = qVar;
-        this.b.c(qVar, new g0(0, 1));
-        qVar.B();
+        this.b.e(qVar, new f0(0, 1));
+        qVar.Z0();
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.k = false;
-        this.b.b();
+        this.b.d();
         this.g = j10;
     }
 
@@ -129,7 +129,7 @@ public final class d implements c3.o {
             e2.v vVar = this.d;
             if (!this.j) {
                 this.i = -1;
-                pVar.p();
+                pVar.q();
                 long j3 = 0;
                 if (pVar.getPosition() == 0) {
                     a(pVar);
@@ -137,7 +137,7 @@ public final class d implements c3.o {
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.g(vVar.a, 0, 2, true)) {
+                        if (!pVar.j(vVar.a, 0, 2, true)) {
                             break;
                         }
                         vVar.J(0);
@@ -145,7 +145,7 @@ public final class d implements c3.o {
                             i12 = 0;
                             break;
                         }
-                        if (!pVar.g(vVar.a, 0, 4, true)) {
+                        if (!pVar.j(vVar.a, 0, 4, true)) {
                             break;
                         }
                         hVar.q(14);
@@ -156,12 +156,12 @@ public final class d implements c3.o {
                         }
                         j3 += i13;
                         i12++;
-                        if (i12 != 1000 && pVar.s(i13 - 6, true)) {
+                        if (i12 != 1000 && pVar.v(i13 - 6, true)) {
                         }
                     } catch (EOFException unused) {
                     }
                 }
-                pVar.p();
+                pVar.q();
                 if (i12 > 0) {
                     this.i = (int) (j3 / i12);
                 } else {
@@ -185,7 +185,7 @@ public final class d implements c3.o {
                         int i14 = this.i;
                         eVar = eVar2;
                         i10 = -1;
-                        qVar.G(new c3.k(length, (int) ((i14 * 8000000) / j10), i14, false, this.h));
+                        qVar.P1(new c3.k(length, (int) ((i14 * 8000000) / j10), i14, false, this.h));
                         this.l = true;
                         if (z10) {
                             return i10;
@@ -196,13 +196,13 @@ public final class d implements c3.o {
                             eVar.u = this.g;
                             this.k = true;
                         }
-                        eVar.a(vVar2);
+                        eVar.b(vVar2);
                         return 0;
                     }
                 }
                 eVar = eVar2;
                 i10 = -1;
-                this.f.G(new c3.t(-9223372036854775807L));
+                this.f.P1(new c3.t(-9223372036854775807L));
                 this.l = true;
                 if (z10) {
                 }

@@ -1,12 +1,12 @@
 package ie;
 
-import ee.v;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import v7.t8;
 import zd.e0;
 import zd.m;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d extends i implements a {
     public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
@@ -35,7 +35,7 @@ public final class d extends i implements a {
             } else {
                 gd.i iVar = gd.i.a;
                 if (i11 <= 0) {
-                    m l4 = e0.l(w7.g.b(cVar));
+                    m l4 = e0.l(t8.b(cVar));
                     try {
                         a(new c(this, l4));
                         Object r10 = l4.r();
@@ -61,10 +61,10 @@ public final class d extends i implements a {
         while (c()) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
-            v vVar = e.a;
-            if (obj2 != vVar) {
+            d9.f fVar = e.a;
+            if (obj2 != fVar) {
                 if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, vVar)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, fVar)) {
                         if (atomicReferenceFieldUpdater.get(this) != obj2) {
                             break;
                         }

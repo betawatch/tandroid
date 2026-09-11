@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import bi.wc;
+import bi.oa;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
 import v7.n6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -26,8 +26,8 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             if (extras != null) {
                 bundle = extras.getBundle("gcm.n.analytics_data");
             }
-        } catch (RuntimeException e) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
+        } catch (RuntimeException e7) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e7);
         }
         if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
             if (bundle != null) {
@@ -54,7 +54,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             return;
         }
         if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new wc(this, intent));
+            new Handler(Looper.getMainLooper()).post(new oa(this, intent));
         } else {
             a(intent);
         }

@@ -1,5 +1,6 @@
 package i;
 
+import ah.g1;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -11,10 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.SystemClock;
 import androidx.activity.i;
-import hi.s0;
-import v7.r8;
+import v7.o8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class f extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int x = 0;
@@ -29,7 +29,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
     public i r;
     public long s;
     public long v;
-    public s0 w;
+    public g1 w;
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x003f  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x006a A[ADDED_TO_REGION] */
@@ -127,11 +127,11 @@ public abstract class f extends Drawable implements Drawable.Callback {
 
     public final void b(Drawable drawable) {
         if (this.w == null) {
-            this.w = new s0();
+            this.w = new g1();
         }
-        s0 s0Var = this.w;
-        s0Var.b = drawable.getCallback();
-        drawable.setCallback(s0Var);
+        g1 g1Var = this.w;
+        g1Var.b = drawable.getCallback();
+        drawable.setCallback(g1Var);
         try {
             if (this.a.y <= 0 && this.f) {
                 drawable.setAlpha(this.e);
@@ -154,21 +154,21 @@ public abstract class f extends Drawable implements Drawable.Callback {
             drawable.setLevel(getLevel());
             drawable.setBounds(getBounds());
             if (Build.VERSION.SDK_INT >= 23) {
-                r8.b(r8.a(this), drawable);
+                o8.b(o8.a(this), drawable);
             }
             drawable.setAutoMirrored(this.a.A);
             Rect rect = this.b;
             if (rect != null) {
                 drawable.setHotspotBounds(rect.left, rect.top, rect.right, rect.bottom);
             }
-            s0 s0Var2 = this.w;
-            Drawable.Callback callback = (Drawable.Callback) s0Var2.b;
-            s0Var2.b = null;
+            g1 g1Var2 = this.w;
+            Drawable.Callback callback = (Drawable.Callback) g1Var2.b;
+            g1Var2.b = null;
             drawable.setCallback(callback);
         } catch (Throwable th2) {
-            s0 s0Var3 = this.w;
-            Drawable.Callback callback2 = (Drawable.Callback) s0Var3.b;
-            s0Var3.b = null;
+            g1 g1Var3 = this.w;
+            Drawable.Callback callback2 = (Drawable.Callback) g1Var3.b;
+            g1Var3.b = null;
             drawable.setCallback(callback2);
             throw th2;
         }
@@ -220,7 +220,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
                 if (this.s == 0 || this.v != 0) {
                     iVar = this.r;
                     if (iVar != null) {
-                        this.r = new i((e) this, 18);
+                        this.r = new i((e) this, 21);
                     } else {
                         unscheduleSelf(iVar);
                     }
@@ -462,7 +462,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
             Drawable drawable = this.c;
             z10 = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
         }
-        if (this.a.A && r8.a(this) == 1) {
+        if (this.a.A && o8.a(this) == 1) {
             int i16 = rect.left;
             rect.left = rect.right;
             rect.right = i16;
@@ -556,7 +556,7 @@ public abstract class f extends Drawable implements Drawable.Callback {
         for (int i13 = 0; i13 < i12; i13++) {
             Drawable drawable = drawableArr[i13];
             if (drawable != null) {
-                boolean b10 = Build.VERSION.SDK_INT >= 23 ? r8.b(i10, drawable) : false;
+                boolean b10 = Build.VERSION.SDK_INT >= 23 ? o8.b(i10, drawable) : false;
                 if (i13 == i11) {
                     z10 = b10;
                 }

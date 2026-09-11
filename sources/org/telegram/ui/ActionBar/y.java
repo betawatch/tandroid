@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.df;
+import org.telegram.ui.bf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class y {
     public z a;
@@ -20,7 +20,7 @@ public final class y {
     public Boolean j;
     public Boolean k;
     public int l;
-    public w0 m;
+    public v0 m;
     public ArrayList n;
     public Integer o;
 
@@ -49,7 +49,7 @@ public final class y {
                 i11++;
             }
         }
-        w0 f7 = zVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
+        v0 f7 = zVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
         this.m = f7;
         f7.setVisibility(this.l);
         CharSequence charSequence = this.d;
@@ -77,31 +77,31 @@ public final class y {
         }
     }
 
-    public final void b(df dfVar) {
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            dfVar.run(w0Var);
+    public final void b(bf bfVar) {
+        v0 v0Var = this.m;
+        if (v0Var != null) {
+            bfVar.run(v0Var);
             return;
         }
         if (this.n == null) {
             this.n = new ArrayList();
         }
-        this.n.add(dfVar);
+        this.n.add(bfVar);
     }
 
     public final void c() {
         this.k = Boolean.FALSE;
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            w0Var.R = false;
+        v0 v0Var = this.m;
+        if (v0Var != null) {
+            v0Var.R = false;
         }
     }
 
     public final void d() {
         this.j = Boolean.TRUE;
-        w0 w0Var = this.m;
-        if (w0Var != null) {
-            w0Var.S = true;
+        v0 v0Var = this.m;
+        if (v0Var != null) {
+            v0Var.S = true;
         }
     }
 
@@ -115,9 +115,9 @@ public final class y {
             if (i10 == 0) {
                 a();
             }
-            w0 w0Var = this.m;
-            if (w0Var != null) {
-                w0Var.setVisibility(i10);
+            v0 v0Var = this.m;
+            if (v0Var != null) {
+                v0Var.setVisibility(i10);
             }
         }
     }

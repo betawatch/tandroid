@@ -1,41 +1,28 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class r6 {
-    public long a;
-    public int b;
-    public long c;
-    public final SparseArray d = new SparseArray();
+public final class r6 extends FrameLayout {
+    public org.telegram.ui.Components.q6 a;
+    public q6 b;
 
-    public r6(long j3) {
-        this.a = j3;
+    public final void a(float f7) {
+        org.telegram.ui.Components.q6 q6Var = this.a;
+        q6Var.a();
+        q6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(w7.p.a(f7, 0.0f, 1.0f) * 100.0f))), !LocaleController.isRTL, true);
+        q6 q6Var2 = this.b;
+        q6Var2.d = f7;
+        q6Var2.invalidate();
     }
 
-    public final void a(yh.a aVar, int i10) {
-        SparseArray sparseArray = this.d;
-        s6 s6Var = (s6) sparseArray.get(i10, null);
-        if (s6Var == null) {
-            s6Var = new s6();
-            sparseArray.put(i10, s6Var);
-        }
-        long j3 = aVar.c;
-        s6Var.a += j3;
-        this.c += j3;
-        this.b++;
-        s6Var.b.add(aVar);
-    }
-
-    public final void b(yh.a aVar) {
-        s6 s6Var = (s6) this.d.get(aVar.d, null);
-        if (s6Var != null && s6Var.b.remove(aVar)) {
-            long j3 = s6Var.a;
-            long j10 = aVar.c;
-            s6Var.a = j3 - j10;
-            this.c -= j10;
-            this.b--;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(350.0f), TLObject.FLAG_30));
     }
 }

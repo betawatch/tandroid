@@ -1,38 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k31 b;
+public final class s21 {
+    public static final s21 a;
+    public static final s21 b;
+    public static final s21 c;
+    public static final /* synthetic */ s21[] d;
 
-    public /* synthetic */ s21(k31 k31Var, int i10) {
-        this.a = i10;
-        this.b = k31Var;
+    static {
+        s21 s21Var = new s21("TOP", 0);
+        a = s21Var;
+        s21 s21Var2 = new s21("LEFT", 1);
+        b = s21Var2;
+        s21 s21Var3 = new s21("BOTTOM", 2);
+        c = s21Var3;
+        d = new s21[]{s21Var, s21Var2, s21Var3};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k31 k31Var = this.b;
-                a31 a31Var = k31Var.G;
-                a31Var.v1(true);
-                y21 y21Var = k31Var.s;
-                y21Var.v1(true);
-                k31Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(y21Var);
-                AndroidUtilities.updateVisibleRows(a31Var);
-                break;
-            default:
-                k31 k31Var2 = this.b;
-                if (k31Var2.k()) {
-                    k31Var2.l();
-                    break;
-                }
-                break;
-        }
+    public static s21 valueOf(String str) {
+        return (s21) Enum.valueOf(s21.class, str);
+    }
+
+    public static s21[] values() {
+        return (s21[]) d.clone();
     }
 }

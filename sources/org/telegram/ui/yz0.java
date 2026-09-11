@@ -1,121 +1,109 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class yz0 extends l71 {
-    public final /* synthetic */ c71[] d2;
-    public final /* synthetic */ ProfileActivity e2;
+public final class yz0 implements nq {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yz0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, c71[] c71VarArr) {
-        super(profileActivity2, activity, true, num, i10, true, f6Var, i11);
-        this.e2 = profileActivity;
-        this.d2 = c71VarArr;
+    public yz0(ProfileActivity profileActivity, int i10, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i10;
+        this.b = chatParticipant;
+        this.c = z10;
+        this.d = zArr;
     }
 
-    @Override // org.telegram.ui.l71
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i10;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i10 = ((org.telegram.ui.ActionBar.p2) this.e2).currentAccount;
-        return xh.v5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+    @Override // org.telegram.ui.nq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
     }
 
-    @Override // org.telegram.ui.l71
-    public final long getDialogId() {
-        return this.e2.a();
-    }
-
-    @Override // org.telegram.ui.l71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        TLRPC.EmojiStatus emojiStatus;
-        int i10;
-        int i11;
-        int i12;
-        ProfileActivity profileActivity = this.e2;
-        org.telegram.ui.Components.n5[] n5VarArr = profileActivity.G;
-        c71[] c71VarArr = this.d2;
-        if (tL_starGiftUnique != null) {
-            i10 = ((org.telegram.ui.ActionBar.p2) profileActivity).currentAccount;
-            TL_stars.SavedStarGift n10 = xh.v5.y(i10, false).n(tL_starGiftUnique.id);
-            if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
-                MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
-                Context context = getContext();
-                i11 = ((org.telegram.ui.ActionBar.p2) profileActivity).currentAccount;
-                i12 = ((org.telegram.ui.ActionBar.p2) profileActivity).currentAccount;
-                xh.x3 x3Var = new xh.x3(context, i11, UserConfig.getInstance(i12).getClientUserId(), profileActivity.z0, null);
-                x3Var.j2(n10, null);
-                x3Var.m2();
-                x3Var.show();
-                c71 c71Var = c71VarArr[0];
-                if (c71Var != null) {
-                    profileActivity.B5 = null;
-                    c71Var.dismiss();
-                    return;
+    @Override // org.telegram.ui.nq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z10;
+        int i11 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
+        int i12 = this.a;
+        if (i12 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i10 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
                 }
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().getClientUserId();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.u2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.u2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i10 != 1 || this.c) {
                 return;
             }
-            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
-            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-            emojiStatus = tL_inputEmojiStatusCollectible;
-            if (num != null) {
-                tL_inputEmojiStatusCollectible.flags |= 1;
-                tL_inputEmojiStatusCollectible.until = num.intValue();
-                emojiStatus = tL_inputEmojiStatusCollectible;
-            }
-        } else if (l4 == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = l4.longValue();
-            emojiStatus = tL_emojiStatus;
-            if (num != null) {
-                tL_emojiStatus.flags |= 1;
-                tL_emojiStatus.until = num.intValue();
-                emojiStatus = tL_emojiStatus;
-            }
+            this.d[0] = true;
+            return;
         }
-        profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
-        MessagesController messagesController = profileActivity.getMessagesController();
-        TLRPC.Chat chat = profileActivity.E2;
-        messagesController.updateEmojiStatus(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
-        for (int i13 = 0; i13 < 2; i13++) {
-            org.telegram.ui.Components.n5 n5Var = n5VarArr[i13];
-            if (n5Var != null) {
-                if (l4 == null && profileActivity.E2 == null) {
-                    n5Var.g(profileActivity.Y3(i13), true);
-                } else if (l4 != null) {
-                    n5Var.j(l4.longValue(), true);
+        if (i12 == 1 && i10 == 0 && profileActivity.E2.megagroup && (chatFull = profileActivity.u2) != null && chatFull.participants != null) {
+            int i13 = 0;
+            while (true) {
+                if (i13 >= profileActivity.u2.participants.participants.size()) {
+                    z10 = false;
+                    break;
                 } else {
-                    n5Var.g(null, true);
+                    if (MessageObject.getPeerId(((TLRPC.TL_chatChannelParticipant) profileActivity.u2.participants.participants.get(i13)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.u2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i13);
+                        z10 = true;
+                        break;
+                    }
+                    i13++;
                 }
-                n5VarArr[i13].m(tL_starGiftUnique != null, true);
             }
-        }
-        if (l4 != null) {
-            org.telegram.ui.Cells.o oVar = profileActivity.d0;
-            yg.p0 p0Var = new yg.p0();
-            long longValue = l4.longValue();
-            p0Var.g = longValue;
-            p0Var.h = longValue;
-            oVar.a(p0Var);
-        }
-        profileActivity.X4();
-        profileActivity.Z4();
-        c71 c71Var2 = c71VarArr[0];
-        if (c71Var2 != null) {
-            profileActivity.B5 = null;
-            c71Var2.dismiss();
+            TLRPC.ChatFull chatFull3 = profileActivity.u2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i11 >= profileActivity.u2.participants.participants.size()) {
+                        break;
+                    }
+                    if (profileActivity.u2.participants.participants.get(i11).user_id == chatParticipant.user_id) {
+                        profileActivity.u2.participants.participants.remove(i11);
+                        z10 = true;
+                        break;
+                    }
+                    i11++;
+                }
+            }
+            if (z10) {
+                profileActivity.h5(true);
+                profileActivity.j5();
+                profileActivity.d.l();
+            }
         }
     }
 }

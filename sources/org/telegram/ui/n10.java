@@ -1,27 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class n10 extends org.telegram.ui.Components.a10 {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ Object V;
+public final class n10 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ cr b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n10(Object obj, Context context, int i10) {
-        super(context, null);
-        this.U = i10;
-        this.V = obj;
+    public n10(cr crVar) {
+        this.b = crVar;
     }
 
-    @Override // org.telegram.ui.Components.a10
-    public final int getColumnsCount() {
-        switch (this.U) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                return ((z10) this.V).s;
+                ((x10) this.b.d).l0.unlock();
+                break;
             default:
-                return ((x10) this.V).d.s;
+                cr crVar = this.b;
+                View view = crVar.b;
+                view.setAlpha(1.0f);
+                s4.o0.x0(view);
+                ((x10) crVar.d).b.removeView(view);
+                break;
         }
+    }
+
+    public n10(cr crVar, s4.o0 o0Var) {
+        this.b = crVar;
     }
 }

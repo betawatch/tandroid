@@ -1,30 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ng1 extends ng.a {
-    public final TLRPC.TL_forumTopic c;
+public final /* synthetic */ class ng1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    public ng1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    public /* synthetic */ ng1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = twoStepVerificationActivity;
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        EditTextBoldCursor editTextBoldCursor;
+        switch (this.a) {
+            case 0:
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                if (!twoStepVerificationActivity.isFinishing() && !twoStepVerificationActivity.H && (editTextBoldCursor = twoStepVerificationActivity.s) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(twoStepVerificationActivity.s);
+                    break;
+                }
+                break;
+            case 1:
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
+                twoStepVerificationActivity2.U = false;
+                twoStepVerificationActivity2.v.a(0.0f);
+                break;
+            case 2:
+                this.b.y0();
+                break;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
+                ng1 ng1Var = twoStepVerificationActivity3.V;
+                AndroidUtilities.cancelRunOnUIThread(ng1Var);
+                AndroidUtilities.runOnUIThread(ng1Var, 1500L);
+                twoStepVerificationActivity3.U = true;
+                break;
         }
-        if (obj == null || ng1.class != obj.getClass()) {
-            return false;
-        }
-        ng1 ng1Var = (ng1) obj;
-        if (this.a != ng1Var.a) {
-            return false;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = ng1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

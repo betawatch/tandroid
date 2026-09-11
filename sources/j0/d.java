@@ -15,9 +15,9 @@ import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.util.Log;
 import java.lang.reflect.Method;
-import v7.r8;
+import v7.o8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d extends Drawable implements Drawable.Callback, c, b {
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
@@ -33,8 +33,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         if (n == null) {
             try {
                 n = Drawable.class.getDeclaredMethod("isProjected", null);
-            } catch (Exception e) {
-                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e);
+            } catch (Exception e7) {
+                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e7);
             }
         }
     }
@@ -123,7 +123,7 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
 
     @Override // android.graphics.drawable.Drawable
     public final int getLayoutDirection() {
-        return r8.a(this.f);
+        return o8.a(this.f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -222,8 +222,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         }
         try {
             return ((Boolean) method.invoke(drawable, null)).booleanValue();
-        } catch (Exception e) {
-            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e);
+        } catch (Exception e7) {
+            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e7);
             return false;
         }
     }
@@ -268,7 +268,7 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean onLayoutDirectionChanged(int i10) {
-        return r8.b(i10, this.f);
+        return o8.b(i10, this.f);
     }
 
     @Override // android.graphics.drawable.Drawable

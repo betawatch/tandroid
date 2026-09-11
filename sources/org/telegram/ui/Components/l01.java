@@ -1,64 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class l01 extends aw0 {
-    public final org.telegram.ui.m20 w0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 x0;
-    public final /* synthetic */ j01 y0;
+public final /* synthetic */ class l01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m01 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l01(Context context, org.telegram.ui.ActionBar.f6 f6Var, j01 j01Var) {
-        super(context, null);
-        this.x0 = f6Var;
-        this.y0 = j01Var;
-        this.w0 = new org.telegram.ui.m20();
+    public /* synthetic */ l01(m01 m01Var, int i10) {
+        this.a = i10;
+        this.b = m01Var;
     }
 
-    @Override // org.telegram.ui.Components.aw0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.aw0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.y0) {
-            return super.drawChild(canvas, view, j3);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                m01 m01Var = this.b;
+                m01Var.getClass();
+                m01Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var.invalidate();
+                break;
+            case 1:
+                m01 m01Var2 = this.b;
+                m01Var2.getClass();
+                m01Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var2.invalidate();
+                break;
+            case 2:
+                m01 m01Var3 = this.b;
+                m01Var3.getClass();
+                m01Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var3.invalidate();
+                break;
+            case 3:
+                m01 m01Var4 = this.b;
+                m01Var4.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var4.s = floatValue;
+                m01Var4.w = (int) ((m01Var4.h * floatValue) + 0);
+                m01Var4.invalidate();
+                break;
+            default:
+                m01 m01Var5 = this.b;
+                m01Var5.getClass();
+                m01Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var5.x = m01Var5.r + ((int) Math.ceil((m01Var5.n - r1) * r5));
+                m01Var5.invalidate();
+                break;
         }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, AndroidUtilities.dp(45.0f), getHeight());
-        this.w0.b(canvas, rectF, 0, 1.0f);
-        canvas.restore();
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.Components.aw0
-    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
-        return this.x0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30);
-        j01 j01Var = this.y0;
-        j01Var.measure(makeMeasureSpec, i11);
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), j01Var.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
     }
 }

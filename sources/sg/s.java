@@ -1,237 +1,238 @@
 package sg;
 
-import android.text.TextUtils;
-import android.util.Pair;
-import bi.wa;
-import bi.ze;
-import di.n3;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import di.f4;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import org.json.JSONObject;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.v5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class s {
-    public static HashMap a;
+public final class s extends View {
+    public final Path a;
+    public final CornerPathEffect b;
+    public final TextPaint c;
+    public StaticLayout d;
+    public float e;
+    public SpannableStringBuilder f;
+    public final ArrayList h;
+    public StaticLayout n;
+    public boolean r;
+    public float s;
+    public boolean v;
+    public final Paint w;
+    public final Paint x;
+    public final /* synthetic */ LimitPreviewView y;
 
-    public static void a(long j3, List list, Utilities.Callback callback, Utilities.Callback callback2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        TL_stories.TL_premium_applyBoost tL_premium_applyBoost = new TL_stories.TL_premium_applyBoost();
-        tL_premium_applyBoost.peer = messagesController.getInputPeer(-j3);
-        tL_premium_applyBoost.flags |= 1;
-        tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new wa(callback2, messagesController, callback, 15), 66);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s(LimitPreviewView limitPreviewView, Context context) {
+        super(context);
+        this.y = limitPreviewView;
+        this.a = new Path();
+        this.b = new CornerPathEffect(AndroidUtilities.dp(6.0f));
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.h = new ArrayList();
+        Paint paint = new Paint();
+        this.w = paint;
+        Paint paint2 = new Paint();
+        this.x = paint2;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(22.0f));
+        textPaint.setColor(-1);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.OVERLAY));
     }
 
-    public static ArrayList b(int i10, List list) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) it.next();
-            String str = tL_premiumGiftCodeOption.store_product;
-            if (tL_premiumGiftCodeOption.users == i10) {
-                arrayList.add(tL_premiumGiftCodeOption);
+    public static void a(s sVar) {
+        ArrayList arrayList = sVar.h;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (((r) arrayList.get(i10)).f != null) {
+                return;
             }
         }
-        if (arrayList.isEmpty()) {
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) it2.next();
-                if (tL_premiumGiftCodeOption2.users == 1) {
-                    arrayList.add(tL_premiumGiftCodeOption2);
-                }
+        arrayList.clear();
+        sVar.r = false;
+        sVar.invalidate();
+    }
+
+    public final void b() {
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(8.0f);
+        float measuredWidth = getMeasuredWidth() * this.s;
+        float clamp = Utilities.clamp(AndroidUtilities.dp(8.0f) + measuredWidth, getMeasuredWidth(), 0.0f);
+        float clamp2 = Utilities.clamp(AndroidUtilities.dp(10.0f) + measuredWidth, getMeasuredWidth(), AndroidUtilities.dp(24.0f));
+        float clamp3 = Utilities.clamp(measuredWidth - AndroidUtilities.dp(this.s >= 0.7f ? 24.0f : 10.0f), getMeasuredWidth(), 0.0f);
+        float clamp4 = Utilities.clamp(measuredWidth - AndroidUtilities.dp(8.0f), getMeasuredWidth(), 0.0f);
+        Path path = this.a;
+        path.rewind();
+        float f7 = measuredHeight;
+        float f10 = f7 - (f7 / 2.0f);
+        path.moveTo(clamp3, f10 - AndroidUtilities.dp(2.0f));
+        path.lineTo(clamp3, f7);
+        path.lineTo(clamp4, f7);
+        path.lineTo(measuredWidth, AndroidUtilities.dp(8.0f) + measuredHeight);
+        if (this.s < 0.7f) {
+            path.lineTo(clamp, f7);
+        }
+        path.lineTo(clamp2, f7);
+        path.lineTo(clamp2, f10 - AndroidUtilities.dp(2.0f));
+        path.close();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float globalXOffset;
+        float globalXOffset2;
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(8.0f);
+        LimitPreviewView limitPreviewView = this.y;
+        Paint paint = limitPreviewView.K;
+        if (limitPreviewView.J) {
+            measuredHeight = getMeasuredHeight();
+            d1 d = d1.d();
+            int measuredWidth = limitPreviewView.getMeasuredWidth();
+            int measuredHeight2 = limitPreviewView.getMeasuredHeight();
+            globalXOffset2 = limitPreviewView.getGlobalXOffset();
+            d.f(globalXOffset2 - getX(), -getTop(), measuredWidth, measuredHeight2);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.dp(3.0f), getMeasuredWidth(), measuredHeight - AndroidUtilities.dp(3.0f));
+            float f7 = measuredHeight / 2.0f;
+            d1 d10 = d1.d();
+            if (d10.c == null) {
+                d10.c = new Paint(1);
+            }
+            d10.c.setColor(j6.w0(null, j6.Oh, false));
+            canvas.drawRoundRect(rectF, f7, f7, d10.c);
+        } else {
+            if (this.v) {
+                this.v = false;
+                b();
+            }
+            d1 d11 = d1.d();
+            int measuredWidth2 = limitPreviewView.getMeasuredWidth();
+            int measuredHeight3 = limitPreviewView.getMeasuredHeight();
+            globalXOffset = limitPreviewView.getGlobalXOffset();
+            d11.f(globalXOffset - getX(), -getTop(), measuredWidth2, measuredHeight3);
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            float f10 = measuredHeight;
+            rectF2.set(0.0f, 0.0f, getMeasuredWidth(), f10);
+            float f11 = f10 / 2.0f;
+            boolean z10 = limitPreviewView.R;
+            TextPaint textPaint = this.c;
+            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : d1.d().e());
+            Paint e7 = d1.d().e();
+            CornerPathEffect cornerPathEffect = this.b;
+            e7.setPathEffect(cornerPathEffect);
+            if (limitPreviewView.e0 != null) {
+                textPaint.setPathEffect(cornerPathEffect);
+            }
+            if (!limitPreviewView.R) {
+                paint = limitPreviewView.e0 != null ? textPaint : d1.d().e();
+            }
+            canvas.drawPath(this.a, paint);
+            d1.d().e().setPathEffect(null);
+            if (limitPreviewView.e0 != null) {
+                textPaint.setPathEffect(null);
+            }
+            if (limitPreviewView.d0) {
+                invalidate();
             }
         }
-        return arrayList;
-    }
-
-    public static List c(ArrayList arrayList) {
-        if (!h()) {
-            return arrayList;
+        int i10 = measuredHeight;
+        if (limitPreviewView.e0 != null) {
+            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.w, 31);
         }
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) obj;
-            if (tL_premiumGiftCodeOption.store_product != null) {
-                arrayList2.add(tL_premiumGiftCodeOption);
+        float measuredWidth3 = (getMeasuredWidth() - this.e) / 2.0f;
+        float height = (i10 - this.d.getHeight()) / 2.0f;
+        if (this.r) {
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(8.0f));
+            if (this.n != null) {
+                canvas.save();
+                canvas.translate(measuredWidth3, height);
+                this.n.draw(canvas);
+                canvas.restore();
             }
-        }
-        return arrayList2;
-    }
-
-    public static void d(MessageObject messageObject, Utilities.Callback callback, Utilities.Callback callback2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        TLRPC.TL_payments_getGiveawayInfo tL_payments_getGiveawayInfo = new TLRPC.TL_payments_getGiveawayInfo();
-        tL_payments_getGiveawayInfo.msg_id = messageObject.getId();
-        tL_payments_getGiveawayInfo.peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
-        connectionsManager.sendRequest(tL_payments_getGiveawayInfo, new o(callback2, callback, 1));
-    }
-
-    public static ArrayList e(long j3) {
-        ArrayList arrayList = new ArrayList();
-        MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-        ArrayList<TLRPC.Dialog> allDialogs = messagesController.getAllDialogs();
-        for (int i10 = 0; i10 < allDialogs.size(); i10++) {
-            TLRPC.Dialog dialog = allDialogs.get(i10);
-            if (DialogObject.isChatDialog(dialog.id) && ChatObject.isBoostSupported(messagesController.getChat(Long.valueOf(-dialog.id)))) {
-                long j10 = dialog.id;
-                if ((-j10) != j3) {
-                    arrayList.add(messagesController.getInputPeer(j10));
-                }
-            }
-        }
-        return arrayList;
-    }
-
-    public static long f() {
-        return MessagesController.getInstance(UserConfig.selectedAccount).giveawayAddPeersMax;
-    }
-
-    public static int g() {
-        return (int) MessagesController.getInstance(UserConfig.selectedAccount).giveawayBoostsPerPremium;
-    }
-
-    public static boolean h() {
-        if (BuildVars.useInvoiceBilling()) {
-            return false;
-        }
-        return BillingController.getInstance().isReady();
-    }
-
-    public static boolean i() {
-        return MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift > 0;
-    }
-
-    public static int j(int i10, TLRPC.Chat chat, Utilities.Callback callback) {
-        Pair pair;
-        if (chat == null) {
-            HashMap hashMap = a;
-            List list = null;
-            if (hashMap != null && (pair = (Pair) hashMap.get(Integer.valueOf(i10))) != null && System.currentTimeMillis() - ((Long) pair.first).longValue() < 1800000) {
-                list = (List) pair.second;
-            }
-            if (list != null) {
-                callback.run(list);
-                return -1;
-            }
-        }
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-        TLRPC.TL_payments_getPremiumGiftCodeOptions tL_payments_getPremiumGiftCodeOptions = new TLRPC.TL_payments_getPremiumGiftCodeOptions();
-        if (chat != null) {
-            tL_payments_getPremiumGiftCodeOptions.flags = 1;
-            tL_payments_getPremiumGiftCodeOptions.boost_peer = messagesController.getInputPeer(-chat.id);
-        }
-        return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new fg.t(chat, i10, callback, 9));
-    }
-
-    public static void k(ArrayList arrayList, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.Chat chat, TLRPC.TL_textWithEntities tL_textWithEntities, p2 p2Var, Utilities.Callback callback, Utilities.Callback callback2) {
-        int i10 = UserConfig.selectedAccount;
-        HashMap hashMap = a;
-        if (hashMap != null) {
-            hashMap.remove(Integer.valueOf(i10));
-        }
-        if (h()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-            TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-            tL_inputStorePaymentPremiumGiftCode.users = new ArrayList<>();
-            int size = arrayList.size();
             int i11 = 0;
-            while (i11 < size) {
-                Object obj = arrayList.get(i11);
-                i11++;
-                TLObject tLObject = (TLObject) obj;
-                if (tLObject instanceof TLRPC.User) {
-                    tL_inputStorePaymentPremiumGiftCode.users.add(messagesController.getInputUser((TLRPC.User) tLObject));
+            while (true) {
+                ArrayList arrayList = this.h;
+                if (i11 >= arrayList.size()) {
+                    break;
                 }
+                r rVar = (r) arrayList.get(i11);
+                canvas.save();
+                boolean z11 = rVar.a;
+                ArrayList arrayList2 = rVar.b;
+                if (z11) {
+                    canvas.translate(rVar.e + measuredWidth3, ((i10 * rVar.c) + height) - ((1 - arrayList2.size()) * i10));
+                    for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                        canvas.translate(0.0f, -i10);
+                        ((StaticLayout) arrayList2.get(i12)).draw(canvas);
+                    }
+                } else if (rVar.d) {
+                    canvas.translate(rVar.e + measuredWidth3, (height - ((i10 * 10) * rVar.c)) + ((10 - arrayList2.size()) * i10));
+                    for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+                        canvas.translate(0.0f, i10);
+                        ((StaticLayout) arrayList2.get(i13)).draw(canvas);
+                    }
+                } else {
+                    canvas.translate(rVar.e + measuredWidth3, (((i10 * 10) * rVar.c) + height) - ((10 - arrayList2.size()) * i10));
+                    for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                        canvas.translate(0.0f, -i10);
+                        ((StaticLayout) arrayList2.get(i14)).draw(canvas);
+                    }
+                }
+                canvas.restore();
+                i11++;
             }
-            if (chat != null) {
-                tL_inputStorePaymentPremiumGiftCode.flags = 1;
-                tL_inputStorePaymentPremiumGiftCode.boost_peer = messagesController.getInputPeer(-chat.id);
-            }
-            if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                tL_inputStorePaymentPremiumGiftCode.flags |= 2;
-                tL_inputStorePaymentPremiumGiftCode.message = tL_textWithEntities;
-            }
-            c5.a aVar = new c5.a();
-            aVar.b = "inapp";
-            aVar.a = tL_premiumGiftCodeOption.store_product;
-            BillingController.getInstance().queryProductDetails(Arrays.asList(aVar.a()), new org.telegram.ui.Components.f1(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, callback2, callback, p2Var, 2));
-            return;
+            canvas.restore();
+        } else if (this.d != null) {
+            canvas.save();
+            canvas.translate(measuredWidth3, height);
+            this.d.draw(canvas);
+            canvas.restore();
         }
-        MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
-        ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = new TLRPC.TL_inputInvoicePremiumGiftCode();
-        TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode2 = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-        tL_inputStorePaymentPremiumGiftCode2.users = new ArrayList<>();
-        int size2 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList.get(i12);
-            i12++;
-            TLObject tLObject2 = (TLObject) obj2;
-            if (tLObject2 instanceof TLRPC.User) {
-                tL_inputStorePaymentPremiumGiftCode2.users.add(messagesController2.getInputUser((TLRPC.User) tLObject2));
-            }
+        if (limitPreviewView.e0 != null) {
+            canvas.restore();
+            canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x, 31);
+            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((v5) ((org.telegram.ui.z0) limitPreviewView.e0).b).t0(getX(), getY()));
+            canvas.restore();
         }
-        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 2;
-            tL_inputStorePaymentPremiumGiftCode2.message = tL_textWithEntities;
-        }
-        if (chat != null) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 1;
-            tL_inputStorePaymentPremiumGiftCode2.boost_peer = messagesController2.getInputPeer(-chat.id);
-        }
-        tL_inputStorePaymentPremiumGiftCode2.currency = tL_premiumGiftCodeOption.currency;
-        tL_inputStorePaymentPremiumGiftCode2.amount = tL_premiumGiftCodeOption.amount;
-        tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiftCode2;
-        tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption;
-        JSONObject p5 = n3.p(p2Var.getResourceProvider(), false);
-        if (p5 != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = p5.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new ze(callback2, messagesController2, tL_inputInvoicePremiumGiftCode, p2Var, callback, 13));
     }
 
-    public static int l(long j3) {
-        if (j3 < System.currentTimeMillis() + 120000) {
-            j3 = System.currentTimeMillis() + 120000;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        SpannableStringBuilder spannableStringBuilder = this.f;
+        TextPaint textPaint = this.c;
+        this.e = f4.g(spannableStringBuilder, textPaint);
+        this.d = new StaticLayout(this.f, textPaint, AndroidUtilities.dp(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.e = 0.0f;
+        for (int i12 = 0; i12 < this.d.getLineCount(); i12++) {
+            this.e = Math.max(this.e, this.d.getLineWidth(i12));
         }
-        return (int) (j3 / 1000);
+        setMeasuredDimension((int) (this.e + getPaddingRight() + getPaddingLeft()), AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(44.0f));
+        b();
     }
 
-    public static void m(int i10, ArrayList arrayList) {
-        if (a == null) {
-            a = new HashMap();
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        if (f7 != getTranslationX()) {
+            super.setTranslationX(f7);
+            invalidate();
         }
-        a.put(Integer.valueOf(i10), new Pair(Long.valueOf(System.currentTimeMillis()), arrayList));
     }
 }

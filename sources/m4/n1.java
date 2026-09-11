@@ -1,54 +1,63 @@
 package m4;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class n1 {
-    public static final e9.a1 d = e9.i0.z(40010);
-    public static final e9.a1 e;
+    public static final String d;
+    public static final String e;
     public static final String f;
-    public static final String g;
-    public static final String h;
     public final int a;
     public final String b;
     public final Bundle c;
 
     static {
-        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
-        e9.q.d(7, objArr);
-        e = e9.i0.t(7, objArr);
         String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
     public n1(int i10) {
-        e2.d.a("commandCode shouldn't be COMMAND_CODE_CUSTOM", i10 != 0);
-        this.a = i10;
-        this.b = "";
-        this.c = Bundle.EMPTY;
+        this("no error message provided", i10, Bundle.EMPTY);
+    }
+
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
+        }
+        return bundle;
     }
 
     public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (!(obj instanceof n1)) {
             return false;
         }
         n1 n1Var = (n1) obj;
-        return this.a == n1Var.a && TextUtils.equals(this.b, n1Var.b);
+        return this.a == n1Var.a && Objects.equals(this.b, n1Var.b);
     }
 
     public final int hashCode() {
-        return Objects.hash(this.b, Integer.valueOf(this.a));
+        return Objects.hash(Integer.valueOf(this.a), this.b);
     }
 
-    public n1(String str, Bundle bundle) {
-        this.a = 0;
+    public n1(String str, int i10, Bundle bundle) {
+        boolean z10 = true;
+        if (i10 >= 0 && i10 != 1) {
+            z10 = false;
+        }
+        e2.d.b(z10);
+        this.a = i10;
         this.b = str;
-        bundle.getClass();
-        this.c = new Bundle(bundle);
+        this.c = bundle;
     }
 }

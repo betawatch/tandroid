@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -721,10 +721,10 @@ public final class s0 implements b1 {
                     if ((i12 & i15) == 0) {
                         break;
                     } else {
-                        double e = r1.d.e(obj, j3);
+                        double e7 = r1.d.e(obj, j3);
                         j jVar = (j) k0Var.a;
                         jVar.getClass();
-                        jVar.K(i17, Double.doubleToRawLongBits(e));
+                        jVar.K(i17, Double.doubleToRawLongBits(e7));
                         continue;
                     }
                 case 1:
@@ -1550,9 +1550,9 @@ public final class s0 implements b1 {
             switch (G(H)) {
                 case 0:
                     if (q(i10, obj)) {
-                        double e = r1.d.e(obj, H & 1048575);
+                        double e7 = r1.d.e(obj, H & 1048575);
                         jVar.getClass();
-                        jVar.K(i11, Double.doubleToRawLongBits(e));
+                        jVar.K(i11, Double.doubleToRawLongBits(e7));
                         break;
                     } else {
                         break;
@@ -4023,9 +4023,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case 36:
-                    int e = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e > 0) {
-                        i14 = a4.a.g(e, j.y(i16), e, i14);
+                    int e7 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e7 > 0) {
+                        i14 = a4.a.g(e7, j.y(i16), e7, i14);
                         break;
                     } else {
                         break;
@@ -4063,9 +4063,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e7 = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e7 > 0) {
-                        i14 = a4.a.g(e7, j.y(i16), e7, i14);
+                    int e10 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e10 > 0) {
+                        i14 = a4.a.g(e10, j.y(i16), e10, i14);
                         break;
                     } else {
                         break;
@@ -4097,9 +4097,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e10 > 0) {
-                        i14 = a4.a.g(e10, j.y(i16), e10, i14);
+                    int e11 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e11 > 0) {
+                        i14 = a4.a.g(e11, j.y(i16), e11, i14);
                         break;
                     } else {
                         break;
@@ -4609,9 +4609,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case 36:
-                    int e = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e > 0) {
-                        i12 = a4.a.g(e, j.y(i13), e, i12);
+                    int e7 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e7 > 0) {
+                        i12 = a4.a.g(e7, j.y(i13), e7, i12);
                         break;
                     } else {
                         break;
@@ -4649,9 +4649,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                    int e7 = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e7 > 0) {
-                        i12 = a4.a.g(e7, j.y(i13), e7, i12);
+                    int e10 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e10 > 0) {
+                        i12 = a4.a.g(e10, j.y(i13), e10, i12);
                         break;
                     } else {
                         break;
@@ -4683,9 +4683,9 @@ public final class s0 implements b1 {
                         break;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                    int e10 = c1.e((List) unsafe.getObject(obj, j3));
-                    if (e10 > 0) {
-                        i12 = a4.a.g(e10, j.y(i13), e10, i12);
+                    int e11 = c1.e((List) unsafe.getObject(obj, j3));
+                    if (e11 > 0) {
+                        i12 = a4.a.g(e11, j.y(i13), e11, i12);
                         break;
                     } else {
                         break;
@@ -5059,7 +5059,7 @@ public final class s0 implements b1 {
         l0 l0Var = ((m0) obj2).a;
         hVar.T(2);
         h hVar2 = (h) hVar.c;
-        int e = hVar2.e(hVar2.A());
+        int e7 = hVar2.e(hVar2.A());
         Object obj3 = l0Var.c;
         Object obj4 = "";
         Object obj5 = obj3;
@@ -5085,7 +5085,7 @@ public final class s0 implements b1 {
                     obj5 = hVar.n(l0Var.b, obj3.getClass(), mVar);
                 }
             } catch (Throwable th2) {
-                hVar2.d(e);
+                hVar2.d(e7);
                 throw th2;
             }
         }

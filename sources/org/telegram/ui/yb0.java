@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,22 +20,22 @@ public final /* synthetic */ class yb0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f11 f11Var;
+        a11 a11Var;
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
-                r01 r01Var = profileActivity.O;
-                if (r01Var != null) {
-                    r01Var.Y0(14);
+                m01 m01Var = profileActivity.O;
+                if (m01Var != null) {
+                    m01Var.Y0(14);
                     profileActivity.G4(false);
                     break;
                 }
                 break;
             case 1:
                 ProfileActivity profileActivity2 = this.b;
-                r01 r01Var2 = profileActivity2.O;
-                if (r01Var2 != null) {
-                    r01Var2.Y0(14);
+                m01 m01Var2 = profileActivity2.O;
+                if (m01Var2 != null) {
+                    m01Var2.Y0(14);
                     profileActivity2.G4(false);
                     break;
                 }
@@ -64,17 +64,17 @@ public final /* synthetic */ class yb0 implements Runnable {
             case 8:
                 ProfileActivity profileActivity5 = this.b;
                 profileActivity5.getClass();
-                profileActivity5.presentFragment(new gg.m1());
+                profileActivity5.presentFragment(new ig.g1());
                 break;
             case 9:
                 ProfileActivity profileActivity6 = this.b;
                 profileActivity6.getClass();
-                profileActivity6.presentFragment(new gg.k1());
+                profileActivity6.presentFragment(new ig.e1());
                 break;
             case 10:
                 ProfileActivity profileActivity7 = this.b;
                 profileActivity7.getClass();
-                profileActivity7.presentFragment(new ra(null));
+                profileActivity7.presentFragment(new qa(null));
                 break;
             case 11:
                 ProfileActivity profileActivity8 = this.b;
@@ -87,9 +87,9 @@ public final /* synthetic */ class yb0 implements Runnable {
                 profileActivity9.presentFragment(new h(3));
                 break;
             case 13:
-                org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
-                n2Var.a = true;
-                this.b.showAsSheet(new PrivacyControlActivity(11, false), n2Var);
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                this.b.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
                 break;
             case 14:
                 ProfileActivity profileActivity10 = this.b;
@@ -107,9 +107,9 @@ public final /* synthetic */ class yb0 implements Runnable {
                 break;
             case 17:
                 ProfileActivity profileActivity11 = this.b;
-                r01 r01Var3 = profileActivity11.O;
-                if (r01Var3 != null) {
-                    r01Var3.v1(true);
+                m01 m01Var3 = profileActivity11.O;
+                if (m01Var3 != null) {
+                    m01Var3.v1(true);
                     profileActivity11.O.n1();
                     break;
                 }
@@ -120,8 +120,8 @@ public final /* synthetic */ class yb0 implements Runnable {
                 break;
             case 19:
                 ProfileActivity profileActivity13 = this.b;
-                if (!profileActivity13.a.b0() && (f11Var = profileActivity13.d) != null) {
-                    f11Var.l();
+                if (!profileActivity13.a.b0() && (a11Var = profileActivity13.d) != null) {
+                    a11Var.l();
                     break;
                 }
                 break;
@@ -137,12 +137,12 @@ public final /* synthetic */ class yb0 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", profileActivity14.f1);
                 bundle.putLong("user_id", profileActivity14.e1);
-                profileActivity14.presentFragment(new k31(bundle));
+                profileActivity14.presentFragment(new g31(bundle));
                 break;
             case 23:
                 ProfileActivity profileActivity15 = this.b;
                 profileActivity15.getClass();
-                profileActivity15.presentFragment(new ra(null));
+                profileActivity15.presentFragment(new qa(null));
                 break;
             case 24:
                 ProfileActivity.W(this.b);
@@ -152,7 +152,7 @@ public final /* synthetic */ class yb0 implements Runnable {
                 TLRPC.UserFull userFull = profileActivity16.v2;
                 if (userFull != null) {
                     AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
-                    org.telegram.messenger.em.o(R.string.TextCopied, org.telegram.ui.Components.wc.a0(profileActivity16));
+                    org.telegram.messenger.vl.o(R.string.TextCopied, org.telegram.ui.Components.yc.a0(profileActivity16));
                     break;
                 }
                 break;
@@ -162,7 +162,7 @@ public final /* synthetic */ class yb0 implements Runnable {
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", profileActivity17.e1);
                 bundle2.putBoolean("focus_notes", true);
-                profileActivity17.presentFragment(new ts(bundle2, profileActivity17.z0));
+                profileActivity17.presentFragment(new ss(bundle2, profileActivity17.z0));
                 break;
             default:
                 this.b.G4(true);

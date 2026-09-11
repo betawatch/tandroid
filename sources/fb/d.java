@@ -16,9 +16,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final Type[] a = new Type[0];
@@ -154,7 +153,7 @@ public abstract class d {
         if (type instanceof WildcardType) {
             return h(((WildcardType) type).getUpperBounds()[0]);
         }
-        throw new IllegalArgumentException("Expected a Class, ParameterizedType, or GenericArrayType, but <" + type + "> is of type " + (type == null ? BuildConfig.BETA_URL : type.getClass().getName()));
+        throw new IllegalArgumentException("Expected a Class, ParameterizedType, or GenericArrayType, but <" + type + "> is of type " + (type == null ? "null" : type.getClass().getName()));
     }
 
     public static BigDecimal i(String str) {

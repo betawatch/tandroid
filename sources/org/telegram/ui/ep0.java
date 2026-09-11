@@ -1,39 +1,44 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ep0 extends org.telegram.ui.Components.n81 {
-    public final /* synthetic */ bq0 a;
+public final class ep0 extends hp0 {
+    public int G;
+    public final /* synthetic */ bq0 H;
 
-    public ep0(bq0 bq0Var) {
-        this.a = bq0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ep0(bq0 bq0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.H = bq0Var;
+        this.G = 0;
     }
 
-    @Override // org.telegram.ui.Components.n81
-    public final View d(int i10) {
-        bq0 bq0Var = this.a;
-        if (i10 == 1) {
-            return bq0Var.h;
+    @Override // org.telegram.ui.hp0
+    public final void a() {
+        bq0 bq0Var = this.H;
+        if (bq0Var.getParentActivity() != null) {
+            AndroidUtilities.setLightStatusBar(bq0Var.getParentActivity(), bq0Var.isLightStatusBar());
         }
-        if (i10 == 0) {
-            return bq0Var.n;
+        int actionBarButtonColor = getActionBarButtonColor();
+        if (this.G != actionBarButtonColor) {
+            ImageView imageView = bq0Var.J;
+            if (imageView != null) {
+                this.G = actionBarButtonColor;
+                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
+            ImageView imageView2 = bq0Var.K;
+            if (imageView2 != null) {
+                this.G = actionBarButtonColor;
+                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+            }
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final int e() {
-        return 2;
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.n81
-    public final void b(View view, int i10, int i11) {
+        bq0Var.G0();
+        bq0Var.A0();
     }
 }

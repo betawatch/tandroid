@@ -1,58 +1,106 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wg implements View.OnKeyListener {
+public final /* synthetic */ class wg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ wg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ wg(co coVar, org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11) {
+        this.a = i11;
+        this.b = coVar;
+        this.c = b2VarArr;
+        this.d = i10;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                eo eoVar = (eo) this.b;
-                eoVar.getClass();
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    eoVar.ta();
+                org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                if (b2Var != null) {
+                    final int i10 = 0;
+                    final co coVar = this.b;
+                    final int i11 = this.d;
+                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.gh
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    coVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                                case 1:
+                                    coVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                                default:
+                                    coVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                            }
+                        }
+                    });
+                    coVar.showDialog(b2VarArr[0]);
                     break;
                 }
                 break;
             case 1:
-                on0 on0Var = (on0) this.b;
-                if (i10 != 67) {
-                    on0Var.getClass();
-                    break;
-                } else if (on0Var.Y[2].length() == 0) {
-                    on0Var.Y[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor2 = on0Var.Y[1];
-                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    on0Var.Y[1].dispatchKeyEvent(keyEvent);
+                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
+                if (b2Var2 != null) {
+                    final int i12 = 1;
+                    final co coVar2 = this.b;
+                    final int i13 = this.d;
+                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.gh
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i12) {
+                                case 0:
+                                    coVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                                case 1:
+                                    coVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                                default:
+                                    coVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                            }
+                        }
+                    });
+                    coVar2.showDialog(b2VarArr2[0]);
                     break;
                 }
                 break;
             default:
-                yv0 yv0Var = (yv0) this.b;
-                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = yv0Var.f;
-                    if (imageView != null) {
-                        imageView.callOnClick();
-                        break;
-                    }
+                org.telegram.ui.ActionBar.b2[] b2VarArr3 = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var3 = b2VarArr3[0];
+                if (b2Var3 != null) {
+                    final int i14 = 2;
+                    final co coVar3 = this.b;
+                    final int i15 = this.d;
+                    b2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.gh
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i14) {
+                                case 0:
+                                    coVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                                case 1:
+                                    coVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                                default:
+                                    coVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                            }
+                        }
+                    });
+                    coVar3.showDialog(b2VarArr3[0]);
+                    break;
                 }
                 break;
         }
-        return true;
     }
 }

@@ -1,89 +1,79 @@
 package bi;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.animation.LinearInterpolator;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+public final class a1 extends LinearLayout {
+    public zh.h8 a;
+    public final Path b;
+    public final Paint c;
+    public long d;
+    public final org.telegram.ui.Components.e6 e;
+    public final /* synthetic */ d1 f;
 
-    public /* synthetic */ a1(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(d1 d1Var, Context context) {
+        super(context);
+        this.f = d1Var;
+        this.b = new Path();
+        this.c = new Paint(1);
+        this.d = 0L;
+        this.e = new org.telegram.ui.Components.e6(this, 0L, 1000L, new LinearInterpolator());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesStorage messagesStorage = this.b;
-                ArrayList arrayList = this.c;
-                try {
-                    SQLiteDatabase database = messagesStorage.getDatabase();
-                    if (database == null) {
-                        return;
-                    }
-                    database.executeFast("DELETE FROM story_drafts WHERE id IN (" + TextUtils.join(", ", arrayList) + ")").stepThis().dispose();
-                    return;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 1:
-                MessagesStorage messagesStorage2 = this.b;
-                ArrayList arrayList2 = this.c;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        SQLiteDatabase database2 = messagesStorage2.getDatabase();
-                        database2.executeFast("DELETE FROM business_links").stepThis().dispose();
-                        sQLitePreparedStatement = database2.executeFast("REPLACE INTO business_links VALUES(?, ?)");
-                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                            TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList2.get(i10);
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_businessChatLink.getObjectSize());
-                            tL_businessChatLink.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            sQLitePreparedStatement.bindInteger(2, i10);
-                            sQLitePreparedStatement.step();
-                        }
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    }
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
-                }
-            default:
-                MessagesStorage messagesStorage3 = this.b;
-                ArrayList arrayList3 = this.c;
-                try {
-                    messagesStorage3.getDatabase().executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
-                    return;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        Path path = this.b;
+        path.rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        path.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        d1 d1Var = this.f;
+        f1 f1Var = d1Var.f;
+        if (f1Var != null) {
+            int b10 = z.b(f1Var.a, f1Var.b(), 3);
+            f1 f1Var2 = d1Var.f;
+            int b11 = z.b(f1Var2.a, f1Var2.b(), 5);
+            canvas.drawColor(b10);
+            long j3 = this.d;
+            f1 f1Var3 = d1Var.f;
+            long j10 = f1Var3.b;
+            org.telegram.ui.Components.e6 e6Var = this.e;
+            if (j3 != j10) {
+                e6Var.d(f1Var3.a(), true);
+            }
+            float d = e6Var.d(d1Var.f.a(), false);
+            this.d = d1Var.f.b;
+            Paint paint = this.c;
+            paint.setColor(b11);
+            paint.setAlpha(127);
+            canvas2 = canvas;
+            canvas2.drawRect(getWidth() * d, 0.0f, getWidth(), getHeight(), paint);
+        } else {
+            canvas2 = canvas;
         }
+        if (this.a == null) {
+            this.a = new zh.h8(1, MediaDataController.MAX_LINKS_COUNT);
+        }
+        this.a.f(0, 0, getWidth(), getHeight());
+        zh.h8 h8Var = this.a;
+        h8Var.h = 30.0f;
+        h8Var.d();
+        this.a.b(canvas2, -1, 0.85f);
+        invalidate();
+        canvas2.restore();
+        super.dispatchDraw(canvas2);
     }
 }

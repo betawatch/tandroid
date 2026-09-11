@@ -1,71 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.Random;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nq0 extends fg.b0 {
-    public final /* synthetic */ oq0 n;
+public final class nq0 extends View {
+    public Random a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public float f;
+    public float h;
+    public float n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nq0(oq0 oq0Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(i10, context, f6Var, true, true);
-        this.n = oq0Var;
-    }
-
-    @Override // fg.b0, s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11;
-        TLRPC.Chat chat;
-        int i12;
-        int i13;
-        int i14;
-        org.telegram.ui.Cells.n4 n4Var = (org.telegram.ui.Cells.n4) c1Var.a;
-        sq0 sq0Var = this.n.K;
-        TLRPC.User user = null;
-        if (sq0Var.h0 || sq0Var.i0) {
-            int i15 = org.telegram.ui.ActionBar.j6.ng;
-            int i16 = org.telegram.ui.ActionBar.j6.fg;
-            n4Var.b.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i15, false));
-            n4Var.H = i16;
-            n4Var.v.b(org.telegram.ui.ActionBar.j6.B5, i16, org.telegram.ui.ActionBar.j6.C5);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        super.onDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
+        float f7 = 3.0f;
+        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
+        int i10 = 7;
+        int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
+        pr prVar = pr.g;
+        float f10 = this.f;
+        float interpolation = prVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
+        float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
+        canvas.save();
+        canvas.translate(0.0f, (-org.telegram.messenger.w1.z(4.0f, getMeasuredHeight(), dp)) * f11);
+        int i11 = 0;
+        while (i11 < i10) {
+            int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i11) + AndroidUtilities.dp(f7);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = dp2;
+            float f13 = dp2 + measuredWidth;
+            rectF.set(0.0f, f12, measuredWidth, f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.w1.C(1.0f, measuredWidth, measuredWidth), f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            i11++;
+            i10 = 7;
+            f7 = 3.0f;
         }
-        i11 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-        TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(i11).hints.get(i10);
-        TLRPC.Peer peer = tL_topPeer.peer;
-        long j3 = peer.user_id;
-        if (j3 != 0) {
-            i14 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-            user = MessagesController.getInstance(i14).getUser(Long.valueOf(tL_topPeer.peer.user_id));
-            chat = null;
-        } else {
-            long j10 = peer.channel_id;
-            if (j10 != 0) {
-                j3 = -j10;
-                i13 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-                chat = MessagesController.getInstance(i13).getChat(Long.valueOf(tL_topPeer.peer.channel_id));
+        canvas.restore();
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.d);
+        canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(4.0f));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.e);
+        canvas.restore();
+        float measuredHeight = ((getMeasuredHeight() - AndroidUtilities.dp(21.0f)) * f11) + AndroidUtilities.dp(3.0f);
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(getMeasuredWidth() - AndroidUtilities.dp(3.0f), measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(15.0f) + measuredHeight);
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), paint);
+        float centerY = rectF2.centerY();
+        float dp3 = AndroidUtilities.dp(0.5f) + measuredWidth;
+        rectF2.set(dp3 - AndroidUtilities.dp(8.0f), centerY - AndroidUtilities.dp(3.0f), dp3 + AndroidUtilities.dp(8.0f), centerY + AndroidUtilities.dp(3.0f));
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint);
+        float f14 = this.f + 0.016f;
+        this.f = f14;
+        if (f14 > 1.0f) {
+            this.h = this.n;
+            float c10 = org.telegram.ui.Cells.p6.c(this.a, 1001) / 1000.0f;
+            this.n = c10;
+            if (c10 > this.h) {
+                this.n = c10 + 0.3f;
             } else {
-                long j11 = peer.chat_id;
-                if (j11 != 0) {
-                    j3 = -j11;
-                    i12 = ((org.telegram.ui.ActionBar.h3) sq0Var).currentAccount;
-                    chat = MessagesController.getInstance(i12).getChat(Long.valueOf(tL_topPeer.peer.chat_id));
-                } else {
-                    chat = null;
-                    j3 = 0;
-                }
+                this.n = c10 - 0.3f;
             }
+            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
+            this.f = 0.0f;
         }
-        boolean z10 = j3 == n4Var.getDialogId();
-        n4Var.setTag(Long.valueOf(j3));
-        n4Var.a(j3, user != null ? UserObject.getFirstName(user) : chat != null ? chat.title : "");
-        boolean z11 = sq0Var.U.h(j3) >= 0;
-        if (n4Var.w) {
-            n4Var.v.a(z11, z10);
-        }
+        invalidate();
     }
 }

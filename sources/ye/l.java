@@ -4,7 +4,7 @@ import bf.o;
 import bf.p;
 import bf.r;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class l extends df.a {
     public final o a = new o();
@@ -39,8 +39,8 @@ public final class l extends df.a {
             if (((p) this.a.c) == null) {
                 return null;
             }
-            bf.a e = dVar.h().e();
-            this.c = (e instanceof r) || (e instanceof o);
+            bf.a e7 = dVar.h().e();
+            this.c = (e7 instanceof r) || (e7 instanceof o);
             return q3.h.a(dVar.e);
         }
         int i10 = dVar.g;

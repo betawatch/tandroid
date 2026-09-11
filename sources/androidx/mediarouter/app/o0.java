@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -56,7 +56,7 @@ public final class o0 extends g.u {
     public TextView W;
     public TextView X;
     public String Y;
-    public of.b Z;
+    public pf.b Z;
     public final r a0;
     public MediaDescriptionCompat b0;
     public f0 c0;
@@ -133,16 +133,16 @@ public final class o0 extends g.u {
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        of.b bVar = this.Z;
+        pf.b bVar = this.Z;
         r rVar = this.a0;
         if (bVar != null) {
-            bVar.q0(rVar);
+            bVar.j0(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
-            of.b bVar2 = new of.b(this.y, mediaSessionCompat$Token);
+            pf.b bVar2 = new pf.b(this.y, mediaSessionCompat$Token);
             this.Z = bVar2;
-            bVar2.m0(rVar);
+            bVar2.f0(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -291,7 +291,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            l2.g b10 = this.r.b(vVar);
+            mg.n b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {

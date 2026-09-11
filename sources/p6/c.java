@@ -7,17 +7,17 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.r3;
+import m.p3;
 import n6.g;
 import n6.p;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final p U;
 
-    public c(Context context, Looper looper, r3 r3Var, p pVar, k kVar, l lVar) {
-        super(context, looper, 270, r3Var, kVar, lVar, 0);
+    public c(Context context, Looper looper, p3 p3Var, p pVar, k kVar, l lVar) {
+        super(context, looper, 270, p3Var, kVar, lVar, 0);
         this.U = pVar;
     }
 

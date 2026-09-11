@@ -19,15 +19,16 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import m.g3;
-import n4.y;
-import w7.a0;
+import ji.b5;
+import ji.u4;
+import m4.t0;
+import w7.z;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class e implements n {
+public final class e implements m {
     public int E;
-    public r F;
+    public q F;
     public b G;
     public b H;
     public Looper I;
@@ -36,15 +37,15 @@ public final class e implements n {
     public j2.k L;
     public volatile androidx.mediarouter.app.c M;
     public final UUID a;
-    public final l b;
+    public final t0 b;
     public final com.google.firebase.messaging.m c;
     public final HashMap d;
     public final boolean e;
     public final int[] f;
     public final boolean h;
-    public final y n;
+    public final pf.b n;
     public final rb.a r;
-    public final a4.m s;
+    public final l.d s;
     public final long v;
     public final ArrayList w;
     public final Set x;
@@ -54,15 +55,15 @@ public final class e implements n {
         uuid.getClass();
         e2.d.a("Use C.CLEARKEY_UUID instead", !b2.i.b.equals(uuid));
         this.a = uuid;
-        this.b = u.d;
+        this.b = t.d;
         this.c = mVar;
         this.d = hashMap;
         this.e = z10;
         this.f = iArr;
         this.h = z11;
         this.r = aVar;
-        this.n = new y(28);
-        this.s = new a4.m(this, 29);
+        this.n = new pf.b(28);
+        this.s = new l.d(this, 5);
         this.w = new ArrayList();
         this.x = Collections.newSetFromMap(new IdentityHashMap());
         this.y = Collections.newSetFromMap(new IdentityHashMap());
@@ -77,7 +78,7 @@ public final class e implements n {
         f g10 = bVar.g();
         g10.getClass();
         Throwable cause = g10.getCause();
-        return (cause instanceof ResourceBusyException) || a0.c(cause);
+        return (cause instanceof ResourceBusyException) || z.c(cause);
     }
 
     public static ArrayList f(b2.o oVar, UUID uuid, boolean z10) {
@@ -91,8 +92,8 @@ public final class e implements n {
         return arrayList;
     }
 
-    @Override // n2.n
-    public final void C(Looper looper, j2.k kVar) {
+    @Override // n2.m
+    public final void B(Looper looper, j2.k kVar) {
         synchronized (this) {
             try {
                 Looper looper2 = this.I;
@@ -110,12 +111,12 @@ public final class e implements n {
         this.L = kVar;
     }
 
-    @Override // n2.n
-    public final int L0(b2.s sVar) {
+    @Override // n2.m
+    public final int H0(b2.s sVar) {
         h(false);
-        r rVar = this.F;
-        rVar.getClass();
-        int a02 = rVar.a0();
+        q qVar = this.F;
+        qVar.getClass();
+        int G0 = qVar.G0();
         b2.o oVar = sVar.v;
         if (oVar == null) {
             int h = r0.h(sVar.r);
@@ -147,11 +148,11 @@ public final class e implements n {
                 return 1;
             }
         }
-        return a02;
+        return G0;
     }
 
-    @Override // n2.n
-    public final g Y0(j jVar, b2.s sVar) {
+    @Override // n2.m
+    public final g T0(j jVar, b2.s sVar) {
         h(false);
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
@@ -168,9 +169,9 @@ public final class e implements n {
         b bVar = null;
         if (oVar == null) {
             int h = r0.h(sVar.r);
-            r rVar = this.F;
-            rVar.getClass();
-            if (rVar.a0() != 2 || !s.c) {
+            q qVar = this.F;
+            qVar.getClass();
+            if (qVar.G0() != 2 || !r.c) {
                 int[] iArr = this.f;
                 while (true) {
                     if (i10 >= iArr.length) {
@@ -182,13 +183,13 @@ public final class e implements n {
                     }
                     i10++;
                 }
-                if (i10 != -1 && rVar.a0() != 1) {
+                if (i10 != -1 && qVar.G0() != 1) {
                     b bVar2 = this.G;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;
-                        b e = e(a1.e, true, null, z10);
-                        this.w.add(e);
-                        this.G = e;
+                        b e7 = e(a1.e, true, null, z10);
+                        this.w.add(e7);
+                        this.G = e7;
                     } else {
                         bVar2.b(null);
                     }
@@ -205,7 +206,7 @@ public final class e implements n {
                 if (jVar != null) {
                     jVar.d(cVar);
                 }
-                return new o(new f(6003, cVar));
+                return new n(new f(6003, cVar));
             }
         } else {
             arrayList = null;
@@ -233,17 +234,17 @@ public final class e implements n {
             bVar.b(jVar);
             return bVar;
         }
-        b e7 = e(arrayList, false, jVar, z10);
+        b e10 = e(arrayList, false, jVar, z10);
         if (!this.e) {
-            this.H = e7;
+            this.H = e10;
         }
-        this.w.add(e7);
-        return e7;
+        this.w.add(e10);
+        return e10;
     }
 
-    @Override // n2.n
+    @Override // n2.m
     public final void b() {
-        r bVar;
+        q aVar;
         h(true);
         int i10 = this.E;
         this.E = i10 + 1;
@@ -255,18 +256,18 @@ public final class e implements n {
             this.b.getClass();
             try {
                 try {
-                    bVar = new u(uuid);
-                } catch (x unused) {
+                    aVar = new t(uuid);
+                } catch (w unused) {
                     e2.a.e("FrameworkMediaDrm", "Failed to instantiate a FrameworkMediaDrm for uuid: " + uuid + ".");
-                    bVar = new qb.b(13);
+                    aVar = new rb.a(13);
                 }
-                this.F = bVar;
-                bVar.c(new g3(this, 1));
+                this.F = aVar;
+                aVar.H0(new u4(this, 6));
                 return;
-            } catch (UnsupportedSchemeException e) {
-                throw new x(e);
-            } catch (Exception e7) {
-                throw new x(e7);
+            } catch (UnsupportedSchemeException e7) {
+                throw new w(e7);
+            } catch (Exception e10) {
+                throw new w(e10);
             }
         }
         if (this.v == -9223372036854775807L) {
@@ -286,13 +287,13 @@ public final class e implements n {
     public final b d(List list, boolean z10, j jVar) {
         this.F.getClass();
         boolean z11 = this.h | z10;
-        r rVar = this.F;
+        q qVar = this.F;
         byte[] bArr = this.K;
         Looper looper = this.I;
         looper.getClass();
         j2.k kVar = this.L;
         kVar.getClass();
-        b bVar = new b(this.a, rVar, this.n, this.s, list, z11, z10, bArr, this.d, this.c, looper, this.r, kVar);
+        b bVar = new b(this.a, qVar, this.n, this.s, list, z11, z10, bArr, this.d, this.c, looper, this.r, kVar);
         bVar.b(jVar);
         if (this.v != -9223372036854775807L) {
             bVar.b(null);
@@ -341,9 +342,9 @@ public final class e implements n {
 
     public final void g() {
         if (this.F != null && this.E == 0 && this.w.isEmpty() && this.x.isEmpty()) {
-            r rVar = this.F;
-            rVar.getClass();
-            rVar.release();
+            q qVar = this.F;
+            qVar.getClass();
+            qVar.release();
             this.F = null;
         }
     }
@@ -361,18 +362,18 @@ public final class e implements n {
         }
     }
 
-    @Override // n2.n
-    public final m j0(j jVar, b2.s sVar) {
+    @Override // n2.m
+    public final l h0(j jVar, b2.s sVar) {
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
         d dVar = new d(this, jVar);
         Handler handler = this.J;
         handler.getClass();
-        handler.post(new m4.w(7, dVar, sVar));
+        handler.post(new b5(12, dVar, sVar));
         return dVar;
     }
 
-    @Override // n2.n
+    @Override // n2.m
     public final void release() {
         h(true);
         int i10 = this.E - 1;

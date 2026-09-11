@@ -1,37 +1,34 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ kh(NotificationsController notificationsController, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = notificationsController;
-        this.c = arrayList;
+    public /* synthetic */ kh(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$removeDeletedHisoryFromNotifications$11(this.c);
+                PasskeysController.lambda$login$11(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$processReadMessages$20(this.c);
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
                 break;
             case 2:
-                this.b.lambda$forceShowPopupForReply$6(this.c);
-                break;
-            case 3:
-                this.b.lambda$removeDeletedMessagesFromNotifications$8(this.c);
+                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
                 break;
             default:
-                this.b.lambda$processDialogsUpdateRead$28(this.c);
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
                 break;
         }
     }

@@ -4,22 +4,22 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class w0 extends o6.a {
     public static final Parcelable.Creator<w0> CREATOR = new r0(20);
     public final long a;
-    public final n7.t0 b;
-    public final n7.t0 c;
-    public final n7.t0 d;
+    public final n7.s0 b;
+    public final n7.s0 c;
+    public final n7.s0 d;
 
     public w0(long j3, byte[] bArr, byte[] bArr2, byte[] bArr3) {
         n6.l.h(bArr);
-        n7.t0 t10 = n7.t0.t(bArr.length, bArr);
+        n7.s0 t10 = n7.s0.t(bArr.length, bArr);
         n6.l.h(bArr2);
-        n7.t0 t11 = n7.t0.t(bArr2.length, bArr2);
+        n7.s0 t11 = n7.s0.t(bArr2.length, bArr2);
         n6.l.h(bArr3);
-        n7.t0 t12 = n7.t0.t(bArr3.length, bArr3);
+        n7.s0 t12 = n7.s0.t(bArr3.length, bArr3);
         this.a = j3;
         this.b = t10;
         this.c = t11;

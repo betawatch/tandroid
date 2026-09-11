@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import u4.e;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -36,8 +36,8 @@ public final class a implements Runnable {
         }
         try {
             dVar.i.tryAcquire(i10, 5L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
+        } catch (InterruptedException e7) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e7);
             Thread.currentThread().interrupt();
         }
     }

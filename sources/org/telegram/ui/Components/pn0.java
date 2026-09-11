@@ -1,42 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class pn0 extends yg.n0 {
-    public final /* synthetic */ qn0 h0;
+public final class pn0 extends e40 {
+    public final /* synthetic */ org.telegram.ui.ey c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pn0(qn0 qn0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(null, i10, view, tL_reactionCount, false, true, f6Var);
-        this.h0 = qn0Var;
+    public pn0(org.telegram.ui.ey eyVar, ll0 ll0Var, Context context, int i10) {
+        super(ll0Var, context, i10);
+        this.c0 = eyVar;
     }
 
-    @Override // yg.n0
-    public final boolean e() {
-        return this.w > 0 || this.u || this.F.l != 1.0f;
-    }
-
-    @Override // yg.n0
-    public final boolean i() {
-        return !e();
-    }
-
-    @Override // yg.n0
-    public final int j() {
-        return 18;
-    }
-
-    @Override // yg.n0
-    public final void s(float f7) {
-        int i10 = this.i;
-        qn0 qn0Var = this.h0;
-        this.N = i0.a.d(f7, i10, org.telegram.ui.ActionBar.j6.v0(qn0Var.e ? org.telegram.ui.ActionBar.j6.Fj : org.telegram.ui.ActionBar.j6.va, qn0Var.s.c));
-        int d = i0.a.d(f7, this.g, qn0Var.e ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Cj, qn0Var.s.c) : 0);
-        this.O = d;
-        this.N = org.telegram.ui.ActionBar.j6.v(d, this.N);
-        this.P = i0.a.d(f7, this.h, qn0Var.e ? 1526726655 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.wa, qn0Var.s.c));
+    @Override // org.telegram.ui.Components.v51
+    public final void N(boolean z10) {
+        super.N(z10);
+        ln0 ln0Var = this.c0.s0;
+        ln0Var.e(false, z10);
+        ln0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        ln0Var.e.setVisibility(8);
     }
 }

@@ -1,269 +1,278 @@
 package bi;
 
+import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.ViewGroup;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.view.SurfaceView;
+import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.jx0;
-import org.telegram.ui.Components.qn;
-import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class gb extends ng.b {
-    public final Context d;
-    public final org.telegram.ui.ActionBar.f6 e;
-    public final db f;
-    public vl0 h;
-    public final /* synthetic */ kb n;
+public final class gb implements h5 {
+    public final /* synthetic */ l8 a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ pb d;
 
-    public gb(kb kbVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, db dbVar, ra raVar) {
-        this.n = kbVar;
-        this.d = context;
-        this.e = f6Var;
-        this.f = dbVar;
+    public gb(pb pbVar, l8 l8Var, ArrayList arrayList, Context context) {
+        this.d = pbVar;
+        this.a = l8Var;
+        this.b = arrayList;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return (i10 == 3 && this.n.W.F) || i10 == 7 || i10 == 9 || i10 == 10;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.n.L;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        kb kbVar = this.n;
-        ArrayList arrayList = kbVar.L;
-        if (arrayList == null || i10 < 0 || i10 >= arrayList.size()) {
-            return -1;
-        }
-        return ((pa) kbVar.L.get(i10)).a;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        kb kbVar = this.n;
-        rb rbVar = kbVar.W;
-        ArrayList arrayList = kbVar.L;
-        if (arrayList == null || i10 < 0 || i10 >= arrayList.size()) {
+    public final void a(int i10, long j3) {
+        pb pbVar = this.d;
+        if (pbVar.J == i10 && pbVar.I == j3) {
             return;
         }
-        pa paVar = (pa) arrayList.get(i10);
-        int i14 = c1Var.f;
-        View view = c1Var.a;
-        boolean z10 = true;
-        int i15 = i10 + 1;
-        pa paVar2 = i15 < arrayList.size() ? (pa) arrayList.get(i15) : null;
-        int i16 = 9;
-        boolean z11 = paVar2 != null && ((i13 = paVar2.a) == i14 || (i13 == 9 && paVar2.q == 1));
-        if (i14 == 3) {
-            qb qbVar = (qb) view;
-            boolean z12 = paVar.n;
-            qbVar.d(z12, !z12);
-            int i17 = paVar.i;
-            float f7 = 1.0f;
-            if (i17 > 0) {
-                qbVar.e(i17, paVar.g, paVar.j);
-                qbVar.b(1.0f, false);
+        pbVar.I = j3;
+        pbVar.J = i10;
+    }
+
+    public final void b(boolean z10) {
+        pb pbVar = this.d;
+        org.telegram.ui.ActionBar.n2 n2Var = pbVar.f;
+        if (pbVar.b) {
+            if (pbVar.c) {
+                return;
+            }
+            if (z10) {
+                AndroidUtilities.requestAdjustNothing(n2Var.getParentActivity(), n2Var.getClassGuid());
+                return;
             } else {
-                TLRPC.User user = paVar.g;
-                if (user != null) {
-                    qbVar.setUser(user);
-                    if (paVar.l && !paVar.k) {
-                        f7 = 0.5f;
-                    }
-                    qbVar.b(f7, false);
+                AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
+                return;
+            }
+        }
+        WindowManager.LayoutParams layoutParams = pbVar.r;
+        layoutParams.softInputMode = z10 ? 48 : 16;
+        try {
+            pbVar.n.updateViewLayout(pbVar.s, layoutParams);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    public final void c(TLRPC.Document document, Uri uri, long j3, n5 n5Var) {
+        long j10;
+        ob obVar;
+        pb pbVar = this.d;
+        ArrayList arrayList = pbVar.M0;
+        if (pbVar.H0 || pbVar.U < 0.9f) {
+            di.l4 l4Var = pbVar.D0;
+            if (l4Var != null) {
+                l4Var.d(0L, null);
+            }
+            t1 t1Var = pbVar.A0;
+            if (t1Var != null) {
+                if (t1Var.n) {
+                    t1Var.s(null);
                 } else {
-                    TLRPC.Chat chat = paVar.h;
-                    if (chat != null) {
-                        qbVar.a(rb.d1(rbVar, chat), chat);
+                    t1Var.e();
+                }
+                pbVar.A0 = null;
+            }
+            FileLog.d("StoryViewer requestPlayer ignored, because closed: " + pbVar.H0 + ", " + pbVar.U);
+            n5Var.a = false;
+            n5Var.c = null;
+            n5Var.b = null;
+            return;
+        }
+        Uri uri2 = pbVar.F0;
+        boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
+        if (!equals || (obVar = pbVar.z0) == null) {
+            pbVar.F0 = uri;
+            di.l4 l4Var2 = pbVar.D0;
+            if (l4Var2 != null) {
+                l4Var2.d(0L, null);
+            }
+            t1 t1Var2 = pbVar.A0;
+            if (t1Var2 != null) {
+                if (t1Var2.n) {
+                    t1Var2.s(null);
+                } else {
+                    t1Var2.e();
+                }
+                pbVar.A0 = null;
+            }
+            ob obVar2 = pbVar.z0;
+            if (obVar2 != null) {
+                obVar2.release(null);
+                pbVar.z0 = null;
+            }
+            n5 n5Var2 = pbVar.G0;
+            if (n5Var2 != null) {
+                n5Var2.c = null;
+                n5Var2.b = null;
+                n5Var2.a = false;
+                n5Var2.e = null;
+                n5Var2.f = null;
+                n5Var2.d = null;
+                n5Var2.b();
+                pbVar.G0 = null;
+            }
+            if (uri != null) {
+                pbVar.G0 = n5Var;
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= arrayList.size()) {
+                        break;
+                    }
+                    if (((ob) arrayList.get(i10)).uri.equals(uri)) {
+                        pbVar.z0 = (ob) arrayList.remove(i10);
+                        break;
+                    }
+                    i10++;
+                }
+                if (pbVar.z0 == null) {
+                    ob obVar3 = new ob(pbVar, pbVar.C0, pbVar.B0);
+                    pbVar.z0 = obVar3;
+                    obVar3.document = document;
+                }
+                ob obVar4 = pbVar.z0;
+                obVar4.uri = uri;
+                obVar4.setSpeed(pb.B1);
+                n5 n5Var3 = pbVar.G0;
+                ob obVar5 = pbVar.z0;
+                n5Var3.c = obVar5;
+                n5Var3.a = false;
+                n5Var3.e = pbVar.y0;
+                n5Var3.f = pbVar.B0;
+                n5Var3.d = pbVar.C0;
+                n5Var3.b = null;
+                FileStreamLoadOperation.setPriorityForDocument(obVar5.document, 3);
+                FileLoader.getInstance(pbVar.h).changePriority(3, pbVar.z0.document, null, null, null, null, null);
+                if (j3 == 0) {
+                    long j11 = pbVar.t1;
+                    if (j11 != 0) {
+                        pbVar.G0.a = true;
+                        j10 = j11;
+                        FileLog.d("StoryViewer requestPlayer: currentPlayerScope.player start " + uri);
+                        ((ob) pbVar.G0.c).start(false, pbVar.w(), uri, j10, pb.D1, pb.B1);
+                        pbVar.G0.b();
                     }
                 }
-            }
-            if (!paVar.k && !paVar.l) {
-                z10 = false;
-            }
-            qbVar.c(z10, false);
-            qbVar.setDivider(z11);
-            qbVar.setRedCheckbox(paVar.m);
-            qbVar.v = rbVar.F;
-            return;
-        }
-        if (i14 == 2) {
-            return;
-        }
-        if (i14 == 0) {
-            view.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-            return;
-        }
-        if (i14 == -1) {
-            if (paVar.o > 0) {
-                vl0 vl0Var = this.h;
-                i12 = Math.max(((vl0Var == null || vl0Var.getMeasuredHeight() <= 0) ? AndroidUtilities.displaySize.y : this.h.getMeasuredHeight() + kbVar.T) - paVar.o, AndroidUtilities.dp(120.0f));
-                view.setTag(33);
+                j10 = j3;
+                FileLog.d("StoryViewer requestPlayer: currentPlayerScope.player start " + uri);
+                ((ob) pbVar.G0.c).start(false, pbVar.w(), uri, j10, pb.D1, pb.B1);
+                pbVar.G0.b();
             } else {
-                i12 = paVar.p;
-                if (i12 >= 0) {
-                    view.setTag(null);
-                } else {
-                    i12 = (int) (AndroidUtilities.displaySize.y * 0.3f);
-                    view.setTag(33);
-                }
+                FileLog.d("StoryViewer requestPlayer: url is null (1)");
             }
-            view.setLayoutParams(new s4.p0(-1, i12));
-            return;
+        } else if (equals) {
+            pbVar.G0 = n5Var;
+            n5Var.c = obVar;
+            n5Var.b = null;
+            obVar.setSpeed(pb.B1);
+            n5 n5Var4 = pbVar.G0;
+            n5Var4.a = pbVar.z0.firstFrameRendered;
+            n5Var4.e = pbVar.y0;
+            n5Var4.f = pbVar.B0;
+            n5Var4.d = pbVar.C0;
+            FileLog.d("StoryViewer requestPlayer: same url");
         }
-        if (i14 == 1) {
-            view.setLayoutParams(new s4.p0(-1, Math.min(AndroidUtilities.dp(150.0f), this.f.J)));
-            return;
-        }
-        if (i14 == 4) {
-            na naVar = (na) view;
-            CharSequence charSequence = paVar.e;
-            CharSequence charSequence2 = paVar.f;
-            naVar.a.setText(charSequence);
-            naVar.b.setText(charSequence2);
-            return;
-        }
-        if (i14 == 11) {
-            na naVar2 = (na) view;
-            naVar2.a.setText(paVar.e);
-            naVar2.b.setText((CharSequence) null);
-            return;
-        }
-        if (i14 == 5) {
-            try {
-                ((jx0) view).b.getImageReceiver().startAnimation();
-                return;
-            } catch (Exception unused) {
-                return;
-            }
-        }
-        if (i14 == 6) {
-            org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
-            if (paVar.e == null) {
-                f9Var.setFixedSize(12);
-                f9Var.setText(null);
-                return;
-            } else {
-                f9Var.setFixedSize(0);
-                f9Var.setText(paVar.e);
-                return;
-            }
-        }
-        if (i14 == 7) {
-            int i18 = paVar.c;
-            if (i18 == 0) {
-                ((org.telegram.ui.Cells.s8) view).j(paVar.e, rbVar.x, z11);
-                return;
-            } else if (i18 == 1) {
-                ((org.telegram.ui.Cells.s8) view).j(paVar.e, rbVar.y, z11);
-                return;
-            } else {
-                if (i18 == 2) {
-                    ((org.telegram.ui.Cells.s8) view).j(paVar.e, rbVar.w, z11);
-                    return;
-                }
-                return;
-            }
-        }
-        if (i14 == 9) {
-            Drawable drawable = paVar.d;
-            if (drawable != null) {
-                ((org.telegram.ui.Cells.s8) view).t(paVar.e, drawable, z11);
-                return;
-            } else {
-                ((org.telegram.ui.Cells.s8) view).o(paVar.e, paVar.f, false, z11);
-                return;
-            }
-        }
-        if (i14 == 8) {
-            ((org.telegram.ui.Cells.m4) view).setText(paVar.e);
-            return;
-        }
-        if (i14 == 10) {
-            i11 = ((org.telegram.ui.ActionBar.h3) rbVar).currentAccount;
-            int i19 = (int) MessagesController.getInstance(i11).starsPaidMessageAmountMax;
-            int[] a2 = org.telegram.ui.Cells.a8.a(i19, new int[]{0, 1, 10, 50, 100, 200, MediaDataController.MAX_LINKS_COUNT, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000});
-            int clamp = Utilities.clamp(rbVar.H, i19, 0);
-            androidx.emoji2.text.w wVar = new androidx.emoji2.text.w(12);
-            org.telegram.ui.Cells.z7 z7Var = new org.telegram.ui.Cells.z7();
-            z7Var.c = a2;
-            z7Var.d = 20;
-            z7Var.e = wVar;
-            ((org.telegram.ui.Cells.a8) view).d(clamp, z7Var, new ai.b(this, i16));
+        i(false, uri != null);
+        pbVar.t1 = 0L;
+        pbVar.P();
+    }
+
+    public final void d(float f7) {
+        pb pbVar = this.d;
+        if (pbVar.r0 != f7) {
+            pbVar.r0 = f7;
+            pbVar.v.invalidate();
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View a8Var;
-        org.telegram.ui.Cells.s8 s8Var;
-        View view;
-        Context context = this.d;
-        if (i10 == -1) {
-            a8Var = new jb(context);
-        } else if (i10 == 0) {
-            a8Var = new View(context);
-            a8Var.setTag(35);
-        } else if (i10 == 1) {
-            a8Var = new View(context);
-            a8Var.setTag(34);
+    public final void e() {
+        this.d.m1 = false;
+    }
+
+    public final void f(boolean z10) {
+        ob obVar;
+        pb pbVar = this.d;
+        if (!pbVar.f1 && z10 && pbVar.k0) {
+            pbVar.k0 = false;
+            n5 n5Var = pbVar.G0;
+            if (n5Var != null && (obVar = (ob) n5Var.c) != null) {
+                obVar.setSeeking(false);
+            }
+            o5 t10 = pbVar.t();
+            if (t10 != null) {
+                t10.invalidate();
+            }
+        }
+        pbVar.f1 = z10;
+        pbVar.P();
+    }
+
+    public final void g(boolean z10) {
+        pb pbVar = this.d;
+        pbVar.X0 = z10;
+        pbVar.P();
+    }
+
+    public final void h(Dialog dialog) {
+        this.d.showDialog(dialog);
+    }
+
+    public final void i(boolean z10, boolean z11) {
+        pb pbVar = this.d;
+        di.l4 l4Var = pbVar.D0;
+        if (l4Var != null) {
+            l4Var.setVisibility(z10 ? 0 : 8);
+        }
+        SurfaceView surfaceView = pbVar.C0;
+        if (surfaceView != null) {
+            surfaceView.setVisibility(z10 ? 8 : z11 ? 0 : 4);
+        }
+        hb hbVar = pbVar.B0;
+        if (hbVar != null) {
+            hbVar.setVisibility(z10 ? 8 : 0);
+        }
+    }
+
+    public final void j() {
+        pb pbVar = this.d;
+        l8 l8Var = this.a;
+        if (l8Var == null) {
+            ArrayList arrayList = new ArrayList(this.b);
+            int indexOf = arrayList.indexOf(Long.valueOf(pbVar.n0.getCurrentPeerView().getCurrentPeer()));
+            if (indexOf < 0) {
+                pbVar.q(false);
+                return;
+            }
+            arrayList.remove(indexOf);
+            if (pbVar.n0.E(true)) {
+                pbVar.n0.G0 = new ah.p(this, arrayList, indexOf, 3);
+                return;
+            } else {
+                pbVar.q(false);
+                return;
+            }
+        }
+        if (pbVar.n0.x0 == null) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList(pbVar.n0.x0);
+        int indexOf2 = pbVar.n0.getCurrentPeerView() == null ? -1 : arrayList2.indexOf(pbVar.n0.getCurrentPeerView().getCurrentDay());
+        if (indexOf2 < 0) {
+            pbVar.q(false);
+            return;
+        }
+        arrayList2.remove(indexOf2);
+        if (pbVar.n0.E(true)) {
+            pbVar.n0.G0 = new a3.j0(this, l8Var, arrayList2, 10);
         } else {
-            org.telegram.ui.ActionBar.f6 f6Var = this.e;
-            if (i10 == 3) {
-                a8Var = new qb(context, f6Var);
-            } else {
-                if (i10 == 4) {
-                    view = new na(context, f6Var, true);
-                } else if (i10 == 11) {
-                    a8Var = new na(context, f6Var, false);
-                } else if (i10 == 8) {
-                    a8Var = new org.telegram.ui.Cells.m4(context, f6Var);
-                    a8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
-                } else if (i10 == 5) {
-                    jx0 jx0Var = new jx0(context, null, 1, f6Var);
-                    jx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                    jx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                    jx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                    view = jx0Var;
-                } else if (i10 == 6) {
-                    a8Var = new org.telegram.ui.Cells.f9(context, f6Var);
-                    a8Var.setBackgroundColor(-15921907);
-                } else {
-                    if (i10 == 7) {
-                        s8Var = new org.telegram.ui.Cells.s8(23, this.d, this.e, true, true);
-                    } else if (i10 == 9) {
-                        s8Var = new org.telegram.ui.Cells.s8(23, this.d, this.e, true, false);
-                    } else {
-                        a8Var = i10 == 10 ? new org.telegram.ui.Cells.a8(context, f6Var) : new qn(context, 1);
-                    }
-                    a8Var = s8Var;
-                }
-                a8Var = view;
-            }
+            pbVar.q(false);
         }
-        return new fl0(a8Var);
     }
 }

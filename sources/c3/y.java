@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class y implements b0 {
     public final c5.b0 a;
@@ -19,11 +19,11 @@ public final class y implements b0 {
             this.a = b0Var;
             c5.b0 b0Var2 = new c5.b0(i10, 2);
             this.b = b0Var2;
-            b0Var.b(0L);
-            b0Var2.b(0L);
+            b0Var.c(0L);
+            b0Var2.c(0L);
         }
-        this.a.c(jArr);
-        this.b.c(jArr2);
+        this.a.d(jArr);
+        this.b.d(jArr2);
         this.c = j3;
     }
 

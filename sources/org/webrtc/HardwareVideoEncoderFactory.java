@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
@@ -24,7 +24,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private final boolean enableIntelVp8Encoder;
     private final EglBase14.Context sharedContext;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -71,8 +71,8 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
             }
             try {
                 mediaCodecInfo = MediaCodecList.getCodecInfoAt(i10);
-            } catch (IllegalArgumentException e) {
-                Logging.e(TAG, "Cannot retrieve encoder codec info", e);
+            } catch (IllegalArgumentException e7) {
+                Logging.e(TAG, "Cannot retrieve encoder codec info", e7);
             }
             if (mediaCodecInfo != null && mediaCodecInfo.isEncoder() && isSupportedCodec(mediaCodecInfo, videoCodecMimeType)) {
                 return mediaCodecInfo;

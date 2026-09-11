@@ -1,37 +1,31 @@
 package b3;
 
 import b2.s;
-import e2.d0;
 import e2.v;
-import h2.h;
-import hc.b;
-import i2.c0;
+import h2.g;
+import i2.d0;
 import i2.f;
 import java.nio.ByteBuffer;
+import n4.y;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a extends f {
-    public final h I;
+    public final g I;
     public final v J;
-    public c0 K;
+    public d0 K;
     public long L;
 
     public a() {
         super(6);
-        this.I = new h(1, 0);
+        this.I = new g(1, 0);
         this.J = new v();
     }
 
-    @Override // i2.f
-    public final int A(s sVar) {
-        return "application/x-camera-motion".equals(sVar.r) ? b.c(4, 0, 0, 0) : b.c(0, 0, 0, 0);
-    }
-
-    @Override // i2.f, i2.h1
-    public final void c(int i10, Object obj) {
+    @Override // i2.f, i2.i1
+    public final void d(int i10, Object obj) {
         if (i10 == 8) {
-            this.K = (c0) obj;
+            this.K = (d0) obj;
         }
     }
 
@@ -51,40 +45,40 @@ public final class a extends f {
     }
 
     @Override // i2.f
-    public final void o() {
-        c0 c0Var = this.K;
-        if (c0Var != null) {
-            c0Var.d();
+    public final void n() {
+        d0 d0Var = this.K;
+        if (d0Var != null) {
+            d0Var.b();
         }
     }
 
     @Override // i2.f
-    public final void q(long j3, boolean z10) {
+    public final void p(long j3, boolean z10) {
         this.L = Long.MIN_VALUE;
-        c0 c0Var = this.K;
-        if (c0Var != null) {
-            c0Var.d();
+        d0 d0Var = this.K;
+        if (d0Var != null) {
+            d0Var.b();
         }
     }
 
     @Override // i2.f
-    public final void x(long j3, long j10) {
+    public final void w(long j3, long j10) {
         float[] fArr;
         while (!k() && this.L < 100000 + j3) {
-            h hVar = this.I;
-            hVar.clear();
-            of.b bVar = this.c;
-            bVar.F();
-            if (w(bVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
+            g gVar = this.I;
+            gVar.i();
+            y yVar = this.c;
+            yVar.A();
+            if (v(yVar, gVar, 0) != -4 || gVar.c(4)) {
                 return;
             }
-            long j11 = hVar.e;
+            long j11 = gVar.h;
             this.L = j11;
             boolean z10 = j11 < this.w;
             if (this.K != null && !z10) {
-                hVar.c();
-                ByteBuffer byteBuffer = hVar.c;
-                String str = d0.a;
+                gVar.m();
+                ByteBuffer byteBuffer = gVar.e;
+                String str = e2.d0.a;
                 if (byteBuffer.remaining() != 16) {
                     fArr = null;
                 } else {
@@ -100,9 +94,14 @@ public final class a extends f {
                     fArr = fArr2;
                 }
                 if (fArr != null) {
-                    this.K.b();
+                    this.K.a();
                 }
             }
         }
+    }
+
+    @Override // i2.f
+    public final int z(s sVar) {
+        return "application/x-camera-motion".equals(sVar.r) ? i2.g.b(4, 0, 0, 0) : i2.g.b(0, 0, 0, 0);
     }
 }

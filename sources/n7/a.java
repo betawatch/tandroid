@@ -13,16 +13,15 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static volatile cc.k b;
     public static final Object a = new Object();
-    public static final c1 c = new c1("id");
-    public static final c1 d = new c1(TeXSymbolParser.TYPE_ATTR);
+    public static final b1 c = new b1("id");
+    public static final b1 d = new b1(TeXSymbolParser.TYPE_ATTR);
 
     public static int a(int i10, int i11) {
         RoundingMode roundingMode = RoundingMode.CEILING;
@@ -36,7 +35,7 @@ public abstract class a {
             return i12;
         }
         int i14 = ((i10 ^ i11) >> 31) | 1;
-        switch (o0.a[roundingMode.ordinal()]) {
+        switch (n0.a[roundingMode.ordinal()]) {
             case 1:
                 throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
             case 2:
@@ -73,8 +72,8 @@ public abstract class a {
         return i12 + i14;
     }
 
-    public static int b(p pVar) {
-        Iterator it = pVar.iterator();
+    public static int b(o oVar) {
+        Iterator it = oVar.iterator();
         int i10 = 0;
         while (it.hasNext()) {
             Object next = it.next();
@@ -97,14 +96,14 @@ public abstract class a {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                j3 = BuildConfig.BETA_URL;
+                j3 = "null";
             } else {
                 try {
                     j3 = obj.toString();
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     String C = a4.a.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
-                    j3 = r6.j("<", C, " threw ", e.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e7);
+                    j3 = p6.j("<", C, " threw ", e7.getClass().getName(), ">");
                 }
             }
             objArr[i11] = j3;
@@ -135,10 +134,10 @@ public abstract class a {
         return sb2.toString();
     }
 
-    public static String d(t0 t0Var) {
-        StringBuilder sb2 = new StringBuilder(t0Var.p());
-        for (int i10 = 0; i10 < t0Var.p(); i10++) {
-            byte i11 = t0Var.i(i10);
+    public static String d(s0 s0Var) {
+        StringBuilder sb2 = new StringBuilder(s0Var.p());
+        for (int i10 = 0; i10 < s0Var.p(); i10++) {
+            byte i11 = s0Var.i(i10);
             if (i11 == 34) {
                 sb2.append("\\\"");
             } else if (i11 == 39) {
@@ -193,7 +192,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hc.b.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.g.i(i11, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -210,18 +209,18 @@ public abstract class a {
         }
     }
 
-    public static final void g(StringBuilder sb2, Iterator it, na.d dVar) {
+    public static final void g(StringBuilder sb2, Iterator it, ob.a aVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(na.d.I3(entry.getKey()));
+            sb2.append(ob.a.D3(entry.getKey()));
             sb2.append(" : ");
-            sb2.append(na.d.I3(entry.getValue()));
+            sb2.append(ob.a.D3(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(na.d.I3(entry2.getKey()));
+                sb2.append(ob.a.D3(entry2.getKey()));
                 sb2.append(" : ");
-                sb2.append(na.d.I3(entry2.getValue()));
+                sb2.append(ob.a.D3(entry2.getValue()));
             }
         }
     }
@@ -240,13 +239,13 @@ public abstract class a {
         if (collection instanceof SortedSet) {
             obj = ((SortedSet) collection).comparator();
             if (obj == null) {
-                obj = w.b;
+                obj = v.b;
             }
         } else {
-            if (!(collection instanceof d0)) {
+            if (!(collection instanceof c0)) {
                 return false;
             }
-            obj = ((t) ((d0) collection)).d;
+            obj = ((s) ((c0) collection)).d;
         }
         return comparator.equals(obj);
     }
@@ -271,11 +270,11 @@ public abstract class a {
         return bArr2;
     }
 
-    public static final e1 k(g1 g1Var) {
+    public static final d1 k(f1 f1Var) {
         try {
-            f1 d10 = g1Var.d();
+            e1 d10 = f1Var.d();
             if (d10 == null) {
-                throw new y0("Parser being asked to parse an empty input stream");
+                throw new x0("Parser being asked to parse an empty input stream");
             }
             try {
                 try {
@@ -283,83 +282,83 @@ public abstract class a {
                     byte b11 = d10.b;
                     int i10 = 0;
                     if (b10 == Byte.MIN_VALUE) {
-                        long a2 = g1Var.a();
+                        long a2 = f1Var.a();
                         if (a2 > 1000) {
-                            throw new y0("Parser being asked to read a large CBOR array");
+                            throw new x0("Parser being asked to read a large CBOR array");
                         }
                         l(b11, a2);
-                        e1[] e1VarArr = new e1[(int) a2];
+                        d1[] d1VarArr = new d1[(int) a2];
                         while (i10 < a2) {
-                            e1VarArr[i10] = k(g1Var);
+                            d1VarArr[i10] = k(f1Var);
                             i10++;
                         }
-                        return new v0(n.u(e1VarArr));
+                        return new u0(m.u(d1VarArr));
                     }
                     if (b10 != -96) {
                         if (b10 == -64) {
-                            throw new y0("Tags are currently unsupported");
+                            throw new x0("Tags are currently unsupported");
                         }
                         if (b10 == -32) {
-                            return new w0(g1Var.e());
+                            return new v0(f1Var.e());
                         }
                         if (b10 == 0 || b10 == 32) {
-                            long b12 = g1Var.b();
+                            long b12 = f1Var.b();
                             l(b11, b12 > 0 ? b12 : ~b12);
-                            return new z0(b12);
+                            return new y0(b12);
                         }
                         if (b10 == 64) {
-                            g1Var.h((byte) 64);
-                            byte[] j3 = g1Var.j();
+                            f1Var.h((byte) 64);
+                            byte[] j3 = f1Var.j();
                             int length = j3.length;
                             l(b11, length);
-                            return new x0(t0.t(length, j3));
+                            return new w0(s0.t(length, j3));
                         }
                         if (b10 == 96) {
-                            g1Var.h((byte) 96);
-                            String str = new String(g1Var.j(), StandardCharsets.UTF_8);
+                            f1Var.h((byte) 96);
+                            String str = new String(f1Var.j(), StandardCharsets.UTF_8);
                             l(b11, str.length());
-                            return new c1(str);
+                            return new b1(str);
                         }
-                        throw new y0("Unidentifiable major type: " + ((b10 >> 5) & 7));
+                        throw new x0("Unidentifiable major type: " + ((b10 >> 5) & 7));
                     }
-                    long c10 = g1Var.c();
+                    long c10 = f1Var.c();
                     if (c10 > 1000) {
-                        throw new y0("Parser being asked to read a large CBOR map");
+                        throw new x0("Parser being asked to read a large CBOR map");
                     }
                     l(b11, c10);
                     int i11 = (int) c10;
-                    a1[] a1VarArr = new a1[i11];
-                    e1 e1Var = null;
+                    z0[] z0VarArr = new z0[i11];
+                    d1 d1Var = null;
                     int i12 = 0;
                     while (i12 < c10) {
-                        e1 k10 = k(g1Var);
-                        if (e1Var != null && k10.compareTo(e1Var) <= 0) {
-                            throw new b5("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + e1Var.toString() + "\nCurrent key: " + k10.toString());
+                        d1 k10 = k(f1Var);
+                        if (d1Var != null && k10.compareTo(d1Var) <= 0) {
+                            throw new b5("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + d1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        a1VarArr[i12] = new a1(0, k10, k(g1Var));
+                        z0VarArr[i12] = new z0(0, k10, k(f1Var));
                         i12++;
-                        e1Var = k10;
+                        d1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i10 < i11) {
-                        a1 a1Var = a1VarArr[i10];
-                        if (treeMap.containsKey((e1) a1Var.b)) {
+                        z0 z0Var = z0VarArr[i10];
+                        if (treeMap.containsKey((d1) z0Var.b)) {
                             throw new b5("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((e1) a1Var.b, (e1) a1Var.c);
+                        treeMap.put((d1) z0Var.b, (d1) z0Var.c);
                         i10++;
                     }
-                    return new b1(s.b(treeMap));
-                } catch (IOException | RuntimeException e) {
-                    e = e;
-                    throw new y0(e);
+                    return new a1(r.b(treeMap));
+                } catch (IOException | RuntimeException e7) {
+                    e = e7;
+                    throw new x0(e);
                 }
-            } catch (RuntimeException e7) {
-                e = e7;
-                throw new y0(e);
+            } catch (RuntimeException e10) {
+                e = e10;
+                throw new x0(e);
             }
-        } catch (IOException e10) {
-            throw new y0(e10);
+        } catch (IOException e11) {
+            throw new x0(e11);
         }
     }
 
@@ -367,22 +366,22 @@ public abstract class a {
         switch (b10) {
             case 24:
                 if (j3 < 24) {
-                    throw new b5(r6.h(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                    throw new b5(p6.h(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
                 if (j3 < 256) {
-                    throw new b5(r6.h(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                    throw new b5(p6.h(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
                 if (j3 < 65536) {
-                    throw new b5(r6.h(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                    throw new b5(p6.h(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
                 if (j3 < 4294967296L) {
-                    throw new b5(r6.h(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                    throw new b5(p6.h(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:
@@ -403,6 +402,6 @@ public abstract class a {
         if (i11 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(hc.b.j(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.g.i(i11, "negative size: "));
     }
 }

@@ -1,17 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class x00 extends FrameLayout {
-    public org.telegram.ui.Components.kj0 a;
+public final /* synthetic */ class x00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y00 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(156.0f), TLObject.FLAG_30));
+    public /* synthetic */ x00(y00 y00Var, int i10) {
+        this.a = i10;
+        this.b = y00Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d();
+                break;
+            case 1:
+                this.b.a();
+                break;
+            default:
+                y00 y00Var = this.b;
+                y00Var.b(y00Var.y);
+                break;
+        }
     }
 }

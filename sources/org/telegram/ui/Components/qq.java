@@ -1,30 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.R;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qq extends AnimatorListenerAdapter {
-    public final /* synthetic */ sq a;
+public abstract class qq extends Drawable {
+    public final Paint a = new Paint(1);
 
-    public qq(sq sqVar) {
-        this.a = sqVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        sq sqVar = this.a;
-        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = sqVar.v;
-        if (sqVar.K == 1) {
-            sqVar.F.setVisibility(4);
-        }
-        for (int i10 = 0; i10 < colorPicker$RadioButtonArr.length; i10++) {
-            if (colorPicker$RadioButtonArr[i10].getTag(R.id.index_tag) == null) {
-                colorPicker$RadioButtonArr[i10].setVisibility(4);
+    public qq(View view) {
+        if (view != null) {
+            view.addOnAttachStateChangeListener(new bi.i2(this, 6));
+            if (view.isAttachedToWindow()) {
+                view.post(new wp(this, 1));
             }
         }
-        sqVar.y = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    public void a() {
+    }
+
+    public void b() {
     }
 }

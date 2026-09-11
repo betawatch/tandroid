@@ -1,6 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class ra extends sa {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class ra extends sa {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        b8.a(i10, this.d);
+        a8.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class ra extends sa {
     @Override // w7.sa, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final sa subList(int i10, int i11) {
-        b8.b(i10, i11, this.d);
+        a8.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

@@ -7,12 +7,12 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
     public static final String h = Pattern.quote("/");
-    public final ee.v a;
+    public final c5.i a;
     public final Context b;
     public final String c;
     public final qa.d d;
@@ -30,7 +30,7 @@ public final class u {
         this.c = str;
         this.d = dVar;
         this.e = rVar;
-        this.a = new ee.v(3);
+        this.a = new c5.i();
     }
 
     public final synchronized String a(String str, SharedPreferences sharedPreferences) {
@@ -59,8 +59,8 @@ public final class u {
         if (this.e.a()) {
             try {
                 str = (String) w.a(((qa.c) this.d).d());
-            } catch (Exception e) {
-                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e);
+            } catch (Exception e7) {
+                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e7);
                 str = null;
             }
             bVar.c("Fetched Firebase Installation ID: " + str);
@@ -87,18 +87,18 @@ public final class u {
 
     public final String c() {
         String str;
-        ee.v vVar = this.a;
+        c5.i iVar = this.a;
         Context context = this.b;
-        synchronized (vVar) {
+        synchronized (iVar) {
             try {
-                if (vVar.b == null) {
+                if (iVar.a == null) {
                     String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
                     if (installerPackageName == null) {
                         installerPackageName = "";
                     }
-                    vVar.b = installerPackageName;
+                    iVar.a = installerPackageName;
                 }
-                str = "".equals(vVar.b) ? null : vVar.b;
+                str = "".equals(iVar.a) ? null : iVar.a;
             } finally {
             }
         }

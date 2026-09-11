@@ -6,7 +6,7 @@ import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ii0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final /* synthetic */ class ii0 implements Runnable {
                         attributes.flags &= -131073;
                         window.setAttributes(attributes);
                         cj0Var.p0 = true;
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                 }
                 AndroidUtilities.runOnUIThread(new ii0(cj0Var, this.c, 1), 100L);
@@ -41,14 +41,14 @@ public final /* synthetic */ class ii0 implements Runnable {
                 cj0 cj0Var2 = this.b;
                 int[] iArr = cj0Var2.o0;
                 AndroidUtilities.showKeyboard(this.c);
-                org.telegram.ui.Components.xg xgVar = cj0Var2.W;
-                if (xgVar != null) {
-                    xgVar.getLocationOnScreen(iArr);
+                org.telegram.ui.Components.vg vgVar = cj0Var2.W;
+                if (vgVar != null) {
+                    vgVar.getLocationOnScreen(iArr);
                     int i10 = iArr[0];
                     int width = cj0Var2.W.getWidth();
-                    org.telegram.ui.Components.xg xgVar2 = cj0Var2.W;
-                    xgVar2.getHeight();
-                    iArr[0] = org.telegram.messenger.em.D(6.0f, width - xgVar2.m(), i10);
+                    org.telegram.ui.Components.vg vgVar2 = cj0Var2.W;
+                    vgVar2.getHeight();
+                    iArr[0] = org.telegram.messenger.vl.D(6.0f, width - vgVar2.m(), i10);
                     cj0Var2.X.setScaleX(cj0Var2.W.getScaleX());
                     cj0Var2.X.setScaleY(cj0Var2.W.getScaleY());
                     break;

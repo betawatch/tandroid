@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Class[] f = {Boolean.TYPE, boolean[].class, Double.TYPE, double[].class, Integer.TYPE, int[].class, Long.TYPE, long[].class, String.class, String[].class, Binder.class, Bundle.class, Byte.TYPE, byte[].class, Character.TYPE, char[].class, CharSequence.class, CharSequence[].class, ArrayList.class, Float.TYPE, float[].class, Parcelable.class, Parcelable[].class, Serializable.class, Short.TYPE, short[].class, SparseArray.class, Size.class, SizeF.class};
@@ -163,7 +163,7 @@ public final class i0 {
             }
             ce.l lVar = (ce.l) i0Var.d.get(key);
             if (lVar != null) {
-                ((ce.o) lVar).d(a2);
+                ((ce.n) lVar).d(a2);
             }
         }
     }

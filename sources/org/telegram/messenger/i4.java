@@ -1,39 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import android.view.MotionEvent;
+import org.telegram.messenger.GoogleMapsProvider;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i4 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ BaseController c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class i4 implements IMapsProvider.ICallableMethod {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ GoogleMapsProvider.GoogleMapView.1 b;
 
-    public /* synthetic */ i4(GiftAuctionController giftAuctionController, long j3, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
-        this.c = giftAuctionController;
-        this.b = j3;
-        this.d = tL_StarGiftAuctionState;
+    public /* synthetic */ i4(GoogleMapsProvider.GoogleMapView.1 r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
+    public final Object call(Object obj) {
+        Boolean lambda$dispatchTouchEvent$0;
+        Boolean lambda$onInterceptTouchEvent$1;
         switch (this.a) {
             case 0:
-                ((GiftAuctionController) this.c).lambda$subscribeToGiftAuctionStateInternal$0(this.b, (TL_payments.TL_StarGiftAuctionState) this.d, (ArrayList) obj);
-                break;
+                lambda$dispatchTouchEvent$0 = this.b.lambda$dispatchTouchEvent$0((MotionEvent) obj);
+                return lambda$dispatchTouchEvent$0;
             default:
-                ((TranslateController) this.c).lambda$checkTranslation$4((MessageObject) this.d, this.b, (TLRPC.TL_textWithEntities) obj);
-                break;
+                lambda$onInterceptTouchEvent$1 = this.b.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
+                return lambda$onInterceptTouchEvent$1;
         }
-    }
-
-    public /* synthetic */ i4(TranslateController translateController, MessageObject messageObject, long j3) {
-        this.c = translateController;
-        this.d = messageObject;
-        this.b = j3;
     }
 }

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class o extends db.u {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class o extends db.u {
                     aVar.t();
                     return null;
                 }
-                Map map = (Map) ((fb.n) this.d).n2();
+                Map map = (Map) ((fb.n) this.d).h2();
                 if (x10 == 1) {
                     aVar.a();
                     while (aVar.k()) {
@@ -47,7 +47,7 @@ public final class o extends db.u {
                 } else {
                     aVar.b();
                     while (aVar.k()) {
-                        rb.a.b.getClass();
+                        t7.u.c.getClass();
                         if (aVar instanceof l) {
                             l lVar = (l) aVar;
                             lVar.F(5);
@@ -171,8 +171,8 @@ public final class o extends db.u {
                 ((HashMap) this.c).put(str, r42);
                 ((HashMap) this.d).put(r42, name);
             }
-        } catch (IllegalAccessException e) {
-            throw new AssertionError(e);
+        } catch (IllegalAccessException e7) {
+            throw new AssertionError(e7);
         }
     }
 }

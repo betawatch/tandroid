@@ -1,23 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class si1 extends org.telegram.ui.Components.voip.c1 {
-    public final /* synthetic */ zi1 V;
+public final class si1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ ui1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public si1(zi1 zi1Var, Context context, float f7, float f10) {
-        super(context, f7, f10);
-        this.V = zi1Var;
+    public si1(ui1 ui1Var) {
+        this.a = ui1Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.c1
-    public final int[] getFloatingViewLocation() {
-        int[] iArr = new int[2];
-        zi1 zi1Var = this.V;
-        zi1Var.Y.getLocationOnScreen(iArr);
-        return new int[]{iArr[0], iArr[1], zi1Var.Y.getMeasuredWidth()};
+    public final void a() {
+        ui1 ui1Var = this.a;
+        if (ui1Var.p0 != 17) {
+            if (Build.VERSION.SDK_INT >= 23 && ui1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                ui1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    ui1Var.r(new f01(this, 24));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(ui1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", ui1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", ui1Var.U0);
+        intent.putExtra("can_video_call", ui1Var.U0);
+        intent.putExtra("account", ui1Var.a);
+        try {
+            ui1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    public final void b() {
+        ui1 ui1Var = this.a;
+        if (ui1Var.p0 == 17) {
+            ui1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            ui1Var.u0.b();
+        }
     }
 }

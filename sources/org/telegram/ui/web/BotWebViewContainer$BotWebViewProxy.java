@@ -3,12 +3,12 @@ package org.telegram.ui.web;
 import android.webkit.JavascriptInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.er0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$BotWebViewProxy {
-    public c1 a;
+    public d1 a;
 
     @JavascriptInterface
     public void postEvent(String str, String str2) {
@@ -16,10 +16,10 @@ public class BotWebViewContainer$BotWebViewProxy {
             if (this.a == null) {
                 FileLog.d("webviewproxy.postEvent: no container");
             } else {
-                AndroidUtilities.runOnUIThread(new sx0(this, str, str2, 9));
+                AndroidUtilities.runOnUIThread(new er0(this, str, str2, 17));
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

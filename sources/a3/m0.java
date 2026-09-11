@@ -1,15 +1,56 @@
 package a3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.view.Surface;
+import java.util.List;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface m0 {
-    public static final na.d g = new na.d(1);
+    void a(float f7);
 
-    void C();
+    boolean b();
 
-    void T();
+    Surface c();
 
-    void l();
+    boolean d(b2.s sVar);
 
-    void onFirstFrameRendered();
+    void e();
+
+    void f();
+
+    void g(a6.i iVar);
+
+    void h(long j3);
+
+    void i();
+
+    void j(int i10);
+
+    void k();
+
+    void l(b2.s sVar, long j3, int i10, List list);
+
+    void m(boolean z10);
+
+    boolean n(long j3, i iVar);
+
+    void o(List list);
+
+    void p(long j3, long j10);
+
+    void q(boolean z10);
+
+    boolean r(boolean z10);
+
+    void release();
+
+    void s(Surface surface, e2.w wVar);
+
+    void t();
+
+    void u(x xVar);
+
+    boolean v();
+
+    void w();
 }

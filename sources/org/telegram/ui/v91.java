@@ -1,38 +1,84 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class v91 extends ReplacementSpan {
-    public final org.telegram.ui.Components.t01 a = new org.telegram.ui.Components.t01(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
-    public final Paint b = new Paint(1);
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+public final /* synthetic */ class v91 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bb1 b;
+    public final /* synthetic */ ArrayList c;
 
-    public v91(org.telegram.ui.ActionBar.f6 f6Var) {
-        this.c = f6Var;
+    public /* synthetic */ v91(bb1 bb1Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = bb1Var;
+        this.c = arrayList;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.c);
-        Paint paint2 = this.b;
-        paint2.setColor(v02);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, dp - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f) + f7 + this.a.c, AndroidUtilities.dp(9.0f) + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
-        this.a.c(f7 + AndroidUtilities.dp(8.0f), dp, 1.0f, -1, canvas);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(16.0f) + this.a.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                bb1 bb1Var = this.b;
+                ArrayList arrayList = bb1Var.s0;
+                ArrayList arrayList2 = bb1Var.r0;
+                int i10 = 0;
+                bb1Var.w0 = false;
+                ArrayList arrayList3 = this.c;
+                if (!arrayList3.isEmpty()) {
+                    int size = arrayList3.size();
+                    for (int i11 = 0; i11 < size; i11++) {
+                        MessageObject messageObject = (MessageObject) arrayList3.get(i11);
+                        int i12 = bb1Var.p0.get(messageObject.getId(), -1);
+                        if (i12 >= 0 && ((ya1) arrayList2.get(i12)).b() == messageObject.getId()) {
+                            ((ya1) arrayList2.get(i12)).b = messageObject;
+                        }
+                    }
+                    arrayList.clear();
+                    int size2 = arrayList2.size();
+                    while (true) {
+                        if (i10 < size2) {
+                            ya1 ya1Var = (ya1) arrayList2.get(i10);
+                            if (ya1Var.b == null) {
+                                bb1Var.o0 = ya1Var.b();
+                            } else {
+                                arrayList.add(ya1Var);
+                                i10++;
+                            }
+                        }
+                    }
+                    bb1Var.o0();
+                    bb1Var.S.setItemAnimator(null);
+                    bb1Var.y0.f();
+                    break;
+                }
+                break;
+            default:
+                bb1 bb1Var2 = this.b;
+                bi.l8 l8Var = bb1Var2.z0;
+                l8Var.getClass();
+                ArrayList arrayList4 = this.c;
+                int size3 = arrayList4.size();
+                int i13 = 0;
+                while (true) {
+                    if (i13 < size3) {
+                        Object obj = arrayList4.get(i13);
+                        i13++;
+                        if (!l8Var.j.containsKey((Integer) obj)) {
+                            z10 = true;
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (!l8Var.q(0, arrayList4, z10)) {
+                    bb1Var2.j0();
+                    bb1Var2.o0();
+                    break;
+                }
+                break;
+        }
     }
 }

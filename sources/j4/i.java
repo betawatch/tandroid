@@ -1,15 +1,15 @@
 package j4;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface i {
-    void a(e2.v vVar);
+    void b(e2.v vVar);
 
-    void b();
+    void d();
 
-    void c(c3.q qVar, g0 g0Var);
+    void e(c3.q qVar, f0 f0Var);
 
-    void d(boolean z10);
+    void f(boolean z10);
 
-    void e(int i10, long j3);
+    void g(int i10, long j3);
 }

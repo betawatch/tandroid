@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,7 +38,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -265,8 +265,8 @@ public class Track {
                 parseFromCsd.n = this.height;
                 this.sampleDescriptionBox.a(parseFromCsd);
                 return;
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException e7) {
+                e7.printStackTrace();
                 return;
             }
         }

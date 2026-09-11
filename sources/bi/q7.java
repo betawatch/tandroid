@@ -1,17 +1,39 @@
 package bi;
 
-import android.graphics.PointF;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class q7 {
-    public final PointF a;
-    public final float b;
-    public final float c;
+public final /* synthetic */ class q7 implements e2.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u8 b;
 
-    public /* synthetic */ q7(PointF pointF, float f7, float f10) {
-        this.a = pointF;
-        this.b = f7;
-        this.c = f10;
+    public /* synthetic */ q7(u8 u8Var, int i10) {
+        this.a = i10;
+        this.b = u8Var;
+    }
+
+    @Override // e2.h
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.f = (LongSparseIntArray) obj;
+                break;
+            default:
+                TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) obj;
+                u8 u8Var = this.b;
+                u8Var.n = false;
+                if (tL_stories_allStories == null) {
+                    u8Var.q();
+                    u8Var.T();
+                    break;
+                } else {
+                    u8Var.Y(tL_stories_allStories, false, true, false);
+                    u8Var.Q(false);
+                    u8Var.Q(true);
+                    break;
+                }
+        }
     }
 }

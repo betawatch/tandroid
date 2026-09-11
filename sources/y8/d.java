@@ -1,12 +1,12 @@
 package y8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d implements x8.c {
-    public final o0.b a;
+    public final mg.n a;
 
-    public d(o0.b bVar) {
-        this.a = bVar;
+    public d(mg.n nVar) {
+        this.a = nVar;
     }
 
     public final boolean equals(Object obj) {
@@ -26,24 +26,24 @@ public final class d implements x8.c {
     @Override // x8.c
     public final void onChannelClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.a).onChannelClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.b).onChannelClosed((x8.d) bVar, i10, i11);
     }
 
     @Override // x8.c
     public final void onChannelOpened(x8.b bVar) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.a).onChannelOpened((x8.d) bVar);
+        ((x8.k) this.a.b).onChannelOpened((x8.d) bVar);
     }
 
     @Override // x8.c
     public final void onInputClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.a).onInputClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.b).onInputClosed((x8.d) bVar, i10, i11);
     }
 
     @Override // x8.c
     public final void onOutputClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.a).onOutputClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.b).onOutputClosed((x8.d) bVar, i10, i11);
     }
 }

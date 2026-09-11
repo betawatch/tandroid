@@ -1,40 +1,12 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.content.DialogInterface;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class e2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h2 b;
-
-    public /* synthetic */ e2(h2 h2Var, int i10) {
-        this.a = i10;
-        this.b = h2Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                h2 h2Var = this.b;
-                DialogInterface.OnShowListener onShowListener = h2Var.i1;
-                if (onShowListener != null) {
-                    onShowListener.onShow(h2Var);
-                    break;
-                }
-                break;
-            default:
-                h2 h2Var2 = this.b;
-                h2Var2.s().removeView(h2Var2.f1);
-                DialogInterface.OnDismissListener onDismissListener = h2Var2.j1;
-                if (onDismissListener != null) {
-                    onDismissListener.onDismiss(h2Var2);
-                    break;
-                }
-                break;
-        }
+public final class e2 extends AlertDialog$Builder {
+    @Override // org.telegram.ui.ActionBar.AlertDialog$Builder
+    public final b2 b(Context context, int i10, f6 f6Var) {
+        return new f2(context, i10, f6Var);
     }
 }

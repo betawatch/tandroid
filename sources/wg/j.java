@@ -1,34 +1,28 @@
 package wg;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vl0;
+import android.text.InputFilter;
+import android.text.Spanned;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class j extends u51 {
-    public static final /* synthetic */ int a = 0;
+public final class j extends InputFilter.LengthFilter {
+    public final /* synthetic */ l a;
 
-    static {
-        u51.setup(new j());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(l lVar) {
+        super(128);
+        this.a = lVar;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
-        k kVar = (k) view;
-        kVar.setUser((TLRPC.User) v51Var.G);
-        kVar.c(v51Var.e, false);
-        kVar.setDivider(z10);
-    }
-
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
-        return new k(context, true, false, f6Var, false);
+    @Override // android.text.InputFilter.LengthFilter, android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
+        if (filter != null && filter.length() == 0) {
+            AndroidUtilities.shakeView(this.a.a);
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
+        return filter;
     }
 }

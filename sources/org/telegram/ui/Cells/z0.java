@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class z0 extends FrameLayout {
-    public final bi.n7 a;
+    public final ah.w a;
     public final org.telegram.ui.ActionBar.f6 b;
     public float c;
     public int d;
@@ -18,14 +18,14 @@ public final class z0 extends FrameLayout {
     public z0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.b = f6Var;
-        bi.n7 n7Var = new bi.n7(this, context);
-        this.a = n7Var;
-        n7Var.setWillNotDraw(false);
-        addView(n7Var, w7.a6.e(36, 36, 17));
+        ah.w wVar = new ah.w(this, context);
+        this.a = wVar;
+        wVar.setWillNotDraw(false);
+        addView(wVar, w7.x5.e(36, 36, 17));
         RadialProgressView radialProgressView = new RadialProgressView(context, f6Var);
         radialProgressView.setSize(AndroidUtilities.dp(28.0f));
         radialProgressView.setProgressColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ic, f6Var));
-        n7Var.addView(radialProgressView, w7.a6.e(32, 32, 17));
+        wVar.addView(radialProgressView, w7.x5.e(32, 32, 17));
     }
 
     public final void a(float f7, int i10) {

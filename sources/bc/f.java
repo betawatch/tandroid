@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-import m.r3;
+import m.p3;
 import n6.l;
 import n6.o;
 import qb.g;
@@ -23,7 +23,7 @@ import qb.j;
 import qb.m;
 import v7.a6;
 import v7.z8;
-import w7.d8;
+import w7.c8;
 import x7.da;
 import z7.ag;
 import z7.dg;
@@ -41,7 +41,7 @@ import z7.jg;
 import z7.vf;
 import z7.wf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public static final k6.c[] k = {j.c};
@@ -100,13 +100,13 @@ public final class f extends qb.e {
                     obtain.writeInterfaceToken(dgVar.c);
                     dgVar.S0(obtain, 1);
                     f(gb.b, elapsedRealtime);
-                } catch (RemoteException e) {
+                } catch (RemoteException e7) {
                     f(gb.d, elapsedRealtime);
-                    throw new mb.a("Failed to init module subject segmenter", e);
+                    throw new mb.a("Failed to init module subject segmenter", e7);
                 }
-            } catch (Exception e7) {
+            } catch (Exception e10) {
                 f(gb.f, elapsedRealtime);
-                throw new mb.a("Failed to load subject segmentation module", e7);
+                throw new mb.a("Failed to load subject segmentation module", e10);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -134,9 +134,9 @@ public final class f extends qb.e {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             if (wfVar.d(hbVar, elapsedRealtime)) {
                 wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime));
-                r3 r3Var = new r3();
-                r3Var.c = fb.b;
-                m.a.execute(new p(wfVar, new a5.a(r3Var, 0), hbVar, wfVar.c(), 8));
+                p3 p3Var = new p3();
+                p3Var.c = fb.b;
+                m.a.execute(new p(wfVar, new a5.a(p3Var, 0), hbVar, wfVar.c(), 8));
             }
         } finally {
             this.j = null;
@@ -155,7 +155,7 @@ public final class f extends qb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     dg dgVar = this.j;
                     l.h(dgVar);
-                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), d8.a(aVar.d));
+                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), c8.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {
@@ -198,21 +198,21 @@ public final class f extends qb.e {
                                             FloatBuffer allocate2 = FloatBuffer.allocate(fArr2.length);
                                             allocate2.put(fArr2);
                                             allocate2.rewind();
-                                        } catch (RemoteException e) {
-                                            e = e;
+                                        } catch (RemoteException e7) {
+                                            e = e7;
                                             fVar.g(gb.e, elapsedRealtime, fVar.h, aVar2, null);
                                             throw new mb.a("Failed to run thin subject segmenter.", e);
                                         }
-                                    } catch (RemoteException e7) {
-                                        e = e7;
+                                    } catch (RemoteException e10) {
+                                        e = e10;
                                     }
                                 }
                                 return new ac.b(arrayList);
-                            } catch (RemoteException e10) {
-                                e = e10;
+                            } catch (RemoteException e11) {
+                                e = e11;
                             }
-                        } catch (RemoteException e11) {
-                            e = e11;
+                        } catch (RemoteException e12) {
+                            e = e12;
                             fVar = this;
                             aVar2 = aVar;
                         }
@@ -235,14 +235,14 @@ public final class f extends qb.e {
         this.f.b(new vf() { // from class: bc.e
             @Override // z7.vf
             public final a5.a zza() {
-                r3 r3Var = new r3();
-                r3Var.c = fb.b;
+                p3 p3Var = new p3();
+                p3Var.c = fb.b;
                 a6 a6Var = new a6(14, false);
                 a6Var.d = f.this.e.a();
                 a6Var.c = gbVar;
                 a6Var.b = Long.valueOf((SystemClock.elapsedRealtime() - j3) & Long.MAX_VALUE);
-                r3Var.e = new fe(a6Var);
-                return new a5.a(r3Var, 0);
+                p3Var.e = new fe(a6Var);
+                return new a5.a(p3Var, 0);
             }
         }, hb.O4);
     }

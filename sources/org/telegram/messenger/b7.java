@@ -1,37 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b7 implements Runnable {
-    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ MessagesStorage.TopicKey d;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ b7(MediaDataController mediaDataController, MessagesStorage.TopicKey topicKey, TLRPC.Message message) {
+    public /* synthetic */ b7(MediaDataController mediaDataController, long j3, int i10) {
+        this.a = i10;
         this.b = mediaDataController;
-        this.d = topicKey;
-        this.c = message;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$putBotKeyboard$200(this.d, this.c);
+                this.b.lambda$loadPinnedMessages$161(this.c);
+                break;
+            case 1:
+                this.b.lambda$increasePeerRaiting$157(this.c);
                 break;
             default:
-                this.b.lambda$loadBotKeyboard$195(this.c, this.d);
+                this.b.lambda$clearBotKeyboard$194(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ b7(MediaDataController mediaDataController, TLRPC.Message message, MessagesStorage.TopicKey topicKey) {
-        this.b = mediaDataController;
-        this.c = message;
-        this.d = topicKey;
     }
 }

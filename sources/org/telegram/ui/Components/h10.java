@@ -1,66 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class h10 extends FrameLayout {
-    public final o6 a;
-    public final o6 b;
+public final class h10 extends URLSpan {
+    public static final /* synthetic */ int e = 0;
+    public final String a;
+    public final TLRPC.TL_messageEntityFormattedDate b;
+    public final n01 c;
+    public final boolean d;
 
-    public h10(Context context) {
-        super(context);
-        o6 o6Var = new o6(context, true, true, false);
-        this.a = o6Var;
-        o6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        o6Var.setTypeface(AndroidUtilities.bold());
-        int i10 = org.telegram.ui.ActionBar.j6.L6;
-        o6Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        o6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(o6Var, w7.a6.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        o6 o6Var2 = new o6(context, true, true, true);
-        this.b = o6Var2;
-        o6Var2.b(0.45f, 250L, wr.h);
-        o6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        o6Var2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        o6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(o6Var2, w7.a6.d(-2, 20.0f, (LocaleController.isRTL ? 3 : 5) | 80, 21.0f, 15.0f, 21.0f, 2.0f));
-        WeakHashMap weakHashMap = r0.i0.a;
-        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+    public h10(String str, n01 n01Var, TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate) {
+        super(str);
+        this.a = str;
+        this.b = tL_messageEntityFormattedDate;
+        this.c = n01Var;
+        this.d = false;
     }
 
-    public final void a(String str, Runnable runnable) {
-        boolean z10 = !LocaleController.isRTL;
-        o6 o6Var = this.b;
-        o6Var.c(str, z10, true);
-        o6Var.setOnClickListener(new t6(1, runnable));
-    }
-
-    public final void b(String str, boolean z10) {
-        o6 o6Var = this.a;
-        if (z10) {
-            o6Var.a();
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r4v0 */
+    /* JADX WARN: Type inference failed for: r4v1 */
+    /* JADX WARN: Type inference failed for: r4v2 */
+    /* JADX WARN: Type inference failed for: r4v3, types: [android.text.SpannableStringBuilder] */
+    /* JADX WARN: Type inference failed for: r4v4 */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    public static CharSequence a(CharSequence charSequence, boolean z10) {
+        if (charSequence instanceof Spanned) {
+            Spanned spanned = (Spanned) charSequence;
+            int i10 = 0;
+            h10[] h10VarArr = (h10[]) spanned.getSpans(0, spanned.length(), h10.class);
+            int length = h10VarArr.length;
+            ?? r42 = 0;
+            while (i10 < length) {
+                h10 h10Var = h10VarArr[i10];
+                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = h10Var.b;
+                if (tL_messageEntityFormattedDate.flags != 0 && (h10Var.d != z10 || (z10 && tL_messageEntityFormattedDate.relative))) {
+                    if (r42 == 0) {
+                        charSequence = new SpannableStringBuilder(spanned);
+                        r42 = charSequence;
+                    }
+                    int spanStart = r42.getSpanStart(h10Var);
+                    int spanEnd = r42.getSpanEnd(h10Var);
+                    String formatEntityFormattedDate = z10 ? LocaleController.formatEntityFormattedDate(h10Var.b) : h10Var.a;
+                    r42.removeSpan(h10Var);
+                    r42.replace(spanStart, spanEnd, formatEntityFormattedDate);
+                    r42.setSpan(new h10(h10Var, z10), spanStart, formatEntityFormattedDate.length() + spanStart, 33);
+                }
+                i10++;
+                r42 = r42;
+            }
         }
-        o6Var.c(str, z10 && !LocaleController.isRTL, true);
+        return charSequence;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(this.a.getText());
+    public static CharSequence b(SpannableStringBuilder spannableStringBuilder) {
+        return a(spannableStringBuilder, false);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        n01 n01Var = this.c;
+        if (n01Var != null) {
+            n01Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i10 == color);
+    }
+
+    public h10(h10 h10Var, boolean z10) {
+        super(h10Var.a);
+        this.a = h10Var.a;
+        this.b = h10Var.b;
+        this.c = h10Var.c;
+        this.d = z10;
+    }
+
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
     }
 }

@@ -3,7 +3,7 @@ package androidx.emoji2.text;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f {
     public volatile Object a;
@@ -18,18 +18,18 @@ public final class f {
         try {
             Context context = (Context) this.b;
             return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e);
+        } catch (Exception e7) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e7);
             return false;
         }
     }
 
     public f(q9.p pVar) {
-        ob.a aVar = new ob.a(24);
-        t7.u uVar = new t7.u();
-        this.c = aVar;
+        qb.b bVar = new qb.b(24);
+        na.d dVar = new na.d();
+        this.c = bVar;
         this.b = new ArrayList();
-        this.a = uVar;
-        pVar.a(new s0.b(this, 20));
+        this.a = dVar;
+        pVar.a(new r9.i(this, 25));
     }
 }

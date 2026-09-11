@@ -7,7 +7,7 @@ import e9.y0;
 import e9.z;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class l extends n implements Comparable {
     public final int e;
@@ -25,7 +25,7 @@ public final class l extends n implements Comparable {
         int i13;
         int i14;
         int i15 = 0;
-        this.f = hc.b.e(i12, false);
+        this.f = i2.g.d(i12, false);
         int i16 = this.d.e;
         int i17 = iVar.y;
         i0 i0Var = iVar.v;
@@ -61,7 +61,7 @@ public final class l extends n implements Comparable {
         int d = p.d(this.d, str, p.g(str) == null);
         this.w = d;
         boolean z11 = i14 > 0 || (i0Var.isEmpty() && i13 > 0) || this.h || (this.n && d > 0);
-        if (hc.b.e(i12, iVar.t0) && z11) {
+        if (i2.g.d(i12, iVar.t0) && z11) {
             i15 = 1;
         }
         this.e = i15;

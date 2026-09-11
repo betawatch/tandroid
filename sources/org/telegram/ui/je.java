@@ -1,130 +1,71 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.RelativeSizeSpan;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class je extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout[] b;
-    public final org.telegram.ui.Components.x5[] c;
-    public final TextView[] d;
-    public final TextView e;
-    public final DecimalFormat f;
+public final class je extends FrameLayout {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final org.telegram.ui.Components.y5 b;
+    public final TextView c;
+    public final TextView d;
+    public final DecimalFormat e;
+    public boolean f;
 
     public je(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.b = new LinearLayout[2];
-        this.c = new org.telegram.ui.Components.x5[2];
-        this.d = new TextView[2];
-        setOrientation(1);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.a6.k(22.0f, 9.0f, 22.0f, 0.0f, -1, -2));
-        for (int i10 = 0; i10 < 2; i10++) {
-            this.b[i10] = new LinearLayout(context);
-            this.b[i10].setOrientation(0);
-            this.a.addView(this.b[i10], w7.a6.o(-1, -2, 1.0f, 119));
-            this.c[i10] = new org.telegram.ui.Components.x5(context);
-            this.c[i10].setTypeface(AndroidUtilities.bold());
-            this.c[i10].setTextSize(1, 16.0f);
-            this.c[i10].setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-            this.b[i10].addView(this.c[i10], w7.a6.t(-2, -2, 80, 0, 0, 5, 0));
-            this.d[i10] = new org.telegram.ui.Components.x5(context);
-            this.d[i10].setTextSize(1, 11.5f);
-            this.d[i10].setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var));
-            this.b[i10].addView(this.d[i10], w7.a6.q(-2, -2, 80));
-        }
+        this.a = f6Var;
+        LinearLayout f7 = org.telegram.messenger.vl.f(context, 1);
+        addView(f7, w7.x5.d(-1, -2.0f, 119, 17.0f, 9.0f, 130.0f, 9.0f));
         TextView textView = new TextView(context);
-        this.e = textView;
-        textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var));
-        addView(textView, w7.a6.t(-1, -2, 55, 22, 5, 22, 9));
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
+        TextView h = com.google.android.gms.internal.vision.e2.h(f7, textView, w7.x5.n(-1, -2), context);
+        this.d = h;
+        h.setTextSize(1, 13.0f);
+        h.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, f6Var));
+        f7.addView(h, w7.x5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
+        org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(context);
+        this.b = y5Var;
+        y5Var.setTypeface(AndroidUtilities.bold());
+        y5Var.setTextSize(1, 13.0f);
+        addView(y5Var, w7.x5.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
         decimalFormatSymbols.setDecimalSeparator('.');
         DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-        this.f = decimalFormat;
+        this.e = decimalFormat;
         decimalFormat.setMinimumFractionDigits(2);
         decimalFormat.setMaximumFractionDigits(12);
         decimalFormat.setGroupingUsed(false);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.f) {
+            org.telegram.ui.ActionBar.f6 f6Var = this.a;
+            Paint G = f6Var != null ? f6Var.G("paintDivider") : org.telegram.ui.ActionBar.j6.k0;
+            if (G != null) {
+                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : 0), getMeasuredHeight() - 1, G);
+            }
+        }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v7, types: [java.lang.CharSequence] */
-    public void set(ie ieVar) {
-        int i10;
-        SpannableStringBuilder spannableStringBuilder;
-        int indexOf;
-        this.e.setText(ieVar.c);
-        int i11 = 0;
-        while (i11 < 2) {
-            String str = i11 == 0 ? ieVar.b : ieVar.h;
-            long j3 = i11 == 0 ? ieVar.e : ieVar.j;
-            LinearLayout[] linearLayoutArr = this.b;
-            if (i11 == 0 && !ieVar.a) {
-                linearLayoutArr[i11].setVisibility(8);
-            } else if (i11 != 1 || ieVar.g) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.ui.Cells.r6.t(str, " "));
-                boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
-                TextView[] textViewArr = this.c;
-                if (equalsIgnoreCase) {
-                    String format = this.f.format(ieVar.d / 1.0E9d);
-                    int indexOf2 = format.indexOf(46);
-                    if (indexOf2 >= 0) {
-                        i10 = i11;
-                        spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber((long) Math.floor(ieVar.d / 1.0E9d), ' '));
-                        spannableStringBuilder2.append((CharSequence) format.substring(indexOf2));
-                    } else {
-                        i10 = i11;
-                        spannableStringBuilder2.append((CharSequence) format);
-                    }
-                    spannableStringBuilder = le.f0(spannableStringBuilder2, textViewArr[i10].getPaint(), 1.05f, 0.0f, true);
-                } else {
-                    i10 = i11;
-                    if ("XTR".equalsIgnoreCase(str)) {
-                        if (i10 == 0) {
-                            spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber(ieVar.d, ' '));
-                        } else {
-                            spannableStringBuilder2.append((CharSequence) xh.z7.J0(ieVar.i, 0.8f, ' '));
-                        }
-                        spannableStringBuilder = xh.z7.X0(false, spannableStringBuilder2, 0.7f, null);
-                    } else {
-                        spannableStringBuilder2.append((CharSequence) Long.toString(ieVar.d));
-                        spannableStringBuilder = spannableStringBuilder2;
-                    }
-                }
-                SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(spannableStringBuilder);
-                if ("TON".equalsIgnoreCase(str) && (indexOf = TextUtils.indexOf(spannableStringBuilder3, ".")) >= 0) {
-                    spannableStringBuilder3.setSpan(new RelativeSizeSpan(0.8125f), indexOf, spannableStringBuilder3.length(), 33);
-                }
-                linearLayoutArr[i10].setVisibility(0);
-                textViewArr[i10].setText(spannableStringBuilder3);
-                this.d[i10].setText("≈" + BillingController.getInstance().formatCurrency(j3, ieVar.f));
-                i11 = i10 + 1;
-            } else {
-                linearLayoutArr[i11].setVisibility(8);
-            }
-            i10 = i11;
-            i11 = i10 + 1;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

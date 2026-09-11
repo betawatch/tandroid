@@ -1,23 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class b41 extends i41 {
-    public final /* synthetic */ org.telegram.ui.sf T;
+public final class b41 extends wh.p {
+    public final org.telegram.ui.l20 R;
+    public final /* synthetic */ e41 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.sf sfVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.T = sfVar;
+    public b41(e41 e41Var, Context context) {
+        super(context);
+        this.S = e41Var;
+        this.R = new org.telegram.ui.l20();
     }
 
-    @Override // org.telegram.ui.Components.i41, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        super.dismiss();
-        this.T.run();
+    @Override // wh.p, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(8.0f) + this.S.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        aw0.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
+        this.R.b(canvas, rectF, 2, 1.0f);
+        canvas.restore();
     }
 }

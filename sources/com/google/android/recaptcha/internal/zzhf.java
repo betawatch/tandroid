@@ -4,9 +4,9 @@ import id.c;
 import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -27,7 +27,7 @@ public final class zzhf {
     public final Object zza(zzhk zzhkVar, c cVar) {
         zzhe zzheVar;
         int i10;
-        zzcg e;
+        zzcg e7;
         zzgr zzgrVar;
         if (cVar instanceof zzhe) {
             zzheVar = (zzhe) cVar;
@@ -38,7 +38,7 @@ public final class zzhf {
                 a aVar = a.a;
                 i10 = zzheVar.zzc;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -49,11 +49,11 @@ public final class zzhf {
                             return aVar;
                         }
                         zzgrVar = zzgrVar2;
-                    } catch (zzcg e7) {
-                        e = e7;
+                    } catch (zzcg e10) {
+                        e7 = e10;
                         zzgrVar = zzgrVar2;
-                        zzgrVar.zzc(e);
-                        throw e;
+                        zzgrVar.zzc(e7);
+                        throw e7;
                     }
                 } else {
                     if (i10 != 1) {
@@ -61,11 +61,11 @@ public final class zzhf {
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        u7.b(obj);
-                    } catch (zzcg e10) {
-                        e = e10;
-                        zzgrVar.zzc(e);
-                        throw e;
+                        t7.b(obj);
+                    } catch (zzcg e11) {
+                        e7 = e11;
+                        zzgrVar.zzc(e7);
+                        throw e7;
                     }
                 }
                 zzgrVar.zzb();

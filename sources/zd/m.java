@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class m extends l0 implements l, kd.d, i2 {
     public static final /* synthetic */ AtomicIntegerFieldUpdater f = AtomicIntegerFieldUpdater.newUpdater(m.class, "_decisionAndIndex$volatile");
@@ -50,10 +50,10 @@ public class m extends l0 implements l, kd.d, i2 {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.h.n;
             loop0: while (true) {
                 Object obj = atomicReferenceFieldUpdater.get(hVar);
-                ee.v vVar = ee.a.d;
-                if (obj == vVar) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(hVar, vVar, this)) {
-                        if (atomicReferenceFieldUpdater.get(hVar) != vVar) {
+                d9.f fVar = ee.a.d;
+                if (obj == fVar) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(hVar, fVar, this)) {
+                        if (atomicReferenceFieldUpdater.get(hVar) != fVar) {
                             break;
                         }
                     }
@@ -119,8 +119,8 @@ public class m extends l0 implements l, kd.d, i2 {
         C(gd.i.a, (hVar != null ? hVar.d : null) == a0Var ? 4 : this.c, null);
     }
 
-    public final ee.v F(rd.l lVar, Object obj) {
-        ee.v vVar = e0.a;
+    public final d9.f F(rd.l lVar, Object obj) {
+        d9.f fVar = e0.a;
         while (true) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
@@ -136,7 +136,7 @@ public class m extends l0 implements l, kd.d, i2 {
             if (!x()) {
                 o();
             }
-            return vVar;
+            return fVar;
         }
     }
 
@@ -155,7 +155,7 @@ public class m extends l0 implements l, kd.d, i2 {
     }
 
     @Override // zd.l
-    public final ee.v b(rd.l lVar, Object obj) {
+    public final d9.f b(rd.l lVar, Object obj) {
         return F(lVar, obj);
     }
 

@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ir0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class ir0 implements Runnable {
                 PhotoViewer photoViewer = this.b;
                 Drawable[] drawableArr = PhotoViewer.T8;
                 photoViewer.x0(false);
-                org.telegram.ui.Components.og0.p0.k(true, true);
+                org.telegram.ui.Components.eg0.p0.k(true, true);
                 break;
             case 1:
                 PhotoViewer photoViewer2 = this.b;
@@ -62,12 +62,12 @@ public final /* synthetic */ class ir0 implements Runnable {
                 photoViewer8.h2();
                 break;
             case 8:
-                org.telegram.ui.Components.df0 df0Var = this.b.C1;
-                kg.f fVar = df0Var.c;
+                org.telegram.ui.Components.ue0 ue0Var = this.b.C1;
+                mg.f fVar = ue0Var.c;
                 fVar.b(0.0f);
                 fVar.setMirrored(false);
                 fVar.setRotated(false);
-                df0Var.b.l(true);
+                ue0Var.b.l(true);
                 break;
             case 9:
                 PhotoViewer photoViewer9 = this.b;
@@ -128,7 +128,7 @@ public final /* synthetic */ class ir0 implements Runnable {
                 break;
             case 21:
                 PhotoViewer photoViewer19 = this.b;
-                if (photoViewer19.v0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.og0.p0.P && photoViewer19.P3) {
+                if (photoViewer19.v0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.eg0.p0.P && photoViewer19.P3) {
                     if (!photoViewer19.t4) {
                         photoViewer19.K3 = false;
                         photoViewer19.h3();
@@ -145,8 +145,8 @@ public final /* synthetic */ class ir0 implements Runnable {
                                 PhotoViewer.a9 = PhotoViewer.Z8;
                                 PhotoViewer.Z8 = null;
                                 photoViewer19.e = false;
-                                ev0 ev0Var = photoViewer19.d5;
-                                if (ev0Var != null && !ev0Var.a.getVisible()) {
+                                cv0 cv0Var = photoViewer19.d5;
+                                if (cv0Var != null && !cv0Var.a.getVisible()) {
                                     photoViewer19.d5.a.setVisible(true, true);
                                 }
                                 photoViewer19.m6 = 1.0f;
@@ -172,9 +172,9 @@ public final /* synthetic */ class ir0 implements Runnable {
                 break;
             case 24:
                 PhotoViewer photoViewer22 = this.b;
-                org.telegram.ui.Components.t71 t71Var = photoViewer22.F2;
-                if (t71Var != null && photoViewer22.a6 <= 1.35f) {
-                    long n10 = t71Var.n();
+                org.telegram.ui.Components.g71 g71Var = photoViewer22.F2;
+                if (g71Var != null && photoViewer22.a6 <= 1.35f) {
+                    long n10 = g71Var.n();
                     long p5 = photoViewer22.F2.p();
                     if (n10 != -9223372036854775807L && p5 >= 8000) {
                         float f7 = photoViewer22.D7;
@@ -196,18 +196,18 @@ public final /* synthetic */ class ir0 implements Runnable {
             case 25:
                 PhotoViewer photoViewer23 = this.b;
                 if (!photoViewer23.U4.isPopupShown()) {
-                    org.telegram.ui.Components.t71 t71Var2 = photoViewer23.F2;
-                    if (t71Var2 != null && photoViewer23.U4.videoWasPlaying) {
-                        t71Var2.C();
+                    org.telegram.ui.Components.g71 g71Var2 = photoViewer23.F2;
+                    if (g71Var2 != null && photoViewer23.U4.videoWasPlaying) {
+                        g71Var2.C();
                         break;
                     }
                 } else {
                     VideoAds videoAds = photoViewer23.U4;
-                    org.telegram.ui.Components.t71 t71Var3 = photoViewer23.F2;
-                    videoAds.videoWasPlaying = t71Var3 != null ? t71Var3.y() : true;
-                    org.telegram.ui.Components.t71 t71Var4 = photoViewer23.F2;
-                    if (t71Var4 != null) {
-                        t71Var4.B();
+                    org.telegram.ui.Components.g71 g71Var3 = photoViewer23.F2;
+                    videoAds.videoWasPlaying = g71Var3 != null ? g71Var3.y() : true;
+                    org.telegram.ui.Components.g71 g71Var4 = photoViewer23.F2;
+                    if (g71Var4 != null) {
+                        g71Var4.B();
                         break;
                     }
                 }
@@ -216,13 +216,13 @@ public final /* synthetic */ class ir0 implements Runnable {
                 PhotoViewer photoViewer24 = this.b;
                 Drawable[] drawableArr15 = PhotoViewer.T8;
                 photoViewer24.G0(false, false);
-                org.telegram.ui.Components.yi yiVar = photoViewer24.a2;
-                if (yiVar != null) {
-                    yiVar.dismiss(true);
+                org.telegram.ui.Components.vi viVar = photoViewer24.a2;
+                if (viVar != null) {
+                    viVar.dismiss(true);
                 }
-                org.telegram.ui.ActionBar.p2 p2Var = photoViewer24.m4;
-                if (p2Var != null) {
-                    p2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                org.telegram.ui.ActionBar.n2 n2Var = photoViewer24.m4;
+                if (n2Var != null) {
+                    n2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
                     break;
                 }
                 break;

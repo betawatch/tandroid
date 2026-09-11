@@ -51,8 +51,8 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
                     temporal = LocalDate.I(temporal);
                 }
                 of2 = of(temporal.j(j$.time.temporal.a.YEAR), temporal.j(j$.time.temporal.a.MONTH_OF_YEAR));
-            } catch (b e) {
-                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e7) {
+                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e7);
             }
         }
         if (qVar instanceof ChronoUnit) {

@@ -6,9 +6,9 @@ import android.graphics.Bitmap;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zt0 extends pg.m0 {
+public final class zt0 extends rg.o0 {
     public final /* synthetic */ PhotoViewer o2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,11 +17,11 @@ public final class zt0 extends pg.m0 {
         this.o2 = photoViewer;
     }
 
-    @Override // pg.m0
+    @Override // rg.o0
     public final int getPKeyboardHeight() {
-        bi.b5 b5Var = this.o2.K1;
-        if (b5Var != null) {
-            return b5Var.l;
+        di.j4 j4Var = this.o2.K1;
+        if (j4Var != null) {
+            return j4Var.l;
         }
         return 0;
     }

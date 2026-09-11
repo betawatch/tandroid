@@ -18,7 +18,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, NotificationCenter.NotificationCenterDelegate {
     private AccountInstance accountInstance;
@@ -140,11 +140,11 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
             this.messages.clear();
             return;
         }
-        AndroidUtilities.runOnUIThread(new g1(this, 1));
+        AndroidUtilities.runOnUIThread(new d1(this, 1));
         try {
             this.countDownLatch.await();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 

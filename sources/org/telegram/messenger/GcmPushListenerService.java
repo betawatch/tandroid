@@ -5,7 +5,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.r;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     /* JADX INFO: Access modifiers changed from: private */
@@ -57,6 +57,6 @@ public class GcmPushListenerService extends FirebaseMessagingService {
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
     public void onNewToken(String str) {
-        AndroidUtilities.runOnUIThread(new w1(str, 4));
+        AndroidUtilities.runOnUIThread(new s1(str, 4));
     }
 }

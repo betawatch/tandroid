@@ -1,33 +1,44 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import java.util.HashMap;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m1 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class m1 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ m1(Object obj, Collator collator, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = collator;
+    public /* synthetic */ m1(ContactsController contactsController, HashMap hashMap, boolean z10, boolean z11, boolean z12) {
+        this.e = contactsController;
+        this.f = hashMap;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$43;
-        int lambda$processLoadedContacts$30;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$buildContactsSectionsArrays$43 = ((ContactsController) this.c).lambda$buildContactsSectionsArrays$43(this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$buildContactsSectionsArrays$43;
+                ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
+                break;
             default:
-                lambda$processLoadedContacts$30 = ContactsController.lambda$processLoadedContacts$30((a0.i) this.c, this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$processLoadedContacts$30;
+                uy.i0((uy) this.e, this.b, this.c, this.d, (Activity) this.f);
+                break;
         }
+    }
+
+    public /* synthetic */ m1(uy uyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
+        this.e = uyVar;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
+        this.f = activity;
     }
 }

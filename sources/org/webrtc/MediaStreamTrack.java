@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
@@ -24,7 +24,7 @@ public class MediaStreamTrack {
                     return mediaType;
                 }
             }
-            throw new IllegalArgumentException(hc.b.j(i10, "Unknown native media type: "));
+            throw new IllegalArgumentException(i2.g.i(i10, "Unknown native media type: "));
         }
 
         public int getNative() {
@@ -32,7 +32,7 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum State {
         LIVE,
         ENDED;

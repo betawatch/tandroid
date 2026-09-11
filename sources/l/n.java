@@ -15,11 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import v7.r8;
-import v7.v7;
-import zh.d3;
+import v7.o8;
+import v7.u7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class n implements l0.a {
     public o A;
@@ -75,7 +74,7 @@ public final class n implements l0.a {
         this.n.p(true);
         o oVar2 = this.A;
         if (oVar2 != null) {
-            oVar2.b = new d3(this);
+            oVar2.b = new xa.c(this, 26);
             oVar2.a.setVisibilityListener(oVar2);
         }
         return this;
@@ -103,7 +102,7 @@ public final class n implements l0.a {
 
     public final Drawable d(Drawable drawable) {
         if (drawable != null && this.w && (this.u || this.v)) {
-            drawable = r8.d(drawable).mutate();
+            drawable = o8.d(drawable).mutate();
             if (this.u) {
                 drawable.setTintList(this.s);
             }
@@ -196,7 +195,7 @@ public final class n implements l0.a {
         if (i10 == 0) {
             return null;
         }
-        Drawable b10 = v7.b(this.n.a, i10);
+        Drawable b10 = u7.b(this.n.a, i10);
         this.m = 0;
         this.l = b10;
         return d(b10);

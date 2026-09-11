@@ -5,26 +5,27 @@ import android.content.Context;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
-import bi.h8;
+import di.g7;
+import ji.u4;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d extends ContentObserver {
     public final ContentResolver a;
     public final Uri b;
-    public final /* synthetic */ h8 c;
+    public final /* synthetic */ g7 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(h8 h8Var, Handler handler, ContentResolver contentResolver, Uri uri) {
+    public d(g7 g7Var, Handler handler, ContentResolver contentResolver, Uri uri) {
         super(handler);
-        this.c = h8Var;
+        this.c = g7Var;
         this.a = contentResolver;
         this.b = uri;
     }
 
     @Override // android.database.ContentObserver
     public final void onChange(boolean z10) {
-        h8 h8Var = this.c;
-        h8Var.a(b.c((Context) h8Var.b, (b2.e) h8Var.j, (a6.i) h8Var.i));
+        g7 g7Var = this.c;
+        g7Var.a(b.c((Context) g7Var.b, (b2.e) g7Var.j, (u4) g7Var.i));
     }
 }

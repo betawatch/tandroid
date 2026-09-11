@@ -17,9 +17,9 @@ import com.google.android.gms.internal.vision.z;
 import java.util.ArrayList;
 import java.util.List;
 import w6.b;
-import w7.p6;
+import w7.m6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class LogUtils {
     public static f0 zza(long j3, int i10, String str, String str2, List<d0> list, g3 g3Var) {
@@ -96,9 +96,9 @@ public class LogUtils {
 
     private static String zzb(Context context) {
         try {
-            return b.a(context).c(0, context.getPackageName()).versionName;
-        } catch (PackageManager.NameNotFoundException e) {
-            p6.a(e, "Unable to find calling package info for %s", context.getPackageName());
+            return b.a(context).d(0, context.getPackageName()).versionName;
+        } catch (PackageManager.NameNotFoundException e7) {
+            m6.a(e7, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

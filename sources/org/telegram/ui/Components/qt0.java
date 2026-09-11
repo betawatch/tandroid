@@ -1,120 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qt0 extends ul0 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public int e;
-    public final /* synthetic */ iv0 f;
+public abstract class qt0 extends FrameLayout {
+    public ok0 E;
+    public int F;
+    public oq0 G;
+    public jn0 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public long a;
+    public boolean b;
+    public ObjectAnimator c;
+    public s4.j d;
+    public s4.u0 e;
+    public s4.u0 f;
+    public wr0 h;
+    public bh.l n;
+    public pt0 r;
+    public yr0 s;
+    public fs0 v;
+    public hs0 w;
+    public ur0 x;
+    public es0 y;
 
-    public qt0(iv0 iv0Var, Context context) {
-        this.f = iv0Var;
-        this.c = context;
-        E(false);
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    public final void E(boolean z10) {
-        iv0 iv0Var = this.f;
-        long j3 = iv0Var.j1;
-        org.telegram.ui.ActionBar.p2 p2Var = iv0Var.v1;
-        if (p2Var == null) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        oq0 oq0Var = this.G;
+        if (oq0Var == null || oq0Var.getVisibility() != 0) {
             return;
         }
-        if (DialogObject.isChatDialog(j3)) {
-            TLRPC.Chat chat = MessagesController.getInstance(p2Var.getCurrentAccount()).getChat(Long.valueOf(-j3));
-            if (chat == null || !ChatObject.isChannelAndNotMegaGroup(chat)) {
-                return;
+        sk0 fastScroll = this.h.getFastScroll();
+        if (fastScroll != null) {
+            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
+            if (this.F == 9) {
+                dp += AndroidUtilities.dp(64.0f);
             }
-        } else if (MessagesController.getInstance(p2Var.getCurrentAccount()).getUser(Long.valueOf(j3)) == null) {
-            return;
-        }
-        MessagesController.ChannelRecommendations channelRecommendations = MessagesController.getInstance(p2Var.getCurrentAccount()).getChannelRecommendations(j3);
-        ArrayList arrayList = this.d;
-        arrayList.clear();
-        int i10 = 0;
-        if (channelRecommendations != null) {
-            for (int i11 = 0; i11 < channelRecommendations.chats.size(); i11++) {
-                TLObject tLObject = channelRecommendations.chats.get(i11);
-                if ((tLObject instanceof TLRPC.Chat) && ChatObject.isNotInChat((TLRPC.Chat) tLObject)) {
-                    arrayList.add(tLObject);
-                } else {
-                    arrayList.add(tLObject);
-                }
+            int i10 = this.F;
+            if (i10 == 8 || xu0.w0(i10)) {
+                dp += AndroidUtilities.dp(42.0f);
             }
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(dp);
         }
-        if (!arrayList.isEmpty() && !UserConfig.getInstance(p2Var.getCurrentAccount()).isPremium()) {
-            i10 = channelRecommendations.more;
-        }
-        this.e = i10;
-        if (z10) {
-            l();
-        }
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return (this.e <= 0 || i10 != this.d.size() + (-1)) ? 17 : 18;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.j6 j6Var;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 == 17) {
-            if (!(view instanceof org.telegram.ui.Cells.j6)) {
-                return;
-            } else {
-                j6Var = (org.telegram.ui.Cells.j6) view;
-            }
-        } else if (i11 != 18) {
-            j6Var = null;
-        } else if (!(view instanceof eu0)) {
-            return;
-        } else {
-            j6Var = ((eu0) view).a;
-        }
-        org.telegram.ui.Cells.j6 j6Var2 = j6Var;
-        if (j6Var2 != null) {
-            ArrayList arrayList = this.d;
-            j6Var2.t(arrayList.get(i10), null, null, null, false, false);
-            j6Var2.M = i10 != arrayList.size() - 1;
+        if (fastScroll.getProgress() > 0.85f) {
+            xu0.q(this, null, false);
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View j6Var;
-        iv0 iv0Var = this.f;
-        if (i10 == 18) {
-            org.telegram.ui.ActionBar.p2 p2Var = iv0Var.v1;
-            j6Var = new eu0(p2Var == null ? UserConfig.selectedAccount : p2Var.getCurrentAccount(), this.c, iv0Var.j1 > 0, iv0Var.F1, new uq0(this, 3));
-        } else {
-            j6Var = new org.telegram.ui.Cells.j6(this.c, iv0Var.F1);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.r) {
+            return true;
         }
-        j6Var.setLayoutParams(new s4.p0(-1, -2));
-        return new fl0(j6Var);
+        return super.drawChild(canvas, view, j3);
     }
 }

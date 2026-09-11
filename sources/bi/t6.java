@@ -1,39 +1,58 @@
 package bi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pk0;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.view.GestureDetector;
+import android.view.animation.OvershootInterpolator;
+import android.widget.Scroller;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class t6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pk0 b;
+public final class t6 extends w5 {
+    public final /* synthetic */ pb N;
+    public final /* synthetic */ a7 O;
 
-    public /* synthetic */ t6(pk0 pk0Var, int i10) {
-        this.a = i10;
-        this.b = pk0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t6(Context context, a7 a7Var, pb pbVar) {
+        super(context);
+        this.O = a7Var;
+        this.N = pbVar;
+        this.w = -1;
+        this.E = new ArrayList();
+        this.F = new ArrayList();
+        this.G = new ArrayList();
+        this.I = new GestureDetector(new t5(0, this));
+        this.d = new Scroller(context, new OvershootInterpolator());
+        this.H = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.k(-16777216, 160)});
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.removeFromParent(this.b);
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                this.b.L0.unlock();
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                pk0 pk0Var = this.b;
-                pk0Var.Q = null;
-                pk0Var.n0 = 0.0f;
-                pk0Var.l0 = null;
-                pk0Var.invalidate();
-                break;
+    @Override // bi.w5
+    public final void b(int i10) {
+        lb lbVar;
+        a7 a7Var = this.O;
+        u6 u6Var = a7Var.E;
+        if (a7Var.w) {
+            return;
+        }
+        if (u6Var.getCurrentItem() != i10) {
+            try {
+                u6Var.x(i10, false);
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+                u6Var.getAdapter().g();
+                u6Var.x(i10, false);
+            }
+        }
+        pb pbVar = this.N;
+        if (pbVar.O0 == null || (lbVar = pbVar.t0) == null) {
+            return;
+        }
+        if (i10 < 10) {
+            lbVar.e(false);
+        } else if (i10 >= this.E.size() - 10) {
+            pbVar.t0.e(true);
         }
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class he0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -50,39 +50,39 @@ public final /* synthetic */ class he0 implements Runnable {
                 }
                 break;
             default:
-                xg0 xg0Var = me0Var.E;
+                wg0 wg0Var = me0Var.E;
                 int i12 = 1;
                 if (tL_error != null && ("SRP_ID_INVALID".equals(tL_error.text) || "NEW_SALT_INVALID".equals(tL_error.text))) {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                    i10 = ((org.telegram.ui.ActionBar.p2) xg0Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
                     ConnectionsManager.getInstance(i10).sendRequest(getpassword, new ke0(me0Var, str2, str, i12), 8);
                     break;
                 } else {
-                    xg0Var.k1(false, true);
+                    wg0Var.k1(false, true);
                     if (!(tLObject instanceof TLRPC.auth_Authorization)) {
                         if (tL_error != null) {
                             me0Var.w = false;
                             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                                xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                                wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                                 break;
                             } else {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
-                                xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                                wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                                 break;
                             }
                         }
                     } else {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xg0Var.getParentActivity());
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new l80(11, me0Var, tLObject));
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wg0Var.getParentActivity());
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new z10(16, me0Var, tLObject));
                         boolean isEmpty = TextUtils.isEmpty(str2);
-                        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         if (isEmpty) {
-                            d2Var.T = LocaleController.getString(R.string.YourPasswordReset);
+                            b2Var.T = LocaleController.getString(R.string.YourPasswordReset);
                         } else {
-                            d2Var.T = LocaleController.getString(R.string.YourPasswordChangedSuccessText);
+                            b2Var.T = LocaleController.getString(R.string.YourPasswordChangedSuccessText);
                         }
-                        d2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
-                        Dialog showDialog = xg0Var.showDialog(d2Var);
+                        b2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
+                        Dialog showDialog = wg0Var.showDialog(b2Var);
                         if (showDialog != null) {
                             showDialog.setCanceledOnTouchOutside(false);
                             showDialog.setCancelable(false);

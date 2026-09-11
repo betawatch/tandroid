@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -61,14 +61,14 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void h(View view, v0 v0Var, og.u0 u0Var) {
+    public static void h(View view, v0 v0Var, o0.a aVar) {
         b2.g i10 = i(view);
         if (i10 != null) {
-            oh.e eVar = (oh.e) i10;
+            qh.e eVar = (qh.e) i10;
             if (eVar.c == 0) {
                 Iterator it = eVar.d.iterator();
                 while (it.hasNext()) {
-                    ((oh.d) it.next()).s();
+                    ((qh.d) it.next()).s();
                 }
             }
             eVar.c++;
@@ -77,7 +77,7 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                h(viewGroup.getChildAt(i11), v0Var, u0Var);
+                h(viewGroup.getChildAt(i11), v0Var, aVar);
             }
         }
     }

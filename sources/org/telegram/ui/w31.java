@@ -1,42 +1,37 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.wc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.Components.bq0 e;
+public final class w31 implements a41 {
+    public final /* synthetic */ co a;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ w31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.wc wcVar, Context context, org.telegram.ui.Components.bq0 bq0Var, int i10) {
-        this.a = i10;
-        this.b = aVar;
-        this.c = wcVar;
-        this.d = context;
-        this.e = bq0Var;
+    public w31(co coVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject) {
+        this.a = coVar;
+        this.b = activity;
+        this.c = f6Var;
+        this.d = messageObject;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.d, 2), this.e)).j();
-                break;
-            case 1:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.d, 5), this.e)).j();
-                break;
-            default:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new qv(this.d, 6), this.e)).j();
-                break;
-        }
+    @Override // org.telegram.ui.a41
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new p31(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.a41
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new te(this.a, this.d, 8), 200L);
+    }
+
+    @Override // org.telegram.ui.a41
+    public final void c() {
+        co coVar = this.a;
+        coVar.showDialog(new sg.a1((org.telegram.ui.ActionBar.n2) coVar, 3, true));
     }
 }

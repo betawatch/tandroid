@@ -1,18 +1,22 @@
 package ki;
 
-import java.net.Socket;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class j {
-    public final int a;
-    public final Socket b;
-    public long c = 4194304;
-    public long d = 4194304;
-    public boolean e;
+public final class j extends AnimatorListenerAdapter {
+    public final /* synthetic */ MessageObject.GroupedMessages.TransitionParams a;
 
-    public j(int i10, Socket socket) {
-        this.a = i10;
-        this.b = socket;
+    public j(MessageObject.GroupedMessages.TransitionParams transitionParams) {
+        this.a = transitionParams;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        MessageObject.GroupedMessages.TransitionParams transitionParams = this.a;
+        transitionParams.backgroundChangeBounds = false;
+        transitionParams.drawBackgroundForDeletedItems = false;
     }
 }

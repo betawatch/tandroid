@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u2 extends h3 {
     public final /* synthetic */ int r = 0;
@@ -129,7 +129,7 @@ public final class u2 extends h3 {
 
     public t8.a[] n(ByteBuffer byteBuffer, g3 g3Var) {
         t8.d[] dVarArr;
-        rb.a[] aVarArr;
+        t7.u[] uVarArr;
         if (!k()) {
             return new t8.a[0];
         }
@@ -144,7 +144,7 @@ public final class u2 extends h3 {
             Parcel P0 = dVar.P0(G0, 1);
             FaceParcel[] faceParcelArr = (FaceParcel[]) P0.createTypedArray(FaceParcel.CREATOR);
             P0.recycle();
-            t8.a[] aVarArr2 = new t8.a[faceParcelArr.length];
+            t8.a[] aVarArr = new t8.a[faceParcelArr.length];
             for (int i11 = 0; i11 < faceParcelArr.length; i11++) {
                 FaceParcel faceParcel = faceParcelArr[i11];
                 int i12 = faceParcel.b;
@@ -160,22 +160,22 @@ public final class u2 extends h3 {
                     }
                     dVarArr = dVarArr2;
                 }
-                u8.a[] aVarArr3 = faceParcel.y;
-                if (aVarArr3 == null) {
-                    aVarArr = new rb.a[0];
+                u8.a[] aVarArr2 = faceParcel.y;
+                if (aVarArr2 == null) {
+                    uVarArr = new t7.u[0];
                 } else {
-                    rb.a[] aVarArr4 = new rb.a[aVarArr3.length];
-                    for (int i14 = 0; i14 < aVarArr3.length; i14++) {
-                        PointF[] pointFArr = aVarArr3[i14].a;
-                        aVarArr4[i14] = new rb.a(22);
+                    t7.u[] uVarArr2 = new t7.u[aVarArr2.length];
+                    for (int i14 = 0; i14 < aVarArr2.length; i14++) {
+                        PointF[] pointFArr = aVarArr2[i14].a;
+                        uVarArr2[i14] = new t7.u(22);
                     }
-                    aVarArr = aVarArr4;
+                    uVarArr = uVarArr2;
                 }
-                aVarArr2[i11] = new t8.a(i12, dVarArr, aVarArr);
+                aVarArr[i11] = new t8.a(i12, dVarArr, uVarArr);
             }
-            return aVarArr2;
-        } catch (RemoteException e) {
-            Log.e("FaceNativeHandle", "Could not call native face detector", e);
+            return aVarArr;
+        } catch (RemoteException e7) {
+            Log.e("FaceNativeHandle", "Could not call native face detector", e7);
             return new t8.a[0];
         }
     }

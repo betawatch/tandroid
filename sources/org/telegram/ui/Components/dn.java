@@ -1,194 +1,123 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableString;
-import android.view.KeyEvent;
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class dn implements sy {
-    public final /* synthetic */ zn a;
+public final class dn implements ti {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ bn c;
 
-    public dn(zn znVar) {
-        this.a = znVar;
+    public dn(Utilities.Callback callback, org.telegram.ui.ActionBar.n2 n2Var, bn bnVar) {
+        this.a = n2Var;
+        this.b = callback;
+        this.c = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ boolean A() {
+    @Override // org.telegram.ui.Components.ti
+    public final void B(hh hhVar) {
+        NotificationCenter.getInstance(this.a.getCurrentAccount()).doOnIdle(hhVar);
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ boolean D0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ long a() {
-        return 0L;
+    @Override // org.telegram.ui.Components.ti
+    public final void l0(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        bn bnVar = this.c;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = bnVar.j0;
+        Utilities.Callback callback = this.b;
+        if (i10 == 15) {
+            org.telegram.ui.ActionBar.n2 n2Var = this.a;
+            e5.g0(n2Var.getContext(), n2Var.getResourceProvider(), null, null, new cn(0, callback), null);
+        } else if (i10 == 7 || i10 == 8) {
+            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
+            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
+            if (selectedPhotosOrder.size() > 0) {
+                Object obj = selectedPhotos.get(selectedPhotosOrder.get(0));
+                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+                if (obj instanceof MediaController.PhotoEntry) {
+                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                    String str = photoEntry.imagePath;
+                    if (str != null) {
+                        sendingMediaInfo.path = str;
+                    } else {
+                        sendingMediaInfo.path = photoEntry.path;
+                    }
+                    sendingMediaInfo.thumbPath = photoEntry.thumbPath;
+                    sendingMediaInfo.coverPath = photoEntry.coverPath;
+                    sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
+                    sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
+                    sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
+                    sendingMediaInfo.discardLivePhoto = true;
+                    sendingMediaInfo.isVideo = photoEntry.isVideo;
+                    CharSequence charSequence = photoEntry.caption;
+                    sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                    sendingMediaInfo.entities = photoEntry.entities;
+                    sendingMediaInfo.masks = photoEntry.stickers;
+                    sendingMediaInfo.ttl = photoEntry.ttl;
+                    sendingMediaInfo.emojiMarkup = photoEntry.emojiMarkup;
+                    sendingMediaInfo.originalPhotoEntry = photoEntry;
+                } else if (obj instanceof MediaController.SearchImage) {
+                    MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                    String str2 = searchImage.imagePath;
+                    if (str2 != null) {
+                        sendingMediaInfo.path = str2;
+                    } else {
+                        sendingMediaInfo.searchImage = searchImage;
+                    }
+                    sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                    sendingMediaInfo.coverPath = searchImage.coverPath;
+                    sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                    CharSequence charSequence2 = searchImage.caption;
+                    sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
+                    sendingMediaInfo.entities = searchImage.entities;
+                    sendingMediaInfo.masks = searchImage.stickers;
+                    sendingMediaInfo.ttl = searchImage.ttl;
+                    TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+                    if (botInlineResult != null && searchImage.type == 1) {
+                        sendingMediaInfo.inlineResult = botInlineResult;
+                        sendingMediaInfo.params = searchImage.params;
+                    }
+                    searchImage.date = (int) (System.currentTimeMillis() / 1000);
+                }
+                callback.run(new sh.d(sendingMediaInfo));
+            }
+        }
+        bnVar.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ boolean b() {
+    @Override // org.telegram.ui.Components.ti
+    public final boolean q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ boolean c() {
-        return false;
+    @Override // org.telegram.ui.Components.ti
+    public final void H() {
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ int f() {
-        return 0;
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void K(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ boolean g() {
-        return false;
+    @Override // org.telegram.ui.Components.ti
+    public final void X(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final void i(int i10) {
-        boolean z10 = i10 != 0;
-        zn znVar = this.a;
-        znVar.h1 = z10;
-        znVar.b.r1.requestLayout();
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void x() {
     }
 
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final boolean k() {
-        EditTextBoldCursor editField;
-        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
-        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
-            return false;
-        }
-        editField.dispatchKeyEvent(new KeyEvent(0, 67));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final void l(String str) {
-        EditTextBoldCursor editField;
-        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
-        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
-            return;
-        }
-        int selectionEnd = editField.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            CharSequence replaceEmoji = Emoji.replaceEmoji(str, editField.getPaint().getFontMetricsInt(), false);
-            editField.setText(editField.getText().insert(selectionEnd, replaceEmoji));
-            int length = selectionEnd + replaceEmoji.length();
-            editField.setSelection(length, length);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final void n() {
-        zn znVar = this.a;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(znVar.getContext(), 0, znVar.a);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new t(this, 24));
-        hc.b.s(R.string.Cancel, alertDialog$Builder, null);
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ float p() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
-        EditTextBoldCursor editField;
-        org.telegram.ui.Cells.e6 e6Var = this.a.g1;
-        if (e6Var == null || (editField = e6Var.getEditField()) == null) {
-            return;
-        }
-        int selectionEnd = editField.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            SpannableString spannableString = new SpannableString(str);
-            y5 y5Var = document != null ? new y5(document, editField.getPaint().getFontMetricsInt()) : new y5(j3, editField.getPaint().getFontMetricsInt());
-            y5Var.cacheType = 3;
-            spannableString.setSpan(y5Var, 0, spannableString.length(), 33);
-            editField.setText(editField.getText().insert(selectionEnd, spannableString));
-            int length = selectionEnd + spannableString.length();
-            editField.setSelection(length, length);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final boolean z() {
-        return this.a.h1;
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void o(r51 r51Var) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void y(long j3) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.sy
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
+    @Override // org.telegram.ui.Components.ti
+    public final /* synthetic */ void E0(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

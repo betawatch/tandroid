@@ -1,20 +1,14 @@
 package za;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a0 {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
+    public final j0 a;
+    public final b b;
 
-    public a0(int i10, long j3, String sessionId, String firstSessionId) {
-        kotlin.jvm.internal.i.e(sessionId, "sessionId");
-        kotlin.jvm.internal.i.e(firstSessionId, "firstSessionId");
-        this.a = sessionId;
-        this.b = firstSessionId;
-        this.c = i10;
-        this.d = j3;
+    public a0(j0 j0Var, b bVar) {
+        this.a = j0Var;
+        this.b = bVar;
     }
 
     public final boolean equals(Object obj) {
@@ -25,16 +19,14 @@ public final class a0 {
             return false;
         }
         a0 a0Var = (a0) obj;
-        return kotlin.jvm.internal.i.a(this.a, a0Var.a) && kotlin.jvm.internal.i.a(this.b, a0Var.b) && this.c == a0Var.c && this.d == a0Var.d;
+        return this.a.equals(a0Var.a) && this.b.equals(a0Var.b);
     }
 
     public final int hashCode() {
-        int h = (a4.a.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j3 = this.d;
-        return h + ((int) (j3 ^ (j3 >>> 32)));
+        return this.b.hashCode() + ((this.a.hashCode() + (k.b.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "SessionDetails(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", sessionStartTimestampUs=" + this.d + ')';
+        return "SessionEvent(eventType=" + k.b + ", sessionData=" + this.a + ", applicationInfo=" + this.b + ')';
     }
 }

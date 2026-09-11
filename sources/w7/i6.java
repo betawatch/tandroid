@@ -1,30 +1,21 @@
 package w7;
 
-import android.os.Build;
-import android.util.Log;
+import java.io.Closeable;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static void a(Object obj, String str, String str2) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, String.format(str2, obj));
+    public static final void a(Closeable closeable, Throwable th2) {
+        if (closeable != null) {
+            if (th2 == null) {
+                closeable.close();
+                return;
+            }
+            try {
+                closeable.close();
+            } catch (Throwable th3) {
+                v7.r7.a(th2, th3);
+            }
         }
-    }
-
-    public static void b(String str, String str2, Exception exc) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 6)) {
-            Log.e(c10, str2, exc);
-        }
-    }
-
-    public static String c(String str) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return "TRuntime.".concat(str);
-        }
-        String concat = "TRuntime.".concat(str);
-        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

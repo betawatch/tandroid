@@ -1,71 +1,79 @@
 package di;
 
-import android.text.SpannableStringBuilder;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ig1;
-import org.telegram.ui.wy;
+import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.nz;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y1 implements Utilities.Callback {
-    public final /* synthetic */ ig1 a;
-    public final /* synthetic */ wy b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public final class y1 extends nz {
+    public final iv0 X;
+    public final /* synthetic */ z1 Y;
 
-    public /* synthetic */ y1(ig1 ig1Var, wy wyVar, long j3, int i10) {
-        this.a = ig1Var;
-        this.b = wyVar;
-        this.c = j3;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y1(z1 z1Var) {
+        super(100, true);
+        this.Y = z1Var;
+        this.X = new iv0();
+        this.O = new x1(this, 0);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        String str;
-        TLRPC.Chat chat;
-        Boolean bool = (Boolean) obj;
-        ig1 ig1Var = this.a;
-        wy wyVar = this.b;
-        if (ig1Var != null) {
-            ig1Var.finishFragment();
-            wyVar.removeSelfFromStack();
-        } else {
-            wyVar.finishFragment();
-        }
-        org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-        if (U == null) {
-            return;
-        }
-        long j3 = this.c;
-        int i10 = this.d;
-        if (j3 >= 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-            str = UserObject.getForcedFirstName(user);
-            chat = user;
-        } else {
-            TLRPC.Chat chat2 = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-            if (chat2 == null) {
-                str = "";
-                chat = chat2;
+    @Override // s4.o0
+    public final int A() {
+        return B();
+    }
+
+    @Override // org.telegram.ui.Components.nz
+    public final iv0 D1(int i10) {
+        TLRPC.Document document;
+        ArrayList<TLRPC.DocumentAttribute> arrayList;
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        int i11;
+        int i12;
+        iv0 iv0Var = this.X;
+        iv0Var.c = false;
+        Object F = this.Y.c.F(i10);
+        if (F instanceof TLRPC.BotInlineResult) {
+            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) F;
+            document = botInlineResult.document;
+            if (document != null) {
+                arrayList = document.attributes;
             } else {
-                str = chat2.title;
-                chat = chat2;
+                TLRPC.WebDocument webDocument = botInlineResult.content;
+                if (webDocument != null) {
+                    arrayList = webDocument.attributes;
+                } else {
+                    TLRPC.WebDocument webDocument2 = botInlineResult.thumb;
+                    arrayList = webDocument2 != null ? webDocument2.attributes : null;
+                }
+            }
+        } else {
+            if (!(F instanceof TLRPC.Document)) {
+                iv0Var.c = true;
+                return iv0Var;
+            }
+            document = (TLRPC.Document) F;
+            arrayList = document.attributes;
+        }
+        iv0Var.b = 100.0f;
+        iv0Var.a = 100.0f;
+        iv0Var.c = false;
+        if (document != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90)) != null && (i11 = closestPhotoSizeWithSize.w) != 0 && (i12 = closestPhotoSizeWithSize.h) != 0) {
+            iv0Var.a = i11;
+            iv0Var.b = i12;
+        }
+        if (arrayList != null) {
+            for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                TLRPC.DocumentAttribute documentAttribute = arrayList.get(i13);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                    iv0Var.a = documentAttribute.w;
+                    iv0Var.b = documentAttribute.h;
+                    break;
+                }
             }
         }
-        wc a02 = wc.a0(U);
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(bool.booleanValue() ? R.string.BotSentRevokeVerifyRequest : R.string.BotSentVerifyRequest, str));
-        a02.getClass();
-        a02.V(Arrays.asList(chat), replaceTags, null, null).k(false);
+        return iv0Var;
     }
 }

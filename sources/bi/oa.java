@@ -1,308 +1,275 @@
 package bi;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
+import android.util.Log;
+import android.view.ViewGroup;
+import di.oc;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.em;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.be0;
-import org.telegram.ui.Components.kf;
-import org.telegram.ui.Components.xd0;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.lr0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class oa extends FrameLayout {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
-    public Object h;
+public final /* synthetic */ class oa implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oa(be0 be0Var, Context context) {
-        super(context);
-        this.h = be0Var;
-        this.b = new ArrayList(4);
-        this.c = new ArrayList(4);
-        this.d = new StringBuilder(4);
-        for (int i10 = 0; i10 < 4; i10++) {
-            TextView textView = new TextView(context);
-            textView.setTextColor(-1);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextSize(1, 36.0f);
-            textView.setGravity(17);
-            textView.setAlpha(0.0f);
-            textView.setPivotX(AndroidUtilities.dp(25.0f));
-            textView.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView, w7.a6.e(50, 50, 51));
-            ((ArrayList) this.b).add(textView);
-            TextView textView2 = new TextView(context);
-            textView2.setTextColor(-1);
-            textView2.setTypeface(AndroidUtilities.bold());
-            textView2.setTextSize(1, 36.0f);
-            textView2.setGravity(17);
-            textView2.setAlpha(0.0f);
-            textView2.setText("•");
-            textView2.setPivotX(AndroidUtilities.dp(25.0f));
-            textView2.setPivotY(AndroidUtilities.dp(25.0f));
-            addView(textView2, w7.a6.e(50, 50, 51));
-            ((ArrayList) this.c).add(textView2);
-        }
+    public /* synthetic */ oa(com.google.firebase.messaging.k kVar, Intent intent) {
+        this.a = 8;
+        this.b = intent;
     }
 
-    public static void a(oa oaVar, boolean z10) {
-        ArrayList arrayList = (ArrayList) oaVar.c;
-        ArrayList arrayList2 = (ArrayList) oaVar.b;
-        StringBuilder sb2 = (StringBuilder) oaVar.d;
-        if (sb2.length() == 0) {
-            return;
-        }
-        kf kfVar = (kf) oaVar.f;
-        if (kfVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(kfVar);
-            oaVar.f = null;
-        }
-        AnimatorSet animatorSet = (AnimatorSet) oaVar.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            oaVar.e = null;
-        }
-        sb2.delete(0, sb2.length());
-        if (z10) {
-            ArrayList arrayList3 = new ArrayList();
-            for (int i10 = 0; i10 < 4; i10++) {
-                TextView textView = (TextView) arrayList2.get(i10);
-                float alpha = textView.getAlpha();
-                Property property = View.ALPHA;
-                Property property2 = View.SCALE_Y;
-                Property property3 = View.SCALE_X;
-                if (alpha != 0.0f) {
-                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
-                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
-                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
-                }
-                TextView textView2 = (TextView) arrayList.get(i10);
-                if (textView2.getAlpha() != 0.0f) {
-                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 0.0f));
-                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f));
-                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f));
-                }
-            }
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            oaVar.e = animatorSet2;
-            animatorSet2.setDuration(150L);
-            ((AnimatorSet) oaVar.e).playTogether(arrayList3);
-            ((AnimatorSet) oaVar.e).addListener(new xd0(oaVar, 2));
-            ((AnimatorSet) oaVar.e).start();
-        } else {
-            for (int i11 = 0; i11 < 4; i11++) {
-                ((TextView) arrayList2.get(i11)).setAlpha(0.0f);
-                ((TextView) arrayList.get(i11)).setAlpha(0.0f);
-            }
-        }
-        be0.a((be0) oaVar.h);
-    }
-
-    public void b(String str) {
-        ArrayList arrayList = (ArrayList) this.c;
-        ArrayList arrayList2 = (ArrayList) this.b;
-        StringBuilder sb2 = (StringBuilder) this.d;
-        if (sb2.length() == 4) {
-            return;
-        }
-        try {
-            performHapticFeedback(3);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        ArrayList arrayList3 = new ArrayList();
-        int length = sb2.length();
-        sb2.append(str);
-        TextView textView = (TextView) arrayList2.get(length);
-        textView.setText(str);
-        textView.setTranslationX(c(length));
-        int i10 = 2;
-        Property property = View.SCALE_X;
-        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f, 1.0f));
-        Property property2 = View.SCALE_Y;
-        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f, 1.0f));
-        Property property3 = View.ALPHA;
-        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f, 1.0f));
-        Property property4 = View.TRANSLATION_Y;
-        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property4, AndroidUtilities.dp(20.0f), 0.0f));
-        TextView textView2 = (TextView) arrayList.get(length);
-        textView2.setTranslationX(c(length));
-        textView2.setAlpha(0.0f);
-        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f, 1.0f));
-        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f, 1.0f));
-        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property4, AndroidUtilities.dp(20.0f), 0.0f));
-        for (int i11 = length + 1; i11 < 4; i11++) {
-            TextView textView3 = (TextView) arrayList2.get(i11);
-            if (textView3.getAlpha() != 0.0f) {
-                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property, 0.0f));
-                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property2, 0.0f));
-                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, 0.0f));
-            }
-            TextView textView4 = (TextView) arrayList.get(i11);
-            if (textView4.getAlpha() != 0.0f) {
-                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property, 0.0f));
-                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property2, 0.0f));
-                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property3, 0.0f));
-            }
-        }
-        kf kfVar = (kf) this.f;
-        if (kfVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(kfVar);
-        }
-        kf kfVar2 = new kf(this, length, i10);
-        this.f = kfVar2;
-        AndroidUtilities.runOnUIThread(kfVar2, 1500L);
-        for (int i12 = 0; i12 < length; i12++) {
-            TextView textView5 = (TextView) arrayList2.get(i12);
-            Property property5 = View.TRANSLATION_X;
-            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property5, c(i12)));
-            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property, 0.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property2, 0.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property3, 0.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property4, 0.0f));
-            TextView textView6 = (TextView) arrayList.get(i12);
-            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property5, c(i12)));
-            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property, 1.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property2, 1.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property3, 1.0f));
-            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property4, 0.0f));
-        }
-        AnimatorSet animatorSet = (AnimatorSet) this.e;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.e = animatorSet2;
-        animatorSet2.setDuration(150L);
-        ((AnimatorSet) this.e).playTogether(arrayList3);
-        ((AnimatorSet) this.e).addListener(new xd0(this, 0));
-        ((AnimatorSet) this.e).start();
-        be0.a((be0) this.h);
-    }
-
-    public int c(int i10) {
-        return org.telegram.messenger.a2.D(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
-    }
-
-    public void d(boolean z10) {
-        ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
-        TextView textView = (TextView) this.d;
-        boolean z11 = LocaleController.isRTL;
-        textView.setLayoutParams(w7.a6.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
         switch (this.a) {
             case 0:
-                super.dispatchDraw(canvas);
-                Paint paint = (Paint) this.f;
-                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, (org.telegram.ui.ActionBar.f6) this.b));
-                canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), paint);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    public void e(String str) {
-        ((TextView) this.d).setText(str);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
+                ta taVar = (ta) this.b;
+                di.f4 f4Var = taVar.c;
+                if (f4Var != null) {
+                    f4Var.e(true);
+                    taVar.c = null;
+                }
+                taVar.b(false);
+                return;
             case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                ArrayList arrayList2 = (ArrayList) this.b;
-                kf kfVar = (kf) this.f;
-                if (kfVar != null) {
-                    AndroidUtilities.cancelRunOnUIThread(kfVar);
-                    this.f = null;
+                ra raVar = (ra) this.b;
+                if (raVar.v) {
+                    raVar.E = true;
+                    raVar.F = System.currentTimeMillis();
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    raVar.e = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 771751935, 771751935, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    raVar.f = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 553648127, 553648127, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    raVar.invalidate();
+                    return;
                 }
-                AnimatorSet animatorSet = (AnimatorSet) this.e;
-                if (animatorSet != null) {
-                    animatorSet.cancel();
-                    this.e = null;
-                }
-                for (int i14 = 0; i14 < 4; i14++) {
-                    if (i14 < ((StringBuilder) this.d).length()) {
-                        TextView textView = (TextView) arrayList2.get(i14);
-                        textView.setAlpha(0.0f);
-                        textView.setScaleX(1.0f);
-                        textView.setScaleY(1.0f);
-                        textView.setTranslationY(0.0f);
-                        textView.setTranslationX(c(i14));
-                        TextView textView2 = (TextView) arrayList.get(i14);
-                        textView2.setAlpha(1.0f);
-                        textView2.setScaleX(1.0f);
-                        textView2.setScaleY(1.0f);
-                        textView2.setTranslationY(0.0f);
-                        textView2.setTranslationX(c(i14));
-                    } else {
-                        ((TextView) arrayList2.get(i14)).setAlpha(0.0f);
-                        ((TextView) arrayList.get(i14)).setAlpha(0.0f);
+                return;
+            case 2:
+                pb pbVar = ((ya) this.b).b;
+                try {
+                    db dbVar = pbVar.s;
+                    if (dbVar == null) {
+                        return;
                     }
+                    if (pbVar.b) {
+                        AndroidUtilities.removeFromParent(dbVar);
+                    } else {
+                        pbVar.n.removeView(dbVar);
+                    }
+                    pbVar.s = null;
+                    return;
+                } catch (Exception unused) {
+                    return;
                 }
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+            case 3:
+                ((db) this.b).I0.K(true);
+                return;
+            case 4:
+                ((yb) this.b).c();
+                return;
+            case 5:
+                ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
+                return;
+            case 6:
+                ((vi) this.b).hide();
+                return;
+            case 7:
+                ci.t tVar = (ci.t) this.b;
+                lr0 lr0Var = tVar.W;
+                b8 b8Var = tVar.a;
+                lr0Var.a(b8Var == null ? "" : b8Var.E);
+                return;
+            case 8:
+                com.google.firebase.messaging.k.a((Intent) this.b);
+                return;
+            case 9:
+                cf.c cVar = (cf.c) this.b;
+                synchronized (((ArrayDeque) cVar.d)) {
+                    SharedPreferences.Editor edit = ((SharedPreferences) cVar.a).edit();
+                    String str = (String) cVar.b;
+                    StringBuilder sb2 = new StringBuilder();
+                    Iterator it = ((ArrayDeque) cVar.d).iterator();
+                    while (it.hasNext()) {
+                        sb2.append((String) it.next());
+                        sb2.append((String) cVar.c);
+                    }
+                    edit.putString(str, sb2.toString()).commit();
+                }
+                return;
+            case 10:
+                com.google.firebase.messaging.d0 d0Var = (com.google.firebase.messaging.d0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + d0Var.a.getAction() + " finishing.");
+                d0Var.b.trySetResult(null);
+                return;
+            case 11:
+                ((di.h) this.b).c.W = false;
+                return;
+            case 12:
+                ((di.l) this.b).invalidateSelf();
+                return;
+            case 13:
+                ((di.d0) this.b).g = -1L;
+                return;
+            case 14:
+                di.m0 m0Var = (di.m0) this.b;
+                rg.j jVar = m0Var.b.H;
+                if (jVar != null) {
+                    jVar.b();
+                }
+                m0Var.b.k();
+                return;
+            case 15:
+                ((di.v0) this.b).a(false);
+                return;
+            case 16:
+                di.z5 z5Var = (di.z5) this.b;
+                qc.e();
+                sg.a1 a1Var = new sg.a1((org.telegram.ui.ActionBar.n2) new l3(z5Var), 14, false);
+                a1Var.setOnDismissListener(new di.f1(i13));
+                a1Var.show();
+                return;
+            case 17:
+                ((di.w1) this.b).G();
+                return;
+            case 18:
+                di.d2 d2Var = (di.d2) this.b;
+                ArrayList arrayList = d2Var.v;
+                ArrayList arrayList2 = d2Var.s;
+                di.e2 e2Var = d2Var.N;
+                di.t2 t2Var = e2Var.s;
+                i10 = ((org.telegram.ui.ActionBar.f3) t2Var).currentAccount;
+                MediaDataController mediaDataController = MediaDataController.getInstance(i10);
+                String str2 = d2Var.H;
+                if ("premium".equalsIgnoreCase(str2)) {
+                    ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(7);
+                    d2Var.x = 0;
+                    arrayList2.clear();
+                    arrayList.clear();
+                    d2Var.y.clear();
+                    d2Var.n.clear();
+                    d2Var.x++;
+                    arrayList2.add(null);
+                    arrayList.add(0L);
+                    arrayList2.addAll(recentStickers);
+                    d2Var.x = recentStickers.size() + d2Var.x;
+                    d2Var.I = d2Var.H;
+                    d2Var.l();
+                    di.p1.v1(e2Var.b, 0, 0);
+                    e2Var.f.c(false);
+                    e2Var.e.n(false);
+                    return;
+                }
+                int i14 = 5;
+                if (e2Var.a == 1 && Emoji.fullyConsistsOfEmojis(d2Var.H)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = d2Var.H;
+                    tL_messages_getStickers.hash = 0L;
+                    i12 = ((org.telegram.ui.ActionBar.f3) t2Var).currentAccount;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new m1(i14, d2Var, str2));
+                    return;
+                }
+                String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+                String[] strArr = d2Var.J;
+                if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
+                    i11 = ((org.telegram.ui.ActionBar.f3) t2Var).currentAccount;
+                    MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
+                }
+                d2Var.J = currentKeyboardLanguage;
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, d2Var.H, false, new androidx.car.app.utils.a((Object) d2Var, str2, (Object) mediaDataController, i14), null, false, false, false, true, 50, false);
+                return;
+            case 19:
+                di.l2 l2Var = (di.l2) ((di.i2) this.b).b;
+                if (l2Var.h) {
+                    return;
+                }
+                l2Var.n.setVisibility(8);
+                return;
+            case 20:
+                di.q2 q2Var = (di.q2) ((di.p2) this.b).b;
+                ArrayList arrayList3 = q2Var.o;
+                if (arrayList3.isEmpty()) {
+                    return;
+                }
+                q2Var.l.d(0.0f, true);
+                int i15 = q2Var.k + 1;
+                q2Var.k = i15;
+                if (i15 > arrayList3.size() - 1) {
+                    q2Var.k = 0;
+                }
+                ah.z0 z0Var = q2Var.j;
+                z0Var.e((ah.j1) arrayList3.get(q2Var.k));
+                q2Var.j = q2Var.i;
+                q2Var.i = z0Var;
+                q2Var.p.invalidate();
+                return;
+            case 21:
+                ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
+                return;
+            case 22:
+                ((di.s3) this.b).b(null);
+                return;
+            case 23:
+                ((di.w3) this.b).E();
+                return;
+            case 24:
+                di.fb fbVar = (di.fb) this.b;
+                if (fbVar.I) {
+                    fbVar.I = false;
+                    fbVar.invalidate();
+                    return;
+                }
+                return;
+            case 25:
+                di.l7 l7Var = ((di.k7) this.b).p;
+                l7Var.Q = System.currentTimeMillis();
+                l7Var.R = 0L;
+                l7Var.r0 = true;
+                ((di.jb) l7Var.a).a.J0.a(0L, true);
+                l7Var.invalidate();
+                return;
+            case 26:
+                di.p pVar = (di.p) this.b;
+                if (pVar.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) pVar.getParent()).removeView(pVar);
+                    return;
+                }
+                return;
+            case 27:
+                di.d dVar = (di.d) this.b;
+                if (dVar != null) {
+                    dVar.setLoading(false);
+                    return;
+                }
+                return;
+            case 28:
+                ((di.fa) ((di.ea) this.b).n).fullScroll(130);
+                return;
             default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
+                oc ocVar = (oc) this.b;
+                ocVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
+                ocVar.w0.h(AndroidUtilities.emptyMotionEvent());
+                return;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    public oa(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.f = new Paint(1);
-        this.b = f6Var;
-        TextView textView = new TextView(context);
-        this.d = textView;
-        em.j(20.0f, 1, textView);
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.a6.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        org.telegram.ui.ActionBar.i2 i2Var = new org.telegram.ui.ActionBar.i2(false);
-        this.e = i2Var;
-        imageView.setImageDrawable(i2Var);
-        i2Var.a(-1);
-        i2Var.b(-1);
-        i2Var.k = 220.0f;
-        addView(imageView, w7.a6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
-        imageView.setOnClickListener(new ai.u(this, 7));
+    public /* synthetic */ oa(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 }

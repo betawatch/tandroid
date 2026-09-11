@@ -1,52 +1,114 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.util.Iterator;
-import java.util.Map;
+import sun.misc.Unsafe;
 
 /* loaded from: classes.dex */
-public final class g1 implements Iterator {
-    public final /* synthetic */ int a;
-    public Iterator b;
+public final class g1 extends i1 {
+    public final /* synthetic */ int b;
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        switch (this.a) {
-        }
-        return this.b.hasNext();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g1(Unsafe unsafe, int i10) {
+        super(unsafe);
+        this.b = i10;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        switch (this.a) {
-        }
-        return ((Map.Entry) this.b.next()).getValue();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        switch (this.a) {
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final void c(Object obj, long j3, double d) {
+        switch (this.b) {
             case 0:
-                throw new UnsupportedOperationException();
-            case 1:
-                this.b.remove();
-                return;
+                e(obj, j3, Double.doubleToLongBits(d));
+                break;
             default:
-                this.b.remove();
-                return;
+                e(obj, j3, Double.doubleToLongBits(d));
+                break;
         }
     }
 
-    public g1(Iterator it, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 2:
-                it.getClass();
-                this.b = it;
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final void d(Object obj, long j3, float f7) {
+        switch (this.b) {
+            case 0:
+                b(j3, obj, Float.floatToIntBits(f7));
                 break;
             default:
-                it.getClass();
-                this.b = it;
+                b(j3, obj, Float.floatToIntBits(f7));
                 break;
         }
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final void f(Object obj, long j3, boolean z10) {
+        switch (this.b) {
+            case 0:
+                if (!j1.h) {
+                    j1.e(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    j1.c(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+            default:
+                if (!j1.h) {
+                    j1.e(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                } else {
+                    j1.c(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    break;
+                }
+        }
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final boolean i(Object obj, long j3) {
+        switch (this.b) {
+            case 0:
+                if (j1.h) {
+                    if (j1.l(obj, j3) != 0) {
+                    }
+                } else if (j1.m(obj, j3) != 0) {
+                }
+                break;
+            default:
+                if (j1.h) {
+                    if (j1.l(obj, j3) != 0) {
+                    }
+                } else if (j1.m(obj, j3) != 0) {
+                }
+                break;
+        }
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final float j(Object obj, long j3) {
+        switch (this.b) {
+        }
+        return Float.intBitsToFloat(g(obj, j3));
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final double k(Object obj, long j3) {
+        switch (this.b) {
+        }
+        return Double.longBitsToDouble(h(obj, j3));
+    }
+
+    @Override // com.google.android.gms.internal.clearcut.i1
+    public final byte l(Object obj, long j3) {
+        switch (this.b) {
+            case 0:
+                if (!j1.h) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (!j1.h) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return j1.m(obj, j3);
     }
 }

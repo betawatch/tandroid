@@ -3,7 +3,6 @@ package f4;
 import android.text.Layout;
 import android.text.TextUtils;
 import b2.q0;
-import bi.u6;
 import com.google.android.gms.internal.vision.e2;
 import e2.d0;
 import e2.h;
@@ -21,6 +20,7 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Cells.p6;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -29,7 +29,7 @@ import w7.c9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -155,8 +155,8 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x022e  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01dc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -503,10 +503,10 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02d0  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02ce  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02ae  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1117,7 +1117,7 @@ public final class e implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(org.telegram.ui.Cells.r6.i("Malformed time expression: ", str));
+            throw new z3.f(p6.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1207,12 +1207,17 @@ public final class e implements m {
     }
 
     @Override // z3.m
-    public final void A(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        c9.b(k(i10, i11, bArr), lVar, hVar);
+    public final int U() {
+        return 1;
     }
 
     @Override // z3.m
-    public final z3.d k(int i10, int i11, byte[] bArr) {
+    public final void e0(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        c9.b(p(i10, i11, bArr), lVar, hVar);
+    }
+
+    @Override // z3.m
+    public final z3.d p(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1223,11 +1228,11 @@ public final class e implements m {
             newPullParser.setInput(new ByteArrayInputStream(bArr, i10, i11), null);
             ArrayDeque arrayDeque = new ArrayDeque();
             d dVar = r;
-            u6 u6Var = null;
+            cf.c cVar = null;
             int i12 = 15;
             int i13 = 0;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
-                c cVar = (c) arrayDeque.peek();
+                c cVar2 = (c) arrayDeque.peek();
                 if (i13 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
@@ -1244,13 +1249,13 @@ public final class e implements m {
                                 f(newPullParser, hashMap, i14, q0Var2, hashMap2, hashMap3);
                             } else {
                                 try {
-                                    c g10 = g(newPullParser, cVar, hashMap2, dVar2);
+                                    c g10 = g(newPullParser, cVar2, hashMap2, dVar2);
                                     arrayDeque.push(g10);
-                                    if (cVar != null) {
-                                        if (cVar.m == null) {
-                                            cVar.m = new ArrayList();
+                                    if (cVar2 != null) {
+                                        if (cVar2.m == null) {
+                                            cVar2.m = new ArrayList();
                                         }
-                                        cVar.m.add(g10);
+                                        cVar2.m.add(g10);
                                     }
                                 } catch (z3.f e7) {
                                     e2.a.o("TtmlParser", "Suppressing parser error", e7);
@@ -1267,17 +1272,17 @@ public final class e implements m {
                         q0Var = q0Var2;
                         dVar = dVar2;
                     } else if (eventType == 4) {
-                        cVar.getClass();
+                        cVar2.getClass();
                         c a2 = c.a(newPullParser.getText());
-                        if (cVar.m == null) {
-                            cVar.m = new ArrayList();
+                        if (cVar2.m == null) {
+                            cVar2.m = new ArrayList();
                         }
-                        cVar.m.add(a2);
+                        cVar2.m.add(a2);
                     } else if (eventType == 3) {
                         if (newPullParser.getName().equals("tt")) {
-                            c cVar2 = (c) arrayDeque.peek();
-                            cVar2.getClass();
-                            u6Var = new u6(cVar2, hashMap, hashMap2, hashMap3);
+                            c cVar3 = (c) arrayDeque.peek();
+                            cVar3.getClass();
+                            cVar = new cf.c(cVar3, hashMap, hashMap2, hashMap3);
                         }
                         arrayDeque.pop();
                     }
@@ -1288,18 +1293,13 @@ public final class e implements m {
                 }
                 newPullParser.next();
             }
-            u6Var.getClass();
-            return u6Var;
+            cVar.getClass();
+            return cVar;
         } catch (IOException e10) {
             throw new IllegalStateException("Unexpected error when reading input.", e10);
         } catch (XmlPullParserException e11) {
             throw new IllegalStateException("Unable to decode source", e11);
         }
-    }
-
-    @Override // z3.m
-    public final int n() {
-        return 1;
     }
 
     @Override // z3.m

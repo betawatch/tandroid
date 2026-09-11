@@ -1,20 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class yc0 implements Runnable {
-    public boolean a;
-    public final /* synthetic */ dd0 b;
+import android.content.Context;
+import android.graphics.Typeface;
+import org.telegram.messenger.AndroidUtilities;
 
-    public yc0(dd0 dd0Var) {
-        this.b = dd0Var;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final class yc0 extends zc0 {
+    public final di.h2 L;
+
+    public yc0(Context context) {
+        super(context, null);
+        di.h2 h2Var = new di.h2(this, context, 5);
+        this.L = h2Var;
+        h2Var.setTextSize(1, 18.0f);
+        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        h2Var.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        h2Var.setBackground(null);
+        h2Var.setSingleLine(true);
+        h2Var.setInputType(1);
+        h2Var.setTypeface(Typeface.DEFAULT);
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l6, false));
+        h2Var.setCursorWidth(1.5f);
+        h2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        e(h2Var);
+        addView(h2Var, w7.x5.e(-1, -2, 16));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10 = this.a;
-        dd0 dd0Var = this.b;
-        dd0Var.a(z10);
-        dd0Var.postDelayed(this, dd0Var.L);
+    public EditTextBoldCursor getEditText() {
+        return this.L;
+    }
+
+    public void setHint(String str) {
+        setText(str);
     }
 }

@@ -1,51 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class c61 extends a71 {
-    public final /* synthetic */ l71 E;
+public final class c61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ j71 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c61(l71 l71Var, Context context, boolean z10) {
-        super(l71Var, context, z10);
-        this.E = l71Var;
+    public /* synthetic */ c61(j71 j71Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = j71Var;
+        this.b = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        l71 l71Var = this.E;
-        bi.l4 l4Var = l71Var.g0;
-        c61 c61Var = l71Var.f0;
-        l61 l61Var = l71Var.U;
-        if (l61Var != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float x10 = l4Var.getX() + c61Var.getX();
-            float y3 = l4Var.getY() + c61Var.getY();
-            sg.f0 f0Var = (sg.f0) l61Var;
-            yg.c0 c0Var = (yg.c0) f0Var.c;
-            yg.b0 b0Var = c0Var.a;
-            org.telegram.ui.Components.pk0 pk0Var = (org.telegram.ui.Components.pk0) f0Var.b;
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = 0;
-            rectF.set(f7, f7, measuredWidth, measuredHeight);
-            pk0Var.getDelegate().r(canvas, rectF, 0.0f, b0Var.getX() + x10, (c0Var.y == 1 ? b0Var.getY() - AndroidUtilities.statusBarHeight : b0Var.getY() + c0Var.c.getY()) + y3, 255, true);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            if (this.E.U != null) {
-                invalidate();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                j71 j71Var = this.c;
+                w51 w51Var = j71Var.i0;
+                boolean z10 = this.b;
+                w51Var.setVisibility(z10 ? 0 : 8);
+                j71Var.h0.setVisibility(z10 ? 8 : 0);
+                j71Var.E1 = null;
+                if (!z10 && (arrayList2 = j71Var.A1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = j71Var.D1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    j71Var.q0.E(false);
+                }
+                if (!z10 && (arrayList = j71Var.B1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                j71 j71Var2 = this.c;
+                j71Var2.j0.setVisibility((this.b && j71Var2.i0.getVisibility() == 0) ? 0 : 8);
+                j71Var2.H1 = null;
+                break;
         }
     }
 }

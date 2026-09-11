@@ -2,14 +2,13 @@ package v2;
 
 import b2.s;
 import g2.b0;
-import n7.a1;
-import v7.n7;
+import v7.m7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j extends e {
     public final d s;
-    public a1 v;
+    public o0.a v;
     public long w;
     public volatile boolean x;
 
@@ -18,7 +17,12 @@ public final class j extends e {
         this.s = dVar;
     }
 
-    @Override // y2.k
+    @Override // y2.j
+    public final void W() {
+        this.x = true;
+    }
+
+    @Override // y2.j
     public final void a() {
         if (this.w == 0) {
             this.s.a(this.v, -9223372036854775807L, -9223372036854775807L);
@@ -44,12 +48,7 @@ public final class j extends e {
                 }
             }
         } finally {
-            n7.a(this.r);
+            m7.a(this.r);
         }
-    }
-
-    @Override // y2.k
-    public final void k() {
-        this.x = true;
     }
 }

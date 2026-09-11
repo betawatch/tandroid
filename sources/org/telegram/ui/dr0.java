@@ -17,9 +17,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class dr0 extends org.telegram.ui.Components.aw0 {
+public final class dr0 extends org.telegram.ui.Components.ov0 {
     public int A0;
     public VelocityTracker B0;
     public boolean C0;
@@ -71,7 +71,7 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
     }
 
     public final boolean a0(MotionEvent motionEvent, boolean z10) {
-        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.k kVar;
         gr0 gr0Var = this.D0;
         er0[] er0VarArr = gr0Var.n;
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = gr0Var.h;
@@ -83,8 +83,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
         this.y0 = false;
         this.x0 = true;
         this.z0 = (int) motionEvent.getX();
-        lVar = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        lVar.setEnabled(false);
+        kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        kVar.setEnabled(false);
         gr0Var.h.setEnabled(false);
         er0 er0Var = er0VarArr[1];
         er0Var.e = i10;
@@ -99,30 +99,30 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.aw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ov0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
         super.dispatchDraw(canvas);
         gr0 gr0Var = this.D0;
-        lVar = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        int measuredHeight = lVar.getMeasuredHeight();
-        lVar2 = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        float translationY = measuredHeight + ((int) lVar2.getTranslationY());
+        kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        int measuredHeight = kVar.getMeasuredHeight();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        float translationY = measuredHeight + ((int) kVar2.getTranslationY());
         canvas.drawLine(0.0f, translationY, getWidth(), translationY, org.telegram.ui.ActionBar.j6.k0);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.l lVar;
-        org.telegram.ui.ActionBar.l lVar2;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
         gr0 gr0Var = this.D0;
         Paint paint = gr0Var.f;
         paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        lVar = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        float measuredHeight = lVar.getMeasuredHeight();
-        lVar2 = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        canvas.drawRect(0.0f, lVar2.getTranslationY() + measuredHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
+        kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        float measuredHeight = kVar.getMeasuredHeight();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        canvas.drawRect(0.0f, kVar2.getTranslationY() + measuredHeight, getMeasuredWidth(), getMeasuredHeight(), paint);
     }
 
     @Override // android.view.ViewGroup
@@ -135,7 +135,7 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:33:0x00af  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x00b9  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x0093  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ov0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -146,7 +146,7 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
         int i17;
         int i18;
         int i19;
-        org.telegram.ui.Components.nu nuVar;
+        org.telegram.ui.Components.hu huVar;
         int measuredHeight;
         int measuredHeight2;
         int childCount = getChildCount();
@@ -180,8 +180,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                             i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        nuVar = gr0Var.d;
-                        if (nuVar != null && nuVar.l(childAt)) {
+                        huVar = gr0Var.d;
+                        if (huVar != null && huVar.l(childAt)) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -197,8 +197,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    nuVar = gr0Var.d;
-                    if (nuVar != null) {
+                    huVar = gr0Var.d;
+                    if (huVar != null) {
                         if (AndroidUtilities.isTablet()) {
                         }
                         i19 = measuredHeight - measuredHeight2;
@@ -212,8 +212,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                 if (i22 == 16) {
                 }
                 i19 = i17 - i18;
-                nuVar = gr0Var.d;
-                if (nuVar != null) {
+                huVar = gr0Var.d;
+                if (huVar != null) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -229,21 +229,21 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onMeasure(int i10, int i11) {
-        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.k kVar;
         int i12;
-        org.telegram.ui.ActionBar.l lVar2;
+        org.telegram.ui.ActionBar.k kVar2;
         int i13;
         er0[] er0VarArr;
         int childCount;
         int i14;
-        org.telegram.ui.ActionBar.l lVar3;
-        org.telegram.ui.Components.vl0 vl0Var;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.Components.ll0 ll0Var;
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
         gr0 gr0Var = this.D0;
-        lVar = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        measureChildWithMargins(lVar, i10, 0, i11, 0);
+        kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        measureChildWithMargins(kVar, i10, 0, i11, 0);
         if (AndroidUtilities.dp(20.0f) < 0) {
             this.C0 = true;
             gr0Var.d.j();
@@ -251,8 +251,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
         } else if (!AndroidUtilities.isInMultiwindow) {
             size2 -= gr0Var.d.getEmojiPadding();
             i12 = View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30);
-            lVar2 = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-            int measuredHeight = lVar2.getMeasuredHeight();
+            kVar2 = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+            int measuredHeight = kVar2.getMeasuredHeight();
             this.C0 = true;
             i13 = 0;
             while (true) {
@@ -261,8 +261,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                     break;
                 }
                 er0 er0Var = er0VarArr[i13];
-                if (er0Var != null && (vl0Var = er0Var.d) != null) {
-                    vl0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + measuredHeight, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                if (er0Var != null && (ll0Var = er0Var.d) != null) {
+                    ll0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + measuredHeight, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 }
                 i13++;
             }
@@ -271,10 +271,10 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
             for (i14 = 0; i14 < childCount; i14++) {
                 View childAt = getChildAt(i14);
                 if (childAt != null && childAt.getVisibility() != 8) {
-                    lVar3 = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-                    if (childAt != lVar3) {
-                        org.telegram.ui.Components.nu nuVar = gr0Var.d;
-                        if (nuVar == null || !nuVar.l(childAt)) {
+                    kVar3 = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+                    if (childAt != kVar3) {
+                        org.telegram.ui.Components.hu huVar = gr0Var.d;
+                        if (huVar == null || !huVar.l(childAt)) {
                             measureChildWithMargins(childAt, i10, 0, i12, 0);
                         } else if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
                             childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
@@ -288,8 +288,8 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
             }
         }
         i12 = i11;
-        lVar2 = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-        int measuredHeight2 = lVar2.getMeasuredHeight();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+        int measuredHeight2 = kVar2.getMeasuredHeight();
         this.C0 = true;
         i13 = 0;
         while (true) {
@@ -306,16 +306,16 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.f5 f5Var;
+        org.telegram.ui.ActionBar.d5 d5Var;
         float f7;
         float f10;
-        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.k kVar;
         float measuredWidth;
         boolean z10;
         gr0 gr0Var = this.D0;
         er0[] er0VarArr = gr0Var.n;
-        f5Var = ((org.telegram.ui.ActionBar.p2) gr0Var).parentLayout;
-        if (((ActionBarLayout) f5Var).j() || Z()) {
+        d5Var = ((org.telegram.ui.ActionBar.n2) gr0Var).parentLayout;
+        if (((ActionBarLayout) d5Var).j() || Z()) {
             return false;
         }
         if (motionEvent != null) {
@@ -383,9 +383,9 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                 } else {
                     measuredWidth = er0VarArr[0].getMeasuredWidth() - Math.abs(x11);
                     if (gr0Var.v) {
-                        gr0Var.r.playTogether(ObjectAnimator.ofFloat(er0VarArr[0], (Property<er0, Float>) property, -r9.getMeasuredWidth()), ObjectAnimator.ofFloat(er0VarArr[1], (Property<er0, Float>) property, 0.0f));
+                        gr0Var.r.playTogether(ObjectAnimator.ofFloat(er0VarArr[0], (Property<er0, Float>) property, -r10.getMeasuredWidth()), ObjectAnimator.ofFloat(er0VarArr[1], (Property<er0, Float>) property, 0.0f));
                     } else {
-                        gr0Var.r.playTogether(ObjectAnimator.ofFloat(er0VarArr[0], (Property<er0, Float>) property, r9.getMeasuredWidth()), ObjectAnimator.ofFloat(er0VarArr[1], (Property<er0, Float>) property, 0.0f));
+                        gr0Var.r.playTogether(ObjectAnimator.ofFloat(er0VarArr[0], (Property<er0, Float>) property, r10.getMeasuredWidth()), ObjectAnimator.ofFloat(er0VarArr[1], (Property<er0, Float>) property, 0.0f));
                     }
                 }
                 gr0Var.r.setInterpolator(gr0.y);
@@ -393,14 +393,14 @@ public final class dr0 extends org.telegram.ui.Components.aw0 {
                 float f11 = measuredWidth2 / 2;
                 float distanceInfluenceForSnapDuration = (AndroidUtilities.distanceInfluenceForSnapDuration(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f11) + f11;
                 gr0Var.r.setDuration(Math.max(ImageReceiver.DEFAULT_CROSSFADE_DURATION, Math.min(Math.abs(f7) > 0.0f ? Math.round(Math.abs(distanceInfluenceForSnapDuration / r4) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                gr0Var.r.addListener(new org.telegram.ui.Components.voip.v2(this, 20));
+                gr0Var.r.addListener(new gk0(this, 3));
                 gr0Var.r.start();
                 gr0Var.s = true;
                 this.x0 = false;
             } else {
                 this.y0 = false;
-                lVar = ((org.telegram.ui.ActionBar.p2) gr0Var).actionBar;
-                lVar.setEnabled(true);
+                kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+                kVar.setEnabled(true);
                 gr0Var.h.setEnabled(true);
             }
             VelocityTracker velocityTracker = this.B0;

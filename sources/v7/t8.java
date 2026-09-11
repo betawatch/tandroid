@@ -1,18 +1,22 @@
 package v7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class t8 {
-    public static long a(e2.v vVar, int i10, int i11) {
-        vVar.J(i10);
-        if (vVar.a() < 5) {
-            return -9223372036854775807L;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
+        kotlin.jvm.internal.i.e(pVar, "<this>");
+        if (pVar instanceof kd.a) {
+            return ((kd.a) pVar).create(cVar, cVar2);
         }
-        int j3 = vVar.j();
-        if ((8388608 & j3) != 0 || ((2096896 & j3) >> 8) != i11 || (j3 & 32) == 0 || vVar.x() < 7 || vVar.a() < 7 || (vVar.x() & 16) != 16) {
-            return -9223372036854775807L;
-        }
-        vVar.h(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
+        id.h context = cVar2.getContext();
+        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
+    }
+
+    public static id.c b(id.c cVar) {
+        id.c intercepted;
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
+        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
     }
 }

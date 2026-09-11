@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import bi.af;
+import di.b7;
 import g7.e;
 import g7.g;
 import java.util.concurrent.Executor;
@@ -15,7 +15,7 @@ import v0.f;
 import v0.i;
 import w7.u7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class b implements l {
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!a1.g.a(cancellationSignal)) {
-                                executor.execute(new af(18, iVar, (f) a2));
+                                executor.execute(new b7(15, iVar, (f) a2));
                             }
                         }
                     }
@@ -86,14 +86,14 @@ public final /* synthetic */ class b implements l {
                 }
                 return gd.i.a;
             default:
-                f1.b bVar = (f1.b) this.e;
-                Context context2 = bVar.e;
+                f1.a aVar = (f1.a) this.e;
+                Context context2 = aVar.e;
                 g7.l lVar = (g7.l) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 CancellationSignal cancellationSignal2 = this.b;
                 if (!a1.g.a(cancellationSignal2)) {
                     Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    b1.d.a(bVar.i, intent2, "BEGIN_SIGN_IN");
+                    b1.d.a(aVar.i, intent2, "BEGIN_SIGN_IN");
                     intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", lVar.a);
                     try {
                         context2.startActivity(intent2);

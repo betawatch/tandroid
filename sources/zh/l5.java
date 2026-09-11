@@ -1,38 +1,43 @@
 package zh;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.Objects;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class l5 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ TextView a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ TextView c;
-    public final /* synthetic */ n5 d;
+public final class l5 {
+    public final long a;
+    public final int b;
 
-    public l5(n5 n5Var, TextView textView, View view, TextView textView2) {
-        this.d = n5Var;
-        this.a = textView;
-        this.b = view;
-        this.c = textView2;
+    public l5(long j3, int i10) {
+        this.a = j3;
+        this.b = i10;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int[] iArr = new int[2];
-        TextView textView = this.a;
-        textView.getLocationOnScreen(iArr);
-        int dp = AndroidUtilities.dp(24.0f) + iArr[1];
-        int measuredHeight = this.b.getMeasuredHeight();
-        n5 n5Var = this.d;
-        if (dp > measuredHeight) {
-            textView.setLayoutParams(w7.a6.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
-            this.c.setLayoutParams(w7.a6.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
-            n5Var.requestLayout();
+    public static l5 a(int i10, long j3) {
+        return new l5(j3, i10);
+    }
+
+    public static l5 b(MessageObject messageObject) {
+        if (messageObject == null) {
+            return null;
         }
-        n5Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        TLRPC.Message message = messageObject.messageOwner;
+        return (message == null || !(message.isThreadMessage || messageObject.isForwardedChannelPost()) || messageObject.messageOwner.fwd_from == null) ? new l5(messageObject.getDialogId(), messageObject.getId()) : new l5(messageObject.getFromChatId(), messageObject.messageOwner.fwd_from.saved_from_msg_id);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof l5) {
+            l5 l5Var = (l5) obj;
+            if (l5Var.a == this.a && l5Var.b == this.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
     }
 }

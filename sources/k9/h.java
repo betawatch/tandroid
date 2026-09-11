@@ -16,12 +16,14 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
+import k2.g0;
+import n4.y;
 import n6.l;
-import og.u0;
+import n7.z0;
 import q9.n;
-import t7.u;
+import r9.k;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -51,24 +53,24 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList f7 = new u0(11, context, new l2.g(ComponentDiscoveryService.class, 15)).f();
+        ArrayList u10 = new z0(11, context, new g0(ComponentDiscoveryService.class, 16)).u();
         Trace.endSection();
         Trace.beginSection("Runtime");
-        r9.j jVar2 = r9.j.a;
+        k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(f7);
+        arrayList.addAll(u10);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));
         arrayList2.add(q9.a.c(context, Context.class, new Class[0]));
         arrayList2.add(q9.a.c(this, h.class, new Class[0]));
         arrayList2.add(q9.a.c(jVar, j.class, new Class[0]));
-        u uVar = new u();
+        ob.a aVar2 = new ob.a(6);
         if ((Build.VERSION.SDK_INT >= 24 ? x.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(q9.a.c(aVar, a.class, new Class[0]));
         }
-        q9.g gVar = new q9.g(jVar2, arrayList, arrayList2, uVar);
+        q9.g gVar = new q9.g(kVar, arrayList, arrayList2, aVar2);
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
@@ -180,7 +182,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.g("[DEFAULT]".equals(str));
+            this.d.e("[DEFAULT]".equals(str));
             ((na.c) this.h.get()).c();
             return;
         }
@@ -224,9 +226,9 @@ public final class h {
     }
 
     public final String toString() {
-        of.b bVar = new of.b(this);
-        bVar.E(this.b, "name");
-        bVar.E(this.c, "options");
-        return bVar.toString();
+        y yVar = new y(this);
+        yVar.y(this.b, "name");
+        yVar.y(this.c, "options");
+        return yVar.toString();
     }
 }

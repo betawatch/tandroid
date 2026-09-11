@@ -11,7 +11,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
 import qb.j;
-import w7.d8;
+import w7.c8;
 import w7.e0;
 import x7.ja;
 import x7.ka;
@@ -21,7 +21,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final Context a;
@@ -47,14 +47,14 @@ public final class a implements b {
             try {
                 jaVar.S0(jaVar.O0(), 1);
                 this.c = true;
-            } catch (RemoteException e) {
-                throw new mb.a("Failed to init thin image labeler.", e);
+            } catch (RemoteException e7) {
+                throw new mb.a("Failed to init thin image labeler.", e7);
             }
         }
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = d8.a(aVar.d);
+        int a2 = c8.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {
@@ -62,7 +62,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new mb.a(hc.b.j(aVar.e, "Unsupported image format: "), 3);
+                    throw new mb.a(i2.g.i(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -101,8 +101,8 @@ public final class a implements b {
                 arrayList.add(new xb.a(naVar.b, naVar.d, naVar.a, naVar.c));
             }
             return arrayList;
-        } catch (RemoteException e7) {
-            throw new mb.a("Failed to run thin image labeler.", e7);
+        } catch (RemoteException e10) {
+            throw new mb.a("Failed to run thin image labeler.", e10);
         }
     }
 
@@ -123,8 +123,8 @@ public final class a implements b {
                 kaVar = queryLocalInterface instanceof ma ? (ma) queryLocalInterface : new ka(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 10);
             }
             this.e = ((ka) kaVar).W0(new x6.b(context), new oa(this.b.a, -1));
-        } catch (RemoteException e) {
-            throw new mb.a("Failed to create thin image labeler.", e);
+        } catch (RemoteException e7) {
+            throw new mb.a("Failed to create thin image labeler.", e7);
         } catch (y6.b unused) {
             if (!this.d) {
                 j.b(context);

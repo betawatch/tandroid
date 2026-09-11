@@ -1,29 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class lz0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final class lz0 extends FrameLayout {
+    public final oz0 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
 
-    public lz0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
+    public lz0(oz0 oz0Var, View view, boolean z10) {
+        super(oz0Var.getContext());
+        this.d = false;
+        this.e = true;
+        this.a = oz0Var;
+        setWillNotDraw(false);
+        if (!z10) {
+            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
+        }
+        addView(view, w7.x5.c(-1.0f, -1));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final m.e3 i() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = ((Pair) get(i10)).first;
-            objArr2[i10] = ((Pair) get(i10)).second;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10 = this.b;
+        oz0 oz0Var = this.a;
+        if (z10 || this.c) {
+            canvas2 = canvas;
+            float dp = AndroidUtilities.dp(10.0f);
+            float[] fArr = oz0Var.c;
+            boolean z11 = this.b;
+            float f7 = (z11 && this.d) ? dp : 0.0f;
+            fArr[1] = f7;
+            fArr[0] = f7;
+            float f10 = (z11 && this.e) ? dp : 0.0f;
+            fArr[3] = f10;
+            fArr[2] = f10;
+            boolean z12 = this.c;
+            float f11 = (z12 && this.e) ? dp : 0.0f;
+            fArr[5] = f11;
+            fArr[4] = f11;
+            if (!z12 || !this.d) {
+                dp = 0.0f;
+            }
+            fArr[7] = dp;
+            fArr[6] = dp;
+            oz0Var.b.rewind();
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = oz0Var.h;
+            rectF.set(f12, f12, getWidth() - oz0Var.h, (oz0Var.h * AndroidUtilities.dp(this.c ? -1.0f : 1.0f)) + getHeight());
+            if (!this.e) {
+                rectF.right += oz0Var.f;
+            }
+            oz0Var.b.addRoundRect(rectF, oz0Var.c, Path.Direction.CW);
+            canvas2.drawPath(oz0Var.b, oz0Var.e);
+        } else {
+            float f13 = oz0Var.h;
+            canvas2 = canvas;
+            canvas2.drawRect(f13, f13, getWidth() - oz0Var.h, getHeight() + oz0Var.h, oz0Var.e);
         }
-        return new m.e3(objArr, objArr2);
+        super.onDraw(canvas2);
     }
 }

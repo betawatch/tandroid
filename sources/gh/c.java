@@ -1,29 +1,29 @@
 package gh;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import dh.f;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+public final class c implements a {
+    public final Paint a = new Paint(1);
 
-    public /* synthetic */ c(e eVar, int i10) {
-        this.a = i10;
-        this.b = eVar;
+    public final void a(int i10) {
+        this.a.setColor(i10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.a();
-                break;
-            default:
-                e eVar = this.b;
-                AndroidUtilities.runOnUIThread(eVar.y, 400L);
-                eVar.c();
-                break;
-        }
+    @Override // gh.a
+    public final dh.d k() {
+        return new f(this);
+    }
+
+    @Override // gh.a
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
+        canvas.drawRect(f7, f10, f11, f12, this.a);
+    }
+
+    @Override // gh.a
+    public final /* synthetic */ void e() {
     }
 }

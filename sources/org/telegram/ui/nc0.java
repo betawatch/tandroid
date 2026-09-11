@@ -15,23 +15,23 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nc0 extends org.telegram.ui.ActionBar.p2 {
+public final class nc0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
-    public org.telegram.ui.Components.vl0 b;
+    public org.telegram.ui.Components.ll0 b;
     public s4.c0 c;
-    public vu d;
-    public org.telegram.ui.Components.pc e;
+    public uu d;
+    public org.telegram.ui.Components.qc e;
     public int f;
-    public final u3 h;
+    public final t3 h;
     public final boolean[] n;
     public final ArrayList r;
     public final ArrayList s;
 
     public nc0() {
         super(null);
-        this.h = new u3(this, 7);
+        this.h = new t3(this, 7);
         this.n = new boolean[3];
         this.r = new ArrayList();
         this.s = new ArrayList();
@@ -55,7 +55,7 @@ public final class nc0 extends org.telegram.ui.ActionBar.p2 {
                 return;
             }
             if (((hc0) arrayList.get(i11)).e == i10) {
-                this.b.d1(new i2.s(this, i11, 12), 700, true);
+                this.b.d1(new i2.t(this, i11, 12), 700, true);
                 return;
             }
             i11++;
@@ -108,7 +108,7 @@ public final class nc0 extends org.telegram.ui.ActionBar.p2 {
                 arrayList2.add(hc0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
             }
             arrayList2.add(hc0.b(32768, LocaleController.getString("LiteOptionsScale")));
-            if (org.telegram.ui.Components.k11.c()) {
+            if (org.telegram.ui.Components.w01.c()) {
                 arrayList2.add(hc0.b(65536, LocaleController.getString("LiteOptionsThanos")));
             }
         }
@@ -148,7 +148,7 @@ public final class nc0 extends org.telegram.ui.ActionBar.p2 {
                                     mc0Var.c(hc0Var, true);
                                     int U = nc0Var.U(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.em.q(imageView.animate().rotation((U < 0 || !nc0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.wr.h, 240L);
+                                    org.telegram.messenger.vl.q(imageView.animate().rotation((U < 0 || !nc0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.pr.h, 240L);
                                 }
                                 mc0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {
@@ -169,38 +169,38 @@ public final class nc0 extends org.telegram.ui.ActionBar.p2 {
         this.e = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PowerUsage));
-        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 4));
-        org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
-        if (f5Var != null && ((ActionBarLayout) f5Var).N0) {
+        this.actionBar.setActionBarMenuOnItemClick(new o70(this, 5));
+        org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
+        if (d5Var != null && ((ActionBarLayout) d5Var).N0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        org.telegram.ui.Components.vl0 vl0Var = new org.telegram.ui.Components.vl0(context, null);
-        this.b = vl0Var;
-        vl0Var.o1();
+        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(context, null);
+        this.b = ll0Var;
+        ll0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
-        org.telegram.ui.Components.vl0 vl0Var2 = this.b;
+        org.telegram.ui.Components.ll0 ll0Var2 = this.b;
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;
-        vl0Var2.setLayoutManager(c0Var);
-        org.telegram.ui.Components.vl0 vl0Var3 = this.b;
-        vu vuVar = new vu(this, 1);
-        this.d = vuVar;
-        vl0Var3.setAdapter(vuVar);
+        ll0Var2.setLayoutManager(c0Var);
+        org.telegram.ui.Components.ll0 ll0Var3 = this.b;
+        uu uuVar = new uu(this, 1);
+        this.d = uuVar;
+        ll0Var3.setAdapter(uuVar);
         s4.j jVar = new s4.j();
         jVar.n(350L);
-        jVar.o(org.telegram.ui.Components.wr.h);
+        jVar.o(org.telegram.ui.Components.pr.h);
         jVar.C = false;
         jVar.m = false;
         this.b.setItemAnimator(jVar);
-        this.a.addView(this.b, w7.a6.c(-1.0f, -1));
+        this.a.addView(this.b, w7.x5.c(-1.0f, -1));
         this.b.setOnItemClickListener(new iu(this, 16));
         this.fragmentView = this.a;
         this.f = AndroidUtilities.isTablet() ? 360864 : LiteMode.FLAGS_CHAT;
@@ -208,32 +208,32 @@ public final class nc0 extends org.telegram.ui.ActionBar.p2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyHidden() {
         super.onBecomeFullyHidden();
         LiteMode.removeOnPowerSaverAppliedListener(this.h);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         LiteMode.addOnPowerSaverAppliedListener(this.h);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         LiteMode.savePreference();
-        org.telegram.ui.Components.p5.u();
+        org.telegram.ui.Components.q5.u();
         org.telegram.ui.ActionBar.j6.o1(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.b.setPadding(0, 0, 0, i13);
         this.b.setClipToPadding(false);

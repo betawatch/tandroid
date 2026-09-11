@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -20,7 +20,7 @@ public class ImageLocation {
     public long documentId;
     public byte[] file_reference;
     public int imageType;
-    public org.telegram.ui.web.j2 instantFile;
+    public org.telegram.ui.web.i2 instantFile;
     public byte[] iv;
     public byte[] key;
     public TLRPC.TL_fileLocationToBeDeprecated location;
@@ -53,12 +53,12 @@ public class ImageLocation {
         return imageLocation;
     }
 
-    public static ImageLocation getForInstantFile(org.telegram.ui.web.j2 j2Var) {
-        if (j2Var == null) {
+    public static ImageLocation getForInstantFile(org.telegram.ui.web.i2 i2Var) {
+        if (i2Var == null) {
             return null;
         }
         ImageLocation imageLocation = new ImageLocation();
-        imageLocation.instantFile = j2Var;
+        imageLocation.instantFile = i2Var;
         return imageLocation;
     }
 
@@ -208,13 +208,9 @@ public class ImageLocation {
         String strippedKeyInternal = getStrippedKeyInternal(obj, obj2, obj3);
         if (BuildVars.LOGS_ENABLED && (obj instanceof MessageObject) && (message = ((MessageObject) obj).messageOwner) != null && message.rich_message != null) {
             StringBuilder v = a4.a.v("[richmedia] strippedKey=", strippedKeyInternal, " fullObject=");
-            String str = BuildConfig.BETA_URL;
-            v.append(obj2 == null ? BuildConfig.BETA_URL : obj2.getClass().getSimpleName());
+            v.append(obj2 == null ? "null" : obj2.getClass().getSimpleName());
             v.append(" stripped=");
-            if (obj3 != null) {
-                str = obj3.getClass().getSimpleName();
-            }
-            hc.b.v(str, v);
+            com.google.android.gms.internal.vision.e2.t(obj3 != null ? obj3.getClass().getSimpleName() : "null", v);
         }
         return strippedKeyInternal;
     }
@@ -294,9 +290,9 @@ public class ImageLocation {
         if (webFile != null) {
             return Utilities.MD5(webFile.url);
         }
-        org.telegram.ui.web.j2 j2Var = this.instantFile;
-        if (j2Var != null) {
-            return Utilities.MD5(j2Var.b);
+        org.telegram.ui.web.i2 i2Var = this.instantFile;
+        if (i2Var != null) {
+            return Utilities.MD5(i2Var.b);
         }
         TLRPC.Document document = this.document;
         if (document == null) {

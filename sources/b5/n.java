@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import v7.h0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final p a;
@@ -12,11 +12,11 @@ public abstract class n {
     static {
         p fVar;
         try {
-            fVar = new a4.m((WebViewProviderFactoryBoundaryInterface) se.b.a(WebViewProviderFactoryBoundaryInterface.class, h0.a()), 3);
+            fVar = new xa.c((WebViewProviderFactoryBoundaryInterface) se.b.a(WebViewProviderFactoryBoundaryInterface.class, h0.a()), 6);
         } catch (ClassNotFoundException unused) {
             fVar = new f();
-        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+        } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e7) {
+            throw new RuntimeException(e7);
         }
         a = fVar;
     }

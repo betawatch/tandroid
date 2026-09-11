@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class NativeLoader {
     private static final String LIB_NAME = "tmessages.49";
@@ -43,8 +43,8 @@ public class NativeLoader {
                 str = "armeabi";
             }
             str2 = str;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         String property = System.getProperty("os.arch");
         return (property == null || !property.contains("686")) ? str2 : "x86";
@@ -105,19 +105,19 @@ public class NativeLoader {
                     try {
                         System.loadLibrary(LIB_NAME);
                         nativeLoaded = true;
-                    } catch (Error e) {
-                        FileLog.e(e);
+                    } catch (Error e7) {
+                        FileLog.e(e7);
                         StringBuilder sb3 = log;
                         sb3.append("184: ");
-                        sb3.append(e);
+                        sb3.append(e7);
                         sb3.append("\n");
                     }
                 }
-            } catch (Error e7) {
-                FileLog.e(e7);
+            } catch (Error e10) {
+                FileLog.e(e10);
                 StringBuilder sb4 = log;
                 sb4.append("128: ");
-                sb4.append(e7);
+                sb4.append(e10);
                 sb4.append("\n");
                 String abiFolder = getAbiFolder();
                 File file = new File(context.getFilesDir(), "lib");
@@ -131,11 +131,11 @@ public class NativeLoader {
                         System.load(file2.getAbsolutePath());
                         nativeLoaded = true;
                         return;
-                    } catch (Error e10) {
+                    } catch (Error e11) {
                         StringBuilder sb5 = log;
-                        sb5.append(e10);
+                        sb5.append(e11);
                         sb5.append("\n");
-                        FileLog.e(e10);
+                        FileLog.e(e11);
                         file2.delete();
                         if (BuildVars.LOGS_ENABLED) {
                             FileLog.e("Library not found, arch = " + abiFolder);
@@ -177,8 +177,8 @@ public class NativeLoader {
             for (File file3 : listFiles) {
                 file3.delete();
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         InputStream inputStream = null;
         try {
@@ -207,35 +207,35 @@ public class NativeLoader {
                     try {
                         System.load(file2.getAbsolutePath());
                         nativeLoaded = true;
-                    } catch (Error e7) {
-                        FileLog.e(e7);
-                    }
-                    try {
-                        inputStream2.close();
-                    } catch (Exception e10) {
+                    } catch (Error e10) {
                         FileLog.e(e10);
                     }
                     try {
-                        zipFile2.close();
+                        inputStream2.close();
                     } catch (Exception e11) {
                         FileLog.e(e11);
                     }
+                    try {
+                        zipFile2.close();
+                    } catch (Exception e12) {
+                        FileLog.e(e12);
+                    }
                     return true;
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e13) {
+                    e = e13;
                     FileLog.e(e);
                     if (0 != 0) {
                         try {
                             inputStream.close();
-                        } catch (Exception e13) {
-                            FileLog.e(e13);
+                        } catch (Exception e14) {
+                            FileLog.e(e14);
                         }
                     }
                     if (zipFile2 != null) {
                         try {
                             zipFile2.close();
-                        } catch (Exception e14) {
-                            FileLog.e(e14);
+                        } catch (Exception e15) {
+                            FileLog.e(e15);
                         }
                     }
                     return false;
@@ -246,8 +246,8 @@ public class NativeLoader {
                 if (0 != 0) {
                     try {
                         inputStream.close();
-                    } catch (Exception e15) {
-                        FileLog.e(e15);
+                    } catch (Exception e16) {
+                        FileLog.e(e16);
                     }
                 }
                 if (zipFile != null) {
@@ -256,13 +256,13 @@ public class NativeLoader {
                 try {
                     zipFile.close();
                     throw th;
-                } catch (Exception e16) {
-                    FileLog.e(e16);
+                } catch (Exception e17) {
+                    FileLog.e(e17);
                     throw th;
                 }
             }
-        } catch (Exception e17) {
-            e = e17;
+        } catch (Exception e18) {
+            e = e18;
             zipFile2 = null;
         } catch (Throwable th3) {
             th = th3;

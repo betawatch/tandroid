@@ -1,48 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ed implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nd b;
+import android.view.View;
 
-    public /* synthetic */ ed(nd ndVar, int i10) {
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ed implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ md b;
+
+    public /* synthetic */ ed(md mdVar, int i10) {
         this.a = i10;
-        this.b = ndVar;
+        this.b = mdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                nd ndVar = this.b;
-                ndVar.j0 = true;
-                ndVar.h0();
+                md.X(this.b, view);
                 break;
             case 1:
-                nd ndVar2 = this.b;
-                ndVar2.x = null;
-                ndVar2.y = null;
-                ndVar2.l0 = null;
-                ndVar2.m0 = null;
-                ndVar2.o0 = null;
-                ndVar2.n0 = null;
-                ndVar2.p0 = 0.0d;
-                ndVar2.e0(false, true);
-                ndVar2.e.h(null, null, ndVar2.s, null);
-                ndVar2.h.setAnimation(ndVar2.J);
-                ndVar2.J.M(0);
+                md mdVar = this.b;
+                mdVar.v.o(mdVar.x != null, new dd(mdVar, 1), new r5(mdVar, 2), 0);
+                mdVar.J.K(0);
+                mdVar.J.N(43);
+                mdVar.h.d();
                 break;
             case 2:
-                this.b.g0(true);
+                md mdVar2 = this.b;
+                if (!mdVar2.j0) {
+                    mdVar2.f0();
+                    break;
+                } else if (mdVar2.a0) {
+                    mdVar2.a0 = false;
+                    mdVar2.h0();
+                    break;
+                }
                 break;
             default:
-                nd ndVar3 = this.b;
-                ndVar3.j0 = true;
-                if (ndVar3.w.length() > 0) {
-                    ndVar3.d0(ndVar3.w.getText().toString());
+                md mdVar3 = this.b;
+                if (!mdVar3.a0) {
+                    mdVar3.a0 = true;
+                    mdVar3.h0();
+                    break;
                 }
-                ndVar3.h0();
                 break;
         }
     }

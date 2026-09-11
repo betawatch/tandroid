@@ -1,121 +1,83 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xl0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ on0 b;
+public final class xl0 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.f6 b;
+    public final FrameLayout c;
+    public final org.telegram.ui.Components.x9 d;
+    public final TextView e;
+    public final TextView f;
+    public final ImageView h;
+    public boolean n;
+    public String r;
 
-    public /* synthetic */ xl0(on0 on0Var, int i10) {
+    public xl0(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
         this.a = i10;
-        this.b = on0Var;
+        this.b = f6Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        addView(frameLayout, w7.x5.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.d = x9Var;
+        x9Var.setImageResource(R.drawable.msg2_permissions);
+        int i11 = org.telegram.ui.ActionBar.j6.G6;
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.3f, org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        x9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
+        frameLayout.addView(x9Var, w7.x5.e(36, 36, 17));
+        TextView b10 = w7.b6.b(context, 15.0f, i11, true, null);
+        this.e = b10;
+        b10.setSingleLine();
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        b10.setEllipsize(truncateAt);
+        addView(b10, w7.x5.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
+        int i12 = org.telegram.ui.ActionBar.j6.y6;
+        TextView b11 = w7.b6.b(context, 13.0f, i12, false, null);
+        this.f = b11;
+        b11.setSingleLine();
+        b11.setEllipsize(truncateAt);
+        addView(b11, w7.x5.d(-1, -2.0f, 55, 72.0f, 31.0f, 46.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.h = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_ab_other);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i12, false), mode));
+        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var), 1, -1));
+        addView(imageView, w7.x5.d(32, 32.0f, 21, 0.0f, 0.0f, 13.0f, 0.0f));
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                on0 on0Var = this.b;
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        on0Var.getClass();
-                        break;
-                    } else {
-                        on0Var.L.callOnClick();
-                        break;
-                    }
-                } else {
-                    on0Var.Y[2].requestFocus();
-                    break;
-                }
-            case 1:
-                on0 on0Var2 = this.b;
-                on0Var2.getClass();
-                if (i10 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = on0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            on0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            on0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-                on0 on0Var3 = this.b;
-                on0Var3.getClass();
-                if (i10 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = on0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            on0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            on0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                on0 on0Var4 = this.b;
-                on0Var4.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    on0Var4.L.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                on0 on0Var5 = this.b;
-                on0Var5.getClass();
-                if (i10 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = on0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            on0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            on0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                on0 on0Var6 = this.b;
-                on0Var6.getClass();
-                if (i10 == 5 || i10 == 6) {
-                    on0Var6.L.callOnClick();
-                    break;
-                }
-                break;
-            default:
-                on0 on0Var7 = this.b;
-                on0Var7.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    on0Var7.L.callOnClick();
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.n) {
+            Paint T0 = org.telegram.ui.ActionBar.j6.T0("paintDivider", this.b);
+            if (T0 == null) {
+                T0 = org.telegram.ui.ActionBar.j6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 72.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 0.0f), getMeasuredHeight(), T0);
         }
-        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

@@ -1,42 +1,71 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zh extends org.telegram.ui.tu0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ yi b;
+public final class zh extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi b;
 
-    public zh(yi yiVar, MediaController.PhotoEntry photoEntry) {
-        this.b = yiVar;
-        this.a = photoEntry;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zh(vi viVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = viVar;
     }
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z10, final int i11, int i12, final boolean z11) {
-        yi yiVar = this.b;
-        yiVar.s2 = true;
-        if (yiVar.Z1 == null) {
-            return;
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.draw(canvas);
+                this.b.b0.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
-        final MediaController.PhotoEntry photoEntry = this.a;
-        photoEntry.editedInfo = videoEditedInfo;
-        d5.a0(yiVar.J1, yiVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.yh
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
-                arrayList.clear();
-                HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
-                hashMap.clear();
-                arrayList.add(0);
-                hashMap.put(0, photoEntry);
-                zh.this.b.Z1.A1(7, true, z10, i11, 0, 0L, false, z11, ((Long) obj).longValue());
-            }
-        });
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                vi viVar = this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, viVar.y0.getSelectedItemsCount())));
+                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(viVar.J0.measureText(format))), AndroidUtilities.dp(24.0f));
+                int measuredWidth = getMeasuredWidth() / 2;
+                viVar.J0.setColor(i0.a.k(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.C5), (int) (((viVar.V0 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+                int i10 = max / 2;
+                viVar.K0.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(viVar.K0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), viVar.L0);
+                viVar.L0.setColor(viVar.getThemedColor(org.telegram.ui.ActionBar.j6.W9));
+                viVar.K0.set(AndroidUtilities.dp(2.0f) + r6, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(viVar.K0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), viVar.L0);
+                canvas.drawText(format, measuredWidth - (r2 / 2), AndroidUtilities.dp(16.2f), viVar.J0);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onSizeChanged(i10, i11, i12, i13);
+                this.b.b0.setBounds(0, (i11 - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(48.0f), i10, i11);
+                break;
+            default:
+                super.onSizeChanged(i10, i11, i12, i13);
+                break;
+        }
     }
 }

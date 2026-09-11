@@ -1,9 +1,10 @@
 package zd;
 
 import v7.h7;
-import v7.u7;
+import v7.t7;
+import v7.t8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a extends u1 implements id.c, c0 {
     public final id.h c;
@@ -31,7 +32,7 @@ public abstract class a extends u1 implements id.c, c0 {
         if (ordinal != 1) {
             if (ordinal == 2) {
                 kotlin.jvm.internal.i.e(pVar, "<this>");
-                w7.g.b(w7.g.a(aVar, this, pVar)).resumeWith(gd.i.a);
+                t8.b(t8.a(aVar, this, pVar)).resumeWith(gd.i.a);
                 return;
             }
             if (ordinal != 3) {
@@ -58,7 +59,7 @@ public abstract class a extends u1 implements id.c, c0 {
                     ee.a.f(hVar, k10);
                 }
             } catch (Throwable th2) {
-                resumeWith(u7.a(th2));
+                resumeWith(t7.a(th2));
             }
         }
     }

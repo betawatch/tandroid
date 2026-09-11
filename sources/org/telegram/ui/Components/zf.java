@@ -1,40 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zf extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-
-    public zf(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.b = chatActivityEnterView;
-        this.a = i10;
+public final class zf extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean isOutOwner() {
+        return true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.s2)) {
-            int i10 = this.a;
-            if (i10 != 3 && chatActivityEnterView.E0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                chatActivityEnterView.E0.requestFocus();
-            }
-            chatActivityEnterView.z();
-            if (i10 != 3) {
-                ug ugVar = chatActivityEnterView.N1;
-                if (ugVar != null) {
-                    ugVar.setVisibility(8);
-                }
-                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
-                if (recordCircle != null) {
-                    recordCircle.d();
-                }
-            }
-        }
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean needDrawShareButton() {
+        return false;
     }
 }

@@ -4,7 +4,7 @@ import e9.a1;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
@@ -31,7 +31,7 @@ public final class a implements c3.o {
         int i10 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.g(vVar.a, 0, 10, false);
+            lVar.j(vVar.a, 0, 10, false);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -39,15 +39,15 @@ public final class a implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            lVar.s(w10, false);
+            lVar.v(w10, false);
         }
         lVar.f = 0;
-        lVar.s(i10, false);
+        lVar.v(i10, false);
         int i11 = i10;
         loop1: while (true) {
             int i12 = 0;
             while (true) {
-                lVar.g(vVar.a, 0, 6, false);
+                lVar.j(vVar.a, 0, 6, false);
                 vVar.J(0);
                 if (vVar.D() != 2935) {
                     break;
@@ -68,24 +68,24 @@ public final class a implements c3.o {
                 if (f7 == -1) {
                     break loop1;
                 }
-                lVar.s(f7 - 6, false);
+                lVar.v(f7 - 6, false);
             }
-            lVar.s(i11, false);
+            lVar.v(i11, false);
         }
         return false;
     }
 
     @Override // c3.o
     public final void g(c3.q qVar) {
-        this.a.c(qVar, new g0(0, 1));
-        qVar.B();
-        qVar.G(new c3.t(-9223372036854775807L));
+        this.a.e(qVar, new f0(0, 1));
+        qVar.Z0();
+        qVar.P1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
     public final void h(long j3, long j10) {
         this.c = false;
-        this.a.b();
+        this.a.d();
     }
 
     @Override // c3.o
@@ -109,7 +109,7 @@ public final class a implements c3.o {
             bVar.o = 0L;
             this.c = true;
         }
-        bVar.a(vVar);
+        bVar.b(vVar);
         return 0;
     }
 

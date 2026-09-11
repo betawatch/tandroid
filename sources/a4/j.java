@@ -1,19 +1,19 @@
 package a4;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j extends z3.i implements Comparable {
-    public long s;
+    public long w;
 
     @Override // java.lang.Comparable
     public final int compareTo(Object obj) {
         j jVar = (j) obj;
-        if (isEndOfStream() != jVar.isEndOfStream()) {
-            return isEndOfStream() ? 1 : -1;
+        if (c(4) != jVar.c(4)) {
+            return c(4) ? 1 : -1;
         }
-        long j3 = this.e - jVar.e;
+        long j3 = this.h - jVar.h;
         if (j3 == 0) {
-            j3 = this.s - jVar.s;
+            j3 = this.w - jVar.w;
             if (j3 == 0) {
                 return 0;
             }

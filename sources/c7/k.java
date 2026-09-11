@@ -3,9 +3,8 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import m.e3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(17);
@@ -18,8 +17,8 @@ public final class k extends l {
             this.a = r.a(i10);
             this.b = str;
             this.c = i11;
-        } catch (q e) {
-            throw new IllegalArgumentException(e);
+        } catch (q e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 
@@ -36,18 +35,18 @@ public final class k extends l {
     }
 
     public final String toString() {
-        e3 e3Var = new e3(getClass().getSimpleName(), 7);
+        m2.t tVar = new m2.t(getClass().getSimpleName(), 7);
         String valueOf = String.valueOf(this.a.a);
-        n7.d dVar = new n7.d(6, false);
-        ((e3) e3Var.d).d = dVar;
-        e3Var.d = dVar;
-        dVar.c = valueOf;
-        dVar.b = "errorCode";
+        n7.c cVar = new n7.c(6, false);
+        ((m2.t) tVar.d).d = cVar;
+        tVar.d = cVar;
+        cVar.c = valueOf;
+        cVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            e3Var.Y(str, "errorMessage");
+            tVar.T(str, "errorMessage");
         }
-        return e3Var.toString();
+        return tVar.toString();
     }
 
     @Override // android.os.Parcelable

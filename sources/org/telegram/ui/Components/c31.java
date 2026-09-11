@@ -1,50 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.os.SystemClock;
+import android.text.TextPaint;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class c31 extends Drawable {
-    public final Drawable a;
-    public final Paint b = new Paint(1);
-    public final RectF c = new RectF();
+    public final xi0 a;
+    public int b;
+    public final TextPaint c;
 
-    public c31(Context context) {
-        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
+    public c31(TextPaint textPaint) {
+        ah.g1 g1Var = new ah.g1(this, 6);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        xi0 xi0Var = new xi0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = xi0Var;
+        xi0Var.setCallback(g1Var);
+        xi0Var.I(1);
+        xi0Var.K((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        xi0Var.H(true);
+        xi0Var.start();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
-        this.a.draw(canvas);
+        int color = this.c.getColor();
+        int i10 = this.b;
+        xi0 xi0Var = this.a;
+        if (color != i10) {
+            xi0Var.a0 = true;
+            xi0Var.O(color, "Comp 1");
+            xi0Var.m();
+            xi0Var.H(true);
+            xi0Var.S(0L);
+            this.b = color;
+        }
+        xi0Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.c.set(rect);
-        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
-        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
-        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
+        return -2;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-        this.a.setAlpha(i10);
     }
 
     @Override // android.graphics.drawable.Drawable

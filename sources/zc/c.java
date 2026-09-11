@@ -5,7 +5,7 @@ import com.google.android.gms.internal.vision.e2;
 import ed.h;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c extends h {
     public static final Pattern e = Pattern.compile("(\\${2})([\\s\\S]+?)\\1");
@@ -17,7 +17,7 @@ public final class c extends h {
             return null;
         }
         d dVar = new d();
-        dVar.g = e2.h(2, 2, a2);
+        dVar.g = e2.i(2, 2, a2);
         return dVar;
     }
 

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.BuildConfig;
 import w7.e0;
 
 /* loaded from: classes.dex */
@@ -43,7 +42,7 @@ public final class a extends o6.a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = e2.d(iArr[i10], i10, 1, arrayList);
+            i10 = e2.e(iArr[i10], i10, 1, arrayList);
         }
         Collections.sort(arrayList);
         return arrayList;
@@ -66,7 +65,7 @@ public final class a extends o6.a {
         sb2.append(str);
         sb2.append("=");
         if (bArr == null) {
-            str2 = BuildConfig.BETA_URL;
+            str2 = "null";
         } else {
             sb2.append("(");
             int length = bArr.length;
@@ -104,7 +103,7 @@ public final class a extends o6.a {
         sb3.append("(");
         String str = this.a;
         if (str == null) {
-            sb2 = BuildConfig.BETA_URL;
+            sb2 = "null";
         } else {
             StringBuilder sb4 = new StringBuilder(String.valueOf(str).length() + 2);
             sb4.append("'");
@@ -116,7 +115,7 @@ public final class a extends o6.a {
         sb3.append(", direct=");
         byte[] bArr = this.b;
         if (bArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("'");
             sb3.append(Base64.encodeToString(bArr, 3));
@@ -135,7 +134,7 @@ public final class a extends o6.a {
         sb3.append("=");
         int[] iArr = this.h;
         if (iArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("(");
             int length = iArr.length;

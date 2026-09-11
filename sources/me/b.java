@@ -3,13 +3,13 @@ package me;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import m4.w;
+import ji.b5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b {
     public final a a;
-    public w b;
+    public b5 b;
     public int c;
     public float d;
     public float e;
@@ -37,9 +37,9 @@ public final class b {
                         throw new AssertionError();
                     }
                     this.c |= 2;
-                    w wVar = new w(6, this, view);
-                    this.b = wVar;
-                    view.postDelayed(wVar, aVar.getLongPressDuration());
+                    b5 b5Var = new b5(11, this, view);
+                    this.b = b5Var;
+                    view.postDelayed(b5Var, aVar.getLongPressDuration());
                     return true;
                 }
             }
@@ -82,11 +82,11 @@ public final class b {
         int i10 = this.c;
         if ((i10 & 2) != 0) {
             this.c = i10 & (-3);
-            w wVar = this.b;
-            if (wVar == null) {
+            b5 b5Var = this.b;
+            if (b5Var == null) {
                 throw new AssertionError();
             }
-            view.removeCallbacks(wVar);
+            view.removeCallbacks(b5Var);
             this.b = null;
         }
         int i11 = this.c;

@@ -1,125 +1,104 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.eo;
+import android.app.Activity;
+import java.util.Locale;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.vc0;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.co;
+import org.telegram.ui.on;
+import org.telegram.ui.pn0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ak implements Runnable {
+public final /* synthetic */ class ak implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ ak(SendMessagesHelper sendMessagesHelper, TLRPC.Message message, int i10, int i11, boolean z10) {
-        this.e = sendMessagesHelper;
-        this.f = message;
-        this.b = i10;
-        this.c = i11;
-        this.d = z10;
+    public /* synthetic */ ak(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, co coVar) {
+        this.c = sendMessagesHelper;
+        this.b = z10;
+        this.d = messageObject;
+        this.e = keyboardButtonProto;
+        this.f = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.Document f7;
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        int i11;
+        int i12 = this.a;
+        boolean z10 = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i12) {
             case 0:
-                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$98((TLRPC.Message) this.f, this.b, this.c, this.d);
+                ((SendMessagesHelper) obj4).lambda$sendCallback$41(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (co) obj, b2Var, i10);
                 break;
             case 1:
-                eo eoVar = (eo) this.e;
-                pk0 pk0Var = (pk0) this.f;
-                org.telegram.ui.ActionBar.p1 p1Var = eoVar.Q8;
-                if (p1Var != null && eoVar.fragmentView != null && !p1Var.isShowing() && AndroidUtilities.isActivityRunning(eoVar.getParentActivity())) {
-                    eoVar.Q8.showAtLocation(eoVar.x0, 51, this.b, this.c);
-                    if (this.d && pk0Var != null) {
-                        pk0Var.r(true);
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.sf(eoVar, 25), 420L);
+                on onVar = (on) obj4;
+                TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
+                co coVar = onVar.a;
+                org.telegram.ui.nf nfVar = new org.telegram.ui.nf(6, onVar, (org.telegram.ui.Cells.t1) obj3);
+                if (!((boolean[]) obj2)[0]) {
+                    nfVar.run(Boolean.FALSE);
                     break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.zb zbVar = (org.telegram.ui.Components.zb) this.e;
-                yg.p0 p0Var = (yg.p0) this.f;
-                org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                long j3 = p0Var.g;
-                if (j3 == 0) {
-                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(p0Var.f);
-                    if (tL_availableReaction != null) {
-                        f7 = tL_availableReaction.activate_animation;
-                    }
+                } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
+                    nfVar.run(Boolean.TRUE);
+                    break;
                 } else {
-                    f7 = org.telegram.ui.Components.p5.f(UserConfig.selectedAccount, j3);
-                }
-                if (f7 != null && R != null) {
-                    org.telegram.ui.Components.wc.a0(R).y(zbVar.a.h, f7, this.d ? new fg.n(this.b, this.c, R, 7) : null).k(true);
+                    Activity parentActivity = coVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.n2) coVar).currentAccount;
+                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.nf(7, onVar, nfVar), coVar.getResourceProvider());
                     break;
                 }
-                break;
             default:
-                NotificationsSettingsActivity notificationsSettingsActivity = (NotificationsSettingsActivity) this.e;
-                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) this.f;
-                int i10 = this.b;
-                boolean z10 = this.d;
-                if (i10 == 3) {
-                    SharedPreferences.Editor edit = notificationsSettingsActivity.getNotificationsSettings().edit();
-                    if (z10) {
-                        edit.remove("EnableAllStories");
-                    } else {
-                        edit.putBoolean("EnableAllStories", true);
-                    }
-                    edit.apply();
-                    notificationsSettingsActivity.getNotificationsController().updateServerNotificationsSettings(i10);
-                } else if (i10 == 4 || i10 == 5) {
-                    SharedPreferences.Editor edit2 = notificationsSettingsActivity.getNotificationsSettings().edit();
-                    if (z10) {
-                        edit2.putBoolean("EnableReactionsMessages", false);
-                        edit2.putBoolean("EnableReactionsStories", false);
-                    } else {
-                        edit2.putBoolean("EnableReactionsMessages", true);
-                        edit2.putBoolean("EnableReactionsStories", true);
-                    }
-                    edit2.apply();
-                    notificationsSettingsActivity.getNotificationsController().updateServerNotificationsSettings(i10);
-                    notificationsSettingsActivity.getNotificationsController().deleteNotificationChannelGlobal(i10);
-                } else {
-                    notificationsSettingsActivity.getNotificationsController().setGlobalNotificationsEnabled(i10, !z10 ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID);
+                vc0 vc0Var = (vc0) obj4;
+                vc0 vc0Var2 = (vc0) obj3;
+                vc0 vc0Var3 = (vc0) obj2;
+                hg.c2 c2Var = (hg.c2) obj;
+                if (z10) {
+                    org.telegram.ui.Components.e5.d(vc0Var, vc0Var2, vc0Var3);
                 }
-                j5Var.e.b(0, !z10, true);
-                notificationsSettingsActivity.c.m(this.c);
+                int value = vc0Var3.getValue();
+                int value2 = vc0Var2.getValue();
+                int value3 = vc0Var.getValue();
+                pn0 pn0Var = (pn0) c2Var.c;
+                int i13 = c2Var.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) c2Var.d;
+                if (i13 == 8) {
+                    int[] iArr = pn0Var.x;
+                    iArr[0] = value;
+                    iArr[1] = value2 + 1;
+                    iArr[2] = value3;
+                } else {
+                    pn0Var.getClass();
+                }
+                editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
         }
     }
 
-    public /* synthetic */ ak(eo eoVar, int i10, int i11, boolean z10, pk0 pk0Var) {
-        this.e = eoVar;
-        this.b = i10;
-        this.c = i11;
-        this.d = z10;
-        this.f = pk0Var;
+    public /* synthetic */ ak(on onVar, org.telegram.ui.Cells.t1 t1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
+        this.c = onVar;
+        this.d = t1Var;
+        this.e = zArr;
+        this.b = z10;
+        this.f = contentsettings;
     }
 
-    public /* synthetic */ ak(org.telegram.ui.Components.zb zbVar, yg.p0 p0Var, boolean z10, int i10, int i11) {
-        this.e = zbVar;
-        this.f = p0Var;
-        this.d = z10;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    public /* synthetic */ ak(NotificationsSettingsActivity notificationsSettingsActivity, int i10, boolean z10, org.telegram.ui.Cells.j5 j5Var, int i11) {
-        this.e = notificationsSettingsActivity;
-        this.b = i10;
-        this.d = z10;
-        this.f = j5Var;
-        this.c = i11;
+    public /* synthetic */ ak(boolean z10, vc0 vc0Var, vc0 vc0Var2, vc0 vc0Var3, hg.c2 c2Var) {
+        this.b = z10;
+        this.c = vc0Var;
+        this.d = vc0Var2;
+        this.e = vc0Var3;
+        this.f = c2Var;
     }
 }

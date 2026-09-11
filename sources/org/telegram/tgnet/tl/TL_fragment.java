@@ -4,18 +4,18 @@ import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public class TL_fragment {
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class InputCollectible extends TLObject {
         public static InputCollectible TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (InputCollectible) TLObject.TLdeserialize(InputCollectible.class, i10 != -1562241884 ? i10 != -476815191 ? null : new TL_inputCollectibleUsername() : new TL_inputCollectiblePhone(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_collectibleInfo extends TLObject {
         public static final int constructor = 1857945489;
         public long amount;
@@ -51,7 +51,7 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_getCollectibleInfo extends TLObject {
         public static final int constructor = -1105295942;
         public InputCollectible collectible;
@@ -68,7 +68,7 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_inputCollectiblePhone extends InputCollectible {
         public static final int constructor = -1562241884;
         public String phone;
@@ -85,7 +85,7 @@ public class TL_fragment {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_inputCollectibleUsername extends InputCollectible {
         public static final int constructor = -476815191;
         public String username;

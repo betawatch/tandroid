@@ -16,6 +16,7 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import i2.g;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a = new v(4);
@@ -70,18 +71,18 @@ public final class b implements o {
     public final boolean b(p pVar) {
         v vVar = this.a;
         l lVar = (l) pVar;
-        lVar.g(vVar.a, 0, 3, false);
+        lVar.j(vVar.a, 0, 3, false);
         vVar.J(0);
         if (vVar.A() == 4607062) {
-            lVar.g(vVar.a, 0, 2, false);
+            lVar.j(vVar.a, 0, 2, false);
             vVar.J(0);
             if ((vVar.D() & MediaDataController.MAX_LINKS_COUNT) == 0) {
-                lVar.g(vVar.a, 0, 4, false);
+                lVar.j(vVar.a, 0, 4, false);
                 vVar.J(0);
                 int j3 = vVar.j();
                 lVar.f = 0;
-                lVar.s(j3, false);
-                lVar.g(vVar.a, 0, 4, false);
+                lVar.v(j3, false);
+                lVar.j(vVar.a, 0, 4, false);
                 vVar.J(0);
                 if (vVar.j() == 0) {
                     return true;
@@ -145,16 +146,16 @@ public final class b implements o {
                 boolean z13 = (x10 & 4) != 0;
                 boolean z14 = (x10 & 1) != 0;
                 if (z13 && this.o == null) {
-                    this.o = new a(this.f.I(8, 1));
+                    this.o = new a(this.f.R1(8, 1));
                 }
                 if (z14 && this.p == null) {
-                    this.p = new e(this.f.I(9, 2));
+                    this.p = new e(this.f.R1(9, 2));
                 }
-                this.f.B();
+                this.f.Z0();
                 this.j = vVar.j() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
-                pVar.q(this.j);
+                pVar.r(this.j);
                 this.j = 0;
                 this.g = 3;
             } else if (i12 == 3) {
@@ -185,7 +186,7 @@ public final class b implements o {
                         if (i10 == 9 || this.p == null) {
                             j11 = -9223372036854775807L;
                             if (i10 == 18 || this.n) {
-                                pVar.q(this.l);
+                                pVar.r(this.l);
                                 z10 = false;
                                 z11 = false;
                                 if (!this.h && z10) {
@@ -242,13 +243,13 @@ public final class b implements o {
                                 }
                                 long j12 = cVar.b;
                                 if (j12 != -9223372036854775807L) {
-                                    this.f.G(new y(j12, cVar.d, cVar.c));
+                                    this.f.P1(new y(j12, cVar.d, cVar.c));
                                     this.n = true;
                                 }
                             }
                         } else {
                             if (!this.n) {
-                                this.f.G(new t(-9223372036854775807L));
+                                this.f.P1(new t(-9223372036854775807L));
                                 this.n = true;
                             }
                             e eVar = this.p;
@@ -258,7 +259,7 @@ public final class b implements o {
                             int i14 = (x11 >> 4) & 15;
                             int i15 = x11 & 15;
                             if (i15 != 7) {
-                                throw new d(hc.b.j(i15, "Video format not supported: "));
+                                throw new d(g.i(i15, "Video format not supported: "));
                             }
                             eVar.g = i14;
                             if (i14 != 5) {
@@ -291,7 +292,7 @@ public final class b implements o {
                                     rVar.y = a11.d;
                                     rVar.D = a11.k;
                                     rVar.t = a11.a;
-                                    hc.b.u(rVar, h0Var);
+                                    g.u(rVar, h0Var);
                                     eVar.e = true;
                                 } else if (x12 == 1 && eVar.e) {
                                     int i20 = eVar.g == 1 ? 1 : 0;
@@ -326,7 +327,7 @@ public final class b implements o {
                         z10 = false;
                     } else {
                         if (!this.n) {
-                            this.f.G(new t(-9223372036854775807L));
+                            this.f.P1(new t(-9223372036854775807L));
                             this.n = true;
                         }
                         a aVar = this.o;
@@ -347,7 +348,7 @@ public final class b implements o {
                                 rVar2.q = r0.n("audio/mpeg");
                                 rVar2.I = 1;
                                 rVar2.J = i24;
-                                hc.b.u(rVar2, h0Var2);
+                                g.u(rVar2, h0Var2);
                                 aVar.c = true;
                             } else if (i23 == 7 || i23 == 8) {
                                 String str = i23 == 7 ? "audio/g711-alaw" : "audio/g711-mlaw";
@@ -356,7 +357,7 @@ public final class b implements o {
                                 rVar3.q = r0.n(str);
                                 rVar3.I = 1;
                                 rVar3.J = 8000;
-                                hc.b.u(rVar3, h0Var2);
+                                g.u(rVar3, h0Var2);
                                 aVar.c = true;
                             } else if (i23 != 10) {
                                 throw new d("Audio format not supported: " + aVar.d);
@@ -383,7 +384,7 @@ public final class b implements o {
                                 rVar4.I = n10.c;
                                 rVar4.J = n10.b;
                                 rVar4.t = Collections.singletonList(bArr4);
-                                hc.b.u(rVar4, h0Var3);
+                                g.u(rVar4, h0Var3);
                                 aVar.c = true;
                             } else if (aVar.d != 10 || x14 == 1) {
                                 int a16 = a13.a();
@@ -419,7 +420,7 @@ public final class b implements o {
                 j11 = -9223372036854775807L;
                 if (i10 == 18) {
                 }
-                pVar.q(this.l);
+                pVar.r(this.l);
                 z10 = false;
                 z11 = false;
                 if (!this.h) {

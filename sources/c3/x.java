@@ -4,7 +4,7 @@ import b2.s0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -21,9 +21,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final ki.f o;
+    public final fg.f o;
 
-    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, ki.f fVar) {
+    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, fg.f fVar) {
         this.a = list;
         this.b = i10;
         this.c = i11;
@@ -41,7 +41,7 @@ public final class x {
         this.o = fVar;
     }
 
-    public static x a(e2.v vVar, boolean z10, ki.f fVar) {
+    public static x a(e2.v vVar, boolean z10, fg.f fVar) {
         com.google.android.gms.internal.cast.a g10;
         int i10;
         int i11 = 4;
@@ -67,7 +67,7 @@ public final class x {
             }
             vVar.J(i12);
             byte[] bArr = new byte[i14];
-            ki.f fVar2 = fVar;
+            fg.f fVar2 = fVar;
             String str = null;
             int i17 = 0;
             int i18 = 0;
@@ -85,19 +85,19 @@ public final class x {
             while (i17 < x11) {
                 int x12 = vVar.x() & 63;
                 int D3 = vVar.D();
-                ki.f fVar3 = fVar2;
+                fg.f fVar3 = fVar2;
                 int i29 = 0;
                 while (i29 < D3) {
                     int D4 = vVar.D();
                     int i30 = x10;
-                    System.arraycopy(f2.o.a, i13, bArr, i18, i11);
+                    System.arraycopy(f2.p.a, i13, bArr, i18, i11);
                     int i31 = i18 + 4;
                     System.arraycopy(vVar.a, vVar.b, bArr, i31, D4);
                     if (x12 == 32 && i29 == 0) {
-                        fVar3 = f2.o.i(i31, i31 + D4, bArr);
+                        fVar3 = f2.p.i(i31, i31 + D4, bArr);
                     } else {
                         if (x12 == 33 && i29 == 0) {
-                            f2.k h = f2.o.h(bArr, i31, i31 + D4, fVar3);
+                            f2.l h = f2.p.h(bArr, i31, i31 + D4, fVar3);
                             i19 = h.a + 1;
                             i20 = h.g;
                             int i32 = h.h;
@@ -109,10 +109,10 @@ public final class x {
                             int i35 = h.m;
                             float f10 = h.i;
                             int i36 = h.j;
-                            f2.h hVar = h.b;
-                            if (hVar != null) {
+                            f2.i iVar = h.b;
+                            if (iVar != null) {
                                 i10 = i36;
-                                str = e2.e.a(hVar.a, hVar.c, hVar.d, hVar.f, hVar.b, hVar.e);
+                                str = e2.e.a(iVar.a, iVar.c, iVar.d, iVar.f, iVar.b, iVar.e);
                             } else {
                                 i10 = i36;
                             }
@@ -121,9 +121,9 @@ public final class x {
                             i26 = i35;
                             i25 = i34;
                             i24 = i33;
-                        } else if (x12 == 39 && i29 == 0 && (g10 = f2.o.g(i31, i31 + D4, bArr)) != null && fVar3 != null) {
+                        } else if (x12 == 39 && i29 == 0 && (g10 = f2.p.g(i31, i31 + D4, bArr)) != null && fVar3 != null) {
                             i13 = 0;
-                            i27 = g10.a == ((f2.g) ((e9.i0) fVar3.a).get(0)).b ? 4 : 5;
+                            i27 = g10.a == ((f2.h) ((e9.i0) fVar3.a).get(0)).b ? 4 : 5;
                         }
                         i13 = 0;
                     }
@@ -138,8 +138,8 @@ public final class x {
                 i11 = 4;
             }
             return new x(i14 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), x10 + 1, i19, i20, i21, i22, i23, i24, i25, i26, i27, f7, i28, str, fVar2);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw s0.a(e, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
+        } catch (ArrayIndexOutOfBoundsException e7) {
+            throw s0.a(e7, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
         }
     }
 }

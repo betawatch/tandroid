@@ -1,53 +1,39 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ MediaDataController b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ BaseController h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ h9(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10, long j3, boolean z11, ArrayList arrayList2, boolean z12) {
-        this.h = mediaDataController;
+    public /* synthetic */ h9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList) {
+        this.b = mediaDataController;
         this.c = z10;
-        this.n = arrayList;
-        this.f = i10;
-        this.b = j3;
-        this.d = z11;
-        this.r = arrayList2;
-        this.e = z12;
+        this.d = i10;
+        this.e = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.h).lambda$processLoadedFeaturedStickers$63(this.c, (ArrayList) this.n, this.f, this.b, this.d, (ArrayList) this.r, this.e);
+                this.b.lambda$loadRecents$48(this.c, this.e, this.d);
                 break;
             default:
-                ((MessagesStorage) this.h).lambda$loadChatInfo$144((TLRPC.ChatFull[]) this.n, this.b, this.c, this.d, this.e, this.f, (CountDownLatch) this.r);
+                this.b.lambda$processLoadedRecentDocuments$53(this.c, this.d, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ h9(MessagesStorage messagesStorage, TLRPC.ChatFull[] chatFullArr, long j3, boolean z10, boolean z11, boolean z12, int i10, CountDownLatch countDownLatch) {
-        this.h = messagesStorage;
-        this.n = chatFullArr;
-        this.b = j3;
+    public /* synthetic */ h9(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10) {
+        this.b = mediaDataController;
         this.c = z10;
-        this.d = z11;
-        this.e = z12;
-        this.f = i10;
-        this.r = countDownLatch;
+        this.e = arrayList;
+        this.d = i10;
     }
 }

@@ -1,13 +1,38 @@
 package n2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final class q {
-    public final byte[] a;
-    public final String b;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import ji.u4;
 
-    public q(String str, byte[] bArr) {
-        this.a = bArr;
-        this.b = str;
-    }
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public interface q {
+    o B0(byte[] bArr, List list, int i10, HashMap hashMap);
+
+    h2.a C(byte[] bArr);
+
+    byte[] G();
+
+    int G0();
+
+    void H0(u4 u4Var);
+
+    boolean M0(String str, byte[] bArr);
+
+    void W(byte[] bArr, byte[] bArr2);
+
+    void b0(byte[] bArr);
+
+    Map d(byte[] bArr);
+
+    void h(byte[] bArr, j2.k kVar);
+
+    p k();
+
+    byte[] o0(byte[] bArr, byte[] bArr2);
+
+    void release();
+
+    void z0(byte[] bArr);
 }

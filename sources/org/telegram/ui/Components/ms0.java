@@ -1,44 +1,31 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ms0 extends s4.s0 {
-    public final /* synthetic */ ds0 a;
-    public final /* synthetic */ es0 b;
-    public final /* synthetic */ iv0 c;
+public final class ms0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qt0 b;
+    public final /* synthetic */ xu0 c;
 
-    public ms0(iv0 iv0Var, ds0 ds0Var, es0 es0Var) {
-        this.c = iv0Var;
-        this.a = ds0Var;
-        this.b = es0Var;
+    public /* synthetic */ ms0(xu0 xu0Var, qt0 qt0Var, int i10) {
+        this.a = i10;
+        this.c = xu0Var;
+        this.b = qt0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        this.c.b1 = i10 != 0;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12;
-        int i13;
-        iv0 iv0Var = this.c;
-        xu0[] xu0VarArr = iv0Var.t1;
-        es0 es0Var = this.b;
-        ds0 ds0Var = this.a;
-        iv0Var.G(ds0Var, (vl0) recyclerView, es0Var);
-        if (i11 != 0 && ((i13 = iv0Var.k0[0].F) == 0 || i13 == 5)) {
-            xu0VarArr[0].a.isEmpty();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
+            default:
+                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                this.b.h.invalidate();
+                break;
         }
-        if (i11 != 0 && ((i12 = ds0Var.F) == 0 || iv0.p0(i12))) {
-            iv0.q(ds0Var, xu0VarArr, true);
-        }
-        ds0Var.h.K0(true);
-        if (ds0Var.G != null) {
-            ds0Var.invalidate();
-        }
-        iv0Var.o0();
     }
 }

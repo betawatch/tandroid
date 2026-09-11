@@ -2,13 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
-import hc.b;
+import i2.g;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
     public static void zzd(Iterable iterable, List list) {
@@ -20,12 +20,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String k10 = b.k(zzteVar.size() - size, "Element at index ", " is null.");
+                    String j3 = g.j(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
                         if (size2 < size) {
-                            throw new NullPointerException(k10);
+                            throw new NullPointerException(j3);
                         }
                         zzteVar.remove(size2);
                     }
@@ -75,12 +75,12 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
     }
 
     private static void zze(List list, int i10) {
-        String k10 = b.k(list.size() - i10, "Element at index ", " is null.");
+        String j3 = g.j(list.size() - i10, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;
             if (size < i10) {
-                throw new NullPointerException(k10);
+                throw new NullPointerException(j3);
             }
             list.remove(size);
         }

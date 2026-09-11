@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class e1 {
     public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7};
@@ -22,29 +22,29 @@ public abstract class e1 {
         return ((bArr[i10 + 3] & 255) << 24) | (bArr[i10] & 255) | ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10 + 2] & 255) << 16);
     }
 
-    public static int b(int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int b(int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.l lVar) {
         h1 h1Var = (h1) o1Var;
-        int j3 = j(bArr, i11, mVar);
-        h1Var.n(mVar.a);
+        int j3 = j(bArr, i11, lVar);
+        h1Var.n(lVar.a);
         while (j3 < i12) {
-            int j10 = j(bArr, j3, mVar);
-            if (i10 != mVar.a) {
+            int j10 = j(bArr, j3, lVar);
+            if (i10 != lVar.a) {
                 break;
             }
-            j3 = j(bArr, j10, mVar);
-            h1Var.n(mVar.a);
+            j3 = j(bArr, j10, lVar);
+            h1Var.n(lVar.a);
         }
         return j3;
     }
 
-    public static int c(int i10, byte[] bArr, int i11, int i12, r2 r2Var, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int c(int i10, byte[] bArr, int i11, int i12, r2 r2Var, com.google.android.gms.internal.clearcut.l lVar) {
         if ((i10 >>> 3) == 0) {
             throw new n1("Protocol message contained an invalid tag (zero).");
         }
         int i13 = i10 & 7;
         if (i13 == 0) {
-            int t10 = t(bArr, i11, mVar);
-            r2Var.a(i10, Long.valueOf(mVar.b));
+            int t10 = t(bArr, i11, lVar);
+            r2Var.a(i10, Long.valueOf(lVar.b));
             return t10;
         }
         if (i13 == 1) {
@@ -52,8 +52,8 @@ public abstract class e1 {
             return i11 + 8;
         }
         if (i13 == 2) {
-            int j3 = j(bArr, i11, mVar);
-            int i14 = mVar.a;
+            int j3 = j(bArr, i11, lVar);
+            int i14 = lVar.a;
             if (i14 < 0) {
                 throw n1.b();
             }
@@ -81,14 +81,14 @@ public abstract class e1 {
             if (i11 >= i12) {
                 break;
             }
-            int j10 = j(bArr, i11, mVar);
-            int i17 = mVar.a;
+            int j10 = j(bArr, i11, lVar);
+            int i17 = lVar.a;
             if (i17 == i15) {
                 i16 = i17;
                 i11 = j10;
                 break;
             }
-            i11 = c(i17, bArr, j10, i12, b10, mVar);
+            i11 = c(i17, bArr, j10, i12, b10, lVar);
             i16 = i17;
         }
         if (i11 > i12 || i16 != i15) {
@@ -98,75 +98,75 @@ public abstract class e1 {
         return i11;
     }
 
-    public static int d(int i10, byte[] bArr, int i11, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int d(int i10, byte[] bArr, int i11, com.google.android.gms.internal.clearcut.l lVar) {
         int i12 = i10 & 127;
         int i13 = i11 + 1;
         byte b10 = bArr[i11];
         if (b10 >= 0) {
-            mVar.a = i12 | (b10 << 7);
+            lVar.a = i12 | (b10 << 7);
             return i13;
         }
         int i14 = i12 | ((b10 & Byte.MAX_VALUE) << 7);
         int i15 = i11 + 2;
         byte b11 = bArr[i13];
         if (b11 >= 0) {
-            mVar.a = i14 | (b11 << 14);
+            lVar.a = i14 | (b11 << 14);
             return i15;
         }
         int i16 = i14 | ((b11 & Byte.MAX_VALUE) << 14);
         int i17 = i11 + 3;
         byte b12 = bArr[i15];
         if (b12 >= 0) {
-            mVar.a = i16 | (b12 << 21);
+            lVar.a = i16 | (b12 << 21);
             return i17;
         }
         int i18 = i16 | ((b12 & Byte.MAX_VALUE) << 21);
         int i19 = i11 + 4;
         byte b13 = bArr[i17];
         if (b13 >= 0) {
-            mVar.a = i18 | (b13 << 28);
+            lVar.a = i18 | (b13 << 28);
             return i19;
         }
         int i20 = i18 | ((b13 & Byte.MAX_VALUE) << 28);
         while (true) {
             int i21 = i19 + 1;
             if (bArr[i19] >= 0) {
-                mVar.a = i20;
+                lVar.a = i20;
                 return i21;
             }
             i19 = i21;
         }
     }
 
-    public static int e(o2 o2Var, int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.m mVar) {
-        int g10 = g(o2Var, bArr, i11, i12, mVar);
-        o1Var.add(mVar.c);
+    public static int e(o2 o2Var, int i10, byte[] bArr, int i11, int i12, o1 o1Var, com.google.android.gms.internal.clearcut.l lVar) {
+        int g10 = g(o2Var, bArr, i11, i12, lVar);
+        o1Var.add(lVar.c);
         while (g10 < i12) {
-            int j3 = j(bArr, g10, mVar);
-            if (i10 != mVar.a) {
+            int j3 = j(bArr, g10, lVar);
+            if (i10 != lVar.a) {
                 break;
             }
-            g10 = g(o2Var, bArr, j3, i12, mVar);
-            o1Var.add(mVar.c);
+            g10 = g(o2Var, bArr, j3, i12, lVar);
+            o1Var.add(lVar.c);
         }
         return g10;
     }
 
-    public static int f(o2 o2Var, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int f(o2 o2Var, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.l lVar) {
         f2 f2Var = (f2) o2Var;
         Object zza = f2Var.zza();
-        int j3 = f2Var.j(zza, bArr, i10, i11, i12, mVar);
+        int j3 = f2Var.j(zza, bArr, i10, i11, i12, lVar);
         f2Var.b(zza);
-        mVar.c = zza;
+        lVar.c = zza;
         return j3;
     }
 
-    public static int g(o2 o2Var, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int g(o2 o2Var, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.l lVar) {
         int i12 = i10 + 1;
         int i13 = bArr[i10];
         if (i13 < 0) {
-            i12 = d(i13, bArr, i12, mVar);
-            i13 = mVar.a;
+            i12 = d(i13, bArr, i12, lVar);
+            i13 = lVar.a;
         }
         int i14 = i12;
         if (i13 < 0 || i13 > i11 - i14) {
@@ -174,19 +174,19 @@ public abstract class e1 {
         }
         Object zza = o2Var.zza();
         int i15 = i14 + i13;
-        o2Var.f(zza, bArr, i14, i15, mVar);
+        o2Var.f(zza, bArr, i14, i15, lVar);
         o2Var.b(zza);
-        mVar.c = zza;
+        lVar.c = zza;
         return i15;
     }
 
-    public static int j(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int j(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
         int i11 = i10 + 1;
         byte b10 = bArr[i10];
         if (b10 < 0) {
-            return d(b10, bArr, i11, mVar);
+            return d(b10, bArr, i11, lVar);
         }
-        mVar.a = b10;
+        lVar.a = b10;
         return i11;
     }
 
@@ -445,11 +445,11 @@ public abstract class e1 {
         sb2.append("}");
     }
 
-    public static int t(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.m mVar) {
+    public static int t(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
         int i11 = i10 + 1;
         long j3 = bArr[i10];
         if (j3 >= 0) {
-            mVar.b = j3;
+            lVar.b = j3;
             return i11;
         }
         int i12 = i10 + 2;
@@ -463,7 +463,7 @@ public abstract class e1 {
             b10 = bArr[i12];
             i12 = i14;
         }
-        mVar.b = j10;
+        lVar.b = j10;
         return i12;
     }
 
@@ -471,31 +471,31 @@ public abstract class e1 {
         return ((bArr[i10 + 7] & 255) << 56) | (bArr[i10] & 255) | ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10 + 2] & 255) << 16) | ((bArr[i10 + 3] & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 6] & 255) << 48);
     }
 
-    public static int w(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.m mVar) {
-        int j3 = j(bArr, i10, mVar);
-        int i11 = mVar.a;
+    public static int w(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
+        int j3 = j(bArr, i10, lVar);
+        int i11 = lVar.a;
         if (i11 < 0) {
             throw n1.b();
         }
         if (i11 == 0) {
-            mVar.c = "";
+            lVar.c = "";
             return j3;
         }
-        mVar.c = new String(bArr, j3, i11, j1.a);
+        lVar.c = new String(bArr, j3, i11, j1.a);
         return j3 + i11;
     }
 
-    public static int x(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.m mVar) {
-        int j3 = j(bArr, i10, mVar);
-        int i11 = mVar.a;
+    public static int x(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
+        int j3 = j(bArr, i10, lVar);
+        int i11 = lVar.a;
         if (i11 < 0) {
             throw n1.b();
         }
         if (i11 == 0) {
-            mVar.c = "";
+            lVar.c = "";
             return j3;
         }
-        mVar.c = b3.a.v(j3, i11, bArr);
+        lVar.c = b3.a.v(j3, i11, bArr);
         return j3 + i11;
     }
 
@@ -503,9 +503,9 @@ public abstract class e1 {
         return (-(i10 & 1)) ^ (i10 >>> 1);
     }
 
-    public static int z(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.m mVar) {
-        int j3 = j(bArr, i10, mVar);
-        int i11 = mVar.a;
+    public static int z(byte[] bArr, int i10, com.google.android.gms.internal.clearcut.l lVar) {
+        int j3 = j(bArr, i10, lVar);
+        int i11 = lVar.a;
         if (i11 < 0) {
             throw n1.b();
         }
@@ -513,10 +513,10 @@ public abstract class e1 {
             throw n1.a();
         }
         if (i11 == 0) {
-            mVar.c = q0.c;
+            lVar.c = q0.c;
             return j3;
         }
-        mVar.c = q0.o(j3, i11, bArr);
+        lVar.c = q0.o(j3, i11, bArr);
         return j3 + i11;
     }
 

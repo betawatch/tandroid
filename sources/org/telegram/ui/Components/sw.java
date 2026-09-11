@@ -1,58 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class sw extends vl0 {
-    public boolean X2;
-    public boolean Y2;
-    public final /* synthetic */ rz Z2;
+public final /* synthetic */ class sw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yy b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw(rz rzVar, Context context) {
-        super(context, null);
-        this.Z2 = rzVar;
+    public /* synthetic */ sw(yy yyVar, int i10) {
+        this.a = i10;
+        this.b = yyVar;
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.tt q6 = org.telegram.ui.tt.q();
-        rz rzVar = this.Z2;
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, rzVar.h0, rzVar.g2, this.p2);
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        rz rzVar = this.Z2;
-        if (rzVar.q0 && rzVar.n0.G > 1) {
-            this.X2 = true;
-            rzVar.i0.h1(0, 0);
-            rzVar.o0.setVisibility(0);
-            rzVar.p0.k(0, 0);
-            rzVar.q0 = false;
-            this.X2 = false;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
         }
-        super.onLayout(z10, i10, i11, i12, i13);
-        rz.f(rzVar, true);
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.Y2) {
-            return;
-        }
-        this.Z2.n0.l();
-        this.Y2 = true;
-    }
-
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.X2) {
-            return;
-        }
-        super.requestLayout();
+        this.b.d();
     }
 }

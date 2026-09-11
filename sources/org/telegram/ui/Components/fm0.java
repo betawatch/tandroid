@@ -1,101 +1,101 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class fm0 extends ww0 {
-    public float d;
-    public final Paint f;
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public int e = 1;
+public final class fm0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public fm0(boolean z10) {
-        if (z10) {
-            this.f = new Paint(1);
+    public /* synthetic */ fm0(KeyEvent.Callback callback, boolean z10, float f7, int i10) {
+        this.a = i10;
+        this.d = callback;
+        this.b = z10;
+        this.c = f7;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                im0 im0Var = (im0) this.d;
+                cc1 cc1Var = im0Var.e;
+                im0Var.h0 = null;
+                boolean z10 = this.b;
+                im0Var.i0 = z10 ? 1.0f : 0.0f;
+                for (int i10 = 0; i10 < cc1Var.getChildCount(); i10++) {
+                    cc1Var.getChildAt(i10).invalidate();
+                }
+                cc1Var.invalidate();
+                im0Var.p();
+                if (!z10) {
+                    float childCount = im0Var.k0 * cc1Var.getChildCount();
+                    float scrollX = im0Var.getScrollX();
+                    float f7 = this.c;
+                    float childCount2 = (scrollX + f7) / (im0Var.j0 * cc1Var.getChildCount());
+                    float measuredWidth = (childCount - im0Var.getMeasuredWidth()) / childCount;
+                    if (childCount2 > measuredWidth) {
+                        childCount2 = measuredWidth;
+                        f7 = 0.0f;
+                    }
+                    float f10 = childCount * childCount2;
+                    if (f10 - f7 < 0.0f) {
+                        f10 = f7;
+                    }
+                    im0Var.l0 = (im0Var.getScrollX() + f7) - f10;
+                    int i11 = (int) (f10 - f7);
+                    im0Var.m0 = i11;
+                    if (i11 < 0) {
+                        im0Var.m0 = 0;
+                    }
+                    for (int i12 = 0; i12 < cc1Var.getChildCount(); i12++) {
+                        View childAt = cc1Var.getChildAt(i12);
+                        if (childAt instanceof cx0) {
+                            ((cx0) childAt).setExpanded(false);
+                        }
+                        childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
+                    }
+                    im0Var.g0 = false;
+                    im0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
+                    cc1Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                if (!this.b) {
+                    super/*android.app.Dialog*/.dismiss();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ww0
-    public final void b(int i10) {
-        Paint paint = this.f;
-        if (paint != null) {
-            paint.setColor(i10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                super.onAnimationStart(animator);
+                xh.l lVar = ((xh.m) this.d).y;
+                lVar.setVisibility(0);
+                if (this.b) {
+                    float f7 = this.c;
+                    lVar.setScaleX(f7);
+                    lVar.setScaleY(f7);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ww0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.ww0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.f;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.j6.c2;
-        }
-        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
-        canvas.drawCircle(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.a ? 8.0f : 9.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.c) {
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = currentTimeMillis - this.b;
-            this.b = currentTimeMillis;
-            if (j3 > 50) {
-                j3 = 50;
-            }
-            float f7 = this.d;
-            int i10 = this.e;
-            float f10 = ((i10 * j3) / 400.0f) + f7;
-            this.d = f10;
-            if (i10 > 0 && f10 >= 1.0f) {
-                this.e = -1;
-                this.d = 1.0f;
-            } else if (i10 < 0 && f10 <= 0.0f) {
-                this.e = 1;
-                this.d = 0.0f;
-            }
-            a();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ww0
-    public final void e() {
-        this.c = false;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(10.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

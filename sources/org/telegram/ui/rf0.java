@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class rf0 implements RequestDelegate {
                 zf0 zf0Var = this.b;
                 if (tLObject == null) {
                     if (tL_error != null && tL_error.text != null) {
-                        AndroidUtilities.runOnUIThread(new h90(21, zf0Var, tL_error));
+                        AndroidUtilities.runOnUIThread(new r80(24, zf0Var, tL_error));
                         break;
                     }
                 } else {
@@ -35,7 +35,7 @@ public final /* synthetic */ class rf0 implements RequestDelegate {
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.q01(this.b, tL_error, this.c, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.in0(this.b, tL_error, this.c, tLObject, 20));
                 break;
         }
     }

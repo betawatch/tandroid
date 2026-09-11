@@ -1,36 +1,30 @@
 package zh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.xa0;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class v1 extends xa0 {
-    public final /* synthetic */ a3 V;
+public final /* synthetic */ class v1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w3 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(a3 a3Var, Context context, long j3, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, j3, 0L, p2Var, f6Var);
-        this.V = a3Var;
+    public /* synthetic */ v1(w3 w3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+        this.a = i10;
+        this.b = w3Var;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // org.telegram.ui.Components.xa0
-    public final void f(Canvas canvas, Rect rect, float f7) {
-        a3 a3Var = this.V;
-        com.google.firebase.messaging.n nVar = a3Var.P1;
-        nVar.z(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        rectF.offset(0.0f, 0.0f);
-        canvas.drawRoundRect(rectF, f7, f7, (Paint) nVar.a);
-        canvas.drawRoundRect(rectF, f7, f7, a3Var.n2);
-        if (rectF.top < getMeasuredHeight() - 1) {
-            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, a3Var.B0.F("paintDivider"));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                break;
+            default:
+                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                break;
         }
     }
 }

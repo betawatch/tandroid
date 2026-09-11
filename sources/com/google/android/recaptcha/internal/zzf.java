@@ -6,10 +6,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 final class zzf extends j implements p {
     int zza;
@@ -55,7 +55,7 @@ final class zzf extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                u7.b(obj);
+                t7.b(obj);
                 zzgr zzgrVar = (zzgr) this.zze;
                 long j3 = this.zzb;
                 zze zzeVar = new zze(zzgrVar, this.zzc, this.zzd, null);
@@ -64,22 +64,22 @@ final class zzf extends j implements p {
             } else {
                 if (i10 != 1) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    u7.b(obj);
+                    t7.b(obj);
                     throw zzcgVar;
                 }
-                u7.b(obj);
+                t7.b(obj);
             }
             Object obj2 = ((f) obj).a;
-            u7.b(obj2);
+            t7.b(obj2);
             return (zzxx) obj2;
-        } catch (Exception e) {
-            zzcg zza = zzh.zza(e, new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), null, 8, null));
+        } catch (Exception e7) {
+            zzcg zza = zzh.zza(e7, new zzcg(zzce.zzb, zzcd.zzaa, e7.getMessage(), null, 8, null));
             zzg zzgVar = this.zzc;
             String str = this.zzd;
             long j10 = this.zzb;
             this.zze = zza;
             this.zza = 2;
-            if (zzgVar.zze(str, j10, e, this) != aVar) {
+            if (zzgVar.zze(str, j10, e7, this) != aVar) {
                 throw zza;
             }
         }

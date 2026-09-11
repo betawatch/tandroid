@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class w5 implements d6.h {
     public static final f5 b = new f5(1);
@@ -14,36 +14,19 @@ public final class w5 implements d6.h {
         this.a = c1Var;
     }
 
-    @Override // d6.h
-    public void A(d6.f fVar, String str) {
-        c1.j.b("onSessionStarted with sessionId = %s", str);
-        c1 c1Var = (c1) this.a;
-        c1Var.h = (d6.c) fVar;
-        c1Var.c();
-        d1 d1Var = c1Var.g;
-        d1Var.f = str;
-        c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 222);
-        c1.b(c1Var);
-        c1Var.e();
-    }
-
-    @Override // d6.h
-    public void B(d6.f fVar, int i10) {
-        c1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
-        c1 c1Var = (c1) this.a;
-        c1Var.h = (d6.c) fVar;
-        c1Var.c();
-        n6.l.h(c1Var.g);
-        c1Var.a.a(c1Var.c.a(c1Var.g, i10), 225);
-        c1.b(c1Var);
-        c1Var.e.removeCallbacks(c1Var.d);
-    }
-
     public void a(int i10, Object obj, j6 j6Var) {
         a5 a5Var = (a5) this.a;
         a5Var.i(i10, 3);
         j6Var.e((v4) obj, a5Var.a);
         a5Var.i(i10, 4);
+    }
+
+    public void b(int i10, Object obj, j6 j6Var) {
+        v4 v4Var = (v4) obj;
+        a5 a5Var = (a5) this.a;
+        a5Var.j((i10 << 3) | 2);
+        a5Var.j(v4Var.a(j6Var));
+        j6Var.e(v4Var, a5Var.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00af  */
@@ -52,7 +35,7 @@ public final class w5 implements d6.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void b(d6.f fVar, String str) {
+    public void d(d6.f fVar, String str) {
         d1 d1Var;
         g6.b bVar = c1.j;
         boolean z10 = false;
@@ -135,14 +118,14 @@ public final class w5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void c(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void f(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
     }
 
     @Override // d6.h
-    public void d(d6.f fVar, boolean z10) {
+    public void g(d6.f fVar, boolean z10) {
         c1.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
@@ -159,23 +142,15 @@ public final class w5 implements d6.h {
         c1Var.e();
     }
 
-    public void e(int i10, Object obj, j6 j6Var) {
-        v4 v4Var = (v4) obj;
-        a5 a5Var = (a5) this.a;
-        a5Var.j((i10 << 3) | 2);
-        a5Var.j(v4Var.a(j6Var));
-        j6Var.e(v4Var, a5Var.a);
-    }
-
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void p(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void j(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
     }
 
     @Override // d6.h
-    public void r(d6.f fVar) {
+    public void n(d6.f fVar) {
         g6.b bVar = c1.j;
         bVar.b("onSessionStarting", new Object[0]);
         c1 c1Var = (c1) this.a;
@@ -197,15 +172,40 @@ public final class w5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void v(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
         c1 c1Var = (c1) this.a;
         c1Var.h = (d6.c) fVar;
         c1.a(c1Var, i10);
     }
 
     @Override // d6.h
-    public /* synthetic */ void z(d6.f fVar) {
+    public /* synthetic */ void t(d6.f fVar) {
         ((c1) this.a).h = (d6.c) fVar;
+    }
+
+    @Override // d6.h
+    public void u(d6.f fVar, String str) {
+        c1.j.b("onSessionStarted with sessionId = %s", str);
+        c1 c1Var = (c1) this.a;
+        c1Var.h = (d6.c) fVar;
+        c1Var.c();
+        d1 d1Var = c1Var.g;
+        d1Var.f = str;
+        c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 222);
+        c1.b(c1Var);
+        c1Var.e();
+    }
+
+    @Override // d6.h
+    public void v(d6.f fVar, int i10) {
+        c1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
+        c1 c1Var = (c1) this.a;
+        c1Var.h = (d6.c) fVar;
+        c1Var.c();
+        n6.l.h(c1Var.g);
+        c1Var.a.a(c1Var.c.a(c1Var.g, i10), 225);
+        c1.b(c1Var);
+        c1Var.e.removeCallbacks(c1Var.d);
     }
 
     public w5() {

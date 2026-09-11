@@ -9,14 +9,14 @@ import e9.p;
 import e9.x0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final a0 b = new a0(new p(new u2.c(9), x0.b), new p(new u2.c(10), x0.c));
+    public static final a0 b = new a0(new p(new t0.a(16), x0.b), new p(new t0.a(17), x0.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a
-    public final long b(long j3) {
+    public final long a(long j3) {
         int i10 = 0;
         long j10 = -9223372036854775807L;
         while (true) {
@@ -42,7 +42,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final i0 c(long j3) {
+    public final i0 b(long j3) {
         ArrayList arrayList = this.a;
         if (!arrayList.isEmpty()) {
             if (j3 >= ((z3.a) arrayList.get(0)).b) {
@@ -69,12 +69,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // w2.a
-    public final boolean e(z3.a aVar, long j3) {
+    public final boolean c(z3.a aVar, long j3) {
         long j10 = aVar.b;
         e2.d.b(j10 != -9223372036854775807L);
         e2.d.b(aVar.c != -9223372036854775807L);
@@ -91,7 +86,12 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final long g(long j3) {
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // w2.a
+    public final long d(long j3) {
         ArrayList arrayList = this.a;
         if (arrayList.isEmpty()) {
             return -9223372036854775807L;
@@ -116,7 +116,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void i(long j3) {
+    public final void e(long j3) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.a;

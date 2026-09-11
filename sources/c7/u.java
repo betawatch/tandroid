@@ -3,15 +3,15 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import n7.m1;
+import n7.l1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u extends o6.a {
     public static final Parcelable.Creator<u> CREATOR = new w.a(25);
     public final String a;
     public final String b;
-    public final n7.t0 c;
+    public final n7.s0 c;
     public final j d;
     public final i e;
     public final k f;
@@ -19,7 +19,7 @@ public final class u extends o6.a {
     public final String n;
 
     public u(String str, String str2, byte[] bArr, j jVar, i iVar, k kVar, g gVar, String str3) {
-        n7.t0 t10 = bArr == null ? null : n7.t0.t(bArr.length, bArr);
+        n7.s0 t10 = bArr == null ? null : n7.s0.t(bArr.length, bArr);
         boolean z10 = false;
         n6.l.a("Must provide a response object.", (jVar != null && iVar == null && kVar == null) || (jVar == null && iVar != null && kVar == null) || (jVar == null && iVar == null && kVar != null));
         if (kVar != null || (str != null && t10 != null)) {
@@ -49,8 +49,8 @@ public final class u extends o6.a {
     }
 
     public final String toString() {
-        n7.t0 t0Var = this.c;
-        String c10 = u6.b.c(t0Var == null ? null : t0Var.u());
+        n7.s0 s0Var = this.c;
+        String c10 = u6.b.c(s0Var == null ? null : s0Var.u());
         String valueOf = String.valueOf(this.d);
         String valueOf2 = String.valueOf(this.e);
         String valueOf3 = String.valueOf(this.f);
@@ -67,7 +67,7 @@ public final class u extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        m1.a.a();
+        l1.a.a();
         throw null;
     }
 }

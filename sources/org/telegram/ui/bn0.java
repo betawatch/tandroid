@@ -1,102 +1,104 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SRPHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class bn0 implements TextWatcher {
-    public final /* synthetic */ on0 a;
+public final class bn0 implements RequestDelegate {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ TL_account.getPasswordSettings c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ pn0 e;
 
-    public bn0(on0 on0Var) {
-        this.a = on0Var;
+    public bn0(pn0 pn0Var, boolean z10, byte[] bArr, TL_account.getPasswordSettings getpasswordsettings, String str) {
+        this.e = pn0Var;
+        this.a = z10;
+        this.b = bArr;
+        this.c = getpasswordsettings;
+        this.d = str;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        boolean z10;
-        int indexOf;
-        on0 on0Var = this.a;
-        ArrayList arrayList = on0Var.U0;
-        HashMap hashMap = on0Var.W0;
-        if (on0Var.Z0) {
+    public final void a() {
+        int i10;
+        org.telegram.ui.ActionBar.d5 d5Var;
+        org.telegram.ui.ActionBar.d5 d5Var2;
+        int i11;
+        pn0 pn0Var = this.e;
+        if (pn0Var.Y == null) {
             return;
         }
-        on0Var.Z0 = true;
-        String d = gf.b.d(on0Var.Y[1].getText().toString(), false);
-        on0Var.Y[1].setText(d);
-        org.telegram.ui.Components.p40 p40Var = (org.telegram.ui.Components.p40) on0Var.Y[2];
-        if (d.length() == 0) {
-            p40Var.setHintText((String) null);
-            p40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-            on0Var.Y[0].setText(LocaleController.getString(R.string.ChooseCountry));
-        } else {
-            int i10 = 4;
-            if (d.length() > 4) {
-                while (true) {
-                    if (i10 < 1) {
-                        str = null;
-                        z10 = false;
-                        break;
-                    }
-                    String substring = d.substring(0, i10);
-                    if (((String) hashMap.get(substring)) != null) {
-                        String str2 = d.substring(i10) + on0Var.Y[2].getText().toString();
-                        on0Var.Y[1].setText(substring);
-                        str = str2;
-                        d = substring;
-                        z10 = true;
-                        break;
-                    }
-                    i10--;
-                }
-                if (!z10) {
-                    str = d.substring(1) + on0Var.Y[2].getText().toString();
-                    EditTextBoldCursor editTextBoldCursor = on0Var.Y[1];
-                    d = d.substring(0, 1);
-                    editTextBoldCursor.setText(d);
-                }
-            } else {
-                str = null;
-                z10 = false;
-            }
-            String str3 = (String) hashMap.get(d);
-            if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
-                p40Var.setHintText((String) null);
-                p40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-                on0Var.Y[0].setText(LocaleController.getString(R.string.WrongCountry));
-            } else {
-                on0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
-                String str4 = (String) on0Var.X0.get(d);
-                if (str4 != null) {
-                    p40Var.setHintText(str4.replace('X', (char) 8211));
-                    p40Var.setHint((CharSequence) null);
-                }
-            }
-            if (!z10) {
-                EditTextBoldCursor editTextBoldCursor2 = on0Var.Y[1];
-                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-            }
-            if (str != null) {
-                p40Var.requestFocus();
-                p40Var.setText(str);
-                p40Var.setSelection(p40Var.length());
+        if (!this.a) {
+            i11 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
+            UserConfig.getInstance(i11).savePassword(this.b, pn0Var.e1);
+        }
+        AndroidUtilities.hideKeyboard(pn0Var.Y[0]);
+        pn0Var.f1 = true;
+        long j3 = pn0Var.c;
+        pn0 pn0Var2 = new pn0(j3 == 0 ? 8 : 0, j3, pn0Var.h, pn0Var.r, pn0Var.d, pn0Var.e, pn0Var.n, pn0Var.y, pn0Var.J);
+        pn0Var2.d1 = pn0Var.d1;
+        i10 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
+        ((org.telegram.ui.ActionBar.n2) pn0Var2).currentAccount = i10;
+        pn0Var2.e1 = pn0Var.e1;
+        pn0Var2.c1 = pn0Var.c1;
+        pn0Var2.b1 = pn0Var.b1;
+        pn0Var2.C1 = pn0Var.C1;
+        d5Var = ((org.telegram.ui.ActionBar.n2) pn0Var).parentLayout;
+        if (d5Var != null) {
+            d5Var2 = ((org.telegram.ui.ActionBar.n2) pn0Var).parentLayout;
+            if (((ActionBarLayout) d5Var2).j()) {
+                pn0Var.h1 = pn0Var2;
+                return;
             }
         }
-        on0Var.Z0 = false;
+        pn0Var.presentFragment(pn0Var2, true);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final void b() {
+        int i10;
+        TL_account.updatePasswordSettings updatepasswordsettings = new TL_account.updatePasswordSettings();
+        pn0 pn0Var = this.e;
+        TL_account.Password password = pn0Var.J;
+        TLRPC.PasswordKdfAlgo passwordKdfAlgo = password.current_algo;
+        if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
+            updatepasswordsettings.password = SRPHelper.startCheck(this.b, password.srp_id, password.srp_B, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo);
+        }
+        TL_account.passwordInputSettings passwordinputsettings = new TL_account.passwordInputSettings();
+        updatepasswordsettings.new_settings = passwordinputsettings;
+        passwordinputsettings.new_secure_settings = new TLRPC.TL_secureSecretSettings();
+        TLRPC.TL_secureSecretSettings tL_secureSecretSettings = updatepasswordsettings.new_settings.new_secure_settings;
+        tL_secureSecretSettings.secure_secret = new byte[0];
+        tL_secureSecretSettings.secure_algo = new TLRPC.TL_securePasswordKdfAlgoUnknown();
+        TL_account.passwordInputSettings passwordinputsettings2 = updatepasswordsettings.new_settings;
+        passwordinputsettings2.new_secure_settings.secure_secret_id = 0L;
+        passwordinputsettings2.flags |= 4;
+        i10 = ((org.telegram.ui.ActionBar.n2) pn0Var).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(this.c, new zm0(this, 1));
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10;
+        if (tL_error == null || !"SRP_ID_INVALID".equals(tL_error.text)) {
+            if (tL_error == null) {
+                Utilities.globalQueue.postRunnable(new bi.e4(this, tLObject, this.d, this.a, 24));
+                return;
+            } else {
+                AndroidUtilities.runOnUIThread(new dm0(this, this.a, tL_error, 1));
+                return;
+            }
+        }
+        TL_account.getPassword getpassword = new TL_account.getPassword();
+        i10 = ((org.telegram.ui.ActionBar.n2) this.e).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new di.u3(9, this, this.a), 8);
     }
 }

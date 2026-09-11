@@ -1,45 +1,46 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.widget.RelativeLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class rw0 extends RelativeLayout {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final /* synthetic */ class rw0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tw0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rw0(PopupNotificationActivity popupNotificationActivity, PopupNotificationActivity popupNotificationActivity2) {
-        super(popupNotificationActivity2);
-        this.a = popupNotificationActivity;
+    public /* synthetic */ rw0(tw0 tw0Var, int i10) {
+        this.a = i10;
+        this.b = tw0Var;
     }
 
-    @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            View childAt = getChildAt(i14);
-            if (childAt.getTag() instanceof String) {
-                int left = childAt.getLeft();
-                PopupNotificationActivity popupNotificationActivity = this.a;
-                childAt.layout(left, AndroidUtilities.dp(3.0f) + popupNotificationActivity.b.getTop(), childAt.getRight(), popupNotificationActivity.b.getBottom());
-            }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.Y();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
     }
 
-    @Override // android.widget.RelativeLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        int measuredWidth = popupNotificationActivity.b.getMeasuredWidth();
-        int measuredHeight = popupNotificationActivity.b.getMeasuredHeight();
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt.getTag() instanceof String) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight - AndroidUtilities.dp(3.0f), TLObject.FLAG_30));
-            }
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        tw0 tw0Var = this.b;
+        tw0Var.getClass();
+        if (((org.telegram.ui.Components.h51) obj).d == 1) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+            boolean z10 = !w8Var.e.h;
+            tw0Var.r = z10;
+            w8Var.setChecked(z10);
+            tw0Var.d.Y2.N(true);
+            tw0Var.V(true);
         }
     }
 }

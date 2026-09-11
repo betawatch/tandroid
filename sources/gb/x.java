@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import v7.p8;
+import v7.m8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class x implements db.v {
-    public final n4.y a;
+    public final pf.b a;
     public final fb.f b;
     public final j c;
     public final ArrayList d;
 
-    public x(n4.y yVar, fb.f fVar, j jVar, ArrayList arrayList) {
-        this.a = yVar;
+    public x(pf.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
+        this.a = bVar;
         this.b = fVar;
         this.c = jVar;
         this.d = arrayList;
@@ -214,11 +214,11 @@ public final class x implements db.v {
         if (!Object.class.isAssignableFrom(cls)) {
             return null;
         }
-        p8 p8Var = ib.c.a;
+        m8 m8Var = ib.c.a;
         if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.l(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.T(aVar), b(gVar, aVar, cls, false));
     }
 }

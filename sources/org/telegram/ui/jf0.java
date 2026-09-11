@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class jf0 implements Runnable {
         switch (this.a) {
             case 0:
                 lf0 lf0Var = this.b;
-                org.telegram.ui.Components.kj0 kj0Var = lf0Var.h;
-                kj0Var.getAnimatedDrawable().N(0, false, false);
-                kj0Var.d();
+                org.telegram.ui.Components.aj0 aj0Var = lf0Var.h;
+                aj0Var.getAnimatedDrawable().L(0, false, false);
+                aj0Var.d();
                 EditTextBoldCursor editTextBoldCursor = lf0Var.b;
                 editTextBoldCursor.requestFocus();
                 AndroidUtilities.showKeyboard(editTextBoldCursor);

@@ -1,53 +1,44 @@
 package i2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.text.TextUtils;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i {
-    public final long a;
-    public final long b;
-    public long c = -9223372036854775807L;
-    public long d = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public float j = 0.97f;
-    public float i = 1.03f;
-    public float k = 1.0f;
-    public long l = -9223372036854775807L;
-    public long e = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public long m = -9223372036854775807L;
-    public long n = -9223372036854775807L;
+    public final String a;
+    public final b2.s b;
+    public final b2.s c;
+    public final int d;
+    public final int e;
 
-    public i(long j3, long j10) {
-        this.a = j3;
-        this.b = j10;
+    public i(String str, b2.s sVar, b2.s sVar2, int i10, int i11) {
+        e2.d.b(i10 == 0 || i11 == 0);
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException();
+        }
+        this.a = str;
+        sVar.getClass();
+        this.b = sVar;
+        sVar2.getClass();
+        this.c = sVar2;
+        this.d = i10;
+        this.e = i11;
     }
 
-    public final void a() {
-        long j3;
-        long j10 = this.c;
-        if (j10 != -9223372036854775807L) {
-            j3 = this.d;
-            if (j3 == -9223372036854775807L) {
-                long j11 = this.f;
-                if (j11 != -9223372036854775807L && j10 < j11) {
-                    j10 = j11;
-                }
-                j3 = this.g;
-                if (j3 == -9223372036854775807L || j10 <= j3) {
-                    j3 = j10;
-                }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && i.class == obj.getClass()) {
+            i iVar = (i) obj;
+            if (this.d == iVar.d && this.e == iVar.e && this.a.equals(iVar.a) && this.b.equals(iVar.b) && this.c.equals(iVar.c)) {
+                return true;
             }
-        } else {
-            j3 = -9223372036854775807L;
         }
-        if (this.e == j3) {
-            return;
-        }
-        this.e = j3;
-        this.h = j3;
-        this.m = -9223372036854775807L;
-        this.n = -9223372036854775807L;
-        this.l = -9223372036854775807L;
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.c.hashCode() + ((this.b.hashCode() + a4.a.h((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
     }
 }

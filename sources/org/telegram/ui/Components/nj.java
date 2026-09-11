@@ -1,45 +1,27 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj implements ll0, sj {
-    public final /* synthetic */ bk a;
+public final class nj extends s4.d0 {
+    public final /* synthetic */ ig.e0 r;
 
-    public /* synthetic */ nj(bk bkVar) {
-        this.a = bkVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nj(ig.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // org.telegram.ui.Components.sj
-    public void a(TLRPC.User user, boolean z10, int i10, long j3) {
-        bk bkVar = this.a;
-        bkVar.b.dismiss(true);
-        bkVar.J.a(user, z10, i10, j3);
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.w1.z(8.0f, ((yj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public boolean d(int i10, View view) {
-        Object O;
-        bk bkVar = this.a;
-        s4.h0 adapter = bkVar.s.getAdapter();
-        xj xjVar = bkVar.F;
-        if (adapter == xjVar) {
-            O = xjVar.E(i10);
-        } else {
-            vj vjVar = bkVar.E;
-            O = vjVar.O(vjVar.S(i10), vjVar.Q(i10));
-        }
-        if (O == null) {
-            return false;
-        }
-        bkVar.L((ak) view, O);
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.sj
-    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

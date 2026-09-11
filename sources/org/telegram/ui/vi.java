@@ -1,26 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class vi extends org.telegram.ui.Components.oo {
-    public final /* synthetic */ eo M;
+public final /* synthetic */ class vi implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wi b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.fk0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ ah.j1 n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vi(eo eoVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, i10, document, f6Var);
-        this.M = eoVar;
+    public /* synthetic */ vi(wi wiVar, int i10, boolean z10, org.telegram.ui.Components.fk0 fk0Var, float f7, float f10, ah.j1 j1Var, int i11) {
+        this.a = i11;
+        this.b = wiVar;
+        this.c = i10;
+        this.d = z10;
+        this.e = fk0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = j1Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        eo eoVar = this.M;
-        float y10 = eoVar.R0.getY() + y3;
-        this.J = eoVar.X0.getBackgroundSizeY();
-        this.I = y10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new vi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
+                break;
+            default:
+                co coVar = this.b.s;
+                org.telegram.ui.Cells.a0 q82 = coVar.q8(this.c, true);
+                if (this.d) {
+                    i10 = ((org.telegram.ui.ActionBar.n2) coVar).currentAccount;
+                    ah.e1.d(coVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
+                    ah.e1.f();
+                    break;
+                }
+                break;
+        }
     }
 }

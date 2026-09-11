@@ -1,39 +1,53 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class z8 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class z8 extends org.telegram.ui.j71 {
+    public boolean d2;
+    public final /* synthetic */ f9 e2;
 
-    public final z8 a() {
-        z8 z8Var = new z8();
-        z8Var.c = this.c;
-        z8Var.d = this.d;
-        z8Var.e = this.e;
-        z8Var.f = this.f;
-        z8Var.b = this.b;
-        return z8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z8(f9 f9Var, f9 f9Var2, Activity activity, int i10) {
+        super(f9Var2, activity, false, null, 4, true, null, 16, i10);
+        this.e2 = f9Var;
+        this.d2 = true;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.j71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.d2) {
+            this.d2 = false;
+            this.e2.b.s(null);
         }
-        if (!(obj instanceof z8)) {
-            return false;
-        }
-        z8 z8Var = (z8) obj;
-        return this.c == z8Var.c && this.d == z8Var.d && this.e == z8Var.e && this.f == z8Var.f;
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    @Override // org.telegram.ui.j71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        TLRPC.TL_emojiList tL_emojiList;
+        boolean z10;
+        int i11;
+        boolean z11 = this.R;
+        f9 f9Var = this.e2;
+        if (z11) {
+            i11 = ((org.telegram.ui.ActionBar.n2) f9Var).currentAccount;
+            tL_emojiList = MediaDataController.getInstance(i11).profileAvatarConstructorDefault;
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.n2) f9Var).currentAccount;
+            tL_emojiList = MediaDataController.getInstance(i10).groupAvatarConstructorDefault;
+        }
+        if (tL_emojiList != null) {
+            z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l4 != null ? l4.longValue() : 0L));
+        } else {
+            z10 = false;
+        }
+        f9Var.h0(z10, l4 != null ? l4.longValue() : 0L, document);
     }
 }

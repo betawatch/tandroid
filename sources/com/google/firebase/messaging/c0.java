@@ -1,73 +1,28 @@
 package com.google.firebase.messaging;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import java.util.concurrent.TimeUnit;
+import android.os.Binder;
+import android.os.Process;
+import android.util.Log;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public abstract class c0 {
-    public static final long a = TimeUnit.MINUTES.toMillis(1);
-    public static final Object b = new Object();
-    public static p8.a c;
+public final class c0 extends Binder {
+    public final a6.m a;
 
-    public static void a(Context context) {
-        if (c == null) {
-            p8.a aVar = new p8.a(context);
-            c = aVar;
-            synchronized (aVar.a) {
-                aVar.g = true;
-            }
-        }
+    public c0(a6.m mVar) {
+        this.a = mVar;
     }
 
-    public static void b(Intent intent) {
-        synchronized (b) {
-            try {
-                if (c != null && intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false)) {
-                    intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                    c.c();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public final void a(d0 d0Var) {
+        Task b10;
+        if (Binder.getCallingUid() != Process.myUid()) {
+            throw new SecurityException("Binding only allowed within app");
         }
-    }
-
-    public static void c(Context context, f0 f0Var, Intent intent) {
-        synchronized (b) {
-            try {
-                a(context);
-                boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
-                if (!booleanExtra) {
-                    c.a(a);
-                }
-                f0Var.b(intent).addOnCompleteListener(new a1.c(intent, 14));
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "service received new intent via bind strategy");
         }
-    }
-
-    public static ComponentName d(Context context, Intent intent) {
-        synchronized (b) {
-            try {
-                a(context);
-                boolean booleanExtra = intent.getBooleanExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
-                intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", true);
-                ComponentName startService = context.startService(intent);
-                if (startService == null) {
-                    return null;
-                }
-                if (!booleanExtra) {
-                    c.a(a);
-                }
-                return startService;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+        b10 = ((g) this.a.b).b(d0Var.a);
+        b10.addOnCompleteListener(new a3.a(2), new a1.c(d0Var, 17));
     }
 }

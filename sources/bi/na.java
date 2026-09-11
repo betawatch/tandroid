@@ -1,28 +1,37 @@
 package bi;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.em;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class na extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
+public final class na {
+    public final l5 a;
+    public final org.telegram.ui.Components.e6 b;
+    public final TextPaint c;
+    public final StaticLayout d;
+    public final float e;
+    public final float f;
+    public float g;
+    public boolean h;
+    public int i;
 
-    public na(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
-        super(context);
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        em.x(org.telegram.ui.ActionBar.j6.j5, f6Var, textView, 1, 20.0f);
-        addView(textView, w7.a6.t(-1, -2, 55, 27, 16, 27, z10 ? 4 : 13));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        em.n(org.telegram.ui.ActionBar.j6.q5, f6Var, textView2, 1, 14.0f);
-        if (z10) {
-            addView(textView2, w7.a6.t(-1, -2, 55, 27, 0, 27, 13));
-        }
+    public na(o5 o5Var, l5 l5Var) {
+        this.a = l5Var;
+        this.b = new org.telegram.ui.Components.e6(o5Var, 0L, 360L, pr.h);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(1.0f), 805306368);
+        StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.StorySeekHelp), textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.d = staticLayout;
+        this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
+        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
     }
 }

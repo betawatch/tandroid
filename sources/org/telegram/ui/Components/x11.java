@@ -1,60 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class x11 extends ul0 {
-    public Context c;
-    public ArrayList d;
+public final class x11 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public jq0 d;
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
+    public final void a() {
+        if (this.a == null) {
+            return;
         }
-        return arrayList.size() + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.d.get(i10 - 1)).get(0);
-            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
-            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) c1Var.a;
-            a9Var.a.setText(org.telegram.ui.ActionBar.i5.i(l6Var.f));
-            a9Var.b = b10;
-            a9Var.setWillNotDraw(b10 == 0);
-            a9Var.invalidate();
+        View view = (View) getParent();
+        int i10 = 0;
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
         }
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View a9Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            a9Var = new View(context);
-            a9Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-        } else {
-            a9Var = new org.telegram.ui.Cells.a9(context);
-            a9Var.setLayoutParams(new s4.p0(-1, -2));
-        }
-        return new fl0(a9Var);
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a();
     }
 }

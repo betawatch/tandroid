@@ -9,16 +9,16 @@ import v8.d;
 import v8.k;
 import v8.q;
 import v8.r;
-import v8.s;
+import v8.t;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class FullWallet extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<FullWallet> CREATOR = new r(9);
     public String a;
     public String b;
-    public s c;
+    public t c;
     public String d;
     public q e;
     public q f;

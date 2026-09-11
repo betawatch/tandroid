@@ -9,13 +9,13 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import l2.h;
+import ji.u4;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import s0.d;
+import s0.c;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -41,7 +41,7 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final h a(View view) {
+    public final u4 a(View view) {
         if (this.j == null) {
             this.j = new a(this);
         }
@@ -49,8 +49,8 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+    public final void c(View view, c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
     }
 
     public final AccessibilityEvent e(int i10, int i11) {
@@ -61,7 +61,7 @@ public abstract class b extends r0.b {
             return obtain;
         }
         AccessibilityEvent obtain2 = AccessibilityEvent.obtain(i11);
-        d j3 = j(i10);
+        c j3 = j(i10);
         obtain2.getText().add(j3.g());
         AccessibilityNodeInfo accessibilityNodeInfo = j3.a;
         obtain2.setContentDescription(accessibilityNodeInfo.getContentDescription());
@@ -120,16 +120,16 @@ public abstract class b extends r0.b {
         if (!this.h.isEnabled() || (parent = (view = this.i).getParent()) == null) {
             return;
         }
-        AccessibilityEvent e = e(-1, 2048);
-        e.setContentChangeTypes(1);
-        parent.requestSendAccessibilityEvent(view, e);
+        AccessibilityEvent e7 = e(-1, 2048);
+        e7.setContentChangeTypes(1);
+        parent.requestSendAccessibilityEvent(view, e7);
     }
 
-    public final d j(int i10) {
+    public final c j(int i10) {
         View view = this.i;
         if (i10 == -1) {
             AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(view);
-            d dVar = new d(obtain);
+            c cVar = new c(obtain);
             WeakHashMap weakHashMap = i0.a;
             view.onInitializeAccessibilityNodeInfo(obtain);
             ArrayList arrayList = new ArrayList();
@@ -139,21 +139,21 @@ public abstract class b extends r0.b {
             }
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
-                dVar.a.addChild(view, ((Integer) arrayList.get(i11)).intValue());
+                cVar.a.addChild(view, ((Integer) arrayList.get(i11)).intValue());
             }
-            return dVar;
+            return cVar;
         }
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
-        d dVar2 = new d(obtain2);
+        c cVar2 = new c(obtain2);
         obtain2.setEnabled(true);
         obtain2.setFocusable(true);
-        dVar2.i("android.view.View");
+        cVar2.i("android.view.View");
         Rect rect = n;
-        dVar2.h(rect);
+        cVar2.h(rect);
         obtain2.setBoundsInScreen(rect);
         obtain2.setParent(view);
-        l(i10, dVar2);
-        if (dVar2.g() == null && obtain2.getContentDescription() == null) {
+        l(i10, cVar2);
+        if (cVar2.g() == null && obtain2.getContentDescription() == null) {
             throw new RuntimeException("Callbacks must add text or a content description in populateNodeForVirtualViewId()");
         }
         Rect rect2 = this.e;
@@ -169,20 +169,20 @@ public abstract class b extends r0.b {
             throw new RuntimeException("Callbacks must not add ACTION_CLEAR_ACCESSIBILITY_FOCUS in populateNodeForVirtualViewId()");
         }
         obtain2.setPackageName(view.getContext().getPackageName());
-        dVar2.b = i10;
+        cVar2.b = i10;
         obtain2.setSource(view, i10);
         if (this.k == i10) {
             obtain2.setAccessibilityFocused(true);
-            dVar2.a(128);
+            cVar2.a(128);
         } else {
             obtain2.setAccessibilityFocused(false);
-            dVar2.a(64);
+            cVar2.a(64);
         }
         boolean z10 = this.l == i10;
         if (z10) {
-            dVar2.a(2);
+            cVar2.a(2);
         } else if (obtain2.isFocusable()) {
-            dVar2.a(1);
+            cVar2.a(1);
         }
         obtain2.setFocused(z10);
         int[] iArr = this.g;
@@ -208,18 +208,18 @@ public abstract class b extends r0.b {
                             }
                             parent = view2.getParent();
                         } else if (parent != null) {
-                            dVar2.p(true);
+                            cVar2.p(true);
                         }
                     }
                 }
             }
         }
-        return dVar2;
+        return cVar2;
     }
 
     public abstract boolean k(int i10, int i11);
 
-    public abstract void l(int i10, d dVar);
+    public abstract void l(int i10, c cVar);
 
     public final void m(int i10, int i11) {
         View view;

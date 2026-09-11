@@ -1,40 +1,49 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class tz0 {
-    public static final tz0 e = new tz0(false, new qz0(TLObject.FLAG_31, -2147483647), wz0.R, 0.0f);
-    public final boolean a;
-    public final qz0 b;
-    public final iz0 c;
-    public final float d;
+public final class tz0 implements TextWatcher {
+    public final /* synthetic */ a01 a;
 
-    public tz0(boolean z10, qz0 qz0Var, iz0 iz0Var, float f7) {
-        this.a = z10;
-        this.b = qz0Var;
-        this.c = iz0Var;
-        this.d = f7;
+    public tz0(a01 a01Var) {
+        this.a = a01Var;
     }
 
-    public static iz0 a(tz0 tz0Var, boolean z10) {
-        iz0 iz0Var = tz0Var.c;
-        return iz0Var != wz0.R ? iz0Var : tz0Var.d == 0.0f ? z10 ? wz0.S : wz0.T : wz0.U;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        a01 a01Var = this.a;
+        q6 q6Var = a01Var.n;
+        if (a01Var.x) {
+            return;
         }
-        if (obj == null || tz0.class != obj.getClass()) {
-            return false;
+        String trim = editable.toString().trim();
+        if (trim.length() > 16) {
+            q6Var.setText("-" + (trim.length() - 16));
+            trim = trim.substring(0, 16);
+        } else {
+            q6Var.setText("");
         }
-        tz0 tz0Var = (tz0) obj;
-        return this.c.equals(tz0Var.c) && this.b.equals(tz0Var.b);
+        Utilities.Callback callback = a01Var.w;
+        if (callback != null) {
+            callback.run(trim);
+        }
+        MessageObject messageObject = a01Var.r;
+        if (messageObject != null) {
+            messageObject.forceUpdate = true;
+            a01Var.d.X3(messageObject, null, false, false, false, false);
+        }
     }
 
-    public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

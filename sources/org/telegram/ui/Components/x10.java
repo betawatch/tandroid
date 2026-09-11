@@ -1,254 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class x10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FragmentContextView b;
+public final class x10 {
+    public w10[] a;
+    public w10 b;
+    public w10 c;
+    public w10 d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public long j;
+    public float k;
+    public ArrayList l;
+    public Paint m;
+    public Path n;
 
-    public /* synthetic */ x10(FragmentContextView fragmentContextView, int i10) {
-        this.a = i10;
-        this.b = fragmentContextView;
+    public final void a(float f7) {
+        this.g = f7;
+        float f10 = this.e;
+        this.h = (f7 - f10) / 250.0f;
+        this.i = (f7 - f10) / 120.0f;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                FragmentContextView fragmentContextView = this.b;
-                AnimatorSet animatorSet = fragmentContextView.f;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    fragmentContextView.setVisibility(8);
-                    fragmentContextView.f = null;
-                    break;
-                }
-                break;
-            case 1:
-                FragmentContextView fragmentContextView2 = this.b;
-                AnimatorSet animatorSet2 = fragmentContextView2.f;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fragmentContextView2.f = null;
-                    break;
-                }
-                break;
-            case 2:
-                FragmentContextView fragmentContextView3 = this.b;
-                fragmentContextView3.t0.unlock();
-                AnimatorSet animatorSet3 = fragmentContextView3.f;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    fragmentContextView3.setVisibility(8);
-                    e20 e20Var = fragmentContextView3.o0;
-                    if (e20Var != null) {
-                        ((cr0) e20Var).a(false);
-                    }
-                    fragmentContextView3.f = null;
-                    if (fragmentContextView3.w0) {
-                        fragmentContextView3.e(false);
-                    } else if (fragmentContextView3.v0) {
-                        fragmentContextView3.a(false);
-                    } else if (fragmentContextView3.x0) {
-                        fragmentContextView3.g(false);
-                    } else if (fragmentContextView3.y0) {
-                        fragmentContextView3.c(false);
-                    }
-                    fragmentContextView3.w0 = false;
-                    fragmentContextView3.v0 = false;
-                    fragmentContextView3.x0 = false;
-                    fragmentContextView3.y0 = false;
-                    break;
-                }
-                break;
-            case 3:
-                FragmentContextView fragmentContextView4 = this.b;
-                fragmentContextView4.t0.unlock();
-                AnimatorSet animatorSet4 = fragmentContextView4.f;
-                if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    e20 e20Var2 = fragmentContextView4.o0;
-                    if (e20Var2 != null) {
-                        ((cr0) e20Var2).a(false);
-                    }
-                    fragmentContextView4.f = null;
-                    if (fragmentContextView4.w0) {
-                        fragmentContextView4.e(false);
-                    } else if (fragmentContextView4.v0) {
-                        fragmentContextView4.a(false);
-                    } else if (fragmentContextView4.x0) {
-                        fragmentContextView4.g(false);
-                    } else if (fragmentContextView4.y0) {
-                        fragmentContextView4.c(false);
-                    }
-                    fragmentContextView4.w0 = false;
-                    fragmentContextView4.v0 = false;
-                    fragmentContextView4.x0 = false;
-                    fragmentContextView4.y0 = false;
-                    break;
-                }
-                break;
-            case 4:
-                FragmentContextView fragmentContextView5 = this.b;
-                fragmentContextView5.t0.unlock();
-                AnimatorSet animatorSet5 = fragmentContextView5.f;
-                if (animatorSet5 != null && animatorSet5.equals(animator)) {
-                    fragmentContextView5.setVisibility(8);
-                    fragmentContextView5.f = null;
-                    if (fragmentContextView5.w0) {
-                        fragmentContextView5.e(false);
-                    } else if (fragmentContextView5.v0) {
-                        fragmentContextView5.a(false);
-                    } else if (fragmentContextView5.x0) {
-                        fragmentContextView5.g(false);
-                    } else if (fragmentContextView5.y0) {
-                        fragmentContextView5.c(false);
-                    }
-                    fragmentContextView5.w0 = false;
-                    fragmentContextView5.v0 = false;
-                    fragmentContextView5.x0 = false;
-                    fragmentContextView5.y0 = false;
-                    break;
-                }
-                break;
-            case 5:
-                FragmentContextView fragmentContextView6 = this.b;
-                fragmentContextView6.t0.unlock();
-                AnimatorSet animatorSet6 = fragmentContextView6.f;
-                if (animatorSet6 != null && animatorSet6.equals(animator)) {
-                    e20 e20Var3 = fragmentContextView6.o0;
-                    if (e20Var3 != null) {
-                        ((cr0) e20Var3).a(false);
-                    }
-                    fragmentContextView6.f = null;
-                    if (fragmentContextView6.w0) {
-                        fragmentContextView6.e(false);
-                    } else if (fragmentContextView6.v0) {
-                        fragmentContextView6.a(false);
-                    } else if (fragmentContextView6.x0) {
-                        fragmentContextView6.g(false);
-                    } else if (fragmentContextView6.y0) {
-                        fragmentContextView6.c(false);
-                    }
-                    fragmentContextView6.w0 = false;
-                    fragmentContextView6.v0 = false;
-                    fragmentContextView6.x0 = false;
-                    fragmentContextView6.y0 = false;
-                    break;
-                }
-                break;
-            case 6:
-                FragmentContextView fragmentContextView7 = this.b;
-                fragmentContextView7.t0.unlock();
-                AnimatorSet animatorSet7 = fragmentContextView7.f;
-                if (animatorSet7 != null && animatorSet7.equals(animator)) {
-                    fragmentContextView7.setVisibility(8);
-                    fragmentContextView7.f = null;
-                    if (fragmentContextView7.w0) {
-                        fragmentContextView7.e(false);
-                    } else if (fragmentContextView7.v0) {
-                        fragmentContextView7.a(false);
-                    } else if (fragmentContextView7.x0) {
-                        fragmentContextView7.g(false);
-                    } else if (fragmentContextView7.y0) {
-                        fragmentContextView7.c(false);
-                    }
-                    fragmentContextView7.w0 = false;
-                    fragmentContextView7.v0 = false;
-                    fragmentContextView7.x0 = false;
-                    fragmentContextView7.y0 = false;
-                    break;
-                }
-                break;
-            case 7:
-                FragmentContextView fragmentContextView8 = this.b;
-                fragmentContextView8.t0.unlock();
-                AnimatorSet animatorSet8 = fragmentContextView8.f;
-                if (animatorSet8 != null && animatorSet8.equals(animator)) {
-                    fragmentContextView8.S = false;
-                    fragmentContextView8.f = null;
-                    fragmentContextView8.e(false);
-                    break;
-                }
-                break;
-            case 8:
-                FragmentContextView fragmentContextView9 = this.b;
-                fragmentContextView9.u0.unlock();
-                AnimatorSet animatorSet9 = fragmentContextView9.f;
-                if (animatorSet9 != null && animatorSet9.equals(animator)) {
-                    fragmentContextView9.f = null;
-                }
-                if (fragmentContextView9.w0) {
-                    fragmentContextView9.e(false);
-                } else if (fragmentContextView9.v0) {
-                    fragmentContextView9.a(false);
-                } else if (fragmentContextView9.x0) {
-                    fragmentContextView9.g(false);
-                } else if (fragmentContextView9.y0) {
-                    fragmentContextView9.c(false);
-                }
-                fragmentContextView9.w0 = false;
-                fragmentContextView9.v0 = false;
-                fragmentContextView9.x0 = false;
-                fragmentContextView9.y0 = false;
-                fragmentContextView9.m();
-                break;
-            case 9:
-                FragmentContextView fragmentContextView10 = this.b;
-                fragmentContextView10.t0.unlock();
-                AnimatorSet animatorSet10 = fragmentContextView10.f;
-                if (animatorSet10 != null && animatorSet10.equals(animator)) {
-                    fragmentContextView10.setVisibility(8);
-                    fragmentContextView10.f = null;
-                    if (fragmentContextView10.w0) {
-                        fragmentContextView10.e(false);
-                    } else if (fragmentContextView10.v0) {
-                        fragmentContextView10.a(false);
-                    } else if (fragmentContextView10.x0) {
-                        fragmentContextView10.g(false);
-                    } else if (fragmentContextView10.y0) {
-                        fragmentContextView10.c(false);
-                    }
-                    fragmentContextView10.w0 = false;
-                    fragmentContextView10.v0 = false;
-                    fragmentContextView10.x0 = false;
-                    fragmentContextView10.y0 = false;
-                    break;
-                }
-                break;
-            case 10:
-                FragmentContextView fragmentContextView11 = this.b;
-                fragmentContextView11.t0.unlock();
-                AnimatorSet animatorSet11 = fragmentContextView11.f;
-                if (animatorSet11 != null && animatorSet11.equals(animator)) {
-                    fragmentContextView11.S = false;
-                    fragmentContextView11.f = null;
-                    fragmentContextView11.a(false);
-                    break;
-                }
-                break;
-            default:
-                FragmentContextView fragmentContextView12 = this.b;
-                fragmentContextView12.u0.unlock();
-                AnimatorSet animatorSet12 = fragmentContextView12.f;
-                if (animatorSet12 != null && animatorSet12.equals(animator)) {
-                    fragmentContextView12.f = null;
-                }
-                if (fragmentContextView12.w0) {
-                    fragmentContextView12.e(false);
-                } else if (fragmentContextView12.v0) {
-                    fragmentContextView12.a(false);
-                } else if (fragmentContextView12.x0) {
-                    fragmentContextView12.g(false);
-                } else if (fragmentContextView12.y0) {
-                    fragmentContextView12.c(false);
-                }
-                fragmentContextView12.w0 = false;
-                fragmentContextView12.v0 = false;
-                fragmentContextView12.x0 = false;
-                fragmentContextView12.y0 = false;
-                fragmentContextView12.m();
-                break;
+    public final void b(int i10, boolean z10) {
+        w10 w10Var = this.b;
+        if (w10Var == null || w10Var.i != i10) {
+            if (VoIPService.getSharedInstance() == null && this.b == null) {
+                this.b = this.d;
+                return;
+            }
+            w10 w10Var2 = z10 ? this.b : null;
+            this.c = w10Var2;
+            this.b = this.a[i10];
+            if (w10Var2 != null) {
+                this.k = 0.0f;
+            } else {
+                this.k = 1.0f;
+            }
+        }
+    }
+
+    public final void c(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null) {
+            int callState = sharedInstance.getCallState();
+            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+                b(2, z10);
+                return;
+            }
+            ChatObject.Call call = sharedInstance.groupCall;
+            if (call == null) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+                return;
+            }
+            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+                b(sharedInstance.isMicMute() ? 1 : 0, z10);
+            } else {
+                sharedInstance.setMicMute(true, false, false);
+                b(3, z10);
+            }
         }
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yd0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -34,13 +34,13 @@ public final /* synthetic */ class yd0 implements Runnable {
             case 0:
                 final ge0 ge0Var = this.b;
                 de0 de0Var = ge0Var.a;
-                xg0 xg0Var = ge0Var.W;
-                xg0Var.k1(false, true);
+                wg0 wg0Var = ge0Var.W;
+                wg0Var.k1(false, true);
                 TLRPC.TL_error tL_error = this.c;
                 String str = this.e;
                 if (tL_error == null) {
                     ge0Var.E = false;
-                    xg0Var.v1(false, true);
+                    wg0Var.v1(false, true);
                     final Bundle bundle = new Bundle();
                     bundle.putString("phone", ge0Var.I);
                     bundle.putString("ephone", ge0Var.J);
@@ -51,7 +51,7 @@ public final /* synthetic */ class yd0 implements Runnable {
                     if (tLObject instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
                         TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject).terms_of_service;
                         if (tL_help_termsOfService != null) {
-                            xg0Var.p0 = tL_help_termsOfService;
+                            wg0Var.p0 = tL_help_termsOfService;
                         }
                         final int i11 = 0;
                         ge0Var.o(new Runnable() { // from class: org.telegram.ui.be0
@@ -68,19 +68,19 @@ public final /* synthetic */ class yd0 implements Runnable {
                             }
                         });
                     } else {
-                        ge0Var.o(new zq(ge0Var, tLObject, bundle, 26));
+                        ge0Var.o(new yq(ge0Var, tLObject, bundle, 26));
                     }
                 } else if (tL_error.text.contains("SESSION_PASSWORD_NEEDED")) {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                    i10 = ((org.telegram.ui.ActionBar.p2) xg0Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
                     ConnectionsManager.getInstance(i10).sendRequest(getpassword, new wd0(ge0Var, str, 1), 10);
                 } else {
                     ge0Var.E = false;
-                    xg0Var.v1(false, true);
+                    wg0Var.v1(false, true);
                     if (tL_error.text.contains("EMAIL_ADDRESS_INVALID")) {
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailAddressInvalid));
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailAddressInvalid));
                     } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                     } else if (tL_error.text.contains("CODE_EMPTY") || tL_error.text.contains("CODE_INVALID") || tL_error.text.contains("EMAIL_CODE_INVALID") || tL_error.text.contains("PHONE_CODE_INVALID")) {
                         zd0 zd0Var = ge0Var.S;
                         fe0 fe0Var = ge0Var.Q;
@@ -90,9 +90,9 @@ public final /* synthetic */ class yd0 implements Runnable {
                         }
                         int i12 = 0;
                         while (true) {
-                            hs[] hsVarArr = de0Var.f;
-                            if (i12 < hsVarArr.length) {
-                                hsVarArr[i12].setText("");
+                            gs[] gsVarArr = de0Var.f;
+                            if (i12 < gsVarArr.length) {
+                                gsVarArr[i12].setText("");
                                 de0Var.f[i12].i(1.0f);
                                 i12++;
                             } else {
@@ -108,24 +108,24 @@ public final /* synthetic */ class yd0 implements Runnable {
                             }
                         }
                     } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
                     } else if (tL_error.text.contains("EMAIL_VERIFY_EXPIRED")) {
-                        xg0Var.u1(0, true, null, true);
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                        wg0Var.u1(0, true, null, true);
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                     } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                     } else {
-                        xg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                     }
                     if (de0Var.f != null) {
                         int i13 = 0;
                         while (true) {
-                            hs[] hsVarArr2 = de0Var.f;
-                            if (i13 < hsVarArr2.length) {
-                                hsVarArr2[i13].setText("");
+                            gs[] gsVarArr2 = de0Var.f;
+                            if (i13 < gsVarArr2.length) {
+                                gsVarArr2[i13].setText("");
                                 i13++;
                             } else {
-                                hsVarArr2[0].requestFocus();
+                                gsVarArr2[0].requestFocus();
                             }
                         }
                     }
@@ -136,16 +136,16 @@ public final /* synthetic */ class yd0 implements Runnable {
             default:
                 final ge0 ge0Var2 = this.b;
                 ge0Var2.E = false;
-                xg0 xg0Var2 = ge0Var2.W;
-                xg0Var2.v1(false, true);
+                wg0 wg0Var2 = ge0Var2.W;
+                wg0Var2.v1(false, true);
                 TLRPC.TL_error tL_error2 = this.c;
                 if (tL_error2 != null) {
-                    xg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                    wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                     break;
                 } else {
                     TL_account.Password password = (TL_account.Password) this.d;
                     if (!TwoStepVerificationActivity.i0(password, true)) {
-                        org.telegram.ui.Components.d5.x0(xg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                        org.telegram.ui.Components.e5.x0(wg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                         break;
                     } else {
                         final Bundle bundle2 = new Bundle();

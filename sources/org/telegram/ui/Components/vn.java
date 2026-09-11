@@ -1,44 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class vn extends org.telegram.ui.Cells.e6 {
-    public final /* synthetic */ xn F;
+public final /* synthetic */ class vn implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vn(xn xnVar, Context context, int i10) {
-        super(context, i10, null, null);
-        this.F = xnVar;
+    public /* synthetic */ vn(co coVar, int i10) {
+        this.a = i10;
+        this.b = coVar;
     }
 
-    @Override // org.telegram.ui.Cells.e6
-    public final void g(org.telegram.ui.Cells.d6 d6Var, ActionMode actionMode) {
-        if (d6Var.isFocused() && d6Var.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.eo.k8(menu, ((org.telegram.ui.eo) this.F.d.b.f0).h, false, true, true, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                co coVar = this.b;
+                AtomicReference atomicReference = coVar.n;
+                org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get();
+                if (j5Var != null) {
+                    coVar.removeView(j5Var);
+                    atomicReference.set(null);
+                    break;
+                }
+                break;
+            case 1:
+                co coVar2 = this.b;
+                AtomicReference atomicReference2 = coVar2.v;
+                org.telegram.ui.ActionBar.j5 j5Var2 = (org.telegram.ui.ActionBar.j5) atomicReference2.get();
+                if (j5Var2 != null) {
+                    coVar2.removeView(j5Var2);
+                    atomicReference2.set(null);
+                    if (!coVar2.b) {
+                        coVar2.setClipChildren(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                co coVar3 = this.b;
+                coVar3.j0 = false;
+                coVar3.h0.c(false);
+                if (coVar3.a()) {
+                    coVar3.f();
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.e6
-    public final void i(boolean z10) {
-        zn.M(this.F.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.e6
-    public final void j(org.telegram.ui.Cells.e6 e6Var) {
-        zn.N(this.F.d, e6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.e6
-    public final void k(org.telegram.ui.Cells.d6 d6Var) {
-        this.F.d.b.t1(d6Var, true);
     }
 }

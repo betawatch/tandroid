@@ -10,11 +10,11 @@ import android.view.Display;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.Locale;
-import m.g3;
+import ji.u4;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList I;
@@ -44,7 +44,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new g3(new ComponentName("android", k0.class.getName()), 12));
+        super(context, new u4(new ComponentName("android", k0.class.getName()), 16));
         this.G = new ArrayList();
         this.H = new ArrayList();
         this.r = eVar;
@@ -301,8 +301,8 @@ public class j0 extends k0 implements b0 {
         userRouteInfo.setVolumeCallback(null);
         try {
             this.s.removeUserRoute(userRouteInfo);
-        } catch (IllegalArgumentException e) {
-            Log.w("AxSysMediaRouteProvider", "Failed to remove user route", e);
+        } catch (IllegalArgumentException e7) {
+            Log.w("AxSysMediaRouteProvider", "Failed to remove user route", e7);
         }
     }
 

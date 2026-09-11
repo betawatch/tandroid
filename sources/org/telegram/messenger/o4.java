@@ -1,31 +1,36 @@
 package org.telegram.messenger;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.GoogleMapsProvider;
-import org.telegram.messenger.IMapsProvider;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o4 implements IMapsProvider.ICallableMethod {
+public final /* synthetic */ class o4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ GoogleMapsProvider.GoogleMapView.1 b;
+    public final /* synthetic */ ImageLoader b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ o4(GoogleMapsProvider.GoogleMapView.1 r12, int i10) {
+    public /* synthetic */ o4(ImageLoader imageLoader, String str, int i10) {
         this.a = i10;
-        this.b = r12;
+        this.b = imageLoader;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
-    public final Object call(Object obj) {
-        Boolean lambda$dispatchTouchEvent$0;
-        Boolean lambda$onInterceptTouchEvent$1;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$dispatchTouchEvent$0 = this.b.lambda$dispatchTouchEvent$0((MotionEvent) obj);
-                return lambda$dispatchTouchEvent$0;
+                this.b.lambda$artworkLoadError$10(this.c);
+                break;
+            case 1:
+                this.b.lambda$cancelForceLoadingForImageReceiver$6(this.c);
+                break;
+            case 2:
+                this.b.lambda$preloadArtwork$8(this.c);
+                break;
+            case 3:
+                this.b.lambda$httpFileLoadError$9(this.c);
+                break;
             default:
-                lambda$onInterceptTouchEvent$1 = this.b.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
-                return lambda$onInterceptTouchEvent$1;
+                this.b.lambda$fileDidFailedLoad$12(this.c);
+                break;
         }
     }
 }

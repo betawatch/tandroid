@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class kw0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ lw0 k;
+import android.graphics.drawable.Drawable;
 
-    public kw0(lw0 lw0Var) {
-        this.k = lw0Var;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public abstract class kw0 extends Drawable {
+    public final void a() {
+        yf.h d = yf.h.d();
+        d.getClass();
+        yf.h.c();
+        d.e.add(this);
     }
+
+    public abstract void b(int i10);
+
+    public abstract void c(boolean z10);
+
+    public abstract void d();
+
+    public abstract void e();
 }

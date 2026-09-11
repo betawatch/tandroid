@@ -11,9 +11,8 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class h4 extends v7.q5 implements i9.w {
     public static final boolean d;
@@ -116,7 +115,7 @@ public abstract class h4 extends v7.q5 implements i9.w {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.i("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
@@ -157,7 +156,7 @@ public abstract class h4 extends v7.q5 implements i9.w {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.r6.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.p6.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -187,7 +186,7 @@ public abstract class h4 extends v7.q5 implements i9.w {
             Object f7 = f(this);
             sb2.append("SUCCESS, result=[");
             if (f7 == null) {
-                sb2.append(BuildConfig.BETA_URL);
+                sb2.append("null");
             } else if (f7 == this) {
                 sb2.append("this future");
             } else {

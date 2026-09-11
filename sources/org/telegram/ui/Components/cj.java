@@ -1,31 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ jj a;
+public final class cj extends d61 {
+    public final /* synthetic */ gj f3;
 
-    public /* synthetic */ cj(jj jjVar) {
-        this.a = jjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cj(gj gjVar, Context context, int i10, d dVar, zi ziVar, zi ziVar2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, i10, 0, false, dVar, ziVar, ziVar2, f6Var);
+        this.f3 = gjVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.M((v51) obj, (View) obj2);
+    @Override // org.telegram.ui.Components.d61
+    public final void B1() {
+        gj gjVar = this.f3;
+        gjVar.b.X1(gjVar, 0);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.M((v51) obj, (View) obj2);
-        return Boolean.TRUE;
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean E0(float f7) {
+        vi viVar = this.f3.b;
+        return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + viVar.b2[0]) + (!viVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        gj gjVar = this.f3;
+        gjVar.b.X1(gjVar, 0);
     }
 }

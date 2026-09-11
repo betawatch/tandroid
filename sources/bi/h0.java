@@ -1,84 +1,58 @@
 package bi;
 
-import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.ui.mv0;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class h0 extends VideoPlayerHolderBase {
+public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ e3 b;
 
-    public /* synthetic */ h0(Object obj, int i10) {
+    public /* synthetic */ h0(e3 e3Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = e3Var;
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public boolean needRepeat() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return !((i0) this.b).p.n0;
-            default:
-                return super.needRepeat();
-        }
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public final void onRenderedFirstFrame() {
-        switch (this.a) {
-            case 0:
-                i0 i0Var = (i0) this.b;
-                i0Var.f = true;
-                i0Var.p.invalidate();
-                break;
-            default:
-                qg.a2 a2Var = (qg.a2) this.b;
-                TextureView textureView = a2Var.J;
-                if (textureView != null && !a2Var.F) {
-                    textureView.setAlpha(0.0f);
-                    textureView.animate().alpha(1.0f).setListener(new mv0(this, 22)).setDuration(200L);
+                e3 e3Var = this.b;
+                if (e3Var.O != null && !e3Var.U) {
+                    AndroidUtilities.cancelRunOnUIThread(e3Var.V);
+                    e3Var.U = true;
+                    TL_phone.getGroupCallStars getgroupcallstars = new TL_phone.getGroupCallStars();
+                    getgroupcallstars.call = e3Var.O;
+                    ConnectionsManager.getInstance(e3Var.N).sendRequestTyped(getgroupcallstars, new org.telegram.messenger.a(), new f0(0, e3Var, getgroupcallstars));
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public void onStateChanged(boolean z10, int i10) {
-        switch (this.a) {
             case 1:
-                qg.a2 a2Var = (qg.a2) this.b;
-                h0 h0Var = a2Var.H;
-                if (h0Var != null) {
-                    if (i10 != 4) {
-                        if (i10 == 1) {
-                            h0Var.play();
-                            break;
-                        }
-                    } else {
-                        h0Var.seekTo(0L);
-                        a2Var.H.play();
-                        break;
-                    }
+                e3 e3Var2 = this.b;
+                AndroidUtilities.cancelRunOnUIThread(e3Var2.d0);
+                qc qcVar = e3Var2.W;
+                if (qcVar != null) {
+                    qcVar.b();
+                    e3Var2.W = null;
                 }
-                break;
+                long j3 = e3Var2.R;
+                if (j3 <= 0) {
+                    e3Var2.j();
+                    break;
+                } else {
+                    e3Var2.R = 0L;
+                    e3Var2.S = true;
+                    e3Var2.o(new TLRPC.TL_textWithEntities(), j3);
+                    break;
+                }
             default:
-                super.onStateChanged(z10, i10);
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new g0(this, i10, i11, i12, 0));
-                break;
-            default:
-                super.onVideoSizeChanged(i10, i11, i12, f7);
+                e3 e3Var3 = this.b;
+                e3Var3.e.N(true);
+                e3Var3.n.N(true);
                 break;
         }
     }

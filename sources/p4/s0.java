@@ -17,11 +17,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
+import ji.k5;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Cells.l9;
-import org.telegram.ui.uu0;
+import org.telegram.ui.Cells.l7;
+import org.telegram.ui.ai0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class s0 {
     public boolean a;
@@ -36,7 +37,7 @@ public final class s0 {
     public s0(Context context, e eVar) {
         this.f = new ArrayList();
         this.g = new androidx.mediarouter.app.g(this, 8);
-        this.h = new l9(this, 25);
+        this.h = new l7(this, 27);
         this.b = context;
         this.c = eVar;
         this.d = new Handler();
@@ -46,18 +47,18 @@ public final class s0 {
     public FileInputStream a(AssetManager assetManager, String str) {
         try {
             return assetManager.openFd(str).createInputStream();
-        } catch (FileNotFoundException e) {
-            String message = e.getMessage();
+        } catch (FileNotFoundException e7) {
+            String message = e7.getMessage();
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).w();
+            ((r4.c) this.c).v();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new uu0(this, i10, serializable, 10));
+        ((Executor) this.b).execute(new ai0(this, i10, serializable, 13));
     }
 
     public void c() {
@@ -114,7 +115,7 @@ public final class s0 {
                     }
                     if (i13 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new org.telegram.tgnet.j(this, r0Var);
+                        r0Var.F = new k5(this, r0Var);
                         if (!r0Var.w) {
                             r0Var.w = true;
                             r0Var.r();

@@ -1,30 +1,102 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ DownloadController b;
-    public final /* synthetic */ TLRPC.Document c;
-    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ MessagesStorage b;
 
-    public /* synthetic */ e2(DownloadController downloadController, TLRPC.Document document, MessageObject messageObject, int i10) {
+    public /* synthetic */ e2(MessagesStorage messagesStorage, int i10) {
         this.a = i10;
-        this.b = downloadController;
-        this.c = document;
-        this.d = messageObject;
+        this.b = messagesStorage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onDownloadComplete$7(this.c, this.d);
+                FactCheckController.lambda$clearExpiredInDatabase$7(this.b);
+                break;
+            case 1:
+                this.b.lambda$saveDialogFilter$73();
+                break;
+            case 2:
+                this.b.lambda$clearLocalDatabase$43();
+                break;
+            case 3:
+                this.b.lambda$fixNotificationSettings$9();
+                break;
+            case 4:
+                this.b.lambda$getWallpapers$81();
+                break;
+            case 5:
+                this.b.lambda$loadUnreadMessages$77();
+                break;
+            case 6:
+                this.b.lambda$updateMutedDialogsFiltersCounters$36();
+                break;
+            case 7:
+                this.b.lambda$openDatabase$1();
+                break;
+            case 8:
+                this.b.lambda$openDatabase$2();
+                break;
+            case 9:
+                this.b.lambda$updateFiltersReadCounter$119();
+                break;
+            case 10:
+                this.b.lambda$clearLocalDatabase$44();
+                break;
+            case 11:
+                this.b.lambda$checkSQLException$8();
+                break;
+            case 12:
+                this.b.lambda$fullReset$62();
+                break;
+            case 13:
+                this.b.lambda$new$0();
+                break;
+            case 14:
+                this.b.lambda$resetAllUnreadCounters$250();
+                break;
+            case 15:
+                this.b.lambda$reset$61();
+                break;
+            case 16:
+                this.b.lambda$updateDbToLastVersion$3();
+                break;
+            case 17:
+                this.b.lambda$updateDbToLastVersion$4();
+                break;
+            case 18:
+                this.b.lambda$deleteDialog$89();
+                break;
+            case 19:
+                this.b.lambda$loadDialogFilters$67();
+                break;
+            case 20:
+                this.b.lambda$clearSentMedia$163();
+                break;
+            case 21:
+                this.b.lambda$fullReset$63();
+                break;
+            case 22:
+                this.b.lambda$loadPendingTasks$33();
+                break;
+            case 23:
+                this.b.lambda$deleteAllStoryPushMessages$40();
+                break;
+            case 24:
+                this.b.lambda$cleanup$5();
+                break;
+            case 25:
+                this.b.lambda$deleteAllStoryReactionPushMessages$41();
+                break;
+            case 26:
+                this.b.lambda$getContacts$151();
                 break;
             default:
-                this.b.lambda$startDownloadFile$5(this.c, this.d);
+                this.b.lambda$broadcastQuickRepliesMessagesChange$223();
                 break;
         }
     }

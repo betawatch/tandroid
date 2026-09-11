@@ -7,13 +7,13 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.p;
+import org.telegram.tgnet.m;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public class TL_communities {
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class CommunityPeer extends TLObject {
         public static final int constructor = 1981030077;
         public boolean can_view_history;
@@ -49,7 +49,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class CommunityPeerRequest extends TLObject {
         public static final int constructor = 2078997125;
         public int date;
@@ -84,7 +84,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ParticipantJoinedChats extends TLObject {
         public static final int constructor = -1921494742;
         public ArrayList<Long> creator_chat_ids = new ArrayList<>();
@@ -100,8 +100,8 @@ public class TL_communities {
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.creator_chat_ids = Vector.deserializeLong(inputSerializedData, z10);
             this.joined_chat_ids = Vector.deserializeLong(inputSerializedData, z10);
-            this.chats = Vector.deserialize(inputSerializedData, new p(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -114,7 +114,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class PeerLinkRequests extends TLObject {
         public static final int constructor = 574926765;
         public int flags;
@@ -136,8 +136,8 @@ public class TL_communities {
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.next_offset = inputSerializedData.readString(z10);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new p(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new p(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -156,7 +156,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_create extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1506256404;
         public String about;
@@ -186,7 +186,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_getJoinedCommunities extends TLMethod<TLRPC.messages_Chats> {
         public static final int constructor = -1503401936;
 
@@ -201,7 +201,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_getParticipantJoinedChats extends TLMethod<ParticipantJoinedChats> {
         public static final int constructor = -125916245;
         public TLRPC.InputChannel community;
@@ -220,7 +220,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_getPeerLinkRequests extends TLMethod<PeerLinkRequests> {
         public static final int constructor = -1820904636;
         public TLRPC.InputChannel community;
@@ -241,7 +241,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_toggleAllPeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1075585731;
         public TLRPC.InputChannel community;
@@ -263,7 +263,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_toggleCommunityCollapsedInDialogs extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -681122838;
         public boolean collapsed;
@@ -285,7 +285,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_toggleParticipantBanned extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1721258737;
         public TLRPC.InputChannel community;
@@ -309,7 +309,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_togglePeerLink extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1936576490;
         public TLRPC.InputChannel community;
@@ -339,7 +339,7 @@ public class TL_communities {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class TL_communities_togglePeerLinkRequestApproval extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1937630808;
         public TLRPC.InputChannel community;

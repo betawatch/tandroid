@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a implements g2.h {
     public final g2.h a;
@@ -64,11 +64,11 @@ public final class a implements g2.h {
                 kVar.a.open(kVar.b);
                 kVar.d = true;
                 return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
-                throw new RuntimeException(e);
+            } catch (InvalidAlgorithmParameterException | InvalidKeyException e7) {
+                throw new RuntimeException(e7);
             }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e7) {
-            throw new RuntimeException(e7);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

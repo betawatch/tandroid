@@ -1,49 +1,33 @@
 package yg;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.Utilities;
-import pg.f2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f extends ImageView {
-    public long a;
-    public final /* synthetic */ g b;
+public final class f implements TextWatcher {
+    public final /* synthetic */ i a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(g gVar, Context context) {
-        super(context);
-        this.b = gVar;
-        this.a = 0L;
+    public f(i iVar) {
+        this.a = iVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         Utilities.Callback callback;
-        int action = motionEvent.getAction();
-        g gVar = this.b;
-        if (action == 0) {
-            if (System.currentTimeMillis() < this.a + 350) {
-                return false;
-            }
-            this.a = System.currentTimeMillis();
-            gVar.b = true;
-            gVar.c = false;
-            AndroidUtilities.runOnUIThread(new f2(gVar, 350, 5), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            gVar.b = false;
-            if (!gVar.c && (callback = gVar.d) != null) {
-                callback.run(Boolean.FALSE);
-                try {
-                    gVar.a.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
+        i iVar = this.a;
+        if (iVar.h || (callback = iVar.n) == null || editable == null) {
+            return;
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        callback.run(editable.toString());
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

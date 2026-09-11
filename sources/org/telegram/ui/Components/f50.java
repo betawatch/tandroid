@@ -1,34 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f50 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public kj0 c;
-    public LinearLayout d;
+public final class f50 extends Paint {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f50(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        super(1);
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    public void setGravity(int i10) {
-        this.b.setGravity(i10);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(i10);
+                ((w50) this.b).invalidate();
+                break;
+            default:
+                super.setAlpha(i10);
+                ((ProfileActivity) this.b).fragmentView.invalidate();
+                break;
+        }
     }
 }

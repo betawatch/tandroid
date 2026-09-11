@@ -1,44 +1,71 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.Build;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class k40 implements TextWatcher {
-    public final /* synthetic */ j60 a;
+public final class k40 extends FrameLayout {
+    public final RectF a;
+    public final RectF b;
+    public final RectF c;
+    public final Paint d;
+    public final /* synthetic */ j60 e;
 
-    public k40(j60 j60Var) {
-        this.a = j60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k40(j60 j60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.e = j60Var;
+        this.a = new RectF();
+        this.b = new RectF();
+        this.c = new RectF();
+        this.d = new Paint(1);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        j60 j60Var = this.a;
-        j60Var.A3.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i10 = j60Var.d0;
-        if (codePointCount + 25 > i10) {
-            str = "" + (i10 - codePointCount);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        j60 j60Var = this.e;
+        l40 l40Var = j60Var.F;
+        float y3 = l40Var.getY() + l40Var.getMeasuredHeight();
+        le.e eVar = j60Var.B3;
+        float f7 = y3 - eVar.e;
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, f7, measuredWidth, measuredHeight);
+        float y10 = l40Var.getY() + l40Var.getMeasuredHeight();
+        float measuredWidth2 = getMeasuredWidth();
+        float measuredHeight2 = getMeasuredHeight();
+        RectF rectF2 = this.b;
+        rectF2.set(0.0f, y10, measuredWidth2, measuredHeight2);
+        float y11 = (l40Var.getY() + l40Var.getMeasuredHeight()) - eVar.e;
+        float measuredWidth3 = getMeasuredWidth();
+        float y12 = l40Var.getY() + l40Var.getMeasuredHeight();
+        RectF rectF3 = this.c;
+        rectF3.set(0.0f, y11, measuredWidth3, y12);
+        int i10 = Build.VERSION.SDK_INT;
+        Paint paint = this.d;
+        if (i10 < 29 || j60Var.Q2 == null || !canvas.isHardwareAccelerated()) {
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF3, paint);
+            paint.setColor(i0.a.h(234881023, -14933463));
+            canvas.drawRect(rectF2, paint);
         } else {
-            str = null;
+            paint.setColor(-14933463);
+            canvas.drawRect(rectF, paint);
+            canvas.save();
+            canvas.clipRect(rectF);
+            canvas.translate(-getX(), -getY());
+            float f10 = j60Var.R2;
+            canvas.scale(f10, f10);
+            canvas.drawRenderNode(j60Var.Q2);
+            canvas.restore();
+            paint.setColor(234881023);
+            canvas.drawRect(rectF2, paint);
         }
-        j60Var.M.a();
-        j60Var.M.setText(str);
-        j60Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
-        if (codePointCount > i10) {
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.dispatchDraw(canvas);
     }
 }

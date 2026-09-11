@@ -12,7 +12,7 @@ import com.google.android.gms.wallet.wobs.CommonWalletObject;
 import java.util.ArrayList;
 import w7.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class r implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final class r implements Parcelable.Creator {
                     }
                 }
                 d0.m(parcel, z12);
-                return new s(i12, i13, str2, str3);
+                return new t(i12, i13, str2, str3);
             case 3:
                 int z13 = d0.z(parcel);
                 ArrayList arrayList = null;
@@ -139,10 +139,10 @@ public final class r implements Parcelable.Creator {
                     }
                 }
                 d0.m(parcel, z15);
-                t tVar = new t();
-                tVar.a = str6;
-                tVar.b = bundle2;
-                return tVar;
+                u uVar = new u();
+                uVar.a = str6;
+                uVar.b = bundle2;
+                return uVar;
             case 6:
                 int z16 = d0.z(parcel);
                 String str7 = null;
@@ -275,7 +275,7 @@ public final class r implements Parcelable.Creator {
                 int z22 = d0.z(parcel);
                 String str20 = null;
                 String str21 = null;
-                s sVar = null;
+                t tVar = null;
                 String str22 = null;
                 q qVar2 = null;
                 q qVar3 = null;
@@ -294,7 +294,7 @@ public final class r implements Parcelable.Creator {
                             str21 = d0.h(parcel, readInt10);
                             break;
                         case 4:
-                            sVar = (s) d0.g(parcel, readInt10, s.CREATOR);
+                            tVar = (t) d0.g(parcel, readInt10, t.CREATOR);
                             break;
                         case 5:
                             str22 = d0.h(parcel, readInt10);
@@ -329,7 +329,7 @@ public final class r implements Parcelable.Creator {
                 FullWallet fullWallet = new FullWallet();
                 fullWallet.a = str20;
                 fullWallet.b = str21;
-                fullWallet.c = sVar;
+                fullWallet.c = tVar;
                 fullWallet.d = str22;
                 fullWallet.e = qVar2;
                 fullWallet.f = qVar3;
@@ -1099,13 +1099,13 @@ public final class r implements Parcelable.Creator {
             case 1:
                 return new l[i10];
             case 2:
-                return new s[i10];
+                return new t[i10];
             case 3:
                 return new m[i10];
             case 4:
                 return new n[i10];
             case 5:
-                return new t[i10];
+                return new u[i10];
             case 6:
                 return new q[i10];
             case 7:

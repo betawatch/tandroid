@@ -1,44 +1,63 @@
 package zh;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.tl.TL_stories;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class x6 extends FrameLayout {
-    public final TL_stories.MediaArea a;
-    public final pg.s0 b;
+public final class x6 extends sg.z1 {
+    public Paint[] n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
 
-    public x6(Context context, pg.s0 s0Var, TL_stories.MediaArea mediaArea) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x6(Context context, int i10, int i11) {
         super(context);
-        this.a = mediaArea;
-        this.b = s0Var;
-        addView(s0Var);
+        this.r = i10;
+        this.s = i11;
+        b();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        pg.s0 s0Var = this.b;
-        s0Var.measure(i10, i11);
-        int measuredWidth = (s0Var.getMeasuredWidth() - s0Var.getPaddingLeft()) - s0Var.getPaddingRight();
-        int measuredHeight = (s0Var.getMeasuredHeight() - s0Var.getPaddingTop()) - s0Var.getPaddingBottom();
-        float f7 = measuredWidth;
-        float f10 = f7 / 2.0f;
-        s0Var.setPivotX(s0Var.getPaddingLeft() + f10);
-        float f11 = measuredHeight;
-        float f12 = f11 / 2.0f;
-        s0Var.setPivotY(s0Var.getPaddingTop() + f12);
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        setMeasuredDimension(size, size2);
-        float f13 = size;
-        float f14 = size2;
-        float min = Math.min(f13 / f7, f14 / f11);
-        s0Var.setTranslationX((f13 / 2.0f) - (f10 + s0Var.getPaddingLeft()));
-        s0Var.setTranslationY((f14 / 2.0f) - (f12 + s0Var.getPaddingTop()));
-        s0Var.setScaleX(min);
-        s0Var.setScaleY(min);
+    @Override // sg.z1
+    public final void a() {
+        sg.y1 y1Var = new sg.y1(this.r);
+        this.a = y1Var;
+        y1Var.N = 105;
+        int i10 = 0;
+        y1Var.M = false;
+        y1Var.G = false;
+        y1Var.K = true;
+        y1Var.H = true;
+        y1Var.J = false;
+        y1Var.m = true;
+        y1Var.h = true;
+        if (this.s == 1) {
+            y1Var.k = AndroidUtilities.dp(24.0f);
+        }
+        this.n = new Paint[20];
+        while (true) {
+            Paint[] paintArr = this.n;
+            if (i10 >= paintArr.length) {
+                sg.y1 y1Var2 = this.a;
+                y1Var2.l = new di.a8(this, 5);
+                y1Var2.r = 17;
+                y1Var2.s = 18;
+                y1Var2.t = 19;
+                y1Var2.P = org.telegram.ui.ActionBar.j6.G6;
+                y1Var2.c();
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -371690, -14281), PorterDuff.Mode.SRC_IN));
+            i10++;
+        }
+    }
+
+    @Override // sg.z1
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

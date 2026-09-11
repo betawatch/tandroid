@@ -21,7 +21,7 @@ import javax.crypto.Mac;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class o {
     public static androidx.biometric.u a() {
@@ -38,8 +38,8 @@ public abstract class o {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
             cipher.init(1, secretKey);
             return new androidx.biometric.u(cipher);
-        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e) {
-            Log.w("CryptoObjectUtils", "Failed to create fake crypto object.", e);
+        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e7) {
+            Log.w("CryptoObjectUtils", "Failed to create fake crypto object.", e7);
             return null;
         }
     }

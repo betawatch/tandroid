@@ -11,31 +11,31 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class a2 extends FrameLayout {
-    public final org.telegram.ui.Components.o6 a;
+    public final org.telegram.ui.Components.q6 a;
     public final View b;
     public final org.telegram.ui.ActionBar.f6 c;
 
     public a2(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
         this.c = f6Var;
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, false, false);
-        this.a = o6Var;
+        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, false, false);
+        this.a = q6Var;
         int i10 = org.telegram.ui.ActionBar.j6.G6;
-        o6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        o6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        o6Var.setImportantForAccessibility(2);
-        o6Var.setOnWidthUpdatedListener(new g(this, 2));
-        addView(o6Var, w7.a6.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
+        q6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        q6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        q6Var.setImportantForAccessibility(2);
+        q6Var.setOnWidthUpdatedListener(new g(this, 2));
+        addView(q6Var, w7.x5.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
         View view = new View(context);
         this.b = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
-        addView(view, w7.a6.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+        addView(view, w7.x5.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
     }
 
     public final void a() {

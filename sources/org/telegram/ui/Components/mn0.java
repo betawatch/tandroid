@@ -1,53 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class mn0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ ln0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] d;
-    public final /* synthetic */ View e;
+public final class mn0 extends qs {
+    public final /* synthetic */ org.telegram.ui.ey i0;
 
-    public mn0(ln0 ln0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.d2[] d2VarArr, View view) {
-        this.a = ln0Var;
-        this.b = i10;
-        this.c = reaction;
-        this.d = d2VarArr;
-        this.e = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mn0(org.telegram.ui.ey eyVar, ll0 ll0Var, Context context, int i10, int i11) {
+        super(ll0Var, context, i10, i11, false, null);
+        this.i0 = eyVar;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
-        }
-        ln0 ln0Var = this.a;
-        String obj = ln0Var.getText().toString();
-        if (obj.length() > 12) {
-            AndroidUtilities.shakeView(ln0Var);
-            return true;
-        }
-        MessagesController.getInstance(this.b).renameSavedReactionTag(yg.p0.d(this.c), obj);
-        org.telegram.ui.ActionBar.d2[] d2VarArr = this.d;
-        org.telegram.ui.ActionBar.d2 d2Var = d2VarArr[0];
-        if (d2Var != null) {
-            d2Var.dismiss();
-        }
-        if (d2VarArr[0] == rn0.H) {
-            rn0.H = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+    @Override // org.telegram.ui.Components.v51
+    public final void N(boolean z10) {
+        ArrayList arrayList;
+        super.N(z10);
+        ln0 ln0Var = this.i0.l0;
+        ln0Var.e(this.Z || this.a0 || (arrayList = this.T) == null || !arrayList.isEmpty(), z10);
+        ln0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        ln0Var.e.setVisibility(8);
     }
 }

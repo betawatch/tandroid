@@ -1,5 +1,6 @@
 package androidx.appcompat.view.menu;
 
+import aa.a;
 import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,9 +12,8 @@ import l.a0;
 import l.k;
 import l.l;
 import l.n;
-import m.e3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
@@ -51,14 +51,14 @@ public final class ExpandedMenuView extends ListView implements k, a0, AdapterVi
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        e3 P = e3.P(context, attributeSet, b, i10);
-        TypedArray typedArray = (TypedArray) P.c;
+        a y3 = a.y(context, attributeSet, b, i10);
+        TypedArray typedArray = (TypedArray) y3.c;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(P.E(0));
+            setBackgroundDrawable(y3.r(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(P.E(1));
+            setDivider(y3.r(1));
         }
-        P.Q();
+        y3.A();
     }
 }

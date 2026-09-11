@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class fu0 extends AnimatorListenerAdapter {
     public final /* synthetic */ gu0 a;
@@ -25,9 +25,9 @@ public final class fu0 extends AnimatorListenerAdapter {
         if (photoViewer.t4) {
             PhotoViewer.a0(photoViewer, gu0Var.b.intValue());
         }
-        cv0 cv0Var = gu0Var.a;
-        if (cv0Var != null) {
-            cv0Var.d();
+        av0 av0Var = gu0Var.a;
+        if (av0Var != null) {
+            av0Var.d();
         }
     }
 }

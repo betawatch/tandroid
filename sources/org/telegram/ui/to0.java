@@ -1,27 +1,68 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class to0 extends ClickableSpan {
-    public final /* synthetic */ wo0 a;
+public final class to0 extends FrameLayout {
+    public final Paint a;
+    public float b;
+    public o1.k c;
+    public final /* synthetic */ xo0 d;
 
-    public to0(wo0 wo0Var) {
-        this.a = wo0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public to0(xo0 xo0Var, Context context) {
+        super(context);
+        this.d = xo0Var;
+        this.a = new Paint(1);
+        setWillNotDraw(false);
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        wo0 wo0Var = this.a;
-        wo0Var.presentFragment(new mh1(6, wo0Var.a0));
+    public final void a(boolean z10, boolean z11) {
+        o1.k kVar = this.c;
+        if (kVar != null) {
+            kVar.c();
+        }
+        float f7 = z10 ? 1.0f : 0.0f;
+        if (!z11) {
+            this.b = f7;
+            TextView textView = this.d.U;
+            if (textView != null) {
+                textView.setAlpha((f7 * 0.2f) + 0.8f);
+            }
+            invalidate();
+            return;
+        }
+        float f10 = this.b;
+        if (f10 == f7) {
+            return;
+        }
+        o1.k kVar2 = new o1.k(new o1.j(f10 * 100.0f));
+        o1.l lVar = new o1.l(f7 * 100.0f);
+        lVar.b(z10 ? 500.0f : 650.0f);
+        lVar.a(1.0f);
+        kVar2.u = lVar;
+        this.c = kVar2;
+        kVar2.b(new td0(this, 1));
+        this.c.a(new n9(this, 1));
+        this.c.f();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(false);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = org.telegram.ui.ActionBar.j6.O6;
+        xo0 xo0Var = this.d;
+        canvas.drawColor(xo0Var.getThemedColor(i10));
+        int themedColor = xo0Var.getThemedColor(org.telegram.ui.ActionBar.j6.ei);
+        Paint paint = this.a;
+        paint.setColor(themedColor);
+        canvas.drawCircle(LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(28.0f), -AndroidUtilities.dp(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
     }
 }

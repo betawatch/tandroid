@@ -1,103 +1,52 @@
 package zh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s2 implements Utilities.Callback4 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
-    public final /* synthetic */ y2 c;
+public final class s2 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.e6 c;
+    public float d;
+    public float e;
 
-    public /* synthetic */ s2(v2 v2Var, y2 y2Var, int i10) {
-        this.a = i10;
-        this.b = v2Var;
-        this.c = y2Var;
+    public s2(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        int i10 = 2;
+        m2 m2Var = new m2(this, i10);
+        pr prVar = pr.h;
+        this.b = new org.telegram.ui.Components.e6(m2Var, 420L, prVar, 0);
+        this.c = new org.telegram.ui.Components.e6(new m2(this, i10), 420L, prVar, 0);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback4
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-        switch (this.a) {
-            case 0:
-                Long l4 = (Long) obj;
-                Runnable runnable = (Runnable) obj2;
-                Boolean bool = (Boolean) obj3;
-                long currentTimeMillis = System.currentTimeMillis();
-                a3 a3Var = this.b.l;
-                k2.v vVar = a3Var.M2;
-                t7 t7Var = (t7) vVar.c;
-                if (t7Var != null) {
-                    t7Var.firstFrameRendered = false;
-                    vVar.a = false;
-                    t7Var.setOnReadyListener(new n1(1, currentTimeMillis, runnable));
-                    ((l7) a3Var.Q1).g(false);
-                    kj0 kj0Var = a3Var.z0;
-                    if (kj0Var != null) {
-                        kj0Var.setAnimation(this.c.u);
-                    }
-                    if (a3Var.R2 > 0 && l4.longValue() > a3Var.R2 - 1400) {
-                        l4 = 0L;
-                    }
-                    a3Var.T0(l4.longValue(), true);
-                    a3Var.U3 = false;
-                    AndroidUtilities.runOnUIThread(runnable, 400L);
-                    if (bool.booleanValue()) {
-                        a3Var.f1(false);
-                        break;
-                    }
-                } else {
-                    ((l7) a3Var.Q1).g(false);
-                    a3Var.setActive(true);
-                    a3Var.U3 = false;
-                    a3Var.i1 = new org.telegram.tgnet.f(2, runnable);
-                    if (bool.booleanValue()) {
-                        a3Var.f1(false);
-                    }
-                    AndroidUtilities.runOnUIThread(runnable, 400L);
-                    break;
-                }
-                break;
-            default:
-                Long l10 = (Long) obj;
-                Runnable runnable2 = (Runnable) obj2;
-                Boolean bool2 = (Boolean) obj3;
-                long currentTimeMillis2 = System.currentTimeMillis();
-                a3 a3Var2 = this.b.l;
-                k2.v vVar2 = a3Var2.M2;
-                t7 t7Var2 = (t7) vVar2.c;
-                if (t7Var2 != null) {
-                    t7Var2.firstFrameRendered = false;
-                    vVar2.a = false;
-                    t7Var2.setOnReadyListener(new n1(2, currentTimeMillis2, runnable2));
-                    ((l7) a3Var2.Q1).g(false);
-                    kj0 kj0Var2 = a3Var2.z0;
-                    if (kj0Var2 != null) {
-                        kj0Var2.setAnimation(this.c.u);
-                    }
-                    if (a3Var2.R2 > 0 && l10.longValue() > a3Var2.R2 - 1400) {
-                        l10 = 0L;
-                    }
-                    a3Var2.T0(l10.longValue(), true);
-                    a3Var2.U3 = false;
-                    AndroidUtilities.runOnUIThread(runnable2, 400L);
-                    if (bool2.booleanValue()) {
-                        a3Var2.f1(false);
-                        break;
-                    }
-                } else {
-                    ((l7) a3Var2.Q1).g(false);
-                    a3Var2.setActive(true);
-                    a3Var2.U3 = false;
-                    a3Var2.i1 = new org.telegram.tgnet.f(3, runnable2);
-                    if (bool2.booleanValue()) {
-                        a3Var2.f1(false);
-                    }
-                    AndroidUtilities.runOnUIThread(runnable2, 400L);
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = this.b.d(this.d, false);
+        float e7 = this.c.e(this.d > 0.0f);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f7 = this.e;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(width - f7, height - f7, width + f7, height + f7);
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.25f, -1);
+        Paint paint = this.a;
+        paint.setColor(l1);
+        canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
+        if (e7 > 0.0f) {
+            paint.setColor(org.telegram.ui.ActionBar.j6.l1(e7, -1));
+            canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
         }
     }
 }

@@ -1,220 +1,45 @@
 package zh;
 
-import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.db0;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.wc;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class k3 implements ll0 {
-    public final /* synthetic */ u7 a;
-    public final /* synthetic */ z3 b;
+public final class k3 extends Drawable {
+    public final float a;
+    public final Paint b;
 
-    public k3(z3 z3Var, u7 u7Var) {
-        this.b = z3Var;
-        this.a = u7Var;
+    public k3(float f7, int i10) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = f7;
+        paint.setColor(i10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean d(int i10, View view) {
-        final TL_stories.StoryView storyView;
-        final MessagesController messagesController;
-        final TLRPC.User user;
-        boolean z10;
-        TLRPC.InputStickerSet c10;
-        z3 z3Var = this.b;
-        b bVar = z3Var.s;
-        int i11 = z3Var.v;
-        if (view instanceof org.telegram.ui.Cells.p6) {
-            final org.telegram.ui.Cells.p6 p6Var = (org.telegram.ui.Cells.p6) view;
-            u7 u7Var = this.a;
-            if (u7Var.v != null && (storyView = ((r3) z3Var.w.c.get(i10)).b) != null && (user = (messagesController = MessagesController.getInstance(i11)).getUser(Long.valueOf(storyView.user_id))) != null) {
-                boolean z11 = messagesController.blockePeers.indexOfKey(user.id) >= 0;
-                boolean z12 = user.contact || ContactsController.getInstance(i11).contactsDict.get(Long.valueOf(user.id)) != null;
-                boolean d = z3Var.d(storyView);
-                boolean L = messagesController.getStoriesController().L(storyView);
-                boolean isUserSelf = UserObject.isUserSelf(user);
-                String str = TextUtils.isEmpty(user.first_name) ? TextUtils.isEmpty(user.last_name) ? "" : user.last_name : user.first_name;
-                int indexOf = str.indexOf(" ");
-                if (indexOf > 2) {
-                    str = str.substring(0, indexOf);
-                }
-                if (isUserSelf) {
-                    return false;
-                }
-                w70 F = w70.F(u7Var.v, bVar, view);
-                F.i = 3;
-                F.j = true;
-                F.W(new ColorDrawable(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, bVar)));
-                F.s = 133;
-                boolean z13 = (!d || L || z11 || isUserSelf) ? false : true;
-                final int i12 = 0;
-                final String str2 = str;
-                F.l(R.drawable.msg_stories_myhide, LocaleController.formatString(R.string.StoryHideFrom, str), new Runnable(this) { // from class: zh.i3
-                    public final /* synthetic */ k3 b;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        Paint paint = this.b;
+        float f7 = this.a;
+        canvas.drawRoundRect(rectF, f7, f7, paint);
+        AndroidUtilities.drawStroke(canvas, rectF, f7);
+    }
 
-                    {
-                        this.b = this;
-                    }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
 
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i13 = i12;
-                        TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.p6 p6Var2 = p6Var;
-                        String str3 = str2;
-                        TLRPC.User user2 = user;
-                        MessagesController messagesController2 = messagesController;
-                        k3 k3Var = this.b;
-                        switch (i13) {
-                            case 0:
-                                messagesController2.getStoriesController().j0(user2.id, true, true);
-                                z3 z3Var2 = k3Var.b;
-                                com.google.android.gms.internal.vision.e2.o(R.string.StoryHidFromToast, new Object[]{str3}, new wc(z3Var2, z3Var2.s), R.raw.ic_ban, 36);
-                                p6Var2.a(z3Var2.d(storyView2) ? 1.0f : 0.5f, true);
-                                break;
-                            default:
-                                messagesController2.getStoriesController().j0(user2.id, false, true);
-                                z3 z3Var3 = k3Var.b;
-                                com.google.android.gms.internal.vision.e2.o(R.string.StoryShownBackToToast, new Object[]{str3}, new wc(z3Var3, z3Var3.s), R.raw.contact_check, 36);
-                                p6Var2.a(z3Var3.d(storyView2) ? 1.0f : 0.5f, true);
-                                break;
-                        }
-                    }
-                }, z13);
-                F.E();
-                F.t();
-                final int i13 = 1;
-                F.l(R.drawable.msg_menu_stories, LocaleController.formatString(R.string.StoryShowBackTo, str2), new Runnable(this) { // from class: zh.i3
-                    public final /* synthetic */ k3 b;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
 
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i132 = i13;
-                        TL_stories.StoryView storyView2 = storyView;
-                        org.telegram.ui.Cells.p6 p6Var2 = p6Var;
-                        String str3 = str2;
-                        TLRPC.User user2 = user;
-                        MessagesController messagesController2 = messagesController;
-                        k3 k3Var = this.b;
-                        switch (i132) {
-                            case 0:
-                                messagesController2.getStoriesController().j0(user2.id, true, true);
-                                z3 z3Var2 = k3Var.b;
-                                com.google.android.gms.internal.vision.e2.o(R.string.StoryHidFromToast, new Object[]{str3}, new wc(z3Var2, z3Var2.s), R.raw.ic_ban, 36);
-                                p6Var2.a(z3Var2.d(storyView2) ? 1.0f : 0.5f, true);
-                                break;
-                            default:
-                                messagesController2.getStoriesController().j0(user2.id, false, true);
-                                z3 z3Var3 = k3Var.b;
-                                com.google.android.gms.internal.vision.e2.o(R.string.StoryShownBackToToast, new Object[]{str3}, new wc(z3Var3, z3Var3.s), R.raw.contact_check, 36);
-                                p6Var2.a(z3Var3.d(storyView2) ? 1.0f : 0.5f, true);
-                                break;
-                        }
-                    }
-                }, (!L || z11 || isUserSelf) ? false : true);
-                F.E();
-                F.t();
-                final int i14 = 0;
-                F.m((z12 || z11 || isUserSelf) ? false : true, R.drawable.msg_user_remove, LocaleController.getString(R.string.BlockUser), true, new Runnable(this) { // from class: zh.j3
-                    public final /* synthetic */ k3 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i14) {
-                            case 0:
-                                messagesController.blockPeer(user.id);
-                                z3 z3Var2 = this.b.b;
-                                new wc(z3Var2, z3Var2.s).e(true).j();
-                                p6Var.a(z3Var2.d(storyView) ? 1.0f : 0.5f, true);
-                                break;
-                            default:
-                                MessagesController messagesController2 = messagesController;
-                                i5 storiesController = messagesController2.getStoriesController();
-                                TLRPC.User user2 = user;
-                                storiesController.j0(user2.id, false, true);
-                                messagesController2.unblockPeer(user2.id);
-                                z3 z3Var3 = this.b.b;
-                                new wc(z3Var3, z3Var3.s).e(false).j();
-                                p6Var.a(z3Var3.d(storyView) ? 1.0f : 0.5f, true);
-                                break;
-                        }
-                    }
-                });
-                final int i15 = 1;
-                F.l(R.drawable.msg_block, LocaleController.getString(R.string.Unblock), new Runnable(this) { // from class: zh.j3
-                    public final /* synthetic */ k3 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i15) {
-                            case 0:
-                                messagesController.blockPeer(user.id);
-                                z3 z3Var2 = this.b.b;
-                                new wc(z3Var2, z3Var2.s).e(true).j();
-                                p6Var.a(z3Var2.d(storyView) ? 1.0f : 0.5f, true);
-                                break;
-                            default:
-                                MessagesController messagesController2 = messagesController;
-                                i5 storiesController = messagesController2.getStoriesController();
-                                TLRPC.User user2 = user;
-                                storiesController.j0(user2.id, false, true);
-                                messagesController2.unblockPeer(user2.id);
-                                z3 z3Var3 = this.b.b;
-                                new wc(z3Var3, z3Var3.s).e(false).j();
-                                p6Var.a(z3Var3.d(storyView) ? 1.0f : 0.5f, true);
-                                break;
-                        }
-                    }
-                }, (z12 || !z11 || isUserSelf) ? false : true);
-                F.m(z12 && !isUserSelf, R.drawable.msg_user_remove, LocaleController.getString(R.string.StoryDeleteContact), true, new xh.x4(this, user, str2, p6Var, storyView, 7));
-                TLRPC.Reaction reaction = storyView.reaction;
-                if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji) || (c10 = org.telegram.ui.Components.p5.h(i11).c(((TLRPC.TL_reactionCustomEmoji) reaction).document_id)) == null) {
-                    z10 = false;
-                } else {
-                    F.k();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(c10);
-                    db0 db0Var = new db0(z3Var.v, z3Var.getContext(), bVar, arrayList, 3);
-                    db0Var.setOnClickListener(new wh.r(this, arrayList, F, 8));
-                    F.q(db0Var);
-                    z10 = true;
-                }
-                if (F.x() <= 0 && !z10) {
-                    return false;
-                }
-                F.Z();
-                try {
-                    z3Var.performHapticFeedback(0, 1);
-                } catch (Exception unused) {
-                }
-                return true;
-            }
-        }
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

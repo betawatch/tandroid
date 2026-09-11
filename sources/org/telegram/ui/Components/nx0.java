@@ -1,34 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ FrameLayout c;
+public final class nx0 extends s4.x {
+    public int e;
+    public final /* synthetic */ ux0 f;
 
-    public /* synthetic */ nx0(FrameLayout frameLayout, View view, int i10) {
-        this.a = i10;
-        this.c = frameLayout;
-        this.b = view;
+    public nx0(ux0 ux0Var) {
+        this.f = ux0Var;
+        this.d = 15;
+        this.e = -1;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ox0 ox0Var = (ox0) this.c;
-                ox0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ox0Var.invalidate();
-                ((sm0) this.b).invalidate();
-                break;
-            default:
-                ((v81) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        int i10 = c1Var.f;
+        if (i10 == 3 || i10 != c1Var2.f) {
+            return false;
         }
+        ux0 ux0Var = this.f;
+        if (ux0Var.S == null) {
+            return false;
+        }
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        ux0Var.S.documents.add(b11, ux0Var.S.documents.remove(b10));
+        ux0Var.d.p(b10, b11);
+        this.e = b11;
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        ux0 ux0Var = this.f;
+        if (i10 != 0 || ux0Var.f == null || this.e <= 0) {
+            if (i10 == 2) {
+                ux0Var.f = ((org.telegram.ui.Cells.f8) c1Var.a).getSticker();
+            }
+        } else {
+            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
+            tL_stickers_changeStickerPosition.position = this.e;
+            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(ux0Var.f, "").document;
+            this.e = -1;
+            ux0Var.f = null;
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
+    }
+
+    @Override // s4.v
+    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
     }
 }

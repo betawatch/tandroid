@@ -1,25 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ak extends g.p {
-    public final /* synthetic */ eo c;
+public final /* synthetic */ class ak implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
 
-    public ak(eo eoVar) {
-        this.c = eoVar;
+    public /* synthetic */ ak(co coVar, int i10) {
+        this.a = i10;
+        this.b = coVar;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages X8;
-        eo eoVar = this.c;
-        pm pmVar = eoVar.A0;
-        int i12 = pmVar.J;
-        return (i10 < i12 || i10 >= pmVar.K || (i11 = i10 - i12) < 0 || i11 >= pmVar.L().size() || (X8 = eoVar.X8((messageObject = (MessageObject) eoVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        co coVar = this.b;
+        switch (i10) {
+            case 0:
+                co.i2(coVar);
+                break;
+            case 1:
+                co.i2(coVar);
+                break;
+            case 2:
+                int i11 = co.Hc;
+                coVar.Ma();
+                break;
+            case 3:
+                int i12 = co.Hc;
+                coVar.Ma();
+                break;
+            case 4:
+                int i13 = co.Hc;
+                coVar.Ma();
+                break;
+            case 5:
+                int i14 = co.Hc;
+                coVar.Ma();
+                break;
+            case 6:
+                int i15 = co.Hc;
+                coVar.Ma();
+                break;
+            case 7:
+                int i16 = co.Hc;
+                coVar.Ma();
+                break;
+            case 8:
+                int i17 = co.Hc;
+                coVar.Ma();
+                break;
+            default:
+                int i18 = co.Hc;
+                coVar.Ma();
+                break;
+        }
     }
 }

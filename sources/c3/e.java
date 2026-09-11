@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e implements b0 {
     public final g a;
@@ -26,7 +26,7 @@ public final class e implements b0 {
 
     @Override // c3.b0
     public final a0 j(long j3) {
-        c0 c0Var = new c0(j3, f.a(this.a.b(j3), 0L, this.c, this.d, this.e, this.f));
+        c0 c0Var = new c0(j3, f.a(this.a.l(j3), 0L, this.c, this.d, this.e, this.f));
         return new a0(c0Var, c0Var);
     }
 

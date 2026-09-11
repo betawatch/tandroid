@@ -1,110 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class dt extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4.c1 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ViewPropertyAnimator f;
-    public final /* synthetic */ s4.f1 h;
-
-    public /* synthetic */ dt(s4.f1 f1Var, s4.c1 c1Var, int i10, View view, int i11, ViewPropertyAnimator viewPropertyAnimator, int i12) {
-        this.a = i12;
-        this.h = f1Var;
-        this.b = c1Var;
-        this.c = i10;
-        this.d = view;
-        this.e = i11;
-        this.f = viewPropertyAnimator;
+public final class dt extends org.telegram.ui.ActionBar.f3 {
+    public static /* synthetic */ void m(dt dtVar) {
+        dtVar.dismiss();
+        DownloadController.getInstance(dtVar.currentAccount).clearRecentDownloadedFiles();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i10 = this.c;
-                View view = this.d;
-                if (i10 != 0) {
-                    view.setTranslationX(0.0f);
-                }
-                if (this.e != 0) {
-                    view.setTranslationY(0.0f);
-                }
-                View view2 = this.b.a;
-                if (!(view2 instanceof org.telegram.ui.Cells.r2)) {
-                    if (view2 instanceof fg.l) {
-                        ((fg.l) view2).a = false;
+    public static void n(Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
+        if (n2Var == null || activity == null) {
+            return;
+        }
+        final dt dtVar = new dt(activity, false);
+        dtVar.setApplyBottomPadding(false);
+        dtVar.setApplyTopPadding(false);
+        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        dtVar.fixNavigationBar(dtVar.getThemedColor(i10));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        frameLayout.addView(linearLayout);
+        ImageView imageView = new ImageView(activity);
+        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(dtVar.getThemedColor(org.telegram.ui.ActionBar.j6.i6), 1, -1));
+        imageView.setColorFilter(dtVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ji));
+        imageView.setImageResource(R.drawable.ic_layer_close);
+        final int i11 = 0;
+        imageView.setOnClickListener(new View.OnClickListener(dtVar) { // from class: org.telegram.ui.Components.bt
+            public final /* synthetic */ dt b;
+
+            {
+                this.b = dtVar;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        this.b.dismiss();
                         break;
-                    }
-                } else {
-                    ((org.telegram.ui.Cells.r2) view2).setMoving(false);
-                    break;
+                    default:
+                        dt.m(this.b);
+                        break;
                 }
-                break;
-            default:
-                int i11 = this.c;
-                View view3 = this.d;
-                if (i11 != 0) {
-                    view3.setTranslationX(0.0f);
-                }
-                if (this.e != 0) {
-                    view3.setTranslationY(0.0f);
-                    break;
-                }
-                break;
-        }
-    }
+            }
+        });
+        int dp = AndroidUtilities.dp(8.0f);
+        imageView.setPadding(dp, dp, dp, dp);
+        frameLayout.addView(imageView, w7.x5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
+        yw0 yw0Var = new yw0(activity, dtVar.currentAccount);
+        yw0Var.setStickerNum(9);
+        yw0Var.getImageReceiver().setAutoRepeat(1);
+        linearLayout.addView(yw0Var, w7.x5.t(110, 110, 1, 0, 26, 0, 0));
+        TextView textView = new TextView(activity);
+        textView.setGravity(1);
+        int i12 = org.telegram.ui.ActionBar.j6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setText(LocaleController.getString(R.string.DownloadedFiles));
+        linearLayout.addView(textView, w7.x5.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
+        TextView textView2 = new TextView(activity);
+        textView2.setGravity(1);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
+        textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
+        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", R.string.DownloadedFilesMessage, new Object[0]));
+        linearLayout.addView(textView2, w7.x5.d(-1, -2.0f, 0, 28.0f, 7.0f, 28.0f, 0.0f));
+        TextView textView3 = new TextView(activity);
+        textView3.setGravity(17);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView3.setEllipsize(truncateAt);
+        textView3.setSingleLine(true);
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setText(LocaleController.getString(R.string.ManageDeviceStorage));
+        textView3.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        int dp2 = AndroidUtilities.dp(8.0f);
+        int i13 = org.telegram.ui.ActionBar.j6.Oh;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i13, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
+        textView3.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, w02, k10, k10));
+        linearLayout.addView(textView3, w7.x5.d(-1, 48.0f, 0, 14.0f, 28.0f, 14.0f, 6.0f));
+        TextView textView4 = new TextView(activity);
+        textView4.setGravity(17);
+        textView4.setEllipsize(truncateAt);
+        textView4.setSingleLine(true);
+        textView4.setTextSize(1, 14.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
+        textView4.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
+        int dp3 = AndroidUtilities.dp(8.0f);
+        int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i13, false), 120);
+        textView4.setBackground(org.telegram.ui.ActionBar.j6.i0(dp3, dp3, dp3, dp3, 0, k11, k11));
+        textView4.setLetterSpacing(0.025f);
+        linearLayout.addView(textView4, w7.x5.d(-1, 48.0f, 0, 14.0f, 0.0f, 14.0f, 6.0f));
+        NestedScrollView nestedScrollView = new NestedScrollView(activity);
+        nestedScrollView.addView(frameLayout);
+        dtVar.setCustomView(nestedScrollView);
+        textView3.setOnClickListener(new ct(0, dtVar, n2Var));
+        final int i14 = 1;
+        textView4.setOnClickListener(new View.OnClickListener(dtVar) { // from class: org.telegram.ui.Components.bt
+            public final /* synthetic */ dt b;
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.f.setListener(null);
-                gt gtVar = (gt) this.h;
-                s4.c1 c1Var = this.b;
-                gtVar.v(c1Var);
-                gtVar.w.remove(c1Var);
-                gtVar.A();
-                View view = c1Var.a;
-                if (view instanceof org.telegram.ui.Cells.r2) {
-                    ((org.telegram.ui.Cells.r2) view).setMoving(false);
-                } else if (view instanceof fg.l) {
-                    ((fg.l) view).a = false;
-                }
-                View view2 = this.d;
-                view2.setTranslationX(0.0f);
-                view2.setTranslationY(0.0f);
-                break;
-            default:
-                this.f.setListener(null);
-                s4.j jVar = (s4.j) this.h;
-                s4.c1 c1Var2 = this.b;
-                jVar.P(c1Var2);
-                jVar.v(c1Var2);
-                jVar.z.remove(c1Var2);
-                jVar.G();
-                jVar.z(c1Var2);
-                break;
-        }
-    }
+            {
+                this.b = dtVar;
+            }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((gt) this.h).getClass();
-                break;
-            default:
-                ((s4.j) this.h).getClass();
-                break;
-        }
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        this.b.dismiss();
+                        break;
+                    default:
+                        dt.m(this.b);
+                        break;
+                }
+            }
+        });
+        dtVar.show();
     }
 }

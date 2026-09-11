@@ -1,33 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ol0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g1 a;
-    public final /* synthetic */ PasscodeActivity b;
+public final /* synthetic */ class ol0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gs b;
 
-    public ol0(PasscodeActivity passcodeActivity, org.telegram.ui.ActionBar.g1 g1Var) {
-        this.b = passcodeActivity;
-        this.a = g1Var;
+    public /* synthetic */ ol0(gs gsVar, int i10) {
+        this.a = i10;
+        this.b = gsVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
-    public final void b(int i10) {
-        PasscodeActivity passcodeActivity = this.b;
-        if (i10 == -1) {
-            passcodeActivity.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            passcodeActivity.y = passcodeActivity.y != 0 ? 0 : 1;
-            AndroidUtilities.runOnUIThread(new ak0(3, this, this.a), 150L);
-            passcodeActivity.h.setText("");
-            for (hs hsVar : passcodeActivity.n.f) {
-                hsVar.setText("");
-            }
-            passcodeActivity.l0();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.l(1.0f);
+                break;
+            default:
+                this.b.l(1.0f);
+                break;
         }
     }
 }

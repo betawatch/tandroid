@@ -1,33 +1,41 @@
 package qh;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import android.graphics.RectF;
+import android.view.View;
+import r0.i0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class h extends ph.e {
-    public final TLRPC.Document b;
-    public final Object c;
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public h(TLRPC.Document document, Object obj) {
-        this.b = document;
-        this.c = obj;
-        MessageObject.isAnimatedEmoji(document);
-        ImageReceiver imageReceiver = this.a;
-        boolean z10 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(document);
-        MessageObject.isAnimatedStickerDocument(document, true);
-        imageReceiver.setImage(ImageLocation.getForDocument(document), "38_38", DocumentObject.getSvgThumb(document, j6.lc, 1.0f), document.size, z10 ? "webp" : null, obj, 0);
+    public /* synthetic */ h(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    @Override // ph.e
-    public final void c(Canvas canvas, int i10, int i11) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(0.0f, 0.0f, i10, i11);
-        imageReceiver.draw(canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        i iVar = this.b;
+        switch (i10) {
+            case 0:
+                if (iVar.v != 0) {
+                    iVar.h(false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = iVar.G - 1;
+                iVar.G = i11;
+                if (i11 == 0) {
+                    View view = iVar.E;
+                    RectF rectF = e.e;
+                    iVar.k(e.Z0(i0.f(view), view, view.getRootView()), false);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,23 +1,23 @@
 package d6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface h {
-    void A(f fVar, String str);
+    void d(f fVar, String str);
 
-    void B(f fVar, int i10);
+    void f(f fVar, int i10);
 
-    void b(f fVar, String str);
+    void g(f fVar, boolean z10);
 
-    void c(f fVar, int i10);
+    void j(f fVar, int i10);
 
-    void d(f fVar, boolean z10);
+    void n(f fVar);
 
-    void p(f fVar, int i10);
+    void q(f fVar, int i10);
 
-    void r(f fVar);
+    void t(f fVar);
+
+    void u(f fVar, String str);
 
     void v(f fVar, int i10);
-
-    void z(f fVar);
 }

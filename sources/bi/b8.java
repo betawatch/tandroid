@@ -1,136 +1,272 @@
 package bi;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c00;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.t71;
-import org.telegram.ui.Components.zz;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e8 b;
+public final class b8 extends l8 {
+    public boolean C;
+    public boolean D;
+    public final String E;
+    public int F;
+    public final ArrayList G;
+    public final ArrayList H;
+    public int I;
 
-    public /* synthetic */ b8(e8 e8Var, int i10) {
-        this.a = i10;
-        this.b = e8Var;
+    public b8(int i10, long j3, String str, o1 o1Var) {
+        super(i10, j3, 4, -1, o1Var);
+        this.G = new ArrayList();
+        this.H = new ArrayList();
+        this.I = 0;
+        this.E = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.r();
-                break;
-            case 1:
-                this.b.r();
-                break;
-            case 2:
-                this.b.m(0L);
-                break;
-            case 3:
-                e8 e8Var = this.b;
-                b8 b8Var = e8Var.K;
-                t71 t71Var = e8Var.e;
-                if (t71Var != null && e8Var.F != null) {
-                    long n10 = t71Var.n();
-                    if (e8Var.getDuration() > 1) {
-                        float duration = n10 / e8Var.getDuration();
-                        if (!e8Var.F.m1) {
-                            r9 r9Var = e8Var.d;
-                            if ((duration < r9Var.Z || duration > r9Var.a0) && System.currentTimeMillis() - e8Var.J > 500) {
-                                e8Var.J = System.currentTimeMillis();
-                                t71 t71Var2 = e8Var.e;
-                                long duration2 = (long) (e8Var.d.Z * e8Var.getDuration());
-                                t71Var2.L(duration2, false);
-                                e8Var.w(true);
-                                e8Var.y(true);
-                                n10 = duration2;
-                                e8Var.F.setProgress(e8Var.e.n());
-                            }
-                        }
-                        e8Var.w(n10 < e8Var.I);
-                        e8Var.y(n10 < e8Var.I);
-                        e8Var.F.setProgress(e8Var.e.n());
-                    } else {
-                        e8Var.F.setProgress(e8Var.e.n());
-                    }
-                    if (e8Var.e.y()) {
-                        AndroidUtilities.cancelRunOnUIThread(b8Var);
-                        AndroidUtilities.runOnUIThread(b8Var, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
-                    }
-                    e8Var.I = n10;
-                    break;
-                }
-                break;
-            case 4:
-                e8 e8Var2 = this.b;
-                b8 b8Var2 = e8Var2.L;
-                if (e8Var2.y != null && e8Var2.e == null && e8Var2.x == null && e8Var2.F != null && !e8Var2.j()) {
-                    long n11 = e8Var2.y.n();
-                    r9 r9Var2 = e8Var2.d;
-                    if (r9Var2 != null) {
-                        float f7 = n11;
-                        float f10 = r9Var2.E;
-                        float f11 = r9Var2.C;
-                        if ((f7 < f10 * f11 || f7 > r9Var2.F * f11) && System.currentTimeMillis() - e8Var2.J > 500) {
-                            e8Var2.J = System.currentTimeMillis();
-                            t71 t71Var3 = e8Var2.y;
-                            long j3 = (long) (e8Var2.d.E * r3.C);
-                            t71Var3.L(j3, false);
-                            n11 = j3;
-                        }
-                    }
-                    e8Var2.F.setProgress(n11);
-                    if (e8Var2.y.y()) {
-                        AndroidUtilities.cancelRunOnUIThread(b8Var2);
-                        AndroidUtilities.runOnUIThread(b8Var2, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                e8 e8Var3 = this.b;
-                b8 b8Var3 = e8Var3.M;
-                if (e8Var3.x != null && e8Var3.e == null && !e8Var3.j() && e8Var3.F != null) {
-                    long n12 = e8Var3.x.n();
-                    r9 r9Var3 = e8Var3.d;
-                    if (r9Var3 != null) {
-                        float f12 = n12;
-                        float f13 = r9Var3.s0;
-                        float f14 = r9Var3.q0;
-                        if ((f12 < f13 * f14 || f12 > r9Var3.t0 * f14) && System.currentTimeMillis() - e8Var3.J > 500) {
-                            e8Var3.J = System.currentTimeMillis();
-                            t71 t71Var4 = e8Var3.x;
-                            long j10 = (long) (e8Var3.d.s0 * r3.q0);
-                            t71Var4.L(j10, false);
-                            e8Var3.w(true);
-                            n12 = j10;
-                        }
-                    }
-                    e8Var3.F.setProgress(n12);
-                    if (e8Var3.x.y()) {
-                        AndroidUtilities.cancelRunOnUIThread(b8Var3);
-                        AndroidUtilities.runOnUIThread(b8Var3, (long) (1000.0f / AndroidUtilities.screenRefreshRate));
-                        break;
-                    }
-                }
-                break;
-            default:
-                e8 e8Var4 = this.b;
-                h71 h71Var = e8Var4.n;
-                if (h71Var != null) {
-                    c00 c00Var = h71Var.b;
-                    if (c00Var != null) {
-                        c00Var.postRunnable(new zz(c00Var, 0));
-                    }
-                    h71Var.a = null;
-                    e8Var4.removeView(e8Var4.n);
-                    e8Var4.n = null;
-                    break;
-                }
-                break;
+    @Override // bi.l8
+    public final void C(ArrayList arrayList, boolean z10) {
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        TL_bots.reorderPreviewMedias reorderpreviewmedias = new TL_bots.reorderPreviewMedias();
+        int i10 = this.c;
+        reorderpreviewmedias.bot = MessagesController.getInstance(i10).getInputUser(this.d);
+        reorderpreviewmedias.lang_code = this.E;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            Integer num = (Integer) obj;
+            MessageObject f7 = f(num.intValue());
+            if (f7 != null) {
+                reorderpreviewmedias.order.add(MessagesController.toInputMedia(f7.storyItem.media));
+                arrayList2.add(f7);
+                arrayList3.add(num);
+            }
         }
+        ConnectionsManager.getInstance(i10).sendRequest(reorderpreviewmedias, null);
+        ArrayList arrayList4 = this.H;
+        if (arrayList4.isEmpty()) {
+            arrayList4.add(new ArrayList());
+        }
+        ((ArrayList) arrayList4.get(0)).clear();
+        ((ArrayList) arrayList4.get(0)).addAll(arrayList3);
+        ArrayList arrayList5 = this.i;
+        arrayList5.clear();
+        arrayList5.addAll(arrayList2);
+    }
+
+    public final void F(ArrayList arrayList) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.i;
+            if (i10 >= arrayList2.size()) {
+                break;
+            }
+            MessageObject messageObject = (MessageObject) arrayList2.get(i10);
+            int i11 = 0;
+            while (true) {
+                if (i11 >= arrayList.size()) {
+                    break;
+                }
+                if (MessagesController.equals(messageObject.storyItem.media, (TLRPC.MessageMedia) arrayList.get(i11))) {
+                    arrayList2.remove(i10);
+                    ArrayList arrayList3 = this.H;
+                    if (!arrayList3.isEmpty() && messageObject.getId() < ((ArrayList) arrayList3.get(0)).size()) {
+                        ((ArrayList) arrayList3.get(0)).remove(messageObject.getId());
+                    }
+                    i10--;
+                } else {
+                    i11++;
+                }
+            }
+            i10++;
+        }
+        TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
+        int i12 = this.c;
+        deletepreviewmedia.bot = MessagesController.getInstance(i12).getInputUser(this.d);
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            deletepreviewmedia.media.add(MessagesController.toInputMedia((TLRPC.MessageMedia) arrayList.get(i13)));
+        }
+        ConnectionsManager.getInstance(i12).sendRequest(deletepreviewmedia, null);
+        g8 g8Var = this.q;
+        AndroidUtilities.cancelRunOnUIThread(g8Var);
+        AndroidUtilities.runOnUIThread(g8Var);
+    }
+
+    public final void G(TLRPC.InputMedia inputMedia, TL_bots.botPreviewMedia botpreviewmedia) {
+        ArrayList arrayList;
+        MessageObject messageObject;
+        int id2;
+        TL_stories.StoryItem storyItem;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.Document document;
+        int i10 = 0;
+        while (true) {
+            arrayList = this.i;
+            if (i10 >= arrayList.size()) {
+                messageObject = null;
+                i10 = 0;
+                break;
+            }
+            messageObject = (MessageObject) arrayList.get(i10);
+            if (inputMedia != null && (storyItem = messageObject.storyItem) != null && (messageMedia = storyItem.media) != null) {
+                if (!(inputMedia instanceof TLRPC.TL_inputMediaPhoto)) {
+                    if ((inputMedia instanceof TLRPC.TL_inputMediaDocument) && (document = messageMedia.document) != null && document.id == ((TLRPC.TL_inputMediaDocument) inputMedia).id.id) {
+                        break;
+                    }
+                } else {
+                    TLRPC.Photo photo = messageMedia.photo;
+                    if (photo != null && photo.id == ((TLRPC.TL_inputMediaPhoto) inputMedia).id.id) {
+                        break;
+                    }
+                }
+            }
+            i10++;
+        }
+        ArrayList arrayList2 = this.H;
+        if (messageObject != null) {
+            arrayList.remove(messageObject);
+            if (arrayList2.isEmpty()) {
+                arrayList2.add(new ArrayList());
+            }
+            if (i10 > 0 && i10 < ((ArrayList) arrayList2.get(0)).size()) {
+                ((ArrayList) arrayList2.get(0)).remove(i10);
+            }
+        }
+        MessageObject messageObject2 = new MessageObject(this.c, new a8(this, this.d, botpreviewmedia));
+        TL_stories.StoryItem storyItem2 = messageObject2.storyItem;
+        TLRPC.Message message = messageObject2.messageOwner;
+        if (messageObject == null) {
+            id2 = this.I;
+            this.I = id2 + 1;
+        } else {
+            id2 = messageObject.getId();
+        }
+        message.id = id2;
+        storyItem2.id = id2;
+        messageObject2.parentStoriesList = this;
+        messageObject2.generateThumbs(false);
+        if (arrayList2.isEmpty()) {
+            arrayList2.add(new ArrayList());
+        }
+        ((ArrayList) arrayList2.get(0)).add(i10, Integer.valueOf(messageObject2.getId()));
+        arrayList.add(i10, messageObject2);
+        g8 g8Var = this.q;
+        AndroidUtilities.cancelRunOnUIThread(g8Var);
+        AndroidUtilities.runOnUIThread(g8Var);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final boolean H(Runnable runnable) {
+        TL_bots.getPreviewMedias getpreviewmedias;
+        if (this.C || this.D) {
+            return false;
+        }
+        long j3 = this.d;
+        String str = this.E;
+        int i10 = this.c;
+        if (str != null) {
+            TL_bots.getPreviewInfo getpreviewinfo = new TL_bots.getPreviewInfo();
+            getpreviewinfo.bot = MessagesController.getInstance(i10).getInputUser(j3);
+            getpreviewinfo.lang_code = str;
+            getpreviewmedias = getpreviewinfo;
+        } else {
+            TL_bots.getPreviewMedias getpreviewmedias2 = new TL_bots.getPreviewMedias();
+            getpreviewmedias2.bot = MessagesController.getInstance(i10).getInputUser(j3);
+            getpreviewmedias = getpreviewmedias2;
+        }
+        this.C = true;
+        this.F = ConnectionsManager.getInstance(i10).sendRequest(getpreviewmedias, new m1(2, this, runnable));
+        return true;
+    }
+
+    public final void I(TL_bots.botPreviewMedia botpreviewmedia) {
+        MessageObject messageObject = new MessageObject(this.c, new a8(this, this.d, botpreviewmedia));
+        TL_stories.StoryItem storyItem = messageObject.storyItem;
+        TLRPC.Message message = messageObject.messageOwner;
+        int i10 = this.I;
+        this.I = i10 + 1;
+        message.id = i10;
+        storyItem.id = i10;
+        messageObject.parentStoriesList = this;
+        messageObject.generateThumbs(false);
+        ArrayList arrayList = this.H;
+        if (arrayList.isEmpty()) {
+            arrayList.add(new ArrayList());
+        }
+        ((ArrayList) arrayList.get(0)).add(0, Integer.valueOf(messageObject.getId()));
+        this.i.add(0, messageObject);
+        g8 g8Var = this.q;
+        AndroidUtilities.cancelRunOnUIThread(g8Var);
+        AndroidUtilities.runOnUIThread(g8Var);
+    }
+
+    @Override // bi.l8
+    public final MessageObject f(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.i;
+            if (i11 >= arrayList.size()) {
+                return null;
+            }
+            if (((MessageObject) arrayList.get(i11)).getId() == i10) {
+                return (MessageObject) arrayList.get(i11);
+            }
+            i11++;
+        }
+    }
+
+    @Override // bi.l8
+    public final int g() {
+        return this.i.size();
+    }
+
+    @Override // bi.l8
+    public final ArrayList h() {
+        return this.H;
+    }
+
+    @Override // bi.l8
+    public final int i() {
+        return this.i.size();
+    }
+
+    @Override // bi.l8
+    public final boolean k() {
+        return this.C;
+    }
+
+    @Override // bi.l8
+    public final boolean l() {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final boolean q(int i10, List list, boolean z10) {
+        return H(null);
+    }
+
+    @Override // bi.l8
+    public final boolean r(int i10) {
+        return false;
+    }
+
+    @Override // bi.l8
+    public final void j() {
+    }
+
+    @Override // bi.l8
+    public final void s() {
+    }
+
+    @Override // bi.l8
+    public final void x() {
     }
 }

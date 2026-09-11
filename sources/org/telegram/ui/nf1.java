@@ -1,26 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nf1 implements View.OnClickListener {
-    public final /* synthetic */ ig1 a;
+public final class nf1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ eg1 c;
 
-    public nf1(ig1 ig1Var) {
-        this.a = ig1Var;
+    public /* synthetic */ nf1(eg1 eg1Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = eg1Var;
+        this.b = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        ig1 ig1Var = this.a;
-        if (ig1Var.M == 1) {
-            org.telegram.ui.Components.d5.j0(ig1Var, -ig1Var.a, null, ig1Var.g(), null, false, ig1Var.J, new wa(this, 5), ig1Var.getResourceProvider());
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f7 = z10 ? 1.0f : 0.0f;
+                eg1 eg1Var = this.c;
+                eg1Var.S0(f7);
+                if (!z10) {
+                    Activity parentActivity = eg1Var.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.n2) eg1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
+                    eg1Var.r0.setVisibility(8);
+                    eg1Var.Q0(true);
+                    break;
+                } else {
+                    eg1Var.q0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.o0.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        ig1Var.getMessagesController().addUserToChat(ig1Var.a, ig1Var.getUserConfig().getCurrentUser(), 0, null, ig1Var, false, new gf1(ig1Var, 2), new hf1(ig1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        ig1Var.O0(false);
     }
 }

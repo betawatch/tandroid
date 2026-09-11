@@ -1,88 +1,138 @@
 package zh;
 
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.uw0;
-import org.telegram.ui.Components.x20;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public final class f3 {
-    public final ImageReceiver a;
-    public int b;
-    public StaticLayout c;
-    public final TextPaint d;
-    public f4 e;
-    public final /* synthetic */ g3 f;
+    public final Runnable a;
+    public e3 b;
+    public e3 c;
+    public e3 d;
+    public int e;
+    public float f;
+    public final ArrayList g;
+    public final e3 h;
+    public final e3 i;
+    public final float j;
+    public final int k;
+    public int l;
+    public final org.telegram.ui.Components.e6 m;
+    public int n = -1;
 
-    public f3(g3 g3Var) {
-        this.f = g3Var;
-        ImageReceiver imageReceiver = new ImageReceiver(g3Var);
-        this.a = imageReceiver;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        imageReceiver.setAllowLoadingOnAttachedOnly(true);
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+    public f3(Runnable runnable, ArrayList arrayList, e3 e3Var, e3 e3Var2, float f7, int i10) {
+        this.f = 0.0f;
+        this.a = runnable;
+        this.g = arrayList;
+        this.h = e3Var;
+        this.i = e3Var2;
+        this.j = f7;
+        this.k = i10;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(runnable, 300L, pr.h);
+        this.m = e6Var;
+        e6Var.a(true);
+        this.f = -0.5f;
+        this.e = 1;
+        this.l = i10;
+        this.b = e3Var;
+        this.c = d(false);
+        this.d = d(false);
     }
 
-    public final void a(int i10) {
-        g3 g3Var = this.f;
-        ArrayList arrayList = g3Var.E;
-        if (i10 < 0 || i10 >= arrayList.size()) {
-            return;
+    public final void a() {
+        e3 e3Var = this.h;
+        if (e3Var != null) {
+            e3Var.a();
         }
-        this.e = (f4) arrayList.get(i10);
-        boolean z10 = g3Var.v;
-        ImageReceiver imageReceiver = this.a;
+        e3 e3Var2 = this.i;
+        if (e3Var2 != null) {
+            e3Var2.a();
+        }
+    }
+
+    public final boolean b(float f7) {
+        return this.c == this.i && this.f + f7 >= ((float) this.e) + 0.5f;
+    }
+
+    public final boolean c() {
+        return this.c == this.i && this.f >= ((float) this.e) + 0.5f;
+    }
+
+    public final e3 d(boolean z10) {
+        ArrayList arrayList;
         if (z10) {
-            imageReceiver.onAttachedToWindow();
-        }
-        f4 f4Var = this.e;
-        TL_stories.StoryItem storyItem = f4Var.a;
-        if (storyItem != null) {
-            a6.x(imageReceiver, storyItem);
-        } else {
-            h5 h5Var = f4Var.b;
-            x20[] x20VarArr = a6.a;
-            if (h5Var.c.K) {
-                imageReceiver.setImage(ImageLocation.getForPath(h5Var.f), "320_180", null, null, null, 0L, null, null, 0);
-            } else {
-                imageReceiver.setImage(ImageLocation.getForPath(h5Var.e), "320_180", null, null, null, 0L, null, null, 0);
+            e3 e3Var = this.i;
+            if (e3Var.b()) {
+                int i10 = this.l;
+                if (i10 <= 0) {
+                    return e3Var;
+                }
+                this.l = i10 - 1;
             }
         }
-        b();
+        ArrayList arrayList2 = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            arrayList = this.g;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            if (i11 != this.n && ((e3) arrayList.get(i11)).b()) {
+                arrayList2.add(Integer.valueOf(i11));
+            }
+            i11++;
+        }
+        if (arrayList2.isEmpty()) {
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                if (((e3) arrayList.get(i12)).b()) {
+                    arrayList2.add(Integer.valueOf(i12));
+                }
+            }
+            if (arrayList2.isEmpty()) {
+                return this.h;
+            }
+        }
+        int intValue = ((Integer) AndroidUtilities.randomOf(arrayList2)).intValue();
+        this.n = intValue;
+        return (e3) arrayList.get(intValue);
     }
 
-    public final void b() {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        TL_stories.StoryItem storyItem = this.e.a;
-        g3 g3Var = this.f;
-        if (storyItem != null) {
-            g3.a(g3Var, spannableStringBuilder, storyItem.views, false);
+    public final void e() {
+        this.b = this.c;
+        this.c = this.i;
+        this.d = null;
+        int i10 = this.e + 1;
+        this.e = i10;
+        this.f = i10 + 0.5f;
+    }
+
+    public final float f(float f7, boolean z10) {
+        long j3;
+        e3 e3Var;
+        int i10 = this.l;
+        int i11 = this.k;
+        if (i10 >= i11) {
+            j3 = 450;
+        } else {
+            j3 = i11 == 3 ? 4500 : 2500;
         }
-        if (spannableStringBuilder.length() == 0) {
-            this.c = null;
-            return;
+        org.telegram.ui.Components.e6 e6Var = this.m;
+        e6Var.g = j3;
+        float lerp = (f7 * AndroidUtilities.lerp(i11 == 3 ? 0.75f : 2.0f, 7.5f, e6Var.e(i10 >= i11)) * this.j) + this.f;
+        this.f = lerp;
+        e3 e3Var2 = this.i;
+        if (lerp >= 0.0f) {
+            double d = lerp;
+            if (Math.floor(d) + 1.0d > this.e && (e3Var = this.c) != e3Var2) {
+                this.b = e3Var;
+                e3 e3Var3 = this.d;
+                this.c = e3Var3;
+                this.d = e3Var3 == e3Var2 ? null : d(z10);
+                this.e = ((int) Math.floor(d)) + 1;
+            }
         }
-        int i10 = (int) (g3Var.J + 1.0f);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        TextPaint textPaint = this.d;
-        StaticLayout c10 = uw0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
-        this.c = c10;
-        if (c10.getLineCount() > 1) {
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
-            g3.a(g3Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = uw0.c(spannableStringBuilder2, textPaint, (int) (g3Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
-        }
+        return this.c == e3Var2 ? Math.min(lerp, this.e + 0.5f) : lerp;
     }
 }

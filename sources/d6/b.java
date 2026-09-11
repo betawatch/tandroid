@@ -7,10 +7,10 @@ import c7.r0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
-import v7.y6;
+import v7.x6;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b extends o6.a {
     public static final Parcelable.Creator<b> CREATOR;
@@ -35,7 +35,7 @@ public final class b extends o6.a {
     public final boolean y;
 
     static {
-        new e6.f(e6.f.Y, e6.f.Z, 10000L, null, y6.a("smallIconDrawableResId"), y6.a("stopLiveStreamDrawableResId"), y6.a("pauseDrawableResId"), y6.a("playDrawableResId"), y6.a("skipNextDrawableResId"), y6.a("skipPrevDrawableResId"), y6.a("forwardDrawableResId"), y6.a("forward10DrawableResId"), y6.a("forward30DrawableResId"), y6.a("rewindDrawableResId"), y6.a("rewind10DrawableResId"), y6.a("rewind30DrawableResId"), y6.a("disconnectDrawableResId"), y6.a("notificationImageSizeDimenResId"), y6.a("castingToDeviceStringResId"), y6.a("stopLiveStreamStringResId"), y6.a("pauseStringResId"), y6.a("playStringResId"), y6.a("skipNextStringResId"), y6.a("skipPrevStringResId"), y6.a("forwardStringResId"), y6.a("forward10StringResId"), y6.a("forward30StringResId"), y6.a("rewindStringResId"), y6.a("rewind10StringResId"), y6.a("rewind30StringResId"), y6.a("disconnectStringResId"), null, false, false);
+        new e6.f(e6.f.Y, e6.f.Z, 10000L, null, x6.a("smallIconDrawableResId"), x6.a("stopLiveStreamDrawableResId"), x6.a("pauseDrawableResId"), x6.a("playDrawableResId"), x6.a("skipNextDrawableResId"), x6.a("skipPrevDrawableResId"), x6.a("forwardDrawableResId"), x6.a("forward10DrawableResId"), x6.a("forward30DrawableResId"), x6.a("rewindDrawableResId"), x6.a("rewind10DrawableResId"), x6.a("rewind30DrawableResId"), x6.a("disconnectDrawableResId"), x6.a("notificationImageSizeDimenResId"), x6.a("castingToDeviceStringResId"), x6.a("stopLiveStreamStringResId"), x6.a("pauseStringResId"), x6.a("playStringResId"), x6.a("skipNextStringResId"), x6.a("skipPrevStringResId"), x6.a("forwardStringResId"), x6.a("forward10StringResId"), x6.a("forward30StringResId"), x6.a("rewindStringResId"), x6.a("rewind10StringResId"), x6.a("rewind30StringResId"), x6.a("disconnectStringResId"), null, false, false);
         I = new e6.a("com.google.android.gms.cast.framework.media.MediaIntentReceiver", null, null, null, false, false);
         CREATOR = new r0(28);
     }

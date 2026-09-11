@@ -10,7 +10,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class WebRtcAudioManager {
     private static final int BITS_PER_SAMPLE = 16;
@@ -41,14 +41,14 @@ public class WebRtcAudioManager {
     private int sampleRate;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class VolumeLogger {
         private static final String THREAD_NAME = "WebRtcVolumeLevelLoggerThread";
         private static final int TIMER_PERIOD_IN_SECONDS = 30;
         private final AudioManager audioManager;
         private Timer timer;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public class LogVolumeTask extends TimerTask {
             private final int maxRingVolume;
             private final int maxVoiceCallVolume;

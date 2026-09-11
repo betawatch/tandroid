@@ -7,11 +7,12 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import i2.g;
 import m.y2;
 import m.z2;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -123,7 +124,7 @@ public abstract class b extends BaseAdapter implements Filterable {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
         if (!this.c.moveToPosition(i10)) {
-            throw new IllegalStateException(hc.b.j(i10, "couldn't move cursor to position "));
+            throw new IllegalStateException(g.i(i10, "couldn't move cursor to position "));
         }
         if (view == null) {
             z2 z2Var = (z2) this;

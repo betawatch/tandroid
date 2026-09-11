@@ -2,76 +2,52 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class o21 extends View {
-    public final p21 a;
-    public Utilities.Callback b;
-    public final org.telegram.ui.ActionBar.f6 c;
-    public int d;
+public final class o21 extends Drawable {
+    public final Drawable a;
+    public final Paint b = new Paint(1);
+    public final RectF c = new RectF();
 
-    public o21(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.c = f6Var;
-        p21 p21Var = new p21(i10, this, f6Var, false);
-        this.a = p21Var;
-        p21Var.r = new uq0(this, 18);
+    public o21(Context context) {
+        this.a = context.getResources().getDrawable(R.drawable.menu_topic_add).mutate();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.f6 f6Var = this.c;
-        if (f6Var != null) {
-            f6Var.l(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            org.telegram.ui.ActionBar.j6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawRoundRect(this.c, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.b);
+        this.a.draw(canvas);
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.c.set(rect);
+        int centerX = rect.centerX() - AndroidUtilities.dp(12.0f);
+        int centerY = rect.centerY() - AndroidUtilities.dp(12.0f);
+        this.a.setBounds(centerX, centerY, AndroidUtilities.dp(24.0f) + centerX, AndroidUtilities.dp(24.0f) + centerY);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.b.setAlpha(i10);
+        this.a.setAlpha(i10);
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(MessageObject messageObject) {
-        p21 p21Var = this.a;
-        p21Var.f(messageObject);
-        if (isAttachedToWindow()) {
-            p21Var.a();
-        }
-    }
-
-    public void setBackgroundHeight(int i10) {
-        this.d = i10;
-    }
-
-    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
-        this.b = callback;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

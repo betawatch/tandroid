@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import m.j1;
-import m.n3;
+import m.l3;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 import w7.v6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class u extends androidx.activity.n {
     public s d;
@@ -134,7 +134,7 @@ public abstract class u extends androidx.activity.n {
     public final void onStop() {
         bc.d dVar;
         super.onStop();
-        c0 q6 = ((s) c()).q();
+        b0 q6 = ((s) c()).q();
         if (q6 == null || (dVar = q6.s) == null) {
             return;
         }
@@ -161,8 +161,8 @@ public abstract class u extends androidx.activity.n {
             j1Var.setWindowTitle(charSequence);
             return;
         }
-        c0 c0Var = sVar.n;
-        if (c0Var == null) {
+        b0 b0Var = sVar.n;
+        if (b0Var == null) {
             TextView textView = sVar.K;
             if (textView != null) {
                 textView.setText(charSequence);
@@ -170,15 +170,15 @@ public abstract class u extends androidx.activity.n {
             }
             return;
         }
-        n3 n3Var = (n3) c0Var.e;
-        if (n3Var.g) {
+        l3 l3Var = (l3) b0Var.e;
+        if (l3Var.g) {
             return;
         }
-        Toolbar toolbar = n3Var.a;
-        n3Var.h = charSequence;
-        if ((n3Var.b & 8) != 0) {
+        Toolbar toolbar = l3Var.a;
+        l3Var.h = charSequence;
+        if ((l3Var.b & 8) != 0) {
             toolbar.setTitle(charSequence);
-            if (n3Var.g) {
+            if (l3Var.g) {
                 i0.l(toolbar.getRootView(), charSequence);
             }
         }
@@ -216,17 +216,17 @@ public abstract class u extends androidx.activity.n {
             j1Var.setWindowTitle(string);
             return;
         }
-        c0 c0Var = sVar.n;
-        if (c0Var != null) {
-            n3 n3Var = (n3) c0Var.e;
-            if (n3Var.g) {
+        b0 b0Var = sVar.n;
+        if (b0Var != null) {
+            l3 l3Var = (l3) b0Var.e;
+            if (l3Var.g) {
                 return;
             }
-            Toolbar toolbar = n3Var.a;
-            n3Var.h = string;
-            if ((n3Var.b & 8) != 0) {
+            Toolbar toolbar = l3Var.a;
+            l3Var.h = string;
+            if ((l3Var.b & 8) != 0) {
                 toolbar.setTitle(string);
-                if (n3Var.g) {
+                if (l3Var.g) {
                     i0.l(toolbar.getRootView(), string);
                     return;
                 }

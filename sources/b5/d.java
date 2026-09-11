@@ -20,7 +20,7 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.internal.clearcut.g2;
+import com.google.android.gms.internal.clearcut.f2;
 import e0.p0;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.z0;
@@ -33,14 +33,14 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
     public static AtomicInteger b;
     public static boolean c;
     public static int d;
-    public static g2 e;
+    public static f2 e;
 
     public static void A(float f7) {
         BasePendingResult basePendingResult;
@@ -122,10 +122,10 @@ public abstract class d {
     public static void d(boolean z10) {
         Context f7;
         AudioManager audioManager;
-        g2 g2Var = e;
-        if ((g2Var != null) != z10) {
+        f2 f2Var = e;
+        if ((f2Var != null) != z10) {
             if (!z10) {
-                if (g2Var == null || (f7 = f()) == null) {
+                if (f2Var == null || (f7 = f()) == null) {
                     return;
                 }
                 f7.getContentResolver().unregisterContentObserver(e);
@@ -145,9 +145,9 @@ public abstract class d {
             d = audioManager.getStreamVolume(3);
             ContentResolver contentResolver = f10.getContentResolver();
             Uri uri = Settings.System.CONTENT_URI;
-            g2 g2Var2 = new g2(new Handler(), 1);
-            e = g2Var2;
-            contentResolver.registerContentObserver(uri, true, g2Var2);
+            f2 f2Var2 = new f2(new Handler(), 1);
+            e = f2Var2;
+            contentResolver.registerContentObserver(uri, true, f2Var2);
             A(g());
             audioManager.adjustStreamVolume(3, 0, 1);
         }

@@ -1,32 +1,10 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e31 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-
-    public /* synthetic */ c31(e31 e31Var, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = e31Var;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b(this.c, this.d);
-                break;
-            case 1:
-                this.b.b(this.c, this.d);
-                break;
-            default:
-                this.b.b(this.c, this.d);
-                break;
-        }
+public final class c31 extends s4.d0 {
+    @Override // s4.d0
+    public final int n(int i10) {
+        return super.n(i10) * 6;
     }
 }

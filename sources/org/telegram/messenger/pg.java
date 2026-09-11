@@ -1,29 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class pg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+import java.util.Comparator;
+import org.telegram.messenger.support.LongSparseIntArray;
 
-    public /* synthetic */ pg(MessagesStorage messagesStorage, int i10, boolean z10, long j3) {
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class pg implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LongSparseIntArray b;
+
+    public /* synthetic */ pg(LongSparseIntArray longSparseIntArray, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j3;
-        this.d = z10;
+        this.b = longSparseIntArray;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$checkLoadedRemoteFilters$68;
+        int lambda$resetDialogs$94;
+        Long l4 = (Long) obj;
+        Long l10 = (Long) obj2;
         switch (this.a) {
             case 0:
-                this.b.lambda$setDialogUnread$248(this.c, this.d);
-                break;
+                lambda$checkLoadedRemoteFilters$68 = MessagesStorage.lambda$checkLoadedRemoteFilters$68(this.b, l4, l10);
+                return lambda$checkLoadedRemoteFilters$68;
             default:
-                this.b.lambda$setDialogViewThreadAsMessages$249(this.c, this.d);
-                break;
+                lambda$resetDialogs$94 = MessagesStorage.lambda$resetDialogs$94(this.b, l4, l10);
+                return lambda$resetDialogs$94;
         }
     }
 }

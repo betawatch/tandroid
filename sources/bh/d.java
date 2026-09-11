@@ -1,560 +1,149 @@
 package bh;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Outline;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.RecordingCanvas;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
-import android.os.Build;
-import g.z;
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import v7.j7;
-import w7.q;
-import xf.f0;
+import android.support.v4.media.session.y;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class d extends Drawable {
-    public static final float[] C = new float[8];
-    public static Path D = new Path();
-    public NinePatchDrawable A;
-    public long B;
-    public float a;
-    public float b;
-    public ch.a c;
-    public int d;
+public final class d {
+    public final RenderNode a = y.c();
+    public final RenderNode[] b;
+    public final RenderNode[] c;
+    public final boolean d;
     public int e;
     public int f;
-    public int g;
-    public final c h;
-    public b i;
-    public int j;
-    public boolean k;
-    public float l;
-    public float m;
-    public float n;
-    public final Paint o;
-    public final Paint p;
-    public final Paint q;
-    public final Paint r;
-    public final Paint s;
-    public final Matrix t;
-    public final WeakReference u;
-    public BitmapShader v;
-    public final RectF w;
-    public final RectF x;
-    public final z y;
-    public final Rect z;
+    public float g;
+    public float h;
+    public long i;
+    public final /* synthetic */ f j;
 
-    public d() {
-        c cVar = new c();
-        this.h = cVar;
-        this.j = 255;
-        this.n = 1.0f;
-        this.o = new Paint(1);
-        this.p = new Paint(1);
-        Paint paint = new Paint(1);
-        this.q = paint;
-        this.r = new Paint(1);
-        Paint paint2 = new Paint(1);
-        this.s = paint2;
-        this.t = new Matrix();
-        this.u = new WeakReference(null);
-        paint2.setColor(0);
-        paint.setFilterBitmap(true);
-        this.w = new RectF();
-        this.x = new RectF();
-        this.y = new z();
-        this.z = new Rect();
-        cVar.i = AndroidUtilities.dpf2(1.0f);
-        cVar.j = AndroidUtilities.dpf2(0.6666667f);
-        this.l = AndroidUtilities.dpf2(1.0f);
-        this.m = AndroidUtilities.dpf2(0.33333334f);
+    public d(f fVar, String str, int i10, boolean z10) {
+        this.j = fVar;
+        int i11 = i10 + 1;
+        this.b = new RenderNode[i11];
+        for (int i12 = 0; i12 < i11; i12++) {
+            RenderNode[] renderNodeArr = this.b;
+            y.j();
+            renderNodeArr[i12] = y.d(str + "_down_" + i10);
+        }
+        if (i10 > 0 || z10) {
+            this.c = new RenderNode[i11];
+            for (int i13 = 0; i13 < i11; i13++) {
+                this.c[i13] = y.c();
+            }
+        } else {
+            this.c = this.b;
+        }
+        this.d = this.c == this.b;
+        this.f = 1;
+        this.e = 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x003a, code lost:
-    
-        if (r4 == r20[7]) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0022, code lost:
-    
-        if (r4 == r20[3]) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0024, code lost:
-    
-        r4 = true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void e(Canvas canvas, float f7, float f10, float[] fArr, float f11, boolean z10, Paint paint) {
-        boolean z11;
-        float f12;
-        if (z10) {
-            float f13 = fArr[0];
-            float f14 = fArr[1];
-            if (f13 == f14) {
-                float f15 = fArr[2];
-                if (f14 == f15) {
-                }
+    public final void a(RenderNode renderNode) {
+        boolean z10;
+        int width = renderNode.getWidth();
+        int height = renderNode.getHeight();
+        float f7 = width;
+        f fVar = this.j;
+        int round = Math.round((fVar.d * f7) / this.e);
+        float f10 = height;
+        int round2 = Math.round((fVar.d * f10) / this.f);
+        float f11 = round;
+        float f12 = f11 / f7;
+        float f13 = round2;
+        float f14 = f13 / f10;
+        int i10 = fVar.d;
+        float f15 = (f7 * i10) / f11;
+        float f16 = (f10 * i10) / f13;
+        long calcHash = MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(0L, renderNode.getUniqueId()), round), round2), width), height);
+        boolean z11 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
+        int i11 = 0;
+        while (true) {
+            int length = this.b.length;
+            z10 = this.d;
+            if (i11 >= length) {
+                break;
             }
-            z11 = false;
-        } else {
-            float f16 = fArr[4];
-            float f17 = fArr[5];
-            if (f16 == f17) {
-                float f18 = fArr[6];
-                if (f17 == f18) {
-                }
+            z11 |= !r15[i11].hasDisplayList();
+            if (!z10) {
+                z11 |= !this.c[i11].hasDisplayList();
             }
-            z11 = false;
+            i11++;
         }
-        float f19 = f11 / 2.0f;
-        if (z10) {
-            if (z11) {
-                canvas.save();
-                if (canvas.clipRect(0.0f, 0.0f, f7, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
-                    float f20 = fArr[0];
-                    canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, f20, f20, paint);
-                }
-                canvas.restore();
+        if (this.i == calcHash && !z11) {
+            return;
+        }
+        this.i = calcHash;
+        int i12 = 0;
+        this.a.setPosition(0, 0, width, height);
+        this.a.beginRecording(width, height).drawRenderNode(renderNode);
+        this.a.endRecording();
+        this.b[0].setPosition(0, 0, round, round2);
+        RecordingCanvas beginRecording = this.b[0].beginRecording(round, round2);
+        beginRecording.scale(f12, f14);
+        beginRecording.drawRenderNode(this.a);
+        this.b[0].endRecording();
+        int i13 = 0;
+        while (true) {
+            RenderNode[] renderNodeArr = this.b;
+            if (i13 >= renderNodeArr.length) {
                 return;
             }
-            float f21 = (0.0f + f7) / 2.0f;
-            canvas.save();
-            if (canvas.clipRect(0.0f, 0.0f, f21, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
-                f12 = 0.0f;
-                canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, fArr[0], fArr[1], paint);
+            renderNodeArr[i13].setPosition(i12, i12, round, round2);
+            RecordingCanvas beginRecording2 = this.b[i13].beginRecording(round, round2);
+            if (i13 > 0) {
+                beginRecording2.drawRenderNode(this.b[i12]);
             } else {
-                f12 = 0.0f;
+                beginRecording2.scale(f12, f14);
+                beginRecording2.drawRenderNode(this.a);
             }
-            canvas.restore();
-            canvas.save();
-            if (canvas.clipRect(f21, f12, f7, q.a((fArr[0] * 2.0f) + f12, f12, f10))) {
-                canvas.drawRoundRect(f12 - f19, f12 + f19, f7 + f19, f10 + f19, fArr[2], fArr[3], paint);
+            this.b[i13].endRecording();
+            if (z10) {
+                this.b[i13].setScaleX(f15);
+                this.b[i13].setScaleY(f16);
+                this.b[i13].setPivotX(0.0f);
+                this.b[i13].setPivotY(0.0f);
+            } else {
+                this.c[i13].setPosition(0, 0, width, height);
+                RecordingCanvas beginRecording3 = this.c[i13].beginRecording(width, height);
+                beginRecording3.scale(f15, f16);
+                beginRecording3.drawRenderNode(this.b[i13]);
+                this.c[i13].endRecording();
             }
-            canvas.restore();
-            return;
+            i13++;
+            i12 = 0;
         }
-        if (z11) {
-            canvas.save();
-            if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
-                float f22 = 0.0f - f19;
-                float f23 = fArr[4];
-                canvas.drawRoundRect(f22, f22, f7 + f19, f10 - f19, f23, f23, paint);
-            }
-            canvas.restore();
-            return;
-        }
-        float f24 = (0.0f + f7) / 2.0f;
-        canvas.save();
-        if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f24, f10)) {
-            float f25 = 0.0f - f19;
-            canvas.drawRoundRect(f25, f25, f7 + f19, f10 - f19, fArr[6], fArr[7], paint);
-        }
-        canvas.restore();
-        canvas.save();
-        if (canvas.clipRect(f24, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
-            float f26 = 0.0f - f19;
-            canvas.drawRoundRect(f26, f26, f7 + f19, f10 - f19, fArr[4], fArr[5], paint);
-        }
-        canvas.restore();
     }
 
-    public static void f(Canvas canvas, RectF rectF, float f7, float f10, boolean z10, Paint paint) {
-        float f11 = rectF.left;
-        float f12 = rectF.top;
-        float f13 = rectF.right;
-        float f14 = rectF.bottom;
-        float f15 = f10 / 2.0f;
-        canvas.save();
-        if (z10) {
-            float f16 = f11 - f15;
-            float f17 = f13 + f15;
-            if (canvas.clipRect(f16, f12, f17, q.a((2.0f * f7) + f12, f12, f14))) {
-                canvas.drawRoundRect(f16, f12 + f15, f17, f14 + f15, f7, f7, paint);
-            }
-        } else {
-            float f18 = f11 - f15;
-            float f19 = f13 + f15;
-            if (canvas.clipRect(f18, q.a(f14 - (2.0f * f7), f12, f14), f19, f14)) {
-                canvas.drawRoundRect(f18, f12 - f15, f19, f14 - f15, f7, f7, paint);
+    public final void b(float f7, float f10) {
+        int i10 = this.e;
+        float f11 = i10 >= 2 ? (this.g + f7) % i10 : 0.0f;
+        this.g = f11;
+        int i11 = this.f;
+        this.h = i11 >= 2 ? (this.h + f10) % i11 : 0.0f;
+        if (this.j.b) {
+            this.a.setTranslationX(f11);
+            this.a.setTranslationY(this.h);
+            for (RenderNode renderNode : this.c) {
+                renderNode.setTranslationX(-this.g);
+                renderNode.setTranslationY(-this.h);
             }
         }
-        canvas.restore();
     }
 
-    public static void h(Outline outline, Rect rect, float[] fArr) {
-        if (f0.c(fArr)) {
-            outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
-            return;
-        }
-        Path path = D;
-        if (path == null) {
-            D = new Path();
-        } else {
-            path.rewind();
-        }
-        D.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, fArr, Path.Direction.CW);
-        outline.setConvexPath(D);
+    public final void c(float f7) {
+        this.b[0].setRenderEffect(RenderEffect.createBlurEffect(f.a(f7, this.e), f.a(f7, this.f), Shader.TileMode.CLAMP));
     }
 
-    public final NinePatchDrawable a(int i10, boolean z10) {
-        z zVar = this.y;
-        zVar.a = 0L;
-        zVar.b = false;
-        zVar.a(i10);
-        zVar.a(this.d);
-        c cVar = this.h;
-        for (float f7 : cVar.b) {
-            zVar.c(f7);
-        }
-        zVar.c(this.l);
-        zVar.c(0.0f);
-        zVar.c(this.m);
-        zVar.b(z10);
-        if (z10) {
-            zVar.a(this.f);
-            zVar.a(this.g);
-            zVar.c(cVar.i);
-            zVar.c(cVar.j);
-        }
-        long j3 = zVar.b ? -1L : zVar.a;
-        if (this.A == null || this.B != j3) {
-            this.B = j3;
-            NinePatchDrawable b10 = j7.b(null, cVar.b, this.l, this.m, Color.alpha(i10) == 255 ? i10 : 1, new a(i10, this, z10));
-            this.A = b10;
-            b10.getPadding(this.z);
-        }
-        return this.A;
+    public final void d(float f7, RenderEffect renderEffect) {
+        this.b[0].setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f.a(f7, this.e), f.a(f7, this.f), Shader.TileMode.CLAMP), renderEffect));
     }
 
-    public final void b() {
-        Rect rect = this.h.m;
-        RectF rectF = this.w;
-        rectF.set(rect);
-        rectF.offset(this.a, this.b);
-        RectF rectF2 = this.x;
-        if (rectF.equals(rectF2)) {
-            return;
-        }
-        rectF2.set(rectF);
-        l();
-    }
-
-    public final void c(Canvas canvas, eh.a aVar) {
-        int i10;
-        c cVar = this.h;
-        Rect rect = cVar.m;
-        Rect rect2 = cVar.m;
-        if (rect.isEmpty()) {
-            return;
-        }
-        if (Color.alpha(this.e) == 255) {
-            d(canvas, 0);
-            return;
-        }
-        if (aVar instanceof eh.c) {
-            d(canvas, ((eh.c) aVar).a.getColor());
-            return;
-        }
-        if (aVar instanceof eh.b) {
-            eh.b bVar = (eh.b) aVar;
-            Bitmap bitmap = bVar.d;
-            Bitmap bitmap2 = (Bitmap) this.u.get();
-            Paint paint = this.q;
-            if (bitmap != bitmap2) {
-                if (bitmap == null || bitmap.isRecycled()) {
-                    this.v = null;
-                    paint.setShader(null);
-                } else {
-                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                    BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                    this.v = bitmapShader;
-                    paint.setShader(bitmapShader);
-                }
-            }
-            if (Color.alpha(this.d) > 0) {
-                NinePatchDrawable a2 = a(0, false);
-                int i11 = rect2.left;
-                Rect rect3 = this.z;
-                a2.setBounds(i11 - rect3.left, rect2.top - rect3.top, rect2.right + rect3.right, rect2.bottom + rect3.bottom);
-                a2.setAlpha(this.j);
-                a2.draw(canvas);
-            }
-            if (this.v != null && bitmap != null && !bitmap.isRecycled() && this.j > 0) {
-                Matrix matrix = bVar.b;
-                Matrix matrix2 = this.t;
-                matrix2.set(matrix);
-                matrix2.postTranslate(-this.a, -this.b);
-                this.v.setLocalMatrix(matrix2);
-                paint.setAlpha(this.j);
-                cVar.b(canvas, paint);
-            }
-            int l1 = j6.l1(this.j / 255.0f, this.e);
-            if (Color.alpha(l1) > 0) {
-                Paint paint2 = this.r;
-                paint2.setColor(l1);
-                cVar.b(canvas, paint2);
-            }
-            g(canvas);
-            return;
-        }
-        if (Build.VERSION.SDK_INT >= 29 && (aVar instanceof eh.d)) {
-            eh.d dVar = (eh.d) aVar;
-            if (canvas.isHardwareAccelerated()) {
-                return;
-            }
-            c(canvas, dVar.a);
-            return;
-        }
-        if (aVar instanceof eh.e) {
-            c(canvas, ((eh.e) aVar).a);
-            return;
-        }
-        if (aVar == null || (i10 = this.j) == 0) {
-            return;
-        }
-        int l12 = j6.l1(i10 / 255.0f, this.e);
-        if (Color.alpha(this.d) > 0 && this.j == 255) {
-            float f7 = this.n;
-            if (f7 > 0.0f) {
-                float f10 = this.l;
-                float f11 = this.m;
-                int l13 = j6.l1(f7, this.d);
-                Paint paint3 = this.s;
-                paint3.setShadowLayer(f10, 0.0f, f11, l13);
-                cVar.c(canvas, paint3, this.k);
-            }
-        }
-        float f12 = this.a;
-        float f13 = this.b;
-        float f14 = rect2.left;
-        float f15 = f14 + f12;
-        float f16 = rect2.top;
-        float f17 = f16 + f13;
-        float f18 = rect2.right;
-        float f19 = f18 + f12;
-        float f20 = rect2.bottom;
-        float f21 = f20 + f13;
-        int i12 = this.j;
-        boolean z10 = i12 != 255;
-        if (z10) {
-            canvas.saveLayerAlpha(f14, f16, f18, f20, i12);
-        }
-        canvas.save();
-        canvas.clipPath(cVar.k);
-        canvas.translate(rect2.left, rect2.top);
-        canvas.translate(-f15, -f17);
-        aVar.u(canvas, f15, f17, f19, f21);
-        canvas.restore();
-        if (Color.alpha(l12) > 0) {
-            Paint paint4 = this.o;
-            paint4.setColor(l12);
-            cVar.b(canvas, paint4);
-        }
-        g(canvas);
-        if (z10) {
-            canvas.restore();
-        }
-    }
-
-    public final void d(Canvas canvas, int i10) {
-        int h = i0.a.h(this.e, i10);
-        if (Color.alpha(h) == 0 && Color.alpha(this.d) == 0) {
-            return;
-        }
-        NinePatchDrawable a2 = a(h, true);
-        Rect rect = this.h.m;
-        int i11 = rect.left;
-        Rect rect2 = this.z;
-        a2.setBounds(i11 - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
-        a2.setAlpha(this.j);
-        a2.draw(canvas);
-    }
-
-    public final void g(Canvas canvas) {
-        int l1 = j6.l1(this.j / 255.0f, this.f);
-        int l12 = j6.l1(this.j / 255.0f, this.g);
-        int alpha = Color.alpha(l1);
-        c cVar = this.h;
-        Paint paint = this.p;
-        if (alpha > 0) {
-            paint.setColor(l1);
-            canvas.drawPath(cVar.n, paint);
-        }
-        if (Color.alpha(l12) > 0) {
-            paint.setColor(l12);
-            canvas.drawPath(cVar.o, paint);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.j;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void getOutline(Outline outline) {
-        c cVar = this.h;
-        h(outline, cVar.m, cVar.b);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean getPadding(Rect rect) {
-        c cVar = this.h;
-        int i10 = cVar.d;
-        rect.set(i10, i10, i10, i10);
-        return cVar.e;
-    }
-
-    public abstract eh.a i();
-
-    public void j() {
-        b();
-    }
-
-    public void k() {
-        b();
-    }
-
-    public final void n(ch.a aVar) {
-        this.c = aVar;
-        u();
-        if (aVar instanceof ch.e) {
-            ch.e eVar = (ch.e) aVar;
-            float f7 = eVar.f;
-            float f10 = eVar.h;
-            c cVar = this.h;
-            cVar.i = f7;
-            cVar.j = f10;
-            float f11 = eVar.n;
-            float f12 = eVar.r;
-            this.l = f11;
-            this.m = f12;
-        }
-    }
-
-    public final void o(int i10) {
-        c cVar = this.h;
-        if (cVar.d != i10) {
-            cVar.d = i10;
-            cVar.a();
-            j();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        c cVar = this.h;
-        cVar.a.set(rect);
-        cVar.a();
-        j();
-    }
-
-    public final void p(float f7) {
-        c cVar = this.h;
-        Arrays.fill(cVar.b, f7);
-        Arrays.fill(cVar.c, f7);
-        cVar.a();
-        j();
-    }
-
-    public final void q(float f7, float f10, float f11, float f12) {
-        c cVar = this.h;
-        float[] fArr = cVar.b;
-        fArr[1] = f7;
-        fArr[0] = f7;
-        fArr[3] = f10;
-        fArr[2] = f10;
-        fArr[5] = f11;
-        fArr[4] = f11;
-        fArr[7] = f12;
-        fArr[6] = f12;
-        cVar.a();
-        j();
-    }
-
-    public final void r(float f7, float f10, float f11, float f12) {
-        c cVar = this.h;
-        float[] fArr = cVar.b;
-        fArr[1] = f7;
-        fArr[0] = f7;
-        fArr[3] = f10;
-        fArr[2] = f10;
-        fArr[5] = 0.0f;
-        fArr[4] = 0.0f;
-        fArr[7] = 0.0f;
-        fArr[6] = 0.0f;
-        float[] fArr2 = cVar.c;
-        fArr2[1] = f7;
-        fArr2[0] = f7;
-        fArr2[3] = f10;
-        fArr2[2] = f10;
-        fArr2[5] = f11;
-        fArr2[4] = f11;
-        fArr2[7] = f12;
-        fArr2[6] = f12;
-        cVar.a();
-        j();
-    }
-
-    public final void s(float f7, float f10) {
-        if (this.a == f7 && this.b == f10) {
-            return;
-        }
-        this.a = f7;
-        this.b = f10;
-        k();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i10) {
-        this.j = i10;
-    }
-
-    public final void t(int i10) {
-        this.h.f = i10;
-        j();
-    }
-
-    public void u() {
-        ch.a aVar = this.c;
-        if (aVar == null) {
-            return;
-        }
-        this.e = aVar.x();
-        this.d = this.c.w();
-        this.f = this.c.h();
-        this.g = this.c.p();
-    }
-
-    public void l() {
-    }
-
-    public d m() {
-        return this;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void e(RenderEffect renderEffect) {
+        this.b[1].setRenderEffect(renderEffect);
     }
 }

@@ -1,154 +1,69 @@
 package fg;
 
-import android.location.Location;
-import android.text.TextUtils;
-import bi.o2;
-import bi.te;
-import java.util.ArrayList;
-import java.util.Locale;
+import ji.k5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public abstract class c extends ng.b {
-    public a E;
-    public int F;
-    public long H;
-    public boolean I;
-    public boolean J;
-    public final boolean d;
-    public final boolean e;
-    public boolean h;
-    public boolean n;
-    public Location v;
-    public String w;
-    public String x;
-    public b y;
-    public boolean f = false;
-    public final ArrayList r = new ArrayList();
-    public final ArrayList s = new ArrayList();
-    public final int G = UserConfig.selectedAccount;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f b;
+    public final /* synthetic */ e c;
 
-    public c(boolean z10, boolean z11) {
-        this.d = z10;
-        this.e = z11;
+    public /* synthetic */ c(f fVar, e eVar, int i10) {
+        this.a = i10;
+        this.b = fVar;
+        this.c = eVar;
     }
 
-    public final void F() {
-        if (this.F != 0) {
-            ConnectionsManager.getInstance(this.G).cancelRequest(this.F, true);
-            this.F = 0;
-        }
-    }
-
-    public final void G(String str, Location location) {
-        if (str == null || str.length() == 0) {
-            this.s.clear();
-            this.r.clear();
-            this.J = false;
-            l();
-            return;
-        }
-        if (this.E != null) {
-            Utilities.searchQueue.cancelRunnable(this.E);
-            this.E = null;
-        }
-        this.J = true;
-        DispatchQueue dispatchQueue = Utilities.searchQueue;
-        a aVar = new a((u0) this, str, location, 0);
-        this.E = aVar;
-        dispatchQueue.postRunnable(aVar, 400L);
-    }
-
-    public final void H(String str, Location location, boolean z10) {
-        Location location2;
-        c cVar;
-        String str2;
-        Location location3;
-        Locale locale;
-        if ((location != null || this.d) && ((location2 = this.v) == null || location == null || location.distanceTo(location2) >= 200.0f)) {
-            Locale locale2 = null;
-            this.v = location == null ? null : new Location(location);
-            this.w = str;
-            if (this.h) {
-                this.h = false;
-                if (this.F != 0) {
-                    ConnectionsManager.getInstance(this.G).cancelRequest(this.F, true);
-                    this.F = 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f fVar = this.b;
+                e eVar = (e) fVar.b;
+                e eVar2 = this.c;
+                if (eVar == eVar2) {
+                    fVar.c = null;
+                    fVar.k(eVar2);
+                    break;
                 }
-            }
-            h();
-            this.h = true;
-            this.f = true;
-            TLObject userOrChat = MessagesController.getInstance(this.G).getUserOrChat(this.d ? MessagesController.getInstance(this.G).storyVenueSearchBot : MessagesController.getInstance(this.G).venueSearchBot);
-            if (userOrChat instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) userOrChat;
-                TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-                tL_messages_getInlineBotResults.query = str == null ? "" : str;
-                tL_messages_getInlineBotResults.bot = MessagesController.getInstance(this.G).getInputUser(user);
-                tL_messages_getInlineBotResults.offset = "";
-                if (location != null) {
-                    TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
-                    tL_messages_getInlineBotResults.geo_point = tL_inputGeoPoint;
-                    tL_inputGeoPoint.lat = AndroidUtilities.fixLocationCoord(location.getLatitude());
-                    tL_messages_getInlineBotResults.geo_point._long = AndroidUtilities.fixLocationCoord(location.getLongitude());
-                    tL_messages_getInlineBotResults.flags |= 1;
-                }
-                if (DialogObject.isEncryptedDialog(this.H)) {
-                    tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-                } else {
-                    tL_messages_getInlineBotResults.peer = MessagesController.getInstance(this.G).getInputPeer(this.H);
-                }
-                if (TextUtils.isEmpty(str) || !(this.d || this.e)) {
-                    cVar = this;
-                    str2 = str;
-                    location3 = location;
-                    cVar.n = false;
-                } else {
-                    this.n = true;
-                    Locale currentLocale = LocaleController.getInstance().getCurrentLocale();
-                    if (this.d) {
-                        if (currentLocale.getLanguage().contains("en")) {
-                            locale = currentLocale;
-                            cVar = this;
-                            str2 = str;
-                            location3 = location;
-                            Utilities.globalQueue.postRunnable(new te(cVar, currentLocale, str2, locale, location3, str, 1));
-                        } else {
-                            locale2 = Locale.US;
-                        }
+                break;
+            case 1:
+                f fVar2 = this.b;
+                e eVar3 = (e) fVar2.b;
+                e eVar4 = this.c;
+                if (eVar3 == eVar4) {
+                    c cVar = (c) fVar2.c;
+                    if (cVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(cVar);
+                        fVar2.c = null;
                     }
-                    locale = locale2;
-                    cVar = this;
-                    str2 = str;
-                    location3 = location;
-                    Utilities.globalQueue.postRunnable(new te(cVar, currentLocale, str2, locale, location3, str, 1));
+                    int i10 = eVar4.d;
+                    if (i10 != 0) {
+                        c cVar2 = new c(fVar2, eVar4, 2);
+                        fVar2.d = cVar2;
+                        AndroidUtilities.runOnUIThread(cVar2, 20000L);
+                        k5 k5Var = eVar4.a;
+                        ((ConnectionsManager) k5Var.b).checkWebProxyInternal(eVar4.b, i10, new d(fVar2, eVar4));
+                        break;
+                    } else {
+                        fVar2.k(eVar4);
+                        break;
+                    }
                 }
-                if (location3 == null) {
-                    return;
+                break;
+            default:
+                f fVar3 = this.b;
+                e eVar5 = (e) fVar3.b;
+                e eVar6 = this.c;
+                if (eVar5 == eVar6) {
+                    fVar3.d = null;
+                    fVar3.k(eVar6);
+                    break;
                 }
-                cVar.F = ConnectionsManager.getInstance(cVar.G).sendRequest(tL_messages_getInlineBotResults, new o2(5, this, str2));
-                l();
-                return;
-            }
-            if (z10) {
-                int i10 = this.G;
-                if (!this.I) {
-                    this.I = true;
-                    TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-                    tL_contacts_resolveUsername.username = this.d ? MessagesController.getInstance(i10).storyVenueSearchBot : MessagesController.getInstance(i10).venueSearchBot;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new bi.c2(this, 5));
-                }
-            }
+                break;
         }
     }
 }

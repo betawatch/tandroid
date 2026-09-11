@@ -1,27 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class x3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FileUploadOperation b;
-    public final /* synthetic */ int[] c;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-    public /* synthetic */ x3(FileUploadOperation fileUploadOperation, int[] iArr, int i10) {
-        this.a = i10;
-        this.b = fileUploadOperation;
-        this.c = iArr;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class x3 implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ GiftAuctionController b;
+    public final /* synthetic */ GiftAuctionController.AuctionInternal c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ x3(GiftAuctionController giftAuctionController, GiftAuctionController.AuctionInternal auctionInternal, Utilities.Callback2 callback2) {
+        this.b = giftAuctionController;
+        this.c = auctionInternal;
+        this.d = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$startUploadRequest$5(this.c);
+                this.b.lambda$sendBid$8(this.c, (Utilities.Callback2) this.d, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$startUploadRequest$9(this.c);
+                this.b.lambda$getOrRequestAcquiredGifts$11((Utilities.Callback) this.d, this.c, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ x3(GiftAuctionController giftAuctionController, Utilities.Callback callback, GiftAuctionController.AuctionInternal auctionInternal) {
+        this.b = giftAuctionController;
+        this.d = callback;
+        this.c = auctionInternal;
     }
 }

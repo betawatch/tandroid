@@ -1,38 +1,52 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Utilities.Callback e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ TLRPC.InputStickerSet h;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ BaseController n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ w8(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str, Utilities.Callback callback, boolean z10, TLRPC.InputStickerSet inputStickerSet, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
-        this.d = str;
-        this.e = callback;
-        this.f = z10;
-        this.h = inputStickerSet;
+    public /* synthetic */ w8(MediaDataController mediaDataController, int i10, ArrayList arrayList, boolean z10, long j3, int i11, int i12, long j10) {
+        this.n = mediaDataController;
+        this.b = i10;
+        this.r = arrayList;
+        this.h = z10;
+        this.c = j3;
+        this.e = i11;
+        this.f = i12;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getStickerSet$33(this.c, this.d, this.e, this.f, this.h);
+                ((MediaDataController) this.n).lambda$putMediaDatabase$140(this.b, (ArrayList) this.r, this.h, this.c, this.e, this.f, this.d);
                 break;
             default:
-                this.b.lambda$getStickerSet$36(this.c, this.d, this.e, this.f, this.h);
+                ((MessagesStorage) this.n).lambda$putMessages$238(this.b, (TLRPC.messages_Messages) this.r, this.c, this.d, this.e, this.f, this.h);
                 break;
         }
+    }
+
+    public /* synthetic */ w8(MessagesStorage messagesStorage, int i10, TLRPC.messages_Messages messages_messages, long j3, long j10, int i11, int i12, boolean z10) {
+        this.n = messagesStorage;
+        this.b = i10;
+        this.r = messages_messages;
+        this.c = j3;
+        this.d = j10;
+        this.e = i11;
+        this.f = i12;
+        this.h = z10;
     }
 }

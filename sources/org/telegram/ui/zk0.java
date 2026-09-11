@@ -1,41 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.net.Uri;
+import android.text.TextUtils;
+import java.io.File;
+import java.io.IOException;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zk0 extends FrameLayout {
-    public TextView a;
-    public RadioButton b;
-    public org.telegram.ui.Components.tp c;
-    public boolean d;
-    public yk0 e;
+public final class zk0 {
+    public boolean a;
+    public boolean b;
+    public int c;
+    public int d;
+    public TLRPC.Document e;
+    public String f;
+    public String g;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+    public final Uri a(int i10) {
+        if (!TextUtils.isEmpty(this.g)) {
+            return Uri.fromFile(new File(this.g));
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.b.f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        TLRPC.Document document = this.e;
+        if (document == null) {
+            return null;
+        }
+        String str = document.file_name_fixed;
+        String documentExtension = FileLoader.getDocumentExtension(document);
+        if (documentExtension == null) {
+            return null;
+        }
+        String lowerCase = documentExtension.toLowerCase();
+        if (!str.endsWith(lowerCase)) {
+            str = a4.a.C(str, ".", lowerCase);
+        }
+        File file = new File(AndroidUtilities.getCacheDir(), str);
+        if (!file.exists()) {
+            try {
+                AndroidUtilities.copyFile(FileLoader.getInstance(i10).getPathToAttach(this.e), file);
+            } catch (IOException e7) {
+                e7.printStackTrace();
+            }
+        }
+        return Uri.fromFile(file);
     }
 }

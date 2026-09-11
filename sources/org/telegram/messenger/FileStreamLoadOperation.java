@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
@@ -90,8 +90,8 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
             }
             sb2.append(Utilities.bytesToHex(bArr));
             return Uri.parse("tg://" + attachFileName + sb2.toString());
-        } catch (UnsupportedEncodingException e) {
-            FileLog.e(e);
+        } catch (UnsupportedEncodingException e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -145,8 +145,8 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             this.file = null;
         }
@@ -258,8 +258,8 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public int read(byte[] bArr, int i10, int i11) {
         Exception exc;
         InterruptedException interruptedException;
-        Exception e;
-        InterruptedException e7;
+        Exception e7;
+        InterruptedException e10;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
         if (i11 == 0) {
@@ -276,12 +276,12 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         while (true) {
             if (i12 == 0) {
                 try {
-                } catch (InterruptedException e10) {
-                    interruptedException = e10;
+                } catch (InterruptedException e11) {
+                    interruptedException = e11;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e11) {
-                    exc = e11;
+                } catch (Exception e12) {
+                    exc = e12;
                     throw new IOException(exc);
                 }
             }
@@ -306,14 +306,14 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e12) {
-                        e7 = e12;
-                        interruptedException = e7;
+                    } catch (InterruptedException e13) {
+                        e10 = e13;
+                        interruptedException = e10;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e13) {
-                        e = e13;
-                        exc = e;
+                    } catch (Exception e14) {
+                        e7 = e14;
+                        exc = e7;
                         throw new IOException(exc);
                     }
                 } else {
@@ -359,14 +359,14 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                         }
                     }
                 }
-            } catch (InterruptedException e14) {
-                e7 = e14;
-                interruptedException = e7;
+            } catch (InterruptedException e15) {
+                e10 = e15;
+                interruptedException = e10;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e15) {
-                e = e15;
-                exc = e;
+            } catch (Exception e16) {
+                e7 = e16;
+                exc = e7;
                 throw new IOException(exc);
             }
         }

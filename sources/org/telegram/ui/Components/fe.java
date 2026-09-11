@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public final /* synthetic */ class fe implements Utilities.Callback {
     public final /* synthetic */ Object i;
     public final /* synthetic */ Object j;
 
-    public /* synthetic */ fe(jg jgVar, Object obj, MediaController.PhotoEntry photoEntry, boolean z10, int i10, int i11, boolean z11, String str, Object obj2) {
-        this.h = jgVar;
+    public /* synthetic */ fe(hg hgVar, Object obj, MediaController.PhotoEntry photoEntry, boolean z10, int i10, int i11, boolean z11, String str, Object obj2) {
+        this.h = hgVar;
         this.b = obj;
         this.i = photoEntry;
         this.c = z10;
@@ -40,17 +40,17 @@ public final /* synthetic */ class fe implements Utilities.Callback {
             case 0:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
                 int i11 = ChatActivityEnterView.m5;
-                pd pdVar = new pd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.r1(pdVar)) {
-                    pdVar.run();
+                rd rdVar = new rd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
+                if (!chatActivityEnterView.r1(rdVar)) {
+                    rdVar.run();
                     break;
                 }
                 break;
             default:
-                jg jgVar = (jg) obj3;
-                pd pdVar2 = new pd(jgVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!jgVar.a.r1(pdVar2)) {
-                    pdVar2.run();
+                hg hgVar = (hg) obj3;
+                rd rdVar2 = new rd(hgVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!hgVar.a.r1(rdVar2)) {
+                    rdVar2.run();
                     break;
                 }
                 break;

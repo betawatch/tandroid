@@ -4,16 +4,16 @@ import android.content.ContentResolver;
 import android.os.Build;
 import gd.c;
 import gd.g;
-import v7.t7;
+import v7.s7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzx implements zzar {
     private final c zza;
 
     public zzx() {
         int i10 = zzby.zza;
-        this.zza = t7.a(zzw.zza);
+        this.zza = s7.a(zzw.zza);
     }
 
     public static final /* synthetic */ ContentResolver zzb(zzx zzxVar) {

@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Map;
 import k9.h;
 import q9.j;
-import s0.b;
+import r9.i;
 import w7.o8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -40,7 +40,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         a2.a(new j(0, 2, t9.a.class));
         a2.a(new j(0, 2, l9.a.class));
         a2.a(new j(0, 2, ya.a.class));
-        a2.f = new b(this, 21);
+        a2.f = new i(this, 26);
         a2.c(2);
         return Arrays.asList(a2.b(), o8.a("fire-cls", "18.6.0"));
     }

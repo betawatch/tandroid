@@ -3,13 +3,13 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class zn extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.lc0 a;
+    public final /* synthetic */ org.telegram.ui.Components.dc0 a;
 
-    public zn(org.telegram.ui.Components.lc0 lc0Var) {
-        this.a = lc0Var;
+    public zn(org.telegram.ui.Components.dc0 dc0Var) {
+        this.a = dc0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener

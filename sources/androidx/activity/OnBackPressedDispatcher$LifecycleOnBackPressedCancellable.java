@@ -1,16 +1,16 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
+import androidx.fragment.app.z;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements androidx.lifecycle.r, c {
     public final androidx.lifecycle.o a;
-    public final a0 b;
+    public final z b;
     public v c;
     public final /* synthetic */ x d;
 
-    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(x xVar, androidx.lifecycle.o oVar, a0 onBackPressedCallback) {
+    public OnBackPressedDispatcher$LifecycleOnBackPressedCancellable(x xVar, androidx.lifecycle.o oVar, z onBackPressedCallback) {
         kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
         this.d = xVar;
         this.a = oVar;
@@ -49,7 +49,7 @@ final class OnBackPressedDispatcher$LifecycleOnBackPressedCancellable implements
         }
         x xVar = this.d;
         xVar.getClass();
-        a0 onBackPressedCallback = this.b;
+        z onBackPressedCallback = this.b;
         kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
         xVar.b.addLast(onBackPressedCallback);
         v vVar2 = new v(xVar, onBackPressedCallback);

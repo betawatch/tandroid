@@ -1,22 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class tz0 extends org.telegram.ui.Components.yh0 {
-    public final /* synthetic */ ProfileActivity s1;
+public final class tz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.l lVar, jz0 jz0Var, sz0 sz0Var, org.telegram.ui.Components.th0 th0Var, org.telegram.ui.Components.ph0 ph0Var) {
-        super(context, j3, lVar, jz0Var, sz0Var, th0Var, ph0Var);
-        this.s1 = profileActivity;
+    public tz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.yh0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        ProfileActivity profileActivity = this.a;
+        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+        kVar.B(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.f8, profileActivity.z0), false);
+        pz0 pz0Var = profileActivity.e0;
+        ImageReceiver imageReceiver = pz0Var.U;
+        org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
+        if (animation != null) {
+            animation.w(pz0Var);
+        }
+        imageReceiver.clearImage();
+        ImageReceiver.BitmapHolder bitmapHolder = pz0Var.W;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            pz0Var.W = null;
+        }
+        pz0Var.V = 0.0f;
+        pz0Var.invalidate();
+        profileActivity.H0 = false;
+        profileActivity.l5(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
     }
 }

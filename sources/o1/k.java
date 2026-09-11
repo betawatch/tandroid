@@ -4,9 +4,9 @@ import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import m.e3;
+import m2.t;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k extends h {
     public l u;
@@ -56,10 +56,10 @@ public final class k extends h {
         ArrayList arrayList = bVar.b;
         if (arrayList.size() == 0) {
             if (bVar.d == null) {
-                bVar.d = new e3(bVar.c);
+                bVar.d = new t(bVar.c);
             }
-            e3 e3Var = bVar.d;
-            ((Choreographer) e3Var.c).postFrameCallback((a) e3Var.d);
+            t tVar = bVar.d;
+            ((Choreographer) tVar.c).postFrameCallback((a) tVar.d);
         }
         if (arrayList.contains(this)) {
             return;

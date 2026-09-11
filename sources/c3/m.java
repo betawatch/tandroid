@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] e = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final of.b f = new of.b(new androidx.emoji2.text.w(14));
-    public static final of.b h = new of.b(new androidx.emoji2.text.w(15));
+    public static final n4.y f = new n4.y(new androidx.emoji2.text.w(18));
+    public static final n4.y h = new n4.y(new androidx.emoji2.text.w(19));
     public a1 a;
     public int d;
     public rb.a c = new rb.a(28);
@@ -32,12 +32,12 @@ public final class m implements r {
                 arrayList.add(new d3.a(1));
                 break;
             case 4:
-                o c02 = f.c0(0);
-                if (c02 == null) {
+                o G = f.G(0);
+                if (G == null) {
                     arrayList.add(new h3.b());
                     break;
                 } else {
-                    arrayList.add(c02);
+                    arrayList.add(G);
                     break;
                 }
             case 5:
@@ -60,14 +60,14 @@ public final class m implements r {
                 arrayList.add(new x3.d());
                 break;
             case 10:
-                arrayList.add(new j4.a0());
+                arrayList.add(new j4.z());
                 break;
             case 11:
                 if (this.a == null) {
                     e9.g0 g0Var2 = e9.i0.b;
                     this.a = a1.e;
                 }
-                arrayList.add(new j4.e0(1, !this.b ? 1 : 0, this.c, new e2.b0(0L), new j4.f(0, this.a)));
+                arrayList.add(new j4.d0(1, !this.b ? 1 : 0, this.c, new e2.b0(0L), new j4.f(0, this.a)));
                 break;
             case 12:
                 k4.c cVar = new k4.c();
@@ -81,9 +81,9 @@ public final class m implements r {
                 arrayList.add(new k3.a(this.d));
                 break;
             case 15:
-                o c03 = h.c0(new Object[0]);
-                if (c03 != null) {
-                    arrayList.add(c03);
+                o G2 = h.G(new Object[0]);
+                if (G2 != null) {
+                    arrayList.add(G2);
                     break;
                 }
                 break;
@@ -114,7 +114,7 @@ public final class m implements r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized o[] b(Uri uri, Map map) {
+    public final synchronized o[] c(Uri uri, Map map) {
         ArrayList arrayList;
         String str;
         int a2;

@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class LanguageDetector {
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface StringCallback {
         void run(String str);
     }
@@ -46,21 +46,21 @@ public class LanguageDetector {
                 synchronized (qb.g.b) {
                     qb.g.d(context, TaskExecutors.MAIN_THREAD);
                 }
-            } catch (IllegalStateException e) {
+            } catch (IllegalStateException e7) {
                 if (!z10) {
                     detectLanguage(str, stringCallback, exceptionCallback, true);
                     return;
                 }
                 if (exceptionCallback != null) {
-                    exceptionCallback.run(e);
-                }
-                FileLog.e((Throwable) e, false);
-                return;
-            } catch (Exception e7) {
-                if (exceptionCallback != null) {
                     exceptionCallback.run(e7);
                 }
-                FileLog.e(e7);
+                FileLog.e((Throwable) e7, false);
+                return;
+            } catch (Exception e10) {
+                if (exceptionCallback != null) {
+                    exceptionCallback.run(e10);
+                }
+                FileLog.e(e10);
                 return;
             } catch (Throwable th2) {
                 if (exceptionCallback != null) {

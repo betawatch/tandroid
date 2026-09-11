@@ -1,31 +1,42 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import java.util.List;
+import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c1 implements Utilities.Callback {
+public final /* synthetic */ class c1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ c1(Object obj, int i10) {
+    public /* synthetic */ c1(int i10, Object obj, Object obj2) {
         this.a = i10;
         this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((ChatThemeController) this.b).lambda$init$0((List) obj);
+                ((ChatThemeController) this.b).lambda$requestNextChatThemes$21((ResultCallback) this.c, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((Runnable) this.b).run();
+                ((GiftAuctionController) this.b).lambda$requestGiftAuctionInternal$4((Utilities.Callback2) this.c, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$fetchJoinedCommunities$251((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.b2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((View) this.b).invalidate();
+                ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

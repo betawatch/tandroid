@@ -14,77 +14,77 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.d90;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout {
     public final LinearLayout a;
     public final LinearLayout b;
-    public final org.telegram.ui.Components.x5 c;
-    public final m90 d;
+    public final org.telegram.ui.Components.y5 c;
+    public final d90 d;
     public final ImageView e;
     public final ImageView f;
-    public final org.telegram.ui.Components.w9 h;
-    public final org.telegram.ui.Components.j9 n;
+    public final org.telegram.ui.Components.x9 h;
+    public final org.telegram.ui.Components.l9 n;
     public boolean r;
 
     public z2(Context context) {
         super(context);
         setWillNotDraw(false);
         setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(7.0f));
-        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(context, false);
-        this.n = j9Var;
-        j9Var.setStepFactor(0.56790125f);
-        j9Var.setVisibility(8);
-        j9Var.setCount(0);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.h = w9Var;
-        w9Var.setVisibility(8);
+        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(context, false);
+        this.n = l9Var;
+        l9Var.setStepFactor(0.56790125f);
+        l9Var.setVisibility(8);
+        l9Var.setCount(0);
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.h = x9Var;
+        x9Var.setVisibility(8);
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(1);
         linearLayout.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(24.0f), 0);
-        org.telegram.ui.Components.x5 x5Var = new org.telegram.ui.Components.x5(context);
-        this.c = x5Var;
+        org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(context);
+        this.c = y5Var;
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        x5Var.setEllipsize(truncateAt);
-        x5Var.setTextSize(1, 14.0f);
-        x5Var.setTypeface(AndroidUtilities.bold());
-        x5Var.setMaxLines(5);
-        linearLayout.addView(x5Var, w7.a6.o(-2, -2, 0.0f, (LocaleController.isRTL ? 5 : 3) | 48));
-        m90 m90Var = new m90(context, null);
-        this.d = m90Var;
-        m90Var.setTextSize(1, 13.0f);
-        m90Var.setEllipsize(truncateAt);
-        m90Var.setMaxLines(5);
-        linearLayout.addView(m90Var, w7.a6.o(-1, -2, 0.0f, 48));
-        NotificationCenter.listenEmojiLoading(x5Var);
-        NotificationCenter.listenEmojiLoading(m90Var);
+        y5Var.setEllipsize(truncateAt);
+        y5Var.setTextSize(1, 14.0f);
+        y5Var.setTypeface(AndroidUtilities.bold());
+        y5Var.setMaxLines(5);
+        linearLayout.addView(y5Var, w7.x5.o(-2, -2, 0.0f, (LocaleController.isRTL ? 5 : 3) | 48));
+        d90 d90Var = new d90(context, null);
+        this.d = d90Var;
+        d90Var.setTextSize(1, 13.0f);
+        d90Var.setEllipsize(truncateAt);
+        d90Var.setMaxLines(5);
+        linearLayout.addView(d90Var, w7.x5.o(-1, -2, 0.0f, 48));
+        NotificationCenter.listenEmojiLoading(y5Var);
+        NotificationCenter.listenEmojiLoading(d90Var);
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.a = linearLayout2;
         linearLayout2.setOrientation(0);
         if (LocaleController.isRTL) {
-            linearLayout2.addView(linearLayout, w7.a6.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
-            linearLayout2.addView(j9Var, w7.a6.d(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
-            linearLayout2.addView(w9Var, w7.a6.d(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
+            linearLayout2.addView(linearLayout, w7.x5.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
+            linearLayout2.addView(l9Var, w7.x5.d(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
+            linearLayout2.addView(x9Var, w7.x5.d(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
         } else {
-            linearLayout2.addView(w9Var, w7.a6.d(36, 36.0f, 19, -2.0f, 0.0f, 0.0f, 0.0f));
-            linearLayout2.addView(j9Var, w7.a6.d(0, -1.0f, 16, -2.0f, 0.0f, 0.0f, 0.0f));
-            linearLayout2.addView(linearLayout, w7.a6.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
+            linearLayout2.addView(x9Var, w7.x5.d(36, 36.0f, 19, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(l9Var, w7.x5.d(0, -1.0f, 16, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(linearLayout, w7.x5.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
         }
-        addView(linearLayout2, w7.a6.c(-1.0f, -1));
+        addView(linearLayout2, w7.x5.c(-1.0f, -1));
         linearLayout2.setClipChildren(false);
         linearLayout2.setClipToPadding(false);
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.arrow_newchat);
-        addView(imageView, w7.a6.d(16, 16.0f, (LocaleController.isRTL ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, w7.x5.d(16, 16.0f, (LocaleController.isRTL ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        addView(imageView2, w7.a6.d(36, 36.0f, (LocaleController.isRTL ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
+        addView(imageView2, w7.x5.d(36, 36.0f, (LocaleController.isRTL ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
         imageView2.setVisibility(8);
         setClipToPadding(false);
         setClipChildren(false);
@@ -93,29 +93,29 @@ public final class z2 extends FrameLayout {
 
     public final void a(int i10, ArrayList arrayList) {
         int min = Math.min(3, arrayList == null ? 0 : arrayList.size());
-        org.telegram.ui.Components.j9 j9Var = this.n;
-        boolean z10 = min != j9Var.a.n;
+        org.telegram.ui.Components.l9 l9Var = this.n;
+        boolean z10 = min != l9Var.a.n;
         if (min <= 1) {
-            j9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
-            j9Var.setSize(AndroidUtilities.dp(36.0f));
+            l9Var.setAvatarsTextSize(AndroidUtilities.dp(22.0f));
+            l9Var.setSize(AndroidUtilities.dp(36.0f));
         } else {
-            j9Var.setAvatarsTextSize(AndroidUtilities.dp(20.0f));
-            j9Var.setSize(AndroidUtilities.dp(30.0f));
+            l9Var.setAvatarsTextSize(AndroidUtilities.dp(20.0f));
+            l9Var.setSize(AndroidUtilities.dp(30.0f));
         }
-        j9Var.setCount(min);
-        j9Var.setVisibility(min <= 0 ? 8 : 0);
-        j9Var.getLayoutParams().width = min <= 1 ? AndroidUtilities.dp(36.0f) : AndroidUtilities.dp(hc.b.B(min, 1, 18, 30));
+        l9Var.setCount(min);
+        l9Var.setVisibility(min <= 0 ? 8 : 0);
+        l9Var.getLayoutParams().width = min <= 1 ? AndroidUtilities.dp(36.0f) : AndroidUtilities.dp(com.google.android.gms.internal.vision.e2.w(min, 1, 18, 30));
         if (z10) {
             this.a.requestLayout();
         }
         if (arrayList != null) {
             int i11 = 0;
             while (i11 < 3) {
-                j9Var.b(i11, i11 >= arrayList.size() ? null : (TLObject) arrayList.get(i11), i10);
+                l9Var.b(i11, i11 >= arrayList.size() ? null : (TLObject) arrayList.get(i11), i10);
                 i11++;
             }
         }
-        j9Var.a(false);
+        l9Var.a(false);
     }
 
     public final void b(CharSequence charSequence, CharSequence charSequence2) {
@@ -125,10 +125,10 @@ public final class z2 extends FrameLayout {
     public final void c(CharSequence charSequence, CharSequence charSequence2, boolean z10, boolean z11) {
         this.r = z11;
         int i10 = TextUtils.isEmpty(charSequence) ? 8 : 0;
-        org.telegram.ui.Components.x5 x5Var = this.c;
-        x5Var.setVisibility(i10);
-        x5Var.setText(charSequence);
-        x5Var.setCompoundDrawables(null, null, null, null);
+        org.telegram.ui.Components.y5 y5Var = this.c;
+        y5Var.setVisibility(i10);
+        y5Var.setText(charSequence);
+        y5Var.setCompoundDrawables(null, null, null, null);
         this.d.setText(charSequence2);
         this.e.setVisibility(z10 ? 0 : 8);
         this.f.setVisibility(8);
@@ -146,16 +146,16 @@ public final class z2 extends FrameLayout {
         this.c.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, this.r ? org.telegram.ui.ActionBar.j6.q7 : org.telegram.ui.ActionBar.j6.G6, false));
         int i10 = org.telegram.ui.ActionBar.j6.y6;
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-        m90 m90Var = this.d;
-        m90Var.setTextColor(w02);
-        m90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
+        d90 d90Var = this.d;
+        d90Var.setTextColor(w02);
+        d90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
         int w03 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.e.setColorFilter(w03, mode);
         int w04 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
         ImageView imageView = this.f;
         imageView.setColorFilter(w04, mode);
-        imageView.setBackground(org.telegram.ui.ActionBar.z5.c(null, org.telegram.ui.ActionBar.z5.b(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.z5.a, false))));
+        imageView.setBackground(org.telegram.ui.ActionBar.y5.c(null, org.telegram.ui.ActionBar.y5.b(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.y5.a, false))));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

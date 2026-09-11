@@ -1,9 +1,9 @@
 package l5;
 
 import java.util.HashMap;
-import org.telegram.ui.fy0;
+import org.telegram.ui.es0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class r {
     public final i a;
@@ -30,12 +30,12 @@ public final class r {
         i b10 = this.a.b(aVar.c);
         com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
         nVar.f = new HashMap();
-        nVar.d = Long.valueOf(sVar.a.u());
-        nVar.e = Long.valueOf(sVar.b.u());
+        nVar.d = Long.valueOf(sVar.a.l());
+        nVar.e = Long.valueOf(sVar.b.l());
         nVar.a = this.b;
         nVar.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
         nVar.b = aVar.a;
         q5.a aVar2 = (q5.a) bVar;
-        aVar2.b.execute(new fy0(aVar2, b10, gVar, nVar.g(), 20));
+        aVar2.b.execute(new es0(aVar2, b10, gVar, nVar.g(), 22));
     }
 }

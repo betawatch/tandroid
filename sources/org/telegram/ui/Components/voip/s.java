@@ -13,12 +13,12 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.g9;
+import org.telegram.ui.Components.ca;
+import org.telegram.ui.Components.i9;
 import org.telegram.ui.i60;
 import org.telegram.ui.j60;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public i60 E;
@@ -27,9 +27,9 @@ public final class s extends View {
     public final /* synthetic */ t H;
     public final ImageReceiver a;
     public final ImageReceiver b;
-    public final g9 c;
-    public final ba d;
-    public final ba e;
+    public final i9 c;
+    public final ca d;
+    public final ca e;
     public final Paint f;
     public final Paint h;
     public float n;
@@ -46,7 +46,7 @@ public final class s extends View {
         this.H = tVar;
         this.a = new ImageReceiver();
         this.b = new ImageReceiver();
-        this.c = new g9((f6) null);
+        this.c = new i9((f6) null);
         Paint paint = new Paint(1);
         this.f = paint;
         Paint paint2 = new Paint(1);
@@ -54,16 +54,16 @@ public final class s extends View {
         this.x = new i60[3];
         this.F = -1;
         this.G = 1.0f;
-        ba baVar = new ba(9);
-        this.d = baVar;
-        ba baVar2 = new ba(12);
-        this.e = baVar2;
-        baVar.a = AndroidUtilities.dp(76.0f);
-        baVar.b = AndroidUtilities.dp(92.0f);
-        baVar.b();
-        baVar2.a = AndroidUtilities.dp(80.0f);
-        baVar2.b = AndroidUtilities.dp(95.0f);
-        baVar2.b();
+        ca caVar = new ca(9);
+        this.d = caVar;
+        ca caVar2 = new ca(12);
+        this.e = caVar2;
+        caVar.a = AndroidUtilities.dp(76.0f);
+        caVar.b = AndroidUtilities.dp(92.0f);
+        caVar.b();
+        caVar2.a = AndroidUtilities.dp(80.0f);
+        caVar2.b = AndroidUtilities.dp(95.0f);
+        caVar2.b();
         paint.setColor(i0.a.d(0.0f, j6.w0(null, j6.pg, false), j6.w0(null, j6.qg, false)));
         paint.setAlpha(102);
         paint2.setColor(i0.a.k(-16777216, 127));
@@ -72,8 +72,8 @@ public final class s extends View {
     public static void a(s sVar, boolean z10) {
         TLRPC.GroupCallParticipant groupCallParticipant;
         i60[] i60VarArr = sVar.x;
-        p0 p0Var = sVar.H.n0;
-        int i10 = (p0Var.k || !((groupCallParticipant = p0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : p0Var.e ? 1 : 0;
+        o0 o0Var = sVar.H.n0;
+        int i10 = (o0Var.k || !((groupCallParticipant = o0Var.h) == null || !groupCallParticipant.muted || groupCallParticipant.can_self_unmute)) ? 2 : o0Var.e ? 1 : 0;
         if (i10 == sVar.F) {
             return;
         }
@@ -169,11 +169,11 @@ public final class s extends View {
             i60Var3.b((int) (this.w - AndroidUtilities.dp(100.0f)), (int) (this.v - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(200.0f), 16L, this.n);
         }
         float f19 = this.n;
-        ba baVar = this.e;
-        baVar.e(f19, 1.0f);
+        ca caVar = this.e;
+        caVar.e(f19, 1.0f);
         float f20 = this.n;
-        ba baVar2 = this.d;
-        baVar2.e(f20, 1.0f);
+        ca caVar2 = this.d;
+        caVar2.e(f20, 1.0f);
         for (int i10 = 0; i10 < 2; i10++) {
             Paint paint = this.f;
             if (i10 != 0 || (i60Var2 = this.E) == null) {
@@ -186,8 +186,8 @@ public final class s extends View {
                 f7 = 1.0f - this.G;
             }
             paint.setAlpha((int) (f7 * 76.0f));
-            baVar.a(this.v, this.w, canvas, paint);
-            baVar2.a(this.v, this.w, canvas, paint);
+            caVar.a(this.v, this.w, canvas, paint);
+            caVar2.a(this.v, this.w, canvas, paint);
         }
         canvas.restore();
         float f21 = (this.n * 0.2f) + 1.0f;

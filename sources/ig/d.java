@@ -1,10 +1,42 @@
 package ig;
 
-import org.telegram.messenger.SegmentTree;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class d extends b {
-    public long[] l;
-    public SegmentTree m;
+public final /* synthetic */ class d implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+
+    public /* synthetic */ d(e eVar, int i10) {
+        this.a = i10;
+        this.b = eVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        e eVar = this.b;
+        switch (i10) {
+            case 0:
+                eVar.a();
+                break;
+            case 1:
+                eVar.getClass();
+                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
+                int i11 = eVar.a;
+                disablepeerconnectedbot.peer = MessagesController.getInstance(i11).getInputPeer(eVar.s);
+                ConnectionsManager.getInstance(i11).sendRequest(disablepeerconnectedbot, null);
+                MessagesController.getNotificationsSettings(i11).edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(eVar.s));
+                f.a(i11).f = false;
+                break;
+            default:
+                of.f.s(eVar.getContext(), eVar.x);
+                break;
+        }
+    }
 }

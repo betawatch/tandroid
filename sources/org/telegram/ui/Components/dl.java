@@ -1,28 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class dl extends s4.d0 {
-    public final /* synthetic */ gg.j0 r;
+public final class dl extends FrameLayout {
+    public final HashMap a;
+    public final /* synthetic */ gl b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dl(gg.j0 j0Var, Context context) {
+    public dl(gl glVar, Context context) {
         super(context);
-        this.r = j0Var;
+        this.b = glVar;
+        this.a = new HashMap();
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int k10 = super.k(i10, view);
-        ll llVar = (ll) this.r.V;
-        return k10 - (llVar.P.getPaddingTop() - (llVar.A0 - llVar.z0));
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 4;
+    public final void a() {
+        IMapsProvider.IMap iMap = this.b.H;
+        if (iMap == null) {
+            return;
+        }
+        IMapsProvider.IProjection projection = iMap.getProjection();
+        for (Map.Entry entry : this.a.entrySet()) {
+            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
+            View view = (View) entry.getValue();
+            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
+            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        }
     }
 }

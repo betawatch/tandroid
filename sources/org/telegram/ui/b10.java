@@ -1,10 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_chatlists;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class b10 extends org.telegram.ui.Cells.f3 {
-    @Override // org.telegram.ui.Cells.f3
-    public final int a() {
-        return 25;
+public final class b10 extends y00 {
+    public final /* synthetic */ c10 E;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b10(c10 c10Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, int i11) {
+        super(context, n2Var, i10, i11);
+        this.E = c10Var;
+    }
+
+    @Override // org.telegram.ui.y00
+    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
+        this.E.e.l0(tL_exportedChatlistInvite);
     }
 }

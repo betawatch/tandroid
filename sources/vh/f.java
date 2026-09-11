@@ -1,28 +1,56 @@
 package vh;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.pr;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+public abstract class f {
+    public static final DecelerateInterpolator a = new DecelerateInterpolator();
+    public static final LinearInterpolator b;
+    public static final e c;
+    public static final e d;
+    public static final e e;
+    public static final e f;
+    public static final e g;
+    public static final e h;
+    public static final e i;
+    public static final e j;
+    public static final e k;
+    public static final e l;
+    public static final e m;
+    public static final e n;
+    public static final e o;
+    public static final e p;
+    public static final e q;
+    public static final e r;
+    public static final e s;
+    public static final e t;
 
-    public /* synthetic */ f(p pVar, int i10) {
-        this.a = i10;
-        this.b = pVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.e();
-                break;
-            case 1:
-                p.k(this.b.q, true, true);
-                break;
-            default:
-                this.b.e();
-                break;
-        }
+    static {
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        b = linearInterpolator;
+        c = h.i(new DecelerateInterpolator(), 0, 240, 240, false);
+        d = h.i(linearInterpolator, 0, 240, 240, false);
+        e = h.i(new DecelerateInterpolator(), 220, 240, 240, false);
+        f = h.i(new pr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
+        g = h.i(new pr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
+        h = h.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
+        i = h.i(new DecelerateInterpolator(), 210, 425, 560, false);
+        pr prVar = pr.h;
+        j = h.i(prVar, 0, 320, 560, false);
+        k = h.i(prVar, 40, 320, 560, false);
+        l = h.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        m = h.i(prVar, 0, 460, 560, false);
+        n = h.i(prVar, 0, 325, 560, false);
+        o = h.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        p = h.i(new DecelerateInterpolator(), 200, 480, 560, false);
+        q = h.i(prVar, 60, 320, 560, false);
+        r = h.i(prVar, 90, 380, 560, false);
+        s = h.i(prVar, 110, 440, 560, false);
+        t = h.i(new DecelerateInterpolator(), 200, 460, 560, false);
     }
 }

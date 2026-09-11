@@ -1,13 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.widget.TextView;
-import org.telegram.messenger.Emoji;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class r4 extends m90 {
-    @Override // org.telegram.ui.Components.m90, android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+public final class r4 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getMeasuredWidth(), AndroidUtilities.dp(6.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(6.0f));
     }
 }

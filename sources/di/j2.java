@@ -1,33 +1,60 @@
 package di;
 
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.zv0;
+import org.telegram.ui.Components.eq;
+import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.xy;
+import org.telegram.ui.a61;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j2 implements zv0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class j2 extends eq {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ j2(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    public /* synthetic */ j2(int i10, FrameLayout frameLayout) {
+        this.h = i10;
+        this.i = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.zv0
-    public final void H(int i10, boolean z10) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.eq
+    public final int a() {
+        switch (this.h) {
             case 0:
-                d3 d3Var = ((n3) this.b).v;
-                if (i10 > AndroidUtilities.dp(20.0f)) {
-                    d3Var.e(d3Var.getTopActionBarOffsetY() + (-d3Var.getOffsetY()));
-                    break;
-                }
-                break;
+                return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Je, (org.telegram.ui.ActionBar.f6) this.i);
+            case 1:
+                return ((org.telegram.ui.ActionBar.v0) this.i).c.b.r0;
+            case 2:
+                return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Je, ((xy) this.i).G.Z1);
+            case 3:
+                return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Q5, ((wm0) this.i).f);
             default:
-                ((hi.g2) this.b).getClass();
-                break;
+                return org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Je, ((a61) this.i).y.Z0);
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(xy xyVar) {
+        super(1.25f);
+        this.h = 2;
+        this.i = xyVar;
+        this.f = AndroidUtilities.dp(7.0f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(org.telegram.ui.ActionBar.f6 f6Var) {
+        super(1.25f);
+        this.h = 0;
+        this.i = f6Var;
+        this.f = AndroidUtilities.dp(7.0f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j2(a61 a61Var) {
+        super(1.25f);
+        this.h = 4;
+        this.i = a61Var;
+        this.f = AndroidUtilities.dp(7.0f);
     }
 }

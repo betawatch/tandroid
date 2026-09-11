@@ -1,100 +1,61 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eo b;
+public final class zi extends of.e {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.t1 f;
+    public final /* synthetic */ co g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ zi(eo eoVar, int i10) {
-        this.a = i10;
-        this.b = eoVar;
+    public /* synthetic */ zi(co coVar, int i10, Object obj, org.telegram.ui.Cells.t1 t1Var, int i11) {
+        this.d = i11;
+        this.g = coVar;
+        this.e = i10;
+        this.h = obj;
+        this.f = t1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        wj wjVar;
-        switch (this.a) {
+    @Override // of.e
+    public final void c(boolean z10) {
+        switch (this.d) {
             case 0:
-                eo eoVar = this.b;
-                il ilVar = eoVar.b3;
-                if (ilVar != null) {
-                    ilVar.setIsMessageTransition(false);
-                    eoVar.b3.h(true);
-                    eoVar.b3.setVisibility(4);
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 21), 240L);
                     break;
                 }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                eo eoVar2 = this.b;
-                eoVar2.A9 = dp;
-                eoVar2.o9();
-                break;
-            case 2:
-                eo eoVar3 = this.b;
-                if (eoVar3.fragmentView != null && (wjVar = eoVar3.x0) != null) {
-                    wjVar.invalidate();
-                    eoVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new fj(this, 3), 2000L);
-                break;
-            case 5:
-                eo eoVar4 = this.b;
-                if (animator.equals(eoVar4.g3)) {
-                    eoVar4.g3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                eo eoVar5 = this.b;
-                if (animator.equals(eoVar5.g3)) {
-                    eoVar5.g3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                eo eoVar6 = this.b;
-                if (animator.equals(eoVar6.h3)) {
-                    eoVar6.i3 = 1.0f;
-                    eoVar6.lc();
-                    eoVar6.h3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                eo eoVar7 = this.b;
-                if (animator.equals(eoVar7.h3)) {
-                    eoVar7.i3 = 0.0f;
-                    eoVar7.lc();
-                    eoVar7.h3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.T4 = null;
-                break;
-            case 10:
-                eo eoVar8 = this.b;
-                eoVar8.Da = 1.0f;
-                eoVar8.Y.setVisibility(4);
-                eoVar8.O0.setVisibility(4);
-                eoVar8.o9();
                 break;
             default:
-                eo eoVar9 = this.b;
-                eoVar9.Da = 0.0f;
-                eoVar9.o9();
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 23), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // of.e
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                co coVar = this.g;
+                coVar.wb = i10;
+                coVar.xb = 1;
+                coVar.yb = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                co coVar2 = this.g;
+                coVar2.wb = i11;
+                coVar2.xb = 3;
+                coVar2.zb = (String) this.h;
+                this.f.invalidate();
                 break;
         }
     }

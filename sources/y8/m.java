@@ -8,9 +8,8 @@ import android.util.Log;
 import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new c(8);
@@ -38,7 +37,7 @@ public final class m extends o6.a {
         StringBuilder sb2 = new StringBuilder("DataItemParcelable[@");
         sb2.append(Integer.toHexString(hashCode()));
         byte[] bArr = this.c;
-        sb2.append(",dataSz=".concat((bArr == null ? BuildConfig.BETA_URL : Integer.valueOf(bArr.length)).toString()));
+        sb2.append(",dataSz=".concat((bArr == null ? "null" : Integer.valueOf(bArr.length)).toString()));
         HashMap hashMap = this.b;
         sb2.append(", numAssets=" + hashMap.size());
         sb2.append(", uri=".concat(String.valueOf(this.a)));

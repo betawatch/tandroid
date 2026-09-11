@@ -1,15 +1,15 @@
 package androidx.activity.result;
 
-import androidx.fragment.app.e0;
+import androidx.fragment.app.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d {
     public final b a;
-    public final e0 b;
+    public final d0 b;
 
-    public d(b bVar, e0 e0Var) {
+    public d(b bVar, d0 d0Var) {
         this.a = bVar;
-        this.b = e0Var;
+        this.b = d0Var;
     }
 }

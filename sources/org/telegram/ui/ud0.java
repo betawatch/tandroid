@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ud0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class ud0 implements Runnable {
                 hf0Var.N = null;
                 hf0Var.p(true);
                 hf0Var.e.h(null, null, hf0Var.f, null);
-                kd kdVar = hf0Var.n;
-                org.telegram.ui.Components.hj0 hj0Var = hf0Var.I;
-                kdVar.setAnimation(hj0Var);
-                hj0Var.M(0);
+                jd jdVar = hf0Var.n;
+                org.telegram.ui.Components.xi0 xi0Var = hf0Var.I;
+                jdVar.setAnimation(xi0Var);
+                xi0Var.K(0);
                 hf0Var.K = true;
                 break;
             case 2:

@@ -1,12 +1,24 @@
 package sg;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import bi.l3;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.rv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class j1 extends wg.c {
-    @Override // wg.c
-    public final int getHeaderHeight() {
-        return getResources().getConfiguration().orientation == 2 ? AndroidUtilities.dp(48.0f) : AndroidUtilities.dp(54.0f);
+public final class j1 extends rv {
+    public final /* synthetic */ o1 W;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j1(o1 o1Var, l3 l3Var, Context context, f6 f6Var, ArrayList arrayList) {
+        super(l3Var, context, f6Var, arrayList);
+        this.W = o1Var;
+    }
+
+    @Override // org.telegram.ui.Components.rv
+    public final void Y() {
+        this.W.dismiss();
     }
 }

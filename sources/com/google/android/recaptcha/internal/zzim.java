@@ -8,12 +8,12 @@ import jd.a;
 import kd.j;
 import rd.l;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.b0;
 import zd.c0;
 import zd.f1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 final class zzim extends j implements p {
     public static final /* synthetic */ int zze = 0;
@@ -49,7 +49,7 @@ final class zzim extends j implements p {
         a aVar = a.a;
         int i10 = this.zza;
         i iVar = i.a;
-        u7.b(obj);
+        t7.b(obj);
         if (i10 != 0) {
             return iVar;
         }
@@ -68,7 +68,7 @@ final class zzim extends j implements p {
                 zzzu zzzuVar = (zzzu) list.get(zzizVar.zza());
                 try {
                     zzip.zzf(this.zzd, zzzuVar, zzizVar);
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     zzzuVar.zzk();
                     new Integer(zzzuVar.zzg());
                     List zzj = zzzuVar.zzj();
@@ -82,7 +82,7 @@ final class zzim extends j implements p {
                     }, 31);
                     zziz zzizVar2 = this.zzb;
                     this.zza = 1;
-                    zzh = zzipVar.zzh(e, zzizVar2, this);
+                    zzh = zzipVar.zzh(e7, zzizVar2, this);
                     if (zzh == aVar) {
                         return aVar;
                     }

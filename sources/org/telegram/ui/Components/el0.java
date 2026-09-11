@@ -1,44 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class el0 implements View.OnTouchListener {
-    public float a;
-    public float b;
-    public boolean c;
+public final class el0 implements Runnable {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ fl0 e;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ViewParent parent = view.getParent();
-        if (parent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.a = motionEvent.getX();
-                this.b = motionEvent.getY();
-                this.c = true;
-                parent.requestDisallowInterceptTouchEvent(true);
+    public el0(fl0 fl0Var, View view, int i10, float f7, float f10) {
+        this.e = fl0Var;
+        this.a = view;
+        this.b = i10;
+        this.c = f7;
+        this.d = f10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        gl0 gl0Var = this.e.b;
+        ll0 ll0Var = (ll0) gl0Var.b;
+        if (this == ll0Var.S1) {
+            ll0Var.S1 = null;
+        }
+        View view = this.a;
+        if (view != null) {
+            ll0Var.g1(view, 0.0f, 0.0f, false);
+            if (((ll0) gl0Var.b).R1) {
+                return;
             }
-            if (motionEvent.getAction() == 2) {
-                float x10 = this.a - motionEvent.getX();
-                float y3 = this.b - motionEvent.getY();
-                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-                if (this.c) {
-                    if (Math.sqrt((y3 * y3) + (x10 * x10)) > scaledTouchSlop) {
-                        this.c = false;
-                        parent.requestDisallowInterceptTouchEvent(false);
-                        return false;
-                    }
+            try {
+                view.playSoundEffect(0);
+            } catch (Exception unused) {
+            }
+            view.sendAccessibilityEvent(1);
+            int i10 = this.b;
+            if (i10 != -1) {
+                ll0 ll0Var2 = (ll0) gl0Var.b;
+                zk0 zk0Var = ll0Var2.V0;
+                if (zk0Var != null) {
+                    zk0Var.a(i10, view);
+                    return;
                 }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.c = false;
-                parent.requestDisallowInterceptTouchEvent(false);
-                return false;
+                al0 al0Var = ll0Var2.W0;
+                if (al0Var != null) {
+                    al0Var.d(this.c - view.getX(), this.d - view.getY(), i10, view);
+                }
             }
         }
-        return false;
     }
 }

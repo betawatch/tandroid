@@ -1,93 +1,51 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class n0 extends Drawable {
+public final class n0 extends ClickableSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ Paint c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ n0(Bitmap bitmap, Paint paint, int i10) {
+    public /* synthetic */ n0(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = bitmap;
-        this.c = paint;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Bitmap bitmap = this.b;
-                if (bitmap != null) {
-                    canvas.save();
-                    canvas.translate(getBounds().left, getBounds().top);
-                    canvas.scale(getBounds().width() / bitmap.getWidth(), getBounds().height() / bitmap.getHeight());
-                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, this.c);
-                    canvas.restore();
-                    break;
-                }
+                ((v70) this.b).c((g4) this.c, (org.telegram.ui.Components.j01) this.d);
                 break;
             default:
-                Bitmap bitmap2 = this.b;
-                if (bitmap2 != null) {
-                    canvas.save();
-                    canvas.translate(getBounds().left, getBounds().top);
-                    canvas.scale(getBounds().width() / bitmap2.getWidth(), getBounds().height() / bitmap2.getHeight());
-                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, this.c);
-                    canvas.restore();
-                    break;
+                org.telegram.ui.ActionBar.b2 b2Var = ((org.telegram.ui.ActionBar.b2[]) this.b)[0];
+                if (b2Var != null) {
+                    b2Var.dismiss();
                 }
+                of.f.s((Context) this.c, "https://t.me/" + ((String) this.d));
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
+            case 1:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                break;
         }
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        switch (this.a) {
-        }
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        int i11 = this.a;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
-
-    private final void a(int i10) {
-    }
-
-    private final void b(int i10) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
     }
 }

@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import m.g3;
 import mc.k;
+import mg.n;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a extends c {
     public static final Logger f;
-    public static final /* synthetic */ g3 h;
+    public static final /* synthetic */ n h;
     public ByteBuffer e;
 
     static {
@@ -34,10 +34,10 @@ public abstract class a extends c {
         try {
             this.e.rewind();
             k.a(-1, this.e);
-        } catch (IOException e) {
-            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e);
-        } catch (IndexOutOfBoundsException e7) {
+        } catch (IOException e7) {
             logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e7);
+        } catch (IndexOutOfBoundsException e10) {
+            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e10);
         }
     }
 

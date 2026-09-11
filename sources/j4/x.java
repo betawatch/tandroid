@@ -1,176 +1,83 @@
 package j4;
 
-import com.google.android.gms.internal.vision.e2;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class x implements h0 {
-    public final i a;
-    public final a4.h b = new a4.h(new byte[10], 10);
-    public int c = 0;
-    public int d;
-    public e2.b0 e;
+public final class x {
+    public final /* synthetic */ int a;
+    public final e2.b0 b;
+    public final e2.v c;
+    public boolean d;
+    public boolean e;
     public boolean f;
-    public boolean g;
-    public boolean h;
-    public int i;
-    public int j;
-    public boolean k;
-    public long l;
+    public long g;
+    public long h;
+    public long i;
 
-    public x(i iVar) {
-        this.a = iVar;
+    public x(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = new e2.b0(0L);
+                this.g = -9223372036854775807L;
+                this.h = -9223372036854775807L;
+                this.i = -9223372036854775807L;
+                this.c = new e2.v();
+                break;
+            default:
+                this.b = new e2.b0(0L);
+                this.g = -9223372036854775807L;
+                this.h = -9223372036854775807L;
+                this.i = -9223372036854775807L;
+                this.c = new e2.v();
+                break;
+        }
     }
 
-    @Override // j4.h0
-    public final void a(int i10, e2.v vVar) {
-        e2.d.h(this.e);
-        int i11 = i10 & 1;
-        int i12 = -1;
-        int i13 = 2;
-        i iVar = this.a;
-        if (i11 != 0) {
-            int i14 = this.c;
-            if (i14 != 0 && i14 != 1) {
-                if (i14 == 2) {
-                    e2.a.n("PesReader", "Unexpected start indicator reading extended header");
-                } else {
-                    if (i14 != 3) {
-                        throw new IllegalStateException();
-                    }
-                    if (this.j != -1) {
-                        e2.a.n("PesReader", "Unexpected start indicator: expected " + this.j + " more bytes");
-                    }
-                    iVar.d(vVar.c == 0);
+    public static int b(int i10, byte[] bArr) {
+        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
+    }
+
+    public static long c(e2.v vVar) {
+        int i10 = vVar.b;
+        if (vVar.a() < 9) {
+            return -9223372036854775807L;
+        }
+        byte[] bArr = new byte[9];
+        vVar.h(0, 9, bArr);
+        vVar.J(i10);
+        byte b10 = bArr[0];
+        if ((b10 & 196) == 68) {
+            byte b11 = bArr[2];
+            if ((b11 & 4) == 4) {
+                byte b12 = bArr[4];
+                if ((b12 & 4) == 4 && (bArr[5] & 1) == 1 && (bArr[8] & 3) == 3) {
+                    long j3 = b10;
+                    long j10 = b11;
+                    return ((j10 & 3) << 13) | ((j3 & 3) << 28) | (((56 & j3) >> 3) << 30) | ((bArr[1] & 255) << 20) | (((j10 & 248) >> 3) << 15) | ((bArr[3] & 255) << 5) | ((b12 & 248) >> 3);
                 }
             }
-            this.c = 1;
-            this.d = 0;
         }
-        int i15 = i10;
-        while (vVar.a() > 0) {
-            int i16 = this.c;
-            if (i16 != 0) {
-                a4.h hVar = this.b;
-                if (i16 != 1) {
-                    if (i16 == i13) {
-                        if (d(vVar, hVar.b, Math.min(10, this.i)) && d(vVar, null, this.i)) {
-                            hVar.q(0);
-                            this.l = -9223372036854775807L;
-                            if (this.f) {
-                                hVar.t(4);
-                                hVar.t(1);
-                                hVar.t(1);
-                                long i17 = (hVar.i(15) << 15) | (hVar.i(3) << 30) | hVar.i(15);
-                                hVar.t(1);
-                                if (!this.h && this.g) {
-                                    hVar.t(4);
-                                    hVar.t(1);
-                                    hVar.t(1);
-                                    hVar.t(1);
-                                    this.e.b((hVar.i(3) << 30) | (hVar.i(15) << 15) | hVar.i(15));
-                                    this.h = true;
-                                }
-                                this.l = this.e.b(i17);
-                            }
-                            i15 |= this.k ? 4 : 0;
-                            iVar.e(i15, this.l);
-                            this.c = 3;
-                            this.d = 0;
-                        }
-                    } else {
-                        if (i16 != 3) {
-                            throw new IllegalStateException();
-                        }
-                        int a2 = vVar.a();
-                        int i18 = this.j;
-                        int i19 = i18 == i12 ? 0 : a2 - i18;
-                        if (i19 > 0) {
-                            a2 -= i19;
-                            vVar.I(vVar.b + a2);
-                        }
-                        iVar.a(vVar);
-                        int i20 = this.j;
-                        if (i20 != i12) {
-                            int i21 = i20 - a2;
-                            this.j = i21;
-                            if (i21 == 0) {
-                                iVar.d(false);
-                                this.c = 1;
-                                this.d = 0;
-                            }
-                        }
-                    }
-                } else if (d(vVar, hVar.b, 9)) {
-                    this.c = e() ? 2 : 0;
-                    this.d = 0;
-                }
-            } else {
-                vVar.K(vVar.a());
-            }
-            i12 = -1;
-            i13 = 2;
-        }
+        return -9223372036854775807L;
     }
 
-    @Override // j4.h0
-    public final void b() {
-        this.c = 0;
-        this.d = 0;
-        this.h = false;
-        this.a.b();
-    }
-
-    @Override // j4.h0
-    public final void c(e2.b0 b0Var, c3.q qVar, g0 g0Var) {
-        this.e = b0Var;
-        this.a.c(qVar, g0Var);
-    }
-
-    public final boolean d(e2.v vVar, byte[] bArr, int i10) {
-        int min = Math.min(vVar.a(), i10 - this.d);
-        if (min <= 0) {
-            return true;
+    public final void a(c3.p pVar) {
+        switch (this.a) {
+            case 0:
+                byte[] bArr = e2.d0.b;
+                e2.v vVar = this.c;
+                vVar.getClass();
+                vVar.H(bArr.length, bArr);
+                this.d = true;
+                pVar.q();
+                break;
+            default:
+                byte[] bArr2 = e2.d0.b;
+                e2.v vVar2 = this.c;
+                vVar2.getClass();
+                vVar2.H(bArr2.length, bArr2);
+                this.d = true;
+                pVar.q();
+                break;
         }
-        if (bArr == null) {
-            vVar.K(min);
-        } else {
-            vVar.h(this.d, min, bArr);
-        }
-        int i11 = this.d + min;
-        this.d = i11;
-        return i11 == i10;
-    }
-
-    public final boolean e() {
-        a4.h hVar = this.b;
-        hVar.q(0);
-        int i10 = hVar.i(24);
-        if (i10 != 1) {
-            e2.l(i10, "Unexpected start code prefix: ", "PesReader");
-            this.j = -1;
-            return false;
-        }
-        hVar.t(8);
-        int i11 = hVar.i(16);
-        hVar.t(5);
-        this.k = hVar.h();
-        hVar.t(2);
-        this.f = hVar.h();
-        this.g = hVar.h();
-        hVar.t(6);
-        int i12 = hVar.i(8);
-        this.i = i12;
-        if (i11 == 0) {
-            this.j = -1;
-        } else {
-            int i13 = (i11 - 3) - i12;
-            this.j = i13;
-            if (i13 < 0) {
-                e2.a.n("PesReader", "Found negative packet payload size: " + this.j);
-                this.j = -1;
-            }
-        }
-        return true;
     }
 }

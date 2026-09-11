@@ -1,41 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
 
-    public /* synthetic */ i8(MediaDataController mediaDataController, String str, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = str;
+    public /* synthetic */ i8(BaseController baseController, long j3, long j10, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = baseController;
+        this.c = j3;
+        this.d = j10;
+        this.e = i10;
+        this.f = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$fetchNewEmojiKeywords$207(this.c);
+                ((MediaDataController) this.b).lambda$getMediaCountDatabase$139(this.c, this.d, this.e, this.f);
                 break;
             case 1:
-                this.b.lambda$putEmojiKeywords$214(this.c);
-                break;
-            case 2:
-                this.b.lambda$fetchNewEmojiKeywords$208(this.c);
-                break;
-            case 3:
-                this.b.lambda$fetchNewEmojiKeywords$213(this.c);
-                break;
-            case 4:
-                this.b.lambda$processLoadedDiceStickers$86(this.c);
-                break;
-            case 5:
-                this.b.lambda$fetchNewEmojiKeywords$209(this.c);
+                ((MediaDataController) this.b).lambda$putMediaCountDatabase$138(this.c, this.d, this.e, this.f);
                 break;
             default:
-                this.b.lambda$fetchNewEmojiKeywords$211(this.c);
+                ((MessagesStorage) this.b).lambda$updateRepliesMaxReadId$193(this.c, this.d, this.e, this.f);
                 break;
         }
     }

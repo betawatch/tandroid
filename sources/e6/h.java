@@ -26,7 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
@@ -53,7 +53,7 @@ public final class h implements c6.f {
         aa.a aVar = new aa.a(this);
         this.d = aVar;
         this.c = mVar;
-        mVar.h = new a4.m(this, 13);
+        mVar.h = new a4.m(this, 17);
         mVar.c = aVar;
         this.e = new c(this);
     }
@@ -67,8 +67,8 @@ public final class h implements c6.f {
     public static final void x(p pVar) {
         try {
             pVar.p();
-        } catch (IllegalArgumentException e) {
-            throw e;
+        } catch (IllegalArgumentException e7) {
+            throw e7;
         } catch (Throwable unused) {
             pVar.a(new o(new Status(2100, null, null, null), 1));
         }
@@ -88,8 +88,8 @@ public final class h implements c6.f {
         synchronized (this.a) {
             try {
                 n6.l.e("Must be called from the main thread.");
-                c6.q e = e();
-                i10 = e != null ? e.f : 0;
+                c6.q e7 = e();
+                i10 = e7 != null ? e7.f : 0;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -99,15 +99,15 @@ public final class h implements c6.f {
 
     public final c6.o c() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        if (e == null) {
+        c6.q e7 = e();
+        if (e7 == null) {
             return null;
         }
-        Integer num = (Integer) e.N.get(e.w);
+        Integer num = (Integer) e7.N.get(e7.w);
         if (num == null) {
             return null;
         }
-        return (c6.o) e.G.get(num.intValue());
+        return (c6.o) e7.G.get(num.intValue());
     }
 
     public final MediaInfo d() {
@@ -134,8 +134,8 @@ public final class h implements c6.f {
         synchronized (this.a) {
             try {
                 n6.l.e("Must be called from the main thread.");
-                c6.q e = e();
-                i10 = e != null ? e.e : 1;
+                c6.q e7 = e();
+                i10 = e7 != null ? e7.e : 1;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -160,14 +160,14 @@ public final class h implements c6.f {
             return true;
         }
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        return (e != null && e.e == 5) || m() || l() || k();
+        c6.q e7 = e();
+        return (e7 != null && e7.e == 5) || m() || l() || k();
     }
 
     public final boolean i() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        return e != null && e.e == 4;
+        c6.q e7 = e();
+        return e7 != null && e7.e == 4;
     }
 
     public final boolean j() {
@@ -178,17 +178,17 @@ public final class h implements c6.f {
 
     public final boolean k() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        return (e == null || e.w == 0) ? false : true;
+        c6.q e7 = e();
+        return (e7 == null || e7.w == 0) ? false : true;
     }
 
     public final boolean l() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        if (e == null) {
+        c6.q e7 = e();
+        if (e7 == null) {
             return false;
         }
-        if (e.e != 3) {
+        if (e7.e != 3) {
             return j() && b() == 2;
         }
         return true;
@@ -196,14 +196,14 @@ public final class h implements c6.f {
 
     public final boolean m() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        return e != null && e.e == 2;
+        c6.q e7 = e();
+        return e7 != null && e7.e == 2;
     }
 
     public final boolean n() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e = e();
-        return e != null && e.H;
+        c6.q e7 = e();
+        return e7 != null && e7.H;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
@@ -249,8 +249,8 @@ public final class h implements c6.f {
             try {
                 optLong = jSONObject.optLong("requestId", -1L);
                 c10 = 1;
-            } catch (JSONException e) {
-                e = e;
+            } catch (JSONException e7) {
+                e = e7;
                 r32 = str2;
                 c10 = 1;
                 Object[] objArr = new Object[2];
@@ -258,8 +258,8 @@ public final class h implements c6.f {
                 objArr[c10] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
             }
-        } catch (JSONException e7) {
-            e = e7;
+        } catch (JSONException e10) {
+            e = e10;
             r32 = str2;
         }
         try {
@@ -279,7 +279,7 @@ public final class h implements c6.f {
                                 JSONArray jSONArray = jSONObject.getJSONArray("items");
                                 c6.o[] oVarArr = new c6.o[jSONArray.length()];
                                 for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                    oVarArr[i12] = new xa.c(jSONArray.getJSONObject(i12)).t0();
+                                    oVarArr[i12] = new xa.c(jSONArray.getJSONObject(i12)).B();
                                 }
                                 Iterator it = ((h) mVar.h.b).i.iterator();
                                 while (it.hasNext()) {
@@ -437,7 +437,7 @@ public final class h implements c6.f {
                                             mVar.e = SystemClock.elapsedRealtime();
                                             a4.m mVar2 = mVar.h;
                                             if (mVar2 != null) {
-                                                mVar2.U();
+                                                mVar2.n0();
                                             }
                                         }
                                         if ((i11 & 64) != 0) {
@@ -563,16 +563,16 @@ public final class h implements c6.f {
                         }
                         break;
                 }
-            } catch (JSONException e10) {
-                e = e10;
+            } catch (JSONException e11) {
+                e = e11;
                 r32 = str2;
                 Object[] objArr2 = new Object[2];
                 objArr2[0] = e.getMessage();
                 objArr2[c10] = str;
                 Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
             }
-        } catch (JSONException e11) {
-            e = e11;
+        } catch (JSONException e12) {
+            e = e12;
             Object[] objArr22 = new Object[2];
             objArr22[0] = e.getMessage();
             objArr22[c10] = str;
@@ -649,10 +649,10 @@ public final class h implements c6.f {
         synchronized (e0Var.C) {
             e0Var.C.put(str, this);
         }
-        v e = w.e();
-        e.c = new a0(e0Var, str, this);
-        e.a = 8413;
-        e0Var.e(1, e.a());
+        v e7 = w.e();
+        e7.c = new a0(e0Var, str, this);
+        e7.a = 8413;
+        e0Var.e(1, e7.a());
         n6.l.e("Must be called from the main thread.");
         if (w()) {
             x(new j(this, 0));
@@ -679,10 +679,10 @@ public final class h implements c6.f {
             synchronized (e0Var2.C) {
                 fVar = (c6.f) e0Var2.C.remove(str);
             }
-            v e = w.e();
-            e.c = new a0(e0Var2, fVar, str);
-            e.a = 8414;
-            e0Var2.e(1, e.a());
+            v e7 = w.e();
+            e7.c = new a0(e0Var2, fVar, str);
+            e7.a = 8414;
+            e0Var2.e(1, e7.a());
             this.d.b = null;
             this.b.removeCallbacksAndMessages(null);
         }

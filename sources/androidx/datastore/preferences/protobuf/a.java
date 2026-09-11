@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a {
     protected int memoizedHashCode;
@@ -13,9 +13,9 @@ public abstract class a {
         if (i10 != -1) {
             return i10;
         }
-        int e = b1Var.e(this);
-        wVar.memoizedSerializedSize = e;
-        return e;
+        int e7 = b1Var.e(this);
+        wVar.memoizedSerializedSize = e7;
+        return e7;
     }
 
     public abstract void c(j jVar);

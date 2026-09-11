@@ -1,77 +1,24 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import android.os.CancellationSignal;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SendMessagesHelper;
+import android.media.SoundPool;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class dh implements Runnable {
+public final /* synthetic */ class dh implements SoundPool.OnLoadCompleteListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ dh(Object obj, int i10) {
+    public /* synthetic */ dh(int i10) {
         this.a = i10;
-        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.media.SoundPool.OnLoadCompleteListener
+    public final void onLoadComplete(SoundPool soundPool, int i10, int i11) {
         switch (this.a) {
             case 0:
-                ((MusicPlayerService) this.b).stopSelf();
-                break;
-            case 1:
-                NotificationBadge.HuaweiHomeBadger.lambda$executeBadge$0((Bundle) this.b);
-                break;
-            case 2:
-                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
-                break;
-            case 3:
-                ((CancellationSignal) this.b).cancel();
-                break;
-            case 4:
-                ((ProxyRotationController) this.b).lambda$new$2();
-                break;
-            case 5:
-                ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
-                break;
-            case 6:
-                ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
-                break;
-            case 7:
-                ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
-                break;
-            case 8:
-                ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
-                break;
-            case 9:
-                RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
-                break;
-            case 10:
-                ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
-                break;
-            case 11:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$25();
-                break;
-            case 12:
-                ((SendMessagesHelper) this.b).lambda$new$0();
-                break;
-            case 13:
-                ((MessagesStorage.StringCallback) this.b).run(null);
-                break;
-            case 14:
-                ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
-                break;
-            case 15:
-                ((TelegramMediaSession) this.b).onAccountSwitched();
+                NotificationsController.lambda$playOutChatSound$48(soundPool, i10, i11);
                 break;
             default:
-                ((TranslateController) this.b).loadTranslatingDialogsCached();
+                NotificationsController.lambda$playInChatSound$39(soundPool, i10, i11);
                 break;
         }
     }

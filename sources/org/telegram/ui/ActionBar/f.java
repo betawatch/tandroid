@@ -7,14 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rf;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xg;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.Components.vg;
+import org.telegram.ui.Components.x9;
 import org.telegram.ui.cj0;
 import org.telegram.ui.pi0;
 import org.telegram.ui.vi0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -23,8 +23,8 @@ public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ KeyEvent.Callback e;
 
-    public f(l lVar, ArrayList arrayList, boolean z10, boolean z11) {
-        this.e = lVar;
+    public f(k kVar, ArrayList arrayList, boolean z10, boolean z11) {
+        this.e = kVar;
         this.d = arrayList;
         this.b = z10;
         this.c = z11;
@@ -32,32 +32,32 @@ public final class f extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        rf rfVar;
+        qf qfVar;
         org.telegram.ui.Cells.t1 t1Var;
         ViewGroup viewGroup;
         pi0 pi0Var;
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) this.d;
-                l lVar = (l) this.e;
+                k kVar = (k) this.e;
                 int i10 = 0;
                 while (true) {
                     int size = arrayList.size();
                     boolean z10 = this.b;
                     if (i10 >= size) {
                         if (z10 && !this.c) {
-                            l5 l5Var = lVar.n[0];
-                            if (l5Var != null) {
-                                l5Var.setVisibility(8);
+                            j5 j5Var = kVar.n[0];
+                            if (j5Var != null) {
+                                j5Var.setVisibility(8);
                             }
-                            l5 l5Var2 = lVar.n[1];
-                            if (l5Var2 != null) {
-                                l5Var2.setVisibility(8);
+                            j5 j5Var2 = kVar.n[1];
+                            if (j5Var2 != null) {
+                                j5Var2.setVisibility(8);
                             }
                         }
-                        w9 w9Var = lVar.f;
-                        if (w9Var != null && !z10) {
-                            w9Var.setVisibility(8);
+                        x9 x9Var = kVar.f;
+                        if (x9Var != null && !z10) {
+                            x9Var.setVisibility(8);
                             break;
                         }
                     } else {
@@ -86,17 +86,17 @@ public final class f extends AnimatorListenerAdapter {
                     cj0Var.w = false;
                     cj0Var.v = false;
                 }
-                rf rfVar2 = cj0Var.S;
-                if (rfVar2 != null) {
-                    rfVar2.setAlpha(1.0f);
+                qf qfVar2 = cj0Var.S;
+                if (qfVar2 != null) {
+                    qfVar2.setAlpha(1.0f);
                 }
                 org.telegram.ui.Cells.t1 t1Var2 = cj0Var.r0;
                 if (t1Var2 != null) {
                     t1Var2.setVisibility(0);
                 }
-                xg xgVar = cj0Var.W;
-                if (xgVar != null && !cj0Var.s) {
-                    xgVar.setAlpha(1.0f);
+                vg vgVar = cj0Var.W;
+                if (vgVar != null && !cj0Var.s) {
+                    vgVar.setAlpha(1.0f);
                 }
                 if (!z11 && (pi0Var = cj0Var.X) != null) {
                     pi0Var.setAlpha(0.0f);
@@ -112,7 +112,7 @@ public final class f extends AnimatorListenerAdapter {
                     if (!z11 && (t1Var = cj0Var.r0) != null && t1Var.isAttachedToWindow()) {
                         cj0Var.r0.post(runnable);
                         break;
-                    } else if (!z11 && (rfVar = cj0Var.S) != null && rfVar.isAttachedToWindow()) {
+                    } else if (!z11 && (qfVar = cj0Var.S) != null && qfVar.isAttachedToWindow()) {
                         cj0Var.S.post(runnable);
                         break;
                     } else {

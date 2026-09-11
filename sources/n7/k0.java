@@ -1,133 +1,32 @@
 package n7;
 
-import java.math.RoundingMode;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class k0 {
-    public final String a;
-    public final char[] b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final byte[] g;
-    public final boolean h;
+public final class k0 extends m0 {
+    public final char[] e;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public k0(String str, char[] cArr) {
-        this(str, cArr, r1, false);
-        byte[] bArr = new byte[128];
-        Arrays.fill(bArr, (byte) -1);
-        for (int i10 = 0; i10 < cArr.length; i10++) {
-            char c10 = cArr[i10];
-            if (!(c10 < 128)) {
-                throw new IllegalArgumentException(a.c("Non-ASCII character: %s", Character.valueOf(c10)));
-            }
-            if (!(bArr[c10] == -1)) {
-                throw new IllegalArgumentException(a.c("Duplicate character: %s", Character.valueOf(c10)));
-            }
-            bArr[c10] = (byte) i10;
+    public k0(j0 j0Var) {
+        super(j0Var, (Character) null);
+        this.e = new char[512];
+        char[] cArr = j0Var.b;
+        if (cArr.length != 16) {
+            throw new IllegalArgumentException();
+        }
+        for (int i10 = 0; i10 < 256; i10++) {
+            char[] cArr2 = this.e;
+            cArr2[i10] = cArr[i10 >>> 4];
+            cArr2[i10 | 256] = cArr[i10 & 15];
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof k0)) {
-            return false;
-        }
-        k0 k0Var = (k0) obj;
-        return this.h == k0Var.h && Arrays.equals(this.b, k0Var.b);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(this.b) + (true != this.h ? 1237 : 1231);
-    }
-
-    public final String toString() {
-        return this.a;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0061 A[LOOP:0: B:13:0x005d->B:15:0x0061, LOOP_END] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public k0(String str, char[] cArr, byte[] bArr, boolean z10) {
-        int numberOfLeadingZeros;
-        int i10;
-        this.a = str;
-        cArr.getClass();
-        this.b = cArr;
-        try {
-            int length = cArr.length;
-            RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-            if (length > 0) {
-                switch (o0.a[roundingMode.ordinal()]) {
-                    case 1:
-                        if (((length - 1) & length) != 0) {
-                            throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
-                        }
-                    case 2:
-                    case 3:
-                        numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(length);
-                        this.d = numberOfLeadingZeros;
-                        int numberOfTrailingZeros = Integer.numberOfTrailingZeros(numberOfLeadingZeros);
-                        int i11 = 1 << (3 - numberOfTrailingZeros);
-                        this.e = i11;
-                        this.f = numberOfLeadingZeros >> numberOfTrailingZeros;
-                        this.c = length - 1;
-                        this.g = bArr;
-                        boolean[] zArr = new boolean[i11];
-                        for (i10 = 0; i10 < this.f; i10++) {
-                            int i12 = this.d;
-                            RoundingMode roundingMode2 = RoundingMode.CEILING;
-                            zArr[a.a(i10 * 8, i12)] = true;
-                        }
-                        this.h = z10;
-                        return;
-                    case 4:
-                    case 5:
-                        numberOfLeadingZeros = 32 - Integer.numberOfLeadingZeros(length - 1);
-                        this.d = numberOfLeadingZeros;
-                        int numberOfTrailingZeros2 = Integer.numberOfTrailingZeros(numberOfLeadingZeros);
-                        int i112 = 1 << (3 - numberOfTrailingZeros2);
-                        this.e = i112;
-                        this.f = numberOfLeadingZeros >> numberOfTrailingZeros2;
-                        this.c = length - 1;
-                        this.g = bArr;
-                        boolean[] zArr2 = new boolean[i112];
-                        while (i10 < this.f) {
-                        }
-                        this.h = z10;
-                        return;
-                    case 6:
-                    case 7:
-                    case 8:
-                        int numberOfLeadingZeros2 = Integer.numberOfLeadingZeros(length);
-                        numberOfLeadingZeros = (31 - numberOfLeadingZeros2) + ((((-1257966797) >>> numberOfLeadingZeros2) - length) >>> 31);
-                        this.d = numberOfLeadingZeros;
-                        int numberOfTrailingZeros22 = Integer.numberOfTrailingZeros(numberOfLeadingZeros);
-                        int i1122 = 1 << (3 - numberOfTrailingZeros22);
-                        this.e = i1122;
-                        this.f = numberOfLeadingZeros >> numberOfTrailingZeros22;
-                        this.c = length - 1;
-                        this.g = bArr;
-                        boolean[] zArr22 = new boolean[i1122];
-                        while (i10 < this.f) {
-                        }
-                        this.h = z10;
-                        return;
-                    default:
-                        throw new AssertionError();
-                }
-            } else {
-                throw new IllegalArgumentException("x (0) must be > 0");
-            }
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException(hc.b.j(cArr.length, "Illegal alphabet length "), e);
+    @Override // n7.m0
+    public final void a(StringBuilder sb2, byte[] bArr, int i10) {
+        a.m(0, i10, bArr.length);
+        for (int i11 = 0; i11 < i10; i11++) {
+            int i12 = bArr[i11] & 255;
+            char[] cArr = this.e;
+            sb2.append(cArr[i12]);
+            sb2.append(cArr[i12 | 256]);
         }
     }
 }

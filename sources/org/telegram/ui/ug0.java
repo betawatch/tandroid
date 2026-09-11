@@ -1,53 +1,90 @@
 package org.telegram.ui;
 
+import android.content.SharedPreferences;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ug0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vg0 b;
-    public final /* synthetic */ kg0 c;
+public final class ug0 {
+    public final /* synthetic */ vg0 a;
 
-    public /* synthetic */ ug0(int i10, kg0 kg0Var, vg0 vg0Var) {
-        this.a = i10;
-        this.b = vg0Var;
-        this.c = kg0Var;
+    public ug0(vg0 vg0Var) {
+        this.a = vg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        kg0 kg0Var = this.c;
-        vg0 vg0Var = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = kg0.E;
-                kg0Var.a();
-                AndroidUtilities.runOnUIThread(new ug0(1, kg0Var, vg0Var), 150L);
-                break;
-            default:
-                wg0 wg0Var = vg0Var.a;
-                wg0Var.h(null);
-                RadialProgressView radialProgressView = wg0Var.V.N.d;
-                RadialProgressView radialProgressView2 = kg0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.y = radialProgressView2.y;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.b(85L);
-                break;
+    public final void a(kg0 kg0Var) {
+        int i10;
+        vg0 vg0Var = this.a;
+        vg0Var.L = true;
+        wg0 wg0Var = vg0Var.V;
+        wg0Var.J = 0;
+        wg0Var.n1(0, false);
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 23 && AndroidUtilities.isSimAvailable()) {
+            boolean z10 = wg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
+            boolean z11 = wg0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
+            boolean z12 = i11 < 28 || wg0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
+            boolean z13 = i11 < 26 || wg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
+            ck0 ck0Var = vg0Var.a;
+            if (ck0Var != null && "888".equals(ck0Var.getText())) {
+                z10 = true;
+                z11 = true;
+                z12 = true;
+                z13 = true;
+            }
+            if (wg0Var.v) {
+                wg0Var.r.clear();
+                if (!z10) {
+                    wg0Var.r.add("android.permission.READ_PHONE_STATE");
+                }
+                if (!z11) {
+                    wg0Var.r.add("android.permission.CALL_PHONE");
+                }
+                if (!z12) {
+                    wg0Var.r.add("android.permission.READ_CALL_LOG");
+                }
+                if (!z13 && i11 >= 26) {
+                    wg0Var.r.add("android.permission.READ_PHONE_NUMBERS");
+                }
+                if (!wg0Var.r.isEmpty()) {
+                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                    if (!globalMainSettings.getBoolean("firstlogin", true) && !wg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE") && !wg0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_CALL_LOG")) {
+                        try {
+                            wg0Var.getParentActivity().requestPermissions((String[]) wg0Var.r.toArray(new String[0]), 6);
+                            return;
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                            return;
+                        }
+                    }
+                    globalMainSettings.edit().putBoolean("firstlogin", false).commit();
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wg0Var.getParentActivity());
+                    alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
+                    if (!z10 && (!z11 || !z12)) {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
+                        i10 = R.raw.calls_log;
+                    } else if (z11 && z12) {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
+                        i10 = R.raw.incoming_calls;
+                    } else {
+                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
+                        i10 = R.raw.calls_log;
+                    }
+                    alertDialog$Builder.m(i10, 46, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+                    wg0Var.h = wg0Var.showDialog(alertDialog$Builder.a);
+                    vg0Var.L = true;
+                    return;
+                }
+            }
         }
+        tg0 tg0Var = new tg0(0, kg0Var, this);
+        kg0Var.h.f(true, true);
+        AndroidUtilities.runOnUIThread(tg0Var, 400L);
     }
 }

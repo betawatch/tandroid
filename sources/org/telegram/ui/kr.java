@@ -1,59 +1,65 @@
 package org.telegram.ui;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class kr implements pr {
-    public final /* synthetic */ wr a;
+public final class kr implements or {
+    public final /* synthetic */ vr a;
 
-    public kr(wr wrVar) {
-        this.a = wrVar;
+    public kr(vr vrVar) {
+        this.a = vrVar;
     }
 
-    @Override // org.telegram.ui.pr
+    @Override // org.telegram.ui.or
+    public final void a(TLRPC.User user) {
+        vr.c0(this.a, user);
+    }
+
+    @Override // org.telegram.ui.or
+    public final void b(long j3) {
+        vr vrVar = this.a;
+        ArrayList arrayList = vrVar.F;
+        a0.i iVar = vrVar.K;
+        TLRPC.User user = vrVar.getMessagesController().getUser(Long.valueOf(j3));
+        if (user != null) {
+            AndroidUtilities.runOnUIThread(new fh(24, this, user), 200L);
+        }
+        if (iVar.f(j3) == null) {
+            pr w02 = vrVar.w0();
+            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            tL_channelParticipantAdmin.peer = tL_peerUser;
+            tL_peerUser.user_id = user.id;
+            tL_channelParticipantAdmin.date = vrVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantAdmin.promoted_by = vrVar.getAccountInstance().getUserConfig().clientUserId;
+            arrayList.add(tL_channelParticipantAdmin);
+            iVar.k(tL_channelParticipantAdmin, user.id);
+            Collections.sort(arrayList, new f6(6));
+            vrVar.A0(w02);
+        }
+    }
+
+    @Override // org.telegram.ui.or
     public final void c(long j3, TLObject tLObject) {
-        wr wrVar = this.a;
-        if (wrVar.K.f(j3) == null) {
-            qr w02 = wrVar.w0();
-            wrVar.F.add(tLObject);
-            wrVar.K.k(tLObject, j3);
-            wrVar.z0(wrVar.F);
-            wrVar.A0(w02);
+        vr vrVar = this.a;
+        ArrayList arrayList = vrVar.F;
+        a0.i iVar = vrVar.K;
+        if (tLObject == null || iVar.f(j3) != null) {
+            return;
         }
+        pr w02 = vrVar.w0();
+        arrayList.add(tLObject);
+        iVar.k(tLObject, j3);
+        Collections.sort(arrayList, new f6(6));
+        vrVar.A0(w02);
     }
 
-    @Override // org.telegram.ui.pr
-    public final void d(long j3) {
-        wr wrVar = this.a;
-        if (wrVar.K.f(j3) == null) {
-            qr w02 = wrVar.w0();
-            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
-            if (j3 > 0) {
-                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                tL_channelParticipantBanned.peer = tL_peerUser;
-                tL_peerUser.user_id = j3;
-            } else {
-                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                tL_channelParticipantBanned.peer = tL_peerChannel;
-                tL_peerChannel.channel_id = -j3;
-            }
-            tL_channelParticipantBanned.date = wrVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantBanned.kicked_by = wrVar.getAccountInstance().getUserConfig().clientUserId;
-            wrVar.s.kicked_count++;
-            wrVar.F.add(tL_channelParticipantBanned);
-            wrVar.K.k(tL_channelParticipantBanned, j3);
-            wrVar.z0(wrVar.F);
-            wrVar.A0(w02);
-        }
-    }
-
-    @Override // org.telegram.ui.pr
-    public final /* synthetic */ void a(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.pr
-    public final /* synthetic */ void b(long j3) {
+    @Override // org.telegram.ui.or
+    public final /* synthetic */ void d(long j3) {
     }
 }

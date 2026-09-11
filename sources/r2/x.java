@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
+import k2.g0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -29,8 +30,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void b(int i10, h2.d dVar, long j3, int i11) {
-        this.a.queueSecureInputBuffer(i10, 0, dVar.i, j3, i11);
+    public final void b(int i10, h2.c cVar, long j3, int i11) {
+        this.a.queueSecureInputBuffer(i10, 0, cVar.i, j3, i11);
     }
 
     @Override // r2.l
@@ -39,8 +40,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void d(a3.m mVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
+    public final void d(a3.l lVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, lVar, 1), handler);
     }
 
     @Override // r2.l
@@ -93,13 +94,13 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void j(Surface surface) {
-        this.a.setOutputSurface(surface);
+    public final /* synthetic */ boolean j(g0 g0Var) {
+        return false;
     }
 
     @Override // r2.l
-    public final /* synthetic */ boolean k(o0.b bVar) {
-        return false;
+    public final void k(Surface surface) {
+        this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l

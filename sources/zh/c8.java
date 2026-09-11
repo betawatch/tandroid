@@ -1,61 +1,59 @@
 package zh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
 import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseLongArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.bb;
-import org.telegram.ui.Components.ha;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.f01;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class c8 {
-    public static final c8[] f = new c8[4];
-    public final int a;
-    public final LongSparseLongArray b = new LongSparseLongArray();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final b8 e;
+public final class c8 extends View {
+    public final LinearGradient a;
+    public final Matrix b;
+    public final Paint c;
+    public final Paint d;
+    public final f01 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 f;
 
-    public c8(int i10) {
-        new ArrayList();
-        this.e = new b8(this);
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c8(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.f = f6Var;
+        this.a = new LinearGradient(0.0f, 0.0f, 255.0f, 0.0f, new int[]{-1135603, -404714}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.b = new Matrix();
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        this.e = new f01(LocaleController.getString(R.string.StarsReactionTopSenders), 14.16f, AndroidUtilities.bold());
     }
 
-    public final void a(ha haVar) {
-        TLRPC.UserStatus userStatus;
-        long currentTimeMillis = System.currentTimeMillis();
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        for (int i10 = 0; i10 < haVar.getChildCount(); i10++) {
-            View childAt = haVar.getChildAt(i10);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.r2 ? ((org.telegram.ui.Cells.r2) childAt).getDialogId() : childAt instanceof bb ? ((bb) childAt).getDialogId() : 0L;
-            int i11 = this.a;
-            LongSparseLongArray longSparseLongArray = this.b;
-            if (dialogId > 0) {
-                TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(dialogId));
-                if (user != null && !user.bot && !user.self && !user.contact && (userStatus = user.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            } else {
-                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-dialogId));
-                if (ChatObject.isChannel(chat) && !ChatObject.isMonoForum(chat) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            }
-        }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        this.d.addAll(arrayList);
-        b8 b8Var = this.e;
-        AndroidUtilities.cancelRunOnUIThread(b8Var);
-        AndroidUtilities.runOnUIThread(b8Var, 300L);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Matrix matrix = this.b;
+        matrix.reset();
+        matrix.postTranslate(AndroidUtilities.dp(14.0f), 0.0f);
+        matrix.postScale((getWidth() - AndroidUtilities.dp(28.0f)) / 255.0f, 1.0f);
+        LinearGradient linearGradient = this.a;
+        linearGradient.setLocalMatrix(matrix);
+        Paint paint = this.c;
+        paint.setShader(linearGradient);
+        f01 f01Var = this.e;
+        float dp = f01Var.c + AndroidUtilities.dp(30.0f);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, this.f);
+        Paint paint2 = this.d;
+        paint2.setColor(v02);
+        canvas.drawRect(AndroidUtilities.dp(24.0f), (getHeight() / 2.0f) - 1.0f, ((getWidth() - dp) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, paint2);
+        canvas.drawRect(AndroidUtilities.dp(8.0f) + ((getWidth() + dp) / 2.0f), (getHeight() / 2.0f) - 1.0f, getWidth() - AndroidUtilities.dp(24.0f), getHeight() / 2.0f, paint2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dp) / 2.0f, 0.0f, (getWidth() + dp) / 2.0f, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, paint);
+        this.e.c((getWidth() - f01Var.c) / 2.0f, getHeight() / 2.0f, 1.0f, -1, canvas);
     }
 }

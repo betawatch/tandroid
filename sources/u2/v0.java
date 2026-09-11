@@ -1,28 +1,46 @@
 package u2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import rg.p2;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class v0 {
-    public final int a;
-    public final boolean b;
+public final class v0 implements e0 {
+    public final g2.g a;
+    public final p2 b;
+    public final m2.t c;
+    public final rb.a d;
+    public final int e;
 
-    public v0(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+    public v0(g2.g gVar, c3.m mVar) {
+        p2 p2Var = new p2(mVar, 4);
+        m2.t tVar = new m2.t(4);
+        rb.a aVar = new rb.a(26);
+        this.a = gVar;
+        this.b = p2Var;
+        this.c = tVar;
+        this.d = aVar;
+        this.e = 1048576;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || v0.class != obj.getClass()) {
-            return false;
-        }
-        v0 v0Var = (v0) obj;
-        return this.a == v0Var.a && this.b == v0Var.b;
+    @Override // u2.e0
+    /* renamed from: e, reason: merged with bridge method [inline-methods] */
+    public final w0 a(b2.k0 k0Var) {
+        k0Var.b.getClass();
+        return new w0(k0Var, this.a, this.b, this.c.w(k0Var), this.d, this.e, null);
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + (this.b ? 1 : 0);
+    @Override // u2.e0
+    public final e0 c() {
+        return this;
+    }
+
+    @Override // u2.e0
+    public final e0 b(boolean z10) {
+        return this;
+    }
+
+    @Override // u2.e0
+    public final e0 d(rb.a aVar) {
+        return this;
     }
 }

@@ -14,9 +14,10 @@ import e9.g0;
 import e9.i0;
 import java.util.Arrays;
 import java.util.List;
-import u2.z0;
+import t7.u;
+import u2.x0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
@@ -91,7 +92,7 @@ public final class d implements o {
                 iVar.e = j11;
                 g gVar = iVar.d;
                 String str = d0.a;
-                gVar.y(j11);
+                gVar.h(j11);
                 iVar.h = 2;
             }
         }
@@ -118,14 +119,14 @@ public final class d implements o {
             if (!a(pVar)) {
                 throw s0.a(null, "Failed to determine bitstream type");
             }
-            pVar.p();
+            pVar.q();
         }
         if (!this.c) {
-            h0 I = this.a.I(0, 1);
-            this.a.B();
+            h0 R1 = this.a.R1(0, 1);
+            this.a.Z0();
             i iVar = this.b;
             iVar.c = this.a;
-            iVar.b = I;
+            iVar.b = R1;
             iVar.d(true);
             this.c = true;
         }
@@ -137,7 +138,7 @@ public final class d implements o {
         long j3 = -1;
         if (i11 != 0) {
             if (i11 == 1) {
-                pVar.q((int) iVar2.f);
+                pVar.r((int) iVar2.f);
                 iVar2.h = 2;
                 return 0;
             }
@@ -147,20 +148,20 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long c10 = iVar2.d.c(pVar);
-            if (c10 >= 0) {
-                sVar.a = c10;
+            long a2 = iVar2.d.a(pVar);
+            if (a2 >= 0) {
+                sVar.a = a2;
                 return 1;
             }
-            if (c10 < -1) {
-                iVar2.a(-(c10 + 2));
+            if (a2 < -1) {
+                iVar2.a(-(a2 + 2));
             }
             if (!iVar2.l) {
-                b0 h = iVar2.d.h();
-                e2.d.h(h);
-                iVar2.c.G(h);
+                b0 d = iVar2.d.d();
+                e2.d.h(d);
+                iVar2.c.P1(d);
                 h0 h0Var = iVar2.b;
-                h.l();
+                d.l();
                 h0Var.getClass();
                 iVar2.l = true;
             }
@@ -203,9 +204,9 @@ public final class d implements o {
                     iVar2.b.b(sVar2);
                     iVar2.m = true;
                 }
-                z0 z0Var = (z0) iVar2.j.c;
-                if (z0Var != null) {
-                    iVar2.d = z0Var;
+                x0 x0Var = (x0) iVar2.j.c;
+                if (x0Var != null) {
+                    iVar2.d = x0Var;
                 } else {
                     if (pVar.getLength() != j11) {
                         f fVar = eVar.a;
@@ -225,7 +226,7 @@ public final class d implements o {
                         vVar.H(vVar.c, Arrays.copyOf(bArr, Math.max(65025, vVar.c)));
                         return 0;
                     }
-                    iVar2.d = new na.d(26);
+                    iVar2.d = new u(25);
                 }
                 vVar = vVar3;
                 i10 = 2;

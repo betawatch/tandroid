@@ -1,8 +1,8 @@
 package y9;
 
-import v7.d8;
+import v7.c8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a0 extends e2 {
     public final String b;
@@ -31,20 +31,20 @@ public final class a0 extends e2 {
         this.l = g1Var;
     }
 
-    public final d8 a() {
-        d8 d8Var = new d8();
-        d8Var.a = this.b;
-        d8Var.b = this.c;
-        d8Var.i = Integer.valueOf(this.d);
-        d8Var.c = this.e;
-        d8Var.d = this.f;
-        d8Var.e = this.g;
-        d8Var.k = this.h;
-        d8Var.f = this.i;
-        d8Var.g = this.j;
-        d8Var.h = this.k;
-        d8Var.j = this.l;
-        return d8Var;
+    public final c8 a() {
+        c8 c8Var = new c8();
+        c8Var.a = this.b;
+        c8Var.b = this.c;
+        c8Var.i = Integer.valueOf(this.d);
+        c8Var.c = this.e;
+        c8Var.d = this.f;
+        c8Var.e = this.g;
+        c8Var.k = this.h;
+        c8Var.f = this.i;
+        c8Var.g = this.j;
+        c8Var.h = this.k;
+        c8Var.j = this.l;
+        return c8Var;
     }
 
     public final boolean equals(Object obj) {

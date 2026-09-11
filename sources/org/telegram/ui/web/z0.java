@@ -1,60 +1,471 @@
 package org.telegram.ui.web;
 
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.j6;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import android.webkit.CookieManager;
+import android.webkit.WebView;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.m3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class z0 {
-    public final String a;
-    public final String b;
-    public final int c;
+public final class z0 extends WebView {
+    public static final /* synthetic */ int V = 0;
+    public boolean E;
+    public f3 F;
+    public int G;
+    public int H;
+    public Runnable I;
+    public boolean J;
+    public String K;
+    public String L;
+    public boolean M;
+    public boolean N;
+    public Bitmap O;
+    public final HashMap P;
+    public d1 Q;
+    public boolean R;
+    public a6.i S;
+    public c1 T;
+    public Runnable U;
+    public final int a;
+    public boolean b;
+    public final boolean c;
+    public String d;
+    public e1 e;
+    public z0 f;
+    public boolean h;
+    public String n;
+    public String r;
+    public boolean s;
+    public boolean v;
+    public int w;
+    public int x;
+    public String y;
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
-     */
-    public z0(JSONObject jSONObject) {
-        this.c = -1;
-        this.a = jSONObject.getString("id");
-        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
-        switch (string.hashCode()) {
-            case -1829997182:
-                if (string.equals("destructive")) {
-                    this.c = j6.q7;
-                    break;
-                }
-                break;
-            case -1367724422:
-                if (string.equals("cancel")) {
-                    this.b = LocaleController.getString(R.string.Cancel);
-                    return;
-                }
-                break;
-            case 3548:
-                if (string.equals("ok")) {
-                    this.b = LocaleController.getString(R.string.OK);
-                    return;
-                }
-                break;
-            case 94756344:
-                if (string.equals("close")) {
-                    this.b = LocaleController.getString(R.string.Close);
-                    return;
-                }
-                break;
-            case 1544803905:
-                string.equals("default");
-                break;
+    public z0(Context context, boolean z10, long j3) {
+        super(context);
+        int i10 = d1.Q0;
+        d1.Q0 = i10 + 1;
+        this.a = i10;
+        this.y = "about:blank";
+        this.P = new HashMap();
+        this.c = z10;
+        c("created new webview " + this);
+        setOnLongClickListener(new m0(this));
+        setWebViewClient(new o0(this, z10, context));
+        setWebChromeClient(new w0(this, context, z10, j3));
+        setFindListener(new x0(this));
+        if (z10) {
+            return;
         }
-        this.b = jSONObject.getString("text");
+        setDownloadListener(new y0(this));
+    }
+
+    public static void a(z0 z0Var) {
+        if (z0Var.c) {
+            return;
+        }
+        n2 a2 = n2.a(z0Var);
+        o2 b10 = o2.b();
+        if (a2 == null) {
+            b10.getClass();
+        } else {
+            if (b10.a == null) {
+                b10.a = new HashMap();
+            }
+            if (!TextUtils.isEmpty(a2.b)) {
+                b10.a.put(a2.b, a2);
+                b10.c();
+                b10.d();
+            }
+        }
+        e1 e1Var = z0Var.e;
+        if (e1Var == null || a2 == null) {
+            return;
+        }
+        e1Var.d = a2;
+        f1.c(e1Var);
+    }
+
+    public final void b(n2 n2Var) {
+        i0 i0Var;
+        if (n2Var == null) {
+            return;
+        }
+        d1 d1Var = this.Q;
+        boolean z10 = false;
+        if (d1Var != null && (i0Var = d1Var.c) != null) {
+            int i10 = n2Var.e;
+            if (i10 != 0) {
+                i0Var.o(i10, true);
+                this.s = true;
+            }
+            int i11 = n2Var.f;
+            if (i11 != 0) {
+                this.Q.c.o(i11, false);
+                this.v = true;
+            } else {
+                i11 = -1;
+            }
+            Bitmap bitmap = n2Var.i;
+            if (bitmap != null) {
+                d1 d1Var2 = this.Q;
+                this.O = bitmap;
+                d1Var2.getClass();
+                this.M = true;
+            }
+            if (!TextUtils.isEmpty(n2Var.d)) {
+                String str = n2Var.d;
+                this.r = str;
+                d1 d1Var3 = this.Q;
+                this.K = str;
+                d1Var3.I();
+                z10 = true;
+            }
+            if (SharedConfig.adaptableColorInBrowser) {
+                setBackgroundColor(i11);
+            }
+        }
+        if (z10) {
+            return;
+        }
+        setTitle(null);
+        d1 d1Var4 = this.Q;
+        if (d1Var4 != null) {
+            d1Var4.I();
+        }
+    }
+
+    public final void c(String str) {
+        FileLog.d("[webview] #" + this.a + " " + str);
+    }
+
+    @Override // android.webkit.WebView
+    public final void clearHistory() {
+        c("clearHistory");
+        super.clearHistory();
+    }
+
+    public final void d(String str) {
+        evaluateJavascript(str, new j0(0));
+    }
+
+    @Override // android.webkit.WebView
+    public final void destroy() {
+        c("destroy");
+        super.destroy();
+    }
+
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        return super.drawChild(canvas, view, j3);
+    }
+
+    public final void e(String str, n2 n2Var) {
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
+            this.F = null;
+        }
+        b(n2Var);
+        this.d = str;
+        String b10 = d1.b(str);
+        c("loadUrl " + b10 + " with cached meta");
+        super.loadUrl(b10);
+        d1 d1Var = this.Q;
+        if (d1Var != null) {
+            d1Var.J(!super.canGoBack(), !canGoForward());
+        }
+    }
+
+    public final void f(d1 d1Var, c1 c1Var) {
+        c("setContainers(" + d1Var + ", " + c1Var + ")");
+        boolean z10 = this.Q == null && d1Var != null;
+        this.Q = d1Var;
+        this.T = c1Var;
+        if (z10) {
+            d("window.__tg__postBackgroundChange()");
+        }
+    }
+
+    @Override // android.webkit.WebView
+    public Bitmap getFavicon() {
+        if (this.h) {
+            return null;
+        }
+        return this.O;
+    }
+
+    public String getOpenURL() {
+        return this.d;
+    }
+
+    public float getScrollProgress() {
+        float max = Math.max(1, computeVerticalScrollRange() - computeVerticalScrollExtent());
+        if (max <= getHeight()) {
+            return 0.0f;
+        }
+        return Utilities.clamp01(getScrollY() / max);
+    }
+
+    public int getSearchCount() {
+        return this.H;
+    }
+
+    public int getSearchIndex() {
+        return this.G;
+    }
+
+    @Override // android.webkit.WebView
+    public String getTitle() {
+        return this.K;
+    }
+
+    @Override // android.webkit.WebView
+    public String getUrl() {
+        return this.E ? this.y : super.getUrl();
+    }
+
+    @Override // android.webkit.WebView
+    public final void goBack() {
+        c("goBack");
+        super.goBack();
+    }
+
+    @Override // android.webkit.WebView
+    public final void goForward() {
+        c("goForward");
+        super.goForward();
+    }
+
+    @Override // android.webkit.WebView
+    public final void loadData(String str, String str2, String str3) {
+        this.d = null;
+        StringBuilder w10 = a4.a.w("loadData ", str, " ", str2, " ");
+        w10.append(str3);
+        c(w10.toString());
+        super.loadData(str, str2, str3);
+    }
+
+    @Override // android.webkit.WebView
+    public final void loadDataWithBaseURL(String str, String str2, String str3, String str4, String str5) {
+        this.d = null;
+        StringBuilder w10 = a4.a.w("loadDataWithBaseURL ", str, " ", str2, " ");
+        a4.a.z(w10, str3, " ", str4, " ");
+        w10.append(str5);
+        c(w10.toString());
+        super.loadDataWithBaseURL(str, str2, str3, str4, str5);
+    }
+
+    @Override // android.webkit.WebView
+    public final void loadUrl(String str) {
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
+            this.F = null;
+        }
+        if (!this.c) {
+            b(o2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+        }
+        this.d = str;
+        String b10 = d1.b(str);
+        c("loadUrl " + b10);
+        super.loadUrl(b10);
+        d1 d1Var = this.Q;
+        if (d1Var != null) {
+            d1Var.J(!super.canGoBack(), true ^ canGoForward());
+        }
+    }
+
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        c("attached");
+        AndroidUtilities.checkAndroidTheme(getContext(), true);
+        super.onAttachedToWindow();
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onCheckIsTextEditor() {
+        d1 d1Var = this.Q;
+        if (d1Var == null) {
+            c("onCheckIsTextEditor: no container");
+            return false;
+        }
+        boolean isFocusable = d1Var.isFocusable();
+        c("onCheckIsTextEditor: " + isFocusable);
+        return isFocusable;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        c("detached");
+        AndroidUtilities.checkAndroidTheme(getContext(), false);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
+
+    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+    }
+
+    @Override // android.webkit.WebView
+    public final void onPause() {
+        c("onPause");
+        super.onPause();
+    }
+
+    @Override // android.webkit.WebView
+    public final void onResume() {
+        c("onResume");
+        super.onResume();
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        c1 c1Var = this.T;
+        if (c1Var != null) {
+            getScrollX();
+            getScrollY();
+            ((m3) ((org.telegram.ui.g) c1Var).b).K.f0();
+        }
+        getScrollX();
+        getScrollY();
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.Q != null && motionEvent.getAction() == 0) {
+            this.Q.P = System.currentTimeMillis();
+            if (!this.Q.s()) {
+                getSettings().setMediaPlaybackRequiresUserGesture(false);
+            }
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.webkit.WebView
+    public final void pauseTimers() {
+        c("pauseTimers");
+        super.pauseTimers();
+    }
+
+    @Override // android.webkit.WebView
+    public final void postUrl(String str, byte[] bArr) {
+        c("postUrl " + str + " " + bArr);
+        super.postUrl(str, bArr);
+    }
+
+    @Override // android.webkit.WebView
+    public final void reload() {
+        CookieManager.getInstance().flush();
+        c("reload");
+        super.reload();
+    }
+
+    @Override // android.webkit.WebView
+    public final void resumeTimers() {
+        c("resumeTimers");
+        super.resumeTimers();
+    }
+
+    public void setCloseListener(Runnable runnable) {
+        this.U = runnable;
+    }
+
+    @Override // android.view.View
+    public void setFocusable(int i10) {
+        c("setFocusable " + i10);
+        super.setFocusable(i10);
+    }
+
+    @Override // android.view.View
+    public void setFocusableInTouchMode(boolean z10) {
+        c("setFocusableInTouchMode " + z10);
+        super.setFocusableInTouchMode(z10);
+    }
+
+    @Override // android.view.View
+    public void setFocusedByDefault(boolean z10) {
+        c("setFocusedByDefault " + z10);
+        super.setFocusedByDefault(z10);
+    }
+
+    public void setScrollProgress(float f7) {
+        setScrollY((int) (f7 * Math.max(1, computeVerticalScrollRange() - computeVerticalScrollExtent())));
+    }
+
+    @Override // android.view.View
+    public void setScrollX(int i10) {
+        super.setScrollX(i10);
+    }
+
+    @Override // android.view.View
+    public void setScrollY(int i10) {
+        super.setScrollY(i10);
+    }
+
+    public void setTitle(String str) {
+        this.K = str;
+    }
+
+    @Override // android.webkit.WebView
+    public final void stopLoading() {
+        c("stopLoading");
+        super.stopLoading();
+    }
+
+    @Override // android.view.View
+    public final void stopNestedScroll() {
+        c("stopNestedScroll");
+        super.stopNestedScroll();
+    }
+
+    @Override // android.view.View
+    public void setFocusable(boolean z10) {
+        c("setFocusable " + z10);
+        super.setFocusable(z10);
+    }
+
+    @Override // android.webkit.WebView
+    public final void loadUrl(String str, Map map) {
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
+            this.F = null;
+        }
+        if (!this.c) {
+            b(o2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+        }
+        this.d = str;
+        String b10 = d1.b(str);
+        c("loadUrl " + b10 + " " + map);
+        super.loadUrl(b10, map);
+        d1 d1Var = this.Q;
+        if (d1Var != null) {
+            d1Var.J(!super.canGoBack(), !canGoForward());
+        }
     }
 }

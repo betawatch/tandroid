@@ -1,12 +1,12 @@
 package s2;
 
 import b2.s;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import q3.i;
 import s3.c;
 import w7.l;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
@@ -27,7 +27,7 @@ public final class a {
                     return new c();
             }
         }
-        throw new IllegalArgumentException(r6.i("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(p6.i("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(s sVar) {

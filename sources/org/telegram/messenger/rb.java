@@ -1,34 +1,47 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rb implements Runnable {
+public final /* synthetic */ class rb implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ a0.i c;
-    public final /* synthetic */ a0.i d;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ rb(MessagesController messagesController, a0.i iVar, a0.i iVar2, int i10) {
+    public /* synthetic */ rb(int i10, long j3, long j10, ArrayList arrayList, MessagesController messagesController) {
         this.a = i10;
         this.b = messagesController;
-        this.c = iVar;
-        this.d = iVar2;
+        this.c = j3;
+        this.d = j10;
+        this.e = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkDeletingTask$86(this.c, this.d);
+                this.b.lambda$checkUnreadPollVotesInternal2$430(this.c, this.d, this.e, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$updatePrintingStrings$170(this.c, this.d);
+                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, this.d, this.e, tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$getNewDeleteTask$83(this.c, this.d);
+                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            case 3:
+                this.b.lambda$checkUnreadReactionsInternal2$423(this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            case 4:
+                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, this.d, this.e, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$checkDeletingTask$85(this.c, this.d);
+                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, this.e, tLObject, tL_error);
                 break;
         }
     }

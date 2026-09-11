@@ -1,34 +1,11 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class bo0 implements uo0 {
-    public final /* synthetic */ wo0 a;
-
-    public bo0(wo0 wo0Var) {
-        this.a = wo0Var;
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        wo0 wo0Var = this.a;
-        wo0Var.I0 = tL_payments_validateRequestedInfo;
-        wo0Var.B0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.uo0
-    public final /* synthetic */ void b() {
+public final class bo0 extends org.telegram.ui.Cells.d9 {
+    public bo0(Context context) {
+        super(context);
     }
 }

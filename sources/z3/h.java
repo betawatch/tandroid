@@ -15,9 +15,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import v7.y7;
+import v7.x7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public final m a;
@@ -38,7 +38,7 @@ public final class h implements c3.o {
             r a2 = sVar.a();
             a2.q = r0.n("application/x-media3-cues");
             a2.j = sVar.r;
-            a2.O = mVar.n();
+            a2.O = mVar.U();
             sVar2 = new s(a2);
         } else {
             sVar2 = null;
@@ -69,13 +69,13 @@ public final class h implements c3.o {
     @Override // c3.o
     public final void g(q qVar) {
         e2.d.g(this.h == 0);
-        h0 I = qVar.I(0, 3);
-        this.f = I;
+        h0 R1 = qVar.R1(0, 3);
+        this.f = R1;
         s sVar = this.b;
         if (sVar != null) {
-            I.b(sVar);
-            qVar.B();
-            qVar.G(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
+            R1.b(sVar);
+            qVar.Z0();
+            qVar.P1(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
     }
@@ -121,25 +121,25 @@ public final class h implements c3.o {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x0090, code lost:
     
-        r20.a.A(r20.e, 0, r20.g, r2, new bi.i5(r20, 7));
+        r20.a.e0(r20.e, 0, r20.g, r2, new ah.m(r20, 10));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
         r2 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b6, code lost:
     
         if (r2 >= r11.size()) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b8, code lost:
     
         r20.i[r2] = ((z3.g) r11.get(r2)).a;
         r2 = r2 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
     
         r20.e = e2.d0.b;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00cd, code lost:
     
         r20.h = 4;
      */
@@ -147,11 +147,11 @@ public final class h implements c3.o {
     
         r2 = z3.l.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c7, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00d6, code lost:
     
         throw b2.s0.a(r0, "SubtitleParser failed.");
      */
@@ -164,7 +164,7 @@ public final class h implements c3.o {
         int i11 = this.h;
         e2.d.g((i11 == 0 || i11 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024;
+            int b10 = pVar.getLength() != -1 ? x7.b(pVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -194,10 +194,10 @@ public final class h implements c3.o {
             i10 = 0;
         }
         if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024) == -1) {
+            if (pVar.skip(pVar.getLength() != -1 ? x7.b(pVar.getLength()) : 1024) == -1) {
                 long j3 = this.j;
-                for (int e = j3 == -9223372036854775807L ? 0 : d0.e(this.i, j3, true); e < arrayList.size(); e++) {
-                    a((g) arrayList.get(e));
+                for (int e7 = j3 == -9223372036854775807L ? 0 : d0.e(this.i, j3, true); e7 < arrayList.size(); e7++) {
+                    a((g) arrayList.get(e7));
                 }
                 this.h = 4;
             }

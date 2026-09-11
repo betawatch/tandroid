@@ -2,11 +2,10 @@ package d6;
 
 import android.os.Parcel;
 import android.os.RemoteException;
-import bi.u6;
 import com.google.android.gms.internal.cast.q4;
 import com.google.android.gms.internal.cast.y6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -31,12 +30,12 @@ public final class i {
             int i10 = com.google.android.gms.internal.cast.v.a;
             O0.writeInt(0);
             oVar.S0(O0, 1);
-        } catch (RemoteException e) {
-            c.m.a(e, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
+        } catch (RemoteException e7) {
+            c.m.a(e7, "Unable to call %s on %s.", "onConnected", q.class.getSimpleName());
         }
         q4 q4Var = cVar.l;
         if (q4Var != null) {
-            u6.D(q4Var.a, new y6(new a5.a(3, 2)));
+            cf.c.y(q4Var.a, new y6(new a5.a(3, 2)));
         }
     }
 }

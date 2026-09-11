@@ -2,12 +2,12 @@ package i1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import m.l3;
+import m.j3;
 import m.w2;
 import s4.w0;
 import z4.f;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b implements Parcelable.ClassLoaderCreator {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2(parcel, classLoader);
             case 2:
-                return new l3(parcel, classLoader);
+                return new j3(parcel, classLoader);
             case 3:
                 return new w0(parcel, classLoader);
             default:
@@ -43,7 +43,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2[i10];
             case 2:
-                return new l3[i10];
+                return new j3[i10];
             case 3:
                 return new w0[i10];
             default:
@@ -62,7 +62,7 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2(parcel, null);
             case 2:
-                return new l3(parcel, null);
+                return new j3(parcel, null);
             case 3:
                 return new w0(parcel, null);
             default:

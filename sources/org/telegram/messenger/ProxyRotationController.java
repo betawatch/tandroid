@@ -10,13 +10,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
     private static final ProxyRotationController INSTANCE = new ProxyRotationController();
     public static final List<Integer> ROTATION_TIMEOUTS = Arrays.asList(5, 10, 15, 30, 60);
-    private Runnable checkProxyAndSwitchRunnable = new dh(this, 4);
+    private Runnable checkProxyAndSwitchRunnable = new ug(this, 4);
     private boolean isCurrentlyChecking;
 
     public static void init() {
@@ -47,7 +47,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j3) {
-        AndroidUtilities.runOnUIThread(new zh(proxyInfo, j3, 0));
+        AndroidUtilities.runOnUIThread(new qh(proxyInfo, j3, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -79,7 +79,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
         this.isCurrentlyChecking = false;
         if (SharedConfig.proxyRotationEnabled) {
             ArrayList arrayList = new ArrayList(SharedConfig.proxyList);
-            Collections.sort(arrayList, new p(26));
+            Collections.sort(arrayList, new d(26));
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {

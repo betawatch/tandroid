@@ -1,59 +1,39 @@
 package yg;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import bi.d5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import w7.a6;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.ui.Components.m30;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class g extends FrameLayout {
-    public static final /* synthetic */ int e = 0;
-    public final f a;
-    public boolean b;
-    public boolean c;
-    public Utilities.Callback d;
+public final class g implements View.OnKeyListener {
+    public boolean a;
+    public final /* synthetic */ HashSet b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ i d;
 
-    public g(Activity activity, f6 f6Var) {
-        super(activity);
-        f fVar = new f(this, activity);
-        this.a = fVar;
-        fVar.setHapticFeedbackEnabled(true);
-        fVar.setImageResource(R.drawable.smiles_tab_clear);
-        int i10 = j6.Re;
-        fVar.setColorFilter(new PorterDuffColorFilter(f6Var != null ? f6Var.F0(i10) : j6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        fVar.setScaleType(ImageView.ScaleType.CENTER);
-        fVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
-        fVar.setFocusable(true);
-        fVar.setOnClickListener(new d5(27));
-        addView(fVar, a6.e(36, 36, 17));
-        int w02 = j6.w0(null, j6.i6, false);
-        int dp = AndroidUtilities.dp(36.0f);
-        int i11 = j6.d6;
-        fVar.setBackground(j6.h0(dp, f6Var != null ? f6Var.F0(i11) : j6.w0(null, i11, false), w02));
-        fVar.setOutlineProvider(new xf.i0(18));
-        fVar.setElevation(AndroidUtilities.dp(1.0f));
-        fVar.setClipToOutline(true);
-        setClickable(true);
+    public g(i iVar, HashSet hashSet, Runnable runnable) {
+        this.d = iVar;
+        this.b = hashSet;
+        this.c = runnable;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
-    }
-
-    public void setOnBackspace(Utilities.Callback<Boolean> callback) {
-        this.d = callback;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        i iVar = this.d;
+        ArrayList arrayList = iVar.e;
+        if (i10 == 67) {
+            if (keyEvent.getAction() == 0) {
+                this.a = iVar.b.length() == 0;
+                return false;
+            }
+            if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
+                iVar.a((m30) i2.g.h(1, arrayList), this.b, this.c);
+                return true;
+            }
+        }
+        return false;
     }
 }

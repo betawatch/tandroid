@@ -10,9 +10,9 @@ import android.net.Uri;
 import android.os.Trace;
 import androidx.car.app.j;
 import v4.a;
-import w7.a8;
+import w7.z7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -43,11 +43,11 @@ public class InitializationProvider extends ContentProvider {
         Context context2 = c10.c;
         try {
             try {
-                a8.a("Startup");
+                z7.a("Startup");
                 c10.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
-            } catch (PackageManager.NameNotFoundException e) {
-                throw new j(e);
+            } catch (PackageManager.NameNotFoundException e7) {
+                throw new j(e7);
             }
         } finally {
             Trace.endSection();

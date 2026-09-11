@@ -1,433 +1,147 @@
 package di;
 
-import bi.af;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n3 b;
+public final class s2 extends View {
+    public final RectF E;
+    public float F;
+    public e1 G;
+    public int H;
+    public final TextPaint a;
+    public final Paint b;
+    public StaticLayout c;
+    public float d;
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public StaticLayout r;
+    public float s;
+    public float v;
+    public final RectF w;
+    public final RectF x;
+    public final RectF y;
 
-    public /* synthetic */ s2(n3 n3Var, int i10) {
-        this.a = i10;
-        this.b = n3Var;
+    public s2(Context context) {
+        super(context);
+        this.a = new TextPaint(1);
+        this.b = new Paint(1);
+        this.w = new RectF();
+        this.x = new RectF();
+        this.y = new RectF();
+        this.E = new RectF();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new af(11, this.b, tL_error));
-                break;
-            case 1:
-                final int i10 = 1;
-                final n3 n3Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.l2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                n3 n3Var2 = n3Var;
-                                if (tL_error == null) {
-                                    j5 j5Var = n3Var2.v0;
-                                    if (j5Var != null) {
-                                        j5Var.a(tLObject);
-                                        n3Var2.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var2.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                n3 n3Var3 = n3Var;
-                                if (tL_error == null) {
-                                    j5 j5Var2 = n3Var3.v0;
-                                    if (j5Var2 != null) {
-                                        j5Var2.a(tLObject);
-                                        n3Var3.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var3.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                n3 n3Var4 = n3Var;
-                                if (tL_error == null) {
-                                    j5 j5Var3 = n3Var4.v0;
-                                    if (j5Var3 != null) {
-                                        j5Var3.a(tLObject);
-                                        n3Var4.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                n3 n3Var5 = n3Var;
-                                if (tL_error == null) {
-                                    j5 j5Var4 = n3Var5.v0;
-                                    if (j5Var4 != null) {
-                                        j5Var4.a(tLObject);
-                                        n3Var5.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                n3 n3Var6 = n3Var;
-                                if (tL_error == null) {
-                                    j5 j5Var5 = n3Var6.v0;
-                                    if (j5Var5 != null) {
-                                        j5Var5.a(tLObject);
-                                        n3Var6.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i11 = 4;
-                final n3 n3Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.l2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                n3 n3Var22 = n3Var2;
-                                if (tL_error == null) {
-                                    j5 j5Var = n3Var22.v0;
-                                    if (j5Var != null) {
-                                        j5Var.a(tLObject);
-                                        n3Var22.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                n3 n3Var3 = n3Var2;
-                                if (tL_error == null) {
-                                    j5 j5Var2 = n3Var3.v0;
-                                    if (j5Var2 != null) {
-                                        j5Var2.a(tLObject);
-                                        n3Var3.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var3.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                n3 n3Var4 = n3Var2;
-                                if (tL_error == null) {
-                                    j5 j5Var3 = n3Var4.v0;
-                                    if (j5Var3 != null) {
-                                        j5Var3.a(tLObject);
-                                        n3Var4.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                n3 n3Var5 = n3Var2;
-                                if (tL_error == null) {
-                                    j5 j5Var4 = n3Var5.v0;
-                                    if (j5Var4 != null) {
-                                        j5Var4.a(tLObject);
-                                        n3Var5.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                n3 n3Var6 = n3Var2;
-                                if (tL_error == null) {
-                                    j5 j5Var5 = n3Var6.v0;
-                                    if (j5Var5 != null) {
-                                        j5Var5.a(tLObject);
-                                        n3Var6.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i12 = 0;
-                final n3 n3Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.l2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                n3 n3Var22 = n3Var3;
-                                if (tL_error == null) {
-                                    j5 j5Var = n3Var22.v0;
-                                    if (j5Var != null) {
-                                        j5Var.a(tLObject);
-                                        n3Var22.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                n3 n3Var32 = n3Var3;
-                                if (tL_error == null) {
-                                    j5 j5Var2 = n3Var32.v0;
-                                    if (j5Var2 != null) {
-                                        j5Var2.a(tLObject);
-                                        n3Var32.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                n3 n3Var4 = n3Var3;
-                                if (tL_error == null) {
-                                    j5 j5Var3 = n3Var4.v0;
-                                    if (j5Var3 != null) {
-                                        j5Var3.a(tLObject);
-                                        n3Var4.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                n3 n3Var5 = n3Var3;
-                                if (tL_error == null) {
-                                    j5 j5Var4 = n3Var5.v0;
-                                    if (j5Var4 != null) {
-                                        j5Var4.a(tLObject);
-                                        n3Var5.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                n3 n3Var6 = n3Var3;
-                                if (tL_error == null) {
-                                    j5 j5Var5 = n3Var6.v0;
-                                    if (j5Var5 != null) {
-                                        j5Var5.a(tLObject);
-                                        n3Var6.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                final int i13 = 2;
-                final n3 n3Var4 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.l2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                n3 n3Var22 = n3Var4;
-                                if (tL_error == null) {
-                                    j5 j5Var = n3Var22.v0;
-                                    if (j5Var != null) {
-                                        j5Var.a(tLObject);
-                                        n3Var22.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                n3 n3Var32 = n3Var4;
-                                if (tL_error == null) {
-                                    j5 j5Var2 = n3Var32.v0;
-                                    if (j5Var2 != null) {
-                                        j5Var2.a(tLObject);
-                                        n3Var32.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                n3 n3Var42 = n3Var4;
-                                if (tL_error == null) {
-                                    j5 j5Var3 = n3Var42.v0;
-                                    if (j5Var3 != null) {
-                                        j5Var3.a(tLObject);
-                                        n3Var42.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var42.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                n3 n3Var5 = n3Var4;
-                                if (tL_error == null) {
-                                    j5 j5Var4 = n3Var5.v0;
-                                    if (j5Var4 != null) {
-                                        j5Var4.a(tLObject);
-                                        n3Var5.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                n3 n3Var6 = n3Var4;
-                                if (tL_error == null) {
-                                    j5 j5Var5 = n3Var6.v0;
-                                    if (j5Var5 != null) {
-                                        j5Var5.a(tLObject);
-                                        n3Var6.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i14 = 3;
-                final n3 n3Var5 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: di.l2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i14) {
-                            case 0:
-                                n3 n3Var22 = n3Var5;
-                                if (tL_error == null) {
-                                    j5 j5Var = n3Var22.v0;
-                                    if (j5Var != null) {
-                                        j5Var.a(tLObject);
-                                        n3Var22.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                n3 n3Var32 = n3Var5;
-                                if (tL_error == null) {
-                                    j5 j5Var2 = n3Var32.v0;
-                                    if (j5Var2 != null) {
-                                        j5Var2.a(tLObject);
-                                        n3Var32.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                n3 n3Var42 = n3Var5;
-                                if (tL_error == null) {
-                                    j5 j5Var3 = n3Var42.v0;
-                                    if (j5Var3 != null) {
-                                        j5Var3.a(tLObject);
-                                        n3Var42.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var42.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                n3 n3Var52 = n3Var5;
-                                if (tL_error == null) {
-                                    j5 j5Var4 = n3Var52.v0;
-                                    if (j5Var4 != null) {
-                                        j5Var4.a(tLObject);
-                                        n3Var52.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var52.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                n3 n3Var6 = n3Var5;
-                                if (tL_error == null) {
-                                    j5 j5Var5 = n3Var6.v0;
-                                    if (j5Var5 != null) {
-                                        j5Var5.a(tLObject);
-                                        n3Var6.n();
-                                        break;
-                                    }
-                                } else {
-                                    n3Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawColor(-14737633);
+        Paint paint = this.b;
+        paint.setColor(-13224394);
+        float f7 = this.F;
+        int i10 = (int) f7;
+        RectF rectF = this.y;
+        RectF rectF2 = this.x;
+        RectF rectF3 = this.w;
+        RectF rectF4 = i10 <= 0 ? rectF3 : i10 == 1 ? rectF2 : rectF;
+        int ceil = (int) Math.ceil(f7);
+        RectF rectF5 = ceil <= 0 ? rectF3 : ceil == 1 ? rectF2 : rectF;
+        float f10 = this.F;
+        RectF rectF6 = this.E;
+        AndroidUtilities.lerp(rectF4, rectF5, f10 - ((int) f10), rectF6);
+        canvas.drawRoundRect(rectF6, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
+        StaticLayout staticLayout = this.c;
+        TextPaint textPaint = this.a;
+        if (staticLayout != null) {
+            canvas.save();
+            canvas.translate((rectF3.left + AndroidUtilities.dp(12.0f)) - this.e, com.google.android.gms.internal.vision.e2.A(rectF3.height(), this.c.getHeight(), 2.0f, rectF3.top));
+            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.F - 0.0f), 1.0f, 0.0f), -8158333, -1));
+            this.c.draw(canvas);
+            canvas.restore();
         }
+        if (this.f != null) {
+            canvas.save();
+            canvas.translate((rectF2.left + AndroidUtilities.dp(12.0f)) - this.n, com.google.android.gms.internal.vision.e2.A(rectF2.height(), this.f.getHeight(), 2.0f, rectF2.top));
+            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.F - 1.0f), 1.0f, 0.0f), -8158333, -1));
+            this.f.draw(canvas);
+            canvas.restore();
+        }
+        if (this.r != null) {
+            canvas.save();
+            canvas.translate((rectF.left + AndroidUtilities.dp(12.0f)) - this.v, com.google.android.gms.internal.vision.e2.A(rectF.height(), this.r.getHeight(), 2.0f, rectF.top));
+            textPaint.setColor(i0.a.d(Utilities.clamp(1.0f - Math.abs(this.F - 2.0f), 1.0f, 0.0f), -8158333, -1));
+            this.r.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(40.0f) + AndroidUtilities.navigationBarHeight);
+        if (getMeasuredWidth() != this.H || this.c == null) {
+            float dp = AndroidUtilities.dp(14.0f);
+            TextPaint textPaint = this.a;
+            textPaint.setTextSize(dp);
+            textPaint.setTypeface(AndroidUtilities.bold());
+            String string = LocaleController.getString("Emoji");
+            int measuredWidth = getMeasuredWidth();
+            Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
+            StaticLayout staticLayout = new StaticLayout(string, textPaint, measuredWidth, alignment, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() >= 1 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() >= 1 ? this.c.getLineLeft(0) : 0.0f;
+            StaticLayout staticLayout2 = new StaticLayout(LocaleController.getString("AccDescrStickers"), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            this.f = staticLayout2;
+            this.h = staticLayout2.getLineCount() >= 1 ? this.f.getLineWidth(0) : 0.0f;
+            this.n = this.f.getLineCount() >= 1 ? this.f.getLineLeft(0) : 0.0f;
+            StaticLayout staticLayout3 = new StaticLayout(LocaleController.getString(R.string.AccDescrGIFs), textPaint, getMeasuredWidth(), alignment, 1.0f, 0.0f, false);
+            this.r = staticLayout3;
+            this.s = staticLayout3.getLineCount() >= 1 ? this.r.getLineWidth(0) : 0.0f;
+            this.v = this.r.getLineCount() >= 1 ? this.r.getLineLeft(0) : 0.0f;
+            float dp2 = AndroidUtilities.dp(14.0f) / 2.0f;
+            float dp3 = AndroidUtilities.dp(66.0f) / 2.0f;
+            float measuredWidth2 = (getMeasuredWidth() - ((((((AndroidUtilities.dp(12.0f) + this.d) + AndroidUtilities.dp(36.0f)) + this.h) + AndroidUtilities.dp(36.0f)) + this.s) + AndroidUtilities.dp(12.0f))) / 2.0f;
+            this.w.set(measuredWidth2, dp2, this.d + measuredWidth2 + AndroidUtilities.dp(24.0f), dp3);
+            float dp4 = this.d + AndroidUtilities.dp(36.0f) + measuredWidth2;
+            this.x.set(dp4, dp2, this.h + dp4 + AndroidUtilities.dp(24.0f), dp3);
+            float dp5 = this.h + AndroidUtilities.dp(36.0f) + dp4;
+            this.y.set(dp5, dp2, this.s + dp5 + AndroidUtilities.dp(24.0f), dp3);
+            AndroidUtilities.dp(36.0f);
+        }
+        this.H = getMeasuredWidth();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0) {
+            if (motionEvent.getAction() != 1 || this.G == null) {
+                return super.onTouchEvent(motionEvent);
+            }
+            if (this.w.contains(motionEvent.getX(), motionEvent.getY())) {
+                this.G.run(0);
+                return true;
+            }
+            if (this.x.contains(motionEvent.getX(), motionEvent.getY())) {
+                this.G.run(1);
+                return true;
+            }
+            if (this.y.contains(motionEvent.getX(), motionEvent.getY())) {
+                this.G.run(2);
+            }
+        }
+        return true;
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.gms.tasks;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 final class zzo implements Runnable {
     final /* synthetic */ Task zza;
@@ -29,16 +29,16 @@ final class zzo implements Runnable {
             then.addOnSuccessListener(executor, zzpVar);
             then.addOnFailureListener(executor, this.zzb);
             then.addOnCanceledListener(executor, this.zzb);
-        } catch (RuntimeExecutionException e) {
-            if (e.getCause() instanceof Exception) {
-                this.zzb.onFailure((Exception) e.getCause());
+        } catch (RuntimeExecutionException e7) {
+            if (e7.getCause() instanceof Exception) {
+                this.zzb.onFailure((Exception) e7.getCause());
             } else {
-                this.zzb.onFailure(e);
+                this.zzb.onFailure(e7);
             }
         } catch (CancellationException unused) {
             this.zzb.onCanceled();
-        } catch (Exception e7) {
-            this.zzb.onFailure(e7);
+        } catch (Exception e10) {
+            this.zzb.onFailure(e10);
         }
     }
 }

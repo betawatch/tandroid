@@ -4,10 +4,11 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import i2.h0;
+import i2.i0;
 import java.util.ArrayDeque;
+import k2.g0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -19,7 +20,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public o0.b o;
+    public g0 o;
     public final Object a = new Object();
     public final a0.h d = new a0.h();
     public final a0.h e = new a0.h();
@@ -74,19 +75,19 @@ public final class f extends MediaCodec.Callback {
 
     @Override // android.media.MediaCodec.Callback
     public final void onInputBufferAvailable(MediaCodec mediaCodec, int i10) {
-        h0 h0Var;
+        i0 i0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            o0.b bVar = this.o;
-            if (bVar != null && (h0Var = ((r) bVar.a).W) != null) {
-                h0Var.a();
+            g0 g0Var = this.o;
+            if (g0Var != null && (i0Var = ((r) g0Var.b).W) != null) {
+                i0Var.a();
             }
         }
     }
 
     @Override // android.media.MediaCodec.Callback
     public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i10, MediaCodec.BufferInfo bufferInfo) {
-        h0 h0Var;
+        i0 i0Var;
         synchronized (this.a) {
             try {
                 MediaFormat mediaFormat = this.i;
@@ -97,9 +98,9 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                o0.b bVar = this.o;
-                if (bVar != null && (h0Var = ((r) bVar.a).W) != null) {
-                    h0Var.a();
+                g0 g0Var = this.o;
+                if (g0Var != null && (i0Var = ((r) g0Var.b).W) != null) {
+                    i0Var.a();
                 }
             } catch (Throwable th2) {
                 throw th2;

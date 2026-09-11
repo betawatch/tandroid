@@ -1,35 +1,65 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wn0 implements RequestDelegate {
+public final /* synthetic */ class wn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wo0 b;
+    public final /* synthetic */ xo0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ wn0(wo0 wo0Var, int i10) {
+    public /* synthetic */ wn0(xo0 xo0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = wo0Var;
+        this.b = xo0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ak0(10, this.b, tL_error));
+                xo0 xo0Var = this.b;
+                xo0Var.e0 = false;
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    xo0Var.a0 = password;
+                    if (!TwoStepVerificationActivity.i0(password, false)) {
+                        org.telegram.ui.Components.e5.x0(xo0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        TLRPC.PaymentForm paymentForm = xo0Var.C0;
+                        if (paymentForm != null && xo0Var.a0.has_password) {
+                            paymentForm.password_missing = false;
+                            paymentForm.can_save_credentials = true;
+                            xo0Var.K0();
+                        }
+                        TwoStepVerificationActivity.m0(xo0Var.a0);
+                        xo0 xo0Var2 = xo0Var.f0;
+                        if (xo0Var2 != null) {
+                            xo0Var2.C0(xo0Var.a0);
+                        }
+                        if (!xo0Var.a0.has_password && xo0Var.d0 == null) {
+                            un0 un0Var = new un0(xo0Var, 3);
+                            xo0Var.d0 = un0Var;
+                            AndroidUtilities.runOnUIThread(un0Var, 5000L);
+                            break;
+                        }
+                    }
+                }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new vn0(this.b, tL_error, tLObject, 0));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new pn0(this.b, tLObject, 2));
+                xo0.V(this.b, this.c, this.d);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new pn0(this.b, tLObject, 0));
+                xo0.X(this.b, this.c, this.d);
                 break;
         }
     }

@@ -1,122 +1,131 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.NotificationCenter;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ir0;
+import org.telegram.ui.oy;
+import org.telegram.ui.tx;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f2 implements Runnable {
+public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ f2(int i10, Object obj, Object obj2) {
+    public /* synthetic */ f2(Object obj, long j3, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.c = obj;
+        this.b = j3;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        long j3 = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$1((TLObject) this.c);
+                ((FactCheckController) obj4).lambda$loadMissing$3(this.b, (ArrayList) obj3, (HashMap) obj2, (ArrayList) obj);
                 break;
             case 1:
-                ((FactCheckController) this.b).lambda$applyFactCheck$14((TLRPC.Updates) this.c);
+                ((MessagesController) obj4).lambda$checkSensitive$448(this.b, (boolean[]) obj3, (Runnable) obj2, (Boolean) obj);
                 break;
             case 2:
-                FactCheckController.lambda$saveToDatabase$6((MessagesStorage) this.b, (TLRPC.TL_factCheck) this.c);
+                ((TranslateController) obj4).lambda$checkTranslation$6((MessageObject) obj3, (String) obj2, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
             case 3:
-                ((FileLoadOperation) this.b).lambda$start$11((boolean[]) this.c);
+                tx txVar = (tx) obj4;
+                org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj2;
+                txVar.getClass();
+                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
+                uy uyVar = txVar.b;
+                uyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
+                oy oyVar = uyVar.C2;
+                uyVar.removeSelfFromStack();
+                if (n2VarArr[1] != null) {
+                    n2VarArr[0].removeSelfFromStack();
+                    n2VarArr[1].finishFragment();
+                } else {
+                    n2VarArr[0].finishFragment();
+                }
+                if (oyVar != null) {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(MessagesStorage.TopicKey.of(-j3, 0L));
+                    oyVar.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
+                    break;
+                }
                 break;
             case 4:
-                ((FileLoadOperation) this.b).lambda$addPart$2((ArrayList) this.c);
-                break;
-            case 5:
-                ((FileLoader) this.b).lambda$uploadFile$19((NotificationCenter.NotificationCenterDelegate[]) this.c);
-                break;
-            case 6:
-                ((FileLoader) this.b).lambda$checkCurrentDownloadsFiles$17((ArrayList) this.c);
-                break;
-            case 7:
-                FileLog.lambda$e$2((String) this.b, (Throwable) this.c);
-                break;
-            case 8:
-                ((FilePathDatabase) this.b).lambda$removeFiles$6((List) this.c);
-                break;
-            case 9:
-                ((FileRefController) this.b).lambda$onRequestComplete$47((TLRPC.User) this.c);
-                break;
-            case 10:
-                ((FileRefController) this.b).lambda$onRequestComplete$50((TLRPC.TL_messages_stickerSet) this.c);
-                break;
-            case 11:
-                ((GiftAuctionController) this.b).lambda$sendBid$7((TLRPC.TL_payments_paymentResult) this.c);
-                break;
-            case 12:
-                ((ImageLoader) this.b).lambda$checkMediaPaths$1((Runnable) this.c);
-                break;
-            case 13:
-                ImageLoader.lambda$checkMediaPaths$0((SparseArray) this.b, (Runnable) this.c);
-                break;
-            case 14:
-                ((MediaController) this.b).lambda$playEmojiSound$17((File) this.c);
-                break;
-            case 15:
-                MediaController.lambda$playEmojiSound$18((AccountInstance) this.b, (TLRPC.TL_document) this.c);
-                break;
-            case 16:
-                ((MediaController) this.b).lambda$processMediaObserver$6((ArrayList) this.c);
-                break;
-            case 17:
-                ((MediaController) this.b).lambda$startAudioAgain$7((MessageObject) this.c);
-                break;
-            case 18:
-                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
-                break;
-            case 19:
-                MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
-                break;
-            case 20:
-                MediaDataController.lambda$fillWithAnimatedEmoji$228((boolean[]) this.b, (z6) this.c);
-                break;
-            case 21:
-                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
-                break;
-            case 22:
-                ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
-                break;
-            case 23:
-                ((MessagesController) this.b).lambda$getDifference$351((TLRPC.updates_Difference) this.c);
-                break;
-            case 24:
-                ((MessagesController) this.b).lambda$requestContactToken$475((Utilities.Callback) this.c);
-                break;
-            case 25:
-                ((MessagesController) this.b).lambda$checkTosUpdate$162((TLRPC.TL_help_termsOfServiceUpdate) this.c);
-                break;
-            case 26:
-                ((MessagesController) this.b).lambda$changeChatAvatar$318((Runnable) this.c);
-                break;
-            case 27:
-                ((MessagesController) this.b).lambda$createChat$260((TLRPC.Updates) this.c);
-                break;
-            case 28:
-                ((MessagesController) this.b).lambda$processUpdateArray$392((TL_update.TL_updateServiceNotification) this.c);
-                break;
+                PhotoViewer photoViewer = (PhotoViewer) obj4;
+                String str = (String) obj3;
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                Drawable[] drawableArr = PhotoViewer.T8;
+                if (bitmap == null) {
+                    AndroidUtilities.runOnUIThread(new ir0(photoViewer, 16));
+                    break;
+                } else {
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(str));
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
+                        fileOutputStream.close();
+                        Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888);
+                        Canvas canvas = new Canvas(createBitmap);
+                        Paint paint = new Paint(3);
+                        canvas.translate(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f);
+                        float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
+                        canvas.scale(max, max);
+                        canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(photoViewer, photoEntry, this.b, str, createBitmap, 6));
+                        break;
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        AndroidUtilities.runOnUIThread(new ir0(photoViewer, 17));
+                        return;
+                    }
+                }
             default:
-                ((MessagesController) this.b).lambda$processUpdateArray$393((TLRPC.Message) this.c);
+                yh.b1 b1Var = (yh.b1) obj3;
+                of.e eVar = (of.e) obj;
+                eVar.d();
+                b1Var.v1(j3, new bi.r3((yh.p1) obj4, eVar, (Utilities.Callback) obj2, b1Var, 17));
                 break;
         }
+    }
+
+    public /* synthetic */ f2(Object obj, Dialog dialog, long j3, Object obj2, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = dialog;
+        this.b = j3;
+        this.e = obj2;
+    }
+
+    public /* synthetic */ f2(Object obj, Object obj2, Object obj3, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j3;
     }
 }

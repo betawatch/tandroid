@@ -1,36 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class v01 extends MetricAffectingSpan {
-    public TextPaint a;
+public final class v01 {
+    public final View a;
+    public final ArrayList b;
+    public final Runnable c;
+    public Runnable d;
+    public final Bitmap e;
+    public final Matrix f;
+    public float g;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
-        }
+    public v01(View view, Runnable runnable) {
+        this.g = 1.0f;
+        this.a = view;
+        this.b = null;
+        this.c = null;
+        this.d = runnable;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 != null) {
-            textPaint.setColor(textPaint2.getColor());
-            textPaint.setTypeface(textPaint2.getTypeface());
-            textPaint.setFlags(textPaint2.getFlags());
-            textPaint.setTextSize(textPaint2.getTextSize());
-            textPaint.baselineShift = textPaint2.baselineShift;
-            textPaint.bgColor = textPaint2.bgColor;
-        }
+    public v01(ArrayList arrayList, hg.t tVar) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = arrayList;
+        this.c = null;
+        this.d = tVar;
+        this.e = null;
+        this.f = null;
+    }
+
+    public v01(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = null;
+        this.c = runnable;
+        this.d = runnable2;
+        this.f = matrix;
+        this.e = bitmap;
     }
 }

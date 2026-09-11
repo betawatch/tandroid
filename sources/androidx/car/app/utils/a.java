@@ -3,6 +3,8 @@ package androidx.car.app.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,27 +15,23 @@ import android.util.SparseIntArray;
 import android.view.View;
 import androidx.car.app.FailureResponse;
 import androidx.car.app.IOnDoneCallback;
-import bi.p2;
-import bi.pb;
-import bi.q2;
-import bi.rb;
-import bi.w1;
+import bi.f5;
+import bi.kb;
+import bi.o4;
+import bi.o5;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.t;
-import di.i3;
-import di.u4;
+import di.d2;
+import di.e2;
+import di.ga;
+import di.ia;
 import e2.d0;
-import fg.l1;
-import gg.a0;
-import hi.g2;
-import hi.h4;
-import hi.k2;
-import hi.p1;
-import hi.w3;
-import hi.z3;
+import fi.f3;
+import fi.r4;
+import hg.k1;
+import hg.t;
 import i9.c0;
 import i9.p;
 import i9.q;
@@ -44,72 +42,76 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
-import m4.b0;
-import m4.f1;
+import ji.b5;
+import ji.c2;
+import ji.e4;
+import ji.g2;
+import ji.m1;
+import ji.s3;
+import ji.v3;
+import m4.a0;
+import m4.d1;
+import m4.j0;
 import m4.k0;
-import m4.l0;
-import m4.n1;
+import m4.l1;
+import m4.p1;
 import m4.r;
-import m4.r1;
 import m4.s;
+import m4.t0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.a2;
+import org.telegram.messenger.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.c3;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.s0;
-import org.telegram.ui.Cells.e6;
-import org.telegram.ui.Cells.r6;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.a3;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.r0;
+import org.telegram.ui.Cells.c6;
+import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.c5;
+import org.telegram.ui.Components.ad0;
+import org.telegram.ui.Components.bl;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.e60;
-import org.telegram.ui.Components.f4;
-import org.telegram.ui.Components.f60;
+import org.telegram.ui.Components.dz;
+import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.g4;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.id0;
-import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.ll;
-import org.telegram.ui.Components.ry;
-import org.telegram.ui.Components.th;
-import org.telegram.ui.Components.wc;
-import org.telegram.ui.Components.y3;
-import org.telegram.ui.Components.yi;
-import org.telegram.ui.Components.zn;
-import org.telegram.ui.eo;
-import org.telegram.ui.ig1;
-import org.telegram.ui.qy;
-import org.telegram.ui.vo0;
-import org.telegram.ui.wy;
-import zh.s4;
+import org.telegram.ui.Components.h4;
+import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.ky;
+import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.tc0;
+import org.telegram.ui.Components.tn;
+import org.telegram.ui.Components.vc0;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.x3;
+import org.telegram.ui.Components.z3;
+import org.telegram.ui.co;
+import org.telegram.ui.eg1;
+import org.telegram.ui.oy;
+import org.telegram.ui.ro;
+import org.telegram.ui.uy;
+import org.telegram.ui.wo0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, MediaDataController.KeywordResultCallback, c2, SuccessContinuation, vo0, gl, k0, p, bd0, s0, qy, c5 {
+public final /* synthetic */ class a implements d, MessagesStorage.StringCallback, kb, SuccessContinuation, MediaDataController.KeywordResultCallback, a2, wo0, bl, j0, p, tc0, r0, oy, d5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -122,65 +124,52 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
         this.c = obj3;
     }
 
-    @Override // org.telegram.ui.qy
-    public /* synthetic */ boolean A() {
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean B() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.c5
-    public void I(int i10, int i11, boolean z10) {
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
-            case 23:
-                ll llVar = (ll) this.b;
-                llVar.x0.b((TLRPC.TL_messageMediaGeo) this.d, llVar.y0, z10, i10, ((Long) this.c).longValue());
-                llVar.b.dismiss(true);
-                break;
-            case 24:
-                zn znVar = (zn) this.b;
-                znVar.j0.c((TLRPC.TL_messageMediaToDo) this.d, null, null, null, z10, i10, ((Long) this.c).longValue());
-                znVar.b.dismiss(true);
+            case 25:
+                gl glVar = (gl) this.b;
+                glVar.x0.b((TLRPC.TL_messageMediaGeo) this.d, glVar.y0, z10, i10, ((Long) this.c).longValue());
+                glVar.b.dismiss(true);
                 break;
             default:
-                e60 e60Var = (e60) this.b;
-                a60 a60Var = (a60) this.d;
-                VideoEditedInfo videoEditedInfo = (VideoEditedInfo) this.c;
-                f60 f60Var = e60Var.H0;
-                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, 0, 0L, e60Var.a.getAbsolutePath(), 0, true, 0, 0, 0L);
-                if (a60Var != null) {
-                    photoEntry.ttl = a60Var.c;
-                    photoEntry.effectId = a60Var.d;
-                }
-                f60Var.c.q(photoEntry, videoEditedInfo, z10 || a60Var == null || a60Var.a, i10 != 0 ? i10 : a60Var != null ? a60Var.b : 0, i11 != 0 ? i11 : 0, false, a60Var != null ? a60Var.e : 0L);
-                f60Var.m(false, false);
+                tn tnVar = (tn) this.b;
+                tnVar.j0.d((TLRPC.TL_messageMediaToDo) this.d, null, null, null, z10, i10, ((Long) this.c).longValue());
+                tnVar.b.dismiss(true);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.qy
-    public /* synthetic */ boolean J(wy wyVar) {
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(uy uyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.vo0
+    @Override // org.telegram.ui.wo0
     public void a(int i10) {
         switch (this.a) {
-            case 6:
-                i3 i3Var = (i3) this.b;
-                id0 id0Var = (id0) this.d;
+            case 8:
+                f3 f3Var = (f3) this.b;
+                ad0 ad0Var = (ad0) this.d;
                 String str = (String) this.c;
                 if (i10 != 3) {
-                    id0Var.dismiss();
+                    ad0Var.dismiss();
                 }
-                i3Var.d.x.G(str, r6.w(i10).toLowerCase(Locale.ROOT), false);
+                f3Var.d.x.G(str, p6.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                id0 id0Var2 = (id0) this.b;
-                u4 u4Var = (u4) this.d;
+                ad0 ad0Var2 = (ad0) this.b;
+                r4 r4Var = (r4) this.d;
                 String str2 = (String) this.c;
                 if (i10 != 3) {
-                    id0Var2.dismiss();
+                    ad0Var2.dismiss();
                 }
-                u4Var.getWebViewContainer().G(str2, r6.w(i10).toLowerCase(Locale.ROOT), false);
+                r4Var.getWebViewContainer().G(str2, p6.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -188,46 +177,46 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
     @Override // i9.p
     public w apply(Object obj) {
         int i10 = this.a;
-        int i11 = 20;
         Object obj2 = this.c;
         Object obj3 = this.d;
         Object obj4 = this.b;
+        int i11 = 23;
         switch (i10) {
-            case 12:
-                b0 b0Var = (b0) obj4;
-                Handler handler = b0Var.l;
-                m4.w wVar = new m4.w(b0Var, (r) obj3, new a0(b0Var, (j2.h) obj2, (s) obj, 15));
-                r1 r1Var = new r1(0);
+            case 14:
+                a0 a0Var = (a0) obj4;
+                Handler handler = a0Var.l;
+                b5 b5Var = new b5(a0Var, (r) obj3, new t(a0Var, (t0) obj2, (s) obj, i11));
+                p1 p1Var = new p1(0);
                 String str = d0.a;
                 c0 c0Var = new c0();
-                d0.U(handler, new a3.k0(c0Var, wVar, r1Var, i11));
+                d0.U(handler, new a3.j0(c0Var, b5Var, p1Var, i11));
                 return c0Var;
             default:
-                b0 b0Var2 = (b0) obj4;
+                a0 a0Var2 = (a0) obj4;
                 r rVar = (r) obj3;
                 List list = (List) obj;
-                Handler handler2 = b0Var2.l;
-                m4.w wVar2 = new m4.w(b0Var2, rVar, new b(b0Var2, (f1) obj2, rVar, list, 21));
-                r1 r1Var2 = new r1(0);
+                Handler handler2 = a0Var2.l;
+                b5 b5Var2 = new b5(a0Var2, rVar, new b(a0Var2, (d1) obj2, rVar, list, 25));
+                p1 p1Var2 = new p1(0);
                 String str2 = d0.a;
                 c0 c0Var2 = new c0();
-                d0.U(handler2, new a3.k0(c0Var2, wVar2, r1Var2, i11));
+                d0.U(handler2, new a3.j0(c0Var2, b5Var2, p1Var2, i11));
                 return c0Var2;
         }
     }
 
-    @Override // org.telegram.ui.Components.gl
+    @Override // org.telegram.ui.Components.bl
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         switch (this.a) {
-            case 8:
-                hi.s sVar = (hi.s) this.b;
-                hi.a aVar = (hi.a) this.d;
-                yi yiVar = (yi) this.c;
-                z3 z3Var = sVar.r;
+            case 10:
+                ji.r rVar = (ji.r) this.b;
+                ji.a aVar = (ji.a) this.d;
+                vi viVar = (vi) this.c;
+                v3 v3Var = rVar.r;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    k2 k2Var = z3Var.J3;
-                    if (k2Var != null) {
-                        k2Var.d();
+                    g2 g2Var = v3Var.J3;
+                    if (g2Var != null) {
+                        g2Var.d();
                     }
                     TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) aVar.b;
                     pageblockmap.geo = messageMedia.geo;
@@ -236,24 +225,24 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                         pageblockmap.w = 600;
                         pageblockmap.h = 400;
                     }
-                    k2 k2Var2 = z3Var.J3;
-                    if (k2Var2 != null) {
-                        k2Var2.h();
+                    g2 g2Var2 = v3Var.J3;
+                    if (g2Var2 != null) {
+                        g2Var2.h();
                     }
-                    sVar.V(true);
-                    yiVar.dismiss(true);
-                    z3Var.post(new hi.g(sVar, aVar, 0));
+                    rVar.V(true);
+                    viVar.dismiss(true);
+                    v3Var.post(new ji.f(rVar, aVar, 0));
                     break;
                 }
                 break;
             default:
-                g2 g2Var = (g2) this.b;
-                hi.a aVar2 = (hi.a) this.d;
-                yi yiVar2 = (yi) this.c;
+                c2 c2Var = (c2) this.b;
+                ji.a aVar2 = (ji.a) this.d;
+                vi viVar2 = (vi) this.c;
                 if (messageMedia != null && messageMedia.geo != null) {
-                    k2 k2Var3 = g2Var.P.J3;
-                    if (k2Var3 != null) {
-                        k2Var3.d();
+                    g2 g2Var3 = c2Var.P.J3;
+                    if (g2Var3 != null) {
+                        g2Var3.d();
                     }
                     TL_iv.pageBlockMap pageblockmap2 = (TL_iv.pageBlockMap) aVar2.b;
                     pageblockmap2.geo = messageMedia.geo;
@@ -262,12 +251,12 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                         pageblockmap2.w = 600;
                         pageblockmap2.h = 400;
                     }
-                    k2 k2Var4 = g2Var.P.J3;
-                    if (k2Var4 != null) {
-                        k2Var4.h();
+                    g2 g2Var4 = c2Var.P.J3;
+                    if (g2Var4 != null) {
+                        g2Var4.h();
                     }
-                    yiVar2.dismiss(true);
-                    g2Var.P.post(new p1(g2Var, aVar2, 9));
+                    viVar2.dismiss(true);
+                    c2Var.P.post(new m1(c2Var, aVar2, 9));
                     break;
                 }
                 break;
@@ -287,8 +276,8 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                 } else {
                     try {
                         bVar = new w.b(obj);
-                    } catch (w.g e) {
-                        i.f(iOnDoneCallback, str, e);
+                    } catch (w.g e7) {
+                        i.f(iOnDoneCallback, str, e7);
                         return;
                     }
                 }
@@ -301,84 +290,99 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                 try {
                     iOnDoneCallback2.onFailure(new w.b(new FailureResponse(exc)));
                     break;
-                } catch (w.g e7) {
-                    Log.e("CarApp.Dispatch", "Serialization failure in ".concat(str2), e7);
+                } catch (w.g e10) {
+                    Log.e("CarApp.Dispatch", "Serialization failure in ".concat(str2), e10);
                 }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void f(d2 d2Var, int i10) {
+    @Override // m4.j0
+    public void f(r rVar) {
+        k0 k0Var = (k0) this.b;
+        Bundle bundle = (Bundle) this.d;
+        ResultReceiver resultReceiver = (ResultReceiver) this.c;
+        a0 a0Var = k0Var.g;
+        if (bundle == null) {
+            Bundle bundle2 = Bundle.EMPTY;
+        }
+        u n10 = a0Var.n(rVar);
+        if (resultReceiver != null) {
+            n10.a(new b5(8, n10, resultReceiver), q.a);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
         switch (this.a) {
-            case 3:
-                ((rb) this.b).g1((pb) this.d, (Runnable) this.c, true);
+            case 6:
+                ((ia) this.b).g1((ga) this.d, (Runnable) this.c, true);
                 break;
-            case 5:
+            case 7:
                 Activity activity = (Activity) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.c;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.c;
                 try {
                     Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     activity.startActivity(intent);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 zArr[0] = true;
                 Boolean bool = Boolean.FALSE;
-                rVar.run(bool, bool);
+                sVar.run(bool, bool);
                 break;
-            case 7:
-                l1 l1Var = (l1) this.b;
+            case 9:
+                k1 k1Var = (k1) this.b;
                 boolean[] zArr2 = (boolean[]) this.d;
                 TLRPC.User user = (TLRPC.User) this.c;
-                l1Var.getClass();
+                k1Var.getClass();
                 zArr2[0] = true;
                 if (user != null) {
-                    MessagesController.getNotificationsSettings(l1Var.f).edit().putBoolean("inlinegeo_" + user.id, true).commit();
-                    l1Var.G();
+                    MessagesController.getNotificationsSettings(k1Var.f).edit().putBoolean("inlinegeo_" + user.id, true).commit();
+                    k1Var.G();
                     break;
                 }
                 break;
-            case 10:
+            case 12:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
                 EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                h4 h4Var = (h4) this.c;
+                e4 e4Var = (e4) this.c;
                 String trim = editTextBoldCursor.getText().toString().trim();
                 String trim2 = editTextBoldCursor2.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim) && !TextUtils.isEmpty(trim2)) {
-                    int i11 = h4Var.a;
-                    w3 w3Var = h4Var.b;
+                    int i11 = e4Var.a;
+                    s3 s3Var = e4Var.b;
                     switch (i11) {
                         case 1:
                             TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = new TL_keyboard.TL_inlineButtonTypeUrl();
                             tL_inlineButtonTypeUrl.url = trim2;
-                            w3Var.a(trim, tL_inlineButtonTypeUrl);
+                            s3Var.a(trim, tL_inlineButtonTypeUrl);
                             break;
                         default:
                             TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = new TL_keyboard.TL_inlineButtonTypeCopy();
                             tL_inlineButtonTypeCopy.copy_text = trim2;
-                            w3Var.a(trim, tL_inlineButtonTypeCopy);
+                            s3Var.a(trim, tL_inlineButtonTypeCopy);
                             break;
                     }
                 }
                 break;
-            case 14:
+            case 16:
                 boolean[] zArr3 = (boolean[]) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                d2[] d2VarArr = (d2[]) this.c;
+                b2[] b2VarArr = (b2[]) this.c;
                 zArr3[0] = true;
                 callback.run(Boolean.FALSE);
-                d2VarArr[0].dismiss();
+                b2VarArr[0].dismiss();
                 break;
-            case 18:
+            case 20:
                 ChatActivityEnterView.i((ChatActivityEnterView) this.b, (MessageObject) this.d, (TL_keyboard.KeyboardButtonProto) this.c);
                 break;
-            case 21:
-                yi yiVar = (yi) this.b;
+            case 23:
+                vi viVar = (vi) this.b;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.d;
                 TLRPC.User user2 = (TLRPC.User) this.c;
-                int i12 = yiVar.J1;
+                int i12 = viVar.J1;
                 if (tL_attachMenuBot == null) {
                     MediaDataController.getInstance(i12).removeInline(user2.id);
                     break;
@@ -386,66 +390,168 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                     tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i12).getInputUser(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new th(1, yiVar, tL_attachMenuBot), 66);
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new ro(6, viVar, tL_attachMenuBot), 66);
                     break;
                 }
-            case 25:
-                zn znVar = (zn) this.b;
-                View view = (View) this.d;
-                e6 e6Var = (e6) this.c;
-                znVar.getClass();
-                view.setTag(null);
-                znVar.X(view, e6Var, false);
-                break;
             default:
-                iv0 iv0Var = (iv0) this.b;
-                s4 s4Var = (s4) this.d;
-                ArrayList arrayList = (ArrayList) this.c;
-                s4Var.F(arrayList);
-                wc.a0(iv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                iv0Var.L(false);
+                tn tnVar = (tn) this.b;
+                View view = (View) this.d;
+                c6 c6Var = (c6) this.c;
+                tnVar.getClass();
+                view.setTag(null);
+                tnVar.X(view, c6Var, false);
                 break;
         }
     }
 
-    @Override // m4.k0
-    public void h(r rVar) {
-        l0 l0Var = (l0) this.b;
-        Bundle bundle = (Bundle) this.d;
-        ResultReceiver resultReceiver = (ResultReceiver) this.c;
-        b0 b0Var = l0Var.g;
-        if (bundle == null) {
-            Bundle bundle2 = Bundle.EMPTY;
+    @Override // bi.kb
+    public void h(Canvas canvas, RectF rectF, float f7) {
+        t7 t7Var = (t7) this.b;
+        sk0 sk0Var = (sk0) this.d;
+        int[] iArr = (int[]) this.c;
+        t7Var.c(canvas, rectF, f7);
+        t7Var.f(canvas, rectF, f7);
+        if (t7Var.h) {
+            t7Var.b(canvas, rectF, f7);
+        } else {
+            t7Var.e(canvas, rectF, f7);
         }
-        u n10 = b0Var.n(rVar);
-        if (resultReceiver != null) {
-            n10.a(new m4.w(3, n10, resultReceiver), q.a);
+        if (sk0Var != null && sk0Var.a0 && sk0Var.getVisibility() == 0) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
+            canvas.translate(iArr[0], iArr[1]);
+            sk0Var.draw(canvas);
+            canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.s0
+    @Override // org.telegram.ui.ActionBar.r0
     public void m(int i10) {
         Runnable runnable;
-        c5 c5Var = (c5) this.b;
+        d5 d5Var = (d5) this.b;
         boolean[] zArr = (boolean[]) this.d;
-        c3 c3Var = (c3) this.c;
+        a3 a3Var = (a3) this.c;
         if (i10 == 1) {
-            c5Var.I(2147483646, 0, zArr[0]);
-            runnable = c3Var.a.dismissRunnable;
+            d5Var.J(2147483646, 0, zArr[0]);
+            runnable = a3Var.a.dismissRunnable;
             runnable.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.bd0
-    public void q(dd0 dd0Var, int i10) {
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        f5 f5Var = (f5) this.b;
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.d;
+        f6 f6Var = (f6) this.c;
+        o5 o5Var = f5Var.l;
+        o5Var.getStoriesController().r(o5Var.B1, str, new o4(f5Var, storyItem, f6Var, 2));
+    }
+
+    @Override // org.telegram.ui.Components.tc0
+    public void s(vc0 vc0Var, int i10) {
         switch (this.a) {
-            case 15:
-                d5.g(null, null, 0L, 0L, 0, (dd0) this.b, (f4) this.d, (g4) this.c);
+            case 17:
+                e5.g(null, null, 0L, 0L, 0, (vc0) this.b, (g4) this.d, (h4) this.c);
                 break;
             default:
-                d5.g(null, null, 0L, 0L, 0, (dd0) this.b, (org.telegram.ui.Components.w3) this.d, (y3) this.c);
+                e5.g(null, null, 0L, 0L, 0, (vc0) this.b, (x3) this.d, (z3) this.c);
                 break;
         }
+    }
+
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
+        String str = (String) this.c;
+        com.google.firebase.messaging.t tVar = (com.google.firebase.messaging.t) this.d;
+        String str2 = (String) obj;
+        a6.i c10 = FirebaseMessaging.c(firebaseMessaging.b);
+        k9.h hVar = firebaseMessaging.a;
+        hVar.a();
+        String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
+        String a2 = firebaseMessaging.i.a();
+        synchronized (c10) {
+            String a10 = com.google.firebase.messaging.t.a(System.currentTimeMillis(), str2, a2);
+            if (a10 != null) {
+                SharedPreferences.Editor edit = ((SharedPreferences) c10.b).edit();
+                edit.putString(d + "|T|" + str + "|*", a10);
+                edit.commit();
+            }
+        }
+        if (tVar == null || !str2.equals(tVar.a)) {
+            k9.h hVar2 = firebaseMessaging.a;
+            hVar2.a();
+            if ("[DEFAULT]".equals(hVar2.b)) {
+                if (Log.isLoggable("FirebaseMessaging", 3)) {
+                    StringBuilder sb2 = new StringBuilder("Invoking onNewToken for app: ");
+                    hVar2.a();
+                    sb2.append(hVar2.b);
+                    Log.d("FirebaseMessaging", sb2.toString());
+                }
+                Intent intent = new Intent("com.google.firebase.messaging.NEW_TOKEN");
+                intent.putExtra("token", str2);
+                new com.google.firebase.messaging.j(firebaseMessaging.b).b(intent);
+            }
+        }
+        return Tasks.forResult(str2);
+    }
+
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
+        MessageObject messageObject = (MessageObject) this.d;
+        TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.c;
+        co coVar = chatActivityEnterView.O2;
+        TLRPC.Message message = messageObject.messageOwner;
+        long j3 = message.from_id.user_id;
+        long j10 = message.via_bot_id;
+        if (j10 != 0) {
+            j3 = j10;
+        }
+        TLRPC.User user = chatActivityEnterView.R.getMessagesController().getUser(Long.valueOf(j3));
+        if (user == null) {
+            uyVar.finishFragment();
+            return true;
+        }
+        long j11 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        MediaDataController.getInstance(chatActivityEnterView.Q).saveDraft(j11, 0, "@" + UserObject.getPublicUsername(user) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, true, 0L);
+        if (j11 == chatActivityEnterView.P2) {
+            uyVar.finishFragment();
+            return true;
+        }
+        if (DialogObject.isEncryptedDialog(j11)) {
+            uyVar.finishFragment();
+            return true;
+        }
+        Bundle bundle = new Bundle();
+        if (DialogObject.isUserDialog(j11)) {
+            bundle.putLong("user_id", j11);
+        } else {
+            bundle.putLong("chat_id", -j11);
+        }
+        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, uyVar)) {
+            if (!coVar.presentFragment(new co(bundle), true)) {
+                uyVar.finishFragment();
+                return true;
+            }
+            if (!AndroidUtilities.isTablet()) {
+                coVar.removeSelfFromStack();
+            }
+        }
+        return true;
+    }
+
+    public /* synthetic */ a(Object obj, String str, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = str;
+        this.d = obj2;
+    }
+
+    public /* synthetic */ a(k0 k0Var, l1 l1Var, Bundle bundle, ResultReceiver resultReceiver) {
+        this.a = 13;
+        this.b = k0Var;
+        this.d = bundle;
+        this.c = resultReceiver;
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
@@ -455,19 +561,19 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
         ArrayList arrayList4;
         ArrayList arrayList5 = arrayList;
         switch (this.a) {
-            case 2:
-                p2 p2Var = (p2) this.b;
+            case 5:
+                d2 d2Var = (d2) this.b;
                 String str2 = (String) this.c;
                 MediaDataController mediaDataController = (MediaDataController) this.d;
-                ArrayList arrayList6 = p2Var.h;
-                SparseIntArray sparseIntArray = p2Var.y;
-                ArrayList arrayList7 = p2Var.n;
-                q2 q2Var = p2Var.N;
-                ArrayList arrayList8 = p2Var.v;
-                HashSet hashSet = p2Var.L;
-                ArrayList arrayList9 = p2Var.s;
-                if (TextUtils.equals(str2, p2Var.H)) {
-                    ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(p2Var.H);
+                ArrayList arrayList6 = d2Var.h;
+                SparseIntArray sparseIntArray = d2Var.y;
+                ArrayList arrayList7 = d2Var.n;
+                e2 e2Var = d2Var.N;
+                ArrayList arrayList8 = d2Var.v;
+                HashSet hashSet = d2Var.L;
+                ArrayList arrayList9 = d2Var.s;
+                if (TextUtils.equals(str2, d2Var.H)) {
+                    ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(d2Var.H);
                     for (int i10 = 0; i10 < parseEmojis.size(); i10++) {
                         try {
                             MediaDataController.KeywordResult keywordResult = new MediaDataController.KeywordResult();
@@ -476,20 +582,20 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                         } catch (Exception unused) {
                         }
                     }
-                    p2Var.x = 0;
+                    d2Var.x = 0;
                     arrayList9.clear();
                     arrayList8.clear();
                     sparseIntArray.clear();
                     arrayList7.clear();
-                    p2Var.x++;
+                    d2Var.x++;
                     arrayList9.add(null);
                     arrayList8.add(0L);
-                    if (q2Var.a == 0) {
+                    if (e2Var.a == 0) {
                         hashSet.clear();
                         for (int i11 = 0; i11 < arrayList5.size(); i11++) {
                             MediaDataController.KeywordResult keywordResult2 = (MediaDataController.KeywordResult) arrayList5.get(i11);
                             String str3 = keywordResult2.emoji;
-                            if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) p2Var.d.get(keywordResult2.emoji)) != null) {
+                            if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) d2Var.d.get(keywordResult2.emoji)) != null) {
                                 hashSet.addAll(arrayList4);
                             }
                         }
@@ -497,7 +603,7 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                         for (int i12 = 0; i12 < hashSet.size(); i12++) {
                             arrayList9.add(null);
                         }
-                        p2Var.x = hashSet.size() + p2Var.x;
+                        d2Var.x = hashSet.size() + d2Var.x;
                     } else {
                         HashMap<String, ArrayList<TLRPC.Document>> allStickers = mediaDataController.getAllStickers();
                         for (int i13 = 0; i13 < arrayList5.size(); i13++) {
@@ -508,7 +614,7 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                                     TLRPC.Document document = arrayList3.get(i14);
                                     if (document != null && !arrayList9.contains(document)) {
                                         arrayList9.add(document);
-                                        p2Var.x++;
+                                        d2Var.x++;
                                     }
                                 }
                             }
@@ -534,7 +640,7 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                                         String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i17), null);
                                         if (findAnimatedEmojiEmoticon != null && findAnimatedEmojiEmoticon.contains(keywordResult4.emoji)) {
                                             arrayList9.add(arrayList2.get(i17));
-                                            p2Var.x++;
+                                            d2Var.x++;
                                         }
                                     }
                                 }
@@ -543,63 +649,63 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                             arrayList5 = arrayList;
                         }
                     }
-                    String translitSafe = AndroidUtilities.translitSafe((p2Var.H + "").toLowerCase());
+                    String translitSafe = AndroidUtilities.translitSafe((d2Var.H + "").toLowerCase());
                     for (int i18 = 0; i18 < arrayList6.size(); i18++) {
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i18);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                            if (translitSafe2.startsWith(translitSafe) || a2.w(" ", translitSafe, translitSafe2)) {
+                            if (translitSafe2.startsWith(translitSafe) || w1.w(" ", translitSafe, translitSafe2)) {
                                 int size = arrayList7.size();
                                 arrayList7.add(tL_messages_stickerSet);
-                                sparseIntArray.put(p2Var.x, size);
+                                sparseIntArray.put(d2Var.x, size);
                                 arrayList9.add(null);
-                                p2Var.x++;
+                                d2Var.x++;
                                 arrayList9.addAll(tL_messages_stickerSet.documents);
-                                p2Var.x = tL_messages_stickerSet.documents.size() + p2Var.x;
+                                d2Var.x = tL_messages_stickerSet.documents.size() + d2Var.x;
                             }
                         }
                     }
                     boolean z10 = arrayList8.size() <= 1 && arrayList9.size() <= 1;
-                    p2Var.w = z10;
+                    d2Var.w = z10;
                     if (z10) {
-                        p2Var.x++;
+                        d2Var.x++;
                     }
                     if (!z10) {
-                        p2Var.K++;
+                        d2Var.K++;
                     }
-                    p2Var.I = p2Var.H;
-                    p2Var.l();
-                    w1.v1(q2Var.b, 0, 0);
-                    q2Var.f.c(false);
-                    q2Var.e.n(false);
+                    d2Var.I = d2Var.H;
+                    d2Var.l();
+                    di.p1.v1(e2Var.b, 0, 0);
+                    e2Var.f.c(false);
+                    e2Var.e.n(false);
                     break;
                 }
                 break;
-            case 26:
-                org.telegram.ui.Components.qy qyVar = (org.telegram.ui.Components.qy) this.b;
+            case 28:
+                jy jyVar = (jy) this.b;
                 String str6 = (String) this.c;
                 Runnable runnable = (Runnable) this.d;
-                ry ryVar = qyVar.a;
-                if (str6.equals(ryVar.v)) {
-                    ryVar.w = str;
-                    ryVar.n.addAll(arrayList5);
+                ky kyVar = jyVar.a;
+                if (str6.equals(kyVar.v)) {
+                    kyVar.w = str;
+                    kyVar.n.addAll(arrayList5);
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                kz kzVar = (kz) this.b;
+                dz dzVar = (dz) this.b;
                 HashMap hashMap = (HashMap) this.d;
                 Runnable runnable2 = (Runnable) this.c;
-                HashMap hashMap2 = kzVar.f;
-                if (kzVar.w.M == kzVar.b) {
+                HashMap hashMap2 = dzVar.f;
+                if (dzVar.w.M == dzVar.b) {
                     int size2 = arrayList5.size();
                     for (int i19 = 0; i19 < size2; i19++) {
                         String str7 = ((MediaDataController.KeywordResult) arrayList5.get(i19)).emoji;
                         ArrayList arrayList11 = (ArrayList) hashMap.get(str7);
                         if (arrayList11 != null && !arrayList11.isEmpty() && !hashMap2.containsKey(arrayList11)) {
                             hashMap2.put(arrayList11, str7);
-                            kzVar.h.add(arrayList11);
+                            dzVar.h.add(arrayList11);
                         }
                     }
                     runnable2.run();
@@ -607,101 +713,5 @@ public final /* synthetic */ class a implements d, MediaDataController.KeywordRe
                 }
                 break;
         }
-    }
-
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.b;
-        String str = (String) this.c;
-        t tVar = (t) this.d;
-        String str2 = (String) obj;
-        com.google.firebase.messaging.u c10 = FirebaseMessaging.c(firebaseMessaging.b);
-        k9.h hVar = firebaseMessaging.a;
-        hVar.a();
-        String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
-        String a2 = firebaseMessaging.i.a();
-        synchronized (c10) {
-            String a10 = t.a(System.currentTimeMillis(), str2, a2);
-            if (a10 != null) {
-                SharedPreferences.Editor edit = c10.a.edit();
-                edit.putString(d + "|T|" + str + "|*", a10);
-                edit.commit();
-            }
-        }
-        if (tVar == null || !str2.equals(tVar.a)) {
-            k9.h hVar2 = firebaseMessaging.a;
-            hVar2.a();
-            if ("[DEFAULT]".equals(hVar2.b)) {
-                if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    StringBuilder sb2 = new StringBuilder("Invoking onNewToken for app: ");
-                    hVar2.a();
-                    sb2.append(hVar2.b);
-                    Log.d("FirebaseMessaging", sb2.toString());
-                }
-                Intent intent = new Intent("com.google.firebase.messaging.NEW_TOKEN");
-                intent.putExtra("token", str2);
-                new com.google.firebase.messaging.j(firebaseMessaging.b).b(intent);
-            }
-        }
-        return Tasks.forResult(str2);
-    }
-
-    @Override // org.telegram.ui.qy
-    public boolean v(wy wyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ig1 ig1Var) {
-        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
-        MessageObject messageObject = (MessageObject) this.d;
-        TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.c;
-        eo eoVar = chatActivityEnterView.O2;
-        TLRPC.Message message = messageObject.messageOwner;
-        long j3 = message.from_id.user_id;
-        long j10 = message.via_bot_id;
-        if (j10 != 0) {
-            j3 = j10;
-        }
-        TLRPC.User user = chatActivityEnterView.R.getMessagesController().getUser(Long.valueOf(j3));
-        if (user == null) {
-            wyVar.finishFragment();
-            return true;
-        }
-        long j11 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        MediaDataController.getInstance(chatActivityEnterView.Q).saveDraft(j11, 0, "@" + UserObject.getPublicUsername(user) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, true, 0L);
-        if (j11 == chatActivityEnterView.P2) {
-            wyVar.finishFragment();
-            return true;
-        }
-        if (DialogObject.isEncryptedDialog(j11)) {
-            wyVar.finishFragment();
-            return true;
-        }
-        Bundle bundle = new Bundle();
-        if (DialogObject.isUserDialog(j11)) {
-            bundle.putLong("user_id", j11);
-        } else {
-            bundle.putLong("chat_id", -j11);
-        }
-        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, wyVar)) {
-            if (!eoVar.presentFragment(new eo(bundle), true)) {
-                wyVar.finishFragment();
-                return true;
-            }
-            if (!AndroidUtilities.isTablet()) {
-                eoVar.removeSelfFromStack();
-            }
-        }
-        return true;
-    }
-
-    public /* synthetic */ a(Object obj, String str, Object obj2, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = str;
-        this.d = obj2;
-    }
-
-    public /* synthetic */ a(l0 l0Var, n1 n1Var, Bundle bundle, ResultReceiver resultReceiver) {
-        this.a = 11;
-        this.b = l0Var;
-        this.d = bundle;
-        this.c = resultReceiver;
     }
 }

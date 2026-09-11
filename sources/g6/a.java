@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
@@ -43,7 +43,7 @@ public abstract class a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = e2.d(iArr[i10], i10, 1, arrayList);
+            i10 = e2.e(iArr[i10], i10, 1, arrayList);
         }
         return arrayList;
     }

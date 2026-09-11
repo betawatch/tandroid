@@ -1,282 +1,43 @@
 package a3;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Looper;
-import android.util.Pair;
-import android.view.Surface;
-import e9.a1;
-import java.util.List;
-import java.util.Locale;
-import java.util.concurrent.Executor;
+import android.util.Base64;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class r implements o0 {
-    public e9.i0 a;
-    public b2.s b;
-    public long c;
-    public long d;
-    public Executor e;
-    public final /* synthetic */ w f;
+public final /* synthetic */ class r implements d9.j {
+    public final /* synthetic */ int a;
 
-    public r(w wVar, Context context) {
-        this.f = wVar;
-        e2.d0.L(context);
-        e9.g0 g0Var = e9.i0.b;
-        this.a = a1.e;
-        this.d = -9223372036854775807L;
-        this.e = w.o;
+    public /* synthetic */ r(int i10) {
+        this.a = i10;
     }
 
-    @Override // a3.o0
-    public final void a(float f7) {
-        this.f.e.a(f7);
-    }
-
-    @Override // a3.o0
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // a3.o0
-    public final Surface c() {
-        e2.d.g(false);
-        throw null;
-    }
-
-    @Override // a3.o0
-    public final boolean d(b2.s sVar) {
-        w wVar = this.f;
-        boolean z10 = true;
-        e2.d.g(wVar.l == 0);
-        b2.j jVar = sVar.H;
-        if (jVar == null || !jVar.d()) {
-            jVar = b2.j.h;
-        }
-        int i10 = jVar.c;
-        if (i10 == 7) {
-            try {
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 < 34) {
-                    if (i11 >= 33 && e2.a.j("EGL_EXT_gl_colorspace_bt2020_pq")) {
-                        e2.x xVar = wVar.f;
-                        Looper myLooper = Looper.myLooper();
-                        e2.d.h(myLooper);
-                        wVar.i = xVar.a(myLooper, null);
-                        wVar.b.a();
-                        throw null;
-                    }
+    @Override // d9.j
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                try {
+                    return Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
+                } catch (Exception e7) {
+                    throw new IllegalStateException(e7);
                 }
-            } catch (e2.k e) {
-                throw new n0(e, sVar);
-            }
+            case 1:
+                throw new IllegalStateException();
+            case 2:
+                ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
+                if (newSingleThreadExecutor instanceof i9.x) {
+                    return (i9.x) newSingleThreadExecutor;
+                }
+                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new i9.b0((ScheduledExecutorService) newSingleThreadExecutor) : new i9.y(newSingleThreadExecutor);
+            case 3:
+                return new i2.l(new y2.d(), MediaDataController.MAX_STYLE_RUNS_COUNT, 2000);
+            default:
+                byte[] bArr = new byte[12];
+                j2.h.i.nextBytes(bArr);
+                return Base64.encodeToString(bArr, 10);
         }
-        if (i10 == 6) {
-            if (Build.VERSION.SDK_INT < 33 || !e2.a.j("EGL_EXT_gl_colorspace_bt2020_pq")) {
-                z10 = false;
-            }
-        } else if (i10 == 7) {
-            z10 = e2.a.j("EGL_EXT_gl_colorspace_bt2020_hlg");
-        }
-        if (!z10 && Build.VERSION.SDK_INT >= 29) {
-            Locale locale = Locale.US;
-            e2.a.n("PlaybackVidGraphWrapper", "Color transfer " + i10 + " is not supported. Falling back to OpenGl tone mapping.");
-            b2.j jVar2 = b2.j.h;
-        }
-        e2.x xVar2 = wVar.f;
-        Looper myLooper2 = Looper.myLooper();
-        e2.d.h(myLooper2);
-        wVar.i = xVar2.a(myLooper2, null);
-        wVar.b.a();
-        throw null;
-    }
-
-    @Override // a3.o0
-    public final void e() {
-        w wVar = this.f;
-        if (wVar.d) {
-            wVar.e.e();
-        }
-    }
-
-    @Override // a3.o0
-    public final void f() {
-        w wVar = this.f;
-        if (wVar.d) {
-            wVar.e.f();
-        }
-    }
-
-    @Override // a3.o0
-    public final void g(a6.i iVar) {
-        this.e = i9.q.a;
-    }
-
-    @Override // a3.o0
-    public final void h(long j3) {
-        this.c = j3;
-    }
-
-    @Override // a3.o0
-    public final void i() {
-        long j3 = this.d;
-        w wVar = this.f;
-        if (wVar.m >= j3) {
-            wVar.e.i();
-        }
-    }
-
-    @Override // a3.o0
-    public final void j(int i10) {
-        this.f.e.j(i10);
-    }
-
-    @Override // a3.o0
-    public final void k() {
-        w wVar = this.f;
-        wVar.getClass();
-        int i10 = e2.w.c.a;
-        wVar.j = null;
-    }
-
-    @Override // a3.o0
-    public final void l(b2.s sVar, long j3, int i10, List list) {
-        e2.d.g(false);
-        this.a = e9.i0.v(list);
-        this.b = sVar;
-        b2.r a2 = sVar.a();
-        b2.j jVar = sVar.H;
-        if (jVar == null || !jVar.d()) {
-            jVar = b2.j.h;
-        }
-        a2.G = jVar;
-        a2.a();
-        throw null;
-    }
-
-    @Override // a3.o0
-    public final void m(boolean z10) {
-        this.d = -9223372036854775807L;
-        w wVar = this.f;
-        f fVar = wVar.e;
-        if (wVar.l == 1) {
-            wVar.k++;
-            fVar.m(z10);
-            while (wVar.h.i() > 1) {
-                wVar.h.f();
-            }
-            if (wVar.h.i() == 1) {
-                ((v) wVar.h.f()).getClass();
-                throw null;
-            }
-            wVar.m = -9223372036854775807L;
-            e2.z zVar = wVar.i;
-            e2.d.h(zVar);
-            zVar.c(new d(wVar, 1));
-        }
-    }
-
-    @Override // a3.o0
-    public final boolean n(long j3, j jVar) {
-        e2.d.g(false);
-        int i10 = this.f.n;
-        if (i10 == -1 || i10 != 0) {
-            return false;
-        }
-        throw null;
-    }
-
-    @Override // a3.o0
-    public final void o(List list) {
-        if (this.a.equals(list)) {
-            return;
-        }
-        this.a = e9.i0.v(list);
-        b2.s sVar = this.b;
-        if (sVar == null) {
-            return;
-        }
-        b2.r a2 = sVar.a();
-        b2.j jVar = sVar.H;
-        if (jVar == null || !jVar.d()) {
-            jVar = b2.j.h;
-        }
-        a2.G = jVar;
-        a2.a();
-        throw null;
-    }
-
-    @Override // a3.o0
-    public final void p(long j3, long j10) {
-        this.f.e.p(j3 + this.c, j10);
-    }
-
-    @Override // a3.o0
-    public final void q(boolean z10) {
-        w wVar = this.f;
-        if (wVar.d) {
-            wVar.e.q(z10);
-        }
-    }
-
-    @Override // a3.o0
-    public final boolean r(boolean z10) {
-        return this.f.e.a.b(false);
-    }
-
-    @Override // a3.o0
-    public final void release() {
-        w wVar = this.f;
-        if (wVar.l == 2) {
-            return;
-        }
-        e2.z zVar = wVar.i;
-        if (zVar != null) {
-            zVar.a.removeCallbacksAndMessages(null);
-        }
-        wVar.j = null;
-        wVar.l = 2;
-    }
-
-    @Override // a3.o0
-    public final void s(Surface surface, e2.w wVar) {
-        w wVar2 = this.f;
-        Pair pair = wVar2.j;
-        if (pair != null && ((Surface) pair.first).equals(surface) && ((e2.w) wVar2.j.second).equals(wVar)) {
-            return;
-        }
-        wVar2.j = Pair.create(surface, wVar);
-        int i10 = wVar.a;
-    }
-
-    @Override // a3.o0
-    public final void u(y yVar) {
-        this.f.e.i = yVar;
-    }
-
-    @Override // a3.o0
-    public final boolean v() {
-        return false;
-    }
-
-    @Override // a3.o0
-    public final void w() {
-        w wVar = this.f;
-        if (wVar.h.i() == 0) {
-            wVar.e.w();
-            return;
-        }
-        e2.a0 a0Var = new e2.a0();
-        if (wVar.h.i() <= 0) {
-            wVar.h = a0Var;
-        } else {
-            ((v) wVar.h.f()).getClass();
-            throw null;
-        }
-    }
-
-    @Override // a3.o0
-    public final void t() {
     }
 }

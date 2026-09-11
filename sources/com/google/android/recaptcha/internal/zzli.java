@@ -6,10 +6,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.t;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 final class zzli extends j implements p {
     Object zza;
@@ -41,10 +41,10 @@ final class zzli extends j implements p {
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                u7.b(obj);
+                t7.b(obj);
                 zza = str;
             } else {
-                u7.b(obj);
+                t7.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -56,8 +56,8 @@ final class zzli extends j implements p {
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
             return i.a;
-        } catch (Exception e) {
-            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e.getMessage(), null, 8, null);
+        } catch (Exception e7) {
+            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e7.getMessage(), null, 8, null);
             ((t) this.zzc.zzz()).L(zzcgVar);
             throw zzcgVar;
         }

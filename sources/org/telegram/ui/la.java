@@ -1,77 +1,81 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class la extends FrameLayout {
-    public final EditTextBoldCursor a;
-    public final TextView b;
-    public final /* synthetic */ ra c;
+public final class la extends s4.v {
+    public final /* synthetic */ qa d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public la(ra raVar, Activity activity) {
-        super(activity);
-        this.c = raVar;
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(0);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
-        this.a = editTextBoldCursor;
-        editTextBoldCursor.setTextSize(1, 17.0f);
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        editTextBoldCursor.setInputType(180224);
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getString(R.string.UsernameLinkPlaceholder));
-        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(19.0f));
-        editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setOnEditorActionListener(new ja(this, 0));
-        String str = raVar.r;
-        long j3 = raVar.x;
-        editTextBoldCursor.setText(str);
-        editTextBoldCursor.addTextChangedListener(new ka(this));
-        if (j3 != 0) {
-            editTextBoldCursor.setEnabled(false);
+    public la(qa qaVar) {
+        this.d = qaVar;
+    }
+
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        View view = c1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        return (c1Var.f == 4 && ((na) c1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        if (c1Var.f != c1Var2.f) {
+            return false;
         }
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        textView.setMaxLines(1);
-        textView.setLines(1);
-        textView.setPadding(0, 0, 0, 0);
-        textView.setSingleLine(true);
-        textView.setText(raVar.getMessagesController().linkPrefix + "/");
-        textView.setTextSize(1, 17.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        textView.setTranslationY(-AndroidUtilities.dp(3.0f));
-        linearLayout.addView(textView, w7.a6.p(-2, -2, 0.0f, 16, 21, 15, 0, 15));
-        linearLayout.addView(editTextBoldCursor, w7.a6.p(-2, -2, 1.0f, 16, 0, 15, 21, 15));
-        addView(linearLayout, w7.a6.e(-1, -1, 48));
-        if (j3 != 0) {
-            editTextBoldCursor.setAlpha(0.6f);
-            textView.setAlpha(0.6f);
+        View view = c1Var2.a;
+        if ((view instanceof na) && !((na) view).G) {
+            return false;
+        }
+        ha haVar = this.d.c;
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        int i10 = b10 - 4;
+        int i11 = b11 - 4;
+        qa qaVar = haVar.c;
+        ArrayList arrayList = qaVar.v;
+        if (i10 < arrayList.size() && i11 < arrayList.size()) {
+            if (b10 != b11) {
+                qaVar.d = true;
+            }
+            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
+            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
+            arrayList.set(i11, tL_username);
+            haVar.p(b10, b11);
+            int size = arrayList.size() + 3;
+            if (b10 == size || b11 == size) {
+                haVar.n(b10, 3);
+                haVar.n(b11, 3);
+            }
+        }
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        qa qaVar = this.d;
+        if (i10 == 0) {
+            qa.Y(qaVar);
+        } else {
+            qaVar.b.I0(false);
+            c1Var.a.setPressed(true);
+        }
+        if (c1Var != null) {
+            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

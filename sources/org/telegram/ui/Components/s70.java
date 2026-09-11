@@ -1,40 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.PopupWindow;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s70 implements PopupWindow.OnDismissListener {
-    public final /* synthetic */ ViewGroup a;
-    public final /* synthetic */ w70 b;
+public final class s70 extends ll0 {
+    public final /* synthetic */ w70 X2;
 
-    public s70(w70 w70Var, ViewGroup viewGroup) {
-        this.b = w70Var;
-        this.a = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s70(w70 w70Var, Context context) {
+        super(context, null);
+        this.X2 = w70Var;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
-        View view;
-        w70 w70Var = this.b;
-        w70Var.m = null;
-        w70.a(w70Var, this.a);
-        View view2 = w70Var.p0;
-        if (view2 != null) {
-            view2.setPressed(false);
-            w70Var.p0 = null;
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.X2.n) {
+            return;
         }
-        if (w70Var.o0 != null && (view = w70Var.f) != null) {
-            view.setOnTouchListener(null);
-        }
-        w70Var.o0 = null;
-        w70Var.N();
-        Runnable runnable = w70Var.p;
-        if (runnable != null) {
-            runnable.run();
-            w70Var.p = null;
-        }
+        super.requestLayout();
     }
 }

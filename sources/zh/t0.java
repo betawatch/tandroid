@@ -1,407 +1,52 @@
 package zh;
 
-import android.content.Context;
-import android.media.AudioManager;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_stories;
-import org.webrtc.MediaStreamTrack;
-import org.webrtc.VideoSink;
-import org.webrtc.voiceengine.WebRtcAudioTrack;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class t0 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
-    public static t0 W;
-    public NativeInstance E;
-    public TLRPC.GroupCallParticipant G;
-    public final r0 H;
-    public boolean I;
-    public long J;
-    public int K;
-    public boolean L;
-    public VideoSink O;
-    public boolean P;
-    public Runnable Q;
-    public Runnable R;
-    public ArrayList U;
-    public ArrayList V;
-    public final TL_stories.StoryItem a;
-    public final long b;
-    public final int c;
-    public final Context d;
-    public final int e;
-    public final TLRPC.InputGroupCall f;
-    public final boolean h;
-    public boolean n;
-    public TLRPC.GroupCall v;
-    public boolean x;
-    public int y;
-    public boolean r = false;
-    public boolean s = false;
-    public boolean w = false;
-    public final HashMap F = new HashMap();
-    public final HashSet M = new HashSet();
-    public float N = 1.0f;
-    public int S = -1;
-    public int T = -1;
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ w3 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
+    public final /* synthetic */ TLObject e;
 
-    public t0(Context context, int i10, TL_stories.StoryItem storyItem, long j3, int i11, boolean z10, TLRPC.InputGroupCall inputGroupCall, boolean z11, boolean z12) {
-        this.I = false;
-        this.d = context;
-        this.e = i10;
-        this.f = inputGroupCall;
-        this.a = storyItem;
-        this.b = j3;
-        this.c = i11;
-        this.h = z10;
-        this.n = z11;
-        this.I = z12;
-        r0 r0Var = new r0(this);
-        this.H = r0Var;
-        FileLog.d("[LivePlayer] setup to call " + inputGroupCall.id);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storyGroupCallUpdated);
-        if (z11) {
-            this.J = NativeInstance.createVideoCapturer(r0Var, z12 ? 1 : 0);
-        }
-        c();
-        k();
+    public /* synthetic */ t0(w3 w3Var, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity) {
+        this.b = w3Var;
+        this.c = tL_error;
+        this.e = tLObject;
+        this.d = twoStepVerificationActivity;
     }
 
-    public static NativeInstance.SsrcGroup[] d(TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo) {
-        if (tL_groupCallParticipantVideo.source_groups.isEmpty()) {
-            return null;
-        }
-        int size = tL_groupCallParticipantVideo.source_groups.size();
-        NativeInstance.SsrcGroup[] ssrcGroupArr = new NativeInstance.SsrcGroup[size];
-        for (int i10 = 0; i10 < size; i10++) {
-            ssrcGroupArr[i10] = new NativeInstance.SsrcGroup();
-            TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = tL_groupCallParticipantVideo.source_groups.get(i10);
-            NativeInstance.SsrcGroup ssrcGroup = ssrcGroupArr[i10];
-            ssrcGroup.semantics = tL_groupCallParticipantVideoSourceGroup.semantics;
-            ssrcGroup.ssrcs = new int[tL_groupCallParticipantVideoSourceGroup.sources.size()];
-            int i11 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i10].ssrcs;
-                if (i11 < iArr.length) {
-                    iArr[i11] = tL_groupCallParticipantVideoSourceGroup.sources.get(i11).intValue();
-                    i11++;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                w3 w3Var = this.b;
+                w3Var.getClass();
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.e;
+                    TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+                    twoStepVerificationActivity.I = password;
+                    TwoStepVerificationActivity.m0(password);
+                    w3Var.M1(twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    break;
                 }
-            }
-        }
-        return ssrcGroupArr;
-    }
-
-    public final boolean a() {
-        TLRPC.GroupCall groupCall;
-        return (this.w || this.n || !this.s || W != null || (groupCall = this.v) == null || groupCall.rtmp_stream || !groupCall.creator) ? false : true;
-    }
-
-    public final boolean b() {
-        if (this.v == null || l()) {
-            return false;
-        }
-        return !this.v.messages_enabled;
-    }
-
-    public final void c() {
-        WebRtcAudioTrack.setAudioTrackUsageAttribute(1);
-        WebRtcAudioTrack.setAudioStreamType(TLObject.FLAG_31);
-        AudioManager audioManager = (AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (this.h) {
-            audioManager.setMode(0);
-            audioManager.setBluetoothScoOn(false);
-        } else if (this.n) {
-            audioManager.setMode(3);
-            this.L = audioManager.requestAudioFocus(this, 0, 2) == 1;
-            VoipAudioManager voipAudioManager = VoipAudioManager.get();
-            audioManager.setBluetoothScoOn(false);
-            voipAudioManager.setSpeakerphoneOn(true);
+                break;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
+                w3.W0(this.b, this.c, this.e, twoStepVerificationActivity2);
+                break;
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.storyGroupCallUpdated) {
-            long longValue = ((Long) objArr[0]).longValue();
-            TLRPC.GroupCall groupCall = (TLRPC.GroupCall) objArr[1];
-            if (this.b == longValue) {
-                yf.d.a(this.v, groupCall);
-                this.v = groupCall;
-                NotificationCenter.getInstance(this.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(groupCall.id));
-            }
-        }
-    }
-
-    public final void e() {
-        if (this.w) {
-            return;
-        }
-        this.w = true;
-        u(false);
-        NotificationCenter.getInstance(this.e).removeObserver(this, NotificationCenter.storyGroupCallUpdated);
-        FileLog.d("[LivePlayer] destroyed");
-        if (this.x) {
-            TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
-            leavegroupcall.call = this.f;
-            ConnectionsManager.getInstance(this.e).sendRequest(leavegroupcall, new o0(this, 5));
-        }
-        if (this.n) {
-            this.H.setTarget(null);
-            NativeInstance.destroyVideoCapturer(this.J);
-        }
-        if (this.E != null) {
-            DispatchQueue dispatchQueue = Utilities.globalQueue;
-            NativeInstance nativeInstance = this.E;
-            Objects.requireNonNull(nativeInstance);
-            dispatchQueue.postRunnable(new org.telegram.messenger.voip.u0(nativeInstance, 3));
-            this.M.clear();
-            this.E = null;
-        }
-        if (this.L) {
-            ((AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)).abandonAudioFocus(this);
-            this.L = false;
-        }
-        if (this.n) {
-            VoipAudioManager.get().setSpeakerphoneOn(false);
-        }
-        if (W == this) {
-            W = null;
-            NotificationCenter.getInstance(this.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(g()));
-        }
-    }
-
-    public final boolean f(TLRPC.InputGroupCall inputGroupCall) {
-        TLRPC.InputGroupCall inputGroupCall2 = this.f;
-        return inputGroupCall2 == inputGroupCall || inputGroupCall2.id == inputGroupCall.id;
-    }
-
-    public final long g() {
-        TLRPC.GroupCall groupCall = this.v;
-        if (groupCall != null) {
-            return groupCall.id;
-        }
-        TLRPC.InputGroupCall inputGroupCall = this.f;
-        if (inputGroupCall != null) {
-            return inputGroupCall.id;
-        }
-        return 0L;
-    }
-
-    public final int h() {
-        TLRPC.GroupCall groupCall = this.v;
-        return (groupCall == null || (groupCall.flags & 16) == 0) ? ConnectionsManager.DEFAULT_DATACENTER_ID : groupCall.stream_dc_id;
-    }
-
-    public final TLRPC.Peer i() {
-        TLRPC.GroupCall groupCall = this.v;
-        if (groupCall == null) {
-            return null;
-        }
-        return groupCall.default_send_as;
-    }
-
-    public final long j() {
-        TLRPC.GroupCall groupCall = this.v;
-        if (groupCall == null) {
-            return 0L;
-        }
-        return groupCall.send_paid_messages_stars;
-    }
-
-    public final void k() {
-        if (this.w) {
-            return;
-        }
-        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.e2.d("live_" + this.f.id), 0L, false, SharedConfig.noiseSupression, new n0(this, 0), new z9.a(8), new n0(this, 2), new n0(this, 3), new n0(this, 4), new n0(this, 5), false);
-        this.E = makeGroup;
-        makeGroup.setOnStateUpdatedListener(new s0(this));
-        this.E.resetGroupInstance(false, false);
-    }
-
-    public final boolean l() {
-        TLRPC.GroupCall groupCall = this.v;
-        if (groupCall != null && groupCall.creator) {
-            return true;
-        }
-        int i10 = this.e;
-        long j3 = this.b;
-        return j3 >= 0 ? UserConfig.getInstance(i10).getClientUserId() == j3 : ChatObject.canUserDoAction(MessagesController.getInstance(i10).getChat(Long.valueOf(-j3)), 14);
-    }
-
-    public final boolean m() {
-        int i10 = this.y;
-        return i10 == 3 || i10 == 1 || i10 == 2;
-    }
-
-    public final boolean n() {
-        return !this.w && this.s;
-    }
-
-    public final boolean o() {
-        return this.n && this.r;
-    }
-
-    public final void p() {
-        this.Q = null;
-        if (this.w) {
-            return;
-        }
-        TL_phone.checkGroupCall checkgroupcall = new TL_phone.checkGroupCall();
-        checkgroupcall.call = this.f;
-        checkgroupcall.sources.add(Integer.valueOf(this.K));
-        ConnectionsManager.getInstance(this.e).sendRequest(checkgroupcall, new o0(this, 3));
-    }
-
-    public final void q() {
-        this.R = null;
-        if (this.w) {
-            return;
-        }
-        TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-        getgroupcall.call = this.f;
-        ConnectionsManager.getInstance(this.e).sendRequest(getgroupcall, new o0(this, 1));
-    }
-
-    public final void r(NativeInstance.SsrcGroup[] ssrcGroupArr) {
-        int i10 = 0;
-        while (true) {
-            if (i10 >= (ssrcGroupArr == null ? 0 : ssrcGroupArr.length)) {
-                x();
-                return;
-            }
-            int i11 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i10].ssrcs;
-                if (i11 < iArr.length) {
-                    this.M.add(Integer.valueOf(iArr[i11]));
-                    i11++;
-                }
-            }
-            i10++;
-        }
-    }
-
-    public final void s(VideoSink videoSink) {
-        if (this.O == videoSink) {
-            return;
-        }
-        this.O = videoSink;
-        this.H.setTarget(videoSink);
-    }
-
-    public final void t(boolean z10) {
-        if (this.w || this.s == z10) {
-            return;
-        }
-        if (this.n && z10) {
-            return;
-        }
-        this.s = z10;
-        NotificationCenter.getInstance(this.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(g()));
-    }
-
-    public final void u(boolean z10) {
-        if (this.w) {
-            z10 = false;
-        }
-        if (this.P == z10) {
-            return;
-        }
-        this.P = z10;
-        if (z10) {
-            Runnable runnable = this.Q;
-            if (runnable != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-            }
-            bi.c5 c5Var = new bi.c5(this, 1);
-            this.Q = c5Var;
-            AndroidUtilities.runOnUIThread(c5Var, 4000L);
-            Runnable runnable2 = this.R;
-            if (runnable2 != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable2);
-            }
-            bi.c5 c5Var2 = new bi.c5(this, 2);
-            this.R = c5Var2;
-            AndroidUtilities.runOnUIThread(c5Var2, l() ? 5000 : 20000);
-            return;
-        }
-        int i10 = this.S;
-        int i11 = this.e;
-        if (i10 != -1) {
-            ConnectionsManager.getInstance(i11).cancelRequest(this.S, true);
-            this.S = -1;
-        }
-        if (this.T != -1) {
-            ConnectionsManager.getInstance(i11).cancelRequest(this.T, true);
-            this.T = -1;
-        }
-        Runnable runnable3 = this.Q;
-        if (runnable3 != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable3);
-            this.Q = null;
-        }
-        Runnable runnable4 = this.R;
-        if (runnable4 != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable4);
-            this.R = null;
-        }
-    }
-
-    public final void v(float f7) {
-        float clamp01 = Utilities.clamp01(f7);
-        x0 x0Var = x0.Z;
-        if (x0Var.S && x0Var.v == this) {
-            clamp01 = 1.0f;
-        }
-        FileLog.d("setVolume(" + clamp01 + ")");
-        if (Math.abs(clamp01 - this.N) < 0.01f) {
-            return;
-        }
-        this.N = clamp01;
-        x();
-    }
-
-    public final void w() {
-        TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-        int i10 = this.e;
-        tL_updateStory.peer = MessagesController.getInstance(i10).getPeer(this.b);
-        TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-        tL_updateStory.story = tL_storyItemDeleted;
-        tL_storyItemDeleted.id = this.c;
-        MessagesController.getInstance(i10).getStoriesController().Z(tL_updateStory);
-        e();
-    }
-
-    public final void x() {
-        if (this.w || this.E == null) {
-            return;
-        }
-        Iterator it = this.M.iterator();
-        while (it.hasNext()) {
-            this.E.setVolume(((Integer) it.next()).intValue(), this.N);
-        }
-    }
-
-    @Override // android.media.AudioManager.OnAudioFocusChangeListener
-    public final void onAudioFocusChange(int i10) {
+    public /* synthetic */ t0(w3 w3Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject) {
+        this.b = w3Var;
+        this.c = tL_error;
+        this.d = twoStepVerificationActivity;
+        this.e = tLObject;
     }
 }

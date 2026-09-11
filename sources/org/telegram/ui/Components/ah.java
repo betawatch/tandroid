@@ -1,47 +1,59 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ah extends HashMap {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ah {
+    public static final ah d;
+    public static final ah e;
+    public static final /* synthetic */ ah[] f;
+    public final zg a;
+    public final zg b;
+    public final int c;
 
-    public /* synthetic */ ah(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        int i10 = R.raw.voice_and_video;
+        zg zgVar = zg.a;
+        zg zgVar2 = zg.b;
+        ah ahVar = new ah("VOICE_TO_VIDEO", 0, zgVar, zgVar2, i10);
+        d = ahVar;
+        int i11 = R.raw.sticker_to_keyboard;
+        zg zgVar3 = zg.c;
+        zg zgVar4 = zg.d;
+        ah ahVar2 = new ah("STICKER_TO_KEYBOARD", 1, zgVar3, zgVar4, i11);
+        int i12 = R.raw.smile_to_keyboard;
+        zg zgVar5 = zg.e;
+        ah ahVar3 = new ah("SMILE_TO_KEYBOARD", 2, zgVar5, zgVar4, i12);
+        ah ahVar4 = new ah("VIDEO_TO_VOICE", 3, zgVar2, zgVar, i10);
+        e = ahVar4;
+        ah ahVar5 = new ah("KEYBOARD_TO_STICKER", 4, zgVar4, zgVar3, R.raw.keyboard_to_sticker);
+        int i13 = R.raw.keyboard_to_gif;
+        zg zgVar6 = zg.f;
+        f = new ah[]{ahVar, ahVar2, ahVar3, ahVar4, ahVar5, new ah("KEYBOARD_TO_GIF", 5, zgVar4, zgVar6, i13), new ah("KEYBOARD_TO_SMILE", 6, zgVar4, zgVar5, R.raw.keyboard_to_smile), new ah("GIF_TO_KEYBOARD", 7, zgVar6, zgVar4, R.raw.gif_to_keyboard), new ah("GIF_TO_SMILE", 8, zgVar6, zgVar5, R.raw.gif_to_smile), new ah("SMILE_TO_GIF", 9, zgVar5, zgVar6, R.raw.smile_to_gif), new ah("SMILE_TO_STICKER", 10, zgVar5, zgVar3, R.raw.smile_to_sticker), new ah("STICKER_TO_SMILE", 11, zgVar3, zgVar5, R.raw.sticker_to_smile)};
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public Object get(Object obj) {
-        switch (this.a) {
-            case 0:
-                int i10 = ((dh) this.b).v;
-                hj0 hj0Var = (hj0) super.get(obj);
-                if (hj0Var != null) {
-                    return hj0Var;
-                }
-                ch chVar = (ch) obj;
-                hj0 hj0Var2 = new hj0(chVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
-                put(chVar, hj0Var2);
-                return hj0Var2;
-            default:
-                return super.get(obj);
-        }
+    public ah(String str, int i10, zg zgVar, zg zgVar2, int i11) {
+        this.a = zgVar;
+        this.b = zgVar2;
+        this.c = i11;
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public Object put(Object obj, Object obj2) {
-        switch (this.a) {
-            case 1:
-                String str = (String) obj;
-                String str2 = (String) obj2;
-                ((yc.g) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
-                return (String) super.put(str, str2);
-            default:
-                return super.put(obj, obj2);
-        }
+    public static ah valueOf(String str) {
+        return (ah) Enum.valueOf(ah.class, str);
+    }
+
+    public static ah[] values() {
+        return (ah[]) f.clone();
     }
 }

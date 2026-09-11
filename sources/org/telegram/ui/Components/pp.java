@@ -1,71 +1,94 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class pp implements org.telegram.ui.ActionBar.k6 {
-    public boolean a = false;
-    public final /* synthetic */ sp b;
+public final class pp extends FrameLayout {
+    public final TextView[] a;
+    public final aj0[] b;
+    public final ImageView c;
+    public AnimatorSet d;
+    public pg e;
+    public float f;
+    public final org.telegram.ui.ActionBar.f6 h;
 
-    public pp(sp spVar) {
-        this.b = spVar;
+    public pp(Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity);
+        this.a = new TextView[2];
+        this.b = new aj0[2];
+        this.h = f6Var;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        frameLayout.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, f6Var)));
+        int i10 = 0;
+        frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        addView(frameLayout, w7.x5.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 6.0f));
+        while (i10 < 2) {
+            this.b[i10] = new aj0(activity);
+            this.b[i10].setScaleType(ImageView.ScaleType.CENTER);
+            frameLayout.addView(this.b[i10], w7.x5.d(24, 24.0f, 51, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f));
+            this.a[i10] = new TextView(activity);
+            this.a[i10].setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.pf, this.h));
+            this.a[i10].setTextSize(1, 14.0f);
+            this.a[i10].setMaxLines(1);
+            this.a[i10].setSingleLine(true);
+            this.a[i10].setMaxWidth(AndroidUtilities.dp(250.0f));
+            this.a[i10].setGravity(51);
+            this.a[i10].setPivotX(0.0f);
+            frameLayout.addView(this.a[i10], w7.x5.d(-2, -2.0f, 51, 32.0f, i10 == 0 ? 2.0f : 26.0f, 10.0f, 0.0f));
+            if (i10 == 0) {
+                this.b[i10].f(R.raw.ticks_single, 24, 24, null);
+                this.a[i10].setText(LocaleController.getString(R.string.HintSent));
+            } else {
+                this.b[i10].f(R.raw.ticks_double, 24, 24, null);
+                this.a[i10].setText(LocaleController.getString(R.string.HintRead));
+            }
+            this.b[i10].d();
+            i10++;
+        }
+        ImageView imageView = new ImageView(activity);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.tooltip_arrow);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.qf, this.h), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.x5.d(14, 6.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void a(float f7) {
-        ArrayList arrayList;
-        sp spVar = this.b;
-        qp qpVar = spVar.h;
-        if (f7 == 0.0f && !this.a) {
-            if (qpVar != null && (arrayList = qpVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((rp) obj).c = spVar.N ? 1 : 0;
-                }
-            }
-            if (!spVar.P) {
-                for (int i11 = 0; i11 < qpVar.h(); i11++) {
-                    ((rp) qpVar.d.get(i11)).getClass();
-                }
-            }
-            this.a = true;
+    public final void a() {
+        if (getTag() == null) {
+            return;
         }
-        hj0 hj0Var = spVar.F;
-        int i12 = org.telegram.ui.ActionBar.j6.Oh;
-        hj0Var.setColorFilter(new PorterDuffColorFilter(spVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
-        spVar.setOverlayNavBarColor(spVar.getThemedColor(org.telegram.ui.ActionBar.j6.a7));
-        if (spVar.P) {
-            for (int i13 = 0; i13 < qpVar.h(); i13++) {
-                ((rp) qpVar.d.get(i13)).getClass();
-            }
+        setTag(null);
+        pg pgVar = this.e;
+        if (pgVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(pgVar);
+            this.e = null;
         }
-        if (f7 == 1.0f && this.a) {
-            spVar.P = false;
-            this.a = false;
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
         }
-        spVar.D();
-        bi.n7 n7Var = spVar.Z;
-        if (n7Var != null) {
-            int dp = AndroidUtilities.dp(0.0f);
-            int themedColor = spVar.getThemedColor(org.telegram.ui.ActionBar.j6.d6);
-            int k10 = i0.a.k(spVar.getThemedColor(i12), 76);
-            n7Var.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-        }
-        o6 o6Var = spVar.a0;
-        if (o6Var != null) {
-            o6Var.setTextColor(spVar.getThemedColor(i12));
-        }
-        spVar.setBackgroundColor(spVar.getThemedColor(org.telegram.ui.ActionBar.j6.h5));
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.d = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<pp, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this, (Property<pp, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this, (Property<pp, Float>) View.SCALE_Y, 0.0f));
+        this.d.addListener(new op(this, 1));
+        this.d.setDuration(180L);
+        this.d.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void b() {
+    public float getBaseTranslationY() {
+        return this.f;
     }
 }

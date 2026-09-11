@@ -2,11 +2,11 @@ package n2;
 
 import android.os.Handler;
 import e2.d0;
-import gg.v1;
+import ig.t0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class d implements m {
+public final class d implements l {
     public final j a;
     public g b;
     public boolean c;
@@ -17,10 +17,10 @@ public final class d implements m {
         this.a = jVar;
     }
 
-    @Override // n2.m
+    @Override // n2.l
     public final void release() {
         Handler handler = this.d.J;
         handler.getClass();
-        d0.U(handler, new v1(this, 21));
+        d0.U(handler, new t0(this, 15));
     }
 }

@@ -1,114 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class hb extends FrameLayout {
-    public final tb a;
-    public final Rect b;
-    public final GestureDetector c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public float h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public final /* synthetic */ FrameLayout x;
-    public final /* synthetic */ pc y;
+public final /* synthetic */ class hb implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hb(pc pcVar, tb tbVar, FrameLayout frameLayout) {
-        super(tbVar.getContext());
-        this.y = pcVar;
-        this.x = frameLayout;
-        this.b = new Rect();
-        this.a = tbVar;
-        GestureDetector gestureDetector = new GestureDetector(tbVar.getContext(), new ec(this, tbVar));
-        this.c = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(false);
-        addView(tbVar);
+    public /* synthetic */ hb(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z10 = this.e;
-        tb tbVar = this.a;
-        if (!z10) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            Rect rect = this.b;
-            tbVar.getHitRect(rect);
-            if (!rect.contains((int) x10, (int) y3)) {
-                return false;
-            }
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                qc qcVar = (qc) this.b;
+                if (qcVar.d == hVar) {
+                    qcVar.d = null;
+                    break;
+                }
+                break;
+            case 1:
+                db dbVar = (db) this.b;
+                if (!z10) {
+                    dbVar.run();
+                    break;
+                }
+                break;
+            case 2:
+                vo0 vo0Var = (vo0) this.b;
+                vo0Var.q = false;
+                vo0Var.dismiss();
+                break;
+            case 3:
+                xo0 xo0Var = (xo0) this.b;
+                xo0Var.s = false;
+                xo0Var.r = false;
+                if (!z10) {
+                    hVar.c();
+                }
+                if (hVar == xo0Var.f) {
+                    xo0Var.f = null;
+                    break;
+                }
+                break;
+            case 4:
+                hq0 hq0Var = (hq0) this.b;
+                hq0Var.E.setVisibility(8);
+                hq0Var.z0.setVisibility(8);
+                eq0 eq0Var = hq0Var.L;
+                eq0Var.f = null;
+                eq0Var.l();
+                hq0Var.B0 = null;
+                hq0Var.M0 = false;
+                break;
+            default:
+                hq0 hq0Var2 = ((op0) this.b).d;
+                hq0Var2.F.setVisibility(8);
+                hq0Var2.G.setVisibility(8);
+                hq0Var2.y0.setVisibility(8);
+                hq0Var2.B0 = null;
+                break;
         }
-        this.c.onTouchEvent(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        FrameLayout frameLayout = this.x;
-        pc pcVar = this.y;
-        if (actionMasked == 0) {
-            if (!this.e && !this.s) {
-                tbVar.animate().cancel();
-                this.n = 0.0f;
-                this.h = 0.0f;
-                this.r = false;
-                this.f = tbVar.getTranslationX();
-                System.currentTimeMillis();
-                pc pcVar2 = tbVar.bulletin;
-                this.d = pcVar2 == null || pcVar2.m;
-                this.e = true;
-                pcVar.i(false);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                if (tbVar.onClickListener != null) {
-                    tbVar.setPressed(true);
-                    return true;
-                }
-            }
-        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
-            if (!this.s) {
-                if (Math.abs(this.f) > tbVar.getWidth() / 3.0f) {
-                    float signum = Math.signum(this.f) * tbVar.getWidth();
-                    float f7 = this.f;
-                    tbVar.animate().translationX(signum).alpha(((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.c0(this, signum, 1)).start();
-                    this.e = false;
-                    pcVar.i(true);
-                    if (frameLayout.getParent() != null) {
-                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
-                    }
-                    if (tbVar.onClickListener != null) {
-                        tbVar.setPressed(false);
-                    }
-                } else {
-                    tbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
-                }
-            }
-            if (actionMasked == 1 && tbVar.isPressed() && (onClickListener = tbVar.onClickListener) != null && !this.r) {
-                onClickListener.onClick(tbVar);
-            }
-            this.e = false;
-            pcVar.i(true);
-            if (frameLayout.getParent() != null) {
-            }
-            if (tbVar.onClickListener != null) {
-            }
-        }
-        return true;
     }
 }

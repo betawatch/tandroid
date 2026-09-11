@@ -1,96 +1,162 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zd0 extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+public final class zd0 {
+    public Path a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public ArrayList g;
 
-    public zd0(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.fingerprint);
-        addView(imageView, w7.a6.e(-1, -1, 119));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 26.0f);
-        textView.setGravity(17);
-        addView(textView, w7.a6.d(-1, -2.0f, 17, 0.0f, -5.33f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextSize(1, 10.0f);
-        textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        textView2.setGravity(17);
-        addView(textView2, w7.a6.d(-1, -2.0f, 17, 0.0f, 14.0f, 0.0f, 0.0f));
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    public void setImage(int i10) {
-        ImageView imageView = this.a;
-        imageView.setVisibility(0);
-        this.b.setVisibility(8);
-        this.c.setVisibility(8);
-        imageView.setImageResource(i10);
-    }
-
-    public void setNum(int i10) {
-        this.a.setVisibility(8);
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        TextView textView2 = this.c;
-        textView2.setVisibility(0);
-        String str = "";
-        textView.setText("" + i10);
-        if (i10 != 0) {
-            switch (i10) {
-                case 2:
-                    str = "ABC";
-                    break;
-                case 3:
-                    str = "DEF";
-                    break;
-                case 4:
-                    str = "GHI";
-                    break;
-                case 5:
-                    str = "JKL";
-                    break;
-                case 6:
-                    str = "MNO";
-                    break;
-                case 7:
-                    str = "PQRS";
-                    break;
-                case 8:
-                    str = "TUV";
-                    break;
-                case 9:
-                    str = "WXYZ";
-                    break;
+    public final void a(String str, float f7) {
+        float f10 = this.e;
+        float f11 = this.d;
+        float f12 = this.c;
+        try {
+            wd0 wd0Var = new wd0();
+            wd0Var.a = new ArrayList();
+            wd0Var.b = f7 * this.f;
+            String[] split = str.split(" ");
+            int i10 = 0;
+            while (i10 < split.length) {
+                char charAt = split[i10].charAt(0);
+                if (charAt == 'C') {
+                    vd0 vd0Var = new vd0();
+                    vd0Var.c = (Float.parseFloat(split[i10 + 1]) + f11) * f12;
+                    vd0Var.d = (Float.parseFloat(split[i10 + 2]) + f10) * f12;
+                    vd0Var.e = (Float.parseFloat(split[i10 + 3]) + f11) * f12;
+                    vd0Var.f = (Float.parseFloat(split[i10 + 4]) + f10) * f12;
+                    vd0Var.a = (Float.parseFloat(split[i10 + 5]) + f11) * f12;
+                    i10 += 6;
+                    vd0Var.b = (Float.parseFloat(split[i10]) + f10) * f12;
+                    wd0Var.a.add(vd0Var);
+                } else if (charAt == 'L') {
+                    xd0 xd0Var = new xd0();
+                    xd0Var.a = (Float.parseFloat(split[i10 + 1]) + f11) * f12;
+                    i10 += 2;
+                    xd0Var.b = (Float.parseFloat(split[i10]) + f10) * f12;
+                    wd0Var.a.add(xd0Var);
+                } else if (charAt == 'M') {
+                    yd0 yd0Var = new yd0();
+                    yd0Var.a = (Float.parseFloat(split[i10 + 1]) + f11) * f12;
+                    i10 += 2;
+                    yd0Var.b = (Float.parseFloat(split[i10]) + f10) * f12;
+                    wd0Var.a.add(yd0Var);
+                }
+                i10++;
             }
-        } else {
-            str = "+";
+            this.g.add(wd0Var);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        textView2.setText(str);
+    }
+
+    public final void b(Canvas canvas, Paint paint, float f7) {
+        wd0 wd0Var;
+        wd0 wd0Var2;
+        float f10;
+        ArrayList arrayList = this.g;
+        Path path = this.a;
+        if (this.b != f7) {
+            this.b = f7;
+            int size = arrayList.size();
+            wd0 wd0Var3 = null;
+            wd0 wd0Var4 = null;
+            for (int i10 = 0; i10 < size; i10++) {
+                wd0 wd0Var5 = (wd0) arrayList.get(i10);
+                if ((wd0Var4 == null || wd0Var4.b < wd0Var5.b) && wd0Var5.b <= f7) {
+                    wd0Var4 = wd0Var5;
+                }
+                if ((wd0Var3 == null || wd0Var3.b > wd0Var5.b) && wd0Var5.b >= f7) {
+                    wd0Var3 = wd0Var5;
+                }
+            }
+            if (wd0Var3 == wd0Var4) {
+                wd0Var4 = null;
+            }
+            if (wd0Var4 == null || wd0Var3 != null) {
+                wd0Var = wd0Var3;
+                wd0Var2 = wd0Var4;
+            } else {
+                wd0Var = wd0Var4;
+                wd0Var2 = null;
+            }
+            if (wd0Var == null) {
+                return;
+            }
+            ArrayList arrayList2 = wd0Var.a;
+            if (wd0Var2 != null && wd0Var2.a.size() != arrayList2.size()) {
+                return;
+            }
+            path.reset();
+            int size2 = arrayList2.size();
+            for (int i11 = 0; i11 < size2; i11++) {
+                Object obj = wd0Var2 != null ? wd0Var2.a.get(i11) : null;
+                Object obj2 = arrayList2.get(i11);
+                if (obj != null && obj.getClass() != obj2.getClass()) {
+                    return;
+                }
+                if (wd0Var2 != null) {
+                    float f11 = wd0Var2.b;
+                    f10 = (f7 - f11) / (wd0Var.b - f11);
+                } else {
+                    f10 = 1.0f;
+                }
+                if (obj2 instanceof yd0) {
+                    yd0 yd0Var = (yd0) obj2;
+                    yd0 yd0Var2 = (yd0) obj;
+                    if (yd0Var2 != null) {
+                        float f12 = yd0Var2.a;
+                        float dpf2 = AndroidUtilities.dpf2(((yd0Var.a - f12) * f10) + f12);
+                        float f13 = yd0Var2.b;
+                        path.moveTo(dpf2, AndroidUtilities.dpf2(((yd0Var.b - f13) * f10) + f13));
+                    } else {
+                        path.moveTo(AndroidUtilities.dpf2(yd0Var.a), AndroidUtilities.dpf2(yd0Var.b));
+                    }
+                } else if (obj2 instanceof xd0) {
+                    xd0 xd0Var = (xd0) obj2;
+                    xd0 xd0Var2 = (xd0) obj;
+                    if (xd0Var2 != null) {
+                        float f14 = xd0Var2.a;
+                        float dpf22 = AndroidUtilities.dpf2(((xd0Var.a - f14) * f10) + f14);
+                        float f15 = xd0Var2.b;
+                        path.lineTo(dpf22, AndroidUtilities.dpf2(((xd0Var.b - f15) * f10) + f15));
+                    } else {
+                        path.lineTo(AndroidUtilities.dpf2(xd0Var.a), AndroidUtilities.dpf2(xd0Var.b));
+                    }
+                } else if (obj2 instanceof vd0) {
+                    vd0 vd0Var = (vd0) obj2;
+                    vd0 vd0Var2 = (vd0) obj;
+                    if (vd0Var2 != null) {
+                        float f16 = vd0Var2.c;
+                        float dpf23 = AndroidUtilities.dpf2(((vd0Var.c - f16) * f10) + f16);
+                        float f17 = vd0Var2.d;
+                        float dpf24 = AndroidUtilities.dpf2(((vd0Var.d - f17) * f10) + f17);
+                        float f18 = vd0Var2.e;
+                        float dpf25 = AndroidUtilities.dpf2(((vd0Var.e - f18) * f10) + f18);
+                        float f19 = vd0Var2.f;
+                        float dpf26 = AndroidUtilities.dpf2(((vd0Var.f - f19) * f10) + f19);
+                        float f20 = vd0Var2.a;
+                        float dpf27 = AndroidUtilities.dpf2(((vd0Var.a - f20) * f10) + f20);
+                        float f21 = vd0Var2.b;
+                        path.cubicTo(dpf23, dpf24, dpf25, dpf26, dpf27, AndroidUtilities.dpf2(((vd0Var.b - f21) * f10) + f21));
+                    } else {
+                        path.cubicTo(AndroidUtilities.dpf2(vd0Var.c), AndroidUtilities.dpf2(vd0Var.d), AndroidUtilities.dpf2(vd0Var.e), AndroidUtilities.dpf2(vd0Var.f), AndroidUtilities.dpf2(vd0Var.a), AndroidUtilities.dpf2(vd0Var.b));
+                    }
+                }
+            }
+            path.close();
+        }
+        canvas.drawPath(path, paint);
     }
 }

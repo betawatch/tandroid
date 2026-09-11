@@ -1,96 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public class j9 extends View {
-    public final i9 a;
-    public qg.c1 b;
-    public t01 c;
-    public Paint d;
-
-    public j9(Context context, boolean z10) {
-        super(context);
-        this.a = new i9(this, z10);
-    }
-
-    public final void a(boolean z10) {
-        this.a.b(z10, true);
-    }
-
-    public final void b(int i10, TLObject tLObject, int i11) {
-        this.a.l(i10, tLObject, i11);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.g();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.h();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.i(canvas);
-        if (this.c != null) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getWidth() - AndroidUtilities.dp(22.0f), getHeight() - AndroidUtilities.dp(22.0f), getWidth() - AndroidUtilities.dp(0.0f), getHeight() - AndroidUtilities.dp(0.0f));
-            this.b.e(rectF);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + AndroidUtilities.dp(1.33f), this.d);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
-            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
-        }
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int measuredWidth = getMeasuredWidth();
-        i9 i9Var = this.a;
-        i9Var.p = measuredWidth;
-        i9Var.o = getMeasuredHeight();
-    }
-
-    public void setAvatarsTextSize(int i10) {
-        this.a.j(i10);
-    }
-
-    public void setCentered(boolean z10) {
-        this.a.l = z10;
-    }
-
-    public void setCount(int i10) {
-        this.a.k(i10);
-    }
-
-    public void setDelegate(Runnable runnable) {
-        this.a.j = runnable;
-    }
-
-    public void setSize(int i10) {
-        this.a.s = i10;
-    }
-
-    public void setStepFactor(float f7) {
-        this.a.t = f7;
-    }
-
-    public void setStyle(int i10) {
-        i9 i9Var = this.a;
-        i9Var.k = i10;
-        i9Var.f();
-    }
+public final class j9 {
+    public i9 a;
+    public org.telegram.ui.Cells.b4 b;
+    public long c;
+    public long d;
+    public ImageReceiver e;
+    public TLRPC.GroupCallParticipant f;
+    public long g;
+    public TLObject h;
+    public int i;
+    public int j;
 }

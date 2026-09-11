@@ -1,8 +1,8 @@
 package q9;
 
-import w7.r6;
+import w7.o6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j {
     public final r a;
@@ -48,7 +48,7 @@ public final class j {
             str = "provider";
         } else {
             if (i11 != 2) {
-                throw new AssertionError(hc.b.j(i11, "Unsupported injection: "));
+                throw new AssertionError(i2.g.i(i11, "Unsupported injection: "));
             }
             str = "deferred";
         }
@@ -56,7 +56,7 @@ public final class j {
     }
 
     public j(r rVar, int i10, int i11) {
-        r6.a(rVar, "Null dependency anInterface.");
+        o6.a(rVar, "Null dependency anInterface.");
         this.a = rVar;
         this.b = i10;
         this.c = i11;

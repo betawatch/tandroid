@@ -1,18 +1,9 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x11 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ c21 a;
-    public final /* synthetic */ String b;
+public interface x11 {
+    void b0();
 
-    public /* synthetic */ x11(c21 c21Var, String str) {
-        this.a = c21Var;
-        this.b = str;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        c21.W(this.a, this.b);
-    }
+    void v(wk0 wk0Var);
 }

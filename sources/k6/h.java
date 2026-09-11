@@ -1,20 +1,24 @@
 package k6;
 
-import a9.r;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
 import android.content.pm.Signature;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
-import b2.r0;
-import b2.s;
-import bi.u6;
-import e2.d0;
-import m.e3;
-import m.r3;
-import og.u0;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import ji.u4;
+import k2.g0;
+import m.p3;
+import m2.t;
+import n4.y;
+import v0.p;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h {
     public static h b;
@@ -23,6 +27,10 @@ public final class h {
     public h(Context context, int i10) {
         switch (i10) {
             case 2:
+                kotlin.jvm.internal.i.e(context, "context");
+                this.a = context;
+                break;
+            case 3:
                 this.a = context;
                 break;
             default:
@@ -31,7 +39,32 @@ public final class h {
         }
     }
 
-    public static h b(Context context) {
+    public static v0.j b(h hVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return hVar.e();
+        }
+        if (obj instanceof v0.n) {
+            for (p pVar : ((v0.n) obj).a) {
+            }
+        }
+        Context ctx = hVar.a;
+        kotlin.jvm.internal.i.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return hVar.e();
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            v0.l lVar = new v0.l(ctx);
+            v0.l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
+            return lVar2 == null ? hVar.e() : lVar2;
+        }
+        if (i10 <= 33) {
+            return hVar.e();
+        }
+        return null;
+    }
+
+    public static h c(Context context) {
         n6.l.h(context);
         synchronized (h.class) {
             try {
@@ -46,37 +79,7 @@ public final class h {
         return b;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int c(s sVar) {
-        String str = sVar.r;
-        if (str == null || !r0.k(str)) {
-            return hc.b.c(0, 0, 0, 0);
-        }
-        String str2 = sVar.r;
-        String str3 = d0.a;
-        str2.getClass();
-        switch (str2) {
-            case "image/jpeg":
-            case "image/webp":
-            case "image/bmp":
-            case "image/png":
-                return hc.b.c(4, 0, 0, 0);
-        }
-        return hc.b.c(1, 0, 0, 0);
-    }
-
-    public static final l d(PackageInfo packageInfo, l... lVarArr) {
+    public static final l f(PackageInfo packageInfo, l... lVarArr) {
         Signature[] signatureArr = packageInfo.signatures;
         if (signatureArr != null) {
             if (signatureArr.length != 1) {
@@ -99,13 +102,13 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean e(PackageInfo packageInfo, boolean z10) {
+    public static final boolean g(PackageInfo packageInfo, boolean z10) {
         PackageInfo packageInfo2;
         if (z10) {
             if (packageInfo == null) {
                 packageInfo2 = null;
                 if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
+                    if ((!z10 ? f(packageInfo2, n.a) : f(packageInfo2, n.a[0])) == null) {
                         return true;
                     }
                 }
@@ -118,7 +121,7 @@ public final class h {
         }
         packageInfo2 = packageInfo;
         if (packageInfo != null) {
-            if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
+            if ((!z10 ? f(packageInfo2, n.a) : f(packageInfo2, n.a[0])) == null) {
             }
         }
         return false;
@@ -131,38 +134,82 @@ public final class h {
         }
         l5.j jVar = new l5.j();
         jVar.a = n5.a.a(l5.m.a);
-        r rVar = new r(context);
-        jVar.b = rVar;
-        jVar.c = n5.a.a(new of.b(rVar, new l2.g(rVar, 3), false, 25));
-        r rVar2 = jVar.b;
-        jVar.d = new l2.g(rVar2, 20);
-        fd.a a2 = n5.a.a(new u0(15, jVar.d, n5.a.a(new o0.b(rVar2))));
+        l.d dVar = new l.d(context, 6);
+        jVar.b = dVar;
+        jVar.c = n5.a.a(new y(25, dVar, new u4(dVar, 5)));
+        l.d dVar2 = jVar.b;
+        jVar.d = new g0(dVar2, 22);
+        fd.a a2 = n5.a.a(new o0.a(16, jVar.d, n5.a.a(new mg.n(dVar2, 16))));
         jVar.e = a2;
-        qb.b bVar = new qb.b(19);
-        r rVar3 = jVar.b;
-        e3 e3Var = new e3(rVar3, a2, bVar, 19);
-        fd.a aVar = jVar.a;
-        fd.a aVar2 = jVar.c;
-        u6 u6Var = new u6();
-        u6Var.a = aVar;
-        u6Var.b = aVar2;
-        u6Var.c = e3Var;
-        u6Var.d = a2;
-        u6Var.e = a2;
-        r3 r3Var = new r3();
-        r3Var.a = rVar3;
-        r3Var.b = aVar2;
-        r3Var.c = a2;
-        r3Var.d = e3Var;
-        r3Var.e = aVar;
-        r3Var.f = a2;
-        r3Var.h = a2;
-        ki.f fVar = new ki.f();
-        fVar.a = aVar;
+        rb.a aVar = new rb.a(19);
+        l.d dVar3 = jVar.b;
+        t tVar = new t(dVar3, a2, aVar, 19);
+        fd.a aVar2 = jVar.a;
+        fd.a aVar3 = jVar.c;
+        cf.c cVar = new cf.c();
+        cVar.a = aVar2;
+        cVar.b = aVar3;
+        cVar.c = tVar;
+        cVar.d = a2;
+        cVar.e = a2;
+        p3 p3Var = new p3();
+        p3Var.a = dVar3;
+        p3Var.b = aVar3;
+        p3Var.c = a2;
+        p3Var.d = tVar;
+        p3Var.e = aVar2;
+        p3Var.f = a2;
+        p3Var.h = a2;
+        fg.f fVar = new fg.f();
+        fVar.a = aVar2;
         fVar.b = a2;
-        fVar.c = e3Var;
+        fVar.c = tVar;
         fVar.d = a2;
-        jVar.f = n5.a.a(new aa.a(u6Var, r3Var, fVar, false, 27));
+        jVar.f = n5.a.a(new aa.a(cVar, p3Var, fVar, false, 27));
+        return jVar;
+    }
+
+    public PackageInfo d(int i10, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i10);
+    }
+
+    public v0.j e() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        List m10 = hd.g.m(arrayList);
+        if (m10.isEmpty()) {
+            return null;
+        }
+        Iterator it = m10.iterator();
+        v0.j jVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                kotlin.jvm.internal.i.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                v0.j jVar2 = (v0.j) newInstance;
+                if (!jVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (jVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
+                    }
+                    jVar = jVar2;
+                }
+            } catch (Throwable unused) {
+            }
+        }
         return jVar;
     }
 }

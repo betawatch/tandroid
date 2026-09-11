@@ -1,75 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nh implements ah.a {
+public final /* synthetic */ class nh implements Utilities.Callback4 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ nh(Object obj, int i10) {
+    public /* synthetic */ nh(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = callback;
     }
 
-    @Override // ah.a
-    public final void e(Canvas canvas, RectF rectF) {
-        Canvas canvas2;
-        RectF rectF2;
-        qi qiVar;
-        bi.a9 a9Var;
+    @Override // org.telegram.messenger.Utilities.Callback4
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                yi yiVar = (yi) this.b;
-                int i10 = 0;
-                while (i10 < 2) {
-                    qi qiVar2 = i10 == 0 ? yiVar.y0 : yiVar.z0;
-                    if (qiVar2 == null || qiVar2.c == null || qiVar2.getVisibility() != 0) {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                    } else {
-                        canvas2 = canvas;
-                        rectF2 = rectF;
-                        fh.d.a(qiVar2.c, canvas2, rectF2, qiVar2.d, yiVar.getContainerView(), (int) (((i10 == 0 && (qiVar = yiVar.z0) != null && qiVar.getVisibility() == 0) ? (1.0f - yiVar.z0.getAlpha()) * qiVar2.getAlpha() : qiVar2.getAlpha()) * 255.0f));
-                    }
-                    i10++;
-                    canvas = canvas2;
-                    rectF = rectF2;
-                }
+                vi viVar = (vi) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                ai aiVar = viVar.E0;
+                aiVar.setText(charSequence);
+                aiVar.w(charSequence.length(), charSequence.length());
+                viVar.z1();
                 break;
             case 1:
-                ah.a[] aVarArr = (ah.a[]) this.b;
-                for (int i11 = 0; i11 < 3; i11++) {
-                    ah.a aVar = aVarArr[i11];
-                    if (aVar != null) {
-                        aVar.e(canvas, rectF);
-                    }
-                }
+                vi viVar2 = (vi) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                di diVar = viVar2.P0;
+                diVar.setText(charSequence2);
+                diVar.w(charSequence2.length(), charSequence2.length());
+                viVar2.z1();
                 break;
             default:
-                iv0 iv0Var = (iv0) this.b;
-                for (au0 au0Var : iv0Var.k0) {
-                    zg.k kVar = au0Var.n;
-                    if (kVar != null) {
-                        kVar.e(canvas, rectF);
-                    }
-                }
-                wr0 wr0Var = iv0Var.V;
-                if (wr0Var != null && (a9Var = wr0Var.R) != null) {
-                    a9Var.e(canvas, rectF);
-                    break;
-                }
+                ld ldVar = (ld) this.b;
+                di.g gVar = ldVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                di.e eVar = ldVar.c0;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
                 break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ah.a
-    public final void g(g.z zVar, RectF rectF) {
-        switch (this.a) {
-        }
-        zVar.b = true;
     }
 }

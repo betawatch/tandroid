@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class z2 extends h1.b implements View.OnClickListener {
     public static final /* synthetic */ int N = 0;
@@ -81,8 +81,8 @@ public final class z2 extends h1.b implements View.OnClickListener {
         }
         try {
             return cursor.getString(i10);
-        } catch (Exception e) {
-            Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e);
+        } catch (Exception e7) {
+            Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e7);
             return null;
         }
     }
@@ -97,7 +97,7 @@ public final class z2 extends h1.b implements View.OnClickListener {
     public final void a(View view, Cursor cursor) {
         int i10;
         int i11;
-        Drawable e;
+        Drawable e7;
         ActivityInfo activityInfo;
         int iconResource;
         String str;
@@ -151,62 +151,62 @@ public final class z2 extends h1.b implements View.OnClickListener {
         if (imageView2 != null) {
             int i14 = this.K;
             if (i14 == -1) {
-                e = null;
+                e7 = null;
             } else {
-                e = e(cursor.getString(i14));
-                if (e == null) {
+                e7 = e(cursor.getString(i14));
+                if (e7 == null) {
                     ComponentName searchActivity = this.w.getSearchActivity();
                     String flattenToShortString = searchActivity.flattenToShortString();
                     WeakHashMap weakHashMap = this.y;
                     if (weakHashMap.containsKey(flattenToShortString)) {
                         Drawable.ConstantState constantState = (Drawable.ConstantState) weakHashMap.get(flattenToShortString);
-                        e = constantState == null ? null : constantState.newDrawable(context.getResources());
+                        e7 = constantState == null ? null : constantState.newDrawable(context.getResources());
                     } else {
                         PackageManager packageManager = context.getPackageManager();
                         try {
                             activityInfo = packageManager.getActivityInfo(searchActivity, 128);
                             iconResource = activityInfo.getIconResource();
-                        } catch (PackageManager.NameNotFoundException e7) {
-                            Log.w("SuggestionsAdapter", e7.toString());
+                        } catch (PackageManager.NameNotFoundException e10) {
+                            Log.w("SuggestionsAdapter", e10.toString());
                         }
                         if (iconResource != 0) {
                             Drawable drawable = packageManager.getDrawable(searchActivity.getPackageName(), iconResource, activityInfo.applicationInfo);
                             if (drawable == null) {
-                                StringBuilder m10 = hc.b.m(iconResource, "Invalid icon resource ", " for ");
-                                m10.append(searchActivity.flattenToShortString());
-                                Log.w("SuggestionsAdapter", m10.toString());
+                                StringBuilder l4 = i2.g.l(iconResource, "Invalid icon resource ", " for ");
+                                l4.append(searchActivity.flattenToShortString());
+                                Log.w("SuggestionsAdapter", l4.toString());
                             } else {
-                                e = drawable;
-                                weakHashMap.put(flattenToShortString, e != null ? null : e.getConstantState());
+                                e7 = drawable;
+                                weakHashMap.put(flattenToShortString, e7 != null ? null : e7.getConstantState());
                             }
                         }
-                        e = null;
-                        weakHashMap.put(flattenToShortString, e != null ? null : e.getConstantState());
+                        e7 = null;
+                        weakHashMap.put(flattenToShortString, e7 != null ? null : e7.getConstantState());
                     }
-                    if (e == null) {
-                        e = context.getPackageManager().getDefaultActivityIcon();
+                    if (e7 == null) {
+                        e7 = context.getPackageManager().getDefaultActivityIcon();
                     }
                 }
             }
-            imageView2.setImageDrawable(e);
-            if (e == null) {
+            imageView2.setImageDrawable(e7);
+            if (e7 == null) {
                 imageView2.setVisibility(4);
             } else {
                 imageView2.setVisibility(0);
-                e.setVisible(false, false);
-                e.setVisible(true, false);
+                e7.setVisible(false, false);
+                e7.setVisible(true, false);
             }
         }
         ImageView imageView3 = y2Var.d;
         if (imageView3 != null) {
             int i15 = this.L;
-            Drawable e10 = i15 == -1 ? null : e(cursor.getString(i15));
-            imageView3.setImageDrawable(e10);
-            if (e10 != null) {
+            Drawable e11 = i15 == -1 ? null : e(cursor.getString(i15));
+            imageView3.setImageDrawable(e11);
+            if (e11 != null) {
                 imageView3.setVisibility(0);
-                e10.setVisible(false, false);
+                e11.setVisible(false, false);
                 i10 = 1;
-                e10.setVisible(true, false);
+                e11.setVisible(true, false);
                 i11 = this.F;
                 if (i11 == 2 && (i11 != i10 || (i13 & 1) == 0)) {
                     imageView.setVisibility(8);
@@ -239,8 +239,8 @@ public final class z2 extends h1.b implements View.OnClickListener {
                 this.L = cursor.getColumnIndex("suggest_icon_2");
                 this.M = cursor.getColumnIndex("suggest_flags");
             }
-        } catch (Exception e) {
-            Log.e("SuggestionsAdapter", "error changing cursor and caching columns", e);
+        } catch (Exception e7) {
+            Log.e("SuggestionsAdapter", "error changing cursor and caching columns", e7);
         }
     }
 
@@ -332,8 +332,8 @@ public final class z2 extends h1.b implements View.OnClickListener {
                 }
                 Uri parse = Uri.parse(str);
                 try {
-                } catch (FileNotFoundException e) {
-                    Log.w("SuggestionsAdapter", "Icon not found: " + parse + ", " + e.getMessage());
+                } catch (FileNotFoundException e7) {
+                    Log.w("SuggestionsAdapter", "Icon not found: " + parse + ", " + e7.getMessage());
                 }
                 if ("android.resource".equals(parse.getScheme())) {
                     try {
@@ -356,8 +356,8 @@ public final class z2 extends h1.b implements View.OnClickListener {
                     } finally {
                         try {
                             openInputStream.close();
-                        } catch (IOException e7) {
-                            Log.e("SuggestionsAdapter", "Error closing icon stream for " + parse, e7);
+                        } catch (IOException e10) {
+                            Log.e("SuggestionsAdapter", "Error closing icon stream for " + parse, e10);
                         }
                     }
                 }
@@ -393,11 +393,11 @@ public final class z2 extends h1.b implements View.OnClickListener {
     public final View getDropDownView(int i10, View view, ViewGroup viewGroup) {
         try {
             return super.getDropDownView(i10, view, viewGroup);
-        } catch (RuntimeException e) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e);
+        } catch (RuntimeException e7) {
+            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e7);
             View inflate = this.s.inflate(this.r, viewGroup, false);
             if (inflate != null) {
-                ((y2) inflate.getTag()).a.setText(e.toString());
+                ((y2) inflate.getTag()).a.setText(e7.toString());
             }
             return inflate;
         }
@@ -407,12 +407,12 @@ public final class z2 extends h1.b implements View.OnClickListener {
     public final View getView(int i10, View view, ViewGroup viewGroup) {
         try {
             return super.getView(i10, view, viewGroup);
-        } catch (RuntimeException e) {
-            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e);
+        } catch (RuntimeException e7) {
+            Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e7);
             View inflate = this.s.inflate(this.n, viewGroup, false);
             inflate.setTag(new y2(inflate));
             ((ImageView) inflate.findViewById(R.id.edit_query)).setImageResource(this.E);
-            ((y2) inflate.getTag()).a.setText(e.toString());
+            ((y2) inflate.getTag()).a.setText(e7.toString());
             return inflate;
         }
     }

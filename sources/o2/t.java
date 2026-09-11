@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
@@ -39,27 +39,27 @@ public final class t implements c3.o {
     }
 
     public final h0 a(long j3) {
-        h0 I = this.f.I(0, 3);
+        h0 R1 = this.f.R1(0, 3);
         b2.r rVar = new b2.r();
         rVar.q = r0.n("text/vtt");
         rVar.d = this.a;
         rVar.v = j3;
-        hc.b.u(rVar, I);
-        this.f.B();
-        return I;
+        i2.g.u(rVar, R1);
+        this.f.Z0();
+        return R1;
     }
 
     @Override // c3.o
     public final boolean b(c3.p pVar) {
         c3.l lVar = (c3.l) pVar;
-        lVar.g(this.g, 0, 6, false);
+        lVar.j(this.g, 0, 6, false);
         byte[] bArr = this.g;
         v vVar = this.c;
         vVar.H(6, bArr);
         if (i4.i.a(vVar)) {
             return true;
         }
-        lVar.g(this.g, 6, 3, false);
+        lVar.j(this.g, 6, 3, false);
         vVar.H(9, this.g);
         return i4.i.a(vVar);
     }
@@ -70,7 +70,7 @@ public final class t implements c3.o {
             qVar = new com.google.firebase.messaging.m(qVar, this.d);
         }
         this.f = qVar;
-        qVar.G(new c3.t(-9223372036854775807L));
+        qVar.P1(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o

@@ -1,58 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.R;
-import org.telegram.messenger.camera.CameraView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class bm implements CameraView.CameraViewDelegate {
-    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
+public final class bm extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
-    public bm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
-        this.a = chatAttachAlertPhotoLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bm(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public final void onCameraInit() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
-        ImageView imageView = chatAttachAlertPhotoLayout.r0;
-        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.S;
-        String currentFlashMode = chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode();
-        String nextFlashMode = chatAttachAlertPhotoLayout.P.getCameraSession().getNextFlashMode();
-        if (currentFlashMode == null || nextFlashMode == null) {
-            return;
-        }
-        if (currentFlashMode.equals(nextFlashMode)) {
-            for (int i10 = 0; i10 < 2; i10++) {
-                imageViewArr[i10].setVisibility(4);
-                imageViewArr[i10].setAlpha(0.0f);
-                imageViewArr[i10].setTranslationY(0.0f);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i10);
+        if (this.b) {
+            float f7 = this.a + 0.026666667f;
+            this.a = f7;
+            if (f7 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
             }
         } else {
-            ChatAttachAlertPhotoLayout.o0(imageViewArr[0], chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode());
-            int i11 = 0;
-            while (i11 < 2) {
-                imageViewArr[i11].setVisibility(i11 == 0 ? 0 : 4);
-                imageViewArr[i11].setAlpha((i11 == 0 && chatAttachAlertPhotoLayout.b0) ? 1.0f : 0.0f);
-                imageViewArr[i11].setTranslationY(0.0f);
-                i11++;
+            float f10 = this.a - 0.026666667f;
+            this.a = f10;
+            if (f10 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
             }
         }
-        imageView.setImageResource(chatAttachAlertPhotoLayout.P.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
-        imageView.setVisibility(chatAttachAlertPhotoLayout.P.hasFrontFaceCamera() ? 0 : 4);
-        if (chatAttachAlertPhotoLayout.b0) {
-            return;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        chatAttachAlertPhotoLayout.O = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.P, (Property<im, Float>) View.ALPHA, 0.0f, 1.0f));
-        chatAttachAlertPhotoLayout.O.setDuration(180L);
-        chatAttachAlertPhotoLayout.O.addListener(new org.telegram.ui.Cells.v5(this, 29));
-        chatAttachAlertPhotoLayout.O.start();
+        super.onDraw(canvas);
+        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
+        invalidate();
     }
 }

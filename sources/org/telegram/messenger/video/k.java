@@ -3,9 +3,9 @@ package org.telegram.messenger.video;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.ui.Components.rz;
+import org.telegram.ui.Components.kz;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class k implements Runnable {
                 VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$1((Utilities.Callback2) this.d, this.b, this.c);
                 break;
             default:
-                ((rz) this.d).R(false, this.b, this.c);
+                ((kz) this.d).R(false, this.b, this.c);
                 break;
         }
     }

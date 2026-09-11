@@ -1,313 +1,293 @@
 package uh;
 
-import android.graphics.SurfaceTexture;
-import android.opengl.GLES20;
-import android.opengl.GLES30;
-import javax.microedition.khronos.egl.EGL10;
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.egl.EGLContext;
-import javax.microedition.khronos.egl.EGLDisplay;
-import javax.microedition.khronos.egl.EGLSurface;
+import android.content.Context;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.util.Pair;
+import android.view.View;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import bi.v7;
+import ci.n;
+import di.h2;
+import di.i2;
+import j$.util.Map;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import ji.u4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.b20;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.lb0;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.m30;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.y10;
+import org.telegram.ui.t5;
+import org.telegram.ui.web.b1;
+import r0.a0;
+import s4.j;
+import ug.v0;
+import w7.x5;
+import w7.z5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f extends Thread {
-    public EGLContext E;
-    public int F;
-    public int G;
-    public int H;
-    public int I;
-    public int J;
-    public int K;
-    public int L;
-    public int[] O;
-    public float P;
-    public final /* synthetic */ g Q;
-    public final d c;
-    public final SurfaceTexture d;
-    public boolean f;
-    public int h;
-    public int n;
-    public int r;
-    public EGL10 v;
-    public EGLDisplay w;
-    public EGLConfig x;
-    public EGLSurface y;
-    public volatile boolean a = true;
-    public volatile boolean b = false;
-    public final Object e = new Object();
-    public final float s = AndroidUtilities.dpf2(1.2f);
-    public boolean M = true;
-    public int N = 0;
+public final class f extends bb implements le.d {
+    public static final /* synthetic */ int r0 = 0;
+    public final le.e X;
+    public final le.b Y;
+    public final HashMap Z;
+    public final ArrayList a0;
+    public final ArrayList b0;
+    public String c0;
+    public v51 d0;
+    public final di.d e0;
+    public final n f0;
+    public final t5 g0;
+    public final f20 h0;
+    public final u3 i0;
+    public final HashMap j0;
+    public u4 k0;
+    public int l0;
+    public final int m0;
+    public final FrameLayout n0;
+    public HashSet o0;
+    public final Rect p0;
+    public m30 q0;
 
-    public f(g gVar, SurfaceTexture surfaceTexture, int i10, int i11, d dVar) {
-        this.Q = gVar;
-        this.c = dVar;
-        this.d = surfaceTexture;
-        this.h = i10;
-        this.n = i11;
-        this.r = (int) Utilities.clamp(((i10 * i11) / 250000.0f) * 1000.0f, 10000.0f, 500.0f);
+    public f(Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        pr prVar = pr.h;
+        this.X = new le.e(3, this, prVar, 350L);
+        this.Y = new le.b(4, this, prVar, 320L, false);
+        this.Z = new HashMap();
+        this.a0 = new ArrayList();
+        this.b0 = new ArrayList();
+        this.j0 = new HashMap();
+        this.p0 = new Rect();
+        this.occupyNavigationBar = true;
+        this.drawNavigationBar = false;
+        this.L = false;
+        this.w = false;
+        this.m0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        ll0 ll0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        ll0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.setClipToPadding(false);
+        this.d.j(new lb0(this, 14));
+        this.d.setOnItemClickListener(new c(context, f6Var, this));
+        di.d dVar = new di.d(context, f6Var, true);
+        this.e0 = dVar;
+        dVar.e();
+        dVar.setCountFilled(true);
+        dVar.setText(LocaleController.getString(R.string.Save));
+        dVar.setOnClickListener(new a(this, 0));
+        n nVar = new n(this, context);
+        this.f0 = nVar;
+        nVar.setTextColor(getThemedColor(j6.Sh));
+        nVar.setText(LocaleController.getString(R.string.Save));
+        nVar.setTypeface(AndroidUtilities.bold());
+        nVar.setTextSize(1, 14.0f);
+        nVar.setGravity(17);
+        nVar.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        nVar.setVisibility(8);
+        z5.a(nVar);
+        this.e.n().addView(nVar, x5.t(-2, 48, 16, 12, 0, 12, 0));
+        nVar.setOnClickListener(new a(this, 1));
+        b20 b20Var = new b20(context, f6Var);
+        String string = LocaleController.getString(R.string.PollV2SearchHint);
+        h2 h2Var = b20Var.r;
+        h2Var.setHint(string);
+        h2Var.addTextChangedListener(new i2(this, 17));
+        f20 f20Var = new f20(context, this.currentAccount);
+        this.h0 = f20Var;
+        f20Var.setDelegate(new b(this));
+        t5 t5Var = new t5(context, f6Var, this);
+        this.g0 = t5Var;
+        int i11 = this.backgroundPaddingLeft;
+        t5Var.setPadding(i11, 0, i11, 0);
+        t5Var.addView(b20Var, x5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        t5Var.addView(f20Var, x5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
+        u3 u3Var = new u3(context, 18, f6Var);
+        this.i0 = u3Var;
+        u3Var.setTranslationY(AndroidUtilities.dp(48.0f));
+        u3Var.c(LocaleController.getString(R.string.SearchCountriesTitle), LocaleController.getString(R.string.DeselectAll), new a(this, 2));
+        t5Var.addView(u3Var, x5.e(-1, 32, 48));
+        this.containerView.addView(t5Var, x5.e(-1, 216, 48));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
+        frameLayout.addView(dVar, x5.c(48.0f, -1));
+        this.containerView.addView(frameLayout, x5.e(-1, -2, 80));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.n0 = frameLayout2;
+        frameLayout2.setTranslationY((-AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(68.0f));
+        this.containerView.addView(frameLayout2, x5.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 80));
+        j jVar = new j();
+        jVar.n(350L);
+        jVar.o(prVar);
+        jVar.C = false;
+        jVar.m = false;
+        this.d.setItemAnimator(jVar);
+        this.d.i(new d(this, f6Var));
+        b1 b1Var = new b1(this, 12);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
+        TLRPC.TL_help_getCountriesList tL_help_getCountriesList = new TLRPC.TL_help_getCountriesList();
+        tL_help_getCountriesList.lang_code = LocaleController.getInstance().getCurrentLocaleInfo() != null ? LocaleController.getInstance().getCurrentLocaleInfo().getLangCode() : Locale.getDefault().getCountry();
+        connectionsManager.sendRequest(tL_help_getCountriesList, new v7(b1Var, 22));
+        a0.j(getContainer(), new b(this));
     }
 
-    public static void a() {
-        while (true) {
-            int glGetError = GLES20.glGetError();
-            if (glGetError == 0) {
-                return;
+    public static void P(f fVar, Pair pair) {
+        HashMap hashMap = fVar.j0;
+        HashMap hashMap2 = fVar.Z;
+        hashMap2.putAll((Map) pair.first);
+        ArrayList arrayList = fVar.a0;
+        arrayList.addAll((Collection) pair.second);
+        Map.-EL.forEach(hashMap2, new v0(fVar, 1));
+        HashSet hashSet = fVar.o0;
+        if (hashSet != null) {
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                String str = (String) it.next();
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= size) {
+                        r7 = null;
+                        break;
+                    }
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    for (TLRPC.TL_help_country tL_help_country : (List) hashMap2.get((String) obj)) {
+                        if (TextUtils.equals(str, tL_help_country.iso2)) {
+                            break;
+                        }
+                    }
+                }
+                if (tL_help_country != null) {
+                    m30 m30Var = new m30(fVar.getContext(), tL_help_country);
+                    m30Var.setOnClickListener(new a(fVar, 3));
+                    fVar.h0.a(m30Var);
+                    hashMap.put(tL_help_country.iso2, m30Var);
+                }
             }
-            FileLog.e("spoiler gles error " + glGetError);
         }
+        fVar.d0.N(true);
+        fVar.e0.b(hashMap.size(), true);
     }
 
-    public final void b() {
-        int[] iArr = this.O;
-        if (iArr != null) {
-            GLES20.glDeleteBuffers(2, iArr, 0);
-        }
-        int[] iArr2 = new int[2];
-        this.O = iArr2;
-        GLES20.glGenBuffers(2, iArr2, 0);
-        for (int i10 = 0; i10 < 2; i10++) {
-            GLES20.glBindBuffer(34962, this.O[i10]);
-            GLES20.glBufferData(34962, this.r * 24, null, 35048);
-        }
-        a();
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() {
-        int i10;
-        EGL10 egl10 = (EGL10) EGLContext.getEGL();
-        this.v = egl10;
-        EGLDisplay eglGetDisplay = egl10.eglGetDisplay(0);
-        this.w = eglGetDisplay;
-        if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
-            this.a = false;
+    @Override // le.d
+    public final void E(int i10, float f7, float f10, le.e eVar) {
+        if (i10 != 3) {
+            if (i10 == 4) {
+                y10.d(this.f0, f7);
+            }
         } else {
-            if (this.v.eglInitialize(eglGetDisplay, new int[2])) {
-                EGLConfig[] eGLConfigArr = new EGLConfig[1];
-                if (this.v.eglChooseConfig(this.w, new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 64, 12344}, eGLConfigArr, 1, new int[1])) {
-                    EGLConfig eGLConfig = eGLConfigArr[0];
-                    this.x = eGLConfig;
-                    EGLContext eglCreateContext = this.v.eglCreateContext(this.w, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 3, 12344});
-                    this.E = eglCreateContext;
-                    if (eglCreateContext == null) {
-                        this.a = false;
-                    } else {
-                        EGLSurface eglCreateWindowSurface = this.v.eglCreateWindowSurface(this.w, this.x, this.d, null);
-                        this.y = eglCreateWindowSurface;
-                        if (eglCreateWindowSurface == null) {
-                            this.a = false;
-                        } else if (this.v.eglMakeCurrent(this.w, eglCreateWindowSurface, eglCreateWindowSurface, this.E)) {
-                            b();
-                            int glCreateShader = GLES20.glCreateShader(35633);
-                            int glCreateShader2 = GLES20.glCreateShader(35632);
-                            if (glCreateShader == 0 || glCreateShader2 == 0) {
-                                this.a = false;
-                            } else {
-                                GLES20.glShaderSource(glCreateShader, AndroidUtilities.readRes(R.raw.spoiler_vertex));
-                                GLES20.glCompileShader(glCreateShader);
-                                int[] iArr = new int[1];
-                                GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
-                                if (iArr[0] == 0) {
-                                    FileLog.e("SpoilerEffect2, compile vertex shader error: " + GLES20.glGetShaderInfoLog(glCreateShader));
-                                    GLES20.glDeleteShader(glCreateShader);
-                                    this.a = false;
-                                } else {
-                                    GLES20.glShaderSource(glCreateShader2, AndroidUtilities.readRes(R.raw.spoiler_fragment));
-                                    GLES20.glCompileShader(glCreateShader2);
-                                    GLES20.glGetShaderiv(glCreateShader2, 35713, iArr, 0);
-                                    if (iArr[0] == 0) {
-                                        FileLog.e("SpoilerEffect2, compile fragment shader error: " + GLES20.glGetShaderInfoLog(glCreateShader2));
-                                        GLES20.glDeleteShader(glCreateShader2);
-                                        this.a = false;
-                                    } else {
-                                        int glCreateProgram = GLES20.glCreateProgram();
-                                        this.F = glCreateProgram;
-                                        if (glCreateProgram == 0) {
-                                            this.a = false;
-                                        } else {
-                                            GLES20.glAttachShader(glCreateProgram, glCreateShader);
-                                            GLES20.glAttachShader(this.F, glCreateShader2);
-                                            GLES30.glTransformFeedbackVaryings(this.F, new String[]{"outPosition", "outVelocity", "outTime", "outDuration"}, 35980);
-                                            GLES20.glLinkProgram(this.F);
-                                            GLES20.glGetProgramiv(this.F, 35714, iArr, 0);
-                                            if (iArr[0] == 0) {
-                                                FileLog.e("SpoilerEffect2, link draw program error: " + GLES20.glGetProgramInfoLog(this.F));
-                                                this.a = false;
-                                            } else {
-                                                this.G = GLES20.glGetUniformLocation(this.F, "reset");
-                                                this.H = GLES20.glGetUniformLocation(this.F, "time");
-                                                this.I = GLES20.glGetUniformLocation(this.F, "deltaTime");
-                                                this.J = GLES20.glGetUniformLocation(this.F, "size");
-                                                this.K = GLES20.glGetUniformLocation(this.F, "r");
-                                                this.L = GLES20.glGetUniformLocation(this.F, "seed");
-                                                GLES20.glViewport(0, 0, this.h, this.n);
-                                                GLES20.glEnable(3042);
-                                                GLES20.glBlendFunc(770, 771);
-                                                GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-                                                GLES20.glUseProgram(this.F);
-                                                GLES20.glUniform2f(this.J, this.h, this.n);
-                                                GLES20.glUniform1f(this.G, this.M ? 1.0f : 0.0f);
-                                                GLES20.glUniform1f(this.K, this.s);
-                                                GLES20.glUniform1f(this.L, Utilities.fastRandom.nextInt(256) / 256.0f);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            this.a = false;
-                        }
-                    }
-                } else {
-                    this.a = false;
-                }
-            } else {
-                this.a = false;
-            }
+            Q();
+            this.i0.setTranslationY(AndroidUtilities.dp(48.0f) + f7);
+            this.g0.invalidate();
         }
-        long nanoTime = System.nanoTime();
-        while (this.a) {
-            long nanoTime2 = System.nanoTime();
-            double d = (nanoTime2 - nanoTime) / 1.0E9d;
-            g gVar = this.Q;
-            double d10 = gVar.a;
-            if (d < d10) {
-                double d11 = d10 - d;
-                long j3 = (long) (d11 * 1000.0d);
-                i10 = 3;
-                try {
-                    Thread.sleep(j3, (int) ((d11 - (j3 / 1000.0d)) * 1.0E9d));
-                } catch (Exception unused) {
-                }
-                d = this.Q.a;
-            } else {
-                i10 = 3;
-                double d12 = gVar.b;
-                if (d > d12) {
-                    d = d12;
-                }
-            }
-            while (this.b) {
-                try {
-                    Thread.sleep(1000L);
-                } catch (Exception unused2) {
-                }
-            }
-            synchronized (this.e) {
-                try {
-                    if (this.f) {
-                        GLES20.glUniform2f(this.J, this.h, this.n);
-                        GLES20.glViewport(0, 0, this.h, this.n);
-                        int clamp = (int) Utilities.clamp(((this.h * this.n) / 250000.0f) * 1000.0f, 10000.0f, 500.0f);
-                        if (clamp > this.r) {
-                            this.M = true;
-                            b();
-                        }
-                        this.r = clamp;
-                        this.f = false;
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-            float f7 = (float) d;
-            EGL10 egl102 = this.v;
-            EGLDisplay eGLDisplay = this.w;
-            EGLSurface eGLSurface = this.y;
-            if (egl102.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, this.E)) {
-                float f10 = f7 * 0.65f;
-                float f11 = this.P + f10;
-                this.P = f11;
-                if (f11 > 1000.0f) {
-                    this.P = 0.0f;
-                }
-                GLES20.glClear(16384);
-                GLES20.glBindBuffer(34962, this.O[this.N]);
-                GLES20.glVertexAttribPointer(0, 2, 5126, false, 24, 0);
-                GLES20.glEnableVertexAttribArray(0);
-                GLES20.glVertexAttribPointer(1, 2, 5126, false, 24, 8);
-                GLES20.glEnableVertexAttribArray(1);
-                GLES20.glVertexAttribPointer(2, 1, 5126, false, 24, 16);
-                GLES20.glEnableVertexAttribArray(2);
-                GLES20.glVertexAttribPointer(3, 1, 5126, false, 24, 20);
-                GLES20.glEnableVertexAttribArray(i10);
-                GLES30.glBindBufferBase(35982, 0, this.O[1 - this.N]);
-                GLES20.glVertexAttribPointer(0, 2, 5126, false, 24, 0);
-                GLES20.glEnableVertexAttribArray(0);
-                GLES20.glVertexAttribPointer(1, 2, 5126, false, 24, 8);
-                GLES20.glEnableVertexAttribArray(1);
-                GLES20.glVertexAttribPointer(2, 1, 5126, false, 24, 16);
-                GLES20.glEnableVertexAttribArray(2);
-                GLES20.glVertexAttribPointer(3, 1, 5126, false, 24, 20);
-                GLES20.glEnableVertexAttribArray(i10);
-                GLES20.glUniform1f(this.H, this.P);
-                GLES20.glUniform1f(this.I, f10);
-                GLES30.glBeginTransformFeedback(0);
-                GLES20.glDrawArrays(0, 0, this.r);
-                GLES30.glEndTransformFeedback();
-                if (this.M) {
-                    this.M = false;
-                    GLES20.glUniform1f(this.G, 0.0f);
-                }
-                this.N = 1 - this.N;
-                this.v.eglSwapBuffers(this.w, this.y);
-                a();
-            } else {
-                this.a = false;
-            }
-            AndroidUtilities.cancelRunOnUIThread(this.c);
-            AndroidUtilities.runOnUIThread(this.c);
-            nanoTime = nanoTime2;
+    }
+
+    public final void Q() {
+        int dp = AndroidUtilities.dp(56.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + ((int) this.X.e);
+        int measuredHeight = (this.containerView.getMeasuredHeight() - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(34.0f);
+        Rect rect = this.p0;
+        boolean z10 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
+        rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
+        ll0 ll0Var = this.d;
+        ll0Var.setClipBounds(rect);
+        if (z10) {
+            ll0Var.invalidate();
         }
-        int[] iArr2 = this.O;
-        if (iArr2 != null) {
-            try {
-                GLES20.glDeleteBuffers(2, iArr2, 0);
-            } catch (Exception e) {
-                FileLog.e(e);
+    }
+
+    public final void R() {
+        ll0 ll0Var;
+        float f7 = AndroidUtilities.displaySize.y;
+        int i10 = 0;
+        while (true) {
+            ll0Var = this.d;
+            if (i10 >= ll0Var.getChildCount()) {
+                break;
             }
-            this.O = null;
+            View childAt = ll0Var.getChildAt(i10);
+            if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f7) {
+                f7 = childAt.getY();
+            }
+            i10++;
         }
-        int i11 = this.F;
-        if (i11 != 0) {
-            try {
-                GLES20.glDeleteProgram(i11);
-            } catch (Exception e7) {
-                FileLog.e(e7);
-            }
-            this.F = 0;
+        float max = Math.max(k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight, f7 + AndroidUtilities.dp(8.0f));
+        t5 t5Var = this.g0;
+        if (t5Var.getTranslationY() != max) {
+            t5Var.setTranslationY(max);
+            ll0Var.invalidate();
         }
-        EGL10 egl103 = this.v;
-        if (egl103 != null) {
-            try {
-                EGLDisplay eGLDisplay2 = this.w;
-                EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
-                egl103.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, EGL10.EGL_NO_CONTEXT);
-            } catch (Exception e10) {
-                FileLog.e(e10);
+    }
+
+    public final void S(View view) {
+        m30 m30Var = (m30) view;
+        if (!m30Var.y) {
+            m30 m30Var2 = this.q0;
+            if (m30Var2 != null) {
+                m30Var2.a();
             }
-            try {
-                this.v.eglDestroySurface(this.w, this.y);
-            } catch (Exception e11) {
-                FileLog.e(e11);
-            }
-            try {
-                this.v.eglDestroyContext(this.w, this.E);
-            } catch (Exception e12) {
-                FileLog.e(e12);
-            }
+            this.q0 = m30Var;
+            m30Var.b();
+            return;
         }
-        try {
-            this.d.release();
-        } catch (Exception e13) {
-            FileLog.e(e13);
-        }
-        a();
+        this.q0 = null;
+        this.h0.c(m30Var);
+        String countryIso2 = m30Var.getCountryIso2();
+        HashMap hashMap = this.j0;
+        hashMap.remove(countryIso2);
+        this.e0.b(hashMap.size(), true);
+        this.d0.N(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onContainerLayout(int i10, int i11, int i12, int i13) {
+        super.onContainerLayout(i10, i11, i12, i13);
+        Q();
+        R();
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final kl0 v(ll0 ll0Var) {
+        v51 v51Var = new v51(ll0Var, getContext(), this.currentAccount, 0, true, new ii.a(this, 8), this.resourcesProvider);
+        this.d0 = v51Var;
+        v51Var.r = false;
+        return v51Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.BoostingSelectCountry);
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void z(float f7, int i10) {
     }
 }

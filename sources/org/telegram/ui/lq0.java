@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class lq0 extends FrameLayout {
     public int E;
@@ -57,7 +57,7 @@ public final class lq0 extends FrameLayout {
         this.c = paint3;
         paint3.setColor(-939524096);
         setBackgroundColor(-13421773);
-        setOnTouchListener(new e0(this, 4));
+        setOnTouchListener(new d0(this, 4));
     }
 
     @Override // android.view.View

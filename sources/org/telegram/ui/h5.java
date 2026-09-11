@@ -10,12 +10,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class h5 extends androidx.fragment.app.v {
+public abstract class h5 extends androidx.fragment.app.u {
     public int O = -1;
 
-    public final boolean u(int i10, String[] strArr, int[] iArr) {
+    public final boolean v(int i10, String[] strArr, int[] iArr) {
         if (iArr == null) {
             iArr = new int[0];
         }
@@ -94,11 +94,11 @@ public abstract class h5 extends androidx.fragment.app.v {
         return true;
     }
 
-    public final org.telegram.ui.ActionBar.d2 w(int i10, String str) {
+    public final org.telegram.ui.ActionBar.b2 w(int i10, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
         alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);
-        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new a1(this, 4));
+        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new z0(this, 4));
         alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
         return alertDialog$Builder.a;
     }

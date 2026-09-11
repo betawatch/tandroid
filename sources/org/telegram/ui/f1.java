@@ -1,58 +1,50 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f1 extends s4.n0 {
-    public final /* synthetic */ l1 a;
+public final class f1 extends s4.t {
+    public final /* synthetic */ k1 S;
 
-    public f1(l1 l1Var) {
-        this.a = l1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f1(k1 k1Var) {
+        super(true);
+        this.S = k1Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int i10 = 0;
-        rect.bottom = 0;
-        boolean z10 = view instanceof e2;
-        l1 l1Var = this.a;
-        MessageObject.GroupedMessagePosition groupedMessagePosition = z10 ? (MessageObject.GroupedMessagePosition) l1Var.v.b.get(((e2) view).N) : view instanceof y2 ? (MessageObject.GroupedMessagePosition) l1Var.v.b.get(((y2) view).L) : null;
-        if (groupedMessagePosition == null || groupedMessagePosition.siblingHeights == null) {
-            return;
-        }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            if (i11 >= groupedMessagePosition.siblingHeights.length) {
-                break;
-            }
-            i12 += (int) Math.ceil(r3[i11] * max);
-            i11++;
-        }
-        int dp2 = (AndroidUtilities.dp2(11.0f) * (groupedMessagePosition.maxY - groupedMessagePosition.minY)) + i12;
-        int size = l1Var.v.a.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) l1Var.v.a.get(i10);
-                byte b10 = groupedMessagePosition2.minY;
-                byte b11 = groupedMessagePosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition2.minX != groupedMessagePosition.minX || groupedMessagePosition2.maxX != groupedMessagePosition.maxX || b10 != b11 || groupedMessagePosition2.maxY != groupedMessagePosition.maxY) && b10 == b11)) {
-                    dp2 = org.telegram.messenger.a2.z(4.0f, (int) Math.ceil(max * groupedMessagePosition2.ph), dp2);
-                    break;
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        byte b10;
+        k1 k1Var = this.S;
+        ArrayList<TL_iv.PageBlock> arrayList = k1Var.s.items;
+        MessageObject.GroupedMessagePosition groupedMessagePosition = (MessageObject.GroupedMessagePosition) k1Var.v.b.get(arrayList.get((arrayList.size() - i10) - 1));
+        if (groupedMessagePosition.minX != groupedMessagePosition.maxX && (b10 = groupedMessagePosition.minY) == groupedMessagePosition.maxY && b10 != 0) {
+            int size = k1Var.v.a.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) k1Var.v.a.get(i11);
+                if (groupedMessagePosition2 != groupedMessagePosition) {
+                    byte b11 = groupedMessagePosition2.minY;
+                    byte b12 = groupedMessagePosition.minY;
+                    if (b11 <= b12 && groupedMessagePosition2.maxY >= b12) {
+                        return true;
+                    }
                 }
-                i10++;
-            } else {
-                break;
             }
         }
-        rect.bottom = -dp2;
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

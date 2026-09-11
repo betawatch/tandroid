@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class h extends b8.b {
     public final /* synthetic */ int b;
@@ -263,11 +263,11 @@ public abstract class h extends b8.b {
                     n.f.b("Stopping RouteDiscovery.", new Object[0]);
                     nVar.c.clear();
                     if (Looper.myLooper() == Looper.getMainLooper()) {
-                        of.b bVar5 = nVar.e;
-                        if (((p4.x) bVar5.c) == null) {
-                            bVar5.c = p4.x.d((Context) bVar5.b);
+                        n4.y yVar = nVar.e;
+                        if (((p4.x) yVar.c) == null) {
+                            yVar.c = p4.x.d((Context) yVar.b);
                         }
-                        p4.x xVar = (p4.x) bVar5.c;
+                        p4.x xVar = (p4.x) yVar.c;
                         if (xVar != null) {
                             xVar.h(nVar);
                         }

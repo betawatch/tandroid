@@ -3,15 +3,14 @@ package bc;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.Interpolator;
-import bi.u6;
 import com.google.firebase.messaging.s;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import k.i;
-import m.r3;
+import m.p3;
 import n6.l;
-import og.u0;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
@@ -29,7 +28,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -102,13 +101,13 @@ public final /* synthetic */ class d implements vf {
         boolean z10 = this.b;
         vb.a aVar = (vb.a) this.e;
         ig igVar = (ig) this.f;
-        u6 u6Var = new u6();
+        cf.c cVar = new cf.c();
         boolean z11 = false;
         a6 a6Var = new a6(13, false);
         a6Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
         a6Var.c = gbVar;
         a6Var.d = Boolean.valueOf(z10);
-        u6Var.a = new va(a6Var);
+        cVar.a = new va(a6Var);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
@@ -127,18 +126,18 @@ public final /* synthetic */ class d implements vf {
             }
             i10 = 0;
         }
-        u0 u0Var = new u0(26);
-        u0Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        u0Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        u6Var.b = new ra(u0Var);
-        u6Var.c = fVar.e.a();
+        z0 z0Var = new z0(28, z11);
+        z0Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        z0Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        cVar.b = new ra(z0Var);
+        cVar.c = fVar.e.a();
         if (igVar != null) {
             List list = igVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
             g9.a(length, array);
-            u6Var.e = z7.i.r(length, array);
+            cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {
                 Object[] objArr = new Object[4];
@@ -166,13 +165,13 @@ public final /* synthetic */ class d implements vf {
                     objArr[i13] = teVar;
                     i13 = i14;
                 }
-                u6Var.d = z7.i.r(i13, objArr);
+                cVar.d = z7.i.r(i13, objArr);
             }
         }
-        r3 r3Var = new r3();
-        r3Var.c = fb.b;
-        r3Var.f = new ee(u6Var);
-        return new a5.a(r3Var, 0);
+        p3 p3Var = new p3();
+        p3Var.c = fb.b;
+        p3Var.f = new ee(cVar);
+        return new a5.a(p3Var, 0);
     }
 
     public d() {

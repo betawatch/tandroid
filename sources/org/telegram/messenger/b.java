@@ -10,9 +10,9 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.c2, Vector.TLDeserializer {
+public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.a2, Vector.TLDeserializer {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -41,9 +41,9 @@ public final /* synthetic */ class b implements OnSuccessListener, GenericProvid
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        d2Var.dismiss();
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        b2Var.dismiss();
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener

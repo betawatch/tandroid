@@ -1,50 +1,38 @@
 package i2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.os.Looper;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class j1 extends u2.s {
-    public final /* synthetic */ int f = 0;
-    public final Object g;
+public final class j1 {
+    public final i1 a;
+    public final h1 b;
+    public int c;
+    public Object d;
+    public final Looper e;
+    public boolean f;
 
-    public j1(b2.k1 k1Var, b2.k0 k0Var) {
-        super(k1Var);
-        this.g = k0Var;
+    public j1(h1 h1Var, i1 i1Var, b2.k1 k1Var, int i10, Looper looper) {
+        this.b = h1Var;
+        this.a = i1Var;
+        this.e = looper;
     }
 
-    @Override // u2.s, b2.k1
-    public b2.h1 f(int i10, b2.h1 h1Var, boolean z10) {
-        switch (this.f) {
-            case 0:
-                b2.k1 k1Var = this.e;
-                b2.h1 f7 = k1Var.f(i10, h1Var, z10);
-                if (k1Var.m(f7.c, (b2.j1) this.g, 0L).a()) {
-                    f7.h(h1Var.a, h1Var.b, h1Var.c, h1Var.d, h1Var.e, b2.b.c, true);
-                } else {
-                    f7.f = true;
-                }
-                return f7;
-            default:
-                return super.f(i10, h1Var, z10);
+    public final synchronized void a(boolean z10) {
+        synchronized (this) {
+            notifyAll();
         }
     }
 
-    @Override // u2.s, b2.k1
-    public b2.j1 m(int i10, b2.j1 j1Var, long j3) {
-        switch (this.f) {
-            case 1:
-                super.m(i10, j1Var, j3);
-                b2.k0 k0Var = (b2.k0) this.g;
-                j1Var.c = k0Var;
-                b2.f0 f0Var = k0Var.b;
-                j1Var.getClass();
-                return j1Var;
-            default:
-                return super.m(i10, j1Var, j3);
+    public final void b() {
+        e2.d.g(!this.f);
+        this.f = true;
+        o0 o0Var = (o0) this.b;
+        if (!o0Var.X && o0Var.s.getThread().isAlive()) {
+            o0Var.n.a(14, this).b();
+        } else {
+            e2.a.n("ExoPlayerImplInternal", "Ignoring messages sent after release.");
+            a(false);
         }
-    }
-
-    public j1(b2.k1 k1Var) {
-        super(k1Var);
-        this.g = new b2.j1();
     }
 }

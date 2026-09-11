@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import i2.g;
 import java.util.WeakHashMap;
 import m.v1;
 import m.w1;
@@ -14,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -70,7 +71,7 @@ public class AlertDialogLayout extends w1 {
                 WeakHashMap weakHashMap = i0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    C = hc.b.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
+                    C = g.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft;

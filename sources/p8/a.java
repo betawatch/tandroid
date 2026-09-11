@@ -19,11 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
-import org.telegram.ui.Cells.l9;
+import org.telegram.ui.Cells.l7;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -88,8 +88,8 @@ public final class a {
             if (workSource != null) {
                 try {
                     this.b.setWorkSource(workSource);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
-                    Log.wtf("WakeLock", e.toString());
+                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e7) {
+                    Log.wtf("WakeLock", e7.toString());
                 }
             }
         }
@@ -142,7 +142,7 @@ public final class a {
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new l9(this, 26), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new l7(this, 28), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -232,11 +232,11 @@ public final class a {
                                 if (this.h != null) {
                                     this.h = null;
                                 }
-                            } catch (RuntimeException e) {
-                                if (!e.getClass().equals(RuntimeException.class)) {
-                                    throw e;
+                            } catch (RuntimeException e7) {
+                                if (!e7.getClass().equals(RuntimeException.class)) {
+                                    throw e7;
                                 }
-                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e);
+                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e7);
                                 if (this.h != null) {
                                     this.h = null;
                                 }

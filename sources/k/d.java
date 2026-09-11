@@ -4,23 +4,18 @@ import android.content.Context;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
-import com.google.firebase.messaging.s;
 import java.lang.ref.WeakReference;
+import n4.y;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d extends a implements l.j {
     public Context c;
     public ActionBarContextView d;
-    public of.b e;
+    public y e;
     public WeakReference f;
     public boolean h;
     public l.l n;
-
-    @Override // l.j
-    public final boolean B(l.l lVar, MenuItem menuItem) {
-        return ((s) this.e.b).g(this, menuItem);
-    }
 
     @Override // k.a
     public final void a() {
@@ -28,7 +23,7 @@ public final class d extends a implements l.j {
             return;
         }
         this.h = true;
-        this.e.j0(this);
+        this.e.I(this);
     }
 
     @Override // k.a
@@ -62,7 +57,7 @@ public final class d extends a implements l.j {
 
     @Override // k.a
     public final void g() {
-        this.e.k0(this, this.n);
+        this.e.J(this, this.n);
     }
 
     @Override // k.a
@@ -96,18 +91,23 @@ public final class d extends a implements l.j {
         this.d.setTitle(charSequence);
     }
 
-    @Override // k.a
-    public final void n(boolean z10) {
-        this.b = z10;
-        this.d.setTitleOptional(z10);
-    }
-
     @Override // l.j
-    public final void o(l.l lVar) {
+    public final void n(l.l lVar) {
         g();
         m.h hVar = this.d.d;
         if (hVar != null) {
             hVar.l();
         }
+    }
+
+    @Override // k.a
+    public final void o(boolean z10) {
+        this.b = z10;
+        this.d.setTitleOptional(z10);
+    }
+
+    @Override // l.j
+    public final boolean s(l.l lVar, MenuItem menuItem) {
+        return ((fg.f) this.e.b).H(this, menuItem);
     }
 }

@@ -1,108 +1,84 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.widget.TextView;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.animation.Interpolator;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zb1 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ ThemeActivity a;
+public final /* synthetic */ class zb1 implements org.telegram.ui.Components.zk0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public zb1(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    public /* synthetic */ zb1(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0156  */
-    @Override // org.telegram.ui.ActionBar.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10) {
-        if (i10 == -1) {
-            this.a.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            this.a.w0();
-            return;
-        }
-        if (i10 == 2) {
-            org.telegram.ui.ActionBar.h6 k10 = org.telegram.ui.ActionBar.j6.A0().k(false);
-            if (k10.r == null) {
-                this.a.getMessagesController().saveThemeToServer(k10.b, k10);
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, k10.b, k10);
-                return;
-            }
-            String str = "https://" + this.a.getMessagesController().linkPrefix + "/addtheme/" + k10.r.slug;
-            this.a.showDialog(new org.telegram.ui.Components.sq0(this.a.getParentActivity(), null, str, false, str, false, null));
-            return;
-        }
-        if (i10 == 3) {
-            this.a.x0();
-            return;
-        }
-        if (i10 == 4) {
-            if (this.a.getParentActivity() == null) {
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
-            alertDialog$Builder.a.R = LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle);
-            alertDialog$Builder.a.T = LocaleController.getString("ThemeResetToDefaultsText", R.string.ThemeResetToDefaultsText);
-            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new ul0(this, 20));
-            alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-            this.a.showDialog(d2Var);
-            TextView textView = (TextView) d2Var.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-                return;
-            }
-            return;
-        }
-        if (i10 == 5) {
-            SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
-            String str2 = "Blue";
-            String string = sharedPreferences.getString("lastDayTheme", "Blue");
-            if (org.telegram.ui.ActionBar.j6.N0(string) == null || org.telegram.ui.ActionBar.j6.N0(string).q()) {
-                string = "Blue";
-            }
-            String str3 = "Dark Blue";
-            String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-            if (org.telegram.ui.ActionBar.j6.N0(string2) == null || !org.telegram.ui.ActionBar.j6.N0(string2).q()) {
-                string2 = "Dark Blue";
-            }
-            org.telegram.ui.ActionBar.i6 i6Var = org.telegram.ui.ActionBar.j6.I;
-            if (!string.equals(string2)) {
-                str3 = string2;
-            } else if (i6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-                str3 = string2;
-                boolean equals = str2.equals(i6Var.m());
-                org.telegram.ui.ActionBar.i6 N0 = !equals ? org.telegram.ui.ActionBar.j6.N0(str3) : org.telegram.ui.ActionBar.j6.N0(str2);
-                int[] iArr = {(this.a.s.getIconView().getMeasuredWidth() / 2) + r9, (this.a.s.getIconView().getMeasuredHeight() / 2) + r9};
-                this.a.s.getIconView().getLocationInWindow(iArr);
-                int i11 = iArr[0];
-                int i12 = iArr[1];
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
-                this.a.A0(true);
-                org.telegram.ui.ActionBar.j6.F1(this.a);
-            }
-            str2 = string;
-            boolean equals2 = str2.equals(i6Var.m());
-            if (!equals2) {
-            }
-            int[] iArr2 = {(this.a.s.getIconView().getMeasuredWidth() / 2) + i11, (this.a.s.getIconView().getMeasuredHeight() / 2) + i12};
-            this.a.s.getIconView().getLocationInWindow(iArr2);
-            int i112 = iArr2[0];
-            int i122 = iArr2[1];
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
-            this.a.A0(true);
-            org.telegram.ui.ActionBar.j6.F1(this.a);
+    @Override // org.telegram.ui.Components.zk0
+    public final void a(int i10, View view) {
+        Interpolator interpolator;
+        int i11 = this.a;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
+        switch (i11) {
+            case 0:
+                ic1 ic1Var = (ic1) obj2;
+                ec1 ec1Var = (ec1) obj;
+                ThemeActivity themeActivity = ((gc1) obj3).e;
+                int i12 = themeActivity.f;
+                org.telegram.ui.ActionBar.i6 A0 = i12 == 1 ? org.telegram.ui.ActionBar.j6.J : org.telegram.ui.ActionBar.j6.A0();
+                if (i10 == ic1Var.h() - 1) {
+                    interpolator = null;
+                    themeActivity.presentFragment(new wd1(A0, false, 1, false, i12 == 1));
+                } else {
+                    interpolator = null;
+                    org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) ic1Var.e.get(i10);
+                    if (!TextUtils.isEmpty(h6Var.o) && h6Var.a != org.telegram.ui.ActionBar.j6.n) {
+                        org.telegram.ui.ActionBar.e6.a(false);
+                    }
+                    int i13 = A0.Y;
+                    int i14 = h6Var.a;
+                    if (i13 != i14) {
+                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, A0, Boolean.valueOf(i12 == 1), null, Integer.valueOf(h6Var.a));
+                        org.telegram.ui.ActionBar.d4.q(A0, h6Var.a);
+                        org.telegram.ui.ActionBar.j6.F1(themeActivity);
+                    } else {
+                        themeActivity.presentFragment(new wd1(A0, false, 1, i14 >= 100, i12 == 1));
+                    }
+                }
+                int left = view.getLeft();
+                int right = view.getRight();
+                int dp = AndroidUtilities.dp(52.0f);
+                int i15 = left - dp;
+                if (i15 < 0) {
+                    ec1Var.v0(i15, 0, interpolator);
+                } else {
+                    int i16 = right + dp;
+                    if (i16 > ec1Var.getMeasuredWidth()) {
+                        ec1Var.v0(i16 - ec1Var.getMeasuredWidth(), 0, interpolator);
+                    }
+                }
+                int childCount = ec1Var.getChildCount();
+                for (int i17 = 0; i17 < childCount; i17++) {
+                    View childAt = ec1Var.getChildAt(i17);
+                    if (childAt instanceof ThemeActivity.InnerAccentView) {
+                        ((ThemeActivity.InnerAccentView) childAt).a(true);
+                    }
+                }
+                break;
+            default:
+                y11.V((y11) obj3, (Context) obj2, (String) obj, view, i10);
+                break;
         }
     }
 }

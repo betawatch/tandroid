@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class AppGlobalConfig {
     public final ConfigInt aicomposeToneExamplesNum;
@@ -75,11 +75,11 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigBoolean {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Internal implements ConfigInternal {
             private final boolean defaultValue;
             private final String name;
@@ -116,11 +116,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigDouble {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Internal implements ConfigInternal {
             private final double defaultValue;
             private final String name;
@@ -160,11 +160,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigInt {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Internal implements ConfigInternal {
             private final int defaultValue;
             private final String name;
@@ -205,18 +205,18 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigLong {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Internal implements ConfigInternal {
             private final long defaultValue;
             private final String name;
@@ -257,11 +257,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigString {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public static class Internal implements ConfigInternal {
             private final String defaultValue;
             private final String name;
@@ -306,7 +306,7 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ConfigTime {
         private final ConfigLong.Internal handler;
         private final TimeUnit timeUnit;
@@ -439,8 +439,8 @@ public class AppGlobalConfig {
         while (it.hasNext()) {
             try {
                 it.next().load(sharedPreferences);
-            } catch (ClassCastException e) {
-                FileLog.e(e);
+            } catch (ClassCastException e7) {
+                FileLog.e(e7);
             }
         }
     }

@@ -3,9 +3,9 @@ package com.googlecode.mp4parser;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-import w7.s6;
+import w7.p6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a implements f5.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
@@ -61,8 +61,8 @@ public abstract class a implements f5.b {
                 try {
                     LOG.b("mem mapping " + getType());
                     throw null;
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                } catch (IOException e7) {
+                    throw new RuntimeException(e7);
                 }
             }
         } catch (Throwable th2) {
@@ -85,7 +85,7 @@ public abstract class a implements f5.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(s6.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(p6.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;

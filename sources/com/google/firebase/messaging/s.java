@@ -4,12 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.os.SystemClock;
 import android.util.Log;
-import android.util.Pair;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import e9.a1;
@@ -20,23 +17,27 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLongFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
-import m.g3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.r6;
-import u2.q1;
+import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Components.y5;
+import u2.o1;
+import w7.x5;
 import y9.w0;
 import y9.x0;
+import zd.f1;
+import zd.i2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class s implements z3.m {
     public static s f;
@@ -50,7 +51,7 @@ public final class s implements z3.m {
         this.a = i10;
     }
 
-    public static synchronized s d() {
+    public static synchronized s b() {
         s sVar;
         synchronized (s.class) {
             try {
@@ -65,15 +66,363 @@ public final class s implements z3.m {
         return sVar;
     }
 
-    public static void i(long j3, HashMap hashMap) {
-        ArrayList arrayList = new ArrayList();
-        for (Map.Entry entry : hashMap.entrySet()) {
-            if (((Long) entry.getValue()).longValue() <= j3) {
-                arrayList.add(entry.getKey());
-            }
+    @Override // z3.m
+    public int U() {
+        switch (this.a) {
         }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            hashMap.remove(arrayList.get(i10));
+        return 2;
+    }
+
+    public w0 a() {
+        String str = ((x0) this.c) == null ? " rolloutVariant" : "";
+        if (((String) this.b) == null) {
+            str = str.concat(" parameterKey");
+        }
+        if (((String) this.d) == null) {
+            str = p6.t(str, " parameterValue");
+        }
+        if (((Long) this.e) == null) {
+            str = p6.t(str, " templateVersion");
+        }
+        if (str.isEmpty()) {
+            return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
+    }
+
+    public boolean c(Context context) {
+        if (((Boolean) this.d) == null) {
+            this.d = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
+        }
+        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
+        }
+        return ((Boolean) this.d).booleanValue();
+    }
+
+    public boolean d(Context context) {
+        if (((Boolean) this.c) == null) {
+            this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
+        }
+        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
+        }
+        return ((Boolean) this.c).booleanValue();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x026a, code lost:
+    
+        r2 = r4;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x016d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0185 A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r3v8, types: [be.h, ee.t] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void e(k1.k kVar) {
+        be.b bVar;
+        d9.f fVar;
+        int i10;
+        int i11;
+        k1.k kVar2;
+        be.h hVar;
+        long j3;
+        boolean z10;
+        d9.f fVar2;
+        int i12;
+        int i13;
+        int i14;
+        Object obj;
+        Object a2;
+        int i15;
+        be.h hVar2;
+        k1.k kVar3;
+        ee.d dVar;
+        long j10;
+        be.c cVar;
+        k1.k kVar4 = kVar;
+        be.b bVar2 = (be.b) this.d;
+        bVar2.getClass();
+        AtomicLongFieldUpdater atomicLongFieldUpdater = be.b.b;
+        boolean z11 = false;
+        long j11 = 1152921504606846975L;
+        boolean z12 = bVar2.i(atomicLongFieldUpdater.get(bVar2), false) ? false : !bVar2.a(r2 & 1152921504606846975L);
+        Object obj2 = be.g.a;
+        if (!z12) {
+            d9.f fVar3 = be.d.j;
+            be.h hVar3 = (be.h) be.b.f.get(bVar2);
+            while (true) {
+                long andIncrement = atomicLongFieldUpdater.getAndIncrement(bVar2);
+                long j12 = andIncrement & j11;
+                boolean i16 = bVar2.i(andIncrement, z11);
+                int i17 = be.d.b;
+                long j13 = i17;
+                long j14 = j11;
+                long j15 = j12 / j13;
+                int i18 = (int) (j12 % j13);
+                if (hVar3.c != j15) {
+                    AtomicLongFieldUpdater atomicLongFieldUpdater2 = be.b.c;
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = be.b.f;
+                    be.h hVar4 = be.d.a;
+                    be.c cVar2 = be.c.a;
+                    while (true) {
+                        a2 = ee.a.a(hVar3, j15, cVar2);
+                        if (!ee.a.d(a2)) {
+                            ee.t b10 = ee.a.b(a2);
+                            while (true) {
+                                ee.t tVar = (ee.t) atomicReferenceFieldUpdater.get(bVar2);
+                                i15 = i18;
+                                cVar = cVar2;
+                                if (tVar.c >= b10.c) {
+                                    break;
+                                }
+                                if (!b10.j()) {
+                                    break;
+                                }
+                                while (!atomicReferenceFieldUpdater.compareAndSet(bVar2, tVar, b10)) {
+                                    if (atomicReferenceFieldUpdater.get(bVar2) != tVar) {
+                                        if (b10.f()) {
+                                            b10.e();
+                                        }
+                                        i18 = i15;
+                                        cVar2 = cVar;
+                                    }
+                                }
+                                if (tVar.f()) {
+                                    tVar.e();
+                                }
+                            }
+                        } else {
+                            i15 = i18;
+                            break;
+                        }
+                        i18 = i15;
+                        cVar2 = cVar;
+                    }
+                    if (ee.a.d(a2)) {
+                        bVar2.c();
+                        if (hVar3.c * be.d.b < atomicLongFieldUpdater2.get(bVar2)) {
+                            hVar3.b();
+                            be.h hVar5 = hVar3;
+                            bVar = bVar2;
+                            hVar2 = hVar5;
+                            fVar = fVar3;
+                            i10 = i17;
+                            i11 = i15;
+                            kVar3 = null;
+                            kVar2 = null;
+                            if (kVar3 == null) {
+                                hVar = kVar3;
+                            } else {
+                                if (i16) {
+                                    obj = new be.e(bVar.f());
+                                    break;
+                                }
+                                be.b bVar3 = bVar;
+                                hVar3 = hVar2;
+                                bVar2 = bVar3;
+                                j11 = j14;
+                                fVar3 = fVar;
+                                z11 = false;
+                            }
+                        } else {
+                            be.h hVar6 = hVar3;
+                            bVar = bVar2;
+                            hVar2 = hVar6;
+                            fVar = fVar3;
+                            i10 = i17;
+                            i11 = i15;
+                            kVar2 = null;
+                            kVar3 = kVar2;
+                            if (kVar3 == null) {
+                            }
+                        }
+                    } else {
+                        ?? r32 = (be.h) ee.a.b(a2);
+                        long j16 = r32.c;
+                        if (j16 > j15) {
+                            long j17 = be.d.b * j16;
+                            AtomicLongFieldUpdater atomicLongFieldUpdater3 = be.b.b;
+                            int i19 = i17;
+                            long j18 = j16;
+                            ee.d dVar2 = r32;
+                            while (true) {
+                                long j19 = atomicLongFieldUpdater3.get(bVar2);
+                                long j20 = j19 & j14;
+                                if (j20 >= j17) {
+                                    be.h hVar7 = hVar3;
+                                    bVar = bVar2;
+                                    hVar2 = hVar7;
+                                    fVar = fVar3;
+                                    dVar = dVar2;
+                                    i10 = i19;
+                                    j10 = j18;
+                                    i11 = i15;
+                                    kVar2 = null;
+                                    break;
+                                }
+                                be.b bVar4 = bVar2;
+                                fVar = fVar3;
+                                long j21 = (((int) (j19 >> 60)) << 60) + j20;
+                                i10 = i19;
+                                j10 = j18;
+                                kVar2 = null;
+                                dVar = dVar2;
+                                hVar2 = hVar3;
+                                i11 = i15;
+                                bVar = bVar4;
+                                if (be.b.b.compareAndSet(bVar, j19, j21)) {
+                                    break;
+                                }
+                                hVar3 = hVar2;
+                                bVar2 = bVar;
+                                i15 = i11;
+                                i19 = i10;
+                                j18 = j10;
+                                dVar2 = dVar;
+                                fVar3 = fVar;
+                            }
+                            if (j10 * be.d.b < atomicLongFieldUpdater2.get(bVar)) {
+                                dVar.b();
+                            }
+                            kVar3 = kVar2;
+                            if (kVar3 == null) {
+                            }
+                        } else {
+                            be.h hVar8 = hVar3;
+                            bVar = bVar2;
+                            hVar2 = hVar8;
+                            fVar = fVar3;
+                            i10 = i17;
+                            i11 = i15;
+                            kVar2 = null;
+                            kVar3 = r32;
+                            if (kVar3 == null) {
+                            }
+                        }
+                    }
+                } else {
+                    be.h hVar9 = hVar3;
+                    bVar = bVar2;
+                    fVar = fVar3;
+                    i10 = i17;
+                    i11 = i18;
+                    kVar2 = null;
+                    hVar = hVar9;
+                }
+                hVar.n(i11, kVar4);
+                if (i16) {
+                    bVar2 = bVar;
+                    j3 = j12;
+                    z10 = i16;
+                    fVar2 = fVar;
+                    i12 = 2;
+                    i14 = bVar2.p(hVar, i11, kVar4, j3, fVar2, z10);
+                    i13 = 1;
+                } else {
+                    bVar2 = bVar;
+                    j3 = j12;
+                    z10 = i16;
+                    k1.k kVar5 = kVar2;
+                    fVar2 = fVar;
+                    i12 = 2;
+                    Object l4 = hVar.l(i11);
+                    if (l4 != null) {
+                        if (l4 instanceof i2) {
+                            hVar.n(i11, kVar5);
+                            if (bVar2.m(l4, kVar4)) {
+                                hVar.o(i11, be.d.i);
+                                i13 = 1;
+                                i14 = 0;
+                            } else {
+                                d9.f fVar4 = be.d.k;
+                                if (hVar.f.getAndSet((i11 * 2) + 1, fVar4) != fVar4) {
+                                    i13 = 1;
+                                    hVar.m(i11, true);
+                                } else {
+                                    i13 = 1;
+                                }
+                                i14 = 5;
+                            }
+                        }
+                        i13 = 1;
+                        i14 = bVar2.p(hVar, i11, kVar4, j3, fVar2, z10);
+                    } else if (bVar2.a(j3)) {
+                        if (hVar.k(i11, kVar5, be.d.d)) {
+                            i13 = 1;
+                            i14 = 1;
+                        }
+                        i13 = 1;
+                        i14 = bVar2.p(hVar, i11, kVar4, j3, fVar2, z10);
+                    } else if (fVar2 == null) {
+                        i13 = 1;
+                        i14 = 3;
+                    } else {
+                        if (hVar.k(i11, kVar5, fVar2)) {
+                            i13 = 1;
+                            i14 = 2;
+                        }
+                        i13 = 1;
+                        i14 = bVar2.p(hVar, i11, kVar4, j3, fVar2, z10);
+                    }
+                }
+                Object obj3 = gd.i.a;
+                if (i14 == 0) {
+                    hVar.b();
+                    break;
+                }
+                if (i14 == i13) {
+                    break;
+                }
+                if (i14 != i12) {
+                    if (i14 == 3) {
+                        throw new IllegalStateException("unexpected");
+                    }
+                    if (i14 != 4) {
+                        if (i14 == 5) {
+                            hVar.b();
+                        }
+                        kVar4 = kVar;
+                        hVar3 = hVar;
+                        fVar3 = fVar2;
+                        j11 = j14;
+                        z11 = false;
+                    } else {
+                        if (j3 < be.b.c.get(bVar2)) {
+                            hVar.b();
+                        }
+                        obj = new be.e(bVar2.f());
+                    }
+                } else if (z10) {
+                    hVar.i();
+                    obj = new be.e(bVar2.f());
+                } else {
+                    i2 i2Var = fVar2 instanceof i2 ? (i2) fVar2 : null;
+                    if (i2Var != null) {
+                        i2Var.a(hVar, i11 + i10);
+                    }
+                    hVar.i();
+                    obj = obj2;
+                }
+            }
+        } else {
+            obj = obj2;
+        }
+        i12 = 2;
+        if (obj instanceof be.e) {
+            Throwable th2 = ((be.e) obj).a;
+            if (th2 != null) {
+                throw th2;
+            }
+            throw new b2.v("Channel was closed normally");
+        }
+        if (obj instanceof be.f) {
+            throw new IllegalStateException("Check failed.");
+        }
+        if (((AtomicInteger) this.e).getAndIncrement() == 0) {
+            zd.e0.q((zd.c0) this.b, new bb.j(this, null, i12));
         }
     }
 
@@ -83,7 +432,7 @@ public final class s implements z3.m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void A(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public void e0(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -347,170 +696,29 @@ public final class s implements z3.m {
         }
     }
 
-    public ArrayList a(List list) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        HashMap hashMap = (HashMap) this.b;
-        i(elapsedRealtime, hashMap);
-        HashMap hashMap2 = (HashMap) this.c;
-        i(elapsedRealtime, hashMap2);
-        ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            m2.b bVar = (m2.b) list.get(i10);
-            if (!hashMap.containsKey(bVar.b) && !hashMap2.containsKey(Integer.valueOf(bVar.c))) {
-                arrayList.add(bVar);
-            }
-        }
-        return arrayList;
-    }
-
-    public w0 b() {
-        String str = ((x0) this.c) == null ? " rolloutVariant" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" parameterKey");
-        }
-        if (((String) this.d) == null) {
-            str = r6.t(str, " parameterValue");
-        }
-        if (((Long) this.e) == null) {
-            str = r6.t(str, " templateVersion");
-        }
-        if (str.isEmpty()) {
-            return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    public k.e c(k.a aVar) {
-        ArrayList arrayList = (ArrayList) this.d;
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            k.e eVar = (k.e) arrayList.get(i10);
-            if (eVar != null && eVar.b == aVar) {
-                return eVar;
-            }
-        }
-        k.e eVar2 = new k.e((Context) this.c, aVar);
-        arrayList.add(eVar2);
-        return eVar2;
-    }
-
-    public boolean e(Context context) {
-        if (((Boolean) this.d) == null) {
-            this.d = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
-        }
-        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return ((Boolean) this.d).booleanValue();
-    }
-
-    public boolean f(Context context) {
-        if (((Boolean) this.c) == null) {
-            this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
-        }
-        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return ((Boolean) this.c).booleanValue();
-    }
-
-    public boolean g(k.a aVar, MenuItem menuItem) {
-        return ((ActionMode.Callback) this.b).onActionItemClicked(c(aVar), new l.s((Context) this.c, (l0.a) menuItem));
-    }
-
-    public boolean h(k.a aVar, Menu menu) {
-        ActionMode.Callback callback = (ActionMode.Callback) this.b;
-        k.e c10 = c(aVar);
-        a0.l lVar = (a0.l) this.e;
-        Menu menu2 = (Menu) lVar.get(menu);
-        if (menu2 == null) {
-            menu2 = new l.b0((Context) this.c, (l.l) menu);
-            lVar.put(menu, menu2);
-        }
-        return callback.onCreateActionMode(c10, menu2);
-    }
-
-    @Override // z3.m
-    public /* synthetic */ z3.d k(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return w.f.a(this, bArr, i11);
-    }
-
-    public m2.b m(List list) {
-        m2.b bVar;
-        HashMap hashMap = (HashMap) this.d;
-        ArrayList a2 = a(list);
-        if (a2.size() < 2) {
-            return (m2.b) e9.q.k(a2, null);
-        }
-        Collections.sort(a2, new a4.e(13));
-        ArrayList arrayList = new ArrayList();
-        int i10 = 0;
-        int i11 = ((m2.b) a2.get(0)).c;
-        int i12 = 0;
-        while (true) {
-            if (i12 >= a2.size()) {
-                break;
-            }
-            m2.b bVar2 = (m2.b) a2.get(i12);
-            if (i11 == bVar2.c) {
-                arrayList.add(new Pair(bVar2.b, Integer.valueOf(bVar2.d)));
-                i12++;
-            } else if (arrayList.size() == 1) {
-                return (m2.b) a2.get(0);
-            }
-        }
-        m2.b bVar3 = (m2.b) hashMap.get(arrayList);
-        if (bVar3 != null) {
-            return bVar3;
-        }
-        List subList = a2.subList(0, arrayList.size());
-        int i13 = 0;
-        for (int i14 = 0; i14 < subList.size(); i14++) {
-            i13 += ((m2.b) subList.get(i14)).d;
-        }
-        int nextInt = ((Random) this.e).nextInt(i13);
-        int i15 = 0;
-        while (true) {
-            if (i10 >= subList.size()) {
-                bVar = (m2.b) e9.q.l(subList);
-                break;
-            }
-            bVar = (m2.b) subList.get(i10);
-            i15 += bVar.d;
-            if (nextInt < i15) {
-                break;
-            }
-            i10++;
-        }
-        hashMap.put(arrayList, bVar);
-        return bVar;
-    }
-
-    @Override // z3.m
-    public int n() {
-        switch (this.a) {
-        }
-        return 2;
-    }
-
-    public Task o(Callable callable) {
+    public Task h(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new g3(callable, 25));
-            this.c = continueWith.continueWith((Executor) this.b, new rb.a(24));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new v8.s(callable));
+            this.c = continueWith.continueWith((Executor) this.b, new t7.u(24));
         }
         return continueWith;
     }
 
-    public Task p(Callable callable) {
+    public Task i(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new g3(callable, 25));
-            this.c = continueWithTask.continueWith((Executor) this.b, new rb.a(24));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new v8.s(callable));
+            this.c = continueWithTask.continueWith((Executor) this.b, new t7.u(24));
         }
         return continueWithTask;
+    }
+
+    @Override // z3.m
+    public /* synthetic */ z3.d p(int i10, int i11, byte[] bArr) {
+        switch (this.a) {
+        }
+        return w.f.a(this, bArr, i11);
     }
 
     @Override // z3.m
@@ -521,7 +729,7 @@ public final class s implements z3.m {
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((g3) this.e).toString();
+                return ((mg.n) this.e).toString();
             default:
                 return super.toString();
         }
@@ -535,13 +743,27 @@ public final class s implements z3.m {
         this.e = obj4;
     }
 
+    public s(zd.c0 c0Var, ie.g gVar, k1.m mVar) {
+        this.a = 5;
+        this.b = c0Var;
+        this.c = mVar;
+        be.a[] aVarArr = be.a.a;
+        this.d = new be.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        this.e = new AtomicInteger(0);
+        f1 f1Var = (f1) c0Var.c().get(zd.b0.b);
+        if (f1Var == null) {
+            return;
+        }
+        f1Var.invokeOnCompletion(new ae.d(1, gVar, this));
+    }
+
     public s(ExecutorService executorService) {
         this.a = 12;
         this.c = Tasks.forResult(null);
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new sg.a1(this, 3));
+        executorService.execute(new rg.b0(this, 6));
     }
 
     public s(List list) {
@@ -573,18 +795,18 @@ public final class s implements z3.m {
                         aVar.e = Integer.parseInt(split2[0]);
                         aVar.f = Integer.parseInt(split2[1]);
                         aVar.b = true;
-                    } catch (RuntimeException e) {
-                        e2.a.o("VobsubParser", "Parsing IDX failed", e);
+                    } catch (RuntimeException e7) {
+                        e2.a.o("VobsubParser", "Parsing IDX failed", e7);
                     }
                 }
             }
         }
     }
 
-    private final /* synthetic */ void j() {
+    private final /* synthetic */ void f() {
     }
 
-    private final /* synthetic */ void l() {
+    private final /* synthetic */ void g() {
     }
 
     public s(Typeface typeface, p1.b bVar) {
@@ -641,9 +863,9 @@ public final class s implements z3.m {
         }
     }
 
-    public s(g3 g3Var, Object obj, Object obj2, Object[] objArr) {
+    public s(mg.n nVar, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = g3Var;
+        this.e = nVar;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;
@@ -657,13 +879,6 @@ public final class s implements z3.m {
                 this.c = new e2.v();
                 this.d = new c4.a();
                 break;
-            case 6:
-                Random random = new Random();
-                this.d = new HashMap();
-                this.e = random;
-                this.b = new HashMap();
-                this.c = new HashMap();
-                break;
             default:
                 this.b = null;
                 this.c = null;
@@ -673,19 +888,38 @@ public final class s implements z3.m {
         }
     }
 
-    public s(Context context, ActionMode.Callback callback) {
-        this.a = 5;
-        this.c = context;
-        this.b = callback;
-        this.d = new ArrayList();
-        this.e = new a0.l(0);
+    public s(lg.e eVar) {
+        this.a = 6;
+        LinearLayout linearLayout = new LinearLayout(eVar.getContext());
+        this.e = linearLayout;
+        linearLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
+        if (eVar.E) {
+            TextView textView = new TextView(eVar.getContext());
+            this.d = textView;
+            linearLayout.addView(textView);
+            textView.getLayoutParams().width = AndroidUtilities.dp(36.0f);
+            textView.setVisibility(8);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextSize(1, 13.0f);
+        }
+        TextView textView2 = new TextView(eVar.getContext());
+        this.c = textView2;
+        linearLayout.addView(textView2, x5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
+        y5 y5Var = new y5(eVar.getContext());
+        this.b = y5Var;
+        linearLayout.addView(y5Var, x5.n(-1, -2));
+        textView2.setGravity(8388611);
+        y5Var.setGravity(8388613);
+        y5Var.setTypeface(AndroidUtilities.bold());
+        y5Var.setTextSize(1, 13.0f);
+        textView2.setTextSize(1, 13.0f);
     }
 
-    public s(q1 q1Var, boolean[] zArr) {
+    public s(o1 o1Var, boolean[] zArr) {
         this.a = 11;
-        this.b = q1Var;
+        this.b = o1Var;
         this.c = zArr;
-        int i10 = q1Var.a;
+        int i10 = o1Var.a;
         this.d = new boolean[i10];
         this.e = new boolean[i10];
     }

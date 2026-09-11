@@ -3,24 +3,24 @@ package org.telegram.ui;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class q60 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ FrameLayout a;
-    public final /* synthetic */ s60 b;
+    public final /* synthetic */ t60 b;
 
-    public q60(s60 s60Var, FrameLayout frameLayout) {
-        this.b = s60Var;
+    public q60(t60 t60Var, FrameLayout frameLayout) {
+        this.b = t60Var;
         this.a = frameLayout;
     }
 
     @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
     public final void onGlobalLayout() {
         this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        s60 s60Var = this.b;
-        if (s60Var.z0 == null) {
-            s60Var.z0 = (vc) s60Var.y0(s60Var.Z);
+        t60 t60Var = this.b;
+        if (t60Var.z0 == null) {
+            t60Var.z0 = (uc) t60Var.y0(t60Var.Z);
         }
-        s60Var.z0.f.setOnClickListener(new l60(this, 1));
+        t60Var.z0.f.setOnClickListener(new l60(this, 1));
     }
 }

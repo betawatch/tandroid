@@ -1,51 +1,87 @@
 package org.telegram.messenger;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.TranslateController;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oa implements Function {
+public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ oa(int i10) {
+    public /* synthetic */ oa(MessagesController messagesController, long j3, int i10) {
         this.a = i10;
+        this.b = messagesController;
+        this.c = j3;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String valueOf;
-        String lambda$applyAppConfig$35;
-        Long lambda$new$14;
-        int[] lambda$new$15;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                valueOf = String.valueOf((Long) obj);
-                return valueOf;
+                this.b.lambda$setChannelSlowMode$93(this.c);
+                break;
             case 1:
-                lambda$applyAppConfig$35 = MessagesController.lambda$applyAppConfig$35((int[]) obj);
-                return lambda$applyAppConfig$35;
+                this.b.lambda$setChatReactions$470(this.c);
+                break;
             case 2:
-                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
-                return lambda$new$14;
+                this.b.lambda$getChannelDifference$343(this.c);
+                break;
             case 3:
-                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
-                return lambda$new$15;
+                this.b.lambda$deleteDialog$140(this.c);
+                break;
+            case 4:
+                this.b.lambda$setDefaultBannedRole$97(this.c);
+                break;
+            case 5:
+                this.b.lambda$processUpdateArray$383(this.c);
+                break;
+            case 6:
+                this.b.lambda$getSavedReactionTags$488(this.c);
+                break;
+            case 7:
+                this.b.lambda$getChannelDifference$334(this.c);
+                break;
+            case 8:
+                this.b.lambda$getChannelDifference$335(this.c);
+                break;
+            case 9:
+                this.b.lambda$getChannelDifference$336(this.c);
+                break;
+            case 10:
+                this.b.lambda$getChannelDifference$337(this.c);
+                break;
+            case 11:
+                this.b.lambda$removeDialog$134(this.c);
+                break;
+            case 12:
+                this.b.lambda$deleteParticipantFromChat$312(this.c);
+                break;
+            case 13:
+                this.b.lambda$setParticipantBannedRole$90(this.c);
+                break;
+            case 14:
+                this.b.lambda$deleteDialog$139(this.c);
+                break;
+            case 15:
+                this.b.lambda$setBoostsToUnblockRestrictions$95(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteParticipantFromChat$315(this.c);
+                break;
+            case 17:
+                this.b.lambda$addUserToChat$298(this.c);
+                break;
+            case 18:
+                this.b.lambda$addUserToChat$309(this.c);
+                break;
+            case 19:
+                this.b.lambda$addUserToChat$307(this.c);
+                break;
+            case 20:
+                this.b.lambda$getChannelDifference$344(this.c);
+                break;
             default:
-                str = ((TranslateController.Language) obj).displayName;
-                return str;
+                this.b.lambda$getChannelDifference$345(this.c);
+                break;
         }
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
     }
 }

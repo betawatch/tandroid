@@ -1,32 +1,54 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q7 implements Comparator {
+public final /* synthetic */ class q7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ q7(ArrayList arrayList, int i10) {
+    public /* synthetic */ q7(int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = arrayList;
+        this.b = callback;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$getEmojiSuggestions$220;
-        int lambda$reorderStickers$54;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$getEmojiSuggestions$220 = MediaDataController.lambda$getEmojiSuggestions$220(this.b, (MediaDataController.KeywordResult) obj, (MediaDataController.KeywordResult) obj2);
-                return lambda$getEmojiSuggestions$220;
+                MediaDataController.lambda$loadStickers$98(this.b);
+                break;
+            case 1:
+                MediaDataController.lambda$loadStickers$99(this.b);
+                break;
+            case 2:
+                MediaDataController.lambda$loadBotInfo$198(this.b);
+                break;
+            case 3:
+                MediaDataController.lambda$loadStickers$94(this.b);
+                break;
+            case 4:
+                MediaDataController.lambda$loadStickers$95(this.b);
+                break;
+            case 5:
+                MediaDataController.lambda$loadStickers$96(this.b);
+                break;
+            case 6:
+                this.b.run(null);
+                break;
+            case 7:
+                MessagesController.lambda$addUserToChat$301(this.b);
+                break;
+            case 8:
+                MessagesController.lambda$addUserToChat$305(this.b);
+                break;
+            case 9:
+                this.b.run(null);
+                break;
             default:
-                lambda$reorderStickers$54 = MediaDataController.lambda$reorderStickers$54(this.b, (TLRPC.TL_messages_stickerSet) obj, (TLRPC.TL_messages_stickerSet) obj2);
-                return lambda$reorderStickers$54;
+                ShortcutResultReceiver.lambda$onReceive$0(this.b);
+                break;
         }
     }
 }

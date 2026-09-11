@@ -6,7 +6,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d1 extends r0.b {
     public final /* synthetic */ int d = 0;
@@ -53,30 +53,30 @@ public final class d1 extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, s0.d dVar) {
+    public final void c(View view, s0.c cVar) {
         switch (this.d) {
             case 0:
-                this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+                this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
                 e1 e1Var = (e1) this.e;
                 RecyclerView recyclerView = e1Var.d;
                 RecyclerView recyclerView2 = e1Var.d;
                 if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
-                    recyclerView2.getLayoutManager().T(view, dVar);
+                    recyclerView2.getLayoutManager().T(view, cVar);
                     break;
                 }
                 break;
             default:
-                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
                 this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                dVar.i(z4.g.class.getName());
+                cVar.i(z4.g.class.getName());
                 z4.g gVar = (z4.g) this.e;
                 z4.a aVar = gVar.e;
                 accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
                 if (gVar.canScrollHorizontally(1)) {
-                    dVar.a(4096);
+                    cVar.a(4096);
                 }
                 if (gVar.canScrollHorizontally(-1)) {
-                    dVar.a(8192);
+                    cVar.a(8192);
                     break;
                 }
                 break;
@@ -92,7 +92,7 @@ public final class d1 extends r0.b {
                     RecyclerView recyclerView = e1Var.d;
                     RecyclerView recyclerView2 = e1Var.d;
                     if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
-                        of.e eVar = recyclerView2.getLayoutManager().b.b;
+                        pf.e eVar = recyclerView2.getLayoutManager().b.b;
                         break;
                     }
                 }

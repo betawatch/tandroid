@@ -1,31 +1,31 @@
 package org.telegram.messenger;
 
-import android.text.Spanned;
-import java.util.Comparator;
-import org.telegram.messenger.RichMessageLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class di implements Comparator {
+public final /* synthetic */ class di implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Spanned b;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
 
-    public /* synthetic */ di(Spanned spanned, int i10) {
+    public /* synthetic */ di(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         this.a = i10;
-        this.b = spanned;
+        this.b = secretChatHelper;
+        this.c = context;
+        this.d = b2Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$withReplacements$0;
-        int lambda$new$0;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.y9) obj, (org.telegram.ui.Cells.y9) obj2);
-                return lambda$withReplacements$0;
+                this.b.lambda$startSecretChat$27(this.c, this.d);
+                break;
             default:
-                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
-                return lambda$new$0;
+                this.b.lambda$startSecretChat$29(this.c, this.d);
+                break;
         }
     }
 }

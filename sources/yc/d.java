@@ -18,11 +18,12 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
+import ji.b4;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d {
-    public final l2.g a;
+    public final b4 a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -36,9 +37,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, l2.g gVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, b4 b4Var, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = gVar;
+        this.a = b4Var;
         this.c = new BufferedInputStream(inputStream, 8192);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -131,15 +132,15 @@ public final class d {
                 readLine2 = bufferedReader.readLine();
             }
             hashMap.put("uri", b10);
-        } catch (IOException e) {
-            throw new h("SERVER INTERNAL ERROR: IOException: " + e.getMessage(), e);
+        } catch (IOException e7) {
+            throw new h("SERVER INTERNAL ERROR: IOException: " + e7.getMessage(), e7);
         }
     }
 
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        l2.g gVar = this.a;
+        b4 b4Var = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -197,53 +198,53 @@ public final class d {
                             this.j = new c(this.i);
                             String str2 = (String) this.i.get("connection");
                             boolean z11 = "HTTP/1.1".equals(this.l) && (str2 == null || !str2.matches("(?i).*close.*"));
-                            g e = iVar.e(this);
+                            g e7 = iVar.e(this);
                             String str3 = (String) this.i.get("accept-encoding");
                             this.j.i();
-                            e.i(this.g);
-                            if (i.g(e) && str3 != null && str3.contains("gzip")) {
+                            e7.i(this.g);
+                            if (i.g(e7) && str3 != null && str3.contains("gzip")) {
                                 z10 = true;
                             }
-                            e.g(z10);
-                            e.h(z11);
-                            e.d(outputStream);
-                            if (!z11 || e.b()) {
+                            e7.g(z10);
+                            e7.h(z11);
+                            e7.d(outputStream);
+                            if (!z11 || e7.b()) {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
-                            i.d(e);
-                            gVar.y();
-                        } catch (SSLException e7) {
-                            throw e7;
+                            i.d(e7);
+                            b4Var.a();
+                        } catch (SSLException e10) {
+                            throw e10;
                         } catch (IOException unused) {
                             i.d(bufferedInputStream);
                             i.d(outputStream);
                             throw new SocketException("NanoHttpd Shutdown");
                         }
-                    } catch (h e10) {
-                        i.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
+                    } catch (h e11) {
+                        i.c(e11.a(), "text/plain", e11.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        gVar.y();
+                        b4Var.a();
                     }
-                } catch (SSLException e11) {
-                    i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
+                } catch (SSLException e12) {
+                    i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e12.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    gVar.y();
-                } catch (IOException e12) {
-                    i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
+                    b4Var.a();
+                } catch (IOException e13) {
+                    i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e13.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    gVar.y();
+                    b4Var.a();
                 }
-            } catch (SocketException e13) {
-                throw e13;
-            } catch (SocketTimeoutException e14) {
+            } catch (SocketException e14) {
                 throw e14;
+            } catch (SocketTimeoutException e15) {
+                throw e15;
             }
         } catch (Throwable th2) {
             i.d(null);
-            gVar.y();
+            b4Var.a();
             throw th2;
         }
     }

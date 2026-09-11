@@ -5,17 +5,16 @@ import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
-import m.g3;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ g3 E;
-    public static final /* synthetic */ g3 F;
-    public static final /* synthetic */ g3 w;
-    public static final /* synthetic */ g3 x;
-    public static final /* synthetic */ g3 y;
+    public static final /* synthetic */ mg.n E;
+    public static final /* synthetic */ mg.n F;
+    public static final /* synthetic */ mg.n w;
+    public static final /* synthetic */ mg.n x;
+    public static final /* synthetic */ mg.n y;
     public String e;
     public String f;
     public long h;
@@ -71,11 +70,11 @@ public final class j extends com.googlecode.mp4parser.c {
             if (!str.endsWith(WebViewProviderFactoryBoundaryInterface.MULTI_COOKIE_VALUE_SEPARATOR)) {
                 this.s = false;
             } else {
-                this.f = e2.h(1, 0, this.f);
+                this.f = e2.i(1, 0, this.f);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e) {
-            throw new Error(e);
+        } catch (UnsupportedEncodingException e7) {
+            throw new Error(e7);
         }
     }
 

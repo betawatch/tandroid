@@ -20,10 +20,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -39,7 +39,7 @@ public class FileProvider extends ContentProvider {
     }
 
     public static String a(String str) {
-        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : e2.h(1, 0, str);
+        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : e2.i(1, 0, str);
     }
 
     public static f c(Context context, String str, int i10) {
@@ -79,7 +79,7 @@ public class FileProvider extends ContentProvider {
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(r6.i("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(p6.i("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
             return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
@@ -92,7 +92,7 @@ public class FileProvider extends ContentProvider {
         f fVar = new f(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(r6.i("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(p6.i("Couldn't find meta-data for provider with authority ", str));
         }
         if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
@@ -243,7 +243,7 @@ public class FileProvider extends ContentProvider {
             i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(r6.i("Invalid mode: ", str));
+                throw new IllegalArgumentException(p6.i("Invalid mode: ", str));
             }
             i10 = 1006632960;
         }

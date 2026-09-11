@@ -1,32 +1,50 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class cx extends org.telegram.ui.Components.si0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class cx extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ uy c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(ig1 ig1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = ig1Var;
-    }
-
-    @Override // org.telegram.ui.Components.si0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((vy) this.g0).a.getViewOffset();
+    public cx(uy uyVar, int i10) {
+        super("animationValue", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = uyVar;
+                super("viewPagerTranslation", 0);
+                break;
             default:
-                return ((ig1) this.g0).N.f3;
+                this.c = uyVar;
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(String str, String str2, vy vyVar) {
-        super(str, str2);
-        this.g0 = vyVar;
+    @Override // org.telegram.ui.Components.s6
+    public final void b(Object obj, float f7) {
+        switch (this.b) {
+            case 0:
+                ((uy) obj).C4(f7);
+                break;
+            default:
+                uy uyVar = this.c;
+                uyVar.I0 = f7;
+                ((View) obj).setTranslationY(uyVar.J0 + f7);
+                uyVar.F3();
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.N);
+            default:
+                return Float.valueOf(this.c.I0);
+        }
     }
 }

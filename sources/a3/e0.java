@@ -1,132 +1,106 @@
 package a3;
 
-import android.content.Context;
-import android.hardware.display.DisplayManager;
-import android.os.Build;
-import android.view.Display;
-import android.view.Surface;
+import android.os.SystemClock;
+import b2.r0;
+import b2.x1;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e0 {
-    public final h a;
-    public final c0 b;
-    public final d0 c;
-    public boolean d;
-    public Surface e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
+    public final n4.y a;
+    public final z b;
+    public final y c = new y();
+    public final e2.a0 d = new e2.a0();
+    public final e2.a0 e = new e2.a0();
+    public final e2.q f;
+    public long g;
+    public long h;
+    public long i;
+    public x1 j;
     public long k;
-    public long l;
-    public long m;
-    public long n;
-    public long o;
-    public long p;
-    public long q;
 
-    public e0(Context context) {
-        DisplayManager displayManager;
-        h hVar = new h();
-        hVar.a = new g();
-        hVar.b = new g();
-        hVar.d = -9223372036854775807L;
-        this.a = hVar;
-        c0 c0Var = (context == null || (displayManager = (DisplayManager) context.getSystemService("display")) == null) ? null : new c0(this, displayManager);
-        this.b = c0Var;
-        this.c = c0Var != null ? d0.e : null;
-        this.k = -9223372036854775807L;
-        this.l = -9223372036854775807L;
-        this.f = -1.0f;
-        this.i = 1.0f;
-        this.j = 0;
+    public e0(n4.y yVar, z zVar) {
+        this.a = yVar;
+        this.b = zVar;
+        e2.q qVar = new e2.q();
+        int highestOneBit = Integer.bitCount(16) != 1 ? Integer.highestOneBit(15) << 1 : 16;
+        qVar.a = 0;
+        qVar.b = -1;
+        qVar.c = 0;
+        qVar.e = new long[highestOneBit];
+        qVar.d = highestOneBit - 1;
+        this.f = qVar;
+        this.g = -9223372036854775807L;
+        this.j = x1.d;
+        this.h = -9223372036854775807L;
+        this.i = -9223372036854775807L;
     }
 
-    public static void a(e0 e0Var, Display display) {
-        if (display != null) {
-            long refreshRate = (long) (1.0E9d / display.getRefreshRate());
-            e0Var.k = refreshRate;
-            e0Var.l = (refreshRate * 80) / 100;
-        } else {
-            e2.a.n("VideoFrameReleaseHelper", "Unable to query display refresh rate");
-            e0Var.k = -9223372036854775807L;
-            e0Var.l = -9223372036854775807L;
-        }
-    }
-
-    public final void b() {
-        Surface surface;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || this.h == 0.0f) {
-            return;
-        }
-        this.h = 0.0f;
-        g0.f.v(surface, 0.0f);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c() {
-        float f7;
-        float f10;
-        if (Build.VERSION.SDK_INT < 30 || this.e == null) {
-            return;
-        }
-        h hVar = this.a;
-        if (!hVar.a.a()) {
-            f7 = this.f;
-        } else if (hVar.a.a()) {
-            f7 = (float) (1.0E9d / (hVar.a.e != 0 ? r2.f / r4 : 0L));
-        } else {
-            f7 = -1.0f;
-        }
-        float f11 = this.g;
-        if (f7 == f11) {
-            return;
-        }
-        if (f7 != -1.0f && f11 != -1.0f) {
-            if (hVar.a.a()) {
-                if ((hVar.a.a() ? hVar.a.f : -9223372036854775807L) >= 5000000000L) {
-                    f10 = 0.02f;
-                    if (Math.abs(f7 - this.g) < f10) {
-                        return;
-                    }
+    public final void a(long j3, long j10) {
+        n4.y yVar = this.a;
+        e eVar = (e) yVar.c;
+        while (true) {
+            e2.q qVar = this.f;
+            int i10 = qVar.c;
+            if (i10 == 0) {
+                return;
+            }
+            if (i10 == 0) {
+                throw new NoSuchElementException();
+            }
+            long j11 = ((long[]) qVar.e)[qVar.a];
+            Long l4 = (Long) this.e.g(j11);
+            z zVar = this.b;
+            if (l4 != null && l4.longValue() != this.k) {
+                this.k = l4.longValue();
+                zVar.f(2);
+            }
+            long j12 = this.k;
+            z zVar2 = this.b;
+            y yVar2 = this.c;
+            int a2 = zVar2.a(j11, j3, j10, j12, false, false, yVar2);
+            if (a2 == 0 || a2 == 1) {
+                this.h = j11;
+                boolean z10 = a2 == 0;
+                long d = qVar.d();
+                x1 x1Var = (x1) this.d.g(d);
+                if (x1Var != null && !x1Var.equals(x1.d) && !x1Var.equals(this.j)) {
+                    this.j = x1Var;
+                    b2.r rVar = new b2.r();
+                    rVar.x = x1Var.a;
+                    rVar.y = x1Var.b;
+                    rVar.q = r0.n("video/raw");
+                    yVar.b = new b2.s(rVar);
+                    eVar.h.execute(new d(yVar, x1Var));
                 }
-            }
-            f10 = 1.0f;
-            if (Math.abs(f7 - this.g) < f10) {
-            }
-        } else if (f7 == -1.0f && hVar.e < 30) {
-            return;
-        }
-        this.g = f7;
-        d(false);
-    }
-
-    public final void d(boolean z10) {
-        Surface surface;
-        float f7;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE) {
-            return;
-        }
-        if (this.d) {
-            float f10 = this.g;
-            if (f10 != -1.0f) {
-                f7 = f10 * this.i;
-                if (z10 && this.h == f7) {
+                long nanoTime = z10 ? System.nanoTime() : yVar2.b;
+                boolean z11 = zVar.e != 3;
+                zVar.e = 3;
+                zVar.l.getClass();
+                zVar.g = e2.d0.Q(SystemClock.elapsedRealtime());
+                if (z11 && eVar.d != null) {
+                    eVar.h.execute(new d(0, yVar));
+                }
+                b2.s sVar = (b2.s) yVar.b;
+                eVar.i.c(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
+                i iVar = (i) eVar.c.remove();
+                iVar.c.H0(iVar.a, iVar.b, nanoTime);
+            } else if (a2 == 2 || a2 == 3) {
+                this.h = j11;
+                qVar.d();
+                eVar.h.execute(new d(1, yVar));
+                i iVar2 = (i) eVar.c.remove();
+                iVar2.c.L0(iVar2.a, iVar2.b);
+            } else {
+                if (a2 != 4) {
+                    if (a2 != 5) {
+                        throw new IllegalStateException(String.valueOf(a2));
+                    }
                     return;
                 }
-                this.h = f7;
-                g0.f.v(surface, f7);
+                this.h = j11;
             }
         }
-        f7 = 0.0f;
-        if (z10) {
-        }
-        this.h = f7;
-        g0.f.v(surface, f7);
     }
 }

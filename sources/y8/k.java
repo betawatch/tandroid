@@ -5,10 +5,9 @@ import android.util.Log;
 import com.google.android.gms.common.data.DataHolder;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k extends l6.a {
     public final /* synthetic */ int d;
@@ -35,7 +34,7 @@ public final class k extends l6.a {
                     dataHolder.c(i11, "event_type");
                     str = dataHolder.d[this.c].getInt(i11, dataHolder.c.getInt("event_type")) == 2 ? "deleted" : "unknown";
                 }
-                return r6.j("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
+                return p6.j("DataEventRef{ type=", str, ", dataitem=", new k(dataHolder, this.b, this.e, 1).toString(), " }");
             default:
                 boolean isLoggable = Log.isLoggable("DataItem", 3);
                 DataHolder dataHolder2 = this.a;
@@ -59,7 +58,7 @@ public final class k extends l6.a {
                 int i17 = this.b;
                 dataHolder2.c(i17, "path");
                 sb2.append("uri=".concat(String.valueOf(Uri.parse(dataHolder2.d[this.c].getString(i17, dataHolder2.c.getInt("path"))))));
-                sb2.append(", dataSz=".concat((blob == null ? BuildConfig.BETA_URL : Integer.valueOf(blob.length)).toString()));
+                sb2.append(", dataSz=".concat((blob == null ? "null" : Integer.valueOf(blob.length)).toString()));
                 sb2.append(", numAssets=" + hashMap.size());
                 if (isLoggable && !hashMap.isEmpty()) {
                     sb2.append(", assets=[");

@@ -1,94 +1,133 @@
 package fi;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.TextView;
-import bi.f0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g9;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vl0;
-import org.telegram.ui.Components.w9;
-import s4.p0;
+import org.telegram.ui.p20;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class g extends u51 {
-    public static final /* synthetic */ int a = 0;
+public final class g extends sg.z1 {
+    public final /* synthetic */ int n;
 
-    static {
-        u51.setup(new g());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g(Context context, int i10) {
+        super(context);
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
-        h hVar = (h) view;
-        f fVar = (f) v51Var.G;
-        TLRPC.User user = fVar.b;
-        long j3 = fVar.a;
-        e eVar = (e) v51Var.H;
-        boolean z11 = fVar.c;
-        boolean z12 = !v51Var.j;
-        w9 w9Var = hVar.c;
-        TextView textView = hVar.n;
-        TextView textView2 = hVar.d;
-        hVar.x = eVar;
-        hVar.y = j3;
-        hVar.E = user.id;
-        int i10 = hVar.b;
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-        TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-        hVar.f.setText(DialogObject.getName(j3));
-        hVar.h.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), j6.w0(null, j6.il, false), new f0(6)));
-        if (user2 != null) {
-            textView2.setVisibility(8);
-        } else if (chat == null || chat.participants_count <= 0) {
-            textView2.setVisibility(8);
-        } else {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
-            spannableStringBuilder.setSpan(hVar.r, 0, 1, 33);
-            spannableStringBuilder.append((CharSequence) LocaleController.formatNumberWithMillion(chat.participants_count, ','));
-            textView2.setText(spannableStringBuilder);
-            textView2.setVisibility(0);
+    @Override // sg.z1
+    public final void a() {
+        switch (this.n) {
+            case 0:
+                super.a();
+                sg.y1 y1Var = this.a;
+                y1Var.q = true;
+                y1Var.K = false;
+                y1Var.L = true;
+                y1Var.H = true;
+                y1Var.c();
+                break;
+            case 1:
+                super.a();
+                sg.y1 y1Var2 = this.a;
+                y1Var2.q = true;
+                y1Var2.K = false;
+                y1Var2.L = true;
+                y1Var2.H = true;
+                y1Var2.c();
+                break;
+            case 2:
+                p20 p20Var = new p20(50);
+                this.a = p20Var;
+                p20Var.N = 100;
+                p20Var.M = false;
+                p20Var.G = false;
+                p20Var.K = true;
+                p20Var.H = true;
+                p20Var.J = false;
+                p20Var.r = 4;
+                p20Var.w = 0.98f;
+                p20Var.v = 0.98f;
+                p20Var.u = 0.98f;
+                p20Var.c();
+                break;
+            case 3:
+                sg.y1 y1Var3 = this.a;
+                y1Var3.q = true;
+                y1Var3.K = false;
+                y1Var3.H = true;
+                y1Var3.J = true;
+                y1Var3.k = AndroidUtilities.dp(-14.0f);
+                sg.y1 y1Var4 = this.a;
+                y1Var4.x = 2000L;
+                y1Var4.y = 3000;
+                y1Var4.r = 16;
+                y1Var4.G = false;
+                y1Var4.N = 28;
+                y1Var4.P = j6.Mj;
+                y1Var4.c();
+                break;
+            case 4:
+                sg.y1 y1Var5 = this.a;
+                y1Var5.q = true;
+                y1Var5.K = false;
+                y1Var5.H = true;
+                y1Var5.J = true;
+                y1Var5.k = AndroidUtilities.dp(-14.0f);
+                sg.y1 y1Var6 = this.a;
+                y1Var6.x = 2000L;
+                y1Var6.y = 3000;
+                y1Var6.r = 16;
+                y1Var6.G = false;
+                y1Var6.N = 28;
+                y1Var6.P = j6.Mj;
+                y1Var6.c();
+                break;
+            default:
+                super.a();
+                sg.y1 y1Var7 = this.a;
+                y1Var7.q = true;
+                y1Var7.K = false;
+                y1Var7.L = true;
+                y1Var7.H = true;
+                y1Var7.c();
+                break;
         }
-        if (z11) {
-            textView.setVisibility(0);
-        } else {
-            textView.setVisibility(8);
-        }
-        hVar.w = z12;
-        if (user2 != null) {
-            w9Var.e(user2, new g9(0, user2));
-        } else {
-            w9Var.e(chat, new g9(chat));
-        }
-        hVar.e.e(user, new g9(0, user));
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
-        h hVar = new h(context, i10, f6Var);
-        hVar.setLayoutParams(new p0(-1, -2));
-        hVar.setClickable(false);
-        return hVar;
+    @Override // sg.z1
+    public int getStarsRectWidth() {
+        switch (this.n) {
+            case 0:
+                return getMeasuredWidth();
+            case 1:
+                return getMeasuredWidth();
+            case 2:
+                return getMeasuredWidth();
+            default:
+                return super.getStarsRectWidth();
+        }
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final boolean equals(v51 v51Var, v51 v51Var2) {
-        f fVar = (f) v51Var.G;
-        f fVar2 = (f) v51Var2.G;
-        return fVar.a == fVar2.a && DialogObject.getDialogId(fVar.b) == DialogObject.getDialogId(fVar2.b);
+    @Override // sg.z1, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.n) {
+            case 3:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 4:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 5:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

@@ -1,30 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class f11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i11 b;
-    public final /* synthetic */ h11 c;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ThemeEditorView;
 
-    public /* synthetic */ f11(i11 i11Var, h11 h11Var, int i10) {
-        this.a = i10;
-        this.b = i11Var;
-        this.c = h11Var;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final class f11 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+
+    public f11(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b(this.c);
-                break;
-            case 1:
-                this.b.b(this.c);
-                break;
-            default:
-                this.b.b(this.c);
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        editorAlert.c.setVisibility(4);
+        editorAlert.f.setVisibility(4);
+        editorAlert.s.setVisibility(4);
+        editorAlert.H = false;
     }
 }

@@ -1,100 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class tf0 extends FrameLayout {
-    public final bi.me a;
-    public final bi.d b;
-    public final tt c;
-    public t71 d;
-    public long e;
-    public float f;
-    public bi.t4 h;
-    public Utilities.Callback n;
-    public Runnable r;
+public final /* synthetic */ class tf0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vf0 b;
 
-    public tf0(Context context, org.telegram.ui.ActionBar.f6 f6Var, ia iaVar) {
-        super(context);
-        this.e = -1L;
-        this.f = 1.39f;
-        org.telegram.ui.ActionBar.l lVar = new org.telegram.ui.ActionBar.l(context, f6Var);
-        lVar.setBackButtonImage(R.drawable.ic_ab_back);
-        lVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        lVar.C(-1, false);
-        lVar.A(587202559, false);
-        lVar.setActionBarMenuOnItemClick(new org.telegram.ui.vo(this, 10));
-        addView(lVar, w7.a6.e(-1, -2, 55));
-        bi.me meVar = new bi.me(context, null, null, f6Var, iaVar);
-        this.a = meVar;
-        meVar.X0 = true;
-        addView(meVar, w7.a6.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
-        bi.d dVar = new bi.d(context, f6Var, true);
-        this.b = dVar;
-        dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
-        dVar.e();
-        addView(dVar, w7.a6.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        tt ttVar = new tt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = ttVar;
-        ttVar.setOnClickListener(new bi.q(this, context, f6Var, 22));
-        addView(ttVar, w7.a6.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        meVar.setDelegate(new og.u0(this));
+    public /* synthetic */ tf0(vf0 vf0Var, int i10) {
+        this.a = i10;
+        this.b = vf0Var;
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, t71 t71Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        int i10;
-        bi.d dVar = this.b;
-        dVar.a = f6Var;
-        dVar.j();
-        int i11 = photoEntry.width;
-        if (i11 <= 0 || (i10 = photoEntry.height) <= 0) {
-            this.f = 1.39f;
-        } else {
-            this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                vf0 vf0Var = this.b;
+                vf0Var.getClass();
+                vf0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vf0Var.invalidate();
+                break;
+            default:
+                vf0 vf0Var2 = this.b;
+                vf0Var2.getClass();
+                vf0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vf0Var2.invalidate();
+                break;
         }
-        this.d = t71Var;
-        long j3 = photoEntry.coverSavedPosition;
-        if (j3 >= 0) {
-            this.e = j3;
-            t71Var.L(j3, false);
-        } else {
-            this.e = t71Var.n();
-        }
-        String path = t71Var.F.getPath();
-        long p5 = t71Var.p();
-        i2.e0 e0Var = t71Var.d;
-        e0Var.B1();
-        this.a.o(false, path, p5, e0Var.Z);
-        long p10 = t71Var.p();
-        float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, t71Var.p()));
-        bi.me meVar = this.a;
-        meVar.setVideoLeft(max2);
-        meVar.setVideoRight(max2 + max);
-        meVar.Z0 = 0L;
-        meVar.a1 = p10;
-        bi.he heVar = meVar.h;
-        if (heVar != null) {
-            bi.he.a(heVar, true);
-        }
-        meVar.k();
-    }
-
-    public long getTime() {
-        return this.e;
-    }
-
-    public void setOnClose(Runnable runnable) {
-        this.r = runnable;
-    }
-
-    public void setOnGalleryImage(Utilities.Callback<MediaController.PhotoEntry> callback) {
-        this.n = callback;
     }
 }

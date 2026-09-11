@@ -15,7 +15,7 @@ import r7.p;
 import u6.f;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new j(5);
@@ -190,8 +190,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Object invoke = method.invoke(workSource, null);
                 l.h(invoke);
                 z10 = ((Boolean) invoke).booleanValue();
-            } catch (Exception e) {
-                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e);
+            } catch (Exception e7) {
+                Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e7);
             }
             if (!z10) {
                 u10.append(", ");
@@ -211,8 +211,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Object invoke2 = method2.invoke(workSource, null);
                 l.h(invoke2);
                 intValue = ((Integer) invoke2).intValue();
-            } catch (Exception e7) {
-                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e7);
+            } catch (Exception e10) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e10);
             }
             if (intValue != 0) {
                 z10 = false;

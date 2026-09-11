@@ -1,56 +1,42 @@
 package zh;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.Components.l40;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Object c;
+public final class b3 extends FrameLayout {
+    public final int[] a;
+    public final /* synthetic */ c3 b;
 
-    public /* synthetic */ b3(int i10, View view, Object obj) {
-        this.a = i10;
-        this.b = view;
-        this.c = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b3(c3 c3Var, Context context) {
+        super(context);
+        this.b = c3Var;
+        this.a = new int[2];
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        Object obj = this.c;
-        View view = this.b;
-        switch (i10) {
-            case 0:
-                ProfileStoriesView profileStoriesView = (ProfileStoriesView) view;
-                boolean[] zArr = (boolean[]) obj;
-                int i11 = ProfileStoriesView.s0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!zArr[0] && floatValue > 0.2f) {
-                    zArr[0] = true;
-                    if (SharedConfig.getDevicePerformanceClass() > 0) {
-                        AndroidUtilities.vibrateCursor(profileStoriesView);
-                        AndroidUtilities.runOnUIThread(new xh.x(profileStoriesView, 25), 180L);
-                    }
-                }
-                profileStoriesView.W = Math.max(1.0f, floatValue);
-                profileStoriesView.invalidate();
-                break;
-            default:
-                k kVar = (k) view;
-                View view2 = (View) obj;
-                kVar.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f7 = 1.0f - floatValue2;
-                view2.setAlpha(f7);
-                view2.setTranslationY((-AndroidUtilities.dp(5.0f)) * floatValue2);
-                kVar.y.setAlpha(floatValue2);
-                kVar.y.setTranslationY(AndroidUtilities.dp(5.0f) * f7);
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        FrameLayout frameLayout;
+        super.onLayout(z10, i10, i11, i12, i13);
+        c3 c3Var = this.b;
+        l40 l40Var = c3Var.i;
+        if (l40Var == null || l40Var.d.getChildCount() < 2 || c3Var.r == null || (frameLayout = c3Var.m) == null) {
+            return;
         }
+        int[] iArr = this.a;
+        frameLayout.getLocationInWindow(iArr);
+        float translationX = iArr[0] - c3Var.m.getTranslationX();
+        float translationY = iArr[1] - c3Var.m.getTranslationY();
+        View childAt = l40Var.d.getChildAt(1);
+        childAt.getLocationInWindow(iArr);
+        float translationX2 = iArr[0] - childAt.getTranslationX();
+        float translationY2 = iArr[1] - childAt.getTranslationY();
+        c3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - l40Var.getMeasuredHeight());
+        c3Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
     }
 }

@@ -1,156 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public class o20 extends ScrollView {
-    public final int a;
-    public final a0.i b;
-    public final ArrayList c;
-    public final n20 d;
+public class o20 {
+    public boolean a;
+    public boolean b;
+    public int d;
     public int e;
-    public l20 f;
-    public boolean h;
-    public int n;
+    public int f;
+    public int g;
+    public Shader i;
+    public boolean m;
+    public final Paint c = new Paint(1);
+    public final RectF h = new RectF();
+    public final Matrix j = new Matrix();
+    public Bitmap k = null;
+    public final int[] l = new int[4];
 
-    public o20(Context context, int i10) {
-        super(context);
-        this.b = new a0.i();
-        this.c = new ArrayList();
-        this.a = i10;
-        n20 n20Var = new n20(this, context);
-        this.d = n20Var;
-        setVerticalScrollBarEnabled(false);
-        addView(n20Var, w7.a6.c(-2.0f, -1));
+    public final int a() {
+        int i10 = this.d;
+        int i11 = this.e;
+        if (i11 != 0) {
+            i10 = i0.a.d(0.5f, i10, i11);
+        }
+        int i12 = this.f;
+        if (i12 != 0) {
+            i10 = i0.a.d(0.5f, i10, i12);
+        }
+        int i13 = this.g;
+        return i13 != 0 ? i0.a.d(0.5f, i10, i13) : i10;
     }
 
-    public void a(w30 w30Var) {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.c.add(w30Var);
-        if (!w30Var.d) {
-            o20Var.b.k(w30Var, w30Var.getUid());
-        }
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            n20Var.a.setupEndValues();
-            n20Var.a.cancel();
-        }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new m20(n20Var, 1));
-        n20Var.a.setDuration(150L);
-        n20Var.d = w30Var;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<w30, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<w30, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(n20Var.d, (Property<w30, Float>) View.ALPHA, 0.0f, 1.0f));
-        n20Var.addView(w30Var);
+    public final void b(float f7, float f10, float f11, float f12) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f7, f10, f11, f12);
+        c(rectF);
     }
 
-    public void b() {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.h = true;
-        ArrayList arrayList2 = o20Var.c;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        arrayList2.clear();
-        ArrayList arrayList4 = n20Var.e;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((w30) arrayList3.get(i10)).setOnClickListener(null);
+    public final void c(RectF rectF) {
+        RectF rectF2 = this.h;
+        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
+            return;
         }
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            n20Var.a.setupEndValues();
-            n20Var.a.cancel();
-        }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new bi.u3(24, n20Var, arrayList3));
-        arrayList.clear();
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            w30 w30Var = (w30) arrayList3.get(i11);
-            arrayList.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.ALPHA, 1.0f, 0.0f));
-        }
-        n20Var.requestLayout();
+        rectF2.set(rectF);
+        e();
     }
 
-    public void c(w30 w30Var) {
-        n20 n20Var = this.d;
-        ArrayList arrayList = n20Var.e;
-        ArrayList arrayList2 = n20Var.c;
-        o20 o20Var = n20Var.r;
-        o20Var.h = true;
-        if (!w30Var.d) {
-            o20Var.b.l(w30Var.getUid());
+    public final void d(int i10, int i11, int i12, int i13) {
+        if (this.i != null && this.d == i10 && this.e == i11 && this.f == i12 && this.g == i13) {
+            return;
         }
-        o20Var.c.remove(w30Var);
-        w30Var.setOnClickListener(null);
-        AnimatorSet animatorSet = n20Var.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            n20Var.a.cancel();
+        this.d = i10;
+        int[] iArr = this.l;
+        iArr[0] = i10;
+        this.e = i11;
+        iArr[1] = i11;
+        this.f = i12;
+        iArr[2] = i12;
+        this.g = i13;
+        iArr[3] = i13;
+        Paint paint = this.c;
+        if (i11 == 0) {
+            this.i = null;
+            paint.setShader(null);
+            paint.setColor(i10);
+        } else if (i12 == 0) {
+            if (this.a && this.b) {
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient;
+                paint.setShader(linearGradient);
+            } else {
+                LinearGradient linearGradient2 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i10, i11}, (float[]) null, Shader.TileMode.CLAMP);
+                this.i = linearGradient2;
+                paint.setShader(linearGradient2);
+            }
+        } else if (!this.m) {
+            if (this.k == null) {
+                this.k = Bitmap.createBitmap(60, 80, Bitmap.Config.ARGB_8888);
+            }
+            Utilities.generateGradient(this.k, 0, 0.0f, iArr);
+            Bitmap bitmap = this.k;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.i = bitmapShader;
+            paint.setShader(bitmapShader);
+        } else if (this.a && this.b) {
+            LinearGradient linearGradient3 = new LinearGradient(0.0f, 0.0f, 80.0f, 80.0f, new int[]{i10, i11, i12}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient3;
+            paint.setShader(linearGradient3);
+        } else {
+            LinearGradient linearGradient4 = new LinearGradient(this.a ? 80.0f : 0.0f, 0.0f, 0.0f, 80.0f, new int[]{i10, i11, i12}, (float[]) null, Shader.TileMode.CLAMP);
+            this.i = linearGradient4;
+            paint.setShader(linearGradient4);
         }
-        n20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        n20Var.a = animatorSet2;
-        animatorSet2.addListener(new bi.u3(23, n20Var, w30Var));
-        n20Var.a.setDuration(150L);
-        arrayList.clear();
-        arrayList.add(w30Var);
-        arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(w30Var, (Property<w30, Float>) View.ALPHA, 1.0f, 0.0f));
-        n20Var.requestLayout();
+        e();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        float f7 = this.e;
-        float y3 = motionEvent.getY();
-        if (action != 0 || y3 <= f7) {
-            return super.dispatchTouchEvent(motionEvent);
+    public void e() {
+        if (this.i == null) {
+            return;
         }
-        return false;
-    }
-
-    public ViewGroup getSpansContainer() {
-        return this.d;
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        if (this.h) {
-            this.h = false;
-            return false;
-        }
-        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.a2.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.a2.C(50.0f, this.n, rect.bottom);
-        return super.requestChildRectangleOnScreen(view, rect, z10);
-    }
-
-    public void setDelegate(l20 l20Var) {
-        this.f = l20Var;
+        RectF rectF = this.h;
+        float width = rectF.width() / 60.0f;
+        float height = rectF.height() / 80.0f;
+        Matrix matrix = this.j;
+        matrix.reset();
+        matrix.postTranslate(rectF.left, rectF.top);
+        matrix.preScale(width, height);
+        this.i.setLocalMatrix(matrix);
     }
 }

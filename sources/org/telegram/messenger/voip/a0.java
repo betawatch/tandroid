@@ -1,49 +1,57 @@
 package org.telegram.messenger.voip;
 
 import java.util.HashMap;
-import org.telegram.messenger.AccountInstance;
+import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements Runnable {
+public final /* synthetic */ class a0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ String g;
 
-    public /* synthetic */ a0(int i10, int i11, int i12, long j3, Object obj) {
-        this.a = i12;
-        this.e = obj;
-        this.b = i10;
+    public /* synthetic */ a0(MessagesController messagesController, HashMap hashMap, String str, a0.i iVar, long j3, int i10) {
+        this.a = 2;
+        this.b = messagesController;
+        this.d = hashMap;
+        this.g = str;
+        this.e = iVar;
         this.c = j3;
-        this.d = i11;
+        this.f = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((VoIPService) this.e).lambda$createGroupInstance$76(this.b, this.c, this.d);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$51(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
+                break;
+            case 1:
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$43(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
                 break;
             default:
-                zh.t0 t0Var = (zh.t0) this.e;
-                HashMap hashMap = t0Var.F;
-                int i10 = this.b;
-                long j3 = this.c;
-                if (i10 == 0) {
-                    str = a4.a.o(j3, "");
-                } else {
-                    str = i10 + "_" + j3 + "_" + this.d;
-                }
-                Integer num = (Integer) hashMap.get(str);
-                if (num != null) {
-                    AccountInstance.getInstance(t0Var.e).getConnectionsManager().cancelRequest(num.intValue(), true);
-                    hashMap.remove(str);
-                    break;
-                }
+                ((MessagesController) this.b).lambda$reloadWebPages$187((HashMap) this.d, this.g, (a0.i) this.e, this.c, this.f, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ a0(VoIPService voIPService, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i10, String str, int i11) {
+        this.a = i11;
+        this.b = voIPService;
+        this.c = j3;
+        this.d = hashSet;
+        this.e = atomicInteger;
+        this.f = i10;
+        this.g = str;
     }
 }

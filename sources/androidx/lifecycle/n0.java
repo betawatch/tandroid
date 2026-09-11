@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
@@ -33,7 +33,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 C(Class cls, v1.b bVar) {
+    public final p0 U(Class cls, v1.b bVar) {
         q0 q0Var = q0.b;
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         String str = (String) linkedHashMap.get(q0Var);
@@ -42,18 +42,27 @@ public final class n0 implements s0 {
         }
         if (linkedHashMap.get(j0.a) == null || linkedHashMap.get(j0.b) == null) {
             if (this.d != null) {
-                return a(cls, str);
+                return b(cls, str);
             }
             throw new IllegalStateException("SAVED_STATE_REGISTRY_OWNER_KEY andVIEW_MODEL_STORE_OWNER_KEY must be provided in the creation extras tosuccessfully create a ViewModel.");
         }
         Application application = (Application) linkedHashMap.get(q0.a);
         boolean isAssignableFrom = a.class.isAssignableFrom(cls);
         Constructor a2 = (!isAssignableFrom || application == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
-        return a2 == null ? this.b.C(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
+        return a2 == null ? this.b.U(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
+    }
+
+    @Override // androidx.lifecycle.s0
+    public final p0 a(Class cls) {
+        String canonicalName = cls.getCanonicalName();
+        if (canonicalName != null) {
+            return b(cls, canonicalName);
+        }
+        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final p0 a(Class cls, String str) {
+    public final p0 b(Class cls, String str) {
         Object obj;
         Application application;
         o oVar = this.d;
@@ -64,14 +73,14 @@ public final class n0 implements s0 {
         Constructor a2 = (!isAssignableFrom || this.a == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
         if (a2 == null) {
             if (this.a != null) {
-                return this.b.b(cls);
+                return this.b.a(cls);
             }
             if (q0.c == null) {
                 q0.c = new q0();
             }
             q0 q0Var = q0.c;
             kotlin.jvm.internal.i.b(q0Var);
-            return q0Var.b(cls);
+            return q0Var.a(cls);
         }
         m.p pVar = this.e;
         kotlin.jvm.internal.i.b(pVar);
@@ -105,14 +114,5 @@ public final class n0 implements s0 {
             p0.a(savedStateHandleController);
         }
         return b11;
-    }
-
-    @Override // androidx.lifecycle.s0
-    public final p0 b(Class cls) {
-        String canonicalName = cls.getCanonicalName();
-        if (canonicalName != null) {
-            return a(cls, canonicalName);
-        }
-        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
     }
 }

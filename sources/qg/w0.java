@@ -1,21 +1,38 @@
 package qg;
 
-import android.content.Context;
-import android.widget.Scroller;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class w0 extends Scroller {
-    public final /* synthetic */ x0 a;
+public final /* synthetic */ class w0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(x0 x0Var, Context context) {
-        super(context);
-        this.a = x0Var;
+    public /* synthetic */ w0(c1 c1Var, int i10) {
+        this.a = i10;
+        this.b = c1Var;
     }
 
-    @Override // android.widget.Scroller
-    public final void startScroll(int i10, int i11, int i12, int i13, int i14) {
-        super.startScroll(i10, i11, i12, i13, (this.a.x0 ? 3 : 1) * i14);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                b1 b1Var = this.b.a;
+                if (b1Var != null) {
+                    b1Var.b();
+                    break;
+                }
+                break;
+            case 1:
+                c1 c1Var = this.b;
+                c1Var.c.a(c1Var.r);
+                a1 a1Var = c1Var.d;
+                a1Var.getClass();
+                a1Var.postRunnable(new z0(a1Var, 2));
+                c1Var.d = null;
+                break;
+            default:
+                c1 c1Var2 = this.b;
+                c1Var2.c.q(c1Var2.x);
+                break;
+        }
     }
 }

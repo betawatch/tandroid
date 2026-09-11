@@ -2,9 +2,9 @@ package gb;
 
 import java.util.Iterator;
 import java.util.Map;
-import v7.p8;
+import v7.m8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class t extends db.u {
     public final v a;
@@ -39,11 +39,11 @@ public abstract class t extends db.u {
             }
             aVar.f();
             return b(a2);
-        } catch (IllegalAccessException e) {
-            p8 p8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
-        } catch (IllegalStateException e7) {
-            throw new db.j(e7);
+        } catch (IllegalAccessException e7) {
+            m8 m8Var = ib.c.a;
+            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
+        } catch (IllegalStateException e10) {
+            throw new db.j(e10);
         }
     }
 
@@ -60,9 +60,9 @@ public abstract class t extends db.u {
                 ((s) it.next()).a(bVar, obj);
             }
             bVar.f();
-        } catch (IllegalAccessException e) {
-            p8 p8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e);
+        } catch (IllegalAccessException e7) {
+            m8 m8Var = ib.c.a;
+            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
         }
     }
 }

@@ -18,13 +18,14 @@ import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import n4.y;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j implements ServiceConnection {
     public int a = 0;
     public final Messenger b;
-    public of.b c;
+    public y c;
     public final ArrayDeque d;
     public final SparseArray e;
     public final /* synthetic */ l f;
@@ -171,8 +172,8 @@ public final class j implements ServiceConnection {
                 try {
                     a2 = t6.a.a();
                     context = (Context) this.f.b;
-                } catch (SecurityException e) {
-                    e = e;
+                } catch (SecurityException e7) {
+                    e = e7;
                 }
                 try {
                     if (a2.c(context, context.getClass().getName(), intent, this, 1, null)) {
@@ -180,8 +181,8 @@ public final class j implements ServiceConnection {
                     } else {
                         a("Unable to bind to service");
                     }
-                } catch (SecurityException e7) {
-                    e = e7;
+                } catch (SecurityException e10) {
+                    e = e10;
                     b("Unable to bind to service", e);
                     return true;
                 }
@@ -200,7 +201,7 @@ public final class j implements ServiceConnection {
         if (Log.isLoggable("MessengerIpcClient", 2)) {
             Log.v("MessengerIpcClient", "Service connected");
         }
-        ((ScheduledExecutorService) this.f.c).execute(new s(17, this, iBinder));
+        ((ScheduledExecutorService) this.f.c).execute(new s(16, this, iBinder));
     }
 
     @Override // android.content.ServiceConnection

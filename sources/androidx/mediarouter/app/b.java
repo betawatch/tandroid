@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.SparseArray;
-import v7.v7;
+import v7.u7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public final int a;
@@ -24,7 +24,7 @@ public final class b extends AsyncTask {
         SparseArray<Drawable.ConstantState> sparseArray = MediaRouteButton.sRemoteIndicatorCache;
         int i10 = this.a;
         if (sparseArray.get(i10) == null) {
-            return v7.b(this.b, i10);
+            return u7.b(this.b, i10);
         }
         return null;
     }

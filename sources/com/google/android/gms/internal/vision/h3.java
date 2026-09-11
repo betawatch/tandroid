@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.p6;
+import ji.u4;
+import w7.m6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -91,8 +92,8 @@ public abstract class h3 {
             }
             try {
                 j();
-            } catch (RemoteException e) {
-                Log.e((String) this.f, "Could not finalize native handle", e);
+            } catch (RemoteException e7) {
+                Log.e((String) this.f, "Could not finalize native handle", e7);
             }
         }
     }
@@ -113,8 +114,8 @@ public abstract class h3 {
                 }
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
-                } catch (y6.b e) {
-                    p6.a(e, "Error loading optional module %s", str);
+                } catch (y6.b e7) {
+                    m6.a(e7, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +135,8 @@ public abstract class h3 {
             if (eVar != null) {
                 try {
                     this.e = i(eVar, this.a);
-                } catch (RemoteException | y6.b e7) {
-                    Log.e((String) this.f, "Error creating remote native handle", e7);
+                } catch (RemoteException | y6.b e10) {
+                    Log.e((String) this.f, "Error creating remote native handle", e10);
                 }
             }
             boolean z10 = this.c;
@@ -149,15 +150,15 @@ public abstract class h3 {
         }
     }
 
-    public h3(Context context, m.g3 g3Var) {
+    public h3(Context context, u4 u4Var) {
         this.e = new androidx.mediarouter.app.c(this, 10);
         if (context != null) {
             this.a = context;
-            if (g3Var == null) {
-                this.d = new m.g3(new ComponentName(context, getClass()), 12);
+            if (u4Var == null) {
+                this.d = new u4(new ComponentName(context, getClass()), 16);
                 return;
             } else {
-                this.d = g3Var;
+                this.d = u4Var;
                 return;
             }
         }

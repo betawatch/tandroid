@@ -1,66 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class fb0 extends v81 {
-    public final /* synthetic */ ec0 T;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb0(ec0 ec0Var, Context context, ac0 ac0Var) {
-        super(context, ac0Var);
-        this.T = ec0Var;
-    }
-
-    @Override // org.telegram.ui.Components.v81, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
+public final class fb0 extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        org.telegram.ui.Cells.t1 t1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
         int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
+        }
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = t1Var.getExtraInsetHeight();
+        int i11 = 0;
         while (true) {
-            View[] viewArr = this.T.f.e;
-            if (i10 >= viewArr.length) {
-                z10 = false;
+            if (i11 >= currentPosition.siblingHeights.length) {
                 break;
             }
-            View view = viewArr[i10];
-            if (view != null) {
-                yb0 yb0Var = (yb0) view;
-                if (yb0Var.a == 0) {
-                    z10 = yb0Var.e.i;
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
+        }
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.w1.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
                     break;
                 }
+                i10++;
+            } else {
+                break;
             }
-            i10++;
         }
-        if (z10) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.v81
-    public final void u() {
-        View view = this.e[0];
-        if (view instanceof yb0) {
-            ((yb0) view).e.W();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.v81
-    public final void w(boolean z10) {
-        ec0 ec0Var = this.T;
-        ec0Var.e.setSelectedTab(ec0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof yb0) {
-            ((yb0) view).e.H();
-        }
-        View view2 = viewArr[1];
-        if (view2 instanceof yb0) {
-            ((yb0) view2).e.H();
-        }
+        rect.bottom = -round;
     }
 }

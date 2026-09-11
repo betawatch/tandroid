@@ -1,44 +1,63 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zw extends s4.s {
-    public final /* synthetic */ rz Q;
+public final class zw extends z4.g {
+    public final /* synthetic */ kz w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zw(rz rzVar) {
-        super(5);
-        this.Q = rzVar;
+    public zw(kz kzVar, Context context) {
+        super(context);
+        this.w0 = kzVar;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        int o02 = super.o0(i10, eVar, z0Var);
-        rz rzVar = this.Q;
-        if (o02 != 0 && rzVar.D0.getScrollState() == 1) {
-            rzVar.X1 = false;
-            rzVar.a0();
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
         }
-        if (rzVar.T0 == null) {
-            fg.h1 h1Var = new fg.h1(rzVar, rzVar.c1, rzVar.t1.a(), rzVar.t1.f(), 1);
-            rzVar.T0 = h1Var;
-            h1Var.a();
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
         }
-        rzVar.T0.b();
-        return o02;
-    }
-
-    @Override // s4.c0, s4.o0
-    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
         try {
-            ii.o oVar = new ii.o(recyclerView.getContext(), 2);
-            oVar.a = i10;
-            w0(oVar);
-        } catch (Exception e) {
-            FileLog.e(e);
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        kz kzVar = this.w0;
+        jw jwVar = kzVar.I;
+        kz.c(kzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
+            return;
+        }
+        if (i10 != 0) {
+            if (i10 == 1) {
+                kzVar.h0.x0(0);
+                return;
+            } else {
+                kzVar.D0.x0(1);
+                return;
+            }
+        }
+        kzVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(jwVar, (Property<jw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(pr.h);
+        ofFloat.start();
+        kzVar.I(1, 0);
+        if (jwVar != null) {
+            jwVar.j(0, true);
         }
     }
 }

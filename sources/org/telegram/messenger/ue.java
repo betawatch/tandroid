@@ -1,49 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.tgnet.tl.TL_payments;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ue implements Utilities.Callback2 {
+public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ ue(Object obj, int i10) {
+    public /* synthetic */ ue(int i10, long j3, long j10, MessagesStorage messagesStorage) {
         this.a = i10;
-        this.b = obj;
+        this.b = messagesStorage;
+        this.c = j3;
+        this.d = j10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.5.lambda$getRemote$0((Utilities.Callback4) this.b, (TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$clearUserPhoto$93(this.c, this.d);
                 break;
             case 1:
-                ((AiTonesController) this.b).lambda$request$0((TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$saveChatInviter$132(this.c, this.d);
                 break;
             case 2:
-                ((ChatThemeController) this.b).lambda$setDialogTheme$4((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$setDialogFlags$37(this.c, this.d);
                 break;
             case 3:
-                ((GiftAuctionController) this.b).lambda$requestUserAuctions$10((TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 4:
-                ((MediaDataController) this.b).lambda$loadHints$148((TLRPC.contacts_TopPeers) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 5:
-                MessagesController.lambda$getNextReactionMentionInternal$3((q0.a) this.b, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 6:
-                MessagesController.lambda$createCommunity$255((Utilities.Callback2) this.b, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$removeTopic$57(this.c, this.d);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$deletePollOption$27((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$deleteUserChatHistory$87(this.c, this.d);
                 break;
         }
     }

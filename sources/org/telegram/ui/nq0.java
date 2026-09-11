@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nq0 extends org.telegram.ui.ActionBar.p2 {
+public final class nq0 extends org.telegram.ui.ActionBar.n2 {
     public Bitmap a;
     public BitmapDrawable b;
     public mq0 c;
@@ -23,16 +23,16 @@ public final class nq0 extends org.telegram.ui.ActionBar.p2 {
     public boolean e;
     public boolean f;
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackgroundColor(-13421773);
-        this.actionBar.A(-12763843, false);
+        this.actionBar.B(-12763843, false);
         this.actionBar.setTitleColor(-1);
         this.actionBar.C(-1, false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.CropImage));
-        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 14));
+        this.actionBar.setActionBarMenuOnItemClick(new o70(this, 15));
         this.actionBar.n().h(1, R.drawable.ic_ab_done, LocaleController.getString(R.string.Done), AndroidUtilities.dp(56.0f));
         lq0 lq0Var = new lq0(this, context);
         this.d = lq0Var;
@@ -42,12 +42,12 @@ public final class nq0 extends org.telegram.ui.ActionBar.p2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         int max;
         if (this.a == null) {
@@ -77,7 +77,7 @@ public final class nq0 extends org.telegram.ui.ActionBar.p2 {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         Bitmap bitmap = this.a;

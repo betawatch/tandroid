@@ -6,13 +6,14 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Iterator;
 import java.util.regex.Pattern;
+import n4.y;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
@@ -125,7 +126,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = w7.b(num);
+            String b11 = v7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -136,7 +137,7 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new of.b(15, this, nVar));
+        this.q.a(b10, new y(this, nVar, false, 16));
     }
 
     public final long e(double d, long j3, long j10) {

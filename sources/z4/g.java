@@ -22,6 +22,9 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
+import bi.fb;
+import bi.o5;
+import bi.t9;
 import fb.i;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,19 +35,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.l2;
 import r0.a0;
 import r0.i0;
+import rg.b0;
 import s4.d1;
-import sg.a1;
-import zh.a3;
-import zh.e6;
-import zh.k5;
-import zh.k7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
     public static final i t0 = new i(6);
-    public static final l2 u0 = new l2(5);
+    public static final l2 u0 = new l2(4);
     public static final i v0 = new i(7);
     public int E;
     public float F;
@@ -84,12 +83,12 @@ public class g extends ViewGroup {
     public int j0;
     public ArrayList k0;
     public e l0;
-    public th.e m0;
+    public a1.c m0;
     public Parcelable n;
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final a1 q0;
+    public final b0 q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -110,7 +109,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new a1(this, 8);
+        this.q0 = new b0(this, 11);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -131,7 +130,7 @@ public class g extends ViewGroup {
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
-        a0.j(this, new n7.a1(this));
+        a0.j(this, new o0.a(this));
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -494,12 +493,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            a1 a1Var = this.q0;
+            b0 b0Var = this.q0;
             if (!z10) {
-                a1Var.run();
+                b0Var.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(a1Var);
+                postOnAnimation(b0Var);
             }
         }
     }
@@ -566,7 +565,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) hc.b.i(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.g.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -610,7 +609,7 @@ public class g extends ViewGroup {
     public final void h(int i10) {
         e eVar = this.l0;
         if (eVar != null) {
-            eVar.a(i10);
+            eVar.b(i10);
         }
         ArrayList arrayList = this.k0;
         if (arrayList != null) {
@@ -618,7 +617,7 @@ public class g extends ViewGroup {
             for (int i11 = 0; i11 < size; i11++) {
                 e eVar2 = (e) this.k0.get(i11);
                 if (eVar2 != null) {
-                    eVar2.a(i10);
+                    eVar2.b(i10);
                 }
             }
         }
@@ -807,7 +806,7 @@ public class g extends ViewGroup {
         }
         e eVar = this.l0;
         if (eVar != null) {
-            eVar.b(f7, i10, i11);
+            eVar.a(f7, i10, i11);
         }
         ArrayList arrayList = this.k0;
         if (arrayList != null) {
@@ -815,7 +814,7 @@ public class g extends ViewGroup {
             for (int i16 = 0; i16 < size; i16++) {
                 e eVar2 = (e) this.k0.get(i16);
                 if (eVar2 != null) {
-                    eVar2.b(f7, i10, i11);
+                    eVar2.a(f7, i10, i11);
                 }
             }
         }
@@ -826,26 +825,26 @@ public class g extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((d) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    k7 k7Var = (k7) this.m0.b;
-                    e6 e6Var = (e6) childAt2;
+                    fb fbVar = (fb) this.m0.b;
+                    t9 t9Var = (t9) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        e6Var.a(false);
-                        AndroidUtilities.runOnUIThread(new k5(e6Var, 3), 16L);
+                        t9Var.a(false);
+                        AndroidUtilities.runOnUIThread(new a3.c(t9Var, 27), 16L);
                     } else {
-                        if (!e6Var.d) {
-                            e6Var.a(true);
-                            if (k7Var.x0 != null) {
-                                a3 a3Var = e6Var.a;
-                                long j3 = e6Var.b;
-                                ArrayList arrayList2 = e6Var.c;
-                                a3Var.B1 = j3;
-                                a3Var.z1 = arrayList2;
-                                a3Var.o0(-1);
+                        if (!t9Var.d) {
+                            t9Var.a(true);
+                            if (fbVar.x0 != null) {
+                                o5 o5Var = t9Var.a;
+                                long j3 = t9Var.b;
+                                ArrayList arrayList2 = t9Var.c;
+                                o5Var.B1 = j3;
+                                o5Var.z1 = arrayList2;
+                                o5Var.o0(-1);
                             } else {
-                                e6Var.a.U0(-1, e6Var.b);
+                                t9Var.a.U0(-1, t9Var.b);
                             }
                         }
-                        e6Var.a.setOffset(left2);
+                        t9Var.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);
@@ -1441,7 +1440,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) hc.b.i(1, arrayList);
+        c cVar2 = (c) i2.g.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1660,7 +1659,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            hc.b.w(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i2.g.v(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

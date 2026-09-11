@@ -5,7 +5,6 @@ import android.util.Pair;
 import b2.l1;
 import e2.d0;
 import e9.a1;
-import e9.g0;
 import e9.i0;
 import g2.c0;
 import j$.util.DesugarCollections;
@@ -13,16 +12,17 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import m.g3;
-import v7.y7;
+import ji.u4;
+import k2.g0;
+import v7.x7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
     public final g2.h b;
     public final g2.h c;
-    public final ji.a d;
+    public final g0 d;
     public final Uri[] e;
     public final b2.s[] f;
     public final p2.c g;
@@ -35,24 +35,24 @@ public final class i {
     public Uri p;
     public boolean q;
     public x2.r r;
-    public final g3 j = new g3(4);
+    public final l.d j = new l.d();
     public byte[] m = d0.b;
     public long s = -9223372036854775807L;
 
-    public i(c cVar, p2.c cVar2, Uri[] uriArr, b2.s[] sVarArr, l2.h hVar, c0 c0Var, ji.a aVar, List list, j2.k kVar) {
+    public i(c cVar, p2.c cVar2, Uri[] uriArr, b2.s[] sVarArr, u4 u4Var, c0 c0Var, g0 g0Var, List list, j2.k kVar) {
         this.a = cVar;
         this.g = cVar2;
         this.e = uriArr;
         this.f = sVarArr;
-        this.d = aVar;
+        this.d = g0Var;
         this.i = list;
         this.k = kVar;
-        g2.h createDataSource = ((g2.g) hVar.b).createDataSource();
+        g2.h createDataSource = ((g2.g) u4Var.b).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((g2.g) hVar.b).createDataSource();
+        this.c = ((g2.g) u4Var.b).createDataSource();
         this.h = new l1("", sVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < uriArr.length; i10++) {
@@ -61,7 +61,7 @@ public final class i {
             }
         }
         l1 l1Var = this.h;
-        int[] f7 = y7.f(arrayList);
+        int[] f7 = x7.f(arrayList);
         g gVar = new g(l1Var, f7);
         gVar.g = gVar.s(l1Var.d[f7[0]]);
         this.r = gVar;
@@ -123,7 +123,7 @@ public final class i {
                 i0 i0Var2 = a10.r;
                 int i11 = (int) (longValue - j11);
                 if (i11 < 0 || i0Var2.size() < i11) {
-                    g0 g0Var = i0.b;
+                    e9.g0 g0Var = i0.b;
                     list = a1.e;
                 } else {
                     ArrayList arrayList = new ArrayList();
@@ -244,8 +244,8 @@ public final class i {
         if (uri == null) {
             return null;
         }
-        g3 g3Var = this.j;
-        byte[] bArr = (byte[]) ((d) g3Var.b).remove(uri);
+        l.d dVar = this.j;
+        byte[] bArr = (byte[]) ((d) dVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }

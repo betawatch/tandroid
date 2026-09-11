@@ -31,12 +31,11 @@ import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 import java.util.zip.Inflater;
 import p4.s0;
-import t7.u;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class d {
-    public static final u a = new u();
+    public static final na.d a = new na.d();
     public static final byte[] b = {112, 114, 111, 0};
     public static final byte[] c = {112, 114, 109, 0};
     public static final byte[] d = {48, 49, 53, 0};
@@ -176,7 +175,7 @@ public abstract class d {
         while (i11 < i10) {
             int read = inputStream.read(bArr, i11, i10 - i11);
             if (read < 0) {
-                throw new IllegalStateException(hc.b.j(i10, "Not enough bytes to read: "));
+                throw new IllegalStateException(i2.g.i(i10, "Not enough bytes to read: "));
             }
             i11 += read;
         }

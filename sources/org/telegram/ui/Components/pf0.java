@@ -1,107 +1,75 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.webkit.JavascriptInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class pf0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+    public final /* synthetic */ org.telegram.ui.hu0 a;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 5;
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i11 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i12 = 1;
-        while (i12 < i10) {
-            int i13 = (i12 - 1) * 2;
-            float f14 = fArr[i13];
-            float f15 = fArr[i13 + 1];
-            int i14 = i12 * 2;
-            float f16 = fArr[i14];
-            float f17 = fArr[i14 + 1];
-            int i15 = i12 + 1;
-            int i16 = i15 * 2;
-            float f18 = fArr[i16];
-            float f19 = fArr[i16 + 1];
-            int i17 = (i12 + 2) * 2;
-            float f20 = fArr[i17];
-            float f21 = fArr[i17 + 1];
-            int i18 = 1;
-            while (i18 < i11) {
-                float f22 = i18 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float z10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.vision.e2.z(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.vision.e2.z(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (z10 > f14) {
-                    arrayList2.add(Float.valueOf(z10));
-                    arrayList2.add(Float.valueOf(max));
+    public pf0(org.telegram.ui.hu0 hu0Var) {
+        this.a = hu0Var;
+    }
+
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        AndroidUtilities.runOnUIThread(new m8(this, Integer.parseInt(str), 6));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        AndroidUtilities.runOnUIThread(new nf0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f7) {
+        this.a.J = f7;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i10) {
+        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i10) {
+        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        org.telegram.ui.hu0 hu0Var = this.a;
+        hu0Var.H = i11;
+        String str = hu0Var.s;
+        if (str != null) {
+            qf0.a(hu0Var, str);
+            hu0Var.s = null;
+        }
+    }
+
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.hu0 hu0Var = this.a;
+        boolean z10 = hu0Var.G;
+        boolean z11 = false;
+        int i10 = 1;
+        hu0Var.G = parseInt == 1 || parseInt == 3;
+        hu0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i10 = 2;
                 }
-                if ((i18 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i18++;
-                i11 = 100;
             }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i12 = i15;
-            i10 = 5;
-            i11 = 100;
+            i10 = 3;
+        } else {
+            i10 = 4;
         }
-        arrayList2.add(Float.valueOf(fArr[12]));
-        arrayList2.add(Float.valueOf(fArr[13]));
-        this.f = new float[arrayList.size()];
-        int i19 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i19 >= fArr2.length) {
-                break;
-            }
-            fArr2[i19] = ((Float) arrayList.get(i19)).floatValue();
-            i19++;
+        if (i10 == 3 && hu0Var.h.getVisibility() != 4) {
+            AndroidUtilities.runOnUIThread(new nf0(this, 1), 300L);
         }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i20 = 0; i20 < size; i20++) {
-            fArr3[i20] = ((Float) arrayList2.get(i20)).floatValue();
-        }
-        return fArr3;
-    }
-
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
-    }
-
-    public final void c(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readFloat(z10);
-        this.b = inputSerializedData.readFloat(z10);
-        this.c = inputSerializedData.readFloat(z10);
-        this.d = inputSerializedData.readFloat(z10);
-        this.e = inputSerializedData.readFloat(z10);
-    }
-
-    public final void d(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
+        AndroidUtilities.runOnUIThread(new i2.g0(this, z11, i10, 1));
     }
 }

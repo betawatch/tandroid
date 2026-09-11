@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a0 {
     public boolean a;
@@ -49,7 +49,7 @@ public final class a0 {
         return i10 >= 0 && i10 < z0Var.b();
     }
 
-    public final View c(of.e eVar) {
+    public final View c(pf.e eVar) {
         List list = this.k;
         if (list == null) {
             View view = eVar.j(this.d, Long.MAX_VALUE).a;

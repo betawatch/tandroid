@@ -1,34 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class m20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n20 b;
+public final class m20 extends FrameLayout {
+    public TextView a;
 
-    public /* synthetic */ m20(n20 n20Var, int i10) {
-        this.a = i10;
-        this.b = n20Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                n20 n20Var = this.b;
-                NotificationCenter.getInstance(n20Var.r.a).onAnimationFinish(n20Var.f);
-                n20Var.requestLayout();
-                break;
-            default:
-                n20 n20Var2 = this.b;
-                n20Var2.d = null;
-                n20Var2.a = null;
-                n20Var2.b = false;
-                break;
-        }
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

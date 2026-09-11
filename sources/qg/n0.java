@@ -1,7 +1,33 @@
 package qg;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import ji.u4;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public interface n0 {
-    void setOffset(float f7);
+public final /* synthetic */ class n0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
+
+    public /* synthetic */ n0(q0 q0Var, int i10) {
+        this.a = i10;
+        this.b = q0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                q0 q0Var = this.b;
+                q0Var.c = null;
+                u4 u4Var = q0Var.a;
+                if (u4Var != null) {
+                    u4Var.n();
+                    break;
+                }
+                break;
+            default:
+                this.b.b();
+                break;
+        }
+    }
 }

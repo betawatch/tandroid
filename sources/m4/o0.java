@@ -1,36 +1,24 @@
 package m4;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float b;
 
-    public /* synthetic */ o0(int i10, boolean z10) {
+    public /* synthetic */ o0(float f7, int i10) {
         this.a = i10;
-        this.b = z10;
+        this.b = f7;
     }
 
     @Override // e2.h
     public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                ((l1) obj).X(this.b);
-                break;
-            case 1:
-                ((l1) obj).o0(this.b);
-                break;
-            case 2:
-                ((l1) obj).x(this.b);
+                ((j1) obj).a(this.b);
                 break;
             default:
-                View view = (View) obj;
-                if (view instanceof wg.k) {
-                    ((wg.k) view).g(this.b, true);
-                    break;
-                }
+                ((j1) obj).U(this.b);
                 break;
         }
     }

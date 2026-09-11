@@ -1,159 +1,125 @@
 package n7;
 
-import j$.util.Map;
-import java.io.Serializable;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Function;
+import j$.util.Objects;
+import java.util.Arrays;
+import java.util.Set;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public abstract class o implements Map, Serializable, j$.util.Map {
-    public static final Map.Entry[] b = new Map.Entry[0];
-    public transient p a;
+public abstract class o extends h implements Set, j$.util.Set {
+    public static final /* synthetic */ int c = 0;
+    public transient m b;
 
-    @Override // java.util.Map
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final p entrySet() {
-        p pVar = this.a;
-        if (pVar == null) {
-            s sVar = (s) this;
-            pVar = sVar.isEmpty() ? z.s : new r(sVar);
-            this.a = pVar;
+    public static o r(int i10, Object... objArr) {
+        if (i10 == 0) {
+            return y.s;
         }
-        return pVar;
+        if (i10 == 1) {
+            Object obj = objArr[0];
+            Objects.requireNonNull(obj);
+            return new b0(obj);
+        }
+        int s10 = s(i10);
+        Object[] objArr2 = new Object[s10];
+        int i11 = s10 - 1;
+        int i12 = 0;
+        int i13 = 0;
+        for (int i14 = 0; i14 < i10; i14++) {
+            Object obj2 = objArr[i14];
+            if (obj2 == null) {
+                throw new NullPointerException(i2.g.i(i14, "at index "));
+            }
+            int hashCode = obj2.hashCode();
+            int rotateLeft = (int) (Integer.rotateLeft((int) (hashCode * (-862048943)), 15) * 461845907);
+            while (true) {
+                int i15 = rotateLeft & i11;
+                Object obj3 = objArr2[i15];
+                if (obj3 == null) {
+                    objArr[i13] = obj2;
+                    objArr2[i15] = obj2;
+                    i12 += hashCode;
+                    i13++;
+                    break;
+                }
+                if (!obj3.equals(obj2)) {
+                    rotateLeft++;
+                }
+            }
+        }
+        Arrays.fill(objArr, i13, i10, (Object) null);
+        if (i13 == 1) {
+            Object obj4 = objArr[0];
+            Objects.requireNonNull(obj4);
+            return new b0(obj4);
+        }
+        if (s(i13) < s10 / 2) {
+            return r(i13, objArr);
+        }
+        if (i13 <= 0) {
+            objArr = Arrays.copyOf(objArr, i13);
+        }
+        return new y(i12, i11, i13, objArr, objArr2);
     }
 
-    @Override // java.util.Map
-    public final void clear() {
-        throw new UnsupportedOperationException();
+    public static int s(int i10) {
+        int max = Math.max(i10, 2);
+        if (max >= 751619276) {
+            if (max < 1073741824) {
+                return TLObject.FLAG_30;
+            }
+            throw new IllegalArgumentException("collection too large");
+        }
+        int highestOneBit = Integer.highestOneBit(max - 1);
+        do {
+            highestOneBit += highestOneBit;
+        } while (highestOneBit * 0.7d < max);
+        return highestOneBit;
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$compute(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        return Map.-CC.$default$computeIfAbsent(this, obj, function);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final boolean containsKey(Object obj) {
-        return get(obj) != null;
-    }
-
-    @Override // java.util.Map
-    public final boolean containsValue(Object obj) {
-        return ((s) this).d.contains(obj);
-    }
-
-    @Override // java.util.Map
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    @Override // java.util.Collection, java.util.Set
+    public boolean equals(Object obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj instanceof java.util.Map) {
-            return ((s) this).entrySet().equals(((java.util.Map) obj).entrySet());
+        if ((obj instanceof o) && (this instanceof y) && (((o) obj) instanceof y) && ((y) this).e != obj.hashCode()) {
+            return false;
         }
-        return false;
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ void forEach(BiConsumer biConsumer) {
-        Map.-CC.$default$forEach(this, biConsumer);
-    }
-
-    @Override // java.util.Map
-    public abstract Object get(Object obj);
-
-    @Override // java.util.Map, j$.util.Map
-    public final Object getOrDefault(Object obj, Object obj2) {
-        Object obj3 = get(obj);
-        return obj3 != null ? obj3 : obj2;
-    }
-
-    @Override // java.util.Map
-    public final int hashCode() {
-        return a.b(entrySet());
-    }
-
-    @Override // java.util.Map
-    public final boolean isEmpty() {
-        return ((s) this).size() == 0;
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        return Map.-CC.$default$merge(this, obj, obj2, biFunction);
-    }
-
-    @Override // java.util.Map
-    public final Object put(Object obj, Object obj2) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map
-    public final void putAll(java.util.Map map) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
-        return Map.-CC.$default$putIfAbsent(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean remove(Object obj, Object obj2) {
-        return Map.-CC.$default$remove(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ Object replace(Object obj, Object obj2) {
-        return Map.-CC.$default$replace(this, obj, obj2);
-    }
-
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ void replaceAll(BiFunction biFunction) {
-        Map.-CC.$default$replaceAll(this, biFunction);
-    }
-
-    public final String toString() {
-        s sVar = (s) this;
-        int size = sVar.size();
-        if (size < 0) {
-            throw new IllegalArgumentException(hc.b.j(size, "size cannot be negative but was: "));
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb2 = new StringBuilder((int) Math.min(size * 8, 1073741824L));
-        sb2.append('{');
-        boolean z10 = true;
-        for (Map.Entry entry : sVar.entrySet()) {
-            if (!z10) {
-                sb2.append(", ");
+        if (!(obj instanceof Set)) {
+            return false;
+        }
+        Set set = (Set) obj;
+        try {
+            if (size() == set.size()) {
+                return containsAll(set);
             }
-            sb2.append(entry.getKey());
-            sb2.append('=');
-            sb2.append(entry.getValue());
-            z10 = false;
+            return false;
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
         }
-        sb2.append('}');
-        return sb2.toString();
     }
 
-    @Override // java.util.Map
-    public final Object remove(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.Collection, java.util.Set
+    public int hashCode() {
+        return a.b(this);
     }
 
-    @Override // java.util.Map, j$.util.Map
-    public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
-        return Map.-CC.$default$replace(this, obj, obj2, obj3);
+    public m t() {
+        m mVar = this.b;
+        if (mVar != null) {
+            return mVar;
+        }
+        m u10 = u();
+        this.b = u10;
+        return u10;
+    }
+
+    public m u() {
+        Object[] array = toArray(h.a);
+        i iVar = m.b;
+        return m.t(array.length, array);
     }
 }

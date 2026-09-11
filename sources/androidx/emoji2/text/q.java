@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.n6;
+import w7.k6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
     public final o0.e b;
-    public final t7.u c;
+    public final na.d c;
     public final Object d = new Object();
     public Handler e;
     public ThreadPoolExecutor f;
@@ -24,7 +24,7 @@ public final class q implements k {
     public v7.w h;
 
     public q(Context context, o0.e eVar) {
-        n6.a(context, "Context cannot be null");
+        k6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = eVar;
         this.c = r.d;
@@ -71,7 +71,7 @@ public final class q implements k {
                     this.g = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new a3.d(this, 7));
+                this.f.execute(new a3.c(this, 8));
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -80,10 +80,10 @@ public final class q implements k {
 
     public final o0.i d() {
         try {
-            t7.u uVar = this.c;
+            na.d dVar = this.c;
             Context context = this.a;
             o0.e eVar = this.b;
-            uVar.getClass();
+            dVar.getClass();
             Object[] objArr = {eVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
@@ -92,15 +92,15 @@ public final class q implements k {
             j4.f a2 = o0.d.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(hc.b.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(i2.g.j(i10, "fetchFonts failed (", ")"));
             }
             o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
             if (iVarArr == null || iVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
             return iVarArr[0];
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException("provider not found", e);
+        } catch (PackageManager.NameNotFoundException e7) {
+            throw new RuntimeException("provider not found", e7);
         }
     }
 }

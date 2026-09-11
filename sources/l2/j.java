@@ -1,25 +1,24 @@
 package l2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public interface j {
-    boolean E();
+public final class j extends v2.b {
+    public final i d;
 
-    long J();
+    public j(i iVar, long j3, long j10) {
+        super(j3, j10);
+        this.d = iVar;
+    }
 
-    long K(long j3);
+    @Override // v2.l
+    public final long a() {
+        b();
+        return this.d.f(this.c);
+    }
 
-    long M(long j3, long j10);
-
-    long a(long j3);
-
-    long c(long j3, long j10);
-
-    long i(long j3, long j10);
-
-    long k(long j3, long j10);
-
-    m2.j m(long j3);
-
-    long w(long j3, long j10);
+    @Override // v2.l
+    public final long d() {
+        b();
+        return this.d.e(this.c);
+    }
 }

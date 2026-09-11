@@ -12,20 +12,19 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.fragment.app.j0;
 import java.security.Signature;
 import java.util.concurrent.Executor;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public class p extends androidx.fragment.app.s {
+public class p extends androidx.fragment.app.r {
     public final Handler k0 = new Handler(Looper.getMainLooper());
     public y l0;
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void H() {
         this.U = true;
         if (Build.VERSION.SDK_INT == 29 && v7.m.a(this.l0.c())) {
@@ -35,13 +34,13 @@ public class p extends androidx.fragment.app.s {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void I() {
         this.U = true;
         if (Build.VERSION.SDK_INT >= 29 || this.l0.o) {
             return;
         }
-        androidx.fragment.app.v k10 = k();
+        androidx.fragment.app.u k10 = k();
         if (k10 == null || !k10.isChangingConfigurations()) {
             N(0);
         }
@@ -64,8 +63,8 @@ public class p extends androidx.fragment.app.s {
             if (cancellationSignal != null) {
                 try {
                     z.a(cancellationSignal);
-                } catch (NullPointerException e) {
-                    Log.e("CancelSignalProvider", "Got NPE while canceling biometric authentication.", e);
+                } catch (NullPointerException e7) {
+                    Log.e("CancelSignalProvider", "Got NPE while canceling biometric authentication.", e7);
                 }
                 yVar2.b = null;
             }
@@ -73,8 +72,8 @@ public class p extends androidx.fragment.app.s {
             if (pVar != null) {
                 try {
                     pVar.e();
-                } catch (NullPointerException e7) {
-                    Log.e("CancelSignalProvider", "Got NPE while canceling fingerprint authentication.", e7);
+                } catch (NullPointerException e10) {
+                    Log.e("CancelSignalProvider", "Got NPE while canceling fingerprint authentication.", e10);
                 }
                 yVar2.c = null;
             }
@@ -108,7 +107,7 @@ public class p extends androidx.fragment.app.s {
     public final void P() {
         this.l0.m = false;
         if (t()) {
-            j0 p5 = p();
+            androidx.fragment.app.i0 p5 = p();
             f0 f0Var = (f0) p5.D("androidx.biometric.FingerprintDialogFragment");
             if (f0Var != null) {
                 if (f0Var.t()) {
@@ -129,7 +128,7 @@ public class p extends androidx.fragment.app.s {
     public final boolean R() {
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 28) {
-            androidx.fragment.app.v k10 = k();
+            androidx.fragment.app.u k10 = k();
             if (k10 != null && this.l0.g != null) {
                 String str = Build.MANUFACTURER;
                 String str2 = Build.MODEL;
@@ -161,7 +160,7 @@ public class p extends androidx.fragment.app.s {
     }
 
     public final void S() {
-        androidx.fragment.app.v k10 = k();
+        androidx.fragment.app.u k10 = k();
         if (k10 == null) {
             Log.e("BiometricFragment", "Failed to check device credential. Client FragmentActivity not found.");
             return;
@@ -330,24 +329,25 @@ public class p extends androidx.fragment.app.s {
                     k.a(c11, b10, cancellationSignal, nVar, authenticationCallback);
                 }
                 return;
-            } catch (NullPointerException e) {
-                Log.e("BiometricFragment", "Got NPE while authenticating with biometric prompt.", e);
+            } catch (NullPointerException e7) {
+                Log.e("BiometricFragment", "Got NPE while authenticating with biometric prompt.", e7);
                 T(1, n10 != null ? n10.getString(R.string.default_error_msg) : "");
                 return;
             }
         }
         Context applicationContext = K().getApplicationContext();
-        k0.b bVar = new k0.b(applicationContext, false);
-        int i12 = Build.VERSION.SDK_INT;
-        int i13 = (i12 < 23 || (g10 = e0.b.g(applicationContext)) == null || !e0.b.q(g10)) ? 12 : (i12 < 23 || (g11 = e0.b.g(applicationContext)) == null || !e0.b.m(g11)) ? 11 : 0;
-        if (i13 != 0) {
-            T(i13, v7.p.a(applicationContext, i13));
+        int i12 = 2;
+        s sVar = new s(applicationContext, 2);
+        int i13 = Build.VERSION.SDK_INT;
+        int i14 = (i13 < 23 || (g10 = e0.b.g(applicationContext)) == null || !e0.b.q(g10)) ? 12 : (i13 < 23 || (g11 = e0.b.g(applicationContext)) == null || !e0.b.m(g11)) ? 11 : 0;
+        if (i14 != 0) {
+            T(i14, v7.p.a(applicationContext, i14));
             return;
         }
         if (t()) {
             this.l0.w = true;
             String str2 = Build.MODEL;
-            if (i12 == 28 && str2 != null) {
+            if (i13 == 28 && str2 != null) {
                 for (String str3 : applicationContext.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
                     if (str2.startsWith(str3)) {
                         break;
@@ -356,7 +356,7 @@ public class p extends androidx.fragment.app.s {
             }
             this.k0.postDelayed(new g(this, 1), 500L);
             f0 f0Var = new f0();
-            j0 p5 = p();
+            androidx.fragment.app.i0 p5 = p();
             f0Var.x0 = false;
             f0Var.y0 = true;
             androidx.fragment.app.a aVar3 = new androidx.fragment.app.a(p5);
@@ -398,19 +398,19 @@ public class p extends androidx.fragment.app.s {
                 yVar11.h = new aa.a(new w(yVar11));
             }
             aa.a aVar4 = yVar11.h;
-            if (((xa.c) aVar4.c) == null) {
-                aVar4.c = new xa.c(aVar4, 2);
+            if (((a4.m) aVar4.c) == null) {
+                aVar4.c = new a4.m(aVar4, i12);
             }
             try {
-                bVar.a(aVar, pVar, (xa.c) aVar4.c);
-            } catch (NullPointerException e7) {
-                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e7);
+                sVar.b(aVar, pVar, (a4.m) aVar4.c);
+            } catch (NullPointerException e10) {
+                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e10);
                 T(1, v7.p.a(applicationContext, 1));
             }
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void x(int i10, int i11, Intent intent) {
         super.x(i10, i11, intent);
         if (i10 == 1) {
@@ -423,13 +423,13 @@ public class p extends androidx.fragment.app.s {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void z(Bundle bundle) {
         super.z(bundle);
         if (k() == null) {
             return;
         }
-        y yVar = (y) new aa.a(k()).m(y.class);
+        y yVar = (y) new aa.a(k()).n(y.class);
         this.l0 = yVar;
         if (yVar.r == null) {
             yVar.r = new androidx.lifecycle.z();
@@ -444,12 +444,12 @@ public class p extends androidx.fragment.app.s {
         if (yVar3.t == null) {
             yVar3.t = new androidx.lifecycle.z();
         }
-        yVar3.t.d(this, new pb.c(this, 2));
+        yVar3.t.d(this, new a6.i(this, 4));
         y yVar4 = this.l0;
         if (yVar4.u == null) {
             yVar4.u = new androidx.lifecycle.z();
         }
-        yVar4.u.d(this, new xa.c(this, 3));
+        yVar4.u.d(this, new a4.m(this, 3));
         y yVar5 = this.l0;
         if (yVar5.v == null) {
             yVar5.v = new androidx.lifecycle.z();

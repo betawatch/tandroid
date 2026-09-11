@@ -1,109 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ff0 extends View {
-    public Paint a;
-    public Paint b;
-    public int c;
-    public int d;
-    public float e;
-    public boolean f;
-    public int h;
-    public int n;
-    public ef0 r;
+public final class ff0 {
+    public final gf0 a = new gf0();
+    public final gf0 b = new gf0();
+    public final gf0 c = new gf0();
+    public final gf0 d = new gf0();
+    public final ByteBuffer e;
+    public int f;
 
-    public final void a(int i10, boolean z10) {
-        ef0 ef0Var;
-        int i11 = this.h;
-        if (i10 < i11) {
-            i10 = i11;
-        } else {
-            int i12 = this.n;
-            if (i10 > i12) {
-                i10 = i12;
-            }
+    public ff0() {
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
+        this.e = allocateDirect;
+        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
+    }
+
+    public final void a() {
+        ByteBuffer byteBuffer = this.e;
+        byteBuffer.position(0);
+        gf0 gf0Var = this.a;
+        if (gf0Var.f == null) {
+            gf0Var.a();
         }
-        this.e = (i10 - i11) / (this.n - i11);
-        invalidate();
-        if (!z10 || (ef0Var = this.r) == null) {
-            return;
+        float[] fArr = gf0Var.f;
+        gf0 gf0Var2 = this.b;
+        if (gf0Var2.f == null) {
+            gf0Var2.a();
         }
-        ef0Var.k(((Integer) getTag()).intValue(), getProgress());
-    }
-
-    public int getProgress() {
-        return (int) ((this.e * (this.n - r0)) + this.h);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        int measuredHeight = getMeasuredHeight();
-        int i10 = this.c;
-        int i11 = (measuredHeight - i10) / 2;
-        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-        float f7 = i10 / 2;
-        canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() - r9, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), this.a);
-        if (this.h == 0) {
-            canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else if (this.e > 0.5f) {
-            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
-        } else {
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, AndroidUtilities.dp(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
-            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        float[] fArr2 = gf0Var2.f;
+        gf0 gf0Var3 = this.c;
+        if (gf0Var3.f == null) {
+            gf0Var3.a();
         }
-        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int i10 = this.c;
-        if (motionEvent != null) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
-            if (motionEvent.getAction() == 0) {
-                float measuredHeight = (getMeasuredHeight() - i10) / 2;
-                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
-                    this.f = true;
-                    this.d = (int) (x10 - measuredWidth);
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (this.f) {
-                    this.f = false;
-                    invalidate();
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 2 && this.f) {
-                float f7 = (int) (x10 - this.d);
-                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
-                ef0 ef0Var = this.r;
-                if (ef0Var != null) {
-                    ef0Var.k(((Integer) getTag()).intValue(), getProgress());
-                }
-                invalidate();
-                return true;
-            }
+        float[] fArr3 = gf0Var3.f;
+        gf0 gf0Var4 = this.d;
+        if (gf0Var4.f == null) {
+            gf0Var4.a();
         }
-        return false;
+        float[] fArr4 = gf0Var4.f;
+        for (int i10 = 0; i10 < 200; i10++) {
+            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr[i10] * 255.0f));
+        }
+        byteBuffer.position(0);
     }
 
-    public void setDelegate(ef0 ef0Var) {
-        this.r = ef0Var;
-    }
-
-    public void setProgress(int i10) {
-        a(i10, true);
+    public final boolean b() {
+        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
     }
 }

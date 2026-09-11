@@ -1,96 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.widget.LinearLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public interface rt {
-    void A(TLRPC.Document document);
+public final class rt extends LinearLayout {
+    public final org.telegram.ui.Components.x9 a;
+    public final org.telegram.ui.ActionBar.j5 b;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public TLRPC.StickerSetCovered d;
 
-    boolean B();
-
-    boolean C(TLRPC.Document document);
-
-    void D(TLRPC.Document document);
-
-    String E(boolean z10);
-
-    void F(CharSequence charSequence, String str, pf pfVar);
-
-    void G(TLRPC.Document document);
-
-    boolean H();
-
-    boolean I();
-
-    void J();
-
-    org.telegram.ui.Components.w70 K(bi.n7 n7Var);
-
-    void L();
-
-    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    boolean N(TLRPC.Document document);
-
-    void O(String str);
-
-    Boolean P(TLRPC.Document document);
-
-    boolean Q();
-
-    long a();
-
-    boolean b();
-
-    boolean c();
-
-    TLRPC.TL_messageMediaPoll d();
-
-    boolean e(TLRPC.Document document);
-
-    boolean f();
-
-    TLRPC.PollAnswer g();
-
-    boolean h();
-
-    void i(SendMessagesHelper.ImportingSticker importingSticker);
-
-    boolean j();
-
-    boolean k(int i10);
-
-    void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
-
-    void m(String str);
-
-    void n(TLRPC.Document document);
-
-    boolean o();
-
-    void p(TLRPC.Document document);
-
-    void q();
-
-    void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
-
-    void s();
-
-    void t(TLRPC.Document document);
-
-    void u(TLRPC.StickerSet stickerSet, String str);
-
-    void v(TLObject tLObject, Object obj);
-
-    boolean w();
-
-    void x(String str);
-
-    MessageObject y();
-
-    boolean z();
+    public rt(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = f6Var;
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.a = x9Var;
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.b = j5Var;
+        j5Var.setTextSize(16);
+        j5Var.setTextColor(-1);
+        setOrientation(0);
+        addView(x9Var, w7.x5.t(24, 24, 17, 17, 0, 17, 0));
+        addView(j5Var, w7.x5.t(-2, -2, 17, 0, 0, 12, 0));
+    }
 }

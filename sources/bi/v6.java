@@ -1,38 +1,141 @@
 package bi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ed0;
+import org.telegram.ui.Components.fh0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class v6 extends AnimatorListenerAdapter {
+public final class v6 implements z4.e {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r7 b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ v6(r7 r7Var, int i10) {
+    public /* synthetic */ v6(int i10, View view) {
         this.a = i10;
-        this.b = r7Var;
+        this.b = view;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        float f10;
         switch (this.a) {
             case 0:
-                r7 r7Var = this.b;
-                r7Var.b2 = 0.0f;
-                r7Var.Z1.setAlpha(1.0f);
-                r7Var.Z1.setVisibility(8);
-                r7Var.Z1.n();
+                a7 a7Var = (a7) this.b;
+                if (a7Var.w) {
+                    t6 t6Var = a7Var.h;
+                    t6Var.d.abortAnimation();
+                    if (Math.abs(f7) <= 1.0f) {
+                        ValueAnimator valueAnimator = t6Var.M;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            t6Var.M = null;
+                        }
+                        float f11 = (t6Var.s / 2.0f) + ((-t6Var.getMeasuredWidth()) / 2.0f) + ((r2 + t6Var.n) * i10);
+                        if (f7 > 0.0f) {
+                            f10 = (t6Var.s / 2.0f) + ((-t6Var.getMeasuredWidth()) / 2.0f) + ((i10 + 1) * (r4 + t6Var.n));
+                        } else {
+                            f10 = (t6Var.s / 2.0f) + ((-t6Var.getMeasuredWidth()) / 2.0f) + ((i10 - 1) * (r4 + t6Var.n));
+                            f7 = -f7;
+                        }
+                        if (f7 == 0.0f) {
+                            t6Var.e = f11;
+                        } else {
+                            t6Var.e = AndroidUtilities.lerp(f11, f10, f7);
+                        }
+                        t6Var.L = false;
+                        t6Var.invalidate();
+                        break;
+                    }
+                }
                 break;
             case 1:
-                this.b.p2.setTranslationY(0.0f);
+                ed0 ed0Var = (ed0) this.b;
+                ed0Var.h = i10;
+                ed0Var.n = f7;
+                if (ed0Var.d.getChildAt(i10) != null) {
+                    ed0.a(ed0Var, i10, (int) (ed0Var.d.getChildAt(i10).getWidth() * f7));
+                    ed0Var.invalidate();
+                    z4.e eVar = ed0Var.c;
+                    if (eVar != null) {
+                        eVar.a(f7, i10, i11);
+                        break;
+                    }
+                }
                 break;
             default:
-                r7 r7Var2 = this.b;
-                r7Var2.s2 = false;
-                r7Var2.p2.setTranslationY(0.0f);
-                r7Var2.w0();
+                fh0 fh0Var = (fh0) this.b;
+                if (!fh0Var.a && Math.abs(i10 - fh0Var.w) == 1) {
+                    int i12 = fh0Var.w;
+                    if (i10 > i12) {
+                        fh0.a(fh0Var, 0, 1, 1);
+                    } else if (i10 < i12) {
+                        fh0.a(fh0Var, 1, 0, 0);
+                        fh0.a(fh0Var, 2, 0, -1);
+                    }
+                }
+                int i13 = fh0Var.w;
+                int i14 = fh0Var.x;
+                fh0Var.w = i10;
+                fh0Var.x = i11;
+                if (i13 != i10 || i14 != i11) {
+                    fh0Var.H = true;
+                    fh0Var.postInvalidateOnAnimation();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // z4.e
+    public final void b(int i10) {
+        switch (this.a) {
+            case 1:
+                ed0 ed0Var = (ed0) this.b;
+                z4.e eVar = ed0Var.c;
+                if (eVar != null) {
+                    eVar.b(i10);
+                }
+                int i11 = 0;
+                while (i11 < ed0Var.d.getChildCount()) {
+                    ed0Var.d.getChildAt(i11).setSelected(i11 == i10);
+                    i11++;
+                }
+                break;
+        }
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+        switch (this.a) {
+            case 0:
+                a7 a7Var = (a7) this.b;
+                if (i10 == 1) {
+                    a7Var.w = true;
+                    break;
+                }
+                break;
+            case 1:
+                ed0 ed0Var = (ed0) this.b;
+                if (i10 == 0) {
+                    ed0.a(ed0Var, ed0Var.e.getCurrentItem(), 0);
+                }
+                z4.e eVar = ed0Var.c;
+                if (eVar != null) {
+                    eVar.c(i10);
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(int i10) {
     }
 }

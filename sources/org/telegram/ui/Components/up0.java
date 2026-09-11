@@ -1,32 +1,57 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class up0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ sq0 d;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ up0(sq0 sq0Var, int i10) {
-        this.c = i10;
-        this.d = sq0Var;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final class up0 implements TextWatcher {
+    public final /* synthetic */ hq0 a;
+
+    public up0(hq0 hq0Var) {
+        this.a = hq0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        switch (this.c) {
-            case 0:
-                if (i10 == 0) {
-                    return this.d.H.J;
-                }
-                return 1;
-            case 1:
-                oq0 oq0Var = this.d.M;
-                return (i10 == oq0Var.w || i10 == oq0Var.x || i10 == oq0Var.y || i10 == oq0Var.F || oq0Var.j(i10) == 0) ? 4 : 1;
-            default:
-                if (i10 == 0) {
-                    return this.d.I.J;
-                }
-                return 1;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        hq0 hq0Var = this.a;
+        zp0 zp0Var = hq0Var.K;
+        xw0 xw0Var = hq0Var.Q;
+        b20 b20Var = hq0Var.y0;
+        if (!TextUtils.isEmpty(b20Var.r.getText())) {
+            hq0Var.K0(false);
         }
+        if (hq0Var.A0) {
+            String obj = b20Var.r.getText().toString();
+            if (obj.length() != 0) {
+                if (xw0Var != null) {
+                    xw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                }
+            } else if (hq0Var.F.getAdapter() != zp0Var) {
+                int F0 = hq0.F0(hq0Var);
+                xw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                xw0Var.e(false, true);
+                hq0Var.K0(false);
+                zp0Var.l();
+                if (F0 > 0) {
+                    hq0Var.H.h1(0, -F0);
+                }
+            }
+            dq0 dq0Var = hq0Var.M;
+            if (dq0Var != null) {
+                dq0Var.E(obj);
+            }
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

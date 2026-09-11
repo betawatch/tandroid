@@ -1,33 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k8 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ BaseController d;
+public final /* synthetic */ class k8 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.i d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ k8(BaseController baseController, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.d = baseController;
-        this.b = z10;
-        this.c = j3;
+    public /* synthetic */ k8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j3, a0.i iVar, Runnable runnable) {
+        this.f = mediaDataController;
+        this.h = task;
+        this.n = timer;
+        this.c = arrayList;
+        this.b = j3;
+        this.d = iVar;
+        this.e = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.d).lambda$loadFeaturedStickers$58(this.b, this.c, tLObject, tL_error);
+                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
                 break;
             default:
-                ((MessagesController) this.d).lambda$getChannelRecommendations$482(this.b, this.c, tLObject, tL_error);
+                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ k8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j3, ArrayList arrayList, a0.i iVar, HashSet hashSet, Runnable runnable) {
+        this.f = topicsController;
+        this.h = tL_messages_savedDialogs;
+        this.b = j3;
+        this.c = arrayList;
+        this.d = iVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

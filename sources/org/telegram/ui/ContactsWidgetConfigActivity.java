@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public class ContactsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int F = 0;
@@ -21,15 +21,15 @@ public class ContactsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            org.telegram.messenger.a2.e(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            fz fzVar = new fz(1, this.E);
-            fzVar.y = new a1(this, 27);
+            org.telegram.messenger.w1.e(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            dz dzVar = new dz(1, this.E);
+            dzVar.y = new z0(this, 27);
             if (AndroidUtilities.isTablet()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.c(-1, fzVar);
+                    this.d.c(-1, dzVar);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.c(-1, fzVar);
+                this.c.c(-1, dzVar);
             }
             if (!AndroidUtilities.isTablet()) {
                 this.e.setVisibility(8);

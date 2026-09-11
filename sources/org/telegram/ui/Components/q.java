@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class q extends s4.j {
     public final /* synthetic */ r F;
@@ -14,7 +14,7 @@ public final class q extends s4.j {
     @Override // s4.j
     public final void P(s4.c1 c1Var) {
         ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) this.F).containerView;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
         viewGroup.invalidate();
     }
 }

@@ -1,6 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public interface en0 {
+public final class en0 extends ClickableSpan {
+    public final /* synthetic */ pn0 a;
+
+    public en0(pn0 pn0Var) {
+        this.a = pn0Var;
+    }
+
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        pn0 pn0Var = this.a;
+        of.f.s(pn0Var.getParentActivity(), pn0Var.y.privacy_policy_url);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(AndroidUtilities.bold());
+    }
 }

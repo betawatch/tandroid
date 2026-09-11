@@ -3,16 +3,16 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class c extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ l c;
+    public final /* synthetic */ k c;
 
-    public /* synthetic */ c(l lVar, boolean z10, int i10) {
+    public /* synthetic */ c(k kVar, boolean z10, int i10) {
         this.a = i10;
-        this.c = lVar;
+        this.c = kVar;
         this.b = z10;
     }
 
@@ -21,15 +21,15 @@ public final class c extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 float f7 = this.b ? 1.0f : 0.0f;
-                l lVar = this.c;
-                lVar.r1 = f7;
-                lVar.b();
+                k kVar = this.c;
+                kVar.r1 = f7;
+                kVar.b();
                 break;
             default:
                 float f10 = this.b ? 1.0f : 0.0f;
-                l lVar2 = this.c;
-                lVar2.r1 = f10;
-                lVar2.b();
+                k kVar2 = this.c;
+                kVar2.r1 = f10;
+                kVar2.b();
                 break;
         }
     }

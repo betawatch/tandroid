@@ -1,33 +1,48 @@
 package zh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class b8 implements Runnable {
-    public final /* synthetic */ c8 a;
+public final class b8 extends k8 {
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ int n0;
+    public final /* synthetic */ n8 o0;
 
-    public b8(c8 c8Var) {
-        this.a = c8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b8(n8 n8Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, int i10) {
+        super(context, f6Var);
+        this.o0 = n8Var;
+        this.m0 = z10;
+        this.n0 = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        c8 c8Var = this.a;
-        int i10 = c8Var.a;
-        ArrayList arrayList = c8Var.d;
-        if (arrayList.isEmpty()) {
-            return;
+    @Override // zh.k8
+    public final void e(int i10) {
+        long j3 = i10;
+        n8 n8Var = this.o0;
+        n8Var.s(j3);
+        di.d dVar = n8Var.x;
+        if (dVar != null) {
+            dVar.g(v7.V0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j3, ',')), n8Var.Q), true, true);
         }
-        ArrayList arrayList2 = new ArrayList(arrayList);
-        arrayList.clear();
-        TL_stories.TL_stories_getPeerMaxIDs tL_stories_getPeerMaxIDs = new TL_stories.TL_stories_getPeerMaxIDs();
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            tL_stories_getPeerMaxIDs.id.add(MessagesController.getInstance(i10).getInputPeer(((Long) arrayList2.get(i11)).longValue()));
+        if (this.m0) {
+            bi.e1 e1Var = n8Var.G;
+            e1Var.g = j3;
+            n8Var.H.set(e1Var);
+            int i11 = this.n0;
+            f(bi.z.b(i11, i10, 3), bi.z.b(i11, i10, 4), true);
         }
-        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_stories_getPeerMaxIDs, new org.telegram.messenger.a(), new bi.k6(26, this, arrayList2));
+    }
+
+    @Override // zh.k8
+    public final void setValue(int i10) {
+        super.setValue(i10);
+        if (this.m0) {
+            int i11 = this.n0;
+            f(bi.z.b(i11, i10, 3), bi.z.b(i11, i10, 4), true);
+        }
     }
 }

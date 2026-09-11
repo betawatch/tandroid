@@ -1,67 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class fc extends FrameLayout {
-    public final d6 a;
-    public final d6 b;
-    public final Paint c;
-    public final RectF d;
-    public final long e;
-    public final /* synthetic */ gc f;
+public final class fc extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ ub a;
+    public final /* synthetic */ ib b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fc(gc gcVar, Activity activity) {
-        super(activity);
-        this.f = gcVar;
-        wr wrVar = wr.h;
-        this.a = new d6(this, 320L, wrVar);
-        this.b = new d6(this, 320L, wrVar);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(268435455);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        this.d = new RectF();
-        this.e = System.currentTimeMillis();
+    public fc(ib ibVar, ub ubVar) {
+        this.b = ibVar;
+        this.a = ubVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        gc gcVar = this.f;
-        float d = this.a.d(gcVar.a, false);
-        float e = this.b.e(gcVar.a >= 1.0f);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float dpf2 = width - AndroidUtilities.dpf2(13.0f);
-        float dpf22 = height - AndroidUtilities.dpf2(13.0f);
-        float dpf23 = AndroidUtilities.dpf2(13.0f) + width;
-        float dpf24 = AndroidUtilities.dpf2(13.0f) + height;
-        RectF rectF = this.d;
-        rectF.set(dpf2, dpf22, dpf23, dpf24);
-        float currentTimeMillis = ((System.currentTimeMillis() - this.e) * 0.45f) % 5400.0f;
-        float max = Math.max(0.0f, ((1520.0f * currentTimeMillis) / 5400.0f) - 20.0f);
-        for (int i10 = 0; i10 < 4; i10++) {
-            u1.a aVar = zp.h;
-            aVar.getInterpolation((currentTimeMillis - (i10 * 1350)) / 667.0f);
-            max += aVar.getInterpolation((currentTimeMillis - (r8 + 667)) / 667.0f) * 250.0f;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        ib ibVar = this.b;
+        if (ibVar.s) {
+            return false;
         }
-        int l1 = org.telegram.ui.ActionBar.j6.l1((1.0f - e) * 1.0f, -1);
-        Paint paint = this.c;
-        paint.setColor(l1);
-        canvas.drawArc(rectF, (-90.0f) - max, Math.max(0.02f, d) * (-360.0f), false, paint);
-        if (d < 1.0f && e < 1.0f) {
-            invalidate();
+        ub ubVar = this.a;
+        ibVar.v = ub.access$1400(ubVar, true);
+        ibVar.w = ub.access$1400(ubVar, false);
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        boolean z10 = false;
+        if (Math.abs(f7) <= 2000.0f) {
+            return false;
         }
-        super.onDraw(canvas);
+        ib ibVar = this.b;
+        if ((f7 < 0.0f && ibVar.v) || (f7 > 0.0f && ibVar.w)) {
+            z10 = true;
+        }
+        float signum = Math.signum(f7);
+        ub ubVar = this.a;
+        o1.k kVar = new o1.k(ubVar, o1.h.m, signum * ubVar.getWidth() * 2.0f);
+        if (!z10) {
+            final int i10 = 0;
+            kVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+                public final /* synthetic */ fc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z11, float f11, float f12) {
+                    switch (i10) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar.b(new l7(ubVar, 2));
+        }
+        kVar.u.a(1.0f);
+        kVar.u.b(100.0f);
+        kVar.a = f7;
+        kVar.f();
+        if (z10) {
+            o1.k kVar2 = new o1.k(ubVar, o1.h.t, 0.0f);
+            final int i11 = 1;
+            kVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+                public final /* synthetic */ fc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z11, float f11, float f12) {
+                    switch (i11) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar2.b(new ec());
+            kVar.u.a(1.0f);
+            kVar.u.b(10.0f);
+            kVar.a = f7;
+            kVar2.f();
+        }
+        ibVar.s = true;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        ib ibVar = this.b;
+        float f11 = ibVar.h + f7;
+        ibVar.h = f11;
+        float f12 = ibVar.n + f10;
+        ibVar.n = f12;
+        if (Utilities.dist(0.0f, 0.0f, f11, f12) > AndroidUtilities.touchSlop) {
+            ibVar.r = true;
+        }
+        if (!ibVar.d) {
+            return false;
+        }
+        float f13 = ibVar.f - f7;
+        ibVar.f = f13;
+        ub ubVar = this.a;
+        ubVar.setTranslationX(f13);
+        float f14 = ibVar.f;
+        if (f14 == 0.0f || ((f14 < 0.0f && ibVar.v) || (f14 > 0.0f && ibVar.w))) {
+            ubVar.setAlpha(1.0f - (Math.abs(f14) / ubVar.getWidth()));
+        }
+        return true;
     }
 }

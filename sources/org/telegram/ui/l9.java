@@ -7,7 +7,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l9 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,13 +52,13 @@ public final /* synthetic */ class l9 implements Runnable {
                 u9 u9Var3 = this.b;
                 t9 t9Var = u9Var3.L;
                 if (t9Var != null) {
-                    t9Var.J(u9Var3.Q);
+                    t9Var.K(u9Var3.Q);
                 }
                 u9Var3.finishFragment();
                 break;
             case 5:
                 u9 u9Var4 = this.b;
-                u9Var4.T = new a4.m(19);
+                u9Var4.T = new a6.m(20);
                 Context context = ApplicationLoader.applicationContext;
                 com.google.android.gms.internal.vision.x1 x1Var = new com.google.android.gms.internal.vision.x1();
                 x1Var.a = 256;
@@ -68,7 +68,7 @@ public final /* synthetic */ class l9 implements Runnable {
                 u9 u9Var5 = this.b;
                 if (u9Var5.f.getTag() != null) {
                     u9Var5.f.setTag(null);
-                    u9Var5.f.animate().setDuration(200L).alpha(0.0f).setInterpolator(org.telegram.ui.Components.wr.f).start();
+                    u9Var5.f.animate().setDuration(200L).alpha(0.0f).setInterpolator(org.telegram.ui.Components.pr.f).start();
                     break;
                 }
                 break;
@@ -95,7 +95,7 @@ public final /* synthetic */ class l9 implements Runnable {
                     u9Var7.W = ofFloat;
                     ofFloat.addUpdateListener(new o9(u9Var7, i10));
                     u9Var7.W.setDuration((long) (Math.abs(u9Var7.X - u9Var7.Y) * 300.0f));
-                    u9Var7.W.setInterpolator(org.telegram.ui.Components.wr.f);
+                    u9Var7.W.setInterpolator(org.telegram.ui.Components.pr.f);
                     u9Var7.W.start();
                     o1.k kVar = u9Var7.Z;
                     if (kVar != null) {

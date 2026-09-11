@@ -1,127 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public class tt extends View {
-    public final t01 a;
-    public final Drawable b;
-    public final ImageReceiver c;
-    public final Rect d;
-    public final RectF e;
-    public bh.d f;
+public final /* synthetic */ class tt implements yt, al0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ KeyEvent.Callback c;
+    public final /* synthetic */ Object d;
 
-    public tt(Context context, CharSequence charSequence) {
-        super(context);
-        this.d = new Rect();
-        this.e = new RectF();
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new t01(charSequence, 14.0f, AndroidUtilities.bold());
-        Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
+    public /* synthetic */ tt(zt ztVar, int i10, int i11, Runnable runnable) {
+        this.c = ztVar;
+        this.a = i10;
+        this.b = i11;
+        this.d = runnable;
     }
 
-    public final void a(TLRPC.Photo photo, Object obj) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(24.0f), false, closestPhotoSizeWithSize, false);
-        this.c.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "24_24", ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), "24_24", 0L, null, obj, 0);
+    @Override // org.telegram.ui.Components.al0
+    public void d(float f7, float f10, int i10, View view) {
+        ug.n1.Q((ug.n1) this.c, this.a, (org.telegram.ui.ActionBar.f6) this.d, this.b, view);
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.d.contains((int) motionEvent.getX(), (int) motionEvent.getY()) || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
+    @Override // org.telegram.ui.Components.al0
+    public /* synthetic */ boolean d1(View view) {
         return false;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.onAttachedToWindow();
+    @Override // org.telegram.ui.Components.yt
+    public void run(String str) {
+        zt.k((zt) this.c, this.a, this.b, (Runnable) this.d, str);
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.onDetachedFromWindow();
+    public /* synthetic */ tt(ug.n1 n1Var, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+        this.c = n1Var;
+        this.a = i10;
+        this.d = f6Var;
+        this.b = i11;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ImageReceiver imageReceiver = this.c;
-        boolean hasBitmapImage = imageReceiver.hasBitmapImage();
-        int dp = AndroidUtilities.dp(19.0f) + ((int) Math.ceil(this.a.c)) + AndroidUtilities.dp(hasBitmapImage ? 30.33f : 11.33f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        int width = (getWidth() - dp) / 2;
-        int height = getHeight() / 2;
-        int i10 = height - (dp2 / 2);
-        int i11 = dp + width;
-        Rect rect = this.d;
-        rect.set(width, i10, i11, dp2 + i10);
-        rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-        bh.d dVar = this.f;
-        if (dVar != null) {
-            dVar.setBounds(rect);
-            this.f.draw(canvas);
-        }
-        if (hasBitmapImage) {
-            float dp3 = AndroidUtilities.dp(0.66f) + width;
-            float f7 = height;
-            float dp4 = f7 - (AndroidUtilities.dp(22.66f) / 2.0f);
-            float dp5 = AndroidUtilities.dp(23.32f) + width;
-            float dp6 = (AndroidUtilities.dp(22.66f) / 2.0f) + f7;
-            RectF rectF = this.e;
-            rectF.set(dp3, dp4, dp5, dp6);
-            imageReceiver.setImageCoords(rectF);
-            imageReceiver.draw(canvas);
-        }
-        this.a.c(width + r2, height, 1.0f, -1, canvas);
-        int dp7 = i11 - AndroidUtilities.dp(17.0f);
-        int dp8 = height - AndroidUtilities.dp(6.0f);
-        int dp9 = i11 - AndroidUtilities.dp(5.0f);
-        int dp10 = AndroidUtilities.dp(6.0f) + height;
-        Drawable drawable = this.b;
-        drawable.setBounds(dp7, dp8, dp9, dp10);
-        drawable.draw(canvas);
-    }
-
-    public void setBlurredBackgroundDrawable(bh.d dVar) {
-        dVar.o(AndroidUtilities.dp(4.0f));
-        dVar.p(AndroidUtilities.dp(11.0f));
-        this.f = dVar;
-    }
-
-    public void setImage(Bitmap bitmap) {
-        this.c.setImageBitmap(bitmap);
-        invalidate();
-    }
-
-    public void setImage(String str) {
-        if (str == null) {
-            setImage((Bitmap) null);
-        } else {
-            Utilities.globalQueue.postRunnable(new ee(24, this, str));
-        }
+    @Override // org.telegram.ui.Components.al0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

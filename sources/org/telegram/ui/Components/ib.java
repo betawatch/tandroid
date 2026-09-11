@@ -1,82 +1,114 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import j$.util.Objects;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.gi1;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ib implements View.OnLayoutChangeListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ pc b;
+public final class ib extends FrameLayout {
+    public final ub a;
+    public final Rect b;
+    public final GestureDetector c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public float h;
+    public float n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public final /* synthetic */ FrameLayout x;
+    public final /* synthetic */ qc y;
 
-    public ib(pc pcVar, boolean z10) {
-        this.b = pcVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ib(qc qcVar, ub ubVar, FrameLayout frameLayout) {
+        super(ubVar.getContext());
+        this.y = qcVar;
+        this.x = frameLayout;
+        this.b = new Rect();
+        this.a = ubVar;
+        GestureDetector gestureDetector = new GestureDetector(ubVar.getContext(), new fc(this, ubVar));
+        this.c = gestureDetector;
+        gestureDetector.setIsLongpressEnabled(false);
+        addView(ubVar);
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        nb nbVar;
-        pc pcVar = this.b;
-        tb tbVar = pcVar.e;
-        tbVar.removeOnLayoutChangeListener(this);
-        if (pcVar.l) {
-            tbVar.onShow();
-            org.telegram.ui.ActionBar.p2 p2Var = pcVar.g;
-            boolean z10 = this.a;
-            if (z10 && (p2Var instanceof gi1)) {
-                p2Var = ((gi1) p2Var).X();
-            }
-            FrameLayout frameLayout = pcVar.h;
-            if (p2Var == null || (nbVar = p2Var.getBulletinDelegate()) == null) {
-                if (frameLayout != null) {
-                    Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
-                    if (tag instanceof nb) {
-                        nbVar = (nb) tag;
-                    }
-                }
-                nbVar = null;
-            }
-            pcVar.p = nbVar;
-            if (nbVar == null && p2Var != null) {
-                pcVar.p = new bi.rd(p2Var, 2);
-            }
-            o1.k kVar = pcVar.d;
-            if (kVar == null || !kVar.f) {
-                nb nbVar2 = pcVar.p;
-                pcVar.o = nbVar2 != null ? nbVar2.f(pcVar.a) : 0;
-            }
-            nb nbVar3 = pcVar.p;
-            if (nbVar3 != null) {
-                nbVar3.b(pcVar);
-            }
-            if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true) && !pcVar.s) {
-                if (tbVar != null && pcVar.q == null) {
-                    pcVar.q = tbVar.createTransition();
-                }
-                tbVar.transitionRunningEnter = true;
-                tbVar.delegate = pcVar.p;
-                tbVar.invalidate();
-                sb sbVar = pcVar.q;
-                Objects.requireNonNull(tbVar);
-                sbVar.I(tbVar, new eb(tbVar, 1), new rg(this, 15), new rl(2, this, z10));
-                return;
-            }
-            nb nbVar4 = pcVar.p;
-            tbVar.delegate = nbVar4;
-            if (nbVar4 != null && !z10) {
-                nbVar4.c(tbVar.getHeight());
-            }
-            pcVar.l();
-            tbVar.onEnterTransitionStart();
-            tbVar.onEnterTransitionEnd();
-            if (pcVar.u) {
-                pcVar.i(true);
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View.OnClickListener onClickListener;
+        boolean z10 = this.e;
+        ub ubVar = this.a;
+        if (!z10) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            Rect rect = this.b;
+            ubVar.getHitRect(rect);
+            if (!rect.contains((int) x10, (int) y3)) {
+                return false;
             }
         }
+        this.c.onTouchEvent(motionEvent);
+        int actionMasked = motionEvent.getActionMasked();
+        FrameLayout frameLayout = this.x;
+        qc qcVar = this.y;
+        if (actionMasked == 0) {
+            if (!this.e && !this.s) {
+                ubVar.animate().cancel();
+                this.n = 0.0f;
+                this.h = 0.0f;
+                this.r = false;
+                this.f = ubVar.getTranslationX();
+                System.currentTimeMillis();
+                qc qcVar2 = ubVar.bulletin;
+                this.d = qcVar2 == null || qcVar2.m;
+                this.e = true;
+                qcVar.i(false);
+                if (frameLayout.getParent() != null) {
+                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                if (ubVar.onClickListener != null) {
+                    ubVar.setPressed(true);
+                    return true;
+                }
+            }
+        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
+            if (!this.s) {
+                if (Math.abs(this.f) > ubVar.getWidth() / 3.0f) {
+                    float signum = Math.signum(this.f) * ubVar.getWidth();
+                    float f7 = this.f;
+                    ubVar.animate().translationX(signum).alpha(((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.b0(this, signum, 1)).start();
+                    this.e = false;
+                    qcVar.i(true);
+                    if (frameLayout.getParent() != null) {
+                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
+                    }
+                    if (ubVar.onClickListener != null) {
+                        ubVar.setPressed(false);
+                    }
+                } else {
+                    ubVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
+                }
+            }
+            if (actionMasked == 1 && ubVar.isPressed() && (onClickListener = ubVar.onClickListener) != null && !this.r) {
+                onClickListener.onClick(ubVar);
+            }
+            this.e = false;
+            qcVar.i(true);
+            if (frameLayout.getParent() != null) {
+            }
+            if (ubVar.onClickListener != null) {
+            }
+        }
+        return true;
     }
 }

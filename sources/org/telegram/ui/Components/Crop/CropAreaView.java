@@ -1,5 +1,6 @@
 package org.telegram.ui.Components.Crop;
 
+import ah.b;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -16,16 +17,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import bi.h;
 import com.google.android.gms.internal.vision.e2;
-import kg.a;
-import kg.n;
-import kg.o;
-import kg.p;
 import m1.j;
+import mg.a;
+import mg.o;
+import mg.p;
+import mg.q;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
     public int E;
@@ -215,7 +215,7 @@ public class CropAreaView extends ViewGroup {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.b0, f7);
         this.c0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.c0.addListener(new h(this, 14));
+        this.c0.addListener(new b(this, 29));
         if (i10 == 1) {
             this.c0.setStartDelay(200L);
         }
@@ -644,10 +644,10 @@ public class CropAreaView extends ViewGroup {
                     this.r0 = 1;
                     a aVar = this.d0;
                     if (aVar != null) {
-                        p pVar = (p) aVar;
-                        CropAreaView cropAreaView = pVar.a;
+                        q qVar = (q) aVar;
+                        CropAreaView cropAreaView = qVar.a;
                         cropAreaView.g(1, true);
-                        pVar.d(cropAreaView.getTargetRectToFill());
+                        qVar.d(cropAreaView.getTargetRectToFill());
                     }
                 }
                 return false;
@@ -808,19 +808,19 @@ public class CropAreaView extends ViewGroup {
                 setActualRect(rectF);
                 a aVar2 = this.d0;
                 if (aVar2 != null) {
-                    p pVar2 = (p) aVar2;
-                    CropAreaView cropAreaView2 = pVar2.a;
+                    q qVar2 = (q) aVar2;
+                    CropAreaView cropAreaView2 = qVar2.a;
                     cropAreaView2.g(3, false);
-                    RectF rectF2 = pVar2.f;
+                    RectF rectF2 = qVar2.f;
                     float centerX = rectF2.centerX() - cropAreaView2.getCropCenterX();
                     float centerY = rectF2.centerY() - cropAreaView2.getCropCenterY();
-                    n nVar = pVar2.L;
-                    if (nVar != null) {
-                        n.f(nVar, centerX, centerY);
+                    o oVar = qVar2.L;
+                    if (oVar != null) {
+                        o.f(oVar, centerX, centerY);
                     }
-                    pVar2.r(false);
+                    qVar2.r(false);
                     rectF2.set(cropAreaView2.x);
-                    pVar2.e(true, false, false, false);
+                    qVar2.e(true, false, false, false);
                     return true;
                 }
             }
@@ -860,12 +860,12 @@ public class CropAreaView extends ViewGroup {
         h(true);
         a aVar3 = this.d0;
         if (aVar3 != null) {
-            p pVar3 = (p) aVar3;
-            pVar3.a.d(pVar3.f);
-            pVar3.n = 0.0f;
-            o oVar = pVar3.M;
-            if (oVar != null) {
-                oVar.i0(false);
+            q qVar3 = (q) aVar3;
+            qVar3.a.d(qVar3.f);
+            qVar3.n = 0.0f;
+            p pVar = qVar3.M;
+            if (pVar != null) {
+                pVar.W(false);
                 return true;
             }
         }

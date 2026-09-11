@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sr0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -60,8 +60,8 @@ public final /* synthetic */ class sr0 implements Runnable {
                 photoViewer.B7 = 3;
                 photoViewer.p3(false, false);
                 photoViewer.j3(true, false);
-                eo eoVar = photoViewer.l4;
-                if (eoVar == null || eoVar.Y == null || !eoVar.x9()) {
+                co coVar = photoViewer.l4;
+                if (coVar == null || coVar.Y == null || !coVar.x9()) {
                     photoViewer.R1();
                 } else {
                     photoViewer.l4.Y.P();
@@ -84,11 +84,11 @@ public final /* synthetic */ class sr0 implements Runnable {
                 iArr[0] = i12;
                 int i13 = ((int[]) obj)[0];
                 if (i12 == i13) {
-                    wu0 wu0Var = rs0Var.b.e0;
+                    uu0 uu0Var = rs0Var.b.e0;
                     boolean z11 = this.b;
                     int i14 = (this.c ? 1 : 0) + (z11 ? 1 : 0);
                     boolean z12 = this.d;
-                    new org.telegram.ui.Components.wc(wu0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.vc.v : z12 ? i13 > 1 ? org.telegram.ui.Components.vc.s : org.telegram.ui.Components.vc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.vc.n : org.telegram.ui.Components.vc.h : i13 > 1 ? org.telegram.ui.Components.vc.f : org.telegram.ui.Components.vc.e, i13, -115203550, -1, null).j();
+                    new org.telegram.ui.Components.yc(uu0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.xc.v : z12 ? i13 > 1 ? org.telegram.ui.Components.xc.s : org.telegram.ui.Components.xc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.xc.n : org.telegram.ui.Components.xc.h : i13 > 1 ? org.telegram.ui.Components.xc.f : org.telegram.ui.Components.xc.e, i13, -115203550, -1, null).j();
                     break;
                 }
                 break;

@@ -1,15 +1,27 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class v40 extends org.telegram.ui.Components.voip.w0 {
-    public final /* synthetic */ j60 E;
+public final class v40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
+    public final /* synthetic */ j60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v40(j60 j60Var, Activity activity, boolean z10) {
-        super(activity, z10);
-        this.E = j60Var;
+    public v40(j60 j60Var, org.telegram.ui.Components.voip.t tVar) {
+        this.b = j60Var;
+        this.a = tVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ViewGroup viewGroup;
+        org.telegram.ui.Components.voip.t tVar = this.a;
+        if (tVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.f3) this.b).containerView;
+            viewGroup.removeView(tVar);
+        }
     }
 }

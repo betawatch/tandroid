@@ -1,33 +1,29 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h8 implements MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback {
-    public final /* synthetic */ BaseController a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class h8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ h8(BaseController baseController, Object obj, Object obj2, Object obj3) {
-        this.a = baseController;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ h8(MediaDataController mediaDataController, String str, boolean z10, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = str;
+        this.d = z10;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j3) {
-        ((SendMessagesHelper) this.a).lambda$prepareImportHistory$105((Uri) this.b, (ArrayList) this.c, (MessagesStorage.LongCallback) this.d, j3);
-    }
-
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        ((MediaDataController) this.a).lambda$searchStickers$248((MediaDataController.SearchStickersKey) this.b, (MediaDataController.SearchStickersResult) this.c, (Utilities.Callback) this.d, arrayList, str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
+                break;
+            default:
+                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
+                break;
+        }
     }
 }

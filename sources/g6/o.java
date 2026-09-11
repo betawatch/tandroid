@@ -4,7 +4,7 @@ import android.os.Looper;
 import com.google.android.gms.internal.cast.c0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class o {
     public static final Object i = new Object();
@@ -46,7 +46,7 @@ public final class o {
                 if (iVar != null) {
                     this.d.removeCallbacks(iVar);
                 }
-                androidx.activity.i iVar2 = new androidx.activity.i(this, 17);
+                androidx.activity.i iVar2 = new androidx.activity.i(this, 20);
                 this.h = iVar2;
                 this.d.postDelayed(iVar2, this.b);
             } catch (Throwable th2) {
@@ -97,7 +97,7 @@ public final class o {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
                     n6.l.h(nVar);
-                    nVar.y(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    nVar.s(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;

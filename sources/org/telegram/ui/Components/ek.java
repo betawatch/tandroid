@@ -1,60 +1,27 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.Comparator;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ek implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tk b;
+public final class ek extends s4.d0 {
+    public final /* synthetic */ ig.e0 r;
 
-    public /* synthetic */ ek(tk tkVar, int i10) {
-        this.a = i10;
-        this.b = tkVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(ig.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        nk nkVar = (nk) obj;
-        nk nkVar2 = (nk) obj2;
-        switch (this.a) {
-            case 0:
-                tk tkVar = this.b;
-                tkVar.getClass();
-                File file = nkVar.f;
-                if (file != null) {
-                    if (nkVar2.f != null) {
-                        boolean isDirectory = file.isDirectory();
-                        if (isDirectory != nkVar2.f.isDirectory()) {
-                            if (isDirectory) {
-                            }
-                        } else if (isDirectory || tkVar.c0) {
-                            break;
-                        } else {
-                            long lastModified = nkVar.f.lastModified();
-                            long lastModified2 = nkVar2.f.lastModified();
-                            if (lastModified != lastModified2) {
-                                if (lastModified > lastModified2) {
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                if (this.b.c0) {
-                    break;
-                } else {
-                    long lastModified3 = nkVar.f.lastModified();
-                    long lastModified4 = nkVar2.f.lastModified();
-                    if (lastModified3 != lastModified4) {
-                        if (lastModified3 > lastModified4) {
-                        }
-                    }
-                }
-                break;
-        }
-        return nkVar.f.getName().compareToIgnoreCase(nkVar2.f.getName());
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.w1.z(56.0f, ((ok) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

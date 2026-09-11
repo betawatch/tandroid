@@ -1,19 +1,23 @@
 package v7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class n8 {
-    public abstract boolean a(i9.o oVar, i9.c cVar, i9.c cVar2);
+    public static id.f a(id.f fVar, id.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
+            return fVar;
+        }
+        return null;
+    }
 
-    public abstract boolean b(i9.o oVar, Object obj, Object obj2);
+    public static id.h b(id.f fVar, id.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? id.i.a : fVar;
+    }
 
-    public abstract boolean c(i9.o oVar, i9.n nVar, i9.n nVar2);
-
-    public abstract i9.c d(i9.o oVar);
-
-    public abstract i9.n e(i9.o oVar);
-
-    public abstract void f(i9.n nVar, i9.n nVar2);
-
-    public abstract void g(i9.n nVar, Thread thread);
+    public static id.h c(id.f fVar, id.h context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        return context == id.i.a ? fVar : (id.h) context.fold(fVar, new b1.e(5));
+    }
 }

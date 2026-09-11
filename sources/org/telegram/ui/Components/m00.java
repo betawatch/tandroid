@@ -1,32 +1,40 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class m00 extends ul0 {
+public final class m00 extends kl0 {
     public final Context c;
-    public final /* synthetic */ r00 d;
+    public final /* synthetic */ n00 d;
 
-    public m00(r00 r00Var, Context context) {
-        this.d = r00Var;
-        this.c = context;
+    public m00(n00 n00Var, Activity activity) {
+        this.d = n00Var;
+        this.c = activity;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
 
     @Override // s4.h0
     public final int h() {
-        return this.d.h.size();
-    }
-
-    @Override // s4.h0
-    public final long i(int i10) {
-        return this.d.k0.get(i10);
+        int size = this.d.s.size();
+        return size < 10 ? size + 1 : size;
     }
 
     @Override // s4.h0
@@ -36,35 +44,63 @@ public final class m00 extends ul0 {
 
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
-        p00 p00Var = (p00) c1Var.a;
-        int id2 = p00Var.b != null ? p00Var.getId() : -1;
-        n00 n00Var = (n00) this.d.h.get(i10);
-        p00Var.b = n00Var;
-        p00Var.e = i10;
-        p00Var.setContentDescription(n00Var.b);
-        p00Var.requestLayout();
-        boolean z10 = p00Var.n;
-        n00 n00Var2 = p00Var.b;
-        if (z10 != (n00Var2 != null && n00Var2.g)) {
-            y5.release(p00Var, p00Var.r);
-            y5.release(p00Var, p00Var.O);
-            y5.release(p00Var, p00Var.Q);
-            y5.release(p00Var, p00Var.S);
-            if (p00Var.l0) {
-                p00Var.r = y5.update(p00Var.b.g ? 26 : 0, p00Var, p00Var.r, p00Var.s);
-                p00Var.O = y5.update(p00Var.b.g ? 26 : 0, p00Var, p00Var.O, p00Var.P);
-                p00Var.Q = y5.update(p00Var.b.g ? 26 : 0, p00Var, p00Var.Q, p00Var.R);
-                p00Var.S = y5.update(p00Var.b.g ? 26 : 0, p00Var, p00Var.S, p00Var.T);
+        int i11;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        int i12;
+        org.telegram.ui.ActionBar.y2 y2Var = (org.telegram.ui.ActionBar.y2) c1Var.a;
+        n00 n00Var = this.d;
+        ArrayList arrayList = n00Var.v;
+        ArrayList arrayList2 = n00Var.s;
+        if (i10 >= arrayList2.size()) {
+            y2Var.getImageView().setColorFilter((ColorFilter) null);
+            Context context = this.c;
+            Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
+            Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
+            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.N6, false);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
+            drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k7, false), mode));
+            oq oqVar = new oq(drawable, drawable2);
+            y2Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q6, false));
+            y2Var.a(LocaleController.getString(R.string.CreateNewFilter), 0, oqVar, false);
+            return;
+        }
+        y2Var.getImageView().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J5, false), PorterDuff.Mode.MULTIPLY));
+        MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) arrayList2.get(i10);
+        y2Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
+        int i13 = dialogFilter.flags;
+        if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == (MessagesController.DIALOG_FILTER_FLAG_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS)) {
+            i11 = R.drawable.msg_openprofile;
+        } else {
+            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ & i13) != 0) {
+                int i14 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
+                if ((i13 & i14) == i14) {
+                    i11 = R.drawable.msg_markunread;
+                }
             }
-            p00Var.n = p00Var.b.g;
+            i11 = (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CHANNELS ? R.drawable.msg_channel : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_GROUPS ? R.drawable.msg_groups : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CONTACTS ? R.drawable.msg_contacts : (i13 & MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS) == MessagesController.DIALOG_FILTER_FLAG_BOTS ? R.drawable.msg_bots : R.drawable.msg_folders;
         }
-        if (id2 != p00Var.getId()) {
-            p00Var.k0 = p00Var.b.f ? 1.0f : 0.0f;
+        y2Var.a(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, y2Var.getTextView().getPaint().getFontMetricsInt(), false), dialogFilter.entities, y2Var.getTextView().getPaint().getFontMetricsInt()), 0, new d10(n00Var.getContext(), i11, dialogFilter.color), false);
+        y5 textView = y2Var.getTextView();
+        int i15 = org.telegram.ui.ActionBar.j6.Oh;
+        f6Var = ((org.telegram.ui.ActionBar.f3) n00Var).resourcesProvider;
+        textView.setEmojiColor(org.telegram.ui.ActionBar.j6.v0(i15, f6Var));
+        boolean z10 = true;
+        for (int i16 = 0; i16 < arrayList.size(); i16++) {
+            long longValue = ((Long) arrayList.get(i16)).longValue();
+            i12 = ((org.telegram.ui.ActionBar.f3) n00Var).currentAccount;
+            if (!dialogFilter.includesDialog(AccountInstance.getInstance(i12), longValue)) {
+                z10 = false;
+            }
         }
+        y2Var.setChecked(z10);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new fl0(new p00(this.d, this.c));
+        org.telegram.ui.ActionBar.y2 y2Var = new org.telegram.ui.ActionBar.y2(this.c, 0, null);
+        y2Var.setBackground(null);
+        y2Var.setLayoutParams(new s4.p0(-1, -2));
+        return new vk0(y2Var);
     }
 }

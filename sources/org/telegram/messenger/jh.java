@@ -1,61 +1,94 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class jh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
+import android.content.Context;
+import android.net.Uri;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.kj1;
+import org.telegram.ui.lj1;
+import org.telegram.ui.qv0;
 
-    public /* synthetic */ jh(NotificationsController notificationsController, int i10) {
-        this.a = i10;
-        this.b = notificationsController;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class jh implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+
+    public /* synthetic */ jh(di.d dVar, org.telegram.ui.ActionBar.f3 f3Var, int i10, View view, cf.c cVar) {
+        this.c = dVar;
+        this.d = f3Var;
+        this.b = i10;
+        this.e = view;
+        this.f = cVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$cleanup$2();
-                break;
-            case 1:
-                this.b.lambda$hideNotifications$36();
-                break;
-            case 2:
-                this.b.lambda$repeatNotificationMaybe$41();
-                break;
-            case 3:
-                this.b.lambda$processIgnoreStories$17();
-                break;
-            case 4:
-                this.b.lambda$updateBadge$34();
-                break;
-            case 5:
-                this.b.lambda$deleteAllNotificationChannels$44();
-                break;
-            case 6:
-                this.b.lambda$playOutChatSound$49();
-                break;
-            case 7:
-                this.b.checkStoryPushes();
-                break;
-            case 8:
-                this.b.lambda$new$0();
-                break;
-            case 9:
-                this.b.lambda$new$1();
-                break;
-            case 10:
-                this.b.lambda$showNotifications$35();
-                break;
-            case 11:
-                this.b.lambda$forceShowPopupForReply$7();
-                break;
-            case 12:
-                this.b.lambda$processIgnoreStoryReactions$18();
+                PasskeysController.lambda$create$9((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback2) this.d, (androidx.biometric.s) this.e, (Context) this.f, this.b, (TL_account.passkeyRegistrationOptions) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$playInChatSound$40();
-                break;
+                di.d dVar = (di.d) this.c;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.d;
+                View view = (View) this.e;
+                cf.c cVar = (cf.c) this.f;
+                TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                dVar.setLoading(false);
+                if (!(urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted)) {
+                    if (tL_error == null) {
+                        new org.telegram.ui.Components.yc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        break;
+                    } else {
+                        org.telegram.ui.Cells.p6.q(f3Var.topBulletinContainer, f3Var.getResourcesProvider(), tL_error, false);
+                        break;
+                    }
+                } else {
+                    String queryParameter = Uri.parse("?" + Uri.parse(((TLRPC.TL_urlAuthResultAccepted) urlAuthResult).url).getFragment()).getQueryParameter("tgWebAuthToken");
+                    if (queryParameter == null) {
+                        new org.telegram.ui.Components.yc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0("NO_TOKEN", false);
+                        break;
+                    } else {
+                        int i10 = this.b;
+                        int currentDatacenterId = ConnectionsManager.getInstance(i10).getCurrentDatacenterId();
+                        boolean isTestBackend = ConnectionsManager.getInstance(i10).isTestBackend();
+                        StringBuilder k10 = com.google.android.gms.internal.vision.e2.k("wear-auth: sending /token account=", i10, " dcId=", currentDatacenterId, " isTest=");
+                        k10.append(isTestBackend);
+                        FileLog.d(k10.toString());
+                        Context applicationContext = view.getContext().getApplicationContext();
+                        try {
+                            byte[] c10 = lj1.c(cVar, queryParameter, currentDatacenterId, isTestBackend);
+                            com.google.android.gms.internal.clearcut.u0 u0Var = new com.google.android.gms.internal.clearcut.u0(applicationContext, com.google.android.gms.common.api.i.c);
+                            String str = (String) cVar.d;
+                            com.google.android.gms.common.api.internal.t0 t0Var = u0Var.h;
+                            b8.e eVar = new b8.e(t0Var, str, "/tg-wear-auth/token", c10);
+                            t0Var.b.d(0, eVar);
+                            n6.l.n(eVar, y8.j0.a).addOnSuccessListener(new qv0(20, cVar, dVar)).addOnFailureListener(new kj1(dVar, 1));
+                            f3Var.dismiss();
+                            break;
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                            new org.telegram.ui.Components.yc(f3Var.topBulletinContainer, f3Var.getResourcesProvider()).c0(e7.getMessage(), false);
+                            return;
+                        }
+                    }
+                }
         }
+    }
+
+    public /* synthetic */ jh(org.telegram.ui.ActionBar.b2 b2Var, Utilities.Callback2 callback2, androidx.biometric.s sVar, Context context, int i10) {
+        this.c = b2Var;
+        this.d = callback2;
+        this.e = sVar;
+        this.f = context;
+        this.b = i10;
     }
 }

@@ -1,9 +1,8 @@
 package bc;
 
-import bi.u6;
 import qb.g;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements q9.d {
     public static final /* synthetic */ a b = new a(0);
@@ -15,12 +14,12 @@ public final /* synthetic */ class a implements q9.d {
     }
 
     @Override // q9.d
-    public final Object P1(u6 u6Var) {
+    public final Object D(cf.c cVar) {
         switch (this.a) {
             case 0:
-                return new c((g) u6Var.a(g.class));
+                return new c((g) cVar.a(g.class));
             default:
-                return new b((c) u6Var.a(c.class), (qb.d) u6Var.a(qb.d.class));
+                return new b((c) cVar.a(c.class), (qb.d) cVar.a(qb.d.class));
         }
     }
 }

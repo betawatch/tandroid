@@ -3,10 +3,9 @@ package c2;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
-import bi.s;
 import e2.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b implements AudioManager.OnAudioFocusChangeListener {
     public final Handler a;
@@ -21,6 +20,6 @@ public final class b implements AudioManager.OnAudioFocusChangeListener {
 
     @Override // android.media.AudioManager.OnAudioFocusChangeListener
     public final void onAudioFocusChange(int i10) {
-        d0.U(this.a, new s(this, i10, 5));
+        d0.U(this.a, new ah.g(this, i10, 2));
     }
 }

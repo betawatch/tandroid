@@ -1,55 +1,80 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gx0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+public final class gx0 extends org.telegram.ui.Components.ll0 {
+    public final Paint X2;
+    public final Path Y2;
+    public final /* synthetic */ jx0 Z2;
 
-    public /* synthetic */ gx0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gx0(jx0 jx0Var, Context context) {
+        super(context, null);
+        this.Z2 = jx0Var;
+        Paint paint = new Paint(1);
+        this.X2 = paint;
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+        this.Y2 = new Path();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                lx0 lx0Var = (lx0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = lx0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
-                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
-                    if (childAt != lx0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == lx0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
-                    }
-                }
-                break;
-            default:
-                pb1 pb1Var = (pb1) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.xi xiVar = (org.telegram.ui.Components.xi) this.d;
-                pb1Var.getClass();
-                pb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(pb1Var.a);
-                xiVar.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Path path = this.Y2;
+        path.rewind();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        path.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+        canvas.drawPath(path, this.X2);
+        canvas.save();
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.Z2.n.q0 >= 1.0f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.Z2.n.q0 >= 1.0f) {
+            return false;
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        PremiumPreviewFragment premiumPreviewFragment = this.Z2.n;
+        int i14 = 0;
+        int i15 = 0;
+        while (true) {
+            ArrayList arrayList = premiumPreviewFragment.d;
+            if (i14 >= arrayList.size()) {
+                premiumPreviewFragment.O = i15;
+                return;
+            }
+            premiumPreviewFragment.M.a((lx0) arrayList.get(i14), false);
+            premiumPreviewFragment.M.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+            ((lx0) arrayList.get(i14)).h = i15;
+            i15 += premiumPreviewFragment.M.getMeasuredHeight();
+            i14++;
         }
     }
 }

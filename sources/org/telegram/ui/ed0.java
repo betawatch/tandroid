@@ -9,7 +9,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class ed0 implements ValueAnimator.AnimatorUpdateListener {
     public boolean a;
@@ -38,7 +38,7 @@ public final class ed0 implements ValueAnimator.AnimatorUpdateListener {
                 this.a = true;
             }
         }
-        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.wr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.wr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.wr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.pr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.pr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.pr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
         FrameLayout frameLayout = this.c;
         frameLayout.setScaleX(interpolation);
         frameLayout.setScaleY(interpolation);

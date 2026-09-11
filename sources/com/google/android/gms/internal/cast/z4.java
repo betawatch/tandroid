@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class z4 implements Iterable, Serializable {
     public static final z4 c = new z4(n5.b);
@@ -23,7 +23,7 @@ public class z4 implements Iterable, Serializable {
 
     public static void p(int i10) {
         if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(hc.b.j(i10, "End index: 47 >= "));
+            throw new IndexOutOfBoundsException(i2.g.i(i10, "End index: 47 >= "));
         }
     }
 

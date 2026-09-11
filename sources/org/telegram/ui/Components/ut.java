@@ -1,32 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ut implements Utilities.Callback0Return {
+public final /* synthetic */ class ut implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ ut(Object obj, int i10) {
+    public /* synthetic */ ut(int i10, int i11, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = obj;
+        this.b = i11;
+        this.c = n2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        Editable text;
-        bj0[] bj0VarArr;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                int i11 = EditTextBoldCursor.a;
-                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((bj0VarArr = (bj0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), bj0.class)) == null || bj0VarArr.length == 0));
-            default:
-                return ((d50) obj).getCloseIntoObject();
-        }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+        of.e g10 = b2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new fi.h1(i11, n2Var, g10, b2Var));
+    }
+
+    public /* synthetic */ ut(zt ztVar, int i10, int i11) {
+        this.c = ztVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

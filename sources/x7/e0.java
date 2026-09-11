@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e0 implements ia.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final ia.c g = new ia.c("key", hc.b.p(w.f.j(c0.class, new z(1))));
-    public static final ia.c h = new ia.c("value", hc.b.p(w.f.j(c0.class, new z(2))));
+    public static final ia.c g = new ia.c("key", i2.g.n(w.f.j(c0.class, new z(1))));
+    public static final ia.c h = new ia.c("value", i2.g.n(w.f.j(c0.class, new z(2))));
     public static final d0 i = d0.b;
     public OutputStream a;
     public final HashMap b;

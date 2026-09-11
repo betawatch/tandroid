@@ -16,9 +16,9 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.e10;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -98,7 +98,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        org.telegram.ui.Components.g9 g9Var;
+        org.telegram.ui.Components.i9 i9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -142,7 +142,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l4.longValue()));
             if (chat3 != null) {
                 if (ChatObject.isMonoForum(chat3)) {
-                    str2 = mg.d.i(chat3, this.accountInstance.getCurrentAccount(), false);
+                    str2 = og.d.i(chat3, this.accountInstance.getCurrentAccount(), false);
                     TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
                     if (chat4 == null || (chatPhoto = chat4.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         fileLocation2 = null;
@@ -203,18 +203,18 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         Canvas canvas = new Canvas(createBitmap);
         if (decodeFile == null) {
             if (user != null) {
-                g9Var = new org.telegram.ui.Components.g9(0, user);
+                i9Var = new org.telegram.ui.Components.i9(0, user);
                 if (UserObject.isReplyUser(user)) {
-                    g9Var.g(12);
+                    i9Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
-                    g9Var.g(1);
+                    i9Var.g(1);
                 }
             } else {
-                g9Var = new org.telegram.ui.Components.g9((org.telegram.ui.ActionBar.f6) null);
-                g9Var.k(this.accountInstance.getCurrentAccount(), chat);
+                i9Var = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
+                i9Var.k(this.accountInstance.getCurrentAccount(), chat);
             }
-            g9Var.setBounds(0, 0, dp, dp);
-            g9Var.draw(canvas);
+            i9Var.setBounds(0, 0, dp, dp);
+            i9Var.draw(canvas);
             c10 = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
@@ -307,7 +307,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
                             charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
                         } else if (messageObject.type == 14) {
-                            charSequence = com.google.android.gms.internal.vision.e2.i("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
+                            charSequence = com.google.android.gms.internal.vision.e2.j("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                         } else {
                             charSequence = messageObject.messageText;
                             AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.f6) null);
@@ -364,23 +364,23 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             color = this.mContext.getResources().getColor(R.color.widget_action_text);
                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                             Object[] objArr3 = new Object[2];
-                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.r6.j("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
+                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.p6.j("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
                             objArr3[c10] = string2;
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                             try {
-                                valueOf2.setSpan(new m10(org.telegram.ui.ActionBar.j6.o9, null), string2.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new e10(org.telegram.ui.ActionBar.j6.o9, null), string2.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                            } catch (Exception e) {
-                                FileLog.e(e);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                                 spannableStringBuilder = valueOf2;
                             }
-                            spannableStringBuilder.setSpan(new m10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
                             charSequence2 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new m10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
                         charSequence2 = spannableStringBuilder;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         charSequence2 = spannableStringBuilder;
                     }
                     spannableStringBuilder = valueOf;

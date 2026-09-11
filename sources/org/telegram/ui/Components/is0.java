@@ -1,26 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class is0 extends s4.s {
-    public final /* synthetic */ iv0 Q;
+public final class is0 extends org.telegram.ui.Cells.i7 {
+    public final /* synthetic */ xu0 l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public is0(iv0 iv0Var) {
-        super(3);
-        this.Q = iv0Var;
+    public is0(xu0 xu0Var, Context context) {
+        super(context);
+        this.l0 = xu0Var;
     }
 
-    @Override // s4.s, s4.c0, s4.o0
-    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
-        if (this.Q.o1) {
-            i10 = 0;
+    @Override // org.telegram.ui.Cells.i7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        xu0 xu0Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? xu0Var.t1[4].a : null, false);
+            return playMessage;
         }
-        return super.o0(i10, eVar, z0Var);
-    }
-
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
+        if (messageObject.isMusic()) {
+            return MediaController.getInstance().setPlaylist(xu0Var.t1[4].a, messageObject, xu0Var.c1);
+        }
         return false;
     }
 }

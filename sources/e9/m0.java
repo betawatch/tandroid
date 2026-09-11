@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class m0 extends d0 implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
@@ -45,7 +45,7 @@ public abstract class m0 extends d0 implements Set, j$.util.Set {
         for (int i14 = 0; i14 < i10; i14++) {
             Object obj2 = objArr[i14];
             if (obj2 == null) {
-                throw new NullPointerException(hc.b.j(i14, "at index "));
+                throw new NullPointerException(i2.g.i(i14, "at index "));
             }
             int hashCode = obj2.hashCode();
             int s10 = q.s(hashCode);

@@ -18,9 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public class f0 extends androidx.fragment.app.p {
+public class f0 extends androidx.fragment.app.o {
     public final Handler A0 = new Handler(Looper.getMainLooper());
     public final androidx.activity.i B0 = new androidx.activity.i(this, 1);
     public y C0;
@@ -29,13 +29,13 @@ public class f0 extends androidx.fragment.app.p {
     public ImageView F0;
     public TextView G0;
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void E() {
         this.U = true;
         this.A0.removeCallbacksAndMessages(null);
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void F() {
         this.U = true;
         y yVar = this.C0;
@@ -44,7 +44,7 @@ public class f0 extends androidx.fragment.app.p {
         this.C0.e(q(R.string.fingerprint_dialog_touch_sensor));
     }
 
-    @Override // androidx.fragment.app.p
+    @Override // androidx.fragment.app.o
     public final Dialog O() {
         c5.b0 b0Var = new c5.b0(K());
         j6.l lVar = this.C0.f;
@@ -94,14 +94,14 @@ public class f0 extends androidx.fragment.app.p {
         cVar.f = charSequence;
         cVar.g = xVar;
         cVar.k = inflate;
-        g.g e = b0Var.e();
-        e.setCanceledOnTouchOutside(false);
-        return e;
+        g.g e7 = b0Var.e();
+        e7.setCanceledOnTouchOutside(false);
+        return e7;
     }
 
     public final int P(int i10) {
         Context n10 = n();
-        androidx.fragment.app.v k10 = k();
+        androidx.fragment.app.u k10 = k();
         if (n10 == null || k10 == null) {
             Log.w("FingerprintFragment", "Unable to get themed color. Context or activity is null.");
             return 0;
@@ -114,7 +114,7 @@ public class f0 extends androidx.fragment.app.p {
         return color;
     }
 
-    @Override // androidx.fragment.app.p, android.content.DialogInterface.OnCancelListener
+    @Override // androidx.fragment.app.o, android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
         y yVar = this.C0;
         if (yVar.x == null) {
@@ -123,22 +123,22 @@ public class f0 extends androidx.fragment.app.p {
         y.h(yVar.x, Boolean.TRUE);
     }
 
-    @Override // androidx.fragment.app.p, androidx.fragment.app.s
+    @Override // androidx.fragment.app.o, androidx.fragment.app.r
     public final void z(Bundle bundle) {
         super.z(bundle);
-        androidx.fragment.app.v k10 = k();
+        androidx.fragment.app.u k10 = k();
         if (k10 != null) {
-            y yVar = (y) new aa.a(k10).m(y.class);
+            y yVar = (y) new aa.a(k10).n(y.class);
             this.C0 = yVar;
             if (yVar.z == null) {
                 yVar.z = new androidx.lifecycle.z();
             }
-            yVar.z.d(this, new a6.i(this, 3));
+            yVar.z.d(this, new a6.m(this, 2));
             y yVar2 = this.C0;
             if (yVar2.A == null) {
                 yVar2.A = new androidx.lifecycle.z();
             }
-            yVar2.A.d(this, new a4.m(this, 1));
+            yVar2.A.d(this, new xa.c(this, 3));
         }
         if (Build.VERSION.SDK_INT >= 26) {
             this.D0 = P(e0.a());

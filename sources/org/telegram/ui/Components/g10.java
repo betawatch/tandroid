@@ -1,164 +1,119 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class g10 extends FrameLayout {
-    public ValueAnimator E;
-    public zp F;
-    public Paint a;
-    public n6 b;
-    public n6 c;
-    public float d;
-    public d6 e;
-    public View f;
-    public float h;
-    public boolean n;
-    public ValueAnimator r;
-    public float s;
-    public ValueAnimator v;
-    public int w;
-    public float x;
-    public boolean y;
+public abstract class g10 implements Application.ActivityLifecycleCallbacks {
+    private static g10 Instance;
+    private int refs;
+    private boolean wasInBackground = true;
+    private long enterBackgroundTime = 0;
+    private CopyOnWriteArrayList<f10> listeners = new CopyOnWriteArrayList<>();
 
-    public final void a(boolean z10) {
-        if (this.n != z10) {
-            ValueAnimator valueAnimator = this.r;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.r = null;
-            }
-            float f7 = this.h;
-            this.n = z10;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
-            this.r = ofFloat;
-            ofFloat.addUpdateListener(new e10(this, 2));
-            this.r.addListener(new yo(5, this, z10));
-            this.r.setDuration(320L);
-            this.r.setInterpolator(wr.h);
-            this.r.start();
-        }
+    public g10(Application application) {
+        Instance = this;
+        application.registerActivityLifecycleCallbacks(this);
     }
 
-    public final void b(CharSequence charSequence, boolean z10) {
-        n6 n6Var = this.b;
-        if (z10) {
-            n6Var.b();
-        }
-        n6Var.q(charSequence, z10, true);
-        invalidate();
+    public static g10 getInstance() {
+        return Instance;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return false;
+    public void addListener(f10 f10Var) {
+        this.listeners.add(f10Var);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z10;
-        Paint paint = this.a;
-        n6 n6Var = this.c;
-        n6 n6Var2 = this.b;
-        this.f.draw(canvas);
-        if (this.h > 0.0f) {
-            if (this.F == null) {
-                this.F = new zp(n6Var2.a.getColor());
-            }
-            int dp = (int) ((1.0f - this.h) * AndroidUtilities.dp(24.0f));
-            this.F.setBounds(0, dp, getWidth(), getHeight() + dp);
-            this.F.setAlpha((int) (this.h * 255.0f));
-            this.F.draw(canvas);
-            invalidate();
+    public boolean isBackground() {
+        return this.refs == 0;
+    }
+
+    public boolean isForeground() {
+        return this.refs > 0;
+    }
+
+    public boolean isWasInBackground(boolean z10) {
+        if (z10 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+            this.wasInBackground = false;
         }
-        float f7 = this.h;
-        if (f7 < 1.0f) {
-            if (f7 != 0.0f) {
-                canvas.save();
-                canvas.translate(0.0f, (int) (this.h * AndroidUtilities.dp(-24.0f)));
-                canvas.scale(1.0f, 1.0f - (this.h * 0.4f));
-                z10 = true;
-            } else {
-                z10 = false;
+        return this.wasInBackground;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        int i10 = this.refs + 1;
+        this.refs = i10;
+        if (i10 == 1) {
+            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+                this.wasInBackground = false;
             }
-            float d = n6Var2.d();
-            float d10 = this.e.d(this.d, false);
-            float d11 = ((n6Var.d() + AndroidUtilities.dp(15.66f)) * d10) + d;
-            Rect rect = AndroidUtilities.rectTmp2;
-            rect.set((int) (((getMeasuredWidth() - d11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - n6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.a2.a(getMeasuredWidth() - d11, getWidth(), 2.0f, d), (int) (((getMeasuredHeight() + n6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
-            n6Var2.w = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.x) * (1.0f - this.h) * 255.0f);
-            n6Var2.setBounds(rect);
-            n6Var2.draw(canvas);
-            rect.set((int) (com.google.android.gms.internal.vision.e2.A(getMeasuredWidth(), d11, 2.0f, d) + AndroidUtilities.dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.dp(18.0f)) / 2.0f), (int) (Math.max(AndroidUtilities.dp(9.0f), n6Var.d()) + com.google.android.gms.internal.vision.e2.A(getMeasuredWidth(), d11, 2.0f, d) + AndroidUtilities.dp(13.0f)), (int) ((AndroidUtilities.dp(18.0f) + getMeasuredHeight()) / 2.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(rect);
-            if (this.s != 1.0f) {
-                canvas.save();
-                float f10 = this.s;
-                canvas.scale(f10, f10, rect.centerX(), rect.centerY());
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to foreground");
             }
-            paint.setAlpha((int) ((1.0f - this.h) * 255.0f * d10 * d10));
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), paint);
-            rect.offset(-AndroidUtilities.dp(0.3f), -AndroidUtilities.dp(0.4f));
-            n6Var.w = (int) org.telegram.messenger.a2.A(1.0f, this.h, 255.0f, d10);
-            n6Var.setBounds(rect);
-            n6Var.draw(canvas);
-            if (this.s != 1.0f) {
-                canvas.restore();
-            }
-            if (z10) {
-                canvas.restore();
+            Iterator<f10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameForeground();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
             }
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        String str;
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append((Object) this.b.g);
-        if (this.w > 0) {
-            str = ", " + LocaleController.formatPluralString("Chats", this.w, new Object[0]);
-        } else {
-            str = "";
-        }
-        sb2.append(str);
-        accessibilityNodeInfo.setContentDescription(sb2.toString());
-    }
-
-    @Override // android.view.View
-    public final void setEnabled(boolean z10) {
-        if (this.y != z10) {
-            ValueAnimator valueAnimator = this.E;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.E = null;
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        int i10 = this.refs - 1;
+        this.refs = i10;
+        if (i10 == 0) {
+            this.enterBackgroundTime = SystemClock.elapsedRealtime();
+            this.wasInBackground = true;
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to background");
             }
-            float f7 = this.x;
-            this.y = z10;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
-            this.E = ofFloat;
-            ofFloat.addUpdateListener(new e10(this, 0));
-            this.E.addListener(new f10(0));
-            this.E.start();
+            Iterator<f10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameBackground();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+            }
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || this.c == drawable || super.verifyDrawable(drawable);
+    public void removeListener(f10 f10Var) {
+        this.listeners.remove(f10Var);
+    }
+
+    public void resetBackgroundVar() {
+        this.wasInBackground = false;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityPaused(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

@@ -1,40 +1,79 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ag implements View.OnClickListener {
+public final /* synthetic */ class ag implements org.telegram.ui.Components.oj0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ eo b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ ag(eo eoVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ ag(co coVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = eoVar;
-        this.c = arrayList;
+        this.b = coVar;
+        this.c = messageObject;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.ui.Components.oj0
+    public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
         switch (this.a) {
             case 0:
-                eo eoVar = this.b;
-                ri riVar = new ri(eoVar, eoVar, eoVar.getParentActivity(), eoVar.ea, this.c);
-                riVar.setCalcMandatoryInsets(eoVar.x9());
-                riVar.setDimBehind(false);
-                eoVar.A7(false);
-                eoVar.showDialog(riVar);
+                Bundle bundle = new Bundle();
+                if (j3 > 0) {
+                    bundle.putLong("user_id", j3);
+                } else {
+                    bundle.putLong("chat_id", -j3);
+                }
+                co coVar = this.b;
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
+                    bundle.putInt("report_reaction_message_id", this.c.getId());
+                    bundle.putLong("report_reaction_from_dialog_id", coVar.T5);
+                }
+                coVar.presentFragment(new ProfileActivity(bundle, null));
+                coVar.A7(true);
                 break;
             default:
-                eo eoVar2 = this.b;
-                if (eoVar2.getParentActivity() != null && eoVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.wv(eoVar2, eoVar2.getParentActivity(), eoVar2.ea, this.c).show();
-                    eoVar2.A7(true);
-                    break;
+                co coVar2 = this.b;
+                coVar2.getClass();
+                Bundle bundle2 = new Bundle();
+                if (j3 > 0) {
+                    bundle2.putLong("user_id", j3);
+                } else {
+                    bundle2.putLong("chat_id", -j3);
                 }
+                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
+                    bundle2.putInt("report_reaction_message_id", this.c.getId());
+                    bundle2.putLong("report_reaction_from_dialog_id", coVar2.T5);
+                }
+                coVar2.presentFragment(new ProfileActivity(bundle2, null));
+                coVar2.A7(true);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        co coVar = this.b;
+        org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(coVar.getParentActivity(), 3, coVar.ea)};
+        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
+        MessageObject messageObject = this.c;
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
+        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
+        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
+        tL_inputMediaPoll.poll = tL_poll;
+        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+        tL_poll.id = poll.id;
+        tL_poll.question = poll.question;
+        tL_poll.answers = poll.answers;
+        tL_poll.closed = true;
+        tL_messages_editMessage.media = tL_inputMediaPoll;
+        tL_messages_editMessage.peer = coVar.getMessagesController().getInputPeer(coVar.T5);
+        tL_messages_editMessage.id = messageObject.getId();
+        tL_messages_editMessage.flags |= 16384;
+        AndroidUtilities.runOnUIThread(new wg(coVar, b2VarArr, coVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new aa(coVar, b2VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

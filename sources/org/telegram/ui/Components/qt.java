@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class qt extends p6 {
+    public final /* synthetic */ int W;
+    public final /* synthetic */ EditTextBoldCursor X;
 
-    public /* synthetic */ qt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ qt(int i10, EditTextBoldCursor editTextBoldCursor) {
+        super(false, false, false, false);
+        this.W = i10;
+        this.X = editTextBoldCursor;
     }
 
-    public final void a(int i10, boolean z10) {
-        switch (this.a) {
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
             case 0:
-                ArrayList arrayList = ((st) this.b).b;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    ((qt) obj).a(i10, z10);
-                }
+                this.X.invalidate();
                 break;
             default:
-                ((Runnable) this.b).run();
+                this.X.invalidate();
                 break;
         }
     }

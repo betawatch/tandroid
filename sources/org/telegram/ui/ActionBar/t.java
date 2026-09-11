@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.wr;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -44,42 +44,42 @@ public final class t implements Runnable {
         if (f7 > 1.0f) {
             actionBarLayout.E0 = 1.0f;
         }
-        p2 p2Var = actionBarLayout.H;
-        if (p2Var != null) {
-            p2Var.onTransitionAnimationProgress(true, actionBarLayout.E0);
+        n2 n2Var = actionBarLayout.H;
+        if (n2Var != null) {
+            n2Var.onTransitionAnimationProgress(true, actionBarLayout.E0);
         }
-        p2 p2Var2 = actionBarLayout.I;
-        if (p2Var2 != null) {
-            p2Var2.onTransitionAnimationProgress(false, actionBarLayout.E0);
+        n2 n2Var2 = actionBarLayout.I;
+        if (n2Var2 != null) {
+            n2Var2.onTransitionAnimationProgress(false, actionBarLayout.E0);
         }
-        p2 p2Var3 = actionBarLayout.I;
-        Integer valueOf = p2Var3 != null ? Integer.valueOf(p2Var3.getNavigationBarColor()) : null;
-        p2 p2Var4 = actionBarLayout.H;
-        Integer valueOf2 = p2Var4 != null ? Integer.valueOf(p2Var4.getNavigationBarColor()) : null;
-        p2 p2Var5 = actionBarLayout.I;
-        if (p2Var5 != null && p2Var5.isSupportEdgeToEdge() && valueOf2 != null) {
+        n2 n2Var3 = actionBarLayout.I;
+        Integer valueOf = n2Var3 != null ? Integer.valueOf(n2Var3.getNavigationBarColor()) : null;
+        n2 n2Var4 = actionBarLayout.H;
+        Integer valueOf2 = n2Var4 != null ? Integer.valueOf(n2Var4.getNavigationBarColor()) : null;
+        n2 n2Var5 = actionBarLayout.I;
+        if (n2Var5 != null && n2Var5.isSupportEdgeToEdge() && valueOf2 != null) {
             valueOf = valueOf2;
         }
-        p2 p2Var6 = actionBarLayout.H;
-        if (p2Var6 != null && p2Var6.isSupportEdgeToEdge() && valueOf != null) {
+        n2 n2Var6 = actionBarLayout.H;
+        if (n2Var6 != null && n2Var6.isSupportEdgeToEdge() && valueOf != null) {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(w7.q.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int d = i0.a.d(w7.p.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             s sVar = actionBarLayout.G;
             if (sVar != null && sVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {
-                    l2 l2Var = actionBarLayout.G.sheetsStack.get(i10);
-                    if (l2Var.attachedToParent()) {
-                        d = l2Var.getNavigationBarColor(d);
+                    j2 j2Var = actionBarLayout.G.sheetsStack.get(i10);
+                    if (j2Var.attachedToParent()) {
+                        d = j2Var.getNavigationBarColor(d);
                     }
                 }
             }
             actionBarLayout.H.setNavigationBarColor(d);
         }
-        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : wr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
+        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : pr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
-            float a2 = w7.q.a(interpolation, 0.0f, 1.0f);
+            float a2 = w7.p.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z12) {
                 float f10 = (0.3f * interpolation) + 0.7f;
@@ -102,7 +102,7 @@ public final class t implements Runnable {
             }
         } else {
             float f13 = 1.0f - interpolation;
-            float a10 = w7.q.a(f13, 0.0f, 1.0f);
+            float a10 = w7.p.a(f13, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z12) {
                 float f14 = (f13 * 0.1f) + 0.9f;

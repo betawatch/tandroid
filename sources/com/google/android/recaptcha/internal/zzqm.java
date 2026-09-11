@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import a4.a;
-import hc.b;
+import i2.g;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class zzqm implements Iterable, Serializable {
     public static final zzqm zzb = new zzqk(zzsv.zzb);
@@ -23,7 +23,7 @@ public abstract class zzqm implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(b.k(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(g.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
             throw new IndexOutOfBoundsException(a.l(i10, i11, "Beginning index larger than ending index: ", ", "));

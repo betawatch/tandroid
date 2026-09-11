@@ -4,15 +4,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w5 b;
+    public final /* synthetic */ v5 b;
 
-    public /* synthetic */ m5(w5 w5Var, int i10) {
+    public /* synthetic */ m5(v5 v5Var, int i10) {
         this.a = i10;
-        this.b = w5Var;
+        this.b = v5Var;
     }
 
     @Override // e2.h
@@ -22,7 +22,7 @@ public final /* synthetic */ class m5 implements e2.h {
                 this.b.S = (ChannelBoostsController.CanApplyBoost) obj;
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new n(4, this.b, (TL_stories.TL_premium_boostsStatus) obj));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(7, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
     }

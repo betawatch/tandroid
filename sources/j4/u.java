@@ -1,8 +1,9 @@
 package j4;
 
 import b2.r0;
+import c3.h0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.v a;
@@ -10,7 +11,7 @@ public final class u implements i {
     public final String c;
     public final int d;
     public final String e;
-    public c3.h0 f;
+    public h0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -32,7 +33,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void a(e2.v vVar) {
+    public final void b(e2.v vVar) {
         e2.d.h(this.f);
         while (vVar.a() > 0) {
             int i10 = this.h;
@@ -113,7 +114,7 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void b() {
+    public final void d() {
         this.h = 0;
         this.i = 0;
         this.k = false;
@@ -121,20 +122,20 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void c(c3.q qVar, g0 g0Var) {
-        g0Var.a();
-        g0Var.b();
-        this.g = g0Var.e;
-        g0Var.b();
-        this.f = qVar.I(g0Var.d, 1);
+    public final void e(c3.q qVar, f0 f0Var) {
+        f0Var.a();
+        f0Var.b();
+        this.g = f0Var.e;
+        f0Var.b();
+        this.f = qVar.R1(f0Var.d, 1);
     }
 
     @Override // j4.i
-    public final void e(int i10, long j3) {
+    public final void g(int i10, long j3) {
         this.n = j3;
     }
 
     @Override // j4.i
-    public final void d(boolean z10) {
+    public final void f(boolean z10) {
     }
 }

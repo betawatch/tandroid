@@ -1,0 +1,36 @@
+package fi;
+
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vk0;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes4.dex */
+public final class w3 extends v51 {
+    public final /* synthetic */ e4 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w3(e4 e4Var, ll0 ll0Var, Activity activity, int i10, int i11, ci.u uVar, f6 f6Var) {
+        super(ll0Var, activity, i10, i11, true, uVar, f6Var);
+        this.N = e4Var;
+    }
+
+    @Override // org.telegram.ui.Components.v51, s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        f6 f6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
+        }
+        e4 e4Var = this.N;
+        Activity parentActivity = e4Var.getParentActivity();
+        int i11 = j6.L6;
+        f6Var = ((org.telegram.ui.ActionBar.n2) e4Var).resourceProvider;
+        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(parentActivity, i11, 21, 0, false, f6Var);
+        l4Var.setHeight(25);
+        return new vk0(l4Var);
+    }
+}

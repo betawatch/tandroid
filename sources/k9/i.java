@@ -1,6 +1,5 @@
 package k9;
 
-import bi.u6;
 import cc.k;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.t;
@@ -8,7 +7,7 @@ import java.util.concurrent.Executor;
 import q9.r;
 import zd.y0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i implements q9.d, t {
     public static final i b = new i(0);
@@ -22,24 +21,24 @@ public final class i implements q9.d, t {
     }
 
     @Override // q9.d
-    public Object P1(u6 u6Var) {
+    public Object D(cf.c cVar) {
         switch (this.a) {
             case 0:
-                Object h = u6Var.h(new r(m9.a.class, Executor.class));
-                kotlin.jvm.internal.i.d(h, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) h);
+                Object i10 = cVar.i(new r(m9.a.class, Executor.class));
+                kotlin.jvm.internal.i.d(i10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i10);
             case 1:
-                Object h10 = u6Var.h(new r(m9.c.class, Executor.class));
-                kotlin.jvm.internal.i.d(h10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) h10);
+                Object i11 = cVar.i(new r(m9.c.class, Executor.class));
+                kotlin.jvm.internal.i.d(i11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i11);
             case 2:
-                Object h11 = u6Var.h(new r(m9.b.class, Executor.class));
-                kotlin.jvm.internal.i.d(h11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) h11);
+                Object i12 = cVar.i(new r(m9.b.class, Executor.class));
+                kotlin.jvm.internal.i.d(i12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i12);
             default:
-                Object h12 = u6Var.h(new r(m9.d.class, Executor.class));
-                kotlin.jvm.internal.i.d(h12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) h12);
+                Object i13 = cVar.i(new r(m9.d.class, Executor.class));
+                kotlin.jvm.internal.i.d(i13, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i13);
         }
     }
 

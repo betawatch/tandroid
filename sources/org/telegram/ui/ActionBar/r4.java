@@ -1,37 +1,25 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.MotionEvent;
+import android.widget.ImageButton;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class r4 extends ArrayAdapter {
-    public final /* synthetic */ x4 a;
+public final class r4 extends ImageButton {
+    public final /* synthetic */ v4 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r4(x4 x4Var, Context context) {
-        super(context, 0);
-        this.a = x4Var;
+    public r4(v4 v4Var, Context context) {
+        super(context);
+        this.a = v4Var;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        x4 x4Var = this.a;
-        com.google.firebase.messaging.p pVar = x4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i10);
-        int width = x4Var.I.getWidth();
-        if (view != null) {
-            int i11 = pVar.a;
-            z4.e(view, menuItem, ((x4) pVar.e).Q.j != null);
-        } else {
-            view = z4.b(((x4) pVar.e).Q, (Context) pVar.c, menuItem, true, false, false);
-            int i12 = pVar.b;
-            view.setPadding(i12, 0, i12, 0);
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.a.N) {
+            return false;
         }
-        view.setMinimumWidth(width);
-        return view;
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

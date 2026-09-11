@@ -1,108 +1,161 @@
 package lg;
 
-import android.app.Activity;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-import n7.a1;
-import og.u0;
+import com.google.android.gms.internal.vision.e2;
+import di.g4;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.a2;
-import org.telegram.messenger.em;
+import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m4;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.oo0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.i5;
-import w7.a6;
+import w7.x5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+public class c extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final TextView c;
+    public final TextView d;
+    public boolean e;
+    public boolean f;
+    public final Drawable h;
+    public final int n;
+    public final f6 r;
 
-    public /* synthetic */ c(i iVar, int i10) {
-        this.a = i10;
-        this.b = iVar;
+    public c(Context context, f6 f6Var) {
+        super(context);
+        this.e = true;
+        new SimpleDateFormat("d MMM yyyy");
+        this.r = f6Var;
+        TextPaint textPaint = new TextPaint();
+        textPaint.setTextSize(14.0f);
+        textPaint.setTypeface(AndroidUtilities.bold());
+        int measureText = (int) textPaint.measureText("00 MMM 0000 - 00 MMM 000");
+        this.n = measureText;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        e2.m(15.0f, 1, textView);
+        addView(textView, x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 15.0f);
+        textView2.setTypeface(Typeface.DEFAULT_BOLD);
+        textView2.setGravity(8388627);
+        addView(textView2, x5.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        TextView textView3 = new TextView(context);
+        this.b = textView3;
+        textView3.setTextSize(1, 13.0f);
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setGravity(8388629);
+        addView(textView3, x5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        TextView textView4 = new TextView(context);
+        this.c = textView4;
+        textView4.setTextSize(1, 13.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setGravity(8388629);
+        addView(textView4, x5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView4.setVisibility(8);
+        textView2.setVisibility(8);
+        textView2.setText(LocaleController.getString(R.string.ZoomOut));
+        Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
+        this.h = drawable;
+        textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
+        textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
+        textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
+        textView2.setBackground(j6.G0(AndroidUtilities.dp(3.0f), j6.v0(j6.Rh, f6Var)));
+        textView4.addOnLayoutChangeListener(new g4(this, 1));
+        a();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p2 R = LaunchActivity.R();
-                i5 i5Var = new i5(R.getParentActivity(), false);
-                if (R.getFragmentView() instanceof aw0) {
-                    i5Var.b = (aw0) R.getFragmentView();
-                }
-                Activity parentActivity = R.getParentActivity();
-                LinearLayout f7 = a2.f(parentActivity, 1);
-                TextView textView = new TextView(parentActivity);
-                textView.setText("Saturation " + (i5.c * 5.0f));
-                int i10 = j6.n5;
-                em.r(textView, j6.w0(null, i10, false), 1, 16.0f, 1);
-                textView.setMaxLines(1);
-                textView.setSingleLine(true);
-                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f7.addView(textView, a6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                oo0 oo0Var = new oo0(parentActivity);
-                oo0Var.setDelegate(new a1(i5Var, textView, false, 3));
-                oo0Var.setReportChanges(true);
-                f7.addView(oo0Var, a6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView2 = new TextView(parentActivity);
-                textView2.setText("Alpha " + i5.e);
-                em.r(textView2, j6.w0(null, i10, false), 1, 16.0f, 1);
-                textView2.setMaxLines(1);
-                textView2.setSingleLine(true);
-                textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f7.addView(textView2, a6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                oo0 oo0Var2 = new oo0(parentActivity);
-                oo0Var2.setDelegate(new u0(i5Var, textView2, false, 2));
-                oo0Var2.setReportChanges(true);
-                f7.addView(oo0Var2, a6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                TextView textView3 = new TextView(parentActivity);
-                textView3.setText("Blur Radius");
-                em.r(textView3, j6.w0(null, i10, false), 1, 16.0f, 1);
-                textView3.setMaxLines(1);
-                textView3.setSingleLine(true);
-                textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                f7.addView(textView3, a6.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                oo0 oo0Var3 = new oo0(parentActivity);
-                oo0Var3.setDelegate(new org.telegram.ui.g(i5Var, 5));
-                oo0Var3.setReportChanges(true);
-                f7.addView(oo0Var3, a6.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                f7.addOnLayoutChangeListener(new m4(oo0Var, oo0Var3, oo0Var2));
-                ScrollView scrollView = new ScrollView(parentActivity);
-                scrollView.addView(f7);
-                i5Var.setCustomView(scrollView);
-                i5Var.show();
-                this.b.c(false);
-                break;
-            case 1:
-                i iVar = this.b;
-                iVar.getClass();
-                SharedConfig.toggleDebugWebView();
-                Toast.makeText(iVar.getContext(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
-                break;
-            case 2:
-                ProfileActivity.H4((Activity) this.b.getContext(), false);
-                break;
-            default:
-                i iVar2 = this.b;
-                iVar2.n = true;
-                try {
-                    iVar2.performHapticFeedback(0);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
+    public final void a() {
+        int i10 = j6.j5;
+        f6 f6Var = this.r;
+        this.a.setTextColor(j6.v0(i10, f6Var));
+        this.b.setTextColor(j6.v0(i10, f6Var));
+        this.c.setTextColor(j6.v0(i10, f6Var));
+        int i11 = j6.fj;
+        this.d.setTextColor(j6.v0(i11, f6Var));
+        this.h.setColorFilter(j6.v0(i11, f6Var), PorterDuff.Mode.SRC_IN);
+    }
+
+    public final void b(long j3, long j10) {
+        String format;
+        boolean z10 = this.e;
+        TextView textView = this.b;
+        if (!z10) {
+            textView.setVisibility(8);
+            this.c.setVisibility(8);
+            return;
         }
+        if (this.f) {
+            j10 += 604800000;
+        }
+        if (j10 - j3 >= 86400000) {
+            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3)) + " — " + LocaleController.getInstance().getFormatterYear().format(new Date(j10));
+        } else {
+            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3));
+        }
+        textView.setText(format);
+        textView.setVisibility(0);
+    }
+
+    public final void c(boolean z10) {
+        this.e = z10;
+        TextView textView = this.a;
+        if (z10) {
+            textView.setLayoutParams(x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
+            return;
+        }
+        this.c.setVisibility(8);
+        this.b.setVisibility(8);
+        textView.setLayoutParams(x5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView.requestLayout();
+    }
+
+    public final void d(long j3, boolean z10) {
+        b(j3, j3);
+        TextView textView = this.d;
+        textView.setVisibility(0);
+        TextView textView2 = this.a;
+        if (!z10) {
+            textView.setAlpha(1.0f);
+            textView.setTranslationX(0.0f);
+            textView.setTranslationY(0.0f);
+            textView.setScaleX(1.0f);
+            textView.setScaleY(1.0f);
+            textView2.setAlpha(0.0f);
+            return;
+        }
+        textView.setAlpha(0.0f);
+        textView.setScaleX(0.3f);
+        textView.setScaleY(0.3f);
+        textView.setPivotX(0.0f);
+        textView.setPivotY(AndroidUtilities.dp(40.0f));
+        textView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
+        textView2.setAlpha(1.0f);
+        textView2.setTranslationX(0.0f);
+        textView2.setTranslationY(0.0f);
+        textView2.setScaleX(1.0f);
+        textView2.setScaleY(1.0f);
+        textView2.setPivotX(0.0f);
+        textView2.setPivotY(0.0f);
+        textView2.animate().alpha(0.0f).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
+    }
+
+    public void setTitle(String str) {
+        this.a.setText(str);
+    }
+
+    public void setUseWeekInterval(boolean z10) {
+        this.f = z10;
     }
 }

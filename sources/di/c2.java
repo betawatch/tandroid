@@ -1,48 +1,66 @@
 package di;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.hd0;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.bw;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class c2 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ hd0 d;
+public final class c2 extends bw {
+    public final /* synthetic */ e2 g0;
 
-    public c2(EditTextBoldCursor editTextBoldCursor, int i10, hd0 hd0Var) {
-        this.b = editTextBoldCursor;
-        this.c = i10;
-        this.d = hd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var), false);
+        this.g0 = e2Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        CharSequence text = editTextBoldCursor.getText();
-        if (!this.a) {
-            int length = text.length();
-            int i10 = this.c;
-            if (length > i10) {
-                this.a = true;
-                text = text.subSequence(0, i10);
-                editTextBoldCursor.setText(text);
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                this.a = false;
-            }
+    @Override // org.telegram.ui.Components.bw
+    public final boolean h(int i10) {
+        int i11;
+        int paddingTop;
+        k2 k2Var;
+        e2 e2Var = this.g0;
+        p1 p1Var = e2Var.b;
+        d2 d2Var = e2Var.c;
+        l2 l2Var = e2Var.f;
+        int i12 = 0;
+        if (this.d) {
+            return false;
         }
-        this.d.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(text));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (l2Var != null && (k2Var = l2Var.f) != null) {
+            if (k2Var.getSelectedCategory() != null) {
+                p1.v1(p1Var, 0, 0);
+                l2Var.f.E1(null);
+            }
+            l2Var.f.C1();
+            l2Var.b();
+        }
+        if (d2Var != null) {
+            d2Var.D(null);
+        }
+        while (true) {
+            if (i12 >= d2Var.y.size()) {
+                i11 = -1;
+                break;
+            }
+            i11 = d2Var.y.keyAt(i12);
+            if (d2Var.y.valueAt(i12) == i10) {
+                break;
+            }
+            i12++;
+        }
+        if (i11 >= 0) {
+            float f7 = e2Var.n;
+            if (f7 >= 0.0f) {
+                paddingTop = p1Var.getPaddingTop();
+            } else {
+                f7 = e2Var.b();
+                e2Var.n = f7;
+                paddingTop = p1Var.getPaddingTop();
+            }
+            p1.v1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
+        }
+        return true;
     }
 }

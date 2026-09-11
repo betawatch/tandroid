@@ -1,10 +1,15 @@
 package org.telegram.ui;
 
-import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tb1 implements org.telegram.ui.Components.gl0, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class tb1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ThemeActivity b;
 
@@ -13,32 +18,25 @@ public final /* synthetic */ class tb1 implements org.telegram.ui.Components.gl0
         this.b = themeActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void f(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 1:
+            case 0:
                 ThemeActivity themeActivity = this.b;
-                themeActivity.getClass();
-                org.telegram.ui.Components.d5.W(themeActivity, 0, null, null);
+                themeActivity.b.d1(new pb1(themeActivity, 0), 700, true);
                 break;
             default:
                 ThemeActivity themeActivity2 = this.b;
-                if (themeActivity2.getParentActivity() != null) {
-                    try {
-                        themeActivity2.getParentActivity().startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-                        break;
-                    } catch (Exception unused) {
-                        return;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.j6.x, org.telegram.ui.ActionBar.j6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
                     }
+                } catch (Exception unused) {
                 }
+                AndroidUtilities.runOnUIThread(new w81(6, themeActivity2, str));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.gl0
-    public int run() {
-        int i10;
-        i10 = this.b.sensitiveContentRow;
-        return i10;
     }
 }

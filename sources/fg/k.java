@@ -1,174 +1,439 @@
 package fg;
 
-import j$.util.Objects;
+import android.os.Build;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import com.google.android.gms.internal.cast.o;
+import com.google.android.gms.internal.vision.e2;
+import di.b7;
+import j$.util.concurrent.atomic.DesugarAtomicInteger;
+import java.net.IDN;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+import java.security.SecureRandom;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import org.json.JSONObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.g10;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class k extends ng.a {
-    public final TLRPC.Dialog c;
-    public final TLRPC.RecentMeUrl d;
-    public final TLRPC.TL_contact e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
-    public final TL_chatlists.TL_chatlists_chatlistUpdates i;
-    public final int j;
-    public final int k;
-    public final String l;
-    public final TLRPC.Chat m;
-    public final TLRPC.User n;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final class k implements f10 {
+    public static final Object t = new Object();
+    public static k u;
+    public static k v;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final String f;
+    public final ServerSocket g;
+    public WebView m;
+    public b5.h n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public int r;
+    public d s;
+    public final Object a = new Object();
+    public final ExecutorService h = Executors.newCachedThreadPool();
+    public final ExecutorService i = Executors.newSingleThreadExecutor();
+    public final AtomicInteger j = new AtomicInteger(1);
+    public final HashMap k = new HashMap();
+    public final ArrayDeque l = new ArrayDeque();
 
-    public k(m mVar, TL_chatlists.TL_chatlists_chatlistUpdates tL_chatlists_chatlistUpdates) {
-        super(17, true);
-        this.i = tL_chatlists_chatlistUpdates;
-        int i10 = mVar.W;
-        mVar.W = i10 + 1;
-        this.k = i10;
+    public k(String str, String str2, byte[] bArr) {
+        this.b = str;
+        this.c = str2;
+        String concat = "https://".concat(str);
+        this.d = concat;
+        byte[] bArr2 = new byte[32];
+        new SecureRandom().nextBytes(bArr2);
+        String encodeToString = Base64.encodeToString(bArr2, 11);
+        this.f = encodeToString;
+        String concat2 = "tdesktop-web-proxy-bridge-v1\n".concat(str);
+        Mac mac = Mac.getInstance("HmacSHA256");
+        mac.init(new SecretKeySpec(bArr, "HmacSHA256"));
+        this.e = concat + "/?bridge=" + Base64.encodeToString(mac.doFinal(concat2.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + encodeToString;
+        this.g = new ServerSocket(0, 64, InetAddress.getByName("127.0.0.1"));
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.c, this.m, this.d, this.e, this.l);
-    }
-
-    public k(m mVar, String str) {
-        super(22, false);
-        HashMap hashMap = mVar.Y;
-        Integer num = (Integer) hashMap.get(str);
-        if (num != null) {
-            this.k = num.intValue();
-        } else {
-            int i10 = mVar.W;
-            mVar.W = i10 + 1;
-            this.k = i10;
-            hashMap.put(str, Integer.valueOf(i10));
-        }
-        this.l = str;
-    }
-
-    public k(m mVar, TLRPC.User user) {
-        super(23, false);
-        this.n = user;
-        long j3 = user.id;
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        int i10 = longSparseIntArray.get(j3, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
-        }
-        int i11 = mVar.W;
-        mVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(user.id, i11);
-    }
-
-    public k(m mVar, TLRPC.Chat chat) {
-        super(23, false);
-        this.m = chat;
-        long j3 = chat.id;
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        int i10 = longSparseIntArray.get(-j3, -1);
-        if (i10 >= 0) {
-            this.k = i10;
-            return;
-        }
-        int i11 = mVar.W;
-        mVar.W = i11 + 1;
-        this.k = i11;
-        longSparseIntArray.put(-chat.id, i11);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, int i10, TLRPC.Dialog dialog) {
-        super(i10, true);
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        this.c = dialog;
-        if (dialog != null) {
-            int i11 = longSparseIntArray.get(dialog.id, -1);
-            if (i11 >= 0) {
-                this.k = i11;
-            } else {
-                int i12 = mVar.W;
-                mVar.W = i12 + 1;
-                this.k = i12;
-                longSparseIntArray.put(dialog.id, i12);
+    public static void a(k kVar) {
+        synchronized (kVar.a) {
+            try {
+                if (!kVar.p && kVar.m == null) {
+                    g10 g10Var = g10.getInstance();
+                    if (g10Var != null && g10Var.isBackground()) {
+                        kVar.q = true;
+                        return;
+                    }
+                    kVar.q = false;
+                    kVar.e();
+                    try {
+                        WebView webView = new WebView(ApplicationLoader.applicationContext);
+                        kVar.m = webView;
+                        webView.setBackgroundColor(0);
+                        WebSettings settings = webView.getSettings();
+                        settings.setJavaScriptEnabled(true);
+                        settings.setDomStorageEnabled(false);
+                        settings.setDatabaseEnabled(false);
+                        settings.setAllowFileAccess(false);
+                        settings.setAllowContentAccess(false);
+                        settings.setCacheMode(2);
+                        settings.setJavaScriptCanOpenWindowsAutomatically(false);
+                        settings.setSupportMultipleWindows(false);
+                        settings.setGeolocationEnabled(false);
+                        settings.setMediaPlaybackRequiresUserGesture(true);
+                        settings.setMixedContentMode(1);
+                        if (Build.VERSION.SDK_INT >= 26) {
+                            settings.setSafeBrowsingEnabled(true);
+                        }
+                        webView.setWebViewClient(new i(kVar, 0));
+                        HashSet hashSet = new HashSet();
+                        hashSet.add(kVar.d);
+                        a5.c.a(webView, "TelegramWebProxy", hashSet, new a1.c(kVar, 29));
+                        webView.loadUrl(kVar.e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        kVar.f();
+                    }
+                }
+            } finally {
             }
-        } else if (i10 == 19) {
-            this.k = 5;
-        } else {
-            int i13 = mVar.W;
-            mVar.W = i13 + 1;
-            this.k = i13;
         }
-        if (dialog != null) {
-            int i14 = mVar.h;
-            int i15 = mVar.F;
-            if (i14 != 7 && i14 != 8) {
-                this.g = dialog.pinned;
-            } else {
-                MessagesController.DialogFilter dialogFilter = MessagesController.getInstance(i15).selectedDialogFilter[mVar.h == 8 ? (char) 1 : (char) 0];
-                this.g = dialogFilter != null && dialogFilter.pinnedDialogs.indexOfKey(dialog.id) >= 0;
+    }
+
+    public static void b(k kVar) {
+        int andUpdate;
+        while (true) {
+            try {
+                Socket accept = kVar.g.accept();
+                accept.setTcpNoDelay(true);
+                synchronized (kVar.a) {
+                    try {
+                        if (!kVar.p && kVar.k.size() < 64) {
+                            while (true) {
+                                andUpdate = DesugarAtomicInteger.getAndUpdate(kVar.j, new h());
+                                if (andUpdate != 0 && !kVar.k.containsKey(Integer.valueOf(andUpdate))) {
+                                    break;
+                                }
+                            }
+                            j jVar = new j(andUpdate, accept);
+                            kVar.k.put(Integer.valueOf(andUpdate), jVar);
+                            if (kVar.o) {
+                                jVar.e = true;
+                                kVar.j(1, andUpdate, null);
+                            }
+                            kVar.h.execute(new b7(21, kVar, jVar));
+                        }
+                        try {
+                            accept.close();
+                        } catch (Exception unused) {
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+            } catch (Exception e7) {
+                synchronized (kVar.a) {
+                    try {
+                        if (kVar.p) {
+                            return;
+                        }
+                        FileLog.e(e7);
+                        kVar.f();
+                        return;
+                    } finally {
+                    }
+                }
             }
-            this.h = dialog.isFolder;
-            this.f = MessagesController.getInstance(i15).isForum(dialog.id);
         }
     }
 
-    public k(m mVar, TLRPC.RecentMeUrl recentMeUrl) {
-        super(4, true);
-        this.d = recentMeUrl;
-        int i10 = mVar.W;
-        mVar.W = i10 + 1;
-        this.k = i10;
+    public static byte[] d(String str) {
+        byte[] bArr;
+        if (str == null) {
+            return null;
+        }
+        String trim = str.trim();
+        if ((trim.length() == 32 || trim.length() == 34) && trim.matches("[0-9a-fA-F]+")) {
+            int length = trim.length() / 2;
+            bArr = new byte[length];
+            for (int i10 = 0; i10 < length; i10++) {
+                int i11 = i10 * 2;
+                bArr[i10] = (byte) Integer.parseInt(trim.substring(i11, i11 + 2), 16);
+            }
+        } else {
+            try {
+                bArr = Base64.decode(trim, 10);
+            } catch (Exception unused) {
+                return null;
+            }
+        }
+        if (bArr.length == 16 || (bArr.length == 17 && (bArr[0] & 255) == 221)) {
+            return bArr;
+        }
+        return null;
     }
 
-    public k(m mVar, int i10) {
-        super(i10, true);
-        this.j = i10;
-        if (i10 == 10) {
-            this.k = 1;
-        } else {
-            if (i10 == 19) {
-                this.k = 5;
+    public static boolean h() {
+        try {
+            if (o.a("WEB_MESSAGE_LISTENER")) {
+                if (o.a("WEB_MESSAGE_ARRAY_BUFFER")) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            return false;
+        }
+    }
+
+    public static String i(String str) {
+        if (str == null) {
+            return "";
+        }
+        String trim = str.trim();
+        if (trim.endsWith(".")) {
+            trim = e2.i(1, 0, trim);
+        }
+        try {
+            String lowerCase = IDN.toASCII(trim, 2).toLowerCase(Locale.US);
+            if (lowerCase.length() <= 253 && lowerCase.indexOf(46) > 0 && !lowerCase.contains(":") && !lowerCase.matches("[0-9.]+")) {
+                for (String str2 : lowerCase.split("\\.", -1)) {
+                    if (str2.isEmpty() || str2.length() > 63 || str2.startsWith("-") || str2.endsWith("-")) {
+                        return "";
+                    }
+                }
+                return lowerCase;
+            }
+        } catch (Exception unused) {
+        }
+        return "";
+    }
+
+    public static int k(String str, String str2) {
+        String i10 = i(str);
+        byte[] d = d(str2);
+        if (TextUtils.isEmpty(i10) || d == null || !h()) {
+            return 0;
+        }
+        synchronized (t) {
+            try {
+                k kVar = u;
+                if (kVar != null && kVar.b.equals(i10) && u.c.equals(str2)) {
+                    return u.g.getLocalPort();
+                }
+                k kVar2 = u;
+                if (kVar2 != null) {
+                    kVar2.m();
+                    u = null;
+                }
+                try {
+                    k kVar3 = new k(i10, str2, d);
+                    u = kVar3;
+                    g10 g10Var = g10.getInstance();
+                    if (g10Var != null) {
+                        g10Var.addListener(kVar3);
+                    }
+                    kVar3.h.execute(new g(kVar3, 2));
+                    AndroidUtilities.runOnUIThread(new g(kVar3, 1));
+                    return u.g.getLocalPort();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    k kVar4 = u;
+                    if (kVar4 != null) {
+                        kVar4.m();
+                        u = null;
+                    }
+                    return 0;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public static void l() {
+        synchronized (t) {
+            try {
+                k kVar = u;
+                if (kVar != null) {
+                    kVar.m();
+                    u = null;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void c(j jVar, boolean z10) {
+        synchronized (this.a) {
+            try {
+                if (this.k.get(Integer.valueOf(jVar.a)) != jVar) {
+                    return;
+                }
+                this.k.remove(Integer.valueOf(jVar.a));
+                boolean z11 = z10 && this.o && jVar.e;
+                this.a.notifyAll();
+                try {
+                    jVar.b.close();
+                } catch (Exception unused) {
+                }
+                if (z11) {
+                    j(3, jVar.a, null);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void e() {
+        WebView webView = this.m;
+        this.m = null;
+        this.n = null;
+        if (webView != null) {
+            try {
+                webView.stopLoading();
+                webView.loadUrl("about:blank");
+                webView.removeAllViews();
+                webView.destroy();
+            } catch (Exception e7) {
+                FileLog.e(e7);
+            }
+        }
+    }
+
+    public final void f() {
+        synchronized (this.a) {
+            if (!this.p && !this.q) {
+                this.q = true;
+                int i10 = 0;
+                this.o = false;
+                this.n = null;
+                this.l.clear();
+                this.r = 0;
+                ArrayList arrayList = new ArrayList(this.k.values());
+                this.k.clear();
+                this.a.notifyAll();
+                int size = arrayList.size();
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    try {
+                        ((j) obj).b.close();
+                    } catch (Exception unused) {
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new g(this, 3));
+            }
+        }
+    }
+
+    public final void g(String str, b5.h hVar) {
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            String optString = jSONObject.optString("t");
+            if (!"tproxy-android-init".equals(optString) || jSONObject.optInt("v") != 1 || !this.f.equals(jSONObject.optString("nonce"))) {
+                if ("close".equals(optString) || "failed".equals(jSONObject.optString("state"))) {
+                    f();
+                    return;
+                }
                 return;
             }
-            int i11 = mVar.W;
-            mVar.W = i11 + 1;
-            this.k = i11;
+            synchronized (this.a) {
+                if (!this.p && this.n == null) {
+                    this.n = hVar;
+                    j(16, 0, new byte[]{1});
+                }
+            }
+        } catch (Exception unused) {
         }
     }
 
-    public k(m mVar, int i10, int i11) {
-        super(5, true);
-        this.j = i10;
-        int i12 = mVar.W;
-        mVar.W = i12 + 1;
-        this.k = i12;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, TLRPC.TL_contact tL_contact) {
-        super(6, true);
-        LongSparseIntArray longSparseIntArray = mVar.X;
-        this.e = tL_contact;
-        if (tL_contact != null) {
-            int i10 = longSparseIntArray.get(tL_contact.user_id, -1);
-            if (i10 > 0) {
-                this.k = i10;
+    public final void j(int i10, int i11, byte[] bArr) {
+        if (bArr == null) {
+            bArr = new byte[0];
+        }
+        byte[] array = ByteBuffer.allocate(bArr.length + 8).put((byte) i10).put((byte) (i11 >> 16)).put((byte) (i11 >> 8)).put((byte) i11).putInt(bArr.length).put(bArr).array();
+        synchronized (this.a) {
+            if (!this.p && this.l.size() < 8192 && this.r <= 67108864 - array.length) {
+                this.l.add(array);
+                this.r += array.length;
+                AndroidUtilities.runOnUIThread(new g(this, 4));
                 return;
             }
-            int i11 = mVar.W;
-            mVar.W = i11 + 1;
-            this.k = i11;
-            longSparseIntArray.put(tL_contact.user_id, i11);
-            return;
+            f();
         }
-        int i12 = mVar.W;
-        mVar.W = i12 + 1;
-        this.k = i12;
+    }
+
+    public final void m() {
+        synchronized (this.a) {
+            try {
+                if (this.p) {
+                    return;
+                }
+                this.p = true;
+                int i10 = 0;
+                this.o = false;
+                this.q = false;
+                ArrayList arrayList = new ArrayList(this.k.values());
+                this.k.clear();
+                this.l.clear();
+                this.r = 0;
+                this.a.notifyAll();
+                try {
+                    this.g.close();
+                } catch (Exception unused) {
+                }
+                g10 g10Var = g10.getInstance();
+                if (g10Var != null) {
+                    g10Var.removeListener(this);
+                }
+                int size = arrayList.size();
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    try {
+                        ((j) obj).b.close();
+                    } catch (Exception unused2) {
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new g(this, 0));
+                this.h.shutdownNow();
+                this.i.shutdownNow();
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f10
+    public final void onBecameForeground() {
+        AndroidUtilities.runOnUIThread(new g(this, 1));
+    }
+
+    @Override // org.telegram.ui.Components.f10
+    public final void onBecameBackground() {
     }
 }

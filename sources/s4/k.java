@@ -3,7 +3,7 @@ package s4;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -21,8 +21,8 @@ public final class k {
         Arrays.fill(iArr, 0);
         Arrays.fill(iArr2, 0);
         this.d = oVar;
-        int e = oVar.e();
-        this.e = e;
+        int e7 = oVar.e();
+        this.e = e7;
         int d = oVar.d();
         this.f = d;
         this.g = z10;
@@ -43,15 +43,15 @@ public final class k {
             int i12 = i10 + i11;
             int i13 = nVar3.b + i11;
             if (this.g) {
-                while (e > i12) {
-                    if (iArr[e - 1] == 0) {
-                        c(e, d, size, false);
+                while (e7 > i12) {
+                    if (iArr[e7 - 1] == 0) {
+                        c(e7, d, size, false);
                     }
-                    e--;
+                    e7--;
                 }
                 while (d > i13) {
                     if (iArr2[d - 1] == 0) {
-                        c(e, d, size, true);
+                        c(e7, d, size, true);
                     }
                     d--;
                 }
@@ -63,7 +63,7 @@ public final class k {
                 iArr[i15] = (i16 << 5) | i17;
                 iArr2[i16] = (i15 << 5) | i17;
             }
-            e = nVar3.a;
+            e7 = nVar3.a;
             d = nVar3.b;
         }
     }
@@ -118,17 +118,17 @@ public final class k {
                                 int i22 = i19 >> 5;
                                 i10 = i17;
                                 l d = d(i22, arrayList, false);
-                                bVar.C(i18, d.b - 1);
+                                bVar.D(i18, d.b - 1);
                                 if (i21 == 4) {
                                     int i23 = d.b - 1;
                                     oVar.getClass();
-                                    bVar.k1(i23, 1);
+                                    bVar.m1(i23, 1);
                                 }
                             } else {
                                 if (i21 != 16) {
-                                    StringBuilder m10 = hc.b.m(i18, "unknown flag for pos ", " ");
-                                    m10.append(Long.toBinaryString(i21));
-                                    throw new IllegalStateException(m10.toString());
+                                    StringBuilder l4 = i2.g.l(i18, "unknown flag for pos ", " ");
+                                    l4.append(Long.toBinaryString(i21));
+                                    throw new IllegalStateException(l4.toString());
                                 }
                                 arrayList.add(new l(i18, i18, true));
                                 i10 = i17;
@@ -136,7 +136,7 @@ public final class k {
                         } else {
                             iArr = iArr2;
                             i10 = i17;
-                            bVar.O0(i18, 1);
+                            bVar.P0(i18, 1);
                             int size2 = arrayList.size();
                             int i24 = 0;
                             while (i24 < size2) {
@@ -151,7 +151,7 @@ public final class k {
                         iArr2 = iArr;
                     }
                 } else {
-                    bVar.O0(i14, i16);
+                    bVar.P0(i14, i16);
                 }
             }
             int i25 = size;
@@ -166,19 +166,19 @@ public final class k {
                         if (i30 != 0) {
                             if (i30 != 4 && i30 != 8) {
                                 if (i30 != 16) {
-                                    StringBuilder m11 = hc.b.m(i28, "unknown flag for pos ", " ");
-                                    m11.append(Long.toBinaryString(i30));
-                                    throw new IllegalStateException(m11.toString());
+                                    StringBuilder l10 = i2.g.l(i28, "unknown flag for pos ", " ");
+                                    l10.append(Long.toBinaryString(i30));
+                                    throw new IllegalStateException(l10.toString());
                                 }
                                 arrayList.add(new l(i28, i14, false));
                             }
-                            bVar.C(d(i29 >> 5, arrayList, true).b, i14);
+                            bVar.D(d(i29 >> 5, arrayList, true).b, i14);
                             if (i30 == 4) {
                                 oVar.getClass();
-                                bVar.k1(i14, 1);
+                                bVar.m1(i14, 1);
                             }
                         } else {
-                            bVar.j0(i14, 1);
+                            bVar.k0(i14, 1);
                             int size3 = arrayList.size();
                             int i31 = 0;
                             while (i31 < size3) {
@@ -189,14 +189,14 @@ public final class k {
                         }
                     }
                 } else {
-                    bVar.j0(i14, i26);
+                    bVar.k0(i14, i26);
                 }
             }
             for (int i32 = i13 - 1; i32 >= 0; i32--) {
                 int i33 = nVar.a + i32;
                 if ((iArr3[i33] & 31) == 2) {
                     oVar.getClass();
-                    bVar.k1(i33, 1);
+                    bVar.m1(i33, 1);
                 }
             }
             i11 = nVar.a;
@@ -208,7 +208,7 @@ public final class k {
     }
 
     public final void b(h0 h0Var) {
-        a(new o0.b(h0Var));
+        a(new mg.n(h0Var, 15));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

@@ -1,21 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.webkit.JavascriptInterface;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class su implements DialogInterface.OnShowListener {
-    public final /* synthetic */ zu a;
+public final class su {
+    public final /* synthetic */ tu a;
 
-    public su(zu zuVar) {
-        this.a = zuVar;
+    public su(tu tuVar) {
+        this.a = tuVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        o91 o91Var = this.a.c;
-        if (og0.p0.P && o91Var.f()) {
-            o91Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.ha(this, 1));
+    @JavascriptInterface
+    public void postEvent(String str, String str2) {
+        if ("loaded".equals(str)) {
+            AndroidUtilities.runOnUIThread(new wp(this, 11));
         }
     }
 }

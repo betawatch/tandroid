@@ -1,13 +1,59 @@
 package zh;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class i6 extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha((int) (textPaint.getAlpha() * 0.66f));
+public final /* synthetic */ class i6 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ di.d d;
+    public final /* synthetic */ EditTextBoldCursor e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] f;
+
+    public /* synthetic */ i6(boolean[] zArr, Utilities.Callback2 callback2, di.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.d = dVar;
+        this.e = editTextBoldCursor;
+        this.f = f3VarArr;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    EditTextBoldCursor editTextBoldCursor = this.e;
+                    String obj = editTextBoldCursor.getText().toString();
+                    zArr[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(Long.valueOf(TextUtils.isEmpty(obj) ? 0L : Long.parseLong(obj)), new j6(editTextBoldCursor, this.f, 1));
+                    break;
+                }
+                break;
+            default:
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.d.setLoading(true);
+                    this.c.run(0L, new wh.n(zArr2, this.e, this.f, 17));
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ i6(boolean[] zArr, Utilities.Callback2 callback2, EditTextBoldCursor editTextBoldCursor, di.d dVar, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.b = zArr;
+        this.c = callback2;
+        this.e = editTextBoldCursor;
+        this.d = dVar;
+        this.f = f3VarArr;
     }
 }

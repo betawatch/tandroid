@@ -1,24 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class x71 extends g.p {
-    public final /* synthetic */ z71 c;
+import android.view.View;
 
-    public x71(z71 z71Var) {
-        this.c = z71Var;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final class x71 implements View.OnClickListener {
+    public final /* synthetic */ g81 a;
+
+    public x71(g81 g81Var) {
+        this.a = g81Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        z71 z71Var = this.c;
-        org.telegram.ui.Components.uz uzVar = z71Var.X;
-        org.telegram.ui.Components.j61 j61Var = z71Var.d0;
-        if (j61Var == null) {
-            return uzVar.J;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Components.aj0 aj0Var = this.a.d;
+        if (aj0Var.b() || aj0Var.getAnimatedDrawable() == null) {
+            return;
         }
-        org.telegram.ui.Components.v51 G = j61Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? uzVar.J : i11;
+        aj0Var.getAnimatedDrawable().K(40);
+        aj0Var.d();
     }
 }

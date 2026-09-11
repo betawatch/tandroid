@@ -3,9 +3,8 @@ package sa;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import qa.j;
-import t7.u;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d {
     public static final long d = TimeUnit.HOURS.toMillis(24);
@@ -15,13 +14,13 @@ public final class d {
     public int c;
 
     public d() {
-        if (u.b == null) {
+        if (na.d.a == null) {
             Pattern pattern = j.c;
-            u.b = new u();
+            na.d.a = new na.d();
         }
-        u uVar = u.b;
+        na.d dVar = na.d.a;
         if (j.d == null) {
-            j.d = new j(uVar);
+            j.d = new j(dVar);
         }
         this.a = j.d;
     }

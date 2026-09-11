@@ -1,15 +1,15 @@
 package k2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ of.b b;
+    public final /* synthetic */ n4.y b;
     public final /* synthetic */ Exception c;
 
-    public /* synthetic */ f(of.b bVar, Exception exc, int i10) {
+    public /* synthetic */ f(n4.y yVar, Exception exc, int i10) {
         this.a = i10;
-        this.b = bVar;
+        this.b = yVar;
         this.c = exc;
     }
 
@@ -17,21 +17,21 @@ public final /* synthetic */ class f implements Runnable {
     public final void run() {
         int i10 = this.a;
         Exception exc = this.c;
-        of.b bVar = this.b;
+        n4.y yVar = this.b;
         switch (i10) {
             case 0:
-                j jVar = (j) bVar.c;
+                j jVar = (j) yVar.c;
                 String str = e2.d0.a;
-                j2.e eVar = ((i2.b0) jVar).a.s;
-                j2.a p5 = eVar.p();
-                eVar.q(p5, 1029, new i0.b(p5, exc, 23));
+                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1029, new i0.b(p5, exc, 29));
                 break;
             default:
-                j jVar2 = (j) bVar.c;
+                j jVar2 = (j) yVar.c;
                 String str2 = e2.d0.a;
-                j2.e eVar2 = ((i2.b0) jVar2).a.s;
-                j2.a p10 = eVar2.p();
-                eVar2.q(p10, 1014, new j2.d(p10, exc, 17));
+                j2.f fVar2 = ((i2.c0) jVar2).a.s;
+                j2.a p10 = fVar2.p();
+                fVar2.q(p10, 1014, new j2.c(p10, exc, 23));
                 break;
         }
     }

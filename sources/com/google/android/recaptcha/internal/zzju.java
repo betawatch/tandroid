@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -67,7 +67,7 @@ public final class zzju implements zzjt {
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i10 < length6) {
-                i10 = e2.d(iArr[i10], i10, 1, arrayList3);
+                i10 = e2.e(iArr[i10], i10, 1, arrayList3);
             }
             return arrayList3;
         }

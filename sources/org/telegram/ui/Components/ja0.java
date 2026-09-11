@@ -1,78 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ja0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+public final class ja0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ oa0 b;
 
-    public /* synthetic */ ja0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = notificationCenterDelegate;
-        this.b = i10;
-        this.c = z10;
+    public ja0(oa0 oa0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = oa0Var;
+        this.a = n2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                AnimatorSet[] animatorSetArr = ((hy0) this.d).I;
-                int i10 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i10];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[i10] = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public final void a(boolean z10) {
+        oa0 oa0Var = this.b;
+        if (oa0Var.getNeededLayoutManager() != oa0Var.getCurrentLayoutManager() && oa0Var.a()) {
+            if (oa0Var.f.L0 > 0) {
+                oa0Var.N = true;
+                oa0Var.o(false);
+                return;
+            }
+            oa0Var.b.setLayoutManager(oa0Var.getNeededLayoutManager());
         }
+        if (z10 && !oa0Var.a()) {
+            z10 = false;
+        }
+        oa0Var.o((!z10 || oa0Var.f.K() > 0) ? z10 : false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                la0 la0Var = (la0) this.d;
-                o6[] o6VarArr = la0Var.x;
-                org.telegram.ui.ActionBar.l5[] l5VarArr = la0Var.w;
-                float[] fArr = la0Var.Z;
-                boolean z10 = this.c;
-                float f7 = z10 ? 1.0f : 0.0f;
-                int i10 = this.b;
-                fArr[i10] = f7;
-                l5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
-                l5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
-                l5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
-                o6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
-                if (!z10) {
-                    o6VarArr[i10].setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                hy0 hy0Var = (hy0) this.d;
-                AnimatorSet[] animatorSetArr = hy0Var.I;
-                int i11 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i11];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.c) {
-                        hy0Var.J[i11].setVisibility(4);
-                    }
-                    animatorSetArr[i11] = null;
-                    break;
-                }
-                break;
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
+
+    public final void c() {
+        oa0 oa0Var = this.b;
+        wp wpVar = oa0Var.J;
+        if (oa0Var.b.getLayoutManager() == oa0Var.d || !oa0Var.I) {
+            return;
         }
+        AndroidUtilities.cancelRunOnUIThread(wpVar);
+        AndroidUtilities.runOnUIThread(wpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

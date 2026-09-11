@@ -6,10 +6,10 @@ import android.text.TextUtils;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import v7.e5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final Object a = new Object();
@@ -37,7 +37,7 @@ public abstract class l {
     public static void d(Handler handler) {
         Looper myLooper = Looper.myLooper();
         if (myLooper != handler.getLooper()) {
-            throw new IllegalStateException(r6.j("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
+            throw new IllegalStateException(p6.j("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
         }
     }
 

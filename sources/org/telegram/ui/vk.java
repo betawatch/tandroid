@@ -1,20 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.t61 {
-    public final /* synthetic */ eo N;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk(eo eoVar, Context context) {
-        super(context);
-        this.N = eoVar;
+public final class vk extends ov0 {
+    public vk(ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
     }
 
-    @Override // org.telegram.ui.Components.t61
-    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
-        return this.N.ea;
+    @Override // org.telegram.ui.ov0
+    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
+        if (f7 > 0.0f) {
+            View view = this.e;
+            if (view instanceof org.telegram.ui.Cells.t1) {
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
+                int max = (int) Math.max(f12, f11);
+                int min = (int) Math.min(f13, t1Var.getMeasuredHeight() + f11);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(f10, max, t1Var.getMeasuredWidth() + f10, min);
+                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
+                canvas.translate(f10, f11 + t1Var.getPaddingTop());
+                t1Var.Ed = true;
+                t1Var.Y1(canvas);
+                if (t1Var.f4() && t1Var.getCurrentMessagesGroup() == null) {
+                    t1Var.m2(1.0f, canvas, false);
+                }
+                t1Var.Ed = false;
+                canvas.restore();
+            }
+        }
     }
 }

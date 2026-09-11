@@ -1,208 +1,30 @@
 package bi;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.w70;
-import org.telegram.ui.pf;
-import org.telegram.ui.rt;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class b2 implements rt {
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean B() {
-        return false;
+public final class b2 extends TLRPC.TL_messageMediaStory {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.user_id = inputSerializedData.readInt64(z10);
+        this.id = inputSerializedData.readInt32(z10);
+        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        this.via_mention = inputSerializedData.readBool(z10);
+        this.peer = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(this.user_id);
     }
 
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean C(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ String E(boolean z10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean H() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean I() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ w70 K(n7 n7Var) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean N(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ Boolean P(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean Q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ TLRPC.PollAnswer g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean h() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final boolean k(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean o() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean w() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ MessageObject y() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ boolean z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void A(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void D(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void G(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void J() {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void i(SendMessagesHelper.ImportingSticker importingSticker) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void m(String str) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void n(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void p(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void t(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void x(String str) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void u(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void v(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void F(CharSequence charSequence, String str, pf pfVar) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.rt
-    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-946147811);
+        outputSerializedData.writeInt64(this.user_id);
+        outputSerializedData.writeInt32(this.id);
+        this.storyItem.serializeToStream(outputSerializedData);
+        outputSerializedData.writeBool(this.via_mention);
     }
 }

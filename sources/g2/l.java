@@ -7,7 +7,7 @@ import c3.h0;
 import java.math.RoundingMode;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class l implements k4.b {
     public int a;
@@ -87,7 +87,7 @@ public final class l implements k4.b {
 
     @Override // k4.b
     public void c(int i10, long j3) {
-        ((c3.q) this.e).G(new k4.f((e2.q) this.g, 1, i10, j3));
+        ((c3.q) this.e).P1(new k4.f((e2.q) this.g, 1, i10, j3));
         ((h0) this.f).b((b2.s) this.h);
     }
 

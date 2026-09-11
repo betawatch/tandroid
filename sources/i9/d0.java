@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d0 extends AtomicReference implements Runnable {
     public static final androidx.emoji2.text.n c;
@@ -13,7 +13,7 @@ public final class d0 extends AtomicReference implements Runnable {
     public final /* synthetic */ e0 b;
 
     static {
-        int i10 = 1;
+        int i10 = 2;
         c = new androidx.emoji2.text.n(i10);
         d = new androidx.emoji2.text.n(i10);
     }

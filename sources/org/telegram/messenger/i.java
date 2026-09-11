@@ -1,39 +1,30 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
-import org.telegram.messenger.NotificationBadge;
+import android.view.PixelCopy;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Runnable {
+public final /* synthetic */ class i implements PixelCopy.OnPixelCopyFinishedListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Intent b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ i(Intent intent, int i10) {
+    public /* synthetic */ i(Object obj, int i10) {
         this.a = i10;
-        this.b = intent;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.PixelCopy.OnPixelCopyFinishedListener
+    public final void onPixelCopyFinished(int i10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$googleVoiceClientService_performAction$2(this.b);
+                ((CountDownLatch) this.b).countDown();
                 break;
             case 1:
-                NotificationBadge.AdwHomeBadger.lambda$executeBadge$0(this.b);
-                break;
-            case 2:
-                NotificationBadge.ApexHomeBadger.lambda$executeBadge$0(this.b);
-                break;
-            case 3:
-                NotificationBadge.AsusHomeBadger.lambda$executeBadge$0(this.b);
-                break;
-            case 4:
-                NotificationBadge.DefaultBadger.lambda$executeBadge$0(this.b);
+                ((CountDownLatch) this.b).countDown();
                 break;
             default:
-                NotificationBadge.SonyHomeBadger.lambda$executeBadgeByBroadcast$0(this.b);
+                ((Runnable) this.b).run();
                 break;
         }
     }

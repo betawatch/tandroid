@@ -1,62 +1,39 @@
 package sg;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements Utilities.Callback {
+public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ v(a0 a0Var, int i10) {
+    public /* synthetic */ v(k0 k0Var, int i10) {
         this.a = i10;
-        this.b = a0Var;
+        this.b = k0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                a0 a0Var = this.b;
-                a0Var.dismiss();
-                AndroidUtilities.runOnUIThread(new t(a0Var, 2), 220L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.g1(18, this.b, tLObject));
                 break;
             case 1:
-                a0 a0Var2 = this.b;
-                a0Var2.q0.b(false);
-                i.j(a0Var2.getContext(), (TLRPC.TL_error) obj);
-                break;
-            case 2:
-                a0 a0Var3 = this.b;
-                a0Var3.n0 = a0Var3.Y.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
-                a0Var3.a0(true, true);
-                a0Var3.Z(true);
-                break;
-            case 3:
-                a0 a0Var4 = this.b;
-                a0Var4.dismiss();
-                AndroidUtilities.runOnUIThread(new t(a0Var4, 1), 220L);
-                break;
-            case 4:
-                a0 a0Var5 = this.b;
-                a0Var5.q0.b(false);
-                i.j(a0Var5.getContext(), (TLRPC.TL_error) obj);
-                break;
-            case 5:
-                a0 a0Var6 = this.b;
-                ArrayList arrayList = a0Var6.f0;
-                arrayList.clear();
-                arrayList.addAll((List) obj);
-                a0Var6.a0(true, true);
-                break;
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                k0 k0Var = this.b;
+                if (!z10) {
+                    k0Var.getClass();
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(k0Var.H0);
+                    break;
+                }
             default:
-                a0 a0Var7 = this.b;
-                a0Var7.q0.b(false);
-                i.j(a0Var7.getContext(), (TLRPC.TL_error) obj);
+                k0.U(this.b, tLObject, tL_error);
                 break;
         }
     }

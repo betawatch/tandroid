@@ -5,14 +5,14 @@ import android.os.Looper;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class t {
     public static final Object b = new Object();
     public static final HashMap c = new HashMap();
-    public final b0 a;
+    public final a0 a;
 
-    public t(LaunchActivity launchActivity, b2.b1 b1Var, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, na.d dVar, Bundle bundle, Bundle bundle2, of.b bVar) {
+    public t(LaunchActivity launchActivity, b2.b1 b1Var, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, ob.a aVar, Bundle bundle, Bundle bundle2, n4.y yVar) {
         synchronized (b) {
             HashMap hashMap = c;
             if (hashMap.containsKey("pip-media-session")) {
@@ -20,20 +20,20 @@ public class t {
             }
             hashMap.put("pip-media-session", this);
         }
-        this.a = new b0(this, launchActivity, b1Var, i0Var, i0Var2, i0Var3, dVar, bundle, bundle2, bVar);
+        this.a = new a0(this, launchActivity, b1Var, i0Var, i0Var2, i0Var3, aVar, bundle, bundle2, yVar);
     }
 
     public final void a(b2.b1 b1Var) {
         b1Var.getClass();
         e2.d.b(b1Var.Q());
         Looper y02 = b1Var.y0();
-        b0 b0Var = this.a;
-        e2.d.b(y02 == b0Var.t.a.y0());
+        a0 a0Var = this.a;
+        e2.d.b(y02 == a0Var.t.a.y0());
         e2.d.g(b1Var.y0() == Looper.myLooper());
-        l1 l1Var = b0Var.t;
-        if (b1Var == l1Var.a) {
+        j1 j1Var = a0Var.t;
+        if (b1Var == j1Var.a) {
             return;
         }
-        b0Var.u(l1Var, new l1(b1Var));
+        a0Var.u(j1Var, new j1(b1Var));
     }
 }

@@ -1,9 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.text.style.ClickableSpan;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public interface l90 {
-    void a(ClickableSpan clickableSpan);
+public final class l90 {
+    public final TL_iv.PageBlock a;
+    public final int b;
+
+    public l90(int i10, TL_iv.PageBlock pageBlock) {
+        this.a = pageBlock;
+        this.b = i10;
+    }
 }

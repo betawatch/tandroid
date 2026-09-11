@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class DialogObject {
     public static int editDistance(String str, String str2) {
@@ -304,48 +304,48 @@ public class DialogObject {
         return 2305843009213693952L | i10;
     }
 
-    public static String setDialogPhotoTitle(ImageReceiver imageReceiver, org.telegram.ui.Components.g9 g9Var, TLObject tLObject) {
+    public static String setDialogPhotoTitle(ImageReceiver imageReceiver, org.telegram.ui.Components.i9 i9Var, TLObject tLObject) {
         if (!(tLObject instanceof TLRPC.User)) {
             if (!(tLObject instanceof TLRPC.Chat)) {
                 return "";
             }
             TLRPC.Chat chat = (TLRPC.Chat) tLObject;
             String str = chat.title;
-            if (g9Var != null) {
-                g9Var.q(chat);
+            if (i9Var != null) {
+                i9Var.q(chat);
             }
             if (imageReceiver != null) {
-                imageReceiver.setForUserOrChat(tLObject, g9Var);
+                imageReceiver.setForUserOrChat(tLObject, i9Var);
             }
             return str;
         }
         TLRPC.User user = (TLRPC.User) tLObject;
         if (UserObject.isReplyUser(user)) {
             String string = LocaleController.getString(R.string.RepliesTitle);
-            if (g9Var != null) {
-                g9Var.g(12);
+            if (i9Var != null) {
+                i9Var.g(12);
             }
             if (imageReceiver != null) {
-                imageReceiver.setForUserOrChat(null, g9Var);
+                imageReceiver.setForUserOrChat(null, i9Var);
             }
             return string;
         }
         if (UserObject.isUserSelf(user)) {
             String string2 = LocaleController.getString(R.string.SavedMessages);
-            if (g9Var != null) {
-                g9Var.g(1);
+            if (i9Var != null) {
+                i9Var.g(1);
             }
             if (imageReceiver != null) {
-                imageReceiver.setForUserOrChat(null, g9Var);
+                imageReceiver.setForUserOrChat(null, i9Var);
             }
             return string2;
         }
         String userName = UserObject.getUserName(user);
-        if (g9Var != null) {
-            g9Var.r(user);
+        if (i9Var != null) {
+            i9Var.r(user);
         }
         if (imageReceiver != null) {
-            imageReceiver.setForUserOrChat(tLObject, g9Var);
+            imageReceiver.setForUserOrChat(tLObject, i9Var);
         }
         return userName;
     }
@@ -508,9 +508,9 @@ public class DialogObject {
         return str;
     }
 
-    public static String setDialogPhotoTitle(org.telegram.ui.Components.w9 w9Var, TLObject tLObject) {
-        if (w9Var != null) {
-            return setDialogPhotoTitle(w9Var.getImageReceiver(), w9Var.getAvatarDrawable(), tLObject);
+    public static String setDialogPhotoTitle(org.telegram.ui.Components.x9 x9Var, TLObject tLObject) {
+        if (x9Var != null) {
+            return setDialogPhotoTitle(x9Var.getImageReceiver(), x9Var.getAvatarDrawable(), tLObject);
         }
         return setDialogPhotoTitle(null, null, tLObject);
     }

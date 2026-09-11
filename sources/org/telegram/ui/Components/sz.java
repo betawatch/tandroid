@@ -1,56 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.SurfaceTexture;
+import android.os.Looper;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class sz extends ReplacementSpan {
+public final /* synthetic */ class sz implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ vz b;
 
-    public /* synthetic */ sz(int i10) {
+    public /* synthetic */ sz(vz vzVar, int i10) {
         this.a = i10;
+        this.b = vzVar;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                return (int) paint.measureText(charSequence, i10, i11);
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
             case 1:
-                return AndroidUtilities.dp(16.0f);
-            case 2:
-                return AndroidUtilities.dp(12.0f);
-            case 3:
-                return AndroidUtilities.dp(12.0f);
+                vz.b(this.b);
+                break;
             default:
-                return AndroidUtilities.dp(16.0f);
+                vz vzVar = this.b;
+                kv kvVar = vzVar.b0;
+                SurfaceTexture surfaceTexture = vzVar.w;
+                u61 u61Var = (u61) kvVar.b;
+                if (u61Var.a != null) {
+                    u61Var.a.T(new Surface(surfaceTexture));
+                    break;
+                }
+                break;
         }
-    }
-
-    public /* synthetic */ sz(boolean z10) {
-        this.a = 0;
-    }
-
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.gv;
+import org.telegram.ui.fv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class s extends c0 {
     public boolean I;
@@ -31,7 +32,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new gv(1);
+        this.O = new fv(1);
         this.P = new Rect();
         y1(i10);
     }
@@ -62,7 +63,7 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public int I(of.e eVar, z0 z0Var) {
+    public int I(pf.e eVar, z0 z0Var) {
         if (this.o == 0) {
             return this.J;
         }
@@ -73,7 +74,7 @@ public class s extends c0 {
     }
 
     @Override // s4.c0
-    public final View Q0(of.e eVar, z0 z0Var, int i10, int i11, int i12) {
+    public final View Q0(pf.e eVar, z0 z0Var, int i10, int i11, int i12) {
         G0();
         int j3 = this.q.j();
         int f7 = this.q.f();
@@ -112,13 +113,13 @@ public class s extends c0 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:89:0x0022, code lost:
     
-        if (((java.util.ArrayList) r22.a.d).contains(r3) != false) goto L5;
+        if (((java.util.ArrayList) r22.a.b).contains(r3) != false) goto L5;
      */
     @Override // s4.c0, s4.o0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final View R(View view, int i10, of.e eVar, z0 z0Var) {
+    public final View R(View view, int i10, pf.e eVar, z0 z0Var) {
         View F;
         int r10;
         int i11;
@@ -127,7 +128,7 @@ public class s extends c0 {
         View view3;
         int i13;
         int i14;
-        of.e eVar2 = eVar;
+        pf.e eVar2 = eVar;
         z0 z0Var2 = z0Var;
         RecyclerView recyclerView = this.b;
         if (recyclerView != null) {
@@ -190,7 +191,7 @@ public class s extends c0 {
                             } else {
                                 if (view4 == null) {
                                     i14 = i19;
-                                    if (!(this.c.o(q6) && this.d.o(q6))) {
+                                    if (!(this.c.D(q6) && this.d.D(q6))) {
                                         if (min <= i21) {
                                             if (min == i21) {
                                             }
@@ -244,11 +245,11 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public void U(of.e eVar, z0 z0Var, View view, s0.d dVar) {
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+    public void U(pf.e eVar, z0 z0Var, View view, s0.c cVar) {
+        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (!(layoutParams instanceof r)) {
-            T(view, dVar);
+            T(view, cVar);
             return;
         }
         r rVar = (r) layoutParams;
@@ -302,7 +303,7 @@ public class s extends c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void Z0(of.e eVar, z0 z0Var, a0 a0Var, z zVar) {
+    public void Z0(pf.e eVar, z0 z0Var, a0 a0Var, z zVar) {
         int i10;
         int i11;
         int i12;
@@ -329,7 +330,7 @@ public class s extends c0 {
             int i22 = a0Var.d;
             int v12 = v1(i22, eVar, z0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hc.b.n("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", e2.k("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = a0Var.c(eVar)) == null) {
@@ -452,24 +453,24 @@ public class s extends c0 {
     }
 
     @Override // s4.c0
-    public final void a1(of.e eVar, z0 z0Var, i2.k0 k0Var, int i10) {
+    public final void a1(pf.e eVar, z0 z0Var, i2.l0 l0Var, int i10) {
         A1();
         if (z0Var.b() > 0 && !z0Var.g) {
             boolean z10 = i10 == 1;
-            int u12 = u1(k0Var.b, eVar, z0Var);
+            int u12 = u1(l0Var.b, eVar, z0Var);
             if (z10) {
                 while (u12 > 0) {
-                    int i11 = k0Var.b;
+                    int i11 = l0Var.b;
                     if (i11 <= 0) {
                         break;
                     }
                     int i12 = i11 - 1;
-                    k0Var.b = i12;
+                    l0Var.b = i12;
                     u12 = u1(i12, eVar, z0Var);
                 }
             } else {
                 int b10 = z0Var.b() - 1;
-                int i13 = k0Var.b;
+                int i13 = l0Var.b;
                 while (i13 < b10) {
                     int i14 = i13 + 1;
                     int u13 = u1(i14, eVar, z0Var);
@@ -479,14 +480,14 @@ public class s extends c0 {
                     i13 = i14;
                     u12 = u13;
                 }
-                k0Var.b = i13;
+                l0Var.b = i13;
             }
         }
         r1();
     }
 
     @Override // s4.c0, s4.o0
-    public void b0(of.e eVar, z0 z0Var) {
+    public void b0(pf.e eVar, z0 z0Var) {
         boolean z10 = z0Var.g;
         SparseIntArray sparseIntArray = this.N;
         SparseIntArray sparseIntArray2 = this.M;
@@ -541,7 +542,7 @@ public class s extends c0 {
     }
 
     @Override // s4.c0, s4.o0
-    public final int m0(int i10, of.e eVar, z0 z0Var) {
+    public final int m0(int i10, pf.e eVar, z0 z0Var) {
         A1();
         r1();
         return super.m0(i10, eVar, z0Var);
@@ -561,7 +562,7 @@ public class s extends c0 {
     }
 
     @Override // s4.c0, s4.o0
-    public int o0(int i10, of.e eVar, z0 z0Var) {
+    public int o0(int i10, pf.e eVar, z0 z0Var) {
         A1();
         r1();
         return super.o0(i10, eVar, z0Var);
@@ -581,7 +582,7 @@ public class s extends c0 {
         return rVar2;
     }
 
-    public final void p1(int i10, of.e eVar, z0 z0Var, boolean z10) {
+    public final void p1(int i10, pf.e eVar, z0 z0Var, boolean z10) {
         int i11;
         int i12;
         int i13;
@@ -674,7 +675,7 @@ public class s extends c0 {
         return iArr2[i12 - i10] - iArr2[(i12 - i10) - i11];
     }
 
-    public final int t1(int i10, of.e eVar, z0 z0Var) {
+    public final int t1(int i10, pf.e eVar, z0 z0Var) {
         if (!z0Var.g) {
             return this.O.g(i10, this.J);
         }
@@ -687,7 +688,7 @@ public class s extends c0 {
     }
 
     @Override // s4.o0
-    public int u(of.e eVar, z0 z0Var) {
+    public int u(pf.e eVar, z0 z0Var) {
         if (this.o == 1) {
             return this.J;
         }
@@ -697,7 +698,7 @@ public class s extends c0 {
         return t1(z0Var.b() - 1, eVar, z0Var) + 1;
     }
 
-    public final int u1(int i10, of.e eVar, z0 z0Var) {
+    public final int u1(int i10, pf.e eVar, z0 z0Var) {
         if (!z0Var.g) {
             return this.O.h(i10, this.J);
         }
@@ -713,7 +714,7 @@ public class s extends c0 {
         return 0;
     }
 
-    public final int v1(int i10, of.e eVar, z0 z0Var) {
+    public final int v1(int i10, pf.e eVar, z0 z0Var) {
         if (!z0Var.g) {
             return this.O.i(i10);
         }
@@ -767,7 +768,7 @@ public class s extends c0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(hc.b.j(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(i2.g.i(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();
@@ -784,7 +785,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new gv(1);
+        this.O = new fv(1);
         this.P = new Rect();
         y1(i10);
     }

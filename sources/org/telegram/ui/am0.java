@@ -1,73 +1,106 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class am0 implements View.OnTouchListener {
+public final /* synthetic */ class am0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ on0 b;
+    public final /* synthetic */ pn0 b;
 
-    public /* synthetic */ am0(on0 on0Var, int i10) {
+    public /* synthetic */ am0(pn0 pn0Var, int i10) {
         this.a = i10;
-        this.b = on0Var;
+        this.b = pn0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10 = this.a;
-        int i11 = 2;
-        on0 on0Var = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                if (on0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        bu buVar = new bu(null, false);
-                        buVar.r = new l80(18, on0Var, view);
-                        on0Var.presentFragment(buVar);
-                        break;
-                    }
-                }
+                pn0 pn0Var = this.b;
+                pn0Var.S0 = 2;
+                pn0Var.D1();
                 break;
             case 1:
-                if (on0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(on0Var.getParentActivity());
-                        String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-                        d2Var.R = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new wv(on0Var, i11));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        on0Var.showDialog(d2Var);
-                        break;
-                    }
-                }
+                this.b.d1();
                 break;
             case 2:
-                if (on0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        bu buVar2 = new bu(null, false);
-                        buVar2.r = new bm0(on0Var, i11);
-                        on0Var.presentFragment(buVar2);
-                        break;
-                    }
+                pn0 pn0Var2 = this.b;
+                pn0Var2.S0 = 3;
+                pn0Var2.D1();
+                break;
+            case 3:
+                pn0 pn0Var3 = this.b;
+                pn0Var3.S0 = 1;
+                pn0Var3.D1();
+                break;
+            case 4:
+                pn0 pn0Var4 = this.b;
+                pn0Var4.S0 = 4;
+                pn0Var4.D1();
+                break;
+            case 5:
+                pn0.e0(this.b);
+                break;
+            case 6:
+                pn0 pn0Var5 = this.b;
+                pn0Var5.f = true;
+                pn0Var5.L.callOnClick();
+                pn0Var5.f = false;
+                break;
+            case 7:
+                pn0 pn0Var6 = this.b;
+                pn0Var6.S0 = 0;
+                pn0Var6.D1();
+                break;
+            case 8:
+                pn0 pn0Var7 = this.b;
+                pn0Var7.S0 = 4;
+                pn0Var7.D1();
+                break;
+            case 9:
+                this.b.d1();
+                break;
+            case 10:
+                pn0.b0(this.b);
+                break;
+            case 11:
+                pn0.c0(this.b);
+                break;
+            case 12:
+                this.b.C1();
+                break;
+            case 13:
+                pn0 pn0Var8 = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pn0Var8.getParentActivity());
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.TelegramPassportDeleteTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.TelegramPassportDeleteAlert);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new cm0(pn0Var8, 5));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                pn0Var8.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
+                    break;
                 }
+                break;
+            case 14:
+                this.b.C1();
+                break;
+            case 15:
+                pn0.V(this.b);
                 break;
             default:
-                if (on0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        bu buVar3 = new bu(null, false);
-                        buVar3.r = new bm0(on0Var, 3);
-                        on0Var.presentFragment(buVar3);
-                        break;
-                    }
-                }
+                pn0 pn0Var9 = this.b;
+                pn0Var9.f = true;
+                pn0Var9.L.callOnClick();
+                pn0Var9.f = false;
                 break;
         }
-        return false;
     }
 }

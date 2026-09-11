@@ -1,11 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class wi1 extends org.telegram.ui.Components.voip.u2 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z10) {
-        super.dispatchSetPressed(z10);
-        setPressedBtn(z10);
+public final class wi1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Cells.t1 a;
+    public final /* synthetic */ org.telegram.ui.Components.ui b;
+    public final /* synthetic */ xi1 c;
+
+    public wi1(xi1 xi1Var, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Components.ui uiVar) {
+        this.c = xi1Var;
+        this.a = t1Var;
+        this.b = uiVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.setEnterTransitionInProgress(false);
+        org.telegram.ui.Components.ui uiVar = this.b;
+        ArrayList arrayList = (ArrayList) uiVar.c;
+        xi1 xi1Var = this.c;
+        arrayList.remove(xi1Var);
+        uiVar.a();
+        ((ViewGroup) uiVar.d).invalidate();
+        ChatActivityEnterView.RecordCircle recordCircle = xi1Var.g;
+        if (recordCircle != null) {
+            recordCircle.N = false;
+        }
     }
 }

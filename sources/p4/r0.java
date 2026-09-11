@@ -12,14 +12,15 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
-import m.g3;
+import ji.k5;
+import ji.u4;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public org.telegram.tgnet.j F;
+    public k5 F;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.c0 s;
     public final ArrayList v;
@@ -32,7 +33,7 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new g3(componentName, 12));
+        super(context, new u4(componentName, 16));
         this.v = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.c0();
@@ -186,8 +187,8 @@ public final class r0 extends h3 implements ServiceConnection {
             p();
             try {
                 this.a.unbindService(this);
-            } catch (IllegalArgumentException e) {
-                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e);
+            } catch (IllegalArgumentException e7) {
+                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e7);
             }
         }
     }

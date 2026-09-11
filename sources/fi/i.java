@@ -3,29 +3,36 @@ package fi;
 import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.r61;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.v51;
-import org.telegram.ui.Components.vl0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class i extends u51 {
-    public static final /* synthetic */ int a = 0;
-
+public final class i extends g51 {
     static {
-        u51.setup(new i());
+        g51.setup(new i());
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
-        long j3 = v51Var.B;
-        ((j) view).a((int) j3, (int) (j3 >>> 32), v51Var.k, v51Var.l, v51Var.n, v51Var.q);
+    public static h51 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
+        h51 J = h51.J(i.class);
+        J.d = i10;
+        J.z = i11;
+        J.k = i12;
+        J.l = charSequence;
+        J.m = str;
+        return J;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, vl0 vl0Var, int i10, int i11, f6 f6Var) {
-        return new j(context, f6Var, false);
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+        ((j) view).a(h51Var.z, h51Var.k, h51Var.l, h51Var.m);
+    }
+
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, f6 f6Var) {
+        return new j(context, f6Var);
     }
 }

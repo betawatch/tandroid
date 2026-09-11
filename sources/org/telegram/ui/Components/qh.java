@@ -1,66 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qh implements o1.g {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ KeyEvent.Callback e;
+public final /* synthetic */ class qh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ qh(yi yiVar, float f7, float f10, boolean z10) {
-        this.e = yiVar;
-        this.c = f7;
-        this.d = f10;
-        this.b = z10;
+    public /* synthetic */ qh(vi viVar, boolean z10, int i10) {
+        this.a = i10;
+        this.b = viVar;
+        this.c = z10;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                yi yiVar = (yi) this.e;
-                LinearLayout linearLayout = yiVar.l1;
-                LinearLayout linearLayout2 = yiVar.n1;
-                float f11 = f7 / 500.0f;
-                yiVar.e0.set(yiVar.y0, Float.valueOf(f11));
-                yiVar.X0.setAlpha(AndroidUtilities.lerp(this.c, this.d, f11));
-                yiVar.X1(yiVar.y0, 0);
-                yiVar.X1(yiVar.z0, 0);
-                if (!(yiVar.z0 instanceof xm) || this.b) {
-                    f11 = 1.0f - f11;
+                boolean z10 = this.c;
+                vi viVar = this.b;
+                if (!z10) {
+                    viVar.c1.setVisibility(8);
+                    break;
+                } else {
+                    viVar.getClass();
+                    break;
                 }
-                float clamp = Utilities.clamp(f11, 1.0f, 0.0f);
-                linearLayout2.setAlpha(clamp);
-                float f12 = 1.0f - clamp;
-                linearLayout.setAlpha(f12);
-                linearLayout.setTranslationX(clamp * (-AndroidUtilities.dp(16.0f)));
-                linearLayout2.setTranslationX(f12 * AndroidUtilities.dp(16.0f));
-                break;
+            case 1:
+                boolean z11 = this.c;
+                vi viVar2 = this.b;
+                if (!z11) {
+                    viVar2.w.setVisibility(8);
+                    break;
+                } else {
+                    viVar2.getClass();
+                    break;
+                }
+            case 2:
+                boolean z12 = this.c;
+                vi viVar3 = this.b;
+                if (!z12) {
+                    viVar3.y.setVisibility(8);
+                    break;
+                } else {
+                    viVar3.getClass();
+                    break;
+                }
             default:
-                hp0 hp0Var = (hp0) this.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    if (f7 > this.c / 2.0f || !hp0Var.s) {
-                    }
-                } else if (f7 < this.d / 2.0f || !hp0Var.r) {
+                boolean z13 = this.c;
+                vi viVar4 = this.b;
+                if (!z13) {
+                    viVar4.getClass();
+                    break;
+                } else {
+                    viVar4.x1.setVisibility(4);
+                    break;
                 }
-                hp0Var.s = !z10;
-                hp0Var.r = z10;
-                break;
         }
-    }
-
-    public /* synthetic */ qh(hp0 hp0Var, boolean z10, float f7, float f10) {
-        this.e = hp0Var;
-        this.b = z10;
-        this.c = f7;
-        this.d = f10;
     }
 }

@@ -1,14 +1,35 @@
 package ug;
 
-import org.telegram.ui.Cells.x8;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class y extends x8 {
-    public static final /* synthetic */ int L = 0;
-    public int K;
+public final /* synthetic */ class y implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    public int getType() {
-        return this.K;
+    public /* synthetic */ y(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
+    }
+
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                wg.r rVar = this.b.g0.r;
+                if (rVar != null) {
+                    rVar.setPaused(true);
+                    break;
+                }
+                break;
+            default:
+                wg.r rVar2 = this.b.g0.r;
+                if (rVar2 != null) {
+                    rVar2.setPaused(true);
+                    break;
+                }
+                break;
+        }
     }
 }

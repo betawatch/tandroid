@@ -1,7 +1,66 @@
 package qg;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import java.util.Arrays;
+import java.util.List;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public abstract class m {
-    public static final String[] a = {"Hello", "Привіт", "Привет", "Bonjour", "Hola", "Ciao", "Olá", "여보세요", "你好", "Salve", "Sveiki", "Halo", "გამარჯობა", "Hallå", "Salam", "Tere", "Dia dhuit", "こんにちは", "Сайн уу", "Bongu", "Ahoj", "γεια", "Zdravo", "नमस्ते", "Habari", "Hallo", "ជំរាបសួរ", "مرحبًا", "ನಮಸ್ಕಾರ", "Салам", "Silav li wir", "سڵاو", "Kif inti", "Talofa", "Thobela", "हॅलो", "ሰላም", "Здраво", "ഹലോ", "ہیلو", "ꯍꯦꯜꯂꯣ", "Alô", "வணக்கம்", "Mhoro", "Moni", "Alo", "สวัสดี", "Salom", "Բարեւ"};
+    public static final List a = Arrays.asList(new f(), new a(), new c(), new e(), new b(), new d());
+
+    public float a() {
+        return 0.85f;
+    }
+
+    public float b() {
+        return 0.0f;
+    }
+
+    public int c() {
+        return -16777216;
+    }
+
+    public float d() {
+        return 0.25f;
+    }
+
+    public abstract int e();
+
+    public float f() {
+        return 1.0f;
+    }
+
+    public float g() {
+        return 0.4f;
+    }
+
+    public float h() {
+        return 1.0f;
+    }
+
+    public String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMask";
+        }
+        if (i10 == 1) {
+            return "compositeWithMask";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
+    }
+
+    public float j() {
+        return 1.0f;
+    }
+
+    public float k() {
+        return 0.15f;
+    }
+
+    public int l() {
+        return R.drawable.paint_radial_brush;
+    }
 }

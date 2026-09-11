@@ -1,28 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.Window;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.ui.Components.g71;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vh implements Runnable {
+public final /* synthetic */ class vh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ Exception c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ vh(Utilities.Callback2 callback2, Exception exc, int i10) {
+    public /* synthetic */ vh(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = callback2;
-        this.c = exc;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$3(this.b, this.c);
+                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
+                break;
+            case 1:
+                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
                 break;
             default:
-                PasskeysController.lambda$create$8(this.b, this.c);
+                ((MediaController) this.b).lambda$cleanupPlayer$10((g71) this.c, valueAnimator);
                 break;
         }
     }

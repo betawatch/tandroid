@@ -6,7 +6,7 @@ import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -14,7 +14,7 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -23,7 +23,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),

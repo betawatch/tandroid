@@ -3,7 +3,7 @@ package r9;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements g {
     public final /* synthetic */ int a;
@@ -23,14 +23,14 @@ public final /* synthetic */ class c implements g {
     }
 
     @Override // r9.g
-    public final ScheduledFuture a(l2.h hVar) {
+    public final ScheduledFuture a(l.d dVar) {
         switch (this.a) {
             case 0:
                 f fVar = this.b;
-                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, hVar, 0), this.d, this.e, this.f);
+                return fVar.b.scheduleAtFixedRate(new d(fVar, this.c, dVar, 0), this.d, this.e, this.f);
             default:
                 f fVar2 = this.b;
-                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, hVar, 2), this.d, this.e, this.f);
+                return fVar2.b.scheduleWithFixedDelay(new d(fVar2, this.c, dVar, 2), this.d, this.e, this.f);
         }
     }
 }

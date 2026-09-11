@@ -1,17 +1,19 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ TLRPC.TL_error c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ lb(long j3, Runnable runnable, MessagesController messagesController) {
-        this.a = 1;
+    public /* synthetic */ lb(MessagesController messagesController, TLRPC.TL_error tL_error, long j3, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = runnable;
+        this.c = tL_error;
         this.d = j3;
     }
 
@@ -19,21 +21,11 @@ public final /* synthetic */ class lb implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$setUserAdminRole$105(this.d, this.c);
-                break;
-            case 1:
-                this.b.lambda$setCustomChatReactions$467(this.c, this.d);
+                this.b.lambda$loadFullChat$68(this.c, this.d);
                 break;
             default:
-                this.b.lambda$setUserAdminRole$99(this.d, this.c);
+                this.b.lambda$getChannelDifference$348(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ lb(MessagesController messagesController, long j3, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.d = j3;
-        this.c = runnable;
     }
 }

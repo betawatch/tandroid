@@ -11,15 +11,15 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import m.m2;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.i8;
+import v7.f8;
 import x4.p;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e extends f implements j0.b {
     public boolean E;
     public b F;
-    public i8 G;
+    public f8 G;
     public int H;
     public int I;
     public boolean J;
@@ -234,9 +234,9 @@ public final class e extends f implements j0.b {
     @Override // i.f, android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         super.jumpToCurrentState();
-        i8 i8Var = this.G;
-        if (i8Var != null) {
-            i8Var.d();
+        f8 f8Var = this.G;
+        if (f8Var != null) {
+            f8Var.d();
             this.G = null;
             c(this.H);
             this.H = -1;
@@ -266,23 +266,23 @@ public final class e extends f implements j0.b {
     */
     public final boolean onStateChange(int[] iArr) {
         int i10;
-        i8 aVar;
+        f8 aVar;
         b bVar = this.F;
         int f7 = bVar.f(iArr);
         if (f7 < 0) {
             f7 = bVar.f(StateSet.WILD_CARD);
         }
         if (f7 != this.h) {
-            i8 i8Var = this.G;
-            if (i8Var != null) {
+            f8 f8Var = this.G;
+            if (f8Var != null) {
                 if (f7 != this.H) {
-                    if (f7 == this.I && i8Var.a()) {
-                        i8Var.b();
+                    if (f7 == this.I && f8Var.a()) {
+                        f8Var.b();
                         this.H = this.I;
                         this.I = f7;
                     } else {
                         i10 = this.H;
-                        i8Var.d();
+                        f8Var.d();
                     }
                 }
                 r2 = true;
@@ -293,10 +293,10 @@ public final class e extends f implements j0.b {
             this.I = -1;
             this.H = -1;
             b bVar2 = this.F;
-            int e = bVar2.e(i10);
-            int e7 = bVar2.e(f7);
-            if (e7 != 0 && e != 0) {
-                long j3 = e7 | (e << 32);
+            int e7 = bVar2.e(i10);
+            int e10 = bVar2.e(f7);
+            if (e10 != 0 && e7 != 0) {
+                long j3 = e10 | (e7 << 32);
                 int longValue = (int) ((Long) bVar2.I.g(-1L, j3)).longValue();
                 if (longValue >= 0) {
                     boolean z10 = (((Long) bVar2.I.g(-1L, j3)).longValue() & 8589934592L) != 0;
@@ -324,10 +324,10 @@ public final class e extends f implements j0.b {
     @Override // i.f, android.graphics.drawable.Drawable
     public final boolean setVisible(boolean z10, boolean z11) {
         boolean visible = super.setVisible(z10, z11);
-        i8 i8Var = this.G;
-        if (i8Var != null && (visible || z11)) {
+        f8 f8Var = this.G;
+        if (f8Var != null && (visible || z11)) {
             if (z10) {
-                i8Var.c();
+                f8Var.c();
                 return visible;
             }
             jumpToCurrentState();

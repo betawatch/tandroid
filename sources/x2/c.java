@@ -5,8 +5,9 @@ import b2.l1;
 import e2.d0;
 import java.util.Arrays;
 import java.util.List;
+import org.telegram.ui.f11;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class c implements r {
     public final l1 a;
@@ -27,7 +28,7 @@ public abstract class c implements r {
         for (int i11 = 0; i11 < iArr.length; i11++) {
             this.d[i11] = l1Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new sg.p(3));
+        Arrays.sort(this.d, new f11(12));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;

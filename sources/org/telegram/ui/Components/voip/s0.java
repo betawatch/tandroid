@@ -1,136 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.wr;
-import w7.a6;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s0 extends FrameLayout {
-    public final r0 a;
-    public final w9 b;
-    public AnimatorSet c;
-    public boolean d;
-    public boolean e;
-    public final boolean f;
+public final class s0 implements z4.e {
+    public int a = 0;
+    public int b;
+    public final /* synthetic */ v0 c;
 
-    public s0(Activity activity) {
-        super(activity);
-        r0 r0Var = new r0(AndroidUtilities.dp(104.0f), AndroidUtilities.dp(111.0f), AndroidUtilities.dp(12.0f), 8);
-        this.a = r0Var;
-        r0Var.b(3.0d);
-        if (!r0Var.e) {
-            invalidate();
-        }
-        r0Var.e = true;
-        w9 w9Var = new w9(activity);
-        this.b = w9Var;
-        addView(w9Var, a6.e(135, 135, 17));
-        setWillNotDraw(false);
-        AnimatorSet animatorSet = new AnimatorSet();
-        this.c = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<s0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<s0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(wr.g);
-        this.c.setDuration(3000L);
-        boolean isEnabled = LiteMode.isEnabled(512);
-        this.f = isEnabled;
-        if (isEnabled) {
-            this.c.start();
-        }
-        setClipChildren(false);
+    public s0(v0 v0Var) {
+        this.c = v0Var;
     }
 
-    public final void a() {
-        if (this.d) {
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        v0 v0Var = this.c;
+        v0Var.x = i10;
+        v0Var.w = f7;
+        v0Var.d();
+    }
+
+    /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
+    @Override // z4.e
+    public final void b(int i10) {
+        int i11 = this.a;
+        v0 v0Var = this.c;
+        if (i11 == 0) {
+            if (i10 <= v0Var.y) {
+                v0Var.n = 1;
+            } else {
+                v0Var.n = 2;
+            }
+            v0.a(v0Var);
             return;
         }
-        AnimatorSet animatorSet = this.c;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        this.d = true;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.c = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<s0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<s0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(wr.g);
-        this.c.setDuration(400L);
-        this.c.start();
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        if (this.e != z10) {
-            this.e = z10;
-            r0 r0Var = this.a;
-            if (z10) {
-                r0Var.b(3.0d);
-            }
-            if (r0Var.h != z10) {
-                r0Var.h = z10;
-                ValueAnimator valueAnimator = r0Var.j;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllUpdateListeners();
-                    r0Var.j.cancel();
-                }
-                if (z10) {
-                    r0Var.j = ValueAnimator.ofFloat(r0Var.i, 0.0f);
-                    r0Var.k = (int) (2000.0f / AndroidUtilities.screenRefreshTime);
-                } else {
-                    r0Var.k = 0;
-                    r0Var.j = ValueAnimator.ofFloat(r0Var.i, 1.0f);
-                }
-                r0Var.j.addUpdateListener(new ai.a(r0Var, 16));
-                if (z11) {
-                    r0Var.j.setDuration(150L);
-                } else {
-                    r0Var.j.setDuration(1000L);
-                }
-                r0Var.j.start();
-                invalidate();
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.f) {
-            r0 r0Var = this.a;
-            r0Var.c();
-            r0Var.a(canvas, getWidth() / 2, getHeight() / 2, this);
-        }
-        super.onDraw(canvas);
-    }
-
-    public void setAmplitude(double d) {
-        if (this.e) {
-            return;
-        }
-        r0 r0Var = this.a;
-        if (d > 1.5d) {
-            r0Var.b(d);
+        if (i10 <= v0Var.y) {
+            this.b = 1;
         } else {
-            r0Var.b(0.0d);
+            this.b = 2;
         }
     }
 
-    public void setRoundRadius(int i10) {
-        this.b.setRoundRadius(i10);
-    }
-
-    public void setShowWaves(boolean z10) {
-        r0 r0Var = this.a;
-        if (r0Var.e != z10) {
-            invalidate();
+    @Override // z4.e
+    public final void c(int i10) {
+        this.a = i10;
+        if (i10 == 0) {
+            int i11 = this.b;
+            v0 v0Var = this.c;
+            v0Var.n = i11;
+            v0.a(v0Var);
         }
-        r0Var.e = z10;
     }
 }

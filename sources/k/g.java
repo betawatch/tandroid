@@ -14,7 +14,7 @@ import l.n;
 import l.o;
 import l.s;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -59,8 +59,8 @@ public final class g {
             Constructor<?> constructor = Class.forName(str, false, this.E.c.getClassLoader()).getConstructor(clsArr);
             constructor.setAccessible(true);
             return constructor.newInstance(objArr);
-        } catch (Exception e) {
-            Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e);
+        } catch (Exception e7) {
+            Log.w("SupportMenuInflater", "Cannot instantiate class: " + str, e7);
             return null;
         }
     }
@@ -89,11 +89,11 @@ public final class g {
             try {
                 fVar.b = cls.getMethod(str, f.c);
                 menuItem.setOnMenuItemClickListener(fVar);
-            } catch (Exception e) {
+            } catch (Exception e7) {
                 StringBuilder v = a4.a.v("Couldn't resolve menu item onClick handler ", str, " in class ");
                 v.append(cls.getName());
                 InflateException inflateException = new InflateException(v.toString());
-                inflateException.initCause(e);
+                inflateException.initCause(e7);
                 throw inflateException;
             }
         }
@@ -109,8 +109,8 @@ public final class g {
                         sVar.d = aVar.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
                     }
                     sVar.d.invoke(aVar, Boolean.TRUE);
-                } catch (Exception e7) {
-                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e7);
+                } catch (Exception e10) {
+                    Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e10);
                 }
             }
         }

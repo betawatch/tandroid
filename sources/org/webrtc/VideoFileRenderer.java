@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.er0;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
@@ -76,8 +76,8 @@ public class VideoFileRenderer implements VideoSink {
             this.videoOutFile.close();
             Logging.d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
             this.fileThread.quit();
-        } catch (IOException e) {
-            throw new RuntimeException("Error closing output file", e);
+        } catch (IOException e7) {
+            throw new RuntimeException("Error closing output file", e7);
         }
     }
 
@@ -89,8 +89,8 @@ public class VideoFileRenderer implements VideoSink {
             this.videoOutFile.write("FRAME\n".getBytes(Charset.forName("US-ASCII")));
             this.videoOutFile.write(this.outputFrameBuffer.array(), this.outputFrameBuffer.arrayOffset(), this.outputFrameSize);
             this.frameCount++;
-        } catch (IOException e) {
-            throw new RuntimeException("Error writing video to disk", e);
+        } catch (IOException e7) {
+            throw new RuntimeException("Error writing video to disk", e7);
         }
     }
 
@@ -113,7 +113,7 @@ public class VideoFileRenderer implements VideoSink {
         videoFrame.release();
         VideoFrame.I420Buffer i420 = cropAndScale.toI420();
         cropAndScale.release();
-        this.fileThreadHandler.post(new sx0(this, i420, videoFrame, 15));
+        this.fileThreadHandler.post(new er0(this, i420, videoFrame, 23));
     }
 
     @Override // org.webrtc.VideoSink
@@ -129,9 +129,9 @@ public class VideoFileRenderer implements VideoSink {
         this.fileThreadHandler.post(new h(this, 3));
         try {
             this.fileThread.join();
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e7) {
             Thread.currentThread().interrupt();
-            Logging.e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
+            Logging.e(TAG, "Interrupted while waiting for the write to disk to complete.", e7);
         }
     }
 

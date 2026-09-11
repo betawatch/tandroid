@@ -1,56 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ej implements TextWatcher {
-    public final /* synthetic */ jj a;
+public final class ej extends g51 {
+    public static final /* synthetic */ int a = 0;
 
-    public ej(jj jjVar) {
-        this.a = jjVar;
+    static {
+        g51.setup(new ej());
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        jj jjVar = this.a;
-        zi ziVar = jjVar.g0;
-        TextUtils.isEmpty(jjVar.E);
-        jjVar.E = editable.toString().trim();
-        zi ziVar2 = jjVar.b0;
-        AndroidUtilities.cancelRunOnUIThread(ziVar2);
-        if (!TextUtils.isEmpty(jjVar.E)) {
-            String str = jjVar.E;
-            jjVar.a0 = str != null && str.length() >= 0;
-            if (!TextUtils.equals(jjVar.W, jjVar.E)) {
-                jjVar.M.clear();
-                jjVar.c0 = 0;
-                jjVar.d0 = false;
-            }
-            AndroidUtilities.runOnUIThread(ziVar2, 1500L);
-        }
-        AndroidUtilities.cancelRunOnUIThread(ziVar);
-        if (!TextUtils.isEmpty(jjVar.E)) {
-            String str2 = jjVar.E;
-            jjVar.n0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(jjVar.b.J1).config.musicSearchUsername.get())) ? false : true;
-            if (!TextUtils.equals(jjVar.f0, jjVar.E)) {
-                jjVar.N.clear();
-                jjVar.h0 = false;
-            }
-            AndroidUtilities.runOnUIThread(ziVar, 1500L);
-        }
-        jjVar.P();
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, h51 h51Var, boolean z10, v51 v51Var, d61 d61Var) {
+        fj fjVar = (fj) view;
+        CharSequence charSequence = h51Var.l;
+        CharSequence charSequence2 = h51Var.m;
+        fjVar.b.setText(charSequence);
+        fjVar.c.setText(charSequence2);
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new fj(context, f6Var);
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.g51
+    public final boolean isShadow() {
+        return true;
     }
 }

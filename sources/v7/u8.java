@@ -1,20 +1,27 @@
 package v7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static String a(String str, String str2) {
-        int length = str.length() - str2.length();
-        if (length < 0 || length > 1) {
-            throw new IllegalArgumentException("Invalid input received");
+    public static final Object a(Task task, kd.c cVar) {
+        if (!task.isComplete()) {
+            zd.m mVar = new zd.m(1, t8.b(cVar));
+            mVar.s();
+            task.addOnCompleteListener(je.a.a, new a4.m(mVar, 27));
+            Object r10 = mVar.r();
+            jd.a aVar = jd.a.a;
+            return r10;
         }
-        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            sb2.append(str.charAt(i10));
-            if (str2.length() > i10) {
-                sb2.append(str2.charAt(i10));
-            }
+        Exception exception = task.getException();
+        if (exception != null) {
+            throw exception;
         }
-        return sb2.toString();
+        if (!task.isCanceled()) {
+            return task.getResult();
+        }
+        throw new CancellationException("Task " + task + " was cancelled normally.");
     }
 }

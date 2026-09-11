@@ -1,29 +1,31 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
 
-    public /* synthetic */ c2(Utilities.Callback callback, HashMap hashMap, int i10) {
+    public /* synthetic */ c2(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = hashMap;
+        this.b = b2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
-                break;
+                try {
+                    this.b.dismiss();
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
             default:
-                this.b.run(this.c);
+                this.b.dismiss();
                 break;
         }
     }

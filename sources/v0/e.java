@@ -1,10 +1,10 @@
 package v0;
 
 import android.os.Bundle;
-import og.u0;
+import n7.z0;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e extends b {
     public final String d;
@@ -21,7 +21,7 @@ public final class e extends b {
             String string = jSONObject.getString("name");
             String string2 = jSONObject.isNull("displayName") ? null : jSONObject.getString("displayName");
             kotlin.jvm.internal.i.b(string);
-            u0 u0Var = new u0(string, string2);
+            z0 z0Var = new z0(string, string2);
             Bundle bundle = new Bundle();
             bundle.putString("androidx.credentials.BUNDLE_KEY_SUBTYPE", "androidx.credentials.BUNDLE_VALUE_SUBTYPE_CREATE_PUBLIC_KEY_CREDENTIAL_REQUEST");
             bundle.putString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON", requestJson);

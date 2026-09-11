@@ -5,10 +5,10 @@ import jd.a;
 import kotlin.jvm.internal.o;
 import org.telegram.tgnet.TLObject;
 import rd.l;
-import v7.u7;
+import v7.t7;
 import zd.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzcx {
     public static final zzcx zza = new zzcx();
@@ -59,7 +59,7 @@ public final class zzcx {
                 a aVar = a.a;
                 i11 = zzcuVar.zzh;
                 if (i11 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     o oVar3 = new o();
                     oVar3.a = j3;
                     d10 = d;
@@ -78,7 +78,7 @@ public final class zzcx {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        u7.b(obj);
+                        t7.b(obj);
                         return obj;
                     }
                     i15 = zzcuVar.zze;
@@ -87,7 +87,7 @@ public final class zzcx {
                     j12 = zzcuVar.zza;
                     oVar2 = zzcuVar.zzi;
                     lVar3 = (l) zzcuVar.zzc;
-                    u7.b(obj);
+                    t7.b(obj);
                     zzcu zzcuVar3 = zzcuVar;
                     int i17 = i15;
                     int i18 = i14;
@@ -150,7 +150,7 @@ public final class zzcx {
                 oVar2 = zzcuVar.zzi;
                 lVar3 = (l) zzcuVar.zzc;
                 try {
-                    u7.b(obj);
+                    t7.b(obj);
                     return obj;
                 } catch (Exception unused2) {
                     j13 = (long) (oVar2.a * d11);
@@ -201,7 +201,7 @@ public final class zzcx {
         l lVar5;
         long j13;
         double d11;
-        Exception e;
+        Exception e7;
         if (cVar instanceof zzcv) {
             zzcvVar = (zzcv) cVar;
             int i11 = zzcvVar.zzh;
@@ -211,7 +211,7 @@ public final class zzcx {
                 a aVar = a.a;
                 i10 = zzcvVar.zzh;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     j11 = j3;
                     j12 = j10;
                     d10 = d;
@@ -237,7 +237,7 @@ public final class zzcx {
                         j13 = zzcvVar.zzc;
                         lVar3 = (l) zzcvVar.zzb;
                         lVar5 = (l) zzcvVar.zza;
-                        u7.b(obj);
+                        t7.b(obj);
                         l lVar6 = lVar5;
                         zzcvVar2 = zzcvVar;
                         lVar4 = lVar6;
@@ -245,15 +245,15 @@ public final class zzcx {
                         d10 = d11;
                         j12 = j14;
                         try {
-                        } catch (Exception e7) {
-                            e = e7;
+                        } catch (Exception e10) {
+                            e7 = e10;
                             zzcv zzcvVar3 = zzcvVar2;
                             lVar5 = lVar4;
                             zzcvVar = zzcvVar3;
                             double d12 = d10;
                             j13 = j12;
                             d11 = d12;
-                            if (((Boolean) lVar5.invoke(e)).booleanValue()) {
+                            if (((Boolean) lVar5.invoke(e7)).booleanValue()) {
                             }
                         }
                         zzcvVar2.zza = lVar4;
@@ -271,12 +271,12 @@ public final class zzcx {
                     lVar3 = (l) zzcvVar.zzb;
                     lVar5 = (l) zzcvVar.zza;
                     try {
-                        u7.b(obj);
+                        t7.b(obj);
                         return obj;
-                    } catch (Exception e10) {
-                        e = e10;
-                        if (((Boolean) lVar5.invoke(e)).booleanValue()) {
-                            throw e;
+                    } catch (Exception e11) {
+                        e7 = e11;
+                        if (((Boolean) lVar5.invoke(e7)).booleanValue()) {
+                            throw e7;
                         }
                         j11 = (long) (j11 * d11);
                         if (j11 > j13) {

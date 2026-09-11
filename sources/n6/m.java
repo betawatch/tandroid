@@ -1,6 +1,6 @@
 package n6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class m implements k {
     public static m b;
@@ -27,7 +27,7 @@ public final class m implements k {
     }
 
     @Override // n6.k
-    public Object b(com.google.android.gms.common.api.q qVar) {
+    public Object k(com.google.android.gms.common.api.q qVar) {
         m8.d dVar = (m8.d) this.a;
         dVar.a = qVar;
         return dVar;

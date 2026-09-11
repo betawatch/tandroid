@@ -4,15 +4,15 @@ import android.content.Context;
 import android.hardware.Camera;
 import android.os.Handler;
 import android.os.SystemClock;
+import bi.t1;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
-import zh.t0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 class Camera1Session implements CameraSession {
     private static final int NUMBER_OF_CAPTURE_BUFFERS = 3;
@@ -34,7 +34,7 @@ class Camera1Session implements CameraSession {
     private static final Histogram camera1StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera1.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera1ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera1.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public class 2 implements Camera.PreviewCallback {
         public 2() {
         }
@@ -73,7 +73,7 @@ class Camera1Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum SessionState {
         RUNNING,
         STOPPED
@@ -132,23 +132,23 @@ class Camera1Session implements CameraSession {
                         try {
                             open.setDisplayOrientation(0);
                             createSessionCallback.onDone(new Camera1Session(events, z10, context, surfaceTextureHelper, cameraIndex, open, cameraInfo, findClosestCaptureFormat, nanoTime));
-                        } catch (RuntimeException e) {
+                        } catch (RuntimeException e7) {
                             open.release();
-                            createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e.getMessage());
+                            createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e7.getMessage());
                         }
-                    } catch (RuntimeException e7) {
+                    } catch (RuntimeException e10) {
                         open.release();
-                        createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e7.getMessage());
+                        createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e10.getMessage());
                     }
-                } catch (IOException | RuntimeException e10) {
+                } catch (IOException | RuntimeException e11) {
                     open.release();
-                    createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e10.getMessage());
+                    createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e11.getMessage());
                 }
-            } catch (RuntimeException e11) {
-                createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e11.getMessage());
+            } catch (RuntimeException e12) {
+                createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e12.getMessage());
             }
-        } catch (IllegalArgumentException e12) {
-            createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e12.getMessage());
+        } catch (IllegalArgumentException e13) {
+            createSessionCallback.onFailure(CameraSession.FailureType.ERROR, e13.getMessage());
         }
     }
 
@@ -167,7 +167,7 @@ class Camera1Session implements CameraSession {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getFrameOrientation() {
-        int orientation = t0.W != null ? 0 : this.orientationHelper.getOrientation();
+        int orientation = t1.W != null ? 0 : this.orientationHelper.getOrientation();
         OrientationHelper.cameraOrientation = orientation;
         if (this.info.facing == 1) {
             orientation = 360 - orientation;
@@ -207,13 +207,13 @@ class Camera1Session implements CameraSession {
         this.camera.setErrorCallback(new Camera.ErrorCallback() { // from class: org.webrtc.Camera1Session.1
             @Override // android.hardware.Camera.ErrorCallback
             public void onError(int i10, Camera camera) {
-                String j3 = i10 == 100 ? "Camera server died!" : hc.b.j(i10, "Camera error: ");
-                Logging.e(Camera1Session.TAG, j3);
+                String i11 = i10 == 100 ? "Camera server died!" : i2.g.i(i10, "Camera error: ");
+                Logging.e(Camera1Session.TAG, i11);
                 Camera1Session.this.stopInternal();
                 if (i10 == 2) {
                     Camera1Session.this.events.onCameraDisconnected(Camera1Session.this);
                 } else {
-                    Camera1Session.this.events.onCameraError(Camera1Session.this, j3);
+                    Camera1Session.this.events.onCameraError(Camera1Session.this, i11);
                 }
             }
         });
@@ -224,9 +224,9 @@ class Camera1Session implements CameraSession {
         }
         try {
             this.camera.startPreview();
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e7) {
             stopInternal();
-            this.events.onCameraError(this, e.getMessage());
+            this.events.onCameraError(this, e7.getMessage());
         }
     }
 

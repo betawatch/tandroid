@@ -1,16 +1,18 @@
 package a0;
 
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import t7.u;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class k {
     public final int a;
-    public final b0.b b;
-    public final rb.a c;
+    public final xa.c b;
+    public final u c;
     public int d;
     public int e;
     public int f;
@@ -20,16 +22,16 @@ public class k {
         if (i10 <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.b = new b0.b(0);
-        this.c = new rb.a(4);
+        this.b = new xa.c(5);
+        this.c = new u(3);
     }
 
     public final Object a(Object key) {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
-            b0.b bVar = this.b;
-            bVar.getClass();
-            Object obj = bVar.a.get(key);
+            xa.c cVar = this.b;
+            cVar.getClass();
+            Object obj = ((LinkedHashMap) cVar.b).get(key);
             if (obj != null) {
                 this.e++;
                 return obj;
@@ -44,9 +46,9 @@ public class k {
         kotlin.jvm.internal.i.e(key, "key");
         synchronized (this.c) {
             this.d++;
-            b0.b bVar = this.b;
-            bVar.getClass();
-            put = bVar.a.put(key, obj);
+            xa.c cVar = this.b;
+            cVar.getClass();
+            put = ((LinkedHashMap) cVar.b).put(key, obj);
             if (put != null) {
                 this.d--;
             }
@@ -55,7 +57,7 @@ public class k {
         return put;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x008d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0095, code lost:
     
         throw new java.lang.IllegalStateException("LruCache.sizeOf() is reporting inconsistent results!");
      */
@@ -66,13 +68,13 @@ public class k {
         while (true) {
             synchronized (this.c) {
                 try {
-                    if (this.d < 0 || (this.b.a.isEmpty() && this.d != 0)) {
+                    if (this.d < 0 || (((LinkedHashMap) this.b.b).isEmpty() && this.d != 0)) {
                         break;
                     }
-                    if (this.d <= i10 || this.b.a.isEmpty()) {
+                    if (this.d <= i10 || ((LinkedHashMap) this.b.b).isEmpty()) {
                         break;
                     }
-                    Set entrySet = this.b.a.entrySet();
+                    Set entrySet = ((LinkedHashMap) this.b.b).entrySet();
                     kotlin.jvm.internal.i.d(entrySet, "map.entries");
                     Object obj = null;
                     if (entrySet instanceof List) {
@@ -92,10 +94,10 @@ public class k {
                     }
                     Object key = entry.getKey();
                     Object value = entry.getValue();
-                    b0.b bVar = this.b;
-                    bVar.getClass();
+                    xa.c cVar = this.b;
+                    cVar.getClass();
                     kotlin.jvm.internal.i.e(key, "key");
-                    bVar.a.remove(key);
+                    ((LinkedHashMap) cVar.b).remove(key);
                     int i11 = this.d;
                     kotlin.jvm.internal.i.e(value, "value");
                     this.d = i11 - 1;

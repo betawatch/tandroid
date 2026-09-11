@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class ni0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -39,8 +39,8 @@ public final class ni0 extends FrameLayout {
                 ArrayList arrayList = oi0Var.F;
                 float f7 = -1.0f;
                 if (!arrayList.isEmpty()) {
-                    hz hzVar = (hz) hc.b.i(1, arrayList);
-                    ImageReceiver imageReceiver = hzVar.r;
+                    fz fzVar = (fz) i2.g.h(1, arrayList);
+                    ImageReceiver imageReceiver = fzVar.r;
                     ImageLocation mediaLocation = imageReceiver.getMediaLocation();
                     if (mediaLocation == null) {
                         mediaLocation = imageReceiver.getImageLocation();
@@ -49,16 +49,16 @@ public final class ni0 extends FrameLayout {
                         mediaLocation = imageReceiver.getThumbLocation();
                     }
                     if (mediaLocation != null) {
-                        if (hzVar.s == null) {
+                        if (fzVar.s == null) {
                             TLRPC.Document document = mediaLocation.document;
                             if (document != null) {
-                                hzVar.s = FileLoader.getAttachFileName(document, "tgs");
+                                fzVar.s = FileLoader.getAttachFileName(document, "tgs");
                             } else {
-                                hzVar.s = FileLoader.getAttachFileName(mediaLocation.location, "tgs");
+                                fzVar.s = FileLoader.getAttachFileName(mediaLocation.location, "tgs");
                             }
                         }
-                        if (hzVar.s != null) {
-                            Float fileProgress = ImageLoader.getInstance().getFileProgress(hzVar.s);
+                        if (fzVar.s != null) {
+                            Float fileProgress = ImageLoader.getInstance().getFileProgress(fzVar.s);
                             if (fileProgress == null) {
                                 fileProgress = Float.valueOf(1.0f);
                             }
@@ -120,7 +120,7 @@ public final class ni0 extends FrameLayout {
                     ArrayList arrayList = cj0Var.N;
                     vi0 vi0Var = cj0Var.K;
                     if (cj0Var.F.getWidth() > 0) {
-                        int[] iArr = {org.telegram.messenger.em.D(6.0f, cj0Var.W.getWidth() - cj0Var.W.l(), r2), 0};
+                        int[] iArr = {org.telegram.messenger.vl.D(6.0f, cj0Var.W.getWidth() - cj0Var.W.l(), r2), 0};
                         cj0Var.W.getLocationOnScreen(iArr);
                         int i14 = iArr[0];
                         cj0Var.X.setScaleX(cj0Var.W.getScaleX());
@@ -150,7 +150,7 @@ public final class ni0 extends FrameLayout {
                         }
                         vi0Var.setX((AndroidUtilities.dp(7.0f) + iArr[0]) - vi0Var.getMeasuredWidth());
                         if (cj0Var.g0) {
-                            org.telegram.messenger.em.q(vi0Var.animate().translationY(((cj0Var.X.getHeight() + iArr[1]) - vi0Var.getMeasuredHeight()) - vi0Var.getTop()), ii.n.V, 250L);
+                            org.telegram.messenger.vl.q(vi0Var.animate().translationY(((cj0Var.X.getHeight() + iArr[1]) - vi0Var.getMeasuredHeight()) - vi0Var.getTop()), ki.o.V, 250L);
                         } else {
                             vi0Var.setY((cj0Var.X.getHeight() + iArr[1]) - vi0Var.getMeasuredHeight());
                         }
@@ -161,7 +161,7 @@ public final class ni0 extends FrameLayout {
                         }
                         FrameLayout frameLayout = cj0Var.d0;
                         if (frameLayout != null) {
-                            frameLayout.setX(hc.b.g(6.0f, (cj0Var.X.l() + iArr[0]) - cj0Var.d0.getMeasuredWidth(), 0));
+                            frameLayout.setX(i2.g.f(6.0f, (cj0Var.X.l() + iArr[0]) - cj0Var.d0.getMeasuredWidth(), 0));
                             RectF rectF = cj0Var.l0;
                             if (rectF != null) {
                                 FrameLayout frameLayout2 = cj0Var.d0;
@@ -201,7 +201,7 @@ public final class ni0 extends FrameLayout {
             case 1:
                 super.onSizeChanged(i10, i11, i12, i13);
                 cj0 cj0Var = this.b;
-                fh.d.c(cj0Var.j0, cj0Var.F);
+                hh.d.c(cj0Var.j0, cj0Var.F);
                 ViewGroup viewGroup = cj0Var.Z;
                 if (viewGroup != null) {
                     viewGroup.invalidate();

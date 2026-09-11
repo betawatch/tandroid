@@ -1,52 +1,44 @@
 package org.telegram.ui.Components;
 
-import java.util.concurrent.atomic.AtomicReference;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bo implements Runnable {
+public final class bo extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jo b;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ bo(jo joVar, int i10) {
+    public /* synthetic */ bo(co coVar, int i10) {
         this.a = i10;
-        this.b = joVar;
+        this.b = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                jo joVar = this.b;
-                AtomicReference atomicReference = joVar.n;
-                org.telegram.ui.ActionBar.l5 l5Var = (org.telegram.ui.ActionBar.l5) atomicReference.get();
-                if (l5Var != null) {
-                    joVar.removeView(l5Var);
-                    atomicReference.set(null);
-                    break;
-                }
+                this.b.Q = null;
                 break;
-            case 1:
-                jo joVar2 = this.b;
-                AtomicReference atomicReference2 = joVar2.v;
-                org.telegram.ui.ActionBar.l5 l5Var2 = (org.telegram.ui.ActionBar.l5) atomicReference2.get();
-                if (l5Var2 != null) {
-                    joVar2.removeView(l5Var2);
-                    atomicReference2.set(null);
-                    if (!joVar2.b) {
-                        joVar2.setClipChildren(true);
-                        break;
-                    }
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                co coVar = this.b;
+                if (coVar.Q == animator) {
+                    coVar.getSubtitleTextView().setVisibility(4);
+                    coVar.Q = null;
+                    break;
                 }
                 break;
             default:
-                jo joVar3 = this.b;
-                joVar3.j0 = false;
-                joVar3.h0.c(false);
-                if (joVar3.a()) {
-                    joVar3.f();
-                    break;
-                }
+                this.b.Q = null;
                 break;
         }
     }

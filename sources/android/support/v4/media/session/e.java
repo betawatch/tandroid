@@ -13,7 +13,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e extends MediaController.Callback {
     public final WeakReference a;
@@ -37,7 +37,7 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onExtrasChanged(Bundle bundle) {
-        b0.a(bundle);
+        c0.a(bundle);
     }
 
     @Override // android.media.session.MediaController.Callback
@@ -79,7 +79,7 @@ public final class e extends MediaController.Callback {
         for (Object obj : list) {
             if (obj != null) {
                 MediaSession.QueueItem queueItem = (MediaSession.QueueItem) obj;
-                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(z.b(queueItem)), z.c(queueItem));
+                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(a0.b(queueItem)), a0.c(queueItem));
             } else {
                 mediaSessionCompat$QueueItem = null;
             }
@@ -101,6 +101,6 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onSessionEvent(String str, Bundle bundle) {
-        b0.a(bundle);
+        c0.a(bundle);
     }
 }

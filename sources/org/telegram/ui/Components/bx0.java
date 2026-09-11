@@ -1,36 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class bx0 extends AnimatorListenerAdapter {
+public final class bx0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cx0 b;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ FrameLayout c;
 
-    public /* synthetic */ bx0(cx0 cx0Var, int i10) {
+    public /* synthetic */ bx0(FrameLayout frameLayout, View view, int i10) {
         this.a = i10;
-        this.b = cx0Var;
+        this.c = frameLayout;
+        this.b = view;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                cx0 cx0Var = this.b;
-                cx0Var.y = 1.0f;
+                cx0 cx0Var = (cx0) this.c;
+                cx0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 cx0Var.invalidate();
-                cx0Var.G = null;
-                break;
-            case 1:
-                cx0 cx0Var2 = this.b;
-                cx0Var2.m(((Float) cx0Var2.v.getAnimatedValue()).floatValue());
-                cx0Var2.v = null;
+                ((im0) this.b).invalidate();
                 break;
             default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
+                ((i81) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

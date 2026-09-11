@@ -1,6 +1,6 @@
 package androidx.car.app.utils;
 
-import a3.k0;
+import a3.j0;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class i {
     public static IOnDoneCallback a() {
@@ -32,7 +32,7 @@ public abstract class i {
     }
 
     public static void b(IOnDoneCallback iOnDoneCallback, String str, c cVar) {
-        j.a(new k0(iOnDoneCallback, str, cVar, 2));
+        j.a(new j0(iOnDoneCallback, str, cVar, 2));
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, c cVar) {
@@ -42,8 +42,8 @@ public abstract class i {
     public static void d(String str, d dVar) {
         try {
             e(str, dVar);
-        } catch (RemoteException e) {
-            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
+        } catch (RemoteException e7) {
+            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e7);
         }
     }
 
@@ -53,10 +53,10 @@ public abstract class i {
                 Log.d("CarApp", "Dispatching call " + str + " to host");
             }
             dVar.call();
-        } catch (SecurityException e) {
-            throw e;
-        } catch (RuntimeException e7) {
-            throw new androidx.car.app.j(a4.a.p("Remote ", str, " call failed"), e7);
+        } catch (SecurityException e7) {
+            throw e7;
+        } catch (RuntimeException e10) {
+            throw new androidx.car.app.j(a4.a.p("Remote ", str, " call failed"), e10);
         }
     }
 

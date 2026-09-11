@@ -1,26 +1,40 @@
 package za;
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicReference;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class z implements s {
-    public static final u e = new u();
-    public static final m1.c f = w7.r.a(r.a);
-    public final Context a;
-    public final id.h b;
-    public final AtomicReference c;
-    public final y d;
+public final class z {
+    public final String a;
+    public final String b;
+    public final int c;
+    public final long d;
 
-    public z(Context context, id.h hVar) {
-        kotlin.jvm.internal.i.e(context, "context");
-        this.a = context;
-        this.b = hVar;
-        this.c = new AtomicReference();
-        e.getClass();
-        boolean z10 = false;
-        this.d = new y(new of.b(((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null), z10, 8), this);
-        zd.e0.q(zd.e0.b(hVar), new t(this, null, 0));
+    public z(int i10, long j3, String sessionId, String firstSessionId) {
+        kotlin.jvm.internal.i.e(sessionId, "sessionId");
+        kotlin.jvm.internal.i.e(firstSessionId, "firstSessionId");
+        this.a = sessionId;
+        this.b = firstSessionId;
+        this.c = i10;
+        this.d = j3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof z)) {
+            return false;
+        }
+        z zVar = (z) obj;
+        return kotlin.jvm.internal.i.a(this.a, zVar.a) && kotlin.jvm.internal.i.a(this.b, zVar.b) && this.c == zVar.c && this.d == zVar.d;
+    }
+
+    public final int hashCode() {
+        int h = (a4.a.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
+        long j3 = this.d;
+        return h + ((int) (j3 ^ (j3 >>> 32)));
+    }
+
+    public final String toString() {
+        return "SessionDetails(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", sessionStartTimestampUs=" + this.d + ')';
     }
 }

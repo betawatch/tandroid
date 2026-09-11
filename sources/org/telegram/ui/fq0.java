@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class fq0 extends org.telegram.ui.Components.aw0 {
+public final class fq0 extends org.telegram.ui.Components.ov0 {
     public int w0;
     public boolean x0;
     public final /* synthetic */ kq0 y0;
@@ -24,7 +24,7 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
     /* JADX WARN: Removed duplicated region for block: B:40:0x00c3  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00cd  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00a7  */
-    @Override // org.telegram.ui.Components.aw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ov0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -35,7 +35,7 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
         int i17;
         int i18;
         int i19;
-        org.telegram.ui.Components.nu nuVar;
+        org.telegram.ui.Components.hu huVar;
         int measuredHeight;
         int measuredHeight2;
         int i20 = this.w0;
@@ -43,8 +43,8 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
         kq0 kq0Var = this.y0;
         if (i20 != i21) {
             this.w0 = i21;
-            org.telegram.ui.ActionBar.p1 p1Var = kq0Var.I;
-            if (p1Var != null && p1Var.isShowing()) {
+            org.telegram.ui.ActionBar.n1 n1Var = kq0Var.I;
+            if (n1Var != null && n1Var.isShowing()) {
                 kq0Var.I.d(true);
             }
         }
@@ -77,8 +77,8 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
                             i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
                             i18 = layoutParams.bottomMargin;
                         }
-                        nuVar = kq0Var.M;
-                        if (nuVar != null && nuVar.l(childAt)) {
+                        huVar = kq0Var.M;
+                        if (huVar != null && huVar.l(childAt)) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -94,8 +94,8 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
                         i18 = layoutParams.bottomMargin;
                     }
                     i19 = i17 - i18;
-                    nuVar = kq0Var.M;
-                    if (nuVar != null) {
+                    huVar = kq0Var.M;
+                    if (huVar != null) {
                         if (AndroidUtilities.isTablet()) {
                         }
                         i19 = measuredHeight - measuredHeight2;
@@ -109,8 +109,8 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
                 if (i24 == 16) {
                 }
                 i19 = i17 - i18;
-                nuVar = kq0Var.M;
-                if (nuVar != null) {
+                huVar = kq0Var.M;
+                if (huVar != null) {
                 }
                 childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
             }
@@ -140,8 +140,8 @@ public final class fq0 extends org.telegram.ui.Components.aw0 {
         while (i13 < childCount) {
             View childAt = getChildAt(i13);
             if (childAt != null && childAt.getVisibility() != 8) {
-                org.telegram.ui.Components.nu nuVar = kq0Var.M;
-                if (nuVar == null || !nuVar.l(childAt)) {
+                org.telegram.ui.Components.hu huVar = kq0Var.M;
+                if (huVar == null || !huVar.l(childAt)) {
                     i12 = i10;
                     measureChildWithMargins(childAt, i12, 0, i14, 0);
                     i13++;

@@ -1,71 +1,48 @@
 package sg;
 
 import android.view.View;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.o6;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements c5, dw0, ug.f, ug.k {
-    public final /* synthetic */ a0 a;
+public final /* synthetic */ class u implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ u(a0 a0Var) {
-        this.a = a0Var;
+    public /* synthetic */ u(k0 k0Var, int i10) {
+        this.a = i10;
+        this.b = k0Var;
     }
 
-    @Override // org.telegram.ui.Components.c5
-    public void I(int i10, int i11, boolean z10) {
-        a0 a0Var = this.a;
-        a0Var.m0 = i10 * 1000;
-        a0Var.a0(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public void h(int i10) {
-        a0 a0Var = this.a;
-        int i11 = a0Var.h0;
-        int i12 = ug.d.s;
-        if (i11 == 2) {
-            a0Var.n0 = i10;
-        } else {
-            a0Var.o0 = i10;
-        }
-        a0Var.q0.a.b(a0Var.V(), true);
-        if (a0Var.h0 == 3) {
-            a0Var.a0(true, true);
-        } else {
-            a0Var.a0(false, false);
-        }
-        tg.b bVar = a0Var.g0;
-        int V = a0Var.V();
-        for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
-            View childAt = bVar.f.getChildAt(i13);
-            if (childAt instanceof ug.x) {
-                o6 o6Var = ((ug.x) childAt).r;
-                String formatPluralString = V <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", V, Integer.valueOf(V));
-                o6Var.a();
-                o6Var.c(formatPluralString, true, true);
-            }
-            if (childAt instanceof ug.g) {
-                ug.g gVar = (ug.g) childAt;
-                int F = bVar.F(gVar.getChat());
-                boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(gVar.v);
-                if (gVar.w) {
-                    gVar.setSubtitle(F >= 1 ? LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", F, new Object[0]) : LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                k0 k0Var = this.b;
+                AndroidUtilities.addToClipboard(k0Var.p1());
+                k0Var.dismiss();
+                break;
+            case 1:
+                a0 a0Var = this.b.E0;
+                if (!a0Var.h) {
+                    a0Var.r.performClick();
+                    break;
                 } else {
-                    gVar.setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", V, new Object[0]));
+                    a0Var.e.performClick();
+                    break;
                 }
-            }
+            case 2:
+                a0 a0Var2 = this.b.E0;
+                if (!a0Var2.h) {
+                    a0Var2.r.performClick();
+                    break;
+                } else {
+                    a0Var2.e.performClick();
+                    break;
+                }
+            default:
+                k0.S(this.b);
+                break;
         }
-        bVar.m(8);
-        bVar.q(bVar.e.size() - 12, 12);
-    }
-
-    @Override // org.telegram.ui.Components.dw0
-    public /* synthetic */ void l() {
     }
 }

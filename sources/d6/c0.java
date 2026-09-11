@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c0 extends e6.g {
     public final /* synthetic */ int a;
@@ -64,9 +64,9 @@ public final class c0 extends e6.g {
         switch (this.a) {
             case 1:
                 e6.c cVar = (e6.c) this.b;
-                long e = cVar.e();
-                if (e != cVar.b) {
-                    cVar.b = e;
+                long e7 = cVar.e();
+                if (e7 != cVar.b) {
+                    cVar.b = e7;
                     cVar.c();
                     if (cVar.b != 0) {
                         cVar.d();
@@ -86,15 +86,15 @@ public final class c0 extends e6.g {
             case 0:
                 q4 q4Var = ((c) this.b).l;
                 if (q4Var != null) {
-                    x6 E = q4Var.a.E();
+                    x6 A = q4Var.a.A();
                     u2 u2Var = new u2(str);
                     u2Var.b = j3;
                     u2Var.c = i10;
                     u2Var.d = j10;
                     u2Var.e = j11;
                     j3 j3Var = new j3(u2Var);
-                    j3Var.f = E.h;
-                    E.d.add(j3Var);
+                    j3Var.f = A.h;
+                    A.d.add(j3Var);
                     break;
                 }
                 break;
@@ -299,7 +299,7 @@ public final class c0 extends e6.g {
                         cVar.d();
                         break;
                     } else {
-                        i10 = e2.d(i12, i10, 1, arrayList);
+                        i10 = e2.e(i12, i10, 1, arrayList);
                     }
                 }
                 Collections.sort(arrayList);

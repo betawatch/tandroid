@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class zzpp {
     private static final zzpp zza = new zzpm("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", '=');
@@ -50,8 +50,8 @@ public abstract class zzpp {
         try {
             zzb(sb2, bArr, 0, i11);
             return sb2.toString();
-        } catch (IOException e) {
-            throw new AssertionError(e);
+        } catch (IOException e7) {
+            throw new AssertionError(e7);
         }
     }
 
@@ -67,8 +67,8 @@ public abstract class zzpp {
             byte[] bArr2 = new byte[zza2];
             System.arraycopy(bArr, 0, bArr2, 0, zza2);
             return bArr2;
-        } catch (zzpn e) {
-            throw new IllegalArgumentException(e);
+        } catch (zzpn e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 }

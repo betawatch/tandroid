@@ -1,82 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class q7 implements Runnable {
+public final class q7 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r7 b;
+    public final /* synthetic */ k8 b;
 
-    public /* synthetic */ q7(r7 r7Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q7(k8 k8Var, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = r7Var;
+        this.b = k8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        TextView textView;
         switch (this.a) {
             case 0:
-                r7 r7Var = this.b;
-                int i10 = r7Var.v + 1;
-                r7Var.v = i10;
-                if (i10 != 1) {
-                    if (i10 == 2) {
-                        AndroidUtilities.runOnUIThread(this, 2000L);
-                        break;
-                    }
-                } else {
-                    j8 j8Var = r7Var.H;
-                    j8Var.H0 = -1;
-                    j8Var.I0 = MediaController.getInstance().getPlayingMessageObject().audioProgress;
-                    r7Var.w = System.currentTimeMillis();
-                    AndroidUtilities.runOnUIThread(this, 2000L);
-                    AndroidUtilities.runOnUIThread(r7Var.E);
-                    break;
+                int y3 = org.telegram.messenger.vl.y(248.0f, i12 - i10, 4);
+                for (int i14 = 0; i14 < 5; i14++) {
+                    int dp = (y3 * i14) + AndroidUtilities.dp((i14 * 48) + 4);
+                    int dp2 = AndroidUtilities.dp(9.0f);
+                    k8 k8Var = this.b;
+                    View view = k8Var.n0[i14];
+                    view.layout(dp, dp2, view.getMeasuredWidth() + dp, k8Var.n0[i14].getMeasuredHeight() + dp2);
                 }
                 break;
+            case 1:
             default:
-                r7 r7Var2 = this.b;
-                j8 j8Var2 = r7Var2.H;
-                long duration = MediaController.getInstance().getDuration();
-                if (duration != 0 && duration != -9223372036854775807L) {
-                    float f7 = j8Var2.I0;
-                    long currentTimeMillis = System.currentTimeMillis();
-                    long j3 = currentTimeMillis - r7Var2.w;
-                    r7Var2.w = currentTimeMillis;
-                    long j10 = currentTimeMillis - r7Var2.x;
-                    int i11 = r7Var2.v;
-                    float f10 = ((long) ((f7 * r2) - (j3 * (i11 == 1 ? 3L : i11 == 2 ? 6L : 12L)))) / duration;
-                    if (f10 < 0.0f) {
-                        f10 = 0.0f;
-                    }
-                    j8Var2.I0 = f10;
-                    MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
-                    if (playingMessageObject != null && playingMessageObject.isMusic()) {
-                        j8Var2.G0(playingMessageObject, false);
-                    }
-                    if (j8Var2.H0 == -1 && r7Var2.v > 0) {
-                        if (j10 > 200 || j8Var2.I0 == 0.0f) {
-                            r7Var2.x = currentTimeMillis;
-                            if (j8Var2.I0 == 0.0f) {
-                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), 0.0f);
-                                MediaController.getInstance().pauseByRewind();
-                            } else {
-                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f10);
-                            }
-                        }
-                        if (r7Var2.v > 0 && j8Var2.I0 > 0.0f) {
-                            AndroidUtilities.runOnUIThread(r7Var2.E, 16L);
-                            break;
-                        }
-                    }
-                } else {
-                    r7Var2.w = System.currentTimeMillis();
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+            case 2:
+                super.onLayout(z10, i10, i11, i12, i13);
+                k8 k8Var2 = this.b;
+                if (k8Var2.V != null && (textView = k8Var2.a0) != null) {
+                    int left = (textView.getLeft() - AndroidUtilities.dp(4.0f)) - k8Var2.V.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.v0 v0Var = k8Var2.V;
+                    v0Var.layout(left, v0Var.getTop(), k8Var2.V.getMeasuredWidth() + left, k8Var2.V.getBottom());
                     break;
                 }
                 break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                k8 k8Var = this.b;
+                if (k8Var.i0.getTag() != null) {
+                    k8Var.A0(false, true);
+                }
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
         }
     }
 }

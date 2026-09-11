@@ -4,30 +4,29 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.List;
-import m.e3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class p extends n {
-    public final e3 j;
-    public final e3 k;
+    public final t j;
+    public final t k;
     public final long l;
 
-    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, e3 e3Var, e3 e3Var2, long j15, long j16) {
+    public p(j jVar, long j3, long j10, long j11, long j12, long j13, List list, long j14, t tVar, t tVar2, long j15, long j16) {
         super(jVar, j3, j10, j11, j13, list, j14, j15, j16);
-        this.j = e3Var;
-        this.k = e3Var2;
+        this.j = tVar;
+        this.k = tVar2;
         this.l = j12;
     }
 
     @Override // m2.s
     public final j a(m mVar) {
-        e3 e3Var = this.j;
-        if (e3Var == null) {
+        t tVar = this.j;
+        if (tVar == null) {
             return this.a;
         }
         b2.s sVar = mVar.a;
-        return new j(0L, -1L, e3Var.u(sVar.j, sVar.a, 0L, 0L));
+        return new j(0L, -1L, tVar.p(sVar.j, sVar.a, 0L, 0L));
     }
 
     @Override // m2.n
@@ -55,6 +54,6 @@ public final class p extends n {
         List list = this.f;
         long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a : (j3 - j10) * this.e;
         b2.s sVar = kVar.a;
-        return new j(0L, -1L, this.k.u(sVar.j, sVar.a, j3, j11));
+        return new j(0L, -1L, this.k.p(sVar.j, sVar.a, j3, j11));
     }
 }

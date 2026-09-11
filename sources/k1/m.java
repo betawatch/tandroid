@@ -1,8 +1,8 @@
 package k1;
 
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class m extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class m extends kd.j implements rd.p {
                 int i10 = this.b;
                 gd.i iVar = gd.i.a;
                 if (i10 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     k kVar = (k) this.c;
                     boolean z10 = kVar instanceof i;
                     a0 a0Var = this.d;
@@ -96,30 +96,30 @@ public final class m extends kd.j implements rd.p {
                     if (i10 != 1 && i10 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 return iVar;
             default:
                 a0 a0Var2 = this.d;
-                ce.o oVar = a0Var2.f;
+                ce.n nVar = a0Var2.f;
                 jd.a aVar2 = jd.a.a;
                 int i11 = this.b;
                 if (i11 != 0) {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     return gd.i.a;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 ce.c cVar = (ce.c) this.c;
-                b0 b0Var2 = (b0) oVar.c();
+                b0 b0Var2 = (b0) nVar.c();
                 if (!(b0Var2 instanceof b)) {
-                    a0Var2.n.F(new i(b0Var2));
+                    a0Var2.n.e(new i(b0Var2));
                 }
-                n nVar = new n(b0Var2, null, 0);
+                n nVar2 = new n(b0Var2, null, 0);
                 this.b = 1;
-                oVar.u(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar), this);
+                nVar.z(new ce.i(new kotlin.jvm.internal.n(), new p(cVar), nVar2), this);
                 return aVar2;
         }
     }

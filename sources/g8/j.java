@@ -11,7 +11,7 @@ import android.os.Parcelable;
 import android.os.WorkSource;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.data.DataHolder;
-import com.google.android.gms.internal.clearcut.d2;
+import com.google.android.gms.internal.clearcut.c2;
 import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -25,7 +25,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import w7.d0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -306,7 +306,7 @@ public final class j implements Parcelable.Creator {
                 return new i6.b(j19, j20, z30);
             case 9:
                 int z31 = d0.z(parcel);
-                d2 d2Var = null;
+                c2 c2Var = null;
                 byte[] bArr = null;
                 int[] iArr = null;
                 String[] strArr = null;
@@ -318,7 +318,7 @@ public final class j implements Parcelable.Creator {
                     int readInt10 = parcel.readInt();
                     switch ((char) readInt10) {
                         case 2:
-                            d2Var = (d2) d0.g(parcel, readInt10, d2.CREATOR);
+                            c2Var = (c2) d0.g(parcel, readInt10, c2.CREATOR);
                             break;
                         case 3:
                             bArr = d0.b(parcel, readInt10);
@@ -347,7 +347,7 @@ public final class j implements Parcelable.Creator {
                     }
                 }
                 d0.m(parcel, z31);
-                return new i6.c(d2Var, bArr, iArr, strArr, iArr2, bArr2, z32, aVarArr);
+                return new i6.c(c2Var, bArr, iArr, strArr, iArr2, bArr2, z32, aVarArr);
             case 10:
                 int z33 = d0.z(parcel);
                 LatLng latLng = null;

@@ -1,25 +1,64 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.app.Activity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
+import java.util.List;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class d5 {
-    public final p2 a;
-    public boolean b;
-    public boolean c;
-    public boolean d = true;
-    public boolean e;
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public boolean g;
+public interface d5 {
+    n2 getBackgroundFragment();
 
-    public d5(p2 p2Var) {
-        this.a = p2Var;
-    }
+    f3 getBottomSheet();
 
-    public final void a() {
-        this.c = true;
-    }
+    List getFragmentStack();
 
-    public final void b(boolean z10) {
-        this.b = z10;
-    }
+    n2 getLastFragment();
+
+    f5 getMessageDrawableOutMediaStart();
+
+    f5 getMessageDrawableOutStart();
+
+    FrameLayout getOverlayContainerView();
+
+    Activity getParentActivity();
+
+    List getPulledDialogs();
+
+    n2 getSafeLastFragment();
+
+    float getThemeAnimationValue();
+
+    ViewGroup getView();
+
+    Window getWindow();
+
+    void setBackgroundView(View view);
+
+    void setDelegate(a5 a5Var);
+
+    void setDrawerLayoutContainer(z3 z3Var);
+
+    void setFragmentPanTranslationOffset(int i10);
+
+    void setFragmentStack(List list);
+
+    void setHighlightActionButtons(boolean z10);
+
+    void setInBubbleMode(boolean z10);
+
+    void setIsSheet(boolean z10);
+
+    void setNavigationBarColor(int i10);
+
+    void setPulledDialogs(List list);
+
+    void setRemoveActionBarExtraHeight(boolean z10);
+
+    void setUseAlphaAnimations(boolean z10);
+
+    void setWindow(Window window);
 }

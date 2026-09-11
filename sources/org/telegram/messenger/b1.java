@@ -1,30 +1,18 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ResultCallback b;
-    public final /* synthetic */ TLRPC.TL_error c;
+public final /* synthetic */ class b1 implements Executor {
+    public final /* synthetic */ DispatchQueue a;
 
-    public /* synthetic */ b1(ResultCallback resultCallback, TLRPC.TL_error tL_error, int i10) {
-        this.a = i10;
-        this.b = resultCallback;
-        this.c = tL_error;
+    public /* synthetic */ b1(DispatchQueue dispatchQueue) {
+        this.a = dispatchQueue;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.onError(this.c);
-                break;
-            default:
-                this.b.onError(this.c);
-                break;
-        }
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.postRunnable(runnable);
     }
 }

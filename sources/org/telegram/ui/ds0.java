@@ -4,7 +4,7 @@ import android.animation.AnimatorSet;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ds0 implements Runnable {
     public final /* synthetic */ PhotoViewer a;
@@ -33,17 +33,17 @@ public final /* synthetic */ class ds0 implements Runnable {
         PhotoViewer photoViewer = this.a;
         photoViewer.x3.setOutlineProvider(gt0Var);
         photoViewer.x3.setClipToOutline(true);
-        vu0 vu0Var = photoViewer.E2;
-        if (vu0Var != null) {
-            vu0Var.setOutlineProvider(gt0Var);
+        tu0 tu0Var = photoViewer.E2;
+        if (tu0Var != null) {
+            tu0Var.setOutlineProvider(gt0Var);
             photoViewer.E2.setClipToOutline(true);
         }
         photoViewer.x3.setTranslationY(this.d);
         float f7 = this.e;
         view.setTranslationY(f7);
-        vu0 vu0Var2 = photoViewer.E2;
-        if (vu0Var2 != null) {
-            vu0Var2.setTranslationY(f7);
+        tu0 tu0Var2 = photoViewer.E2;
+        if (tu0Var2 != null) {
+            tu0Var2.setTranslationY(f7);
         }
         photoViewer.Y5 = 0.0f;
         photoViewer.e0.invalidate();

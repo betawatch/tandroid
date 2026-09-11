@@ -14,7 +14,7 @@ import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -26,7 +26,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final org.telegram.ui.Components.voip.x m = new org.telegram.ui.Components.voip.x(this, 19);
+    public final org.telegram.ui.web.b m = new org.telegram.ui.web.b(this, 10);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -53,9 +53,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        org.telegram.ui.Components.voip.x xVar = this.m;
-        handler.removeCallbacks(xVar);
-        handler.postDelayed(xVar, 1000L);
+        org.telegram.ui.web.b bVar = this.m;
+        handler.removeCallbacks(bVar);
+        handler.postDelayed(bVar, 1000L);
     }
 
     @Override // p4.q
@@ -72,9 +72,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        org.telegram.ui.Components.voip.x xVar = this.m;
-        handler.removeCallbacks(xVar);
-        handler.postDelayed(xVar, 1000L);
+        org.telegram.ui.web.b bVar = this.m;
+        handler.removeCallbacks(bVar);
+        handler.postDelayed(bVar, 1000L);
     }
 
     @Override // p4.p
@@ -144,8 +144,8 @@ public final class g extends p {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e) {
-            Log.e("MR2Provider", "Could not send control request to service.", e);
+        } catch (RemoteException e7) {
+            Log.e("MR2Provider", "Could not send control request to service.", e7);
         }
     }
 
@@ -167,8 +167,8 @@ public final class g extends p {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e) {
-            Log.e("MR2Provider", "Could not send control request to service.", e);
+        } catch (RemoteException e7) {
+            Log.e("MR2Provider", "Could not send control request to service.", e7);
         }
     }
 }

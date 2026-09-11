@@ -6,13 +6,13 @@ import gd.g;
 import ie.a;
 import ie.e;
 import org.telegram.tgnet.TLObject;
+import v7.s7;
 import v7.t7;
-import v7.u7;
 import zd.h0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class zzbo {
     public s zza;
@@ -52,10 +52,10 @@ public final class zzbo {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                     return obj;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 h0 zza = zzdf.zza(((StandardIntegrityManager) ((g) this.zzd).a()).prepareIntegrityToken(StandardIntegrityManager.PrepareIntegrityTokenRequest.builder().setCloudProjectNumber(this.zze).build()));
                 zzbcVar.zzc = 1;
                 Object await = zza.await(zzbcVar);
@@ -100,7 +100,7 @@ public final class zzbo {
                 jd.a aVar = jd.a.a;
                 i10 = zzbgVar.zzc;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     s zzf = zzf();
                     zzbgVar.zzd = str;
                     zzbgVar.zzc = 1;
@@ -110,11 +110,11 @@ public final class zzbo {
                         if (i10 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        u7.b(obj);
+                        t7.b(obj);
                         return ((StandardIntegrityManager.StandardIntegrityToken) obj).token();
                     }
                     str = zzbgVar.zzd;
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 h0 zza = zzdf.zza(((StandardIntegrityManager.StandardIntegrityTokenProvider) obj).request(StandardIntegrityManager.StandardIntegrityTokenRequest.builder().setRequestHash(str).build()));
                 zzbgVar.zzd = null;
@@ -152,9 +152,9 @@ public final class zzbo {
 
     public zzbo(long j3) {
         int i10 = zzby.zza;
-        this.zzb = t7.a(zzbk.zza);
+        this.zzb = s7.a(zzbk.zza);
         this.zzc = zzbp.zza;
-        this.zzd = t7.a(zzbl.zza);
+        this.zzd = s7.a(zzbl.zza);
         this.zzf = e.a();
     }
 }

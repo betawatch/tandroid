@@ -9,7 +9,7 @@ import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +31,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -51,8 +51,8 @@ public class SurfaceTextureHelper {
             public SurfaceTextureHelper call() {
                 try {
                     return new SurfaceTextureHelper(EglBase.Context.this, handler, z10, yuvConverter, frameRefMonitor);
-                } catch (RuntimeException e) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
+                } catch (RuntimeException e7) {
+                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e7);
                     return null;
                 }
             }
@@ -206,13 +206,13 @@ public class SurfaceTextureHelper {
 
     public void setTextureSize(int i10, int i11) {
         if (i10 <= 0) {
-            throw new IllegalArgumentException(hc.b.j(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(i2.g.i(i10, "Texture width must be positive, but was "));
         }
         if (i11 <= 0) {
-            throw new IllegalArgumentException(hc.b.j(i11, "Texture height must be positive, but was "));
+            throw new IllegalArgumentException(i2.g.i(i11, "Texture height must be positive, but was "));
         }
         this.surfaceTexture.setDefaultBufferSize(i10, i11);
-        this.handler.post(new fg.n(this, i10, i11, 12));
+        this.handler.post(new hg.n(this, i10, i11, 12));
     }
 
     public void startListening(VideoSink videoSink) {
@@ -293,10 +293,10 @@ public class SurfaceTextureHelper {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
                 }
             }, handler);
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e7) {
             this.eglBase.release();
             handler.getLooper().quit();
-            throw e;
+            throw e7;
         }
     }
 

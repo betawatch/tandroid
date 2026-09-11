@@ -1,382 +1,253 @@
 package di;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
-import android.util.Pair;
-import bi.k6;
-import java.nio.charset.StandardCharsets;
-import java.security.KeyStore;
-import java.security.SecureRandom;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h7;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class u {
-    public static final WeakHashMap k = new WeakHashMap();
-    public static KeyStore l;
-    public final Context a;
-    public final int b;
-    public final long c;
-    public boolean d;
-    public boolean e;
+public final class u extends Drawable {
+    public final /* synthetic */ int a = 1;
+    public final Path b;
+    public final Paint c;
+    public final Paint d;
+    public final Paint e;
     public boolean f;
-    public String g;
-    public String h;
-    public xa.c i;
-    public k6 j;
+    public final Object g;
 
-    public u(Context context, int i10, long j3) {
-        this.a = context;
-        this.b = i10;
-        this.c = j3;
-        h();
+    public u() {
+        Path path = new Path();
+        this.b = path;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        Paint paint3 = new Paint(1);
+        this.e = paint3;
+        this.g = new org.telegram.ui.Components.e6(new cc0(this, 1), 320L, pr.h, 0);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(-1);
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(2.0f)));
+        paint2.setColor(-1);
+        paint3.setStyle(style);
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        path.moveTo(-AndroidUtilities.dpf2(3.75f), -AndroidUtilities.dpf2(5.4166f));
+        path.lineTo(AndroidUtilities.dpf2(3.75f), 0.0f);
+        path.lineTo(-AndroidUtilities.dpf2(3.75f), AndroidUtilities.dpf2(5.4166f));
+        path.close();
     }
 
-    public static void b() {
-        Context context = ApplicationLoader.applicationContext;
-        if (context == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < 4; i10++) {
-            context.getSharedPreferences("2botbiometry_" + i10, 0).edit().clear().apply();
-        }
-        k.clear();
-    }
-
-    public static u c(Context context, int i10, long j3) {
-        Pair pair = new Pair(Integer.valueOf(i10), Long.valueOf(j3));
-        WeakHashMap weakHashMap = k;
-        u uVar = (u) weakHashMap.get(pair);
-        if (uVar != null) {
-            return uVar;
-        }
-        u uVar2 = new u(context, i10, j3);
-        weakHashMap.put(pair, uVar2);
-        return uVar2;
-    }
-
-    public static void d(Activity activity, int i10, Utilities.Callback callback) {
-        int i11 = 0;
-        SharedPreferences sharedPreferences = activity.getSharedPreferences("2botbiometry_" + i10, 0);
-        ArrayList arrayList = new ArrayList();
-        Iterator<Map.Entry<String, ?>> it = sharedPreferences.getAll().entrySet().iterator();
-        while (it.hasNext()) {
-            String key = it.next().getKey();
-            if (key.endsWith("_requested")) {
-                try {
-                    arrayList.add(Long.valueOf(Long.parseLong(key.substring(0, key.length() - 10))));
-                } catch (Exception e) {
-                    FileLog.e(e);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.f;
+                if (z10) {
+                    canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255, 31);
+                } else {
+                    canvas.save();
                 }
-            }
-        }
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            Long l4 = (Long) obj;
-            u c10 = c(activity, i10, l4.longValue());
-            if (c10.e && c10.f) {
-                hashMap.put(l4, Boolean.valueOf(!c10.d));
-            }
-        }
-        if (arrayList.isEmpty()) {
-            callback.run(new ArrayList());
-        } else {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new q(i10, arrayList, hashMap, callback));
+                canvas.translate(getBounds().centerX(), getBounds().centerY());
+                canvas.drawPath(this.b, this.c);
+                if (z10) {
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.d);
+                    canvas.drawLine(-AndroidUtilities.dp(8.66f), -AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), AndroidUtilities.dp(8.66f), this.e);
+                }
+                canvas.restore();
+                break;
+            default:
+                float dpf2 = AndroidUtilities.dpf2(1.66f);
+                Paint paint = this.c;
+                paint.setStrokeWidth(dpf2);
+                float dpf22 = AndroidUtilities.dpf2(3.32f);
+                Paint paint2 = this.e;
+                paint2.setStrokeWidth(dpf22);
+                float e7 = ((org.telegram.ui.Components.e6) this.g).e(this.f);
+                float centerX = getBounds().centerX();
+                float centerY = getBounds().centerY();
+                float dpf23 = AndroidUtilities.dpf2(10.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(centerX - dpf23, centerY - dpf23, centerX + dpf23, dpf23 + centerY);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.33f), AndroidUtilities.dpf2(8.33f), paint);
+                if (e7 > 0.0f) {
+                    canvas.saveLayerAlpha(rectF, 255, 31);
+                } else {
+                    canvas.save();
+                }
+                canvas.save();
+                canvas.translate(AndroidUtilities.dpf2(1.0f) + centerX, centerY - AndroidUtilities.dpf2(0.5f));
+                canvas.drawPath(this.b, this.d);
+                canvas.restore();
+                if (e7 > 0.0f) {
+                    if (this.f) {
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (centerX - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e7), (centerY - AndroidUtilities.dpf2(8.33f)) + (AndroidUtilities.dpf2(16.66f) * e7), paint2);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), (AndroidUtilities.dpf2(16.66f) * e7) + (centerX - AndroidUtilities.dpf2(8.33f)), (AndroidUtilities.dpf2(16.66f) * e7) + (centerY - AndroidUtilities.dpf2(8.33f)), paint);
+                    } else {
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e7), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e7), paint2);
+                        canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e7), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e7), paint);
+                    }
+                }
+                canvas.restore();
+                break;
         }
     }
 
-    public final boolean a() {
-        return this.f;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(32.0f);
+            default:
+                return AndroidUtilities.dp(24.0f);
+        }
     }
 
-    public final SecretKey e() {
-        if (l == null) {
-            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            l = keyStore;
-            keyStore.load(null);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(32.0f);
+            default:
+                return AndroidUtilities.dp(24.0f);
         }
-        KeyStore keyStore2 = l;
-        StringBuilder sb2 = new StringBuilder("9bot_");
-        long j3 = this.c;
-        sb2.append(j3);
-        if (keyStore2.containsAlias(sb2.toString())) {
-            return (SecretKey) l.getKey("9bot_" + j3, null);
-        }
-        KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec.Builder("9bot_" + j3, 3);
-        builder.setBlockModes("CBC");
-        builder.setEncryptionPaddings("PKCS7Padding");
-        builder.setUserAuthenticationRequired(true);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            builder.setUserAuthenticationParameters(60, 2);
-        }
-        if (i10 >= 24) {
-            builder.setInvalidatedByBiometricEnrollment(true);
-        }
-        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-        keyGenerator.init(builder.build());
-        return keyGenerator.generateKey();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final JSONObject f() {
-        String str;
-        String string;
-        JSONObject jSONObject = new JSONObject();
-        Context context = this.a;
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
         }
-        if (new aa.a(new androidx.biometric.s(context, 0)).f(15) == 0) {
-            str = "unknown";
-            if (str == null) {
-                jSONObject.put("available", true);
-                jSONObject.put(TeXSymbolParser.TYPE_ATTR, str);
-            } else {
-                jSONObject.put("available", false);
-            }
-            jSONObject.put("access_requested", this.f);
-            jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-            jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-            SharedPreferences sharedPreferences = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-            StringBuilder sb2 = new StringBuilder("device_id");
-            long j3 = this.c;
-            sb2.append(j3);
-            string = sharedPreferences.getString(sb2.toString(), null);
-            if (string == null) {
-                byte[] bArr = new byte[32];
-                new SecureRandom().nextBytes(bArr);
-                SharedPreferences.Editor edit = sharedPreferences.edit();
-                String o9 = a4.a.o(j3, "device_id");
-                string = Utilities.bytesToHex(bArr);
-                edit.putString(o9, string).apply();
-            }
-            jSONObject.put("device_id", string);
-            return jSONObject;
-        }
-        str = null;
-        if (str == null) {
-        }
-        jSONObject.put("access_requested", this.f);
-        jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-        jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-        SharedPreferences sharedPreferences2 = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-        StringBuilder sb22 = new StringBuilder("device_id");
-        long j32 = this.c;
-        sb22.append(j32);
-        string = sharedPreferences2.getString(sb22.toString(), null);
-        if (string == null) {
-        }
-        jSONObject.put("device_id", string);
-        return jSONObject;
+        return -2;
     }
 
-    public final boolean g() {
-        return this.e;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.c.setAlpha(i10);
+                break;
+            default:
+                this.c.setAlpha(i10);
+                this.d.setAlpha(i10);
+                break;
+        }
     }
 
-    public final void h() {
-        SharedPreferences sharedPreferences = this.a.getSharedPreferences("2botbiometry_" + this.b, 0);
-        long j3 = this.c;
-        this.g = sharedPreferences.getString(String.valueOf(j3), null);
-        this.h = sharedPreferences.getString(String.valueOf(j3) + "_iv", null);
-        boolean z10 = true;
-        boolean z11 = this.g != null;
-        this.e = z11;
-        if (!z11) {
-            if (!sharedPreferences.getBoolean(j3 + "_requested", false)) {
-                z10 = false;
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                this.c.setColorFilter(colorFilter);
+                break;
+            default:
+                this.d.setColorFilter(colorFilter);
+                this.c.setColorFilter(colorFilter);
+                break;
         }
+    }
+
+    public u(t tVar, boolean z10) {
+        t tVar2 = tVar;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Paint(1);
+        this.e = new Paint(1);
+        Path path = new Path();
+        this.b = path;
+        this.g = new float[8];
         this.f = z10;
-        this.d = sharedPreferences.getBoolean(j3 + "_disabled", false);
-    }
-
-    public final androidx.biometric.u i(boolean z10) {
-        try {
-            if (Build.VERSION.SDK_INT < 23) {
-                return null;
+        paint.setColor(-1);
+        float dpf2 = AndroidUtilities.dpf2(13.333333f);
+        float dpf22 = AndroidUtilities.dpf2(18.666666f);
+        float dpf23 = AndroidUtilities.dpf2(3.0f);
+        float dpf24 = AndroidUtilities.dpf2(10.0f);
+        float dpf25 = AndroidUtilities.dpf2(15.333333f);
+        float dpf26 = AndroidUtilities.dpf2(1.0f);
+        float dpf27 = AndroidUtilities.dpf2(1.33f);
+        path.setFillType(Path.FillType.EVEN_ODD);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((-dpf2) / 2.0f, (-dpf22) / 2.0f, dpf2 / 2.0f, dpf22 / 2.0f);
+        path.addRoundRect(rectF, dpf23, dpf23, Path.Direction.CW);
+        ArrayList arrayList = tVar2.e;
+        int i10 = tVar2.c;
+        int size = arrayList.size();
+        int i11 = 0;
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            int i13 = i12 + 1;
+            s sVar = (s) obj;
+            int[] iArr = tVar2.d;
+            int i14 = sVar.c;
+            int i15 = sVar.b;
+            int i16 = iArr[i14];
+            int i17 = i16 - 1;
+            float max = (dpf24 - (Math.max(i11, i17) * dpf27)) / i16;
+            int i18 = i10 - 1;
+            float max2 = (dpf25 - (Math.max(i11, i18) * dpf27)) / i10;
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            ArrayList arrayList2 = arrayList;
+            float f7 = (-dpf24) / 2.0f;
+            int i19 = i10;
+            float f10 = i15;
+            float f11 = (max * f10) + f7;
+            float f12 = f10 * dpf27;
+            int i20 = size;
+            float f13 = (-dpf25) / 2.0f;
+            float f14 = dpf24;
+            float f15 = i14;
+            float f16 = (max2 * f15) + f13;
+            float f17 = f15 * dpf27;
+            float f18 = dpf25;
+            float f19 = f17 + f16;
+            float f20 = dpf26;
+            rectF2.set(f12 + f11, f19, org.telegram.ui.Cells.p6.a(max, i15 + 1, f7, f12), org.telegram.ui.Cells.p6.a(max2, i14 + 1, f13, f17));
+            float[] fArr = (float[]) this.g;
+            float f21 = 0.0f;
+            float f22 = (i15 == 0 && i14 == 0) ? f20 : 0.0f;
+            fArr[1] = f22;
+            fArr[0] = f22;
+            float f23 = (i15 == i17 && i14 == 0) ? f20 : 0.0f;
+            fArr[3] = f23;
+            fArr[2] = f23;
+            float f24 = (i15 == i17 && i14 == i18) ? f20 : 0.0f;
+            fArr[5] = f24;
+            fArr[4] = f24;
+            if (i15 == 0 && i14 == i18) {
+                f21 = f20;
             }
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            SecretKey e = e();
-            if (z10) {
-                cipher.init(2, e, new IvParameterSpec(Utilities.hexToBytes(this.h)));
-            } else {
-                cipher.init(1, e);
-            }
-            return new androidx.biometric.u(cipher);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return null;
+            fArr[7] = f21;
+            fArr[6] = f21;
+            this.b.addRoundRect(rectF2, fArr, Path.Direction.CW);
+            tVar2 = tVar;
+            arrayList = arrayList2;
+            i10 = i19;
+            i12 = i13;
+            size = i20;
+            dpf24 = f14;
+            dpf26 = f20;
+            dpf25 = f18;
+            i11 = 0;
         }
-    }
-
-    public final void j(String str, boolean z10, String str2, Utilities.Callback3 callback3) {
-        int i10;
-        int i11;
-        this.j = null;
-        try {
-            if (this.i == null) {
-                this.i = new xa.c(LaunchActivity.G1, f0.e.e(this.a), new s(this));
-            }
-            androidx.biometric.u i12 = i(z10);
-            TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
-            j6.l lVar = new j6.l(1);
-            lVar.b = UserObject.getUserName(user);
-            lVar.d = LocaleController.getString(R.string.Back);
-            lVar.a = 15;
-            if (!TextUtils.isEmpty(str)) {
-                lVar.c = str;
-            }
-            j6.l c10 = lVar.c();
-            if (i12 != null) {
-                Cipher cipher = i12.b;
-                if (!z10 && (i11 = Build.VERSION.SDK_INT) >= 30) {
-                    try {
-                        if (TextUtils.isEmpty(str2)) {
-                            this.g = null;
-                        } else if (i11 < 23) {
-                            this.g = str2;
-                        } else {
-                            this.g = Utilities.bytesToHex(cipher.doFinal(str2.getBytes(StandardCharsets.UTF_8)));
-                            this.h = Utilities.bytesToHex(cipher.getIV());
-                        }
-                        k();
-                        callback3.run(Boolean.TRUE, null, null);
-                        return;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        i12 = i(z10);
-                    }
-                }
-            }
-            this.j = new k6(1, callback3, (i12 == null || Build.VERSION.SDK_INT >= 30) ? null : i12);
-            if (i12 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.s0(c10, null);
-                return;
-            }
-            xa.c cVar = this.i;
-            cVar.getClass();
-            int i13 = c10.a;
-            int i14 = i13 != 0 ? i13 : 15;
-            if ((i14 & 255) == 255) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
-            }
-            if (i10 < 30 && v7.m.a(i14)) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
-            }
-            cVar.s0(c10, i12);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            callback3.run(Boolean.FALSE, null, null);
-        }
-    }
-
-    public final void k() {
-        SharedPreferences.Editor edit = this.a.getSharedPreferences("2botbiometry_" + this.b, 0).edit();
-        boolean z10 = this.f;
-        long j3 = this.c;
-        if (z10) {
-            edit.putBoolean(j3 + "_requested", true);
-        } else {
-            edit.remove(j3 + "_requested");
-        }
-        if (this.e) {
-            String valueOf = String.valueOf(j3);
-            String str = this.g;
-            if (str == null) {
-                str = "";
-            }
-            edit.putString(valueOf, str);
-            String str2 = String.valueOf(j3) + "_iv";
-            String str3 = this.h;
-            edit.putString(str2, str3 != null ? str3 : "");
-        } else {
-            edit.remove(String.valueOf(j3));
-            edit.remove(String.valueOf(j3) + "_iv");
-        }
-        if (this.d) {
-            edit.putBoolean(j3 + "_disabled", true);
-        } else {
-            edit.remove(j3 + "_disabled");
-        }
-        edit.apply();
-    }
-
-    public final void l(String str, final String str2, final h7 h7Var) {
-        j(str, false, str2, new Utilities.Callback3() { // from class: di.r
-            @Override // org.telegram.messenger.Utilities.Callback3
-            public final void run(Object obj, Object obj2, Object obj3) {
-                String str3 = str2;
-                Boolean bool = (Boolean) obj;
-                androidx.biometric.t tVar = (androidx.biometric.t) obj2;
-                androidx.biometric.u uVar = (androidx.biometric.u) obj3;
-                u uVar2 = u.this;
-                uVar2.getClass();
-                if (tVar != null) {
-                    try {
-                        if (TextUtils.isEmpty(str3)) {
-                            uVar2.g = null;
-                            uVar2.h = null;
-                        } else {
-                            int i10 = Build.VERSION.SDK_INT;
-                            if (i10 < 23) {
-                                uVar2.g = str3;
-                                uVar2.h = null;
-                            } else {
-                                if (i10 >= 30) {
-                                    uVar = uVar2.i(false);
-                                }
-                                if (uVar == null) {
-                                    throw new RuntimeException("No cryptoObject found");
-                                }
-                                Cipher cipher = uVar.b;
-                                uVar2.g = Utilities.bytesToHex(cipher.doFinal(str3.getBytes(StandardCharsets.UTF_8)));
-                                uVar2.h = Utilities.bytesToHex(cipher.getIV());
-                            }
-                        }
-                        uVar2.k();
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        bool = Boolean.FALSE;
-                    }
-                }
-                h7Var.run(bool);
-            }
-        });
+        Paint paint2 = this.d;
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        this.d.setStrokeWidth(AndroidUtilities.dp(3.33f));
+        this.d.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        this.e.setStyle(style);
+        this.e.setStrokeWidth(AndroidUtilities.dp(1.33f));
+        this.e.setColor(-1);
+        this.e.setStrokeCap(Paint.Cap.ROUND);
+        this.e.setStrokeJoin(Paint.Join.ROUND);
     }
 }

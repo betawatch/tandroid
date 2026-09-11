@@ -1,47 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class pw0 extends ab {
-    public xs X;
+public final class pw0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qw0 b;
 
-    public pw0(Context context) {
-        super(context, null, true, false, null);
-        fixNavigationBar();
-        this.E = true;
-        this.y = true;
-        K();
-        vl0 vl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        vl0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new al0(this, 3));
-        this.d.setOnItemClickListener(new k(this, 14));
+    public /* synthetic */ pw0(qw0 qw0Var, int i10) {
+        this.a = i10;
+        this.b = qw0Var;
     }
 
-    public static void P(pw0 pw0Var, int i10) {
-        v51 G = pw0Var.X.G(i10 - 1);
-        Object obj = G != null ? G.G : null;
-        if (obj instanceof TLRPC.User) {
-            MessagesController.getInstance(pw0Var.currentAccount).openApp(pw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                qw0 qw0Var = this.b;
+                qw0Var.y = 1.0f;
+                qw0Var.invalidate();
+                qw0Var.G = null;
+                break;
+            case 1:
+                qw0 qw0Var2 = this.b;
+                qw0Var2.m(((Float) qw0Var2.v.getAnimatedValue()).floatValue());
+                qw0Var2.v = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                this.b.F = null;
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ab
-    public final ul0 v(vl0 vl0Var) {
-        xs xsVar = new xs(vl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.X = xsVar;
-        xsVar.r = false;
-        return xsVar;
-    }
-
-    @Override // org.telegram.ui.Components.ab
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

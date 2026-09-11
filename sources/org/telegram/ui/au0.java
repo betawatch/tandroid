@@ -6,20 +6,20 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class au0 extends ou0 {
+public final class au0 extends nu0 {
     public final /* synthetic */ int p0;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ au0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, ru0 ru0Var, FrameLayout frameLayout, int i10) {
-        super(context, ru0Var, frameLayout);
+    public /* synthetic */ au0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, qu0 qu0Var, FrameLayout frameLayout, int i10) {
+        super(context, qu0Var, frameLayout);
         this.p0 = i10;
         this.q0 = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.ou0
+    @Override // org.telegram.ui.nu0
     public boolean C() {
         switch (this.p0) {
             case 0:
@@ -29,7 +29,7 @@ public final class au0 extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.ou0
+    @Override // org.telegram.ui.nu0
     public void D() {
         switch (this.p0) {
             case 1:
@@ -42,7 +42,7 @@ public final class au0 extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.ou0
+    @Override // org.telegram.ui.nu0
     public void F() {
         switch (this.p0) {
             case 1:
@@ -51,7 +51,7 @@ public final class au0 extends ou0 {
         }
     }
 
-    @Override // org.telegram.ui.ou0
+    @Override // org.telegram.ui.nu0
     public void G() {
         switch (this.p0) {
             case 1:
@@ -70,7 +70,7 @@ public final class au0 extends ou0 {
             case 0:
                 super.invalidate();
                 PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                av0[] av0VarArr = photoViewer.W0;
+                yu0[] yu0VarArr = photoViewer.W0;
                 ImageView[] imageViewArr = photoViewer.y3;
                 if (photoViewer.J) {
                     int scrollY = getScrollY();
@@ -78,8 +78,8 @@ public final class au0 extends ou0 {
                     boolean z10 = scrollY == 0 && translationY == 0.0f;
                     boolean z11 = scrollY == 0 && translationY == 0.0f;
                     if (!z10) {
-                        int b10 = av0VarArr[0].b() + av0VarArr[0].j;
-                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
+                        int b10 = yu0VarArr[0].b() + yu0VarArr[0].j;
+                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
                         boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
                         z10 = top > b10;
                         z11 = z12;
@@ -87,13 +87,13 @@ public final class au0 extends ou0 {
                     if (photoViewer.z3) {
                         if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
                             imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new org.telegram.ui.Components.voip.v2(this, 24)).start();
+                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new gk0(this, 7)).start();
                         } else if (imageViewArr[0].getTag() == null && !z11) {
                             imageViewArr[0].setTag(3);
                             imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
                         }
                     }
-                    av0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
+                    yu0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
                     break;
                 }
                 break;

@@ -1,12 +1,11 @@
 package ub;
 
 import android.content.Context;
-import bi.u6;
 import java.util.ArrayList;
 import java.util.Collections;
 import n6.l;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements q9.d {
     public static final /* synthetic */ b b = new b(0);
@@ -18,15 +17,15 @@ public final /* synthetic */ class b implements q9.d {
     }
 
     @Override // q9.d
-    public final Object P1(u6 u6Var) {
+    public final Object D(cf.c cVar) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = new ArrayList(u6Var.x(tb.a.class));
+                ArrayList arrayList = new ArrayList(cVar.s(tb.a.class));
                 l.j("No delegate creator registered.", !arrayList.isEmpty());
                 Collections.sort(arrayList, c.a);
-                return new e((Context) u6Var.a(Context.class), (tb.a) arrayList.get(0));
+                return new e((Context) cVar.a(Context.class), (tb.a) arrayList.get(0));
             default:
-                return new a((e) u6Var.a(e.class), (qb.d) u6Var.a(qb.d.class));
+                return new a((e) cVar.a(e.class), (qb.d) cVar.a(qb.d.class));
         }
     }
 }

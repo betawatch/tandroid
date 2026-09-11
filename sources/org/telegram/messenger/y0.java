@@ -1,35 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y0 implements RequestDelegate {
+public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatObject.Call b;
+    public final /* synthetic */ ResultCallback b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ y0(ChatObject.Call call, int i10) {
+    public /* synthetic */ y0(ResultCallback resultCallback, TLRPC.TL_error tL_error, int i10) {
         this.a = i10;
-        this.b = call;
+        this.b = resultCallback;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadGroupCall$11(tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$reloadGroupCall$9(tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$setTitle$4(tLObject, tL_error);
+                this.b.onError(this.c);
                 break;
             default:
-                this.b.lambda$toggleRecord$13(tLObject, tL_error);
+                this.b.onError(this.c);
                 break;
         }
     }

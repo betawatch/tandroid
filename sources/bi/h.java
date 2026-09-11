@@ -1,251 +1,217 @@
 package bi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import androidx.appcompat.widget.ActionBarOverlayLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.hi0;
-import org.telegram.ui.a11;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.g80;
+import org.telegram.ui.co;
+import org.telegram.ui.f10;
+import org.telegram.ui.j60;
+import org.telegram.ui.m50;
+import org.telegram.ui.mk;
+import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class h extends AnimatorListenerAdapter {
+public final /* synthetic */ class h implements c9, vh1, m4.e1, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, wh.l {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ h(Object obj, int i10) {
+    public /* synthetic */ h(int i10, Object obj, boolean z10) {
         this.a = i10;
-        this.b = obj;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // org.telegram.ui.vh1
+    public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
-            case 15:
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
-                actionBarOverlayLayout.M = null;
-                actionBarOverlayLayout.v = false;
+            case 1:
+                ig.a0 a0Var = (ig.a0) this.c;
+                ArrayList arrayList2 = a0Var.k;
+                ArrayList arrayList3 = a0Var.j;
+                int i11 = 0;
+                if (this.b) {
+                    a0Var.f = i10;
+                    arrayList3.clear();
+                    arrayList3.addAll(arrayList);
+                    while (i11 < arrayList3.size()) {
+                        arrayList2.remove(arrayList3.get(i11));
+                        i11++;
+                    }
+                } else {
+                    a0Var.g = i10;
+                    arrayList2.clear();
+                    arrayList2.addAll(arrayList);
+                    while (i11 < arrayList2.size()) {
+                        arrayList3.remove(arrayList2.get(i11));
+                        i11++;
+                    }
+                }
+                a0Var.e.run();
                 break;
             default:
-                super.onAnimationCancel(animator);
+                f10 f10Var = (f10) this.c;
+                LongSparseIntArray longSparseIntArray = f10Var.H;
+                f10Var.y = i10;
+                if (this.b) {
+                    f10Var.o0(f10Var.F, arrayList, true);
+                    f10Var.F = arrayList;
+                    for (int i12 = 0; i12 < f10Var.F.size(); i12++) {
+                        f10Var.G.remove(f10Var.F.get(i12));
+                    }
+                    ArrayList arrayList4 = new ArrayList();
+                    int size = longSparseIntArray.size();
+                    for (int i13 = 0; i13 < size; i13++) {
+                        long keyAt = longSparseIntArray.keyAt(i13);
+                        Long valueOf = Long.valueOf(keyAt);
+                        if (!DialogObject.isEncryptedDialog(keyAt) && !f10Var.F.contains(valueOf)) {
+                            arrayList4.add(valueOf);
+                        }
+                    }
+                    int size2 = arrayList4.size();
+                    for (int i14 = 0; i14 < size2; i14++) {
+                        longSparseIntArray.delete(((Long) arrayList4.get(i14)).longValue());
+                    }
+                } else {
+                    f10Var.o0(f10Var.G, arrayList, false);
+                    f10Var.G = arrayList;
+                    for (int i15 = 0; i15 < f10Var.G.size(); i15++) {
+                        Long l4 = (Long) f10Var.G.get(i15);
+                        f10Var.F.remove(l4);
+                        longSparseIntArray.delete(l4.longValue());
+                    }
+                }
+                f10Var.j0();
+                f10Var.i0(false);
+                f10Var.w0();
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
+    @Override // yf.m
+    public void c(long j3) {
+        org.telegram.ui.Components.p6 p6Var = ((org.telegram.ui.Cells.t1) this.c).w4;
+        if (p6Var != null) {
+            p6Var.q(LocaleController.formatPollEndTime((int) j3, this.b), true, true);
+        }
+    }
+
+    @Override // bi.c9
+    public void e(boolean z10) {
+        v vVar = (v) this.c;
+        if (!this.b && z10) {
+            boolean z11 = vVar.b == 1;
+            u8 u8Var = vVar.s;
+            if (z11) {
+                if (!u8Var.z) {
+                    return;
+                }
+            } else if (!u8Var.p) {
+                return;
+            }
+            u8Var.Q(z11);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
-            case 0:
-                o oVar = ((i) this.b).c0;
-                if (oVar.g0 == animator) {
-                    oVar.g0 = null;
-                    oVar.f.getEditText().setScrollY(oVar.b0);
-                    break;
-                }
-                break;
-            case 1:
-                i0 i0Var = (i0) this.b;
-                i0Var.l = 1.0f;
-                j0 j0Var = i0Var.p;
-                if (j0Var.n.contains(i0Var)) {
-                    i0Var.c.onDetachedFromWindow();
-                    h0 h0Var = i0Var.d;
-                    if (h0Var != null) {
-                        h0Var.pause();
-                        i0Var.d.release(null);
-                        i0Var.d = null;
-                    }
-                    TextureView textureView = i0Var.e;
-                    if (textureView != null) {
-                        AndroidUtilities.removeFromParent(textureView);
-                        i0Var.e = null;
-                    }
-                    i0Var.f = false;
-                    j0Var.n.remove(i0Var);
-                }
-                j0Var.invalidate();
-                break;
-            case 2:
-                p4 p4Var = ((v3) this.b).h;
-                p4Var.F.setVisibility(8);
-                p4Var.d.setVisibility(8);
-                break;
-            case 3:
-                x4 x4Var = (x4) this.b;
-                x4Var.o0 = 1.0f;
-                x4Var.invalidate();
-                break;
             case 4:
-                super.onAnimationEnd(animator);
-                o7 o7Var = (o7) this.b;
-                ImageView imageView = o7Var.c;
-                o7Var.c = o7Var.d;
-                o7Var.d = imageView;
-                imageView.bringToFront();
-                o7Var.d.setVisibility(8);
-                o7Var.h = null;
+                org.telegram.ui.z6.V((org.telegram.ui.z6) this.c, this.b);
                 break;
             case 5:
-                super.onAnimationEnd(animator);
-                ((u7) this.b).w = null;
+            default:
+                j60 j60Var = ((m50) this.c).b;
+                j60Var.a1.toggleRecord(null, 0);
+                j60Var.k1().j(this.b ? 101 : 40, 0L, null);
                 break;
             case 6:
-                r8 r8Var = (r8) this.b;
-                if (r8Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) r8Var.getParent()).removeView(r8Var);
-                    break;
+                co coVar = (co) this.c;
+                mk mkVar = coVar.Y;
+                if (mkVar != null) {
+                    if (!this.b) {
+                        mkVar.B();
+                        break;
+                    } else {
+                        coVar.finishFragment();
+                        break;
+                    }
                 }
                 break;
             case 7:
-                ((kb) this.b).N = false;
-                break;
-            case 8:
-                ib ibVar = (ib) this.b;
-                ibVar.setTranslationY(0.0f);
-                ibVar.d = null;
-                break;
-            case 9:
-                di.b0 b0Var = (di.b0) this.b;
-                b0Var.setVisibility(8);
-                b0Var.a = null;
-                break;
-            case 10:
-                ((di.n3) this.b).y.setVisibility(8);
-                break;
-            case 11:
-                ((di.u4) this.b).I.setVisibility(8);
-                break;
-            case 12:
-                super.onAnimationEnd(animator);
-                hg.g gVar = (hg.g) this.b;
-                if (!gVar.i1) {
-                    gVar.u0 = false;
-                    gVar.t0.setVisibility(8);
-                    gVar.invalidate();
-                }
-                gVar.f0 = false;
-                break;
-            case 13:
-                ((jg.e) this.b).h.setVisibility(8);
-                break;
-            case 14:
-                ((CropAreaView) this.b).c0 = null;
-                break;
-            case 15:
-                ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
-                actionBarOverlayLayout.M = null;
-                actionBarOverlayLayout.v = false;
-                break;
-            case 16:
-                og.g0 g0Var = (og.g0) this.b;
-                g0Var.a.getPainting().c(null, g0Var.a.getCurrentColor(), true, null);
-                g0Var.r = null;
-                break;
-            case 17:
-                org.telegram.ui.j4 j4Var = (org.telegram.ui.j4) this.b;
-                Runnable runnable = j4Var.a0;
-                if (runnable != null) {
-                    runnable.run();
-                    j4Var.a0 = null;
-                    break;
-                }
-                break;
-            case 18:
-                org.telegram.ui.w3 w3Var = (org.telegram.ui.w3) this.b;
-                w3Var.w = 1.0f;
-                w3Var.n();
-                w3Var.i();
-                w3Var.h();
-                w3Var.a.unlock();
-                break;
-            case 19:
-                org.telegram.ui.r4 r4Var = (org.telegram.ui.r4) this.b;
-                r4Var.getClass();
-                r4Var.setVisibility(8);
-                break;
-            case 20:
-                org.telegram.ui.u4 u4Var = (org.telegram.ui.u4) this.b;
-                u4Var.c = false;
-                u4Var.invalidate();
-                break;
-            case 21:
-                ((org.telegram.ui.w5) this.b).f0.setVisibility(8);
-                break;
-            case 22:
-            default:
-                super.onAnimationEnd(animator);
-                break;
-            case 23:
-                ((org.telegram.ui.u9) this.b).s = null;
-                break;
-            case 24:
-                org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((a11) jVar).c0.e.c.r = false;
-                FrameLayout frameLayout = jVar.J;
-                if (frameLayout.getBackground() == null) {
-                    frameLayout.setBackground(jVar.K);
-                    break;
-                }
-                break;
-            case 25:
-                org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) this.b;
-                Button button = wVar.n;
-                hi0 hi0Var = wVar.f;
-                if (button != hi0Var) {
-                    hi0Var.setVisibility(4);
-                    break;
-                } else {
-                    wVar.e.setVisibility(4);
-                    break;
-                }
-            case 26:
-                super.onAnimationEnd(animator);
-                ((org.telegram.ui.Cells.e0) this.b).x = null;
-                break;
-            case 27:
-                ((org.telegram.ui.Cells.g4) this.b).G = null;
-                break;
-            case 28:
-                org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) this.b;
-                if (animator.equals(t5Var.n)) {
-                    t5Var.n = null;
-                    break;
-                }
-                break;
-            case 29:
-                androidx.activity.i iVar = (androidx.activity.i) this.b;
-                if (animator.equals(((org.telegram.ui.Cells.w5) iVar.b).d)) {
-                    ((org.telegram.ui.Cells.w5) iVar.b).d = null;
-                    break;
+                Activity activity = (Activity) this.c;
+                if (activity != null && Build.VERSION.SDK_INT >= 23) {
+                    if (this.b && tf.c.a(activity) == -2) {
+                        try {
+                            activity.startActivity(new Intent("android.settings.PICTURE_IN_PICTURE_SETTINGS", Uri.parse("package:" + activity.getPackageName())));
+                            break;
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                        }
+                    }
+                    try {
+                        activity.startActivity(new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + activity.getPackageName())));
+                        break;
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        return;
+                    }
                 }
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
+    @Override // m4.e1
+    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
         switch (this.a) {
-            case 19:
-                ((org.telegram.ui.r4) this.b).setVisibility(0);
-                break;
-            case 22:
-                org.telegram.ui.h8 h8Var = (org.telegram.ui.h8) this.b;
-                for (int i10 = 0; i10 < h8Var.b.getChildCount(); i10++) {
-                    org.telegram.ui.e8.a((org.telegram.ui.e8) h8Var.b.getChildAt(i10), h8Var.P, h8Var.Q);
-                }
-                break;
-            case 24:
-                ((a11) ((org.telegram.ui.Cells.j) this.b)).c0.e.c.r = true;
-                break;
+            case 2:
+                e9.a1 z10 = e9.i0.z((b2.k0) this.c);
+                boolean z11 = this.b;
+                return a0Var.q(rVar, z10, z11 ? -1 : a0Var.t.l0(), z11 ? -9223372036854775807L : a0Var.t.J0());
             default:
-                super.onAnimationStart(animator);
-                break;
+                List list = (List) this.c;
+                boolean z12 = this.b;
+                return a0Var.q(rVar, list, z12 ? -1 : a0Var.t.l0(), z12 ? -9223372036854775807L : a0Var.t.J0());
         }
+    }
+
+    @Override // wh.l
+    public void o(wh.h hVar, float f7, float f10) {
+        wh.p pVar = (wh.p) this.c;
+        if (pVar.d || !this.b) {
+            return;
+        }
+        hVar.q = new wh.o(pVar, 0);
+        float sqrt = (float) Math.sqrt(Math.pow(pVar.getHeight(), 2.0d) + Math.pow(pVar.getWidth(), 2.0d));
+        ArrayList arrayList = pVar.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((wh.h) obj).j(f7, f10, sqrt, false);
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        g80 g80Var = (g80) this.c;
+        if (tL_error != null && "INVITE_REQUEST_SENT".equals(tL_error.text)) {
+            g80Var.setOnDismissListener(new b80(0, g80Var, this.b));
+        }
+        g80Var.dismiss();
+        return false;
     }
 }

@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import v7.u5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -64,15 +64,15 @@ public final class q0 implements Runnable {
             c5.h a2 = c5.g0.a(intValue2, "Billing override value was set by a license tester.");
             d0Var.F(93, i10, a2);
             ((q0.a) lVar.b).accept(a2);
-        } catch (ExecutionException e) {
-            lVar.k(e.getCause());
+        } catch (ExecutionException e7) {
+            lVar.k(e7.getCause());
         } catch (Throwable th3) {
             lVar.k(th3);
         }
     }
 
     public final String toString() {
-        aa.a aVar = new aa.a(q0.class.getSimpleName(), 11);
+        aa.a aVar = new aa.a(q0.class.getSimpleName(), 10);
         k kVar = new k();
         ((k) aVar.d).b = kVar;
         aVar.d = kVar;

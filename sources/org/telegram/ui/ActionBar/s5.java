@@ -4,10 +4,10 @@ import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class s5 extends w7.x5 {
-    @Override // w7.x5
+public final class s5 extends w7.i0 {
+    @Override // w7.i0
     public final void b(int i10, int i11) {
         Point point = AndroidUtilities.displaySize;
         if ((point.x <= point.y) == (i10 <= i11)) {

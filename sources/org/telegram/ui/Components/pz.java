@@ -1,133 +1,159 @@
 package org.telegram.ui.Components;
 
+import android.util.SparseArray;
+import android.view.View;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class pz extends ul0 {
-    public final boolean c;
-    public final /* synthetic */ rz d;
+public class pz extends s4.c0 {
+    public final SparseArray I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final RecyclerView N;
+    public boolean O;
+    public boolean P;
+    public final boolean Q;
+    public boolean R;
+    public int S;
+    public final boolean T;
 
-    public pz(rz rzVar, boolean z10) {
-        this.d = rzVar;
-        this.c = z10;
+    public pz(ll0 ll0Var, int i10) {
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = ll0Var;
+        this.M = i10;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        boolean z10 = this.c;
-        rz rzVar = this.d;
-        return (z10 ? rzVar.n1 : rzVar.m1).size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        ArrayList<TLRPC.Document> arrayList;
-        ImageLocation forSticker;
-        w9 w9Var = (w9) c1Var.a;
-        rz rzVar = this.d;
-        boolean z10 = this.c;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? rzVar.n1 : rzVar.m1).get(i10);
-        w9Var.setTag(stickerSetCovered);
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(rzVar.c1).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
-            arrayList = stickerSet == null ? null : stickerSet.documents;
-        } else {
-            arrayList = stickerSetCovered.covers;
+    @Override // s4.o0
+    public final void P(View view) {
+        if (this.T) {
+            RecyclerView recyclerView = this.N;
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+                ((ViewGroup.MarginLayoutParams) ((s4.p0) view.getLayoutParams())).height = Math.max(this.J, 0);
+            }
         }
-        TLRPC.Document document = stickerSetCovered.cover;
-        if (document == null) {
-            if (arrayList == null || arrayList.isEmpty()) {
-                document = null;
-            } else {
-                if (stickerSetCovered.set != null) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11).id == stickerSetCovered.set.thumb_document_id) {
-                            document = arrayList.get(i11);
-                            break;
-                        }
+        super.P(view);
+    }
+
+    @Override // s4.o0
+    public final void Q() {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void V(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void W(RecyclerView recyclerView) {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void X(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void Y(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void Z() {
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void a0(RecyclerView recyclerView, int i10, int i11, Object obj) {
+        p1();
+        p1();
+    }
+
+    @Override // s4.o0
+    public final void d0(pf.e eVar, s4.z0 z0Var, int i10, int i11) {
+        int i12 = this.K;
+        this.L = View.MeasureSpec.getSize(i10);
+        int size = View.MeasureSpec.getSize(i11);
+        this.K = size;
+        if (i12 != size) {
+            p1();
+        }
+        super.d0(eVar, z0Var, i10, i11);
+    }
+
+    @Override // s4.c0, s4.o0
+    public final boolean e() {
+        return this.Q;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void p1() {
+        RecyclerView recyclerView;
+        s4.h0 adapter;
+        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
+            int h = adapter.h() - 1;
+            int i10 = 0;
+            int i11 = 0;
+            for (int i12 = this.O; i12 < h; i12++) {
+                int j3 = adapter.j(i12);
+                SparseArray sparseArray = this.I;
+                s4.c1 c1Var = (s4.c1) sparseArray.get(j3, null);
+                if (c1Var == null) {
+                    c1Var = adapter.g(recyclerView, j3);
+                    View view = c1Var.a;
+                    sparseArray.put(j3, c1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
                     }
                 }
-                document = null;
-                if (document == null) {
-                    document = arrayList.get(0);
+                View view2 = c1Var.a;
+                if (this.P) {
+                    adapter.v(c1Var, i12);
+                }
+                s4.p0 p0Var = (s4.p0) view2.getLayoutParams();
+                view2.measure(s4.o0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) p0Var).leftMargin + ((ViewGroup.MarginLayoutParams) p0Var).rightMargin, ((ViewGroup.MarginLayoutParams) p0Var).width), s4.o0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) p0Var).topMargin + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) p0Var).height));
+                i10 += view2.getMeasuredHeight();
+                if (i12 == 0) {
+                    i11 = view2.getMeasuredHeight();
+                }
+                if (this.R) {
+                    if (i10 >= this.K + i11) {
+                        break;
+                    }
+                } else {
+                    if (i10 >= this.K) {
+                        break;
+                    }
                 }
             }
-        }
-        if (document == null) {
-            return;
-        }
-        if (z10) {
-            w9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.j6.n0(rzVar.Z1) : null);
-        }
-        TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.j6.c7, 0.2f);
-        if (svgThumb != null) {
-            svgThumb.overrideWidthAndHeight(512, 512);
-        }
-        if (closestPhotoSizeWithSize == null || MessageObject.isVideoSticker(document)) {
-            closestPhotoSizeWithSize = document;
-        }
-        boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-        if (z11) {
-            forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
-        } else if (!(closestPhotoSizeWithSize instanceof TLRPC.PhotoSize)) {
-            return;
-        } else {
-            forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
-        }
-        if (forSticker == null) {
-            return;
-        }
-        String str = !LiteMode.isEnabled(z10 ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "30_30_firstframe" : "30_30";
-        if (z11 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
-            if (svgThumb != null) {
-                w9Var.n(ImageLocation.getForDocument(document), str, svgThumb, stickerSetCovered);
-                return;
+            if (this.R) {
+                this.J = Math.max(this.S, (((this.K - i10) - this.M) - recyclerView.getPaddingBottom()) + i11);
             } else {
-                w9Var.j(ImageLocation.getForDocument(document), str, forSticker, null, 0, stickerSetCovered);
-                return;
+                this.J = Math.max(this.S, ((this.K - i10) - this.M) - recyclerView.getPaddingBottom());
             }
-        }
-        String str2 = str;
-        ImageLocation imageLocation = forSticker;
-        if (imageLocation.imageType == 1) {
-            w9Var.i(imageLocation, str2, "tgs", svgThumb, stickerSetCovered);
-        } else {
-            w9Var.i(imageLocation, null, "webp", svgThumb, stickerSetCovered);
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        oz ozVar = new oz(this, this.d.getContext());
-        ozVar.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        ozVar.setLayerNum(1);
-        ozVar.setAspectFit(true);
-        ozVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new fl0(ozVar);
+    public pz(int i10, int i11, ll0 ll0Var) {
+        super(1, false);
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = ll0Var;
+        this.M = i10;
     }
 }

@@ -1,29 +1,79 @@
 package di;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class x0 implements LocationListener {
-    public final /* synthetic */ LocationManager a;
-    public final /* synthetic */ LocationListener[] b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ z0 d;
+public final /* synthetic */ class x0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b1 b;
 
-    public x0(z0 z0Var, LocationManager locationManager, LocationListener[] locationListenerArr, Utilities.Callback callback) {
-        this.d = z0Var;
-        this.a = locationManager;
-        this.b = locationListenerArr;
-        this.c = callback;
+    public /* synthetic */ x0(b1 b1Var, int i10) {
+        this.a = i10;
+        this.b = b1Var;
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        this.a.removeUpdates(this.b[0]);
-        this.d.getClass();
-        this.c.run(z0.h(location));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        File file;
+        File file2;
+        ArrayList arrayList = (ArrayList) obj;
+        switch (this.a) {
+            case 0:
+                b1 b1Var = this.b;
+                b1Var.getClass();
+                long currentTimeMillis = System.currentTimeMillis();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    o8 a2 = ((a1) arrayList.get(i10)).a();
+                    if ((a2.v() || ((file = a2.L) != null && file.exists())) && currentTimeMillis - a2.d <= 604800000) {
+                        arrayList4.add(a2);
+                        arrayList2.add(Long.valueOf(a2.b));
+                    } else {
+                        arrayList3.add(a2);
+                    }
+                }
+                b1Var.c(arrayList3);
+                b1Var.f = false;
+                b1Var.e = true;
+                bi.u8 storiesController = MessagesController.getInstance(b1Var.a).getStoriesController();
+                storiesController.getClass();
+                int size = arrayList4.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj2 = arrayList4.get(i11);
+                    i11++;
+                    bi.t8 t8Var = new bi.t8(storiesController, (o8) obj2);
+                    storiesController.d(t8Var.J, t8Var, storiesController.b, false);
+                }
+                NotificationCenter.getInstance(storiesController.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                break;
+            default:
+                b1 b1Var2 = this.b;
+                b1Var2.getClass();
+                long currentTimeMillis2 = System.currentTimeMillis();
+                ArrayList arrayList5 = new ArrayList();
+                ArrayList arrayList6 = new ArrayList();
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    o8 a10 = ((a1) arrayList.get(i12)).a();
+                    if ((a10.v() || ((file2 = a10.L) != null && file2.exists())) && (!a10.g ? currentTimeMillis2 - a10.d <= 604800000 : currentTimeMillis2 <= a10.J)) {
+                        b1Var2.b.add(a10);
+                        arrayList5.add(Long.valueOf(a10.b));
+                    } else {
+                        arrayList6.add(a10);
+                    }
+                }
+                b1Var2.c(arrayList6);
+                b1Var2.d = false;
+                b1Var2.c = true;
+                NotificationCenter.getInstance(b1Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+                break;
+        }
     }
 }

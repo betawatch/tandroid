@@ -1,38 +1,75 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class t7 extends ImageView {
-    public final int a;
-    public final /* synthetic */ v7 b;
+public final /* synthetic */ class t7 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t7(v7 v7Var, Context context, int i10, int i11) {
-        super(context);
-        this.b = v7Var;
-        this.a = i10;
-        setBackground(org.telegram.ui.ActionBar.j6.f0(1090519039, 1, -1));
-        setScaleType(ImageView.ScaleType.CENTER);
-        setImageResource(i11);
-        setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new j5(this, i10, 1));
+    public /* synthetic */ t7(u8 u8Var, long j3, boolean z10, TL_stories.PeerStories peerStories, long j10, TLObject tLObject) {
+        this.e = u8Var;
+        this.c = j3;
+        this.b = z10;
+        this.f = peerStories;
+        this.d = j10;
+        this.h = tLObject;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Button");
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u8 u8Var = (u8) this.e;
+                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                u8Var.D.remove(Long.valueOf(this.c));
+                boolean z10 = this.b;
+                long j3 = this.d;
+                if (!z10) {
+                    peerStories = u8Var.y(j3);
+                }
+                if (peerStories != null) {
+                    if (tLObject instanceof TL_stories.TL_stories_stories) {
+                        TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                        for (int i10 = 0; i10 < tL_stories_stories.stories.size(); i10++) {
+                            for (int i11 = 0; i11 < peerStories.stories.size(); i11++) {
+                                if (peerStories.stories.get(i11).id == tL_stories_stories.stories.get(i10).id) {
+                                    peerStories.stories.set(i11, tL_stories_stories.stories.get(i10));
+                                    u8Var.W(j3, tL_stories_stories.stories.get(i10));
+                                }
+                            }
+                        }
+                        if (!z10) {
+                            h9 h9Var = u8Var.k;
+                            h9Var.b.getStorageQueue().postRunnable(new e9(h9Var, peerStories, 1));
+                        }
+                    }
+                    NotificationCenter.getInstance(u8Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                    break;
+                }
+                break;
+            default:
+                ((FileLoader) this.e).lambda$checkUploadNewDataAvailable$3(this.b, (String) this.f, this.c, this.d, (Float) this.h);
+                break;
+        }
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+    public /* synthetic */ t7(FileLoader fileLoader, boolean z10, String str, long j3, long j10, Float f7) {
+        this.e = fileLoader;
+        this.b = z10;
+        this.f = str;
+        this.c = j3;
+        this.d = j10;
+        this.h = f7;
     }
 }

@@ -13,16 +13,15 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.r6;
-import v7.n8;
+import org.telegram.ui.Cells.p6;
+import v7.k8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
     public static final s0 e;
-    public static final n8 f;
+    public static final k8 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -31,7 +30,7 @@ public abstract class o extends j9.a implements w {
     static {
         boolean z10;
         Throwable th2;
-        n8 fVar;
+        k8 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -327,7 +326,7 @@ public abstract class o extends j9.a implements w {
 
     public final void f(StringBuilder sb2, Object obj) {
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else {
             if (obj == this) {
                 sb2.append("this future");
@@ -365,9 +364,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 while (true) {
-                    n8 n8Var = f;
-                    n8Var.f(nVar3, nVar2);
-                    if (n8Var.c(this, nVar2, nVar3)) {
+                    k8 k8Var = f;
+                    k8Var.f(nVar3, nVar2);
+                    if (k8Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -405,7 +404,7 @@ public abstract class o extends j9.a implements w {
                     t10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t10.toString();
                     if (nanos + 1000 < j10) {
-                        String t11 = r6.t(sb2, " (plus ");
+                        String t11 = p6.t(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
@@ -413,17 +412,17 @@ public abstract class o extends j9.a implements w {
                         if (convert > j10) {
                             String str = t11 + convert + " " + lowerCase;
                             if (z10) {
-                                str = r6.t(str, ",");
+                                str = p6.t(str, ",");
                             }
-                            t11 = r6.t(str, " ");
+                            t11 = p6.t(str, " ");
                         }
                         if (z10) {
                             t11 = t11 + nanos2 + " nanoseconds ";
                         }
-                        sb2 = r6.t(t11, "delay)");
+                        sb2 = p6.t(t11, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(r6.t(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(p6.t(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(a4.a.C(sb2, " for ", oVar));
                 }
@@ -606,9 +605,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    n8 n8Var = f;
-                    n8Var.f(nVar3, nVar2);
-                    if (n8Var.c(this, nVar2, nVar3)) {
+                    k8 k8Var = f;
+                    k8Var.f(nVar3, nVar2);
+                    if (k8Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

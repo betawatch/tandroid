@@ -8,20 +8,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.TLObject;
 import v7.h7;
 import v7.i7;
-import v7.s7;
-import v7.u7;
+import v7.r7;
+import v7.t7;
+import v7.t8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class e0 {
-    public static final ee.v a = new ee.v("RESUME_TOKEN", 0);
-    public static final ee.v b = new ee.v("REMOVED_TASK", 0);
-    public static final ee.v c = new ee.v("CLOSED_EMPTY", 0);
-    public static final ee.v d = new ee.v("COMPLETING_ALREADY", 0);
-    public static final ee.v e = new ee.v("COMPLETING_WAITING_CHILDREN", 0);
-    public static final ee.v f = new ee.v("COMPLETING_RETRY", 0);
-    public static final ee.v g = new ee.v("TOO_LATE_TO_CANCEL", 0);
-    public static final ee.v h = new ee.v("SEALED", 0);
+    public static final d9.f a = new d9.f("RESUME_TOKEN", 1);
+    public static final d9.f b = new d9.f("REMOVED_TASK", 1);
+    public static final d9.f c = new d9.f("CLOSED_EMPTY", 1);
+    public static final d9.f d = new d9.f("COMPLETING_ALREADY", 1);
+    public static final d9.f e = new d9.f("COMPLETING_WAITING_CHILDREN", 1);
+    public static final d9.f f = new d9.f("COMPLETING_RETRY", 1);
+    public static final d9.f g = new d9.f("TOO_LATE_TO_CANCEL", 1);
+    public static final d9.f h = new d9.f("SEALED", 1);
     public static final q0 i = new q0(false);
     public static final q0 j = new q0(true);
 
@@ -56,7 +57,7 @@ public abstract class e0 {
             return hd.o.a;
         }
         e eVar = new e(h0VarArr);
-        m mVar = new m(1, w7.g.b(jVar));
+        m mVar = new m(1, t8.b(jVar));
         mVar.s();
         int length = h0VarArr.length;
         c[] cVarArr = new c[length];
@@ -99,7 +100,7 @@ public abstract class e0 {
 
     public static final Object g(long j3, kd.c cVar) {
         if (j3 > 0) {
-            m mVar = new m(1, w7.g.b(cVar));
+            m mVar = new m(1, t8.b(cVar));
             mVar.s();
             if (j3 < Long.MAX_VALUE) {
                 j(mVar.e).b(j3, mVar);
@@ -154,18 +155,18 @@ public abstract class e0 {
             return new m(1, cVar);
         }
         ee.h hVar = (ee.h) cVar;
-        ee.v vVar = ee.a.d;
+        d9.f fVar = ee.a.d;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.h.n;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(hVar);
             mVar = null;
             if (obj == null) {
-                atomicReferenceFieldUpdater.set(hVar, vVar);
+                atomicReferenceFieldUpdater.set(hVar, fVar);
                 mVar2 = null;
                 break;
             }
             if (obj instanceof m) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, vVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, fVar)) {
                     if (atomicReferenceFieldUpdater.get(hVar) != obj) {
                         break;
                     }
@@ -173,7 +174,7 @@ public abstract class e0 {
                 mVar2 = (m) obj;
                 break loop0;
             }
-            if (obj != vVar && !(obj instanceof Throwable)) {
+            if (obj != fVar && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(("Inconsistent state " + obj).toString());
             }
         }
@@ -205,7 +206,7 @@ public abstract class e0 {
         } catch (Throwable th3) {
             if (th2 != th3) {
                 RuntimeException runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                s7.a(runtimeException, th2);
+                r7.a(runtimeException, th2);
                 th2 = runtimeException;
             }
             ee.a.c(hVar, th2);
@@ -239,14 +240,14 @@ public abstract class e0 {
                 jd.a aVar = jd.a.a;
                 i10 = gVar.c;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     it = collection.iterator();
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     it = gVar.a;
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 while (it.hasNext()) {
                     f1 f1Var = (f1) it.next();
@@ -293,7 +294,7 @@ public abstract class e0 {
                 jd.a aVar = jd.a.a;
                 i10 = fVar.e;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     i11 = 0;
                     f1VarArr2 = f1VarArr;
                     length = f1VarArr.length;
@@ -306,7 +307,7 @@ public abstract class e0 {
                     length = fVar.c;
                     i11 = fVar.b;
                     f1[] f1VarArr3 = (f1[]) fVar.a;
-                    u7.b(obj);
+                    t7.b(obj);
                     f1VarArr2 = f1VarArr3;
                     i11++;
                     if (i11 < length) {
@@ -348,13 +349,13 @@ public abstract class e0 {
     }
 
     public static final Object r(Object obj) {
-        return obj instanceof v ? u7.a(((v) obj).a) : obj;
+        return obj instanceof v ? t7.a(((v) obj).a) : obj;
     }
 
     public static final void s(m mVar, id.c cVar, boolean z10) {
         Object obj = m.h.get(mVar);
         Throwable g10 = mVar.g(obj);
-        Object a2 = g10 != null ? u7.a(g10) : mVar.h(obj);
+        Object a2 = g10 != null ? t7.a(g10) : mVar.h(obj);
         if (!z10) {
             cVar.resumeWith(a2);
             return;
@@ -387,7 +388,7 @@ public abstract class e0 {
         try {
             a2 = cVar + '@' + k(cVar);
         } catch (Throwable th2) {
-            a2 = u7.a(th2);
+            a2 = t7.a(th2);
         }
         if (gd.f.a(a2) != null) {
             a2 = cVar.getClass().getName() + '@' + k(cVar);

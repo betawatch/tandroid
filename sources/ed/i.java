@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.a1;
-import v7.b7;
+import n7.z0;
+import v7.a7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class i implements cf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -23,7 +23,7 @@ public final class i implements cf.a {
     public static final Pattern l = Pattern.compile("^[\\p{Zs}\t\r\n\f]");
     public static final Pattern m = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
     public static final Pattern n = Pattern.compile("\\s+");
-    public final a1 a;
+    public final z0 a;
     public final BitSet b;
     public final HashMap c;
     public final HashMap d;
@@ -33,9 +33,9 @@ public final class i implements cf.a {
     public ye.b h;
     public f6.f i;
 
-    public i(a1 a1Var, List list, List list2) {
+    public i(z0 z0Var, List list, List list2) {
         k kVar;
-        this.a = a1Var;
+        this.a = z0Var;
         HashMap hashMap = new HashMap(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -53,25 +53,25 @@ public final class i implements cf.a {
         Iterator it2 = list2.iterator();
         while (it2.hasNext()) {
             ef.a aVar = (ef.a) it2.next();
-            char e = aVar.e();
+            char e7 = aVar.e();
             char a2 = aVar.a();
-            if (e == a2) {
-                ef.a aVar2 = (ef.a) hashMap2.get(Character.valueOf(e));
+            if (e7 == a2) {
+                ef.a aVar2 = (ef.a) hashMap2.get(Character.valueOf(e7));
                 if (aVar2 == null || aVar2.e() != aVar2.a()) {
-                    b(e, aVar, hashMap2);
+                    b(e7, aVar, hashMap2);
                 } else {
                     if (aVar2 instanceof k) {
                         kVar = (k) aVar2;
                     } else {
-                        k kVar2 = new k(e);
+                        k kVar2 = new k(e7);
                         kVar2.f(aVar2);
                         kVar = kVar2;
                     }
                     kVar.f(aVar);
-                    hashMap2.put(Character.valueOf(e), kVar);
+                    hashMap2.put(Character.valueOf(e7), kVar);
                 }
             } else {
-                b(e, aVar, hashMap2);
+                b(e7, aVar, hashMap2);
                 b(a2, aVar, hashMap2);
             }
         }
@@ -236,7 +236,7 @@ public final class i implements cf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        b7.b(pVar3, pVar4);
+        a7.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -279,12 +279,12 @@ public final class i implements cf.a {
             if (!bVar2.d || aVar == null) {
                 bVar2 = bVar2.f;
             } else {
-                char e = aVar.e();
+                char e7 = aVar.e();
                 ye.b bVar4 = bVar2.e;
                 int i10 = 0;
                 boolean z11 = false;
                 while (bVar4 != null && bVar4 != bVar && bVar4 != hashMap.get(Character.valueOf(c10))) {
-                    if (bVar4.c && bVar4.b == e) {
+                    if (bVar4.c && bVar4.b == e7) {
                         i10 = aVar.b(bVar4, bVar2);
                         z11 = true;
                         if (i10 > 0) {
@@ -300,8 +300,8 @@ public final class i implements cf.a {
                     s sVar2 = bVar4.a;
                     bVar4.g -= i10;
                     bVar2.g -= i10;
-                    sVar2.g = e2.h(i10, 0, sVar2.g);
-                    sVar.g = e2.h(i10, 0, sVar.g);
+                    sVar2.g = e2.i(i10, 0, sVar2.g);
+                    sVar.g = e2.i(i10, 0, sVar.g);
                     ye.b bVar5 = bVar2.e;
                     while (bVar5 != null && bVar5 != bVar4) {
                         ye.b bVar6 = bVar5.e;
@@ -309,7 +309,7 @@ public final class i implements cf.a {
                         bVar5 = bVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        b7.b(pVar, (p) sVar.e);
+                        a7.b(pVar, (p) sVar.e);
                     }
                     aVar.d(sVar2, sVar, i10);
                     if (bVar4.g == 0) {

@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 import android.view.WindowInsets;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.vv0;
+import org.telegram.ui.Components.pk0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class p0 implements View.OnApplyWindowInsetsListener {
-    public final oh.e a;
+    public final qh.e a;
     public l1 b;
 
-    public p0(ViewGroup viewGroup, oh.e eVar) {
+    public p0(ViewGroup viewGroup, qh.e eVar) {
         l1 l1Var;
         this.a = eVar;
         l1 f7 = i0.f(viewGroup);
@@ -105,11 +105,11 @@ public final class p0 implements View.OnApplyWindowInsetsListener {
                     int min3 = Math.min(i25, i26);
                     int i27 = f11.d;
                     int i28 = f12.d;
-                    og.u0 u0Var = new og.u0(12, i0.c.b(min, min2, min3, Math.min(i27, i28)), i0.c.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
+                    o0.a aVar = new o0.a(13, i0.c.b(min, min2, min3, Math.min(i27, i28)), i0.c.b(Math.max(f11.a, f12.a), Math.max(i23, i24), Math.max(i25, i26), Math.max(i27, i28)));
                     q0.f(view, h, false);
                     duration.addUpdateListener(new o0(v0Var, h, l1Var2, i22, view));
-                    duration.addListener(new vv0(19, view, (Object) v0Var));
-                    p.a(view, new com.google.android.gms.internal.cast.p(view, v0Var, u0Var, duration, 4));
+                    duration.addListener(new pk0(v0Var, view, 18));
+                    p.a(view, new com.google.android.gms.internal.cast.p(view, v0Var, aVar, duration, 4));
                     this.b = h;
                     if (view.getTag(R.id.tag_on_apply_window_listener) == null) {
                         return view.onApplyWindowInsets(windowInsets);

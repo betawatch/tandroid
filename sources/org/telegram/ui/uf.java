@@ -1,31 +1,49 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements View.OnClickListener {
+public final /* synthetic */ class uf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ uf(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i10) {
+    public /* synthetic */ uf(co coVar, int i10) {
         this.a = i10;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.b = coVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        MessageObject messageObject;
+        MessageObject messageObject2;
         switch (this.a) {
             case 0:
-                this.b.getSwipeBack().b(true);
-                break;
+                co coVar = this.b;
+                MessageObject messageObject3 = coVar.d5;
+                if (messageObject3 == null) {
+                    return false;
+                }
+                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
+                    new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(coVar.getParentActivity()), coVar.ea).k(false).j();
+                }
+                return true;
             case 1:
-                this.b.getSwipeBack().b(true);
-                break;
+                return co.R0(this.b);
             default:
-                this.b.getSwipeBack().b(true);
-                break;
+                co coVar2 = this.b;
+                int i10 = coVar2.ob;
+                if (i10 == 1 && (messageObject2 = coVar2.p5) != null) {
+                    coVar2.F(messageObject2.getId(), 0, 0, 0, true, true);
+                    return true;
+                }
+                if (coVar2.f5 == null || i10 != 2 || (messageObject = coVar2.n5) == null) {
+                    return false;
+                }
+                coVar2.F(messageObject.getId(), 0, 0, 0, true, true);
+                return true;
         }
     }
 }

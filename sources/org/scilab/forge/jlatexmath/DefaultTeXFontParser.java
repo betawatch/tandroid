@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.parsers.DocumentBuilderFactory;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class DefaultTeXFontParser {
     public static final String GEN_SET_EL = "GeneralSettings";
@@ -35,12 +35,12 @@ public class DefaultTeXFontParser {
     private static Map<String, Integer> rangeTypeMappings = new HashMap();
     private static Map<String, CharChildParser> charChildParsers = new HashMap();
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface CharChildParser {
         void parse(Element element, char c10, FontInfo fontInfo);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ExtensionParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -48,7 +48,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class KernParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -56,7 +56,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class LigParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -64,7 +64,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class NextLargerParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -225,7 +225,7 @@ public class DefaultTeXFontParser {
                 CharFont[] charFontArr = this.parsedTextStyles.get(attrValueAndCheckIfNotNull2);
                 int intValue = num.intValue();
                 if (charFontArr[intValue] == null) {
-                    throw new XMLResourceParseException(r6.j("DefaultTeXFont.xml: the default text style mapping '", attrValueAndCheckIfNotNull2, "' for the range '", attrValueAndCheckIfNotNull, "' contains no mapping for that range!"));
+                    throw new XMLResourceParseException(p6.j("DefaultTeXFont.xml: the default text style mapping '", attrValueAndCheckIfNotNull2, "' for the range '", attrValueAndCheckIfNotNull, "' contains no mapping for that range!"));
                 }
                 strArr[intValue] = attrValueAndCheckIfNotNull2;
             }
@@ -312,9 +312,9 @@ public class DefaultTeXFontParser {
             }
             this.parsedTextStyles = parseStyleMappings();
             return (FontInfo[]) arrayList.toArray(fontInfoArr);
-        } catch (Exception e) {
+        } catch (Exception e7) {
             StringBuilder v = a.v("Cannot find the file ", str, "!");
-            v.append(e.toString());
+            v.append(e7.toString());
             throw new XMLResourceParseException(v.toString());
         }
     }
@@ -391,8 +391,8 @@ public class DefaultTeXFontParser {
         factory.setIgnoringComments(true);
         try {
             this.root = factory.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(str, e7);
         }
     }
 
@@ -402,8 +402,8 @@ public class DefaultTeXFontParser {
         factory.setIgnoringComments(true);
         try {
             this.root = factory.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(str, e7);
         }
     }
 

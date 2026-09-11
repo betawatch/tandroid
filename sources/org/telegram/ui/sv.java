@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sv implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class sv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wy b;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ sv(wy wyVar, int i10) {
+    public /* synthetic */ sv(uy uyVar, int i10) {
         this.a = i10;
-        this.b = wyVar;
+        this.b = uyVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                wy.j0(this.b);
+                uy uyVar = this.b;
+                uyVar.getClass();
+                uyVar.z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                wy wyVar = this.b;
-                if (wyVar.S3 != null) {
-                    wyVar.getMessagesController().removeSuggestion(0L, wyVar.S3);
-                    wyVar.S3 = null;
-                    wyVar.L4();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.b4(true);
+                this.b.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                this.b.b4(true);
+                uy uyVar2 = this.b;
+                uyVar2.getClass();
+                uyVar2.F4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

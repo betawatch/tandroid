@@ -1,23 +1,9 @@
 package qh;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class a implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ b a;
+public interface a {
+    void a(int i10);
 
-    public a(b bVar) {
-        this.a = bVar;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.c.e();
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.c.f();
-    }
+    void b(float f7);
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e1 extends r0.b {
     public final RecyclerView d;
@@ -25,7 +25,7 @@ public final class e1 extends r0.b {
         if (recyclerView.getLayoutManager() != null) {
             c0 c0Var = (c0) recyclerView.getLayoutManager();
             RecyclerView recyclerView2 = c0Var.b;
-            of.e eVar = recyclerView2.b;
+            pf.e eVar = recyclerView2.b;
             if (accessibilityEvent != null) {
                 boolean z10 = true;
                 if (!recyclerView2.canScrollVertically(1) && !c0Var.b.canScrollVertically(-1) && !c0Var.b.canScrollHorizontally(-1) && !c0Var.b.canScrollHorizontally(1)) {
@@ -45,15 +45,15 @@ public final class e1 extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, s0.d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+    public final void c(View view, s0.c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
         RecyclerView recyclerView = this.d;
         if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
             return;
         }
         o0 layoutManager = recyclerView.getLayoutManager();
         RecyclerView recyclerView2 = layoutManager.b;
-        layoutManager.S(recyclerView2.b, recyclerView2.t0, dVar);
+        layoutManager.S(recyclerView2.b, recyclerView2.t0, cVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */
@@ -71,7 +71,7 @@ public final class e1 extends r0.b {
         if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
             o0 layoutManager = recyclerView.getLayoutManager();
             RecyclerView recyclerView2 = layoutManager.b;
-            of.e eVar = recyclerView2.b;
+            pf.e eVar = recyclerView2.b;
             if (i10 == 4096) {
                 F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
                 if (layoutManager.b.canScrollHorizontally(1)) {

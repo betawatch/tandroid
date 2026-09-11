@@ -9,15 +9,15 @@ import java.util.RandomAccess;
 import java.util.Set;
 import v7.t6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class j1 extends AbstractCollection implements Set {
     public final Set a;
-    public final d9.f b;
+    public final d9.g b;
 
-    public j1(Set set, d9.f fVar) {
+    public j1(Set set, d9.g gVar) {
         this.a = set;
-        this.b = fVar;
+        this.b = gVar;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -43,31 +43,31 @@ public class j1 extends AbstractCollection implements Set {
     public final void clear() {
         Set set = this.a;
         boolean z10 = set instanceof RandomAccess;
-        d9.f fVar = this.b;
+        d9.g gVar = this.b;
         if (!z10 || !(set instanceof List)) {
             Iterator it = set.iterator();
-            fVar.getClass();
+            gVar.getClass();
             while (it.hasNext()) {
-                if (fVar.apply(it.next())) {
+                if (gVar.apply(it.next())) {
                     it.remove();
                 }
             }
             return;
         }
         List list = (List) set;
-        fVar.getClass();
+        gVar.getClass();
         int i10 = 0;
         for (int i11 = 0; i11 < list.size(); i11++) {
             Object obj = list.get(i11);
-            if (!fVar.apply(obj)) {
+            if (!gVar.apply(obj)) {
                 if (i11 > i10) {
                     try {
                         list.set(i10, obj);
                     } catch (IllegalArgumentException unused) {
-                        q.r(list, fVar, i10, i11);
+                        q.r(list, gVar, i10, i11);
                         return;
                     } catch (UnsupportedOperationException unused2) {
-                        q.r(list, fVar, i10, i11);
+                        q.r(list, gVar, i10, i11);
                         return;
                     }
                 }
@@ -117,15 +117,15 @@ public class j1 extends AbstractCollection implements Set {
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean isEmpty() {
         Iterator it = this.a.iterator();
-        d9.f fVar = this.b;
-        t6.d(fVar, "predicate");
+        d9.g gVar = this.b;
+        t6.d(gVar, "predicate");
         int i10 = 0;
         while (true) {
             if (!it.hasNext()) {
                 i10 = -1;
                 break;
             }
-            if (fVar.apply(it.next())) {
+            if (gVar.apply(it.next())) {
                 break;
             }
             i10++;
@@ -137,9 +137,9 @@ public class j1 extends AbstractCollection implements Set {
     public final Iterator iterator() {
         Iterator it = this.a.iterator();
         it.getClass();
-        d9.f fVar = this.b;
-        fVar.getClass();
-        return new n0(it, fVar);
+        d9.g gVar = this.b;
+        gVar.getClass();
+        return new n0(it, gVar);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

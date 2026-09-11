@@ -2,15 +2,51 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ey extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+public final class ey extends z4.a implements cd0 {
+    public final /* synthetic */ kz c;
+
+    public ey(kz kzVar) {
+        this.c = kzVar;
+    }
+
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+    }
+
+    @Override // z4.a
+    public final int b() {
+        return this.c.e.size();
+    }
+
+    @Override // z4.a
+    public final CharSequence d(int i10) {
+        if (i10 == 0) {
+            return LocaleController.getString(R.string.Emoji);
+        }
+        if (i10 == 1) {
+            return LocaleController.getString(R.string.AccDescrGIFs);
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return LocaleController.getString(R.string.AccDescrStickers);
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        FrameLayout frameLayout = ((gz) this.c.e.get(i10)).b;
+        gVar.addView(frameLayout);
+        return frameLayout;
+    }
+
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

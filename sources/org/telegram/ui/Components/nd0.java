@@ -1,313 +1,160 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Point;
+import android.util.Property;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
+import android.view.ViewTreeObserver;
+import android.view.animation.DecelerateInterpolator;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class nd0 extends HorizontalScrollView {
-    public int E;
-    public int F;
-    public int G;
-    public final org.telegram.ui.ActionBar.f6 H;
-    public int I;
-    public final d6 J;
-    public final d6 K;
-    public final LinearLayout.LayoutParams a;
-    public final ld0 b;
-    public z4.e c;
-    public final LinearLayout d;
-    public z4.g e;
-    public int f;
-    public int h;
-    public float n;
-    public final Paint r;
-    public int s;
-    public int v;
-    public boolean w;
-    public int x;
-    public int y;
+public final class nd0 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ sd0 d;
 
-    public nd0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.b = new ld0(0, this);
-        this.h = 0;
-        this.n = 0.0f;
-        this.s = -10066330;
-        this.v = 436207616;
-        this.w = false;
-        this.x = AndroidUtilities.dp(52.0f);
-        this.y = AndroidUtilities.dp(8.0f);
-        this.E = AndroidUtilities.dp(2.0f);
-        this.F = AndroidUtilities.dp(12.0f);
-        this.G = AndroidUtilities.dp(24.0f);
-        this.I = 0;
-        wr wrVar = wr.h;
-        this.J = new d6(this, 350L, wrVar);
-        this.K = new d6(this, 350L, wrVar);
-        this.H = f6Var;
-        setFillViewport(true);
-        setWillNotDraw(false);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setOrientation(0);
-        linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        addView(linearLayout);
-        Paint paint = new Paint();
-        this.r = paint;
-        paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.FILL);
-        this.a = new LinearLayout.LayoutParams(-2, -1);
+    public nd0(sd0 sd0Var, int i10, int i11, Runnable runnable) {
+        this.d = sd0Var;
+        this.a = i10;
+        this.b = i11;
+        this.c = runnable;
     }
 
-    public static void a(nd0 nd0Var, int i10, int i11) {
-        View childAt;
-        if (nd0Var.f == 0 || (childAt = nd0Var.d.getChildAt(i10)) == null) {
-            return;
-        }
-        int left = childAt.getLeft() + i11;
-        if (i10 > 0 || i11 > 0) {
-            left -= nd0Var.x;
-        }
-        if (left != nd0Var.I) {
-            nd0Var.I = left;
-            nd0Var.scrollTo(left, 0);
-        }
-    }
-
-    public final void b(int i10, CharSequence charSequence) {
-        md0 md0Var = new md0(this, getContext(), i10);
-        md0Var.setTextSize(1, 14.0f);
-        md0Var.setTypeface(AndroidUtilities.bold());
-        md0Var.setTextColor(c(0.6f));
-        md0Var.setFocusable(true);
-        md0Var.setGravity(17);
-        md0Var.setText(charSequence);
-        w7.c6.b(md0Var, 0.025f, 1.2f);
-        md0Var.setOnClickListener(new bi.j5(this, i10, 11));
-        md0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        this.d.addView(md0Var, w7.a6.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
-        md0Var.setSelected(i10 == this.h);
-    }
-
-    public final int c(float f7) {
-        return i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Wk, this.H), (int) (f7 * 255.0f));
-    }
-
-    public final void d() {
-        this.d.removeAllViews();
-        this.f = this.e.getAdapter().b();
-        for (int i10 = 0; i10 < this.f; i10++) {
-            if (this.e.getAdapter() instanceof kd0) {
-                ((kd0) this.e.getAdapter()).getClass();
-                b(i10, this.e.getAdapter().d(i10));
-            } else {
-                b(i10, this.e.getAdapter().d(i10));
-            }
-        }
-        e();
-        getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.j(this, 5));
-    }
-
-    public final void e() {
-        int i10 = 0;
-        while (i10 < this.f) {
-            View childAt = this.d.getChildAt(i10);
-            childAt.setLayoutParams(this.a);
-            if (this.w) {
-                childAt.setPadding(0, 0, 0, 0);
-                childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
-            } else if (this.e.getAdapter() instanceof kd0) {
-                ((ky) ((kd0) this.e.getAdapter())).getClass();
-                int dp = AndroidUtilities.dp(i10 == 1 ? 12.0f : 18.0f);
-                childAt.setPadding(dp, 0, dp, 0);
-            } else {
-                int i11 = this.G;
-                childAt.setPadding(i11, 0, i11, 0);
-            }
-            i10++;
-        }
-    }
-
-    public int getDividerPadding() {
-        return this.F;
-    }
-
-    public int getIndicatorColor() {
-        return this.s;
-    }
-
-    public int getIndicatorHeight() {
-        return this.y;
-    }
-
-    public int getScrollOffset() {
-        return this.x;
-    }
-
-    public boolean getShouldExpand() {
-        return this.w;
-    }
-
-    public int getTabPaddingLeftRight() {
-        return this.G;
-    }
-
-    public int getUnderlineColor() {
-        return this.v;
-    }
-
-    public int getUnderlineHeight() {
-        return this.E;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float d;
-        float d10;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        float f7;
+        int dp;
+        int[] iArr;
+        bi.g5 g5Var;
         int i10;
-        if (isInEditMode() || this.f == 0) {
-            super.onDraw(canvas);
-            return;
-        }
-        int height = getHeight();
-        int i11 = this.E;
-        LinearLayout linearLayout = this.d;
-        Paint paint = this.r;
-        if (i11 != 0) {
-            paint.setColor(this.v);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, height - this.E, linearLayout.getWidth(), height);
-            float f7 = this.E / 2.0f;
-            canvas.drawRoundRect(rectF, f7, f7, paint);
-        }
-        View childAt = linearLayout.getChildAt(this.h);
-        if (childAt != null) {
-            float paddingLeft = childAt.getPaddingLeft() + childAt.getLeft();
-            float right = childAt.getRight() - childAt.getPaddingRight();
-            float f10 = this.n;
-            d6 d6Var = this.K;
-            d6 d6Var2 = this.J;
-            if (f10 <= 0.0f || (i10 = this.h) >= this.f - 1) {
-                d = d6Var2.d(paddingLeft, false);
-                d10 = d6Var.d(right, false);
+        AnimatorSet animatorSet;
+        sd0 sd0Var = this.d;
+        int[] iArr2 = sd0Var.W;
+        sd0Var.setAlpha(1.0f);
+        sd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        aj0 aj0Var = sd0Var.I;
+        aj0Var.getAnimatedDrawable().L(0, false, false);
+        aj0Var.getAnimatedDrawable().N(37);
+        aj0Var.d();
+        char c10 = 1;
+        sd0Var.m(true);
+        AndroidUtilities.runOnUIThread(new cc0(this, 4), 350L);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        ArrayList arrayList = new ArrayList();
+        Point point = AndroidUtilities.displaySize;
+        int i11 = point.x;
+        int i12 = point.y + AndroidUtilities.statusBarHeight;
+        int i13 = this.a;
+        int i14 = i11 - i13;
+        int i15 = i14 * i14;
+        int i16 = this.b;
+        int i17 = i12 - i16;
+        int i18 = i17 * i17;
+        double sqrt = Math.sqrt(i18 + i15);
+        int i19 = i13 * i13;
+        double sqrt2 = Math.sqrt(i18 + i19);
+        int i20 = i16 * i16;
+        final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i19 + i20)), Math.sqrt(i20 + i15));
+        ArrayList arrayList2 = sd0Var.O;
+        arrayList2.clear();
+        bi.g5 g5Var2 = sd0Var.e;
+        int childCount = g5Var2.getChildCount();
+        int i21 = 0;
+        while (i21 < childCount) {
+            View childAt = g5Var2.getChildAt(i21);
+            childAt.setScaleX(0.7f);
+            childAt.setScaleY(0.7f);
+            childAt.setAlpha(0.0f);
+            pd0 pd0Var = new pd0();
+            childAt.getLocationInWindow(iArr2);
+            int measuredWidth = i13 - ((childAt.getMeasuredWidth() / 2) + iArr2[0]);
+            int measuredHeight = i16 - ((childAt.getMeasuredHeight() / 2) + iArr2[c10]);
+            int i22 = (measuredHeight * measuredHeight) + (measuredWidth * measuredWidth);
+            ArrayList arrayList3 = arrayList2;
+            pd0Var.b = ((float) Math.sqrt(i22)) - AndroidUtilities.dp(40.0f);
+            if (i21 != -1) {
+                animatorSet = new AnimatorSet();
+                iArr = iArr2;
+                animatorSet.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, 1.0f));
+                g5Var = g5Var2;
+                i10 = childCount;
+                animatorSet.setDuration(140L);
+                animatorSet.setInterpolator(new DecelerateInterpolator());
             } else {
-                View childAt2 = linearLayout.getChildAt(i10 + 1);
-                float paddingLeft2 = childAt2.getPaddingLeft() + childAt2.getLeft();
-                float right2 = childAt2.getRight() - childAt2.getPaddingRight();
-                float f11 = this.n;
-                float f12 = 1.0f - f11;
-                d = (paddingLeft * f12) + (paddingLeft2 * f11);
-                d10 = (f12 * right) + (f11 * right2);
-                d6Var2.d(d, true);
-                d6Var.d(d10, true);
-                if (childAt instanceof md0) {
-                    md0 md0Var = (md0) childAt;
-                    md0Var.setTextColor(md0Var.a.c(AndroidUtilities.lerp(0.6f, 0.8f, 1.0f - this.n)));
-                }
-                if (childAt2 instanceof md0) {
-                    md0 md0Var2 = (md0) childAt2;
-                    md0Var2.setTextColor(md0Var2.a.c(AndroidUtilities.lerp(0.6f, 0.8f, this.n)));
+                iArr = iArr2;
+                g5Var = g5Var2;
+                i10 = childCount;
+                animatorSet = null;
+            }
+            AnimatorSet animatorSet3 = new AnimatorSet();
+            pd0Var.a = animatorSet3;
+            bi.g5 g5Var3 = g5Var;
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, i21 == -1 ? 0.9f : 0.6f, i21 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, i21 != -1 ? 0.6f : 0.9f, i21 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
+            pd0Var.a.addListener(new r80(animatorSet, 4));
+            pd0Var.a.setDuration(i21 == -1 ? 232L : 200L);
+            pd0Var.a.setInterpolator(new DecelerateInterpolator());
+            arrayList3.add(pd0Var);
+            i21++;
+            arrayList2 = arrayList3;
+            childCount = i10;
+            iArr2 = iArr;
+            g5Var2 = g5Var3;
+            c10 = 1;
+        }
+        arrayList.add(ObjectAnimator.ofFloat(sd0Var.v, (Property<ah.w, Float>) View.ALPHA, 0.0f, 1.0f));
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        arrayList.add(ofFloat);
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ld0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                sd0 sd0Var2 = nd0.this.d;
+                double animatedFraction = max * valueAnimator.getAnimatedFraction();
+                int i23 = 0;
+                while (true) {
+                    ArrayList arrayList4 = sd0Var2.O;
+                    if (i23 >= arrayList4.size()) {
+                        return;
+                    }
+                    pd0 pd0Var2 = (pd0) arrayList4.get(i23);
+                    if (pd0Var2.b <= animatedFraction) {
+                        pd0Var2.a.start();
+                        arrayList4.remove(i23);
+                        i23--;
+                    }
+                    i23++;
                 }
             }
-            if (this.y != 0) {
-                paint.setColor(this.s);
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(d - AndroidUtilities.dp(11.0f), getPaddingTop(), d10 + AndroidUtilities.dp(11.0f), height - getPaddingBottom());
-                rectF2.offset(getPaddingLeft(), 0.0f);
-                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
-            }
+        });
+        pr prVar = pr.h;
+        animatorSet2.setInterpolator(prVar);
+        animatorSet2.setDuration(500L);
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(sd0Var.P, 1.0f);
+        ofFloat2.addUpdateListener(new h70(this, 2));
+        ofFloat2.addListener(new md0(this, 0));
+        ofFloat2.setDuration(420L);
+        ofFloat2.setInterpolator(prVar);
+        arrayList.add(ofFloat2);
+        animatorSet2.playTogether(arrayList);
+        animatorSet2.addListener(new md0(this, 1));
+        animatorSet2.start();
+        AnimatorSet animatorSet4 = new AnimatorSet();
+        animatorSet4.setDuration(332L);
+        if (AndroidUtilities.isTablet() || sd0Var.getContext().getResources().getConfiguration().orientation != 2) {
+            f7 = i11 / 2.0f;
+            dp = AndroidUtilities.dp(29.0f);
+        } else {
+            f7 = (SharedConfig.passcodeType == 0 ? i11 / 2.0f : i11) / 2.0f;
+            dp = AndroidUtilities.dp(30.0f);
         }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (!this.w || View.MeasureSpec.getMode(i10) == 0) {
-            return;
-        }
-        this.d.measure(getMeasuredWidth() | TLObject.FLAG_30, i11);
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        if (this.w) {
-            return;
-        }
-        post(new kc0(this, 3));
-    }
-
-    public void setDividerPadding(int i10) {
-        this.F = i10;
-        invalidate();
-    }
-
-    public void setIndicatorColor(int i10) {
-        this.s = i10;
-        invalidate();
-    }
-
-    public void setIndicatorColorResource(int i10) {
-        this.s = getResources().getColor(i10);
-        invalidate();
-    }
-
-    public void setIndicatorHeight(int i10) {
-        this.y = i10;
-        invalidate();
-    }
-
-    public void setOnPageChangeListener(z4.e eVar) {
-        this.c = eVar;
-    }
-
-    public void setScrollOffset(int i10) {
-        this.x = i10;
-        invalidate();
-    }
-
-    public void setShouldExpand(boolean z10) {
-        this.w = z10;
-        this.d.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        e();
-        requestLayout();
-    }
-
-    public void setTabPaddingLeftRight(int i10) {
-        this.G = i10;
-        e();
-    }
-
-    public void setUnderlineColor(int i10) {
-        this.v = i10;
-        invalidate();
-    }
-
-    public void setUnderlineColorResource(int i10) {
-        this.v = getResources().getColor(i10);
-        invalidate();
-    }
-
-    public void setUnderlineHeight(int i10) {
-        this.E = i10;
-        invalidate();
-    }
-
-    public void setViewPager(z4.g gVar) {
-        this.e = gVar;
-        if (gVar.getAdapter() == null) {
-            throw new IllegalStateException("ViewPager does not have adapter instance.");
-        }
-        gVar.setOnPageChangeListener(this.b);
-        d();
+        animatorSet4.playTogether(ObjectAnimator.ofFloat(aj0Var, (Property<aj0, Float>) View.TRANSLATION_X, i13 - AndroidUtilities.dp(29.0f), f7 - dp), ObjectAnimator.ofFloat(aj0Var, (Property<aj0, Float>) View.TRANSLATION_Y, i16 - AndroidUtilities.dp(29.0f), sd0Var.H), ObjectAnimator.ofFloat(aj0Var, (Property<aj0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(aj0Var, (Property<aj0, Float>) View.SCALE_Y, 0.5f, 1.0f));
+        animatorSet4.setInterpolator(pr.g);
+        animatorSet4.start();
     }
 }

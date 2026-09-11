@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-import a3.h0;
+import a3.g0;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -42,7 +42,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -97,7 +97,7 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) hc.b.z(1, arrayList));
+            this.frames.add((Frame) i2.g.z(1, arrayList));
         }
         if (arrayList.size() > 0) {
             FileLog.d("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
@@ -172,7 +172,7 @@ public class VideoFramesRewinder {
             i12 = i10;
             i13 = 0;
         }
-        AndroidUtilities.runOnUIThread(new h0(this, arrayList, currentTimeMillis, 4));
+        AndroidUtilities.runOnUIThread(new g0(this, arrayList, currentTimeMillis, 10));
     }
 
     private void prepare(long j3) {

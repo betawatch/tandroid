@@ -1,40 +1,26 @@
 package za;
 
 import android.content.Context;
-import android.content.res.Resources;
-import org.telegram.messenger.beta.R;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class y implements ce.b {
-    public final Object a;
-    public final Object b;
+public final class y implements s {
+    public static final u e = new u();
+    public static final m1.c f = w7.q.a(r.a);
+    public final Context a;
+    public final id.h b;
+    public final AtomicReference c;
+    public final o0.a d;
 
-    public y(Context context) {
-        n6.l.h(context);
-        Resources resources = context.getResources();
-        this.a = resources;
-        this.b = resources.getResourcePackageName(R.string.common_google_play_services_unknown_issue);
-    }
-
-    public String a(String str) {
-        String str2 = (String) this.b;
-        Resources resources = (Resources) this.a;
-        int identifier = resources.getIdentifier(str, "string", str2);
-        if (identifier == 0) {
-            return null;
-        }
-        return resources.getString(identifier);
-    }
-
-    @Override // ce.b
-    public Object u(ce.c cVar, kd.c cVar2) {
-        Object u10 = ((of.b) this.a).u(new k1.p(cVar, (z) this.b), cVar2);
-        return u10 == jd.a.a ? u10 : gd.i.a;
-    }
-
-    public y(of.b bVar, z zVar) {
-        this.a = bVar;
-        this.b = zVar;
+    public y(Context context, id.h hVar) {
+        kotlin.jvm.internal.i.e(context, "context");
+        this.a = context;
+        this.b = hVar;
+        this.c = new AtomicReference();
+        e.getClass();
+        int i10 = 9;
+        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null)), this);
+        zd.e0.q(zd.e0.b(hVar), new t(this, null, 0));
     }
 }

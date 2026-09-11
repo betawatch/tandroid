@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h extends g.u {
     public LinearLayout E;
@@ -244,7 +244,7 @@ public final class h extends g.u {
                 }
                 this.x.setText(string);
                 this.y.setMovementMethod(LinkMovementMethod.getInstance());
-                this.F.setOnClickListener(new ai.u(this, i10));
+                this.F.setOnClickListener(new ah.h0(this, i10));
                 ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
                 this.H = listView;
                 listView.setAdapter((ListAdapter) this.I);
@@ -257,7 +257,7 @@ public final class h extends g.u {
         string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
         this.x.setText(string);
         this.y.setMovementMethod(LinkMovementMethod.getInstance());
-        this.F.setOnClickListener(new ai.u(this, i10));
+        this.F.setOnClickListener(new ah.h0(this, i10));
         ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
         this.H = listView2;
         listView2.setAdapter((ListAdapter) this.I);

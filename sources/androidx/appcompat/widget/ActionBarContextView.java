@@ -15,18 +15,19 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.x;
+import i2.g;
 import java.util.WeakHashMap;
 import l.a0;
 import l.l;
 import m.h;
-import m.u3;
+import m.s3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
-import v7.v7;
+import v7.u7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -62,7 +63,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int C = hc.b.C(i12, measuredHeight, 2, i11);
+        int C = g.C(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, C, i10, measuredHeight + C);
         } else {
@@ -274,7 +275,7 @@ public class ActionBarContextView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        boolean a2 = u3.a(this);
+        boolean a2 = s3.a(this);
         int paddingRight = a2 ? (i12 - i10) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
         int paddingTop2 = ((i13 - i11) - getPaddingTop()) - getPaddingBottom();
@@ -460,7 +461,7 @@ public class ActionBarContextView extends ViewGroup {
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i10, 0);
         if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = v7.b(context, resourceId);
+            drawable = u7.b(context, resourceId);
         } else {
             drawable = obtainStyledAttributes.getDrawable(0);
         }

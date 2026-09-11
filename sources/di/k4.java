@@ -1,105 +1,52 @@
 package di;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.c30;
-import org.telegram.ui.Components.g21;
-import org.telegram.ui.Components.my;
-import org.telegram.ui.Components.tu0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.nj1;
-import org.telegram.ui.oi;
-import org.telegram.ui.ta0;
-import org.telegram.ui.uu0;
-import xh.v5;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.vl;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class k4 extends FrameLayout {
+    public static final /* synthetic */ int d = 0;
+    public final org.telegram.ui.Components.x9 a;
+    public final d b;
+    public boolean c;
 
-    public /* synthetic */ k4(int i10, ta0 ta0Var) {
-        this.a = 8;
-        this.b = i10;
-        this.c = ta0Var;
+    public k4(Context context) {
+        super(context);
+        LinearLayout f7 = vl.f(context, 1);
+        addView(f7, w7.x5.e(-2, -2, 17));
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.a = x9Var;
+        f7.addView(x9Var, w7.x5.q(130, 130, 1));
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1);
+        textView.setText(LocaleController.getString(R.string.LiveStoryDisconnected));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        f7.addView(textView, w7.x5.t(-2, -2, 1, 0, 8, 0, 0));
+        d dVar = new d(context, null, true);
+        this.b = dVar;
+        dVar.g(LocaleController.getString(R.string.LiveStoryDisconnectedContinue), false, true);
+        f7.addView(dVar, w7.x5.t((int) ((dVar.d.e() + AndroidUtilities.dp(24.0f)) / AndroidUtilities.density), 38, 1, 0, 18, 0, 0));
+        dVar.setOnClickListener(new ah.f(2));
+        setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        int i11 = 14;
-        int i12 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new bi.g3((u4) obj, tLObject, i12, 6));
-                break;
-            case 1:
-                ((VoIPService) obj).lambda$startScreenCapture$60(i12, tLObject, tL_error);
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new my((tu0) obj, tLObject, i12, i11));
-                break;
-            case 3:
-                LaunchActivity launchActivity = (LaunchActivity) obj;
-                Pattern pattern = LaunchActivity.B1;
-                SharedConfig.lastUpdateCheckTime = System.currentTimeMillis();
-                SharedConfig.saveConfig();
-                if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    AndroidUtilities.runOnUIThread(new my(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i12, 26));
-                    break;
-                } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
-                    AndroidUtilities.runOnUIThread(new c30(13));
-                    break;
-                } else if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new c30(tL_error, i11));
-                    break;
-                }
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new my((oi) obj, tLObject, i12, 27));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new uu0((nj1) obj, i12, tLObject, 8));
-                break;
-            case 6:
-                xh.x3.U((xh.x3) obj, i12, tLObject);
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new uu0((v5) obj, i12, tLObject, 14));
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new uu0(tLObject, i12, (ta0) obj, 18));
-                break;
-            default:
-                zh.a5 a5Var = (zh.a5) obj;
-                if (tLObject instanceof TL_stories.TL_stories_stories) {
-                    ArrayList arrayList = new ArrayList();
-                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                    for (int i13 = 0; i13 < tL_stories_stories.stories.size(); i13++) {
-                        arrayList.add(a5Var.y(tL_stories_stories.stories.get(i13)));
-                    }
-                    AndroidUtilities.runOnUIThread(new g21(a5Var, arrayList, tL_stories_stories, this.b, 18));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new zh.x4(a5Var, 1));
-                    break;
-                }
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 != 0 || this.c) {
+            return;
         }
-    }
-
-    public /* synthetic */ k4(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+        this.a.setImageDrawable(new xi0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.c = true;
     }
 }

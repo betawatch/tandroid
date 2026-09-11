@@ -1,18 +1,49 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e1 implements Executor {
-    public final /* synthetic */ DispatchQueue a;
+public final /* synthetic */ class e1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsController b;
 
-    public /* synthetic */ e1(DispatchQueue dispatchQueue) {
-        this.a = dispatchQueue;
+    public /* synthetic */ e1(ContactsController contactsController, int i10) {
+        this.a = i10;
+        this.b = contactsController;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.postRunnable(runnable);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$loadContacts$27();
+                break;
+            case 1:
+                this.b.lambda$performSyncPhoneBook$18();
+                break;
+            case 2:
+                this.b.lambda$processLoadedContacts$29();
+                break;
+            case 3:
+                this.b.lambda$applyContactsUpdates$47();
+                break;
+            case 4:
+                this.b.lambda$checkAppAccount$4();
+                break;
+            case 5:
+                this.b.lambda$cleanup$1();
+                break;
+            case 6:
+                this.b.lambda$new$0();
+                break;
+            case 7:
+                this.b.lambda$forceImportContacts$6();
+                break;
+            case 8:
+                this.b.lambda$readContacts$11();
+                break;
+            default:
+                this.b.lambda$checkContacts$5();
+                break;
+        }
     }
 }

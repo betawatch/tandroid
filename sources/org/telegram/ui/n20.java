@@ -1,53 +1,20 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n20 implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class n20 extends sg.c1 {
+    public final /* synthetic */ int r;
 
-    public /* synthetic */ n20(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n20(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.f6 f6Var, int i14) {
+        super(i10, i11, i12, i13, f6Var);
+        this.r = i14;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                s20 s20Var = (s20) this.b;
-                s20Var.getClass();
-                if (((View) obj).getParent() == s20Var.c) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                fg0 fg0Var = (fg0) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    AndroidUtilities.runOnUIThread(new bg0(fg0Var, 1));
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                URLSpan uRLSpan = (URLSpan) obj;
-                if (uRLSpan == null) {
-                    break;
-                } else {
-                    profileActivity.B4(uRLSpan.getURL(), null);
-                    break;
-                }
+    @Override // sg.c1
+    public final int c(int i10) {
+        switch (this.r) {
         }
-        return Boolean.FALSE;
+        return org.telegram.ui.ActionBar.j6.C0(i10);
     }
 }

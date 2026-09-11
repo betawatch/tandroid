@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import rd.l;
 import w0.i;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -20,31 +20,31 @@ public final /* synthetic */ class b implements l {
         switch (this.a) {
             case 0:
                 e eVar = (e) this.b;
-                i e = (i) obj;
-                kotlin.jvm.internal.i.e(e, "e");
-                eVar.f().execute(new a(eVar, e, 2));
+                i e7 = (i) obj;
+                kotlin.jvm.internal.i.e(e7, "e");
+                eVar.f().execute(new a(eVar, e7, 2));
                 break;
             case 1:
                 d1.e eVar2 = (d1.e) this.b;
-                w0.d e7 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e7, "e");
+                w0.d e10 = (w0.d) obj;
+                kotlin.jvm.internal.i.e(e10, "e");
                 Executor executor = eVar2.g;
                 if (executor == null) {
                     kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
-                executor.execute(new d1.a(eVar2, e7, 0));
+                executor.execute(new d1.a(eVar2, e10, 0));
                 break;
             case 2:
                 e1.d dVar = (e1.d) this.b;
-                w0.d e10 = (w0.d) obj;
-                kotlin.jvm.internal.i.e(e10, "e");
+                w0.d e11 = (w0.d) obj;
+                kotlin.jvm.internal.i.e(e11, "e");
                 Executor executor2 = dVar.g;
                 if (executor2 == null) {
                     kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
-                executor2.execute(new e1.c(dVar, e10, 0));
+                executor2.execute(new e1.c(dVar, e11, 0));
                 break;
             default:
                 return obj == ((hd.c) this.b) ? "(this Collection)" : String.valueOf(obj);

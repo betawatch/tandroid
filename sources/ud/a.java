@@ -1,9 +1,9 @@
 package ud;
 
 import java.util.Iterator;
-import w7.x;
+import w7.w;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a implements Iterable {
     public final char a;
@@ -12,7 +12,7 @@ public abstract class a implements Iterable {
 
     public a(char c10, char c11) {
         this.a = c10;
-        this.b = (char) x.a(c10, c11, 1);
+        this.b = (char) w.a(c10, c11, 1);
     }
 
     @Override // java.lang.Iterable

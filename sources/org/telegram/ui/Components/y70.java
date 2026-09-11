@@ -1,30 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AccountInstance;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y70 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AccountInstance b;
-    public final /* synthetic */ int c;
+public final class y70 extends FrameLayout {
+    public TextView a;
 
-    public /* synthetic */ y70(AccountInstance accountInstance, int i10, int i11) {
-        this.a = i11;
-        this.b = accountInstance;
-        this.c = i10;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-            default:
-                this.b.getConnectionsManager().cancelRequest(this.c, true);
-                break;
-        }
+    public void setText(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

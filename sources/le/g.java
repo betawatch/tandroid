@@ -1,9 +1,9 @@
 package le;
 
 import android.graphics.RectF;
-import w7.q;
+import w7.p;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class g implements Comparable {
     public final Object a;
@@ -43,7 +43,7 @@ public final class g implements Comparable {
     }
 
     public final float c() {
-        return q.a(this.d.a, 0.0f, 1.0f);
+        return p.a(this.d.a, 0.0f, 1.0f);
     }
 
     @Override // java.lang.Comparable

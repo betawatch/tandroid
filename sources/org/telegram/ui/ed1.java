@@ -1,63 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ed1 extends AnimatorListenerAdapter {
+public final class ed1 extends w7.i0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ae1 b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public /* synthetic */ ed1(ae1 ae1Var, int i10) {
+    public /* synthetic */ ed1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
         this.a = i10;
-        this.b = ae1Var;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // w7.i0
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((ui1) this.b).v.invalidate();
+                break;
+        }
+    }
+
+    @Override // w7.i0
+    public void b(int i10, int i11) {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                ae1 ae1Var = this.b;
-                ae1Var.x0.invalidate();
-                ae1Var.w0[1].setVisibility(8);
-                ae1Var.c2 = null;
-                break;
-            case 1:
-                this.b.B0 = null;
-                break;
-            case 2:
-                ae1 ae1Var2 = this.b;
-                if (ae1Var2.D0.getTag() == null) {
-                    ae1Var2.D0.setVisibility(4);
-                }
-                ae1Var2.H0 = null;
-                break;
-            case 3:
-                ae1 ae1Var3 = this.b;
-                if (ae1Var3.E0.getTag() == null) {
-                    ae1Var3.E0.setVisibility(4);
-                }
-                ae1Var3.I0 = null;
-                break;
-            case 4:
-                ae1 ae1Var4 = this.b;
-                nc ncVar = ae1Var4.h2;
-                if (ncVar != null) {
-                    if (ncVar.getParent() != null) {
-                        ((ViewGroup) ae1Var4.h2.getParent()).removeView(ae1Var4.h2);
-                    }
-                    ae1Var4.h2 = null;
-                }
-                ae1Var4.j2 = null;
-                super.onAnimationEnd(animator);
-                break;
-            default:
-                ae1 ae1Var5 = this.b;
-                if (!ae1Var5.p1.a()) {
-                    ae1Var5.R1.setVisibility(8);
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((wd1) this.b).x0.invalidate();
                     break;
                 }
                 break;

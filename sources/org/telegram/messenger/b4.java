@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import org.telegram.messenger.FilesMigrationService;
+import java.util.function.ToIntFunction;
+import org.telegram.messenger.GiftAuctionController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b4 implements View.OnClickListener {
+public final /* synthetic */ class b4 implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ b4(Object obj, int i10) {
+    public /* synthetic */ b4(int i10) {
         this.a = i10;
-        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
+        int lambda$updateActiveAuctions$13;
         switch (this.a) {
             case 0:
-                ((FilesMigrationService.FilesMigrationBottomSheet) this.b).lambda$new$0(view);
-                break;
+                lambda$updateActiveAuctions$13 = GiftAuctionController.lambda$updateActiveAuctions$13((GiftAuctionController.Auction) obj);
+                return lambda$updateActiveAuctions$13;
             default:
-                MessagesController.lambda$checkSensitive$445((boolean[]) this.b, view);
-                break;
+                return Integer.parseInt((String) obj);
         }
     }
 }

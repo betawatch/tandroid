@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final b a = new b("MetadataUtils", null);
@@ -47,8 +47,8 @@ public abstract class a {
         } else {
             try {
                 substring = str.substring(0, 8);
-            } catch (IndexOutOfBoundsException e) {
-                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e);
+            } catch (IndexOutOfBoundsException e7) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e7);
             }
             if (!TextUtils.isEmpty(substring)) {
                 bVar.b("Invalid date format", new Object[0]);
@@ -75,8 +75,8 @@ public abstract class a {
                                     substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
                                 }
                             }
-                        } catch (IndexOutOfBoundsException e7) {
-                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e7);
+                        } catch (IndexOutOfBoundsException e10) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e10);
                         }
                         if (TextUtils.isEmpty(substring2)) {
                             substring = a4.a.C(substring, "T", substring2);
@@ -92,8 +92,8 @@ public abstract class a {
                 }
                 calendar.setTime(new SimpleDateFormat(str2).parse(substring));
                 return calendar;
-            } catch (ParseException e10) {
-                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e10);
+            } catch (ParseException e11) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e11);
                 return null;
             }
             substring2 = null;

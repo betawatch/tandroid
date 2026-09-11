@@ -1,31 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class dp0 implements qb {
-    public final /* synthetic */ pc a;
-    public final /* synthetic */ ff b;
+public final /* synthetic */ class dp0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hq0 b;
 
-    public dp0(ff ffVar, pc pcVar) {
-        this.b = ffVar;
-        this.a = pcVar;
+    public /* synthetic */ dp0(hq0 hq0Var, int i10) {
+        this.a = i10;
+        this.b = hq0Var;
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void c() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void a(pc pcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void b() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hq0 hq0Var = this.b;
+                hq0Var.A0 = true;
+                b20 b20Var = hq0Var.y0;
+                b20Var.r.setText("");
+                AndroidUtilities.showKeyboard(b20Var.r);
+                break;
+            default:
+                ue ueVar = new ue(8);
+                hq0 hq0Var2 = this.b;
+                if (!hq0Var2.isKeyboardVisible()) {
+                    ueVar.run();
+                    break;
+                } else {
+                    b20 b20Var2 = hq0Var2.y0;
+                    if (b20Var2 != null) {
+                        AndroidUtilities.hideKeyboard(b20Var2.r);
+                    }
+                    AndroidUtilities.runOnUIThread(ueVar, 300L);
+                    break;
+                }
+        }
     }
 }

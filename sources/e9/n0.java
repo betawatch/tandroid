@@ -3,7 +3,7 @@ package e9;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class n0 extends o1 {
     public int a;
@@ -43,7 +43,7 @@ public final class n0 extends o1 {
                     } else {
                         next = it.next();
                     }
-                } while (!((d9.f) this.e).apply(next));
+                } while (!((d9.g) this.e).apply(next));
             default:
                 do {
                     Iterator it2 = this.d;
@@ -76,11 +76,11 @@ public final class n0 extends o1 {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public n0(Iterator it, d9.f fVar) {
+    public n0(Iterator it, d9.g gVar) {
         this();
         this.c = 0;
         this.d = it;
-        this.e = fVar;
+        this.e = gVar;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

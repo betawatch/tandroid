@@ -1,14 +1,23 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
-import android.text.Layout;
+import android.graphics.Path;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class v9 {
-    public int a;
-    public Layout b;
-    public float c;
-    public float d;
-    public Rect e;
+public final class v9 extends Path {
+    public float a;
+
+    @Override // android.graphics.Path
+    public final void addRect(float f7, float f10, float f11, float f12, Path.Direction direction) {
+        super.addRect(f7, f10, f11, f12, direction);
+        if (f12 > this.a) {
+            this.a = f12;
+        }
+    }
+
+    @Override // android.graphics.Path
+    public final void reset() {
+        super.reset();
+        this.a = 0.0f;
+    }
 }

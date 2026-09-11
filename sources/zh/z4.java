@@ -1,25 +1,67 @@
 package zh;
 
-import java.util.List;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z4 implements Utilities.CallbackReturn {
-    public final /* synthetic */ a5 a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ List d;
+public final /* synthetic */ class z4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ s5 b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ Utilities.Callback f;
 
-    public /* synthetic */ z4(a5 a5Var, boolean z10, int i10, List list) {
-        this.a = a5Var;
-        this.b = z10;
-        this.c = i10;
-        this.d = list;
+    public /* synthetic */ z4(s5 s5Var, int i10, Utilities.Callback callback, boolean[] zArr, Utilities.Callback callback2) {
+        this.b = s5Var;
+        this.d = i10;
+        this.e = callback;
+        this.c = zArr;
+        this.f = callback2;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        return Boolean.valueOf(this.a.q(this.c, this.d, this.b));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Boolean bool = (Boolean) obj;
+        switch (this.a) {
+            case 0:
+                if (this.d > 0) {
+                    this.b.S();
+                }
+                Utilities.Callback callback = this.e;
+                if (callback != null) {
+                    callback.run(Boolean.TRUE);
+                }
+                this.c[0] = true;
+                Utilities.Callback callback2 = this.f;
+                if (callback2 != null) {
+                    callback2.run(bool.booleanValue() ? "paid" : "failed");
+                    break;
+                }
+                break;
+            default:
+                this.c[0] = true;
+                if (this.d > 0) {
+                    this.b.S();
+                }
+                Utilities.Callback callback3 = this.e;
+                if (callback3 != null) {
+                    callback3.run(bool.booleanValue() ? "paid" : "failed");
+                }
+                Utilities.Callback callback4 = this.f;
+                if (callback4 != null) {
+                    callback4.run(Boolean.TRUE);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ z4(s5 s5Var, boolean[] zArr, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+        this.b = s5Var;
+        this.c = zArr;
+        this.d = i10;
+        this.e = callback;
+        this.f = callback2;
     }
 }

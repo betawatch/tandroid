@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -47,8 +47,8 @@ public final class d {
         if (methodArr == null) {
             try {
                 methodArr = cls.getDeclaredMethods();
-            } catch (NoClassDefFoundError e) {
-                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e);
+            } catch (NoClassDefFoundError e7) {
+                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e7);
             }
         }
         boolean z10 = false;

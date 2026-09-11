@@ -1,39 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class js0 extends s4.n0 {
-    public final /* synthetic */ ds0 a;
+public final class js0 extends FragmentContextView {
+    public final /* synthetic */ xu0 N0;
 
-    public js0(ds0 ds0Var) {
-        this.a = ds0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public js0(xu0 xu0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, xu0 xu0Var2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, n2Var, xu0Var2, false, f6Var);
+        this.N0 = xu0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        if (!(view instanceof org.telegram.ui.Cells.u7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
-        ds0 ds0Var = this.a;
-        ds0Var.r.getClass();
-        int R = RecyclerView.R(u7Var);
-        int i10 = ds0Var.s.J;
-        u7Var.a0 = R < i10;
-        int i11 = R % i10;
-        u7Var.V = i11 == 0;
-        u7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        xu0 xu0Var = this.N0;
+        xu0Var.P0.i(xu0Var.Q0, i10 == 0, true);
     }
 }

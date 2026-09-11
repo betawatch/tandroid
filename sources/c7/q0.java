@@ -12,7 +12,7 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class q0 extends o6.a {
     public static final Parcelable.Creator<q0> CREATOR = new w.a(23);
@@ -82,13 +82,13 @@ public final class q0 extends o6.a {
     */
     public static byte[] d(byte[] bArr) {
         c2.a aVar;
-        n7.f0 f0Var;
-        int i10 = n7.i0.a;
-        n7.j0 j0Var = n7.h0.a;
-        int i11 = j0Var.f;
-        MessageDigest messageDigest = j0Var.e;
+        n7.e0 e0Var;
+        int i10 = n7.h0.a;
+        n7.i0 i0Var = n7.g0.a;
+        int i11 = i0Var.f;
+        MessageDigest messageDigest = i0Var.e;
         try {
-            if (j0Var.h) {
+            if (i0Var.h) {
                 try {
                     aVar = new c2.a((MessageDigest) messageDigest.clone(), i11);
                 } catch (CloneNotSupportedException unused) {
@@ -114,14 +114,14 @@ public final class q0 extends o6.a {
                 int i12 = aVar.b;
                 if (i12 == messageDigest2.getDigestLength()) {
                     byte[] digest = messageDigest2.digest();
-                    char[] cArr = n7.g0.a;
-                    f0Var = new n7.f0(digest);
+                    char[] cArr = n7.f0.a;
+                    e0Var = new n7.e0(digest);
                 } else {
                     byte[] copyOf = Arrays.copyOf(messageDigest2.digest(), i12);
-                    char[] cArr2 = n7.g0.a;
-                    f0Var = new n7.f0(copyOf);
+                    char[] cArr2 = n7.f0.a;
+                    e0Var = new n7.e0(copyOf);
                 }
-                return (byte[]) f0Var.b.clone();
+                return (byte[]) e0Var.b.clone();
             }
             aVar = new c2.a(MessageDigest.getInstance(messageDigest.getAlgorithm()), i11);
             MessageDigest messageDigest22 = (MessageDigest) aVar.c;
@@ -130,8 +130,8 @@ public final class q0 extends o6.a {
             int length3 = bArr22.length;
             if (!aVar.a) {
             }
-        } catch (NoSuchAlgorithmException e) {
-            throw new AssertionError(e);
+        } catch (NoSuchAlgorithmException e7) {
+            throw new AssertionError(e7);
         }
     }
 
@@ -189,8 +189,8 @@ public final class q0 extends o6.a {
                 }
             }
             return "PrfExtension{" + jSONObject.toString() + "}";
-        } catch (JSONException e) {
-            return a4.a.p("PrfExtension{Exception:", e.getMessage(), "}");
+        } catch (JSONException e7) {
+            return a4.a.p("PrfExtension{Exception:", e7.getMessage(), "}");
         }
     }
 

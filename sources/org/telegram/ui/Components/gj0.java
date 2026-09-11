@@ -1,52 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gj0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hj0 b;
+    public final /* synthetic */ pj0 b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ gj0(hj0 hj0Var, int i10) {
+    public /* synthetic */ gj0(pj0 pj0Var, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = hj0Var;
+        this.b = pj0Var;
+        this.c = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                hj0 hj0Var = this.b;
-                hj0Var.getClass();
-                try {
-                    xf.e eVar = hj0Var.D0;
-                    if (eVar != null) {
-                        eVar.b();
-                    }
-                } catch (Throwable unused) {
-                }
-                AndroidUtilities.runOnUIThread(hj0Var.B0);
-                break;
-            case 1:
-                hj0 hj0Var2 = this.b;
-                hj0Var2.Q = null;
-                hj0Var2.p();
-                break;
-            case 2:
-                hj0.h(this.b);
-                break;
-            case 3:
-                hj0.e(this.b);
-                break;
-            case 4:
-                hj0.d(this.b);
-                break;
-            case 5:
-                hj0.f(this.b);
+                pj0 pj0Var = this.b;
+                NotificationCenter.getInstance(pj0Var.b).doOnIdle(new gj0(pj0Var, this.c, 1));
                 break;
             default:
-                this.b.m();
+                pj0.a(this.b, this.c);
                 break;
         }
     }

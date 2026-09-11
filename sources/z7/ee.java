@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class ee {
     public final va a;
@@ -9,11 +9,11 @@ public final class ee {
     public final m d;
     public final m e;
 
-    public /* synthetic */ ee(bi.u6 u6Var) {
-        this.a = (va) u6Var.a;
-        this.b = (ra) u6Var.b;
-        this.c = (ve) u6Var.c;
-        this.d = (m) u6Var.d;
-        this.e = (m) u6Var.e;
+    public /* synthetic */ ee(cf.c cVar) {
+        this.a = (va) cVar.a;
+        this.b = (ra) cVar.b;
+        this.c = (ve) cVar.c;
+        this.d = (m) cVar.d;
+        this.e = (m) cVar.e;
     }
 }

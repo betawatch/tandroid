@@ -1,33 +1,70 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.view.View;
+import android.view.ViewGroup;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class l7 extends ng.a {
-    public r6 c;
-    public yh.a d;
+public final class l7 extends g7 {
+    public final ArrayList n;
+    public final /* synthetic */ s7 r;
 
-    public final boolean equals(Object obj) {
-        yh.a aVar;
-        yh.a aVar2;
-        r6 r6Var;
-        r6 r6Var2;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && l7.class == obj.getClass()) {
-            l7 l7Var = (l7) obj;
-            int i10 = this.a;
-            if (i10 == l7Var.a) {
-                if (i10 == 1 && (r6Var = this.c) != null && (r6Var2 = l7Var.c) != null) {
-                    return r6Var.a == r6Var2.a;
-                }
-                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = l7Var.d) != null) {
-                    return Objects.equals(aVar.a, aVar2.a);
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l7(s7 s7Var) {
+        super(s7Var, 2);
+        this.r = s7Var;
+        this.n = new ArrayList();
+    }
+
+    @Override // org.telegram.ui.g7, org.telegram.ui.f7
+    public final void F() {
+        super.F();
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i10 >= arrayList2.size()) {
+                return;
             }
+            arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0, 0L));
+            i10++;
         }
-        return false;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        View view = c1Var.a;
+        k7 k7Var = (k7) view;
+        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) k7Var.b.getChildAt(0);
+        ArrayList arrayList = this.e;
+        ai.b bVar = ((m7) arrayList.get(i10)).d;
+        boolean z10 = bVar == view.getTag();
+        boolean z11 = i10 != arrayList.size() - 1;
+        view.setTag(bVar);
+        File file = bVar.a;
+        j7Var.d(bVar.h == 5 ? LocaleController.getString(R.string.AttachRound) : file.getName(), LocaleController.formatDateAudio(file.lastModified() / 1000, true), Utilities.getExtension(file.getName()), null, 0, z11);
+        if (!z10) {
+            j7Var.setPhoto(file.getPath());
+        }
+        j7Var.getImageView().setRoundRadius(AndroidUtilities.dp(bVar.h == 5 ? 20.0f : 4.0f));
+        k7Var.d = z11;
+        k7Var.c.setText(AndroidUtilities.formatFileSize(bVar.c));
+        k7Var.a.a(this.r.f.j.contains(bVar), z10);
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        k7 k7Var = new k7(this, viewGroup.getContext(), 0);
+        k7Var.e = 2;
+        k7Var.b.addView(new org.telegram.ui.Cells.j7(viewGroup.getContext(), 3, null));
+        return new org.telegram.ui.Components.vk0(k7Var);
     }
 }

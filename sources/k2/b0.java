@@ -1,31 +1,38 @@
 package k2;
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
+import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements Executor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class b0 extends AudioTrack.StreamEventCallback {
+    public final /* synthetic */ c0 a;
 
-    public /* synthetic */ b0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public b0(c0 c0Var) {
+        this.a = c0Var;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((Handler) this.b).post(runnable);
-                break;
-            case 1:
-                e2.d0.U(((m4.b0) this.b).l, runnable);
-                break;
-            default:
-                ((p4.b) this.b).post(runnable);
-                break;
+    @Override // android.media.AudioTrack.StreamEventCallback
+    public final void onDataRequest(AudioTrack audioTrack, int i10) {
+        d0 d0Var;
+        n nVar;
+        if (audioTrack.equals(this.a.c.x) && (nVar = (d0Var = this.a.c).t) != null && d0Var.X) {
+            nVar.T();
+        }
+    }
+
+    @Override // android.media.AudioTrack.StreamEventCallback
+    public final void onPresentationEnded(AudioTrack audioTrack) {
+        if (audioTrack.equals(this.a.c.x)) {
+            this.a.c.W = true;
+        }
+    }
+
+    @Override // android.media.AudioTrack.StreamEventCallback
+    public final void onTearDown(AudioTrack audioTrack) {
+        d0 d0Var;
+        n nVar;
+        if (audioTrack.equals(this.a.c.x) && (nVar = (d0Var = this.a.c).t) != null && d0Var.X) {
+            nVar.T();
         }
     }
 }

@@ -1,33 +1,33 @@
 package c3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface p extends b2.k {
     void b(int i10, int i11, byte[] bArr);
 
     boolean d(byte[] bArr, int i10, int i11, boolean z10);
 
-    int e(int i10, int i11, byte[] bArr);
-
-    boolean f(int i10, boolean z10);
-
-    boolean g(byte[] bArr, int i10, int i11, boolean z10);
-
     long getLength();
 
     long getPosition();
 
-    long h();
+    int h(int i10, int i11, byte[] bArr);
 
-    void j(int i10);
+    boolean i(int i10, boolean z10);
 
-    void p();
+    boolean j(byte[] bArr, int i10, int i11, boolean z10);
 
-    void q(int i10);
+    long k();
+
+    void l(int i10);
+
+    void q();
+
+    void r(int i10);
 
     void readFully(byte[] bArr, int i10, int i11);
 
-    boolean s(int i10, boolean z10);
-
     int skip(int i10);
+
+    boolean v(int i10, boolean z10);
 }

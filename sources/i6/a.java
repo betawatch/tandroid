@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
 import com.google.android.gms.common.api.e;
-import com.google.android.gms.internal.clearcut.c2;
-import com.google.android.gms.internal.clearcut.q1;
-import com.google.android.gms.internal.clearcut.v0;
+import com.google.android.gms.internal.clearcut.b2;
+import com.google.android.gms.internal.clearcut.p1;
+import com.google.android.gms.internal.clearcut.u0;
 
 /* loaded from: classes.dex */
 public final class a {
@@ -17,31 +17,31 @@ public final class a {
     public final int c;
     public final String d;
     public final int e;
-    public final q1 f;
-    public final v0 g;
+    public final p1 f;
+    public final u0 g;
     public final u6.a h;
-    public final c2 i;
+    public final b2 i;
 
     public a(Context context) {
-        v0 v0Var = new v0(context, j, null, new com.google.android.gms.common.api.internal.a());
-        c2 c2Var = new c2(context);
+        u0 u0Var = new u0(context, j, null, new com.google.android.gms.common.api.internal.a());
+        b2 b2Var = new b2(context);
         this.e = -1;
-        q1 q1Var = q1.b;
-        this.f = q1Var;
+        p1 p1Var = p1.b;
+        this.f = p1Var;
         this.a = context;
         this.b = context.getPackageName();
         int i10 = 0;
         try {
             i10 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e);
+        } catch (PackageManager.NameNotFoundException e7) {
+            Log.wtf("ClearcutLogger", "This can't happen.", e7);
         }
         this.c = i10;
         this.e = -1;
         this.d = "VISION";
-        this.g = v0Var;
+        this.g = u0Var;
         this.h = u6.a.a;
-        this.f = q1Var;
-        this.i = c2Var;
+        this.f = p1Var;
+        this.i = b2Var;
     }
 }

@@ -1,31 +1,113 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Matrix;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class e30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j30 b;
+public final class e30 {
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public RadialGradient g;
+    public final int i;
+    public int j;
+    public int k;
+    public int l;
+    public float a = -1.0f;
+    public float b = -1.0f;
+    public final Matrix h = new Matrix();
 
-    public /* synthetic */ e30(j30 j30Var, int i10) {
-        this.a = i10;
-        this.b = j30Var;
+    public e30(int i10) {
+        this.i = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                j30 j30Var = this.b;
-                j30Var.b.setVisibility(8);
-                j30Var.y = false;
-                j30Var.E = 0.0f;
-                break;
-            default:
-                this.b.e.setVisibility(8);
-                break;
+    public final void a(float f7) {
+        int i10 = this.i;
+        if (i10 == 0) {
+            int i11 = this.j;
+            int i12 = org.telegram.ui.ActionBar.j6.Tg;
+            if (i11 != org.telegram.ui.ActionBar.j6.w0(null, i12, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ug, false)) {
+                int w02 = org.telegram.ui.ActionBar.j6.w0(null, i12, false);
+                this.j = w02;
+                int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ug, false);
+                this.k = w03;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w02, w03}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else if (i10 == 1) {
+            int i13 = this.j;
+            int i14 = org.telegram.ui.ActionBar.j6.Vg;
+            if (i13 != org.telegram.ui.ActionBar.j6.w0(null, i14, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Wg, false)) {
+                int w04 = org.telegram.ui.ActionBar.j6.w0(null, i14, false);
+                this.j = w04;
+                int w05 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Wg, false);
+                this.k = w05;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w04, w05}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else {
+            if (i10 != 3) {
+                return;
+            }
+            int i15 = this.j;
+            int i16 = org.telegram.ui.ActionBar.j6.ih;
+            if (i15 != org.telegram.ui.ActionBar.j6.w0(null, i16, false) || this.k != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false) || this.l != org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false)) {
+                int w06 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false);
+                this.k = w06;
+                int w07 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false);
+                this.l = w07;
+                int w08 = org.telegram.ui.ActionBar.j6.w0(null, i16, false);
+                this.j = w08;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w06, w07, w08}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        }
+        int dp = AndroidUtilities.dp(130.0f);
+        float f10 = this.e;
+        if (f10 == 0.0f || this.f >= f10) {
+            this.e = Utilities.random.nextInt(700) + 500;
+            this.f = 0.0f;
+            if (this.a == -1.0f) {
+                b();
+            }
+            this.c = this.a;
+            this.d = this.b;
+            b();
+        }
+        float f11 = 16L;
+        float f12 = (f11 * 0.02f * f7) + (1.0f * f11) + this.f;
+        this.f = f12;
+        float f13 = this.e;
+        if (f12 > f13) {
+            this.f = f13;
+        }
+        float interpolation = pr.g.getInterpolation(this.f / f13);
+        float f14 = dp;
+        float f15 = this.c;
+        float f16 = ((((this.a - f15) * interpolation) + f15) * f14) - 200.0f;
+        float f17 = this.d;
+        float f18 = ((((this.b - f17) * interpolation) + f17) * f14) - 200.0f;
+        float f19 = (f14 / 400.0f) * (i10 == 3 ? 2.0f : 1.5f);
+        Matrix matrix = this.h;
+        matrix.reset();
+        matrix.postTranslate(f16, f18);
+        matrix.postScale(f19, f19, f16 + 200.0f, f18 + 200.0f);
+        this.g.setLocalMatrix(matrix);
+    }
+
+    public final void b() {
+        int i10 = this.i;
+        if (i10 == 0) {
+            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
+        } else if (i10 == 3) {
+            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.b = (Utilities.random.nextInt(100) * 0.1f) / 100.0f;
+        } else {
+            this.a = a4.a.e(Utilities.random.nextInt(100), 100.0f, 0.2f, 0.8f);
+            this.b = Utilities.random.nextInt(100) / 100.0f;
         }
     }
 }

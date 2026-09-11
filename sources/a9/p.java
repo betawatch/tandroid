@@ -1,10 +1,10 @@
 package a9;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class p implements t {
+public final class p implements s {
     public static final Object c = new Object();
-    public volatile t a;
+    public volatile s a;
     public volatile Object b;
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -18,7 +18,7 @@ public final class p implements t {
         return pVar;
     }
 
-    @Override // a9.u
+    @Override // a9.t
     public final Object a() {
         Object obj;
         Object obj2 = this.b;

@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class s2 extends a0 {
     public boolean E;
@@ -26,7 +26,7 @@ public final class s2 extends a0 {
     public int H;
     public TLRPC.RecentMeUrl f;
     public ImageReceiver h;
-    public org.telegram.ui.Components.g9 n;
+    public org.telegram.ui.Components.i9 n;
     public int r;
     public StaticLayout s;
     public int v;
@@ -66,8 +66,8 @@ public final class s2 extends a0 {
             canvas2.translate(this.x, this.w);
             try {
                 this.y.draw(canvas2);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             canvas2.restore();
         }
@@ -101,7 +101,7 @@ public final class s2 extends a0 {
         if (z10) {
             int i16 = this.H;
             ImageReceiver imageReceiver = this.h;
-            org.telegram.ui.Components.g9 g9Var = this.n;
+            org.telegram.ui.Components.i9 i9Var = this.n;
             TextPaint textPaint2 = org.telegram.ui.ActionBar.j6.B0[0];
             TextPaint textPaint3 = org.telegram.ui.ActionBar.j6.F0[0];
             this.E = false;
@@ -118,8 +118,8 @@ public final class s2 extends a0 {
                     this.r = AndroidUtilities.dp(AndroidUtilities.leftBaseline + 4);
                 }
                 str = chat.title;
-                g9Var.k(i16, chat);
-                imageReceiver.setForUserOrChat(chat, g9Var, this.f);
+                i9Var.k(i16, chat);
+                imageReceiver.setForUserOrChat(chat, i9Var, this.f);
             } else if (recentMeUrl instanceof TLRPC.TL_recentMeUrlUser) {
                 TLRPC.User user = MessagesController.getInstance(i16).getUser(Long.valueOf(this.f.user_id));
                 if (LocaleController.isRTL) {
@@ -142,8 +142,8 @@ public final class s2 extends a0 {
                     this.E = user.verified;
                 }
                 str = UserObject.getUserName(user);
-                g9Var.m(i16, user);
-                imageReceiver.setForUserOrChat(user, g9Var, this.f);
+                i9Var.m(i16, user);
+                imageReceiver.setForUserOrChat(user, i9Var, this.f);
             } else if (recentMeUrl instanceof TLRPC.TL_recentMeUrlStickerSet) {
                 if (LocaleController.isRTL) {
                     this.r = AndroidUtilities.dp(14.0f);
@@ -151,8 +151,8 @@ public final class s2 extends a0 {
                     this.r = AndroidUtilities.dp(AndroidUtilities.leftBaseline);
                 }
                 String str2 = this.f.set.set.title;
-                g9Var.n(5L, str2, null);
-                imageReceiver.setImage(ImageLocation.getForDocument(this.f.set.cover), null, g9Var, null, this.f, 0);
+                i9Var.n(5L, str2, null);
+                imageReceiver.setImage(ImageLocation.getForDocument(this.f.set.cover), null, i9Var, null, this.f, 0);
                 str = str2;
             } else if (recentMeUrl instanceof TLRPC.TL_recentMeUrlChatInvite) {
                 if (LocaleController.isRTL) {
@@ -163,17 +163,17 @@ public final class s2 extends a0 {
                 TLRPC.ChatInvite chatInvite = this.f.chat_invite;
                 TLRPC.Chat chat2 = chatInvite.chat;
                 if (chat2 != null) {
-                    g9Var.k(i16, chat2);
+                    i9Var.k(i16, chat2);
                     TLRPC.RecentMeUrl recentMeUrl2 = this.f;
                     TLRPC.Chat chat3 = recentMeUrl2.chat_invite.chat;
                     String str3 = chat3.title;
                     this.E = chat3.verified;
-                    imageReceiver.setForUserOrChat(chat3, g9Var, recentMeUrl2);
+                    imageReceiver.setForUserOrChat(chat3, i9Var, recentMeUrl2);
                     str = str3;
                 } else {
                     String str4 = chatInvite.title;
-                    g9Var.n(5L, str4, null);
-                    imageReceiver.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(this.f.chat_invite.photo.sizes, 50), this.f.chat_invite.photo), "50_50", g9Var, null, this.f, 0);
+                    i9Var.n(5L, str4, null);
+                    imageReceiver.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(this.f.chat_invite.photo.sizes, 50), this.f.chat_invite.photo), "50_50", i9Var, null, this.f, 0);
                     str = str4;
                 }
                 if (LocaleController.isRTL) {
@@ -190,10 +190,10 @@ public final class s2 extends a0 {
                 } else {
                     this.r = AndroidUtilities.dp(AndroidUtilities.leftBaseline);
                 }
-                imageReceiver.setImage(null, null, g9Var, null, this.f, 0);
+                imageReceiver.setImage(null, null, i9Var, null, this.f, 0);
                 str = "Url";
             } else {
-                imageReceiver.setImage(null, null, g9Var, null, recentMeUrl, 0);
+                imageReceiver.setImage(null, null, i9Var, null, recentMeUrl, 0);
                 str = "";
             }
             String str5 = MessagesController.getInstance(i16).linkPrefix + "/" + this.f.url;
@@ -221,19 +221,19 @@ public final class s2 extends a0 {
                 textPaint = textPaint3;
                 try {
                     i14 = max2;
-                } catch (Exception e) {
-                    e = e;
+                } catch (Exception e7) {
+                    e = e7;
                     i14 = max2;
                 }
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e10) {
+                e = e10;
                 i14 = max2;
                 textPaint = textPaint3;
             }
             try {
                 this.s = new StaticLayout(ellipsize, textPaint2, max2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e11) {
+                e = e11;
                 FileLog.e(e);
                 int measuredWidth3 = getMeasuredWidth() - AndroidUtilities.dp(AndroidUtilities.leftBaseline + 16);
                 if (LocaleController.isRTL) {
@@ -257,14 +257,14 @@ public final class s2 extends a0 {
             max = Math.max(AndroidUtilities.dp(12.0f), measuredWidth32);
             try {
                 i15 = max;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e12) {
+                e = e12;
                 i15 = max;
             }
             try {
                 this.y = new StaticLayout(TextUtils.ellipsize(str5, textPaint, max - AndroidUtilities.dp(12.0f), TextUtils.TruncateAt.END), textPaint, max, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e13) {
+                e = e13;
                 FileLog.e(e);
                 if (LocaleController.isRTL) {
                 }

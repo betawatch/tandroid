@@ -27,7 +27,7 @@ import u6.c;
 import v7.n5;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -209,8 +209,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                             for (int i12 = 0; i12 < optJSONArray.length(); i12++) {
                                 try {
                                     strArr[i12] = optJSONArray.getString(i12);
-                                } catch (JSONException e) {
-                                    e = e;
+                                } catch (JSONException e7) {
+                                    e = e7;
                                     String message = e.getMessage();
                                     Locale locale = Locale.ROOT;
                                     Log.d("AdBreakInfo", "Error while creating an AdBreakInfo from JSON: " + message);
@@ -223,8 +223,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                             j3 = j10;
                         }
                         bVar = new b(j12, string, optLong, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
-                    } catch (JSONException e7) {
-                        e = e7;
+                    } catch (JSONException e10) {
+                        e = e10;
                         j3 = j10;
                     }
                     if (bVar == null) {
@@ -273,8 +273,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         String a15 = g6.a.a("hlsSegmentFormat", jSONObject3);
                         JSONObject optJSONObject2 = jSONObject3.optJSONObject("vastAdsRequest");
                         aVar = new c6.a(string2, a12, optLong2, a10, str, a2, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), a13, a14, intValue, a15, optJSONObject2 == null ? null : new t(g6.a.a("adTagUrl", optJSONObject2), g6.a.a("adsResponse", optJSONObject2)));
-                    } catch (JSONException e10) {
-                        String message2 = e10.getMessage();
+                    } catch (JSONException e11) {
+                        String message2 = e11.getMessage();
                         Locale locale2 = Locale.ROOT;
                         Log.d("AdBreakClipInfo", "Error while creating an AdBreakClipInfo from JSON: " + message2);
                     }

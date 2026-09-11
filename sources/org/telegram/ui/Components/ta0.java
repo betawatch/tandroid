@@ -1,70 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ta0 extends org.telegram.ui.tu0 {
-    public final /* synthetic */ xa0 a;
+public final class ta0 extends z5 {
+    public final /* synthetic */ ua0 a;
 
-    public ta0(xa0 xa0Var) {
-        this.a = xa0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ta0(ua0 ua0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = ua0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            xa0 xa0Var = this.a;
-            if (i10 < xa0Var.P.size()) {
-                int childCount = xa0Var.getListView().getChildCount();
-                Object obj = xa0Var.P.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = xa0Var.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.e2) {
-                        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) childAt;
-                        if (e2Var.getResult() == obj) {
-                            imageReceiver = e2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.ev0 ev0Var = new org.telegram.ui.ev0();
-                                ev0Var.b = iArr[0];
-                                ev0Var.c = iArr[1];
-                                ev0Var.d = xa0Var.getListView();
-                                ev0Var.a = imageReceiver;
-                                ev0Var.e = imageReceiver.getBitmapSafe();
-                                ev0Var.h = imageReceiver.getRoundRadius(true);
-                                return ev0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            xa0 xa0Var = this.a;
-            if (i10 >= xa0Var.P.size()) {
-                return;
-            }
-            xa0Var.x.d((TLRPC.BotInlineResult) xa0Var.P.get(i10), z10, i11);
-        }
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        ua0 ua0Var = this.a;
+        int i15 = ua0Var.y;
+        int i16 = i14 + i12;
+        int i17 = this.measuredSize;
+        ua0Var.c.set((int) f7, i2.g.C(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
     }
 }

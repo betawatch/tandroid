@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ye extends xg {
+public final class ye extends vg {
     public final /* synthetic */ int l0;
     public final /* synthetic */ ChatActivityEnterView m0;
 
@@ -15,7 +15,7 @@ public final class ye extends xg {
         this.m0 = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.xg
+    @Override // org.telegram.ui.Components.vg
     public boolean d() {
         switch (this.l0) {
             case 0:
@@ -25,7 +25,7 @@ public final class ye extends xg {
         }
     }
 
-    @Override // org.telegram.ui.Components.xg
+    @Override // org.telegram.ui.Components.vg
     public final boolean e() {
         switch (this.l0) {
             case 0:
@@ -36,18 +36,18 @@ public final class ye extends xg {
         }
     }
 
-    @Override // org.telegram.ui.Components.xg
+    @Override // org.telegram.ui.Components.vg
     public final boolean f() {
         switch (this.l0) {
             case 0:
-                of ofVar = this.m0.L0;
-                return !(ofVar == null || ofVar.q0) || this.r > 0;
+                nf nfVar = this.m0.L0;
+                return !(nfVar == null || nfVar.q0) || this.r > 0;
             default:
                 return true;
         }
     }
 
-    @Override // org.telegram.ui.Components.xg
+    @Override // org.telegram.ui.Components.vg
     public boolean j() {
         switch (this.l0) {
             case 0:

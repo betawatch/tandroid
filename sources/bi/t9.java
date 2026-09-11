@@ -1,36 +1,38 @@
 package bi;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ aa b;
+public final class t9 extends FrameLayout {
+    public o5 a;
+    public long b;
+    public ArrayList c;
+    public boolean d;
+    public final /* synthetic */ fb e;
 
-    public /* synthetic */ t9(aa aaVar, int i10) {
-        this.a = i10;
-        this.b = aaVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t9(fb fbVar, Context context) {
+        super(context);
+        this.e = fbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                aa.Q(this.b);
-                break;
-            case 1:
-                this.b.X();
-                break;
-            default:
-                aa aaVar = this.b;
-                org.telegram.ui.Cells.i3 i3Var = aaVar.Y;
-                if (aaVar.isShowing()) {
-                    i3Var.b.requestFocus();
-                    AndroidUtilities.showKeyboard(i3Var.b);
-                    break;
-                }
-                break;
+    public final void a(boolean z10) {
+        if (this.d != z10) {
+            this.d = z10;
+            invalidate();
+            this.a.setIsVisible(z10);
+            this.e.A();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            super.dispatchDraw(canvas);
         }
     }
 }

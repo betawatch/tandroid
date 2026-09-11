@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import s4.c1;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c0 extends s4.h0 {
     public final ArrayList c = new ArrayList();
@@ -95,8 +95,8 @@ public final class c0 extends s4.h0 {
         if (uri != null) {
             try {
                 createFromStream = Drawable.createFromStream(c0Var.r.n.getContentResolver().openInputStream(uri), null);
-            } catch (IOException e) {
-                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
+            } catch (IOException e7) {
+                Log.w("RecyclerAdapter", "Failed to load " + uri, e7);
             }
         }
         int i11 = vVar.n;

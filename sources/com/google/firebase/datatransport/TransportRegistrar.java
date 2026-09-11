@@ -3,6 +3,7 @@ package com.google.firebase.datatransport;
 import android.content.Context;
 import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
+import di.w9;
 import i5.f;
 import j5.a;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import q9.b;
 import q9.j;
 import w7.o8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
@@ -28,7 +29,7 @@ public class TransportRegistrar implements ComponentRegistrar {
         i0 a2 = q9.a.a(f.class);
         a2.d = LIBRARY_NAME;
         a2.a(j.a(Context.class));
-        a2.f = new dh.a(22);
+        a2.f = new w9(29);
         return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "18.1.8"));
     }
 }

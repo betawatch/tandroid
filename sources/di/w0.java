@@ -1,112 +1,89 @@
 package di;
 
-import android.app.Activity;
-import android.content.DialogInterface;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.json.JSONObject;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.d6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w0 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ w0(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ w0(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
         this.a = i10;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
+        this.b = messagesStorage;
+        this.c = arrayList;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                z0 z0Var = (z0) this.c;
-                boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.d;
-                z0Var.getClass();
-                if (!zArr[0]) {
-                    z0Var.d = true;
-                    z0Var.e = false;
-                    z0Var.l();
-                    Iterator it = z0Var.f.iterator();
-                    while (it.hasNext()) {
-                        ((Runnable) it.next()).run();
+                MessagesStorage messagesStorage = this.b;
+                ArrayList arrayList = this.c;
+                try {
+                    SQLiteDatabase database = messagesStorage.getDatabase();
+                    if (database == null) {
+                        return;
                     }
-                    zArr[0] = true;
-                    rVar.run(Boolean.TRUE, Boolean.FALSE);
-                    break;
+                    database.executeFast("DELETE FROM story_drafts WHERE id IN (" + TextUtils.join(", ", arrayList) + ")").stepThis().dispose();
+                    return;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
                 }
-                break;
             case 1:
-                boolean[] zArr2 = (boolean[]) this.b;
-                boolean[] zArr3 = (boolean[]) this.c;
-                Utilities.Callback callback = (Utilities.Callback) this.d;
-                if (!zArr2[0] && !zArr3[0]) {
-                    zArr3[0] = true;
-                    callback.run("USER_DECLINED");
-                    break;
+                MessagesStorage messagesStorage2 = this.b;
+                ArrayList arrayList2 = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        SQLiteDatabase database2 = messagesStorage2.getDatabase();
+                        database2.executeFast("DELETE FROM business_links").stepThis().dispose();
+                        sQLitePreparedStatement = database2.executeFast("REPLACE INTO business_links VALUES(?, ?)");
+                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                            TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList2.get(i10);
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_businessChatLink.getObjectSize());
+                            tL_businessChatLink.serializeToStream(nativeByteBuffer);
+                            sQLitePreparedStatement.requery();
+                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
+                            sQLitePreparedStatement.bindInteger(2, i10);
+                            sQLitePreparedStatement.step();
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
                 }
-                break;
-            case 2:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.b;
-                Activity activity = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (p2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, p2Var.getClassGuid());
-                    break;
-                }
-                break;
-            case 3:
-                Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.p3 p3Var = (org.telegram.ui.Components.p3) this.b;
-                org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.d;
-                callback2.run(Integer.valueOf(r3Var.getValue() + (p3Var.getValue() * 60)));
-                break;
-            case 4:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.c;
-                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.d;
-                c1Var.getClass();
-                if (!atomicBoolean.get()) {
-                    c1Var.z(a1Var, "popup_closed", new JSONObject());
-                }
-                c1Var.c0 = null;
-                c1Var.e0 = System.currentTimeMillis();
-                break;
-            case 5:
-                d6 d6Var = (d6) this.c;
-                org.telegram.ui.ActionBar.p2 p2Var2 = (org.telegram.ui.ActionBar.p2) this.b;
-                Activity activity2 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(d6Var);
-                if (p2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity2, p2Var2.getClassGuid());
-                    break;
-                }
-                break;
             default:
-                wh.q2 q2Var = (wh.q2) this.c;
-                wh.y1 y1Var = (wh.y1) this.b;
-                Activity activity3 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(y1Var);
-                AndroidUtilities.requestAdjustResize(activity3, q2Var.a.getClassGuid());
-                break;
+                MessagesStorage messagesStorage3 = this.b;
+                ArrayList arrayList3 = this.c;
+                try {
+                    messagesStorage3.getDatabase().executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
+                    return;
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                    return;
+                }
         }
-    }
-
-    public /* synthetic */ w0(boolean[] zArr, boolean[] zArr2, Utilities.Callback callback) {
-        this.a = 1;
-        this.b = zArr;
-        this.c = zArr2;
-        this.d = callback;
     }
 }

@@ -1,36 +1,92 @@
 package rg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import v7.z6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
+public abstract class d extends FrameLayout {
+    public boolean a;
+    public final c b;
+    public boolean c;
+    public float d;
+    public float e;
+    public boolean f;
 
-    public /* synthetic */ d(f fVar, int i10) {
-        this.a = i10;
-        this.b = fVar;
+    public d(Context context, c cVar) {
+        super(context);
+        this.b = cVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ValueAnimator valueAnimator;
-        switch (this.a) {
-            case 0:
-                f fVar = this.b;
-                AnimatorSet animatorSet = fVar.T;
-                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = fVar.S) != null && valueAnimator.isRunning())) {
-                    fVar.h(fVar.I);
-                    break;
-                } else {
-                    fVar.k();
-                    break;
-                }
-            default:
-                this.b.i();
-                break;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (this.a && (view instanceof c2)) {
+            return true;
         }
+        return super.drawChild(canvas, view, j3);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        if (!(view instanceof x2)) {
+            super.measureChildWithMargins(view, i10, i11, i12, i13);
+            return;
+        }
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(0, 0));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        c cVar = this.b;
+        k b10 = cVar.b();
+        if (b10 == null) {
+            return false;
+        }
+        if (motionEvent.getPointerCount() != 1) {
+            b10.n = false;
+            b10.r = true;
+            this.c = false;
+            this.f = true;
+            invalidate();
+            return true;
+        }
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            this.c = false;
+            b10.n = false;
+            b10.r = false;
+            this.d = motionEvent.getX();
+            this.e = motionEvent.getY();
+            this.f = false;
+            return true;
+        }
+        if (!this.f && actionMasked == 2) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            if (this.c || z6.a(x10, y3, this.d, this.e) > AndroidUtilities.touchSlop) {
+                this.c = true;
+                b10.n = true;
+                b10.e(x10 - this.d, y3 - this.e);
+                this.d = x10;
+                this.e = y3;
+                return true;
+            }
+        } else if (actionMasked == 1 || actionMasked == 3) {
+            b10.n = false;
+            b10.r = true;
+            if (!this.c) {
+                cVar.a();
+            }
+            invalidate();
+            return false;
+        }
+        return true;
     }
 }

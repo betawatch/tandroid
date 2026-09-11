@@ -1,44 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ps extends View {
-    public final Paint a;
-    public final Matrix b;
-    public LinearGradient c;
-    public int d;
-    public float e;
-    public float f;
+public final class ps {
+    public final int a;
+    public final ls b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public long f;
+    public String g;
+    public final ArrayList h = new ArrayList();
+    public boolean i = false;
 
-    public ps(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
+    public ps(int i10, ls lsVar) {
+        this.a = i10;
+        this.b = lsVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
-    }
-
-    public void setColor(int i10) {
-        if (this.d != i10) {
-            this.d = i10;
-            int alpha = Color.alpha(i10);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 192) / 255), i0.a.k(i10, (alpha * 144) / 255), i0.a.k(i10, 0)}, (float[]) null, Shader.TileMode.CLAMP);
-            this.c = linearGradient;
-            this.a.setShader(linearGradient);
-            this.c.setLocalMatrix(this.b);
-            invalidate();
+    public final void a() {
+        if (this.c || this.e) {
+            return;
         }
+        this.c = true;
+        boolean z10 = this.d;
+        int i10 = this.a;
+        if (!z10) {
+            os osVar = new os(this, 0);
+            MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+            messagesStorage.getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.p(this, messagesStorage, osVar, 14));
+            return;
+        }
+        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
+        getpopularappbots.limit = 20;
+        String str = this.g;
+        if (str == null) {
+            str = "";
+        }
+        getpopularappbots.offset = str;
+        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new y1(this, 3));
     }
 }

@@ -1,26 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z1 implements NotificationCenter.NotificationCenterDelegate {
+public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ DownloadController b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ z1(Object obj, int i10) {
+    public /* synthetic */ z1(DownloadController downloadController, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = downloadController;
+        this.c = messageObject;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ContactsLoadingObserver) this.b).lambda$new$0(i10, i11, objArr);
+                this.b.lambda$startDownloadFile$4(this.c);
+                break;
+            case 1:
+                this.b.lambda$onDownloadFail$9(this.c);
                 break;
             default:
-                ((TelegramMediaSession) this.b).lambda$new$0(i10, i11, objArr);
+                this.b.lambda$onDownloadComplete$6(this.c);
                 break;
         }
     }

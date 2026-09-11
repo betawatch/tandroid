@@ -1,65 +1,47 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class lr implements pr {
-    public final /* synthetic */ wr a;
+public final /* synthetic */ class lr implements q0.a {
+    public final /* synthetic */ int a;
 
-    public lr(wr wrVar) {
-        this.a = wrVar;
+    public /* synthetic */ lr(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.pr
-    public final void a(TLRPC.User user) {
-        wr.c0(this.a, user);
-    }
-
-    @Override // org.telegram.ui.pr
-    public final void b(long j3) {
-        wr wrVar = this.a;
-        ArrayList arrayList = wrVar.F;
-        a0.i iVar = wrVar.K;
-        TLRPC.User user = wrVar.getMessagesController().getUser(Long.valueOf(j3));
-        if (user != null) {
-            AndroidUtilities.runOnUIThread(new qh(21, this, user), 200L);
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    s5Var.c(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    s5Var.setHighQuality(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().isHighQuality());
+                    s5Var.f(s5Var.getPhotoEntry() != null ? s5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.gn0) {
+                    ((org.telegram.ui.Components.gn0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.gn0) {
+                    ((org.telegram.ui.Components.gn0) view3).a(false, true);
+                    break;
+                }
+                break;
         }
-        if (iVar.f(j3) == null) {
-            qr w02 = wrVar.w0();
-            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
-            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-            tL_channelParticipantAdmin.peer = tL_peerUser;
-            tL_peerUser.user_id = user.id;
-            tL_channelParticipantAdmin.date = wrVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantAdmin.promoted_by = wrVar.getAccountInstance().getUserConfig().clientUserId;
-            arrayList.add(tL_channelParticipantAdmin);
-            iVar.k(tL_channelParticipantAdmin, user.id);
-            Collections.sort(arrayList, new a4.e(27));
-            wrVar.A0(w02);
-        }
-    }
-
-    @Override // org.telegram.ui.pr
-    public final void c(long j3, TLObject tLObject) {
-        wr wrVar = this.a;
-        ArrayList arrayList = wrVar.F;
-        a0.i iVar = wrVar.K;
-        if (tLObject == null || iVar.f(j3) != null) {
-            return;
-        }
-        qr w02 = wrVar.w0();
-        arrayList.add(tLObject);
-        iVar.k(tLObject, j3);
-        Collections.sort(arrayList, new a4.e(27));
-        wrVar.A0(w02);
-    }
-
-    @Override // org.telegram.ui.pr
-    public final /* synthetic */ void d(long j3) {
     }
 }

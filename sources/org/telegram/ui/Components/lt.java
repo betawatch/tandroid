@@ -1,74 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class lt implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nt b;
+public final class lt extends EdgeEffect {
+    public final int a;
+    public final kt b;
+    public final RecyclerView c;
+    public final wp d;
+    public boolean e;
 
-    public /* synthetic */ lt(nt ntVar, int i10) {
+    public lt(RecyclerView recyclerView, int i10, kt ktVar) {
+        super(recyclerView.getContext());
+        this.d = new wp(this, 7);
+        this.c = recyclerView;
         this.a = i10;
-        this.b = ntVar;
+        this.b = ktVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        Bitmap bitmap;
-        switch (this.a) {
-            case 0:
-                nt ntVar = this.b;
-                try {
-                    i10 = ntVar.w + 0;
-                    bitmap = ntVar.b;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    ntVar.E = true;
-                }
-                if (bitmap != null) {
-                    if (bitmap.getWidth() == ntVar.x) {
-                        if (ntVar.b.getHeight() != i10) {
-                        }
-                        ntVar.b.eraseColor(0);
-                        ntVar.c.save();
-                        ntVar.c.translate(0.0f, 0);
-                        ntVar.c(ntVar.c);
-                        ntVar.c.restore();
-                        ntVar.b.prepareToDraw();
-                        AndroidUtilities.runOnUIThread(ntVar.H);
-                        break;
-                    }
-                }
-                Bitmap bitmap2 = ntVar.b;
-                if (bitmap2 != null) {
-                    bitmap2.recycle();
-                }
-                ntVar.b = Bitmap.createBitmap(ntVar.x, i10, Bitmap.Config.ARGB_8888);
-                ntVar.c = new Canvas(ntVar.b);
-                ntVar.b.eraseColor(0);
-                ntVar.c.save();
-                ntVar.c.translate(0.0f, 0);
-                ntVar.c(ntVar.c);
-                ntVar.c.restore();
-                ntVar.b.prepareToDraw();
-                AndroidUtilities.runOnUIThread(ntVar.H);
-            default:
-                nt ntVar2 = this.b;
-                ntVar2.f = false;
-                ntVar2.g();
-                if (!ntVar2.a) {
-                    ntVar2.j();
-                    break;
-                } else if (ntVar2.v == ntVar2.J) {
-                    ntVar2.G = true;
-                    break;
-                }
-                break;
+    public final void a() {
+        boolean b10 = b();
+        if (this.e != b10) {
+            this.e = b10;
+            kt ktVar = this.b;
+            if (ktVar != null) {
+                ktVar.a(this.a, b10);
+            }
         }
+    }
+
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
+        }
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i10) {
+        super.onAbsorb(i10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7) {
+        super.onPull(f7);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f7, float f10) {
+        float onPullDistance = super.onPullDistance(f7, f10);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i10, int i11) {
+        super.setSize(i10, i11);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7, float f10) {
+        super.onPull(f7, f10);
+        a();
     }
 }

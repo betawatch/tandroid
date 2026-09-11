@@ -34,9 +34,9 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class rs0 extends org.telegram.ui.ActionBar.k {
+public final class rs0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 a;
     public final /* synthetic */ PhotoViewer b;
 
@@ -45,7 +45,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         this.a = f6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k
+    @Override // org.telegram.ui.ActionBar.j
     public final boolean a() {
         PhotoViewer photoViewer = this.b;
         if (photoViewer.T4 != null || photoViewer.b5 != null) {
@@ -63,166 +63,169 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         return pathToAttach.exists() || file.exists() || fileLoader2.getPathToAttach(imageLocation2 != null ? imageLocation2.location : null, PhotoViewer.q1(imageLocation2), false).exists();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:202:0x040d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:200:0x040a, code lost:
     
-        if (w.f.o(r0) != false) goto L204;
+        if (w.f.o(r0) != false) goto L202;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x07f4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:323:0x07f9, code lost:
     
-        if (r14 == org.telegram.messenger.UserConfig.getInstance(r13).getClientUserId()) goto L352;
+        if (r12 == org.telegram.messenger.UserConfig.getInstance(r15).getClientUserId()) goto L349;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:327:0x07f8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:324:0x07fd, code lost:
     
-        if (r4 == null) goto L357;
+        if (r4 == null) goto L354;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:328:0x07fa, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:325:0x07ff, code lost:
     
-        r13 = r7.T;
+        r12 = r7.T;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:329:0x0804, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:326:0x0809, code lost:
     
-        if (org.telegram.messenger.MessagesController.getInstance(r13).canRevokePmInbox == false) goto L357;
+        if (org.telegram.messenger.MessagesController.getInstance(r12).canRevokePmInbox == false) goto L354;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:330:0x0806, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:327:0x080b, code lost:
     
-        r13 = true;
+        r12 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:331:0x0809, code lost:
-    
-        r14 = r7.T4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:332:0x0811, code lost:
-    
-        if (r14.messageOwner.action == null) goto L362;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:333:0x0813, code lost:
-    
-        r14 = r7.T4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:334:0x081d, code lost:
-    
-        if ((r14.messageOwner.action instanceof org.telegram.tgnet.TLRPC.TL_messageActionEmpty) == false) goto L344;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:335:0x081f, code lost:
-    
-        r14 = r7.T4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:336:0x0827, code lost:
-    
-        if (r14.isOut() != false) goto L367;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:337:0x0829, code lost:
-    
-        if (r13 != false) goto L367;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:339:0x082f, code lost:
-    
-        if (org.telegram.messenger.ChatObject.hasAdminRights(r9) == false) goto L344;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:340:0x0831, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:328:0x080e, code lost:
     
         r13 = r7.T4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:341:0x083a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:329:0x0816, code lost:
     
-        if ((r10 - r13.messageOwner.date) > r12) goto L344;
+        if (r13.messageOwner.action == null) goto L359;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:342:0x083c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:330:0x0818, code lost:
     
-        r10 = r7.y;
-        r14 = new android.widget.FrameLayout(r10);
-        r10 = r7.y;
-        r8 = new org.telegram.ui.Cells.z1(r10, 1, r2);
+        r13 = r7.T4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:331:0x0822, code lost:
+    
+        if ((r13.messageOwner.action instanceof org.telegram.tgnet.TLRPC.TL_messageActionEmpty) == false) goto L341;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:332:0x0824, code lost:
+    
+        r13 = r7.T4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:333:0x082c, code lost:
+    
+        if (r13.isOut() != false) goto L364;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:334:0x082e, code lost:
+    
+        if (r12 != false) goto L364;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:336:0x0834, code lost:
+    
+        if (org.telegram.messenger.ChatObject.hasAdminRights(r5) == false) goto L341;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x0836, code lost:
+    
+        r12 = r7.T4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:338:0x083f, code lost:
+    
+        if ((r8 - r12.messageOwner.date) > r9) goto L341;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:339:0x0841, code lost:
+    
+        r8 = r7.y;
+        r15 = new android.widget.FrameLayout(r8);
+        r9 = r7.y;
+        r8 = new org.telegram.ui.Cells.z1(r9, 1, r2);
         r8.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:343:0x0857, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:340:0x085c, code lost:
     
-        if (r9 == null) goto L372;
+        if (r5 == null) goto L369;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:344:0x0859, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:341:0x085e, code lost:
     
-        r2 = "Cancel";
+        r5 = "Cancel";
+        r2 = null;
+        r11 = 0;
         r8.e(org.telegram.messenger.LocaleController.getString("DeleteForAll", org.telegram.messenger.R.string.DeleteForAll), "", false, false, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:346:0x088c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:343:0x0896, code lost:
     
-        if (org.telegram.messenger.LocaleController.isRTL == false) goto L376;
+        if (org.telegram.messenger.LocaleController.isRTL == false) goto L373;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:347:0x088e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:344:0x0898, code lost:
     
         r4 = org.telegram.messenger.AndroidUtilities.dp(16.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:349:0x0899, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:346:0x08a3, code lost:
     
-        if (org.telegram.messenger.LocaleController.isRTL == false) goto L380;
+        if (org.telegram.messenger.LocaleController.isRTL == false) goto L377;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:350:0x089b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:347:0x08a5, code lost:
     
         r6 = org.telegram.messenger.AndroidUtilities.dp(8.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:351:0x08a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:348:0x08ae, code lost:
     
-        r8.setPadding(r4, 0, r6, 0);
-        r14.addView(r8, w7.a6.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        r8.setPadding(r4, r11, r6, r11);
+        r15.addView(r8, w7.x5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         r8.setOnClickListener(new org.telegram.ui.m8(5, r0));
-        r3.n(r14);
+        r3.n(r15);
         r3.a.G = 9;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:357:0x08a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:354:0x08aa, code lost:
     
         r6 = org.telegram.messenger.AndroidUtilities.dp(16.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:358:0x0893, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:355:0x089d, code lost:
     
         r4 = org.telegram.messenger.AndroidUtilities.dp(8.0f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:359:0x086b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:356:0x0873, code lost:
     
-        r2 = "Cancel";
+        r5 = "Cancel";
+        r2 = null;
+        r11 = 0;
         r8.e(org.telegram.messenger.LocaleController.formatString("DeleteForUser", org.telegram.messenger.R.string.DeleteForUser, org.telegram.messenger.UserObject.getFirstName(r4)), "", false, false, false);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:360:0x0808, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:357:0x080d, code lost:
     
-        r13 = false;
+        r12 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:361:0x07f6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:358:0x07fb, code lost:
     
-        if (r9 != null) goto L353;
+        if (r5 != null) goto L350;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:370:0x06cf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:367:0x06cd, code lost:
     
-        if (r4 == r10) goto L309;
+        if (r4 == r8) goto L306;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:374:0x06df, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:371:0x06dd, code lost:
     
-        if (r4.isVideo() != false) goto L326;
+        if (r4.isVideo() != false) goto L323;
      */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x015d  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x0334  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x04ed  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x050c  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x05f0  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x04f3  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x04e9  */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x06af  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x0772  */
-    /* JADX WARN: Removed duplicated region for block: B:354:0x08f9  */
-    /* JADX WARN: Removed duplicated region for block: B:356:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:365:0x06bd  */
-    /* JADX WARN: Removed duplicated region for block: B:532:0x0dc1  */
-    /* JADX WARN: Removed duplicated region for block: B:534:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x01c9  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01d8  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0246  */
-    /* JADX WARN: Type inference failed for: r14v15 */
-    /* JADX WARN: Type inference failed for: r14v16 */
-    /* JADX WARN: Type inference failed for: r14v17, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r14v18 */
-    @Override // org.telegram.ui.ActionBar.k
+    /* JADX WARN: Removed duplicated region for block: B:103:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x032f  */
+    /* JADX WARN: Removed duplicated region for block: B:230:0x04d5  */
+    /* JADX WARN: Removed duplicated region for block: B:232:0x04e7  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0506  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x05eb  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x04ed  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x06ad  */
+    /* JADX WARN: Removed duplicated region for block: B:308:0x0776  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x0901  */
+    /* JADX WARN: Removed duplicated region for block: B:353:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x06bb  */
+    /* JADX WARN: Removed duplicated region for block: B:531:0x0dcf  */
+    /* JADX WARN: Removed duplicated region for block: B:533:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01cb  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01da  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0243  */
+    /* JADX WARN: Type inference failed for: r14v10 */
+    /* JADX WARN: Type inference failed for: r14v7 */
+    /* JADX WARN: Type inference failed for: r14v8 */
+    /* JADX WARN: Type inference failed for: r14v9, types: [boolean, int] */
+    @Override // org.telegram.ui.ActionBar.j
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -237,8 +240,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         MessageObject messageObject4;
         MessageObject messageObject5;
         MessageObject messageObject6;
-        yu0 yu0Var;
-        yu0 yu0Var2;
+        wu0 wu0Var;
+        wu0 wu0Var2;
         int i13;
         Activity activity3;
         MessageObject messageObject7;
@@ -256,13 +259,14 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         TLObject tLObject;
         Activity activity7;
         MessageObject messageObject16;
-        org.telegram.ui.Components.hy0 hy0Var;
+        org.telegram.ui.Components.ux0 ux0Var;
         MessageObject messageObject17;
         ImageLocation imageLocation;
         ImageLocation imageLocation2;
+        TLRPC.Photo photo;
         ImageLocation imageLocation3;
         ImageLocation imageLocation4;
-        TLRPC.Photo photo;
+        TLRPC.Photo photo2;
         int i14;
         Activity activity8;
         long j3;
@@ -274,7 +278,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         ImageLocation imageLocation7;
         ImageLocation imageLocation8;
         ImageLocation imageLocation9;
-        cv0 cv0Var;
+        String str;
+        av0 av0Var;
         int i17;
         ImageLocation imageLocation10;
         ImageLocation imageLocation11;
@@ -303,32 +308,32 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         int i33;
         int i34;
         MessageObject messageObject19;
-        yu0 yu0Var3;
-        yu0 yu0Var4;
+        wu0 wu0Var3;
+        wu0 wu0Var4;
         int i35;
         int i36;
         int i37;
-        yu0 yu0Var5;
+        wu0 wu0Var5;
         MessageObject messageObject20;
-        eo eoVar;
+        co coVar;
         int i38;
         int i39;
         MessageObject messageObject21;
-        eo eoVar2;
-        eo eoVar3;
+        co coVar2;
+        co coVar3;
         MessageObject messageObject22;
         int i40;
         MessageObject messageObject23;
-        org.telegram.ui.ActionBar.w0 w0Var;
+        org.telegram.ui.ActionBar.v0 v0Var;
         View findViewWithTag;
-        org.telegram.ui.Components.zf0 zf0Var;
+        org.telegram.ui.Components.qf0 qf0Var;
         PhotoViewer photoViewer;
         Activity activity9;
-        cv0 cv0Var2;
+        av0 av0Var2;
         MessageObject messageObject24;
         boolean z10;
         Activity activity10;
-        cv0 cv0Var3;
+        av0 av0Var3;
         CharSequence a02;
         ImageLocation imageLocation14;
         MessageObject messageObject25;
@@ -355,8 +360,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         MessageObject messageObject33;
         int i48;
         Activity activity11;
-        cv0 cv0Var4;
-        cv0 cv0Var5;
+        av0 av0Var4;
+        av0 av0Var5;
         MessageObject messageObject34;
         Activity activity12;
         MessageObject messageObject35;
@@ -364,11 +369,10 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         Activity activity13;
         MessageObject messageObject36;
         ArrayList arrayList;
-        eo eoVar4;
-        String str;
+        co coVar4;
         MessageObject messageObject37;
         MessageObject messageObject38;
-        eo eoVar5;
+        co coVar5;
         Activity activity14;
         boolean z13;
         Activity activity15;
@@ -376,26 +380,26 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         int z15;
         int z16;
         int z17;
-        eo eoVar6;
+        co coVar6;
         MessageObject messageObject39;
         MessageObject messageObject40;
         int i49;
-        cv0 cv0Var6;
+        av0 av0Var6;
         MessageObject messageObject41;
         MessageObject messageObject42;
         MessageObject messageObject43;
         String str2;
-        eo eoVar7;
+        co coVar7;
         int i50;
         MessageObject messageObject44;
         MessageObject messageObject45;
-        eo eoVar8;
+        co coVar8;
         Activity activity16;
         Activity activity17;
-        eo eoVar9;
-        of.g m12;
-        org.telegram.ui.Components.t7 t7Var;
-        eo eoVar10;
+        co coVar9;
+        pf.g m12;
+        org.telegram.ui.Components.u7 u7Var;
+        co coVar10;
         MessageObject.GroupedMessages groupedMessages;
         MessageObject messageObject46;
         Activity activity18;
@@ -410,12 +414,12 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         MessageObject messageObject49;
         MessageObject messageObject50;
         ImageLocation imageLocation17;
-        yu0 yu0Var6;
+        wu0 wu0Var6;
         File file;
         ?? r14;
-        yu0 yu0Var7;
+        wu0 wu0Var7;
         int i51;
-        yu0 yu0Var8;
+        wu0 wu0Var8;
         int i52;
         boolean a2;
         ImageLocation imageLocation18;
@@ -429,7 +433,6 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         boolean z21;
         MessageObject messageObject51;
         boolean z22;
-        File file2;
         Activity activity19;
         Activity activity20;
         MessageObject messageObject52;
@@ -447,7 +450,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
         int i58;
         TLObject p12;
         int i59;
-        eo eoVar11;
+        co coVar11;
         MessageObject messageObject60;
         Activity activity21;
         Activity activity22;
@@ -471,10 +474,9 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
             }
             return;
         }
-        TLRPC.Photo photo2 = null;
         MessageObject.GroupedMessages groupedMessages2 = null;
-        String str3 = null;
-        photo2 = null;
+        r11 = null;
+        File file2 = null;
         if (i10 == 2) {
             int i60 = Build.VERSION.SDK_INT;
             if (i60 >= 23 && (i60 <= 28 || BuildVars.NO_SCOPED_STORAGE)) {
@@ -486,11 +488,11 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                 }
             }
             final ArrayList arrayList2 = new ArrayList(1);
-            eoVar10 = photoViewer2.l4;
-            if (eoVar10 != null) {
-                eoVar11 = photoViewer2.l4;
+            coVar10 = photoViewer2.l4;
+            if (coVar10 != null) {
+                coVar11 = photoViewer2.l4;
                 messageObject60 = photoViewer2.T4;
-                groupedMessages = eoVar11.y8(messageObject60.getGroupId());
+                groupedMessages = coVar11.y8(messageObject60.getGroupId());
             } else {
                 groupedMessages = null;
             }
@@ -502,7 +504,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
             }
             if (arrayList2.size() > 1) {
                 boolean z24 = false;
-                final boolean z25 = false;
+                boolean z25 = false;
                 boolean z26 = false;
                 for (int i61 = 0; i61 < arrayList2.size(); i61++) {
                     MessageObject messageObject61 = (MessageObject) arrayList2.get(i61);
@@ -527,15 +529,15 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         if (!messageObject49.isLivePhoto()) {
                             string = LocaleController.getString("ThisMedia", R.string.ThisMedia);
                             final int i62 = true ? 1 : 0;
-                            alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.c2(this) { // from class: org.telegram.ui.is0
+                            alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.js0
                                 public final /* synthetic */ rs0 b;
 
                                 {
                                     this.b = this;
                                 }
 
-                                @Override // org.telegram.ui.ActionBar.c2
-                                public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
+                                @Override // org.telegram.ui.ActionBar.a2
+                                public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i63) {
                                     switch (i62) {
                                         case 0:
                                             rs0 rs0Var = this.b;
@@ -569,7 +571,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                                         break;
                                                     }
                                                 } else if (pathToAttach2 != null && pathToAttach2.exists() && file3 != null && file3.exists()) {
-                                                    MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new hs0(rs0Var2, 1));
+                                                    MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new is0(rs0Var2, 1));
                                                     break;
                                                 } else {
                                                     photoViewer4.U2();
@@ -580,15 +582,17 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                     }
                                 }
                             });
+                            String formatPluralString = (!z24 || z26) ? LocaleController.formatPluralString("AllNMedia", arrayList2.size(), new Object[0]) : LocaleController.formatPluralString("AllNPhotos", arrayList2.size(), new Object[0]);
                             final boolean z27 = z24;
-                            final boolean z28 = z26;
-                            alertDialog$Builder.k((!z24 || z26) ? LocaleController.formatPluralString("AllNMedia", arrayList2.size(), new Object[0]) : LocaleController.formatPluralString("AllNPhotos", arrayList2.size(), new Object[0]), new org.telegram.ui.ActionBar.c2() { // from class: org.telegram.ui.os0
-                                @Override // org.telegram.ui.ActionBar.c2
-                                public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i63) {
+                            final boolean z28 = z25;
+                            final boolean z29 = z26;
+                            alertDialog$Builder.k(formatPluralString, new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.os0
+                                @Override // org.telegram.ui.ActionBar.a2
+                                public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i63) {
                                     rs0 rs0Var = rs0.this;
                                     PhotoViewer photoViewer3 = rs0Var.b;
                                     int[] iArr = new int[1];
-                                    final sr0 sr0Var = new sr0(rs0Var, new int[1], iArr, z27, z25, z28);
+                                    final sr0 sr0Var = new sr0(rs0Var, new int[1], iArr, z27, z28, z29);
                                     int i64 = 0;
                                     while (true) {
                                         ArrayList arrayList3 = arrayList2;
@@ -671,8 +675,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                     }
                                 }
                             });
-                            alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new org.telegram.ui.Components.gp0(29));
-                            org.telegram.ui.ActionBar.d2 a10 = alertDialog$Builder.a();
+                            alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new org.telegram.ui.Components.wo0(28));
+                            org.telegram.ui.ActionBar.b2 a10 = alertDialog$Builder.a();
                             z18 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                             a10.i(z18);
                             a10.show();
@@ -696,15 +700,15 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                 }
                 string = LocaleController.getString("ThisPhoto", R.string.ThisPhoto);
                 final int i622 = true ? 1 : 0;
-                alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.c2(this) { // from class: org.telegram.ui.is0
+                alertDialog$Builder.h(string, new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.js0
                     public final /* synthetic */ rs0 b;
 
                     {
                         this.b = this;
                     }
 
-                    @Override // org.telegram.ui.ActionBar.c2
-                    public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                    @Override // org.telegram.ui.ActionBar.a2
+                    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i632) {
                         switch (i622) {
                             case 0:
                                 rs0 rs0Var = this.b;
@@ -738,7 +742,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                             break;
                                         }
                                     } else if (pathToAttach2 != null && pathToAttach2.exists() && file3 != null && file3.exists()) {
-                                        MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new hs0(rs0Var2, 1));
+                                        MediaController.saveFile(pathToAttach2.toString(), file3.toString(), photoViewer4.y, new is0(rs0Var2, 1));
                                         break;
                                     } else {
                                         photoViewer4.U2();
@@ -749,15 +753,18 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         }
                     }
                 });
+                if (z24) {
+                }
                 final boolean z272 = z24;
-                final boolean z282 = z26;
-                alertDialog$Builder.k((!z24 || z26) ? LocaleController.formatPluralString("AllNMedia", arrayList2.size(), new Object[0]) : LocaleController.formatPluralString("AllNPhotos", arrayList2.size(), new Object[0]), new org.telegram.ui.ActionBar.c2() { // from class: org.telegram.ui.os0
-                    @Override // org.telegram.ui.ActionBar.c2
-                    public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                final boolean z282 = z25;
+                final boolean z292 = z26;
+                alertDialog$Builder.k(formatPluralString, new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.os0
+                    @Override // org.telegram.ui.ActionBar.a2
+                    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i632) {
                         rs0 rs0Var = rs0.this;
                         PhotoViewer photoViewer3 = rs0Var.b;
                         int[] iArr = new int[1];
-                        final sr0 sr0Var = new sr0(rs0Var, new int[1], iArr, z272, z25, z282);
+                        final sr0 sr0Var = new sr0(rs0Var, new int[1], iArr, z272, z282, z292);
                         int i64 = 0;
                         while (true) {
                             ArrayList arrayList3 = arrayList2;
@@ -840,8 +847,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         }
                     }
                 });
-                alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new org.telegram.ui.Components.gp0(29));
-                org.telegram.ui.ActionBar.d2 a102 = alertDialog$Builder.a();
+                alertDialog$Builder.i(LocaleController.getString("Cancel", R.string.Cancel), new org.telegram.ui.Components.wo0(28));
+                org.telegram.ui.ActionBar.b2 a102 = alertDialog$Builder.a();
                 z18 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                 a102.i(z18);
                 a102.show();
@@ -886,13 +893,13 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     i53 = photoViewer2.T;
                     FileLoader fileLoader2 = FileLoader.getInstance(i53);
                     imageLocation19 = photoViewer2.a5;
-                    TLObject tLObject2 = imageLocation19 == null ? null : imageLocation19.location;
+                    TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = imageLocation19 == null ? null : imageLocation19.location;
                     j14 = photoViewer2.z5;
                     if (j14 == 0) {
                         z21 = photoViewer2.B5;
                         if (!z21) {
                             z20 = false;
-                            pathToAttach = fileLoader2.getPathToAttach(tLObject2, q12, z20);
+                            pathToAttach = fileLoader2.getPathToAttach(tL_fileLocationToBeDeprecated, q12, z20);
                             if (pathToAttach != null && !pathToAttach.exists()) {
                                 i54 = photoViewer2.T;
                                 FileLoader fileLoader3 = FileLoader.getInstance(i54);
@@ -907,7 +914,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         }
                     }
                     z20 = true;
-                    pathToAttach = fileLoader2.getPathToAttach(tLObject2, q12, z20);
+                    pathToAttach = fileLoader2.getPathToAttach(tL_fileLocationToBeDeprecated, q12, z20);
                     if (pathToAttach != null) {
                         i54 = photoViewer2.T;
                         FileLoader fileLoader32 = FileLoader.getInstance(i54);
@@ -919,14 +926,14 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     r14 = q12 == null && (q12.equals("webm") || q12.equals("mp4") || q12.equals("gif"));
                     file = pathToAttach;
                 } else {
-                    yu0Var6 = photoViewer2.j7;
-                    if (yu0Var6 != null) {
-                        yu0Var7 = photoViewer2.j7;
+                    wu0Var6 = photoViewer2.j7;
+                    if (wu0Var6 != null) {
+                        wu0Var7 = photoViewer2.j7;
                         i51 = photoViewer2.P4;
-                        file = yu0Var7.b(i51);
-                        yu0Var8 = photoViewer2.j7;
+                        file = wu0Var7.b(i51);
+                        wu0Var8 = photoViewer2.j7;
                         i52 = photoViewer2.P4;
-                        a2 = yu0Var8.a(i52);
+                        a2 = wu0Var8.a(i52);
                     } else {
                         file = null;
                         r14 = 0;
@@ -955,37 +962,33 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                     i56 = photoViewer2.T;
                                     file2 = FileLoader.getInstance(i56).getPathToAttach(document, true);
                                 }
-                                if (z22) {
-                                    if (file == null || !file.exists()) {
-                                        photoViewer2.U2();
-                                        return;
-                                    }
-                                    String file3 = file.toString();
-                                    activity19 = photoViewer2.y;
-                                    MediaController.saveFile(file3, activity19, r14, null, null, new ls0(this, r14, true ? 1 : 0));
-                                    return;
-                                }
-                                if (file == null || !file.exists() || file2 == null || !file2.exists()) {
-                                    photoViewer2.U2();
-                                    return;
-                                }
-                                String file4 = file.toString();
-                                String file5 = file2.toString();
-                                activity20 = photoViewer2.y;
-                                MediaController.saveFile(file4, file5, activity20, new hs0(this, 0));
-                                return;
                             }
                         }
-                        file2 = null;
-                        if (z22) {
+                        if (!z22) {
+                            if (file == null || !file.exists()) {
+                                photoViewer2.U2();
+                                return;
+                            }
+                            String file3 = file.toString();
+                            activity19 = photoViewer2.y;
+                            MediaController.saveFile(file3, activity19, r14, null, null, new ls0(this, r14, true ? 1 : 0));
+                            return;
                         }
+                        if (file == null || !file.exists() || file2 == null || !file2.exists()) {
+                            photoViewer2.U2();
+                            return;
+                        }
+                        String file4 = file.toString();
+                        String file5 = file2.toString();
+                        activity20 = photoViewer2.y;
+                        MediaController.saveFile(file4, file5, activity20, new is0(this, 0));
+                        return;
                     }
                 }
                 z22 = false;
                 if (z22) {
                 }
-                file2 = null;
-                if (z22) {
+                if (!z22) {
                 }
             }
             r14 = a2;
@@ -998,16 +1001,15 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
             z22 = false;
             if (z22) {
             }
-            file2 = null;
-            if (z22) {
+            if (!z22) {
             }
         } else {
             if (i10 == 24) {
-                of.b d02 = of.b.d0();
+                pf.b W = pf.b.W();
                 m12 = photoViewer2.m1();
-                d02.o0(m12);
-                t7Var = photoViewer2.G0;
-                t7Var.performClick();
+                W.g0(m12);
+                u7Var = photoViewer2.G0;
+                u7Var.performClick();
                 return;
             }
             if (i10 == 3) {
@@ -1015,17 +1017,17 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     photoViewer2.s4 = true;
                     Bundle bundle = new Bundle();
                     bundle.putLong("dialog_id", photoViewer2.E5);
-                    org.telegram.ui.Components.la0 la0Var = new org.telegram.ui.Components.la0(bundle, null);
-                    eoVar8 = photoViewer2.l4;
-                    if (eoVar8 != null) {
-                        eoVar9 = photoViewer2.l4;
-                        la0Var.X(eoVar9.v8());
+                    org.telegram.ui.Components.ca0 ca0Var = new org.telegram.ui.Components.ca0(bundle, null);
+                    coVar8 = photoViewer2.l4;
+                    if (coVar8 != null) {
+                        coVar9 = photoViewer2.l4;
+                        ca0Var.X(coVar9.v8());
                     }
                     photoViewer2.G0(false, false);
                     activity16 = photoViewer2.y;
                     if (activity16 instanceof LaunchActivity) {
                         activity17 = photoViewer2.y;
-                        ((LaunchActivity) activity17).q0(la0Var, false, true);
+                        ((LaunchActivity) activity17).q0(ca0Var, false, true);
                         return;
                     }
                     return;
@@ -1069,7 +1071,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                 if (activity instanceof LaunchActivity) {
                     activity2 = photoViewer2.y;
                     LaunchActivity launchActivity = (LaunchActivity) activity2;
-                    launchActivity.q0(new eo(bundle2), launchActivity.S() > 1 || AndroidUtilities.isTablet(), true);
+                    launchActivity.q0(new co(bundle2), launchActivity.S() > 1 || AndroidUtilities.isTablet(), true);
                 }
                 photoViewer2.G0(false, false);
                 photoViewer2.T4 = null;
@@ -1083,8 +1085,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
             }
             if (i10 == 25) {
                 if (photoViewer2.m4 != null) {
-                    cv0Var6 = photoViewer2.d;
-                    if (cv0Var6 == null) {
+                    av0Var6 = photoViewer2.d;
+                    if (av0Var6 == null) {
                         return;
                     }
                     messageObject41 = photoViewer2.T4;
@@ -1110,17 +1112,17 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                 str2 = pathToMessage.getAbsolutePath();
                             }
                         }
-                        String str4 = str2;
-                        if (TextUtils.isEmpty(str4)) {
+                        String str3 = str2;
+                        if (TextUtils.isEmpty(str3)) {
                             return;
                         }
-                        eoVar7 = photoViewer2.l4;
+                        coVar7 = photoViewer2.l4;
                         ArrayList arrayList3 = new ArrayList();
-                        arrayList3.add(new MediaController.PhotoEntry(0, 0, 0L, str4, 0, false, 0, 0, 0L));
-                        this.b.f2(arrayList3, 0, 11, false, new ps0(), eoVar7);
+                        arrayList3.add(new MediaController.PhotoEntry(0, 0, 0L, str3, 0, false, 0, 0, 0L));
+                        this.b.f2(arrayList3, 0, 11, false, new ps0(), coVar7);
                         photoViewer2.X0(null, null, false, null);
                         photoViewer2.l2();
-                        tt.q().x();
+                        st.q().x();
                         return;
                     }
                     return;
@@ -1147,14 +1149,11 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         messageObject36 = photoViewer2.T4;
                         ((LaunchActivity) activity13).K0(messageObject36.currentAccount);
                         arrayList = new ArrayList(1);
-                        eoVar4 = photoViewer2.l4;
-                        if (eoVar4 == null) {
-                            eoVar6 = photoViewer2.l4;
+                        coVar4 = photoViewer2.l4;
+                        if (coVar4 != null) {
+                            coVar6 = photoViewer2.l4;
                             messageObject39 = photoViewer2.T4;
-                            str = "Cancel";
-                            groupedMessages2 = eoVar6.y8(messageObject39.getGroupId());
-                        } else {
-                            str = "Cancel";
+                            groupedMessages2 = coVar6.y8(messageObject39.getGroupId());
                         }
                         if (groupedMessages2 == null) {
                             arrayList.addAll(groupedMessages2.messages);
@@ -1171,14 +1170,14 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             bundle3.putBoolean("onlySelect", true);
                             bundle3.putBoolean("canSelectTopics", true);
                             bundle3.putInt("dialogsType", 3);
-                            wy wyVar = new wy(bundle3);
+                            uy uyVar = new uy(bundle3);
                             ArrayList arrayList4 = new ArrayList();
                             messageObject38 = photoViewer2.T4;
                             arrayList4.add(messageObject38);
-                            eoVar5 = photoViewer2.l4;
-                            wyVar.C2 = new a7(this, arrayList4, eoVar5, 18);
+                            coVar5 = photoViewer2.l4;
+                            uyVar.C2 = new b7(this, arrayList4, coVar5, 18);
                             activity14 = photoViewer2.y;
-                            ((LaunchActivity) activity14).q0(wyVar, false, true);
+                            ((LaunchActivity) activity14).q0(uyVar, false, true);
                             photoViewer2.G0(false, false);
                             return;
                         }
@@ -1195,15 +1194,15 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         alertDialog$Builder2.g(LocaleController.getString("ForwardGroupMediaMessage", R.string.ForwardGroupMediaMessage));
                         alertDialog$Builder2.a.I = org.telegram.ui.ActionBar.j6.pg;
                         final int i65 = 0;
-                        alertDialog$Builder2.h(z13 ? LocaleController.getString("ThisPhoto", R.string.ThisPhoto) : LocaleController.getString("ThisMedia", R.string.ThisMedia), new org.telegram.ui.ActionBar.c2(this) { // from class: org.telegram.ui.is0
+                        alertDialog$Builder2.h(z13 ? LocaleController.getString("ThisPhoto", R.string.ThisPhoto) : LocaleController.getString("ThisMedia", R.string.ThisMedia), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.js0
                             public final /* synthetic */ rs0 b;
 
                             {
                                 this.b = this;
                             }
 
-                            @Override // org.telegram.ui.ActionBar.c2
-                            public final void f(org.telegram.ui.ActionBar.d2 d2Var, int i632) {
+                            @Override // org.telegram.ui.ActionBar.a2
+                            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i632) {
                                 switch (i65) {
                                     case 0:
                                         rs0 rs0Var = this.b;
@@ -1237,7 +1236,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                                     break;
                                                 }
                                             } else if (pathToAttach2 != null && pathToAttach2.exists() && file32 != null && file32.exists()) {
-                                                MediaController.saveFile(pathToAttach2.toString(), file32.toString(), photoViewer4.y, new hs0(rs0Var2, 1));
+                                                MediaController.saveFile(pathToAttach2.toString(), file32.toString(), photoViewer4.y, new is0(rs0Var2, 1));
                                                 break;
                                             } else {
                                                 photoViewer4.U2();
@@ -1248,9 +1247,9 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                 }
                             }
                         });
-                        alertDialog$Builder2.k(z13 ? LocaleController.formatPluralString("AllNPhotos", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("AllNMedia", arrayList.size(), new Object[0]), new l80(23, this, arrayList));
-                        alertDialog$Builder2.i(LocaleController.getString(str, R.string.Cancel), new js0(0));
-                        org.telegram.ui.ActionBar.d2 a11 = alertDialog$Builder2.a();
+                        alertDialog$Builder2.k(z13 ? LocaleController.formatPluralString("AllNPhotos", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("AllNMedia", arrayList.size(), new Object[0]), new z10(28, this, arrayList));
+                        alertDialog$Builder2.i(LocaleController.getString("Cancel", R.string.Cancel), new org.telegram.ui.Components.wo0(29));
+                        org.telegram.ui.ActionBar.b2 a11 = alertDialog$Builder2.a();
                         z14 = photoViewer2.z1(org.telegram.ui.ActionBar.j6.ug);
                         a11.i(z14);
                         a11.show();
@@ -1276,8 +1275,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                 messageObject36 = photoViewer2.T4;
                 ((LaunchActivity) activity13).K0(messageObject36.currentAccount);
                 arrayList = new ArrayList(1);
-                eoVar4 = photoViewer2.l4;
-                if (eoVar4 == null) {
+                coVar4 = photoViewer2.l4;
+                if (coVar4 != null) {
                 }
                 if (groupedMessages2 == null) {
                 }
@@ -1293,12 +1292,12 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                 if (i10 == 26) {
                     activity11 = photoViewer2.y;
                     if (activity11 != null) {
-                        cv0Var4 = photoViewer2.d;
-                        if (cv0Var4 == null) {
+                        av0Var4 = photoViewer2.d;
+                        if (av0Var4 == null) {
                             return;
                         }
-                        cv0Var5 = photoViewer2.d;
-                        cv0Var5.I();
+                        av0Var5 = photoViewer2.d;
+                        av0Var5.I();
                         photoViewer2.G0(true, false);
                         return;
                     }
@@ -1309,8 +1308,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     if (activity9 == null) {
                         return;
                     }
-                    cv0Var2 = photoViewer2.d;
-                    if (cv0Var2 == null) {
+                    av0Var2 = photoViewer2.d;
+                    if (av0Var2 == null) {
                         return;
                     }
                     messageObject24 = photoViewer2.T4;
@@ -1324,8 +1323,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                 z10 = ChatObject.isChannel(MessagesController.getInstance(i48).getChat(Long.valueOf(-dialogId2)));
                                 activity10 = photoViewer2.y;
                                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(activity10);
-                                cv0Var3 = photoViewer2.d;
-                                a02 = cv0Var3.a0();
+                                av0Var3 = photoViewer2.d;
+                                a02 = av0Var3.a0();
                                 if (a02 == null) {
                                     alertDialog$Builder3.l(LocaleController.getString("AreYouSureDeletePhotoTitle", R.string.AreYouSureDeletePhotoTitle));
                                     alertDialog$Builder3.g(a02);
@@ -1401,10 +1400,11 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                         }
                                     }
                                 }
-                                String str5 = "Cancel";
-                                alertDialog$Builder3.k(LocaleController.getString("Delete", R.string.Delete), new l80(24, this, zArr));
-                                alertDialog$Builder3.h(LocaleController.getString(str5, R.string.Cancel), null);
-                                org.telegram.ui.ActionBar.d2 a12 = alertDialog$Builder3.a();
+                                String str4 = "Cancel";
+                                org.telegram.ui.ActionBar.a2 a2Var = null;
+                                alertDialog$Builder3.k(LocaleController.getString("Delete", R.string.Delete), new z10(29, this, zArr));
+                                alertDialog$Builder3.h(LocaleController.getString(str4, R.string.Cancel), a2Var);
+                                org.telegram.ui.ActionBar.b2 a12 = alertDialog$Builder3.a();
                                 photoViewer2.S2(alertDialog$Builder3);
                                 textView = (TextView) a12.d(-1);
                                 if (textView == null) {
@@ -1419,25 +1419,26 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     z10 = false;
                     activity10 = photoViewer2.y;
                     AlertDialog$Builder alertDialog$Builder32 = new AlertDialog$Builder(activity10);
-                    cv0Var3 = photoViewer2.d;
-                    a02 = cv0Var3.a0();
+                    av0Var3 = photoViewer2.d;
+                    a02 = av0Var3.a0();
                     if (a02 == null) {
                     }
                     boolean[] zArr2 = new boolean[1];
                     messageObject29 = photoViewer2.T4;
                     if (messageObject29 != null) {
                     }
-                    String str52 = "Cancel";
-                    alertDialog$Builder32.k(LocaleController.getString("Delete", R.string.Delete), new l80(24, this, zArr2));
-                    alertDialog$Builder32.h(LocaleController.getString(str52, R.string.Cancel), null);
-                    org.telegram.ui.ActionBar.d2 a122 = alertDialog$Builder32.a();
+                    String str42 = "Cancel";
+                    org.telegram.ui.ActionBar.a2 a2Var2 = null;
+                    alertDialog$Builder32.k(LocaleController.getString("Delete", R.string.Delete), new z10(29, this, zArr2));
+                    alertDialog$Builder32.h(LocaleController.getString(str42, R.string.Cancel), a2Var2);
+                    org.telegram.ui.ActionBar.b2 a122 = alertDialog$Builder32.a();
                     photoViewer2.S2(alertDialog$Builder32);
                     textView = (TextView) a122.d(-1);
                     if (textView == null) {
                     }
                 } else {
                     if (i10 == 9 || i10 == 16) {
-                        PhotoViewer.F(photoViewer2);
+                        PhotoViewer.G(photoViewer2);
                         return;
                     }
                     if (i10 == 10) {
@@ -1445,17 +1446,17 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             if (photoViewer2.t4) {
                                 activity5 = photoViewer2.y;
                                 messageObject11 = photoViewer2.T4;
-                                nf.f.s(activity5, MessageObject.getMedia(messageObject11.messageOwner).webpage.url);
+                                of.f.s(activity5, MessageObject.getMedia(messageObject11.messageOwner).webpage.url);
                                 photoViewer2.G0(false, false);
                                 return;
                             }
                             messageObject6 = photoViewer2.T4;
                             if (messageObject6 == null) {
-                                yu0Var = photoViewer2.j7;
-                                if (yu0Var != null) {
-                                    yu0Var2 = photoViewer2.j7;
+                                wu0Var = photoViewer2.j7;
+                                if (wu0Var != null) {
+                                    wu0Var2 = photoViewer2.j7;
                                     i13 = photoViewer2.P4;
-                                    TLObject d11 = yu0Var2.d(i13);
+                                    TLObject d11 = wu0Var2.d(i13);
                                     activity3 = photoViewer2.y;
                                     if (AndroidUtilities.openForView(d11, activity3)) {
                                         photoViewer2.G0(false, false);
@@ -1486,8 +1487,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                 photoViewer2.U2();
                                 return;
                             }
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                             return;
                         }
                     }
@@ -1510,19 +1511,19 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                                 messageObject15 = photoViewer2.T4;
                                 tLObject = MessageObject.getMedia(messageObject15.messageOwner).document;
                             }
-                            TLObject tLObject3 = tLObject;
+                            TLObject tLObject2 = tLObject;
                             activity7 = photoViewer2.y;
                             messageObject16 = photoViewer2.T4;
-                            photoViewer2.U3 = new qs0(this, activity7, messageObject16, tLObject3, this.a);
-                            hy0Var = photoViewer2.U3;
-                            hy0Var.show();
+                            photoViewer2.U3 = new qs0(this, activity7, messageObject16, tLObject2, this.a);
+                            ux0Var = photoViewer2.U3;
+                            ux0Var.show();
                             return;
                         }
                         return;
                     }
                     if (i10 == 6) {
-                        w0Var = photoViewer2.o0;
-                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = w0Var.b;
+                        v0Var = photoViewer2.o0;
+                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = v0Var.b;
                         if (actionBarPopupWindow$ActionBarPopupWindowLayout == null || (findViewWithTag = actionBarPopupWindow$ActionBarPopupWindowLayout.findViewWithTag(6)) == null || findViewWithTag.getVisibility() != 0) {
                             return;
                         }
@@ -1530,8 +1531,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             photoViewer2.h3();
                             return;
                         }
-                        zf0Var = photoViewer2.f0;
-                        if (zf0Var.e()) {
+                        qf0Var = photoViewer2.f0;
+                        if (qf0Var.e()) {
                             if (PhotoViewer.a9 != null) {
                                 PhotoViewer.a9.P0();
                             }
@@ -1541,8 +1542,8 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             PhotoViewer.Z8 = null;
                             photoViewer2.e = false;
                             photoViewer2.f = false;
-                            ev0 ev0Var = photoViewer2.d5;
-                            if (ev0Var != null && !ev0Var.a.getVisible()) {
+                            cv0 cv0Var = photoViewer2.d5;
+                            if (cv0Var != null && !cv0Var.a.getVisible()) {
                                 photoViewer2.d5.a.setVisible(true, true);
                             }
                             photoViewer2.m6 = 1.0f;
@@ -1571,12 +1572,12 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         if (messageObject19 != null) {
                             messageObject20 = photoViewer2.T4;
                             TLRPC.Document document2 = messageObject20.getDocument();
-                            eoVar = photoViewer2.l4;
-                            if (eoVar != null) {
-                                eoVar2 = photoViewer2.l4;
-                                if (eoVar2.Y != null) {
-                                    eoVar3 = photoViewer2.l4;
-                                    eoVar3.Y.n(document2);
+                            coVar = photoViewer2.l4;
+                            if (coVar != null) {
+                                coVar2 = photoViewer2.l4;
+                                if (coVar2.Y != null) {
+                                    coVar3 = photoViewer2.l4;
+                                    coVar3.Y.n(document2);
                                     i39 = photoViewer2.T;
                                     MessagesController messagesController = MessagesController.getInstance(i39);
                                     messageObject21 = photoViewer2.T4;
@@ -1590,26 +1591,26 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             messageObject21 = photoViewer2.T4;
                             messagesController2.saveGif(messageObject21, document2);
                         } else {
-                            yu0Var3 = photoViewer2.j7;
-                            if (yu0Var3 == null) {
+                            wu0Var3 = photoViewer2.j7;
+                            if (wu0Var3 == null) {
                                 return;
                             }
-                            yu0Var4 = photoViewer2.j7;
+                            wu0Var4 = photoViewer2.j7;
                             i35 = photoViewer2.P4;
-                            TLObject d12 = yu0Var4.d(i35);
+                            TLObject d12 = wu0Var4.d(i35);
                             if (d12 instanceof TLRPC.Document) {
                                 TLRPC.Document document3 = (TLRPC.Document) d12;
                                 i36 = photoViewer2.T;
                                 MediaDataController.getInstance(i36).addRecentGif(document3, (int) (System.currentTimeMillis() / 1000), true);
                                 i37 = photoViewer2.T;
                                 MessagesController messagesController3 = MessagesController.getInstance(i37);
-                                yu0Var5 = photoViewer2.j7;
-                                messagesController3.saveGif(yu0Var5.g(), document3);
+                                wu0Var5 = photoViewer2.j7;
+                                messagesController3.saveGif(wu0Var5.g(), document3);
                             }
                         }
-                        wu0 wu0Var = photoViewer2.e0;
-                        if (wu0Var != null) {
-                            org.telegram.ui.Components.wc.Z(wu0Var, f6Var).o(org.telegram.ui.Components.vc.y, f6Var).j();
+                        uu0 uu0Var = photoViewer2.e0;
+                        if (uu0Var != null) {
+                            org.telegram.ui.Components.yc.Z(uu0Var, f6Var).o(org.telegram.ui.Components.xc.y, f6Var).j();
                             return;
                         }
                         return;
@@ -1708,10 +1709,10 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         photoViewer2.d7.add(0, message);
                         photoViewer2.P4 = -1;
                         photoViewer2.B2(0);
-                        org.telegram.ui.Components.f40 f40Var = photoViewer2.l1;
-                        f40Var.d.clear();
-                        f40Var.e.clear();
-                        f40Var.c.clear();
+                        org.telegram.ui.Components.v30 v30Var = photoViewer2.l1;
+                        v30Var.d.clear();
+                        v30Var.e.clear();
+                        v30Var.c.clear();
                         photoViewer2.l1.b();
                         undoView = photoViewer2.n1;
                         j13 = photoViewer2.z5;
@@ -1730,9 +1731,9 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             public final void run() {
                                 switch (i67) {
                                     case 0:
-                                        org.telegram.ui.ActionBar.w0 w0Var2 = this.b.b.o0;
-                                        if (w0Var2 != null) {
-                                            w0Var2.r(14);
+                                        org.telegram.ui.ActionBar.v0 v0Var2 = this.b.b.o0;
+                                        if (v0Var2 != null) {
+                                            v0Var2.r(14);
                                             break;
                                         }
                                         break;
@@ -1755,21 +1756,23 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         i16 = photoViewer2.T;
                         FileLoader fileLoader6 = FileLoader.getInstance(i16);
                         imageLocation7 = photoViewer2.a5;
-                        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = imageLocation7 == null ? null : imageLocation7.location;
+                        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = imageLocation7 == null ? null : imageLocation7.location;
                         imageLocation8 = photoViewer2.a5;
-                        File pathToAttach2 = fileLoader6.getPathToAttach(tL_fileLocationToBeDeprecated, PhotoViewer.q1(imageLocation8), true);
+                        File pathToAttach2 = fileLoader6.getPathToAttach(tL_fileLocationToBeDeprecated2, PhotoViewer.q1(imageLocation8), true);
                         imageLocation9 = photoViewer2.a5;
-                        boolean z29 = imageLocation9.imageType == 2;
-                        if (z29) {
+                        boolean z30 = imageLocation9.imageType == 2;
+                        if (z30) {
                             i17 = photoViewer2.T;
                             FileLoader fileLoader7 = FileLoader.getInstance(i17);
                             imageLocation10 = photoViewer2.Z4;
-                            TLObject tLObject4 = imageLocation10 != null ? imageLocation10.location : null;
+                            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = imageLocation10 == null ? null : imageLocation10.location;
                             imageLocation11 = photoViewer2.Z4;
-                            str3 = fileLoader7.getPathToAttach(tLObject4, PhotoViewer.q1(imageLocation11), true).getAbsolutePath();
+                            str = fileLoader7.getPathToAttach(tL_fileLocationToBeDeprecated3, PhotoViewer.q1(imageLocation11), true).getAbsolutePath();
+                        } else {
+                            str = null;
                         }
-                        cv0Var = photoViewer2.d;
-                        cv0Var.f(pathToAttach2.getAbsolutePath(), str3, z29);
+                        av0Var = photoViewer2.d;
+                        av0Var.f(pathToAttach2.getAbsolutePath(), str, z30);
                         return;
                     }
                     if (i10 == 19) {
@@ -1791,9 +1794,9 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             public final void run() {
                                 switch (i69) {
                                     case 0:
-                                        org.telegram.ui.ActionBar.w0 w0Var2 = this.b.b.o0;
-                                        if (w0Var2 != null) {
-                                            w0Var2.r(14);
+                                        org.telegram.ui.ActionBar.v0 v0Var2 = this.b.b.o0;
+                                        if (v0Var2 != null) {
+                                            v0Var2.r(14);
                                             break;
                                         }
                                         break;
@@ -1829,9 +1832,9 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             public final void run() {
                                 switch (i70) {
                                     case 0:
-                                        org.telegram.ui.ActionBar.w0 w0Var2 = this.b.b.o0;
-                                        if (w0Var2 != null) {
-                                            w0Var2.r(14);
+                                        org.telegram.ui.ActionBar.v0 v0Var2 = this.b.b.o0;
+                                        if (v0Var2 != null) {
+                                            v0Var2.r(14);
                                             break;
                                         }
                                         break;
@@ -1853,12 +1856,12 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                     }
                     if (i10 == 22) {
                         photoViewer2.Z2 = !photoViewer2.Z2;
-                        boolean z30 = photoViewer2.Z2;
+                        boolean z31 = photoViewer2.Z2;
                         messageObject18 = photoViewer2.T4;
-                        org.telegram.ui.Components.t71.I(messageObject18, z30);
-                        org.telegram.ui.Components.t71 t71Var = photoViewer2.F2;
-                        if (t71Var != null) {
-                            t71Var.N(photoViewer2.Z2);
+                        org.telegram.ui.Components.g71.I(messageObject18, z31);
+                        org.telegram.ui.Components.g71 g71Var = photoViewer2.F2;
+                        if (g71Var != null) {
+                            g71Var.N(photoViewer2.Z2);
                         }
                         photoViewer2.s0.d(photoViewer2.Z2);
                         photoViewer2.s0.setSelectorColor(photoViewer2.Z2 ? 259241196 : 268435455);
@@ -1874,13 +1877,13 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                             imageLocation6 = photoViewer2.Z4;
                             photo2 = imageLocation6.photo;
                             photo = photo2;
-                            if (photo != null) {
+                            if (photo == null) {
                                 return;
                             }
                             i14 = photoViewer2.T;
                             activity8 = photoViewer2.y;
                             j3 = photoViewer2.z5;
-                            org.telegram.ui.Components.d5.J(i14, activity8, j3, photo, new zh.b());
+                            org.telegram.ui.Components.e5.J(i14, activity8, j3, photo, new bi.b());
                             return;
                         }
                     }
@@ -1890,10 +1893,13 @@ public final class rs0 extends org.telegram.ui.ActionBar.k {
                         if (imageLocation3.photo != null) {
                             imageLocation4 = photoViewer2.a5;
                             photo2 = imageLocation4.photo;
+                            photo = photo2;
+                            if (photo == null) {
+                            }
                         }
                     }
-                    photo = photo2;
-                    if (photo != null) {
+                    photo = null;
+                    if (photo == null) {
                     }
                 }
             }

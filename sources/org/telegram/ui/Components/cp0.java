@@ -1,43 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class cp0 extends FrameLayout {
-    public final /* synthetic */ ff a;
+public final /* synthetic */ class cp0 implements r0.n, org.telegram.ui.ActionBar.l1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hq0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cp0(ff ffVar, Context context) {
-        super(context);
-        this.a = ffVar;
+    public /* synthetic */ cp0(hq0 hq0Var, int i10) {
+        this.a = i10;
+        this.b = hq0Var;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ff ffVar = this.a;
-        View contentView = ffVar.getContentView();
-        int[] iArr = new int[2];
-        contentView.getLocationInWindow(iArr);
-        iArr[0] = iArr[0] + ffVar.E;
-        iArr[1] = iArr[1] + ffVar.F;
-        getLocationInWindow(new int[2]);
-        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
-            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
-                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
-                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
-                    return contentView.dispatchTouchEvent(motionEvent);
+    @Override // r0.n
+    public r0.l1 T0(View view, r0.l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
+        hq0 hq0Var = this.b;
+        hq0Var.processLegacyContainerInsets(g10);
+        i0.c f7 = l1Var.a.f(519);
+        if (!hq0Var.G0.equals(f7)) {
+            hq0Var.G0 = f7;
+            hq0Var.container.requestLayout();
+        }
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.l1
+    public void n(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
+        org.telegram.ui.ActionBar.n1 n1Var2;
+        switch (this.a) {
+            case 1:
+                hq0 hq0Var = this.b;
+                hq0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = hq0Var.J0) != null && n1Var.isShowing()) {
+                    hq0Var.J0.d(true);
+                    break;
                 }
-            }
+                break;
+            default:
+                hq0 hq0Var2 = this.b;
+                hq0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var2 = hq0Var2.J0) != null && n1Var2.isShowing()) {
+                    hq0Var2.J0.d(true);
+                    break;
+                }
+                break;
         }
-        if (!ffVar.A && !ffVar.D) {
-            ffVar.D = true;
-            ffVar.l(new o1.k[0]);
-        }
-        return true;
     }
 }

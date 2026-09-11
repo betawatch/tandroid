@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationBadge;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class AuthTokensHelper {
     public static void addLogOutToken(TLRPC.TL_auth_loggedOut tL_auth_loggedOut) {
@@ -15,7 +15,7 @@ public class AuthTokensHelper {
         int i10 = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
         SerializedData serializedData = new SerializedData(tL_auth_loggedOut.getObjectSize());
         tL_auth_loggedOut.serializeToStream(serializedData);
-        sharedPreferences.edit().putString(hc.b.j(i10, "log_out_token_"), Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i10 + 1).apply();
+        sharedPreferences.edit().putString(i2.g.i(i10, "log_out_token_"), Utilities.bytesToHex(serializedData.toByteArray())).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i10 + 1).apply();
         BackupAgent.requestBackup();
     }
 
@@ -38,8 +38,8 @@ public class AuthTokensHelper {
                 if (TLdeserialize instanceof TLRPC.TL_auth_authorization) {
                     arrayList.add((TLRPC.TL_auth_authorization) TLdeserialize);
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         return arrayList;

@@ -5,7 +5,7 @@ import v7.z8;
 import z7.wf;
 import z7.yf;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final qb.g b;
@@ -19,6 +19,6 @@ public final class c extends g {
     public final Object N0(Object obj) {
         wf b10 = yf.b();
         qb.g gVar = this.b;
-        return new f(gVar, (ac.e) obj, b10, new z8(gVar.b(), 2));
+        return new f(gVar, (ac.e) obj, b10, new z8(gVar.b(), 1));
     }
 }

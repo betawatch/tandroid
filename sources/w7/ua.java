@@ -1,6 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class ua extends sa {
     public static final ua e = new ua(0, new Object[0]);
@@ -14,7 +14,7 @@ public final class ua extends sa {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        b8.a(i10, this.d);
+        a8.a(i10, this.d);
         Object obj = this.c[i10];
         obj.getClass();
         return obj;

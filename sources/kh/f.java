@@ -1,62 +1,120 @@
 package kh;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import java.util.List;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.h3;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.h40;
-import org.telegram.ui.j60;
-import s4.c1;
-import s4.j;
-import yg.l0;
-import yg.p0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f extends j {
-    public final /* synthetic */ h F;
+public final class f extends View implements z5 {
+    public bh.c a;
+    public bh.c b;
+    public int c;
+    public int d;
+    public gh.c e;
+    public int f;
 
-    public f(h hVar) {
-        this.F = hVar;
+    public f(Context context) {
+        super(context);
     }
 
-    @Override // s4.j
-    public final float A(View view) {
-        return 0.6f;
+    public final void a() {
+        this.a.setBounds(0, 0, getMeasuredWidth(), this.c);
+        this.b.setBounds(0, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight());
     }
 
-    @Override // s4.f1
-    public final void w(c1 c1Var) {
-        p0 p0Var;
-        g gVar;
+    public final void b(bh.b bVar, eh.e eVar) {
+        dh.d c10 = bVar.c(this, null, false);
+        c10.n(eVar);
+        bh.c cVar = new bh.c(c10);
+        this.a = cVar;
+        cVar.b(-AndroidUtilities.dp(30.0f), true);
+        dh.d c11 = bVar.c(this, null, false);
+        c11.n(eVar);
+        bh.c cVar2 = new bh.c(c11);
+        this.b = cVar2;
+        cVar2.b(AndroidUtilities.dp(30.0f), true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void d() {
         int i10;
-        h hVar = this.F;
-        e eVar = hVar.U0;
-        int b10 = c1Var.b();
-        List list = eVar.c;
-        GroupCallMessage groupCallMessage = null;
-        if (list != null && b10 >= 0 && b10 < list.size()) {
-            groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
-        }
-        if (groupCallMessage == null || (p0Var = groupCallMessage.visibleReaction) == null) {
+        gh.c cVar = this.e;
+        if (cVar == null || (i10 = this.f) == -1) {
             return;
         }
-        View view = c1Var.a;
-        if (!(view instanceof c) || (gVar = hVar.Z0) == null) {
-            return;
+        cVar.a(j6.w0(null, i10, false));
+        invalidate();
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.draw(canvas);
+        this.b.draw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        a();
+    }
+
+    public void setFadeHeightBottom(int i10) {
+        this.b.b(i10, true);
+    }
+
+    public void setFadeHeightTop(int i10) {
+        this.a.b(-i10, true);
+    }
+
+    public void setFadeTopAlpha(int i10) {
+        bh.c cVar = this.a;
+        if (cVar.q != i10) {
+            cVar.q = i10;
+            invalidate();
         }
-        j60 j60Var = ((h40) gVar).a;
-        Context context = j60Var.getContext();
-        pk0 pk0Var = j60Var.K;
-        i10 = ((h3) j60Var).currentAccount;
-        l0 l0Var = new l0(context, null, pk0Var, (c) view, null, 0.0f, 0.0f, p0Var, i10, 1, false);
-        l0.B = l0Var;
-        l0Var.i.setTag(R.id.parent_tag, 1);
-        j60Var.container.addView(l0Var.i);
-        l0Var.s = true;
-        l0Var.y = System.currentTimeMillis();
+    }
+
+    public void setFadeZoneBottom(int i10) {
+        if (this.d != i10) {
+            this.d = i10;
+            a();
+            invalidate();
+        }
+    }
+
+    public void setFadeZoneTop(int i10) {
+        if (this.c != i10) {
+            this.c = i10;
+            a();
+            invalidate();
+        }
+    }
+
+    public void setIgnoreFastWay(boolean z10) {
+        this.a.p = z10;
+        this.b.p = z10;
+    }
+
+    public void setup(bh.b bVar) {
+        b(bVar, null);
+    }
+
+    public void setupColorKey(int i10) {
+        this.f = i10;
+        if (this.e == null) {
+            gh.c cVar = new gh.c();
+            this.e = cVar;
+            cVar.a(j6.w0(null, i10, false));
+            setup(new bh.b(this.e));
+        }
     }
 }

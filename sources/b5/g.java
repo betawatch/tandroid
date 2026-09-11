@@ -4,10 +4,10 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.r3;
+import m.p3;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Callable {
     public final /* synthetic */ int a;
@@ -21,13 +21,13 @@ public final /* synthetic */ class g implements Callable {
     private final Object a() {
         boolean z10;
         String str;
-        r3 r3Var = (r3) this.b;
-        synchronized (((AtomicMarkableReference) r3Var.h)) {
+        p3 p3Var = (p3) this.b;
+        synchronized (((AtomicMarkableReference) p3Var.h)) {
             try {
                 z10 = false;
-                if (((AtomicMarkableReference) r3Var.h).isMarked()) {
-                    str = (String) ((AtomicMarkableReference) r3Var.h).getReference();
-                    ((AtomicMarkableReference) r3Var.h).set(str, false);
+                if (((AtomicMarkableReference) p3Var.h).isMarked()) {
+                    str = (String) ((AtomicMarkableReference) p3Var.h).getReference();
+                    ((AtomicMarkableReference) p3Var.h).set(str, false);
                     z10 = true;
                 } else {
                     str = null;
@@ -37,7 +37,7 @@ public final /* synthetic */ class g implements Callable {
             }
         }
         if (z10) {
-            ((x9.f) r3Var.a).i((String) r3Var.c, str);
+            ((x9.f) p3Var.a).i((String) p3Var.c, str);
         }
         return null;
     }
@@ -67,8 +67,8 @@ public final /* synthetic */ class g implements Callable {
                     }
                 }
                 if (map != null) {
-                    r3 r3Var = (r3) mVar.d;
-                    ((x9.f) r3Var.a).g((String) r3Var.c, map, mVar.a);
+                    p3 p3Var = (p3) mVar.d;
+                    ((x9.f) p3Var.a).g((String) p3Var.c, map, mVar.a);
                 }
                 return null;
         }

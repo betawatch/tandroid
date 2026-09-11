@@ -15,7 +15,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a {
     public static int h;
@@ -100,7 +100,7 @@ public final class a {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 19), 30L, TimeUnit.SECONDS), 22));
+            taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 21));
             return taskCompletionSource.getTask();
         }
         if (this.c.g() == 2) {
@@ -108,7 +108,7 @@ public final class a {
         } else {
             this.b.startService(intent);
         }
-        taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 19), 30L, TimeUnit.SECONDS), 22));
+        taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a((Object) this, b10, (Object) this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 21));
         return taskCompletionSource.getTask();
     }
 

@@ -2,11 +2,11 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class xf0 extends org.telegram.ui.Components.voip.m2 {
+public final class xf0 extends org.telegram.ui.Components.voip.l2 {
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.fw0 f;
+    public final /* synthetic */ org.telegram.ui.Components.tv0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public xf0(zf0 zf0Var, Context context, int i10) {
@@ -23,7 +23,7 @@ public final class xf0 extends org.telegram.ui.Components.voip.m2 {
         }
     }
 
-    @Override // org.telegram.ui.Components.voip.m2
+    @Override // org.telegram.ui.Components.voip.l2
     public final boolean a() {
         switch (this.e) {
             case 0:
@@ -35,7 +35,7 @@ public final class xf0 extends org.telegram.ui.Components.voip.m2 {
         }
     }
 
-    @Override // org.telegram.ui.Components.voip.m2
+    @Override // org.telegram.ui.Components.voip.l2
     public final boolean b() {
         xf0 xf0Var;
         switch (this.e) {

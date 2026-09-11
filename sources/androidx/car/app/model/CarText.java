@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -136,7 +136,7 @@ public final class CarText {
         return androidx.car.app.utils.i.g(arrayList);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;

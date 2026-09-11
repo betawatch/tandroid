@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zd0 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,11 +34,11 @@ public final /* synthetic */ class zd0 implements Runnable {
                 de0Var.e = false;
                 de0Var.f[0].requestFocus();
                 while (true) {
-                    hs[] hsVarArr = de0Var.f;
-                    if (i10 >= hsVarArr.length) {
+                    gs[] gsVarArr = de0Var.f;
+                    if (i10 >= gsVarArr.length) {
                         break;
                     } else {
-                        hsVarArr[i10].i(0.0f);
+                        gsVarArr[i10].i(0.0f);
                         i10++;
                     }
                 }
@@ -53,8 +53,8 @@ public final /* synthetic */ class zd0 implements Runnable {
                 ge0Var3.R = false;
                 int i11 = 0;
                 while (true) {
-                    hs[] hsVarArr2 = ge0Var3.a.f;
-                    if (i11 >= hsVarArr2.length) {
+                    gs[] gsVarArr2 = ge0Var3.a.f;
+                    if (i11 >= gsVarArr2.length) {
                         if (fe0Var.getCurrentView() != ge0Var3.e) {
                             fe0Var.showNext();
                             FrameLayout frameLayout = ge0Var3.h;
@@ -65,7 +65,7 @@ public final /* synthetic */ class zd0 implements Runnable {
                             break;
                         }
                     } else {
-                        hsVarArr2[i11].i(0.0f);
+                        gsVarArr2[i11].i(0.0f);
                         i11++;
                     }
                 }
@@ -76,11 +76,11 @@ public final /* synthetic */ class zd0 implements Runnable {
                 de0Var2.e = false;
                 de0Var2.f[0].requestFocus();
                 while (true) {
-                    hs[] hsVarArr3 = de0Var2.f;
-                    if (i12 >= hsVarArr3.length) {
+                    gs[] gsVarArr3 = de0Var2.f;
+                    if (i12 >= gsVarArr3.length) {
                         break;
                     } else {
-                        hsVarArr3[i12].i(0.0f);
+                        gsVarArr3[i12].i(0.0f);
                         i12++;
                     }
                 }
@@ -92,9 +92,9 @@ public final /* synthetic */ class zd0 implements Runnable {
                 break;
             default:
                 ge0 ge0Var4 = this.b;
-                org.telegram.ui.Components.kj0 kj0Var = ge0Var4.w;
-                kj0Var.getAnimatedDrawable().N(0, false, false);
-                kj0Var.d();
+                org.telegram.ui.Components.aj0 aj0Var = ge0Var4.w;
+                aj0Var.getAnimatedDrawable().L(0, false, false);
+                aj0Var.d();
                 de0 de0Var3 = ge0Var4.a;
                 if (de0Var3 != null && de0Var3.f != null) {
                     de0Var3.setText("");

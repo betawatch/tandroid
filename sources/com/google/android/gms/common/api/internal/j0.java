@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
-import m.r3;
+import m.p3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j0 extends com.google.android.gms.common.api.m implements v0 {
     public final a0.f E;
     public Set F;
-    public final r3 G;
+    public final p3 G;
     public final a0.f H;
     public final a8.d I;
-    public final a4.m J;
+    public final a6.m J;
     public final ArrayList K;
     public Integer L;
     public final g1 M;
@@ -43,7 +43,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     public final k6.d x;
     public u0 y;
 
-    public j0(Context context, ReentrantLock reentrantLock, Looper looper, r3 r3Var, a0.f fVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar2, int i10, ArrayList arrayList3) {
+    public j0(Context context, ReentrantLock reentrantLock, Looper looper, p3 p3Var, a0.f fVar, ArrayList arrayList, ArrayList arrayList2, a0.f fVar2, int i10, ArrayList arrayList3) {
         k6.d dVar = k6.d.d;
         a8.d dVar2 = n8.b.a;
         this.d = null;
@@ -51,12 +51,12 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
         this.s = 120000L;
         this.v = 5000L;
         this.F = new HashSet();
-        this.J = new a4.m(7);
+        this.J = new a6.m(10);
         this.L = null;
-        xa.c cVar = new xa.c(this, 13);
+        a6.i iVar = new a6.i(this, 11);
         this.f = context;
         this.b = reentrantLock;
-        this.c = new n6.s(looper, cVar);
+        this.c = new n6.s(looper, iVar);
         this.h = looper;
         int i11 = 0;
         this.w = new h0(this, looper, i11);
@@ -86,7 +86,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     throw th2;
                 }
             }
-            if (sVar.a.z0()) {
+            if (sVar.a.t()) {
                 com.google.android.gms.internal.cast.c0 c0Var = sVar.n;
                 c0Var.sendMessage(c0Var.obtainMessage(1, kVar));
             }
@@ -97,7 +97,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
             i11++;
             this.c.a((com.google.android.gms.common.api.l) obj2);
         }
-        this.G = r3Var;
+        this.G = p3Var;
         this.I = dVar2;
     }
 
@@ -339,7 +339,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void n(k6.a aVar) {
+    public final void m(k6.a aVar) {
         k6.d dVar = this.x;
         Context context = this.f;
         int i10 = aVar.b;
@@ -381,7 +381,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void v(int i10) {
+    public final void p(int i10) {
         if (i10 == 1) {
             if (!this.r) {
                 this.r = true;
@@ -452,7 +452,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void z(Bundle bundle) {
+    public final void v(Bundle bundle) {
         while (!this.n.isEmpty()) {
             e eVar = (e) this.n.remove();
             a0.f fVar = this.E;
@@ -500,7 +500,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     Object obj = arrayList.get(i11);
                     i11++;
                     com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || !sVar.a.z0() || sVar.f.get() != i10) {
+                    if (!sVar.e || !sVar.a.t() || sVar.f.get() != i10) {
                         break;
                     } else if (!sVar.c.contains(kVar)) {
                         kVar.onConnected(bundle);

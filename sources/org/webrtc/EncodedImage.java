@@ -3,7 +3,7 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class EncodedImage implements RefCounted {
     public final ByteBuffer buffer;
@@ -16,7 +16,7 @@ public class EncodedImage implements RefCounted {
     private final RefCountDelegate refCountDelegate;
     public final int rotation;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Builder {
         private ByteBuffer buffer;
         private long captureTimeNs;
@@ -77,7 +77,7 @@ public class EncodedImage implements RefCounted {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum FrameType {
         EmptyFrame(0),
         VideoFrameKey(3),
@@ -95,7 +95,7 @@ public class EncodedImage implements RefCounted {
                     return frameType;
                 }
             }
-            throw new IllegalArgumentException(hc.b.j(i10, "Unknown native frame type: "));
+            throw new IllegalArgumentException(i2.g.i(i10, "Unknown native frame type: "));
         }
 
         public int getNative() {

@@ -22,9 +22,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import n4.y;
 import org.telegram.messenger.FileStreamLoadOperation;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -118,8 +119,8 @@ public final class ExtendedDefaultDataSource implements h {
                 addListenersToDataSource(hVar);
             } catch (ClassNotFoundException unused) {
                 Log.w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
-            } catch (Exception e) {
-                throw new RuntimeException("Error instantiating RTMP extension", e);
+            } catch (Exception e7) {
+                throw new RuntimeException("Error instantiating RTMP extension", e7);
             }
             if (this.rtmpDataSource == null) {
                 this.rtmpDataSource = this.baseDataSource;
@@ -230,7 +231,7 @@ public final class ExtendedDefaultDataSource implements h {
     }
 
     public ExtendedDefaultDataSource(Context context, String str, int i10, int i11, boolean z10) {
-        this(context, new r(str, i10, i11, z10, new of.b(14)), (LongSparseArray<Uri>) null);
+        this(context, new r(str, i10, i11, z10, new y(15)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {

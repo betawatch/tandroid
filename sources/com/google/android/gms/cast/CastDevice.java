@@ -16,10 +16,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import o6.a;
-import org.telegram.ui.Cells.r6;
+import org.telegram.ui.Cells.p6;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -50,8 +50,8 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (!TextUtils.isEmpty(str2)) {
             try {
                 this.c = InetAddress.getByName(str2);
-            } catch (UnknownHostException e) {
-                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e.getMessage());
+            } catch (UnknownHostException e7) {
+                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e7.getMessage());
             }
         }
         this.d = str3 == null ? "" : str3;
@@ -135,7 +135,7 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return r6.j("\"", str, "\" (", this.a, ")");
+        return p6.j("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable

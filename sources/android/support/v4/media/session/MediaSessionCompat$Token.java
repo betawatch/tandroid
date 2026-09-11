@@ -3,10 +3,10 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new a0(2);
+    public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new b0(2);
     public final Object b;
     public d c;
     public final Object a = new Object();

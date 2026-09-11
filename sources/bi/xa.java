@@ -1,106 +1,75 @@
 package bi;
 
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.eo;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class xa implements Runnable {
+public final /* synthetic */ class xa implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ pb b;
 
-    public /* synthetic */ xa(Object obj, long j3, boolean z10, int i10) {
+    public /* synthetic */ xa(pb pbVar, int i10) {
         this.a = i10;
-        this.d = obj;
-        this.b = j3;
-        this.c = z10;
+        this.b = pbVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        int i11;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                kb kbVar = (kb) this.d;
-                rb rbVar = kbVar.W;
-                boolean z10 = this.c;
-                long j3 = this.b;
-                if (z10) {
-                    i11 = ((org.telegram.ui.ActionBar.h3) rbVar).currentAccount;
-                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j3), new ab(kbVar, j3, 0), 200);
-                    break;
-                } else {
-                    i10 = ((org.telegram.ui.ActionBar.h3) rbVar).currentAccount;
-                    MessagesController.getInstance(i10).loadFullChat(j3, 0, true);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pb pbVar = this.b;
+                pbVar.U = floatValue;
+                pbVar.o();
+                db dbVar = pbVar.s;
+                if (dbVar != null) {
+                    dbVar.invalidate();
+                }
+                t1 t1Var = pbVar.A0;
+                if (t1Var != null) {
+                    t1Var.v((1.0f - pbVar.V) * pbVar.U);
                     break;
                 }
+                break;
             case 1:
-                ei.t0 t0Var = (ei.t0) this.d;
-                t0Var.i = null;
-                a0.i iVar = t0Var.g;
-                long j10 = this.b;
-                iVar.l(j10);
-                ArrayList arrayList = t0Var.j;
-                if (arrayList != null) {
-                    for (int size = arrayList.size() - 1; size >= 0; size--) {
-                        if (DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) t0Var.j.get(size)).peer) == j10) {
-                            t0Var.j.remove(size);
-                        }
-                    }
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pb pbVar2 = this.b;
+                pbVar2.U = floatValue2;
+                eb ebVar = pbVar2.v;
+                if (ebVar != null && floatValue2 > 0.6f && b0.c && ebVar.a) {
+                    ebVar.a(false);
                 }
-                t0Var.a();
-                ei.s0 s0Var = t0Var.h;
-                if (s0Var != null) {
-                    s0Var.F();
+                t1 t1Var2 = pbVar2.A0;
+                if (t1Var2 != null) {
+                    t1Var2.v((1.0f - pbVar2.V) * pbVar2.U);
                 }
-                MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new ei.r0(t0Var, 2));
+                pbVar2.o();
+                db dbVar2 = pbVar2.s;
+                if (dbVar2 != null) {
+                    dbVar2.invalidate();
+                    break;
+                }
                 break;
             case 2:
-                ((MediaDataController) this.d).lambda$markFeaturedStickersByIdAsRead$67(this.c, this.b);
-                break;
-            case 3:
-                ((NotificationsController) this.d).lambda$setOpenedInBubble$4(this.c, this.b);
-                break;
-            case 4:
-                ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
-                break;
-            case 5:
-                eo.b0((eo) this.d, this.b, this.c);
-                break;
-            default:
-                xh.r8 r8Var = (xh.r8) this.d;
-                long j11 = this.b;
-                r8Var.F = j11;
-                r8Var.E = j11;
-                if (this.c) {
-                    zh.k0 k0Var = r8Var.G;
-                    k0Var.c = j11;
-                    r8Var.H.set(k0Var);
-                }
-                r8Var.r();
-                r8Var.I.a(true, true);
-                xh.q8 q8Var = r8Var.y;
-                if (q8Var != null) {
-                    q8Var.setMyPrivacy(r8Var.E);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pb pbVar3 = this.b;
+                pbVar3.Z = floatValue3;
+                pbVar3.d0 = Utilities.clamp(pbVar3.Z / AndroidUtilities.dp(200.0f), 1.0f, 0.0f);
+                fb fbVar = pbVar3.n0;
+                o5 currentPeerView = fbVar == null ? null : fbVar.getCurrentPeerView();
+                if (currentPeerView != null) {
+                    currentPeerView.invalidate();
                     break;
                 }
                 break;
+            default:
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pb pbVar4 = this.b;
+                pbVar4.e0 = floatValue4;
+                pbVar4.v.invalidate();
+                break;
         }
-    }
-
-    public /* synthetic */ xa(Object obj, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.b = j3;
     }
 }

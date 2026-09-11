@@ -1,35 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.concurrent.CountDownLatch;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class dg implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ CountDownLatch e;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ dg(int i10, long j3, CountDownLatch countDownLatch, MessagesStorage messagesStorage, boolean[] zArr) {
+    public /* synthetic */ dg(MessagesStorage messagesStorage, ArrayList arrayList, ArrayList arrayList2, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = j3;
-        this.d = zArr;
-        this.e = countDownLatch;
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkMessageByRandomId$153(this.c, this.d, this.e);
-                break;
-            case 1:
-                this.b.lambda$isMigratedChat$141(this.c, this.d, this.e);
+                this.b.lambda$setDialogsPinned$252(this.c, this.d);
                 break;
             default:
-                this.b.lambda$hasInviteMeMessage$143(this.c, this.d, this.e);
+                this.b.lambda$loadTopics$50(this.c, this.d);
                 break;
         }
     }

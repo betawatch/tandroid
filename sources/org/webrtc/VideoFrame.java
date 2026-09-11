@@ -3,14 +3,14 @@ package org.webrtc;
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Buffer extends RefCounted {
         Buffer cropAndScale(int i10, int i11, int i12, int i13, int i14, int i15);
 
@@ -29,7 +29,7 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface I420Buffer extends Buffer {
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
@@ -47,10 +47,10 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface TextureBuffer extends Buffer {
 
-        /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+        /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
         public enum Type {
             OES(36197),
             RGB(3553);

@@ -2,20 +2,20 @@ package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class v implements Runnable {
     public final /* synthetic */ boolean a;
-    public final /* synthetic */ p2 b;
-    public final /* synthetic */ p2 c;
+    public final /* synthetic */ n2 b;
+    public final /* synthetic */ n2 c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ ActionBarLayout e;
 
-    public v(ActionBarLayout actionBarLayout, boolean z10, p2 p2Var, p2 p2Var2, boolean z11) {
+    public v(ActionBarLayout actionBarLayout, boolean z10, n2 n2Var, n2 n2Var2, boolean z11) {
         this.e = actionBarLayout;
         this.a = z10;
-        this.b = p2Var;
-        this.c = p2Var2;
+        this.b = n2Var;
+        this.c = n2Var2;
         this.d = z11;
     }
 
@@ -27,9 +27,9 @@ public final class v implements Runnable {
         }
         actionBarLayout.d = null;
         if (this.a) {
-            p2 p2Var = this.b;
-            if (p2Var != null) {
-                p2Var.onTransitionAnimationStart(false, false);
+            n2 n2Var = this.b;
+            if (n2Var != null) {
+                n2Var.onTransitionAnimationStart(false, false);
             }
             this.c.onTransitionAnimationStart(true, false);
             actionBarLayout.d0(true, true, this.d);

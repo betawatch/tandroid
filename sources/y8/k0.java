@@ -2,9 +2,8 @@ package y8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class k0 extends o6.a implements x8.g {
     public static final Parcelable.Creator<k0> CREATOR = new c(27);
@@ -22,7 +21,7 @@ public final class k0 extends o6.a implements x8.g {
 
     public final String toString() {
         byte[] bArr = this.c;
-        String obj = (bArr == null ? BuildConfig.BETA_URL : Integer.valueOf(bArr.length)).toString();
+        String obj = (bArr == null ? "null" : Integer.valueOf(bArr.length)).toString();
         StringBuilder sb2 = new StringBuilder("MessageEventParcelable[");
         sb2.append(this.a);
         sb2.append(",");

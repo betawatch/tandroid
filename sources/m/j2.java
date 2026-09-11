@@ -7,11 +7,11 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j2 extends d2 implements e2 {
     public static final Method T;
-    public pb.c S;
+    public l.d S;
 
     static {
         try {
@@ -24,18 +24,18 @@ public final class j2 extends d2 implements e2 {
     }
 
     @Override // m.e2
-    public final void h(l.l lVar, MenuItem menuItem) {
-        pb.c cVar = this.S;
-        if (cVar != null) {
-            cVar.h(lVar, menuItem);
+    public final void d(l.l lVar, MenuItem menuItem) {
+        l.d dVar = this.S;
+        if (dVar != null) {
+            dVar.d(lVar, menuItem);
         }
     }
 
     @Override // m.e2
     public final void o(l.l lVar, l.n nVar) {
-        pb.c cVar = this.S;
-        if (cVar != null) {
-            cVar.o(lVar, nVar);
+        l.d dVar = this.S;
+        if (dVar != null) {
+            dVar.o(lVar, nVar);
         }
     }
 

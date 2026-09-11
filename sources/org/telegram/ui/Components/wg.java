@@ -1,112 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class wg extends View {
-    public float a;
-    public long b;
-    public boolean c;
-    public boolean d;
+public final class wg extends FrameLayout {
+    public final org.telegram.ui.ActionBar.j5 a;
+    public final RectF b;
+    public final Paint c;
+    public final Drawable d;
     public boolean e;
-    public final hj0 f;
-    public boolean h;
-    public final /* synthetic */ ChatActivityEnterView n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wg(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.n = chatActivityEnterView;
-        hj0 hj0Var = new hj0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.f = hj0Var;
-        hj0Var.p0 = true;
-        a();
+    public wg(Activity activity) {
+        super(activity);
+        this.b = new RectF();
+        this.c = new Paint(1);
+        this.e = false;
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(activity);
+        this.a = j5Var;
+        addView(j5Var, w7.x5.c(-1.0f, -1));
+        setWillNotDraw(false);
+        Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
+        this.d = drawable;
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        setClipToPadding(false);
+        setClipChildren(false);
+        w7.z5.a(this);
     }
 
-    public final void a() {
-        int i10 = org.telegram.ui.ActionBar.j6.jf;
-        int i11 = ChatActivityEnterView.m5;
-        ChatActivityEnterView chatActivityEnterView = this.n;
-        int i02 = chatActivityEnterView.i0(i10);
-        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.Sd);
-        chatActivityEnterView.v3.setColor(i02);
-        hj0 hj0Var = this.f;
-        hj0Var.a0 = true;
-        hj0Var.Q(i02, "Cup Red");
-        hj0Var.Q(i02, "Box");
-        hj0Var.Q(i03, "Line 1");
-        hj0Var.Q(i03, "Line 2");
-        hj0Var.Q(i03, "Line 3");
-        hj0Var.o();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.d = true;
-        boolean z10 = this.e;
-        hj0 hj0Var = this.f;
-        if (z10) {
-            hj0Var.start();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (!(view instanceof org.telegram.ui.ActionBar.j5) || !this.e) {
+            return super.drawChild(canvas, view, j3);
         }
-        hj0Var.v0 = this;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.d = false;
-        hj0 hj0Var = this.f;
-        hj0Var.stop();
-        hj0Var.v0 = null;
+        org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) view;
+        canvas.save();
+        canvas.scale(0.8f, 0.8f);
+        canvas.translate(-AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+        int color = j5Var.getTextPaint().getColor();
+        j5Var.getTextPaint().setColor(-1);
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        j5Var.getTextPaint().setColor(color);
+        canvas.restore();
+        return drawChild;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        Paint paint = this.n.v3;
-        boolean z10 = this.e;
-        hj0 hj0Var = this.f;
-        if (z10) {
-            hj0Var.setAlpha((int) (this.a * 255.0f));
-        }
-        paint.setAlpha((int) (this.a * 255.0f));
-        long currentTimeMillis = System.currentTimeMillis() - this.b;
-        if (this.h) {
-            this.a = 1.0f;
-        } else if (this.c || this.e) {
-            float f7 = (currentTimeMillis / 600.0f) + this.a;
-            this.a = f7;
-            if (f7 >= 1.0f) {
-                this.a = 1.0f;
-                this.c = false;
-            }
-        } else {
-            float f10 = this.a - (currentTimeMillis / 600.0f);
-            this.a = f10;
-            if (f10 <= 0.0f) {
-                this.a = 0.0f;
-                this.c = true;
-            }
-        }
-        this.b = System.currentTimeMillis();
         if (this.e) {
-            hj0Var.draw(canvas);
+            canvas.save();
+            int dp = AndroidUtilities.dp(26.0f);
+            canvas.translate(AndroidUtilities.dp(5.0f), (getMeasuredHeight() - dp) / 2.0f);
+            float f7 = dp;
+            RectF rectF = this.b;
+            rectF.set(-AndroidUtilities.dp(5.0f), 0.0f, getMeasuredWidth() - getPaddingEnd(), f7);
+            float f10 = f7 / 2.0f;
+            canvas.drawRoundRect(rectF, f10, f10, this.c);
+            int measuredWidth = (getMeasuredWidth() - getPaddingEnd()) - AndroidUtilities.dp(6.0f);
+            Drawable drawable = this.d;
+            canvas.translate(measuredWidth - drawable.getIntrinsicWidth(), AndroidUtilities.dp(5.0f));
+            drawable.draw(canvas);
+            canvas.restore();
         }
-        if (!this.e || !hj0Var.u()) {
-            canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
-        }
-        invalidate();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.c.setShader(new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{-9071617, -5999873}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 }

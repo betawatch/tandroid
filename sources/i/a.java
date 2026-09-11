@@ -1,11 +1,11 @@
 package i;
 
 import android.graphics.drawable.Animatable;
-import v7.i8;
+import v7.f8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class a extends i8 {
+public final class a extends f8 {
     public final /* synthetic */ int a;
     public final Animatable b;
 
@@ -14,7 +14,7 @@ public final class a extends i8 {
         this.b = animatable;
     }
 
-    @Override // v7.i8
+    @Override // v7.f8
     public final void c() {
         switch (this.a) {
             case 0:
@@ -26,7 +26,7 @@ public final class a extends i8 {
         }
     }
 
-    @Override // v7.i8
+    @Override // v7.f8
     public final void d() {
         switch (this.a) {
             case 0:

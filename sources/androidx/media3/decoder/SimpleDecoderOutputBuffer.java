@@ -1,30 +1,33 @@
 package androidx.media3.decoder;
 
 import androidx.media3.decoder.ffmpeg.a;
-import h2.j;
+import h2.h;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class SimpleDecoderOutputBuffer extends j {
-    public final a a;
-    public ByteBuffer b;
+public final class SimpleDecoderOutputBuffer extends h {
+    public final a f;
+    public ByteBuffer h;
 
     public SimpleDecoderOutputBuffer(a aVar) {
-        this.a = aVar;
+        this.f = aVar;
     }
 
-    @Override // h2.j, h2.a
-    public final void clear() {
-        super.clear();
-        ByteBuffer byteBuffer = this.b;
+    @Override // h2.h
+    public final void i() {
+        this.b = 0;
+        this.c = 0L;
+        this.d = 0;
+        this.e = false;
+        ByteBuffer byteBuffer = this.h;
         if (byteBuffer != null) {
             byteBuffer.clear();
         }
     }
 
-    @Override // h2.j
-    public final void release() {
-        this.a.c(this);
+    @Override // h2.h
+    public final void j() {
+        this.f.a.n(this);
     }
 }

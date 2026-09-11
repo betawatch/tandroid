@@ -16,11 +16,12 @@ import e6.n;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import i2.g;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.k;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -37,8 +38,8 @@ public final class b implements o {
     public final void a() {
         q qVar = this.b;
         qVar.getClass();
-        qVar.B();
-        this.b.G(new t(-9223372036854775807L));
+        qVar.Z0();
+        this.b.P1(new t(-9223372036854775807L));
         this.c = 6;
     }
 
@@ -47,18 +48,18 @@ public final class b implements o {
         l lVar = (l) pVar;
         v vVar = this.a;
         vVar.G(2);
-        lVar.g(vVar.a, 0, 2, false);
+        lVar.j(vVar.a, 0, 2, false);
         if (vVar.D() == 65496) {
             vVar.G(2);
-            lVar.g(vVar.a, 0, 2, false);
+            lVar.j(vVar.a, 0, 2, false);
             int D = vVar.D();
             this.d = D;
             if (D == 65504) {
                 vVar.G(2);
-                lVar.g(vVar.a, 0, 2, false);
-                lVar.s(vVar.D() - 2, false);
+                lVar.j(vVar.a, 0, 2, false);
+                lVar.v(vVar.D() - 2, false);
                 vVar.G(2);
-                lVar.g(vVar.a, 0, 2, false);
+                lVar.j(vVar.a, 0, 2, false);
                 this.d = vVar.D();
             }
             if (this.d == 65505) {
@@ -156,11 +157,11 @@ public final class b implements o {
                 sVar.a = j10;
                 return 1;
             }
-            if (!pVar.g(vVar.a, 0, 1, true)) {
+            if (!pVar.j(vVar.a, 0, 1, true)) {
                 a();
                 return 0;
             }
-            pVar.p();
+            pVar.q();
             if (this.j == null) {
                 this.j = new k(z3.k.D, 8);
             }
@@ -179,11 +180,11 @@ public final class b implements o {
             aVar2.getClass();
             q qVar2 = this.b;
             qVar2.getClass();
-            h0 I = qVar2.I(1024, 4);
+            h0 R1 = qVar2.R1(1024, 4);
             r rVar = new r();
             rVar.p = r0.n("image/jpeg");
             rVar.k = new p0(aVar2);
-            hc.b.u(rVar, I);
+            g.u(rVar, R1);
             this.c = 5;
             return 0;
         }
@@ -245,7 +246,7 @@ public final class b implements o {
                 }
             }
         } else {
-            pVar.q(this.e);
+            pVar.r(this.e);
         }
         this.c = 0;
         return 0;

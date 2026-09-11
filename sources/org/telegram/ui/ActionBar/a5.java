@@ -1,20 +1,19 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class a5 extends ActionBarLayout {
-    public final /* synthetic */ o s1;
+public interface a5 {
+    void a(float f7);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a5(Activity activity, o oVar) {
-        super(activity, false);
-        this.s1 = oVar;
-    }
+    void b(ActionBarLayout actionBarLayout, boolean z10);
 
-    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.f5
-    public final h3 getBottomSheet() {
-        return ((h3[]) this.s1.b)[0];
-    }
+    void e(int[] iArr);
+
+    boolean h(n2 n2Var, ActionBarLayout actionBarLayout);
+
+    boolean j();
+
+    boolean k(ActionBarLayout actionBarLayout);
+
+    boolean l(ActionBarLayout actionBarLayout, b5 b5Var);
 }

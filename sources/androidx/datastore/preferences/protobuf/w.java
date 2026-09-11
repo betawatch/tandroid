@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class w extends a {
     private static Map<Object, w> defaultInstanceMap = new ConcurrentHashMap();
@@ -24,8 +24,8 @@ public abstract class w extends a {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 wVar = defaultInstanceMap.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e7) {
+                throw new IllegalStateException("Class initialization cannot fail.", e7);
             }
         }
         if (wVar != null) {
@@ -42,10 +42,10 @@ public abstract class w extends a {
     public static Object f(Method method, w wVar, Object... objArr) {
         try {
             return method.invoke(wVar, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
+        } catch (IllegalAccessException e7) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }

@@ -5,15 +5,15 @@ import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import v7.p8;
+import v7.m8;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static final p8 a;
+    public static final m8 a;
 
     static {
-        p8 aVar;
+        m8 aVar;
         try {
             aVar = new b();
         } catch (ReflectiveOperationException unused) {
@@ -75,10 +75,10 @@ public abstract class c {
     public static void f(AccessibleObject accessibleObject) {
         try {
             accessibleObject.setAccessible(true);
-        } catch (Exception e) {
+        } catch (Exception e7) {
             StringBuilder v = a4.a.v("Failed making ", d(accessibleObject, false), " accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.");
-            v.append(e(e));
-            throw new j(v.toString(), e);
+            v.append(e(e7));
+            throw new j(v.toString(), e7);
         }
     }
 }

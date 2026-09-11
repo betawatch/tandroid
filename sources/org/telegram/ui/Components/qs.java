@@ -1,172 +1,142 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qs extends f6 {
-    public boolean E;
-    public boolean F;
-    public bh.d s;
-    public final Path v;
-    public final RectF w;
-    public int x;
-    public FragmentContextView y;
+public class qs extends v51 {
+    public final int N;
+    public final int O;
+    public final boolean P;
+    public final ps Q;
+    public final ArrayList R;
+    public final ArrayList S;
+    public final ArrayList T;
+    public boolean U;
+    public boolean V;
+    public final CharSequence W;
+    public int X;
+    public int Y;
+    public boolean Z;
+    public boolean a0;
+    public boolean b0;
+    public int c0;
+    public int d0;
+    public String e0;
+    public final ls f0;
+    public boolean g0;
+    public final y2 h0;
 
-    public qs(Context context) {
-        super(context);
-        this.v = new Path();
-        this.w = new RectF();
-        this.x = 24;
-        setOrientation(1);
-        bh.d dVar = this.s;
-        if (dVar != null) {
-            dVar.u();
-        }
-        invalidate();
+    public qs(ll0 ll0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(ll0Var, context, i10, 0, true, null, f6Var);
+        this.R = new ArrayList();
+        this.S = new ArrayList();
+        this.T = new ArrayList();
+        this.f0 = new ls(this, 0);
+        this.g0 = true;
+        this.h0 = new y2(this, 3);
+        this.s = new d(this, 8);
+        this.N = i10;
+        this.O = i11;
+        this.P = z10;
+        this.Q = new ps(i10, new ls(this, 1));
+        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ms(this, f6Var, context)), true);
+        N(false);
+        MediaDataController.getInstance(i10).loadHints(true);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int currentStyle;
-        FragmentContextView fragmentContextView;
-        Canvas canvas2 = canvas;
-        if (getMetadata().c.a == 0.0f) {
-            return;
+    public final void V() {
+        boolean isEmpty = TextUtils.isEmpty(this.e0);
+        ll0 ll0Var = this.d;
+        if (isEmpty) {
+            if (!this.g0) {
+                if (ll0Var != null) {
+                    for (int i10 = 0; i10 < ll0Var.getChildCount(); i10++) {
+                        if (!(ll0Var.getChildAt(i10) instanceof t00)) {
+                        }
+                    }
+                }
+            }
+            this.Q.a();
+            break;
         }
-        bh.d dVar = this.s;
-        if (dVar != null) {
-            dVar.draw(canvas2);
-        }
-        FragmentContextView fragmentContextView2 = this.y;
-        le.j jVar = this.c;
-        View view = null;
-        if (fragmentContextView2 != null && ((currentStyle = fragmentContextView2.getCurrentStyle()) == 3 || currentStyle == 1)) {
-            int entriesCount = getEntriesCount();
-            for (int i10 = 0; i10 < entriesCount; i10++) {
-                le.g n10 = jVar.n(i10);
-                float paddingTop = getPaddingTop() + n10.b().top;
-                View view2 = ((e6) n10.a).a;
-                float c10 = n10.c();
-                if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
-                    hd capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
-                    int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
-                    int i11 = -dp;
-                    capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);
-                    capsuleBlobDrawable.setAlpha((int) (c10 * 255.0f));
-                    canvas2.save();
-                    canvas2.translate(0.0f, paddingTop);
-                    capsuleBlobDrawable.draw(canvas2);
-                    canvas2.restore();
-                    view = view2;
+        if (this.b0 && !this.Z && ll0Var != null) {
+            int i11 = 0;
+            while (true) {
+                if (i11 >= ll0Var.getChildCount()) {
+                    break;
+                }
+                if (!(ll0Var.getChildAt(i11) instanceof t00)) {
+                    i11++;
+                } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
+                    W(true);
                 }
             }
         }
-        View view3 = view;
-        canvas2.save();
-        canvas2.clipPath(this.v);
-        int entriesCount2 = getEntriesCount();
-        int i12 = 0;
-        while (i12 < entriesCount2) {
-            le.g n11 = jVar.n(i12);
-            float paddingTop2 = getPaddingTop() + n11.b().top;
-            View view4 = ((e6) n11.a).a;
-            float min = Math.min(1.0f, n11.c.a) * n11.c();
-            if (min > 0.0f && view3 != view4) {
-                int alpha = org.telegram.ui.ActionBar.j6.k0.getAlpha();
-                org.telegram.ui.ActionBar.j6.k0.setAlpha((int) (alpha * min));
-                float f7 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.j6.k0);
-                org.telegram.ui.ActionBar.j6.k0.setAlpha(alpha);
+        this.g0 = false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void W(boolean z10) {
+        this.Z = true;
+        int i10 = this.d0 + 1;
+        this.d0 = i10;
+        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+        tL_messages_searchGlobal.broadcasts_only = false;
+        int i11 = this.O;
+        if (i11 != 0) {
+            tL_messages_searchGlobal.flags |= 1;
+            tL_messages_searchGlobal.folder_id = i11;
+        }
+        tL_messages_searchGlobal.q = this.e0;
+        tL_messages_searchGlobal.limit = 25;
+        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+        int i12 = this.N;
+        if (z10) {
+            ArrayList arrayList = this.T;
+            if (!arrayList.isEmpty()) {
+                MessageObject messageObject = (MessageObject) i2.g.h(1, arrayList);
+                tL_messages_searchGlobal.offset_rate = this.c0;
+                tL_messages_searchGlobal.offset_id = messageObject.getId();
+                if (messageObject.messageOwner.peer_id == null) {
+                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                } else {
+                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
+                }
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+                if (z10) {
+                    this.a0 = true;
+                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
+                    tL_contacts_search.limit = 30;
+                    tL_contacts_search.bots = true;
+                    tL_contacts_search.q = this.e0;
+                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new bi.f0(11, this, tL_contacts_search));
+                    return;
+                }
+                return;
             }
-            i12++;
-            canvas2 = canvas;
         }
-        this.E = view3 != null;
-        this.F = false;
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (view3 != null) {
-            this.F = true;
-            this.E = false;
-            super.dispatchDraw(canvas);
+        tL_messages_searchGlobal.offset_rate = 0;
+        tL_messages_searchGlobal.offset_id = 0;
+        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+        if (z10) {
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        bh.d dVar;
-        if (super.dispatchTouchEvent(motionEvent)) {
-            return true;
-        }
-        return motionEvent.getAction() == 0 && (dVar = this.s) != null && dVar.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        FragmentContextView fragmentContextView = this.y;
-        boolean z10 = fragmentContextView != null && (fragmentContextView == view || fragmentContextView.getParent() == view);
-        if (!(z10 && this.E) && (z10 || !this.F)) {
-            return super.drawChild(canvas, view, j3);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.f6
-    public final void e() {
-        j();
-        invalidate();
-    }
-
-    public final void j() {
-        float f7 = getMetadata().g.a;
-        float f10 = getMetadata().c.a;
-        RectF rectF = this.w;
-        rectF.set(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getPaddingTop() + f7);
-        float min = Math.min(AndroidUtilities.dp(this.x), Math.min(rectF.width(), rectF.height()) / 2.0f);
-        Path path = this.v;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        bh.d dVar = this.s;
-        if (dVar != null) {
-            dVar.setAlpha((int) (f10 * 255.0f));
-            this.s.setBounds(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(14.0f), getMeasuredWidth() - AndroidUtilities.dp(4.0f), ((getPaddingBottom() + getPaddingTop()) + ((int) f7)) - AndroidUtilities.dp(14.0f));
-            this.s.p(Math.min(AndroidUtilities.dp(this.x), f7 / 2.0f));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.f6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        j();
-    }
-
-    public void setBlurredBackground(bh.d dVar) {
-        this.s = dVar;
-    }
-
-    public void setCallFragmentContextView(FragmentContextView fragmentContextView) {
-        this.y = fragmentContextView;
-        fragmentContextView.getCapsuleBlobDrawable().setCallback(this);
-    }
-
-    public void setDefaultRadiusDp(int i10) {
-        this.x = i10;
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        if (super.verifyDrawable(drawable)) {
-            return true;
-        }
-        FragmentContextView fragmentContextView = this.y;
-        return fragmentContextView != null && fragmentContextView.getCapsuleBlobDrawable() == drawable;
     }
 }

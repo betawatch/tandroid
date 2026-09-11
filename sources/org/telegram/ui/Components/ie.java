@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ie implements Runnable {
     public final /* synthetic */ int a;
@@ -17,23 +17,23 @@ public final /* synthetic */ class ie implements Runnable {
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
             case 0:
-                qg qgVar = chatActivityEnterView.Y2;
-                if (qgVar != null) {
-                    qgVar.p1();
+                og ogVar = chatActivityEnterView.Y2;
+                if (ogVar != null) {
+                    ogVar.k1();
                     break;
                 }
                 break;
             case 1:
-                rf rfVar = chatActivityEnterView.E0;
-                if (rfVar != null) {
-                    rfVar.setText("");
+                qf qfVar = chatActivityEnterView.E0;
+                if (qfVar != null) {
+                    qfVar.setText("");
                     break;
                 }
                 break;
             case 2:
-                rf rfVar2 = chatActivityEnterView.E0;
-                if (rfVar2 != null) {
-                    rfVar2.setText("");
+                qf qfVar2 = chatActivityEnterView.E0;
+                if (qfVar2 != null) {
+                    qfVar2.setText("");
                 }
                 chatActivityEnterView.K(true);
                 break;

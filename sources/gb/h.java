@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h extends db.u {
     public static final e c = new e();
@@ -50,10 +50,10 @@ public final class h extends db.u {
                         try {
                             b10 = hb.a.b(v, new ParsePosition(0));
                             break;
-                        } catch (ParseException e) {
+                        } catch (ParseException e7) {
                             StringBuilder v9 = a4.a.v("Failed parsing '", v, "' as Date; at path ");
                             v9.append(aVar.j());
-                            throw new db.j(v9.toString(), e);
+                            throw new db.j(v9.toString(), e7);
                         }
                     }
                     Object obj = arrayList.get(i10);

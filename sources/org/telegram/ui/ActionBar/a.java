@@ -2,17 +2,17 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.k01;
+import org.telegram.ui.f01;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ k b;
 
-    public /* synthetic */ a(l lVar, int i10) {
+    public /* synthetic */ a(k kVar, int i10) {
         this.a = i10;
-        this.b = lVar;
+        this.b = kVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -20,49 +20,49 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
         z zVar;
         switch (this.a) {
             case 0:
-                k01 k01Var = this.b.U0;
-                if (k01Var != null) {
-                    k01Var.run();
+                f01 f01Var = this.b.U0;
+                if (f01Var != null) {
+                    f01Var.run();
                     break;
                 }
                 break;
             case 1:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l lVar = this.b;
-                lVar.o0 = floatValue;
-                if (lVar.a != null && lVar.Q0) {
+                k kVar = this.b;
+                kVar.o0 = floatValue;
+                if (kVar.a != null && kVar.Q0) {
                     float dp = AndroidUtilities.dp(23.0f);
-                    float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), lVar.o0);
-                    lVar.a.q(lerp, dp, dp, lerp);
-                    lVar.invalidate();
+                    float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), kVar.o0);
+                    kVar.a.q(lerp, dp, dp, lerp);
+                    kVar.invalidate();
                 }
-                if (lVar.O0 && (zVar = lVar.E) != null) {
-                    zVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), lVar.o0));
+                if (kVar.O0 && (zVar = kVar.E) != null) {
+                    zVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), kVar.o0));
                 }
-                k01 k01Var2 = lVar.U0;
-                if (k01Var2 != null) {
-                    k01Var2.run();
+                f01 f01Var2 = kVar.U0;
+                if (f01Var2 != null) {
+                    f01Var2.run();
                     break;
                 }
                 break;
             case 2:
-                k01 k01Var3 = this.b.U0;
-                if (k01Var3 != null) {
-                    k01Var3.run();
+                f01 f01Var3 = this.b.U0;
+                if (f01Var3 != null) {
+                    f01Var3.run();
                     break;
                 }
                 break;
             case 3:
-                l lVar2 = this.b;
-                lVar2.getClass();
-                lVar2.r1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lVar2.b();
+                k kVar2 = this.b;
+                kVar2.getClass();
+                kVar2.r1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar2.b();
                 break;
             default:
-                l lVar3 = this.b;
-                lVar3.getClass();
-                lVar3.r1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lVar3.b();
+                k kVar3 = this.b;
+                kVar3.getClass();
+                kVar3.r1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar3.b();
                 break;
         }
     }

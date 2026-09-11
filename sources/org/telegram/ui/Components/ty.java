@@ -1,59 +1,101 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ty extends u51 {
-    public static final /* synthetic */ int a = 0;
+public final class ty extends ImageView {
+    public int a;
+    public q5 b;
+    public boolean c;
+    public z5 d;
+    public xx e;
+    public final ImageReceiver.BackgroundThreadDrawHolder[] f;
+    public float h;
+    public ValueAnimator n;
 
-    static {
-        u51.setup(new ty());
+    public ty(Context context) {
+        super(context);
+        this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
+        setScaleType(ImageView.ScaleType.CENTER);
+        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
     }
 
-    public static v51 a(TLRPC.StickerSetCovered stickerSetCovered, jy jyVar, boolean z10) {
-        v51 J = v51.J(ty.class);
-        long j3 = stickerSetCovered.set.id;
-        long j10 = 1 + j3;
-        J.d = (int) (j10 ^ (j10 >>> 32));
-        J.B = j3;
-        J.G = stickerSetCovered;
-        J.H = jyVar;
-        J.e = z10;
-        return J;
+    public final void a(Drawable drawable, boolean z10) {
+        setImageDrawable(drawable);
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final void bindView(View view, v51 v51Var, boolean z10, j61 j61Var, r61 r61Var) {
-        mh.c cVar = (mh.c) view;
-        Object obj = v51Var.G;
-        if (obj instanceof TLRPC.TL_messages_stickerSet) {
-            cVar.setPack((TLRPC.TL_messages_stickerSet) obj);
-        } else if (obj instanceof TLRPC.StickerSetCovered) {
-            TLRPC.Document document = ((jy) v51Var.H).e;
-            cVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
-            cVar.c.d(document, null, null, null, false, false);
+    public z5 getSpan() {
+        return this.d;
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isPressed()) {
+            float f7 = this.h;
+            if (f7 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f7;
+                this.h = min;
+                this.h = Utilities.clamp(min, 1.0f, 0.0f);
+                invalidate();
+            }
         }
-        cVar.a(v51Var.e, false);
+        float f10 = ((1.0f - this.h) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        super.onDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final boolean contentsEquals(v51 v51Var, v51 v51Var2) {
-        return v51Var.B == v51Var2.B && v51Var.e == v51Var2.e;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.view.View");
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final View createView(Context context, vl0 vl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        mh.c cVar = new mh.c(context, f6Var);
-        cVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(64.0f), -1));
-        return cVar;
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i10));
     }
 
-    @Override // org.telegram.ui.Components.u51
-    public final boolean equals(v51 v51Var, v51 v51Var2) {
-        return v51Var.B == v51Var2.B;
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z10) {
+            super.setPressed(z10);
+            invalidate();
+            if (z10 && (valueAnimator = this.n) != null) {
+                valueAnimator.removeAllListeners();
+                this.n.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.h;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.n = ofFloat;
+                ofFloat.addUpdateListener(new l6(this, 21));
+                this.n.addListener(new j6(this, 23));
+                this.n.setInterpolator(new OvershootInterpolator(5.0f));
+                this.n.setDuration(350L);
+                this.n.start();
+            }
+        }
+    }
+
+    public void setSpan(z5 z5Var) {
+        this.d = z5Var;
     }
 }

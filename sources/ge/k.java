@@ -1,9 +1,9 @@
 package ge;
 
-import ee.w;
+import ee.v;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final String a;
@@ -17,7 +17,7 @@ public abstract class k {
 
     static {
         String str;
-        int i10 = w.a;
+        int i10 = v.a;
         try {
             str = System.getProperty("kotlinx.coroutines.scheduler.default.name");
         } catch (SecurityException unused) {
@@ -28,7 +28,7 @@ public abstract class k {
         }
         a = str;
         b = ee.a.i("kotlinx.coroutines.scheduler.resolution.ns", 100000L, 1L, Long.MAX_VALUE);
-        int i11 = w.a;
+        int i11 = v.a;
         if (i11 < 2) {
             i11 = 2;
         }

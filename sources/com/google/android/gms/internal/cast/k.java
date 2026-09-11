@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -18,11 +18,11 @@ public final /* synthetic */ class k implements Runnable {
         switch (this.a) {
             case 0:
                 n nVar = this.b;
-                of.b bVar = nVar.e;
-                if (((p4.x) bVar.c) == null) {
-                    bVar.c = p4.x.d((Context) bVar.b);
+                n4.y yVar = nVar.e;
+                if (((p4.x) yVar.c) == null) {
+                    yVar.c = p4.x.d((Context) yVar.b);
                 }
-                p4.x xVar = (p4.x) bVar.c;
+                p4.x xVar = (p4.x) yVar.c;
                 if (xVar != null) {
                     xVar.h(nVar);
                     break;

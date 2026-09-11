@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class Utilities {
     private static final String RANDOM_STRING_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -38,72 +38,72 @@ public class Utilities {
     public static Pattern pattern = Pattern.compile("[\\-0-9]+");
     public static SecureRandom random = new SecureRandom();
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback<T> {
         void run(T t10);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback0Return<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback2<T, T2> {
         void run(T t10, T2 t22);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback2Return<T1, T2, ReturnType> {
         ReturnType run(T1 t12, T2 t22);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback3<T, T2, T3> {
         void run(T t10, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback3Return<T1, T2, T3, ReturnType> {
         ReturnType run(T1 t12, T2 t22, T3 t32);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback4<T, T2, T3, T4> {
         void run(T t10, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback4Return<T, T2, T3, T4, ReturnType> {
         ReturnType run(T t10, T2 t22, T3 t32, T4 t42);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback5<T, T2, T3, T4, T5> {
         void run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface Callback5Return<T, T2, T3, T4, T5, ReturnType> {
         ReturnType run(T t10, T2 t22, T3 t32, T4 t42, T5 t52);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface CallbackReturn<Arg, ReturnType> {
         ReturnType run(Arg arg);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface CallbackVoidReturn<ReturnType> {
         ReturnType run();
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface IndexedConsumer<T> {
         void accept(T t10, int i10);
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum libyuv_ScaleFilter {
         None,
         Linear,
@@ -138,8 +138,8 @@ public class Utilities {
             fileInputStream.read(bArr);
             fileInputStream.close();
             random.setSeed(bArr);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -154,8 +154,8 @@ public class Utilities {
                 sb2.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
             }
             return sb2.toString();
-        } catch (NoSuchAlgorithmException e) {
-            FileLog.e(e);
+        } catch (NoSuchAlgorithmException e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -171,8 +171,8 @@ public class Utilities {
                 sb2.append(Integer.toHexString((b10 & 255) | 256).substring(1, 3));
             }
             return sb2.toString();
-        } catch (NoSuchAlgorithmException e) {
-            FileLog.e(e);
+        } catch (NoSuchAlgorithmException e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -284,8 +284,8 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
             messageDigest.update(bArr, i10, i11);
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[20];
         }
     }
@@ -299,8 +299,8 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
             messageDigest.update(bArr, 0, bArr.length);
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[64];
         }
     }
@@ -484,9 +484,9 @@ public class Utilities {
                 runnable.run();
             }
         } else {
-            g9 g9Var = new g9(new int[]{0}, callbackArr, runnable, 28);
+            y8 y8Var = new y8(new int[]{0}, callbackArr, runnable, 28);
             for (Callback<Runnable> callback : callbackArr) {
-                callback.run(g9Var);
+                callback.run(y8Var);
             }
         }
     }
@@ -547,8 +547,8 @@ public class Utilities {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
             messageDigest.update(bArr, i10, (int) j3);
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[32];
         }
     }
@@ -557,7 +557,7 @@ public class Utilities {
         if (callbackArr == null || callbackArr.length <= i10) {
             return;
         }
-        callbackArr[i10].run(new u6(i10, callbackArr, 11));
+        callbackArr[i10].run(new n6(i10, callbackArr, 11));
     }
 
     public static String generateRandomString(int i10) {
@@ -604,8 +604,8 @@ public class Utilities {
                 byteBuffer.limit(i11);
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[20];
@@ -622,8 +622,8 @@ public class Utilities {
             messageDigest.update(bArr, 0, bArr.length);
             messageDigest.update(bArr2, 0, bArr2.length);
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[64];
         }
     }
@@ -635,8 +635,8 @@ public class Utilities {
                 messageDigest.update(bArr2, 0, bArr2.length);
             }
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[32];
         }
     }
@@ -665,8 +665,8 @@ public class Utilities {
             messageDigest.update(bArr2, 0, bArr2.length);
             messageDigest.update(bArr3, 0, bArr3.length);
             return messageDigest.digest();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new byte[64];
         }
     }
@@ -682,8 +682,8 @@ public class Utilities {
                 byteBuffer.limit(i13);
                 messageDigest.update(byteBuffer);
                 return messageDigest.digest();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 byteBuffer.limit(limit);
                 byteBuffer.position(position);
                 return new byte[32];

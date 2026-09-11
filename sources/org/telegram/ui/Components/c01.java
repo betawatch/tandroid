@@ -1,0 +1,45 @@
+package org.telegram.ui.Components;
+
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c01 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e01 b;
+
+    public /* synthetic */ c01(e01 e01Var, int i10) {
+        this.a = i10;
+        this.b = e01Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a();
+                break;
+            case 1:
+                e01 e01Var = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e01Var.getContext());
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.TosDeclineDeleteAccount);
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new c01(e01Var, 2));
+                i2.g.r(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            default:
+                e01 e01Var2 = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(e01Var2.getContext(), 3, null);
+                b2Var2.g0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(e01Var2.d).sendRequest(deleteaccount, new org.telegram.ui.ro(16, e01Var2, b2Var2));
+                b2Var2.show();
+                break;
+        }
+    }
+}

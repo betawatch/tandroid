@@ -1,27 +1,15 @@
 package i2;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class d1 implements v0 {
-    public final u2.b0 a;
-    public int d;
-    public boolean e;
-    public final ArrayList c = new ArrayList();
-    public final Object b = new Object();
+public final class d1 {
+    public final u2.a a;
+    public final x0 b;
+    public final c1 c;
 
-    public d1(u2.a aVar, boolean z10) {
-        this.a = new u2.b0(aVar, z10);
-    }
-
-    @Override // i2.v0
-    public final Object a() {
-        return this.b;
-    }
-
-    @Override // i2.v0
-    public final b2.k1 b() {
-        return this.a.o;
+    public d1(u2.a aVar, x0 x0Var, c1 c1Var) {
+        this.a = aVar;
+        this.b = x0Var;
+        this.c = c1Var;
     }
 }

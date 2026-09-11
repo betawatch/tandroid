@@ -1,40 +1,40 @@
 package k2;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ of.b b;
-    public final /* synthetic */ i2.g c;
+    public final /* synthetic */ n4.y b;
+    public final /* synthetic */ i2.h c;
 
-    public /* synthetic */ g(of.b bVar, i2.g gVar, int i10) {
+    public /* synthetic */ g(n4.y yVar, i2.h hVar, int i10) {
         this.a = i10;
-        this.b = bVar;
-        this.c = gVar;
+        this.b = yVar;
+        this.c = hVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                of.b bVar = this.b;
-                i2.g gVar = this.c;
-                synchronized (gVar) {
+                n4.y yVar = this.b;
+                i2.h hVar = this.c;
+                synchronized (hVar) {
                 }
-                j jVar = (j) bVar.c;
+                j jVar = (j) yVar.c;
                 String str = e2.d0.a;
-                j2.e eVar = ((i2.b0) jVar).a.s;
-                j2.a n10 = eVar.n((u2.g0) eVar.d.e);
-                eVar.q(n10, 1013, new j2.d(n10, gVar, 5));
+                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.a n10 = fVar.n((u2.f0) fVar.d.e);
+                fVar.q(n10, 1013, new j2.c(n10, hVar, 11));
                 break;
             default:
-                of.b bVar2 = this.b;
-                i2.g gVar2 = this.c;
-                j jVar2 = (j) bVar2.c;
+                n4.y yVar2 = this.b;
+                i2.h hVar2 = this.c;
+                j jVar2 = (j) yVar2.c;
                 String str2 = e2.d0.a;
-                j2.e eVar2 = ((i2.b0) jVar2).a.s;
-                j2.a p5 = eVar2.p();
-                eVar2.q(p5, 1007, new i0.b(p5, gVar2, 28));
+                j2.f fVar2 = ((i2.c0) jVar2).a.s;
+                j2.a p5 = fVar2.p();
+                fVar2.q(p5, 1007, new j2.c(p5, hVar2, 4));
                 break;
         }
     }

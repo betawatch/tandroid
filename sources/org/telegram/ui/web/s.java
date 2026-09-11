@@ -1,42 +1,93 @@
 package org.telegram.ui.web;
 
+import bi.k9;
 import org.json.JSONObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements Utilities.Callback {
+public final /* synthetic */ class s implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
-    public final /* synthetic */ a1 c;
+    public final /* synthetic */ d1 b;
+    public final /* synthetic */ k9 c;
 
-    public /* synthetic */ s(c1 c1Var, a1 a1Var, int i10) {
+    public /* synthetic */ s(d1 d1Var, k9 k9Var, int i10) {
         this.a = i10;
-        this.b = c1Var;
-        this.c = a1Var;
+        this.b = d1Var;
+        this.c = k9Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        i0 i0Var;
         switch (this.a) {
             case 0:
-                this.b.z(this.c, "location_requested", (JSONObject) obj);
-                break;
-            case 1:
-                this.b.z(this.c, "location_requested", (JSONObject) obj);
-                break;
-            default:
-                c1 c1Var = this.b;
-                c1Var.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                a1 a1Var = this.c;
-                if (!booleanValue) {
-                    c1Var.z(a1Var, "home_screen_failed", c1.B("UNSUPPORTED", "error"));
-                    break;
-                } else {
-                    c1Var.z(a1Var, "home_screen_added", null);
+                String str = (String) obj2;
+                JSONObject B = d1.B(str, "status");
+                d1 d1Var = this.b;
+                d1Var.y(this.c, "emoji_status_access_requested", B);
+                if (((Boolean) obj).booleanValue() && "allowed".equalsIgnoreCase(str) && (i0Var = d1Var.c) != null) {
+                    i0Var.a();
                     break;
                 }
+                break;
+            case 1:
+                Boolean bool = (Boolean) obj;
+                Boolean bool2 = (Boolean) obj2;
+                d1 d1Var2 = this.b;
+                if (d1Var2.c != null && bool.booleanValue()) {
+                    d1Var2.c.w(bool2.booleanValue());
+                }
+                d1Var2.k0.k(new t(d1Var2, this.c, 1));
+                break;
+            case 2:
+                d1 d1Var3 = this.b;
+                d1Var3.getClass();
+                if (((Boolean) obj).booleanValue()) {
+                    fi.s sVar = d1Var3.j0;
+                    sVar.e = true;
+                    sVar.k();
+                }
+                d1Var3.w(this.c);
+                break;
+            case 3:
+                k9 k9Var = this.c;
+                Boolean bool3 = (Boolean) obj;
+                String str2 = (String) obj2;
+                d1 d1Var4 = this.b;
+                d1Var4.getClass();
+                if (bool3.booleanValue()) {
+                    d1Var4.j0.e = true;
+                }
+                try {
+                    JSONObject jSONObject = new JSONObject();
+                    jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
+                    jSONObject.put("token", str2);
+                    d1Var4.y(k9Var, "biometry_auth_requested", jSONObject);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            default:
+                String str3 = (String) obj;
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                d1 d1Var5 = this.b;
+                k9 k9Var2 = this.c;
+                if (str3 != null) {
+                    d1Var5.y(k9Var2, "emoji_status_failed", d1.B(str3, "error"));
+                    break;
+                } else {
+                    d1Var5.y(k9Var2, "emoji_status_set", null);
+                    i0 i0Var2 = d1Var5.c;
+                    if (i0Var2 != null) {
+                        i0Var2.d(document);
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

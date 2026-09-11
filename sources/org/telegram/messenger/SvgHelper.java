@@ -36,13 +36,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class SvgHelper {
     private static final Pattern SPLIT_BOUNDARY;
     private static final double[] pow10 = new double[128];
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Circle {
         float rad;
         float x1;
@@ -55,7 +55,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Line {
         float x1;
         float x2;
@@ -70,7 +70,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
@@ -89,7 +89,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Oval {
         RectF rect;
 
@@ -98,7 +98,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class ParserHelper {
         private char current;
         private int n;
@@ -455,7 +455,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -530,7 +530,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class RoundRect {
         RectF rect;
         float rx;
@@ -541,13 +541,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public enum ScaleMode {
         Default,
         ByWidth
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -572,7 +572,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -669,9 +669,9 @@ public class SvgHelper {
                         if (runnable != null) {
                             AndroidUtilities.cancelRunOnUIThread(runnable);
                         }
-                        y1 y1Var = new y1(22);
-                        shiftRunnable = y1Var;
-                        AndroidUtilities.runOnUIThread(y1Var, ((int) (1000.0f / AndroidUtilities.screenRefreshRate)) - 1);
+                        u1 u1Var = new u1(22);
+                        shiftRunnable = u1Var;
+                        AndroidUtilities.runOnUIThread(u1Var, ((int) (1000.0f / AndroidUtilities.screenRefreshRate)) - 1);
                     }
                     ImageReceiver imageReceiver = this.parentImageReceiver;
                     if (imageReceiver == null || z10) {
@@ -936,13 +936,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public interface SvgResult {
         Bitmap getBitmap();
 
         SvgDrawable getDrawable();
 
-        List<cg.c> getGiftPatternPositions();
+        List<dg.c> getGiftPatternPositions();
     }
 
     static {
@@ -1019,8 +1019,8 @@ public class SvgHelper {
             }
             sb2.append('z');
             return sb2.toString();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return "";
         }
     }
@@ -1387,8 +1387,8 @@ public class SvgHelper {
             paint.setColor(-1);
             canvas.drawPath(doPath, paint);
             return createBitmap;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1498,8 +1498,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getDrawable();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1513,8 +1513,8 @@ public class SvgHelper {
             svgDrawable.width = i10;
             svgDrawable.height = i11;
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1573,8 +1573,8 @@ public class SvgHelper {
                 return sVGHandler;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1755,7 +1755,7 @@ public class SvgHelper {
         return arrayList;
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class SVGHandler extends DefaultHandler implements SvgResult {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -1768,7 +1768,7 @@ public class SvgHelper {
         private HashMap<String, StyleSet> globalStyles;
         private boolean insideGiftRect;
         private int insideGiftRectDepth;
-        private List<cg.c> insideGiftRectPositions;
+        private List<dg.c> insideGiftRectPositions;
         private Paint paint;
         private Integer paintColor;
         boolean pushed;
@@ -1941,12 +1941,12 @@ public class SvgHelper {
         }
 
         @Override // org.telegram.messenger.SvgHelper.SvgResult
-        public List<cg.c> getGiftPatternPositions() {
+        public List<dg.c> getGiftPatternPositions() {
             return this.insideGiftRectPositions;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Type inference failed for: r0v9, types: [cg.c] */
+        /* JADX WARN: Type inference failed for: r0v9, types: [dg.c] */
         @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
         public void startElement(String str, String str2, String str3, Attributes attributes) {
             String stringAttr;
@@ -1964,9 +1964,9 @@ public class SvgHelper {
                             RectF rectF = new RectF(parseFloat, parseFloat2, Float.parseFloat(attributes.getValue("width")) + parseFloat, Float.parseFloat(attributes.getValue("height")) + parseFloat2);
                             Matrix parseTransform = SvgHelper.parseTransform(attributes.getValue("transform"));
                             parseTransform.postScale(f7, f7);
-                            r14 = new cg.c(rectF, parseTransform);
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                            r14 = new dg.c(rectF, parseTransform);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                         if (r14 != null) {
                             if (this.insideGiftRectPositions == null) {
@@ -2275,7 +2275,7 @@ public class SvgHelper {
             return f7;
         }
         if (stringAttr.endsWith("px")) {
-            stringAttr = com.google.android.gms.internal.vision.e2.h(2, 0, stringAttr);
+            stringAttr = com.google.android.gms.internal.vision.e2.i(2, 0, stringAttr);
         } else if (stringAttr.endsWith("mm")) {
             return null;
         }
@@ -2297,8 +2297,8 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2311,8 +2311,8 @@ public class SvgHelper {
             svgDrawable.width = i10;
             svgDrawable.height = i11;
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2324,8 +2324,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(ApplicationLoader.applicationContext.getResources().openRawResource(i10)));
             return sVGHandler.getDrawable();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2337,8 +2337,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(inputStream));
             return sVGHandler.getBitmap();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2363,8 +2363,8 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2376,8 +2376,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getBitmap();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }

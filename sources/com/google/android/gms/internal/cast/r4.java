@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class r4 extends h4 implements Runnable {
     public final Runnable n;
@@ -19,11 +19,11 @@ public final class r4 extends h4 implements Runnable {
     public final void run() {
         try {
             this.n.run();
-        } catch (Error | RuntimeException e) {
-            if (h4.f.f(this, null, new a4(e))) {
+        } catch (Error | RuntimeException e7) {
+            if (h4.f.f(this, null, new a4(e7))) {
                 h4.h(this);
             }
-            throw e;
+            throw e7;
         }
     }
 }

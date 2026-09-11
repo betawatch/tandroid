@@ -1,45 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class w31 extends s4.s0 {
-    public final /* synthetic */ i41 a;
+public final /* synthetic */ class w31 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f41 b;
 
-    public w31(i41 i41Var) {
-        this.a = i41Var;
+    public /* synthetic */ w31(f41 f41Var, int i10) {
+        this.a = i10;
+        this.b = f41Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        i41 i41Var = this.a;
-        v31 v31Var = i41Var.H;
-        if (i10 == 0) {
-            i41Var.G = false;
-        }
-        if ((i10 == 0 || i10 == 2) && i41Var.z(false) > 0.0f && i41Var.z(false) < AndroidUtilities.dp(96.0f) && v31Var.canScrollVertically(1) && i41.u(i41Var)) {
-            i41Var.G = true;
-            v31Var.v0(0, (int) i41Var.z(false), null);
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        i41 i41Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) i41Var).containerView;
-        viewGroup.invalidate();
-        boolean canScrollVertically = i41Var.H.canScrollVertically(1);
-        View view = i41Var.L;
-        Boolean bool = i41Var.Q;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            i41Var.Q = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.em.q(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), wr.h, 320L);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.dismiss();
+                break;
+            case 3:
+                f41 f41Var = this.b;
+                CharSequence charSequence = f41Var.c0;
+                if (charSequence != null) {
+                    f41Var.d0.run(charSequence);
+                }
+                f41Var.dismiss();
+                break;
+            default:
+                f41.P(this.b, view);
+                break;
         }
     }
 }

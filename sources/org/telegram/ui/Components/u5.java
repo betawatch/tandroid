@@ -1,39 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.view.View;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class u5 {
-    public ArrayList a;
-    public HashMap b;
-    public ArrayList c;
+public final class u5 implements w5 {
+    public final View a;
+    public final boolean b;
+    public Layout c;
+    public z5 d;
+    public Rect e;
+    public q5 f;
+    public Emoji.EmojiDrawable h;
+    public boolean n;
+    public float r;
+    public float s;
+    public boolean v;
 
-    public final void a() {
-        ArrayList arrayList = this.a;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            ((t5) arrayList.get(i10)).d.spanDrawn = false;
-        }
+    public u5(View view, boolean z10) {
+        this.a = view;
+        this.b = z10;
     }
 
-    public final void b(int i10) {
-        t5 t5Var = (t5) this.a.remove(i10);
-        HashMap hashMap = this.b;
-        w5 w5Var = (w5) hashMap.get(t5Var.c);
-        if (w5Var == null) {
-            throw new RuntimeException("!!!");
-        }
-        ArrayList arrayList = w5Var.b;
-        arrayList.remove(t5Var);
-        w5Var.a();
-        if (arrayList.isEmpty()) {
-            hashMap.remove(t5Var.c);
-            this.c.remove(w5Var);
-        }
-        p5 p5Var = t5Var.f;
-        if (p5Var != null) {
-            p5Var.p(t5Var);
+    @Override // org.telegram.ui.Components.w5
+    public final void invalidate() {
+        View view = this.a;
+        if (view != null) {
+            if (!this.b || view.getParent() == null) {
+                view.invalidate();
+            } else {
+                ((View) view.getParent()).invalidate();
+            }
         }
     }
 }

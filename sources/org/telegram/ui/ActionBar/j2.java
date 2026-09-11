@@ -1,55 +1,37 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nb;
-import org.telegram.ui.Components.pc;
+import android.app.Dialog;
+import android.view.View;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class j2 implements nb {
-    public final /* synthetic */ p2 a;
+public interface j2 {
+    boolean attachedToParent();
 
-    public j2(p2 p2Var) {
-        this.a = p2Var;
-    }
+    void dismiss();
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ boolean a() {
-        return true;
-    }
+    void dismiss(boolean z10);
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
+    yc getBulletinFactory();
 
-    @Override // org.telegram.ui.Components.nb
-    public final int f(int i10) {
-        if (this.a.isSupportEdgeToEdge()) {
-            return AndroidUtilities.navigationBarHeight;
-        }
-        return 0;
-    }
+    int getNavigationBarColor(int i10);
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ boolean g(int i10) {
-        return false;
-    }
+    View getWindowView();
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ int h(int i10) {
-        return 0;
-    }
+    boolean isAttachedLightStatusBar();
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void b(pc pcVar) {
-    }
+    boolean isFullyVisible();
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void c(float f7) {
-    }
+    boolean isShown();
 
-    @Override // org.telegram.ui.Components.nb
-    public final /* synthetic */ void d(pc pcVar) {
-    }
+    boolean onAttachedBackPressed();
+
+    void setKeyboardHeightFromParent(int i10);
+
+    void setLastVisible(boolean z10);
+
+    void setOnDismissListener(Runnable runnable);
+
+    boolean showDialog(Dialog dialog);
 }

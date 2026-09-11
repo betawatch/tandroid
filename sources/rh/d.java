@@ -1,94 +1,100 @@
 package rh;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Rect;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.wr;
-import xf.p;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class d extends c {
-    public final n6 d;
-    public final lj0 e;
-    public final le.b f;
-    public float h;
+public final class d extends View {
+    public final Drawable a;
+    public final le.b b;
+    public final int c;
+    public e d;
 
-    public d(t1 t1Var, f6 f6Var) {
-        super(f6Var);
-        lj0 lj0Var = new lj0(t1Var);
-        this.e = lj0Var;
-        lj0Var.d(null, true, false);
-        lj0Var.v = 650.0f;
-        lj0Var.e(0.69f, false);
-        lj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new le.b(t1Var, wr.h, 260L);
-        n6 n6Var = new n6(true, false, false, false);
-        this.d = n6Var;
-        n6Var.u(AndroidUtilities.bold());
-        n6Var.t(AndroidUtilities.dp(13.0f));
-        n6Var.b = 17;
-        int v02 = j6.v0(j6.i6, f6Var);
-        if (this.b != v02) {
-            j6.B1(this.a, v02, false);
-            this.b = v02;
+    public d(Context context, int i10) {
+        super(context);
+        this.b = new le.b(this, pr.h, 380L);
+        this.c = i10;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
+        this.a = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.o7, false), PorterDuff.Mode.SRC_IN));
+    }
+
+    public final void a(e eVar, boolean z10) {
+        e eVar2;
+        e eVar3;
+        this.b.a(eVar != null, z10);
+        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
+            eVar3.b();
+        }
+        this.d = eVar;
+        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
+            return;
+        }
+        eVar2.a(this);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.a(this);
         }
     }
 
-    @Override // rh.c
-    public final void a(int i10) {
-        this.a.setAlpha(i10);
-        this.d.w = i10;
-    }
-
-    public final float b() {
-        return this.f.e;
-    }
-
-    public final void c(int i10) {
-        this.d.r(i10);
-        this.e.o = i10;
-    }
-
-    public final void d(float f7) {
-        if (this.h != f7) {
-            this.h = f7;
-            Rect bounds = getBounds();
-            int i10 = (int) this.h;
-            this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.b();
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float f7 = this.f.e;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f7 = this.b.e;
         if (f7 < 1.0f) {
-            p.b(canvas, this.d, 1.0f - f7);
+            canvas.save();
+            float f10 = 1.0f - f7;
+            canvas.scale(f10, f10, width, height);
+            this.a.draw(canvas);
+            canvas.restore();
         }
         if (f7 > 0.0f) {
-            float exactCenterX = getBounds().exactCenterX();
-            float exactCenterY = getBounds().exactCenterY();
+            float f11 = this.c;
+            int dp = AndroidUtilities.dp(f11);
+            int width2 = (getWidth() - dp) / 2;
+            int height2 = (getHeight() - dp) / 2;
             canvas.save();
-            canvas.scale(f7, f7, exactCenterX, exactCenterY);
-            this.e.a(canvas);
+            canvas.translate(width2, height2);
+            canvas.scale(f7, f7, AndroidUtilities.dp(f11) / 2.0f, AndroidUtilities.dp(f11) / 2.0f);
+            e eVar = this.d;
+            if (eVar != null) {
+                eVar.c(canvas, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11));
+            }
             canvas.restore();
         }
     }
 
-    @Override // rh.c, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        Rect bounds = getBounds();
-        int i10 = (int) this.h;
-        this.d.setBounds(bounds.left, bounds.top + i10, bounds.right, bounds.bottom + i10);
-        int dp = AndroidUtilities.dp(11.0f);
-        int centerX = rect.centerX();
-        int centerY = rect.centerY();
-        this.e.f(centerX - dp, centerY - dp, centerX + dp, centerY + dp);
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        int dp = AndroidUtilities.dp(24.0f);
+        int i14 = (i10 - dp) / 2;
+        int i15 = (i11 - dp) / 2;
+        this.a.setBounds(i14, i15, i14 + dp, dp + i15);
     }
 }

@@ -1,109 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.text.Editable;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public abstract class o40 extends j61 {
-    public final int N;
-    public final ArrayList O;
-    public boolean P;
-    public zh.u4 Q;
-    public boolean R;
-    public boolean S;
-    public int T;
-    public int U;
-    public boolean V;
-    public int W;
-    public String X;
-    public String Y;
-    public int Z;
-    public my a0;
-    public final boolean[] b0;
+public final class o40 implements org.telegram.ui.ar0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ u40 d;
 
-    public o40(vl0 vl0Var, Context context, int i10) {
-        super(vl0Var, context, i10, 0, false, null, null);
-        this.O = new ArrayList();
-        this.T = 0;
-        this.U = -1;
-        this.b0 = new boolean[1];
-        this.s = new e(this, 16);
-        this.N = i10;
+    public o40(u40 u40Var, HashMap hashMap, ArrayList arrayList) {
+        this.d = u40Var;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    public static String X(String str, boolean[] zArr) {
-        if (zArr != null) {
-            zArr[0] = false;
-        }
-        if (str == null || str.isEmpty()) {
-            return null;
-        }
-        String trim = str.trim();
-        if (trim.length() <= 1) {
-            return null;
-        }
-        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
-            return null;
-        }
-        if (zArr != null) {
-            zArr[0] = trim.charAt(0) == '$';
-        }
-        return trim.substring(1);
+    @Override // org.telegram.ui.ar0
+    public final boolean e() {
+        return this.d.b.e();
     }
 
-    public final void V() {
-        zh.u4 u4Var = this.Q;
-        if (u4Var != null && u4Var.I != 0) {
-            ConnectionsManager.getInstance(u4Var.c).cancelRequest(u4Var.I, true);
-            u4Var.I = 0;
-        }
-        this.P = false;
-        if (this.U >= 0) {
-            ConnectionsManager.getInstance(this.N).cancelRequest(this.U, true);
-            this.U = -1;
-        }
-        AndroidUtilities.cancelRunOnUIThread(this.a0);
-        this.T++;
-        this.S = false;
-    }
-
-    public final void W() {
-        vl0 vl0Var;
-        if (TextUtils.isEmpty(this.X) || this.V || this.S || (vl0Var = this.d) == null) {
+    @Override // org.telegram.ui.ar0
+    public final void h(int i10, boolean z10, boolean z11) {
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty()) {
             return;
         }
-        for (int i10 = 0; i10 < vl0Var.getChildCount(); i10++) {
-            if (vl0Var.getChildAt(i10) instanceof a10) {
-                Y(this.X);
+        u40 u40Var = this.d;
+        if (u40Var.b == null || this.a || z10) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                u40.b(u40Var, false, arrayList);
                 return;
             }
+            Object obj = hashMap.get(arrayList2.get(i11));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str = searchImage.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                CharSequence charSequence = searchImage.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+            }
+            i11++;
         }
     }
 
-    public final void Y(String str) {
-        this.X = str;
-        String X = X(str, this.b0);
-        if (!TextUtils.equals(this.Y, X)) {
-            this.O.clear();
-            this.V = false;
-            this.W = 0;
-            V();
-        } else if (this.S) {
-            return;
-        }
-        int i10 = this.T + 1;
-        this.T = i10;
-        if (X == null) {
-            return;
-        }
-        this.S = true;
-        N(true);
-        my myVar = new my(this, i10, X, 3);
-        this.a0 = myVar;
-        AndroidUtilities.runOnUIThread(myVar, 300L);
+    @Override // org.telegram.ui.ar0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final void b(Editable editable) {
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ void g() {
     }
 }

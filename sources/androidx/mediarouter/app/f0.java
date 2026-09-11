@@ -16,7 +16,7 @@ import java.net.URLConnection;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f0 extends AsyncTask {
     public final Bitmap a;
@@ -111,8 +111,8 @@ public final class f0 extends AsyncTask {
                                 }
                                 bufferedInputStream.close();
                                 return null;
-                            } catch (IOException e) {
-                                e = e;
+                            } catch (IOException e7) {
+                                e = e7;
                                 Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
                                 if (bufferedInputStream != null) {
                                     try {
@@ -134,8 +134,8 @@ public final class f0 extends AsyncTask {
                         } catch (IOException unused4) {
                             return null;
                         }
-                    } catch (IOException e7) {
-                        e = e7;
+                    } catch (IOException e10) {
+                        e = e10;
                         bufferedInputStream = null;
                     } catch (Throwable th2) {
                         th = th2;

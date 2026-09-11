@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -46,7 +46,7 @@ public abstract class n {
         return allocate.array();
     }
 
-    public static f2.a b(p0 p0Var, String str) {
+    public static f2.b b(p0 p0Var, String str) {
         int i10 = 0;
         while (true) {
             o0[] o0VarArr = p0Var.a;
@@ -54,10 +54,10 @@ public abstract class n {
                 return null;
             }
             o0 o0Var = o0VarArr[i10];
-            if (o0Var instanceof f2.a) {
-                f2.a aVar = (f2.a) o0Var;
-                if (aVar.a.equals(str)) {
-                    return aVar;
+            if (o0Var instanceof f2.b) {
+                f2.b bVar = (f2.b) o0Var;
+                if (bVar.a.equals(str)) {
+                    return bVar;
                 }
             }
             i10++;
@@ -111,7 +111,7 @@ public abstract class n {
             String t10 = vVar.t(j3 - 16);
             return new q3.e(TranslateController.UNKNOWN_LANGUAGE, t10, t10);
         }
-        e2.a.n("MetadataUtil", "Failed to parse comment attribute: " + dd.k.a(i10));
+        e2.a.n("MetadataUtil", "Failed to parse comment attribute: " + dd.k.b(i10));
         return null;
     }
 
@@ -126,7 +126,7 @@ public abstract class n {
         int i10 = j10 & 16777215;
         String str = i10 == 13 ? "image/jpeg" : i10 == 14 ? "image/png" : null;
         if (str == null) {
-            e2.l(i10, "Unrecognized cover art flags: ", "MetadataUtil");
+            e2.n(i10, "Unrecognized cover art flags: ", "MetadataUtil");
             return null;
         }
         vVar.K(4);
@@ -142,15 +142,15 @@ public abstract class n {
             vVar.K(10);
             int D = vVar.D();
             if (D > 0) {
-                String j10 = hc.b.j(D, "");
+                String i11 = i2.g.i(D, "");
                 int D2 = vVar.D();
                 if (D2 > 0) {
-                    j10 = j10 + "/" + D2;
+                    i11 = i11 + "/" + D2;
                 }
-                return new q3.o(str, null, i0.z(j10));
+                return new q3.o(str, null, i0.z(i11));
             }
         }
-        e2.a.n("MetadataUtil", "Failed to parse index/count attribute: " + dd.k.a(i10));
+        e2.a.n("MetadataUtil", "Failed to parse index/count attribute: " + dd.k.b(i10));
         return null;
     }
 
@@ -184,7 +184,7 @@ public abstract class n {
         if (h >= 0) {
             return z10 ? new q3.o(str, null, i0.z(Integer.toString(h))) : new q3.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(h));
         }
-        e2.a.n("MetadataUtil", "Failed to parse uint8 attribute: " + dd.k.a(i10));
+        e2.a.n("MetadataUtil", "Failed to parse uint8 attribute: " + dd.k.b(i10));
         return null;
     }
 
@@ -203,16 +203,16 @@ public abstract class n {
         }
         int j10 = vVar.j();
         if (j10 != 1886614376) {
-            e2.l(j10, "Atom type is not pssh: ", "PsshAtomUtil");
+            e2.n(j10, "Atom type is not pssh: ", "PsshAtomUtil");
             return null;
         }
-        int e = c.e(vVar.j());
-        if (e > 1) {
-            e2.l(e, "Unsupported pssh version: ", "PsshAtomUtil");
+        int e7 = c.e(vVar.j());
+        if (e7 > 1) {
+            e2.n(e7, "Unsupported pssh version: ", "PsshAtomUtil");
             return null;
         }
         UUID uuid = new UUID(vVar.r(), vVar.r());
-        if (e == 1) {
+        if (e7 == 1) {
             int B = vVar.B();
             uuidArr = new UUID[B];
             for (int i10 = 0; i10 < B; i10++) {
@@ -231,7 +231,7 @@ public abstract class n {
         vVar.h(0, B2, bArr2);
         j6.l lVar = new j6.l();
         lVar.b = uuid;
-        lVar.a = e;
+        lVar.a = e7;
         lVar.c = bArr2;
         lVar.d = uuidArr;
         return lVar;
@@ -256,7 +256,7 @@ public abstract class n {
             vVar.K(8);
             return new q3.o(str, null, i0.z(vVar.t(j3 - 16)));
         }
-        e2.a.n("MetadataUtil", "Failed to parse text attribute: " + dd.k.a(i10));
+        e2.a.n("MetadataUtil", "Failed to parse text attribute: " + dd.k.b(i10));
         return null;
     }
 
@@ -272,12 +272,12 @@ public abstract class n {
                     break;
                 }
                 o0 o0Var = o0VarArr[i11];
-                if (o0Var instanceof f2.a) {
-                    f2.a aVar = (f2.a) o0Var;
-                    if (!aVar.a.equals("com.android.capture.fps")) {
-                        p0Var2 = p0Var2.a(aVar);
+                if (o0Var instanceof f2.b) {
+                    f2.b bVar = (f2.b) o0Var;
+                    if (!bVar.a.equals("com.android.capture.fps")) {
+                        p0Var2 = p0Var2.a(bVar);
                     } else if (i10 == 2) {
-                        p0Var2 = p0Var2.a(aVar);
+                        p0Var2 = p0Var2.a(bVar);
                     }
                 }
                 i11++;
@@ -313,7 +313,7 @@ public abstract class n {
         while (i14 < i12) {
             vVar.G(8);
             boolean z14 = true;
-            if (!pVar.g(vVar.a, i13, 8, true)) {
+            if (!pVar.j(vVar.a, i13, 8, true)) {
                 break;
             }
             long z15 = vVar.z();
@@ -331,7 +331,7 @@ public abstract class n {
                     long length2 = pVar.getLength();
                     if (length2 != j3) {
                         i10 = i14;
-                        z15 = (length2 - pVar.h()) + 8;
+                        z15 = (length2 - pVar.k()) + 8;
                         j10 = z15;
                         i11 = 8;
                     }
@@ -412,7 +412,7 @@ public abstract class n {
                     }
                     z13 = z14;
                 } else if (i16 != 0) {
-                    pVar.j(i16);
+                    pVar.l(i16);
                 }
                 j12 = j3;
                 length = j15;

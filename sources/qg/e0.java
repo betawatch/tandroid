@@ -1,14 +1,38 @@
 package qg;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class e0 extends f0 {
-    public final int g;
-    public final boolean h;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
 
-    public e0(int i10, boolean z10) {
-        super(-1, -1, -1, null, null);
-        this.g = i10;
-        this.h = z10;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+
+    public /* synthetic */ e0(ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = arrayList;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j0.h = this.b;
+                j0.i = false;
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.customTypefacesLoaded, new Object[0]);
+                break;
+            default:
+                ArrayList arrayList = this.b;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((Bitmap) obj).recycle();
+                }
+                break;
+        }
     }
 }

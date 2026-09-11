@@ -26,6 +26,7 @@ import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.mediarouter.app.g;
+import di.w9;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +38,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -122,7 +123,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = dh.a.d(context.getSystemService(dh.a.i())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = w9.a(context.getSystemService(w9.d())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -138,7 +139,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return dh.a.d(context.getSystemService(dh.a.i())).getMaxShortcutCountPerActivity();
+            return w9.a(context.getSystemService(w9.d())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -301,7 +302,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            dh.a.d(context.getSystemService(dh.a.i())).removeAllDynamicShortcuts();
+            w9.a(context.getSystemService(w9.d())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -342,7 +343,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            dh.a.d(context.getSystemService(dh.a.i())).reportShortcutUsed(str);
+            w9.a(context.getSystemService(w9.d())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
@@ -406,8 +407,8 @@ public abstract class f {
                                     if (applicationInfo != null) {
                                         resources = packageManager.getResourcesForApplication(applicationInfo);
                                     }
-                                } catch (PackageManager.NameNotFoundException e) {
-                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e);
+                                } catch (PackageManager.NameNotFoundException e7) {
+                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e7);
                                 }
                                 resources = null;
                             }
@@ -425,8 +426,8 @@ public abstract class f {
                 } else if (i11 == 2) {
                     try {
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(context2.createPackageContext(iconCompat.h(), 0), iconCompat.e));
-                    } catch (PackageManager.NameNotFoundException e7) {
-                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e7);
+                    } catch (PackageManager.NameNotFoundException e10) {
+                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e10);
                     }
                 } else {
                     if (i11 != 5) {
@@ -461,8 +462,8 @@ public abstract class f {
     public static void v(Surface surface, float f7) {
         try {
             surface.setFrameRate(f7, f7 == 0.0f ? 0 : 1);
-        } catch (IllegalStateException e) {
-            e2.a.f("VideoFrameReleaseHelper", "Failed to call Surface.setFrameRate", e);
+        } catch (IllegalStateException e7) {
+            e2.a.f("VideoFrameReleaseHelper", "Failed to call Surface.setFrameRate", e7);
         }
     }
 

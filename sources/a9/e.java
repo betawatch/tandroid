@@ -15,22 +15,22 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class e {
     public static final HashMap o = new HashMap();
     public final Context a;
-    public final j0 b;
+    public final i0 b;
     public final String c;
     public boolean g;
     public final Intent h;
-    public final n0 i;
+    public final m0 i;
     public d m;
     public IInterface n;
     public final ArrayList d = new ArrayList();
     public final HashSet e = new HashSet();
     public final Object f = new Object();
-    public final l0 k = new IBinder.DeathRecipient() { // from class: a9.l0
+    public final k0 k = new IBinder.DeathRecipient() { // from class: a9.k0
         @Override // android.os.IBinder.DeathRecipient
         public final void binderDied() {
             e eVar = e.this;
@@ -45,7 +45,7 @@ public final class e {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ((k0) obj).a(new RemoteException(String.valueOf(eVar.c).concat(" : Binder has died.")));
+                ((j0) obj).a(new RemoteException(String.valueOf(eVar.c).concat(" : Binder has died.")));
             }
             eVar.d.clear();
             synchronized (eVar.f) {
@@ -56,45 +56,45 @@ public final class e {
     public final AtomicInteger l = new AtomicInteger(0);
     public final WeakReference j = new WeakReference(null);
 
-    /* JADX WARN: Type inference failed for: r0v3, types: [a9.l0] */
-    public e(Context context, j0 j0Var, String str, Intent intent, n0 n0Var) {
+    /* JADX WARN: Type inference failed for: r0v3, types: [a9.k0] */
+    public e(Context context, i0 i0Var, String str, Intent intent, m0 m0Var) {
         this.a = context;
-        this.b = j0Var;
+        this.b = i0Var;
         this.c = str;
         this.h = intent;
-        this.i = n0Var;
+        this.i = m0Var;
     }
 
-    public static void b(e eVar, k0 k0Var) {
+    public static void b(e eVar, j0 j0Var) {
         IInterface iInterface = eVar.n;
-        j0 j0Var = eVar.b;
+        i0 i0Var = eVar.b;
         ArrayList arrayList = eVar.d;
         int i10 = 0;
         if (iInterface != null || eVar.g) {
             if (!eVar.g) {
-                k0Var.run();
+                j0Var.run();
                 return;
             } else {
-                j0Var.b("Waiting to bind to the service.", new Object[0]);
-                arrayList.add(k0Var);
+                i0Var.b("Waiting to bind to the service.", new Object[0]);
+                arrayList.add(j0Var);
                 return;
             }
         }
-        j0Var.b("Initiate binding to the service.", new Object[0]);
-        arrayList.add(k0Var);
+        i0Var.b("Initiate binding to the service.", new Object[0]);
+        arrayList.add(j0Var);
         d dVar = new d(eVar, 0);
         eVar.m = dVar;
         eVar.g = true;
         if (eVar.a.bindService(eVar.h, dVar, 1)) {
             return;
         }
-        j0Var.b("Failed to bind to the service.", new Object[0]);
+        i0Var.b("Failed to bind to the service.", new Object[0]);
         eVar.g = false;
         int size = arrayList.size();
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((k0) obj).a(new f("Failed to bind to the service."));
+            ((j0) obj).a(new f("Failed to bind to the service."));
         }
         arrayList.clear();
     }
@@ -117,8 +117,8 @@ public final class e {
         return handler;
     }
 
-    public final void c(k0 k0Var, TaskCompletionSource taskCompletionSource) {
-        a().post(new m0(this, k0Var.c(), taskCompletionSource, k0Var));
+    public final void c(j0 j0Var, TaskCompletionSource taskCompletionSource) {
+        a().post(new l0(this, j0Var.c(), taskCompletionSource, j0Var));
     }
 
     public final void d(TaskCompletionSource taskCompletionSource) {

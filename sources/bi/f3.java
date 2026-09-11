@@ -1,172 +1,114 @@
 package bi;
 
-import android.content.Context;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagePreviewParams;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.hb0;
+import org.telegram.ui.Components.qb0;
+import org.telegram.ui.Components.wb0;
+import org.telegram.ui.co;
+import org.telegram.ui.rl;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public class f3 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
-    public static int G = 1;
-    public gg.g E;
-    public Utilities.CallbackReturn F;
-    public String b;
-    public int c;
-    public final l1 d;
-    public final m1 e;
-    public final p1 f;
-    public final e3 h;
-    public float n;
-    public final boolean r;
-    public final boolean s;
-    public boolean v;
-    public ai.c0 w;
-    public float x;
-    public Utilities.Callback3Return y;
+public final class f3 extends w7.h0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public f3(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
-        super(1, context, f6Var, true);
-        this.b = null;
-        this.c = -1;
-        this.d = new l1();
-        this.e = new m1();
-        this.n = -1.0f;
-        this.r = z10;
-        this.s = z11;
-        this.useSmoothKeyboard = true;
-        fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
-        this.occupyNavigationBar = true;
-        setUseLightStatusBar(false);
-        this.containerView = new r1(this, context);
-        p1 p1Var = new p1(this, context, 0);
-        this.f = p1Var;
-        p1Var.b = z10 ? 0 : G;
-        p1Var.setAdapter(new q1(this, z10, context));
-        this.containerView.addView(p1Var, w7.a6.e(-1, -1, 87));
-        new b5(this.containerView, false, new j1(this, 0));
-        if (!z10) {
-            e3 e3Var = new e3(context);
-            this.h = e3Var;
-            e3Var.G = new j1(this, 1);
-            e3Var.F = p1Var.b;
-            e3Var.invalidate();
-            this.containerView.addView(e3Var, w7.a6.e(-1, -2, 87));
-        }
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.stickersDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.groupStickersDidLoad);
-        FileLog.disableGson(true);
-        if (!z10) {
-            MediaDataController.getInstance(this.currentAccount).checkStickers(5);
-            MediaDataController.getInstance(this.currentAccount).checkFeaturedEmoji();
-            MediaDataController.getInstance(this.currentAccount).loadRecents(0, true, true, false);
-        }
-        MediaDataController.getInstance(this.currentAccount).checkStickers(0);
-        MediaDataController.getInstance(this.currentAccount).loadRecents(0, false, true, false);
-        MediaDataController.getInstance(this.currentAccount).loadRecents(2, false, true, false);
-        MediaDataController.getInstance(this.currentAccount).loadRecents(7, false, true, false);
+    public /* synthetic */ f3(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static /* synthetic */ void m(f3 f3Var) {
-        boolean z10 = f3Var.v;
-        boolean z11 = f3Var.keyboardVisible;
-        if (z10 != z11) {
-            f3Var.v = z11;
-            f3Var.container.clearAnimation();
-            float f7 = 0.0f;
-            if (f3Var.keyboardVisible) {
-                int i10 = AndroidUtilities.displaySize.y;
-                int i11 = f3Var.keyboardHeight;
-                f7 = Math.min(0.0f, Math.max(((i10 - i11) * 0.3f) - f3Var.x, (-i11) / 3.0f));
-            }
-            f3Var.container.animate().translationY(f7).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.r1.w).start();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3
-    public final boolean canDismissWithSwipe() {
-        return this.f.getTranslationY() >= ((float) ((int) this.n));
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.stickersDidLoad || i10 == NotificationCenter.groupStickersDidLoad) {
-            for (View view : this.f.getViewPages()) {
-                if (view instanceof q2) {
-                    q2 q2Var = (q2) view;
-                    if (i10 == NotificationCenter.groupStickersDidLoad || ((q2Var.a == 0 && ((Integer) objArr[0]).intValue() == 5) || (q2Var.a == 1 && ((Integer) objArr[0]).intValue() == 0))) {
-                        p2 p2Var = q2Var.c;
-                        if (p2Var.H == null) {
-                            p2Var.D(null);
+    @Override // w7.h0
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                o5 o5Var = (o5) this.b;
+                h5 h5Var = o5Var.Q1;
+                boolean y3 = o5Var.K0.W.y();
+                pb pbVar = ((gb) h5Var).d;
+                pbVar.j1 = y3;
+                pbVar.P();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.i4) this.b).I;
+                if (f3Var != null) {
+                    f3Var.setDisableScroll(z10);
+                    break;
+                }
+                break;
+            case 2:
+                co coVar = (co) this.b;
+                coVar.n9 = !z10;
+                if (z10) {
+                    if (coVar.d9 != null) {
+                        co.V1(coVar, 0.0f);
+                        coVar.d9 = null;
+                    }
+                    coVar.e9 = false;
+                    coVar.f9 = false;
+                    rl rlVar = coVar.h9;
+                    if (rlVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(rlVar.H);
+                        rlVar.a();
+                    }
+                }
+                coVar.vc();
+                break;
+            default:
+                qb0 qb0Var = (qb0) this.b;
+                hb0 hb0Var = qb0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = qb0Var.s;
+                wb0 wb0Var = qb0Var.c0;
+                if (wb0Var.s) {
+                    if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
+                        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
+                        break;
+                    } else if (z10) {
+                        if (hb0Var.v - hb0Var.u <= MessagesController.getInstance(wb0Var.w).quoteLengthMax) {
+                            org.telegram.ui.Cells.y9 y9Var = hb0Var.W;
+                            MessageObject c10 = qb0Var.c(y9Var != null ? ((org.telegram.ui.Cells.t1) y9Var).getMessageObject() : null);
+                            MessagePreviewParams messagePreviewParams = wb0Var.d;
+                            if (messagePreviewParams.quote == null) {
+                                int i10 = hb0Var.u;
+                                messagePreviewParams.quoteStart = i10;
+                                int i11 = hb0Var.v;
+                                messagePreviewParams.quoteEnd = i11;
+                                messagePreviewParams.quote = sn.b(i10, i11, c10);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(qb0Var.I);
+                                break;
+                            }
+                        } else {
+                            qb0Var.f();
+                            break;
                         }
                     }
                 }
-            }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.stickersDidLoad);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.groupStickersDidLoad);
-        o0();
-        super.dismiss();
-        FileLog.disableGson(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.h3
-    public final int getContainerViewHeight() {
-        return this.containerView.getMeasuredHeight() <= 0 ? AndroidUtilities.displaySize.y : (int) (this.containerView.getMeasuredHeight() - this.f.getY());
-    }
-
-    public boolean l0(Integer num) {
-        return true;
-    }
-
-    public boolean m0(Integer num) {
-        return true;
-    }
-
-    public boolean n0(s sVar) {
-        return true;
-    }
-
-    public final void o0() {
-        x2 x2Var;
-        this.keyboardVisible = false;
-        this.container.animate().translationY(0.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.r1.w).start();
-        for (View view : this.f.getViewPages()) {
-            if (view instanceof q2) {
-                x2 x2Var2 = ((q2) view).f;
-                if (x2Var2 != null) {
-                    AndroidUtilities.hideKeyboard(x2Var2.d);
+    @Override // w7.h0
+    public void b() {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
+            case 2:
+                co coVar = (co) this.b;
+                kVar = ((org.telegram.ui.ActionBar.n2) coVar).actionBar;
+                if (kVar != null) {
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) coVar).actionBar;
+                    if (kVar2.s()) {
+                        coVar.z7(false);
+                    }
                 }
-            } else if ((view instanceof k2) && (x2Var = ((k2) view).d) != null) {
-                AndroidUtilities.hideKeyboard(x2Var.d);
-            }
-        }
-    }
-
-    public final void p0(int i10) {
-        if (l0(Integer.valueOf(i10))) {
-            if ((i10 != 1 || n0(new s(this, i10, 2))) && ((Boolean) this.F.run(Integer.valueOf(i10))).booleanValue()) {
-                dismiss();
-            }
-        }
-    }
-
-    public final void q0(Utilities.CallbackReturn callbackReturn) {
-        this.F = callbackReturn;
-        for (View view : this.f.getViewPages()) {
-            if (view instanceof q2) {
-                p2 p2Var = ((q2) view).c;
-                if (p2Var.H == null) {
-                    p2Var.D(null);
-                }
-            }
+                coVar.Q7();
+                coVar.y3.j(58, 0L, null);
+                break;
         }
     }
 }

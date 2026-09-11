@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.BinderWrapper;
 import d6.d0;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import m.r3;
+import m.p3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class v extends n6.g {
     public static final b n0 = new b("CastClientImpl", null);
@@ -40,8 +40,8 @@ public final class v extends n6.g {
     public Bundle l0;
     public final HashMap m0;
 
-    public v(Context context, Looper looper, r3 r3Var, CastDevice castDevice, long j3, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
-        super(context, looper, 10, r3Var, kVar, lVar, 0);
+    public v(Context context, Looper looper, p3 p3Var, CastDevice castDevice, long j3, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 10, p3Var, kVar, lVar, 0);
         this.V = castDevice;
         this.W = d0Var;
         this.Y = j3;
@@ -131,8 +131,8 @@ public final class v extends n6.g {
                     } finally {
                         super.disconnect();
                     }
-                } catch (RemoteException | IllegalStateException e) {
-                    bVar.a(e, "Error while disconnecting the controller interface", new Object[0]);
+                } catch (RemoteException | IllegalStateException e7) {
+                    bVar.a(e7, "Error while disconnecting the controller interface", new Object[0]);
                 }
                 return;
             }

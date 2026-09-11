@@ -6,10 +6,9 @@ import c5.v;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import m.r3;
+import m.p3;
 import n6.i;
 import n6.l;
-import n7.a1;
 import org.telegram.tgnet.ConnectionsManager;
 import qb.m;
 import v7.a6;
@@ -21,7 +20,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -83,18 +82,18 @@ public final class a {
             }
         }
         hashMap.put(j7Var, Long.valueOf(elapsedRealtime3));
-        r3 r3Var = new r3();
-        r3Var.c = y6.b;
-        r3Var.b = d7.b;
-        r3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        r3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        r3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        r3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        r3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        e7 e7Var = new e7(r3Var);
+        p3 p3Var = new p3();
+        p3Var.c = y6.b;
+        p3Var.b = d7.b;
+        p3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        p3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        p3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        e7 e7Var = new e7(p3Var);
         a6 a6Var = new a6(3, false);
         a6Var.d = e7Var;
-        m.a.execute(new v(a2, new a1(a6Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        m.a.execute(new v(a2, new o0.a(a6Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

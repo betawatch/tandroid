@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final class tt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -39,8 +39,8 @@ public final class tt0 extends AnimatorListenerAdapter {
         }
         photoViewer.F.setVisibility(0);
         if (photoViewer.i2) {
-            ru0 ru0Var = photoViewer.Q1;
-            ru0Var.setVisibility(ru0Var.getTag() != null ? 0 : 4);
+            qu0 qu0Var = photoViewer.Q1;
+            qu0Var.setVisibility(qu0Var.getTag() != null ? 0 : 4);
         }
         if (photoViewer.d2 || photoViewer.e2) {
             return;

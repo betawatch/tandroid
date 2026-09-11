@@ -1,19 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class a61 extends z51 {
-    public a61(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (b11) null);
+public final class a61 extends nz {
+    public final /* synthetic */ d61 X;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a61(d61 d61Var, int i10) {
+        super(i10, false);
+        this.X = d61Var;
     }
 
-    @Override // org.telegram.ui.Components.z51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setUnderlineText(false);
+    @Override // s4.c0
+    public final int W0(s4.z0 z0Var) {
+        return this.X.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
     }
 }

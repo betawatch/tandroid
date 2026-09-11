@@ -1,36 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.location.Location;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class qk extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.dr b;
+public final /* synthetic */ class qk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gl b;
 
-    public qk(org.telegram.ui.dr drVar) {
-        this.b = drVar;
+    public /* synthetic */ qk(gl glVar, int i10) {
+        this.a = i10;
+        this.b = glVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        Location location;
         switch (this.a) {
             case 0:
-                ((sk) this.b.d).U.unlock();
+                gl glVar = this.b;
+                double[] dArr = glVar.b.x2;
+                glVar.b0(dArr[0], dArr[1]);
+                break;
+            case 1:
+                gl.M(this.b);
+                break;
+            case 2:
+                this.b.Y();
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new qk(this.b, 4));
+                break;
+            case 4:
+                View view = this.b.M;
+                view.setTag(1);
+                view.animate().alpha(0.0f).setDuration(180L).start();
+                break;
+            case 5:
+                gl glVar2 = this.b;
+                hg.t0 t0Var = glVar2.O;
+                if (!glVar2.t0) {
+                    IMapsProvider.IMap iMap = glVar2.H;
+                    if (iMap != null && (location = glVar2.r0) != null) {
+                        location.setLatitude(iMap.getCameraPosition().target.latitude);
+                        glVar2.r0.setLongitude(glVar2.H.getCameraPosition().target.longitude);
+                    }
+                    t0Var.L(glVar2.r0);
+                    t0Var.I();
+                    break;
+                } else {
+                    glVar2.t0 = false;
+                    break;
+                }
+                break;
+            case 6:
+                dl dlVar = this.b.F;
+                if (dlVar != null) {
+                    dlVar.a();
+                    break;
+                }
+                break;
+            case 7:
+                View view2 = this.b.M;
+                if (view2.getTag() == null) {
+                    view2.animate().alpha(0.0f).setDuration(180L).start();
+                    break;
+                }
                 break;
             default:
-                org.telegram.ui.dr drVar = this.b;
-                View view = drVar.b;
-                view.setAlpha(1.0f);
-                s4.o0.x0(view);
-                ((sk) drVar.d).X.r.removeView(view);
+                this.b.b0(0.0d, 0.0d);
                 break;
         }
-    }
-
-    public qk(org.telegram.ui.dr drVar, s4.o0 o0Var) {
-        this.b = drVar;
     }
 }

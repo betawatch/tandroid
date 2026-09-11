@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Timer;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class zt extends org.telegram.ui.Components.ul0 {
+public final class zt extends org.telegram.ui.Components.kl0 {
     public final Context c;
     public Timer d;
     public ArrayList e;
@@ -25,12 +25,12 @@ public final class zt extends org.telegram.ui.Components.ul0 {
         while (it.hasNext()) {
             Iterator it2 = ((List) it.next()).iterator();
             while (it2.hasNext()) {
-                this.f.add((wt) it2.next());
+                this.f.add((vt) it2.next());
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.kl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -52,19 +52,19 @@ public final class zt extends org.telegram.ui.Components.ul0 {
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
         String str;
-        wt wtVar = (wt) this.e.get(i10);
-        org.telegram.ui.Cells.ga gaVar = (org.telegram.ui.Cells.ga) c1Var.a;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(bu.V(wtVar), gaVar.getTextView().getPaint().getFontMetricsInt(), false);
+        vt vtVar = (vt) this.e.get(i10);
+        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) c1Var.a;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(bu.V(vtVar), eaVar.getTextView().getPaint().getFontMetricsInt(), false);
         if (this.h.h) {
-            str = "+" + wtVar.c;
+            str = "+" + vtVar.c;
         } else {
             str = null;
         }
-        gaVar.c(replaceEmoji, str, false, false);
+        eaVar.c(replaceEmoji, str, false, false);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.fl0(bu.U(this.c));
+        return new org.telegram.ui.Components.vk0(bu.U(this.c));
     }
 }

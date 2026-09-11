@@ -11,7 +11,7 @@ import e9.a1;
 import e9.g0;
 import e9.i0;
 import j$.util.Objects;
-import j4.e0;
+import j4.d0;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -23,10 +23,10 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import v7.n7;
+import v7.m7;
 import v7.r6;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -97,13 +97,18 @@ public final class j extends v2.k {
         return bArr;
     }
 
-    @Override // y2.k
+    @Override // y2.j
+    public final void W() {
+        this.W = true;
+    }
+
+    @Override // y2.j
     public final void a() {
         b bVar;
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o c10 = bVar.a.c();
-            if ((c10 instanceof e0) || (c10 instanceof w3.h)) {
+            if ((c10 instanceof d0) || (c10 instanceof w3.h)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -145,7 +150,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.f(this.U, false);
+                h.i(this.U, false);
             }
             do {
                 try {
@@ -153,9 +158,9 @@ public final class j extends v2.k {
                         if (this.W) {
                             break;
                         }
-                    } catch (EOFException e) {
+                    } catch (EOFException e7) {
                         if ((this.d.f & 16384) == 0) {
-                            throw e;
+                            throw e7;
                         }
                         this.S.a.h(0L, 0L);
                         j3 = h.d;
@@ -169,10 +174,10 @@ public final class j extends v2.k {
             this.U = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            n7.a(hVar);
+            m7.a(hVar);
             throw th3;
         }
-        n7.a(hVar);
+        m7.a(hVar);
     }
 
     public final int f(int i10) {
@@ -214,7 +219,7 @@ public final class j extends v2.k {
                 lVar.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.g(vVar.a, 0, 10, false);
+                    lVar.j(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -231,7 +236,7 @@ public final class j extends v2.k {
                         vVar.G(i12);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.g(vVar.a, 10, w10, false);
+                    lVar.j(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {
@@ -361,7 +366,7 @@ public final class j extends v2.k {
                                         i11 |= 4;
                                     }
                                 }
-                                aVar = new e0(2, !z13 ? 1 : 0, !z13 ? kVar3 : kVar6, b0Var3, new j4.f(i11, singletonList));
+                                aVar = new d0(2, !z13 ? 1 : 0, !z13 ? kVar3 : kVar6, b0Var3, new j4.f(i11, singletonList));
                                 b0Var = b0Var3;
                             } else if (intValue != 13) {
                                 i10 = i15;
@@ -407,7 +412,7 @@ public final class j extends v2.k {
                 } else {
                     c3.o oVar2 = bVar2.a;
                     c3.o c11 = oVar2.c();
-                    e2.d.g(!((c11 instanceof e0) || (c11 instanceof w3.h)));
+                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.h)));
                     e2.d.f("Can't recreate wrapped extractors. Outer type: " + oVar2.getClass(), oVar2.c() == oVar2);
                     if (oVar2 instanceof t) {
                         dVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
@@ -478,13 +483,8 @@ public final class j extends v2.k {
             return lVar;
         } catch (InterruptedException unused3) {
             throw new InterruptedIOException();
-        } catch (TimeoutException e) {
-            throw new IOException(e);
+        } catch (TimeoutException e7) {
+            throw new IOException(e7);
         }
-    }
-
-    @Override // y2.k
-    public final void k() {
-        this.W = true;
     }
 }

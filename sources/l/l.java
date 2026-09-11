@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import r0.j0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public class l implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -167,7 +167,7 @@ public class l implements Menu {
             if (yVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                yVar.c(this, z10);
+                yVar.d(this, z10);
             }
         }
         this.s = false;
@@ -223,7 +223,7 @@ public class l implements Menu {
 
     public boolean e(l lVar, MenuItem menuItem) {
         j jVar = this.e;
-        return jVar != null && jVar.B(lVar, menuItem);
+        return jVar != null && jVar.s(lVar, menuItem);
     }
 
     public boolean f(n nVar) {
@@ -351,7 +351,7 @@ public class l implements Menu {
                 if (yVar == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    z10 |= yVar.d();
+                    z10 |= yVar.c();
                 }
             }
             ArrayList arrayList = this.i;
@@ -482,8 +482,8 @@ public class l implements Menu {
             if (intent != null) {
                 try {
                     lVar.a.startActivity(intent);
-                } catch (ActivityNotFoundException e) {
-                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
+                } catch (ActivityNotFoundException e7) {
+                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e7);
                 }
             }
             o oVar = nVar.A;

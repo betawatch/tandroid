@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -53,24 +53,24 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
         NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
         switch (i12) {
             case 0:
-                wg0 wg0Var = (wg0) notificationCenterDelegate;
+                vg0 vg0Var = (vg0) notificationCenterDelegate;
                 Long l4 = (Long) obj;
                 TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj2;
                 String str2 = (String) obj3;
-                org.telegram.ui.Components.m90 m90Var = wg0Var.n;
-                xg0 xg0Var = wg0Var.V;
-                wg0Var.U = null;
-                wg0Var.T = false;
+                org.telegram.ui.Components.d90 d90Var = vg0Var.n;
+                wg0 wg0Var = vg0Var.V;
+                vg0Var.U = null;
+                vg0Var.T = false;
                 if (str2 == null || (!"EMPTY".equals(str2) && !"CANCELLED".equals(str2))) {
-                    if (l4.longValue() != 0 && (xg0Var.getParentActivity() instanceof LaunchActivity)) {
+                    if (l4.longValue() != 0 && (wg0Var.getParentActivity() instanceof LaunchActivity)) {
                         for (int i13 = 0; i13 < 4; i13++) {
                             UserConfig userConfig = UserConfig.getInstance(i13);
-                            if (userConfig.isClientActivated() && userConfig.getClientUserId() == l4.longValue() && ConnectionsManager.getInstance(i13).isTestBackend() == xg0Var.E) {
+                            if (userConfig.isClientActivated() && userConfig.getClientUserId() == l4.longValue() && ConnectionsManager.getInstance(i13).isTestBackend() == wg0Var.E) {
                                 if (UserConfig.selectedAccount != i13) {
-                                    ((LaunchActivity) xg0Var.getParentActivity()).K0(i13);
+                                    ((LaunchActivity) wg0Var.getParentActivity()).K0(i13);
                                 }
-                                xg0Var.finishFragment();
-                                xg0Var.k1(false, true);
+                                wg0Var.finishFragment();
+                                wg0Var.k1(false, true);
                                 break;
                             }
                         }
@@ -78,21 +78,21 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                     if (str2 == null || !str2.contains("SESSION_PASSWORD_NEEDED")) {
                         if (str2 != null) {
                             if (BuildVars.DEBUG_VERSION) {
-                                org.telegram.ui.Components.wc.a0(xg0Var).c0(str2, false);
+                                org.telegram.ui.Components.yc.a0(wg0Var).c0(str2, false);
                                 break;
                             }
                         }
                     } else {
                         TL_account.getPassword getpassword = new TL_account.getPassword();
-                        i10 = ((org.telegram.ui.ActionBar.p2) xg0Var).currentAccount;
-                        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new pg0(wg0Var, 1), 10);
+                        i10 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
+                        ConnectionsManager.getInstance(i10).sendRequest(getpassword, new pg0(vg0Var, 1), 10);
                     }
                     if (auth_authorization instanceof TLRPC.TL_auth_authorization) {
-                        xg0Var.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
+                        wg0Var.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
                         break;
                     }
-                } else if (m90Var != null && "CANCELLED".equals(str2)) {
-                    m90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new lg0(wg0Var, 3)), true));
+                } else if (d90Var != null && "CANCELLED".equals(str2)) {
+                    d90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StartTextPasskey), new lg0(vg0Var, 3)), true));
                     break;
                 }
                 break;
@@ -104,9 +104,9 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                 Drawable[] drawableArr = PhotoViewer.T8;
                 if (clickableSpan instanceof URLSpan) {
                     String url = ((URLSpan) clickableSpan).getURL();
-                    org.telegram.ui.ActionBar.h3 h3Var = new org.telegram.ui.ActionBar.h3(1, (Context) photoViewer.y, photoViewer.v2, false);
-                    h3Var.setBackgroundColor(-14933463);
-                    h3Var.fixNavigationBar(-14933463);
+                    org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) photoViewer.y, photoViewer.v2, false);
+                    f3Var.setBackgroundColor(-14933463);
+                    f3Var.fixNavigationBar(-14933463);
                     if (url.startsWith("video?")) {
                         try {
                             i11 = Integer.parseInt(url.substring(url.indexOf(63) + 1));
@@ -154,8 +154,8 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                             }
                             str = url;
                             z10 = false;
-                            h3Var.title = str;
-                            h3Var.bigTitle = false;
+                            f3Var.title = str;
+                            f3Var.bigTitle = false;
                             String string = LocaleController.getString(R.string.Open);
                             String string2 = LocaleController.getString(R.string.CopyLink);
                             CharSequence[] charSequenceArr = new CharSequence[2];
@@ -175,33 +175,33 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                                         AndroidUtilities.addToClipboard(str3);
                                         String string3 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                         if (AndroidUtilities.shouldShowClipboardToast()) {
-                                            new org.telegram.ui.Components.wc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
+                                            new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string3).j();
                                         }
                                     }
                                 }
                             };
-                            h3Var.items = charSequenceArr;
-                            h3Var.onClickListener = onClickListener;
-                            h3Var.setOnHideListener(new s5(runnable, 12));
-                            h3Var.scrollNavBar = true;
-                            h3Var.show();
+                            f3Var.items = charSequenceArr;
+                            f3Var.onClickListener = onClickListener;
+                            f3Var.setOnHideListener(new r5(runnable, 12));
+                            f3Var.scrollNavBar = true;
+                            f3Var.show();
                             photoViewer.e0.performHapticFeedback(0, 2);
-                            h3Var.setItemColor(0, -1, -1);
-                            h3Var.setItemColor(1, -1, -1);
-                            h3Var.setBackgroundColor(-14933463);
-                            h3Var.setTitleColor(-7697782);
-                            h3Var.setCalcMandatoryInsets(true);
-                            AndroidUtilities.setNavigationBarColor((Dialog) h3Var, -14933463, false);
-                            AndroidUtilities.setLightNavigationBar((Dialog) h3Var, false);
-                            h3Var.scrollNavBar = true;
+                            f3Var.setItemColor(0, -1, -1);
+                            f3Var.setItemColor(1, -1, -1);
+                            f3Var.setBackgroundColor(-14933463);
+                            f3Var.setTitleColor(-7697782);
+                            f3Var.setCalcMandatoryInsets(true);
+                            AndroidUtilities.setNavigationBarColor((Dialog) f3Var, -14933463, false);
+                            AndroidUtilities.setLightNavigationBar((Dialog) f3Var, false);
+                            f3Var.scrollNavBar = true;
                             break;
                         } else {
                             str = url.substring(4);
                             z10 = true;
                         }
                         c10 = 1;
-                        h3Var.title = str;
-                        h3Var.bigTitle = false;
+                        f3Var.title = str;
+                        f3Var.bigTitle = false;
                         String string3 = LocaleController.getString(R.string.Open);
                         String string22 = LocaleController.getString(R.string.CopyLink);
                         CharSequence[] charSequenceArr2 = new CharSequence[2];
@@ -221,32 +221,32 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                                     AndroidUtilities.addToClipboard(str3);
                                     String string32 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                     if (AndroidUtilities.shouldShowClipboardToast()) {
-                                        new org.telegram.ui.Components.wc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
+                                        new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string32).j();
                                     }
                                 }
                             }
                         };
-                        h3Var.items = charSequenceArr2;
-                        h3Var.onClickListener = onClickListener2;
-                        h3Var.setOnHideListener(new s5(runnable, 12));
-                        h3Var.scrollNavBar = true;
-                        h3Var.show();
+                        f3Var.items = charSequenceArr2;
+                        f3Var.onClickListener = onClickListener2;
+                        f3Var.setOnHideListener(new r5(runnable, 12));
+                        f3Var.scrollNavBar = true;
+                        f3Var.show();
                         photoViewer.e0.performHapticFeedback(0, 2);
-                        h3Var.setItemColor(0, -1, -1);
-                        h3Var.setItemColor(1, -1, -1);
-                        h3Var.setBackgroundColor(-14933463);
-                        h3Var.setTitleColor(-7697782);
-                        h3Var.setCalcMandatoryInsets(true);
-                        AndroidUtilities.setNavigationBarColor((Dialog) h3Var, -14933463, false);
-                        AndroidUtilities.setLightNavigationBar((Dialog) h3Var, false);
-                        h3Var.scrollNavBar = true;
+                        f3Var.setItemColor(0, -1, -1);
+                        f3Var.setItemColor(1, -1, -1);
+                        f3Var.setBackgroundColor(-14933463);
+                        f3Var.setTitleColor(-7697782);
+                        f3Var.setCalcMandatoryInsets(true);
+                        AndroidUtilities.setNavigationBarColor((Dialog) f3Var, -14933463, false);
+                        AndroidUtilities.setLightNavigationBar((Dialog) f3Var, false);
+                        f3Var.scrollNavBar = true;
                     }
                     i11 = -1;
                     if (!url.startsWith("mailto:")) {
                     }
                     c10 = 1;
-                    h3Var.title = str;
-                    h3Var.bigTitle = false;
+                    f3Var.title = str;
+                    f3Var.bigTitle = false;
                     String string32 = LocaleController.getString(R.string.Open);
                     String string222 = LocaleController.getString(R.string.CopyLink);
                     CharSequence[] charSequenceArr22 = new CharSequence[2];
@@ -266,25 +266,25 @@ public final /* synthetic */ class og0 implements Utilities.Callback3 {
                                 AndroidUtilities.addToClipboard(str3);
                                 String string322 = z10 ? LocaleController.getString("PhoneCopied", R.string.PhoneCopied) : str3.startsWith("#") ? LocaleController.getString("HashtagCopied", R.string.HashtagCopied) : str3.startsWith("@") ? LocaleController.getString("UsernameCopied", R.string.UsernameCopied) : LocaleController.getString("LinkCopied", R.string.LinkCopied);
                                 if (AndroidUtilities.shouldShowClipboardToast()) {
-                                    new org.telegram.ui.Components.wc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
+                                    new org.telegram.ui.Components.yc(photoViewer2.e0, photoViewer2.v2).Q(R.raw.voip_invite, 36, string322).j();
                                 }
                             }
                         }
                     };
-                    h3Var.items = charSequenceArr22;
-                    h3Var.onClickListener = onClickListener22;
-                    h3Var.setOnHideListener(new s5(runnable, 12));
-                    h3Var.scrollNavBar = true;
-                    h3Var.show();
+                    f3Var.items = charSequenceArr22;
+                    f3Var.onClickListener = onClickListener22;
+                    f3Var.setOnHideListener(new r5(runnable, 12));
+                    f3Var.scrollNavBar = true;
+                    f3Var.show();
                     photoViewer.e0.performHapticFeedback(0, 2);
-                    h3Var.setItemColor(0, -1, -1);
-                    h3Var.setItemColor(1, -1, -1);
-                    h3Var.setBackgroundColor(-14933463);
-                    h3Var.setTitleColor(-7697782);
-                    h3Var.setCalcMandatoryInsets(true);
-                    AndroidUtilities.setNavigationBarColor((Dialog) h3Var, -14933463, false);
-                    AndroidUtilities.setLightNavigationBar((Dialog) h3Var, false);
-                    h3Var.scrollNavBar = true;
+                    f3Var.setItemColor(0, -1, -1);
+                    f3Var.setItemColor(1, -1, -1);
+                    f3Var.setBackgroundColor(-14933463);
+                    f3Var.setTitleColor(-7697782);
+                    f3Var.setCalcMandatoryInsets(true);
+                    AndroidUtilities.setNavigationBarColor((Dialog) f3Var, -14933463, false);
+                    AndroidUtilities.setLightNavigationBar((Dialog) f3Var, false);
+                    f3Var.scrollNavBar = true;
                 } else if (runnable != null) {
                     runnable.run();
                     break;

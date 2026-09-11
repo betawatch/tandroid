@@ -2,13 +2,12 @@ package l;
 
 import android.view.ActionProvider;
 import android.view.View;
-import zh.d3;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class o implements ActionProvider.VisibilityListener {
     public final ActionProvider a;
-    public d3 b;
+    public xa.c b;
 
     public o(s sVar, ActionProvider actionProvider) {
         this.a = actionProvider;
@@ -20,9 +19,9 @@ public final class o implements ActionProvider.VisibilityListener {
 
     @Override // android.view.ActionProvider.VisibilityListener
     public final void onActionProviderVisibilityChanged(boolean z10) {
-        d3 d3Var = this.b;
-        if (d3Var != null) {
-            l lVar = ((n) d3Var.a).n;
+        xa.c cVar = this.b;
+        if (cVar != null) {
+            l lVar = ((n) cVar.b).n;
             lVar.h = true;
             lVar.p(true);
         }

@@ -3,10 +3,9 @@ package re;
 import com.google.firebase.messaging.s;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import m.g3;
-import qg.m0;
+import mg.n;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -49,23 +48,23 @@ public final class a {
                 try {
                     cls2 = Class.forName("java.lang.ClassNotFoundException");
                     d = cls2;
-                } catch (ClassNotFoundException e) {
-                    throw new NoClassDefFoundError(e.getMessage());
+                } catch (ClassNotFoundException e7) {
+                    throw new NoClassDefFoundError(e7.getMessage());
                 }
             }
             return cls2;
         }
     }
 
-    public static s b(g3 g3Var, Object obj, Object obj2) {
-        return new s(g3Var, obj, obj2, c);
+    public static s b(n nVar, Object obj, Object obj2) {
+        return new s(nVar, obj, obj2, c);
     }
 
-    public static s c(g3 g3Var, Object obj, Object obj2, Object obj3) {
-        return new s(g3Var, obj, obj2, new Object[]{obj3});
+    public static s c(n nVar, Object obj, Object obj2, Object obj3) {
+        return new s(nVar, obj, obj2, new Object[]{obj3});
     }
 
-    public final m0 d(String str, String str2, String str3, String str4, String str5) {
+    public final ra.a d(String str, String str2, String str3, String str4, String str5) {
         int parseInt = Integer.parseInt("1", 16);
         ClassLoader classLoader = this.a;
         Class a2 = a(classLoader, str2);
@@ -88,18 +87,18 @@ public final class a {
             clsArr2[i12] = a(classLoader, stringTokenizer3.nextToken());
         }
         Class a10 = a(classLoader, str5);
-        m0 m0Var = new m0(2);
-        m0Var.b = parseInt;
-        m0Var.c = str;
-        m0Var.e = a2;
-        m0Var.g = clsArr;
-        m0Var.h = a10;
-        return m0Var;
+        ra.a aVar = new ra.a(1);
+        aVar.b = parseInt;
+        aVar.c = str;
+        aVar.e = a2;
+        aVar.g = clsArr;
+        aVar.h = a10;
+        return aVar;
     }
 
-    public final g3 e(m0 m0Var) {
-        g3 g3Var = new g3(17, false);
-        g3Var.b = m0Var;
-        return g3Var;
+    public final n e(ra.a aVar) {
+        n nVar = new n(13, false);
+        nVar.b = aVar;
+        return nVar;
     }
 }

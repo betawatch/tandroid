@@ -1,47 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class yi implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.pk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ yg.p0 n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ eo s;
+public final class yi implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bi.k8 b;
+    public final /* synthetic */ co c;
+    public final /* synthetic */ co d;
 
-    public yi(eo eoVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.pk0 pk0Var, float f7, float f10, yg.p0 p0Var, MessageObject messageObject) {
-        this.s = eoVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = i10;
-        this.d = z12;
-        this.e = pk0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = p0Var;
-        this.r = messageObject;
+    public yi(co coVar, int i10, bi.k8 k8Var, co coVar2) {
+        this.d = coVar;
+        this.a = i10;
+        this.b = k8Var;
+        this.c = coVar2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (!this.a) {
-            eo eoVar = this.s;
-            if (eoVar.cc != null) {
-                eoVar.cc = null;
-                if (this.b) {
-                    eoVar.h8(new xi(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
-                } else {
-                    eoVar.h8(new qh(7, this, this.r));
-                }
-                eoVar.A7(true);
-            }
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        int i13 = NotificationCenter.messagesDidLoad;
+        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
+            this.b.run();
+            AndroidUtilities.runOnUIThread(new i2.a0(this.c, i10, i11, objArr), 50L);
+            i12 = ((org.telegram.ui.ActionBar.n2) this.d).currentAccount;
+            NotificationCenter.getInstance(i12).removeObserver(this, i13);
         }
     }
 }

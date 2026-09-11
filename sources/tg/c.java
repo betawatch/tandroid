@@ -1,13 +1,11 @@
 package tg;
 
-import org.telegram.messenger.a2;
-import org.telegram.ui.wy;
-import sg.b0;
-import sg.f0;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
+public final class c implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ e b;
 
@@ -18,19 +16,20 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
+        ValueAnimator valueAnimator;
         switch (this.a) {
             case 0:
-                this.b.E();
-                break;
-            default:
-                StringBuilder sb2 = new StringBuilder("https://t.me/giftcode/");
                 e eVar = this.b;
-                sb2.append(eVar.h);
-                String sb3 = sb2.toString();
-                wy wyVar = new wy(a2.e(3, "onlySelect", "dialogsType", true));
-                wyVar.C2 = new f0(1, eVar, sb3);
-                eVar.e.presentFragment(wyVar);
-                ((b0) eVar).r.dismiss();
+                AnimatorSet animatorSet = eVar.T;
+                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = eVar.S) != null && valueAnimator.isRunning())) {
+                    eVar.h(eVar.I);
+                    break;
+                } else {
+                    eVar.k();
+                    break;
+                }
+            default:
+                this.b.i();
                 break;
         }
     }

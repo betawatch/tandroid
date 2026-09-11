@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import w7.e0;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class f extends o6.a {
     public static final Parcelable.Creator<f> CREATOR;
@@ -59,7 +59,7 @@ public final class f extends o6.a {
         Object[] objArr = {MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK, MediaIntentReceiver.ACTION_STOP_CASTING};
         for (int i10 = 0; i10 < 2; i10++) {
             if (objArr[i10] == null) {
-                throw new NullPointerException(hc.b.j(i10, "at index "));
+                throw new NullPointerException(i2.g.i(i10, "at index "));
             }
         }
         Y = j0.r(2, objArr);

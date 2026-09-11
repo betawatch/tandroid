@@ -1,66 +1,157 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import j$.util.Comparator$-CC;
 import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.w01;
+import java.util.Collections;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.fd;
+import org.telegram.messenger.rf;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class f6 implements n2 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ w01 c;
+public final class f6 {
+    public final int a;
+    public boolean b;
+    public boolean c;
+    public int e;
+    public long f;
+    public int g;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList h = new ArrayList();
 
-    public f6(w01 w01Var, org.telegram.ui.ActionBar.p2 p2Var, Context context) {
-        this.c = w01Var;
-        this.a = p2Var;
-        this.b = context;
+    public f6(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Cells.n2
-    public final boolean b() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.n2
-    public final void c() {
-        org.telegram.ui.ActionBar.p2 p2Var = this.a;
-        zh.i5 storiesController = p2Var.getMessagesController().getStoriesController();
-        ArrayList arrayList = storiesController.h;
-        if (arrayList.isEmpty()) {
+    public static /* synthetic */ void a(f6 f6Var, TLObject tLObject, MessagesStorage messagesStorage, long j3, int i10, ArrayList arrayList) {
+        ArrayList arrayList2 = f6Var.d;
+        int i11 = f6Var.a;
+        if (!(tLObject instanceof TLRPC.messages_Messages)) {
+            if (i10 != f6Var.e) {
+                return;
+            }
+            f6Var.c();
             return;
         }
-        boolean z10 = storiesController.D(0, DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(0)).peer)) != 0;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            long peerDialogId = DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(i10)).peer);
-            if (!z10 || storiesController.D(0, peerDialogId) != 0) {
-                arrayList2.add(Long.valueOf(peerDialogId));
+        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+        MessagesController.getInstance(i11).putUsers(messages_messages.users, false);
+        MessagesController.getInstance(i11).putChats(messages_messages.chats, false);
+        messagesStorage.putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+        messagesStorage.putMessages(messages_messages, -j3, 3, 0, false, 0, 0L);
+        if (i10 == f6Var.e && !messages_messages.messages.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.o6(7)));
+            TLRPC.Message message = (TLRPC.Message) i2.g.h(1, messages_messages.messages);
+            long j10 = message.grouped_id;
+            if (j10 != 0) {
+                ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
+                int size = arrayList3.size();
+                int i12 = 0;
+                while (i12 < size) {
+                    TLRPC.Message message2 = arrayList3.get(i12);
+                    i12++;
+                    TLRPC.Message message3 = message2;
+                    if (message3.grouped_id == j10) {
+                        arrayList2.add(new MessageObject(i11, message3, false, true));
+                    }
+                }
+            } else {
+                arrayList2.add(new MessageObject(i11, message, false, true));
+            }
+            if (arrayList2.isEmpty()) {
+                return;
+            }
+            f6Var.c();
+        }
+    }
+
+    public static /* synthetic */ void b(f6 f6Var, int i10, ArrayList arrayList, long j3, int i11, MessagesStorage messagesStorage) {
+        int i12 = f6Var.a;
+        ArrayList arrayList2 = f6Var.d;
+        if (i10 != f6Var.e) {
+            return;
+        }
+        if (!arrayList.isEmpty()) {
+            arrayList2.clear();
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.o6(6)));
+            TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
+            long j10 = message.grouped_id;
+            if (j10 != 0) {
+                int size = arrayList.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList.get(i13);
+                    i13++;
+                    TLRPC.Message message2 = (TLRPC.Message) obj;
+                    if (message2.grouped_id == j10) {
+                        arrayList2.add(new MessageObject(i12, message2, false, true));
+                    }
+                }
+            } else {
+                arrayList2.add(new MessageObject(i12, message, false, true));
+            }
+            if (!arrayList2.isEmpty()) {
+                f6Var.c();
+                return;
             }
         }
-        p2Var.getOrCreateStoryViewer().F(this.b, null, arrayList2, 0, null, null, new zh.s5(this.c), false);
-    }
-
-    @Override // org.telegram.ui.Cells.n2
-    public final void e(r2 r2Var) {
-        org.telegram.ui.ActionBar.p2 p2Var = this.a;
-        if (p2Var.getMessagesController().getStoriesController().I(r2Var.getDialogId())) {
-            p2Var.getOrCreateStoryViewer().getClass();
-            p2Var.getOrCreateStoryViewer().D(p2Var.getContext(), r2Var.getDialogId(), new zh.s5(this.c));
+        TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
+        tL_channels_getMessages.channel = MessagesController.getInstance(i12).getInputChannel(j3);
+        for (int i14 = 10; i14 >= 0; i14--) {
+            int i15 = i11 - i14;
+            if (i15 >= 0) {
+                tL_channels_getMessages.id.add(Integer.valueOf(i15));
+            }
         }
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new fd(f6Var, messagesStorage, j3, i10, arrayList));
     }
 
-    @Override // org.telegram.ui.Cells.n2
-    public final void a(r2 r2Var) {
+    public final void c() {
+        int i10 = 0;
+        this.b = false;
+        this.c = true;
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+        arrayList.clear();
     }
 
-    @Override // org.telegram.ui.Cells.n2
-    public final void d(r2 r2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.n2
-    public final void f(r2 r2Var) {
+    public final void d(TLRPC.UserFull userFull) {
+        ArrayList arrayList = this.d;
+        if (userFull == null || (userFull.flags2 & 64) == 0) {
+            this.e++;
+            this.c = true;
+            arrayList.clear();
+            c();
+            return;
+        }
+        long j3 = userFull.personal_channel_id;
+        int i10 = userFull.personal_channel_message;
+        if (this.c || this.b) {
+            if (this.f == j3 && this.g == i10) {
+                return;
+            }
+            this.c = false;
+            arrayList.clear();
+        }
+        int i11 = this.e + 1;
+        this.e = i11;
+        this.b = true;
+        this.f = j3;
+        this.g = i10;
+        int i12 = this.a;
+        long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
+        messagesStorage.getStorageQueue().postRunnable(new rf(this, i10, messagesStorage, j3, clientUserId, i11));
     }
 }

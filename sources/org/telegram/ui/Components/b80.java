@@ -1,23 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class b80 extends vl0 {
-    public final /* synthetic */ f80 X2;
+public final /* synthetic */ class b80 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b80(f80 f80Var, Context context) {
-        super(context, null);
-        this.X2 = f80Var;
+    public /* synthetic */ b80(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.vl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.X2.n) {
-            return;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                g80 g80Var = (g80) this.b;
+                g80.w(g80Var.getContext(), g80Var.c, g80Var.n, this.c);
+                break;
+            case 1:
+                g80 g80Var2 = (g80) this.b;
+                g80.w(g80Var2.getContext(), g80Var2.c, g80Var2.n, this.c);
+                break;
+            default:
+                di.pc pcVar = (di.pc) this.b;
+                pcVar.z2 = false;
+                pcVar.X0.x(7, true);
+                if (this.c) {
+                    pcVar.q(true);
+                    break;
+                }
+                break;
         }
-        super.requestLayout();
     }
 }

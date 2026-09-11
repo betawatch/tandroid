@@ -12,17 +12,17 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public interface WebViewBuilderBoundaryInterface {
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     @Retention(RetentionPolicy.SOURCE)
     public @interface Baseline {
         public static final int DEFAULT = 0;
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     public static class Config implements Consumer<BiConsumer<Integer, Object>> {
         public int baseline = 0;
         public final ArrayList a = new ArrayList();
@@ -46,7 +46,7 @@ public interface WebViewBuilderBoundaryInterface {
         }
     }
 
-    /* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+    /* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
     @Target({ElementType.TYPE_USE})
     @Retention(RetentionPolicy.SOURCE)
     public @interface ConfigField {

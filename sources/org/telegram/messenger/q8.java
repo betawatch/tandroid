@@ -1,35 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ q8(BaseController baseController, long j3, long j10, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = baseController;
-        this.c = j3;
-        this.d = j10;
-        this.e = i10;
-        this.f = i11;
+    public /* synthetic */ q8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.b = mediaDataController;
+        this.c = z10;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.b).lambda$getMediaCountDatabase$139(this.c, this.d, this.e, this.f);
+                this.b.lambda$loadRecents$49(this.c, this.d);
                 break;
             case 1:
-                ((MediaDataController) this.b).lambda$putMediaCountDatabase$138(this.c, this.d, this.e, this.f);
+                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
                 break;
             default:
-                ((MessagesStorage) this.b).lambda$updateRepliesMaxReadId$193(this.c, this.d, this.e, this.f);
+                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
                 break;
         }
     }

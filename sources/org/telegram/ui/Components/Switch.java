@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
 public class Switch extends View {
     public int E;
@@ -59,7 +59,7 @@ public class Switch extends View {
 
     public Switch(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.a = new le.b(0, new hi.y1(this, 23), wr.h, 380L, true);
+        this.a = new le.b(0, new ji.k5(this, 2), pr.h, 380L, true);
         this.v = 1.0f;
         this.w = org.telegram.ui.ActionBar.j6.r7;
         this.x = org.telegram.ui.ActionBar.j6.V6;
@@ -85,7 +85,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new gz0(this, 0));
+                this.d.addListener(new ty0(this, 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -102,7 +102,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i10 == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new gz0(this, 1));
+                this.e.addListener(new ty0(this, 1));
                 this.e.start();
                 return;
             }
@@ -311,7 +311,7 @@ public class Switch extends View {
                                 canvas.scale(f14, f14, f12, f13);
                             }
                             Drawable drawable2 = this.F;
-                            drawable2.setBounds(org.telegram.messenger.em.w(2, dp2, drawable2), org.telegram.messenger.em.e(2, measuredHeight2, this.F), org.telegram.messenger.em.B(2, dp2, this.F), org.telegram.messenger.em.z(2, measuredHeight2, this.F));
+                            drawable2.setBounds(org.telegram.messenger.vl.w(2, dp2, drawable2), org.telegram.messenger.vl.e(2, measuredHeight2, this.F), org.telegram.messenger.vl.B(2, dp2, this.F), org.telegram.messenger.vl.z(2, measuredHeight2, this.F));
                             this.F.draw(canvas4);
                             if (z10) {
                                 canvas.restore();
@@ -399,7 +399,7 @@ public class Switch extends View {
             Paint paint = new Paint(1);
             this.J = paint;
             paint.setColor(-1);
-            org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{0}), null, i10 >= 23 ? null : new bi.w4(this, 5));
+            org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{0}), null, i10 >= 23 ? null : new di.e4(this, 5));
             this.I = zVar;
             if (i10 >= 23) {
                 zVar.setRadius(AndroidUtilities.dp(18.0f));
@@ -496,6 +496,6 @@ public class Switch extends View {
         return i10;
     }
 
-    public void setOnCheckedChangeListener(hz0 hz0Var) {
+    public void setOnCheckedChangeListener(uy0 uy0Var) {
     }
 }

@@ -1,29 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes.dex */
-public final /* synthetic */ class nh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+import android.content.Context;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ nh(NotificationsController notificationsController, long j3, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsController;
-        this.c = j3;
-        this.d = i10;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class nh implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ nh(Context context, int i10, Utilities.Callback2 callback2) {
+        this.c = callback2;
+        this.d = context;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDeleteStory$15(this.c, this.d);
+                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
                 break;
             default:
-                this.b.lambda$processReadStories$16(this.c, this.d);
+                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ nh(TranslateController translateController, int i10, Utilities.Callback callback) {
+        this.c = translateController;
+        this.b = i10;
+        this.d = callback;
     }
 }

@@ -1,176 +1,34 @@
 package bb;
 
-import android.os.Build;
 import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import hd.r;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.TLObject;
-import v7.u7;
-import zd.e0;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final class d {
-    public final qa.d a;
-    public final aa.a b;
-    public final l c;
-    public final ie.d d = ie.e.a();
+public final class d extends kd.j implements p {
+    public /* synthetic */ Object a;
 
-    public d(id.h hVar, qa.d dVar, za.b bVar, aa.a aVar, k1.f fVar) {
-        this.a = dVar;
-        this.b = aVar;
-        this.c = new l(fVar);
+    @Override // kd.a
+    public final id.c create(Object obj, id.c cVar) {
+        d dVar = new d(2, cVar);
+        dVar.a = obj;
+        return dVar;
     }
 
-    public static String b(String str) {
-        Pattern compile = Pattern.compile("/");
-        kotlin.jvm.internal.i.d(compile, "compile(...)");
-        String replaceAll = compile.matcher(str).replaceAll("");
-        kotlin.jvm.internal.i.d(replaceAll, "replaceAll(...)");
-        return replaceAll;
+    @Override // rd.p
+    public final Object invoke(Object obj, Object obj2) {
+        d dVar = (d) create((String) obj, (id.c) obj2);
+        gd.i iVar = gd.i.a;
+        dVar.invokeSuspend(iVar);
+        return iVar;
     }
 
-    public final Boolean a() {
-        e eVar = this.c.b;
-        if (eVar != null) {
-            return eVar.a;
-        }
-        kotlin.jvm.internal.i.h("sessionConfigs");
-        throw null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00b6 A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #0 {all -> 0x0052, blocks: (B:25:0x004e, B:26:0x00b2, B:28:0x00b6, B:31:0x00c1, B:38:0x0084, B:40:0x008c, B:43:0x0097), top: B:7:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00c1 A[Catch: all -> 0x0052, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0052, blocks: (B:25:0x004e, B:26:0x00b2, B:28:0x00b6, B:31:0x00c1, B:38:0x0084, B:40:0x008c, B:43:0x0097), top: B:7:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x008c A[Catch: all -> 0x0052, TRY_LEAVE, TryCatch #0 {all -> 0x0052, blocks: (B:25:0x004e, B:26:0x00b2, B:28:0x00b6, B:31:0x00c1, B:38:0x0084, B:40:0x008c, B:43:0x0097), top: B:7:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0097 A[Catch: all -> 0x0052, TRY_ENTER, TryCatch #0 {all -> 0x0052, blocks: (B:25:0x004e, B:26:0x00b2, B:28:0x00b6, B:31:0x00c1, B:38:0x0084, B:40:0x008c, B:43:0x0097), top: B:7:0x002c }] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x002e  */
-    /* JADX WARN: Type inference failed for: r4v0, types: [int] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object c(id.c cVar) {
-        a aVar;
-        ?? r42;
-        ie.a aVar2;
-        ie.a aVar3;
-        d dVar;
-        String str;
-        try {
-            if (cVar instanceof a) {
-                aVar = (a) cVar;
-                int i10 = aVar.e;
-                if ((i10 & TLObject.FLAG_31) != 0) {
-                    aVar.e = i10 - TLObject.FLAG_31;
-                    Object obj = aVar.c;
-                    jd.a aVar4 = jd.a.a;
-                    r42 = aVar.e;
-                    gd.i iVar = gd.i.a;
-                    if (r42 != 0) {
-                        u7.b(obj);
-                        ie.d dVar2 = this.d;
-                        if (!dVar2.c() && !this.c.b()) {
-                            return iVar;
-                        }
-                        aVar.a = this;
-                        aVar.b = dVar2;
-                        aVar.e = 1;
-                        if (dVar2.d(aVar) != aVar4) {
-                            aVar3 = dVar2;
-                            dVar = this;
-                        }
-                        return aVar4;
-                    }
-                    if (r42 != 1) {
-                        if (r42 != 2) {
-                            if (r42 != 3) {
-                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                            }
-                            aVar2 = (ie.a) aVar.a;
-                            try {
-                                u7.b(obj);
-                                ((ie.d) aVar2).e(null);
-                                return iVar;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                ((ie.d) aVar2).e(null);
-                                throw th;
-                            }
-                        }
-                        aVar3 = aVar.b;
-                        dVar = (d) aVar.a;
-                        u7.b(obj);
-                        str = (String) obj;
-                        if (str != null) {
-                            Log.w("SessionConfigFetcher", "Error getting Firebase Installation ID. Skipping this Session Event.");
-                            ((ie.d) aVar3).e(null);
-                            return iVar;
-                        }
-                        gd.d dVar3 = new gd.d("X-Crashlytics-Installation-ID", str);
-                        String format = String.format("%s/%s", Arrays.copyOf(new Object[]{Build.MANUFACTURER, Build.MODEL}, 2));
-                        dVar.getClass();
-                        gd.d dVar4 = new gd.d("X-Crashlytics-Device-Model", b(format));
-                        String INCREMENTAL = Build.VERSION.INCREMENTAL;
-                        kotlin.jvm.internal.i.d(INCREMENTAL, "INCREMENTAL");
-                        gd.d dVar5 = new gd.d("X-Crashlytics-OS-Build-Version", b(INCREMENTAL));
-                        String RELEASE = Build.VERSION.RELEASE;
-                        kotlin.jvm.internal.i.d(RELEASE, "RELEASE");
-                        Map b10 = r.b(dVar3, dVar4, dVar5, new gd.d("X-Crashlytics-OS-Display-Version", b(RELEASE)), new gd.d("X-Crashlytics-API-Client-Version", "1.2.0"));
-                        Log.d("SessionConfigFetcher", "Fetching settings from server.");
-                        aa.a aVar5 = dVar.b;
-                        b bVar = new b(dVar, null);
-                        c cVar2 = new c(2, null);
-                        aVar.a = aVar3;
-                        aVar.b = null;
-                        aVar.e = 3;
-                        Object w10 = e0.w((id.h) aVar5.d, new b(aVar5, b10, bVar, cVar2, null), aVar);
-                        if (w10 != aVar4) {
-                            w10 = iVar;
-                        }
-                        if (w10 != aVar4) {
-                            aVar2 = aVar3;
-                            ((ie.d) aVar2).e(null);
-                            return iVar;
-                        }
-                        return aVar4;
-                    }
-                    aVar3 = aVar.b;
-                    dVar = (d) aVar.a;
-                    u7.b(obj);
-                    if (dVar.c.b()) {
-                        Log.d("SessionConfigFetcher", "Remote settings cache not expired. Using cached values.");
-                        ((ie.d) aVar3).e(null);
-                        return iVar;
-                    }
-                    Task d = ((qa.c) dVar.a).d();
-                    kotlin.jvm.internal.i.d(d, "firebaseInstallationsApi.id");
-                    aVar.a = dVar;
-                    aVar.b = aVar3;
-                    aVar.e = 2;
-                    obj = w7.h.a(d, aVar);
-                    if (obj == aVar4) {
-                        return aVar4;
-                    }
-                    str = (String) obj;
-                    if (str != null) {
-                    }
-                }
-            }
-            if (r42 != 0) {
-            }
-            if (dVar.c.b()) {
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            aVar2 = r42;
-        }
-        aVar = new a(this, (kd.c) cVar);
-        Object obj2 = aVar.c;
-        jd.a aVar42 = jd.a.a;
-        r42 = aVar.e;
-        gd.i iVar2 = gd.i.a;
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        jd.a aVar = jd.a.a;
+        t7.b(obj);
+        Log.e("SessionConfigFetcher", "Error failing to fetch the remote configs: " + ((String) this.a));
+        return gd.i.a;
     }
 }

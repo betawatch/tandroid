@@ -1,43 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.rd1;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class kp implements rd1 {
-    public final /* synthetic */ sp a;
+public final class kp {
+    public final org.telegram.ui.ActionBar.d4 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
+    public Bitmap e;
 
-    public kp(sp spVar) {
-        this.a = spVar;
+    public kp(org.telegram.ui.ActionBar.d4 d4Var) {
+        this.a = d4Var;
     }
 
-    @Override // org.telegram.ui.rd1
-    public final boolean Y0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.rd1
-    public final boolean a() {
-        return this.a.N;
-    }
-
-    @Override // org.telegram.ui.rd1
-    public final void n1(boolean z10) {
-        sp spVar = this.a;
-        org.telegram.ui.eo eoVar = spVar.v;
-        spVar.N = !spVar.N;
-        if (spVar.M != null) {
-            spVar.P = true;
-            eoVar.e7 = true;
-            TLRPC.WallPaper wallPaper = spVar.v() ? null : spVar.n.h;
-            org.telegram.ui.ActionBar.f4 f4Var = spVar.M.a;
-            if (f4Var.a) {
-                spVar.n.i(null, wallPaper, z10, Boolean.valueOf(spVar.N), false);
-            } else {
-                spVar.n.i(f4Var, wallPaper, z10, Boolean.valueOf(spVar.N), false);
-            }
-            eoVar.e7 = false;
+    public final String a() {
+        org.telegram.ui.ActionBar.d4 d4Var = this.a;
+        if (d4Var == null || d4Var.a) {
+            return null;
         }
+        return d4Var.e;
     }
 }

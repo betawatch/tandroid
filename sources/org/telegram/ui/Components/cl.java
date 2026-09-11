@@ -1,28 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import org.telegram.messenger.IMapsProvider;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cl implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ll b;
+public final class cl implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a;
+    public final float[] b = {0.0f, 1.0f};
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ dl d;
 
-    public /* synthetic */ cl(ll llVar, int i10) {
-        this.a = i10;
-        this.b = llVar;
+    public cl(dl dlVar, FrameLayout frameLayout) {
+        this.d = dlVar;
+        this.c = frameLayout;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                ll.K(this.b, (IMapsProvider.IMap) obj);
-                break;
-            default:
-                ll.R(this.b, (Location) obj);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
+        if (lerp >= 0.7f && !this.a) {
+            dl dlVar = this.d;
+            gl glVar = dlVar.b;
+            gl glVar2 = dlVar.b;
+            if (glVar.i0 != null) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(glVar2.i0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(glVar2.i0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(glVar2.i0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                animatorSet.setDuration(250L);
+                animatorSet.start();
+                this.a = true;
+            }
         }
+        float interpolation = lerp <= 0.5f ? pr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (pr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (pr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setScaleX(interpolation);
+        frameLayout.setScaleY(interpolation);
     }
 }

@@ -1,122 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class xl0 implements s4.r0 {
-    public RecyclerView a;
-    public boolean c;
+public final class xl0 extends Drawable {
+    public final RectF a = new RectF();
+    public final Paint b;
+    public final TextPaint c;
     public int d;
-    public int e;
-    public int f;
-    public boolean g;
-    public boolean h;
-    public int i;
-    public final wl0 k;
-    public int b = -1;
-    public final int j = AndroidUtilities.dp(80.0f);
-    public final org.telegram.ui.Cells.l9 l = new org.telegram.ui.Cells.l9(this, 19);
+    public String e;
+    public final int f;
+    public int g;
+    public final int h;
 
-    public xl0(wl0 wl0Var) {
-        this.k = wl0Var;
+    public xl0(int i10) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.g = 255;
+        this.h = 255;
+        this.f = i10;
+        textPaint.setTextSize(AndroidUtilities.dp(11));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        if (i10 == 0) {
+            this.e = LocaleController.getString(R.string.ScamMessage);
+        } else {
+            this.e = LocaleController.getString(R.string.FakeMessage);
+        }
+        this.d = (int) Math.ceil(textPaint.measureText(this.e));
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, MotionEvent motionEvent) {
-        View E = recyclerView.E(motionEvent.getX(), motionEvent.getY());
-        int R = E != null ? RecyclerView.R(E) : -1;
-        float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        wl0 wl0Var = this.k;
-        org.telegram.ui.Cells.l9 l9Var = this.l;
-        if (action == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            AndroidUtilities.cancelRunOnUIThread(l9Var);
-            wl0Var.a(false);
+    public final void a() {
+        String string = this.f == 0 ? LocaleController.getString(R.string.ScamMessage) : LocaleController.getString(R.string.FakeMessage);
+        if (string.equals(this.e)) {
             return;
         }
-        if (action != 2) {
-            return;
-        }
-        if (this.j > -1) {
-            float f7 = 0;
-            if (y3 >= f7 && y3 <= this.d) {
-                this.h = false;
-                if (!this.g) {
-                    this.g = true;
-                    AndroidUtilities.cancelRunOnUIThread(l9Var);
-                    AndroidUtilities.runOnUIThread(l9Var);
-                }
-                this.i = ((int) (this.d - (y3 - f7))) / 2;
-            } else if (y3 >= this.e && y3 <= this.f) {
-                this.g = false;
-                if (!this.h) {
-                    this.h = true;
-                    AndroidUtilities.cancelRunOnUIThread(l9Var);
-                    AndroidUtilities.runOnUIThread(l9Var);
-                }
-                this.i = ((int) ((y3 + this.f) - (this.e + r11))) / 2;
-            } else if (this.g || this.h) {
-                AndroidUtilities.cancelRunOnUIThread(l9Var);
-                this.g = false;
-                this.h = false;
-            }
-        }
-        if (R == -1 || this.b == R) {
-            return;
-        }
-        this.b = R;
-        wl0Var.c(E, !wl0Var.d(R));
+        this.e = string;
+        this.d = (int) Math.ceil(this.c.measureText(string));
     }
 
-    @Override // s4.r0
-    public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
-        boolean z10 = this.c && !(recyclerView.getAdapter() == null || recyclerView.getAdapter().h() == 0);
-        if (z10) {
-            this.a = recyclerView;
-            int i10 = this.j;
-            if (i10 > -1) {
-                this.d = i10;
-                this.e = recyclerView.getMeasuredHeight() - i10;
-                this.f = recyclerView.getMeasuredHeight();
-            }
-        }
-        if (z10 && motionEvent.getAction() == 1) {
-            this.c = false;
-            this.g = false;
-            this.h = false;
-            AndroidUtilities.cancelRunOnUIThread(this.l);
-            this.k.a(false);
-        }
-        return z10;
+    public final void b(int i10) {
+        this.c.setColor(i10);
+        this.b.setColor(i10);
+        this.g = Color.alpha(i10);
     }
 
-    public final void d(View view, int i10, boolean z10) {
-        if (this.c) {
-            return;
-        }
-        this.b = -1;
-        AndroidUtilities.cancelRunOnUIThread(this.l);
-        this.g = false;
-        this.h = false;
-        wl0 wl0Var = this.k;
-        if (!wl0Var.b(i10)) {
-            this.c = false;
-            return;
-        }
-        wl0Var.a(true);
-        wl0Var.c(view, z10);
-        this.c = true;
-        this.b = i10;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.a;
+        rectF.set(bounds);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), this.b);
+        canvas.drawText(this.e, rectF.left + AndroidUtilities.dp(5.0f), rectF.top + AndroidUtilities.dp(12.0f), this.c);
     }
 
-    @Override // s4.r0
-    public final void c(boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(16.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(10.0f) + this.d;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.h != i10) {
+            int i11 = (int) ((i10 / 255.0f) * this.g);
+            this.b.setAlpha(i11);
+            this.c.setAlpha(i11);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

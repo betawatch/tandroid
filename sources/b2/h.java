@@ -8,7 +8,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class h extends Binder {
     public static final int b;
@@ -49,8 +49,8 @@ public final class h extends Binder {
                     obtain2.recycle();
                     obtain.recycle();
                     i10 = readInt;
-                } catch (RemoteException e) {
-                    throw new RuntimeException(e);
+                } catch (RemoteException e7) {
+                    throw new RuntimeException(e7);
                 }
             } catch (Throwable th2) {
                 obtain2.recycle();

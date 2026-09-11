@@ -1,60 +1,144 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final class ck0 extends s4.n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pk0 b;
+public final class ck0 extends x9 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ dk0 H;
 
-    public /* synthetic */ ck0(pk0 pk0Var, int i10) {
-        this.a = i10;
-        this.b = pk0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ck0(dk0 dk0Var, Context context, int i10) {
+        super(context);
+        this.G = i10;
+        this.H = dk0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.x9
+    public ImageReceiver c() {
+        switch (this.G) {
             case 0:
-                super.a(rect, view, recyclerView, z0Var);
-                pk0 pk0Var = this.b;
-                if (!pk0Var.q()) {
-                    recyclerView.getClass();
-                    int R = RecyclerView.R(view);
-                    if (R == 0) {
-                        rect.left = AndroidUtilities.dp(6.0f);
+                return new bk0(0, this);
+            case 1:
+                return new bk0(1, this);
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                dk0 dk0Var = this.H;
+                ck0 ck0Var = dk0Var.b;
+                super.dispatchDraw(canvas);
+                if (this.a.getLottieAnimation() != null && !dk0Var.E) {
+                    this.a.getLottieAnimation().start();
+                }
+                if (dk0Var.s && !dk0Var.v && this.a.getLottieAnimation() != null && this.a.getLottieAnimation().y() && ck0Var.a.getLottieAnimation() != null && ck0Var.a.getLottieAnimation().s()) {
+                    dk0Var.v = true;
+                    ck0Var.a.getLottieAnimation().L(0, false, true);
+                    ck0Var.setVisibility(0);
+                    Runnable runnable = dk0Var.P.P0;
+                    if (runnable != null) {
+                        runnable.run();
                     }
-                    rect.right = AndroidUtilities.dp(4.0f);
-                    if (R == pk0Var.a0.h() - 1) {
-                        if ((!pk0Var.U.isEmpty() && !MessagesController.getInstance(pk0Var.J).premiumFeaturesBlocked()) || pk0Var.q()) {
-                            rect.right = AndroidUtilities.dp(2.0f);
-                            break;
-                        } else {
-                            rect.right = AndroidUtilities.dp(6.0f);
-                            break;
-                        }
-                    }
-                } else {
-                    rect.left = 0;
-                    rect.right = 0;
+                    AndroidUtilities.runOnUIThread(new cc0(this, 17));
+                }
+                invalidate();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(Rect rect) {
+        switch (this.G) {
+            case 0:
+                dk0 dk0Var = this.H;
+                if (!ah.y0.c(this, dk0Var.P)) {
+                    super.invalidate(rect);
+                    dk0Var.P.invalidate();
                     break;
                 }
                 break;
             default:
-                recyclerView.getClass();
-                int R2 = RecyclerView.R(view);
-                if (R2 == 0) {
-                    rect.left = AndroidUtilities.dp(8.0f);
+                super.invalidate(rect);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.x9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                this.H.b();
+                super.onDraw(canvas);
+                break;
+            case 2:
+                q5 q5Var = this.e;
+                ImageReceiver imageReceiver = q5Var != null ? q5Var.k : this.a;
+                if (imageReceiver != null && imageReceiver.getLottieAnimation() != null) {
+                    imageReceiver.getLottieAnimation().start();
                 }
-                if (R2 == this.b.a0.h() - 1) {
-                    rect.right = AndroidUtilities.dp(8.0f);
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.G) {
+            case 0:
+                if (!ah.y0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
                     break;
                 }
+                break;
+            case 1:
+                if (!ah.y0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10 = this.G;
+        dk0 dk0Var = this.H;
+        switch (i10) {
+            case 0:
+                if (!ah.y0.c(this, dk0Var.P)) {
+                    super.invalidate();
+                    dk0Var.P.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                if (!ah.y0.c(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                dk0Var.P.invalidate();
                 break;
         }
     }

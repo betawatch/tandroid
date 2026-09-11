@@ -1,26 +1,35 @@
 package org.telegram.messenger;
 
-import android.location.Location;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.n70;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z5 implements q0.a {
+public final /* synthetic */ class z5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LocationController b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ z5(LocationController locationController, int i10) {
+    public /* synthetic */ z5(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, float f7, int i10) {
         this.a = i10;
-        this.b = locationController;
+        this.c = notificationCenterDelegate;
+        this.d = obj;
+        this.b = f7;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onConnected$4((Integer) obj);
+                ((MediaController) this.c).lambda$setPlaybackSpeed$16((MessageObject) this.d, this.b);
                 break;
             default:
-                this.b.setLastKnownLocation((Location) obj);
+                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
+                n70 n70Var = (n70) this.d;
+                i4Var.h0.M.c(0.0f, true);
+                n70Var.p = new org.telegram.ui.b0(i4Var, this.b, 0);
+                n70Var.Z();
                 break;
         }
     }

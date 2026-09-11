@@ -1,60 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q80;
-import org.telegram.ui.TwoStepVerificationActivity;
-
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ca implements RequestDelegate {
+public final /* synthetic */ class ca implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ca(MessagesController messagesController, boolean z10, TLRPC.User user, long j3) {
-        this.a = 0;
+    public /* synthetic */ ca(MessagesController messagesController, int i10, int i11) {
+        this.a = i11;
         this.b = messagesController;
-        this.c = z10;
-        this.e = user;
-        this.d = j3;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$deleteParticipantFromChat$316(this.c, (TLRPC.User) this.e, this.d, tLObject, tL_error);
+                this.b.lambda$updateTimerProc$157(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$checkChatInviter$375((TLRPC.Chat) this.e, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$onFolderEmpty$197(this.c);
                 break;
             case 2:
-                q80.s((q80) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                this.b.lambda$ensureMessagesLoaded$462(this.c);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.gg((xh.h) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.d));
+                this.b.lambda$didAddedNewTask$81(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ ca(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
-        this.e = obj;
-        this.c = z10;
-        this.d = j3;
-    }
-
-    public /* synthetic */ ca(q80 q80Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.a = 2;
-        this.b = q80Var;
-        this.d = j3;
-        this.c = z10;
-        this.e = tL_messages_importChatInvite;
     }
 }

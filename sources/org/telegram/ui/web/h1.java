@@ -1,176 +1,74 @@
 package org.telegram.ui.web;
 
-import android.content.Context;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.TimeZone;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.j61;
-import org.telegram.ui.Components.jx0;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.v51;
-import org.telegram.ui.b91;
-import w7.a6;
+import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
-public final class h1 extends m61 {
-    public final Utilities.Callback d;
-    public boolean h;
-    public String n;
-    public NumberTextView r;
-    public org.telegram.ui.ActionBar.w0 v;
-    public jx0 w;
-    public ArrayList e = f1.a(new ai.b(this, 29));
-    public final ArrayList f = new ArrayList();
-    public final HashSet s = new HashSet();
+public final class h1 extends g5 {
+    public final b f = new b(this, 4);
+    public final /* synthetic */ i1 h;
 
-    public h1(org.telegram.ui.b0 b0Var, Utilities.Callback callback) {
-        this.d = callback;
+    public h1(i1 i1Var) {
+        this.h = i1Var;
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final void U(ArrayList arrayList, j61 j61Var) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeZone(TimeZone.getDefault());
-        int i10 = 5;
-        int i11 = 2;
-        if (TextUtils.isEmpty(this.n)) {
-            ArrayList arrayList2 = this.e;
-            if (arrayList2 != null) {
-                int i12 = 0;
-                for (int size = arrayList2.size() - 1; size >= 0; size--) {
-                    e1 e1Var = (e1) this.e.get(size);
-                    calendar.setTimeInMillis(e1Var.b);
-                    int i13 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
-                    if (i12 != i13) {
-                        arrayList.add(v51.q(LocaleController.formatDateChat(e1Var.b / 1000)));
-                        i12 = i13;
-                    }
-                    String str = this.n;
-                    int i14 = h.a;
-                    v51 J = v51.J(h.class);
-                    J.z = 3;
-                    J.q = false;
-                    J.H = e1Var;
-                    J.m = str;
-                    arrayList.add(J);
-                }
-            }
-        } else {
-            ArrayList arrayList3 = this.f;
-            int size2 = arrayList3.size() - 1;
-            int i15 = 0;
-            while (size2 >= 0) {
-                e1 e1Var2 = (e1) arrayList3.get(size2);
-                calendar.setTimeInMillis(e1Var2.b);
-                int i16 = calendar.get(i10) + (calendar.get(i11) * 100) + (calendar.get(1) * 10000);
-                if (i15 != i16) {
-                    arrayList.add(v51.q(LocaleController.formatDateChat(e1Var2.b / 1000)));
-                    i15 = i16;
-                }
-                String str2 = this.n;
-                int i17 = h.a;
-                v51 J2 = v51.J(h.class);
-                J2.z = 3;
-                J2.q = false;
-                J2.H = e1Var2;
-                J2.m = str2;
-                arrayList.add(J2);
-                size2--;
-                i10 = 5;
-                i11 = 2;
-            }
-            if (this.h) {
-                arrayList.add(v51.n(32));
-                arrayList.add(v51.n(32));
-                arrayList.add(v51.n(32));
+    public static boolean t(String str, String str2) {
+        if (str == null || str2 == null) {
+            return false;
+        }
+        String lowerCase = str.toLowerCase();
+        String lowerCase2 = str2.toLowerCase();
+        if (lowerCase.startsWith(lowerCase2) || org.telegram.messenger.w1.w(" ", lowerCase2, lowerCase) || org.telegram.messenger.w1.w(".", lowerCase2, lowerCase)) {
+            return true;
+        }
+        String translitSafe = AndroidUtilities.translitSafe(lowerCase);
+        String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
+        return translitSafe.startsWith(translitSafe2) || org.telegram.messenger.w1.w(" ", translitSafe2, translitSafe) || org.telegram.messenger.w1.w(".", translitSafe2, translitSafe);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
+        i1 i1Var = this.h;
+        i1Var.n = null;
+        i1Var.h = false;
+        AndroidUtilities.cancelRunOnUIThread(this.f);
+        x51 x51Var = i1Var.a;
+        if (x51Var != null) {
+            x51Var.Y2.N(true);
+            i1Var.a.X2.h1(0, 0);
+        }
+        i1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(i1Var.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        i1 i1Var = this.h;
+        boolean z10 = !TextUtils.isEmpty(i1Var.n);
+        String obj = editText.getText().toString();
+        if (!TextUtils.equals(i1Var.n, obj)) {
+            i1Var.n = obj;
+            i1Var.h = true;
+            b bVar = this.f;
+            AndroidUtilities.cancelRunOnUIThread(bVar);
+            AndroidUtilities.runOnUIThread(bVar, 500L);
+            i1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        }
+        x51 x51Var = i1Var.a;
+        if (x51Var != null) {
+            x51Var.Y2.N(true);
+            if (z10 != (!TextUtils.isEmpty(obj))) {
+                i1Var.a.X2.h1(0, 0);
             }
         }
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        arrayList.add(v51.B(null));
     }
 
-    @Override // org.telegram.ui.Components.m61
-    public final CharSequence V() {
-        return LocaleController.getString(R.string.WebHistory);
-    }
-
-    @Override // org.telegram.ui.Components.m61
-    public final void W(v51 v51Var, View view) {
-        if (!v51Var.G(h.class) || this.actionBar.s()) {
-            return;
-        }
-        finishFragment();
-        this.d.run((e1) v51Var.H);
-    }
-
-    @Override // org.telegram.ui.Components.m61
-    public final boolean X(v51 v51Var, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.m61, org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        this.fragmentView = super.createView(context);
-        org.telegram.ui.ActionBar.l lVar = this.actionBar;
-        int i10 = j6.d6;
-        lVar.setBackgroundColor(getThemedColor(i10));
-        this.actionBar.setActionModeColor(j6.w0(null, i10, false));
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        org.telegram.ui.ActionBar.l lVar2 = this.actionBar;
-        int i11 = j6.G6;
-        lVar2.setTitleColor(getThemedColor(i11));
-        this.actionBar.A(getThemedColor(j6.z8), false);
-        this.actionBar.C(getThemedColor(i11), false);
-        this.actionBar.C(getThemedColor(i11), true);
-        this.actionBar.setCastShadows(true);
-        this.actionBar.setActionBarMenuOnItemClick(new b91(this, 9));
-        org.telegram.ui.ActionBar.z j3 = this.actionBar.j(null);
-        NumberTextView numberTextView = new NumberTextView(j3.getContext());
-        this.r = numberTextView;
-        numberTextView.setTextSize(18);
-        this.r.setTypeface(AndroidUtilities.bold());
-        this.r.setTextColor(getThemedColor(j6.y8));
-        this.r.setOnTouchListener(new ai.h(2));
-        j3.addView(this.r, a6.m(1.0f, 0, -1, 65, 0, 0));
-        org.telegram.ui.ActionBar.w0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
-        c10.F();
-        c10.H = new g1(this);
-        this.v = c10;
-        c10.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.v.setContentDescription(LocaleController.getString(R.string.Search));
-        EditTextBoldCursor searchField = this.v.getSearchField();
-        searchField.setTextColor(getThemedColor(i11));
-        searchField.setHintTextColor(getThemedColor(j6.Si));
-        searchField.setCursorColor(getThemedColor(i11));
-        jx0 jx0Var = new jx0(context, null, 1, null);
-        this.w = jx0Var;
-        jx0Var.d.setText(LocaleController.getString(TextUtils.isEmpty(this.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
-        this.w.e.setVisibility(8);
-        this.w.e(false, false);
-        this.w.setAnimateLayoutChange(true);
-        ((FrameLayout) this.fragmentView).addView(this.w, a6.c(-1.0f, -1));
-        this.a.setEmptyView(this.w);
-        this.a.j(new al0(this, 8));
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean isLightStatusBar() {
-        return AndroidUtilities.computePerceivedBrightness(getThemedColor(j6.d6)) > 0.721f;
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 }

@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a0 implements k0 {
     public final m0 a;
@@ -16,22 +16,7 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void l(int i10) {
-        m0 m0Var = this.a;
-        m0Var.h();
-        m0Var.p.v(i10);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean r() {
-        m0 m0Var = this.a;
-        m0Var.o.getClass();
-        m0Var.h();
-        return true;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final e t(e eVar) {
+    public final e A(e eVar) {
         m0 m0Var = this.a;
         try {
             g1 g1Var = m0Var.o.M;
@@ -46,11 +31,11 @@ public final class a0 implements k0 {
             }
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e) {
-                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
-                throw e;
-            } catch (RemoteException e7) {
+            } catch (DeadObjectException e7) {
                 eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
+                throw e7;
+            } catch (RemoteException e10) {
+                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
             return eVar;
         } catch (DeadObjectException unused) {
@@ -62,18 +47,33 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
+    public final void w(int i10) {
+        m0 m0Var = this.a;
+        m0Var.h();
+        m0Var.p.p(i10);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.k0
+    public final boolean z() {
+        m0 m0Var = this.a;
+        m0Var.o.getClass();
+        m0Var.h();
+        return true;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.k0
     public final void f() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void m() {
+    public final void x() {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void d(Bundle bundle) {
+    public final void c(Bundle bundle) {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void k(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void u(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

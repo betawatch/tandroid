@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class j extends r0 {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -245,22 +245,22 @@ public final class j extends r0 {
                     p(b10);
                     this.f = u1.a.f(str, bArr2, this.f, b10);
                 }
-            } catch (t1 e) {
+            } catch (t1 e7) {
                 this.f = i12;
-                throw e;
-            } catch (ArrayIndexOutOfBoundsException e7) {
-                throw new i(e7);
+                throw e7;
+            } catch (ArrayIndexOutOfBoundsException e10) {
+                throw new i(e10);
             }
-        } catch (t1 e10) {
-            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
+        } catch (t1 e11) {
+            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e11);
             byte[] bytes = str.getBytes(z.a);
             try {
                 T(bytes.length);
                 l(0, bytes.length, bytes);
-            } catch (i e11) {
-                throw e11;
-            } catch (IndexOutOfBoundsException e12) {
-                throw new i(e12);
+            } catch (i e12) {
+                throw e12;
+            } catch (IndexOutOfBoundsException e13) {
+                throw new i(e13);
             }
         }
     }

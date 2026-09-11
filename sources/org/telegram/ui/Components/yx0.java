@@ -1,15 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
-/* loaded from: classes3.dex */
-public final class yx0 extends org.telegram.ui.tu0 {
-    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
-    public final boolean P() {
-        return true;
-    }
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-    @Override // org.telegram.ui.tu0, org.telegram.ui.cv0
-    public final boolean z() {
-        return false;
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* loaded from: classes3.dex */
+public final class yx0 extends EditTextBoldCursor {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

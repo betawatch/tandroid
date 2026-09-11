@@ -2,9 +2,8 @@ package w7;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class x7 {
     public static String a(String str, Object... objArr) {
@@ -21,15 +20,15 @@ public abstract class x7 {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+                sb2 = "null";
             } else {
                 try {
                     sb2 = obj.toString();
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e7);
                     StringBuilder v = a4.a.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
+                    v.append(e7.getClass().getName());
                     v.append(">");
                     sb2 = v.toString();
                 }

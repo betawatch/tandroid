@@ -1,43 +1,92 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.SharedConfig;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ji implements Comparator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class ji implements RequestDelegate {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ SendMessagesHelper b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+    public final /* synthetic */ boolean j;
+    public final /* synthetic */ Object k;
+    public final /* synthetic */ Object l;
 
-    public /* synthetic */ ji(int i10) {
-        this.a = i10;
+    public /* synthetic */ ji(SendMessagesHelper sendMessagesHelper, String str, List list, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, co coVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z11) {
+        this.b = sendMessagesHelper;
+        this.d = str;
+        this.k = list;
+        this.f = z10;
+        this.c = messageObject;
+        this.l = keyboardButtonProto;
+        this.e = coVar;
+        this.g = twoStepVerificationActivity;
+        this.h = tLObjectArr;
+        this.i = inputCheckPasswordSRP;
+        this.j = z11;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$updateAllDialogs$0;
-        int lambda$resendMessages$13;
-        int lambda$checkSecretHoles$16;
-        int lambda$saveProxyList$4;
-        int lambda$sortTopics$9;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                lambda$updateAllDialogs$0 = SavedMessagesController.lambda$updateAllDialogs$0((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updateAllDialogs$0;
+                this.b.lambda$performSendMessageRequest$76((TLRPC.TL_messages_addPollAnswer) this.k, (TLRPC.TL_messages_addPollAnswer) this.l, this.c, this.d, (SendMessagesHelper.DelayedMessage) this.e, this.f, (SendMessagesHelper.DelayedMessage) this.g, this.h, (HashMap) this.i, this.j, tLObject, tL_error);
+                break;
             case 1:
-                lambda$resendMessages$13 = SecretChatHelper.lambda$resendMessages$13((TLRPC.Message) obj, (TLRPC.Message) obj2);
-                return lambda$resendMessages$13;
-            case 2:
-                lambda$checkSecretHoles$16 = SecretChatHelper.lambda$checkSecretHoles$16((SecretChatHelper.TL_decryptedMessageHolder) obj, (SecretChatHelper.TL_decryptedMessageHolder) obj2);
-                return lambda$checkSecretHoles$16;
-            case 3:
-                lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
-                return lambda$saveProxyList$4;
+                this.b.lambda$performSendMessageRequest$101((TLObject) this.k, this.c, this.d, (SendMessagesHelper.DelayedMessage) this.e, this.f, (SendMessagesHelper.DelayedMessage) this.g, this.h, (HashMap) this.i, this.j, (TLRPC.Message) this.l, tLObject, tL_error);
+                break;
             default:
-                lambda$sortTopics$9 = TopicsController.lambda$sortTopics$9((TLRPC.TL_forumTopic) obj, (TLRPC.TL_forumTopic) obj2);
-                return lambda$sortTopics$9;
+                List list = (List) this.k;
+                TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.l;
+                co coVar = (co) this.e;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.g;
+                TLObject[] tLObjectArr = (TLObject[]) this.h;
+                TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.i;
+                boolean z10 = this.j;
+                this.b.lambda$sendCallback$46(this.d, list, this.f, this.c, keyboardButtonProto, coVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z10, tLObject, tL_error);
+                break;
         }
+    }
+
+    public /* synthetic */ ji(SendMessagesHelper sendMessagesHelper, TLObject tLObject, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11, TLRPC.Message message) {
+        this.b = sendMessagesHelper;
+        this.k = tLObject;
+        this.c = messageObject;
+        this.d = str;
+        this.e = delayedMessage;
+        this.f = z10;
+        this.g = delayedMessage2;
+        this.h = obj;
+        this.i = hashMap;
+        this.j = z11;
+        this.l = message;
+    }
+
+    public /* synthetic */ ji(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer2, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
+        this.b = sendMessagesHelper;
+        this.k = tL_messages_addPollAnswer;
+        this.l = tL_messages_addPollAnswer2;
+        this.c = messageObject;
+        this.d = str;
+        this.e = delayedMessage;
+        this.f = z10;
+        this.g = delayedMessage2;
+        this.h = obj;
+        this.i = hashMap;
+        this.j = z11;
     }
 }

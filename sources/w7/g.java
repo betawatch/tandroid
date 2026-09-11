@@ -1,22 +1,20 @@
 package w7;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public abstract class g {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
-        kotlin.jvm.internal.i.e(pVar, "<this>");
-        if (pVar instanceof kd.a) {
-            return ((kd.a) pVar).create(cVar, cVar2);
-        }
-        id.h context = cVar2.getContext();
-        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
-    }
+    public static StaticLayout a;
 
-    public static id.c b(id.c cVar) {
-        id.c intercepted;
-        kotlin.jvm.internal.i.e(cVar, "<this>");
-        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
-        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
+    public static ji.b0 a(int i10, int i11, int i12, int i13) {
+        Rect rect = new Rect(i10, i11, i12, i13);
+        if (a == null) {
+            a = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        }
+        return new ji.b0(a, rect);
     }
 }

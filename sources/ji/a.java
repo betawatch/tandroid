@@ -1,20 +1,61 @@
 package ji;
 
-import android.util.SparseArray;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes4.dex */
 public final class a {
-    public SparseArray a;
+    public static long u = 1;
+    public final long a;
+    public TL_iv.PageBlock b;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public u g;
+    public ArrayList h;
+    public boolean i;
+    public final ArrayList j;
+    public final ArrayList k;
+    public int l;
+    public int m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public boolean r;
+    public boolean s;
+    public long t;
 
-    public void a(HashMap hashMap) {
-        if (this.a == null) {
-            this.a = new SparseArray(hashMap.size());
-        }
-        for (Map.Entry entry : hashMap.entrySet()) {
-            this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
-        }
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public a(TL_iv.PageBlock pageBlock, int i10, int i11) {
+        this(pageBlock, i10, i11, r4);
+        long j3 = u;
+        u = 1 + j3;
+    }
+
+    public final boolean a() {
+        return this.c > 0 && this.e;
+    }
+
+    public final boolean b() {
+        return this.c > 0;
+    }
+
+    public final boolean c() {
+        return this.d > 0;
+    }
+
+    public a(TL_iv.PageBlock pageBlock, int i10, int i11, long j3) {
+        this.j = new ArrayList();
+        this.k = new ArrayList();
+        this.b = pageBlock;
+        this.c = i10;
+        this.d = i11;
+        this.a = j3;
     }
 }

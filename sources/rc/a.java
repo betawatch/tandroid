@@ -5,25 +5,25 @@ import com.google.firebase.messaging.s;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import m.g3;
 import mc.c;
+import mg.n;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ g3 b;
-    public static final /* synthetic */ g3 c;
-    public static final /* synthetic */ g3 d;
-    public static final /* synthetic */ g3 e;
-    public static final /* synthetic */ g3 f;
-    public static final /* synthetic */ g3 h;
-    public static final /* synthetic */ g3 n;
-    public static final /* synthetic */ g3 r;
-    public static final /* synthetic */ g3 s;
-    public static final /* synthetic */ g3 v;
-    public static final /* synthetic */ g3 w;
-    public static final /* synthetic */ g3 x;
-    public static final /* synthetic */ g3 y;
+    public static final /* synthetic */ n b;
+    public static final /* synthetic */ n c;
+    public static final /* synthetic */ n d;
+    public static final /* synthetic */ n e;
+    public static final /* synthetic */ n f;
+    public static final /* synthetic */ n h;
+    public static final /* synthetic */ n n;
+    public static final /* synthetic */ n r;
+    public static final /* synthetic */ n s;
+    public static final /* synthetic */ n v;
+    public static final /* synthetic */ n w;
+    public static final /* synthetic */ n x;
+    public static final /* synthetic */ n y;
     public b a;
 
     static {

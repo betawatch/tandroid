@@ -62,8 +62,8 @@ public final class n extends a implements Serializable {
                 this.k = Math.max(this.k, y3);
             }
             this.c = true;
-        } catch (Exception e) {
-            throw new j$.time.b("Unable to initialize HijrahCalendar: Hijrah-umalqura", e);
+        } catch (Exception e7) {
+            throw new j$.time.b("Unable to initialize HijrahCalendar: Hijrah-umalqura", e7);
         }
     }
 

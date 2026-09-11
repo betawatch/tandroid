@@ -1,47 +1,29 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-55c51131a4e3e5b800077d6b571ddc9a5a11ae13728b5823d570600aeb3bdcdf */
+/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wn implements Runnable {
+public final /* synthetic */ class wn implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ org.telegram.ui.Components.dc0 b;
 
-    public /* synthetic */ wn(bo boVar, int i10) {
+    public /* synthetic */ wn(org.telegram.ui.Components.dc0 dc0Var, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.b = dc0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.f5 f5Var;
-        org.telegram.ui.ActionBar.f5 f5Var2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                SparseIntArray sparseIntArray = new SparseIntArray();
-                bo boVar = this.b;
-                boVar.e = sparseIntArray;
-                eo eoVar = boVar.V;
-                org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) eoVar.getThemedDrawable("drawableMsgOut");
-                boVar.I = h5Var;
-                f5Var = ((org.telegram.ui.ActionBar.p2) eoVar).parentLayout;
-                h5Var.H = f5Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.h5 h5Var2 = (org.telegram.ui.ActionBar.h5) eoVar.getThemedDrawable("drawableMsgOutMedia");
-                boVar.J = h5Var2;
-                f5Var2 = ((org.telegram.ui.ActionBar.p2) eoVar).parentLayout;
-                h5Var2.H = f5Var2.getMessageDrawableOutMediaStart();
-                boVar.I.I = 0.0f;
-                boVar.J.I = 0.0f;
-                eoVar.uc();
-                boVar.k(0.0f);
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                bo boVar2 = this.b;
-                boVar2.I.H = null;
-                boVar2.J.H = null;
-                boVar2.e = null;
-                boVar2.k(1.0f);
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }
