@@ -28,7 +28,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ui1;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ct implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -180,9 +180,9 @@ public final /* synthetic */ class ct implements View.OnClickListener {
                 break;
             case 7:
                 n70 n70Var = (n70) this.b;
-                a3.h0 h0Var = (a3.h0) this.c;
+                a3.g0 g0Var = (a3.g0) this.c;
                 n70Var.u();
-                h0Var.run();
+                g0Var.run();
                 break;
             case 8:
                 n70 n70Var2 = (n70) this.b;

@@ -1,6 +1,20 @@
 package h2;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+import android.media.MediaCodec;
+import com.google.android.gms.internal.cast.k4;
+
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public interface b {
+public final class b {
+    public final MediaCodec.CryptoInfo a;
+    public final MediaCodec.CryptoInfo.Pattern b = k4.a();
+
+    public b(MediaCodec.CryptoInfo cryptoInfo) {
+        this.a = cryptoInfo;
+    }
+
+    public static void a(b bVar, int i10, int i11) {
+        bVar.b.set(i10, i11);
+        bVar.a.setPattern(bVar.b);
+    }
 }

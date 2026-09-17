@@ -2,10 +2,10 @@ package i2;
 
 import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public final class d0 implements a3.y, i1 {
-    public a3.y a;
+public final class d0 implements a3.x, i1 {
+    public a3.x a;
     public d0 b;
 
     public final void a() {
@@ -22,18 +22,18 @@ public final class d0 implements a3.y, i1 {
         }
     }
 
-    @Override // a3.y
+    @Override // a3.x
     public final void c(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
-        a3.y yVar = this.a;
-        if (yVar != null) {
-            yVar.c(j3, j10, sVar, mediaFormat);
+        a3.x xVar = this.a;
+        if (xVar != null) {
+            xVar.c(j3, j10, sVar, mediaFormat);
         }
     }
 
     @Override // i2.i1
     public final void d(int i10, Object obj) {
         if (i10 == 7) {
-            this.a = (a3.y) obj;
+            this.a = (a3.x) obj;
         } else if (i10 == 8) {
             this.b = (d0) obj;
         } else if (i10 == 10000 && obj != null) {

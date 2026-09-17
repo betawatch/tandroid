@@ -37,7 +37,7 @@ import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public static final Rect a0 = new Rect();

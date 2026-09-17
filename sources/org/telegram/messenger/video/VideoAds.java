@@ -66,7 +66,7 @@ import org.telegram.ui.e41;
 import sg.a1;
 import w7.x5;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static HashMap<VideoAdsLocation, VideoAds> cached = new HashMap<>();
@@ -95,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 0);
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public static class AdLayout extends nb {
         public final ImageView buttonView;
         public final x9 imageView;
@@ -154,7 +154,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -285,7 +285,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -1065,7 +1065,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

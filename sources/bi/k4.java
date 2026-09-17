@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.ek0;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class k4 implements ek0 {
     public final /* synthetic */ o5 a;
@@ -16,11 +16,11 @@ public final class k4 implements ek0 {
 
     @Override // org.telegram.ui.Components.ek0
     public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
-        a3.k0 k0Var = new a3.k0(this, j1Var, view, 4);
+        a3.j0 j0Var = new a3.j0(this, j1Var, view, 4);
         if (z10) {
-            k0Var.run();
+            j0Var.run();
         } else {
-            this.a.n0(k0Var);
+            this.a.n0(j0Var);
         }
     }
 

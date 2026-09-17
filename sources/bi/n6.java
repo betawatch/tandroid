@@ -23,7 +23,7 @@ import org.telegram.ui.Components.vk0;
 import org.telegram.ui.Components.x70;
 import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class n6 extends kl0 {
     public final ArrayList c = new ArrayList();
@@ -368,7 +368,7 @@ public final class n6 extends kl0 {
                 d90Var2.setGravity(17);
                 d90Var2.setDisablePaddingsOffsetY(true);
                 if (i10 == 11) {
-                    d90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.d(this, 20)));
+                    d90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.c(this, 20)));
                 } else {
                     d90Var2.setText(LocaleController.getString(R.string.ServerErrorViewersFull));
                 }

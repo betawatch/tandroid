@@ -1,26 +1,29 @@
 package q2;
 
 import android.graphics.Bitmap;
-import h2.j;
+import h2.h;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public final class a extends j {
-    public Bitmap a;
-    public final /* synthetic */ c b;
+public final class a extends h {
+    public Bitmap f;
+    public final /* synthetic */ c h;
 
     public a(c cVar) {
-        this.b = cVar;
+        this.h = cVar;
     }
 
-    @Override // h2.j, h2.a
-    public final void clear() {
-        this.a = null;
-        super.clear();
+    @Override // h2.h
+    public final void i() {
+        this.f = null;
+        this.b = 0;
+        this.c = 0L;
+        this.d = 0;
+        this.e = false;
     }
 
-    @Override // h2.j
-    public final void release() {
-        this.b.n(this);
+    @Override // h2.h
+    public final void j() {
+        this.h.n(this);
     }
 }

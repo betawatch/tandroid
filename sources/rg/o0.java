@@ -85,7 +85,7 @@ import org.telegram.ui.Components.zg;
 import org.telegram.ui.ir0;
 import org.telegram.ui.zt0;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public abstract class o0 extends pv0 implements s1, i, o1, nv0, NotificationCenter.NotificationCenterDelegate {
     public final h1 A0;
@@ -705,13 +705,13 @@ public abstract class o0 extends pv0 implements s1, i, o1, nv0, NotificationCent
                     return;
                 }
                 m2.t tVar = new m2.t(20);
-                a3.l lVar = (a3.l) tVar.b;
+                a3.k kVar = (a3.k) tVar.b;
                 int width = bitmap.getWidth();
                 int height = bitmap.getHeight();
                 tVar.d = bitmap;
-                lVar.a = width;
-                lVar.b = height;
-                lVar.c = o0Var.getFrameRotation();
+                kVar.a = width;
+                kVar.b = height;
+                kVar.c = o0Var.getFrameRotation();
                 if (((ByteBuffer) tVar.c) == null && ((Bitmap) tVar.d) == null) {
                     throw new IllegalStateException("Missing image data.  Call either setBitmap or setImageData to specify the image");
                 }

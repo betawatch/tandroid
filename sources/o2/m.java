@@ -8,7 +8,7 @@ import n4.y;
 import u2.b1;
 import v7.x7;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class m implements b1 {
     public final int a;
@@ -78,10 +78,10 @@ public final class m implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(y yVar, h2.h hVar, int i10) {
+    public final int f(y yVar, h2.g gVar, int i10) {
         b2.s sVar;
         if (this.c == -3) {
-            hVar.addFlag(4);
+            gVar.a(4);
             return -4;
         }
         if (c()) {
@@ -111,7 +111,7 @@ public final class m implements b1 {
                     qVar.W = sVar2;
                 }
                 if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
-                    int C = qVar.L[i11].C(yVar, hVar, i10, qVar.j0);
+                    int C = qVar.L[i11].C(yVar, gVar, i10, qVar.j0);
                     if (C == -5) {
                         b2.s sVar3 = (b2.s) yVar.c;
                         sVar3.getClass();

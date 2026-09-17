@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final class f80 extends org.telegram.ui.co {
     public boolean Qc;
@@ -51,7 +51,7 @@ public final class f80 extends org.telegram.ui.co {
         long j3 = this.Sc;
         TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
         if (ChatObject.canManageMyTag(chat)) {
-            qc J = yc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
+            qc J = yc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.g0(this, j3, chat, 21));
             J.r = false;
             J.k(true);
         } else {

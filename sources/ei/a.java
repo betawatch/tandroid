@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import zh.s;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class a implements Runnable {
                 new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new a(this.b, 4));
                 break;
             case 4:
-                r4.d.s(this.b, new a3.b(2), r4.d.a, false);
+                r4.d.s(this.b, new a3.a(2), r4.d.a, false);
                 break;
             case 5:
                 new s(this.b).show();

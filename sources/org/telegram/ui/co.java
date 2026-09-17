@@ -169,7 +169,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public class co extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, oy, dd0, org.telegram.ui.Components.fk, org.telegram.ui.Components.ch, ng.b, org.telegram.ui.Components.o50, le.d {
     public static int Hc = 22;
@@ -1844,7 +1844,7 @@ public class co extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         unVar.p(null);
     }
 
-    public static a3.h0 O4(co coVar, MessageObject messageObject) {
+    public static a3.g0 O4(co coVar, MessageObject messageObject) {
         if (messageObject == null || messageObject.isOut() || !messageObject.isSecretMedia() || messageObject.messageOwner.ttl != Integer.MAX_VALUE) {
             return null;
         }
@@ -1855,7 +1855,7 @@ public class co extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             arrayList.add(messageObject);
             coVar.tc(arrayList, true);
         }
-        return new a3.h0(coVar, createDeleteShowOnceTask, messageObject, 14);
+        return new a3.g0(coVar, createDeleteShowOnceTask, messageObject, 14);
     }
 
     public static void P0(co coVar) {

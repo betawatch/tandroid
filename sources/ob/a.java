@@ -51,7 +51,7 @@ import r4.c;
 import v2.l;
 import v7.l8;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public class a implements bg.a, q, e, cg.a, n, d, k1, c, Continuation, l, xf.a, y6.d {
     public final /* synthetic */ int a;
@@ -639,26 +639,26 @@ public class a implements bg.a, q, e, cg.a, n, d, k1, c, Continuation, l, xf.a, 
     }
 
     @Override // y6.d
-    public a3.l h(Context context, String str, y6.c cVar) {
-        a3.l lVar = new a3.l();
-        lVar.a = cVar.e(context, str);
+    public a3.k h(Context context, String str, y6.c cVar) {
+        a3.k kVar = new a3.k();
+        kVar.a = cVar.e(context, str);
         int i10 = 1;
         int b10 = cVar.b(context, str, true);
-        lVar.b = b10;
-        int i11 = lVar.a;
+        kVar.b = b10;
+        int i11 = kVar.a;
         if (i11 == 0) {
             i11 = 0;
             if (b10 == 0) {
                 i10 = 0;
-                lVar.c = i10;
-                return lVar;
+                kVar.c = i10;
+                return kVar;
             }
         }
         if (b10 < i11) {
             i10 = -1;
         }
-        lVar.c = i10;
-        return lVar;
+        kVar.c = i10;
+        return kVar;
     }
 
     @Override // fb.n

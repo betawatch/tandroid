@@ -1,58 +1,11 @@
 package a3;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class g {
-    public long a;
-    public long b;
-    public long c;
+    public f a;
+    public f b;
+    public boolean c;
     public long d;
-    public long e;
-    public long f;
-    public final boolean[] g = new boolean[15];
-    public int h;
-
-    public final boolean a() {
-        return this.d > 15 && this.h == 0;
-    }
-
-    public final void b(long j3) {
-        long j10 = this.d;
-        if (j10 == 0) {
-            this.a = j3;
-        } else if (j10 == 1) {
-            long j11 = j3 - this.a;
-            this.b = j11;
-            this.f = j11;
-            this.e = 1L;
-        } else {
-            long j12 = j3 - this.c;
-            int i10 = (int) (j10 % 15);
-            long abs = Math.abs(j12 - this.b);
-            boolean[] zArr = this.g;
-            if (abs <= 1000000) {
-                this.e++;
-                this.f += j12;
-                if (zArr[i10]) {
-                    zArr[i10] = false;
-                    this.h--;
-                }
-            } else if (!zArr[i10]) {
-                zArr[i10] = true;
-                this.h++;
-            }
-        }
-        this.d++;
-        this.c = j3;
-    }
-
-    public final void c() {
-        this.d = 0L;
-        this.e = 0L;
-        this.f = 0L;
-        this.h = 0;
-        Arrays.fill(this.g, false);
-    }
+    public int e;
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements org.telegram.ui.ActionBar.a2, al0, rc0, sc0, tc0, le.f, ImageReceiver.ImageReceiverDelegate, d5, r0.n, vh.a, t0.f, bl0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, bi.lb, org.telegram.ui.ActionBar.r0, org.telegram.ui.ActionBar.l1, wh.l {
     public final /* synthetic */ int a;

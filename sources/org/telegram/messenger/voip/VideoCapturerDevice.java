@@ -26,7 +26,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -44,7 +44,7 @@ public class VideoCapturerDevice {
     private static final int CAPTURE_HEIGHT = 720;
     private static VideoCapturerDevice[] instance = new VideoCapturerDevice[2];
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -115,7 +115,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j3, String str) {
-        AndroidUtilities.runOnUIThread(new a3.h0(this, j3, str, 12));
+        AndroidUtilities.runOnUIThread(new a3.g0(this, j3, str, 12));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -199,7 +199,7 @@ public class VideoCapturerDevice {
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new a3.h0(this, j3, screenCaptureSize, 13));
+                this.handler.post(new a3.g0(this, j3, screenCaptureSize, 13));
             }
         }
     }
@@ -355,7 +355,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -393,7 +393,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }

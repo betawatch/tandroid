@@ -1,6 +1,6 @@
 package org.telegram.messenger.video;
 
-import a3.h0;
+import a3.g0;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -42,7 +42,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -172,7 +172,7 @@ public class VideoFramesRewinder {
             i12 = i10;
             i13 = 0;
         }
-        AndroidUtilities.runOnUIThread(new h0(this, arrayList, currentTimeMillis, 10));
+        AndroidUtilities.runOnUIThread(new g0(this, arrayList, currentTimeMillis, 10));
     }
 
     private void prepare(long j3) {

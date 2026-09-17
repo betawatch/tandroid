@@ -13,7 +13,7 @@ import e2.d0;
 import java.nio.ByteBuffer;
 import k2.g0;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -68,8 +68,8 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void b(int i10, h2.d dVar, long j3, int i11) {
-        this.c.b(i10, dVar, j3, i11);
+    public final void b(int i10, h2.c cVar, long j3, int i11) {
+        this.c.b(i10, cVar, j3, i11);
     }
 
     @Override // r2.l
@@ -78,8 +78,8 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void d(a3.m mVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, mVar, 0), handler);
+    public final void d(a3.l lVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, lVar, 0), handler);
     }
 
     @Override // r2.l

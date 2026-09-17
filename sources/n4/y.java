@@ -67,7 +67,7 @@ import p4.t0;
 import r0.l0;
 import v7.t7;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, c3.i, t3, le.f, n5.b {
     public final /* synthetic */ int a;
@@ -881,9 +881,9 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, c3.i, t3, 
         animatorSet.play(animator);
     }
 
-    public y(a3.f fVar) {
+    public y(a3.e eVar) {
         this.a = 1;
-        this.c = fVar;
+        this.c = eVar;
     }
 
     public y(Context context, String str, ComponentName componentName, PendingIntent pendingIntent, Bundle bundle) {

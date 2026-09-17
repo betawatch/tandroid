@@ -46,7 +46,7 @@ import org.telegram.ui.Components.pr;
 import org.telegram.ui.lx;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.d {
     public boolean A0;
@@ -167,7 +167,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         mVar2.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         mVar2.setClipToPadding(false);
         mVar2.setClipChildren(false);
-        gdVar.h = new a3.d(lxVar, 12);
+        gdVar.h = new a3.c(lxVar, 12);
         ah.j jVar = new ah.j(lxVar, 1);
         gdVar.l = true;
         gdVar.j = jVar;
@@ -933,12 +933,12 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
                         k9Var.a();
                         this.r0 = null;
                     }
-                    a3.h0 h0Var = new a3.h0(this, uVar, j3, 1);
+                    a3.g0 g0Var = new a3.g0(this, uVar, j3, 1);
                     if (z10) {
-                        h0Var.run();
+                        g0Var.run();
                         return;
                     }
-                    k9 n10 = p9.n(y3, h0Var);
+                    k9 n10 = p9.n(y3, g0Var);
                     uVar.e = n10;
                     this.r0 = n10;
                     if (n10 != null) {

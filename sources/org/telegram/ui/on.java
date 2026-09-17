@@ -98,7 +98,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SecretMediaViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final class on implements org.telegram.ui.Cells.k1 {
     public final /* synthetic */ co a;
@@ -414,7 +414,7 @@ public final class on implements org.telegram.ui.Cells.k1 {
     @Override // org.telegram.ui.Cells.k1
     public final void J0(org.telegram.ui.Cells.t1 t1Var) {
         int i10;
-        a3.h0 h0Var;
+        a3.g0 g0Var;
         MessageObject.GroupedMessages groupedMessages;
         int i11;
         co coVar = this.a;
@@ -438,14 +438,14 @@ public final class on implements org.telegram.ui.Cells.k1 {
                 }
                 boolean z10 = j3 == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId;
                 long j10 = j3;
-                a3.h0 h0Var2 = new a3.h0(this, arrayList, j10, 15);
+                a3.g0 g0Var2 = new a3.g0(this, arrayList, j10, 15);
                 if (z10) {
-                    h0Var2.run();
-                    h0Var = null;
+                    g0Var2.run();
+                    g0Var = null;
                 } else {
-                    h0Var = h0Var2;
+                    g0Var = g0Var2;
                 }
-                qcVar = org.telegram.ui.Components.yc.v(coVar.getParentActivity(), coVar, null, 1, j10, 1, coVar.getThemedColor(org.telegram.ui.ActionBar.j6.Fi), coVar.getThemedColor(org.telegram.ui.ActionBar.j6.Hi), 5000, false, h0Var);
+                qcVar = org.telegram.ui.Components.yc.v(coVar.getParentActivity(), coVar, null, 1, j10, 1, coVar.getThemedColor(org.telegram.ui.ActionBar.j6.Fi), coVar.getThemedColor(org.telegram.ui.ActionBar.j6.Hi), 5000, false, g0Var);
                 qcVar.k = true;
                 qcVar.k(qcVar.e instanceof org.telegram.ui.Components.bc);
             }
@@ -494,7 +494,7 @@ public final class on implements org.telegram.ui.Cells.k1 {
                 this.a.Z9 = new k51(this.a.getParentActivity());
                 k51 k51Var2 = this.a.Z9;
                 te fb2 = !messageObject.isOutOwner() ? this.a.fb(messageObject, true) : null;
-                a3.h0 O4 = !messageObject.isOutOwner() ? co.O4(this.a, messageObject) : null;
+                a3.g0 O4 = !messageObject.isOutOwner() ? co.O4(this.a, messageObject) : null;
                 Context context = k51Var2.a;
                 ah.w wVar = k51Var2.c;
                 k51Var2.X = fb2;
@@ -1562,7 +1562,7 @@ public final class on implements org.telegram.ui.Cells.k1 {
                         TLObject userOrChat = MessagesController.getInstance(lw0Var2.H.currentAccount).getUserOrChat(peerDialogId);
                         CharSequence replaceTags = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.PollAddedByAtTime, DialogObject.getShortName(userOrChat), LocaleController.formatDateTime(pollAnswer3.date, true)));
                         coVar2 = coVar4;
-                        a3.h0 h0Var = new a3.h0(lw0Var2, peerDialogId, coVar2, 29);
+                        a3.g0 g0Var = new a3.g0(lw0Var2, peerDialogId, coVar2, 29);
                         Context context2 = G.e;
                         FrameLayout frameLayout = new FrameLayout(context2);
                         int i19 = org.telegram.ui.ActionBar.j6.i6;
@@ -1580,7 +1580,7 @@ public final class on implements org.telegram.ui.Cells.k1 {
                         textView.setMaxWidth(AndroidUtilities.dp(150.0f));
                         textView.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
                         frameLayout.addView(textView, w7.x5.d(-2, -2.0f, 55, 59.0f, 8.0f, 16.0f, 0.0f));
-                        frameLayout.setOnClickListener(new org.telegram.ui.Components.ct(7, G, h0Var));
+                        frameLayout.setOnClickListener(new org.telegram.ui.Components.ct(7, G, g0Var));
                         G.r(frameLayout, w7.x5.n(-1, -2));
                         G.T(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, f6Var)));
                         G.Q(bVar, fh.b.k(f6Var), false);
@@ -4547,7 +4547,7 @@ public final class on implements org.telegram.ui.Cells.k1 {
         int i18 = 6;
         if (messageObject6.needDrawBluredPreview()) {
             te fb2 = coVar2.fb(messageObject6, false);
-            a3.h0 O4 = co.O4(coVar2, messageObject6);
+            a3.g0 O4 = co.O4(coVar2, messageObject6);
             t1Var.invalidate();
             final SecretMediaViewer f12 = SecretMediaViewer.f();
             final Activity parentActivity = coVar2.getParentActivity();

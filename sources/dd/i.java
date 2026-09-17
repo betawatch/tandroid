@@ -1,28 +1,28 @@
 package dd;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class i extends j {
     @Override // dd.j, dd.k
-    public final /* bridge */ /* synthetic */ k b() {
-        b();
+    public final /* bridge */ /* synthetic */ k f() {
+        f();
         return this;
     }
 
     @Override // dd.j
-    /* renamed from: k */
-    public final j b() {
-        super.b();
-        this.k = new cd.c();
+    /* renamed from: q */
+    public final j f() {
+        super.f();
+        this.v = new cd.c();
         return this;
     }
 
     @Override // dd.k
     public final String toString() {
-        cd.c cVar = this.k;
+        cd.c cVar = this.v;
         if (cVar == null || cVar.a <= 0) {
-            return "<" + i() + ">";
+            return "<" + o() + ">";
         }
-        return "<" + i() + " " + this.k.toString() + ">";
+        return "<" + o() + " " + this.v.toString() + ">";
     }
 }

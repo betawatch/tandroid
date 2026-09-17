@@ -1,87 +1,15 @@
 package h2;
 
-import b2.l0;
-import b2.s;
-import java.nio.ByteBuffer;
+import dd.k;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public class h extends a {
-    public s a;
-    public final d b = new d();
-    public ByteBuffer c;
-    public boolean d;
-    public long e;
-    public ByteBuffer f;
-    public final int h;
-    public final int n;
+public abstract class h extends k {
+    public long c;
+    public int d;
+    public boolean e;
 
-    static {
-        l0.a("media3.decoder");
-    }
+    public abstract void i();
 
-    public h(int i10, int i11) {
-        this.h = i10;
-        this.n = i11;
-    }
-
-    public final ByteBuffer a(int i10) {
-        int i11 = this.h;
-        if (i11 == 1) {
-            return ByteBuffer.allocate(i10);
-        }
-        if (i11 == 2) {
-            return ByteBuffer.allocateDirect(i10);
-        }
-        ByteBuffer byteBuffer = this.c;
-        throw new g("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
-    }
-
-    public final void b(int i10) {
-        int i11 = i10 + this.n;
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer == null) {
-            this.c = a(i11);
-            return;
-        }
-        int capacity = byteBuffer.capacity();
-        int position = byteBuffer.position();
-        int i12 = i11 + position;
-        if (capacity >= i12) {
-            this.c = byteBuffer;
-            return;
-        }
-        ByteBuffer a2 = a(i12);
-        a2.order(byteBuffer.order());
-        if (position > 0) {
-            byteBuffer.flip();
-            a2.put(byteBuffer);
-        }
-        this.c = a2;
-    }
-
-    public final void c() {
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer != null) {
-            byteBuffer.flip();
-        }
-        ByteBuffer byteBuffer2 = this.f;
-        if (byteBuffer2 != null) {
-            byteBuffer2.flip();
-        }
-    }
-
-    @Override // h2.a
-    public void clear() {
-        super.clear();
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer != null) {
-            byteBuffer.clear();
-        }
-        ByteBuffer byteBuffer2 = this.f;
-        if (byteBuffer2 != null) {
-            byteBuffer2.clear();
-        }
-        this.d = false;
-    }
+    public abstract void j();
 }

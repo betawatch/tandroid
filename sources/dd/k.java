@@ -1,34 +1,42 @@
 package dd;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public abstract class k {
     public final /* synthetic */ int a;
-    public final int b;
+    public int b;
 
-    public /* synthetic */ k(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
-    }
-
-    public static String a(int i10) {
+    public static String b(int i10) {
         return "" + ((char) ((i10 >> 24) & 255)) + ((char) ((i10 >> 16) & 255)) + ((char) ((i10 >> 8) & 255)) + ((char) (i10 & 255));
     }
 
-    public static void c(StringBuilder sb2) {
+    public static void g(StringBuilder sb2) {
         if (sb2 != null) {
             sb2.delete(0, sb2.length());
         }
     }
 
-    public abstract k b();
+    public void a(int i10) {
+        this.b = i10 | this.b;
+    }
+
+    public boolean c(int i10) {
+        return (this.b & i10) == i10;
+    }
+
+    public abstract k f();
 
     public String toString() {
         switch (this.a) {
             case 1:
-                return a(this.b);
+                return b(this.b);
             default:
                 return super.toString();
         }
+    }
+
+    public /* synthetic */ k(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 }

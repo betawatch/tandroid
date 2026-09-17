@@ -1,10 +1,10 @@
 package fg;
 
-import a3.h0;
+import a3.g0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestTimeDelegate;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements RequestTimeDelegate {
     public final /* synthetic */ f a;
@@ -17,6 +17,6 @@ public final /* synthetic */ class d implements RequestTimeDelegate {
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        AndroidUtilities.runOnUIThread(new h0(this.a, this.b, j3, 8));
+        AndroidUtilities.runOnUIThread(new g0(this.a, this.b, j3, 8));
     }
 }

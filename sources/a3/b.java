@@ -1,31 +1,11 @@
 package a3;
 
-import java.util.concurrent.Executor;
-import org.telegram.messenger.AndroidUtilities;
+import android.media.MediaFormat;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Executor {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ b(int i10) {
-        this.a = i10;
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(runnable);
-                break;
-            default:
-                runnable.run();
-                break;
-        }
-    }
-
-    private final void a(Runnable runnable) {
+public final /* synthetic */ class b implements x {
+    @Override // a3.x
+    public final void c(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
     }
 }

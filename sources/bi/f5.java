@@ -39,7 +39,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.bs;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class f5 extends wr {
     public boolean c;
@@ -168,11 +168,11 @@ public final class f5 extends wr {
             if ((o5Var.C1 || o5Var.S1.h(o5Var.B1)) && !m5Var.f && (storyItem = m5Var.a) != null) {
                 HashSet hashSet = storyItem.albums != null ? new HashSet(storyItem.albums) : new HashSet();
                 n70 n70Var = new n70(actionBarPopupWindow$ActionBarPopupWindowLayout2, f6Var);
-                n70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.d(actionBarPopupWindow$ActionBarPopupWindowLayout2, 18), false);
+                n70Var.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new a3.c(actionBarPopupWindow$ActionBarPopupWindowLayout2, 18), false);
                 n70Var.k();
                 f8 B = o5Var.getStoriesController().B(o5Var.B1, true);
                 f8 B2 = o5Var.S1.B(o5Var.B1, false);
-                n70.f(n70Var, B, hashSet, B2 != null && B2.a(), new a3.k0(f5Var, f6Var, storyItem, 5), new r3(f5Var, hashSet, storyItem, f6Var, 1));
+                n70.f(n70Var, B, hashSet, B2 != null && B2.a(), new a3.j0(f5Var, f6Var, storyItem, 5), new r3(f5Var, hashSet, storyItem, f6Var, 1));
                 int b10 = actionBarPopupWindow$ActionBarPopupWindowLayout2.b(n70Var.B);
                 org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(0, o5Var.getContext(), f5Var.d, false, false);
                 o5Var.E3 = f1Var;

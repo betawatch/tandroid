@@ -105,7 +105,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.NumberTextView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public class uy extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, ng.b, le.d, dh0 {
     public static float A4;
@@ -2969,9 +2969,9 @@ public class uy extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                     }
                     return;
                 }
-                Runnable h0Var = new a3.h0(this, j3, new a3.g0(this, j3, j10, eg1Var, 12), 24);
+                Runnable g0Var = new a3.g0(this, j3, new a3.f0(this, j3, j10, eg1Var, 12), 24);
                 if (j3 < 0) {
-                    Q4(getMessagesController().getChat(Long.valueOf(-j3)), h0Var, null);
+                    Q4(getMessagesController().getChat(Long.valueOf(-j3)), g0Var, null);
                     return;
                 }
                 TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(j3));
@@ -2981,7 +2981,7 @@ public class uy extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
                 b2Var2.R = formatString;
                 b2Var2.T = TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.AreYouSureSendChatToBotMessage, UserObject.getFirstName(user3), UserObject.getFirstName(user4))));
-                alertDialog$Builder.k(LocaleController.formatString("Send", R.string.Send, new Object[0]), new iu(h0Var, i11));
+                alertDialog$Builder.k(LocaleController.formatString("Send", R.string.Send, new Object[0]), new iu(g0Var, i11));
                 alertDialog$Builder.h(LocaleController.formatString("Cancel", R.string.Cancel, new Object[0]), new org.telegram.ui.Components.wo0(i12));
                 showDialog(b2Var2);
                 return;

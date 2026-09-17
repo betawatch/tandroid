@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque g = new ArrayDeque();
@@ -64,7 +64,7 @@ public final class e implements m {
     }
 
     @Override // r2.m
-    public final void b(int i10, h2.d dVar, long j3, int i11) {
+    public final void b(int i10, h2.c cVar, long j3, int i11) {
         c();
         d d = d();
         d.a = i10;
@@ -72,8 +72,8 @@ public final class e implements m {
         d.d = j3;
         d.e = i11;
         MediaCodec.CryptoInfo cryptoInfo = d.c;
-        cryptoInfo.numSubSamples = dVar.f;
-        int[] iArr = dVar.d;
+        cryptoInfo.numSubSamples = cVar.f;
+        int[] iArr = cVar.d;
         int[] iArr2 = cryptoInfo.numBytesOfClearData;
         if (iArr != null) {
             if (iArr2 == null || iArr2.length < iArr.length) {
@@ -83,7 +83,7 @@ public final class e implements m {
             }
         }
         cryptoInfo.numBytesOfClearData = iArr2;
-        int[] iArr3 = dVar.e;
+        int[] iArr3 = cVar.e;
         int[] iArr4 = cryptoInfo.numBytesOfEncryptedData;
         if (iArr3 != null) {
             if (iArr4 == null || iArr4.length < iArr3.length) {
@@ -93,7 +93,7 @@ public final class e implements m {
             }
         }
         cryptoInfo.numBytesOfEncryptedData = iArr4;
-        byte[] bArr = dVar.b;
+        byte[] bArr = cVar.b;
         byte[] bArr2 = cryptoInfo.key;
         if (bArr != null) {
             if (bArr2 == null || bArr2.length < bArr.length) {
@@ -104,7 +104,7 @@ public final class e implements m {
         }
         bArr2.getClass();
         cryptoInfo.key = bArr2;
-        byte[] bArr3 = dVar.a;
+        byte[] bArr3 = cVar.a;
         byte[] bArr4 = cryptoInfo.iv;
         if (bArr3 != null) {
             if (bArr4 == null || bArr4.length < bArr3.length) {
@@ -115,13 +115,13 @@ public final class e implements m {
         }
         bArr4.getClass();
         cryptoInfo.iv = bArr4;
-        cryptoInfo.mode = dVar.c;
+        cryptoInfo.mode = cVar.c;
         if (Build.VERSION.SDK_INT >= 24) {
-            cryptoInfo.setPattern(new MediaCodec.CryptoInfo.Pattern(dVar.g, dVar.h));
+            cryptoInfo.setPattern(new MediaCodec.CryptoInfo.Pattern(cVar.g, cVar.h));
         }
-        androidx.mediarouter.app.c cVar = this.c;
+        androidx.mediarouter.app.c cVar2 = this.c;
         String str = d0.a;
-        cVar.obtainMessage(2, d).sendToTarget();
+        cVar2.obtainMessage(2, d).sendToTarget();
     }
 
     @Override // r2.m

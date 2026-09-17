@@ -17,7 +17,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.z6;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -239,7 +239,7 @@ public final class o {
                         while (i15 < i14.d) {
                             if (((Integer) i14.get(i15)).intValue() + i12 < length) {
                                 a4.h hVar = new a4.h(bArr, ((Integer) i14.get(i15)).intValue() + i12, length);
-                                a3.l e7 = f2.p.e(hVar);
+                                a3.k e7 = f2.p.e(hVar);
                                 if (e7.a == 33 && e7.b == 0) {
                                     hVar.t(4);
                                     int i16 = hVar.i(3);

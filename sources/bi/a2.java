@@ -27,7 +27,7 @@ import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.jn;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class a2 implements NotificationCenter.NotificationCenterDelegate, sf.a {
     public static final hv0 X = new hv0(new androidx.emoji2.text.w(11), new androidx.emoji2.text.w(12));
@@ -49,7 +49,7 @@ public final class a2 implements NotificationCenter.NotificationCenterDelegate, 
     public Float R;
     public boolean S;
     public boolean T;
-    public a3.d U;
+    public a3.c U;
     public di.l4 V;
     public boolean W;
     public float a;
@@ -72,7 +72,7 @@ public final class a2 implements NotificationCenter.NotificationCenterDelegate, 
         a2Var.a = 1.4f;
         a2Var.s = true;
         a2Var.M = 1.0f;
-        a2Var.U = new a3.d(a2Var, 15);
+        a2Var.U = new a3.c(a2Var, 15);
         Z = a2Var;
     }
 

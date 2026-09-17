@@ -25,7 +25,7 @@ import java.util.List;
 import ji.b5;
 import ji.k5;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class h0 extends r2.r implements s0 {
     public final Context X0;
@@ -58,15 +58,7 @@ public final class h0 extends r2.r implements s0 {
         ((d0) pVar).t = new g0(this, 0);
     }
 
-    public final int A0(r2.o oVar, b2.s sVar) {
-        int i10;
-        if (!"OMX.google.raw.decoder".equals(oVar.a) || (i10 = Build.VERSION.SDK_INT) >= 24 || (i10 == 23 && e2.d0.N(this.X0))) {
-            return sVar.s;
-        }
-        return -1;
-    }
-
-    public final void B0() {
+    public final void A0() {
         l();
         long i10 = ((d0) this.Z0).i();
         if (i10 != Long.MIN_VALUE) {
@@ -79,13 +71,13 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final i2.i D(r2.o oVar, b2.s sVar, b2.s sVar2) {
+    public final i2.i C(r2.o oVar, b2.s sVar, b2.s sVar2) {
         i2.i b10 = oVar.b(sVar, sVar2);
         int i10 = b10.e;
-        if (this.V == null && u0(sVar2)) {
+        if (this.V == null && t0(sVar2)) {
             i10 |= 32768;
         }
-        if (A0(oVar, sVar2) > this.b1) {
+        if (z0(oVar, sVar2) > this.b1) {
             i10 |= 64;
         }
         int i11 = i10;
@@ -93,7 +85,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final float N(float f7, b2.s sVar, b2.s[] sVarArr) {
+    public final float M(float f7, b2.s sVar, b2.s[] sVarArr) {
         int i10 = -1;
         for (b2.s sVar2 : sVarArr) {
             int i11 = sVar2.K;
@@ -108,7 +100,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final ArrayList O(r2.i iVar, b2.s sVar, boolean z10) {
+    public final ArrayList N(r2.i iVar, b2.s sVar, boolean z10) {
         a1 f7;
         if (sVar.r == null) {
             f7 = a1.e;
@@ -129,7 +121,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final long P(long j3, long j10) {
+    public final long O(long j3, long j10) {
         boolean z10 = this.m1 != -9223372036854775807L;
         if (this.l1) {
             long h = ((d0) this.Z0).h();
@@ -158,21 +150,21 @@ public final class h0 extends r2.r implements s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final com.google.firebase.messaging.n Q(r2.o oVar, b2.s sVar, MediaCrypto mediaCrypto, float f7) {
+    public final com.google.firebase.messaging.n P(r2.o oVar, b2.s sVar, MediaCrypto mediaCrypto, float f7) {
         boolean z10;
         String str;
         b2.s[] sVarArr = this.s;
         sVarArr.getClass();
-        int A0 = A0(oVar, sVar);
+        int z02 = z0(oVar, sVar);
         String str2 = oVar.a;
         if (sVarArr.length != 1) {
             for (b2.s sVar2 : sVarArr) {
                 if (oVar.b(sVar, sVar2).d != 0) {
-                    A0 = Math.max(A0, A0(oVar, sVar2));
+                    z02 = Math.max(z02, z0(oVar, sVar2));
                 }
             }
         }
-        this.b1 = A0;
+        this.b1 = z02;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 < 24 && "OMX.SEC.aac.dec".equals(str2) && "samsung".equals(Build.MANUFACTURER)) {
             String str3 = Build.DEVICE;
@@ -256,14 +248,14 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final void R(h2.h hVar) {
+    public final void Q(h2.g gVar) {
         b2.s sVar;
-        if (Build.VERSION.SDK_INT < 29 || (sVar = hVar.a) == null || !Objects.equals(sVar.r, "audio/opus") || !this.x0) {
+        if (Build.VERSION.SDK_INT < 29 || (sVar = gVar.c) == null || !Objects.equals(sVar.r, "audio/opus") || !this.x0) {
             return;
         }
-        ByteBuffer byteBuffer = hVar.f;
+        ByteBuffer byteBuffer = gVar.n;
         byteBuffer.getClass();
-        b2.s sVar2 = hVar.a;
+        b2.s sVar2 = gVar.c;
         sVar2.getClass();
         int i10 = sVar2.M;
         if (byteBuffer.remaining() == 8) {
@@ -272,7 +264,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final void X(Exception exc) {
+    public final void W(Exception exc) {
         e2.a.f("MediaCodecAudioRenderer", "Audio codec error", exc);
         n4.y yVar = this.Y0;
         Handler handler = (Handler) yVar.b;
@@ -282,16 +274,16 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final void Y(long j3, long j10, String str) {
+    public final void X(long j3, long j10, String str) {
         n4.y yVar = this.Y0;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
-            handler.post(new a3.g0(yVar, str, j3, j10, 2));
+            handler.post(new a3.f0(yVar, str, j3, j10, 2));
         }
     }
 
     @Override // r2.r
-    public final void Z(String str) {
+    public final void Y(String str) {
         n4.y yVar = this.Y0;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
@@ -299,37 +291,30 @@ public final class h0 extends r2.r implements s0 {
         }
     }
 
+    @Override // r2.r
+    public final i2.i Z(n4.y yVar) {
+        b2.s sVar = (b2.s) yVar.c;
+        sVar.getClass();
+        this.e1 = sVar;
+        i2.i Z = super.Z(yVar);
+        n4.y yVar2 = this.Y0;
+        Handler handler = (Handler) yVar2.b;
+        if (handler != null) {
+            handler.post(new hg.t(yVar2, sVar, Z, 19));
+        }
+        return Z;
+    }
+
     @Override // i2.s0
     public final long a() {
         if (this.n == 2) {
-            B0();
+            A0();
         }
         return this.g1;
     }
 
     @Override // r2.r
-    public final i2.i a0(n4.y yVar) {
-        b2.s sVar = (b2.s) yVar.c;
-        sVar.getClass();
-        this.e1 = sVar;
-        i2.i a02 = super.a0(yVar);
-        n4.y yVar2 = this.Y0;
-        Handler handler = (Handler) yVar2.b;
-        if (handler != null) {
-            handler.post(new hg.t(yVar2, sVar, a02, 19));
-        }
-        return a02;
-    }
-
-    @Override // i2.s0
-    public final boolean b() {
-        boolean z10 = this.j1;
-        this.j1 = false;
-        return z10;
-    }
-
-    @Override // r2.r
-    public final void b0(b2.s sVar, MediaFormat mediaFormat) {
+    public final void a0(b2.s sVar, MediaFormat mediaFormat) {
         b2.s sVar2 = this.f1;
         boolean z10 = true;
         int[] iArr = null;
@@ -410,8 +395,15 @@ public final class h0 extends r2.r implements s0 {
         }
     }
 
+    @Override // i2.s0
+    public final boolean b() {
+        boolean z10 = this.j1;
+        this.j1 = false;
+        return z10;
+    }
+
     @Override // r2.r
-    public final void c0() {
+    public final void b0() {
         this.Z0.getClass();
     }
 
@@ -496,7 +488,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r
-    public final void e0() {
+    public final void d0() {
         ((d0) this.Z0).N = true;
     }
 
@@ -505,13 +497,8 @@ public final class h0 extends r2.r implements s0 {
         ((d0) this.Z0).F(v0Var);
     }
 
-    @Override // i2.s0
-    public final v0 h() {
-        return ((d0) this.Z0).E;
-    }
-
     @Override // r2.r
-    public final boolean h0(long j3, long j10, r2.l lVar, ByteBuffer byteBuffer, int i10, int i11, int i12, long j11, boolean z10, boolean z11, b2.s sVar) {
+    public final boolean g0(long j3, long j10, r2.l lVar, ByteBuffer byteBuffer, int i10, int i11, int i12, long j11, boolean z10, boolean z11, b2.s sVar) {
         int i13;
         int i14;
         byteBuffer.getClass();
@@ -531,7 +518,7 @@ public final class h0 extends r2.r implements s0 {
             return true;
         }
         try {
-            if (!((d0) pVar).n(j11, i12, byteBuffer)) {
+            if (!((d0) pVar).n(byteBuffer, j11, i12)) {
                 this.m1 = j11;
                 return false;
             }
@@ -566,13 +553,18 @@ public final class h0 extends r2.r implements s0 {
         }
     }
 
+    @Override // i2.s0
+    public final v0 h() {
+        return ((d0) this.Z0).E;
+    }
+
     @Override // i2.f
     public final String j() {
         return "MediaCodecAudioRenderer";
     }
 
     @Override // r2.r
-    public final void k0() {
+    public final void j0() {
         try {
             ((d0) this.Z0).w();
             long j3 = this.I0;
@@ -602,7 +594,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r, i2.f
-    public final void o() {
+    public final void n() {
         n4.y yVar = this.Y0;
         this.i1 = true;
         this.e1 = null;
@@ -610,12 +602,12 @@ public final class h0 extends r2.r implements s0 {
         try {
             ((d0) this.Z0).g();
             try {
-                super.o();
+                super.n();
             } finally {
             }
         } catch (Throwable th2) {
             try {
-                super.o();
+                super.n();
                 throw th2;
             } finally {
             }
@@ -623,7 +615,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // i2.f
-    public final void p(boolean z10, boolean z11) {
+    public final void o(boolean z10, boolean z11) {
         i2.h hVar = new i2.h();
         this.O0 = hVar;
         n4.y yVar = this.Y0;
@@ -659,8 +651,8 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // r2.r, i2.f
-    public final void q(long j3, boolean z10) {
-        super.q(j3, z10);
+    public final void p(long j3, boolean z10) {
+        super.p(j3, z10);
         ((d0) this.Z0).g();
         this.g1 = j3;
         this.m1 = -9223372036854775807L;
@@ -669,7 +661,7 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // i2.f
-    public final void r() {
+    public final void q() {
         r2.j jVar;
         c cVar;
         g7 g7Var = ((d0) this.Z0).z;
@@ -695,15 +687,15 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // i2.f
-    public final void s() {
+    public final void r() {
         p pVar = this.Z0;
         this.j1 = false;
         this.m1 = -9223372036854775807L;
         try {
             try {
                 this.x0 = false;
-                l0();
-                j0();
+                k0();
+                i0();
             } finally {
                 i2.g.D(this.V, null);
                 this.V = null;
@@ -717,28 +709,28 @@ public final class h0 extends r2.r implements s0 {
     }
 
     @Override // i2.f
-    public final void t() {
+    public final void s() {
         ((d0) this.Z0).u();
         this.l1 = true;
     }
 
     @Override // i2.f
-    public final void u() {
-        B0();
+    public final void t() {
+        A0();
         this.l1 = false;
         ((d0) this.Z0).t();
     }
 
     @Override // r2.r
-    public final boolean u0(b2.s sVar) {
+    public final boolean t0(b2.s sVar) {
         m1 m1Var = this.d;
         m1Var.getClass();
         if (m1Var.a != 0) {
-            int z02 = z0(sVar);
-            if ((z02 & 512) != 0) {
+            int y02 = y0(sVar);
+            if ((y02 & 512) != 0) {
                 m1 m1Var2 = this.d;
                 m1Var2.getClass();
-                if (m1Var2.a == 2 || (z02 & 1024) != 0) {
+                if (m1Var2.a == 2 || (y02 & 1024) != 0) {
                     return true;
                 }
                 if (sVar.M == 0 && sVar.N == 0) {
@@ -758,7 +750,7 @@ public final class h0 extends r2.r implements s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int v0(r2.i iVar, b2.s sVar) {
+    public final int u0(r2.i iVar, b2.s sVar) {
         int i10;
         d0 d0Var;
         a1 f7;
@@ -779,7 +771,7 @@ public final class h0 extends r2.r implements s0 {
             if (z12) {
                 List d = r2.w.d("audio/raw", false, false);
             }
-            i10 = z0(sVar);
+            i10 = y0(sVar);
             if (((d0) pVar).G(sVar)) {
                 return i2.g.b(4, 8, 32, i10);
             }
@@ -836,13 +828,21 @@ public final class h0 extends r2.r implements s0 {
         return b10;
     }
 
-    public final int z0(b2.s sVar) {
+    public final int y0(b2.s sVar) {
         e j3 = ((d0) this.Z0).j(sVar);
         if (!j3.a) {
             return 0;
         }
         int i10 = j3.b ? 1536 : 512;
         return j3.c ? i10 | 2048 : i10;
+    }
+
+    public final int z0(r2.o oVar, b2.s sVar) {
+        int i10;
+        if (!"OMX.google.raw.decoder".equals(oVar.a) || (i10 = Build.VERSION.SDK_INT) >= 24 || (i10 == 23 && e2.d0.N(this.X0))) {
+            return sVar.s;
+        }
+        return -1;
     }
 
     @Override // i2.f

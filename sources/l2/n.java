@@ -12,7 +12,7 @@ import n4.y;
 import org.telegram.ui.Components.ho0;
 import u2.a1;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class n implements h0 {
     public final a1 a;
@@ -43,14 +43,14 @@ public final class n implements h0 {
         this.a.c(j3, i10, i11, i12, g0Var);
         while (this.a.x(false)) {
             l3.a aVar = this.c;
-            aVar.clear();
+            aVar.i();
             if (this.a.C(this.b, aVar, 0, false) == -4) {
-                aVar.c();
+                aVar.m();
             } else {
                 aVar = null;
             }
             if (aVar != null) {
-                long j11 = aVar.e;
+                long j11 = aVar.h;
                 p0 a2 = this.e.c.a(aVar);
                 if (a2 != null) {
                     n3.a aVar2 = (n3.a) a2.a[0];

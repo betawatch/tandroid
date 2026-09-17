@@ -9,7 +9,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e7 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class e7 implements Runnable {
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
                             tVar.d = bitmap2;
-                            a3.l lVar = (a3.l) tVar.b;
-                            lVar.a = width3;
-                            lVar.b = height3;
+                            a3.k kVar = (a3.k) tVar.b;
+                            kVar.a = width3;
+                            kVar.b = height3;
                             SparseArray Z0 = nVar.Z0(tVar);
                             for (int i11 = 0; i11 < Z0.size(); i11++) {
                                 r8.m mVar = (r8.m) Z0.valueAt(i11);

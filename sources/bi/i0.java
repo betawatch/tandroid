@@ -9,7 +9,7 @@ import org.telegram.ui.Components.n70;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -53,7 +53,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     b bVar = new b();
                     long j3 = this.c;
                     long j10 = this.b;
-                    new zh.k7(context, bVar, j10, 17, "", new a3.g0(g1Var, j3, tL_textWithEntities, j10, 1), g1Var.M).show();
+                    new zh.k7(context, bVar, j10, 17, "", new a3.f0(g1Var, j3, tL_textWithEntities, j10, 1), g1Var.M).show();
                     break;
                 }
                 break;

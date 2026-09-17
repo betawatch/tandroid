@@ -38,7 +38,7 @@ import org.telegram.ui.co;
 import org.telegram.ui.nf;
 import org.telegram.ui.ta0;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -267,7 +267,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 return;
             case 3:
                 long j10 = this.b;
-                AndroidUtilities.runOnUIThread(new a3.h0((o9) obj3, (View) obj2, j10, 6), 500L);
+                AndroidUtilities.runOnUIThread(new a3.g0((o9) obj3, (View) obj2, j10, 6), 500L);
                 ((j9) obj).f(j10);
                 return;
             case 4:
@@ -279,7 +279,7 @@ public final /* synthetic */ class x7 implements Runnable {
                     AndroidUtilities.runOnUIThread(new di.q9(baVar, isChannel, j11, 0));
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new a3.h0(baVar, j11, loadChatInfoInQueue, 7));
+                    AndroidUtilities.runOnUIThread(new a3.g0(baVar, j11, loadChatInfoInQueue, 7));
                     return;
                 }
             case 5:

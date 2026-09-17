@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public enum t0 extends b2 {
     public t0() {
@@ -11,12 +11,12 @@ public enum t0 extends b2 {
     public final void d(l lVar, a aVar) {
         String h = aVar.h(b2.H0);
         if (h.length() > 0) {
-            lVar.i.f(h);
+            lVar.i.l(h);
         }
         char d = aVar.d();
         if (d == 0) {
             lVar.m(this);
-            lVar.i.e((char) 65533);
+            lVar.i.j((char) 65533);
             return;
         }
         if (d != ' ') {
@@ -31,10 +31,10 @@ public enum t0 extends b2 {
                     if (d == '&') {
                         int[] c10 = lVar.c('>', true);
                         if (c10 != null) {
-                            lVar.i.g(c10);
+                            lVar.i.m(c10);
                             return;
                         } else {
-                            lVar.i.e('&');
+                            lVar.i.j('&');
                             return;
                         }
                     }
@@ -48,7 +48,7 @@ public enum t0 extends b2 {
                                 lVar.c = wVar;
                                 break;
                             default:
-                                lVar.i.e(d);
+                                lVar.i.j(d);
                                 break;
                         }
                         return;
@@ -56,7 +56,7 @@ public enum t0 extends b2 {
                 }
             }
             lVar.m(this);
-            lVar.i.e(d);
+            lVar.i.j(d);
             return;
         }
         lVar.c = b2.W;

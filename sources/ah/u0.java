@@ -36,7 +36,7 @@ import org.telegram.ui.s61;
 import org.telegram.ui.w51;
 import w7.x5;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes3.dex */
 public final class u0 {
     public final int[] A;
@@ -375,14 +375,14 @@ public final class u0 {
             fk0Var.setCustomEmojiReactionsBackground(false);
             ValueAnimator valueAnimator3 = this.x;
             Objects.requireNonNull(valueAnimator3);
-            a3.d dVar = new a3.d(valueAnimator3, 3);
+            a3.c cVar = new a3.c(valueAnimator3, 3);
             y0.f = this.w;
             y0.e = true;
             y0.g = false;
             if (y0.d) {
                 y0.d = false;
             }
-            y0.c = dVar;
+            y0.c = cVar;
         } else {
             fk0Var.O0 = true;
             fk0Var.invalidate();

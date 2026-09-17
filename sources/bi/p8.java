@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class p8 implements RequestDelegate {
                                     }
                                 }
                             }
-                            AndroidUtilities.runOnUIThread(new a3.h0(t8Var, j3, storyItem, 3));
+                            AndroidUtilities.runOnUIThread(new a3.g0(t8Var, j3, storyItem, 3));
                             MessagesController.getInstance(i22).processUpdateArray(updates4.updates, updates4.users, updates4.chats, false, updates4.date);
                         }
                     }

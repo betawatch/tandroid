@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public final v h = new v();
@@ -49,7 +49,7 @@ public final class i extends l {
         return new m(list, 0);
     }
 
-    @Override // a4.l, h2.e
+    @Override // a4.l, h2.d
     public final void flush() {
         super.flush();
         this.n = null;
@@ -62,7 +62,7 @@ public final class i extends l {
 
     @Override // a4.l
     public final void g(j jVar) {
-        ByteBuffer byteBuffer = jVar.c;
+        ByteBuffer byteBuffer = jVar.e;
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
@@ -116,11 +116,6 @@ public final class i extends l {
                 }
             }
         }
-    }
-
-    @Override // h2.e
-    public final String getName() {
-        return "Cea708Decoder";
     }
 
     @Override // a4.l

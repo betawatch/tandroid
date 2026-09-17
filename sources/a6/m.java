@@ -25,7 +25,6 @@ import androidx.biometric.d0;
 import androidx.biometric.f0;
 import androidx.fragment.app.t;
 import androidx.lifecycle.a0;
-import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
 import b2.q0;
 import bi.gb;
 import bi.o5;
@@ -93,7 +92,7 @@ import org.telegram.ui.Components.g71;
 import org.telegram.ui.kv0;
 import rg.d2;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, OnSuccessListener, SuccessContinuation, p, d71, n, i1, s, a2, j0, g1, k2.n {
     public final /* synthetic */ int a;
@@ -125,7 +124,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
     public void B(View view, j1 j1Var, boolean z10, boolean z11) {
         g0 g0Var = (g0) this.b;
         g0Var.a.ab(null, g0Var.e, g0Var.b, view, 0.0f, 0.0f, j1Var, false, z10, z11, false);
-        AndroidUtilities.runOnUIThread(new a3.d(this, 2));
+        AndroidUtilities.runOnUIThread(new a3.c(this, 2));
     }
 
     @Override // ji.g1
@@ -201,7 +200,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void K() {
-        ((FfmpegAudioRenderer) this.b).Z = true;
+        ((androidx.media3.decoder.ffmpeg.b) this.b).Z = true;
     }
 
     @Override // ji.j0
@@ -235,7 +234,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void O(k2.k kVar) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new k2.h(yVar, kVar, 0));
@@ -276,7 +275,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void V(k2.k kVar) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new k2.h(yVar, kVar, 1));
@@ -1319,7 +1318,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void b(long j3) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new bi.g(yVar, j3, 12));
@@ -1347,7 +1346,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void d() {
-        ((FfmpegAudioRenderer) this.b).f0 = true;
+        ((androidx.media3.decoder.ffmpeg.b) this.b).f0 = true;
     }
 
     @Override // ji.g1
@@ -1515,7 +1514,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void onAudioSessionIdChanged(int i10) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new ah.g(yVar, i10, 12));
@@ -1528,7 +1527,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void onSkipSilenceEnabledChanged(boolean z10) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new ah.u(8, yVar, z10));
@@ -1596,7 +1595,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
 
     @Override // k2.n
     public void q(int i10, long j3, long j10) {
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new k2.i(yVar, i10, j3, j10, 0));
@@ -1732,9 +1731,9 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
     @Override // k2.n
     public void x() {
         x2.p pVar;
-        FfmpegAudioRenderer ffmpegAudioRenderer = (FfmpegAudioRenderer) this.b;
-        synchronized (ffmpegAudioRenderer.a) {
-            pVar = ffmpegAudioRenderer.H;
+        androidx.media3.decoder.ffmpeg.b bVar = (androidx.media3.decoder.ffmpeg.b) this.b;
+        synchronized (bVar.a) {
+            pVar = bVar.H;
         }
         if (pVar != null) {
             pVar.h();
@@ -1744,7 +1743,7 @@ public final class m implements ek0, a0, kv0, androidx.activity.result.b, v0, On
     @Override // k2.n
     public void z(Exception exc) {
         e2.a.f("DecoderAudioRenderer", "Audio sink error", exc);
-        y yVar = ((FfmpegAudioRenderer) this.b).I;
+        y yVar = ((androidx.media3.decoder.ffmpeg.b) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
             handler.post(new k2.f(yVar, exc, 1));

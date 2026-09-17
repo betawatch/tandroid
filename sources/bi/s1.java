@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.voip.Instance;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class s1 implements Instance.OnStateUpdatedListener {
     public final /* synthetic */ t1 a;
@@ -20,7 +20,7 @@ public final class s1 implements Instance.OnStateUpdatedListener {
         t1Var.y = i10;
         FileLog.d("[LivePlayer] connectionState = " + i10);
         if (m10 != t1Var.m()) {
-            AndroidUtilities.runOnUIThread(new a3.d(this, 14));
+            AndroidUtilities.runOnUIThread(new a3.c(this, 14));
         }
     }
 }

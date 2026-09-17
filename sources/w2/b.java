@@ -1,71 +1,69 @@
 package w2;
 
-import h2.f;
+import h2.g;
 import h2.h;
-import h2.l;
+import h2.j;
 import java.nio.ByteBuffer;
+import z3.f;
 import z3.i;
-import z3.j;
 import z3.m;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public final class b extends l implements z3.e {
-    public final String o;
-    public final m p;
+public final class b extends j implements z3.e {
+    public final m o;
 
     public b(String str, m mVar) {
-        super(new i[2], new j[2]);
-        this.o = str;
-        o(1024);
-        this.p = mVar;
+        super(new i[2], new z3.j[2]);
+        int i10 = this.g;
+        g[] gVarArr = this.e;
+        e2.d.g(i10 == gVarArr.length);
+        for (g gVar : gVarArr) {
+            gVar.l(1024);
+        }
+        this.o = mVar;
     }
 
-    @Override // h2.l
-    public final h f() {
+    @Override // h2.j
+    public final g f() {
         return new i();
     }
 
-    @Override // h2.l
-    public final h2.j g() {
+    @Override // h2.j
+    public final h g() {
         return new z3.c(this);
     }
 
-    @Override // h2.e
-    public final String getName() {
-        return this.o;
+    @Override // h2.j
+    public final h2.e h(Throwable th2) {
+        return new f("Unexpected decode error", th2);
     }
 
-    @Override // h2.l
-    public final f h(Throwable th2) {
-        return new z3.f("Unexpected decode error", th2);
-    }
-
-    @Override // h2.l
-    public final f i(h hVar, h2.j jVar, boolean z10) {
-        i iVar = (i) hVar;
-        j jVar2 = (j) jVar;
+    @Override // h2.j
+    public final h2.e i(g gVar, h hVar, boolean z10) {
+        i iVar = (i) gVar;
+        z3.j jVar = (z3.j) hVar;
         try {
-            ByteBuffer byteBuffer = iVar.c;
+            ByteBuffer byteBuffer = iVar.e;
             byteBuffer.getClass();
             byte[] array = byteBuffer.array();
             int limit = byteBuffer.limit();
-            m mVar = this.p;
+            m mVar = this.o;
             if (z10) {
                 mVar.reset();
             }
             z3.d p5 = mVar.p(0, limit, array);
-            long j3 = iVar.e;
-            long j10 = iVar.r;
-            jVar2.timeUs = j3;
-            jVar2.a = p5;
+            long j3 = iVar.h;
+            long j10 = iVar.v;
+            jVar.c = j3;
+            jVar.f = p5;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }
-            jVar2.b = j3;
-            jVar2.shouldBeSkipped = false;
+            jVar.h = j3;
+            jVar.e = false;
             return null;
-        } catch (z3.f e7) {
+        } catch (f e7) {
             return e7;
         }
     }

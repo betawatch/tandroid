@@ -2,12 +2,11 @@ package androidx.media3.decoder.ffmpeg;
 
 import b2.l0;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
-public final class FfmpegLibrary {
+public abstract class FfmpegLibrary {
     public static String a;
     public static int b;
-    public static String c;
 
     static {
         l0.a("media3.decoder.ffmpeg");
@@ -20,35 +19,13 @@ public final class FfmpegLibrary {
             case "audio/eac3-joc":
             case "audio/eac3":
                 return "eac3";
-            case "video/dolby-vision":
             case "video/hevc":
                 return "hevc";
-            case "video/3gpp":
-                return "h263";
-            case "video/av01":
-                if (c == null) {
-                    c = ffmpegGetAv1DecoderName();
-                }
-                return c;
-            case "video/divx":
-            case "video/mp4v-es":
-                return "mpeg4";
-            case "video/mp42":
-                return "msmpeg4v2";
-            case "video/mp43":
-                return "msmpeg4";
-            case "video/mpeg":
-                return "mpeg2video";
-            case "video/wvc1":
-                return "vc1";
             case "audio/amr-wb":
                 return "amrwb";
-            case "audio/vnd.dts.hd;profile=lbr":
             case "audio/vnd.dts":
             case "audio/vnd.dts.hd":
                 return "dca";
-            case "video/x-msvideo":
-                return "mpeg4";
             case "audio/vorbis":
                 return "vorbis";
             case "audio/mpeg-L1":
@@ -57,20 +34,10 @@ public final class FfmpegLibrary {
                 return "mp3";
             case "audio/mp4a-latm":
                 return "aac";
-            case "video/mjpeg":
-                return "mjpeg";
-            case "video/mpeg2":
-                return "mpeg2video";
-            case "video/x-flv":
-                return "flv1";
             case "audio/ac3":
                 return "ac3";
-            case "video/prores":
-                return "prores";
             case "video/avc":
                 return "h264";
-            case "video/ogg":
-                return "theora";
             case "audio/3gpp":
                 return "amrnb";
             case "audio/alac":
@@ -81,10 +48,6 @@ public final class FfmpegLibrary {
                 return "opus";
             case "audio/true-hd":
                 return "truehd";
-            case "video/x-vnd.on2.vp8":
-                return "vp8";
-            case "video/x-vnd.on2.vp9":
-                return "vp9";
             case "audio/g711-alaw":
                 return "pcm_alaw";
             case "audio/g711-mlaw":
@@ -109,8 +72,8 @@ public final class FfmpegLibrary {
     }
 
     public static boolean d(String str) {
-        String a2;
-        if (str == null || (a2 = a(str)) == null) {
+        String a2 = a(str);
+        if (a2 == null) {
             return false;
         }
         if (ffmpegHasDecoder(a2)) {
@@ -119,8 +82,6 @@ public final class FfmpegLibrary {
         e2.a.n("FfmpegLibrary", "No " + a2 + " decoder available. Check the FFmpeg build configuration.");
         return false;
     }
-
-    private static native String ffmpegGetAv1DecoderName();
 
     private static native int ffmpegGetInputBufferPaddingSize();
 

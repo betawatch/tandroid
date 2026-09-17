@@ -43,7 +43,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -367,7 +367,7 @@ public final class u extends g.g {
         pf.b bVar = this.i0;
         r rVar = this.j0;
         if (bVar != null) {
-            bVar.k0(rVar);
+            bVar.j0(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {

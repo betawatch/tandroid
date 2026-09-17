@@ -23,7 +23,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yx0;
 import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -67,14 +67,14 @@ public final /* synthetic */ class o4 implements Utilities.Callback {
                 Utilities.Callback callback = (Utilities.Callback) obj;
                 o5 o5Var = f5Var.l;
                 if ((storyItem instanceof a8) && (b8Var = ((a8) storyItem).a) != null) {
-                    a3.k0 k0Var = new a3.k0(b8Var, storyItem2, callback, 6);
+                    a3.j0 j0Var = new a3.j0(b8Var, storyItem2, callback, 6);
                     if (b8Var.F != 0) {
                         ConnectionsManager.getInstance(b8Var.c).cancelRequest(b8Var.F, true);
                         b8Var.F = 0;
                     }
                     b8Var.C = false;
                     b8Var.D = false;
-                    b8Var.H(k0Var);
+                    b8Var.H(j0Var);
                     break;
                 } else {
                     TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();

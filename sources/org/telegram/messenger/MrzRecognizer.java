@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+    /* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -417,9 +417,9 @@ public class MrzRecognizer {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         tVar.d = bitmap;
-        a3.l lVar = (a3.l) tVar.b;
-        lVar.a = width;
-        lVar.b = height;
+        a3.k kVar = (a3.k) tVar.b;
+        kVar.a = width;
+        kVar.b = height;
         SparseArray Z0 = nVar.Z0(tVar);
         int i10 = 0;
         for (int i11 = 0; i11 < Z0.size(); i11++) {

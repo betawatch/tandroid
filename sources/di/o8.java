@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class o8 {
     public String A;
@@ -1310,7 +1310,7 @@ public final class o8 {
                 bVar.run();
                 return;
             } else {
-                Utilities.globalQueue.postRunnable(new a3.k0(absolutePath, iArr, bVar, 18));
+                Utilities.globalQueue.postRunnable(new a3.j0(absolutePath, iArr, bVar, 18));
                 return;
             }
         }
@@ -1319,7 +1319,7 @@ public final class o8 {
             strArr[i11] = ((o8) this.T.get(i11)).L == null ? null : ((o8) this.T.get(i11)).L.getAbsolutePath();
             iArr[i11] = new int[11];
         }
-        Utilities.globalQueue.postRunnable(new a3.k0(strArr, iArr, bVar, 17));
+        Utilities.globalQueue.postRunnable(new a3.j0(strArr, iArr, bVar, 17));
     }
 
     public final boolean t() {

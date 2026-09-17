@@ -22,7 +22,7 @@ import n6.l;
 import org.telegram.tgnet.TLObject;
 import t7.u;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class e {
     public static Boolean d = null;
@@ -84,7 +84,7 @@ public final class e {
         long longValue = l4.longValue();
         try {
             n1Var.set(Long.valueOf(SystemClock.uptimeMillis()));
-            a3.l h10 = dVar.h(context, str, k);
+            a3.k h10 = dVar.h(context, str, k);
             j3 = longValue;
             try {
                 Log.i("DynamiteModule", "Considering local module " + str + ":" + h10.a + " and remote module " + str + ":" + h10.b);

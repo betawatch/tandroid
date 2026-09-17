@@ -114,7 +114,7 @@ import org.telegram.ui.w81;
 import w7.b6;
 import w7.x5;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public abstract class d1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -2286,7 +2286,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                     getrequestedwebviewbutton.bot = MessagesController.getInstance(this.M).getInputUser(this.U);
                     getrequestedwebviewbutton.webapp_req_id = str11;
-                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.b(1), new w(this, k9Var, str11, 0));
+                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.a(1), new w(this, k9Var, str11, 0));
                     return;
                 case '8':
                     fi.a1 z30 = this.c.z();

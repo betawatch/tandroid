@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes4.dex */
 public final class i9 extends ImageReceiver {
     public final /* synthetic */ Runnable[] a;
@@ -23,7 +23,7 @@ public final class i9 extends ImageReceiver {
             AndroidUtilities.cancelRunOnUIThread(runnable);
             ((s8) this.b.d).run();
         }
-        AndroidUtilities.runOnUIThread(new a3.d(this, 26));
+        AndroidUtilities.runOnUIThread(new a3.c(this, 26));
         return imageBitmapByKey;
     }
 }

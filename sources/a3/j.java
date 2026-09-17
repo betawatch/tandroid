@@ -1,15 +1,21 @@
 package a3;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+import android.content.Context;
+import android.os.Handler;
+
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public final class j {
-    public final /* synthetic */ r2.l a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ n c;
+    public final Context a;
+    public boolean b;
+    public r2.k c;
+    public long d;
+    public Handler e;
+    public i2.c0 f;
+    public int g;
 
-    public j(n nVar, r2.l lVar, int i10, long j3) {
-        this.c = nVar;
-        this.a = lVar;
-        this.b = i10;
+    public j(Context context) {
+        this.a = context;
+        this.c = new q2.b(context);
     }
 }

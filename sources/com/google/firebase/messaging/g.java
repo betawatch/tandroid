@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import a3.k0;
+import a3.j0;
 import ah.i0;
 import android.app.Service;
 import android.content.Intent;
@@ -16,7 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
+/* compiled from: r8-map-id-e83daa4a3f4c5cc77b567d3f921056f729108399460aa18047e0e51e076a97b3 */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -57,7 +57,7 @@ public abstract class g extends Service {
             return Tasks.forResult(null);
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new k0(this, intent, taskCompletionSource, 12));
+        this.executor.execute(new j0(this, intent, taskCompletionSource, 12));
         return taskCompletionSource.getTask();
     }
 
@@ -106,7 +106,7 @@ public abstract class g extends Service {
             a(intent);
             return 2;
         }
-        b10.addOnCompleteListener(new a3.b(2), new i0(7, this, intent));
+        b10.addOnCompleteListener(new a3.a(2), new i0(7, this, intent));
         return 3;
     }
 
