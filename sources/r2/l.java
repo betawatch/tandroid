@@ -8,16 +8,16 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import k2.g0;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public interface l {
     void a(long j3, int i10, int i11, int i12);
 
-    void b(int i10, h2.c cVar, long j3, int i11);
+    void b(int i10, h2.d dVar, long j3, int i11);
 
     void c(int i10);
 
-    void d(a3.l lVar, Handler handler);
+    void d(a3.m mVar, Handler handler);
 
     void e();
 

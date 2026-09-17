@@ -1,11 +1,11 @@
 package d9;
 
-import a3.r;
+import a3.s;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class l implements j {
-    public static final r d = new r(1);
+    public static final s d = new s(1);
     public final Object a = new Object();
     public volatile j b;
     public Object c;
@@ -17,14 +17,14 @@ public final class l implements j {
     @Override // d9.j
     public final Object get() {
         j jVar = this.b;
-        r rVar = d;
-        if (jVar != rVar) {
+        s sVar = d;
+        if (jVar != sVar) {
             synchronized (this.a) {
                 try {
-                    if (this.b != rVar) {
+                    if (this.b != sVar) {
                         Object obj = this.b.get();
                         this.c = obj;
-                        this.b = rVar;
+                        this.b = sVar;
                         return obj;
                     }
                 } finally {

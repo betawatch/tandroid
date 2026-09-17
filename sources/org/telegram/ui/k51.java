@@ -30,7 +30,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final class k51 extends Dialog {
     public final org.telegram.ui.Components.ht E;
@@ -53,7 +53,7 @@ public final class k51 extends Dialog {
     public org.telegram.ui.Components.l8 V;
     public boolean W;
     public te X;
-    public a3.g0 Y;
+    public a3.h0 Y;
     public final f51 Z;
     public final Context a;
     public float a0;
@@ -205,13 +205,13 @@ public final class k51 extends Dialog {
         c(false, new f51(this, 3));
         j0 j0Var = this.b;
         j0Var.invalidate();
-        a3.g0 g0Var = this.Y;
-        if (g0Var != null) {
+        a3.h0 h0Var = this.Y;
+        if (h0Var != null) {
             org.telegram.ui.Cells.t1 t1Var2 = this.O;
             if (t1Var2 != null) {
                 t1Var2.fd = true;
             }
-            AndroidUtilities.runOnUIThread(g0Var);
+            AndroidUtilities.runOnUIThread(h0Var);
             this.Y = null;
             org.telegram.ui.Components.w01 w01Var = new org.telegram.ui.Components.w01(this.a, null);
             this.d = w01Var;

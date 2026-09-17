@@ -3,7 +3,7 @@ package dd;
 import java.util.Arrays;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class l {
     public static final char[] r;
@@ -34,7 +34,7 @@ public final class l {
 
     public l(a aVar, b bVar) {
         i iVar = new i(2);
-        iVar.v = new cd.c();
+        iVar.k = new cd.c();
         this.j = iVar;
         this.k = new h(3);
         this.l = new d(5, 0);
@@ -222,17 +222,17 @@ public final class l {
         j jVar;
         if (z10) {
             jVar = this.j;
-            jVar.f();
+            jVar.b();
         } else {
             jVar = this.k;
-            jVar.f();
+            jVar.b();
         }
         this.i = jVar;
         return jVar;
     }
 
     public final void e() {
-        k.g(this.h);
+        k.c(this.h);
     }
 
     public final void f(char c10) {
@@ -250,7 +250,7 @@ public final class l {
             this.o = ((i) kVar).c;
             return;
         }
-        if (i10 != 3 || ((h) kVar).v == null) {
+        if (i10 != 3 || ((h) kVar).k == null) {
             return;
         }
         b bVar = this.b;
@@ -287,7 +287,7 @@ public final class l {
     public final void k() {
         j jVar = this.i;
         if (jVar.e != null) {
-            jVar.p();
+            jVar.j();
         }
         g(this.i);
     }
@@ -309,6 +309,6 @@ public final class l {
     }
 
     public final boolean n() {
-        return this.o != null && this.i.o().equalsIgnoreCase(this.o);
+        return this.o != null && this.i.i().equalsIgnoreCase(this.o);
     }
 }

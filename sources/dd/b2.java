@@ -2,7 +2,7 @@ package dd;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public abstract class b2 {
     public static final t1 A0;
@@ -253,7 +253,7 @@ public abstract class b2 {
         StringBuilder sb2 = lVar.h;
         if (aVar.o()) {
             String e7 = aVar.e();
-            lVar.i.n(e7);
+            lVar.i.h(e7);
             sb2.append(e7);
             return;
         }

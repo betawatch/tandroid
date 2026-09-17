@@ -11,7 +11,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class d extends l {
     public final int i;
@@ -74,7 +74,7 @@ public final class d extends l {
         return new m(list, 0);
     }
 
-    @Override // a4.l, h2.d
+    @Override // a4.l, h2.e
     public final void flush() {
         super.flush();
         this.o = null;
@@ -100,7 +100,7 @@ public final class d extends l {
     */
     public final void g(j jVar) {
         boolean z10;
-        ByteBuffer byteBuffer = jVar.e;
+        ByteBuffer byteBuffer = jVar.c;
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
@@ -304,7 +304,12 @@ public final class d extends l {
         }
     }
 
-    @Override // a4.l, h2.d
+    @Override // h2.e
+    public final String getName() {
+        return "Cea608Decoder";
+    }
+
+    @Override // a4.l, h2.e
     /* renamed from: h */
     public final z3.j c() {
         z3.j jVar;
@@ -324,9 +329,9 @@ public final class d extends l {
         this.y = -9223372036854775807L;
         m f7 = f();
         long j11 = this.e;
-        jVar.c = j11;
-        jVar.f = f7;
-        jVar.h = j11;
+        jVar.timeUs = j11;
+        jVar.a = f7;
+        jVar.b = j11;
         return jVar;
     }
 
@@ -400,7 +405,7 @@ public final class d extends l {
         }
     }
 
-    @Override // a4.l, h2.d
+    @Override // a4.l, h2.e
     public final void release() {
     }
 }

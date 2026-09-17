@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.er0;
 import org.telegram.ui.f11;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class v7 implements RequestDelegate {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a3.c((di.o9) obj, 22));
+                AndroidUtilities.runOnUIThread(new a3.d((di.o9) obj, 22));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new a1.e(i17, (d8) obj, tLObject));

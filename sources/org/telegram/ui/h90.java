@@ -30,7 +30,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h90 implements Runnable {
     public final /* synthetic */ int a;
@@ -974,7 +974,7 @@ public final /* synthetic */ class h90 implements Runnable {
                     Activity parentActivity2 = n2Var3.getParentActivity();
                     AccountInstance accountInstance = AccountInstance.getInstance(i22);
                     pf.b bVar2 = new pf.b(7, (boolean) r13);
-                    bVar2.h0(x4Var.e0.h);
+                    bVar2.i0(x4Var.e0.h);
                     billingController.launchBillingFlow(parentActivity2, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(bVar2.w()));
                     break;
                 } else if (tL_error19 != null) {

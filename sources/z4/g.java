@@ -38,7 +38,7 @@ import r0.i0;
 import rg.b0;
 import s4.d1;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -829,7 +829,7 @@ public class g extends ViewGroup {
                     t9 t9Var = (t9) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
                         t9Var.a(false);
-                        AndroidUtilities.runOnUIThread(new a3.c(t9Var, 27), 16L);
+                        AndroidUtilities.runOnUIThread(new a3.d(t9Var, 27), 16L);
                     } else {
                         if (!t9Var.d) {
                             t9Var.a(true);

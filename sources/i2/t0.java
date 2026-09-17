@@ -20,7 +20,7 @@ import org.telegram.ui.f11;
 import rg.p2;
 import v7.x7;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class t0 {
     public final Object a;
@@ -278,7 +278,7 @@ public final class t0 {
         int length2 = fVarArr.length;
         int[] iArr6 = new int[length2];
         for (int i16 = 0; i16 < length2; i16++) {
-            iArr6[i16] = fVarArr[i16].A();
+            iArr6[i16] = fVarArr[i16].B();
         }
         int i17 = 0;
         while (i17 < o1Var2.a) {
@@ -294,7 +294,7 @@ public final class t0 {
                 u2.o1 o1Var3 = o1Var2;
                 int i20 = 0;
                 for (int i21 = 0; i21 < a2.a; i21++) {
-                    i20 = Math.max(i20, fVar.z(a2.d[i21]) & 7);
+                    i20 = Math.max(i20, fVar.A(a2.d[i21]) & 7);
                 }
                 boolean z16 = iArr4[i18] == 0;
                 if (i20 > i19 || (i20 == i19 && z14 && !z15 && z16)) {
@@ -314,7 +314,7 @@ public final class t0 {
                 f fVar2 = fVarArr[length3];
                 int[] iArr7 = new int[a2.a];
                 for (int i22 = 0; i22 < a2.a; i22++) {
-                    iArr7[i22] = fVar2.z(a2.d[i22]);
+                    iArr7[i22] = fVar2.A(a2.d[i22]);
                 }
                 iArr3 = iArr7;
             }

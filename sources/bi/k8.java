@@ -74,7 +74,7 @@ import org.telegram.ui.vn;
 import org.telegram.ui.xn;
 import org.telegram.ui.xv;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a;
@@ -204,7 +204,7 @@ public final /* synthetic */ class k8 implements Runnable {
                 l8Var.x();
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new a3.j0(MessagesStorage.getInstance(i18).getUsers((ArrayList) obj2), (HashMap) obj3, (Utilities.Callback) obj, 24));
+                AndroidUtilities.runOnUIThread(new a3.k0(MessagesStorage.getInstance(i18).getUsers((ArrayList) obj2), (HashMap) obj3, (Utilities.Callback) obj, 24));
                 break;
             case 2:
                 TLRPC.UserFull userFull2 = (TLRPC.UserFull) obj3;

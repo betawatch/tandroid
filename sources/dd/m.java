@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public enum m extends b2 {
     public m() {
@@ -30,10 +30,10 @@ public enum m extends b2 {
             }
         }
         String str = "";
-        lVar.i.n(str);
+        lVar.i.h(str);
         char d = aVar.d();
         if (d == 0) {
-            lVar.i.n(b2.I0);
+            lVar.i.h(b2.I0);
             return;
         }
         if (d != ' ') {
@@ -54,7 +54,7 @@ public enum m extends b2 {
             } else if (d != '\t' && d != '\n' && d != '\f' && d != '\r') {
                 j jVar = lVar.i;
                 jVar.getClass();
-                jVar.n(String.valueOf(d));
+                jVar.h(String.valueOf(d));
                 return;
             }
         }

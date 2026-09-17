@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public final int a;
@@ -43,14 +43,14 @@ public final class s0 implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(n4.y yVar, h2.g gVar, int i10) {
+    public final int f(n4.y yVar, h2.h hVar, int i10) {
         u0 u0Var = this.b;
         if (u0Var.D()) {
             return -3;
         }
         int i11 = this.a;
         u0Var.y(i11);
-        int C = u0Var.K[i11].C(yVar, gVar, i10, u0Var.e0);
+        int C = u0Var.K[i11].C(yVar, hVar, i10, u0Var.e0);
         if (C == -3) {
             u0Var.z(i11);
         }

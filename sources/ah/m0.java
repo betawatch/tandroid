@@ -45,7 +45,7 @@ import org.telegram.ui.xo;
 import org.telegram.ui.xw;
 import rg.c2;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class m0 implements ValueAnimator.AnimatorUpdateLis
                     zArr[0] = true;
                     if (SharedConfig.getDevicePerformanceClass() > 0) {
                         AndroidUtilities.vibrateCursor(profileStoriesView);
-                        AndroidUtilities.runOnUIThread(new a3.c(profileStoriesView, 19), 180L);
+                        AndroidUtilities.runOnUIThread(new a3.d(profileStoriesView, 19), 180L);
                     }
                 }
                 profileStoriesView.W = Math.max(1.0f, floatValue3);

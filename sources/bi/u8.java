@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes4.dex */
 public final class u8 {
     public static final Comparator X = Comparator$-CC.comparingInt(new o6(1));
@@ -1521,7 +1521,7 @@ public final class u8 {
         this.l.edit().putBoolean("stories_loaded", false).remove("last_stories_state").putBoolean("stories_loaded_hidden", false).remove("last_stories_state_hidden").putBoolean("read_loaded", false).apply();
         di.b1 b1Var = this.w;
         Objects.requireNonNull(b1Var);
-        AndroidUtilities.runOnUIThread(new a3.c(b1Var, 23));
+        AndroidUtilities.runOnUIThread(new a3.d(b1Var, 23));
         T();
         if (this.s) {
             return;
@@ -1613,7 +1613,7 @@ public final class u8 {
         k0(j3, arrayList);
         ArrayList<Integer> arrayList2 = tL_stories_deleteStories.id;
         h9 h9Var = this.k;
-        h9Var.b.getStorageQueue().postRunnable(new a3.g0(h9Var, arrayList2, j3, 4));
+        h9Var.b.getStorageQueue().postRunnable(new a3.h0(h9Var, arrayList2, j3, 4));
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
     }
 

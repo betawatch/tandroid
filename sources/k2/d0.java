@@ -32,7 +32,7 @@ import ji.u4;
 import org.telegram.messenger.MediaController;
 import v7.x7;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class d0 implements p {
     public static final Object o0 = new Object();
@@ -1090,7 +1090,7 @@ public final class d0 implements p {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean n(ByteBuffer byteBuffer, long j3, int i10) {
+    public final boolean n(long j3, int i10, ByteBuffer byteBuffer) {
         boolean z10;
         boolean z11;
         boolean z12;

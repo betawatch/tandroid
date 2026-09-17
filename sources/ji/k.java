@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.d80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final /* synthetic */ class k implements Runnable {
                         Activity parentActivity = n2Var.getParentActivity();
                         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                         pf.b bVar = new pf.b(7, false);
-                        bVar.h0((c5.o) list.get(0));
+                        bVar.i0((c5.o) list.get(0));
                         billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.w()));
                         break;
                     }
@@ -148,7 +148,7 @@ public final /* synthetic */ class k implements Runnable {
                         Activity parentActivity2 = n2Var2.getParentActivity();
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
                         pf.b bVar2 = new pf.b(7, false);
-                        bVar2.h0((c5.o) list2.get(0));
+                        bVar2.i0((c5.o) list2.get(0));
                         billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.w()));
                         break;
                     }
@@ -180,7 +180,7 @@ public final /* synthetic */ class k implements Runnable {
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     pf.b bVar3 = new pf.b(7, false);
-                    bVar3.h0((c5.o) list3.get(0));
+                    bVar3.i0((c5.o) list3.get(0));
                     billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.w()));
                     break;
                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class k implements Runnable {
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     pf.b bVar4 = new pf.b(7, false);
-                    bVar4.h0((c5.o) list4.get(0));
+                    bVar4.i0((c5.o) list4.get(0));
                     billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.w()));
                     break;
                 }

@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -169,7 +169,7 @@ public final /* synthetic */ class rf implements View.OnClickListener {
                 org.telegram.ui.Components.k8 k8Var = (org.telegram.ui.Components.k8) obj2;
                 k8Var.getClass();
                 ((org.telegram.ui.Components.n70) obj).u();
-                k8Var.t0(7);
+                k8Var.t0(6);
                 break;
             case 18:
                 org.telegram.ui.Components.s90 s90Var = (org.telegram.ui.Components.s90) obj;
@@ -393,7 +393,7 @@ public final /* synthetic */ class rf implements View.OnClickListener {
                 esVar.s();
                 break;
             default:
-                ((org.telegram.ui.Components.es) obj2).B0 = !r13.B0;
+                ((org.telegram.ui.Components.es) obj2).B0 = !r12.B0;
                 ((org.telegram.ui.Components.v51) obj).N(true);
                 break;
         }

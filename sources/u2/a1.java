@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ho0;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public class a1 implements c3.h0 {
     public b2.s A;
@@ -91,30 +91,30 @@ public class a1 implements c3.h0 {
         return this.s != this.p ? this.j[u(this.s)] : this.C;
     }
 
-    public final int C(n4.y yVar, h2.g gVar, int i10, boolean z10) {
+    public final int C(n4.y yVar, h2.h hVar, int i10, boolean z10) {
         int i11;
         boolean z11 = (i10 & 2) != 0;
         j5.b bVar = this.b;
         synchronized (this) {
             try {
-                gVar.f = false;
+                hVar.d = false;
                 i11 = -3;
                 if (this.s != this.p) {
                     b2.s sVar = ((y0) this.c.l(t())).a;
                     if (!z11 && sVar == this.g) {
                         int u10 = u(this.s);
                         if (y(u10)) {
-                            gVar.b = this.m[u10];
+                            hVar.setFlags(this.m[u10]);
                             if (this.s == this.p - 1 && (z10 || this.w)) {
-                                gVar.a(TLObject.FLAG_29);
+                                hVar.addFlag(TLObject.FLAG_29);
                             }
-                            gVar.h = this.n[u10];
+                            hVar.e = this.n[u10];
                             bVar.b = this.l[u10];
                             bVar.a = this.k[u10];
                             bVar.c = this.o[u10];
                             i11 = -4;
                         } else {
-                            gVar.f = true;
+                            hVar.d = true;
                         }
                     }
                     A(sVar, yVar);
@@ -127,23 +127,23 @@ public class a1 implements c3.h0 {
                         A(sVar2, yVar);
                         i11 = -5;
                     }
-                    gVar.b = 4;
-                    gVar.h = Long.MIN_VALUE;
+                    hVar.setFlags(4);
+                    hVar.e = Long.MIN_VALUE;
                     i11 = -4;
                 }
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        if (i11 == -4 && !gVar.c(4)) {
+        if (i11 == -4 && !hVar.isEndOfStream()) {
             boolean z12 = (i10 & 1) != 0;
             if ((i10 & 4) == 0) {
                 if (z12) {
                     ho0 ho0Var = this.a;
-                    ho0.f((x0) ho0Var.f, gVar, this.b, (e2.v) ho0Var.d);
+                    ho0.f((x0) ho0Var.f, hVar, this.b, (e2.v) ho0Var.d);
                 } else {
                     ho0 ho0Var2 = this.a;
-                    ho0Var2.f = ho0.f((x0) ho0Var2.f, gVar, this.b, (e2.v) ho0Var2.d);
+                    ho0Var2.f = ho0.f((x0) ho0Var2.f, hVar, this.b, (e2.v) ho0Var2.d);
                 }
             }
             if (!z12) {

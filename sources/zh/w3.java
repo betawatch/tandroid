@@ -104,7 +104,7 @@ import org.telegram.ui.ta;
 import org.telegram.ui.uy;
 import org.telegram.ui.xe;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes4.dex */
 public class w3 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int q1 = 0;
@@ -1619,9 +1619,9 @@ public class w3 extends bb implements NotificationCenter.NotificationCenterDeleg
                     return;
                 }
                 s5 y3 = s5.y(w3Var.currentAccount, false);
-                a3.f0 f0Var = new a3.f0(w3Var, j11, j3, callback, 14);
+                a3.g0 g0Var = new a3.g0(w3Var, j11, j3, callback, 14);
                 y3.e = false;
-                y3.q(false, true, f0Var);
+                y3.q(false, true, g0Var);
                 y3.e = true;
                 return;
             }

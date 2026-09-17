@@ -1,6 +1,6 @@
 package androidx.profileinstaller;
 
-import a3.a;
+import a3.b;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -11,9 +11,10 @@ import android.os.Process;
 import android.util.Log;
 import java.io.File;
 import ji.u4;
+import r4.a;
 import r4.d;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -24,7 +25,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            d.s(context, new a(2), new u4(this, 19), true);
+            d.s(context, new b(2), new u4(this, 19), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -73,7 +74,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             return;
         }
         int i10 = Build.VERSION.SDK_INT;
-        if (d.c(i10 >= 24 ? r4.a.a(context) : i10 >= 23 ? context.getCodeCacheDir() : context.getCacheDir())) {
+        if (d.c(i10 >= 24 ? a.a(context) : i10 >= 23 ? context.getCodeCacheDir() : context.getCacheDir())) {
             u4Var3.x(14, null);
         } else {
             u4Var3.x(15, null);

@@ -22,7 +22,7 @@ import java.util.Set;
 import java.util.UUID;
 import w7.z;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final List a;
@@ -43,7 +43,7 @@ public final class b implements g {
     public int p;
     public HandlerThread q;
     public android.support.v4.media.session.f r;
-    public h2.a s;
+    public h2.b s;
     public f t;
     public byte[] u;
     public byte[] v;
@@ -240,7 +240,7 @@ public final class b implements g {
     }
 
     @Override // n2.g
-    public final h2.a h() {
+    public final h2.b h() {
         p();
         return this.s;
     }

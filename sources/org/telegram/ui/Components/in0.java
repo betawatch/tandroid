@@ -53,7 +53,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.ab1;
 import org.telegram.ui.la1;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class in0 implements Runnable {
     public final /* synthetic */ int a;
@@ -546,7 +546,7 @@ public final /* synthetic */ class in0 implements Runnable {
                 i18 = ((org.telegram.ui.ActionBar.n2) wg0Var3).currentAccount;
                 AccountInstance accountInstance3 = AccountInstance.getInstance(i18);
                 pf.b bVar = new pf.b(7, (boolean) (objArr4 == true ? 1 : 0));
-                bVar.h0(oVar);
+                bVar.i0(oVar);
                 billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(bVar.w()));
                 break;
             case 23:

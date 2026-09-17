@@ -1,30 +1,14 @@
 package a3;
 
-import android.hardware.display.DisplayManager;
+import android.util.Range;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes.dex */
-public final class b0 implements DisplayManager.DisplayListener {
-    public final DisplayManager a;
-    public final /* synthetic */ d0 b;
+public abstract class b0 {
+    public long a;
+    public long b;
+    public double c;
+    public Range d;
 
-    public b0(d0 d0Var, DisplayManager displayManager) {
-        this.b = d0Var;
-        this.a = displayManager;
-    }
-
-    @Override // android.hardware.display.DisplayManager.DisplayListener
-    public final void onDisplayChanged(int i10) {
-        if (i10 == 0) {
-            d0.a(this.b, this.a.getDisplay(0));
-        }
-    }
-
-    @Override // android.hardware.display.DisplayManager.DisplayListener
-    public final void onDisplayAdded(int i10) {
-    }
-
-    @Override // android.hardware.display.DisplayManager.DisplayListener
-    public final void onDisplayRemoved(int i10) {
-    }
+    public abstract void a();
 }

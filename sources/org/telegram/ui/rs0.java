@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1181a9f210c4244598aa36bb39e1460f3842f305ed8c0c95af755ee091fedd7d */
+/* compiled from: r8-map-id-09da8b159cf36792e88674cebe3dc77c7407e16cea1bdebcb1e8ccd47061bd65 */
 /* loaded from: classes3.dex */
 public final class rs0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 a;
@@ -1007,7 +1007,7 @@ public final class rs0 extends org.telegram.ui.ActionBar.j {
             if (i10 == 24) {
                 pf.b W = pf.b.W();
                 m12 = photoViewer2.m1();
-                W.g0(m12);
+                W.h0(m12);
                 u7Var = photoViewer2.G0;
                 u7Var.performClick();
                 return;
