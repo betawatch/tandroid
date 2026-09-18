@@ -1,26 +1,26 @@
 package ng;
 
-import org.telegram.ui.bo;
-import org.telegram.ui.fg1;
+import org.telegram.ui.dg1;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ b(bo boVar, int i10) {
+    public /* synthetic */ b(zn znVar, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.b = znVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                bo boVar = this.b;
-                if (boVar.getParentLayout() != null) {
-                    fg1.I0(boVar);
+                zn znVar = this.b;
+                if (znVar.getParentLayout() != null) {
+                    dg1.I0(znVar);
                     break;
                 }
                 break;

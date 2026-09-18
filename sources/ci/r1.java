@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.ay;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.rv;
 import org.telegram.ui.Components.sv;
-import org.telegram.ui.Components.vx;
-import org.telegram.ui.hi0;
-import org.telegram.ui.tj0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.wx;
+import org.telegram.ui.gi0;
+import org.telegram.ui.sj0;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class r1 extends s4.n0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class r1 extends s4.n0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = wl.A(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = wh.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -72,17 +72,17 @@ public final class r1 extends s4.n0 {
                 break;
             case 3:
                 kz kzVar = (kz) this.b;
-                vx vxVar = kzVar.P;
+                wx wxVar = kzVar.P;
                 if (!(view instanceof org.telegram.ui.Cells.o8)) {
-                    if (!(view instanceof ml0) && !(view instanceof ay)) {
-                        if (view instanceof org.telegram.ui.Components.u9) {
+                    if (!(view instanceof wl0) && !(view instanceof cy)) {
+                        if (view instanceof org.telegram.ui.Components.w9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;
                         }
                     } else {
-                        rect.left = -vxVar.getPaddingLeft();
-                        rect.right = -vxVar.getPaddingRight();
-                        if (view instanceof ay) {
+                        rect.left = -wxVar.getPaddingLeft();
+                        rect.right = -wxVar.getPaddingRight();
+                        if (view instanceof cy) {
                             rect.top = AndroidUtilities.dp(8.0f);
                             break;
                         }
@@ -106,7 +106,7 @@ public final class r1 extends s4.n0 {
                 break;
             case 5:
                 recyclerView.getClass();
-                if (RecyclerView.S(view) == ((hi0) this.b).c.size() - 1) {
+                if (RecyclerView.S(view) == ((gi0) this.b).c.size() - 1) {
                     rect.bottom = AndroidUtilities.dp(4.0f);
                     break;
                 }
@@ -115,9 +115,9 @@ public final class r1 extends s4.n0 {
                 super.a(rect, view, recyclerView, z0Var);
                 recyclerView.getClass();
                 int S = RecyclerView.S(view);
-                tj0 tj0Var = (tj0) this.b;
-                if (S == tj0Var.c0.size()) {
-                    rect.bottom = tj0Var.l0;
+                sj0 sj0Var = (sj0) this.b;
+                if (S == sj0Var.c0.size()) {
+                    rect.bottom = sj0Var.l0;
                     break;
                 }
                 break;
@@ -148,9 +148,9 @@ public final class r1 extends s4.n0 {
                 super.a(rect, view, recyclerView, z0Var);
                 recyclerView.getClass();
                 int S3 = RecyclerView.S(view);
-                tg.a1 a1Var = (tg.a1) this.b;
-                if (S3 == a1Var.d0.size()) {
-                    rect.bottom = a1Var.p0;
+                tg.z0 z0Var2 = (tg.z0) this.b;
+                if (S3 == z0Var2.d0.size()) {
+                    rect.bottom = z0Var2.p0;
                     break;
                 }
                 break;

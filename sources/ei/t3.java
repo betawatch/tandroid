@@ -20,17 +20,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.dk;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.ok;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -47,17 +46,17 @@ public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ Object w;
     public final /* synthetic */ Object x;
 
-    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.g3 g3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, f6 f6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, e6 e6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
         this.n = dVar;
         this.d = tLObject;
         this.b = i10;
         this.f = j3;
-        this.r = g3Var;
+        this.r = f3Var;
         this.s = starrefprogram;
         this.h = j10;
         this.e = z10;
         this.v = context;
-        this.w = f6Var;
+        this.w = e6Var;
         this.x = user;
         this.c = tL_error;
     }
@@ -68,7 +67,7 @@ public final /* synthetic */ class t3 implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
     
-        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.br(r13, (org.telegram.ui.Components.t00) r2, r1, r12));
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.zq(r13, (org.telegram.ui.Components.t00) r2, r1, r12));
      */
     /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
     
@@ -84,7 +83,7 @@ public final /* synthetic */ class t3 implements Runnable {
     */
     public final void run() {
         TL_payments.connectedBotStarRef connectedbotstarref;
-        org.telegram.ui.ActionBar.o2 U;
+        org.telegram.ui.ActionBar.n2 U;
         int i10;
         ArrayList arrayList;
         int i11 = this.a;
@@ -100,15 +99,15 @@ public final /* synthetic */ class t3 implements Runnable {
         Object obj6 = this.n;
         switch (i11) {
             case 0:
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) obj5;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
-                f6 f6Var = (f6) obj2;
+                e6 e6Var = (e6) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
                 ((ci.d) obj6).setLoading(false);
                 if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
                     if (tL_error != null) {
-                        p6.q(g3Var.topBulletinContainer, f6Var, tL_error, false);
+                        org.telegram.ui.Cells.c1.p(f3Var.topBulletinContainer, e6Var, tL_error, false);
                         break;
                     }
                 } else {
@@ -135,7 +134,7 @@ public final /* synthetic */ class t3 implements Runnable {
                     d.h = false;
                     NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
                     d.a();
-                    g3Var.dismiss();
+                    f3Var.dismiss();
                     int i14 = 0;
                     while (true) {
                         if (i14 < connectedstarrefbots.connected_bots.size()) {
@@ -166,7 +165,7 @@ public final /* synthetic */ class t3 implements Runnable {
                                 }
                             }
                         }
-                        new vc(e4.H0(context, i12, connectedbotstarref, j10, f6Var).topBulletinContainer, f6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
+                        new xc(e4.H0(context, i12, connectedbotstarref, j10, e6Var).topBulletinContainer, e6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
@@ -191,7 +190,7 @@ public final /* synthetic */ class t3 implements Runnable {
                     if (tL_error == null) {
                         dk dkVar = okVar.r;
                         d7Var.e(false, true);
-                        c90 c90Var = d7Var.e;
+                        l90 l90Var = d7Var.e;
                         vh.o oVar = d7Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         nkVar.G = messages_messages.next_rate;
@@ -233,12 +232,12 @@ public final /* synthetic */ class t3 implements Runnable {
                         if (arrayList9.isEmpty()) {
                             if (TextUtils.isEmpty(nkVar.K) && this.f == 0 && j3 == 0) {
                                 oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
-                                c90Var.setVisibility(0);
-                                c90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                                l90Var.setVisibility(0);
+                                l90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
                             } else {
                                 oVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                                c90Var.setVisibility(0);
-                                c90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                                l90Var.setVisibility(0);
+                                l90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
                         if (!z10) {
@@ -286,10 +285,10 @@ public final /* synthetic */ class t3 implements Runnable {
                         }
                     } else {
                         vh.o oVar2 = d7Var.d;
-                        c90 c90Var2 = d7Var.e;
+                        l90 l90Var2 = d7Var.e;
                         oVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
-                        c90Var2.setVisibility(0);
-                        c90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        l90Var2.setVisibility(0);
+                        l90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         d7Var.e(false, true);
                         break;
                     }

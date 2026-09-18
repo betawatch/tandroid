@@ -1,45 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class eo0 extends b8 {
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ Object F;
-    public final /* synthetic */ int y;
+public final class eo0 extends gg.i0 {
+    public final /* synthetic */ org.telegram.ui.uy I0;
+    public final /* synthetic */ Context J0;
+    public final /* synthetic */ org.telegram.ui.ey K0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eo0(Object obj, Context context, Context context2, int i10) {
-        super(context);
-        this.y = i10;
-        this.F = obj;
-        this.E = context2;
+    public eo0(org.telegram.ui.ey eyVar, Context context, org.telegram.ui.uy uyVar, int i10, int i11, s4.j jVar, boolean z10, org.telegram.ui.uy uyVar2, Context context2) {
+        super(context, uyVar, i10, i11, jVar, z10);
+        this.K0 = eyVar;
+        this.I0 = uyVar2;
+        this.J0 = context2;
     }
 
-    @Override // org.telegram.ui.Components.b8
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                r90 r90Var = new r90(this.E);
-                r90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Si, ((go0) this.F).M));
-                r90Var.setTextSize(1, 12.0f);
-                r90Var.setEllipsize(TextUtils.TruncateAt.END);
-                r90Var.setSingleLine(true);
-                r90Var.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
-                return r90Var;
-            default:
-                TextView textView = new TextView(this.E);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Pi, ((ProfileActivity) this.F).z0));
-                textView.setTextSize(0, AndroidUtilities.dp(13.5f));
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setGravity(3);
-                return textView;
+    @Override // s4.h0
+    public final void l() {
+        ai.w0 w0Var;
+        int i10 = this.B0;
+        super.l();
+        org.telegram.ui.ey eyVar = this.K0;
+        if (!eyVar.J0 && (w0Var = eyVar.W) != null) {
+            w0Var.v0(0);
+            eyVar.J0 = true;
         }
+        if (h() != 0 || i10 == 0 || this.D0 > 0) {
+            return;
+        }
+        eyVar.a0.e(false, false);
     }
 }

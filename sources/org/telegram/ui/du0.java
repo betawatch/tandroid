@@ -1,104 +1,61 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class du0 extends qu0 {
-    public final /* synthetic */ int p0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate q0;
+public final class du0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.rm0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ du0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, tu0 tu0Var, FrameLayout frameLayout, int i10) {
-        super(context, tu0Var, frameLayout);
-        this.p0 = i10;
-        this.q0 = notificationCenterDelegate;
+    public /* synthetic */ du0(org.telegram.ui.Components.rm0 rm0Var, int i10) {
+        this.a = i10;
+        this.b = rm0Var;
     }
 
-    @Override // org.telegram.ui.qu0
-    public boolean C() {
-        switch (this.p0) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                return !((PhotoViewer) this.q0).s;
-            default:
-                return super.C();
-        }
-    }
-
-    @Override // org.telegram.ui.qu0
-    public void D() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.J && getScrollY() <= 0) {
-                    AndroidUtilities.runOnUIThread(secretMediaViewer.r1, 3000L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.qu0
-    public void F() {
-        switch (this.p0) {
-            case 1:
-                AndroidUtilities.cancelRunOnUIThread(((SecretMediaViewer) this.q0).r1);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.qu0
-    public void G() {
-        switch (this.p0) {
-            case 1:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.q0;
-                if (secretMediaViewer.K0 == null) {
-                    secretMediaViewer.k(((float) getScrollY()) < ((float) getMeasuredHeight()) / 3.0f && secretMediaViewer.k0, true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.p0) {
-            case 0:
-                super.invalidate();
-                PhotoViewer photoViewer = (PhotoViewer) this.q0;
-                bv0[] bv0VarArr = photoViewer.W0;
-                ImageView[] imageViewArr = photoViewer.y3;
-                if (photoViewer.J) {
-                    int scrollY = getScrollY();
-                    float translationY = photoViewer.Q1.getTranslationY();
-                    boolean z10 = scrollY == 0 && translationY == 0.0f;
-                    boolean z11 = scrollY == 0 && translationY == 0.0f;
-                    if (!z10) {
-                        int b10 = bv0VarArr[0].b() + bv0VarArr[0].j;
-                        int top = (((photoViewer.Z1.getTop() + ((int) translationY)) - scrollY) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (C() ? AndroidUtilities.statusBarHeight : 0))) - AndroidUtilities.dp(12.0f);
-                        boolean z12 = top > AndroidUtilities.dp(32.0f) + ((int) imageViewArr[0].getY());
-                        z10 = top > b10;
-                        z11 = z12;
-                    }
-                    if (photoViewer.z3) {
-                        if (imageViewArr[0].getTag() != null && ((Integer) imageViewArr[0].getTag()).intValue() == 3 && z11) {
-                            imageViewArr[0].setTag(2);
-                            imageViewArr[0].animate().alpha(1.0f).setDuration(150L).setListener(new er0(this, 4)).start();
-                        } else if (imageViewArr[0].getTag() == null && !z11) {
-                            imageViewArr[0].setTag(3);
-                            imageViewArr[0].animate().alpha(0.0f).setListener(null).setDuration(150L).start();
-                        }
-                    }
-                    bv0VarArr[0].e(2, z10 ? 1.0f : 0.0f, true);
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.Q1.getNextView().setText((CharSequence) null);
+                bu0 bu0Var = photoViewer.T1;
+                bu0Var.l0 = false;
+                if (bu0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) bu0Var.o0.getLayoutParams()).topMargin = bu0Var.m0;
+                    bu0Var.m0 = -1;
+                    bu0Var.requestLayout();
                     break;
                 }
                 break;
             default:
-                super.invalidate();
+                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                bu0 bu0Var = ((PhotoViewer) this.b.b).T1;
+                Method method = bu0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(bu0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Size;
 import android.widget.TextView;
 import ci.uc;
 import java.lang.ref.WeakReference;
@@ -13,13 +14,18 @@ import m.v0;
 import m.w0;
 import r0.i0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a0 {
     public int a;
     public int b;
-    public Object c = new long[10];
-    public Object d = new Object[10];
+    public Object c;
+    public Object d;
+
+    public a0() {
+        this.c = new long[10];
+        this.d = new Object[10];
+    }
 
     public synchronized void a(Object obj, long j3) {
         if (this.b > 0) {
@@ -116,5 +122,12 @@ public final class a0 {
 
     public synchronized int i() {
         return this.b;
+    }
+
+    public a0(Size size, Size size2, int i10, int i11) {
+        this.c = size;
+        this.d = size2;
+        this.a = i10;
+        this.b = i11;
     }
 }

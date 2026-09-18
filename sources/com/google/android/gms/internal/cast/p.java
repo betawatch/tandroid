@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class p implements Runnable {
         a5.a aVar = (a5.a) this.c;
         v7.j6 j6Var = (v7.j6) this.d;
         String str2 = (String) this.e;
-        ni.f fVar = (ni.f) aVar.c;
+        oi.f fVar = (oi.f) aVar.c;
         fVar.b = j6Var;
         e8 e8Var = (e8) fVar.a;
         if (e8Var != null) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class p implements Runnable {
         synchronized (y8.class) {
             j9Var = y8.j;
             if (j9Var == null) {
-                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -153,7 +153,7 @@ public final /* synthetic */ class p implements Runnable {
         synchronized (fa.class) {
             sVar = fa.k;
             if (sVar == null) {
-                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -310,33 +310,33 @@ public final /* synthetic */ class p implements Runnable {
                 c0Var.postDelayed(tVar, 10000L);
                 return;
             case 1:
-                l.e eVar = (l.e) ((k2.u) this.e).b;
-                l.m mVar2 = (l.m) this.c;
-                l.d dVar = (l.d) this.b;
-                if (dVar != null) {
-                    eVar.P = true;
-                    dVar.b.c(false);
-                    eVar.P = false;
+                l.f fVar = (l.f) ((l.d) this.e).a;
+                l.n nVar2 = (l.n) this.c;
+                l.e eVar = (l.e) this.b;
+                if (eVar != null) {
+                    fVar.P = true;
+                    eVar.b.c(false);
+                    fVar.P = false;
                 }
-                if (mVar2.isEnabled() && mVar2.hasSubMenu()) {
-                    ((l.k) this.d).q(mVar2, null, 4);
+                if (nVar2.isEnabled() && nVar2.hasSubMenu()) {
+                    ((l.l) this.d).q(nVar2, null, 4);
                     return;
                 }
                 return;
             case 2:
-                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((ka.c) this.b).c0((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((k2.c0) this.b).n((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((ka.c) this.b).c0((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
-                r0.q0.h((View) this.b, (r0.v0) this.c, (o0.a) this.d);
+                r0.q0.h((View) this.b, (r0.w0) this.c, (o0.a) this.d);
                 ((ValueAnimator) this.e).start();
                 return;
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((p2.b) this.d);
+                    handler.removeCallbacks((org.telegram.ui.web.p1) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((rf.b) this.c).a(false);
                         return;
@@ -374,7 +374,7 @@ public final /* synthetic */ class p implements Runnable {
                 synchronized (wf.class) {
                     mVar = wf.k;
                     if (mVar == null) {
-                        n0.c a11 = w7.z.a(Resources.getSystem().getConfiguration());
+                        n0.c a11 = w7.a0.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i15 = 0;
                         while (i12 < a11.a.size()) {
@@ -429,10 +429,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        p2.b bVar2 = new p2.b(16, this, bVar);
-        this.d = bVar2;
+        org.telegram.ui.web.p1 p1Var = new org.telegram.ui.web.p1(20, this, bVar);
+        this.d = p1Var;
         if (j3 > 0) {
-            handler.postDelayed(bVar2, j3);
+            handler.postDelayed(p1Var, j3);
         }
     }
 }

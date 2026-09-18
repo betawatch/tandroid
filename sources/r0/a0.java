@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -19,13 +19,13 @@ public abstract class a0 {
         }
     }
 
-    public static l1 b(View view, l1 l1Var, Rect rect) {
-        WindowInsets g10 = l1Var.g();
+    public static m1 b(View view, m1 m1Var, Rect rect) {
+        WindowInsets g10 = m1Var.g();
         if (g10 != null) {
-            return l1.h(view, view.computeSystemWindowInsets(g10, rect));
+            return m1.h(view, view.computeSystemWindowInsets(g10, rect));
         }
         rect.setEmpty();
-        return l1Var;
+        return m1Var;
     }
 
     public static ColorStateList c(View view) {
@@ -40,19 +40,19 @@ public abstract class a0 {
         return view.getElevation();
     }
 
-    public static l1 f(View view) {
-        if (w0.d && view.isAttachedToWindow()) {
+    public static m1 f(View view) {
+        if (x0.d && view.isAttachedToWindow()) {
             try {
-                Object obj = w0.a.get(view.getRootView());
+                Object obj = x0.a.get(view.getRootView());
                 if (obj != null) {
-                    Rect rect = (Rect) w0.b.get(obj);
-                    Rect rect2 = (Rect) w0.c.get(obj);
+                    Rect rect = (Rect) x0.b.get(obj);
+                    Rect rect2 = (Rect) x0.c.get(obj);
                     if (rect != null && rect2 != null) {
                         int i10 = Build.VERSION.SDK_INT;
-                        b1 a1Var = i10 >= 34 ? new a1() : i10 >= 30 ? new z0() : i10 >= 29 ? new y0() : new x0();
-                        a1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
-                        a1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
-                        l1 b10 = a1Var.b();
+                        c1 b1Var = i10 >= 34 ? new b1() : i10 >= 30 ? new a1() : i10 >= 29 ? new z0() : new y0();
+                        b1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
+                        b1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
+                        m1 b10 = b1Var.b();
                         b10.a.r(b10);
                         b10.a.d(view.getRootView());
                         return b10;

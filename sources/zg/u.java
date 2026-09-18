@@ -1,18 +1,18 @@
 package zg;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bc0;
-import yh.w3;
+import org.telegram.ui.Components.kc0;
+import yh.u3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c0 b;
+    public final /* synthetic */ b0 b;
 
-    public /* synthetic */ u(c0 c0Var, int i10) {
+    public /* synthetic */ u(b0 b0Var, int i10) {
         this.a = i10;
-        this.b = c0Var;
+        this.b = b0Var;
     }
 
     @Override // java.lang.Runnable
@@ -22,20 +22,20 @@ public final /* synthetic */ class u implements Runnable {
                 this.b.a.invalidate();
                 break;
             default:
-                c0 c0Var = this.b;
-                w3 w3Var = c0Var.c;
-                if (w3Var.getParent() != null) {
-                    if (c0Var.d) {
-                        AndroidUtilities.removeFromParent(w3Var);
+                b0 b0Var = this.b;
+                u3 u3Var = b0Var.c;
+                if (u3Var.getParent() != null) {
+                    if (b0Var.d) {
+                        AndroidUtilities.removeFromParent(u3Var);
                     } else {
                         try {
-                            c0Var.b.removeView(w3Var);
+                            b0Var.b.removeView(u3Var);
                         } catch (Exception unused) {
                         }
                     }
-                    bc0 bc0Var = c0Var.p;
-                    if (bc0Var != null) {
-                        bc0Var.run();
+                    kc0 kc0Var = b0Var.p;
+                    if (kc0Var != null) {
+                        kc0Var.run();
                         break;
                     }
                 }

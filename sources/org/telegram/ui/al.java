@@ -1,15 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class al extends org.telegram.ui.Components.n41 {
-    public final /* synthetic */ bo s;
+public final class al implements LayoutTransition.TransitionListener {
+    public g6 a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ zn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(bo boVar, Activity activity, bo boVar2, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, f6Var, boVar2);
-        this.s = boVar;
+    public al(zn znVar, org.telegram.ui.ActionBar.z zVar) {
+        this.d = znVar;
+        this.c = zVar;
+    }
+
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
+            return;
+        }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new g6(this, 1);
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

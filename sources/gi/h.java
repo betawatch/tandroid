@@ -17,24 +17,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.z5;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.u9;
-import w7.x5;
-import yf.f0;
+import org.telegram.ui.Components.w9;
+import w7.y5;
+import yf.g0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class h extends FrameLayout implements a6 {
+public final class h extends FrameLayout implements z5 {
     public static final /* synthetic */ int F = 0;
     public long E;
-    public final f6 a;
+    public final e6 a;
     public final int b;
-    public final u9 c;
+    public final w9 c;
     public final TextView d;
-    public final u9 e;
+    public final w9 e;
     public final TextView f;
     public final TextView h;
     public final TextView n;
@@ -45,15 +45,15 @@ public final class h extends FrameLayout implements a6 {
     public e x;
     public long y;
 
-    public h(Context context, int i10, f6 f6Var) {
+    public h(Context context, int i10, e6 e6Var) {
         super(context);
         ah.c cVar;
-        this.a = f6Var;
+        this.a = e6Var;
         this.b = i10;
         if (Build.VERSION.SDK_INT >= 31) {
             fh.d dVar = new fh.d(null);
             this.s = dVar;
-            dVar.h(AndroidUtilities.dp(7.0f), f0.a());
+            dVar.i(AndroidUtilities.dp(7.0f), g0.a());
             dVar.h = true;
             cVar = new ah.c(dVar);
         } else {
@@ -63,10 +63,10 @@ public final class h extends FrameLayout implements a6 {
             cVar = new ah.c(cVar2);
         }
         FrameLayout frameLayout = new FrameLayout(context);
-        u9 u9Var = new u9(context);
-        this.c = u9Var;
-        u9Var.setRoundRadius(AndroidUtilities.dp(52.0f) / 2);
-        addView(u9Var, x5.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
+        w9 w9Var = new w9(context);
+        this.c = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(52.0f) / 2);
+        addView(w9Var, y5.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
         oq oqVar = new oq(R.drawable.mini_user_channels_10, 0);
         this.r = oqVar;
         oqVar.setTranslateX(AndroidUtilities.dp(2.0f));
@@ -78,10 +78,10 @@ public final class h extends FrameLayout implements a6 {
         textView.setTextColor(-1);
         textView.setGravity(17);
         textView.setPadding(AndroidUtilities.dp(1.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        frameLayout.addView(textView, x5.e(-2, -1, 81));
-        addView(frameLayout, x5.s(52, 48, 11, 48, 0, 14.33f, 0));
+        frameLayout.addView(textView, y5.e(-2, -1, 81));
+        addView(frameLayout, y5.s(52, 48, 11, 48, 0, 14.33f, 0));
         ch.d c10 = cVar.c(textView, null, false);
-        dh.e eVar = new dh.e(f6Var);
+        dh.e eVar = new dh.e(e6Var);
         eVar.e = new d2.c(8);
         eVar.f(1627389951, 1358954495);
         eVar.e(603979776, 603979776);
@@ -106,12 +106,12 @@ public final class h extends FrameLayout implements a6 {
         textView2.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, x5.k(0.0f, 10.0f, 0.0f, 1.33f, -1, -2));
-        u9 u9Var2 = new u9(context);
-        this.e = u9Var2;
-        u9Var2.setRoundRadius(AndroidUtilities.dp(8.0f));
+        linearLayout.addView(textView2, y5.k(0.0f, 10.0f, 0.0f, 1.33f, -1, -2));
+        w9 w9Var2 = new w9(context);
+        this.e = w9Var2;
+        w9Var2.setRoundRadius(AndroidUtilities.dp(8.0f));
         final int i11 = 0;
-        u9Var2.setOnClickListener(new View.OnClickListener(this) { // from class: gi.d
+        w9Var2.setOnClickListener(new View.OnClickListener(this) { // from class: gi.d
             public final /* synthetic */ h b;
 
             {
@@ -128,7 +128,7 @@ public final class h extends FrameLayout implements a6 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.a(j3);
+                                s0Var.e(j3);
                                 break;
                             }
                         }
@@ -140,7 +140,7 @@ public final class h extends FrameLayout implements a6 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.a(j10);
+                                s0Var2.e(j10);
                                 break;
                             }
                         }
@@ -164,7 +164,7 @@ public final class h extends FrameLayout implements a6 {
                 }
             }
         });
-        addView(u9Var2, x5.d(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
+        addView(w9Var2, y5.d(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.h = textView3;
         textView3.setTextSize(1, 13.0f);
@@ -188,7 +188,7 @@ public final class h extends FrameLayout implements a6 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.a(j3);
+                                s0Var.e(j3);
                                 break;
                             }
                         }
@@ -200,7 +200,7 @@ public final class h extends FrameLayout implements a6 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.a(j10);
+                                s0Var2.e(j10);
                                 break;
                             }
                         }
@@ -224,10 +224,10 @@ public final class h extends FrameLayout implements a6 {
                 }
             }
         });
-        TextView h = e2.h(linearLayout, textView3, x5.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
+        TextView h = e2.h(linearLayout, textView3, y5.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
         this.n = h;
         h.setTextSize(1, 13.0f);
-        h.setBackground(j6.b0(AndroidUtilities.dp(12.0f), j6.l1(0.14f, j6.v0(j6.D6, f6Var))));
+        h.setBackground(j6.b0(AndroidUtilities.dp(12.0f), j6.l1(0.14f, j6.v0(j6.D6, e6Var))));
         h.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.66f));
         h.setSingleLine(true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -236,16 +236,16 @@ public final class h extends FrameLayout implements a6 {
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.CommunityPendingRequestOnlyVisibleToMembers));
         h.setText(spannableStringBuilder);
         h.setVisibility(8);
-        linearLayout.addView(h, x5.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
+        linearLayout.addView(h, y5.k(0.0f, 7.0f, 0.0f, 1.33f, -2, -2));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setClipChildren(false);
-        ci.d dVar2 = new ci.d(context, f6Var, true);
+        ci.d dVar2 = new ci.d(context, e6Var, true);
         dVar2.setUseWrapContent(true);
         dVar2.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
         dVar2.e();
         dVar2.d();
-        dVar2.setColor(j6.l1(0.14f, j6.v0(j6.z6, f6Var)));
+        dVar2.setColor(j6.l1(0.14f, j6.v0(j6.z6, e6Var)));
         dVar2.setTextColor(j6.w0(null, j6.G6, false));
         dVar2.g(LocaleController.getString(R.string.Decline), false, true);
         final int i13 = 2;
@@ -266,7 +266,7 @@ public final class h extends FrameLayout implements a6 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.a(j3);
+                                s0Var.e(j3);
                                 break;
                             }
                         }
@@ -278,7 +278,7 @@ public final class h extends FrameLayout implements a6 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.a(j10);
+                                s0Var2.e(j10);
                                 break;
                             }
                         }
@@ -302,8 +302,8 @@ public final class h extends FrameLayout implements a6 {
                 }
             }
         });
-        linearLayout2.addView(dVar2, x5.p(-2, 30, 0.0f, 16, 0, 0, 4, 0));
-        ci.d dVar3 = new ci.d(context, f6Var, true);
+        linearLayout2.addView(dVar2, y5.p(-2, 30, 0.0f, 16, 0, 0, 4, 0));
+        ci.d dVar3 = new ci.d(context, e6Var, true);
         dVar3.setUseWrapContent(true);
         dVar3.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
         dVar3.e();
@@ -326,7 +326,7 @@ public final class h extends FrameLayout implements a6 {
                             long j3 = hVar.E;
                             s0 s0Var = ((t0) eVar2).h;
                             if (s0Var != null) {
-                                s0Var.a(j3);
+                                s0Var.e(j3);
                                 break;
                             }
                         }
@@ -338,7 +338,7 @@ public final class h extends FrameLayout implements a6 {
                             long j10 = hVar2.E;
                             s0 s0Var2 = ((t0) eVar3).h;
                             if (s0Var2 != null) {
-                                s0Var2.a(j10);
+                                s0Var2.e(j10);
                                 break;
                             }
                         }
@@ -362,9 +362,9 @@ public final class h extends FrameLayout implements a6 {
                 }
             }
         });
-        linearLayout2.addView(dVar3, x5.p(-2, 30, 0.0f, 16, 4, 0, 0, 0));
-        linearLayout.addView(linearLayout2, x5.t(-1, -2, 0, 0, 10, 0, 0));
-        addView(linearLayout, x5.d(-1, -2.0f, 48, 75.0f, 0.0f, 0.0f, 13.0f));
+        linearLayout2.addView(dVar3, y5.p(-2, 30, 0.0f, 16, 4, 0, 0, 0));
+        linearLayout.addView(linearLayout2, y5.t(-1, -2, 0, 0, 10, 0, 0));
+        addView(linearLayout, y5.d(-1, -2.0f, 48, 75.0f, 0.0f, 0.0f, 13.0f));
         e();
     }
 
@@ -383,11 +383,11 @@ public final class h extends FrameLayout implements a6 {
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
         fh.d dVar;
-        u9 u9Var;
-        if (Build.VERSION.SDK_INT >= 31 && (dVar = this.s) != null && view == (u9Var = this.c)) {
+        w9 w9Var;
+        if (Build.VERSION.SDK_INT >= 31 && (dVar = this.s) != null && view == (w9Var = this.c)) {
             int dp = AndroidUtilities.dp(9.0f);
-            int left = u9Var.getLeft() - dp;
-            int top = u9Var.getTop() - dp;
+            int left = w9Var.getLeft() - dp;
+            int top = w9Var.getTop() - dp;
             int dp2 = (dp * 2) + AndroidUtilities.dp(52.0f);
             RecordingCanvas a2 = dVar.a(dp2, dp2);
             a2.translate(-left, -top);
@@ -398,19 +398,19 @@ public final class h extends FrameLayout implements a6 {
             super.drawChild(a2, view, j3);
             a2.restore();
             a2.drawColor(TLObject.FLAG_29);
-            dVar.b();
+            dVar.c();
         }
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.G6;
-        f6 f6Var = this.a;
-        this.f.setTextColor(j6.v0(i10, f6Var));
+        e6 e6Var = this.a;
+        this.f.setTextColor(j6.v0(i10, e6Var));
         int i11 = j6.z6;
-        this.h.setTextColor(j6.v0(i11, f6Var));
-        this.n.setTextColor(j6.v0(i11, f6Var));
+        this.h.setTextColor(j6.v0(i11, e6Var));
+        this.n.setTextColor(j6.v0(i11, e6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

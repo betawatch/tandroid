@@ -1,13 +1,148 @@
 package zg;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Paint;
+import android.os.Build;
+import android.text.InputFilter;
+import android.text.SpannableStringBuilder;
+import android.view.ActionMode;
 import android.view.GestureDetector;
+import android.view.Menu;
 import android.view.MotionEvent;
+import ii.v5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.bu;
+import yh.x7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class d0 extends GestureDetector.SimpleOnGestureListener {
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
-    public final boolean onDoubleTap(MotionEvent motionEvent) {
-        return true;
+public abstract class d0 extends bu {
+    public final e6 c;
+    public final n2.e d;
+    public Runnable e;
+    public int f;
+
+    public d0(Context context, int i10, e6 e6Var) {
+        super(context, e6Var);
+        this.c = e6Var;
+        this.d = new n2.e(getContext(), new c0());
+        setBackground(null);
+        setIncludeFontPadding(true);
+        int i11 = Build.VERSION.SDK_INT;
+        setShowSoftInputOnFocus(false);
+        setSingleLine(false);
+        setMaxLines(50);
+        this.f = i10;
+        setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
+        setTextSize(1, 22.0f);
+        setGravity(80);
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(12.0f));
+        setTextColor(j6.v0(j6.Ud, e6Var));
+        setLinkTextColor(j6.v0(j6.hc, e6Var));
+        setHighlightColor(j6.v0(j6.uf, e6Var));
+        int i12 = j6.Vd;
+        setHintColor(j6.v0(i12, e6Var));
+        setHintTextColor(j6.v0(i12, e6Var));
+        setCursorColor(j6.v0(j6.Wd, e6Var));
+        setHandlesColor(j6.v0(j6.vf, e6Var));
+        if (i11 >= 28) {
+            setFallbackLineSpacing(false);
+        }
+        setOnFocusChangeListener(new v5((o) this, 7));
+        setTextIsSelectable(true);
+        setLongClickable(false);
+        setFocusableInTouchMode(false);
+    }
+
+    @Override // org.telegram.ui.Components.du, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (!((GestureDetector) this.d.b).onTouchEvent(motionEvent) || isLongClickable()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void extendActionMode(ActionMode actionMode, Menu menu) {
+        menu.clear();
+        int i10 = R.id.menu_delete;
+        menu.add(i10, i10, 0, LocaleController.getString(R.string.Delete));
+    }
+
+    public int getEditTextSelectionEnd() {
+        int selectionEnd = getSelectionEnd();
+        if (selectionEnd < 0) {
+            return 0;
+        }
+        return selectionEnd;
+    }
+
+    public int getEditTextSelectionStart() {
+        int selectionStart = getSelectionStart();
+        if (selectionStart < 0) {
+            return 0;
+        }
+        return selectionStart;
+    }
+
+    public Paint.FontMetricsInt getFontMetricsInt() {
+        return getPaint().getFontMetricsInt();
+    }
+
+    public final void m() {
+        setLongClickable(false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
+            b bVar = new b(this.c);
+            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 255);
+            ofInt.addUpdateListener(new a(bVar, this, 0));
+            ofInt.setDuration(200L);
+            ofInt.start();
+            spannableStringBuilder2.setSpan(bVar, 0, spannableStringBuilder2.length(), 33);
+            setText(getText().append((CharSequence) spannableStringBuilder2));
+        }
+    }
+
+    public final void n(boolean z10) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
+        for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
+            x7 x7Var = new x7(5, this, bVar);
+            if (z10) {
+                setCursorVisible(false);
+                ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
+                ofInt.addUpdateListener(new a(bVar, this, 1));
+                ofInt.addListener(new pg.d0(x7Var, 12));
+                ofInt.setDuration(200L);
+                ofInt.start();
+            } else {
+                x7Var.run();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.du, android.widget.TextView
+    public final void onSelectionChanged(int i10, int i11) {
+        super.onSelectionChanged(i10, i11);
+        if (!hasSelection() || ((b[]) getText().getSpans(i10, i11, b.class)).length == 0) {
+            return;
+        }
+        setSelection(i10, i11 - 1);
+    }
+
+    public void setMaxLength(int i10) {
+        if (this.f != i10) {
+            this.f = i10;
+            setFilters(new InputFilter[]{new InputFilter.LengthFilter(i10)});
+        }
+    }
+
+    public void setOnFocused(Runnable runnable) {
+        this.e = runnable;
     }
 }

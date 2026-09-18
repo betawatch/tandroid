@@ -4,34 +4,34 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.qa;
-import org.telegram.ui.mx0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.kx0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class v0 implements z4.e {
-    public final /* synthetic */ qa a;
+    public final /* synthetic */ sa a;
     public final /* synthetic */ x0 b;
 
-    public v0(x0 x0Var, qa qaVar) {
+    public v0(x0 x0Var, sa saVar) {
         this.b = x0Var;
-        this.a = qaVar;
+        this.a = saVar;
     }
 
     @Override // z4.e
     public final void a(int i10) {
         x0 x0Var = this.b;
         ArrayList arrayList = x0Var.d;
-        if (((mx0) arrayList.get(i10)).a == 0) {
+        if (((kx0) arrayList.get(i10)).a == 0) {
             x0Var.N.setTitle(LocaleController.getString(R.string.DoubledLimits));
             x0Var.N.requestLayout();
-        } else if (((mx0) arrayList.get(i10)).a == 14) {
+        } else if (((kx0) arrayList.get(i10)).a == 14) {
             x0Var.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
             x0Var.N.requestLayout();
-        } else if (((mx0) arrayList.get(i10)).a == 40) {
+        } else if (((kx0) arrayList.get(i10)).a == 40) {
             x0Var.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
             x0Var.N.requestLayout();
-        } else if (((mx0) arrayList.get(i10)).a == 28) {
+        } else if (((kx0) arrayList.get(i10)).a == 28) {
             x0Var.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
             x0Var.N.requestLayout();
         }
@@ -40,10 +40,10 @@ public final class v0 implements z4.e {
 
     @Override // z4.e
     public final void b(float f7, int i10, int i11) {
-        qa qaVar = this.a;
-        qaVar.b = f7;
-        qaVar.c = i10;
-        qaVar.invalidate();
+        sa saVar = this.a;
+        saVar.b = f7;
+        saVar.c = i10;
+        saVar.invalidate();
         x0 x0Var = this.b;
         x0Var.G = i10;
         x0Var.H = i11 > 0 ? i10 + 1 : i10 - 1;
@@ -85,9 +85,9 @@ public final class v0 implements z4.e {
             i12++;
         }
         int i14 = x0Var.G;
-        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((mx0) arrayList.get(x0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((kx0) arrayList.get(x0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
         int i15 = x0Var.H;
-        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((mx0) arrayList.get(x0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((kx0) arrayList.get(x0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
         if (z10 && z11) {
             x0Var.f = 1.0f;
             float f10 = x0Var.I;

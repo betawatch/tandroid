@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class e0 extends androidx.fragment.app.p {
     public final Handler A0 = new Handler(Looper.getMainLooper());
@@ -129,7 +129,7 @@ public class e0 extends androidx.fragment.app.p {
         super.z(bundle);
         androidx.fragment.app.v k10 = k();
         if (k10 != null) {
-            x xVar = (x) new aa.a(k10).m(x.class);
+            x xVar = (x) new aa.a(k10).l(x.class);
             this.C0 = xVar;
             if (xVar.z == null) {
                 xVar.z = new androidx.lifecycle.z();

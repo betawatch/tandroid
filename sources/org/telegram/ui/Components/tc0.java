@@ -1,116 +1,103 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewConfiguration;
-import org.telegram.messenger.EmojiData;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class tc0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public int c;
-    public final /* synthetic */ Object d;
+public final class tc0 extends Drawable {
+    public final Drawable a;
+    public final Paint b;
+    public final Paint c;
+    public final e6 d;
+    public boolean e;
 
-    public tc0(org.telegram.ui.iz izVar, int i10, int i11) {
-        this.d = izVar;
-        this.b = i10;
-        this.c = i11;
+    public tc0(Context context) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.d = new e6(new kc0(this, 2), 200L, qr.g, 0);
+        this.a = context.getResources().getDrawable(R.drawable.filled_sound_on).mutate();
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.566f));
+        paint.setColor(-1);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Join join = Paint.Join.ROUND;
+        paint.setStrokeJoin(join);
+        paint2.setStyle(style);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(4.5f));
+        paint2.setColor(-65536);
+        paint2.setStrokeCap(cap);
+        paint2.setStrokeJoin(join);
     }
 
-    public void a() {
-        this.c = 0;
-        this.b = 0;
-        uc0 uc0Var = (uc0) this.d;
-        uc0Var.removeCallbacks(this);
-        if (uc0Var.n0) {
-            uc0Var.n0 = false;
-            uc0Var.invalidate(0, uc0Var.m0, uc0Var.getRight(), uc0Var.getBottom());
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
+        Drawable drawable = this.a;
+        drawable.setBounds(bounds);
+        drawable.draw(canvas);
+        float e = this.d.e(this.e);
+        if (e > 0.0f) {
+            float dpf2 = AndroidUtilities.dpf2(0.783f);
+            float centerX = (bounds.centerX() - AndroidUtilities.dp(9.0f)) + dpf2;
+            float centerY = (bounds.centerY() - AndroidUtilities.dp(9.0f)) + dpf2;
+            float dp = (AndroidUtilities.dp(9.0f) + bounds.centerX()) - dpf2;
+            float dp2 = (AndroidUtilities.dp(9.0f) + bounds.centerY()) - dpf2;
+            if (this.e) {
+                centerX = AndroidUtilities.lerp(dp, centerX, e);
+                centerY = AndroidUtilities.lerp(dp2, centerY, e);
+            } else {
+                dp = AndroidUtilities.lerp(centerX, dp, e);
+                dp2 = AndroidUtilities.lerp(centerY, dp2, e);
+            }
+            float f7 = dp2;
+            float f10 = centerX;
+            float f11 = centerY;
+            float f12 = dp;
+            canvas.drawLine(f10, f11, f12, f7, this.c);
+            int min = (int) (Math.min(1.0f, e * 10.0f) * 255.0f);
+            Paint paint = this.b;
+            paint.setAlpha(min);
+            canvas.drawLine(f10, f11, f12, f7, paint);
         }
-        uc0Var.o0 = false;
+        canvas.restore();
     }
 
-    /* JADX WARN: Type inference failed for: r1v15, types: [boolean, byte] */
-    /* JADX WARN: Type inference failed for: r1v8, types: [boolean, byte] */
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Cells.t1 t1Var;
-        org.telegram.ui.bo boVar;
-        switch (this.a) {
-            case 0:
-                uc0 uc0Var = (uc0) this.d;
-                int i10 = this.c;
-                if (i10 == 1) {
-                    int i11 = this.b;
-                    if (i11 == 1) {
-                        uc0Var.n0 = true;
-                        uc0Var.invalidate(0, uc0Var.m0, uc0Var.getRight(), uc0Var.getBottom());
-                        break;
-                    } else if (i11 == 2) {
-                        uc0Var.o0 = true;
-                        uc0Var.invalidate(0, 0, uc0Var.getRight(), uc0Var.l0);
-                        break;
-                    }
-                } else if (i10 == 2) {
-                    int i12 = this.b;
-                    if (i12 == 1) {
-                        if (!uc0Var.n0) {
-                            uc0Var.postDelayed(this, ViewConfiguration.getPressedStateDuration());
-                        }
-                        uc0Var.n0 = (byte) (!uc0Var.n0 ? 1 : 0);
-                        uc0Var.invalidate(0, uc0Var.m0, uc0Var.getRight(), uc0Var.getBottom());
-                        break;
-                    } else if (i12 == 2) {
-                        if (!uc0Var.o0) {
-                            uc0Var.postDelayed(this, ViewConfiguration.getPressedStateDuration());
-                        }
-                        uc0Var.o0 = (byte) (!uc0Var.o0 ? 1 : 0);
-                        uc0Var.invalidate(0, 0, uc0Var.getRight(), uc0Var.l0);
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.iz izVar = (org.telegram.ui.iz) this.d;
-                int i13 = this.b;
-                int i14 = this.c;
-                ml0 ml0Var = izVar.H;
-                if (izVar.n) {
-                    int i15 = 0;
-                    while (true) {
-                        if (i15 < ml0Var.getChildCount()) {
-                            View childAt = ml0Var.getChildAt(i15);
-                            if (childAt instanceof org.telegram.ui.Cells.t1) {
-                                t1Var = (org.telegram.ui.Cells.t1) childAt;
-                                String stickerEmoji = t1Var.getMessageObject().getStickerEmoji();
-                                if (stickerEmoji == null) {
-                                    stickerEmoji = t1Var.getMessageObject().messageOwner.message;
-                                }
-                                if (t1Var.getPhotoImage().hasNotThumb() && stickerEmoji != null && t1Var.getMessageObject().getId() == i13) {
-                                }
-                            }
-                            i15++;
-                        } else {
-                            t1Var = null;
-                        }
-                    }
-                    if (t1Var != null && (boVar = izVar.a) != null) {
-                        boVar.Na(t1Var);
-                        if (!EmojiData.hasEmojiSupportVibration(t1Var.getMessageObject().getStickerEmoji()) && !t1Var.getMessageObject().isPremiumSticker() && !t1Var.getMessageObject().isAnimatedAnimatedEmoji()) {
-                            try {
-                                t1Var.performHapticFeedback(3);
-                            } catch (Exception unused) {
-                            }
-                        }
-                        izVar.o(t1Var, i14, false, true);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    public tc0(uc0 uc0Var) {
-        this.d = uc0Var;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

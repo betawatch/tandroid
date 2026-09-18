@@ -24,7 +24,7 @@ import hg.k0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
@@ -179,7 +179,7 @@ public final class b implements o {
             h0 h0Var = this.f;
             r a2 = c10.a();
             a2.p = r0.n("audio/flac");
-            k0.u(a2, h0Var);
+            k0.r(a2, h0Var);
             h0 h0Var2 = this.f;
             this.i.b();
             h0Var2.getClass();
@@ -247,11 +247,11 @@ public final class b implements o {
         if (this.n == -1) {
             u uVar4 = this.i;
             pVar.p();
-            pVar.k(1);
+            pVar.l(1);
             byte[] bArr4 = new byte[1];
             pVar.a(0, 1, bArr4);
             boolean z13 = (bArr4[0] & 1) == 1;
-            pVar.k(2);
+            pVar.l(2);
             r10 = z13 ? 7 : 6;
             v vVar6 = new v(r10);
             byte[] bArr5 = vVar6.a;

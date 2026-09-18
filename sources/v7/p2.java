@@ -1,19 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class p2 implements ia.d {
     public static final p2 a = new p2();
-    public static final ia.c b = new ia.c("durationMs", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(1))));
-    public static final ia.c c = new ia.c("errorCode", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(2))));
-    public static final ia.c d = new ia.c("isColdCall", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(3))));
-    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(4))));
-    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(5))));
-    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(6))));
-    public static final ia.c h = new ia.c("eventsCount", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(7))));
-    public static final ia.c i = new ia.c("otherErrors", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(8))));
-    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(9))));
-    public static final ia.c k = new ia.c("isAccelerated", hg.k0.o(org.telegram.ui.Cells.p6.k(h.class, new e(10))));
+    public static final ia.c b = new ia.c("durationMs", hg.k0.m(t8.b.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("errorCode", hg.k0.m(t8.b.l(h.class, new e(2))));
+    public static final ia.c d = new ia.c("isColdCall", hg.k0.m(t8.b.l(h.class, new e(3))));
+    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.m(t8.b.l(h.class, new e(4))));
+    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.m(t8.b.l(h.class, new e(5))));
+    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.m(t8.b.l(h.class, new e(6))));
+    public static final ia.c h = new ia.c("eventsCount", hg.k0.m(t8.b.l(h.class, new e(7))));
+    public static final ia.c i = new ia.c("otherErrors", hg.k0.m(t8.b.l(h.class, new e(8))));
+    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.m(t8.b.l(h.class, new e(9))));
+    public static final ia.c k = new ia.c("isAccelerated", hg.k0.m(t8.b.l(h.class, new e(10))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

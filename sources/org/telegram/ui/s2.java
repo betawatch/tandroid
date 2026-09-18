@@ -6,17 +6,17 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class s2 extends HorizontalScrollView {
-    public final /* synthetic */ w70 a;
+    public final /* synthetic */ u70 a;
     public final /* synthetic */ t2 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s2(t2 t2Var, Context context, w70 w70Var) {
+    public s2(t2 t2Var, Context context, u70 u70Var) {
         super(context);
         this.b = t2Var;
-        this.a = w70Var;
+        this.a = u70Var;
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.ViewGroup
@@ -38,13 +38,13 @@ public final class s2 extends HorizontalScrollView {
     @Override // android.view.View
     public final void onScrollChanged(int i10, int i11, int i12, int i13) {
         super.onScrollChanged(i10, i11, i12, i13);
-        w70 w70Var = this.a;
-        if (w70Var.d != null) {
-            w70Var.d = null;
-            w70Var.f = null;
+        u70 u70Var = this.a;
+        if (u70Var.d != null) {
+            u70Var.d = null;
+            u70Var.f = null;
         }
         this.b.a();
-        org.telegram.ui.Cells.q9 q9Var = ((h4) w70Var).O0;
+        org.telegram.ui.Cells.q9 q9Var = ((h4) u70Var).O0;
         if (q9Var == null || !q9Var.y()) {
             return;
         }

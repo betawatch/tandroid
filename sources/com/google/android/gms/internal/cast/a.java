@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.y9;
+import org.telegram.ui.x9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
@@ -30,7 +30,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
@@ -59,7 +59,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void x(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;
@@ -73,7 +73,7 @@ public final class a implements d6.h, y6.c {
         if (atomicInteger != null) {
             atomicInteger.set(0);
         }
-        hVar.p(new y9());
+        hVar.p(new x9());
         n6.l.e("Must be called from the main thread.");
         if (hVar.w()) {
             e6.h.x(new e6.j(hVar, 3));
@@ -83,9 +83,9 @@ public final class a implements d6.h, y6.c {
         int i10 = this.a;
         long j3 = -1;
         if (i10 == 0) {
-            h71 h71Var = PhotoViewer.t1().F2;
-            if (h71Var != null) {
-                j3 = h71Var.n();
+            u71 u71Var = PhotoViewer.t1().F2;
+            if (u71Var != null) {
+                j3 = u71Var.n();
             }
         } else if (i10 == 1) {
             j3 = MediaController.getInstance().getCurrentPosition();
@@ -97,7 +97,7 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void y(d6.f fVar, int i10) {
     }
 
     public /* synthetic */ a(int i10) {

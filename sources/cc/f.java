@@ -2,7 +2,7 @@ package cc;
 
 import hg.k0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class f extends d {
     public final int c;
@@ -46,7 +46,7 @@ public final class f extends d {
     @Override // cc.d
     public final byte[] b(int i10, byte[] bArr) {
         if (i10 < 0 || i10 >= this.b) {
-            throw new IllegalArgumentException(k0.i(i10, "Requested row is outside the image: "));
+            throw new IllegalArgumentException(k0.h(i10, "Requested row is outside the image: "));
         }
         int i11 = this.a;
         if (bArr == null || bArr.length < i11) {

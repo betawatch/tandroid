@@ -1,33 +1,99 @@
 package yh;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bo;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.id0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class w6 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g3[] a;
-    public final /* synthetic */ long b;
+public final class w6 implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ id0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ci.d h;
+    public final /* synthetic */ TextView n;
 
-    public w6(org.telegram.ui.ActionBar.g3[] g3VarArr, long j3) {
-        this.a = g3VarArr;
-        this.b = j3;
+    public w6(EditTextBoldCursor editTextBoldCursor, id0 id0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = id0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(bo.R9(this.b));
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        id0 id0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
+        }
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+        } catch (Exception unused) {
+            j3 = 0;
+        }
+        try {
+            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
+                this.a = true;
+                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
+                editTextBoldCursor.setText(Long.toString(j3));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                int i10 = -this.b;
+                this.b = i10;
+                AndroidUtilities.shakeViewSpring(id0Var, i10);
+            }
+        } catch (Exception unused2) {
+            this.a = true;
+            long j10 = this.e;
+            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+            this.a = false;
+            if (!this.f) {
+            }
+            id0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+            TextView textView = this.n;
+            if (j3 != 0) {
+            }
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        id0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -35,6 +35,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -42,27 +43,27 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.bl;
+import org.telegram.ui.Components.dd0;
+import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.dz;
 import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.iy;
+import org.telegram.ui.Components.jd0;
 import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.sc0;
-import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.un;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.zc0;
-import org.telegram.ui.bo;
-import org.telegram.ui.fg1;
-import org.telegram.ui.qo;
-import org.telegram.ui.qy;
-import org.telegram.ui.wy;
-import org.telegram.ui.xo0;
+import org.telegram.ui.dg1;
+import org.telegram.ui.oo;
+import org.telegram.ui.oy;
+import org.telegram.ui.uy;
+import org.telegram.ui.wo0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.b2, SuccessContinuation, xo0, bl, m4.k0, i9.p, sc0, org.telegram.ui.ActionBar.s0, qy, org.telegram.ui.Components.b5 {
+public final /* synthetic */ class r5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, SuccessContinuation, wo0, bl, m4.j0, i9.p, bd0, org.telegram.ui.ActionBar.r0, oy, org.telegram.ui.Components.d5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -75,12 +76,12 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.qy
+    @Override // org.telegram.ui.oy
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 25:
@@ -96,31 +97,31 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         }
     }
 
-    @Override // org.telegram.ui.qy
-    public /* synthetic */ boolean K(wy wyVar) {
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(uy uyVar) {
         return false;
     }
 
-    @Override // org.telegram.ui.xo0
+    @Override // org.telegram.ui.wo0
     public void a(int i10) {
         switch (this.a) {
             case 8:
                 ei.f3 f3Var = (ei.f3) this.b;
-                zc0 zc0Var = (zc0) this.c;
+                jd0 jd0Var = (jd0) this.c;
                 String str = (String) this.d;
                 if (i10 != 3) {
-                    zc0Var.dismiss();
+                    jd0Var.dismiss();
                 }
-                f3Var.d.x.G(str, org.telegram.ui.Cells.p6.w(i10).toLowerCase(Locale.ROOT), false);
+                f3Var.d.x.G(str, org.telegram.ui.Cells.c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
-                zc0 zc0Var2 = (zc0) this.b;
+                jd0 jd0Var2 = (jd0) this.b;
                 ei.q4 q4Var = (ei.q4) this.c;
                 String str2 = (String) this.d;
                 if (i10 != 3) {
-                    zc0Var2.dismiss();
+                    jd0Var2.dismiss();
                 }
-                q4Var.getWebViewContainer().G(str2, org.telegram.ui.Cells.p6.w(i10).toLowerCase(Locale.ROOT), false);
+                q4Var.getWebViewContainer().G(str2, org.telegram.ui.Cells.c1.w(i10).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -128,31 +129,31 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
     @Override // i9.p
     public i9.w apply(Object obj) {
         int i10 = this.a;
+        int i11 = 23;
         Object obj2 = this.d;
         Object obj3 = this.c;
         Object obj4 = this.b;
-        int i11 = 23;
         switch (i10) {
             case 14:
                 m4.a0 a0Var = (m4.a0) obj4;
                 Handler handler = a0Var.l;
-                gg.x1 x1Var = new gg.x1(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.u0) obj2, (m4.s) obj, i11));
-                m4.q1 q1Var = new m4.q1(0);
+                ki.c0 c0Var = new ki.c0(a0Var, (m4.r) obj3, new gg.t(a0Var, (m4.r0) obj2, (m4.s) obj, 26));
+                m4.p1 p1Var = new m4.p1(0);
                 String str = e2.d0.a;
-                i9.c0 c0Var = new i9.c0();
-                e2.d0.U(handler, new a3.k0(c0Var, x1Var, q1Var, i11));
-                return c0Var;
+                i9.c0 c0Var2 = new i9.c0();
+                e2.d0.U(handler, new a3.k0(c0Var2, c0Var, p1Var, i11));
+                return c0Var2;
             default:
                 m4.a0 a0Var2 = (m4.a0) obj4;
                 m4.r rVar = (m4.r) obj3;
                 List list = (List) obj;
                 Handler handler2 = a0Var2.l;
-                gg.x1 x1Var2 = new gg.x1(a0Var2, rVar, new i5(a0Var2, (m4.e1) obj2, rVar, list, 24));
-                m4.q1 q1Var2 = new m4.q1(0);
+                ki.c0 c0Var3 = new ki.c0(a0Var2, rVar, new i5(a0Var2, (m4.d1) obj2, rVar, list, 24));
+                m4.p1 p1Var2 = new m4.p1(0);
                 String str2 = e2.d0.a;
-                i9.c0 c0Var2 = new i9.c0();
-                e2.d0.U(handler2, new a3.k0(c0Var2, x1Var2, q1Var2, i11));
-                return c0Var2;
+                i9.c0 c0Var4 = new i9.c0();
+                e2.d0.U(handler2, new a3.k0(c0Var4, c0Var3, p1Var2, i11));
+                return c0Var4;
         }
     }
 
@@ -227,7 +228,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                 } else {
                     try {
                         bVar = new w.b(obj);
-                    } catch (w.g e) {
+                    } catch (w.f e) {
                         androidx.car.app.utils.g.f(iOnDoneCallback, str, e);
                         return;
                     }
@@ -241,14 +242,14 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                 try {
                     iOnDoneCallback2.onFailure(new w.b(new FailureResponse(exc)));
                     break;
-                } catch (w.g e7) {
+                } catch (w.f e7) {
                     Log.e("CarApp.Dispatch", "Serialization failure in ".concat(str2), e7);
                 }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 5:
                 ((ci.ia) this.b).g1((ci.ga) this.c, (Runnable) this.d, true);
@@ -306,10 +307,10 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
             case 16:
                 boolean[] zArr3 = (boolean[]) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
-                org.telegram.ui.ActionBar.c2[] c2VarArr = (org.telegram.ui.ActionBar.c2[]) this.d;
+                org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.d;
                 zArr3[0] = true;
                 callback.run(Boolean.FALSE);
-                c2VarArr[0].dismiss();
+                b2VarArr[0].dismiss();
                 break;
             case 20:
                 ChatActivityEnterView.i((ChatActivityEnterView) this.b, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d);
@@ -326,39 +327,39 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                     TLRPC.TL_messages_toggleBotInAttachMenu tL_messages_toggleBotInAttachMenu = new TLRPC.TL_messages_toggleBotInAttachMenu();
                     tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i12).getInputUser(user2);
                     tL_messages_toggleBotInAttachMenu.enabled = false;
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new qo(6, viVar, tL_attachMenuBot), 66);
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_toggleBotInAttachMenu, new oo(6, viVar, tL_attachMenuBot), 66);
                     break;
                 }
             default:
                 un unVar = (un) this.b;
                 View view = (View) this.c;
-                org.telegram.ui.Cells.c6 c6Var = (org.telegram.ui.Cells.c6) this.d;
+                org.telegram.ui.Cells.d6 d6Var = (org.telegram.ui.Cells.d6) this.d;
                 unVar.getClass();
                 view.setTag(null);
-                unVar.X(view, c6Var, false);
+                unVar.X(view, d6Var, false);
                 break;
         }
     }
 
-    @Override // m4.k0
+    @Override // m4.j0
     public void g(m4.r rVar) {
-        m4.l0 l0Var = (m4.l0) this.b;
+        m4.k0 k0Var = (m4.k0) this.b;
         Bundle bundle = (Bundle) this.c;
         ResultReceiver resultReceiver = (ResultReceiver) this.d;
-        m4.a0 a0Var = l0Var.g;
+        m4.a0 a0Var = k0Var.g;
         if (bundle == null) {
             Bundle bundle2 = Bundle.EMPTY;
         }
         i9.u n10 = a0Var.n(rVar);
         if (resultReceiver != null) {
-            n10.a(new m4.g0(0, n10, resultReceiver), i9.q.a);
+            n10.a(new ki.c0(4, n10, resultReceiver), i9.q.a);
         }
     }
 
     @Override // ai.ec
-    public void h(Canvas canvas, RectF rectF, float f7) {
+    public void i(Canvas canvas, RectF rectF, float f7) {
         org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) this.b;
-        tk0 tk0Var = (tk0) this.c;
+        dl0 dl0Var = (dl0) this.c;
         int[] iArr = (int[]) this.d;
         t7Var.c(canvas, rectF, f7);
         t7Var.f(canvas, rectF, f7);
@@ -367,35 +368,35 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         } else {
             t7Var.e(canvas, rectF, f7);
         }
-        if (tk0Var != null && tk0Var.a0 && tk0Var.getVisibility() == 0) {
+        if (dl0Var != null && dl0Var.a0 && dl0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f7 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            tk0Var.draw(canvas);
+            dl0Var.draw(canvas);
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.s0
+    @Override // org.telegram.ui.ActionBar.r0
     public void m(int i10) {
         Runnable runnable;
-        org.telegram.ui.Components.b5 b5Var = (org.telegram.ui.Components.b5) this.b;
+        org.telegram.ui.Components.d5 d5Var = (org.telegram.ui.Components.d5) this.b;
         boolean[] zArr = (boolean[]) this.c;
-        org.telegram.ui.ActionBar.b3 b3Var = (org.telegram.ui.ActionBar.b3) this.d;
+        org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) this.d;
         if (i10 == 1) {
-            b5Var.J(2147483646, 0, zArr[0]);
-            runnable = b3Var.a.dismissRunnable;
+            d5Var.J(2147483646, 0, zArr[0]);
+            runnable = a3Var.a.dismissRunnable;
             runnable.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.sc0
-    public void q(uc0 uc0Var, int i10) {
+    @Override // org.telegram.ui.Components.bd0
+    public void q(dd0 dd0Var, int i10) {
         switch (this.a) {
             case 17:
-                org.telegram.ui.Components.c5.g(null, null, 0L, 0L, 0, (uc0) this.b, (org.telegram.ui.Components.e4) this.c, (org.telegram.ui.Components.f4) this.d);
+                org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, (dd0) this.b, (org.telegram.ui.Components.g4) this.c, (org.telegram.ui.Components.h4) this.d);
                 break;
             default:
-                org.telegram.ui.Components.c5.g(null, null, 0L, 0L, 0, (uc0) this.b, (org.telegram.ui.Components.v3) this.c, (org.telegram.ui.Components.x3) this.d);
+                org.telegram.ui.Components.e5.g(null, null, 0L, 0L, 0, (dd0) this.b, (org.telegram.ui.Components.x3) this.c, (org.telegram.ui.Components.z3) this.d);
                 break;
         }
     }
@@ -404,9 +405,9 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
     public void run(String str) {
         w5 w5Var = (w5) this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-        org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.d;
-        f6 f6Var2 = w5Var.l;
-        f6Var2.getStoriesController().r(f6Var2.B1, str, new d5(w5Var, storyItem, f6Var, 2));
+        org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.d;
+        f6 f6Var = w5Var.l;
+        f6Var.getStoriesController().r(f6Var.B1, str, new d5(w5Var, storyItem, e6Var, 2));
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -415,7 +416,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         String str = (String) this.c;
         com.google.firebase.messaging.u uVar = (com.google.firebase.messaging.u) this.d;
         String str2 = (String) obj;
-        com.google.firebase.messaging.v c10 = FirebaseMessaging.c(firebaseMessaging.b);
+        a4.m c10 = FirebaseMessaging.c(firebaseMessaging.b);
         k9.h hVar = firebaseMessaging.a;
         hVar.a();
         String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
@@ -423,7 +424,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         synchronized (c10) {
             String a10 = com.google.firebase.messaging.u.a(System.currentTimeMillis(), str2, a2);
             if (a10 != null) {
-                SharedPreferences.Editor edit = c10.a.edit();
+                SharedPreferences.Editor edit = ((SharedPreferences) c10.b).edit();
                 edit.putString(d + "|T|" + str + "|*", a10);
                 edit.commit();
             }
@@ -446,12 +447,12 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         return Tasks.forResult(str2);
     }
 
-    @Override // org.telegram.ui.qy
-    public boolean u(wy wyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         MessageObject messageObject = (MessageObject) this.c;
         TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
-        bo boVar = chatActivityEnterView.O2;
+        zn znVar = chatActivityEnterView.O2;
         TLRPC.Message message = messageObject.messageOwner;
         long j3 = message.from_id.user_id;
         long j10 = message.via_bot_id;
@@ -460,17 +461,17 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         }
         TLRPC.User user = chatActivityEnterView.R.getMessagesController().getUser(Long.valueOf(j3));
         if (user == null) {
-            wyVar.finishFragment();
+            uyVar.finishFragment();
             return true;
         }
         long j11 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         MediaDataController.getInstance(chatActivityEnterView.Q).saveDraft(j11, 0, "@" + UserObject.getPublicUsername(user) + " " + tL_inlineButtonTypeSwitchInline.query, null, null, true, 0L);
         if (j11 == chatActivityEnterView.P2) {
-            wyVar.finishFragment();
+            uyVar.finishFragment();
             return true;
         }
         if (DialogObject.isEncryptedDialog(j11)) {
-            wyVar.finishFragment();
+            uyVar.finishFragment();
             return true;
         }
         Bundle bundle = new Bundle();
@@ -479,21 +480,21 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
         } else {
             bundle.putLong("chat_id", -j11);
         }
-        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, wyVar)) {
-            if (!boVar.presentFragment(new bo(bundle), true)) {
-                wyVar.finishFragment();
+        if (chatActivityEnterView.R.getMessagesController().checkCanOpenChat(bundle, uyVar)) {
+            if (!znVar.presentFragment(new zn(bundle), true)) {
+                uyVar.finishFragment();
                 return true;
             }
             if (!AndroidUtilities.isTablet()) {
-                boVar.removeSelfFromStack();
+                znVar.removeSelfFromStack();
             }
         }
         return true;
     }
 
-    public /* synthetic */ r5(m4.l0 l0Var, m4.m1 m1Var, Bundle bundle, ResultReceiver resultReceiver) {
+    public /* synthetic */ r5(m4.k0 k0Var, m4.l1 l1Var, Bundle bundle, ResultReceiver resultReceiver) {
         this.a = 13;
-        this.b = l0Var;
+        this.b = k0Var;
         this.c = bundle;
         this.d = resultReceiver;
     }
@@ -598,7 +599,7 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i18);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                            if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.w1.w(" ", translitSafe, translitSafe2)) {
+                            if (translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
                                 int size = arrayList7.size();
                                 arrayList7.add(tL_messages_stickerSet);
                                 sparseIntArray.put(d2Var.x, size);
@@ -626,13 +627,13 @@ public final /* synthetic */ class r5 implements MessagesStorage.StringCallback,
                 }
                 break;
             case 28:
-                iy iyVar = (iy) this.b;
+                jy jyVar = (jy) this.b;
                 String str6 = (String) this.c;
                 Runnable runnable = (Runnable) this.d;
-                jy jyVar = iyVar.a;
-                if (str6.equals(jyVar.v)) {
-                    jyVar.w = str;
-                    jyVar.n.addAll(arrayList5);
+                ky kyVar = jyVar.a;
+                if (str6.equals(kyVar.v)) {
+                    kyVar.w = str;
+                    kyVar.n.addAll(arrayList5);
                     runnable.run();
                     break;
                 }

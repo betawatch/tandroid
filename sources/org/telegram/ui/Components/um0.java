@@ -1,32 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class um0 implements View.OnClickListener {
-    public final /* synthetic */ vm0 a;
+public final class um0 {
+    public static final um0 a;
+    public static final um0 b;
+    public static final /* synthetic */ um0[] c;
 
-    public um0(vm0 vm0Var) {
-        this.a = vm0Var;
+    static {
+        um0 um0Var = new um0("LINE", 0);
+        a = um0Var;
+        um0 um0Var2 = new um0("TAB", 1);
+        b = um0Var2;
+        c = new um0[]{um0Var, um0Var2};
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        wm0 wm0Var = this.a.c;
-        for (int i10 = 0; i10 < wm0Var.e.size(); i10++) {
-            MessageObject messageObject = (MessageObject) wm0Var.e.get(i10);
-            if (wm0Var.H) {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(messageObject.getDocument());
-            } else {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(messageObject.getDocument(), messageObject, 0, 0);
-                DownloadController.getInstance(wm0Var.d).updateFilesLoadingPriority();
-            }
-        }
-        wm0Var.d(true);
+    public static um0 valueOf(String str) {
+        return (um0) Enum.valueOf(um0.class, str);
+    }
+
+    public static um0[] values() {
+        return (um0[]) c.clone();
     }
 }

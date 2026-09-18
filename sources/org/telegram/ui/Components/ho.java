@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class ho implements ImageReceiver.ImageReceiverDelegate {
     public boolean a;
@@ -17,17 +17,17 @@ public final class ho implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        yi0 yi0Var;
+        ij0 ij0Var;
         yf.e eVar;
         if (this.a) {
             return;
         }
         if ((i10 == 0 || i10 == 3) && drawable != null) {
             this.a = true;
-            boolean z10 = drawable instanceof yi0;
+            boolean z10 = drawable instanceof ij0;
             hg.g gVar = this.b;
-            if (z10 && (eVar = (yi0Var = (yi0) drawable).B0) != null && eVar.g()) {
-                yi0Var.A0 = new oh(14, this, gVar);
+            if (z10 && (eVar = (ij0Var = (ij0) drawable).B0) != null && eVar.g()) {
+                ij0Var.A0 = new zd(18, this, gVar);
             } else {
                 jo.a(this.c);
                 gVar.run();

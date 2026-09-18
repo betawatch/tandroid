@@ -10,16 +10,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class w00 extends ll0 {
+public final class w00 extends vl0 {
     public final /* synthetic */ c10 c;
 
     public w00(c10 c10Var) {
         this.c = c10Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.f != 2) {
             return false;
@@ -66,7 +66,7 @@ public final class w00 extends ll0 {
         TLRPC.Chat chat;
         c10 c10Var = this.c;
         ArrayList arrayList2 = c10Var.g0;
-        org.telegram.ui.ActionBar.o2 o2Var = c10Var.n;
+        org.telegram.ui.ActionBar.n2 n2Var = c10Var.n;
         int i11 = c1Var.f;
         View view = c1Var.a;
         TLRPC.User user = null;
@@ -107,7 +107,7 @@ public final class w00 extends ll0 {
                 return;
             }
         }
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
         int i12 = c10Var.r0;
         if (i10 < i12 || i10 > c10Var.s0) {
             int i13 = c10Var.v0;
@@ -124,16 +124,16 @@ public final class w00 extends ll0 {
         if (peer != null) {
             if (peer instanceof TLRPC.TL_peerUser) {
                 j3 = peer.user_id;
-                user = o2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
+                user = n2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
                 str = UserObject.getUserName(user);
                 str2 = (user == null || !user.bot) ? LocaleController.getString(R.string.FilterInviteUser) : LocaleController.getString(R.string.FilterInviteBot);
             } else {
                 if (peer instanceof TLRPC.TL_peerChat) {
                     j3 = -peer.chat_id;
-                    chat = o2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
+                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
                 } else if (peer instanceof TLRPC.TL_peerChannel) {
                     j3 = -peer.channel_id;
-                    chat = o2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
+                    chat = n2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
                 }
                 str2 = null;
                 user = chat;
@@ -145,35 +145,35 @@ public final class w00 extends ll0 {
                 str2 = chat2.participants_count != 0 ? ChatObject.isChannelAndNotMegaGroup(chat2) ? LocaleController.formatPluralStringComma("Subscribers", chat2.participants_count) : LocaleController.formatPluralStringComma("Members", chat2.participants_count) : ChatObject.isChannelAndNotMegaGroup(chat2) ? LocaleController.getString(R.string.ChannelPublic) : LocaleController.getString(R.string.MegaPublic);
                 str = str3;
             }
-            f4Var.setTag(Long.valueOf(j3));
-            checkBoxBase = f4Var.getCheckBox().getCheckBoxBase();
+            g4Var.setTag(Long.valueOf(j3));
+            checkBoxBase = g4Var.getCheckBox().getCheckBoxBase();
             f7 = !c10Var.h0.contains(Long.valueOf(j3)) ? 0.5f : 1.0f;
             if (checkBoxBase.h != f7) {
                 checkBoxBase.h = f7;
                 checkBoxBase.b();
             }
-            f4Var.c(c10Var.i0.contains(Long.valueOf(j3)), false);
-            f4Var.d(user, str, str2);
+            g4Var.c(c10Var.i0.contains(Long.valueOf(j3)), false);
+            g4Var.d(user, str, str2);
         }
         j3 = 0;
         str = null;
         str2 = null;
         if (user instanceof TLRPC.Chat) {
         }
-        f4Var.setTag(Long.valueOf(j3));
-        checkBoxBase = f4Var.getCheckBox().getCheckBoxBase();
+        g4Var.setTag(Long.valueOf(j3));
+        checkBoxBase = g4Var.getCheckBox().getCheckBoxBase();
         if (!c10Var.h0.contains(Long.valueOf(j3))) {
         }
         if (checkBoxBase.h != f7) {
         }
-        f4Var.c(c10Var.i0.contains(Long.valueOf(j3)), false);
-        f4Var.d(user, str, str2);
+        g4Var.c(c10Var.i0.contains(Long.valueOf(j3)), false);
+        g4Var.d(user, str, str2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v3, types: [android.view.View, org.telegram.ui.Components.z00] */
     /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View, org.telegram.ui.Cells.e9] */
-    /* JADX WARN: Type inference failed for: r9v4, types: [android.view.View, org.telegram.ui.Cells.f4] */
+    /* JADX WARN: Type inference failed for: r9v4, types: [android.view.View, org.telegram.ui.Cells.g4] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         b10 b10Var;
@@ -189,9 +189,9 @@ public final class w00 extends ll0 {
                 e9Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
                 b10Var2 = e9Var;
             } else if (i10 == 2) {
-                ?? f4Var = new org.telegram.ui.Cells.f4(c10Var.getContext(), 1, 0, false);
-                f4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                b10Var = f4Var;
+                ?? g4Var = new org.telegram.ui.Cells.g4(c10Var.getContext(), 1, 0, false);
+                g4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                b10Var = g4Var;
             } else if (i10 == 3) {
                 ?? z00Var = new z00(c10Var.getContext());
                 z00Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
@@ -199,6 +199,6 @@ public final class w00 extends ll0 {
             }
             b10Var = b10Var2;
         }
-        return new wk0(b10Var);
+        return new gl0(b10Var);
     }
 }

@@ -12,10 +12,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.w31;
-import org.telegram.ui.g41;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.e41;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class n9 implements ActionMode.Callback {
     public String a = null;
@@ -31,7 +31,7 @@ public final class n9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((this.b.l0 == null || ((this.a == null || g41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+        findItem.setVisible((this.b.l0 == null || ((this.a == null || e41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -54,7 +54,7 @@ public final class n9 implements ActionMode.Callback {
                         String str = this.a;
                         g gVar2 = new g(this, 8);
                         org.telegram.ui.h4 h4Var = tVar.a;
-                        w31.K(h4Var.L, h4Var.M, str, language, s10, null, gVar2);
+                        k41.K(h4Var.L, h4Var.M, str, language, s10, null, gVar2);
                     }
                     daVar.v();
                     return true;
@@ -62,7 +62,7 @@ public final class n9 implements ActionMode.Callback {
                 if (itemId == R.id.menu_quote) {
                     if (daVar.y()) {
                         y9 y9Var = daVar.W;
-                        MessageObject messageObject = y9Var instanceof t1 ? ((t1) y9Var).getMessageObject() : null;
+                        MessageObject messageObject = y9Var instanceof u1 ? ((u1) y9Var).getMessageObject() : null;
                         if (messageObject != null && daVar.s() != null) {
                             daVar.J(daVar.u, daVar.v, messageObject);
                             daVar.f(true);

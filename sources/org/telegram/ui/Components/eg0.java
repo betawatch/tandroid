@@ -1,191 +1,291 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.content.res.Configuration;
+import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class eg0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fg0 b;
+public final class eg0 extends View {
+    public ValueAnimator E;
+    public final Paint F;
+    public final Paint G;
+    public final Paint H;
+    public final Paint I;
+    public int J;
+    public int K;
+    public final org.telegram.ui.ActionBar.e6 L;
+    public boolean M;
+    public int a;
+    public int b;
+    public int c;
+    public float d;
+    public int e;
+    public int f;
+    public boolean h;
+    public boolean n;
+    public float r;
+    public float s;
+    public int v;
+    public int w;
+    public final RectF x;
+    public float y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ eg0(fg0 fg0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = fg0Var;
+    public eg0(Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity);
+        this.a = -1;
+        this.b = 0;
+        this.x = new RectF();
+        Paint paint = new Paint(1);
+        this.H = paint;
+        Paint paint2 = new Paint(1);
+        this.I = paint2;
+        this.J = -1;
+        this.L = e6Var;
+        Paint.Style style = Paint.Style.FILL;
+        paint.setStyle(style);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        Paint paint3 = new Paint();
+        this.F = paint3;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        paint3.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{-1, 0}, new float[]{0.0f, 1.0f}, tileMode));
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint3.setXfermode(new PorterDuffXfermode(mode));
+        Paint paint4 = new Paint();
+        this.G = paint4;
+        paint4.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(6.0f), new int[]{0, -1}, new float[]{0.0f, 1.0f}, tileMode));
+        paint4.setXfermode(new PorterDuffXfermode(mode));
+        d();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                fg0 fg0Var = this.b;
-                lo0 lo0Var = fg0Var.R;
-                if (lo0Var != null && lo0Var.a()) {
-                    fg0Var.R.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    fg0Var.R.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    public final void a() {
+        boolean z10 = (this.n ? Math.max(this.e, this.f) : this.b) > 3;
+        int i10 = z10 ? 2 : 0;
+        if (getLayerType() != i10) {
+            setLayerType(i10, null);
+            invalidate();
+        }
+        this.M = z10;
+    }
+
+    public final void b(int i10) {
+        if (this.n) {
+            this.J = i10;
+            return;
+        }
+        if (!this.h) {
+            this.d = this.a;
+        } else {
+            if (this.c == i10) {
+                return;
+            }
+            ValueAnimator valueAnimator = this.E;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            float f7 = this.d;
+            float f10 = this.y;
+            this.d = (this.c * f10) + ((1.0f - f10) * f7);
+        }
+        if (i10 != this.a) {
+            this.c = i10;
+            this.h = true;
+            this.y = 0.0f;
+            invalidate();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.E = ofFloat;
+            ofFloat.addUpdateListener(new cg0(this, 1));
+            this.E.addListener(new dg0(this, 0));
+            this.E.setInterpolator(qr.f);
+            this.E.setDuration(220L);
+            this.E.start();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        PhotoViewer photoViewer;
-        org.telegram.ui.mt0 mt0Var;
-        switch (this.a) {
-            case 0:
-                int actionMasked = motionEvent.getActionMasked();
-                fg0 fg0Var = this.b;
-                if (actionMasked == 0 || actionMasked == 5) {
-                    if (motionEvent.getPointerCount() == 1) {
-                        fg0Var.f0 = true;
-                        fg0Var.g0 = new float[]{motionEvent.getX(), motionEvent.getY()};
-                        AndroidUtilities.runOnUIThread(fg0Var.h0, 500L);
-                    } else {
-                        fg0Var.f0 = false;
-                        fg0Var.i();
-                        AndroidUtilities.cancelRunOnUIThread(fg0Var.h0);
-                    }
-                }
-                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                    fg0Var.f0 = false;
-                    fg0Var.i();
-                    AndroidUtilities.cancelRunOnUIThread(fg0Var.h0);
-                } else if (actionMasked == 2 && (photoViewer = fg0Var.V) != null && (mt0Var = photoViewer.c4) != null && mt0Var.rewinding) {
-                    mt0Var.setX(motionEvent.getX());
-                }
-                if (fg0Var.y != null) {
-                    MotionEvent obtain = MotionEvent.obtain(motionEvent);
-                    obtain.offsetLocation(fg0Var.y.getX(), fg0Var.y.getY());
-                    boolean dispatchTouchEvent = fg0Var.y.dispatchTouchEvent(motionEvent);
-                    obtain.recycle();
-                    if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                        fg0Var.y = null;
-                    }
-                    if (dispatchTouchEvent) {
-                        return true;
-                    }
-                }
-                MotionEvent obtain2 = MotionEvent.obtain(motionEvent);
-                obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
-                boolean onTouchEvent = fg0Var.s.onTouchEvent(obtain2);
-                obtain2.recycle();
-                boolean z10 = !fg0Var.s.isInProgress() && fg0Var.v.y(motionEvent);
-                if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
-                    fg0Var.w = false;
-                    fg0Var.x = false;
-                    if (fg0Var.d0) {
-                        fg0Var.d0 = false;
-                        fg0 fg0Var2 = fg0.p0;
-                        vu vuVar = fg0Var2.U;
-                        if (vuVar != null) {
-                            vuVar.H();
-                        } else {
-                            PhotoViewer photoViewer2 = fg0Var2.V;
-                            if (photoViewer2 != null) {
-                                photoViewer2.P0();
-                                MediaController.getInstance().tryResumePausedAudio();
-                            }
-                        }
-                        fg0.j(false);
-                    } else {
-                        o1.k kVar = fg0Var.M;
-                        if (!kVar.f) {
-                            float f7 = fg0Var.K;
-                            kVar.b = f7;
-                            kVar.c = true;
-                            kVar.u.i = (fg0Var.H / 2.0f) + f7 >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r1 - r6) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                            fg0Var.M.f();
-                        }
-                        o1.k kVar2 = fg0Var.N;
-                        if (!kVar2.f) {
-                            kVar2.b = fg0Var.L;
-                            kVar2.c = true;
-                            kVar2.u.i = w7.p.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - fg0Var.I) - AndroidUtilities.dp(16.0f));
-                            fg0Var.N.f();
-                        }
-                    }
-                }
-                return onTouchEvent || z10;
-            default:
-                return super.dispatchTouchEvent(motionEvent);
+    public final void c(int i10, int i11, boolean z10) {
+        int i12 = this.a;
+        if (i12 < 0 || i11 == 0 || this.b == 0) {
+            z10 = false;
         }
+        if (!z10) {
+            ValueAnimator valueAnimator = this.E;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.a = i10;
+            this.b = i11;
+            invalidate();
+        } else if (this.b == i11 && (Math.abs(i12 - i10) <= 2 || this.h || this.n)) {
+            b(i10);
+        } else {
+            ValueAnimator valueAnimator2 = this.E;
+            if (valueAnimator2 != null) {
+                this.J = 0;
+                valueAnimator2.cancel();
+            }
+            int dp = AndroidUtilities.dp(8.0f);
+            int i13 = dp * 2;
+            this.v = (getMeasuredHeight() - i13) / Math.min(this.b, 3);
+            this.w = (getMeasuredHeight() - i13) / Math.min(i11, 3);
+            float f7 = (this.a - 1) * this.v;
+            this.r = f7;
+            if (f7 < 0.0f) {
+                this.r = 0.0f;
+            } else {
+                float f10 = hg.k0.f(this.b, 1, r4, dp) - f7;
+                int measuredHeight = getMeasuredHeight() - dp;
+                int i14 = this.v;
+                if (f10 < measuredHeight - i14) {
+                    this.r = hg.k0.f(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+                }
+            }
+            float f11 = (i10 - 1) * this.w;
+            this.s = f11;
+            if (f11 < 0.0f) {
+                this.s = 0.0f;
+            } else {
+                int i15 = i11 - 1;
+                float f12 = ((r4 * i15) + dp) - f11;
+                int measuredHeight2 = getMeasuredHeight() - dp;
+                int i16 = this.w;
+                if (f12 < measuredHeight2 - i16) {
+                    this.s = ((i15 * i16) + dp) - ((getMeasuredHeight() - dp) - this.w);
+                }
+            }
+            this.d = this.a;
+            this.c = i10;
+            this.a = i10;
+            this.e = this.b;
+            this.f = i11;
+            this.b = i11;
+            this.n = true;
+            this.h = true;
+            this.y = 0.0f;
+            invalidate();
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.E = ofFloat;
+            ofFloat.addUpdateListener(new cg0(this, 0));
+            this.E.addListener(new dg0(this, 1));
+            this.E.setInterpolator(qr.f);
+            this.E.setDuration(220L);
+            this.E.start();
+        }
+        a();
+    }
+
+    public final void d() {
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ee, this.L);
+        this.K = v02;
+        this.H.setColor(i0.a.k(v02, (int) ((Color.alpha(v02) / 255.0f) * 112.0f)));
+        this.I.setColor(this.K);
     }
 
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkDisplaySize(getContext(), configuration);
-                fg0 fg0Var = this.b;
-                fg0Var.G = null;
-                AndroidUtilities.setPreferredMaxRefreshRate(fg0Var.b, fg0Var.d, fg0Var.c);
-                if (fg0Var.H != fg0Var.t() * fg0Var.J || fg0Var.I != fg0Var.r() * fg0Var.J) {
-                    WindowManager.LayoutParams layoutParams = fg0Var.c;
-                    int t10 = (int) (fg0Var.t() * fg0Var.J);
-                    fg0Var.H = t10;
-                    layoutParams.width = t10;
-                    WindowManager.LayoutParams layoutParams2 = fg0Var.c;
-                    int r10 = (int) (fg0Var.r() * fg0Var.J);
-                    fg0Var.I = r10;
-                    layoutParams2.height = r10;
-                    AndroidUtilities.updateViewLayout(fg0Var.b, fg0Var.d, fg0Var.c);
-                    o1.k kVar = fg0Var.M;
-                    float f7 = fg0Var.K;
-                    kVar.b = f7;
-                    kVar.c = true;
-                    kVar.u.i = a4.a.A(fg0Var.t(), fg0Var.J, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (fg0Var.t() * fg0Var.J)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    fg0Var.M.f();
-                    o1.k kVar2 = fg0Var.N;
-                    kVar2.b = fg0Var.L;
-                    kVar2.c = true;
-                    kVar2.u.i = w7.p.a(r1, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (fg0Var.r() * fg0Var.J)) - AndroidUtilities.dp(16.0f));
-                    fg0Var.N.f();
-                    break;
-                }
-                break;
-            default:
-                super.onConfigurationChanged(configuration);
-                break;
+    public final void onDraw(Canvas canvas) {
+        float measuredHeight;
+        float f7;
+        RectF rectF;
+        super.onDraw(canvas);
+        if (this.a < 0 || this.b == 0) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                fg0 fg0Var = this.b;
-                x61 x61Var = fg0Var.Q;
-                if (x61Var.j) {
-                    x61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    fg0Var.Q.draw(canvas);
+        int dp = AndroidUtilities.dp(8.0f);
+        if (this.n) {
+            float f10 = this.v;
+            float f11 = this.y;
+            measuredHeight = (this.w * f11) + ((1.0f - f11) * f10);
+        } else if (this.b == 0) {
+            return;
+        } else {
+            measuredHeight = (getMeasuredHeight() - (dp * 2)) / Math.min(this.b, 3);
+        }
+        if (measuredHeight == 0.0f) {
+            return;
+        }
+        float dpf2 = AndroidUtilities.dpf2(0.7f);
+        if (this.n) {
+            float f12 = this.r;
+            float f13 = this.y;
+            f7 = (this.s * f13) + ((1.0f - f13) * f12);
+        } else {
+            if (this.h) {
+                float f14 = (this.d - 1.0f) * measuredHeight;
+                float f15 = this.y;
+                f7 = ((this.c - 1) * measuredHeight * f15) + ((1.0f - f15) * f14);
+            } else {
+                f7 = (this.a - 1) * measuredHeight;
+            }
+            if (f7 < 0.0f) {
+                f7 = 0.0f;
+            } else {
+                float f16 = dp;
+                if ((((this.b - 1) * measuredHeight) + f16) - f7 < (getMeasuredHeight() - dp) - measuredHeight) {
+                    f7 = (((this.b - 1) * measuredHeight) + f16) - ((getMeasuredHeight() - dp) - measuredHeight);
                 }
-                PhotoViewer photoViewer = fg0Var.V;
-                if (photoViewer != null && photoViewer.b4 != null) {
-                    canvas.save();
-                    canvas.translate(getLeft(), getTop());
-                    fg0Var.V.b4.draw(canvas, getRight() - getLeft(), getBottom() - getTop());
-                    canvas.restore();
-                    break;
+            }
+        }
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        float f17 = dp;
+        int max = Math.max(0, (int) (((f17 + f7) / measuredHeight) - 1.0f));
+        int min = Math.min(max + 6, this.n ? Math.max(this.e, this.f) : this.b);
+        while (true) {
+            rectF = this.x;
+            if (max >= min) {
+                break;
+            }
+            float f18 = ((max * measuredHeight) + f17) - f7;
+            float f19 = f18 + measuredHeight;
+            if (f19 >= 0.0f && f18 <= getMeasuredHeight()) {
+                rectF.set(0.0f, f18 + dpf2, getMeasuredWidth(), f19 - dpf2);
+                boolean z10 = this.n;
+                Paint paint = this.H;
+                if (z10 && max >= this.f) {
+                    paint.setColor(i0.a.k(this.K, (int) ((1.0f - this.y) * (Color.alpha(r4) / 255.0f) * 76.0f)));
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+                } else if (!z10 || max < this.e) {
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                } else {
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f * this.y)));
+                    canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
+                    paint.setColor(i0.a.k(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
                 }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+            }
+            max++;
+        }
+        boolean z11 = this.h;
+        Paint paint2 = this.I;
+        if (z11) {
+            float f20 = this.d;
+            float f21 = this.y;
+            float f22 = ((((this.c * f21) + ((1.0f - f21) * f20)) * measuredHeight) + f17) - f7;
+            rectF.set(0.0f, f22 + dpf2, getMeasuredWidth(), (f22 + measuredHeight) - dpf2);
+            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
+        } else {
+            float f23 = ((this.a * measuredHeight) + f17) - f7;
+            rectF.set(0.0f, f23 + dpf2, getMeasuredWidth(), (f23 + measuredHeight) - dpf2);
+            canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint2);
+        }
+        if (this.M) {
+            float measuredWidth2 = getMeasuredWidth();
+            float dp2 = AndroidUtilities.dp(6.0f);
+            Paint paint3 = this.F;
+            canvas.drawRect(0.0f, 0.0f, measuredWidth2, dp2, paint3);
+            canvas.drawRect(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f), getMeasuredWidth(), getMeasuredHeight(), paint3);
+            canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(6.0f));
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(6.0f), this.G);
         }
     }
 }

@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class qz extends View {
     public final Paint a;
@@ -18,10 +18,10 @@ public final class qz extends View {
     public final Path c;
     public int d;
     public int e;
-    public h01[] f;
+    public v01[] f;
     public RectF[] h;
     public float n;
-    public org.telegram.ui.ap0 r;
+    public org.telegram.ui.zo0 r;
     public int s;
 
     public qz(Context context) {
@@ -35,15 +35,15 @@ public final class qz extends View {
     }
 
     public final void a(float f7, int i10, int i11, Canvas canvas) {
-        h01[] h01VarArr = this.f;
-        int length = h01VarArr.length;
+        v01[] v01VarArr = this.f;
+        int length = v01VarArr.length;
         int i12 = 0;
         float f10 = f7;
         while (i12 < length) {
-            h01 h01Var = h01VarArr[i12];
+            v01 v01Var = v01VarArr[i12];
             int i13 = i11;
-            h01Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
-            f10 += h01Var.l() + AndroidUtilities.dp(24.0f);
+            v01Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
+            f10 += v01Var.l() + AndroidUtilities.dp(24.0f);
             i12++;
             i11 = i13;
         }
@@ -56,14 +56,14 @@ public final class qz extends View {
         }
         int width = getWidth();
         int height = getHeight();
-        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.w1.D(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
+        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.wh.c(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
         int i10 = 0;
         while (true) {
-            h01[] h01VarArr = this.f;
-            if (i10 >= h01VarArr.length) {
+            v01[] v01VarArr = this.f;
+            if (i10 >= v01VarArr.length) {
                 break;
             }
-            dp = (int) (h01VarArr[i10].l() + dp);
+            dp = (int) (v01VarArr[i10].l() + dp);
             i10++;
         }
         float dp2 = (height - AndroidUtilities.dp(36.0f)) / 2.0f;
@@ -121,9 +121,9 @@ public final class qz extends View {
         }
         if (i10 >= 0 && i10 != this.s) {
             this.s = i10;
-            org.telegram.ui.ap0 ap0Var = this.r;
-            if (ap0Var != null) {
-                ap0Var.run(Integer.valueOf(i10));
+            org.telegram.ui.zo0 zo0Var = this.r;
+            if (zo0Var != null) {
+                zo0Var.run(Integer.valueOf(i10));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -159,10 +159,10 @@ public final class qz extends View {
     }
 
     public void setTabs(CharSequence... charSequenceArr) {
-        this.f = new h01[charSequenceArr.length];
+        this.f = new v01[charSequenceArr.length];
         this.h = new RectF[charSequenceArr.length];
         for (int i10 = 0; i10 < charSequenceArr.length; i10++) {
-            this.f[i10] = new h01(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
+            this.f[i10] = new v01(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
             this.h[i10] = new RectF();
         }
         invalidate();

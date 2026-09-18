@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class c0 extends o0 {
     public int A;
@@ -255,14 +255,14 @@ public class c0 extends o0 {
             i12 = 4161;
             i13 = 4097;
         }
-        return this.o == 0 ? this.c.q(i10, i11, i12, i13) : this.d.q(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.v(i10, i11, i12, i13) : this.d.v(i10, i11, i12, i13);
     }
 
     public final View P0(int i10, int i11, boolean z10, boolean z11) {
         G0();
         int i12 = z10 ? 24579 : 320;
         int i13 = z11 ? 320 : 0;
-        return this.o == 0 ? this.c.q(i10, i11, i12, i13) : this.d.q(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.v(i10, i11, i12, i13) : this.d.v(i10, i11, i12, i13);
     }
 
     public View Q0(of.e eVar, z0 z0Var, int i10, int i11, int i12) {
@@ -644,7 +644,7 @@ public class c0 extends o0 {
                     c0Var.q(r10);
                     c0Var.a.y(r10);
                     eVar2.i(q6);
-                    c0Var.b.f.J(V);
+                    c0Var.b.f.L(V);
                 } else {
                     c0Var.j0(r10);
                     eVar2.h(V);
@@ -991,7 +991,7 @@ public class c0 extends o0 {
     public final void j1(int i10) {
         f0 f0Var;
         if (i10 != 0 && i10 != 1) {
-            throw new IllegalArgumentException(hg.k0.i(i10, "invalid orientation:"));
+            throw new IllegalArgumentException(hg.k0.h(i10, "invalid orientation:"));
         }
         b(null);
         if (i10 != this.o || this.q == null) {

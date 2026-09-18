@@ -24,7 +24,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a = new v(4);
@@ -67,7 +67,7 @@ public final class b implements o {
                 vVar.J(0);
                 int j3 = vVar.j();
                 lVar.f = 0;
-                lVar.s(j3, false);
+                lVar.t(j3, false);
                 lVar.h(vVar.a, 0, 4, false);
                 vVar.J(0);
                 if (vVar.j() == 0) {
@@ -259,7 +259,7 @@ public final class b implements o {
                             int i14 = (x11 >> 4) & 15;
                             int i15 = x11 & 15;
                             if (i15 != 7) {
-                                throw new d(k0.i(i15, "Video format not supported: "));
+                                throw new d(k0.h(i15, "Video format not supported: "));
                             }
                             eVar.g = i14;
                             if (i14 != 5) {
@@ -292,7 +292,7 @@ public final class b implements o {
                                     rVar.y = a2.d;
                                     rVar.D = a2.k;
                                     rVar.t = a2.a;
-                                    k0.u(rVar, h0Var);
+                                    k0.r(rVar, h0Var);
                                     eVar.e = true;
                                 } else if (x12 == 1 && eVar.e) {
                                     int i20 = eVar.g == 1 ? 1 : 0;
@@ -348,7 +348,7 @@ public final class b implements o {
                                 rVar2.q = r0.n("audio/mpeg");
                                 rVar2.I = 1;
                                 rVar2.J = i24;
-                                k0.u(rVar2, h0Var2);
+                                k0.r(rVar2, h0Var2);
                                 aVar.c = true;
                             } else if (i23 == 7 || i23 == 8) {
                                 String str = i23 == 7 ? "audio/g711-alaw" : "audio/g711-mlaw";
@@ -357,7 +357,7 @@ public final class b implements o {
                                 rVar3.q = r0.n(str);
                                 rVar3.I = 1;
                                 rVar3.J = 8000;
-                                k0.u(rVar3, h0Var2);
+                                k0.r(rVar3, h0Var2);
                                 aVar.c = true;
                             } else if (i23 != 10) {
                                 throw new d("Audio format not supported: " + aVar.d);
@@ -384,7 +384,7 @@ public final class b implements o {
                                 rVar4.I = n10.c;
                                 rVar4.J = n10.b;
                                 rVar4.t = Collections.singletonList(bArr4);
-                                k0.u(rVar4, h0Var3);
+                                k0.r(rVar4, h0Var3);
                                 aVar.c = true;
                             } else if (aVar.d != 10 || x14 == 1) {
                                 int a13 = b12.a();

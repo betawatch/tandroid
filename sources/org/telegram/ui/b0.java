@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,31 +24,31 @@ public final /* synthetic */ class b0 implements Runnable {
                 h4Var.h0.M.c(this.b, true);
                 break;
             case 1:
-                org.telegram.ui.Components.gb gbVar = (org.telegram.ui.Components.gb) this.c;
-                if (gbVar.a.getTranslationX() == this.b) {
-                    gbVar.y.b();
+                org.telegram.ui.Components.ib ibVar = (org.telegram.ui.Components.ib) this.c;
+                if (ibVar.a.getTranslationX() == this.b) {
+                    ibVar.y.b();
                     break;
                 }
                 break;
             case 2:
                 org.telegram.ui.Components.voip.a1 a1Var = (org.telegram.ui.Components.voip.a1) this.c;
                 float f7 = this.b;
-                mi1 mi1Var = a1Var.c;
+                li1 li1Var = a1Var.c;
                 if (f7 > 0.0f) {
-                    int i10 = mi1Var.w;
+                    int i10 = li1Var.w;
                     if (i10 < 2) {
-                        mi1Var.c(i10 + 1, true);
+                        li1Var.c(i10 + 1, true);
                     }
                 } else {
-                    int i11 = mi1Var.w;
+                    int i11 = li1Var.w;
                     if (i11 > 0) {
-                        mi1Var.c(i11 - 1, true);
+                        li1Var.c(i11 - 1, true);
                     }
                 }
                 a1Var.b = false;
                 break;
             case 3:
-                ((l80) this.c).f.e.smoothScrollTo(0, (int) this.b);
+                ((j80) this.c).f.e.smoothScrollTo(0, (int) this.b);
                 break;
             case 4:
                 ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();

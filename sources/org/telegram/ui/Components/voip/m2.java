@@ -27,9 +27,9 @@ import org.telegram.ui.Components.dt;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sh;
 import org.webrtc.RendererCommon;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class m2 implements VoIPService.StateListener, rf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean T = false;
@@ -101,12 +101,12 @@ public final class m2 implements VoIPService.StateListener, rf.a, NotificationCe
             imageView.setImageResource(R.drawable.pip_close);
             imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView.setContentDescription(LocaleController.getString(R.string.Close));
-            l2Var.addView(imageView, x5.d(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
+            l2Var.addView(imageView, y5.d(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
-            l2Var.addView(imageView2, x5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
+            l2Var.addView(imageView2, y5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ai.e2(15));
             imageView2.setOnClickListener(new dt(26, this, context));
         }

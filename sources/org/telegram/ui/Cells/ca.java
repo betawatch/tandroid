@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class ca extends View {
     public final Paint a;
@@ -124,7 +124,7 @@ public final class ca extends View {
                 float f12 = m10[0] + daVar.a;
                 canvas.translate(f12, f11);
                 y9 y9Var2 = daVar.W;
-                MessageObject messageObject = y9Var2 instanceof t1 ? ((t1) y9Var2).getMessageObject() : null;
+                MessageObject messageObject = y9Var2 instanceof u1 ? ((u1) y9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.isOutOwner()) {
                     paint.setColor(daVar.u(org.telegram.ui.ActionBar.j6.vf));
                 } else {
@@ -309,7 +309,7 @@ public final class ca extends View {
                 actionMode.invalidateContentRect();
                 ActionMode actionMode2 = daVar.Y;
                 if (actionMode2 != null) {
-                    ((org.telegram.ui.ActionBar.j4) actionMode2).e();
+                    ((org.telegram.ui.ActionBar.i4) actionMode2).e();
                 }
             }
             if (daVar.k) {
@@ -341,7 +341,7 @@ public final class ca extends View {
         char charAt2;
         da daVar = this.r;
         g gVar = daVar.r0;
-        l7 l7Var = daVar.f0;
+        t6 t6Var = daVar.f0;
         t9 t9Var = daVar.a0;
         if (!daVar.y()) {
             return false;
@@ -443,7 +443,7 @@ public final class ca extends View {
                                     if (!z13 || z11) {
                                         if (!daVar.N) {
                                             daVar.N = true;
-                                            AndroidUtilities.runOnUIThread(l7Var);
+                                            AndroidUtilities.runOnUIThread(t6Var);
                                         }
                                         daVar.O = z13;
                                         if (z13) {
@@ -456,7 +456,7 @@ public final class ca extends View {
                                         i13 = (int) (f7 + f10);
                                     } else if (daVar.N) {
                                         daVar.N = false;
-                                        AndroidUtilities.cancelRunOnUIThread(l7Var);
+                                        AndroidUtilities.cancelRunOnUIThread(t6Var);
                                     }
                                     l4 = daVar.l(i14, i13, daVar.a, daVar.b, daVar.W, false);
                                     if (l4 >= 0) {
@@ -673,7 +673,7 @@ public final class ca extends View {
         }
         if (daVar.N) {
             daVar.N = false;
-            AndroidUtilities.cancelRunOnUIThread(l7Var);
+            AndroidUtilities.cancelRunOnUIThread(t6Var);
         }
         return daVar.i;
     }

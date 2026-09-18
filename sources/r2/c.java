@@ -11,10 +11,9 @@ import android.os.Trace;
 import android.view.Surface;
 import e2.d0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Cells.ia;
 import org.telegram.ui.web.u0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c implements l {
     public final MediaCodec a;
@@ -79,22 +78,18 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final boolean d(ia iaVar) {
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            fVar.o = iaVar;
-        }
-        return true;
-    }
-
-    @Override // r2.l
-    public final void e(a3.m mVar, Handler handler) {
+    public final void d(a3.m mVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, mVar, 0), handler);
     }
 
     @Override // r2.l
-    public final void f() {
+    public final void e() {
         this.a.detachOutputSurface();
+    }
+
+    @Override // r2.l
+    public final void f(int i10, long j3) {
+        this.a.releaseOutputBuffer(i10, j3);
     }
 
     @Override // r2.l
@@ -111,45 +106,13 @@ public final class c implements l {
         this.a.start();
     }
 
-    @Override // r2.l
-    public final void g(int i10, long j3) {
-        this.a.releaseOutputBuffer(i10, j3);
-    }
-
-    @Override // r2.l
-    public final ByteBuffer getInputBuffer(int i10) {
-        return this.a.getInputBuffer(i10);
-    }
-
-    @Override // r2.l
-    public final ByteBuffer getOutputBuffer(int i10) {
-        return this.a.getOutputBuffer(i10);
-    }
-
-    @Override // r2.l
-    public final MediaFormat getOutputFormat() {
-        MediaFormat mediaFormat;
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            try {
-                mediaFormat = fVar.h;
-                if (mediaFormat == null) {
-                    throw new IllegalStateException();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return mediaFormat;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:18:0x002c A[Catch: all -> 0x002e, DONT_GENERATE, TryCatch #0 {all -> 0x002e, blocks: (B:4:0x000a, B:6:0x000f, B:8:0x0013, B:10:0x0017, B:12:0x0021, B:18:0x002c, B:21:0x0030, B:26:0x004a, B:29:0x003e, B:30:0x004c, B:31:0x0051, B:33:0x0052, B:34:0x0054, B:35:0x0055, B:36:0x0057, B:37:0x0058, B:38:0x005a), top: B:3:0x000a }] */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0030 A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, blocks: (B:4:0x000a, B:6:0x000f, B:8:0x0013, B:10:0x0017, B:12:0x0021, B:18:0x002c, B:21:0x0030, B:26:0x004a, B:29:0x003e, B:30:0x004c, B:31:0x0051, B:33:0x0052, B:34:0x0054, B:35:0x0055, B:36:0x0057, B:37:0x0058, B:38:0x005a), top: B:3:0x000a }] */
     @Override // r2.l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int h() {
+    public final int g() {
         boolean z10;
         this.c.c();
         f fVar = this.b;
@@ -197,13 +160,40 @@ public final class c implements l {
         }
     }
 
+    @Override // r2.l
+    public final ByteBuffer getInputBuffer(int i10) {
+        return this.a.getInputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final ByteBuffer getOutputBuffer(int i10) {
+        return this.a.getOutputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final MediaFormat getOutputFormat() {
+        MediaFormat mediaFormat;
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            try {
+                mediaFormat = fVar.h;
+                if (mediaFormat == null) {
+                    throw new IllegalStateException();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return mediaFormat;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:18:0x002c A[Catch: all -> 0x002e, DONT_GENERATE, TryCatch #0 {all -> 0x002e, blocks: (B:4:0x000a, B:6:0x000f, B:8:0x0013, B:10:0x0017, B:12:0x0021, B:18:0x002c, B:21:0x0031, B:25:0x003c, B:28:0x0040, B:30:0x004e, B:31:0x0075, B:35:0x006b, B:36:0x0077, B:37:0x007c, B:39:0x007d, B:40:0x007f, B:41:0x0080, B:42:0x0082, B:43:0x0083, B:44:0x0085), top: B:3:0x000a }] */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0031 A[Catch: all -> 0x002e, TryCatch #0 {all -> 0x002e, blocks: (B:4:0x000a, B:6:0x000f, B:8:0x0013, B:10:0x0017, B:12:0x0021, B:18:0x002c, B:21:0x0031, B:25:0x003c, B:28:0x0040, B:30:0x004e, B:31:0x0075, B:35:0x006b, B:36:0x0077, B:37:0x007c, B:39:0x007d, B:40:0x007f, B:41:0x0080, B:42:0x0082, B:43:0x0083, B:44:0x0085), top: B:3:0x000a }] */
     @Override // r2.l
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int i(MediaCodec.BufferInfo bufferInfo) {
+    public final int h(MediaCodec.BufferInfo bufferInfo) {
         boolean z10;
         this.c.c();
         f fVar = this.b;
@@ -258,13 +248,22 @@ public final class c implements l {
     }
 
     @Override // r2.l
-    public final void j(int i10) {
+    public final void i(int i10) {
         this.a.setVideoScalingMode(i10);
     }
 
     @Override // r2.l
-    public final void k(Surface surface) {
+    public final void j(Surface surface) {
         this.a.setOutputSurface(surface);
+    }
+
+    @Override // r2.l
+    public final boolean k(k2.u uVar) {
+        f fVar = this.b;
+        synchronized (fVar.a) {
+            fVar.o = uVar;
+        }
+        return true;
     }
 
     @Override // r2.l

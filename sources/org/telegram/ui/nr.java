@@ -1,16 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public interface nr {
-    void a(TLRPC.User user);
+public final /* synthetic */ class nr implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.ew0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ or b;
 
-    void b(long j3);
+    public /* synthetic */ nr(or orVar, int i10) {
+        this.a = i10;
+        this.b = orVar;
+    }
 
-    void c(long j3, TLObject tLObject);
+    @Override // org.telegram.ui.Cells.a5
+    public boolean e(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        sr srVar = this.b.d;
+        return srVar.h0(srVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
+    }
 
-    void d(long j3);
+    @Override // org.telegram.ui.Components.ew0
+    public void h(int i10) {
+        switch (this.a) {
+            case 1:
+                sr srVar = this.b.d;
+                if (srVar.s != null) {
+                    int i11 = srVar.p1;
+                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
+                    srVar.p1 = i10;
+                    if (z10) {
+                        mr w02 = srVar.w0();
+                        srVar.B0();
+                        srVar.A0(w02);
+                    }
+                    srVar.a.m(srVar.P0);
+                    break;
+                }
+                break;
+            default:
+                this.b.d.s1 = i10 + 1;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ew0
+    public /* synthetic */ void n() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
+    }
 }

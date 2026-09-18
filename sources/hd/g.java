@@ -10,7 +10,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import w7.t8;
+import w7.u8;
 
 /* loaded from: classes.dex */
 public abstract class g extends m {
@@ -33,7 +33,7 @@ public abstract class g extends m {
             if (i10 > 1) {
                 sb2.append(charSequence);
             }
-            t8.a(sb2, obj, lVar);
+            u8.a(sb2, obj, lVar);
         }
         sb2.append(charSequence3);
     }
@@ -58,7 +58,7 @@ public abstract class g extends m {
         Object next;
         kotlin.jvm.internal.i.e(iterable, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(k0.j(i10, "Requested element count ", " is less than zero.").toString());
+            throw new IllegalArgumentException(k0.i(i10, "Requested element count ", " is less than zero.").toString());
         }
         o oVar = o.a;
         if (i10 == 0) {

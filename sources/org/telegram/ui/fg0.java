@@ -1,27 +1,79 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+public final class fg0 extends sg.e {
+    public final /* synthetic */ int b0;
 
-    public /* synthetic */ fg0(s3 s3Var, int i10) {
-        this.a = i10;
-        this.b = s3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fg0(Context context, int i10, int i11, int i12) {
+        super(context, i10, i11);
+        this.b0 = i12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run("CANCELLED");
+    @Override // sg.e
+    public void k() {
+        switch (this.b0) {
+            case 4:
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new fg0(this.b, 0));
+                super.k();
                 break;
         }
+    }
+
+    @Override // sg.e, android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.b0) {
+            case 0:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 3:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // sg.e, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.b0) {
+            case 0:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 3:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    private final void l() {
     }
 }

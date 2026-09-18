@@ -8,19 +8,19 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class z extends i1 {
+public final class z extends j1 {
     public final RectF m0;
     public final RectF n0;
     public final Path o0;
     public final /* synthetic */ c0 p0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(c0 c0Var, Context context, int i10, f6 f6Var) {
-        super(context, i10, f6Var);
+    public z(c0 c0Var, Context context, int i10, e6 e6Var) {
+        super(context, i10, e6Var);
         this.p0 = c0Var;
         this.m0 = new RectF();
         this.n0 = new RectF();

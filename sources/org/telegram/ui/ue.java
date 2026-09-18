@@ -6,16 +6,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ zn b;
     public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ ue(bo boVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ ue(zn znVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.b = znVar;
         this.c = messageObject;
     }
 
@@ -35,71 +35,71 @@ public final /* synthetic */ class ue implements Runnable {
                 }
                 break;
             case 1:
-                bo boVar = this.b;
-                boVar.getClass();
+                zn znVar = this.b;
+                znVar.getClass();
                 MessageObject messageObject2 = this.c;
                 TLRPC.Message message = messageObject2.messageOwner;
                 int i10 = message.ttl;
                 boolean z10 = i10 != Integer.MAX_VALUE;
                 int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
-                message.destroyTime = boVar.getConnectionsManager().getCurrentTime() + i11;
-                messageObject2.messageOwner.destroyTimeMillis = boVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
-                if (boVar.h == null) {
-                    boVar.getMessagesController().markMessageAsRead2(boVar.T5, messageObject2.getId(), null, i11, 0L, z10);
+                message.destroyTime = znVar.getConnectionsManager().getCurrentTime() + i11;
+                messageObject2.messageOwner.destroyTimeMillis = znVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
+                if (znVar.h == null) {
+                    znVar.getMessagesController().markMessageAsRead2(znVar.T5, messageObject2.getId(), null, i11, 0L, z10);
                     break;
                 } else {
-                    boVar.getMessagesController().markMessageAsRead(boVar.T5, messageObject2.messageOwner.random_id, i11);
+                    znVar.getMessagesController().markMessageAsRead(znVar.T5, messageObject2.messageOwner.random_id, i11);
                     break;
                 }
             case 2:
                 int id2 = this.c.getId();
-                bo boVar2 = this.b;
-                boVar2.Xa(id2, 0, true, 0, true, 0, null, null, new wg(boVar2, 13));
-                if (boVar2.h6.isEmpty()) {
-                    boVar2.Lb(false);
+                zn znVar2 = this.b;
+                znVar2.Xa(id2, 0, true, 0, true, 0, null, null, new ug(znVar2, 13));
+                if (znVar2.h6.isEmpty()) {
+                    znVar2.Lb(false);
                     break;
                 }
                 break;
             case 3:
-                bo boVar3 = this.b;
-                boVar3.getClass();
+                zn znVar3 = this.b;
+                znVar3.getClass();
                 MessageObject messageObject3 = this.c;
-                boVar3.Xa(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == boVar3.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
+                znVar3.Xa(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == znVar3.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
                 break;
             case 4:
-                bo boVar4 = this.b;
-                boVar4.getClass();
+                zn znVar4 = this.b;
+                znVar4.getClass();
                 MessageObject messageObject4 = this.c;
-                boVar4.Xa(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == boVar4.L6 ? 1 : 0, false, 0, null, null, null);
+                znVar4.Xa(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == znVar4.L6 ? 1 : 0, false, 0, null, null, null);
                 break;
             case 5:
-                bo boVar5 = this.b;
-                boVar5.getClass();
+                zn znVar5 = this.b;
+                znVar5.getClass();
                 MessageObject messageObject5 = this.c;
-                boVar5.F(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, messageObject5.getDialogId() == boVar5.L6 ? 1 : 0, 0, true, false);
+                znVar5.F(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, messageObject5.getDialogId() == znVar5.L6 ? 1 : 0, 0, true, false);
                 break;
             case 6:
-                bo boVar6 = this.b;
-                boVar6.getClass();
+                zn znVar6 = this.b;
+                znVar6.getClass();
                 MessageObject messageObject6 = this.c;
                 if (!messageObject6.isVideo()) {
                     MediaController.getInstance().playMessage(messageObject6);
                     break;
                 } else {
-                    boVar6.ha(null, messageObject6);
+                    znVar6.ha(null, messageObject6);
                     break;
                 }
             case 7:
-                bo boVar7 = this.b;
-                boVar7.getMessagesController().pinMessage(boVar7.e, boVar7.f, this.c.getId(), true, false, false);
-                boVar7.A3 = null;
+                zn znVar7 = this.b;
+                znVar7.getMessagesController().pinMessage(znVar7.e, znVar7.f, this.c.getId(), true, false, false);
+                znVar7.A3 = null;
                 break;
             default:
-                bo boVar8 = this.b;
-                org.telegram.ui.Components.vc.a0(boVar8).c(LocaleController.getString(R.string.AdHidden)).j();
+                zn znVar8 = this.b;
+                org.telegram.ui.Components.xc.a0(znVar8).c(LocaleController.getString(R.string.AdHidden)).j();
                 MessageObject messageObject7 = this.c;
-                boVar8.Fa(messageObject7);
-                boVar8.Ha(messageObject7);
+                znVar8.Fa(messageObject7);
+                znVar8.Ha(messageObject7);
                 break;
         }
     }

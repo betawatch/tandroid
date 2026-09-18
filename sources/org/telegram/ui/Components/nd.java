@@ -1,50 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class nd extends FrameLayout {
-    public ai.f0 a;
-    public ld b;
-    public boolean c;
+public abstract class nd extends LinearLayout {
+    public ImageView a;
+    public TextView b;
+    public Space c;
+    public boolean d;
 
-    public final void a(ld ldVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = ldVar;
-            ldVar.setVisibility(8);
-            addView(ldVar, layoutParams);
-        }
-    }
-
-    public final void b(ai.f0 f0Var, FrameLayout.LayoutParams layoutParams) {
+    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
         if (this.a == null) {
-            this.a = f0Var;
-            addView(f0Var, layoutParams);
+            this.a = imageView;
+            addView(imageView, layoutParams);
         }
     }
 
-    public ld getEditView() {
-        return this.b;
+    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
+        if (this.c == null) {
+            this.c = space;
+            addView(space, layoutParams);
+        }
     }
 
-    public View getReplyView() {
+    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = textView;
+            addView(textView, layoutParams);
+        }
+    }
+
+    public abstract void d();
+
+    public ImageView getImageView() {
         return this.a;
     }
 
-    public void setEditMode(boolean z10) {
-        this.c = z10;
-        this.a.setVisibility(z10 ? 8 : 0);
-        this.b.setVisibility(z10 ? 0 : 8);
+    public TextView getTextView() {
+        return this.b;
     }
 
-    public void setEditSuggestionMode(boolean z10) {
-        setEditMode(z10);
-        if (z10) {
-            this.a.setVisibility(0);
+    public void setEditButton(boolean z10) {
+        this.d = z10;
+    }
+
+    public void setOnlyIconMode(boolean z10) {
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setVisibility(z10 ? 8 : 0);
         }
-        this.b.a[0].setOnlyIconMode(z10);
-        this.b.a[1].setOnlyIconMode(z10);
+        Space space = this.c;
+        if (space != null) {
+            space.setVisibility(z10 ? 8 : 0);
+        }
     }
 }

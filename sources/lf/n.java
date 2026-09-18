@@ -8,111 +8,110 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import k2.c0;
 import n4.y;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class n extends jf.a {
     public static final Logger r = Logger.getLogger(n.class.getName());
 
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x0203, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x0205, code lost:
     
         if (r13 <= 0) goto L129;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0207, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0209, code lost:
     
         if (r0.f != false) goto L129;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:104:0x0209, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:104:0x020b, code lost:
     
         r2 = r6.z(r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x020d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x020f, code lost:
     
         r15.d(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:108:0x023d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x023f, code lost:
     
-        r2.d.s(r2.a.e());
+        r2.d.E0(r2.a.e());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:111:0x0213, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x0215, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x024c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x024e, code lost:
     
-        r2.d.s(r2.a.e());
+        r2.d.E0(r2.a.e());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x0257, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x0259, code lost:
     
         throw r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:114:0x0215, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x0217, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:116:0x021a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:116:0x021c, code lost:
     
         if (r12.isLoggable(r5) != false) goto L123;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:117:0x021c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:117:0x021e, code lost:
     
         r12.log(r5, "ID3 exception occured in frame " + r10 + ": " + r0.getMessage());
      */
-    /* JADX WARN: Code restructure failed: missing block: B:120:0x01ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:120:0x01cc, code lost:
     
         if (r12.isLoggable(r5) == false) goto L137;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:121:0x01cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x01ce, code lost:
     
         r12.log(r5, "ID3 frame claims to extend frames area");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x01c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01c6, code lost:
     
         if (r13 <= r16.e()) goto L98;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x01d6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x01d8, code lost:
     
         r9 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x01db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x01dd, code lost:
     
         if (r9 >= r10.length()) goto L243;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x01e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x01e5, code lost:
     
         if (r10.charAt(r9) < 'A') goto L105;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x01eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x01ed, code lost:
     
         if (r10.charAt(r9) <= 'Z') goto L245;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:88:0x01fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x0200, code lost:
     
         r9 = r9 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:90:0x01f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x01f5, code lost:
     
         if (r10.charAt(r9) < '0') goto L242;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x01fb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x01fd, code lost:
     
         if (r10.charAt(r9) <= '9') goto L246;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0258, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x025a, code lost:
     
-        r8.s(r13);
+        r8.E0(r13);
      */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x028a  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x0321  */
-    /* JADX WARN: Removed duplicated region for block: B:213:0x03b4  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x03ba  */
-    /* JADX WARN: Removed duplicated region for block: B:219:0x03c0  */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x03c6  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x03cc  */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x03d2  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x03d8  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x03b6  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x03bc  */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x03c2  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x03c8  */
+    /* JADX WARN: Removed duplicated region for block: B:225:0x03ce  */
+    /* JADX WARN: Removed duplicated region for block: B:228:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x03da  */
     /* JADX WARN: Removed duplicated region for block: B:233:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:240:? A[RETURN, SYNTHETIC] */
     /*
@@ -139,7 +138,6 @@ public final class n extends jf.a {
         this.a = "MP3";
         o oVar = new o(bufferedInputStream);
         oVar.d = 0;
-        int i11 = 3;
         if (h.b(oVar)) {
             Logger logger2 = h.s;
             h hVar = new h();
@@ -150,68 +148,67 @@ public final class n extends jf.a {
                 jVar.b = 0;
                 jVar.c = 0;
                 long j13 = dVar.b;
-                c0 c0Var = new c0(dVar, i11);
+                a4.m mVar = new a4.m(dVar, 27);
                 byte[] bArr = new byte[3];
-                int i12 = 0;
-                while (i12 < i11) {
+                int i11 = 0;
+                for (int i12 = 3; i11 < i12; i12 = 3) {
                     long j14 = j13;
-                    int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr, i12, 3 - i12);
+                    int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr, i11, 3 - i11);
                     if (read <= 0) {
                         throw new EOFException();
                     }
-                    i12 += read;
+                    i11 += read;
                     j13 = j14;
-                    i11 = 3;
                 }
                 long j15 = j13;
                 String str5 = new String(bArr, "ISO-8859-1");
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte o9 = c0Var.o();
-                jVar.a = o9;
-                if (o9 != 2 && o9 != 3 && o9 != 4) {
-                    throw new c(k0.i(o9, "Unsupported ID3v2 version: "));
+                byte y02 = mVar.y0();
+                jVar.a = y02;
+                if (y02 != 2 && y02 != 3 && y02 != 4) {
+                    throw new c(k0.h(y02, "Unsupported ID3v2 version: "));
                 }
-                byte o10 = c0Var.o();
-                byte o11 = c0Var.o();
-                int q6 = c0Var.q();
-                jVar.b = q6 + 10;
-                if (o9 == 2) {
-                    jVar.d = (o11 & 128) != 0;
-                    jVar.e = (o11 & 64) != 0;
-                    b11 = o10;
+                byte y03 = mVar.y0();
+                byte y04 = mVar.y0();
+                int B0 = mVar.B0();
+                jVar.b = B0 + 10;
+                if (y02 == 2) {
+                    jVar.d = (y04 & 128) != 0;
+                    jVar.e = (y04 & 64) != 0;
+                    b11 = y03;
                 } else {
-                    jVar.d = (o11 & 128) != 0;
-                    if ((o11 & 64) == 0) {
-                        b11 = o10;
-                        b12 = o11;
-                    } else if (o9 == 3) {
-                        int p5 = c0Var.p();
-                        c0Var.o();
-                        c0Var.o();
-                        c0Var.p();
-                        b11 = o10;
-                        b12 = o11;
-                        c0Var.s(p5 - 6);
+                    jVar.d = (y04 & 128) != 0;
+                    if ((y04 & 64) == 0) {
+                        b11 = y03;
+                        b12 = y04;
+                    } else if (y02 == 3) {
+                        int A0 = mVar.A0();
+                        mVar.y0();
+                        mVar.y0();
+                        mVar.A0();
+                        b11 = y03;
+                        b12 = y04;
+                        mVar.E0(A0 - 6);
                     } else {
-                        b11 = o10;
-                        b12 = o11;
-                        c0Var.s(c0Var.q() - 4);
+                        b11 = y03;
+                        b12 = y04;
+                        mVar.E0(mVar.B0() - 4);
                     }
-                    if (o9 >= 4 && (b12 & 16) != 0) {
+                    if (y02 >= 4 && (b12 & 16) != 0) {
                         jVar.c = 10;
-                        jVar.b = q6 + 20;
+                        jVar.b = B0 + 20;
                     }
                 }
                 int i13 = (int) (dVar.b - j15);
                 hVar.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(o9), Integer.valueOf(b11));
+                String.format("2.%d.%d", Integer.valueOf(y02), Integer.valueOf(b11));
                 int i14 = jVar.b;
                 if (jVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (o9 >= 4 || !jVar.d) {
+                if (y02 >= 4 || !jVar.d) {
                     logger = logger2;
                     iVar = new i(oVar, i13, (i14 - i13) - jVar.c, jVar);
                 } else {
@@ -238,7 +235,7 @@ public final class n extends jf.a {
                     iVar = new i(new ByteArrayInputStream(bArr2, 0, i17), i13, i17, jVar);
                     logger = logger2;
                 }
-                c0 c0Var2 = (c0) iVar.d;
+                a4.m mVar2 = (a4.m) iVar.d;
                 mf.a aVar2 = (mf.a) iVar.b;
                 while (true) {
                     try {
@@ -267,7 +264,7 @@ public final class n extends jf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                c0Var2.s(aVar.e());
+                                mVar2.E0(aVar.e());
                                 i10 = jVar.c;
                                 if (i10 > 0) {
                                 }
@@ -313,7 +310,7 @@ public final class n extends jf.a {
                         aVar = aVar2;
                     }
                 }
-                c0Var2.s(aVar.e());
+                mVar2.E0(aVar.e());
                 i10 = jVar.c;
                 if (i10 > 0) {
                     oVar.skip(i10);

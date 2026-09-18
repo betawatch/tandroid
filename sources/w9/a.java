@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import java.util.ArrayList;
-import n7.a1;
+import n7.z0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -16,9 +16,9 @@ public final class a {
     public final String e;
     public final String f;
     public final String g;
-    public final a1 h;
+    public final z0 h;
 
-    public a(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, a1 a1Var) {
+    public a(String str, String str2, ArrayList arrayList, String str3, String str4, String str5, String str6, z0 z0Var) {
         this.a = str;
         this.b = str2;
         this.c = arrayList;
@@ -26,10 +26,10 @@ public final class a {
         this.e = str4;
         this.f = str5;
         this.g = str6;
-        this.h = a1Var;
+        this.h = z0Var;
     }
 
-    public static a a(Context context, u uVar, String str, String str2, ArrayList arrayList, a1 a1Var) {
+    public static a a(Context context, u uVar, String str, String str2, ArrayList arrayList, z0 z0Var) {
         String packageName = context.getPackageName();
         String c10 = uVar.c();
         PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
@@ -38,6 +38,6 @@ public final class a {
         if (str3 == null) {
             str3 = "0.0";
         }
-        return new a(str, str2, arrayList, c10, packageName, l4, str3, a1Var);
+        return new a(str, str2, arrayList, c10, packageName, l4, str3, z0Var);
     }
 }

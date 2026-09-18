@@ -6,7 +6,7 @@ import java.io.InterruptedIOException;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class l implements p {
     public final b2.k b;
@@ -136,7 +136,7 @@ public final class l implements p {
 
     @Override // c3.p
     public final boolean h(byte[] bArr, int i10, int i11, boolean z10) {
-        if (!s(i11, z10)) {
+        if (!t(i11, z10)) {
             return false;
         }
         System.arraycopy(this.e, this.f - i11, bArr, i10, i11);
@@ -149,8 +149,8 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final void k(int i10) {
-        s(i10, false);
+    public final void l(int i10) {
+        t(i10, false);
     }
 
     @Override // c3.p
@@ -192,25 +192,6 @@ public final class l implements p {
     }
 
     @Override // c3.p
-    public final boolean s(int i10, boolean z10) {
-        b(i10);
-        int i11 = this.h - this.f;
-        while (i11 < i10) {
-            int i12 = i10;
-            boolean z11 = z10;
-            i11 = c(this.e, this.f, i12, i11, z11);
-            if (i11 == -1) {
-                return false;
-            }
-            this.h = this.f + i11;
-            i10 = i12;
-            z10 = z11;
-        }
-        this.f += i10;
-        return true;
-    }
-
-    @Override // c3.p
     public final int skip(int i10) {
         l lVar;
         int min = Math.min(this.h, i10);
@@ -226,5 +207,24 @@ public final class l implements p {
             lVar.d += min;
         }
         return min;
+    }
+
+    @Override // c3.p
+    public final boolean t(int i10, boolean z10) {
+        b(i10);
+        int i11 = this.h - this.f;
+        while (i11 < i10) {
+            int i12 = i10;
+            boolean z11 = z10;
+            i11 = c(this.e, this.f, i12, i11, z11);
+            if (i11 == -1) {
+                return false;
+            }
+            this.h = this.f + i11;
+            i10 = i12;
+            z10 = z11;
+        }
+        this.f += i10;
+        return true;
     }
 }

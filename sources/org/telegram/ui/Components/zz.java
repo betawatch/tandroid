@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class zz {
     public int A;
@@ -97,7 +97,7 @@ public final class zz {
     public int m0;
     public int n;
     public int n0;
-    public k2.c0 o;
+    public n2.e o;
     public int o0;
     public int p;
     public int p0;
@@ -361,9 +361,9 @@ public final class zz {
                                             this.F = GLES20.glGetAttribLocation(this.D, "inputTexCoord");
                                             this.G = GLES20.glGetUniformLocation(this.D, "sTexture");
                                         }
-                                        k2.c0 c0Var = new k2.c0(13);
+                                        n2.e eVar = new n2.e(7, false);
                                         int[] iArr4 = new int[1];
-                                        c0Var.b = iArr4;
+                                        eVar.b = iArr4;
                                         ArrayList arrayList = new ArrayList();
                                         arrayList.add(new PointF(0.0f, 0.0f));
                                         arrayList.add(new PointF(0.5f, 0.5f));
@@ -372,8 +372,8 @@ public final class zz {
                                         arrayList2.add(new PointF(0.0f, 0.0f));
                                         arrayList2.add(new PointF(0.47f, 0.57f));
                                         arrayList2.add(new PointF(1.0f, 1.0f));
-                                        float[] j3 = k2.c0.j(arrayList2);
-                                        float[] j10 = k2.c0.j(arrayList);
+                                        float[] D = n2.e.D(arrayList2);
+                                        float[] D2 = n2.e.D(arrayList);
                                         GLES20.glGenTextures(1, iArr4, 0);
                                         GLES20.glBindTexture(3553, iArr4[0]);
                                         GLES20.glTexParameteri(3553, 10241, 9729);
@@ -382,21 +382,21 @@ public final class zz {
                                         GLES20.glTexParameteri(3553, 10243, 33071);
                                         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(1024);
                                         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
-                                        if (j10.length >= 256 && j10.length >= 256 && j10.length >= 256 && j3.length >= 256) {
+                                        if (D2.length >= 256 && D2.length >= 256 && D2.length >= 256 && D.length >= 256) {
                                             for (int i10 = 0; i10 < 256; i10++) {
                                                 float f7 = i10;
-                                                int min = (int) Math.min(Math.max(j10[i10] + f7, 0.0f), 255.0f);
-                                                int min2 = (int) Math.min(Math.max(j10[i10] + f7, 0.0f), 255.0f);
-                                                int min3 = (int) Math.min(Math.max(f7 + j10[i10], 0.0f), 255.0f);
-                                                allocateDirect.put((byte) Math.min(Math.max(min3 + j3[min3], 0.0f), 255.0f));
-                                                allocateDirect.put((byte) Math.min(Math.max(min2 + j3[min2], 0.0f), 255.0f));
-                                                allocateDirect.put((byte) Math.min(Math.max(min + j3[min], 0.0f), 255.0f));
+                                                int min = (int) Math.min(Math.max(D2[i10] + f7, 0.0f), 255.0f);
+                                                int min2 = (int) Math.min(Math.max(D2[i10] + f7, 0.0f), 255.0f);
+                                                int min3 = (int) Math.min(Math.max(f7 + D2[i10], 0.0f), 255.0f);
+                                                allocateDirect.put((byte) Math.min(Math.max(min3 + D[min3], 0.0f), 255.0f));
+                                                allocateDirect.put((byte) Math.min(Math.max(min2 + D[min2], 0.0f), 255.0f));
+                                                allocateDirect.put((byte) Math.min(Math.max(min + D[min], 0.0f), 255.0f));
                                                 allocateDirect.put((byte) -1);
                                             }
                                             allocateDirect.position(0);
                                             GLES20.glTexImage2D(3553, 0, 6408, 256, 1, 0, 6408, 5121, allocateDirect);
                                         }
-                                        this.o = c0Var;
+                                        this.o = eVar;
                                         return true;
                                     }
                                 }

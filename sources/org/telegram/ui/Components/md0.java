@@ -1,42 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class md0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nd0 b;
+public final class md0 extends TextView {
+    public final /* synthetic */ nd0 a;
 
-    public /* synthetic */ md0(nd0 nd0Var, int i10) {
-        this.a = i10;
-        this.b = nd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public md0(nd0 nd0Var, Context context, int i10) {
+        super(context);
+        this.a = nd0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                sd0 sd0Var = this.b.d;
-                sd0Var.P = 1.0f;
-                sd0Var.f(1.0f);
-                break;
-            default:
-                nd0 nd0Var = this.b;
-                Runnable runnable = nd0Var.c;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                if (SharedConfig.passcodeType == 1 && nd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = nd0Var.d.r) != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(nd0Var.d.r);
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        nd0 nd0Var = this.a;
+        if (nd0Var.e.getAdapter() instanceof ld0) {
+            ((ld0) nd0Var.e.getAdapter()).getClass();
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void setSelected(boolean z10) {
+        super.setSelected(z10);
+        Drawable background = getBackground();
+        nd0 nd0Var = this.a;
+        if (background != null) {
+            org.telegram.ui.ActionBar.j6.B1(background, nd0Var.c(z10 ? 0.1f : 0.05f), true);
+        }
+        setTextColor(nd0Var.c(z10 ? 0.8f : 0.6f));
     }
 }

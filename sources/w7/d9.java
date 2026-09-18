@@ -1,42 +1,79 @@
 package w7;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Looper;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
+import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class d9 {
-    public static com.google.android.gms.internal.clearcut.v0 a(Context context, GoogleSignInOptions googleSignInOptions) {
-        n6.l.h(googleSignInOptions);
-        return new com.google.android.gms.internal.clearcut.v0(context, w5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
+    public static void a(z3.d dVar, int i10, e2.h hVar) {
+        long g10 = dVar.g(i10);
+        List s10 = dVar.s(g10);
+        if (s10.isEmpty()) {
+            return;
+        }
+        if (i10 == dVar.v() - 1) {
+            throw new IllegalStateException();
+        }
+        long g11 = dVar.g(i10 + 1) - dVar.g(i10);
+        if (g11 > 0) {
+            hVar.accept(new z3.a(g10, g11, s10));
+        }
     }
 
-    public static Task b(Intent intent) {
-        z5.b bVar;
-        GoogleSignInAccount googleSignInAccount;
-        a5.a aVar = a6.h.a;
-        Status status = Status.h;
-        if (intent == null) {
-            bVar = new z5.b(null, status);
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0059 A[LOOP:0: B:14:0x0053->B:16:0x0059, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void b(z3.d dVar, z3.l lVar, e2.h hVar) {
+        int d;
+        boolean z10;
+        int i10;
+        long j3 = lVar.a;
+        if (j3 == -9223372036854775807L) {
+            d = 0;
         } else {
-            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
-            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
-            if (googleSignInAccount2 == null) {
-                if (status2 != null) {
-                    status = status2;
-                }
-                bVar = new z5.b(null, status);
-            } else {
-                bVar = new z5.b(googleSignInAccount2, Status.e);
+            d = dVar.d(j3);
+            if (d == -1) {
+                d = dVar.v();
+            }
+            if (d > 0 && dVar.g(d - 1) == j3) {
+                d--;
             }
         }
-        Status status3 = bVar.a;
-        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(n6.l.m(status3)) : Tasks.forResult(googleSignInAccount);
+        if (j3 != -9223372036854775807L && d < dVar.v()) {
+            List s10 = dVar.s(j3);
+            long g10 = dVar.g(d);
+            if (!s10.isEmpty()) {
+                long j10 = lVar.a;
+                if (j10 < g10) {
+                    hVar.accept(new z3.a(j10, g10 - j10, s10));
+                    z10 = true;
+                    for (i10 = d; i10 < dVar.v(); i10++) {
+                        a(dVar, i10, hVar);
+                    }
+                    if (lVar.b) {
+                        return;
+                    }
+                    if (z10) {
+                        d--;
+                    }
+                    for (int i11 = 0; i11 < d; i11++) {
+                        a(dVar, i11, hVar);
+                    }
+                    if (z10) {
+                        hVar.accept(new z3.a(dVar.g(d), j3 - dVar.g(d), dVar.s(j3)));
+                        return;
+                    }
+                    return;
+                }
+            }
+        }
+        z10 = false;
+        while (i10 < dVar.v()) {
+        }
+        if (lVar.b) {
+        }
     }
 }

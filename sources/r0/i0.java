@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -41,16 +41,16 @@ public abstract class i0 {
         return l0Var2;
     }
 
-    public static l1 b(View view, l1 l1Var) {
+    public static m1 b(View view, m1 m1Var) {
         int i10 = Build.VERSION.SDK_INT;
-        WindowInsets g10 = l1Var.g();
+        WindowInsets g10 = m1Var.g();
         if (g10 != null) {
             WindowInsets a2 = i10 >= 30 ? f0.a(view, g10) : y.a(view, g10);
             if (!a2.equals(g10)) {
-                return l1.h(view, a2);
+                return m1.h(view, a2);
             }
         }
-        return l1Var;
+        return m1Var;
     }
 
     public static boolean c(View view, KeyEvent keyEvent) {
@@ -141,7 +141,7 @@ public abstract class i0 {
         return Build.VERSION.SDK_INT >= 31 ? g0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
-    public static l1 f(View view) {
+    public static m1 f(View view) {
         return Build.VERSION.SDK_INT >= 23 ? b0.a(view) : a0.f(view);
     }
 
@@ -214,15 +214,15 @@ public abstract class i0 {
         }
     }
 
-    public static l1 h(View view, l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
+    public static m1 h(View view, m1 m1Var) {
+        WindowInsets g10 = m1Var.g();
         if (g10 != null) {
             WindowInsets b10 = y.b(view, g10);
             if (!b10.equals(g10)) {
-                return l1.h(view, b10);
+                return m1.h(view, b10);
             }
         }
-        return l1Var;
+        return m1Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -2,15 +2,15 @@ package ei;
 
 import android.view.ViewGroup;
 import java.util.LinkedList;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.be0;
+import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.Components.sb;
-import org.telegram.ui.Components.sd0;
+import org.telegram.ui.Components.lc0;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements o1.f {
     public final /* synthetic */ int a;
@@ -52,41 +52,41 @@ public final /* synthetic */ class m4 implements o1.f {
                 }
                 break;
             case 1:
-                sb sbVar = (sb) this.b;
-                ng ngVar = (ng) this.c;
-                sbVar.setInOutOffset(0.0f);
+                ub ubVar = (ub) this.b;
+                og ogVar = (og) this.c;
+                ubVar.setInOutOffset(0.0f);
                 if (!z10) {
-                    ngVar.run();
+                    ogVar.run();
                     break;
                 }
                 break;
             case 2:
-                vi.r((vi) this.b, (org.telegram.ui.ActionBar.q) this.c);
+                vi.r((vi) this.b, (org.telegram.messenger.video.o) this.c);
                 break;
             case 3:
                 gi giVar = (gi) this.b;
-                fh fhVar = (fh) this.c;
+                gh ghVar = (gh) this.c;
                 vi viVar = (vi) giVar.d;
                 viVar.z0.setTranslationY(0.0f);
                 viVar.z0.k(viVar.l2);
-                viewGroup = ((org.telegram.ui.ActionBar.g3) viVar).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) viVar).containerView;
                 viewGroup.invalidate();
-                fhVar.run();
+                ghVar.run();
                 viVar.a2(0);
                 break;
             default:
-                sd0 sd0Var = (sd0) this.b;
-                cc0 cc0Var = (cc0) this.c;
-                LinkedList linkedList = sd0Var.M;
-                sd0Var.L = null;
-                cc0Var.D = null;
-                cc0Var.z();
+                be0 be0Var = (be0) this.b;
+                lc0 lc0Var = (lc0) this.c;
+                LinkedList linkedList = be0Var.M;
+                be0Var.L = null;
+                lc0Var.D = null;
+                lc0Var.z();
                 if (!z10) {
-                    cc0Var.h = 1.0f;
-                    cc0Var.z();
+                    lc0Var.h = 1.0f;
+                    lc0Var.z();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        sd0Var.N.poll();
+                        be0Var.N.poll();
                         break;
                     }
                 }

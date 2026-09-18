@@ -5,7 +5,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -31,29 +31,29 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 e0Var.a.run();
                 break;
             case 2:
-                t1 t1Var = (t1) this.b;
-                t1Var.getClass();
-                t1Var.Bb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t1Var.invalidate();
+                u1 u1Var = (u1) this.b;
+                u1Var.getClass();
+                u1Var.Bb = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u1Var.invalidate();
                 break;
             case 3:
-                f4 f4Var = (f4) this.b;
-                org.telegram.ui.Components.u9 u9Var = f4Var.a;
+                g4 g4Var = (g4) this.b;
+                org.telegram.ui.Components.w9 w9Var = g4Var.a;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f7 = f4Var.H ? 1.0f - (0.18f * floatValue) : 0.82f + (0.18f * floatValue);
-                u9Var.setScaleX(f7);
-                u9Var.setScaleY(f7);
-                if (!f4Var.H) {
+                float f7 = g4Var.H ? 1.0f - (0.18f * floatValue) : 0.82f + (0.18f * floatValue);
+                w9Var.setScaleX(f7);
+                w9Var.setScaleY(f7);
+                if (!g4Var.H) {
                     floatValue = 1.0f - floatValue;
                 }
-                f4Var.I = floatValue;
-                f4Var.invalidate();
+                g4Var.I = floatValue;
+                g4Var.invalidate();
                 break;
             case 4:
-                n6 n6Var = (n6) this.b;
-                n6Var.getClass();
-                n6Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n6Var.invalidate();
+                o6 o6Var = (o6) this.b;
+                o6Var.getClass();
+                o6Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o6Var.invalidate();
                 break;
             case 5:
                 t7 t7Var = (t7) this.b;

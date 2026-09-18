@@ -1,21 +1,7 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class aw0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ bw0 k;
-
-    public aw0(bw0 bw0Var) {
-        this.k = bw0Var;
-    }
+public interface aw0 {
+    void H(int i10, boolean z10);
 }

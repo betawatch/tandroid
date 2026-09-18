@@ -1,81 +1,40 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class na extends s4.v {
-    public final /* synthetic */ sa d;
+public final /* synthetic */ class na implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oa b;
 
-    public na(sa saVar) {
-        this.d = saVar;
+    public /* synthetic */ na(oa oaVar, int i10) {
+        this.a = i10;
+        this.b = oaVar;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        View view = c1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        return (c1Var.f == 4 && ((pa) c1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        if (c1Var.f != c1Var2.f) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                oa oaVar = this.b;
+                oaVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                oaVar.n = floatValue;
+                oaVar.f.setTranslationX(floatValue * AndroidUtilities.dp(16.0f));
+                oaVar.d.setAlpha(oaVar.n);
+                break;
+            default:
+                oa oaVar2 = this.b;
+                oaVar2.getClass();
+                oaVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                int i10 = org.telegram.ui.ActionBar.j6.z6;
+                org.telegram.ui.ActionBar.e6 e6Var = oaVar2.b;
+                int d = i0.a.d(oaVar2.E, org.telegram.ui.ActionBar.j6.v0(i10, e6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, e6Var));
+                oaVar2.e.b(d);
+                oaVar2.f.setTextColor(d);
+                break;
         }
-        View view = c1Var2.a;
-        if ((view instanceof pa) && !((pa) view).G) {
-            return false;
-        }
-        ja jaVar = this.d.c;
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        int i10 = b10 - 4;
-        int i11 = b11 - 4;
-        sa saVar = jaVar.c;
-        ArrayList arrayList = saVar.v;
-        if (i10 < arrayList.size() && i11 < arrayList.size()) {
-            if (b10 != b11) {
-                saVar.d = true;
-            }
-            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
-            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
-            arrayList.set(i11, tL_username);
-            jaVar.p(b10, b11);
-            int size = arrayList.size() + 3;
-            if (b10 == size || b11 == size) {
-                jaVar.n(b10, 3);
-                jaVar.n(b11, 3);
-            }
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        sa saVar = this.d;
-        if (i10 == 0) {
-            sa.Y(saVar);
-        } else {
-            saVar.b.J0(false);
-            c1Var.a.setPressed(true);
-        }
-        if (c1Var != null) {
-            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
     }
 }

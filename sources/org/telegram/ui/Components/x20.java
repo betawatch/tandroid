@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class x20 extends FrameLayout {
     public float a;
@@ -158,8 +158,8 @@ public final class x20 extends FrameLayout {
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(z20Var5.b0, z10 ? 1.0f : 0.0f);
                     z20Var5.c0 = ofFloat;
-                    ofFloat.addUpdateListener(new i6(z20Var5, 25));
-                    z20Var5.c0.addListener(new aa(10, z20Var5, z10));
+                    ofFloat.addUpdateListener(new k6(z20Var5, 25));
+                    z20Var5.c0.addListener(new ca(10, z20Var5, z10));
                     z20Var5.c0.setDuration(250L);
                     z20Var5.c0.setInterpolator(qr.f);
                     z20Var5.c0.start();
@@ -286,8 +286,8 @@ public final class x20 extends FrameLayout {
         }
         this.c = false;
         z20 z20Var12 = this.n;
-        bj0 bj0Var = z20Var12.V;
-        yi0 yi0Var = z20Var12.v;
+        lj0 lj0Var = z20Var12.V;
+        ij0 ij0Var = z20Var12.v;
         ai.f0 f0Var = z20Var12.b;
         x20 x20Var2 = z20Var12.a;
         ci.s6 s6Var = z20Var12.c;
@@ -307,14 +307,14 @@ public final class x20 extends FrameLayout {
         x20 x20Var3 = z20Var14.a;
         ai.f0 f0Var2 = z20Var14.b;
         FrameLayout frameLayout = z20Var14.d;
-        org.telegram.ui.w7 w7Var = z20Var14.e;
+        org.telegram.ui.v7 v7Var = z20Var14.e;
         z20Var12.d();
         z20.d0 = null;
         AnimatorSet animatorSet = new AnimatorSet();
-        int i13 = yi0Var.a0;
+        int i13 = ij0Var.a0;
         if (i13 < 33) {
             x20Var = x20Var3;
-            j3 = (long) (((1.0f - (i13 / 33.0f)) * yi0Var.r()) / 2.0f);
+            j3 = (long) (((1.0f - (i13 / 33.0f)) * ij0Var.r()) / 2.0f);
         } else {
             x20Var = x20Var3;
             j3 = 0;
@@ -376,11 +376,11 @@ public final class x20 extends FrameLayout {
         ofFloat14.setDuration(350L);
         ofFloat14.setInterpolator(qrVar3);
         animatorSet.playTogether(ofFloat14);
-        animatorSet.addListener(new y20(z20Var12, x20Var4, f0Var2, windowManager, frameLayout, w7Var));
+        animatorSet.addListener(new y20(z20Var12, x20Var4, f0Var2, windowManager, frameLayout, v7Var));
         animatorSet.start();
-        yi0Var.P(66);
-        bj0Var.i();
-        bj0Var.d();
+        ij0Var.P(66);
+        lj0Var.i();
+        lj0Var.d();
         return false;
     }
 }

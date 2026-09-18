@@ -1,31 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class kd0 extends v7.n {
-    public final /* synthetic */ sd0 a;
-
-    public kd0(sd0 sd0Var) {
-        this.a = sd0Var;
-    }
-
-    @Override // v7.n
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.m(true);
-    }
-
-    @Override // v7.n
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.m(true);
-    }
-
-    @Override // v7.n
-    public final void c(androidx.biometric.s sVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.k(true);
-    }
+public final class kd0 {
+    public Paint a;
+    public Paint b;
+    public View c;
+    public i2.z d;
+    public long e;
+    public RectF f;
+    public float g;
+    public float h;
+    public float i;
+    public Path j;
+    public boolean k;
+    public boolean l;
 }

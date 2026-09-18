@@ -11,11 +11,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.wh;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.qh;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -79,17 +79,17 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                         z5Var.container.performHapticFeedback(3);
                     } catch (Exception unused) {
                     }
-                    new org.telegram.ui.Components.vc(z5Var.container, e6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new g5(r6Var, 1))).k(true);
+                    new org.telegram.ui.Components.xc(z5Var.container, e6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new g5(r6Var, 1))).k(true);
                     return Boolean.FALSE;
                 }
                 int i10 = 0;
                 for (int i11 = 0; i11 < k6Var.getChildCount(); i11++) {
-                    if (k6Var.getChildAt(i11) instanceof qg.t0) {
+                    if (k6Var.getChildAt(i11) instanceof qg.q0) {
                         i10++;
                     }
                 }
                 if (i10 >= 3) {
-                    new org.telegram.ui.Components.vc(z5Var.container, e6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
+                    new org.telegram.ui.Components.xc(z5Var.container, e6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
                     return Boolean.FALSE;
                 }
                 zArr[0] = false;
@@ -98,7 +98,7 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                 return Boolean.TRUE;
             case 1:
                 final org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) this.b;
-                final org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.c;
+                final org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) this.c;
                 Context context = (Context) this.d;
                 org.telegram.ui.Components.c0 c0Var = (org.telegram.ui.Components.c0) obj;
                 TL_aicompose.AiComposeTone aiComposeTone = c0Var.e;
@@ -106,8 +106,8 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
                 final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                n70 F = n70.F(e0Var.container, f6Var, c0Var);
-                F.W(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var)));
+                w70 F = w70.F(e0Var.container, e6Var2, c0Var);
+                F.W(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, e6Var2)));
                 final int i12 = 0;
                 F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable
@@ -115,7 +115,7 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                         switch (i12) {
                             case 0:
                                 e0 e0Var2 = e0Var;
-                                y yVar = new y(e0Var2.getContext(), f6Var);
+                                y yVar = new y(e0Var2.getContext(), e6Var2);
                                 TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
                                 yVar.j0 = tL_aiComposeTone2;
                                 yVar.h0 = Long.valueOf(tL_aiComposeTone2.emoji_id);
@@ -132,19 +132,19 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                                 break;
                             default:
                                 e0 e0Var3 = e0Var;
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, f6Var);
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, e6Var2);
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.x5(17, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.l4(18, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
                         }
                     }
                 }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.o5(e0Var, tL_aiComposeTone, context, f6Var, 15), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new wh(19, e0Var, tL_aiComposeTone));
+                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.n5(e0Var, tL_aiComposeTone, context, e6Var2, 15), false);
+                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new qh(23, e0Var, tL_aiComposeTone));
                 final int i13 = 1;
                 F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                     @Override // java.lang.Runnable
@@ -152,7 +152,7 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                         switch (i13) {
                             case 0:
                                 e0 e0Var2 = e0Var;
-                                y yVar = new y(e0Var2.getContext(), f6Var);
+                                y yVar = new y(e0Var2.getContext(), e6Var2);
                                 TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
                                 yVar.j0 = tL_aiComposeTone2;
                                 yVar.h0 = Long.valueOf(tL_aiComposeTone2.emoji_id);
@@ -169,11 +169,11 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                                 break;
                             default:
                                 e0 e0Var3 = e0Var;
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, f6Var);
+                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, e6Var2);
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.x5(17, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.l4(18, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
@@ -188,17 +188,17 @@ public final /* synthetic */ class p5 implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((rh.g) this.d).b;
                 return rh.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
             default:
-                ml0 ml0Var = (ml0) this.b;
+                wl0 wl0Var = (wl0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != ml0Var) {
+                    if (view.getParent() != wl0Var) {
                         return Boolean.FALSE;
                     }
                     Boolean bool = (Boolean) callbackReturn.run(view);
                     boolean booleanValue = bool.booleanValue();
-                    s4.c1 U = ml0Var.U(view);
+                    s4.c1 U = wl0Var.U(view);
                     if (U != null) {
                         sparseIntArray.put(U.f, booleanValue ? 1 : 0);
                     }

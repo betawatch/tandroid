@@ -1,72 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class sz0 extends org.telegram.ui.Components.x80 {
-    public final /* synthetic */ ProfileActivity P0;
+public final class sz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sz0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.P0 = profileActivity;
+    public sz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.P0.B3();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        ProfileActivity profileActivity = this.a;
+        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+        kVar.A(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.f8, profileActivity.z0), false);
+        oz0 oz0Var = profileActivity.e0;
+        ImageReceiver imageReceiver = oz0Var.U;
+        org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
+        if (animation != null) {
+            animation.w(oz0Var);
+        }
+        imageReceiver.clearImage();
+        ImageReceiver.BitmapHolder bitmapHolder = oz0Var.W;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            oz0Var.W = null;
+        }
+        oz0Var.V = 0.0f;
+        oz0Var.invalidate();
+        profileActivity.H0 = false;
+        profileActivity.l5(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.k5
-    public final void setTextColor(int i10) {
-        int l1;
-        super.setTextColor(i10);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.k5[] k5VarArr = profileActivity.r;
-        org.telegram.ui.ActionBar.k5 k5Var = k5VarArr[2];
-        if (k5Var != null) {
-            k5Var.setTextColor(i10);
-            k5VarArr[3].setTextColor(i10);
-        }
-        m11 m11Var = profileActivity.b6;
-        if (m11Var == null || m11Var.c == (l1 = org.telegram.ui.ActionBar.j6.l1(1.4f, org.telegram.ui.ActionBar.j6.b(-0.02f, 0.15f, i10)))) {
-            return;
-        }
-        m11Var.c = l1;
-        m11Var.invalidateSelf();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        ProfileActivity profileActivity = this.P0;
-        profileActivity.Z3();
-        profileActivity.getClass();
-        profileActivity.r[2].setTranslationX(f7);
-        profileActivity.r[3].setTranslationX(f7);
-        org.telegram.ui.Components.jw0 jw0Var = profileActivity.T;
-        if (jw0Var != null) {
-            jw0Var.setTranslationX(f7 - profileActivity.Z3());
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.k5[] k5VarArr = profileActivity.r;
-        if (profileActivity.T != null) {
-            AndroidUtilities.dp(3.0f);
-            profileActivity.T.getVisibilityFactor();
-        }
-        k5VarArr[2].setTranslationY(f7);
-        k5VarArr[3].setTranslationY(f7);
-        org.telegram.ui.Components.jw0 jw0Var = profileActivity.T;
-        if (jw0Var != null) {
-            jw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
     }
 }

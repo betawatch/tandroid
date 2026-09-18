@@ -10,6 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.RequestDelegateTimestamp;
@@ -18,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.nm0;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.r00;
 import org.telegram.ui.re;
-import org.telegram.ui.t00;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -114,33 +115,33 @@ public final /* synthetic */ class ga implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.c);
                 break;
             case 2:
-                bo boVar = (bo) obj5;
-                bm0 bm0Var = (bm0) obj;
-                ((n70) obj4).n0 = true;
-                Activity parentActivity = boVar.getParentActivity();
+                zn znVar = (zn) obj5;
+                nm0 nm0Var = (nm0) obj;
+                ((w70) obj4).n0 = true;
+                Activity parentActivity = znVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.z6 z6Var = new ci.z6(boVar, (ArrayList) obj2, j11, bm0Var, 1);
-                re reVar = new re(bm0Var, i11);
-                Pattern pattern = org.telegram.ui.Components.c5.a;
-                org.telegram.ui.Components.c5.K(parentActivity, j11, j10, 0, true, z6Var, reVar, new org.telegram.ui.Components.a5(null), null);
+                ci.z6 z6Var = new ci.z6(znVar, (ArrayList) obj2, j11, nm0Var, 1);
+                re reVar = new re(nm0Var, i11);
+                Pattern pattern = org.telegram.ui.Components.e5.a;
+                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, z6Var, reVar, new org.telegram.ui.Components.c5(null), null);
                 break;
             case 3:
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj5;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
                 TLObject tLObject2 = (TLObject) obj4;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (o2Var.getContext() != null) {
+                if (n2Var.getContext() != null) {
                     if (tLObject2 instanceof TL_chatlists.TL_chatlists_exportedInvites) {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
-                        o2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-                        o2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new t00(o2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        n2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
+                        n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
+                        new r00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        org.telegram.messenger.w1.p(R.string.UnknownError, vc.a0(o2Var), null);
+                        wh.o(R.string.UnknownError, xc.a0(n2Var), null);
                     } else {
-                        new t00(o2Var, dialogFilter, null).show();
+                        new r00(n2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.c)));
@@ -149,15 +150,15 @@ public final /* synthetic */ class ga implements Runnable {
                 }
                 break;
             case 4:
-                yh.a4.i0((yh.a4) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
+                yh.y3.i0((yh.y3) obj5, (TLObject) obj4, (String) obj3, (TL_stars.InputSavedStarGift) obj2, (TLRPC.TL_error) obj, this.c);
                 break;
             case 5:
                 ((boolean[]) obj3)[0] = true;
-                ((yh.v5) obj5).g(this.c, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj2, (Utilities.Callback2) obj);
+                ((yh.t5) obj5).g(this.c, (TLObject) obj4, (TLRPC.TL_textWithEntities) obj2, (Utilities.Callback2) obj);
                 break;
             default:
                 ((boolean[]) obj4)[0] = true;
-                ((yh.v5) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj2, this.c, null, true, (Utilities.Callback2) obj);
+                ((yh.t5) obj5).h((TLRPC.TL_payments_paymentFormStarGift) obj3, (TL_stars.StarGift) obj2, this.c, null, true, (Utilities.Callback2) obj);
                 break;
         }
     }
@@ -182,9 +183,9 @@ public final /* synthetic */ class ga implements Runnable {
         this.c = j3;
     }
 
-    public /* synthetic */ ga(yh.v5 v5Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
+    public /* synthetic */ ga(yh.t5 t5Var, boolean[] zArr, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities, Utilities.Callback2 callback2) {
         this.a = 5;
-        this.d = v5Var;
+        this.d = t5Var;
         this.e = zArr;
         this.c = j3;
         this.b = tLObject;
@@ -192,9 +193,9 @@ public final /* synthetic */ class ga implements Runnable {
         this.h = callback2;
     }
 
-    public /* synthetic */ ga(yh.v5 v5Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, Utilities.Callback2 callback2) {
+    public /* synthetic */ ga(yh.t5 t5Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, Utilities.Callback2 callback2) {
         this.a = 6;
-        this.d = v5Var;
+        this.d = t5Var;
         this.b = zArr;
         this.e = tL_payments_paymentFormStarGift;
         this.f = starGift;

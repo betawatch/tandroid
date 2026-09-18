@@ -28,7 +28,7 @@ import k1.m;
 import k1.n;
 import rd.p;
 import v7.t7;
-import yh.a2;
+import yf.q;
 import za.k0;
 import za.m0;
 import za.n0;
@@ -37,7 +37,7 @@ import za.y;
 import zd.c0;
 import zd.e0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class i extends kd.j implements p {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class i extends kd.j implements p {
             case 5:
                 return new i((y) this.c, (String) this.d, cVar, 5);
             default:
-                return new i((ni.f) this.c, (ArrayList) this.d, cVar, 6);
+                return new i((oi.f) this.c, (ArrayList) this.d, cVar, 6);
         }
     }
 
@@ -407,9 +407,9 @@ public final class i extends kd.j implements p {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         t7.b(obj);
-                        Boolean e10 = hVar6.a.e();
-                        if (e10 != null) {
-                            booleanValue = e10.booleanValue();
+                        Boolean h = hVar6.a.h();
+                        if (h != null) {
+                            booleanValue = h.booleanValue();
                         } else {
                             Boolean a2 = hVar6.b.a();
                             booleanValue = a2 != null ? a2.booleanValue() : true;
@@ -419,7 +419,7 @@ public final class i extends kd.j implements p {
                             return iVar2;
                         }
                         id.h hVar7 = (id.h) obj4;
-                        ni.f fVar = new ni.f();
+                        oi.f fVar = new oi.f();
                         fVar.a = hVar7;
                         fVar.c = new LinkedBlockingDeque(20);
                         fVar.d = new a9.d(fVar, 3);
@@ -442,9 +442,9 @@ public final class i extends kd.j implements p {
                             fVar.N(1);
                         }
                         k9.h hVar9 = lVar3.a;
-                        a2 a2Var = new a2(9);
+                        q qVar = new q(11);
                         hVar9.a();
-                        hVar9.j.add(a2Var);
+                        hVar9.j.add(qVar);
                         return iVar2;
                     }
                     t7.b(obj);
@@ -479,10 +479,10 @@ public final class i extends kd.j implements p {
                 k2.u a10 = y.f.a(context, za.u.a[0]);
                 n nVar = new n((String) obj4, cVar, r83 == true ? 1 : 0);
                 this.b = 1;
-                return a10.T(new n1.c(nVar, null, 1), this) == aVar9 ? aVar9 : iVar2;
+                return a10.a(new n1.c(nVar, null, 1), this) == aVar9 ? aVar9 : iVar2;
             default:
                 ArrayList arrayList = (ArrayList) obj4;
-                ni.f fVar2 = (ni.f) this.c;
+                oi.f fVar2 = (oi.f) this.c;
                 jd.a aVar10 = jd.a.a;
                 int i20 = this.b;
                 if (i20 == 0) {
@@ -510,7 +510,7 @@ public final class i extends kd.j implements p {
                     Iterator it2 = values2.iterator();
                     while (it2.hasNext()) {
                         if (((w9.j) it2.next()).a.a()) {
-                            ArrayList f7 = hd.g.f(new ArrayList(new hd.d(new Message[]{ni.f.a(fVar2, arrayList, 2), ni.f.a(fVar2, arrayList, 1)}, true)));
+                            ArrayList f7 = hd.g.f(new ArrayList(new hd.d(new Message[]{oi.f.a(fVar2, arrayList, 2), oi.f.a(fVar2, arrayList, 1)}, true)));
                             k0 k0Var = new k0();
                             if (f7.size() <= 1) {
                                 asList = hd.g.m(f7);
@@ -531,8 +531,8 @@ public final class i extends kd.j implements p {
                                         if (messenger2 != null) {
                                             messenger2.send(message);
                                         }
-                                    } catch (RemoteException e11) {
-                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e11);
+                                    } catch (RemoteException e10) {
+                                        Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e10);
                                         fVar2.L(message);
                                     }
                                 } else {

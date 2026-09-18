@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class b1 extends db.u {
     @Override // db.u
@@ -14,9 +14,9 @@ public class b1 extends db.u {
             if (p5 <= 255 && p5 >= -128) {
                 return Byte.valueOf((byte) p5);
             }
-            StringBuilder l4 = hg.k0.l(p5, "Lossy conversion from ", " to byte; at path ");
-            l4.append(aVar.j());
-            throw new db.j(l4.toString());
+            StringBuilder j3 = hg.k0.j(p5, "Lossy conversion from ", " to byte; at path ");
+            j3.append(aVar.j());
+            throw new db.j(j3.toString());
         } catch (NumberFormatException e) {
             throw new db.j(e);
         }

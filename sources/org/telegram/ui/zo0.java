@@ -1,16 +1,10 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zo0 implements yf.a0, r0.n, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class zo0 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ cq0 b;
 
@@ -19,68 +13,27 @@ public final /* synthetic */ class zo0 implements yf.a0, r0.n, org.telegram.ui.A
         this.b = cq0Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        cq0 cq0Var = this.b;
-        cq0Var.b0 = defaultWindowInsets;
-        np0 np0Var = cq0Var.h.b;
-        int i10 = defaultWindowInsets.a;
-        int paddingTop = np0Var.getPaddingTop();
-        i0.b bVar = cq0Var.b0;
-        np0Var.setPadding(i10, paddingTop, bVar.c, AndroidUtilities.dp(72.0f) + bVar.d);
-        np0 np0Var2 = cq0Var.n.b;
-        int i11 = cq0Var.b0.a;
-        int paddingTop2 = np0Var2.getPaddingTop();
-        i0.b bVar2 = cq0Var.b0;
-        np0Var2.setPadding(i11, paddingTop2, bVar2.c, AndroidUtilities.dp(72.0f) + bVar2.d);
-        FrameLayout frameLayout = cq0Var.P;
-        i0.b bVar3 = cq0Var.b0;
-        frameLayout.setPadding(bVar3.a, 0, bVar3.c, bVar3.d);
-        return r0.l1.b;
-    }
-
-    @Override // yf.a0
-    public void a(int i10) {
-        cq0 cq0Var = this.b;
-        fh.d dVar = cq0Var.g0;
-        ArrayList arrayList = cq0Var.k0;
-        ah.i iVar = cq0Var.f0;
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 < 31 || iVar == null) {
-            return;
-        }
-        ArrayList arrayList2 = cq0Var.j0;
-        int a2 = yf.e0.a(arrayList2, (i11 < 29 || dVar == null) ? 0 : dVar.c(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList);
-        int measuredWidth = cq0Var.d.getMeasuredWidth();
-        for (int i12 = 0; i12 < a2; i12++) {
-            RectF rectF = (RectF) arrayList.get(i12);
-            float f7 = measuredWidth;
-            rectF.left = w7.p.a(rectF.left, 0.0f, f7);
-            rectF.top = Math.max(0.0f, rectF.top);
-            rectF.right = w7.p.a(rectF.right, 0.0f, f7);
-            rectF.bottom = Math.min(cq0Var.d.getHeight(), rectF.bottom);
-        }
-        iVar.g(a2, arrayList);
-        if (iVar.e(cq0Var.i0, cq0Var.d.getWidth(), cq0Var.d.getHeight())) {
-            if (dVar != null) {
-                dVar.e();
-            }
-            Iterator it = cq0Var.d0.iterator();
-            while (it.hasNext()) {
-                ((View) it.next()).invalidate();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
-            case 2:
-                this.b.finishFragment();
+            case 0:
+                cq0 cq0Var = this.b;
+                cq0Var.r = false;
+                cq0Var.Q.setLoading(false);
+                if (((Boolean) obj).booleanValue()) {
+                    cq0Var.x0();
+                    cq0Var.finishFragment();
+                    cq0Var.E0();
+                    break;
+                }
                 break;
             default:
-                this.b.y0();
+                Integer num = (Integer) obj;
+                ci.i1 i1Var = this.b.I;
+                if (i1Var != null) {
+                    i1Var.E(num.intValue());
+                    break;
+                }
                 break;
         }
     }

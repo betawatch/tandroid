@@ -12,7 +12,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xi implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new eq(svgThumb), (Object) null, 0);
                 view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
-                return new cd(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+                return new ed(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
             case 2:
                 int i10 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
                 if (i10 == -1) {
@@ -46,10 +46,10 @@ public final /* synthetic */ class xi implements Utilities.CallbackReturn {
                 }
                 return Boolean.valueOf(i10 == 1);
             default:
-                f61 f61Var = (f61) this.b;
+                t61 t61Var = (t61) this.b;
                 View view2 = (View) obj;
-                f61Var.getClass();
-                return view2.getParent() != f61Var ? Boolean.FALSE : Boolean.valueOf(!x51.K(f61Var.U(view2).f));
+                t61Var.getClass();
+                return view2.getParent() != t61Var ? Boolean.FALSE : Boolean.valueOf(!l61.K(t61Var.U(view2).f));
         }
     }
 }

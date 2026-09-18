@@ -7,10 +7,11 @@ import android.media.AudioManager;
 import android.media.Spatializer;
 import android.os.Handler;
 import android.os.Looper;
+import e2.d0;
 import j$.util.Objects;
-import k2.d0;
+import k2.c0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class k {
     public final Spatializer a;
@@ -36,7 +37,7 @@ public final class k {
         e2.d.h(myLooper);
         Handler handler = new Handler(myLooper);
         this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new d0(handler, 0), jVar);
+        spatializer.addOnSpatializerStateChangedListener(new c0(handler, 0), jVar);
     }
 
     public final boolean a(b2.e eVar, b2.s sVar) {
@@ -54,7 +55,7 @@ public final class k {
         } else if (Objects.equals(str2, "audio/ac4") && (i10 == 18 || i10 == 21)) {
             i10 = 24;
         }
-        int s10 = e2.d0.s(i10);
+        int s10 = d0.s(i10);
         if (s10 == 0) {
             return false;
         }

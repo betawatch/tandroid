@@ -7,11 +7,11 @@ import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class xu extends PopupWindow {
     public static Field f;
-    public static final org.telegram.ui.ActionBar.h1 g = new org.telegram.ui.ActionBar.h1(1);
+    public static final org.telegram.ui.ActionBar.g1 g = new org.telegram.ui.ActionBar.g1(1);
     public ViewTreeObserver.OnScrollChangedListener a;
     public ViewTreeObserver b;
     public final wu c;

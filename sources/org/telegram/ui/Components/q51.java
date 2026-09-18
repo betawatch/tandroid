@@ -1,37 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class q51 extends n51 {
-    public final int e;
-    public final p01 f;
+public abstract class q51 {
+    public String[] a = new String[0];
 
-    public q51(String str, int i10, p01 p01Var) {
-        super(str, (p01) null);
-        this.e = i10;
-        this.f = p01Var;
+    public boolean a() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.n51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
-        }
-        p01 p01Var = this.f;
-        if (p01Var != null) {
-            p01Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
-        }
+    public String[] b() {
+        return this.a;
+    }
+
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(j51 j51Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(j51 j51Var, j jVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
     }
 }

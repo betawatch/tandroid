@@ -7,23 +7,23 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.na0;
 import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.wa0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class i extends na0 {
+public final class i extends wa0 {
     public final /* synthetic */ int V;
     public final /* synthetic */ KeyEvent.Callback W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, j3, 0L, o2Var, f6Var);
+    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, j3, 0L, n2Var, e6Var);
         this.V = i10;
         this.W = callback;
     }
 
-    @Override // org.telegram.ui.Components.na0
+    @Override // org.telegram.ui.Components.wa0
     public void f(Canvas canvas, Rect rect, float f7) {
         switch (this.V) {
             case 0:
@@ -53,7 +53,7 @@ public final class i extends na0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.na0
+    @Override // org.telegram.ui.Components.wa0
     public boolean h() {
         switch (this.V) {
             case 0:
@@ -63,7 +63,7 @@ public final class i extends na0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.na0
+    @Override // org.telegram.ui.Components.wa0
     public void i() {
         switch (this.V) {
             case 1:
@@ -76,7 +76,7 @@ public final class i extends na0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.na0
+    @Override // org.telegram.ui.Components.wa0
     public void n(boolean z10) {
         switch (this.V) {
             case 1:

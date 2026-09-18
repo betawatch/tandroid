@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import m.u1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b extends u1 {
     public final /* synthetic */ int s = 0;
@@ -17,7 +17,7 @@ public final class b extends u1 {
     }
 
     @Override // m.u1
-    public final b0 b() {
+    public final c0 b() {
         m.d dVar;
         switch (this.s) {
             case 0:
@@ -37,12 +37,12 @@ public final class b extends u1 {
 
     @Override // m.u1
     public final boolean c() {
-        b0 b10;
+        c0 b10;
         switch (this.s) {
             case 0:
                 ActionMenuItemView actionMenuItemView = (ActionMenuItemView) this.v;
-                j jVar = actionMenuItemView.v;
-                return jVar != null && jVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
+                k kVar = actionMenuItemView.v;
+                return kVar != null && kVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
             default:
                 ((m.g) this.v).d.l();
                 return true;

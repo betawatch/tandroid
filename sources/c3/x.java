@@ -4,7 +4,7 @@ import b2.s0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -21,9 +21,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final ni.f o;
+    public final oi.f o;
 
-    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, ni.f fVar) {
+    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, oi.f fVar) {
         this.a = list;
         this.b = i10;
         this.c = i11;
@@ -41,7 +41,7 @@ public final class x {
         this.o = fVar;
     }
 
-    public static x a(e2.v vVar, boolean z10, ni.f fVar) {
+    public static x a(e2.v vVar, boolean z10, oi.f fVar) {
         com.google.android.gms.internal.cast.a g10;
         int i10;
         int i11 = 4;
@@ -67,7 +67,7 @@ public final class x {
             }
             vVar.J(i12);
             byte[] bArr = new byte[i14];
-            ni.f fVar2 = fVar;
+            oi.f fVar2 = fVar;
             String str = null;
             int i17 = 0;
             int i18 = 0;
@@ -85,7 +85,7 @@ public final class x {
             while (i17 < x11) {
                 int x12 = vVar.x() & 63;
                 int D3 = vVar.D();
-                ni.f fVar3 = fVar2;
+                oi.f fVar3 = fVar2;
                 int i29 = 0;
                 while (i29 < D3) {
                     int D4 = vVar.D();

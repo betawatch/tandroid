@@ -4,14 +4,14 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.cw;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class c2 extends cw {
     public final /* synthetic */ e2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var), false);
+    public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, e6Var), false);
         this.g0 = e2Var;
     }
 

@@ -1,21 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class cd0 extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ kd0 o;
+public final class cd0 extends gg.u0 {
+    public final /* synthetic */ jd0 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cd0(kd0 kd0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = kd0Var;
+    public cd0(jd0 jd0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, false, z10);
+        this.N = jd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.I0 = null;
+    @Override // s4.h0
+    public final void l() {
+        jd0 jd0Var = this.N;
+        org.telegram.ui.ActionBar.v0 v0Var = jd0Var.w;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(jd0Var.W.J);
+        }
+        TextView textView = jd0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, jd0Var.W.x)));
+        }
+        super.l();
     }
 }

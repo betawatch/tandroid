@@ -8,34 +8,34 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.yi0;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k4 extends FrameLayout {
     public static final /* synthetic */ int d = 0;
-    public final org.telegram.ui.Components.u9 a;
+    public final org.telegram.ui.Components.w9 a;
     public final d b;
     public boolean c;
 
     public k4(Context context) {
         super(context);
-        LinearLayout f7 = wl.f(context, 1);
-        addView(f7, w7.x5.e(-2, -2, 17));
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.a = u9Var;
-        f7.addView(u9Var, w7.x5.q(130, 130, 1));
+        LinearLayout e = wh.e(context, 1);
+        addView(e, w7.y5.e(-2, -2, 17));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        e.addView(w9Var, w7.y5.q(130, 130, 1));
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
         textView.setText(LocaleController.getString(R.string.LiveStoryDisconnected));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        f7.addView(textView, w7.x5.t(-2, -2, 1, 0, 8, 0, 0));
+        e.addView(textView, w7.y5.t(-2, -2, 1, 0, 8, 0, 0));
         d dVar = new d(context, null, true);
         this.b = dVar;
         dVar.g(LocaleController.getString(R.string.LiveStoryDisconnectedContinue), false, true);
-        f7.addView(dVar, w7.x5.t((int) ((dVar.d.e() + AndroidUtilities.dp(24.0f)) / AndroidUtilities.density), 38, 1, 0, 18, 0, 0));
+        e.addView(dVar, w7.y5.t((int) ((dVar.d.e() + AndroidUtilities.dp(24.0f)) / AndroidUtilities.density), 38, 1, 0, 18, 0, 0));
         dVar.setOnClickListener(new ai.e2(1));
         setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));
     }
@@ -46,7 +46,7 @@ public final class k4 extends FrameLayout {
         if (i10 != 0 || this.c) {
             return;
         }
-        this.a.setImageDrawable(new yi0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.a.setImageDrawable(new ij0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         this.c = true;
     }
 }

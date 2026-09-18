@@ -10,6 +10,7 @@ import android.util.Pair;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import e9.a1;
+import e9.g0;
 import e9.i0;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -30,14 +31,13 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.p6;
 import u2.o1;
 import y9.w0;
 import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class t implements z3.m {
     public static t f;
@@ -91,7 +91,7 @@ public final class t implements z3.m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void B(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public void C(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -340,7 +340,7 @@ public final class t implements z3.m {
                         if (bVar3 == null) {
                             a1Var = i0.z(bVar3);
                         } else {
-                            e9.g0 g0Var = i0.b;
+                            g0 g0Var = i0.b;
                             a1Var = a1.e;
                         }
                         hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
@@ -377,10 +377,10 @@ public final class t implements z3.m {
             str = str.concat(" parameterKey");
         }
         if (((String) this.d) == null) {
-            str = p6.t(str, " parameterValue");
+            str = t8.b.v(str, " parameterValue");
         }
         if (((Long) this.e) == null) {
-            str = p6.t(str, " templateVersion");
+            str = t8.b.v(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
@@ -778,7 +778,7 @@ public final class t implements z3.m {
     public Task k(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new v8.s(callable));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new ka.c(callable, 28));
             this.c = continueWith.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWith;
@@ -787,7 +787,7 @@ public final class t implements z3.m {
     public Task l(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new v8.s(callable));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new ka.c(callable, 28));
             this.c = continueWithTask.continueWith((Executor) this.b, new rb.a(24));
         }
         return continueWithTask;
@@ -797,7 +797,7 @@ public final class t implements z3.m {
     public /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
         switch (this.a) {
         }
-        return w.f.a(this, bArr, i11);
+        return t8.b.a(this, bArr, i11);
     }
 
     @Override // z3.m
@@ -808,7 +808,7 @@ public final class t implements z3.m {
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((k2.c0) this.e).toString();
+                return ((ka.c) this.e).toString();
             default:
                 return super.toString();
         }
@@ -842,7 +842,7 @@ public final class t implements z3.m {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new qg.b0(this, 6));
+        executorService.execute(new p8.b(this, 8));
     }
 
     public t(List list) {
@@ -942,9 +942,9 @@ public final class t implements z3.m {
         }
     }
 
-    public t(k2.c0 c0Var, Object obj, Object obj2, Object[] objArr) {
+    public t(ka.c cVar, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = c0Var;
+        this.e = cVar;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;

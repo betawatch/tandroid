@@ -5,10 +5,10 @@ import android.view.Choreographer;
 import java.util.ArrayList;
 import vh.i;
 import vh.j;
-import w7.p;
-import yf.x;
+import w7.q;
+import yf.y;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                         }
                     }
                     if (aVar2.c != 0) {
-                        cVar.d(p.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
+                        cVar.d(q.a(aVar2.b() / 0.95f, 0.0f, 1.0f));
                     } else if (aVar.c != 0) {
-                        cVar.d(p.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
+                        cVar.d(q.a(1.0f - (aVar.b() / 0.95f), 0.0f, 1.0f));
                     }
                     cVar.l.postFrameCallback(cVar.m);
                     break;
@@ -64,20 +64,20 @@ public final /* synthetic */ class b implements Choreographer.FrameCallback {
                 jVar.l = false;
                 break;
             default:
-                x xVar = (x) this.b;
-                if (xVar.F.get()) {
-                    long j10 = xVar.b;
+                y yVar = (y) this.b;
+                if (yVar.F.get()) {
+                    long j10 = yVar.b;
                     if (j10 == 0) {
-                        xVar.b = j3;
+                        yVar.b = j3;
                     } else if (j3 - j10 >= 1000000000) {
-                        xVar.c = xVar.a;
-                        xVar.f = xVar.e.getAndSet(0);
-                        xVar.a = 0;
-                        xVar.b = j3;
+                        yVar.c = yVar.a;
+                        yVar.f = yVar.e.getAndSet(0);
+                        yVar.a = 0;
+                        yVar.b = j3;
                     } else {
-                        xVar.a++;
+                        yVar.a++;
                     }
-                    Choreographer.getInstance().postFrameCallback(xVar.d);
+                    Choreographer.getInstance().postFrameCallback(yVar.d);
                     break;
                 }
                 break;

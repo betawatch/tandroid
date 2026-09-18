@@ -22,18 +22,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.w1;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.m9;
+import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.qr;
 import yf.p;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
@@ -44,10 +44,10 @@ public final class b extends Drawable implements DownloadController.FileDownload
     public boolean J;
     public int K;
     public int L;
-    public final m6 a;
-    public final k9 b;
+    public final o6 a;
+    public final m9 b;
     public final ImageReceiver c;
-    public final t1 d;
+    public final u1 d;
     public final int e;
     public boolean f;
     public boolean h;
@@ -59,25 +59,25 @@ public final class b extends Drawable implements DownloadController.FileDownload
     public final Paint x;
     public final le.b y;
 
-    public b(int i10, t1 t1Var) {
+    public b(int i10, u1 u1Var) {
         Paint paint = new Paint(1);
         this.w = paint;
         this.x = new Paint(1);
         this.G = new a5.a((char) 0, 14);
         this.e = i10;
-        this.d = t1Var;
-        this.y = new le.b(t1Var, qr.h, 380L);
-        m6 m6Var = new m6(false, false, false, false);
-        this.a = m6Var;
-        m6Var.b = 21;
-        m6Var.t(AndroidUtilities.dp(11.0f));
-        m6Var.setCallback(t1Var);
-        this.b = new k9(i10, t1Var, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.33f), AndroidUtilities.dpf2(1.0f));
-        ImageReceiver imageReceiver = new ImageReceiver(t1Var);
+        this.d = u1Var;
+        this.y = new le.b(u1Var, qr.h, 380L);
+        o6 o6Var = new o6(false, false, false, false);
+        this.a = o6Var;
+        o6Var.b = 21;
+        o6Var.t(AndroidUtilities.dp(11.0f));
+        o6Var.setCallback(u1Var);
+        this.b = new m9(i10, u1Var, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.33f), AndroidUtilities.dpf2(1.0f));
+        ImageReceiver imageReceiver = new ImageReceiver(u1Var);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(5.0f));
         paint.setColor(TLObject.FLAG_30);
-        RadialProgress2 radialProgress2 = new RadialProgress2(t1Var, null);
+        RadialProgress2 radialProgress2 = new RadialProgress2(u1Var, null);
         this.E = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(18.0f));
         radialProgress2.d = -1;
@@ -111,21 +111,21 @@ public final class b extends Drawable implements DownloadController.FileDownload
             int i10 = (int) iVar.f.a;
             int lerp = (bounds.right - dp) - AndroidUtilities.lerp(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f) + i10, f7);
             if (f7 > 0.0f) {
-                k9 k9Var = this.b;
-                k9Var.i = (int) (this.y.e * 255.0f);
-                k9Var.setBounds((bounds.right - dp) - i10, bounds.bottom - AndroidUtilities.dp(31.33f), bounds.right - dp, bounds.bottom);
+                m9 m9Var = this.b;
+                m9Var.i = (int) (this.y.e * 255.0f);
+                m9Var.setBounds((bounds.right - dp) - i10, bounds.bottom - AndroidUtilities.dp(31.33f), bounds.right - dp, bounds.bottom);
                 this.b.c(canvas);
             }
             int dp2 = bounds.bottom - AndroidUtilities.dp(21.33f);
-            m6 m6Var = this.a;
-            m6Var.w = (int) (this.y.e * 255.0f);
-            m6Var.setBounds(bounds.left, AndroidUtilities.dp(15.0f) + dp2, lerp, dp2 - AndroidUtilities.dp(15.0f));
+            o6 o6Var = this.a;
+            o6Var.w = (int) (this.y.e * 255.0f);
+            o6Var.setBounds(bounds.left, AndroidUtilities.dp(15.0f) + dp2, lerp, dp2 - AndroidUtilities.dp(15.0f));
             this.a.draw(canvas);
         }
         if (this.h) {
             int dp3 = AndroidUtilities.dp(36.0f);
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(w1.B(9.0f, bounds.right, dp3), w1.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
+            rect.set(q.C(9.0f, bounds.right, dp3), q.C(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             this.E.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
@@ -171,9 +171,9 @@ public final class b extends Drawable implements DownloadController.FileDownload
     }
 
     public final float d(float f7) {
-        k9 k9Var = this.b;
-        float d = this.a.d() + k9Var.c.d.f.a;
-        float dp = k9Var.c.d.c.a * AndroidUtilities.dp(4.0f);
+        m9 m9Var = this.b;
+        float d = this.a.d() + m9Var.c.d.f.a;
+        float dp = m9Var.c.d.c.a * AndroidUtilities.dp(4.0f);
         float f10 = this.y.e;
         return (f7 * f10) + (dp * f10) + d;
     }

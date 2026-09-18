@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import n7.a1;
+import n7.z0;
 import v7.a7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class i implements cf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -23,7 +23,7 @@ public final class i implements cf.a {
     public static final Pattern l = Pattern.compile("^[\\p{Zs}\t\r\n\f]");
     public static final Pattern m = Pattern.compile("^[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]");
     public static final Pattern n = Pattern.compile("\\s+");
-    public final a1 a;
+    public final z0 a;
     public final BitSet b;
     public final HashMap c;
     public final HashMap d;
@@ -33,9 +33,9 @@ public final class i implements cf.a {
     public ye.b h;
     public f6.f i;
 
-    public i(a1 a1Var, List list, List list2) {
+    public i(z0 z0Var, List list, List list2) {
         k kVar;
-        this.a = a1Var;
+        this.a = z0Var;
         HashMap hashMap = new HashMap(list.size());
         Iterator it = list.iterator();
         while (it.hasNext()) {

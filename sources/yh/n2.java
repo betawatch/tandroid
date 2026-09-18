@@ -1,170 +1,114 @@
 package yh;
 
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.oj0;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a3 b;
+public final class n2 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.e6 d;
+    public final Path e;
+    public final i8 f;
+    public int g;
+    public int h;
 
-    public /* synthetic */ n2(a3 a3Var, int i10) {
-        this.a = i10;
-        this.b = a3Var;
+    public n2() {
+        Paint paint = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.e6(1.0f, new rg.w1(this, 27), 0L, 420L, qr.h);
+        this.e = new Path();
+        this.f = new i8(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        x2 x2Var;
-        int i10 = this.a;
-        boolean z10 = true;
-        a3 a3Var = this.b;
-        switch (i10) {
-            case 0:
-                if (a3Var.P.getAlpha() >= 1.0f) {
-                    a3Var.g0.run();
-                    break;
-                }
-                break;
-            case 1:
-                if (a3Var.P.getAlpha() >= 1.0f) {
-                    a3Var.g0.run();
-                    break;
-                }
-                break;
-            case 2:
-                a3Var.getClass();
-                a3Var.b((o2) view);
-                break;
-            case 3:
-                a3Var.getClass();
-                a3Var.b((o2) view);
-                break;
-            case 4:
-                a3 a3Var2 = this.b;
-                LinearLayout linearLayout = a3Var2.G;
-                x2[] x2VarArr = a3Var2.n;
-                if (a3Var2.getAlpha() >= 1.0f && !a3Var2.h0) {
-                    if (a3Var2.j0) {
-                        a3Var2.a(a3Var2.W, a3Var2.a0, a3Var2.b0, a3Var2.c0);
-                        break;
-                    } else {
-                        ArrayList arrayList = new ArrayList();
-                        for (x2 x2Var2 : x2VarArr) {
-                            if (x2Var2 != null) {
-                                TL_stars.StarGift starGift = x2Var2.h;
-                                if ((starGift != null ? starGift : null) != null) {
-                                    if (starGift == null) {
-                                        starGift = null;
-                                    }
-                                    arrayList.add(starGift);
-                                }
-                            }
-                        }
-                        if (!arrayList.isEmpty() && a3Var2.e0 != null) {
-                            TextView textView = a3Var2.K;
-                            a3Var2.h0 = true;
-                            a3Var2.j0 = false;
-                            ci.f4 f4Var = a3Var2.T;
-                            if (f4Var != null) {
-                                f4Var.e(true);
-                                a3Var2.T = null;
-                            }
-                            textView.setText("");
-                            a3Var2.L.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, ei.l.G0(a3Var2.getGiftsSuccessChance())));
-                            for (int i11 = 0; i11 < x2VarArr.length; i11++) {
-                                x2 x2Var3 = x2VarArr[i11];
-                                if (x2Var3 != null) {
-                                    x2Var3.setClickable(false);
-                                    x2 x2Var4 = x2VarArr[i11];
-                                    TL_stars.StarGift starGift2 = x2Var4.h;
-                                    if (starGift2 == null) {
-                                        starGift2 = null;
-                                    }
-                                    if (starGift2 == null) {
-                                        x2Var4.animate().alpha(0.0f).start();
-                                    }
-                                }
-                            }
-                            int i12 = 0;
-                            while (true) {
-                                if (i12 < x2VarArr.length) {
-                                    x2 x2Var5 = x2VarArr[i12];
-                                    if (x2Var5 != null) {
-                                        TL_stars.StarGift starGift3 = x2Var5.h;
-                                        if ((starGift3 != null ? starGift3 : null) != null) {
-                                            if (starGift3 == null) {
-                                                starGift3 = null;
-                                            }
-                                            textView.setText(starGift3.title + " #" + LocaleController.formatNumber(starGift3.num, ','));
-                                        }
-                                    }
-                                    i12++;
-                                }
-                            }
-                            a3Var2.Q.animate().alpha(0.0f).start();
-                            linearLayout.animate().alpha(0.0f).start();
-                            a3Var2.R.animate().alpha(1.0f).start();
-                            a3Var2.P.animate().alpha(0.25f).start();
-                            a3Var2.J.d();
-                            ArrayList arrayList2 = new ArrayList();
-                            for (x2 x2Var6 : x2VarArr) {
-                                TL_stars.StarGift starGift4 = x2Var6.h;
-                                if ((starGift4 != null ? starGift4 : null) != null) {
-                                    if (starGift4 == null) {
-                                        starGift4 = null;
-                                    }
-                                    arrayList2.add(starGift4);
-                                }
-                            }
-                            a3Var2.e0.run(arrayList2, new ai.m0(23, a3Var2, arrayList2), new rg.w1(a3Var2, 26));
-                            break;
-                        } else {
-                            AndroidUtilities.shakeViewSpring(linearLayout);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                x2 x2Var7 = (x2) view;
-                TL_stars.StarGift starGift5 = x2Var7.h;
-                if (starGift5 == null) {
-                    starGift5 = null;
-                }
-                if (starGift5 != null && !x2Var7.n) {
-                    x2Var7.a(null, true);
-                    a3Var.d(true);
-                    break;
-                } else {
-                    int i13 = 0;
-                    while (true) {
-                        x2[] x2VarArr2 = a3Var.n;
-                        if (i13 < x2VarArr2.length && (x2Var = x2VarArr2[i13]) != view) {
-                            if (x2Var != null) {
-                                TL_stars.StarGift starGift6 = x2Var.h;
-                                if (starGift6 == null) {
-                                    starGift6 = null;
-                                }
-                                if (starGift6 != null) {
-                                    z10 = false;
-                                }
-                            }
-                            i13++;
-                        }
-                    }
-                    a3Var.f0.run(new oj0(19, a3Var, x2Var7), Boolean.valueOf(z10));
-                    break;
-                }
-                break;
+    public final void a(int i10, int i11) {
+        if (this.g == i10 && this.h == i11) {
+            return;
         }
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i10;
+        this.h = i11;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.d(0.0f, true);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        AndroidUtilities.rectTmp.set(getBounds());
+        float dp = AndroidUtilities.dp(24.0f);
+        int i10 = 0;
+        float d = this.d.d(1.0f, false);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i10 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                i8 i8Var = this.f;
+                i8Var.g(rectF);
+                i8Var.h = 30.0f;
+                i8Var.d();
+                i8Var.a(canvas, org.telegram.ui.ActionBar.j6.l1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                AndroidUtilities.drawStroke(canvas, rectF, dp);
+                return;
+            }
+            if (linearGradientArr[i10] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i10].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i10];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, dp, dp, paint);
+                }
+            }
+            i10++;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

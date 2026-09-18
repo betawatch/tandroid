@@ -9,15 +9,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.du0;
+import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.ys;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -40,8 +40,8 @@ public final class k0 extends AnimatorListenerAdapter {
             case 1:
                 View view = (View) this.c;
                 view.setTranslationY(0.0f);
-                if (view instanceof org.telegram.ui.Cells.t1) {
-                    ((org.telegram.ui.Cells.t1) view).getTransitionParams().h = false;
+                if (view instanceof org.telegram.ui.Cells.u1) {
+                    ((org.telegram.ui.Cells.u1) view).getTransitionParams().h = false;
                     break;
                 }
                 break;
@@ -73,8 +73,8 @@ public final class k0 extends AnimatorListenerAdapter {
                 s4.c1 c1Var2 = (s4.c1) this.b;
                 ji.n nVar = (ji.n) this.e;
                 View view2 = (View) this.c;
-                if (view2 instanceof org.telegram.ui.Cells.t1) {
-                    ((org.telegram.ui.Cells.t1) view2).getTransitionParams().h = false;
+                if (view2 instanceof org.telegram.ui.Cells.u1) {
+                    ((org.telegram.ui.Cells.u1) view2).getTransitionParams().h = false;
                 }
                 ((ViewPropertyAnimator) this.d).setListener(null);
                 if (nVar.y.remove(c1Var2)) {
@@ -96,10 +96,10 @@ public final class k0 extends AnimatorListenerAdapter {
                 atVar.A();
                 break;
             case 3:
-                ((zu0) this.e).H1 = false;
+                ((kv0) this.e).H1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((st0) this.b).removeView(view3);
+                    ((du0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -143,16 +143,16 @@ public final class k0 extends AnimatorListenerAdapter {
                 if (kVar2 != null) {
                     kVar2.setSkipDrawChild(false);
                 }
-                org.telegram.ui.ActionBar.w0 w0Var = (org.telegram.ui.ActionBar.w0) this.d;
-                if (w0Var != null) {
-                    w0Var.setAlpha(1.0f);
+                org.telegram.ui.ActionBar.v0 v0Var = (org.telegram.ui.ActionBar.v0) this.d;
+                if (v0Var != null) {
+                    v0Var.setAlpha(1.0f);
                 }
                 if (profileActivity.fragmentView != null) {
                     profileActivity.e0.setProgressToExpand(0.0f);
                     profileActivity.a.setLayerType(0, null);
                     if (profileActivity.P0 != null) {
-                        kVar = ((o2) profileActivity).actionBar;
-                        org.telegram.ui.ActionBar.a0 n10 = kVar.n();
+                        kVar = ((n2) profileActivity).actionBar;
+                        org.telegram.ui.ActionBar.z n10 = kVar.n();
                         ArrayList arrayList = n10.e;
                         if (arrayList != null) {
                             arrayList.clear();

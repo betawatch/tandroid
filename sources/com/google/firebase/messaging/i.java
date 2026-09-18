@@ -15,8 +15,8 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.regex.Pattern;
+import m4.j0;
 import m4.k0;
-import m4.l0;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
@@ -24,29 +24,29 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.voip.f2;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.cm0;
-import org.telegram.ui.ft;
-import org.telegram.ui.h10;
-import org.telegram.ui.ha;
+import org.telegram.ui.dt;
+import org.telegram.ui.f10;
+import org.telegram.ui.fp;
+import org.telegram.ui.ga;
 import org.telegram.ui.hp;
-import org.telegram.ui.jp;
-import org.telegram.ui.m9;
-import org.telegram.ui.qn0;
-import org.telegram.ui.y00;
+import org.telegram.ui.l9;
+import org.telegram.ui.pn0;
+import org.telegram.ui.w00;
 import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, b2, k0, bl0, ft, androidx.car.app.utils.a {
+public final /* synthetic */ class i implements Continuation, a2, j0, ll0, dt, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -66,7 +66,7 @@ public final /* synthetic */ class i implements Continuation, b2, k0, bl0, ft, a
         return lambda$onCarHardwareResult$0;
     }
 
-    @Override // org.telegram.ui.ft
+    @Override // org.telegram.ui.dt
     public void b(TLRPC.User user) {
         LaunchActivity launchActivity = (LaunchActivity) this.c;
         int[] iArr = (int[]) this.d;
@@ -75,93 +75,93 @@ public final /* synthetic */ class i implements Continuation, b2, k0, bl0, ft, a
         f2.m(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
-        ChatAttachAlertPhotoLayout.K((ChatAttachAlertPhotoLayout) this.c, this.b, (f6) this.d, view, i10);
+        ChatAttachAlertPhotoLayout.K((ChatAttachAlertPhotoLayout) this.c, this.b, (e6) this.d, view, i10);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 hg.a0 a0Var = (hg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((j51) this.d).x));
+                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((x51) this.d).x));
                 a0Var.e.run();
                 break;
             case 2:
             case 7:
             case 9:
             default:
-                qn0 qn0Var = (qn0) this.c;
+                pn0 pn0Var = (pn0) this.c;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) this.d;
                 boolean z10 = this.b;
-                qn0Var.y1();
-                qn0Var.j1(tL_secureRequiredType, null, null, true, new zl0(qn0Var, 4), new cm0(qn0Var, 6), z10);
+                pn0Var.y1();
+                pn0Var.j1(tL_secureRequiredType, null, null, true, new zl0(pn0Var, 4), new cm0(pn0Var, 6), z10);
                 break;
             case 3:
-                m9 m9Var = (m9) this.c;
+                l9 l9Var = (l9) this.c;
                 boolean z11 = this.b;
                 boolean[] zArr = (boolean[]) this.d;
                 if (z11) {
                     boolean z12 = zArr[0];
                     TLRPC.TL_messages_deletePhoneCallHistory tL_messages_deletePhoneCallHistory = new TLRPC.TL_messages_deletePhoneCallHistory();
                     tL_messages_deletePhoneCallHistory.revoke = z12;
-                    m9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new u3(3, m9Var, z12));
-                    m9Var.G.clear();
-                    m9Var.H = false;
-                    m9Var.J = true;
-                    m9Var.F.setVisibility(8);
-                    m9Var.d.Y2.N(true);
+                    l9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new u3(3, l9Var, z12));
+                    l9Var.G.clear();
+                    l9Var.H = false;
+                    l9Var.J = true;
+                    l9Var.F.setVisibility(8);
+                    l9Var.d.Y2.N(true);
                 } else {
-                    m9Var.getMessagesController().deleteMessages(new ArrayList<>(m9Var.L), null, null, 0L, 0, zArr[0], 0);
+                    l9Var.getMessagesController().deleteMessages(new ArrayList<>(l9Var.L), null, null, 0L, 0, zArr[0], 0);
                 }
-                m9Var.k0(false);
+                l9Var.k0(false);
                 break;
             case 4:
-                ((ha) this.c).a.j0((TLRPC.TL_username) this.d, this.b, true);
+                ((ga) this.c).a.j0((TLRPC.TL_username) this.d, this.b, true);
                 break;
             case 5:
-                hp hpVar = (hp) this.c;
+                fp fpVar = (fp) this.c;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z13 = this.b;
-                jp jpVar = hpVar.a;
-                jpVar.x1(tL_username, z13, true);
-                jpVar.a3.V();
+                hp hpVar = fpVar.a;
+                hpVar.x1(tL_username, z13, true);
+                hpVar.a3.V();
                 break;
             case 6:
-                o2 o2Var = (o2) this.c;
+                n2 n2Var = (n2) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 boolean z14 = this.b;
-                TLRPC.UserFull userFull = o2Var.getMessagesController().getUserFull(user.id);
-                f2.m(user, z14, userFull != null && userFull.video_calls_available, o2Var.getParentActivity(), userFull, o2Var.getAccountInstance());
+                TLRPC.UserFull userFull = n2Var.getMessagesController().getUserFull(user.id);
+                f2.m(user, z14, userFull != null && userFull.video_calls_available, n2Var.getParentActivity(), userFull, n2Var.getAccountInstance());
                 break;
             case 8:
-                h10 h10Var = (h10) this.c;
-                y00 y00Var = (y00) this.d;
+                f10 f10Var = (f10) this.c;
+                w00 w00Var = (w00) this.d;
                 boolean z15 = this.b;
-                int i11 = y00Var.j;
+                int i11 = w00Var.j;
                 if (i11 > 0) {
-                    h10Var.y &= ~i11;
+                    f10Var.y &= ~i11;
                 } else {
-                    (z15 ? h10Var.F : h10Var.G).remove(Long.valueOf(y00Var.h));
+                    (z15 ? f10Var.F : f10Var.G).remove(Long.valueOf(w00Var.h));
                 }
-                h10Var.j0();
-                h10Var.w0();
-                h10Var.i0(true);
+                f10Var.j0();
+                f10Var.w0();
+                f10Var.i0(true);
                 if (z15) {
-                    h10Var.n0(1, false);
+                    f10Var.n0(1, false);
                     break;
                 }
                 break;
             case 10:
                 boolean z16 = this.b;
                 String str = (String) this.c;
-                o2 o2Var2 = (o2) this.d;
+                n2 n2Var2 = (n2) this.d;
                 try {
                     PackageInfo packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
                     Locale locale = Locale.US;
@@ -176,24 +176,24 @@ public final /* synthetic */ class i implements Continuation, b2, k0, bl0, ft, a
                         intent.putExtra("android.intent.extra.SUBJECT", "Invalid phone number: " + str);
                         intent.putExtra("android.intent.extra.TEXT", "I'm trying to use my mobile phone number: " + str + "\nBut Telegram says it's invalid. Please help.\n\nApp version: " + str2 + "\nOS version: SDK " + Build.VERSION.SDK_INT + "\nDevice Name: " + Build.MANUFACTURER + Build.MODEL + "\nLocale: " + Locale.getDefault());
                     }
-                    o2Var2.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
+                    n2Var2.getParentActivity().startActivity(Intent.createChooser(intent, "Send email..."));
                     break;
                 } catch (Exception unused) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o2Var2.getParentActivity());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var2.getParentActivity());
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
                     alertDialog$Builder.a.T = LocaleController.getString("NoMailInstalled", R.string.NoMailInstalled);
                     alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), null);
-                    o2Var2.showDialog(alertDialog$Builder.a);
+                    n2Var2.showDialog(alertDialog$Builder.a);
                     return;
                 }
         }
     }
 
-    @Override // m4.k0
+    @Override // m4.j0
     public void g(m4.r rVar) {
-        l0 l0Var = (l0) this.c;
-        i9.c0 q6 = l0Var.g.q(rVar, i0.z((b2.k0) this.d), -1, -9223372036854775807L);
-        q6.a(new i9.s(0, q6, new androidx.activity.n(l0Var, rVar, this.b, 3)), i9.q.a);
+        k0 k0Var = (k0) this.c;
+        i9.c0 q6 = k0Var.g.q(rVar, i0.z((b2.k0) this.d), -1, -9223372036854775807L);
+        q6.a(new i9.s(0, q6, new androidx.activity.n(k0Var, rVar, this.b, 3)), i9.q.a);
     }
 
     @Override // com.google.android.gms.tasks.Continuation
@@ -208,14 +208,14 @@ public final /* synthetic */ class i implements Continuation, b2, k0, bl0, ft, a
         this.d = obj2;
     }
 
-    public /* synthetic */ i(String str, o2 o2Var, boolean z10) {
+    public /* synthetic */ i(String str, n2 n2Var, boolean z10) {
         this.a = 10;
         this.b = z10;
         this.c = str;
-        this.d = o2Var;
+        this.d = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

@@ -4,7 +4,7 @@ import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class y5 implements h1 {
     public final /* synthetic */ d6 a;
@@ -14,7 +14,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
+    public final void B(i1 i1Var, int i10, int i11) {
         a6 a6Var;
         q9 textSelectionHelper;
         d6 d6Var = this.a;
@@ -25,7 +25,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void M(CharSequence charSequence) {
+    public final void K(CharSequence charSequence) {
         a6 a6Var = this.a.y;
         if (a6Var != null) {
             e3 e3Var = (e3) a6Var;
@@ -37,7 +37,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void W(Editable editable) {
+    public final void U(Editable editable) {
         d6 d6Var = this.a;
         if (d6Var.x == null) {
             return;
@@ -70,7 +70,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean b0(boolean z10) {
+    public final /* synthetic */ boolean X(boolean z10) {
         return false;
     }
 
@@ -117,7 +117,7 @@ public final class y5 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean q(i1 i1Var) {
+    public final /* synthetic */ boolean p(i1 i1Var) {
         return false;
     }
 

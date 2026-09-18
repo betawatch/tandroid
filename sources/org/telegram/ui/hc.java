@@ -1,26 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hc implements Runnable {
+public final /* synthetic */ class hc implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cd b;
+    public final /* synthetic */ bd b;
 
-    public /* synthetic */ hc(cd cdVar, int i10) {
+    public /* synthetic */ hc(bd bdVar, int i10) {
         this.a = i10;
-        this.b = cdVar;
+        this.b = bdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // e2.h
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                cd.U(this.b);
+                bd.V(this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                org.telegram.messenger.w1.o(R.string.ChannelWallpaperUpdated, org.telegram.ui.Components.vc.a0(this.b), R.raw.done, 36);
+                this.b.W0((TL_stories.TL_premium_boostsStatus) obj);
                 break;
         }
     }

@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class cw extends nm0 {
+public abstract class cw extends zm0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
     public static final int[] f0 = {R.raw.msg_emoji_smiles, R.raw.msg_emoji_cat, R.raw.msg_emoji_food, R.raw.msg_emoji_activities, R.raw.msg_emoji_travel, R.raw.msg_emoji_objects, R.raw.msg_emoji_other, R.raw.msg_emoji_flags};
     public final yv E;
@@ -45,13 +45,13 @@ public abstract class cw extends nm0 {
     public final int h;
     public final boolean n;
     public boolean r;
-    public c6 s;
-    public final org.telegram.ui.ActionBar.f6 v;
+    public e6 s;
+    public final org.telegram.ui.ActionBar.e6 v;
     public final boolean w;
     public final yv x;
     public final yv y;
 
-    public cw(Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
+    public cw(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11, boolean z12, boolean z13, int i10, Runnable runnable, int i11, boolean z14) {
         super(context);
         this.h = R.drawable.msg_emoji_recent;
         int i12 = R.drawable.msg_emoji_gem;
@@ -73,7 +73,7 @@ public abstract class cw extends nm0 {
         this.c0 = true;
         this.d0 = 11.0f;
         this.w = z13;
-        this.v = f6Var;
+        this.v = e6Var;
         this.R = runnable;
         this.T = i10;
         this.Q = i11;
@@ -173,8 +173,8 @@ public abstract class cw extends nm0 {
         return false;
     }
 
-    public boolean g(wx wxVar) {
-        return wxVar.f;
+    public boolean g(xx xxVar) {
+        return xxVar.f;
     }
 
     public ColorFilter getEmojiColorFilter() {
@@ -259,7 +259,7 @@ public abstract class cw extends nm0 {
                     if (z11) {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(awVar2.r, z12 ? 1.0f : 0.0f);
                         awVar2.c = ofFloat2;
-                        ofFloat2.addUpdateListener(new i6(awVar2, 20));
+                        ofFloat2.addUpdateListener(new k6(awVar2, 20));
                         awVar2.c.setDuration(475L);
                         awVar2.c.setInterpolator(qr.h);
                         awVar2.c.start();
@@ -290,12 +290,12 @@ public abstract class cw extends nm0 {
 
     public final int k() {
         boolean z10 = this.P;
-        org.telegram.ui.ActionBar.f6 f6Var = this.v;
+        org.telegram.ui.ActionBar.e6 e6Var = this.v;
         if (z10) {
-            return i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Wk, f6Var), (int) 12.75f);
+            return i0.a.k(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Wk, e6Var), (int) 12.75f);
         }
         int i10 = this.T;
-        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.j6.l1(0.09f, this.Q) : org.telegram.ui.ActionBar.j6.l1(0.18f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, f6Var));
+        return (i10 == 5 || i10 == 7) ? org.telegram.ui.ActionBar.j6.l1(0.09f, this.Q) : org.telegram.ui.ActionBar.j6.l1(0.18f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, e6Var));
     }
 
     public final void l(boolean z10) {
@@ -437,18 +437,18 @@ public abstract class cw extends nm0 {
                 int i15 = 0;
                 while (i15 < Math.max(arrayList.size(), i14)) {
                     yv yvVar3 = i15 < i14 ? (yv) this.b.getChildAt(i15 + i12) : null;
-                    wx wxVar = i15 < arrayList.size() ? (wx) arrayList.get(i15) : null;
-                    if (wxVar == null) {
+                    xx xxVar = i15 < arrayList.size() ? (xx) arrayList.get(i15) : null;
+                    if (xxVar == null) {
                         if (yvVar3 != null) {
                             this.b.removeView(yvVar3);
                         }
-                    } else if (wxVar.j == 0) {
-                        boolean z12 = wxVar.e;
-                        Long l4 = wxVar.a;
+                    } else if (xxVar.j == 0) {
+                        boolean z12 = xxVar.e;
+                        Long l4 = xxVar.a;
                         if (l4 != null) {
                             if (yvVar3 == null) {
                                 i10 = i14;
-                                yvVar3 = new yv(this, getContext(), wxVar.a.longValue());
+                                yvVar3 = new yv(this, getContext(), xxVar.a.longValue());
                                 i(yvVar3);
                                 this.b.addView(yvVar3, i12 + i15);
                             } else {
@@ -460,8 +460,8 @@ public abstract class cw extends nm0 {
                             z10 = z11;
                         } else {
                             i10 = i14;
-                            TLRPC.StickerSet stickerSet = wxVar.b;
-                            ArrayList arrayList3 = wxVar.c;
+                            TLRPC.StickerSet stickerSet = xxVar.b;
+                            ArrayList arrayList3 = xxVar.c;
                             if (stickerSet == null) {
                                 i11 = i12;
                                 yvVar = yvVar2;
@@ -497,7 +497,7 @@ public abstract class cw extends nm0 {
                                             yvVar3.setAnimatedEmojiDocument(document);
                                         }
                                         if (document == null) {
-                                            yvVar3.setStickerThumb(wxVar);
+                                            yvVar3.setStickerThumb(xxVar);
                                         }
                                     }
                                     document = null;
@@ -513,7 +513,7 @@ public abstract class cw extends nm0 {
                             if (document == null) {
                             }
                         }
-                        yvVar3.a = wxVar.i ? Long.valueOf(439488310) : null;
+                        yvVar3.a = xxVar.i ? Long.valueOf(439488310) : null;
                         yvVar3.g(this.M == i15, false);
                         int i17 = this.T;
                         if (i17 == 4) {
@@ -522,7 +522,7 @@ public abstract class cw extends nm0 {
                             if (i17 != 6 && i17 != 5 && i17 != 7) {
                                 if (!z10 && !z12) {
                                     yvVar3.a(Boolean.TRUE);
-                                } else if (g(wxVar)) {
+                                } else if (g(xxVar)) {
                                     yvVar3.a(null);
                                 } else {
                                     yvVar3.a(Boolean.FALSE);
@@ -536,11 +536,11 @@ public abstract class cw extends nm0 {
                         i12 = i11;
                         yvVar2 = yvVar;
                     } else if (yvVar3 == null) {
-                        yv yvVar4 = new yv(this, getContext(), wxVar.j, false);
+                        yv yvVar4 = new yv(this, getContext(), xxVar.j, false);
                         i(yvVar4);
                         this.b.addView(yvVar4, i12 + i15);
                     } else {
-                        yvVar3.setDrawable(getResources().getDrawable(wxVar.j).mutate());
+                        yvVar3.setDrawable(getResources().getDrawable(xxVar.j).mutate());
                         yvVar3.d();
                         yvVar3.a(null);
                     }
@@ -558,7 +558,7 @@ public abstract class cw extends nm0 {
                 if (yvVar5 != null) {
                     yvVar5.bringToFront();
                     if (yvVar5.getAlpha() < 1.0f) {
-                        yvVar5.animate().alpha(1.0f).setDuration(zg.f0.d() ? 0L : 200L).setInterpolator(qr.f).start();
+                        yvVar5.animate().alpha(1.0f).setDuration(zg.e0.d() ? 0L : 200L).setInterpolator(qr.f).start();
                     }
                 }
                 for (int i18 = 0; i18 < arrayList2.size(); i18++) {

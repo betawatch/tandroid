@@ -7,12 +7,12 @@ import java.util.Locale;
 import java.util.UUID;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class u {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
     public static final String h = Pattern.quote("/");
-    public final c5.i a;
+    public final ee.v a;
     public final Context b;
     public final String c;
     public final qa.d d;
@@ -30,7 +30,7 @@ public final class u {
         this.c = str;
         this.d = dVar;
         this.e = rVar;
-        this.a = new c5.i();
+        this.a = new ee.v(4);
     }
 
     public final synchronized String a(String str, SharedPreferences sharedPreferences) {
@@ -58,7 +58,7 @@ public final class u {
         bVar.c("Cached Firebase Installation ID: " + string);
         if (this.e.a()) {
             try {
-                str = (String) x.a(((qa.c) this.d).d());
+                str = (String) w.a(((qa.c) this.d).d());
             } catch (Exception e) {
                 Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e);
                 str = null;
@@ -87,18 +87,18 @@ public final class u {
 
     public final String c() {
         String str;
-        c5.i iVar = this.a;
+        ee.v vVar = this.a;
         Context context = this.b;
-        synchronized (iVar) {
+        synchronized (vVar) {
             try {
-                if (iVar.a == null) {
+                if (vVar.b == null) {
                     String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
                     if (installerPackageName == null) {
                         installerPackageName = "";
                     }
-                    iVar.a = installerPackageName;
+                    vVar.b = installerPackageName;
                 }
-                str = "".equals(iVar.a) ? null : iVar.a;
+                str = "".equals(vVar.b) ? null : vVar.b;
             } finally {
             }
         }

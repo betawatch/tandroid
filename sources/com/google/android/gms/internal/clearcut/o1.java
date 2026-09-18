@@ -33,7 +33,7 @@ public abstract class o1 {
         byte[] bArr = x1Var.e;
         long j3 = x1Var.a;
         int i10 = 0;
-        int N = j3 != 0 ? a6.m.N(j3) + a6.m.P(1) : 0;
+        int P = j3 != 0 ? a6.m.P(j3) + a6.m.Q(1) : 0;
         y1[] y1VarArr = x1Var.d;
         if (y1VarArr != null && y1VarArr.length > 0) {
             int i11 = 0;
@@ -48,36 +48,36 @@ public abstract class o1 {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            N += a6.m.R(bArr.length) + bArr.length + a6.m.P(4);
+            P += a6.m.R(bArr.length) + bArr.length + a6.m.Q(4);
         }
         if (!Arrays.equals(x1Var.f, bArr2)) {
             byte[] bArr3 = x1Var.f;
-            N += a6.m.R(bArr3.length) + bArr3.length + a6.m.P(6);
+            P += a6.m.R(bArr3.length) + bArr3.length + a6.m.Q(6);
         }
         if (str4 != null && !str4.equals("")) {
-            N += a6.m.E(8, str4);
+            P += a6.m.I(8, str4);
         }
         int i12 = x1Var.c;
         if (i12 != 0) {
-            N += (i12 >= 0 ? a6.m.R(i12) : 10) + a6.m.P(11);
+            P += (i12 >= 0 ? a6.m.R(i12) : 10) + a6.m.Q(11);
         }
         if (str3 != null && !str3.equals("")) {
-            N += a6.m.E(13, str3);
+            P += a6.m.I(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            N += a6.m.E(14, str2);
+            P += a6.m.I(14, str2);
         }
         long j10 = x1Var.s;
         if (j10 != 180000) {
-            N += a6.m.N((j10 >> 63) ^ (j10 << 1)) + a6.m.P(15);
+            P += a6.m.P((j10 >> 63) ^ (j10 << 1)) + a6.m.Q(15);
         }
         long j11 = x1Var.b;
         if (j11 != 0) {
-            N += a6.m.N(j11) + a6.m.P(17);
+            P += a6.m.P(j11) + a6.m.Q(17);
         }
         if (!Arrays.equals(x1Var.v, bArr2)) {
             byte[] bArr4 = x1Var.v;
-            N += a6.m.R(bArr4.length) + bArr4.length + a6.m.P(18);
+            P += a6.m.R(bArr4.length) + bArr4.length + a6.m.Q(18);
         }
         int[] iArr2 = x1Var.x;
         if (iArr2 != null && iArr2.length > 0) {
@@ -91,12 +91,12 @@ public abstract class o1 {
                 i13 += i14 >= 0 ? a6.m.R(i14) : 10;
                 i10++;
             }
-            N = N + i13 + (iArr.length * 2);
+            P = P + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            N += a6.m.E(24, str);
+            P += a6.m.I(24, str);
         }
-        return x1Var.y ? a6.m.P(25) + 1 + N : N;
+        return x1Var.y ? a6.m.Q(25) + 1 + P : P;
     }
 
     public final o1 d() {

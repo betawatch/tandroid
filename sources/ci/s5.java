@@ -5,16 +5,16 @@ import android.graphics.Matrix;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class s5 implements pg.u {
     public boolean a;
-    public final /* synthetic */ pg.s0 b;
+    public final /* synthetic */ pg.u0 b;
     public final /* synthetic */ qb c;
 
-    public s5(qb qbVar, pg.s0 s0Var) {
+    public s5(qb qbVar, pg.u0 u0Var) {
         this.c = qbVar;
-        this.b = s0Var;
+        this.b = u0Var;
     }
 
     @Override // pg.u
@@ -62,12 +62,12 @@ public final class s5 implements pg.u {
     public final void h(int i10) {
         qb qbVar = this.c;
         qbVar.I0(false);
-        pg.s0 s0Var = this.b;
-        s0Var.h(i10, true);
-        s0Var.g();
+        pg.u0 u0Var = this.b;
+        u0Var.h(i10, true);
+        u0Var.g();
         qbVar.setNewColor(i10);
         r5 r5Var = qbVar.w1;
-        r5Var.setSelectedColorIndex(s0Var.d());
+        r5Var.setSelectedColorIndex(u0Var.d());
         r5Var.getAdapter().l();
     }
 }

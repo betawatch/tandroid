@@ -1,10 +1,10 @@
 package ai;
 
-import org.telegram.ui.kd0;
+import org.telegram.ui.jd0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class ib extends kd0 {
+public final class ib extends jd0 {
     public final /* synthetic */ int R0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class ib extends kd0 {
         this.R0 = i11;
     }
 
-    @Override // org.telegram.ui.kd0
+    @Override // org.telegram.ui.jd0
     public final boolean h0() {
         switch (this.R0) {
         }

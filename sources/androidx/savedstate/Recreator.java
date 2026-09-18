@@ -16,11 +16,11 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.i;
 import m.p;
-import org.telegram.ui.Cells.p6;
 import t4.c;
 import t4.e;
+import t8.b;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -78,7 +78,7 @@ public final class Recreator implements r {
                             g10.g();
                         }
                     } catch (Exception e) {
-                        throw new RuntimeException(p6.i("Failed to instantiate ", str2), e);
+                        throw new RuntimeException(b.i("Failed to instantiate ", str2), e);
                     }
                 } catch (NoSuchMethodException e7) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);

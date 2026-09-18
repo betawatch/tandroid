@@ -27,7 +27,7 @@ import q3.m;
 import v7.p7;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -148,14 +148,14 @@ public final class d implements o {
                         pVar.a(10, w10, bArr);
                         p0Var = new q3.i(null).c(i14, bArr);
                     } else {
-                        pVar.k(w10);
+                        pVar.l(w10);
                     }
                     i13 += i14;
                 } catch (EOFException unused) {
                 }
             }
             pVar.p();
-            pVar.k(i13);
+            pVar.l(i13);
             this.l = p0Var;
             if (p0Var != null) {
                 this.e.b(p0Var);
@@ -186,7 +186,7 @@ public final class d implements o {
                         this.d.a(j3);
                         i10 = j3;
                     }
-                    pVar.k(h - 4);
+                    pVar.l(h - 4);
                 } else {
                     int i17 = i16 + 1;
                     if (i16 == i12) {
@@ -198,7 +198,7 @@ public final class d implements o {
                     }
                     if (z10) {
                         pVar.p();
-                        pVar.k(i11 + i17);
+                        pVar.l(i11 + i17);
                     } else {
                         pVar.q(1);
                     }

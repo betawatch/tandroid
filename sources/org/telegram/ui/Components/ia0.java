@@ -1,45 +1,78 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ia0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 a;
-    public final /* synthetic */ na0 b;
+public final class ia0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public ia0(na0 na0Var, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.b = na0Var;
-        this.a = o2Var;
+    public /* synthetic */ ia0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
+        this.a = i11;
+        this.d = notificationCenterDelegate;
+        this.b = i10;
+        this.c = z10;
     }
 
-    public final void a(boolean z10) {
-        na0 na0Var = this.b;
-        if (na0Var.getNeededLayoutManager() != na0Var.getCurrentLayoutManager() && na0Var.a()) {
-            if (na0Var.f.M0 > 0) {
-                na0Var.N = true;
-                na0Var.o(false);
-                return;
-            }
-            na0Var.b.setLayoutManager(na0Var.getNeededLayoutManager());
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                AnimatorSet[] animatorSetArr = ((hy0) this.d).I;
+                int i10 = this.b;
+                AnimatorSet animatorSet = animatorSetArr[i10];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[i10] = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        if (z10 && !na0Var.a()) {
-            z10 = false;
-        }
-        na0Var.o((!z10 || na0Var.f.K() > 0) ? z10 : false);
     }
 
-    public final void b(boolean z10) {
-        this.b.l(z10);
-    }
-
-    public final void c() {
-        na0 na0Var = this.b;
-        xp xpVar = na0Var.J;
-        if (na0Var.b.getLayoutManager() == na0Var.d || !na0Var.I) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ka0 ka0Var = (ka0) this.d;
+                p6[] p6VarArr = ka0Var.x;
+                org.telegram.ui.ActionBar.j5[] j5VarArr = ka0Var.w;
+                float[] fArr = ka0Var.Z;
+                boolean z10 = this.c;
+                float f7 = z10 ? 1.0f : 0.0f;
+                int i10 = this.b;
+                fArr[i10] = f7;
+                j5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
+                j5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
+                j5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
+                p6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
+                if (!z10) {
+                    p6VarArr[i10].setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                hy0 hy0Var = (hy0) this.d;
+                AnimatorSet[] animatorSetArr = hy0Var.I;
+                int i11 = this.b;
+                AnimatorSet animatorSet = animatorSetArr[i11];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.c) {
+                        hy0Var.J[i11].setVisibility(4);
+                    }
+                    animatorSetArr[i11] = null;
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.cancelRunOnUIThread(xpVar);
-        AndroidUtilities.runOnUIThread(xpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

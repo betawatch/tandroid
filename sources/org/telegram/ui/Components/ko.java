@@ -4,23 +4,23 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ko implements Utilities.Callback {
-    public final /* synthetic */ n70 a;
+    public final /* synthetic */ w70 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
 
-    public /* synthetic */ ko(n70 n70Var, int i10, long j3, long j10, org.telegram.ui.bo boVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.a = n70Var;
+    public /* synthetic */ ko(w70 w70Var, int i10, long j3, long j10, org.telegram.ui.zn znVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = w70Var;
         this.b = i10;
         this.c = j3;
         this.d = j10;
-        this.e = boVar;
-        this.f = f6Var;
+        this.e = znVar;
+        this.f = e6Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -31,12 +31,12 @@ public final /* synthetic */ class ko implements Utilities.Callback {
         int i10 = this.b;
         long j3 = this.c;
         long j10 = this.d;
-        org.telegram.ui.ActionBar.o2 o2Var = this.e;
-        org.telegram.ui.ActionBar.f6 f6Var = this.f;
+        org.telegram.ui.ActionBar.n2 n2Var = this.e;
+        org.telegram.ui.ActionBar.e6 e6Var = this.f;
         if (intValue != 0) {
             NotificationsController.getInstance(i10).muteUntil(j3, j10, num.intValue());
-            if (vc.a(o2Var)) {
-                vc.z(o2Var, 5, num.intValue(), f6Var).j();
+            if (xc.a(n2Var)) {
+                xc.z(n2Var, 5, num.intValue(), e6Var).j();
                 return;
             }
             return;
@@ -44,8 +44,8 @@ public final /* synthetic */ class ko implements Utilities.Callback {
         if (MessagesController.getInstance(i10).isDialogMuted(j3, j10)) {
             NotificationsController.getInstance(i10).muteDialog(j3, j10, false);
         }
-        if (vc.a(o2Var)) {
-            vc.z(o2Var, 4, num.intValue(), f6Var).j();
+        if (xc.a(n2Var)) {
+            xc.z(n2Var, 4, num.intValue(), e6Var).j();
         }
     }
 }

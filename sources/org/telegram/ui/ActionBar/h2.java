@@ -1,150 +1,55 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class h2 extends Drawable {
-    public final Paint a;
-    public boolean b;
-    public long c;
-    public float d;
-    public float e;
-    public int f;
-    public final boolean g;
-    public final DecelerateInterpolator h;
-    public int i;
-    public int j;
-    public float k;
-    public int l;
+public final class h2 implements ob {
+    public final /* synthetic */ n2 a;
 
-    public h2(boolean z10) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.h = new DecelerateInterpolator();
-        this.i = -1;
-        this.j = -9079435;
-        this.k = 300.0f;
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint2.setColor(-65536);
-        this.g = z10;
+    public h2(n2 n2Var) {
+        this.a = n2Var;
     }
 
-    public final void a(int i10) {
-        this.i = i10;
-        invalidateSelf();
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean a() {
+        return true;
     }
 
-    public final void b(int i10) {
-        this.j = i10;
-        invalidateSelf();
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean e() {
+        return true;
     }
 
-    public final void c(float f7, boolean z10) {
-        this.c = 0L;
-        float f10 = this.e;
-        if (f10 == 1.0f) {
-            this.b = true;
-        } else if (f10 == 0.0f) {
-            this.b = false;
+    @Override // org.telegram.ui.Components.ob
+    public final int f(int i10) {
+        if (this.a.isSupportEdgeToEdge()) {
+            return AndroidUtilities.navigationBarHeight;
         }
-        this.c = 0L;
-        if (z10) {
-            if (f10 < f7) {
-                this.f = (int) (f10 * this.k);
-            } else {
-                this.f = (int) ((1.0f - f10) * this.k);
-            }
-            this.c = System.currentTimeMillis();
-            this.d = f7;
-        } else {
-            this.e = f7;
-            this.d = f7;
-        }
-        invalidateSelf();
+        return 0;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.e != this.d) {
-            if (this.c != 0) {
-                int currentTimeMillis = this.f + ((int) (System.currentTimeMillis() - this.c));
-                this.f = currentTimeMillis;
-                float f7 = currentTimeMillis;
-                float f10 = this.k;
-                if (f7 >= f10) {
-                    this.e = this.d;
-                } else {
-                    float f11 = this.e;
-                    float f12 = this.d;
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f11 < f12) {
-                        this.e = decelerateInterpolator.getInterpolation(f7 / f10) * this.d;
-                    } else {
-                        this.e = 1.0f - decelerateInterpolator.getInterpolation(f7 / f10);
-                    }
-                }
-            }
-            this.c = System.currentTimeMillis();
-            invalidateSelf();
-        }
-        int d = i0.a.d(this.e, this.i, this.j);
-        Paint paint = this.a;
-        paint.setColor(d);
-        canvas.save();
-        canvas.translate(AndroidUtilities.dp(24.0f) / 2.0f, AndroidUtilities.dp(24.0f) / 2.0f);
-        int i10 = this.l;
-        if (i10 != 0) {
-            canvas.rotate(i10);
-        }
-        float f13 = this.e;
-        canvas.translate(-AndroidUtilities.dp(0.66f), 0.0f);
-        if (this.g) {
-            canvas.rotate((this.e * (this.b ? -180 : 180)) + 135.0f);
-            f13 = 1.0f;
-        } else {
-            canvas.rotate(this.e * (this.b ? -225 : 135));
-        }
-        float f14 = 1.0f - f13;
-        canvas.drawLine(AndroidUtilities.dp(AndroidUtilities.lerp(-6.75f, -8.0f, f13)), 0.0f, AndroidUtilities.dp(8.0f) - ((paint.getStrokeWidth() / 2.0f) * f14), 0.0f, paint);
-        float dp = AndroidUtilities.dp(-0.25f);
-        float dp2 = AndroidUtilities.dp(AndroidUtilities.lerp(7.0f, 8.0f, f13)) - ((paint.getStrokeWidth() / 4.0f) * f14);
-        float dp3 = AndroidUtilities.dp(AndroidUtilities.lerp(-7.25f, 0.0f, f13));
-        canvas.drawLine(dp3, -dp, 0.0f, -dp2, paint);
-        canvas.drawLine(dp3, dp, 0.0f, dp2, paint);
-        canvas.restore();
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ boolean g(int i10) {
+        return false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ int h(int i10) {
+        return 0;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void b(qc qcVar) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void c(float f7) {
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void d(qc qcVar) {
     }
 }

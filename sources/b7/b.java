@@ -11,10 +11,10 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import hg.k0;
 import j7.c;
-import n7.k;
+import n7.j;
 import v7.g5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -68,12 +68,12 @@ public final class b extends Binder implements IInterface {
                     return false;
                 }
                 Parcelable.Creator<Status> creator = Status.CREATOR;
-                int i12 = k.a;
+                int i12 = j.a;
                 Status createFromParcel = parcel.readInt() == 0 ? null : creator.createFromParcel(parcel);
                 PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(k0.i(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
                 g5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
@@ -91,7 +91,7 @@ public final class b extends Binder implements IInterface {
                 Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
                 int dataAvail2 = parcel.dataAvail();
                 if (dataAvail2 > 0) {
-                    throw new BadParcelableException(k0.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(k0.h(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
                 g5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;

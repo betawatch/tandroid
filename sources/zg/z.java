@@ -1,38 +1,37 @@
 package zg;
 
-import android.graphics.Outline;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.qk0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z extends ViewOutlineProvider {
-    public final Rect a = new Rect();
-    public final RectF b = new RectF();
-    public final RectF c = new RectF();
-    public final /* synthetic */ c0 d;
+public final class z extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    public z(c0 c0Var) {
-        this.d = c0Var;
+    public /* synthetic */ z(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        c0 c0Var = this.d;
-        float lerp = AndroidUtilities.lerp(c0Var.e, AndroidUtilities.dp(8.0f), c0Var.j);
-        float measuredWidth = view.getMeasuredWidth();
-        float measuredHeight = view.getMeasuredHeight();
-        RectF rectF = this.b;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        RectF rectF2 = c0Var.f;
-        float f7 = c0Var.j;
-        RectF rectF3 = this.c;
-        AndroidUtilities.lerp(rectF2, rectF, f7, rectF3);
-        Rect rect = this.a;
-        rectF3.round(rect);
-        outline.setRoundRect(rect, lerp);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f();
+                break;
+            default:
+                b0 b0Var = this.b;
+                b0.a(b0Var, false);
+                b0Var.j = 0.0f;
+                qk0 qk0Var = b0Var.n;
+                qk0Var.setCustomEmojiEnterProgress(Utilities.clamp(0.0f, 1.0f, 0.0f));
+                qk0Var.setSkipDraw(false);
+                b0Var.c.setVisibility(8);
+                b0Var.f();
+                break;
+        }
     }
 }

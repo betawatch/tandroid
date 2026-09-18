@@ -7,9 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.mz;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class c0 implements TextWatcher {
     public final /* synthetic */ i0 a;
@@ -55,7 +56,7 @@ public final class c0 implements TextWatcher {
                 a2 a2Var = (a2) arrayList2.get(i10);
                 if (!b2.g(a2Var.b)) {
                     String translitSafe2 = AndroidUtilities.translitSafe(a2Var.b);
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.w1.w(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
                         arrayList.add(a2Var);
                     }
                 }

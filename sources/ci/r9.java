@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.bo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r9 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final /* synthetic */ class r9 implements Runnable {
                 boolean z10 = this.c;
                 long j3 = this.b;
                 if (z10) {
-                    i11 = ((org.telegram.ui.ActionBar.g3) iaVar).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.f3) iaVar).currentAccount;
                     MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j3), new s9(baVar, j3, 0), 200);
                     break;
                 } else {
-                    i10 = ((org.telegram.ui.ActionBar.g3) iaVar).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.f3) iaVar).currentAccount;
                     MessagesController.getInstance(i10).loadFullChat(j3, 0, true);
                     break;
                 }
@@ -60,7 +60,7 @@ public final /* synthetic */ class r9 implements Runnable {
                 t0Var.a();
                 fi.s0 s0Var = t0Var.h;
                 if (s0Var != null) {
-                    s0Var.e();
+                    s0Var.f();
                 }
                 MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new fi.r0(t0Var, 2));
                 break;
@@ -74,23 +74,23 @@ public final /* synthetic */ class r9 implements Runnable {
                 ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
                 break;
             case 5:
-                bo.b0((bo) this.d, this.b, this.c);
+                zn.p0((zn) this.d, this.b, this.c);
                 break;
             default:
-                yh.q8 q8Var = (yh.q8) this.d;
+                yh.o8 o8Var = (yh.o8) this.d;
                 long j11 = this.b;
-                q8Var.F = j11;
-                q8Var.E = j11;
+                o8Var.F = j11;
+                o8Var.E = j11;
                 if (this.c) {
-                    ai.m1 m1Var = q8Var.G;
+                    ai.m1 m1Var = o8Var.G;
                     m1Var.c = j11;
-                    q8Var.H.set(m1Var);
+                    o8Var.H.set(m1Var);
                 }
-                q8Var.r();
-                q8Var.I.a(true, true);
-                yh.p8 p8Var = q8Var.y;
-                if (p8Var != null) {
-                    p8Var.setMyPrivacy(q8Var.E);
+                o8Var.r();
+                o8Var.I.a(true, true);
+                yh.n8 n8Var = o8Var.y;
+                if (n8Var != null) {
+                    n8Var.setMyPrivacy(o8Var.E);
                     break;
                 }
                 break;

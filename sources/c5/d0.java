@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 import v7.a6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -163,8 +163,8 @@ public final class d0 extends c {
     }
 
     @Override // c5.c, c5.b
-    public final void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
-        G(7, new z(c0Var, 0), new v(this, mVar, c0Var, 1));
+    public final void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
+        G(7, new z(d0Var, 0), new v(this, mVar, d0Var, 1));
     }
 
     @Override // c5.c, c5.b

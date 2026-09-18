@@ -4,15 +4,15 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a4 b;
+    public final /* synthetic */ y3 b;
 
-    public /* synthetic */ u0(a4 a4Var, int i10) {
+    public /* synthetic */ u0(y3 y3Var, int i10) {
         this.a = i10;
-        this.b = a4Var;
+        this.b = y3Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -55,30 +55,30 @@ public final /* synthetic */ class u0 implements View.OnClickListener {
                 this.b.a2();
                 break;
             case 12:
-                a4 a4Var = this.b;
-                if (!a4Var.j0.N) {
-                    a4Var.v0.a(!r7.a.q, true);
+                y3 y3Var = this.b;
+                if (!y3Var.j0.N) {
+                    y3Var.v0.a(!r7.a.q, true);
                     break;
                 }
                 break;
             case 13:
-                a4.T0(this.b, view);
+                y3.T0(this.b, view);
                 break;
             case 14:
                 this.b.W1(true);
                 break;
             case 15:
                 float alpha = view.getAlpha();
-                a4 a4Var2 = this.b;
+                y3 y3Var2 = this.b;
                 if (alpha >= 0.99f) {
-                    a4Var2.Y1();
+                    y3Var2.Y1();
                     break;
                 } else {
-                    a4Var2.u1();
+                    y3Var2.u1();
                     break;
                 }
             case 16:
-                a4.b1(this.b);
+                y3.b1(this.b);
                 break;
             case 17:
                 this.b.S1();
@@ -91,30 +91,30 @@ public final /* synthetic */ class u0 implements View.OnClickListener {
                 break;
             case 20:
                 if (view.getAlpha() >= 1.0f) {
-                    a4 a4Var3 = this.b;
-                    ci.d dVar = a4Var3.j0;
+                    y3 y3Var3 = this.b;
+                    ci.d dVar = y3Var3.j0;
                     dVar.g(LocaleController.getString(R.string.GiftCraftInfoButton), true, true);
                     dVar.f(null, true);
-                    dVar.setOnClickListener(new u0(a4Var3, 22));
-                    a4Var3.e0.i(3, LocaleController.getString(R.string.GiftCraftInfoTitle), LocaleController.getString(R.string.GiftCraftInfoText), null);
-                    a4Var3.q2(3, true, null);
+                    dVar.setOnClickListener(new u0(y3Var3, 22));
+                    y3Var3.e0.i(3, LocaleController.getString(R.string.GiftCraftInfoTitle), LocaleController.getString(R.string.GiftCraftInfoText), null);
+                    y3Var3.q2(3, true, null);
                     break;
                 }
                 break;
             case 21:
-                a4 a4Var4 = this.b;
-                a4Var4.V0 = true;
-                a4Var4.r2(false);
+                y3 y3Var4 = this.b;
+                y3Var4.V0 = true;
+                y3Var4.r2(false);
                 break;
             case 22:
                 this.b.W1(false);
                 break;
             case 23:
-                m3 m3Var = this.b.M0;
-                m3Var.h.e();
-                m3Var.i.e();
-                m3Var.j.e();
-                m3Var.k.e();
+                k3 k3Var = this.b.M0;
+                k3Var.h.e();
+                k3Var.i.e();
+                k3Var.j.e();
+                k3Var.k.e();
                 break;
             case 24:
                 this.b.Q1();
@@ -123,9 +123,9 @@ public final /* synthetic */ class u0 implements View.OnClickListener {
                 this.b.onBackPressed();
                 break;
             default:
-                a4 a4Var5 = this.b;
-                a4Var5.V0 = true;
-                a4Var5.r2(false);
+                y3 y3Var5 = this.b;
+                y3Var5.V0 = true;
+                y3Var5.r2(false);
                 break;
         }
     }

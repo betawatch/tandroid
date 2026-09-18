@@ -22,17 +22,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class q7 extends FrameLayout {
-    public final org.telegram.ui.Components.u9 a;
+    public final org.telegram.ui.Components.w9 a;
     public final TextView b;
-    public final p5 c;
+    public final q5 c;
     public final View d;
     public final np e;
     public final FrameLayout f;
@@ -47,39 +46,39 @@ public final class q7 extends FrameLayout {
         setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f = frameLayout;
-        addView(frameLayout, w7.x5.c(-1.0f, -1));
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.a = u9Var;
-        u9Var.getImageReceiver().setNeedsQualityThumb(true);
-        u9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
-        frameLayout.addView(u9Var, w7.x5.c(-1.0f, -1));
-        p5 p5Var = new p5(context, 1);
-        p5Var.b = new RectF();
-        this.c = p5Var;
-        p5Var.setWillNotDraw(false);
-        p5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        frameLayout.addView(p5Var, w7.x5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        addView(frameLayout, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        w9Var.getImageReceiver().setNeedsQualityThumb(true);
+        w9Var.getImageReceiver().setShouldGenerateQualityThumb(true);
+        frameLayout.addView(w9Var, w7.y5.c(-1.0f, -1));
+        q5 q5Var = new q5(context, 1);
+        q5Var.b = new RectF();
+        this.c = q5Var;
+        q5Var.setWillNotDraw(false);
+        q5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
+        frameLayout.addView(q5Var, w7.y5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.play_mini_video);
-        p5Var.addView(imageView, w7.x5.e(-2, -2, 19));
+        q5Var.addView(imageView, w7.y5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        p5Var.addView(textView, w7.x5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        q5Var.addView(textView, w7.y5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         View view = new View(context);
         this.d = view;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
-        addView(view, w7.x5.c(-1.0f, -1));
+        addView(view, w7.y5.c(-1.0f, -1));
         np npVar = new np(context, 21, null);
         this.e = npVar;
         npVar.setVisibility(4);
         npVar.b(-1, org.telegram.ui.ActionBar.j6.Lh, org.telegram.ui.ActionBar.j6.k7);
         npVar.setDrawUnchecked(false);
         npVar.setDrawBackgroundAsArc(1);
-        addView(npVar, w7.x5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
+        addView(npVar, w7.y5.d(24, 24.0f, 53, 0.0f, 1.0f, 1.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -95,8 +94,8 @@ public final class q7 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (!this.e.a.q) {
-            org.telegram.ui.Components.u9 u9Var = this.a;
-            if (u9Var.getImageReceiver().hasBitmapImage() && u9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.M1(this.n)) {
+            org.telegram.ui.Components.w9 w9Var = this.a;
+            if (w9Var.getImageReceiver().hasBitmapImage() && w9Var.getImageReceiver().getCurrentAlpha() == 1.0f && !PhotoViewer.M1(this.n)) {
                 return;
             }
         }
@@ -110,7 +109,7 @@ public final class q7 extends FrameLayout {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachLivePhoto));
         } else if (this.n.isVideo()) {
             StringBuilder sb2 = new StringBuilder();
-            wl.l(R.string.AttachVideo, ", ", sb2);
+            c1.l(R.string.AttachVideo, ", ", sb2);
             sb2.append(LocaleController.formatDuration((int) this.n.getDuration()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {

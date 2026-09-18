@@ -1,41 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h41 b;
+public final class y31 extends s4.s0 {
+    public final /* synthetic */ k41 a;
 
-    public /* synthetic */ y31(h41 h41Var, int i10) {
-        this.a = i10;
-        this.b = h41Var;
+    public y31(k41 k41Var) {
+        this.a = k41Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            case 3:
-                h41 h41Var = this.b;
-                CharSequence charSequence = h41Var.c0;
-                if (charSequence != null) {
-                    h41Var.d0.run(charSequence);
-                }
-                h41Var.dismiss();
-                break;
-            default:
-                h41.P(this.b, view);
-                break;
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        k41 k41Var = this.a;
+        x31 x31Var = k41Var.H;
+        if (i10 == 0) {
+            k41Var.G = false;
+        }
+        if ((i10 == 0 || i10 == 2) && k41Var.z(false) > 0.0f && k41Var.z(false) < AndroidUtilities.dp(96.0f) && x31Var.canScrollVertically(1) && k41.u(k41Var)) {
+            k41Var.G = true;
+            x31Var.w0(0, (int) k41Var.z(false), null);
+        }
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        k41 k41Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) k41Var).containerView;
+        viewGroup.invalidate();
+        boolean canScrollVertically = k41Var.H.canScrollVertically(1);
+        View view = k41Var.L;
+        Boolean bool = k41Var.Q;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            k41Var.Q = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.wh.r(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), qr.h, 320L);
         }
     }
 }

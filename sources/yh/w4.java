@@ -1,44 +1,38 @@
 package yh;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w4 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class w4 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ t5 b;
 
-    public /* synthetic */ w4(Utilities.Callback2 callback2, boolean[] zArr, int i10) {
+    public /* synthetic */ w4(t5 t5Var, int i10) {
         this.a = i10;
-        this.b = callback2;
-        this.c = zArr;
+        this.b = t5Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null && !this.c[0]) {
-                    callback2.run(0L, Boolean.FALSE);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new a5(this.b, tLObject, 0));
                 break;
             case 1:
-                Utilities.Callback2 callback22 = this.b;
-                if (callback22 != null && !this.c[0]) {
-                    callback22.run(Boolean.FALSE, null);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new a5(this.b, tLObject, 1));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new a5(this.b, tLObject, 2));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new a5(this.b, tLObject, 3));
                 break;
             default:
-                Utilities.Callback2 callback23 = this.b;
-                if (callback23 != null && !this.c[0]) {
-                    callback23.run(Boolean.FALSE, null);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new a5(this.b, tLObject, 4));
                 break;
         }
     }

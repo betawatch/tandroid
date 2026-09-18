@@ -1,53 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class n51 extends URLSpan {
-    public final boolean a;
-    public final p01 b;
-    public TLObject c;
-    public String d;
+public final class n51 implements ey0 {
+    public final /* synthetic */ t51 a;
 
-    public n51(String str) {
-        this(str, (p01) null);
+    public n51(t51 t51Var) {
+        this.a = t51Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public void onClick(View view) {
-        String url = getURL();
-        if (!url.startsWith("@")) {
-            nf.f.s(view.getContext(), url);
-            return;
-        }
-        nf.f.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    @Override // org.telegram.ui.Components.ey0
+    public final boolean b() {
+        return this.a.b.a();
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        int i10 = textPaint.linkColor;
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        p01 p01Var = this.b;
-        if (p01Var != null) {
-            p01Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(i10 == color && !this.a);
+    @Override // org.telegram.ui.Components.ey0
+    public final boolean c() {
+        return this.a.b.c();
     }
 
-    public n51(String str, int i10) {
-        this(str, (p01) null);
-        this.a = true;
-    }
-
-    public n51(String str, p01 p01Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = false;
-        this.b = p01Var;
+    @Override // org.telegram.ui.Components.ey0
+    public final void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
+        this.a.b.f(document, obj, z11, i10);
     }
 }

@@ -1,19 +1,28 @@
 package pg;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class q1 {
-    public int a;
-    public float b;
-    public float c;
+public abstract class q1 {
+    public final boolean a;
+    public boolean b;
+    public boolean c;
+    public float d;
+    public float e;
 
-    public q1(float f7, float f10, int i10) {
-        this.a = i10;
-        this.b = f7;
-        this.c = f10;
+    public q1() {
+        this.b = true;
+        this.c = true;
+        a();
     }
 
-    public final Object clone() {
-        return new q1(this.b, this.c, this.a);
+    public abstract void a();
+
+    public abstract void b(float f7, float f10);
+
+    public q1(int i10) {
+        this.b = true;
+        this.c = true;
+        this.a = true;
+        a();
     }
 }

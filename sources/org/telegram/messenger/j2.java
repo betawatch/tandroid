@@ -8,13 +8,13 @@ import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.vn;
-import org.telegram.ui.zn;
+import org.telegram.ui.Components.lc0;
+import org.telegram.ui.tn;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.b2, ResultCallback {
+public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.a2, ResultCallback {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -29,44 +29,44 @@ public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.b2, R
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((bu) this.d, this.b, (MessageObject) this.e, this.a, c2Var, i10);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((bu) this.d, this.b, (MessageObject) this.e, this.a, b2Var, i10);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        zn znVar = (zn) this.c;
-        org.telegram.ui.ActionBar.e4 e4Var = (org.telegram.ui.ActionBar.e4) this.d;
-        cc0 cc0Var = (cc0) this.e;
+        xn xnVar = (xn) this.c;
+        org.telegram.ui.ActionBar.d4 d4Var = (org.telegram.ui.ActionBar.d4) this.d;
+        lc0 lc0Var = (lc0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((dg.a) pair.second).b;
-        org.telegram.ui.ActionBar.e4 e4Var2 = znVar.f;
-        if (e4Var2 == null || longValue != e4Var2.i(znVar.G ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.d4 d4Var2 = xnVar.f;
+        if (d4Var2 == null || longValue != d4Var2.i(xnVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        ValueAnimator valueAnimator = znVar.r;
+        ValueAnimator valueAnimator = xnVar.r;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        int i10 = e4Var.k(this.a ? 1 : 0).settings.intensity;
+        int i10 = d4Var.k(this.a ? 1 : 0).settings.intensity;
         List list = ((dg.a) pair.second).c;
-        cc0Var.R = list;
-        long j3 = znVar.V.Qa;
+        lc0Var.R = list;
+        long j3 = xnVar.V.Qa;
         if (list != null) {
-            cc0Var.S = new Random(j3).nextInt(cc0Var.R.size());
+            lc0Var.S = new Random(j3).nextInt(lc0Var.R.size());
         }
-        cc0Var.t(bitmap, i10);
-        cc0Var.u(this.b);
+        lc0Var.t(bitmap, i10);
+        lc0Var.u(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        znVar.r = ofFloat;
-        ofFloat.addUpdateListener(new vn(cc0Var, 2));
-        znVar.r.setDuration(250L);
-        znVar.r.start();
+        xnVar.r = ofFloat;
+        ofFloat.addUpdateListener(new tn(lc0Var, 2));
+        xnVar.r.setDuration(250L);
+        xnVar.r.start();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -74,11 +74,11 @@ public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.b2, R
         org.telegram.tgnet.l.a(this, th2);
     }
 
-    public /* synthetic */ j2(zn znVar, org.telegram.ui.ActionBar.e4 e4Var, boolean z10, cc0 cc0Var, int i10) {
-        this.c = znVar;
-        this.d = e4Var;
+    public /* synthetic */ j2(xn xnVar, org.telegram.ui.ActionBar.d4 d4Var, boolean z10, lc0 lc0Var, int i10) {
+        this.c = xnVar;
+        this.d = d4Var;
         this.a = z10;
-        this.e = cc0Var;
+        this.e = lc0Var;
         this.b = i10;
     }
 

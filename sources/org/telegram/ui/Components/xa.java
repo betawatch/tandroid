@@ -1,106 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class xa extends ll0 {
-    public final /* synthetic */ int c;
-    public final Context d;
-    public final Object e;
-    public final /* synthetic */ KeyEvent.Callback f;
+public final class xa extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ bw0 u1;
+    public final /* synthetic */ bb v1;
 
-    public xa(jj jjVar, Context context) {
-        this.c = 1;
-        this.f = jjVar;
-        this.e = new ArrayList();
-        this.d = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa(bb bbVar, Context context, bw0 bw0Var) {
+        super(context, null);
+        this.v1 = bbVar;
+        this.u1 = bw0Var;
     }
 
-    @Override // s4.h0
-    public void B(s4.j0 j0Var) {
-        switch (this.c) {
-            case 0:
-                ((ll0) this.e).B(new wa(this, j0Var));
-                break;
-            default:
-                super.B(j0Var);
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        bb bbVar = this.v1;
+        if (bbVar.L && bbVar.M) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            this.u1.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        switch (this.c) {
-            case 0:
-                return ((ll0) this.e).D(c1Var);
-            default:
-                return c1Var.f == 0;
-        }
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        switch (this.c) {
-            case 0:
-                return ((ll0) this.e).h() + 1;
-            default:
-                return ((ArrayList) this.e).size();
-        }
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        switch (this.c) {
-            case 0:
-                za zaVar = (za) this.f;
-                if (i10 == (zaVar.P ? h() - 1 : 0)) {
-                    return -1000;
-                }
-                return ((ll0) this.e).j(i10 - (!zaVar.P ? 1 : 0));
-            default:
-                return 0;
-        }
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        switch (this.c) {
-            case 0:
-                za zaVar = (za) this.f;
-                if (i10 != (zaVar.P ? h() - 1 : 0)) {
-                    ((ll0) this.e).v(c1Var, i10 - (!zaVar.P ? 1 : 0));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Cells.fb fbVar = (org.telegram.ui.Cells.fb) c1Var.a;
-                fbVar.d(1, false, false);
-                fbVar.setSize(((jj) this.f).r);
-                fbVar.e(1, ((ArrayList) this.e).get(i10), null, 0);
-                break;
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        switch (this.c) {
-            case 0:
-                return i10 == -1000 ? new wk0(new ci.eb((za) this.f, this.d)) : ((ll0) this.e).x(viewGroup, i10);
-            default:
-                ij ijVar = new ij(this, this.d);
-                ijVar.b = false;
-                return new wk0(ijVar);
-        }
-    }
-
-    public xa(za zaVar, ll0 ll0Var, Context context) {
-        this.c = 0;
-        this.f = zaVar;
-        this.e = ll0Var;
-        this.d = context;
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.v1.M();
     }
 }

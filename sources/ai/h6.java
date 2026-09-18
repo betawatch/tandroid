@@ -20,17 +20,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.Components.sc0;
-import org.telegram.ui.Components.uc0;
+import org.telegram.ui.Components.bd0;
+import org.telegram.ui.Components.dd0;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.af;
-import org.telegram.ui.i71;
-import org.telegram.ui.tz0;
+import org.telegram.ui.g71;
+import org.telegram.ui.rz0;
+import org.telegram.ui.ze;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.b2, sc0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
+public final /* synthetic */ class h6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.a2, bd0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -47,20 +47,20 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
 
     @Override // c5.p
     public void a(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new af((KeyEvent.Callback) this.a, (Object) hVar, (Object) list, (String) this.b, this.c, (TLObject) this.d, this.e, 4));
+        AndroidUtilities.runOnUIThread(new ze((KeyEvent.Callback) this.a, (Object) hVar, (Object) list, (String) this.b, this.c, (TLObject) this.d, this.e, 4));
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        org.telegram.ui.ActionBar.p3 p3Var = (org.telegram.ui.ActionBar.p3) this.a;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) this.a;
         boolean[] zArr = (boolean[]) this.b;
-        org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) this.c;
+        org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) this.c;
         Utilities.Callback callback = (Utilities.Callback) this.d;
-        org.telegram.ui.ActionBar.c2[] c2VarArr = (org.telegram.ui.ActionBar.c2[]) this.e;
+        org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.e;
         zArr[0] = true;
-        p3Var.h(p3Var.w, o3Var, true);
+        o3Var.h(o3Var.w, n3Var, true);
         callback.run(Boolean.TRUE);
-        c2VarArr[0].dismiss();
+        b2VarArr[0].dismiss();
     }
 
     @Override // ai.dc
@@ -84,16 +84,16 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        tz0 tz0Var = (tz0) iVar.b;
+        rz0 rz0Var = (rz0) iVar.b;
         int i10 = ProfileStoriesView.s0;
-        tz0Var.a(canvas, i6Var, i6Var2);
+        rz0Var.a(canvas, i6Var, i6Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception e) {
-        v0.o request = (v0.o) this.a;
+        v0.n request = (v0.n) this.a;
         f1.a aVar = (f1.a) this.b;
         v0.i iVar = (v0.i) this.c;
         Executor executor = (Executor) this.d;
@@ -101,7 +101,7 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
         kotlin.jvm.internal.i.e(e, "e");
         CredentialProviderPlayServicesImpl.Companion.getClass();
         kotlin.jvm.internal.i.e(request, "request");
-        for (v0.q qVar : request.a) {
+        for (v0.p pVar : request.a) {
         }
         Log.w("GetCredentialController", "Pre-u credman get flow failed; retrying with gis flow");
         new c1.e(aVar.e).g(request, cancellationSignal, executor, iVar);
@@ -109,31 +109,31 @@ public final /* synthetic */ class h6 implements dc, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new af((yh.v5) this.a, list, (d80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
+        AndroidUtilities.runOnUIThread(new ze((yh.t5) this.a, list, (m80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
     }
 
-    @Override // org.telegram.ui.Components.sc0
-    public void q(uc0 uc0Var, int i10) {
-        org.telegram.ui.Components.c5.c((ci.d) this.a, (uc0) this.b, (uc0) this.c, (uc0) this.d, (uc0) this.e);
+    @Override // org.telegram.ui.Components.bd0
+    public void q(dd0 dd0Var, int i10) {
+        org.telegram.ui.Components.e5.c((ci.d) this.a, (dd0) this.b, (dd0) this.c, (dd0) this.d, (dd0) this.e);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        i71 i71Var = (i71) this.a;
+        g71 g71Var = (g71) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        i71Var.getClass();
+        g71Var.getClass();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             try {
                 if (((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.startsWith("animated_")) {
                     linkedHashSet.add(Long.valueOf(Long.parseLong(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.substring(9))));
                 } else {
-                    int i11 = i71Var.W;
+                    int i11 = g71Var.W;
                     if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji)) != null) {
-                        arrayList2.add(zg.p0.c(tL_availableReaction));
+                        arrayList2.add(zg.o0.c(tL_availableReaction));
                     }
                 }
             } catch (Exception unused) {

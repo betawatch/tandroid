@@ -2,9 +2,9 @@ package g7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class n extends o6.a {
     public static final Parcelable.Creator<n> CREATOR = new e6.i(26);
@@ -12,6 +12,6 @@ public final class n extends o6.a {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i10) {
         kotlin.jvm.internal.i.e(dest, "dest");
-        e0.r(dest, e0.q(dest, 20293));
+        f0.r(dest, f0.q(dest, 20293));
     }
 }

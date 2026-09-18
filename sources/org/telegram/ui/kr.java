@@ -1,47 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kr implements q0.a {
-    public final /* synthetic */ int a;
+public final class kr extends org.telegram.ui.Components.n20 {
+    public final /* synthetic */ sr b;
 
-    public /* synthetic */ kr(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kr(sr srVar, Activity activity, sr srVar2) {
+        super(activity, srVar2);
+        this.b = srVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.s5) {
-                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-                    s5Var.c(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
-                    s5Var.setHighQuality(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().isHighQuality());
-                    s5Var.f(s5Var.getPhotoEntry() != null ? s5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
-                    break;
-                }
-                break;
-            case 2:
-                View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.in0) {
-                    ((org.telegram.ui.Components.in0) view2).a(false, true);
-                    break;
-                }
-                break;
-            default:
-                View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.in0) {
-                    ((org.telegram.ui.Components.in0) view3).a(false, true);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.n20
+    public final void n() {
+        sr srVar = this.b;
+        srVar.getMessagesController().convertToGigaGroup(srVar.getParentActivity(), srVar.r, srVar, new y0(this, 25));
+    }
+
+    @Override // org.telegram.ui.Components.n20
+    public final void m() {
     }
 }

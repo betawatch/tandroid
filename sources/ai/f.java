@@ -18,9 +18,9 @@ import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -121,12 +121,12 @@ public final /* synthetic */ class f implements Runnable {
                 org.telegram.ui.ActionBar.j6.E(false);
                 break;
             case 17:
-                int i13 = bo.Gc;
+                int i13 = zn.Gc;
                 break;
             case 18:
                 break;
             case 19:
-                zg.l0.b(true);
+                zg.k0.b(true);
                 break;
             case 20:
                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
@@ -135,26 +135,26 @@ public final /* synthetic */ class f implements Runnable {
                 globalInstance.lambda$postNotificationNameOnUIThread$1(i14, Boolean.FALSE, bool, bool);
                 break;
             case 21:
-                Pattern pattern = org.telegram.ui.Components.c5.a;
+                Pattern pattern = org.telegram.ui.Components.e5.a;
                 break;
             case 22:
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var2 = new org.telegram.ui.ActionBar.m2();
-                    m2Var2.a = true;
-                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), m2Var2);
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
                     break;
                 }
                 break;
             case 23:
-                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.o5.v);
+                AndroidUtilities.cancelRunOnUIThread(org.telegram.ui.Components.q5.v);
                 try {
-                    if (org.telegram.ui.Components.o5.q != null) {
-                        for (int i15 = 0; i15 < org.telegram.ui.Components.o5.q.size(); i15++) {
-                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.o5.q.valueAt(i15);
+                    if (org.telegram.ui.Components.q5.q != null) {
+                        for (int i15 = 0; i15 < org.telegram.ui.Components.q5.q.size(); i15++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) org.telegram.ui.Components.q5.q.valueAt(i15);
                             int i16 = 0;
                             while (i16 < longSparseArray.size()) {
-                                if (!((org.telegram.ui.Components.o5) longSparseArray.valueAt(i16)).a) {
+                                if (!((org.telegram.ui.Components.q5) longSparseArray.valueAt(i16)).a) {
                                     longSparseArray.removeAt(i16);
                                     i16--;
                                 }
@@ -172,7 +172,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.h8 h8Var = org.telegram.ui.Components.h8.T0;
+                org.telegram.ui.Components.j8 j8Var = org.telegram.ui.Components.j8.T0;
                 break;
             case 25:
                 SavedMessagesController.openSavedMessages();

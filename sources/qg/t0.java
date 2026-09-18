@@ -4,42 +4,58 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.ik0;
-import w7.x5;
+import org.telegram.messenger.wh;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.sk0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class t0 extends j {
-    public final r0 q0;
-    public int r0;
+    public final s0 q0;
+    public boolean r0;
     public int s0;
-    public boolean t0;
-    public q0 u0;
+    public int t0;
+    public TLRPC.MessageMedia u0;
+    public TL_stories.MediaArea v0;
 
-    public t0(Context context, PointF pointF, int i10, q0 q0Var, float f7, int i11) {
+    public t0(Context context, PointF pointF, int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea, float f7, int i11) {
         super(context, pointF);
-        r0 r0Var = new r0(context, f7);
-        this.q0 = r0Var;
-        r0Var.setMaxWidth(i11);
-        this.u0 = q0Var;
-        r0Var.b(i10, q0Var, false);
-        m();
-        this.s0 = 3;
-        r0Var.c(3, this.r0);
-        addView(r0Var, x5.e(-2, -2, 51));
+        s0 s0Var = new s0(context, f7);
+        this.q0 = s0Var;
+        s0Var.setMaxWidth(i11);
+        r(i10, messageMedia, mediaArea);
+        s0Var.e(0, this.s0);
+        addView(s0Var, y5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
     }
 
+    public static String q(double d) {
+        double abs = Math.abs(d);
+        double floor = Math.floor(abs);
+        String n10 = a4.a.n((int) floor, "°", new StringBuilder(""));
+        double floor2 = Math.floor((abs - floor) * 60.0d);
+        StringBuilder u10 = a4.a.u(n10);
+        u10.append(floor2 <= 0.0d ? "0" : "");
+        u10.append(floor2 < 10.0d ? "0" : "");
+        String n11 = a4.a.n((int) floor2, "'", u10);
+        double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
+        StringBuilder u11 = a4.a.u(n11);
+        u11.append(floor3 <= 0.0d ? "0" : "");
+        u11.append(floor3 < 10.0d ? "0" : "");
+        return a4.a.n((int) floor3, "\"", u11);
+    }
+
     @Override // qg.j
     public final i a() {
-        return new s0(this, getContext());
+        return new p0(this, getContext());
     }
 
     public int getColor() {
-        return this.r0;
+        return this.s0;
     }
 
     @Override // qg.j
@@ -47,46 +63,45 @@ public final class t0 extends j {
         return 1.5f;
     }
 
-    public int getNextType() {
-        int i10 = this.s0 + 1;
-        return i10 == 4 ? !this.t0 ? 1 : 0 : i10;
-    }
-
     @Override // qg.j
-    public ik0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new ik0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float u10 = wl.u(dp, 2.0f, getPositionX(), scaleX);
-        return new ik0(u10, wl.u(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + u10) - u10, dp2 * scaleX);
+        float x10 = wh.x(dp, 2.0f, getPositionX(), scaleX);
+        return new sk0(x10, wh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
     }
 
     @Override // qg.j
     public float getStickyPaddingBottom() {
-        return this.q0.h;
+        return this.q0.J;
     }
 
     @Override // qg.j
     public float getStickyPaddingLeft() {
-        return this.q0.f;
+        return this.q0.I;
     }
 
     @Override // qg.j
     public float getStickyPaddingRight() {
-        return this.q0.f;
+        return this.q0.I;
     }
 
     @Override // qg.j
     public float getStickyPaddingTop() {
-        return this.q0.h;
+        return this.q0.J;
     }
 
     public int getType() {
-        return this.s0;
+        return this.t0;
+    }
+
+    public int getTypesCount() {
+        return this.q0.getTypesCount() - (!this.r0 ? 1 : 0);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -101,9 +116,38 @@ public final class t0 extends j {
         k();
     }
 
+    public final void r(int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea) {
+        String str;
+        this.u0 = messageMedia;
+        this.v0 = mediaArea;
+        String str2 = null;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            TLRPC.GeoPoint geoPoint = messageMedia.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(q(d));
+            sb2.append(d > 0.0d ? "N" : "S");
+            sb2.append(" ");
+            sb2.append(q(d10));
+            sb2.append(d10 > 0.0d ? "E" : "W");
+            str = sb2.toString();
+        } else if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
+            String upperCase = messageMedia.title.toUpperCase();
+            str2 = ((TLRPC.TL_messageMediaVenue) messageMedia).emoji;
+            str = upperCase;
+        } else {
+            str = "";
+        }
+        s0 s0Var = this.q0;
+        s0Var.d(i10, str2);
+        s0Var.setText(str);
+        m();
+    }
+
     public void setColor(int i10) {
-        this.t0 = true;
-        this.r0 = i10;
+        this.r0 = true;
+        this.s0 = i10;
     }
 
     public void setMaxWidth(int i10) {
@@ -111,7 +155,7 @@ public final class t0 extends j {
     }
 
     public void setType(int i10) {
-        this.s0 = i10;
-        this.q0.c(i10, this.r0);
+        this.t0 = i10;
+        this.q0.e(i10, this.s0);
     }
 }

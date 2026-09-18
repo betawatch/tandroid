@@ -1,24 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jv0 extends o1.i {
-    public final hv0 a;
-    public final iv0 b;
-    public float c = 1.0f;
+public final class jv0 {
+    public final int a;
+    public final int b;
+    public final iv0 c;
+    public final hv0 d;
+    public final /* synthetic */ kv0 e;
 
-    public jv0(hv0 hv0Var, iv0 iv0Var) {
-        this.a = hv0Var;
-        this.b = iv0Var;
-    }
-
-    @Override // o1.i
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
-    }
-
-    @Override // o1.i
-    public final void b(Object obj, float f7) {
-        this.b.b(obj, f7 / this.c);
+    public jv0(kv0 kv0Var, Context context, int i10) {
+        this.e = kv0Var;
+        this.b = i10;
+        int i11 = kv0Var.a2;
+        kv0Var.a2 = i11 + 1;
+        this.a = (i11 & 65535) | 65536;
+        this.c = new iv0(this, context, i10);
+        this.d = new hv0(kv0Var, context, i10, false);
     }
 }

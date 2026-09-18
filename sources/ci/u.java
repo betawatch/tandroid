@@ -11,10 +11,10 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.kc0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -34,7 +34,7 @@ public final class u extends Drawable {
         this.d = paint2;
         Paint paint3 = new Paint(1);
         this.e = paint3;
-        this.g = new org.telegram.ui.Components.c6(new bc0(this, 1), 320L, qr.h, 0);
+        this.g = new org.telegram.ui.Components.e6(new kc0(this, 1), 320L, qr.h, 0);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(-1);
@@ -73,7 +73,7 @@ public final class u extends Drawable {
                 float dpf22 = AndroidUtilities.dpf2(3.32f);
                 Paint paint2 = this.e;
                 paint2.setStrokeWidth(dpf22);
-                float e = ((org.telegram.ui.Components.c6) this.g).e(this.f);
+                float e = ((org.telegram.ui.Components.e6) this.g).e(this.f);
                 float centerX = getBounds().centerX();
                 float centerY = getBounds().centerY();
                 float dpf23 = AndroidUtilities.dpf2(10.66f);
@@ -211,7 +211,7 @@ public final class u extends Drawable {
             float f18 = dpf25;
             float f19 = f17 + f16;
             float f20 = dpf26;
-            rectF2.set(f12 + f11, f19, org.telegram.ui.Cells.p6.a(max, i15 + 1, f7, f12), org.telegram.ui.Cells.p6.a(max2, i14 + 1, f13, f17));
+            rectF2.set(f12 + f11, f19, t8.b.d(max, i15 + 1, f7, f12), t8.b.d(max2, i14 + 1, f13, f17));
             float[] fArr = (float[]) this.g;
             float f21 = 0.0f;
             float f22 = (i15 == 0 && i14 == 0) ? f20 : 0.0f;

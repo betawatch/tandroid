@@ -8,9 +8,9 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
 import java.util.ArrayList;
-import w7.z8;
+import w7.a9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class l0 extends Handler {
     public boolean a;
@@ -152,7 +152,7 @@ public final class l0 extends Handler {
             bb.h hVar = (bb.h) b10;
             Bundle bundle = (Bundle) hVar.a.b;
             yd.a aVar = null;
-            yd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new yd.a(z8.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d)) : null;
+            yd.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new yd.a(a9.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d)) : null;
             if (aVar2 != null) {
                 a2 = aVar2.a;
                 int i11 = yd.a.d;
@@ -167,7 +167,7 @@ public final class l0 extends Handler {
             Integer num = eVar.c;
             if (num != null) {
                 int i12 = yd.a.d;
-                aVar = new yd.a(z8.a(num.intValue(), yd.c.d));
+                aVar = new yd.a(a9.a(num.intValue(), yd.c.d));
             }
             if (aVar != null) {
                 a2 = aVar.a;
@@ -176,7 +176,7 @@ public final class l0 extends Handler {
                 }
             }
             int i14 = yd.a.d;
-            a2 = z8.a(30, yd.c.e);
+            a2 = a9.a(30, yd.c.e);
             if (when > (((((int) a2) & 1) != 1 || yd.a.b(a2)) ? yd.a.c(a2, yd.c.c) : a2 >> 1)) {
                 Log.d("SessionLifecycleService", "Session too long in background. Creating new session.");
                 b();

@@ -3,14 +3,14 @@ package ah;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import ii.u0;
-import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.e31;
+import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.lo0;
-import yh.o3;
-import zg.n0;
+import org.telegram.ui.Components.s31;
+import org.telegram.ui.Components.yo0;
+import yh.m3;
+import zg.m0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final class d implements Drawable.Callback {
                 ((eq) this.b).invalidateSelf();
                 break;
             case 4:
-                ((lo0) this.b).b.run();
+                ((yo0) this.b).b.run();
                 break;
             case 5:
-                ((cd) this.b).invalidateSelf();
+                ((ed) this.b).invalidateSelf();
                 break;
             case 6:
-                ((e31) this.b).invalidateSelf();
+                ((s31) this.b).invalidateSelf();
                 break;
             case 7:
                 ((wg.a) this.b).c.invalidate();
@@ -49,15 +49,15 @@ public final class d implements Drawable.Callback {
                 ((x4.d) this.b).invalidateSelf();
                 break;
             case 10:
-                ((o3) this.b).f.invalidate();
+                ((m3) this.b).f.invalidate();
                 break;
             default:
-                n0 n0Var = (n0) this.b;
-                View view = n0Var.W;
+                m0 m0Var = (m0) this.b;
+                View view = m0Var.W;
                 if (view != null) {
                     view.invalidate();
-                    if (n0Var.R && n0Var.W.getParent() != null && (n0Var.W.getParent().getParent() instanceof View)) {
-                        ((View) n0Var.W.getParent().getParent()).invalidate();
+                    if (m0Var.R && m0Var.W.getParent() != null && (m0Var.W.getParent().getParent() instanceof View)) {
+                        ((View) m0Var.W.getParent().getParent()).invalidate();
                         break;
                     }
                 }
@@ -86,7 +86,7 @@ public final class d implements Drawable.Callback {
             case 4:
                 break;
             case 5:
-                ((cd) this.b).scheduleSelf(runnable, j3);
+                ((ed) this.b).scheduleSelf(runnable, j3);
                 break;
             case 6:
                 break;
@@ -102,7 +102,7 @@ public final class d implements Drawable.Callback {
             case 10:
                 break;
             default:
-                View view = ((n0) this.b).W;
+                View view = ((m0) this.b).W;
                 if (view != null) {
                     view.scheduleDrawable(drawable, runnable, j3);
                     break;
@@ -132,7 +132,7 @@ public final class d implements Drawable.Callback {
             case 4:
                 break;
             case 5:
-                ((cd) this.b).unscheduleSelf(runnable);
+                ((ed) this.b).unscheduleSelf(runnable);
                 break;
             case 6:
                 break;
@@ -148,7 +148,7 @@ public final class d implements Drawable.Callback {
             case 10:
                 break;
             default:
-                View view = ((n0) this.b).W;
+                View view = ((m0) this.b).W;
                 if (view != null) {
                     view.unscheduleDrawable(drawable, runnable);
                     break;

@@ -18,23 +18,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.x51;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class c extends o2 implements NotificationCenter.NotificationCenterDelegate {
+public final class c extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
     public int F;
     public int G;
     public pr a;
-    public org.telegram.ui.ActionBar.w0 b;
-    public f61 c;
+    public org.telegram.ui.ActionBar.v0 b;
+    public t61 c;
     public a0 d;
     public boolean e;
     public boolean f;
@@ -47,64 +47,64 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
     public int x;
     public int y;
 
-    public static void U(c cVar, ArrayList arrayList, x51 x51Var) {
+    public static void U(c cVar, ArrayList arrayList, l61 l61Var) {
         String string = LocaleController.getString(R.string.BusinessAway);
         String string2 = LocaleController.getString(R.string.BusinessAwayInfo);
-        j51 j51Var = new j51(2);
-        j51Var.l = string;
-        j51Var.o = string2;
-        j51Var.m = "RestrictedEmoji";
-        j51Var.n = "💤";
-        arrayList.add(j51Var);
-        j51 i10 = j51.i(1, LocaleController.getString(R.string.BusinessAwaySend));
+        x51 x51Var = new x51(2);
+        x51Var.l = string;
+        x51Var.o = string2;
+        x51Var.m = "RestrictedEmoji";
+        x51Var.n = "💤";
+        arrayList.add(x51Var);
+        x51 i10 = x51.i(1, LocaleController.getString(R.string.BusinessAwaySend));
         i10.K(cVar.s);
         arrayList.add(i10);
-        arrayList.add(j51.B(null));
+        arrayList.add(x51.B(null));
         if (cVar.s) {
             a2 d = b2.f(cVar.currentAccount).d("away");
             if (d != null) {
-                j51 j51Var2 = new j51(17);
-                j51Var2.G = d;
-                arrayList.add(j51Var2);
+                x51 x51Var2 = new x51(17);
+                x51Var2.G = d;
+                arrayList.add(x51Var2);
             } else {
-                j51 c10 = j51.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessAwayCreate));
+                x51 c10 = x51.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessAwayCreate));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(j51.B(null));
+            arrayList.add(x51.B(null));
             com.google.android.gms.internal.vision.e2.n(R.string.BusinessAwaySchedule, arrayList);
-            j51 w10 = j51.w(3, LocaleController.getString(R.string.BusinessAwayScheduleAlways));
+            x51 w10 = x51.w(3, LocaleController.getString(R.string.BusinessAwayScheduleAlways));
             w10.K(cVar.x == 0);
             arrayList.add(w10);
             if (cVar.e) {
-                j51 w11 = j51.w(4, LocaleController.getString(R.string.BusinessAwayScheduleOutsideHours));
+                x51 w11 = x51.w(4, LocaleController.getString(R.string.BusinessAwayScheduleOutsideHours));
                 w11.K(cVar.x == 1);
                 arrayList.add(w11);
             }
-            j51 w12 = j51.w(5, LocaleController.getString(R.string.BusinessAwayScheduleCustom));
+            x51 w12 = x51.w(5, LocaleController.getString(R.string.BusinessAwayScheduleCustom));
             w12.K(cVar.x == 2);
             arrayList.add(w12);
             if (cVar.x == 2) {
-                arrayList.add(j51.B(null));
+                arrayList.add(x51.B(null));
                 com.google.android.gms.internal.vision.e2.n(R.string.BusinessAwaySchedule, arrayList);
-                arrayList.add(j51.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomStart), LocaleController.formatShortDateTime(cVar.F), 8));
-                arrayList.add(j51.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomEnd), LocaleController.formatShortDateTime(cVar.G), 9));
+                arrayList.add(x51.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomStart), LocaleController.formatShortDateTime(cVar.F), 8));
+                arrayList.add(x51.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomEnd), LocaleController.formatShortDateTime(cVar.G), 9));
             }
-            arrayList.add(j51.B(null));
-            j51 i11 = j51.i(10, LocaleController.getString(R.string.BusinessAwayOnlyOffline));
+            arrayList.add(x51.B(null));
+            x51 i11 = x51.i(10, LocaleController.getString(R.string.BusinessAwayOnlyOffline));
             i11.K(cVar.w);
             arrayList.add(i11);
             com.google.android.gms.internal.vision.e2.w(R.string.BusinessAwayOnlyOfflineInfo, arrayList);
             com.google.android.gms.internal.vision.e2.n(R.string.BusinessRecipients, arrayList);
-            j51 w13 = j51.w(6, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
+            x51 w13 = x51.w(6, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
             w13.K(cVar.v);
             arrayList.add(w13);
-            j51 w14 = j51.w(7, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
+            x51 w14 = x51.w(7, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
             w14.K(!cVar.v);
             arrayList.add(w14);
-            arrayList.add(j51.B(null));
-            cVar.d.a(arrayList, x51Var, true);
-            arrayList.add(j51.B(null));
+            arrayList.add(x51.B(null));
+            cVar.d.a(arrayList, l61Var, true);
+            arrayList.add(x51.B(null));
         }
     }
 
@@ -159,8 +159,8 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
             int i10 = -this.h;
             this.h = i10;
             AndroidUtilities.shakeViewSpring(z12, i10);
-            f61 f61Var = this.c;
-            f61Var.y0(f61Var.y1(2));
+            t61 t61Var = this.c;
+            t61Var.y0(t61Var.y1(2));
             return;
         }
         if (!z10 || this.d.k(this.c)) {
@@ -204,8 +204,8 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
     }
 
     public final void Y() {
-        f61 f61Var;
-        x51 x51Var;
+        t61 t61Var;
+        l61 l61Var;
         if (this.f) {
             return;
         }
@@ -237,9 +237,9 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
                 int i11 = tL_businessAwayMessageScheduleCustom.end_date;
                 this.E = i11;
                 this.G = i11;
-                f61Var = this.c;
-                if (f61Var != null && (x51Var = f61Var.Y2) != null) {
-                    x51Var.N(true);
+                t61Var = this.c;
+                if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+                    l61Var.N(true);
                 }
                 V(true);
                 this.f = true;
@@ -258,15 +258,15 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
             this.r = 1;
             this.x = 1;
         }
-        f61Var = this.c;
-        if (f61Var != null) {
-            x51Var.N(true);
+        t61Var = this.c;
+        if (t61Var != null) {
+            l61Var.N(true);
         }
         V(true);
         this.f = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -285,12 +285,12 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
         a0Var.h = this.v;
         TL_account.TL_businessAwayMessage tL_businessAwayMessage = this.n;
         a0Var.j(tL_businessAwayMessage == null ? null : tL_businessAwayMessage.recipients);
-        f61 f61Var = new f61(this, new bi.v(this, 21), new a(this, 0), null);
-        this.c = f61Var;
-        f61Var.q1();
-        f61 f61Var2 = this.c;
-        f61Var2.Y2.r = false;
-        frameLayout.addView(f61Var2, x5.c(-1.0f, -1));
+        t61 t61Var = new t61(this, new bi.v(this, 21), new a(this, 0), null);
+        this.c = t61Var;
+        t61Var.q1();
+        t61 t61Var2 = this.c;
+        t61Var2.Y2.r = false;
+        frameLayout.addView(t61Var2, y5.c(-1.0f, -1));
         this.actionBar.z(this.c, true);
         Y();
         this.fragmentView = frameLayout;
@@ -299,26 +299,26 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        x51 x51Var;
+        l61 l61Var;
         if (i10 != NotificationCenter.quickRepliesUpdated) {
             if (i10 == NotificationCenter.userInfoDidLoad) {
                 Y();
             }
         } else {
-            f61 f61Var = this.c;
-            if (f61Var != null && (x51Var = f61Var.Y2) != null) {
-                x51Var.N(true);
+            t61 t61Var = this.c;
+            if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+                l61Var.N(true);
             }
             V(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onBackPressed(boolean z10) {
         if (!W()) {
             return super.onBackPressed(z10);
@@ -338,7 +338,7 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.quickRepliesUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
@@ -347,14 +347,14 @@ public final class c extends o2 implements NotificationCenter.NotificationCenter
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.quickRepliesUpdated);
         getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.c.setPadding(0, 0, 0, i13);
         this.c.setClipToPadding(false);

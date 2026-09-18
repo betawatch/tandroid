@@ -4,20 +4,20 @@ import android.os.Handler;
 import e2.d0;
 import i2.g0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class d implements l {
-    public final j a;
-    public g b;
+public final class d implements m {
+    public final k a;
+    public h b;
     public boolean c;
-    public final /* synthetic */ e d;
+    public final /* synthetic */ f d;
 
-    public d(e eVar, j jVar) {
-        this.d = eVar;
-        this.a = jVar;
+    public d(f fVar, k kVar) {
+        this.d = fVar;
+        this.a = kVar;
     }
 
-    @Override // n2.l
+    @Override // n2.m
     public final void release() {
         Handler handler = this.d.J;
         handler.getClass();

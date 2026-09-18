@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class rk0 implements Runnable {
                 gg.c2 c2Var = sk0Var2.h;
                 int i10 = sk0Var2.n.s;
                 c2Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.searchQueue.postRunnable(new rf0(sk0Var2, str2, new ArrayList(sk0Var2.n.w), 8));
+                Utilities.searchQueue.postRunnable(new qf0(sk0Var2, str2, new ArrayList(sk0Var2.n.w), 8));
                 break;
         }
     }

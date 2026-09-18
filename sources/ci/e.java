@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class e implements Runnable {
                     }
                     mVar.q0.addListener(new ai.n(7, mVar, z10));
                     if (z10) {
-                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.q1.w);
+                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.p1.w);
                         mVar.q0.setDuration(250L);
                     } else {
                         mVar.q0.setInterpolator(new u1.a());

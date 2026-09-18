@@ -7,12 +7,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.kd0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.jd0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e1 b;
 
@@ -21,8 +21,8 @@ public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegr
         this.b = e1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 this.b.W();
@@ -47,12 +47,12 @@ public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegr
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         e1 e1Var = this.b;
-        j51 j51Var = (j51) obj;
+        x51 x51Var = (x51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = j51Var.d;
-        if (i10 != 1 && j51Var.c != e1Var.h) {
+        int i10 = x51Var.d;
+        if (i10 != 1 && x51Var.c != e1Var.h) {
             if (i10 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e1Var.getParentActivity());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.BusinessLocationClearTitle);
@@ -64,26 +64,26 @@ public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegr
             }
             return;
         }
-        if (e1Var.x != null && j51Var.c != e1Var.h) {
+        if (e1Var.x != null && x51Var.c != e1Var.h) {
             e1Var.x = null;
             e1Var.a.Y2.N(true);
             return;
         }
-        kd0 kd0Var = new kd0(8);
+        jd0 jd0Var = new jd0(8);
         if (e1Var.x != null) {
             TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
             tL_channelLocation.address = e1Var.y;
             tL_channelLocation.geo_point = e1Var.x;
-            kd0Var.A0 = tL_channelLocation;
+            jd0Var.A0 = tL_channelLocation;
         }
-        kd0Var.F0 = new ah.b(15, e1Var, kd0Var);
+        jd0Var.F0 = new ah.b(15, e1Var, jd0Var);
         if (e1Var.x != null || TextUtils.isEmpty(e1Var.y)) {
-            e1Var.presentFragment(kd0Var);
+            e1Var.presentFragment(jd0Var);
             return;
         }
-        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(e1Var.getParentActivity(), 3, null);
-        c2Var.g0 = false;
-        c2Var.q(200L);
-        Utilities.searchQueue.postRunnable(new x0(e1Var, kd0Var, c2Var));
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(e1Var.getParentActivity(), 3, null);
+        b2Var.g0 = false;
+        b2Var.q(200L);
+        Utilities.searchQueue.postRunnable(new x0(e1Var, jd0Var, b2Var));
     }
 }

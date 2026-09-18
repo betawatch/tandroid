@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pq0 implements org.telegram.ui.Components.b5, org.telegram.ui.Components.cl0, org.telegram.ui.ActionBar.m1, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class pq0 implements org.telegram.ui.Components.d5, org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.l1, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ cr0 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class pq0 implements org.telegram.ui.Components.b5,
         this.b = cr0Var;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:
@@ -26,51 +26,51 @@ public final /* synthetic */ class pq0 implements org.telegram.ui.Components.b5,
         }
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         cr0 cr0Var = this.b;
         if (cr0Var.Y) {
             cr0Var.a0(view, cr0Var.J.photos.get(i10));
             return true;
         }
-        if (!(view instanceof org.telegram.ui.Cells.s5)) {
+        if (!(view instanceof org.telegram.ui.Cells.t5)) {
             return false;
         }
-        org.telegram.ui.Components.ol0 ol0Var = cr0Var.V;
-        boolean z10 = !((org.telegram.ui.Cells.s5) view).a();
+        org.telegram.ui.Components.yl0 yl0Var = cr0Var.V;
+        boolean z10 = !((org.telegram.ui.Cells.t5) view).a();
         cr0Var.X = z10;
-        ol0Var.d(view, i10, z10);
+        yl0Var.d(view, i10, z10);
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         cr0 cr0Var = this.b;
-        hr0 hr0Var = cr0Var.t0;
-        if (hr0Var == null) {
+        gr0 gr0Var = cr0Var.t0;
+        if (gr0Var == null) {
             cr0Var.Z();
             return;
         }
-        switch (hr0Var.a) {
+        switch (gr0Var.a) {
             case 0:
-                ir0 ir0Var = hr0Var.b;
-                ir0Var.a.Z();
-                ir0Var.b.Z();
+                hr0 hr0Var = gr0Var.b;
+                hr0Var.a.Z();
+                hr0Var.b.Z();
                 break;
             default:
-                ir0 ir0Var2 = hr0Var.b;
-                ir0Var2.a.Z();
-                ir0Var2.b.Z();
+                hr0 hr0Var2 = gr0Var.b;
+                hr0Var2.a.Z();
+                hr0Var2.b.Z();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public void o(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
+    @Override // org.telegram.ui.ActionBar.l1
+    public void p(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
         cr0 cr0Var = this.b;
         cr0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = cr0Var.m0) != null && o1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = cr0Var.m0) != null && n1Var.isShowing()) {
             cr0Var.m0.d(true);
         }
     }

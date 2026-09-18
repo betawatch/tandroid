@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l8 implements Runnable {
     public final /* synthetic */ int a;
@@ -117,26 +117,26 @@ public final /* synthetic */ class l8 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopics$3((TLRPC.TL_messages_savedDialogsSlice) obj2, this.b, (a0.i) obj, this.c);
                 break;
             case 9:
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) obj3;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                int i14 = t1Var.I7;
+                int i14 = u1Var.I7;
                 if (user == null) {
                     if (chat == null) {
-                        t1Var.X8[i12].n(j3, "", "");
+                        u1Var.X8[i12].n(j3, "", "");
                         break;
                     } else {
-                        t1Var.X8[i12].k(i14, chat);
-                        t1Var.W8[i12].setForUserOrChat(chat, t1Var.X8[i12]);
+                        u1Var.X8[i12].k(i14, chat);
+                        u1Var.W8[i12].setForUserOrChat(chat, u1Var.X8[i12]);
                         break;
                     }
                 } else {
-                    t1Var.X8[i12].m(i14, user);
-                    t1Var.W8[i12].setForUserOrChat(user, t1Var.X8[i12]);
+                    u1Var.X8[i12].m(i14, user);
+                    u1Var.W8[i12].setForUserOrChat(user, u1Var.X8[i12]);
                     break;
                 }
             case 10:
-                new xh.y4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
+                new xh.z4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
                 break;
             case 11:
                 yh.n nVar = (yh.n) obj;
@@ -167,7 +167,7 @@ public final /* synthetic */ class l8 implements Runnable {
                 tL_fulfillStarsSubscription.subscription_id = ((TL_stars.StarsSubscription) obj2).id;
                 tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
                 int i16 = this.c;
-                ConnectionsManager.getInstance(i16).sendRequest(tL_fulfillStarsSubscription, new j8(dVar, (org.telegram.ui.ActionBar.g3[]) obj, i16, this.b, 7));
+                ConnectionsManager.getInstance(i16).sendRequest(tL_fulfillStarsSubscription, new j8(dVar, (org.telegram.ui.ActionBar.f3[]) obj, i16, this.b, 7));
                 break;
         }
     }

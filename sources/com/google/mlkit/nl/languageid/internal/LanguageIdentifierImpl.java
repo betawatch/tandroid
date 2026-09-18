@@ -9,6 +9,7 @@ import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
 import e6.n;
+import ee.v;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
@@ -20,8 +21,7 @@ import k6.c;
 import n6.i;
 import n6.l;
 import n6.o;
-import ni.f;
-import org.telegram.ui.Cells.ia;
+import oi.f;
 import qb.g;
 import qb.j;
 import sb.b;
@@ -38,7 +38,7 @@ import v7.r1;
 import v7.y8;
 import v7.z8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -57,9 +57,9 @@ public class LanguageIdentifierImpl implements b {
     }
 
     public static final f6 k() {
-        ia iaVar = new ia(17);
-        iaVar.b = Float.valueOf(-1.0f);
-        return new f6(iaVar);
+        u uVar = new u(28, false);
+        uVar.b = Float.valueOf(-1.0f);
+        return new f6(uVar);
     }
 
     @Override // com.google.android.gms.common.api.n
@@ -102,11 +102,11 @@ public class LanguageIdentifierImpl implements b {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
                     String e = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
-                    u uVar = new u(27);
-                    c5.i iVar = new c5.i();
-                    iVar.a = e;
-                    uVar.b = new c7(iVar);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(uVar), i6.b);
+                    n2.e eVar3 = new n2.e(23, false);
+                    v vVar = new v(2);
+                    vVar.b = e;
+                    eVar3.b = new c7(vVar);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(eVar3), i6.b);
                     return e;
                 } catch (RuntimeException e7) {
                     languageIdentifierImpl.j(elapsedRealtime, z11, null, i6.c);

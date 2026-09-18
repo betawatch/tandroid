@@ -1,72 +1,17 @@
 package r0;
 
-import w7.w6;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public abstract class b1 {
-    public final l1 a;
-    public i0.b[] b;
-
+public final class b1 extends a1 {
     public b1() {
-        this(new l1());
     }
 
-    public final void a() {
-        i0.b[] bVarArr = this.b;
-        if (bVarArr != null) {
-            i0.b bVar = bVarArr[0];
-            i0.b bVar2 = bVarArr[1];
-            l1 l1Var = this.a;
-            if (bVar2 == null) {
-                bVar2 = l1Var.a.f(2);
-            }
-            if (bVar == null) {
-                bVar = l1Var.a.f(1);
-            }
-            g(i0.b.a(bVar, bVar2));
-            i0.b bVar3 = this.b[w6.a(16)];
-            if (bVar3 != null) {
-                f(bVar3);
-            }
-            i0.b bVar4 = this.b[w6.a(32)];
-            if (bVar4 != null) {
-                d(bVar4);
-            }
-            i0.b bVar5 = this.b[w6.a(64)];
-            if (bVar5 != null) {
-                h(bVar5);
-            }
-        }
-    }
-
-    public abstract l1 b();
-
+    @Override // r0.a1, r0.c1
     public void c(int i10, i0.b bVar) {
-        if (this.b == null) {
-            this.b = new i0.b[10];
-        }
-        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
-            if ((i10 & i11) != 0) {
-                this.b[w6.a(i11)] = bVar;
-            }
-        }
+        this.c.setInsets(l1.a(i10), bVar.d());
     }
 
-    public abstract void e(i0.b bVar);
-
-    public abstract void g(i0.b bVar);
-
-    public b1(l1 l1Var) {
-        this.a = l1Var;
-    }
-
-    public void d(i0.b bVar) {
-    }
-
-    public void f(i0.b bVar) {
-    }
-
-    public void h(i0.b bVar) {
+    public b1(m1 m1Var) {
+        super(m1Var);
     }
 }

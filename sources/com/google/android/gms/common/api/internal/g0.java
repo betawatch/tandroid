@@ -20,7 +20,7 @@ import java.util.concurrent.locks.Lock;
 import m.p3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
     public n6.h E;
@@ -56,7 +56,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean G() {
+    public final boolean H() {
         ArrayList arrayList = this.K;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
@@ -69,7 +69,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e M(e eVar) {
+    public final e L(e eVar) {
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 

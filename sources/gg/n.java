@@ -19,17 +19,17 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.hb0;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ko;
 import org.telegram.ui.Components.oo;
-import org.telegram.ui.Components.pb0;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.qb0;
+import org.telegram.ui.Components.yb0;
+import org.telegram.ui.zn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -170,11 +170,11 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 7:
-                o2 o2Var = (o2) this.d;
+                n2 n2Var = (n2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                o2Var.presentFragment(new bo(bundle));
+                n2Var.presentFragment(new zn(bundle));
                 break;
             case 8:
                 oo ooVar = (oo) this.d;
@@ -183,7 +183,7 @@ public final /* synthetic */ class n implements Runnable {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                ooVar.t(i18);
+                ooVar.u(i18);
                 break;
             case 9:
                 ko koVar = (ko) this.d;
@@ -195,22 +195,22 @@ public final /* synthetic */ class n implements Runnable {
                 koVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                pb0 pb0Var = ((hb0) this.d).X2;
-                View d = pb0Var.d();
-                hb0 hb0Var = pb0Var.f;
+                yb0 yb0Var = ((qb0) this.d).X2;
+                View d = yb0Var.d();
+                qb0 qb0Var = yb0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = hb0Var.getPaddingTop();
-                    int height = hb0Var.getHeight() - hb0Var.getPaddingBottom();
+                    int paddingTop = qb0Var.getPaddingTop();
+                    int height = qb0Var.getHeight() - qb0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        hb0Var.scrollBy(0, i21);
+                        qb0Var.scrollBy(0, i21);
                         break;
                     }
                 }

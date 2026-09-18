@@ -1,32 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z60 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a70 b;
+public final class z60 extends org.telegram.ui.Cells.e9 {
+    public final org.telegram.ui.Cells.t6 v;
+    public boolean w;
+    public final /* synthetic */ a70 x;
 
-    public /* synthetic */ z60(a70 a70Var, int i10) {
-        this.a = i10;
-        this.b = a70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z60(a70 a70Var, Context context) {
+        super(context);
+        this.x = a70Var;
+        this.v = new org.telegram.ui.Cells.t6(this, 17);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                a70 a70Var = this.b;
-                a70Var.e.d0 = null;
-                a70Var.requestLayout();
-                break;
-            default:
-                a70 a70Var2 = this.b;
-                a70Var2.e.d0 = null;
-                a70Var2.a = false;
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        org.telegram.ui.Cells.t6 t6Var = this.v;
+        AndroidUtilities.cancelRunOnUIThread(t6Var);
+        if (this.w) {
+            AndroidUtilities.runOnUIThread(t6Var, 500L);
         }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AndroidUtilities.cancelRunOnUIThread(this.v);
     }
 }

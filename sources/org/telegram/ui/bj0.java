@@ -1,52 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class bj0 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        org.telegram.ui.Cells.t1 t1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.t1) || (currentMessagesGroup = (t1Var = (org.telegram.ui.Cells.t1) view).getCurrentMessagesGroup()) == null || (currentPosition = t1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+public final class bj0 extends org.telegram.ui.Cells.u1 {
+    public int Ge;
+    public int He;
+    public int Ie;
+    public final /* synthetic */ cj0 Je;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bj0(cj0 cj0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i10, true, null, e6Var);
+        this.Je = cj0Var;
+        this.Ge = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.He = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Ie = -1;
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (!this.Zc.w0 || i11 == 0 || this.Ge == Integer.MAX_VALUE || i13 == 0 || this.He == Integer.MAX_VALUE) {
             return;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = t1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
-                break;
+        if (this.Ie == (getMessageObject() == null ? 0 : getMessageObject().getId())) {
+            if (!this.Je.w0) {
+                setTranslationY(-(i11 - this.Ge));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.qr.h).start();
             }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
+            this.Ge = getTop();
+            this.He = getBottom();
+            this.Ie = getMessageObject() != null ? getMessageObject().getId() : 0;
         }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.w1.z(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
-                }
-                i10++;
-            } else {
-                break;
-            }
-        }
-        rect.bottom = -round;
+    }
+
+    @Override // org.telegram.ui.Cells.u1
+    public final vh.g w3() {
+        return vh.g.d(1, this, this.Je.F);
     }
 }

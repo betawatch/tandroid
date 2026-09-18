@@ -1,32 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class l51 extends URLSpan {
-    public final p01 a;
+public final class l51 extends g.p {
+    public final /* synthetic */ t51 c;
 
-    public l51(String str, p01 p01Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = p01Var;
+    public l51(t51 t51Var) {
+        this.c = t51Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        p01 p01Var = this.a;
-        if (p01Var != null) {
-            p01Var.a(textPaint);
+    @Override // g.p
+    public final int i(int i10) {
+        t51 t51Var = this.c;
+        s4.h0 adapter = t51Var.n.getAdapter();
+        s51 s51Var = t51Var.s;
+        if (adapter == s51Var) {
+            if ((s51Var.d.get(i10) instanceof Integer) || i10 >= s51Var.w) {
+                return s51Var.v;
+            }
+            return 1;
         }
-        textPaint.setUnderlineText(true);
+        gg.g2 g2Var = t51Var.v;
+        SparseArray sparseArray = g2Var.s;
+        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
+            return g2Var.e.a();
+        }
+        return 1;
     }
 }

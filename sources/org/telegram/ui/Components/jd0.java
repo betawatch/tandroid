@@ -1,240 +1,168 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class jd0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
+    public final ActionBarLayout a;
+    public final FrameLayout b;
+    public final be0 c;
 
-    public /* synthetic */ jd0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public jd0(Context context) {
+        super(context, R.style.TransparentDialog);
+        ActionBarLayout actionBarLayout = new ActionBarLayout(context, false);
+        this.a = actionBarLayout;
+        actionBarLayout.setFragmentStack(new ArrayList());
+        org.telegram.ui.ActionBar.b5 b5Var = new org.telegram.ui.ActionBar.b5(new ai.y3(this, 7));
+        b5Var.c = true;
+        actionBarLayout.R(b5Var);
+        actionBarLayout.setDelegate(this);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
+        frameLayout.addView(actionBarLayout.getView(), new FrameLayout.LayoutParams(-1, -1, 17));
+        if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
+            frameLayout.setBackgroundColor(-1728053248);
+            frameLayout.setOnClickListener(new g80(this, 4));
+            actionBarLayout.setRemoveActionBarExtraHeight(true);
+            n7.z0.k(actionBarLayout.getView());
+        }
+        be0 be0Var = new be0(context);
+        this.c = be0Var;
+        frameLayout.addView(be0Var, w7.y5.c(-1.0f, -1));
+        setContentView(frameLayout);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 3:
-                ((qg0) this.b).h = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a.Q(n2Var, (!AndroidUtilities.isTablet() || AndroidUtilities.isInMultiwindow || AndroidUtilities.isSmallTablet()) ? false : true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final void e(int[] iArr) {
+        if (!AndroidUtilities.isTablet() || AndroidUtilities.isInMultiwindow || AndroidUtilities.isSmallTablet()) {
+            return;
+        }
+        iArr[0] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(530.0f), View.MeasureSpec.getSize(iArr[0])), TLObject.FLAG_30);
+        iArr[1] = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(528.0f), View.MeasureSpec.getSize(iArr[1])), TLObject.FLAG_30);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final boolean h(org.telegram.ui.ActionBar.n2 n2Var, ActionBarLayout actionBarLayout) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final boolean k(ActionBarLayout actionBarLayout) {
+        if (actionBarLayout.getFragmentStack().size() <= 1) {
+            dismiss();
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final boolean l(ActionBarLayout actionBarLayout, org.telegram.ui.ActionBar.b5 b5Var) {
+        org.telegram.ui.ActionBar.n2 n2Var = b5Var.a;
+        return true;
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        if (this.c.getVisibility() == 0) {
+            if (getOwnerActivity() != null) {
+                getOwnerActivity().finish();
+            }
+        } else {
+            ActionBarLayout actionBarLayout = this.a;
+            actionBarLayout.G();
+            if (actionBarLayout.getFragmentStack().size() <= 1) {
+                dismiss();
+            }
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                sd0 sd0Var = (sd0) this.b;
-                sd0Var.setVisibility(8);
-                sd0Var.h();
-                sd0Var.P = 0.0f;
-                sd0Var.f(0.0f);
-                sd0Var.setAlpha(0.0f);
-                break;
-            case 1:
-                AnimatorSet animatorSet = (AnimatorSet) this.b;
-                if (animatorSet != null) {
-                    animatorSet.start();
-                    break;
-                }
-                break;
-            case 2:
-                ff ffVar = (ff) this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) ((ci.m9) ffVar.c).e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ((ci.m9) ffVar.c).e = null;
-                    break;
-                }
-                break;
-            case 3:
-                break;
-            case 4:
-                vg0 vg0Var = (vg0) this.b;
-                vg0Var.f = false;
-                vg0Var.F = null;
-                break;
-            case 5:
-                ((ji0) this.b).b();
-                break;
-            case 6:
-                ((qj0) this.b).h.setVisibility(8);
-                break;
-            case 7:
-                ml0 ml0Var = (ml0) this.b;
-                View view = ml0Var.c1;
-                if (view != null) {
-                    view.setVisibility(8);
-                }
-                if (ml0Var.c1()) {
-                    ml0Var.invalidate();
-                    break;
-                }
-                break;
-            case 8:
-                jm0 jm0Var = (jm0) this.b;
-                if (jm0Var.s != null) {
-                    jm0Var.j();
-                    jm0Var.s.invalidate();
-                    jm0Var.e.invalidate();
-                    jm0Var.invalidate();
-                    jm0Var.s = null;
-                    break;
-                }
-                break;
-            case 9:
-                ((nm0) this.b).d = false;
-                break;
-            case 10:
-                ((zn0) this.b).N0.setVisibility(8);
-                break;
-            case 11:
-                xo0 xo0Var = (xo0) this.b;
-                if (animator == xo0Var.h) {
-                    xo0Var.h = null;
-                    break;
-                }
-                break;
-            case 12:
-                ((hq0) this.b).e = null;
-                break;
-            case 13:
-                pq0 pq0Var = (pq0) this.b;
-                if (pq0Var.getParent() != null) {
-                    ((ViewGroup) pq0Var.getParent()).removeView(pq0Var);
-                    break;
-                }
-                break;
-            case 14:
-                us0 us0Var = (us0) this.b;
-                View view2 = us0Var.c;
-                view2.setAlpha(1.0f);
-                s4.o0.x0(view2);
-                us0Var.a.removeView(view2);
-                break;
-            case 15:
-                gv0 gv0Var = (gv0) this.b;
-                if (gv0Var.f == animator) {
-                    gv0Var.f = null;
-                    break;
-                }
-                break;
-            case 16:
-                xw0 xw0Var = (xw0) this.b;
-                xw0Var.setCategoriesShownT(((Float) xw0Var.p3.getAnimatedValue()).floatValue());
-                xw0Var.p3 = null;
-                break;
-            case 17:
-                wx0 wx0Var = (wx0) this.b;
-                wx0Var.x.setVisibility(8);
-                wx0Var.F.setImageDrawable(null);
-                break;
-            case 18:
-                int i10 = 0;
-                while (true) {
-                    dy0[] dy0VarArr = (dy0[]) this.b;
-                    if (i10 >= dy0VarArr.length) {
-                        break;
-                    } else {
-                        dy0 dy0Var = dy0VarArr[i10];
-                        if (dy0Var != null) {
-                            dy0Var.d = false;
-                        }
-                        i10++;
-                    }
-                }
-            case 19:
-                super.onAnimationEnd(animator);
-                ((ey0) this.b).H = null;
-                break;
-            case 20:
-                ((hy0) this.b).e = false;
-                break;
-            case 21:
-                ((o01) this.b).setVisibility(4);
-                break;
-            case 22:
-                ((z11) this.b).setVisibility(8);
-                break;
-            case 23:
-                ai.n4 n4Var = ((t21) this.b).f;
-                n4Var.setScaleX(1.0f);
-                n4Var.setScaleY(1.0f);
-                n4Var.invalidate();
-                break;
-            case 24:
-                x21 x21Var = (x21) this.b;
-                x21Var.K = 1.0f;
-                x21Var.h.invalidate();
-                break;
-            case 25:
-                ((f51) this.b).L = null;
-                break;
-            case 26:
-                UndoView undoView = (UndoView) this.b;
-                undoView.setVisibility(4);
-                undoView.setScaleX(1.0f);
-                undoView.setScaleY(1.0f);
-                undoView.setAlpha(1.0f);
-                break;
-            case 27:
-                m61 m61Var = (m61) this.b;
-                if (m61Var.a.getTag() == null) {
-                    m61Var.a.setVisibility(4);
-                    break;
-                }
-                break;
-            case 28:
-                super.onAnimationEnd(animator);
-                n61 n61Var = (n61) this.b;
-                n61Var.b = 0.0f;
-                n61Var.setTranslationY(0.0f);
-                n61Var.a = null;
-                break;
-            default:
-                i81 i81Var = (i81) this.b;
-                i81Var.J = false;
-                i81Var.setEnabled(true);
-                h81 h81Var = i81Var.y;
-                if (h81Var != null) {
-                    ((ka.c) h81Var).h(1.0f);
-                }
-                i81Var.invalidate();
-                break;
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            window.addFlags(-2147483392);
+        } else {
+            window.addFlags(-2147417856);
+        }
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        if (i10 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+        if (i10 >= 23) {
+            window.setStatusBarColor(0);
+        }
+        FrameLayout frameLayout = this.b;
+        frameLayout.setSystemUiVisibility(1280);
+        frameLayout.setOnApplyWindowInsetsListener(new org.telegram.ui.ActionBar.g3(2));
+        if (i10 >= 26) {
+            AndroidUtilities.setLightNavigationBar(this, i0.a.f(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, true)) >= 0.9d);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 9:
-                nm0 nm0Var = (nm0) this.b;
-                nm0Var.d = true;
-                if (nm0Var.getParent() instanceof HorizontalScrollView) {
-                    ((HorizontalScrollView) nm0Var.getParent()).requestDisallowInterceptTouchEvent(false);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    @Override // android.app.Dialog
+    public final void onStart() {
+        super.onStart();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).B0.add(this.c);
         }
     }
 
-    public jd0(us0 us0Var, s4.o0 o0Var) {
-        this.a = 14;
-        this.b = us0Var;
+    @Override // android.app.Dialog
+    public final void onStop() {
+        super.onStop();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).B0.remove(this.c);
+        }
     }
 
-    private final void a(Animator animator) {
+    @Override // org.telegram.ui.ActionBar.a5
+    public final /* synthetic */ void a(float f7) {
+    }
+
+    @Override // org.telegram.ui.ActionBar.a5
+    public final void b(ActionBarLayout actionBarLayout, boolean z10) {
     }
 }

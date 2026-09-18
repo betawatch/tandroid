@@ -3,9 +3,9 @@ package ci;
 import android.app.Activity;
 import android.app.Dialog;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class sb extends org.telegram.ui.ActionBar.o2 {
+public final class sb extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ oc b;
 
@@ -25,15 +25,15 @@ public final class sb extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final Activity getParentActivity() {
         switch (this.a) {
         }
         return this.b.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final org.telegram.ui.ActionBar.f6 getResourceProvider() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
         switch (this.a) {
             case 0:
                 return new ai.x3(7, this.b.a);
@@ -42,25 +42,25 @@ public final class sb extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public boolean presentFragment(org.telegram.ui.ActionBar.o2 o2Var) {
+    @Override // org.telegram.ui.ActionBar.n2
+    public boolean presentFragment(org.telegram.ui.ActionBar.n2 n2Var) {
         switch (this.a) {
             case 0:
                 this.b.T();
                 return false;
             default:
-                return super.presentFragment(o2Var);
+                return super.presentFragment(n2Var);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public Dialog showDialog(Dialog dialog) {
         switch (this.a) {
             case 1:

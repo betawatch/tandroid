@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class pv implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList a;
@@ -42,13 +42,13 @@ public abstract class pv implements NotificationCenter.NotificationCenterDelegat
                 if (document == null) {
                     this.c[i10].add(null);
                 } else {
-                    ox oxVar = new ox();
+                    px pxVar = new px();
                     long j3 = document.id;
                     for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j3))); i13++) {
                     }
-                    oxVar.a = tL_messages_stickerSet;
-                    oxVar.b = document.id;
-                    this.c[i10].add(oxVar);
+                    pxVar.a = tL_messages_stickerSet;
+                    pxVar.b = document.id;
+                    this.c[i10].add(pxVar);
                     if (this.f.H) {
                         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                         if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
@@ -65,7 +65,7 @@ public abstract class pv implements NotificationCenter.NotificationCenterDelegat
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         TLRPC.StickerSet stickerSet;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         if (i10 == NotificationCenter.groupStickersDidLoad) {
             for (int i12 = 0; i12 < this.b.size(); i12++) {
                 if (this.b.get(i12) == null) {
@@ -74,12 +74,12 @@ public abstract class pv implements NotificationCenter.NotificationCenterDelegat
                         sv svVar = this.f;
                         svVar.dismiss();
                         Context context = svVar.getContext();
-                        org.telegram.ui.ActionBar.o2 o2Var = svVar.c;
+                        org.telegram.ui.ActionBar.n2 n2Var = svVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
-                        org.telegram.ui.ActionBar.o2 o2Var2 = svVar.c;
-                        org.telegram.ui.nk nkVar = o2Var2 instanceof org.telegram.ui.bo ? ((org.telegram.ui.bo) o2Var2).Y : null;
-                        f6Var = ((org.telegram.ui.ActionBar.g3) svVar).resourcesProvider;
-                        new wx0(context, o2Var, inputStickerSet, null, nkVar, f6Var).show();
+                        org.telegram.ui.ActionBar.n2 n2Var2 = svVar.c;
+                        org.telegram.ui.lk lkVar = n2Var2 instanceof org.telegram.ui.zn ? ((org.telegram.ui.zn) n2Var2).Y : null;
+                        e6Var = ((org.telegram.ui.ActionBar.f3) svVar).resourcesProvider;
+                        new hy0(context, n2Var, inputStickerSet, null, lkVar, e6Var).show();
                         return;
                     }
                     this.b.set(i12, stickerSet2);

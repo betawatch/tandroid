@@ -34,13 +34,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.h01;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static o20 b;
@@ -50,7 +50,7 @@ public abstract class ia {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static h01 i;
+    public static v01 i;
     public static int j;
     public static BitmapDrawable m;
     public static final o20[] a = new o20[2];
@@ -64,18 +64,18 @@ public abstract class ia {
     public static final PathMeasure s = new PathMeasure();
     public static final Path t = new Path();
 
-    public static void a(org.telegram.ui.ActionBar.k5 k5Var) {
+    public static void a(org.telegram.ui.ActionBar.j5 j5Var) {
         String string = LocaleController.getString(R.string.UploadingStory);
         if (string.indexOf("…") <= 0) {
-            k5Var.l(string, false);
+            j5Var.l(string, false);
             return;
         }
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
         pc pcVar = new pc();
         valueOf.setSpan(pcVar, valueOf.length() - 1, valueOf.length(), 0);
-        pcVar.a = k5Var;
+        pcVar.a = j5Var;
         pcVar.n = true;
-        k5Var.l(valueOf, false);
+        j5Var.l(valueOf, false);
     }
 
     public static void b(TL_stories.StoryItem storyItem, TLRPC.User user) {
@@ -92,7 +92,7 @@ public abstract class ia {
         }
     }
 
-    public static void c(org.telegram.ui.ActionBar.f6 f6Var) {
+    public static void c(org.telegram.ui.ActionBar.e6 e6Var) {
         if (e == null) {
             Paint paint = new Paint(1);
             e = paint;
@@ -100,7 +100,7 @@ public abstract class ia {
             e.setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             e.setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, e6Var);
         if (j != v02) {
             j = v02;
             float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(v02);
@@ -114,7 +114,7 @@ public abstract class ia {
         }
     }
 
-    public static void d(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+    public static void d(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         Paint[] paintArr = k;
         if (paintArr[z10 ? 1 : 0] == null) {
             Paint paint = new Paint(1);
@@ -123,7 +123,7 @@ public abstract class ia {
             paintArr[z10 ? 1 : 0].setStrokeWidth(AndroidUtilities.dpf2(1.3f));
             paintArr[z10 ? 1 : 0].setStrokeCap(Paint.Cap.ROUND);
         }
-        int v02 = org.telegram.ui.ActionBar.j6.v0(!z10 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8, f6Var);
+        int v02 = org.telegram.ui.ActionBar.j6.v0(!z10 ? org.telegram.ui.ActionBar.j6.s8 : org.telegram.ui.ActionBar.j6.M8, e6Var);
         int[] iArr = l;
         if (iArr[z10 ? 1 : 0] != v02) {
             iArr[z10 ? 1 : 0] = v02;
@@ -311,8 +311,8 @@ public abstract class ia {
                 caVar.B = 1.0f;
             }
         }
-        wc wcVar = caVar.H;
-        float a2 = wcVar != null ? wcVar.a(0.08f) : 1.0f;
+        yc ycVar = caVar.H;
+        float a2 = ycVar != null ? ycVar.a(0.08f) : 1.0f;
         if (caVar.C != z17 && z17) {
             caVar.K = 1.0f;
             caVar.L = false;
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new h01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new v01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            h01 h01Var = i;
+            v01 v01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            h01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            v01Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -829,9 +829,9 @@ public abstract class ia {
         int max;
         Paint paint6;
         ca caVar2 = caVar;
-        org.telegram.ui.ActionBar.f6 f6Var = caVar2.J;
+        org.telegram.ui.ActionBar.e6 e6Var = caVar2.J;
         boolean z11 = caVar2.E;
-        c(f6Var);
+        c(e6Var);
         d(caVar2.J, caVar2.o);
         long j3 = caVar2.s;
         int i10 = 0;
@@ -1050,7 +1050,7 @@ public abstract class ia {
             }
             ((aa) daVar.e).setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), org.telegram.ui.Cells.p6.t(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), t8.b.v(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return daVar;
     }

@@ -1,99 +1,175 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class am0 extends Drawable {
-    public int a = 255;
-    public final /* synthetic */ w80 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.t1 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+    public final bw e;
+    public final bw f;
+    public float h;
+    public float i;
+    public final Rect a = new Rect();
+    public final qr b = kt.b;
+    public final int c = AndroidUtilities.dp(24.0f);
+    public final int d = AndroidUtilities.dp(24.0f);
+    public long g = -1;
 
-    public am0(w80 w80Var, int[] iArr, org.telegram.ui.Cells.t1 t1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = w80Var;
-        this.c = iArr;
-        this.d = t1Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
+    public am0() {
+        bw bwVar = new bw();
+        this.e = bwVar;
+        bwVar.c.setColor(-2130706433);
+        bw bwVar2 = new bw();
+        this.f = bwVar2;
+        bwVar2.c.setColor(-2130706433);
+    }
+
+    public final void a(Canvas canvas, float f7) {
+        Rect bounds = getBounds();
+        float interpolation = this.b.getInterpolation(f7);
+        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
+        Rect rect = this.a;
+        rect.left = dp;
+        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
+        rect.bottom = dp2;
+        rect.right = bounds.right - rect.left;
+        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
+        bw bwVar = this.f;
+        bwVar.setBounds(rect);
+        bwVar.draw(canvas);
+        int dp3 = AndroidUtilities.dp(12.0f);
+        rect.right = dp3;
+        rect.left = dp3;
+        int dp4 = AndroidUtilities.dp(8.0f);
+        rect.bottom = dp4;
+        rect.top = dp4;
+        rect.inset(-AndroidUtilities.dp(AndroidUtilities.lerp(10, 11, interpolation)), -AndroidUtilities.dp(AndroidUtilities.lerp(2, 3, interpolation)));
+        bw bwVar2 = this.e;
+        bwVar2.setBounds(rect);
+        bwVar2.setAlpha(AndroidUtilities.lerp(128, 255, interpolation));
+        bwVar2.draw(canvas);
+    }
+
+    public final void b(Canvas canvas, float f7) {
+        Rect bounds = getBounds();
+        float interpolation = this.b.getInterpolation(f7);
+        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
+        Rect rect = this.a;
+        rect.left = dp;
+        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
+        rect.bottom = dp2;
+        rect.right = bounds.right - rect.left;
+        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
+        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, -8, interpolation)));
+        bw bwVar = this.f;
+        bwVar.setBounds(rect);
+        bwVar.draw(canvas);
+        rect.left = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(1, 2, interpolation)) * this.h);
+        int dpf2 = (int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(5, 6, interpolation)) * this.i);
+        rect.top = dpf2;
+        rect.right = bounds.right - rect.left;
+        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(AndroidUtilities.lerp(6, 4, interpolation)) * this.i));
+        rect.offset(0, AndroidUtilities.dp(AndroidUtilities.lerp(0, 8, interpolation)));
+        bw bwVar2 = this.e;
+        bwVar2.setBounds(rect);
+        bwVar2.setAlpha(255);
+        bwVar2.draw(canvas);
+    }
+
+    public final void c(Canvas canvas, float f7) {
+        Rect bounds = getBounds();
+        float interpolation = this.b.getInterpolation(f7);
+        int dp = (int) (AndroidUtilities.dp(2.0f) * this.h);
+        Rect rect = this.a;
+        rect.left = dp;
+        int dp2 = bounds.bottom - ((int) (AndroidUtilities.dp(6.0f) * this.i));
+        rect.bottom = dp2;
+        rect.right = bounds.right - rect.left;
+        rect.top = dp2 - ((int) (AndroidUtilities.dp(4.0f) * this.i));
+        rect.offset(0, AndroidUtilities.dp(-8.0f));
+        bw bwVar = this.f;
+        bwVar.setBounds(rect);
+        bwVar.draw(canvas);
+        rect.left = (int) (AndroidUtilities.dpf2(2.0f) * this.h);
+        int dpf2 = (int) (AndroidUtilities.dpf2(6.0f) * this.i);
+        rect.top = dpf2;
+        rect.right = bounds.right - rect.left;
+        rect.bottom = dpf2 + ((int) (AndroidUtilities.dpf2(4.0f) * this.i));
+        rect.offset(0, AndroidUtilities.dp(8.0f));
+        bw bwVar2 = this.e;
+        bwVar2.setBounds(rect);
+        bwVar2.setAlpha(AndroidUtilities.lerp(255, 128, interpolation));
+        bwVar2.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
+        if (this.g <= 0) {
+            a(canvas, 0.0f);
             return;
         }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        float f7 = rectF.left;
-        CornerPathEffect cornerPathEffect = w80.w;
-        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        w80 w80Var = this.b;
-        org.telegram.ui.Cells.t1 t1Var = this.d;
-        if (t1Var == null || !t1Var.C1()) {
-            canvas.drawPath(w80Var, this.i);
+        int currentTimeMillis = (int) (System.currentTimeMillis() - this.g);
+        int i10 = currentTimeMillis - 300;
+        if (i10 < 0) {
+            a(canvas, 0.0f);
+        } else if (i10 < 150) {
+            a(canvas, i10 / 150.0f);
         } else {
-            org.telegram.ui.ActionBar.g5 g5Var = t1Var.t8;
-            if (g5Var == null || g5Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], t1Var.getPaddingTop() + iArr2[1]);
-                t1Var.D1(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - t1Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
+            int i11 = currentTimeMillis - 750;
+            if (i11 < 0) {
+                a(canvas, 1.0f);
+            } else if (i11 < 200) {
+                b(canvas, i11 / 200.0f);
             } else {
-                canvas.save();
-                t1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -t1Var.t8.r);
-                canvas.drawPaint(t1Var.t8.c);
-                canvas.restore();
-            }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
+                int i12 = currentTimeMillis - 1250;
+                if (i12 < 0) {
+                    b(canvas, 1.0f);
+                } else if (i12 < 150) {
+                    c(canvas, i12 / 150.0f);
+                } else {
+                    c(canvas, 1.0f);
+                    if (currentTimeMillis - 1400 >= 100) {
+                        this.g = System.currentTimeMillis();
+                    }
+                }
             }
         }
-        canvas.clipPath(w80Var);
-        this.j.draw(canvas);
-        canvas.restore();
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.d;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.c;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final int getOpacity() {
-        return -2;
+        return -3;
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a = i10;
+    public final void onBoundsChange(Rect rect) {
+        this.h = rect.width() / this.c;
+        this.i = rect.height() / this.d;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
+        this.e.setColorFilter(colorFilter);
+        this.f.setColorFilter(colorFilter);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

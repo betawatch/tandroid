@@ -1,142 +1,54 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class zd extends LinearLayout {
-    public static float b = 1.0f;
-    public final /* synthetic */ int a;
+public final class zd extends org.telegram.ui.Components.id0 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ Object M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zd(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public /* synthetic */ zd(Object obj, Context context, int i10) {
+        super(context, null);
+        this.L = i10;
+        this.M = obj;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.a) {
-            case 4:
-                if (!(getParent() instanceof org.telegram.ui.Components.ao0)) {
-                    return super.drawChild(canvas, view, j3);
-                }
-                org.telegram.ui.Components.ao0 ao0Var = (org.telegram.ui.Components.ao0) getParent();
-                canvas.save();
-                LinearLayout linearLayout = ao0Var.b;
-                Path path = ao0Var.n;
-                if (view != null && org.telegram.ui.Components.ao0.e(view)) {
-                    int indexOfChild = linearLayout.indexOfChild(view);
-                    int i10 = indexOfChild - 1;
-                    View childAt = i10 < 0 ? null : linearLayout.getChildAt(i10);
-                    int i11 = indexOfChild + 1;
-                    View childAt2 = i11 < linearLayout.getChildCount() ? linearLayout.getChildAt(i11) : null;
-                    boolean z10 = childAt != null && org.telegram.ui.Components.ao0.e(childAt);
-                    boolean z11 = childAt2 != null && org.telegram.ui.Components.ao0.e(childAt2);
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(view.getX(), Math.max(ao0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + ao0Var.getScrollY() + ao0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
-                    if (z10 && z11) {
-                        z10 = view.getY() >= rectF.top;
-                        boolean z12 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
-                        if (!z10 || !z12) {
-                            z11 = z12;
-                        }
-                    }
-                    if (!z10 && !z11) {
-                        path.rewind();
-                        float f7 = ao0Var.c;
-                        path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
-                        canvas.clipPath(path);
-                    } else if (!z10) {
-                        path.rewind();
-                        path.addRoundRect(rectF, ao0Var.d, Path.Direction.CW);
-                        canvas.clipPath(path);
-                    } else if (!z11) {
-                        path.rewind();
-                        path.addRoundRect(rectF, ao0Var.e, Path.Direction.CW);
-                        canvas.clipPath(path);
-                    }
-                }
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 2:
-                super.onLayout(z10, i10, i11, i12, i13);
-                setPivotX(getWidth());
-                break;
-            case 3:
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-            case 4:
-                super.onLayout(z10, i10, i11, i12, i13);
-                if (getParent() instanceof org.telegram.ui.Components.ao0) {
-                    ((org.telegram.ui.Components.ao0) getParent()).invalidate();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
             case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                ke keVar = (ke) this.M;
+                org.telegram.ui.Components.t61 t61Var = keVar.a1;
+                fi.o oVar = keVar.Y0;
+                if (oVar != null && !oVar.isFocusable()) {
+                    oVar.setFocusable(true);
+                    oVar.setFocusableInTouchMode(true);
+                    int y12 = t61Var.y1(3);
+                    if (y12 >= 0 && y12 < t61Var.Y2.x.size()) {
+                        t61Var.C0();
+                        t61Var.y0(y12);
+                    }
+                    oVar.requestFocus();
+                }
                 break;
-            case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 2:
-            case 4:
-            case 5:
             default:
-                super.onMeasure(i10, i11);
-                break;
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)), i11);
-                break;
-            case 6:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(0.0f);
-                break;
-            case 7:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(getMeasuredWidth());
-                break;
-            case 8:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
-                break;
-            case 9:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 10:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                yh.g gVar = (yh.g) this.M;
+                fi.o oVar2 = gVar.Q;
+                if (oVar2 != null && !oVar2.isFocusable()) {
+                    gVar.Q.setFocusable(true);
+                    gVar.Q.setFocusableInTouchMode(true);
+                    int y13 = gVar.e.y1(1);
+                    if (y13 >= 0 && y13 < gVar.e.Y2.x.size()) {
+                        gVar.e.C0();
+                        gVar.e.y0(y13);
+                    }
+                    gVar.Q.requestFocus();
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zd(Context context) {
-        super(context);
-        this.a = 4;
-        setWillNotDraw(false);
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

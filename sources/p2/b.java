@@ -1,375 +1,414 @@
 package p2;
 
-import android.app.job.JobParameters;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.RectF;
 import android.net.Uri;
-import android.os.Process;
-import android.os.StrictMode;
-import android.text.TextUtils;
-import androidx.car.app.hardware.common.CarResultStub;
-import com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService;
-import java.io.File;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.os.SystemClock;
+import b2.s0;
+import c5.b0;
+import com.google.android.gms.internal.cast.b5;
+import e2.d0;
+import e9.i0;
+import g2.x;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.bo;
-import org.telegram.ui.oj0;
-import pg.a1;
-import pg.c1;
-import pg.q0;
-import pg.x0;
-import qg.a2;
-import qg.m2;
-import qg.p0;
-import qg.p2;
-import rg.h0;
-import rg.i0;
-import rg.j0;
-import rg.z1;
-import s4.c0;
-import tg.b0;
-import tg.n1;
-import tg.w;
-import u2.u0;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.web.p1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class b implements y2.h {
+    public final Uri a;
+    public final y2.m b = new y2.m("DefaultHlsPlaylistTracker:MediaPlaylist");
+    public final g2.h c;
+    public l d;
+    public long e;
+    public long f;
+    public long h;
+    public long n;
+    public boolean r;
+    public IOException s;
+    public boolean v;
+    public final /* synthetic */ c w;
 
-    public /* synthetic */ b(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public b(c cVar, Uri uri) {
+        this.w = cVar;
+        this.a = uri;
+        this.c = ((g2.g) cVar.a.a).createDataSource();
     }
 
-    private final void a() {
-        q9.o oVar = (q9.o) this.b;
-        pa.b bVar = (pa.b) this.c;
-        synchronized (oVar) {
-            try {
-                if (oVar.b == null) {
-                    oVar.a.add(bVar);
-                } else {
-                    oVar.b.add(bVar.get());
-                }
-            } catch (Throwable th2) {
-                throw th2;
+    public static boolean a(b bVar, long j3) {
+        bVar.n = SystemClock.elapsedRealtime() + j3;
+        Uri uri = bVar.a;
+        c cVar = bVar.w;
+        if (!uri.equals(cVar.v)) {
+            return false;
+        }
+        List list = cVar.s.e;
+        int size = list.size();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        for (int i10 = 0; i10 < size; i10++) {
+            b bVar2 = (b) cVar.d.get(((n) list.get(i10)).a);
+            bVar2.getClass();
+            if (elapsedRealtime > bVar2.n) {
+                Uri uri2 = bVar2.a;
+                cVar.v = uri2;
+                bVar2.e(cVar.b(uri2));
+                return false;
             }
         }
+        return true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        pa.a aVar;
-        int i10;
-        TLRPC.Document document;
-        TLRPC.Document document2;
-        File pathToAttach;
-        switch (this.a) {
-            case 0:
-                c cVar = (c) this.b;
-                Uri uri = (Uri) this.c;
-                cVar.r = false;
-                cVar.d(uri);
-                return;
-            case 1:
-                q0 q0Var = (q0) this.b;
-                x0 x0Var = (x0) this.c;
-                q0Var.v = true;
-                ByteBuffer byteBuffer = (ByteBuffer) q0Var.h(q0Var.f(), true, false, false).c;
-                RectF f7 = q0Var.f();
-                Object obj = q0Var.a.b;
-                q0Var.w = new a5.a(byteBuffer, 0, f7);
-                q0Var.a(false);
-                x0Var.run();
-                return;
-            case 2:
-                c1 c1Var = (c1) this.b;
-                Runnable runnable = (Runnable) this.c;
-                a1 a1Var = c1Var.d;
-                if (a1Var == null || !a1Var.f) {
-                    return;
-                }
-                a1.b(a1Var);
-                runnable.run();
-                return;
-            case 3:
-                q9.p pVar = (q9.p) this.b;
-                pa.b bVar = (pa.b) this.c;
-                if (pVar.b != q9.p.d) {
-                    throw new IllegalStateException("provide() can be called only once.");
-                }
-                synchronized (pVar) {
-                    aVar = pVar.a;
-                    pVar.a = null;
-                    pVar.b = bVar;
-                }
-                aVar.j(bVar);
-                return;
-            case 4:
-                a();
-                return;
-            case 5:
-                p0 p0Var = (p0) this.b;
-                a2 a2Var = (a2) this.c;
-                a2Var.m();
-                p0Var.r0(a2Var, true);
-                return;
-            case 6:
-                ((a2) this.b).s((Bitmap) this.c);
-                return;
-            case 7:
-                p2 p2Var = (p2) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                p2Var.G = false;
-                m2[] m2VarArr = (m2[]) arrayList.toArray(new m2[0]);
-                p2Var.H = m2VarArr;
-                if (m2VarArr.length > 0) {
-                    p2Var.b0.setScaleX(0.3f);
-                    p2Var.b0.setScaleY(0.3f);
-                    p2Var.b0.setAlpha(0.0f);
-                    p2Var.b0.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(250L).setInterpolator(qr.f).start();
-                    return;
-                }
-                return;
-            case 8:
-                CarResultStub.lambda$notifyResults$1((Map.Entry) this.b, this.c);
-                return;
-            case 9:
-                JobInfoSchedulerService jobInfoSchedulerService = (JobInfoSchedulerService) this.b;
-                JobParameters jobParameters = (JobParameters) this.c;
-                int i11 = JobInfoSchedulerService.a;
-                jobInfoSchedulerService.jobFinished(jobParameters, false);
-                return;
-            case 10:
-                r9.a aVar2 = (r9.a) this.b;
-                Runnable runnable2 = (Runnable) this.c;
-                Process.setThreadPriority(aVar2.c);
-                StrictMode.ThreadPolicy threadPolicy = aVar2.d;
-                if (threadPolicy != null) {
-                    StrictMode.setThreadPolicy(threadPolicy);
-                }
-                runnable2.run();
-                return;
-            case 11:
-                Callable callable = (Callable) this.b;
-                r9.h hVar = (r9.h) ((k2.u) this.c).b;
-                try {
-                    hVar.k(callable.call());
-                    return;
-                } catch (Exception e) {
-                    hVar.l(e);
-                    return;
-                }
-            case 12:
-                j0 j0Var = (j0) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                ArrayList arrayList2 = j0Var.i0;
-                ml0 ml0Var = j0Var.d;
-                if (tLObject != null) {
-                    arrayList2.clear();
-                    arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
-                    j0Var.I0 = false;
-                    j0Var.J0.b(j0Var.n0 + 4);
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= ml0Var.getChildCount()) {
-                            i10 = 0;
-                        } else if (ml0Var.getChildAt(i12) instanceof i0) {
-                            i10 = ml0Var.getChildAt(i12).getTop();
-                        } else {
-                            i12++;
+    @Override // y2.h
+    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
+        y2.p pVar = (y2.p) jVar;
+        long j11 = pVar.a;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        c cVar = this.w;
+        cVar.c.getClass();
+        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    public final Uri b() {
+        l lVar = this.d;
+        Uri uri = this.a;
+        if (lVar != null) {
+            k kVar = lVar.v;
+            if (kVar.a != -9223372036854775807L || kVar.e) {
+                Uri.Builder buildUpon = uri.buildUpon();
+                l lVar2 = this.d;
+                if (lVar2.v.e) {
+                    buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(lVar2.k + lVar2.r.size()));
+                    l lVar3 = this.d;
+                    if (lVar3.n != -9223372036854775807L) {
+                        i0 i0Var = lVar3.s;
+                        int size = i0Var.size();
+                        if (!i0Var.isEmpty() && ((g) e9.q.l(i0Var)).x) {
+                            size--;
                         }
-                    }
-                    j0Var.M1();
-                    if (j0Var.l0 >= 0 && i10 != 0) {
-                        ((c0) ml0Var.getLayoutManager()).h1(j0Var.l0 + 1, i10);
+                        buildUpon.appendQueryParameter("_HLS_part", String.valueOf(size));
                     }
                 }
-                int max = Math.max(arrayList2.size(), j0Var.M0.b);
-                j0Var.x0.g(max, false);
-                j0Var.x0.setBagePosition(max / j0Var.M0.c);
-                h0 h0Var = j0Var.x0;
-                h0Var.H = true;
-                h0Var.requestLayout();
-                return;
-            case 13:
-                ((j0) this.b).m1((f90) this.c, true);
-                return;
-            case 14:
-                z1 z1Var = (z1) this.b;
-                AndroidUtilities.runOnUIThread(new b(15, z1Var, FileLoader.getInstance(z1Var.s).getPathToAttach((TLRPC.Document) this.c)));
-                return;
-            case 15:
-                z1 z1Var2 = (z1) this.b;
-                z1Var2.e = (File) this.c;
-                z1Var2.a();
-                return;
-            case 16:
-                com.google.android.gms.internal.cast.p pVar2 = (com.google.android.gms.internal.cast.p) this.b;
-                rf.b bVar2 = (rf.b) this.c;
-                if (((AtomicBoolean) pVar2.e).compareAndSet(false, true)) {
-                    bVar2.a(true);
-                    return;
+                k kVar2 = this.d.v;
+                if (kVar2.a != -9223372036854775807L) {
+                    buildUpon.appendQueryParameter("_HLS_skip", kVar2.b ? "v2" : "YES");
                 }
-                return;
-            case 17:
-                ((tg.x0) this.b).run((ArrayList) this.c);
-                return;
-            case 18:
-                ((w) this.b).run((TLRPC.TL_error) this.c);
-                return;
-            case 19:
-                ((oj0) this.b).run((ArrayList) this.c);
-                return;
-            case 20:
-                MessagesStorage messagesStorage = (MessagesStorage) this.b;
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                HashMap<Long, Integer> smallGroupsParticipantsCount = messagesStorage.getSmallGroupsParticipantsCount();
-                if (smallGroupsParticipantsCount == null || smallGroupsParticipantsCount.isEmpty()) {
-                    return;
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.a2(callback, smallGroupsParticipantsCount, 1));
-                return;
-            case 21:
-                oc M = vc.a0((bo) this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)), R.raw.stars_send);
-                M.j = 5000;
-                M.k(true);
-                return;
-            case 22:
-                b0 b0Var = (b0) this.b;
-                TL_stories.PrepaidGiveaway prepaidGiveaway = (TL_stories.PrepaidGiveaway) this.c;
-                b0Var.getClass();
-                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostByChannelCreated, b0Var.b0, Boolean.TRUE, prepaidGiveaway);
-                return;
-            case 23:
-                n1.P((n1) this.b, (TLObject) this.c);
-                return;
-            case 24:
-                ((e2.h) this.b).accept(this.c);
-                return;
-            case 25:
-                ((u0) this.b).A((c3.b0) this.c);
-                return;
-            case 26:
-                uf.c cVar2 = (uf.c) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                if (tLObject2 != null) {
-                    if (tLObject2 instanceof TL_account.TL_savedRingtonesNotModified) {
-                        cVar2.f(true);
-                    } else if (tLObject2 instanceof TL_account.TL_savedRingtones) {
-                        TL_account.TL_savedRingtones tL_savedRingtones = (TL_account.TL_savedRingtones) tLObject2;
-                        ArrayList<TLRPC.Document> arrayList3 = tL_savedRingtones.ringtones;
-                        ArrayList arrayList4 = cVar2.e;
-                        if (!cVar2.f) {
-                            cVar2.f(false);
-                            cVar2.f = true;
-                        }
-                        HashMap hashMap = new HashMap();
-                        int size = arrayList4.size();
-                        int i13 = 0;
-                        while (i13 < size) {
-                            Object obj2 = arrayList4.get(i13);
-                            i13++;
-                            uf.b bVar3 = (uf.b) obj2;
-                            if (bVar3.b != null && (document = bVar3.a) != null) {
-                                hashMap.put(Long.valueOf(document.id), bVar3.b);
-                            }
-                        }
-                        arrayList4.clear();
-                        SharedPreferences d = cVar2.d();
-                        d.edit().clear().apply();
-                        SharedPreferences.Editor edit = d.edit();
-                        edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, arrayList3.size());
-                        for (int i14 = 0; i14 < arrayList3.size(); i14++) {
-                            TLRPC.Document document3 = arrayList3.get(i14);
-                            String str = (String) hashMap.get(Long.valueOf(document3.id));
-                            SerializedData serializedData = new SerializedData(document3.getObjectSize());
-                            document3.serializeToStream(serializedData);
-                            edit.putString("tone_document" + i14, Utilities.bytesToHex(serializedData.toByteArray()));
-                            if (str != null) {
-                                edit.putString("tone_local_path" + i14, str);
-                            }
-                            uf.b bVar4 = new uf.b();
-                            bVar4.a = document3;
-                            bVar4.b = str;
-                            int i15 = cVar2.d;
-                            cVar2.d = i15 + 1;
-                            bVar4.c = i15;
-                            arrayList4.add(bVar4);
-                        }
-                        edit.apply();
-                        NotificationCenter.getInstance(cVar2.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.onUserRingtonesUpdated, new Object[0]);
-                        SharedPreferences.Editor edit2 = cVar2.d().edit();
-                        long j3 = tL_savedRingtones.hash;
-                        uf.c.g = j3;
-                        SharedPreferences.Editor putLong = edit2.putLong("hash", j3);
-                        long currentTimeMillis = System.currentTimeMillis();
-                        uf.c.h = currentTimeMillis;
-                        putLong.putLong("lastReload", currentTimeMillis).apply();
-                    }
-                    cVar2.b();
-                    return;
-                }
-                return;
-            case 27:
-                uf.c cVar3 = (uf.c) this.b;
-                ArrayList arrayList5 = (ArrayList) this.c;
-                for (int i16 = 0; i16 < arrayList5.size(); i16++) {
-                    uf.b bVar5 = (uf.b) arrayList5.get(i16);
-                    if (bVar5 != null && ((TextUtils.isEmpty(bVar5.b) || !new File(bVar5.b).exists()) && (document2 = bVar5.a) != null && ((pathToAttach = FileLoader.getInstance(cVar3.c).getPathToAttach(document2)) == null || !pathToAttach.exists()))) {
-                        AndroidUtilities.runOnUIThread(new b(28, cVar3, document2));
-                    }
-                }
-                return;
-            case 28:
-                uf.c cVar4 = (uf.c) this.b;
-                TLRPC.Document document4 = (TLRPC.Document) this.c;
-                FileLoader.getInstance(cVar4.c).loadFile(document4, document4, 0, 0);
-                return;
-            default:
-                uf.d dVar = (uf.d) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                int i17 = dVar.a;
-                if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLongError", R.string.TooLongError, new Object[0]), LocaleController.formatString("ErrorRingtoneDurationTooLong", R.string.ErrorRingtoneDurationTooLong, Integer.valueOf(MessagesController.getInstance(i17).ringtoneDurationMax)));
-                    return;
-                } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("TooLargeError", R.string.TooLargeError, new Object[0]), LocaleController.formatString("ErrorRingtoneSizeTooBig", R.string.ErrorRingtoneSizeTooBig, Integer.valueOf(MessagesController.getInstance(i17).ringtoneSizeMax / 1024)));
-                    return;
-                } else {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 4, LocaleController.formatString("InvalidFormatError", R.string.InvalidFormatError, new Object[0]), LocaleController.getString(R.string.ErrorRingtoneInvalidFormat));
-                    return;
-                }
+                return buildUpon.build();
+            }
         }
+        return uri;
+    }
+
+    public final void c(boolean z10) {
+        e(z10 ? b() : this.a);
+    }
+
+    public final void d(Uri uri) {
+        c cVar = this.w;
+        y2.o K = cVar.b.K(cVar.s, this.d);
+        Map map = Collections.EMPTY_MAP;
+        e2.d.i(uri, "The uri must be set.");
+        y2.p pVar = new y2.p(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, K);
+        this.b.f(pVar, this, cVar.c.L3(pVar.c));
+    }
+
+    public final void e(Uri uri) {
+        this.n = 0L;
+        if (this.r) {
+            return;
+        }
+        y2.m mVar = this.b;
+        if (mVar.d() || mVar.c()) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.h;
+        if (elapsedRealtime >= j3) {
+            d(uri);
+        } else {
+            this.r = true;
+            this.w.n.postDelayed(new p1(4, this, uri), j3 - elapsedRealtime);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x027e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0057  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void f(l lVar, u2.t tVar) {
+        boolean z10;
+        CopyOnWriteArrayList copyOnWriteArrayList;
+        long j3;
+        long j10;
+        long j11;
+        int i10;
+        i0 i0Var;
+        l lVar2;
+        b5 b5Var;
+        long j12;
+        b5 b5Var2;
+        boolean z11;
+        k kVar;
+        int size;
+        int size2;
+        int size3;
+        l lVar3 = this.d;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        this.e = elapsedRealtime;
+        c cVar = this.w;
+        CopyOnWriteArrayList copyOnWriteArrayList2 = cVar.e;
+        if (lVar3 != null) {
+            long j13 = lVar.k;
+            long j14 = lVar3.k;
+            if (j13 <= j14 && (j13 < j14 || ((size = lVar.r.size() - lVar3.r.size()) == 0 ? !((size2 = lVar.s.size()) > (size3 = lVar3.s.size()) || (size2 == size3 && lVar.o && !lVar3.o)) : size <= 0))) {
+                z10 = false;
+                i0 i0Var2 = lVar.r;
+                long j15 = lVar.k;
+                long j16 = 0;
+                if (z10) {
+                    if (!lVar.o) {
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        lVar2 = lVar3;
+                        j12 = j15;
+                    } else if (lVar3.o) {
+                        lVar2 = lVar3;
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        j12 = j15;
+                        b5Var = null;
+                    } else {
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        j12 = j15;
+                        lVar2 = new l(lVar3.d, lVar3.a, lVar3.b, lVar3.e, lVar3.g, lVar3.h, lVar3.i, lVar3.j, lVar3.k, lVar3.l, lVar3.m, lVar3.n, lVar3.c, true, lVar3.p, lVar3.q, lVar3.r, lVar3.s, lVar3.v, lVar3.t, lVar3.w);
+                    }
+                    b5Var = null;
+                } else {
+                    copyOnWriteArrayList = copyOnWriteArrayList2;
+                    if (lVar.p) {
+                        j3 = lVar.h;
+                    } else {
+                        l lVar4 = cVar.w;
+                        j3 = lVar4 != null ? lVar4.h : 0L;
+                        if (lVar3 != null) {
+                            long j17 = lVar3.h;
+                            long j18 = lVar3.k;
+                            i0 i0Var3 = lVar3.r;
+                            j10 = j3;
+                            int size4 = i0Var3.size();
+                            int i11 = (int) (j15 - j18);
+                            i iVar = i11 < i0Var3.size() ? (i) i0Var3.get(i11) : null;
+                            if (iVar != null) {
+                                j11 = iVar.e;
+                            } else {
+                                if (size4 == j15 - j18) {
+                                    j11 = lVar3.u;
+                                }
+                                if (lVar.i) {
+                                    l lVar5 = cVar.w;
+                                    int i12 = lVar5 != null ? lVar5.j : 0;
+                                    if (lVar3 != null) {
+                                        int i13 = (int) (j15 - lVar3.k);
+                                        i0 i0Var4 = lVar3.r;
+                                        i iVar2 = i13 < i0Var4.size() ? (i) i0Var4.get(i13) : null;
+                                        if (iVar2 != null) {
+                                            i12 = (lVar3.j + iVar2.d) - ((i) i0Var2.get(0)).d;
+                                            i10 = i12;
+                                            i0Var = i0Var2;
+                                        }
+                                    }
+                                    i10 = i12;
+                                    i0Var = i0Var2;
+                                } else {
+                                    i10 = lVar.j;
+                                    i0Var = i0Var2;
+                                }
+                                b5Var = null;
+                                j12 = j15;
+                                lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
+                            }
+                            j3 = j17 + j11;
+                        }
+                    }
+                    j10 = j3;
+                    if (lVar.i) {
+                    }
+                    b5Var = null;
+                    j12 = j15;
+                    lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
+                }
+                this.d = lVar2;
+                Uri uri = this.a;
+                if (lVar2 == lVar3) {
+                    this.s = b5Var;
+                    this.f = elapsedRealtime;
+                    if (uri.equals(cVar.v)) {
+                        if (cVar.w == null) {
+                            cVar.x = !lVar2.o;
+                            cVar.y = lVar2.h;
+                        }
+                        cVar.w = lVar2;
+                        cVar.r.v(lVar2);
+                    }
+                    Iterator it = copyOnWriteArrayList.iterator();
+                    while (it.hasNext()) {
+                        ((t) it.next()).a();
+                    }
+                } else if (!lVar2.o) {
+                    long size5 = j12 + lVar.r.size();
+                    l lVar6 = this.d;
+                    if (size5 < lVar6.k) {
+                        b5Var2 = new b5();
+                        z11 = true;
+                    } else {
+                        b5Var2 = ((double) (elapsedRealtime - this.f)) > ((double) d0.e0(lVar6.m)) * 3.5d ? new b5() : b5Var;
+                        z11 = false;
+                    }
+                    if (b5Var2 != null) {
+                        this.s = b5Var2;
+                        b0 b0Var = new b0(b5Var2, 1, 11);
+                        Iterator it2 = copyOnWriteArrayList.iterator();
+                        while (it2.hasNext()) {
+                            ((t) it2.next()).b(uri, b0Var, z11);
+                        }
+                    }
+                }
+                l lVar7 = this.d;
+                kVar = lVar7.v;
+                long j19 = lVar7.m;
+                if (!kVar.e) {
+                    if (lVar7 == lVar3) {
+                        long j20 = lVar7.n;
+                        if (j20 != -9223372036854775807L) {
+                            j16 = j20 / 2;
+                        } else {
+                            j19 /= 2;
+                        }
+                    }
+                    this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                    if (this.d.o) {
+                        return;
+                    }
+                    if (uri.equals(cVar.v) || this.v) {
+                        e(b());
+                        return;
+                    }
+                    return;
+                }
+                if (lVar7 == lVar3) {
+                    j19 /= 2;
+                }
+                j16 = j19;
+                this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                if (this.d.o) {
+                }
+            }
+        } else {
+            lVar.getClass();
+        }
+        z10 = true;
+        i0 i0Var22 = lVar.r;
+        long j152 = lVar.k;
+        long j162 = 0;
+        if (z10) {
+        }
+        this.d = lVar2;
+        Uri uri2 = this.a;
+        if (lVar2 == lVar3) {
+        }
+        l lVar72 = this.d;
+        kVar = lVar72.v;
+        long j192 = lVar72.m;
+        if (!kVar.e) {
+        }
+        j162 = j192;
+        this.h = (d0.e0(j162) + elapsedRealtime) - tVar.a;
+        if (this.d.o) {
+        }
+    }
+
+    @Override // y2.h
+    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+        y2.p pVar = (y2.p) jVar;
+        long j11 = pVar.a;
+        int i11 = pVar.c;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        boolean z10 = uri.getQueryParameter("_HLS_msn") != null;
+        boolean z11 = iOException instanceof q;
+        k4.d dVar = y2.m.e;
+        c cVar = this.w;
+        if (z10 || z11) {
+            int i12 = iOException instanceof x ? ((x) iOException).d : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (z11 || i12 == 400 || i12 == 503) {
+                this.h = SystemClock.elapsedRealtime();
+                c(false);
+                a5.a aVar = cVar.f;
+                String str = d0.a;
+                aVar.r(tVar, i11, iOException, true);
+                return dVar;
+            }
+        }
+        b0 b0Var = new b0(iOException, i10, 11);
+        Iterator it = cVar.e.iterator();
+        boolean z12 = false;
+        while (it.hasNext()) {
+            z12 |= !((t) it.next()).b(this.a, b0Var, false);
+        }
+        qb.b bVar = cVar.c;
+        if (z12) {
+            bVar.getClass();
+            long M3 = qb.b.M3(b0Var);
+            dVar = M3 != -9223372036854775807L ? new k4.d(0, M3, false) : y2.m.f;
+        }
+        boolean a2 = dVar.a();
+        cVar.f.r(tVar, i11, iOException, !a2);
+        if (!a2) {
+            bVar.getClass();
+        }
+        return dVar;
+    }
+
+    @Override // y2.h
+    public final void n(y2.j jVar, long j3, long j10, int i10) {
+        u2.t tVar;
+        y2.p pVar = (y2.p) jVar;
+        if (i10 == 0) {
+            long j11 = pVar.a;
+            tVar = new u2.t(pVar.b);
+        } else {
+            long j12 = pVar.a;
+            Uri uri = pVar.d.c;
+            tVar = new u2.t(j10);
+        }
+        this.w.f.s(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // y2.h
+    public final void o(y2.j jVar, long j3, long j10) {
+        y2.p pVar = (y2.p) jVar;
+        p pVar2 = (p) pVar.f;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        if (pVar2 instanceof l) {
+            f((l) pVar2, tVar);
+            this.w.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        } else {
+            s0 b10 = s0.b("Loaded playlist has unexpected type.", null);
+            this.s = b10;
+            this.w.f.r(tVar, 4, b10, true);
+        }
+        this.w.c.getClass();
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class n6 extends View {
     public ArrayList E;
@@ -212,8 +212,8 @@ public abstract class n6 extends View {
                 float f20 = this.r;
                 float f21 = f10 * f20;
                 f11 = measuredWidth;
-                float y3 = org.telegram.messenger.w1.y(f19, f18, 2.0f, b10);
-                float y10 = org.telegram.messenger.w1.y(f21, f20, 2.0f, this.x);
+                float y3 = org.telegram.messenger.q.y(f19, f18, 2.0f, b10);
+                float y10 = org.telegram.messenger.q.y(f21, f20, 2.0f, this.x);
                 if (this.y == 0.0f || i14 == (i12 = this.K)) {
                     arrayList2 = arrayList3;
                     arrayList = arrayList4;

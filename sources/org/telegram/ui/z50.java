@@ -1,80 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
+import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z50 extends View {
-    public int[] a;
-    public int b;
-    public final Paint c;
-    public float d;
-    public final /* synthetic */ k60 e;
+public final class z50 extends org.telegram.ui.Cells.e4 {
+    public final /* synthetic */ c60 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z50(k60 k60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = k60Var;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setAlpha(0);
+    public z50(c60 c60Var, Context context) {
+        super(context);
+        this.f0 = c60Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (!this.e.z2 || r0.a2.c >= 0.1d) {
-            return;
-        }
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
+    @Override // org.telegram.ui.Cells.e4
+    public final void d(org.telegram.ui.Cells.e4 e4Var) {
+        i60 i60Var = this.f0.M;
+        i60 i60Var2 = i60.D3;
+        i60Var.F1(e4Var);
     }
 
-    public void setNewColors(int[] iArr) {
-        int[] iArr2 = this.a;
-        Paint paint = this.c;
-        boolean z10 = true;
-        k60 k60Var = this.e;
-        boolean z11 = false;
-        if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
-            if (iArr2 == null) {
-                paint.setAlpha(255);
-            }
-            this.a = iArr;
-            if (k60Var.h1 != null) {
-                float f7 = k60Var.i1;
-                if (f7 != 1.0f) {
-                    iArr[0] = i0.a.k(iArr[0], (int) (f7 * 255.0f));
-                    int[] iArr3 = this.a;
-                    iArr3[1] = i0.a.k(iArr3[1], (int) (k60Var.i1 * 255.0f));
-                }
-            }
-            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, k60Var.U0.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));
-            z11 = true;
-        }
-        if (this.b != k60Var.V1) {
-            paint.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, k60Var.V1);
-            this.b = k60Var.V1;
+    @Override // org.telegram.ui.Cells.e4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (AndroidUtilities.isTablet()) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
         } else {
-            z10 = z11;
-        }
-        if (z10) {
-            invalidate();
-        }
-        k60Var.z1();
-    }
-
-    public void setShadowOffset(int i10) {
-        float f7 = i10;
-        if (this.d != f7) {
-            this.c.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, this.e.V1);
-            this.d = f7;
-            invalidate();
+            super.onMeasure(i10, i11);
         }
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class uv extends LinearLayout {
     public final a0.i a;
@@ -42,7 +42,7 @@ public final class uv extends LinearLayout {
     }
 
     public final void a(RectF rectF, int i10) {
-        View childAt = getChildAt(w7.p.b(i10, 0, getChildCount() - 1));
+        View childAt = getChildAt(w7.q.b(i10, 0, getChildCount() - 1));
         if (childAt == null) {
             return;
         }
@@ -67,7 +67,7 @@ public final class uv extends LinearLayout {
             }
         }
         if (cwVar.s == null) {
-            cwVar.s = new c6(this, 350L, qr.h);
+            cwVar.s = new e6(this, 350L, qr.h);
         }
         float d = cwVar.s.d(cwVar.r ? 1.0f : 0.0f, false);
         int floor = (int) Math.floor(cwVar.K);
@@ -139,13 +139,13 @@ public final class uv extends LinearLayout {
         int i14 = (i13 - i11) / 2;
         if (!this.h) {
             int childCount = (getChildCount() - (!cwVar.W ? 1 : 0)) - (!cwVar.b0 ? 1 : 0);
-            int A = (int) (org.telegram.messenger.wl.A(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
+            int B = (int) (org.telegram.messenger.wh.B(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
             int paddingLeft = getPaddingLeft();
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt = getChildAt((!cwVar.W ? 1 : 0) + (!cwVar.b0 ? 1 : 0) + i15);
                 if (childAt != null) {
                     childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
-                    paddingLeft = childAt.getMeasuredWidth() + A + paddingLeft;
+                    paddingLeft = childAt.getMeasuredWidth() + B + paddingLeft;
                 }
             }
             return;
@@ -167,8 +167,8 @@ public final class uv extends LinearLayout {
                     yv yvVar2 = (yv) childAt2;
                     Long l10 = yvVar2.a;
                     if (l10 == null) {
-                        wx wxVar = yvVar2.v;
-                        if (wxVar == null || (stickerSet = wxVar.b) == null) {
+                        xx xxVar = yvVar2.v;
+                        if (xxVar == null || (stickerSet = xxVar.b) == null) {
                             l10 = yvVar2.r;
                             if (l10 == null) {
                                 TLRPC.Document document = yvVar2.s;
@@ -191,7 +191,7 @@ public final class uv extends LinearLayout {
                         childAt2.setScaleX(0.0f);
                         childAt2.setScaleY(0.0f);
                         childAt2.setAlpha(0.0f);
-                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(zg.f0.d() ? 0L : 200L).setInterpolator(qr.h).start();
+                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(zg.e0.d() ? 0L : 200L).setInterpolator(qr.h).start();
                     }
                 }
                 if (l4 != null) {
@@ -203,7 +203,7 @@ public final class uv extends LinearLayout {
                     iVar.k(Integer.valueOf(paddingLeft2), l4.longValue());
                 }
                 if ((childAt2 != cwVar.y || cwVar.W) && (childAt2 != cwVar.E || cwVar.b0)) {
-                    paddingLeft2 = org.telegram.messenger.w1.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
+                    paddingLeft2 = org.telegram.messenger.q.D(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
                 }
             }
             i16++;

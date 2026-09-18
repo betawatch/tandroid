@@ -1,42 +1,61 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.Editable;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class oh1 extends org.telegram.ui.Cells.i3 {
-    public final /* synthetic */ int x;
-    public final /* synthetic */ UserInfoActivity y;
+public final class oh1 extends org.telegram.ui.Components.w51 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, str, false, false, -1, f6Var);
-        this.x = i10;
-        this.y = userInfoActivity;
+    static {
+        org.telegram.ui.Components.w51.setup(new oh1());
     }
 
-    @Override // org.telegram.ui.Cells.i3
-    public final void b(Editable editable) {
-        switch (this.x) {
-            case 0:
-                this.y.b0(true);
-                break;
-            case 1:
-                this.y.b0(true);
-                break;
-            default:
-                UserInfoActivity userInfoActivity = this.y;
-                userInfoActivity.b0(true);
-                userInfoActivity.e0();
-                break;
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
+        ph1 ph1Var = (ph1) view;
+        int i10 = x51Var.k;
+        CharSequence charSequence = x51Var.l;
+        CharSequence charSequence2 = x51Var.m;
+        boolean z11 = x51Var.q;
+        boolean z12 = x51Var.r;
+        int i11 = x51Var.z;
+        TextView textView = ph1Var.d;
+        TextView textView2 = ph1Var.e;
+        ImageView imageView = ph1Var.f;
+        ph1Var.h = z11;
+        ph1Var.n = z12;
+        ImageView imageView2 = ph1Var.b;
+        imageView2.setImageResource(i10);
+        if (i11 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i11);
+        } else {
+            imageView.setVisibility(8);
         }
+        textView.setText(charSequence);
+        textView2.setText(charSequence2);
+        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        ph1Var.c.setPadding(0, dp, 0, dp);
+        org.telegram.ui.ActionBar.e6 e6Var = ph1Var.a;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(ph1Var.n ? org.telegram.ui.ActionBar.j6.q7 : ph1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, e6Var);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(ph1Var.n ? org.telegram.ui.ActionBar.j6.q7 : ph1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, e6Var), mode));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(ph1Var.n ? org.telegram.ui.ActionBar.j6.p7 : ph1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, e6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(ph1Var.n ? org.telegram.ui.ActionBar.j6.p7 : ph1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, e6Var));
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, str, true, false, i10, f6Var);
-        this.x = 2;
-        this.y = userInfoActivity;
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new ph1(context, e6Var);
     }
 }

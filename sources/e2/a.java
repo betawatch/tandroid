@@ -12,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -44,10 +44,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder g10 = w.f.g(str, "\n  ");
-        g10.append(replace.replace("\n", "\n  "));
-        g10.append('\n');
-        return g10.toString();
+        StringBuilder j3 = t8.b.j(str, "\n  ");
+        j3.append(replace.replace("\n", "\n  "));
+        j3.append('\n');
+        return j3.toString();
     }
 
     public static void b() {

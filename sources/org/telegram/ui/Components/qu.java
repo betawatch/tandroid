@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class qu extends WebViewClient {
     public final /* synthetic */ vu a;
@@ -36,15 +36,15 @@ public final class qu extends WebViewClient {
 
     @Override // android.webkit.WebViewClient
     public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         vu vuVar = this.a;
         try {
             if (!AndroidUtilities.isSafeToShow(vuVar.getContext())) {
                 return true;
             }
             Context context = vuVar.getContext();
-            f6Var = ((org.telegram.ui.ActionBar.g3) vuVar).resourcesProvider;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+            e6Var = ((org.telegram.ui.ActionBar.f3) vuVar).resourcesProvider;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
             alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new xp(this, 10));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);

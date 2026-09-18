@@ -33,18 +33,17 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.l2;
-import qg.b0;
+import org.telegram.ui.Cells.m2;
 import r0.a0;
 import r0.i0;
 import s4.d1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
     public static final i t0 = new i(6);
-    public static final l2 u0 = new l2(5);
+    public static final m2 u0 = new m2(5);
     public static final i v0 = new i(7);
     public int E;
     public float F;
@@ -89,7 +88,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final b0 q0;
+    public final p8.b q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -110,7 +109,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new b0(this, 11);
+        this.q0 = new p8.b(this, 13);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -494,12 +493,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            b0 b0Var = this.q0;
+            p8.b bVar = this.q0;
             if (!z10) {
-                b0Var.run();
+                bVar.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(b0Var);
+                postOnAnimation(bVar);
             }
         }
     }
@@ -566,7 +565,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) k0.h(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) k0.g(1, arrayList)).b));
         }
         return i10;
     }
@@ -1441,7 +1440,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) k0.h(1, arrayList);
+        c cVar2 = (c) k0.g(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1660,7 +1659,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            k0.v(sb2, this.a, ", found: ", b10, " Pager id: ");
+            k0.s(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

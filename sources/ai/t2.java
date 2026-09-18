@@ -3,9 +3,9 @@ package ai;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.t50;
+import org.telegram.ui.r50;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class t2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -66,19 +66,19 @@ public final class t2 extends AnimatorListenerAdapter {
                 ocVar.h0.invalidate();
                 break;
             case 3:
-                t50 t50Var = (t50) obj;
-                t50Var.h = f7;
-                t50Var.a.invalidate();
+                r50 r50Var = (r50) obj;
+                r50Var.h = f7;
+                r50Var.a.invalidate();
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                yh.e4 e4Var = (yh.e4) obj;
-                e4Var.y = f7;
-                e4Var.invalidate();
-                if (animator == e4Var.E && runnable != null) {
+                yh.c4 c4Var = (yh.c4) obj;
+                c4Var.y = f7;
+                c4Var.invalidate();
+                if (animator == c4Var.E && runnable != null) {
                     runnable.run();
                     break;
                 }

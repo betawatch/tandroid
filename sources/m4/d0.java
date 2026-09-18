@@ -1,19 +1,19 @@
 package m4;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements k0 {
+public final /* synthetic */ class d0 implements j0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
+    public final /* synthetic */ k0 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ d0(l0 l0Var, int i10, int i11) {
+    public /* synthetic */ d0(k0 k0Var, int i10, int i11) {
         this.a = i11;
-        this.b = l0Var;
+        this.b = k0Var;
         this.c = i10;
     }
 
-    @Override // m4.k0
+    @Override // m4.j0
     public final void g(r rVar) {
         int i10 = this.a;
         int i11 = 0;
@@ -22,10 +22,10 @@ public final /* synthetic */ class d0 implements k0 {
         i11 = 0;
         i11 = 0;
         int i12 = this.c;
-        l0 l0Var = this.b;
+        k0 k0Var = this.b;
         switch (i10) {
             case 0:
-                k1 k1Var = l0Var.g.t;
+                j1 j1Var = k0Var.g.t;
                 int i13 = k.a;
                 if (i12 != -1 && i12 != 0) {
                     if (i12 == 1) {
@@ -36,18 +36,18 @@ public final /* synthetic */ class d0 implements k0 {
                         e2.a.n("LegacyConversions", "Unrecognized PlaybackStateCompat.RepeatMode: " + i12 + " was converted to `Player.REPEAT_MODE_OFF`");
                     }
                 }
-                k1Var.j(i11);
+                j1Var.j(i11);
                 return;
             default:
-                k1 k1Var2 = l0Var.g.t;
+                j1 j1Var2 = k0Var.g.t;
                 int i14 = k.a;
                 if (i12 != -1 && i12 != 0) {
                     if (i12 != 1 && i12 != 2) {
-                        throw new IllegalArgumentException(hg.k0.i(i12, "Unrecognized ShuffleMode: "));
+                        throw new IllegalArgumentException(hg.k0.h(i12, "Unrecognized ShuffleMode: "));
                     }
                     z10 = true;
                 }
-                k1Var2.x(z10);
+                j1Var2.x(z10);
                 return;
         }
     }

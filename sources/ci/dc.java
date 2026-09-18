@@ -7,10 +7,10 @@ import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.j40;
-import org.telegram.ui.jf0;
+import org.telegram.ui.h40;
+import org.telegram.ui.if0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class dc extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class dc extends ClickableSpan {
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
         GroupCallMessage groupCallMessage;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         switch (this.a) {
             case 0:
                 ((ec) this.b).S1.T();
@@ -33,42 +33,42 @@ public final class dc extends ClickableSpan {
                 lh.c cVar = (lh.c) this.b;
                 lh.a aVar = cVar.I;
                 if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((j40) aVar).a(groupCallMessage);
+                    ((h40) aVar).a(groupCallMessage);
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Cells.x1 x1Var = (org.telegram.ui.Cells.x1) this.b;
-                nf.f.s(x1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ra) x1Var.M).e.r);
+                org.telegram.ui.Cells.y1 y1Var = (org.telegram.ui.Cells.y1) this.b;
+                nf.f.s(y1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.qa) y1Var.M).e.r);
                 break;
             case 3:
-                ((org.telegram.ui.wb) this.b).finishFragment();
+                ((org.telegram.ui.vb) this.b).finishFragment();
                 break;
             case 4:
                 ((org.telegram.ui.q1) this.b).run();
                 break;
             case 5:
-                ((org.telegram.ui.Components.vc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                ((org.telegram.ui.Components.xc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
                 break;
             case 6:
                 ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
                 break;
             case 7:
-                ((jf0) this.b).q(false);
+                ((if0) this.b).q(false);
                 break;
             case 8:
                 rg.j0 j0Var = ((rg.c0) this.b).c;
-                org.telegram.ui.ActionBar.o2 o2Var = j0Var.n;
+                org.telegram.ui.ActionBar.n2 n2Var = j0Var.n;
                 long j3 = j0Var.a0;
-                f6Var = ((org.telegram.ui.ActionBar.g3) j0Var).resourcesProvider;
-                tg.o.m(o2Var, f6Var, j3, null);
+                e6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
+                tg.m.m(n2Var, e6Var, j3, null);
                 break;
         }
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         switch (this.a) {
             case 0:
                 textPaint.setUnderlineText(false);
@@ -103,8 +103,8 @@ public final class dc extends ClickableSpan {
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
                 int i10 = org.telegram.ui.ActionBar.j6.gc;
-                f6Var = ((org.telegram.ui.ActionBar.g3) ((rg.c0) this.b).c).resourcesProvider;
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+                e6Var = ((org.telegram.ui.ActionBar.f3) ((rg.c0) this.b).c).resourcesProvider;
+                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
                 break;
             default:
                 super.updateDrawState(textPaint);

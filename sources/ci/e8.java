@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class e8 implements TextWatcher {
     public final /* synthetic */ g8 a;
@@ -39,7 +39,7 @@ public final class e8 implements TextWatcher {
                 g8Var.Y();
                 String str5 = g8Var.s0;
                 if (str5 != null && str5.length() > 3) {
-                    i10 = ((org.telegram.ui.ActionBar.g3) g8Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.f3) g8Var).currentAccount;
                     if (!TextUtils.isEmpty(MessagesController.getInstance(i10).config.musicSearchUsername.get())) {
                         z10 = true;
                     }

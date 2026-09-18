@@ -1,37 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jk extends eo {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class jk extends org.telegram.ui.Components.to {
+    public final /* synthetic */ zn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jk(Context context, org.telegram.ui.ActionBar.e5 e5Var, Bundle bundle, int i10) {
-        super(context, e5Var, bundle);
-        this.f = i10;
+    public jk(zn znVar, Context context) {
+        super(context);
+        this.f = znVar;
     }
 
-    @Override // org.telegram.ui.eo
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
-            default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.to
+    public final void a(boolean z10) {
+        zn znVar = this.f;
+        znVar.t7();
+        znVar.r7();
+        znVar.u7();
+        znVar.v7();
+        bl blVar = znVar.ab;
+        if (blVar != null) {
+            blVar.setTranslationY(znVar.w9 + getCurrentHeight());
+        }
+        if (!z10) {
+            znVar.o9();
+        } else {
+            znVar.D9 = true;
+            znVar.jc();
         }
     }
 }

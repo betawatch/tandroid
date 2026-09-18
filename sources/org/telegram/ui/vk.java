@@ -1,24 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.pk0 {
-    public final /* synthetic */ bo l;
+import org.telegram.messenger.NotificationCenter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk(bo boVar, vj vjVar, yj yjVar) {
-        super(vjVar, yjVar);
-        this.l = boVar;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class vk implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ zn a;
+
+    public vk(zn znVar) {
+        this.a = znVar;
     }
 
-    public final void f(int i10) {
-        if (this.l.Pa) {
-            if (i10 == 0) {
-                i10 = 1;
-            } else if (i10 == 1) {
-                i10 = 0;
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            zn znVar = this.a;
+            if (znVar.H6 && longValue == znVar.T5) {
+                return true;
             }
         }
-        this.b = i10;
+        return false;
     }
 }

@@ -1,16 +1,16 @@
 package ii;
 
 import android.view.View;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public interface u3 {
-    n70 D(View view);
+    w70 F(View view);
 
-    void F();
+    void G();
 
-    void H(t3 t3Var, View view);
+    void J(t3 t3Var, View view);
 
     void d(v3 v3Var, View view);
 
@@ -18,7 +18,7 @@ public interface u3 {
 
     void g(d6 d6Var, String str);
 
-    void h(int i10);
+    void i(int i10);
 
     void l();
 
@@ -26,7 +26,7 @@ public interface u3 {
 
     void onContentChanged();
 
-    void q(a aVar);
+    void p(a aVar);
 
     void s();
 

@@ -14,18 +14,18 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
-    public final org.telegram.ui.ActionBar.f6 b;
+    public final org.telegram.ui.ActionBar.e6 b;
     public final k0 c;
     public boolean d;
 
-    public l0(Context context, org.telegram.ui.ActionBar.f6 f6Var, k0 k0Var) {
-        this.b = f6Var;
+    public l0(Context context, org.telegram.ui.ActionBar.e6 e6Var, k0 k0Var) {
+        this.b = e6Var;
         this.c = k0Var;
-        i1 i1Var = new i1(context, f6Var);
+        i1 i1Var = new i1(context, e6Var);
         this.a = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         i1Var.setAllowNewlines(false);
@@ -65,12 +65,12 @@ public final class l0 {
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a N = this.c.N();
-        if (N == null || (pageBlock = N.b) == null) {
+        a M = this.c.M();
+        if (M == null || (pageBlock = M.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = N.b.caption.text;
+        TL_iv.RichText richText = M.b.caption.text;
         String l4 = f6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
@@ -82,14 +82,14 @@ public final class l0 {
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        q9 E = k0Var.E();
-        if (E != null) {
+        q9 C = k0Var.C();
+        if (C != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            E.a0(canvas, k0Var.K(), 0);
+            C.a0(canvas, k0Var.I(), 0);
             canvas.restore();
         }
     }
@@ -138,11 +138,11 @@ public final class l0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a N = this.c.N();
-        if (N == null || (pageBlock = N.b) == null) {
+        a M = this.c.M();
+        if (M == null || (pageBlock = M.b) == null) {
             return;
         }
         d(pageBlock);
-        N.b.caption.text = f6.f(this.a.getText());
+        M.b.caption.text = f6.f(this.a.getText());
     }
 }

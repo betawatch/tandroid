@@ -2,29 +2,29 @@ package qg;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+    public final /* synthetic */ m0 b;
 
-    public /* synthetic */ o(p0 p0Var, int i10) {
+    public /* synthetic */ o(m0 m0Var, int i10) {
         this.a = i10;
-        this.b = p0Var;
+        this.b = m0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                p0 p0Var = this.b;
-                p0Var.getClass();
-                p0Var.f2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                m0 m0Var = this.b;
+                m0Var.getClass();
+                m0Var.f2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                p0 p0Var2 = this.b;
-                p0Var2.getClass();
-                p0Var2.f2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                m0 m0Var2 = this.b;
+                m0Var2.getClass();
+                m0Var2.f2.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

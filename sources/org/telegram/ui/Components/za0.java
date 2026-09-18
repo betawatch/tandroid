@@ -1,36 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class za0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pb0 b;
-    public final /* synthetic */ Context c;
+public final class za0 extends z5 {
+    public final /* synthetic */ cb0 a;
 
-    public /* synthetic */ za0(pb0 pb0Var, Context context, int i10) {
-        this.a = i10;
-        this.b = pb0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public za0(cb0 cb0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = cb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                pb0 pb0Var = this.b;
-                pb0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new za0(pb0Var, this.c, 1));
-                break;
-            default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new rg.x0(context, 43, this.b.c0.F).show();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = i14 + i12;
+        int i16 = this.measuredSize;
+        this.a.c.set((int) f7, (i15 - i16) / 2, (int) (f7 + i16), (i15 + i16) / 2);
     }
 }

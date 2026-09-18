@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class qm extends ni {
     public static final HashMap U = new HashMap();
@@ -38,7 +38,7 @@ public final class qm extends ni {
     public int R;
     public boolean S;
     public boolean T;
-    public org.telegram.ui.ActionBar.f6 n;
+    public org.telegram.ui.ActionBar.e6 n;
     public ai.w0 r;
     public s4.c0 s;
     public pm v;
@@ -69,8 +69,8 @@ public final class qm extends ni {
             pmVar.c();
             pmVar.requestLayout();
             this.s.h1(0, 0);
-            this.r.post(new oh(13, this, niVar));
-            postDelayed(new ng(this, 25), 250L);
+            this.r.post(new zd(17, this, niVar));
+            postDelayed(new og(this, 25), 250L);
             pmVar.i(this.P, false);
         } else {
             G();
@@ -133,9 +133,9 @@ public final class qm extends ni {
     public final void dispatchDraw(Canvas canvas) {
         Drawable d;
         int i10;
-        org.telegram.ui.zn znVar = this.b.r;
+        org.telegram.ui.xn xnVar = this.b.r;
         boolean z10 = false;
-        if (znVar != null && (d = znVar.d()) != null) {
+        if (xnVar != null && (d = xnVar.d()) != null) {
             int currentItemTop = getCurrentItemTop();
             if (AndroidUtilities.isTablet()) {
                 i10 = 16;
@@ -167,10 +167,10 @@ public final class qm extends ni {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        wk0 wk0Var = (wk0) w0Var.H(childAt);
+        gl0 gl0Var = (gl0) w0Var.H(childAt);
         int top = childAt.getTop();
         int dp = AndroidUtilities.dp(8.0f);
-        if (top < AndroidUtilities.dp(8.0f) || wk0Var == null || wk0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(8.0f) || gl0Var == null || gl0Var.b() != 0) {
             top = dp;
         }
         w0Var.setTopGlowOffset(top);

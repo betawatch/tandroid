@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.j;
 import com.google.android.gms.tasks.Task;
 import n6.o;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b extends j {
     public static final e k = new e("ClientTelemetry.API", new d(11), new com.google.android.gms.common.api.d());
@@ -17,7 +17,7 @@ public final class b extends j {
         v e = w.e();
         e.d = new k6.c[]{k7.b.a};
         e.b = false;
-        e.c = new ka.c(oVar, 12);
+        e.c = new l.d(oVar);
         return e(2, e.a());
     }
 }

@@ -1,9 +1,6 @@
 package pg;
 
-import android.os.Looper;
-import org.telegram.ui.Cells.l7;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,28 +15,25 @@ public final /* synthetic */ class z0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                a1 a1Var = this.b;
-                l7 l7Var = a1Var.w;
-                z0 z0Var = a1Var.s;
-                if (z0Var != null) {
-                    a1Var.cancelRunnable(z0Var);
-                    a1Var.s = null;
-                }
-                a1Var.cancelRunnable(l7Var);
-                a1Var.postRunnable(l7Var);
-                break;
-            case 1:
-                a1 a1Var2 = this.b;
-                a1Var2.s = null;
-                a1Var2.w.run();
-                break;
-            default:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
+                c1 c1Var = this.b.b.d;
+                if (c1Var != null) {
+                    c1Var.postRunnable(c1Var.w);
                     break;
                 }
+                break;
+            case 1:
+                c1 c1Var2 = this.b.b.d;
+                if (c1Var2 != null) {
+                    c1Var2.postRunnable(c1Var2.w);
+                    break;
+                }
+                break;
+            default:
+                e1 e1Var = this.b.b;
+                c1 c1Var3 = e1Var.d;
+                c1Var3.getClass();
+                c1Var3.postRunnable(new b1(c1Var3, 2));
+                e1Var.d = null;
                 break;
         }
     }

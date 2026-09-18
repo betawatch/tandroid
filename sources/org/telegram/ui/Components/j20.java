@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j20 {
     public static final int x;
@@ -80,9 +80,9 @@ public final class j20 {
         boolean z11;
         boolean z12;
         boolean z13;
-        org.telegram.ui.ku0 ku0Var;
+        org.telegram.ui.iu0 iu0Var;
         MessageObject messageObject;
-        org.telegram.ui.ku0 ku0Var2;
+        org.telegram.ui.iu0 iu0Var2;
         h20 h20Var;
         boolean z14;
         boolean onScroll;
@@ -289,7 +289,7 @@ public final class j20 {
                 boolean[] zArr = photoViewer.w1;
                 if (!zArr[0] && !zArr[1]) {
                     float x10 = motionEvent.getX();
-                    if ((x10 < Math.min(135, photoViewer.e0.getMeasuredWidth() / 8) || x10 > photoViewer.e0.getMeasuredWidth() - r4) && (messageObject = photoViewer.T4) != null && ((!messageObject.isVideo() && ((ku0Var2 = photoViewer.f0) == null || !ku0Var2.x)) || SystemClock.elapsedRealtime() - photoViewer.u1 < 500 || !photoViewer.q0(motionEvent))) {
+                    if ((x10 < Math.min(135, photoViewer.e0.getMeasuredWidth() / 8) || x10 > photoViewer.e0.getMeasuredWidth() - r4) && (messageObject = photoViewer.T4) != null && ((!messageObject.isVideo() && ((iu0Var2 = photoViewer.f0) == null || !iu0Var2.x)) || SystemClock.elapsedRealtime() - photoViewer.u1 < 500 || !photoViewer.q0(motionEvent))) {
                         this.j = true;
                     }
                 }
@@ -312,7 +312,7 @@ public final class j20 {
                         h20 h20Var3 = this.h;
                         MotionEvent motionEvent7 = this.n;
                         PhotoViewer photoViewer2 = (PhotoViewer) h20Var3;
-                        if ((photoViewer2.F2 != null || ((ku0Var = photoViewer2.f0) != null && ku0Var.x)) && photoViewer2.l3) {
+                        if ((photoViewer2.F2 != null || ((iu0Var = photoViewer2.f0) != null && iu0Var.x)) && photoViewer2.l3) {
                             long o12 = photoViewer2.o1();
                             j3 = 0;
                             long A1 = photoViewer2.A1();
@@ -333,11 +333,11 @@ public final class j20 {
                                             } else {
                                                 photoViewer2.z1.e(true);
                                                 photoViewer2.z1.d(x12 < ((float) k12));
-                                                x61 x61Var = photoViewer2.z1;
+                                                l71 l71Var = photoViewer2.z1;
                                                 i20Var = i20Var2;
-                                                long j12 = x61Var.o + 10000;
-                                                x61Var.o = j12;
-                                                x61Var.p = LocaleController.formatPluralString("Seconds", (int) (j12 / 1000), new Object[0]);
+                                                long j12 = l71Var.o + 10000;
+                                                l71Var.o = j12;
+                                                l71Var.p = LocaleController.formatPluralString("Seconds", (int) (j12 / 1000), new Object[0]);
                                                 photoViewer2.s2(j10);
                                                 photoViewer2.e0.invalidate();
                                                 photoViewer2.q3.h(j10 / A1, true);
@@ -400,28 +400,28 @@ public final class j20 {
                             j3 = 0;
                         }
                         if (photoViewer2.I6 && ((photoViewer2.a6 != 1.0f || (photoViewer2.Y5 == 0.0f && photoViewer2.X5 == 0.0f)) && photoViewer2.n6 == j3 && photoViewer2.n4 == 0)) {
-                            org.telegram.ui.bv0 bv0Var = photoViewer2.W0[0];
-                            if (bv0Var == null || !bv0Var.p || bv0Var.h == -1) {
+                            org.telegram.ui.zu0 zu0Var = photoViewer2.W0[0];
+                            if (zu0Var == null || !zu0Var.p || zu0Var.h == -1) {
                                 cVar = cVar2;
                             } else {
                                 cVar = cVar2;
                             }
                             if (photoViewer2.a6 == 1.0f) {
-                                float c10 = org.telegram.messenger.wl.c(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
-                                float c11 = org.telegram.messenger.wl.c(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
+                                float b10 = org.telegram.messenger.wh.b(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
+                                float b11 = org.telegram.messenger.wh.b(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
                                 photoViewer2.v3(3.0f);
                                 float f17 = photoViewer2.E6;
-                                if (c10 >= f17) {
+                                if (b10 >= f17) {
                                     f17 = photoViewer2.F6;
                                 }
-                                c10 = f17;
+                                b10 = f17;
                                 float f18 = photoViewer2.G6;
-                                if (c11 >= f18) {
+                                if (b11 >= f18) {
                                     f18 = photoViewer2.H6;
                                 }
-                                c11 = f18;
+                                b11 = f18;
                                 z13 = true;
-                                photoViewer2.j0(3.0f, c10, c11, true);
+                                photoViewer2.j0(3.0f, b10, b11, true);
                             } else {
                                 z13 = true;
                                 photoViewer2.j0(1.0f, 0.0f, 0.0f, true);

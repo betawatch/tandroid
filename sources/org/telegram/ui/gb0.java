@@ -1,48 +1,19 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gb0 implements qf.c {
-    public final mb0 a;
-    public final /* synthetic */ LaunchActivity b;
+public final class gb0 implements View.OnLayoutChangeListener {
+    public boolean a;
 
-    public gb0(LaunchActivity launchActivity) {
-        this.b = launchActivity;
-        Pattern pattern = LaunchActivity.B1;
-        this.a = new mb0(launchActivity, false);
-    }
-
-    @Override // qf.c
-    public final void b() {
-        Pattern pattern = LaunchActivity.B1;
-        this.b.getWindow();
-    }
-
-    @Override // qf.c
-    public final void d() {
-        this.a.a(false);
-    }
-
-    @Override // qf.c
-    public final void f() {
-        Pattern pattern = LaunchActivity.B1;
-        LaunchActivity launchActivity = this.b;
-        launchActivity.getClass();
-        this.a.a(true);
-        launchActivity.getWindow();
-    }
-
-    @Override // qf.c
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // qf.c
-    public final /* synthetic */ void c() {
-    }
-
-    @Override // qf.c
-    public final /* synthetic */ void e() {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        boolean z10 = i13 - i11 > i12 - i10;
+        if (z10 != this.a) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(this, 21));
+            this.a = z10;
+        }
     }
 }

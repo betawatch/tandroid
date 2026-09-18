@@ -1,39 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class m41 extends ScrollView {
-    public Drawable a;
-    public c6 b;
-    public boolean c;
+public final /* synthetic */ class m41 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v41 b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
-        if (d > 0.0f) {
-            if (this.a == null) {
-                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
-            }
-            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (d * 255.0f));
-            this.a.draw(canvas);
-        }
+    public /* synthetic */ m41(v41 v41Var, int i10) {
+        this.a = i10;
+        this.b = v41Var;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        super.onNestedScroll(view, i10, i11, i12, i13);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.dismiss();
+                break;
+            case 3:
+                v41 v41Var = this.b;
+                CharSequence charSequence = v41Var.c0;
+                if (charSequence != null) {
+                    v41Var.d0.run(charSequence);
+                }
+                v41Var.dismiss();
+                break;
+            default:
+                v41.P(this.b, view);
+                break;
         }
     }
 }

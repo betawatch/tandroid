@@ -24,10 +24,10 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public Drawable c;
     public a3 d;
@@ -41,9 +41,9 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public int w;
     public TL_iv.pageBlockMap x;
 
-    public y1(Context context, w70 w70Var, f4 f4Var) {
+    public y1(Context context, u70 u70Var, f4 f4Var) {
         super(context);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
         setWillNotDraw(false);
         this.f = new ImageReceiver(this);
@@ -94,8 +94,8 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         }
         Paint paint = org.telegram.ui.ActionBar.j6.S1;
         int i10 = org.telegram.ui.ActionBar.j6.pe;
-        w70 w70Var = this.a;
-        ((h4) w70Var).getClass();
+        u70 u70Var = this.a;
+        ((h4) u70Var).getClass();
         int i11 = 0;
         paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         ImageReceiver imageReceiver = this.f;
@@ -123,7 +123,7 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.n, this.r);
-            h4.v(w70Var, canvas, this, 0);
+            h4.v(u70Var, canvas, this, 0);
             this.d.draw(canvas, this);
             canvas.restore();
             i11 = 1;
@@ -131,11 +131,11 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         if (this.e != null) {
             canvas.save();
             canvas.translate(this.n, this.r + this.s);
-            h4.v(w70Var, canvas, this, i11);
+            h4.v(u70Var, canvas, this, i11);
             this.e.draw(canvas, this);
             canvas.restore();
         }
-        h4.u(canvas, w70Var, this.x, getMeasuredHeight());
+        h4.u(canvas, u70Var, this.x, getMeasuredHeight());
     }
 
     @Override // android.view.View
@@ -163,7 +163,7 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (pageblockmap.level > 0) {
                 i13 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r0 * 14);
                 this.n = i13;
-                i14 = org.telegram.messenger.wl.v(18.0f, i13, size);
+                i14 = org.telegram.messenger.wh.z(18.0f, i13, size);
                 dp = i14;
             } else {
                 this.n = AndroidUtilities.dp(18.0f);
@@ -216,14 +216,14 @@ public final class y1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (q6 != null) {
                 int height = this.d.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.s = height;
-                i15 = org.telegram.messenger.w1.C(4.0f, height, i15);
+                i15 = org.telegram.messenger.q.D(4.0f, height, i15);
                 a3 a3Var = this.d;
                 a3Var.s = this.n;
                 a3Var.v = this.r;
             }
             int i19 = i15;
             TL_iv.pageBlockMap pageblockmap5 = this.x;
-            a3 p5 = h4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+            a3 p5 = h4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a(), 0, this.b);
             this.e = p5;
             if (p5 != null) {
                 i19 += this.e.d.getHeight() + AndroidUtilities.dp(4.0f);

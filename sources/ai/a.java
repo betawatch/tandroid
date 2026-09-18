@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.bo;
-import org.telegram.ui.o01;
+import org.telegram.ui.m01;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -91,11 +91,11 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 break;
             case 9:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                o01 o01Var = profileStoriesView.h;
+                m01 m01Var = profileStoriesView.h;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.G = floatValue5;
-                o01Var.R = floatValue5;
-                o01Var.invalidate();
+                m01Var.R = floatValue5;
+                m01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 10:
@@ -231,14 +231,14 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 break;
             default:
                 ji.n nVar = (ji.n) this.b;
-                bo boVar = nVar.F;
-                if (boVar == null) {
+                zn znVar = nVar.F;
+                if (znVar == null) {
                     nVar.G.invalidate();
                     break;
                 } else {
-                    boVar.r9();
-                    if (boVar.J8 != null) {
-                        boVar.fragmentView.invalidate();
+                    znVar.r9();
+                    if (znVar.J8 != null) {
+                        znVar.fragmentView.invalidate();
                         break;
                     }
                 }

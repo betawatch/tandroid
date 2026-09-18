@@ -1,7 +1,9 @@
 package m4;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import java.util.List;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public interface d1 {
-    void g(k1 k1Var, r rVar);
+    void a(j1 j1Var, r rVar, List list);
 }

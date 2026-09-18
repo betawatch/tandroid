@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gq0 extends org.telegram.ui.Components.qv0 {
+public final class gq0 extends org.telegram.ui.Components.bw0 {
     public int w0;
     public boolean x0;
     public final /* synthetic */ lq0 y0;
@@ -24,7 +24,7 @@ public final class gq0 extends org.telegram.ui.Components.qv0 {
     /* JADX WARN: Removed duplicated region for block: B:40:0x00c3  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x00cd  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00a7  */
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -43,8 +43,8 @@ public final class gq0 extends org.telegram.ui.Components.qv0 {
         lq0 lq0Var = this.y0;
         if (i20 != i21) {
             this.w0 = i21;
-            org.telegram.ui.ActionBar.o1 o1Var = lq0Var.I;
-            if (o1Var != null && o1Var.isShowing()) {
+            org.telegram.ui.ActionBar.n1 n1Var = lq0Var.I;
+            if (n1Var != null && n1Var.isShowing()) {
                 lq0Var.I.d(true);
             }
         }

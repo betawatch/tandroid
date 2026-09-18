@@ -22,7 +22,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.l20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class c extends Handler {
                 }
             case 3:
                 m4.r rVar2 = (m4.r) msg.obj;
-                ni.f fVar = (ni.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 if (fVar.A(rVar2)) {
                     m4.q qVar = rVar2.d;
                     e2.d.h(qVar);
@@ -229,7 +229,7 @@ public final class c extends Handler {
                 if (bArr == null) {
                     return;
                 }
-                ArrayList arrayList = ((n2.e) this.b).w;
+                ArrayList arrayList = ((n2.f) this.b).w;
                 int size = arrayList.size();
                 int i14 = 0;
                 while (i14 < size) {
@@ -355,10 +355,10 @@ public final class c extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                ka.c cVar3 = (ka.c) h3Var.f;
-                if (cVar3 != null) {
+                l.d dVar = (l.d) h3Var.f;
+                if (dVar != null) {
                     b2.p pVar2 = (b2.p) h3Var.n;
-                    p4.e eVar = (p4.e) cVar3.b;
+                    p4.e eVar = (p4.e) dVar.a;
                     p4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, pVar2);
@@ -409,7 +409,7 @@ public final class c extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(Looper looper, ni.f fVar) {
+    public c(Looper looper, oi.f fVar) {
         super(looper);
         this.a = 3;
         this.b = fVar;

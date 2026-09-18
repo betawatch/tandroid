@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class hk extends ll0 {
+public final class hk extends vl0 {
     public final ArrayList c = new ArrayList();
     public final ArrayList d = new ArrayList();
     public final ArrayList e = new ArrayList();
@@ -22,7 +22,7 @@ public final class hk extends ll0 {
         this.f = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -80,12 +80,12 @@ public final class hk extends ll0 {
         View view = c1Var.a;
         ok okVar = this.h;
         if (i11 == 0) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
             if (okVar.c0) {
-                l4Var.setText(LocaleController.getString(R.string.RecentFilesAZ));
+                m4Var.setText(LocaleController.getString(R.string.RecentFilesAZ));
                 return;
             } else {
-                l4Var.setText(LocaleController.getString(R.string.RecentFiles));
+                m4Var.setText(LocaleController.getString(R.string.RecentFiles));
                 return;
             }
         }
@@ -93,42 +93,42 @@ public final class hk extends ll0 {
             return;
         }
         ik E = E(i10);
-        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
+        org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) view;
         int i12 = E.a;
         if (i12 != 0) {
-            j7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
+            k7Var.d(E.b, E.c, null, null, i12, i10 != this.c.size() - 1);
         } else {
-            j7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
+            k7Var.d(E.b, E.c, E.d.toUpperCase().substring(0, Math.min(E.d.length(), 4)), E.e, 0, false);
         }
         File file = E.f;
         if (file != null) {
-            j7Var.b(okVar.R.containsKey(file.toString()), !okVar.U);
+            k7Var.b(okVar.R.containsKey(file.toString()), !okVar.U);
         } else {
-            j7Var.b(false, !okVar.U);
+            k7Var.b(false, !okVar.U);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
+        View m4Var;
         View view;
-        org.telegram.ui.ActionBar.f6 f6Var = this.h.a;
+        org.telegram.ui.ActionBar.e6 e6Var = this.h.a;
         Context context = this.f;
         if (i10 == 0) {
-            l4Var = new org.telegram.ui.Cells.l4(context, f6Var);
+            m4Var = new org.telegram.ui.Cells.m4(context, e6Var);
         } else {
             if (i10 != 1) {
                 if (i10 != 2) {
                     view = new View(context);
                     view.setTag(-33024);
                 } else {
-                    view = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.p6) null);
+                    view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
                 }
-                return new wk0(view);
+                return new gl0(view);
             }
-            l4Var = new org.telegram.ui.Cells.j7(context, 1, f6Var);
+            m4Var = new org.telegram.ui.Cells.k7(context, 1, e6Var);
         }
-        view = l4Var;
-        return new wk0(view);
+        view = m4Var;
+        return new gl0(view);
     }
 }

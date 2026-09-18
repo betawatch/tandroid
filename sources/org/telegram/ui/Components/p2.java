@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -31,13 +31,13 @@ public final /* synthetic */ class p2 implements Runnable {
                 nf.f.q(context, Uri.parse(str), this.b == 0, this.c, (nf.e) this.f);
                 break;
             default:
-                h8.z((h8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
+                j8.z((j8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
                 break;
         }
     }
 
-    public /* synthetic */ p2(h8 h8Var, long j3, boolean z10, TLRPC.Document document, Runnable runnable) {
-        this.d = h8Var;
+    public /* synthetic */ p2(j8 j8Var, long j3, boolean z10, TLRPC.Document document, Runnable runnable) {
+        this.d = j8Var;
         this.b = j3;
         this.c = z10;
         this.e = document;

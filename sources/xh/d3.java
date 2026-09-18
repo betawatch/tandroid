@@ -1,12 +1,43 @@
 package xh;
 
-import org.telegram.ui.Components.f61;
+import android.os.Bundle;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class d3 extends f61 {
-    @Override // org.telegram.ui.Components.ml0
-    public final Integer X0(int i10) {
-        return 0;
+public final class d3 extends zn {
+    public boolean Pc;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique Qc;
+    public final /* synthetic */ long Rc;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d3(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
+        super(bundle);
+        this.Qc = tL_starGiftUnique;
+        this.Rc = j3;
+        this.Pc = false;
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Pc) {
+            return;
+        }
+        this.Pc = true;
+        qc O = xc.a0(this).O(this.Qc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Rc)));
+        O.r = false;
+        O.j();
+        r00 r00Var = this.m9;
+        if (r00Var != null) {
+            r00Var.c(true);
+        }
     }
 }

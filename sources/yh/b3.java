@@ -1,76 +1,43 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.f9;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class b3 extends View {
-    public final o3 a;
-    public final ImageReceiver b;
-    public final Drawable c;
+public final class b3 {
+    public final zf.b a;
+    public final TLRPC.TL_payments_paymentFormStarGift b;
+    public final zf.a c;
 
-    public b3(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLObject tLObject) {
-        super(context);
-        o3 o3Var = new o3(this, tL_starGiftUnique, 60, 0.27f);
-        this.a = o3Var;
-        o3Var.t = 3;
-        f9 f9Var = new f9((org.telegram.ui.ActionBar.f6) null);
-        f9Var.p(tLObject);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
-        imageReceiver.setForUserOrChat(tLObject, f9Var);
-        Drawable mutate = context.getDrawable(R.drawable.chats_undo).mutate();
-        this.c = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), PorterDuff.Mode.MULTIPLY));
-        mutate.setBounds(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.b.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int width = (getWidth() / 2) - (AndroidUtilities.dp(156.0f) / 2);
-        int height = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
-        int dp = AndroidUtilities.dp(60.0f) + width;
-        int dp2 = AndroidUtilities.dp(60.0f) + height;
-        o3 o3Var = this.a;
-        o3Var.setBounds(width, height, dp, dp2);
-        o3Var.draw(canvas);
-        canvas.save();
-        canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-        this.c.draw(canvas);
-        canvas.restore();
-        float dp3 = AndroidUtilities.dp(60.0f);
-        float dp4 = AndroidUtilities.dp(60.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(AndroidUtilities.dp(96.0f) + width, height, dp3, dp4);
-        imageReceiver.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
+    public b3(zf.b bVar, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
+        long j3;
+        this.a = bVar;
+        this.b = tL_payments_paymentFormStarGift;
+        t5[][] t5VarArr = t5.S;
+        if (tL_payments_paymentFormStarGift != null) {
+            ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStarGift.invoice.prices;
+            int size = arrayList.size();
+            int i10 = 0;
+            j3 = 0;
+            while (i10 < size) {
+                TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i10);
+                i10++;
+                j3 += tL_labeledPrice.amount;
+            }
+        } else {
+            j3 = 0;
+        }
+        zf.b bVar2 = zf.b.a;
+        if (bVar == bVar2) {
+            this.c = zf.a.g(j3, bVar2);
+            return;
+        }
+        zf.b bVar3 = zf.b.b;
+        if (bVar == bVar3) {
+            this.c = zf.a.i(j3, bVar3);
+        } else {
+            this.c = zf.a.i(0L, bVar2);
+        }
     }
 }

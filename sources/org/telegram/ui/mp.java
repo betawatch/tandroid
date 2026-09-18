@@ -1,74 +1,17 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wp b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
-    public final /* synthetic */ int d;
+public final class mp implements k70 {
+    public final /* synthetic */ up a;
 
-    public /* synthetic */ mp(wp wpVar, org.telegram.ui.ActionBar.c2[] c2VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = wpVar;
-        this.c = c2VarArr;
-        this.d = i10;
+    public mp(up upVar) {
+        this.a = upVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = this.c;
-                org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
-                if (c2Var != null) {
-                    final int i10 = 1;
-                    final wp wpVar = this.b;
-                    final int i11 = this.d;
-                    c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.np
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(wpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(wpVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    wpVar.showDialog(c2VarArr[0]);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.c2 c2Var2 = c2VarArr2[0];
-                if (c2Var2 != null) {
-                    final int i12 = 0;
-                    final wp wpVar2 = this.b;
-                    final int i13 = this.d;
-                    c2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.np
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    ConnectionsManager.getInstance(wpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(wpVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    wpVar2.showDialog(c2VarArr2[0]);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.k70
+    public final void a(l70 l70Var, long j3) {
+        up upVar = this.a;
+        upVar.Y(upVar.getMessagesController().getChat(Long.valueOf(j3)), l70Var);
     }
 }

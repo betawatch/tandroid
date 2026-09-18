@@ -10,9 +10,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class uk0 extends org.telegram.ui.Components.ll0 {
+public final class uk0 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ NotificationsSettingsActivity d;
 
@@ -21,7 +21,7 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         NotificationsSettingsActivity notificationsSettingsActivity = this.d;
@@ -178,36 +178,36 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
         View view = c1Var.a;
         NotificationsSettingsActivity notificationsSettingsActivity = this.d;
         if (i38 == 0) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
             if (i10 == notificationsSettingsActivity.x) {
-                l4Var.setText(LocaleController.getString("NotificationsForChats", R.string.NotificationsForChats));
+                m4Var.setText(LocaleController.getString("NotificationsForChats", R.string.NotificationsForChats));
                 return;
             }
             if (i10 == notificationsSettingsActivity.E) {
-                l4Var.setText(LocaleController.getString("InAppNotifications", R.string.InAppNotifications));
+                m4Var.setText(LocaleController.getString("InAppNotifications", R.string.InAppNotifications));
                 return;
             }
             if (i10 == notificationsSettingsActivity.K) {
-                l4Var.setText(LocaleController.getString("Events", R.string.Events));
+                m4Var.setText(LocaleController.getString("Events", R.string.Events));
                 return;
             }
             if (i10 == notificationsSettingsActivity.M) {
-                l4Var.setText(LocaleController.getString("NotificationsOther", R.string.NotificationsOther));
+                m4Var.setText(LocaleController.getString("NotificationsOther", R.string.NotificationsOther));
                 return;
             }
             if (i10 == notificationsSettingsActivity.S) {
-                l4Var.setText(LocaleController.getString("Reset", R.string.Reset));
+                m4Var.setText(LocaleController.getString("Reset", R.string.Reset));
                 return;
             }
             if (i10 == notificationsSettingsActivity.G) {
-                l4Var.setText(LocaleController.getString("VoipNotificationSettings", R.string.VoipNotificationSettings));
+                m4Var.setText(LocaleController.getString("VoipNotificationSettings", R.string.VoipNotificationSettings));
                 return;
             } else if (i10 == notificationsSettingsActivity.N) {
-                l4Var.setText(LocaleController.getString("BadgeNumber", R.string.BadgeNumber));
+                m4Var.setText(LocaleController.getString("BadgeNumber", R.string.BadgeNumber));
                 return;
             } else {
                 if (i10 == notificationsSettingsActivity.r) {
-                    l4Var.setText(LocaleController.getString("ShowNotificationsFor", R.string.ShowNotificationsFor));
+                    m4Var.setText(LocaleController.getString("ShowNotificationsFor", R.string.ShowNotificationsFor));
                     return;
                 }
                 return;
@@ -215,7 +215,7 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
         }
         if (i38 == 1) {
             org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
-            i11 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).currentAccount;
             SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
             i12 = notificationsSettingsActivity.inappSoundRow;
             if (i10 == i12) {
@@ -313,7 +313,7 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
                 return;
             }
             org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
-            i37 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).currentAccount;
+            i37 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).currentAccount;
             SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(i37);
             if (i10 == notificationsSettingsActivity.I) {
                 String string2 = notificationsSettings2.getString("CallsRingtone", LocaleController.getString("DefaultRingtone", R.string.DefaultRingtone));
@@ -348,10 +348,10 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
             notificationsSettingsActivity.V = false;
             return;
         }
-        org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view;
-        i24 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).currentAccount;
+        org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+        i24 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).currentAccount;
         SharedPreferences notificationsSettings3 = MessagesController.getNotificationsSettings(i24);
-        i25 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).currentAccount;
+        i25 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).currentAccount;
         int currentTime = ConnectionsManager.getInstance(i25).getCurrentTime();
         i26 = notificationsSettingsActivity.privateRow;
         ArrayList arrayList3 = null;
@@ -447,7 +447,7 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
                     z11 = true;
                 }
                 i36 = notificationsSettingsActivity.reactionsRow;
-                i5Var.b(str, sb2, i32, z11, i33, false, i10 != i36, false);
+                j5Var.b(str, sb2, i32, z11, i33, false, i10 != i36, false);
             }
             string = LocaleController.getString(R.string.NotificationsGroups);
             arrayList = notificationsSettingsActivity.e;
@@ -468,7 +468,7 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
             if (i10 != i34) {
             }
             i36 = notificationsSettingsActivity.reactionsRow;
-            i5Var.b(str, sb22, i32, z11, i33, false, i10 != i36, false);
+            j5Var.b(str, sb22, i32, z11, i33, false, i10 != i36, false);
         }
         str = string;
         i33 = 0;
@@ -477,39 +477,39 @@ public final class uk0 extends org.telegram.ui.Components.ll0 {
         if (i10 != i34) {
         }
         i36 = notificationsSettingsActivity.reactionsRow;
-        i5Var.b(str, sb222, i32, z11, i33, false, i10 != i36, false);
+        j5Var.b(str, sb222, i32, z11, i33, false, i10 != i36, false);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.ActionBar.f6 f6Var2;
-        org.telegram.ui.ActionBar.f6 f6Var3;
-        org.telegram.ui.ActionBar.f6 f6Var4;
-        org.telegram.ui.ActionBar.f6 f6Var5;
+        View m4Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.e6 e6Var3;
+        org.telegram.ui.ActionBar.e6 e6Var4;
+        org.telegram.ui.ActionBar.e6 e6Var5;
         NotificationsSettingsActivity notificationsSettingsActivity = this.d;
         Context context = this.c;
         if (i10 == 0) {
-            f6Var = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).resourceProvider;
-            l4Var = new org.telegram.ui.Cells.l4(context, f6Var);
+            e6Var = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.m4(context, e6Var);
         } else if (i10 == 1) {
-            f6Var2 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).resourceProvider;
-            l4Var = new org.telegram.ui.Cells.w8(context, f6Var2);
+            e6Var2 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.w8(context, e6Var2);
         } else if (i10 == 2) {
-            l4Var = new org.telegram.ui.Cells.d9(context);
+            m4Var = new org.telegram.ui.Cells.d9(context);
         } else if (i10 == 3) {
-            f6Var3 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).resourceProvider;
-            l4Var = new org.telegram.ui.Cells.i5(21, 64, this.c, f6Var3, true);
+            e6Var3 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.j5(21, 64, this.c, e6Var3, true);
         } else if (i10 == 4) {
-            l4Var = new org.telegram.ui.Cells.a7(context, (org.telegram.ui.Cells.p6) null);
+            m4Var = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
         } else if (i10 != 5) {
-            f6Var5 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).resourceProvider;
-            l4Var = new org.telegram.ui.Cells.e9(context, f6Var5);
+            e6Var5 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.e9(context, e6Var5);
         } else {
-            f6Var4 = ((org.telegram.ui.ActionBar.o2) notificationsSettingsActivity).resourceProvider;
-            l4Var = new org.telegram.ui.Cells.ea(context, 0, f6Var4);
+            e6Var4 = ((org.telegram.ui.ActionBar.n2) notificationsSettingsActivity).resourceProvider;
+            m4Var = new org.telegram.ui.Cells.ea(context, 0, e6Var4);
         }
-        return new org.telegram.ui.Components.wk0(l4Var);
+        return new org.telegram.ui.Components.gl0(m4Var);
     }
 }

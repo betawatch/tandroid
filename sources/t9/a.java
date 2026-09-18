@@ -3,12 +3,11 @@ package t9;
 import android.util.Log;
 import ci.t9;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Cells.p6;
 import q9.p;
 import r5.d;
 import y9.b1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -36,7 +35,7 @@ public final class a {
     }
 
     public final void d(String str, long j3, b1 b1Var) {
-        String i10 = p6.i("Deferring native open session: ", str);
+        String i10 = t8.b.i("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", i10, null);
         }

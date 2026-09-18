@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class j0 {
     public static final float[][] a;
@@ -94,7 +94,7 @@ public abstract class j0 {
         }
     }
 
-    public static void c(Canvas canvas, org.telegram.ui.Components.m5 m5Var, int i10, float f7, float f10, RectF rectF, float f11) {
+    public static void c(Canvas canvas, org.telegram.ui.Components.o5 o5Var, int i10, float f7, float f10, RectF rectF, float f11) {
         float f12;
         float f13;
         float f14;
@@ -188,9 +188,9 @@ public abstract class j0 {
             if (f13 < 1.0f) {
                 clamp013 = AndroidUtilities.lerp(0.0f, clamp013, f13);
             }
-            m5Var.setBounds((int) (f46 - dpf27), (int) (b10 - dpf27), (int) (f46 + dpf27), (int) (b10 + dpf27));
-            m5Var.v = (int) (clamp013 * 255.0f);
-            m5Var.draw(canvas);
+            o5Var.setBounds((int) (f46 - dpf27), (int) (b10 - dpf27), (int) (f46 + dpf27), (int) (b10 + dpf27));
+            o5Var.v = (int) (clamp013 * 255.0f);
+            o5Var.draw(canvas);
             i12 += 3;
             i11 += 2;
             f15 = f10;

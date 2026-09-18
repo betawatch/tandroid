@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class tc {
     public int a;
@@ -18,12 +18,12 @@ public final class tc {
     public float h;
     public float i;
     public final RectF j = new RectF();
-    public final org.telegram.ui.Components.c6 k;
+    public final org.telegram.ui.Components.e6 k;
     public final /* synthetic */ zc l;
 
     public tc(zc zcVar) {
         this.l = zcVar;
-        this.k = new org.telegram.ui.Components.c6(zcVar, 360L, qr.h);
+        this.k = new org.telegram.ui.Components.e6(zcVar, 360L, qr.h);
     }
 
     public static void a(tc tcVar, boolean z10) {

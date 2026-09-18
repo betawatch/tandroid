@@ -6,9 +6,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.f90;
+import org.telegram.ui.Components.o90;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements e2.h {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final /* synthetic */ class s7 implements e2.h {
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.d;
-                c2Var.dismiss();
+                b2Var.dismiss();
                 if (((Boolean) obj).booleanValue() && callback != null) {
                     callback.run(inputPeer);
                     break;
@@ -60,11 +60,11 @@ public final /* synthetic */ class s7 implements e2.h {
                 break;
             case 2:
                 rg.j0 j0Var = (rg.j0) this.b;
-                f90 f90Var = (f90) this.c;
+                o90 o90Var = (o90) this.c;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) this.d;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 j0Var.getClass();
-                f90Var.setLoading(false);
+                o90Var.setLoading(false);
                 if (tL_premium_boostsStatus != null) {
                     j0Var.b0.boosts++;
                     if (j0Var.h0 == 32 && (t12 = j0Var.t1()) != null) {

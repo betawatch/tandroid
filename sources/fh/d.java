@@ -14,7 +14,7 @@ import android.os.Build;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d implements a {
     public final a a;
@@ -44,7 +44,15 @@ public final class d implements a {
         return beginRecording;
     }
 
+    @Override // fh.a
     public final void b() {
+        Runnable runnable = this.v;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    public final void c() {
         if (!this.n) {
             throw new IllegalStateException();
         }
@@ -53,7 +61,14 @@ public final class d implements a {
         this.r = null;
     }
 
-    public final int c(int i10, int i11, List list) {
+    @Override // fh.a
+    public final ch.d d() {
+        ch.e eVar = new ch.e(this);
+        this.s.add(eVar);
+        return eVar;
+    }
+
+    public final int e(int i10, int i11, List list) {
         RectF rectF;
         Iterator it = this.s.iterator();
         int i12 = 0;
@@ -79,52 +94,37 @@ public final class d implements a {
         return i12;
     }
 
-    @Override // fh.a
-    public final void d() {
-        Runnable runnable = this.v;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public final void e() {
+    public final void f() {
         Iterator it = this.s.iterator();
         while (it.hasNext()) {
             ((ch.e) it.next()).O = true;
         }
     }
 
-    public final boolean f(int i10, int i11) {
+    public final boolean g(int i10, int i11) {
         return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
     }
 
-    public final void g(float f7) {
+    public final void h(float f7) {
         this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
     }
 
-    public final void h(float f7, RenderEffect renderEffect) {
+    public final void i(float f7, RenderEffect renderEffect) {
         this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
     }
 
-    public final void i(int i10, int i11) {
+    public final void j(int i10, int i11) {
         this.b.setPosition(0, 0, i10, i11);
     }
 
-    public final void j(k kVar) {
+    public final void k(k kVar) {
         if (this.c == null) {
             this.c = new l(this.b, kVar);
         }
     }
 
-    public final void k() {
+    public final void l() {
         this.c.a();
-    }
-
-    @Override // fh.a
-    public final ch.d l() {
-        ch.e eVar = new ch.e(this);
-        this.s.add(eVar);
-        return eVar;
     }
 
     @Override // fh.a

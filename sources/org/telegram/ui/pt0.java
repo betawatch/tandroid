@@ -1,53 +1,79 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class pt0 extends OrientationEventListener {
-    public final /* synthetic */ PhotoViewer a;
+public final /* synthetic */ class pt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pt0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.a = photoViewer;
+    public /* synthetic */ pt0(qt0 qt0Var, int i10) {
+        this.a = i10;
+        this.b = qt0Var;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        ut0 ut0Var;
-        Activity activity;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.W3 == null || (ut0Var = photoViewer.y2) == null || ut0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
-            return;
-        }
-        if (i11 != 1) {
-            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
-                photoViewer.Z3 = true;
-                return;
-            }
-            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
-                return;
-            }
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
-            return;
-        }
-        if (i10 >= 240 && i10 <= 300) {
-            photoViewer.Z3 = true;
-            return;
-        }
-        if (!photoViewer.Z3 || i10 <= 0) {
-            return;
-        }
-        if (i10 >= 330 || i10 <= 30) {
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L32;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.j jVar;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b.b;
+                uu0 uu0Var = photoViewer.E2;
+                if (uu0Var != null) {
+                    org.telegram.ui.Components.u71 u71Var = photoViewer.F2;
+                    if (uu0Var.e != u71Var) {
+                        uu0Var.c = false;
+                        uu0Var.d = false;
+                        if (uu0Var.b) {
+                            uu0Var.a++;
+                            uu0Var.b = false;
+                        }
+                        uu0Var.setImageResource(R.color.transparent);
+                    }
+                    if (u71Var != null) {
+                        i2.e0 e0Var = u71Var.d;
+                        if (e0Var != null) {
+                            try {
+                                e0Var.B1();
+                                b2.s sVar = e0Var.Q;
+                                if (sVar != null && (jVar = sVar.H) != null) {
+                                    int i10 = jVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = u71Var.p() - u71Var.n();
+                        if (!uu0Var.c && !uu0Var.d && !uu0Var.b && p5 < 5250.0f) {
+                            Uri uri = u71Var.F;
+                            int i11 = uu0Var.a + 1;
+                            uu0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new fm0(uu0Var, uri, i11, 2));
+                            uu0Var.b = true;
+                        }
+                    }
+                    uu0Var.e = u71Var;
+                    break;
+                }
+                break;
+            case 1:
+                uu0.a(this.b.b.E2);
+                break;
+            default:
+                uu0.a(this.b.b.E2);
+                break;
         }
     }
 }

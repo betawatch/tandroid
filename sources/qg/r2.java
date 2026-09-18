@@ -1,39 +1,47 @@
 package qg;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Insets;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
+public final class r2 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ s2 a;
 
-    public /* synthetic */ r2(v2 v2Var, int i10) {
-        this.a = i10;
-        this.b = v2Var;
+    public r2(s2 s2Var) {
+        this.a = s2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new r2(this.b, 0));
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            default:
-                v2 v2Var = this.b;
-                ai.y1 y1Var = v2Var.H;
-                if (y1Var != null) {
-                    y1Var.run(null);
-                    v2Var.H = null;
-                }
-                v2Var.dismiss();
-                break;
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        WindowInsets windowInsets2;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        s2 s2Var = this.a;
+        ai.f0 f0Var = s2Var.b;
+        Rect rect = s2Var.h;
+        int i14 = Build.VERSION.SDK_INT;
+        if (i14 >= 30) {
+            Insets insets = windowInsets.getInsets(647);
+            i10 = insets.left;
+            i11 = insets.top;
+            i12 = insets.right;
+            i13 = insets.bottom;
+            rect.set(i10, i11, i12, i13);
+        } else {
+            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
+        f0Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        f0Var.requestLayout();
+        if (i14 < 30) {
+            return windowInsets.consumeSystemWindowInsets();
+        }
+        windowInsets2 = WindowInsets.CONSUMED;
+        return windowInsets2;
     }
 }

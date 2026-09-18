@@ -2,22 +2,22 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.xd1;
+import org.telegram.ui.vd1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yl extends org.telegram.ui.ActionBar.w0 {
+public final class yl extends org.telegram.ui.ActionBar.v0 {
     public final /* synthetic */ int v0;
     public final /* synthetic */ Object w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yl(ni niVar, Context context, org.telegram.ui.ActionBar.a0 a0Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, a0Var, 0, 0, false, f6Var);
+    public /* synthetic */ yl(ni niVar, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, zVar, 0, 0, false, e6Var);
         this.v0 = i10;
         this.w0 = niVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.w0, android.view.View
+    @Override // org.telegram.ui.ActionBar.v0, android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.v0) {
             case 0:
@@ -30,15 +30,15 @@ public final class yl extends org.telegram.ui.ActionBar.w0 {
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((xd1) this.w0).h.getText());
+                accessibilityNodeInfo.setText(((vd1) this.w0).h.getText());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yl(xd1 xd1Var, Context context, org.telegram.ui.ActionBar.a0 a0Var) {
-        super(context, a0Var, 0, 0);
+    public yl(vd1 vd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
+        super(context, zVar, 0, 0);
         this.v0 = 2;
-        this.w0 = xd1Var;
+        this.w0 = vd1Var;
     }
 }

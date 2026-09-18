@@ -70,21 +70,22 @@ import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Adler32;
 import java.util.zip.InflaterInputStream;
+import k2.u;
 import m.q;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.c5;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.lz0;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.iz0;
 import org.telegram.ui.Components.ok;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.xy0;
-import org.telegram.ui.bo;
+import org.telegram.ui.Components.wz0;
 import org.telegram.ui.br0;
+import org.telegram.ui.zn;
 import org.xmlpull.v1.XmlPullParserException;
 import r0.i0;
 import s4.c1;
@@ -93,14 +94,13 @@ import s4.y;
 import u2.u0;
 import v7.v7;
 import v7.y7;
-import w7.f6;
-import zg.n0;
+import w7.g6;
+import zg.o0;
 import zg.p0;
-import zg.q0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public class i implements fk0, br0, n5.b, t0.i, ja.a {
+public class i implements pk0, br0, n5.b, t0.h, ja.a {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -127,7 +127,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
     public static Object[] w(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        xy0 xy0Var = lz0.R;
+        iz0 iz0Var = wz0.R;
         int i10 = -1;
         for (int i11 : iArr) {
             i10 = Math.max(i10, i11);
@@ -139,7 +139,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         return objArr2;
     }
 
-    public static n2.e x(c0 c0Var) {
+    public static n2.f x(c0 c0Var) {
         g2.o oVar = new g2.o();
         oVar.c = null;
         Uri uri = c0Var.b;
@@ -181,20 +181,20 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
             int i11 = f7[i10];
             e2.d.b(i11 == 2 || i11 == 1);
         }
-        n2.e eVar = new n2.e(uuid2, mVar, hashMap, z11, (int[]) f7.clone(), z12, bVar);
+        n2.f fVar = new n2.f(uuid2, mVar, hashMap, z11, (int[]) f7.clone(), z12, bVar);
         byte[] bArr = c0Var.h;
         byte[] copyOf = bArr != null ? Arrays.copyOf(bArr, bArr.length) : null;
-        e2.d.g(eVar.w.isEmpty());
-        eVar.K = copyOf;
-        return eVar;
+        e2.d.g(fVar.w.isEmpty());
+        fVar.K = copyOf;
+        return fVar;
     }
 
-    public n2.m A(b2.k0 k0Var) {
-        n2.e eVar;
+    public n2.n A(b2.k0 k0Var) {
+        n2.f fVar;
         k0Var.b.getClass();
         c0 c0Var = k0Var.b.c;
         if (c0Var == null) {
-            return n2.m.z;
+            return n2.n.z;
         }
         synchronized (this.b) {
             try {
@@ -202,21 +202,21 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
                     this.c = c0Var;
                     this.d = x(c0Var);
                 }
-                eVar = (n2.e) this.d;
-                eVar.getClass();
+                fVar = (n2.f) this.d;
+                fVar.getClass();
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return eVar;
+        return fVar;
     }
 
     public View B(int i10) {
-        return ((RecyclerView) ((k2.c0) this.b).b).getChildAt(J(i10));
+        return ((RecyclerView) ((ka.c) this.b).b).getChildAt(J(i10));
     }
 
     public int C() {
-        return ((RecyclerView) ((k2.c0) this.b).b).getChildCount() - ((ArrayList) this.d).size();
+        return ((RecyclerView) ((ka.c) this.b).b).getChildCount() - ((ArrayList) this.d).size();
     }
 
     public ColorStateList D(int i10) {
@@ -371,27 +371,27 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         if (i10 < 0) {
             return -1;
         }
-        int childCount = ((RecyclerView) ((k2.c0) this.b).b).getChildCount();
+        int childCount = ((RecyclerView) ((ka.c) this.b).b).getChildCount();
         int i11 = i10;
         while (i11 < childCount) {
-            int w10 = i10 - (i11 - nVar.w(i11));
-            if (w10 == 0) {
-                while (nVar.z(i11)) {
+            int x10 = i10 - (i11 - nVar.x(i11));
+            if (x10 == 0) {
+                while (nVar.D(i11)) {
                     i11++;
                 }
                 return i11;
             }
-            i11 += w10;
+            i11 += x10;
         }
         return -1;
     }
 
     public View K(int i10) {
-        return ((RecyclerView) ((k2.c0) this.b).b).getChildAt(i10);
+        return ((RecyclerView) ((ka.c) this.b).b).getChildAt(i10);
     }
 
     public int L() {
-        return ((RecyclerView) ((k2.c0) this.b).b).getChildCount();
+        return ((RecyclerView) ((ka.c) this.b).b).getChildCount();
     }
 
     public boolean M() {
@@ -419,11 +419,11 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
 
     public void N(View view) {
         ((ArrayList) this.d).add(view);
-        k2.c0 c0Var = (k2.c0) this.b;
+        ka.c cVar = (ka.c) this.b;
         c1 V = RecyclerView.V(view);
         if (V != null) {
             View view2 = V.a;
-            RecyclerView recyclerView = (RecyclerView) c0Var.b;
+            RecyclerView recyclerView = (RecyclerView) cVar.b;
             int i10 = V.s;
             if (i10 != -1) {
                 V.r = i10;
@@ -506,9 +506,9 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
             if (((c3.o) this.c) == null) {
                 StringBuilder sb2 = new StringBuilder("None of the available extractors (");
                 xa.c cVar = new xa.c(", ");
-                Iterator it = e9.q.w(e9.i0.w(d), new t0.a(8)).iterator();
+                Iterator it = e9.q.w(e9.i0.w(d), new s9.b(10)).iterator();
                 StringBuilder sb3 = new StringBuilder();
-                cVar.j(sb3, it);
+                cVar.p(sb3, it);
                 sb2.append(sb3.toString());
                 sb2.append(") could read the stream.");
                 String sb4 = sb2.toString();
@@ -537,8 +537,8 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
 
     public void S() {
         int i10;
-        RecyclerView recyclerView = (RecyclerView) ((k2.c0) this.b).b;
-        ((e6.n) this.c).C();
+        RecyclerView recyclerView = (RecyclerView) ((ka.c) this.b).b;
+        ((e6.n) this.c).G();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
         while (true) {
@@ -610,13 +610,13 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
                 int i11 = next.getExtras().getInt("attemptNumber");
                 if (next.getId() == value) {
                     if (i11 >= i10) {
-                        f6.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                        g6.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
                         return;
                     }
                 }
             }
         }
-        Cursor rawQuery = ((s5.g) ((s5.d) this.c)).a().rawQuery("SELECT next_request_ms FROM transport_contexts WHERE backend_name = ? and priority = ?", new String[]{str2, String.valueOf(v5.a.a(dVar))});
+        Cursor rawQuery = ((s5.h) ((s5.d) this.c)).a().rawQuery("SELECT next_request_ms FROM transport_contexts WHERE backend_name = ? and priority = ?", new String[]{str2, String.valueOf(v5.a.a(dVar))});
         try {
             Long valueOf = rawQuery.moveToNext() ? Long.valueOf(rawQuery.getLong(0)) : 0L;
             rawQuery.close();
@@ -655,7 +655,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
             objArr[2] = valueOf3;
             objArr[3] = valueOf;
             objArr[4] = valueOf4;
-            String c11 = f6.c("JobInfoScheduler");
+            String c11 = g6.c("JobInfoScheduler");
             if (Log.isLoggable(c11, 3)) {
                 Log.d(c11, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
             }
@@ -670,7 +670,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         of.g gVar;
         of.g gVar2 = (of.g) this.c;
         if (gVar2 != null && ((of.a) this.d) == null && aVar != null) {
-            r(gVar2);
+            q(gVar2);
         }
         if (((of.a) this.d) != null && (gVar = (of.g) this.c) != null && aVar == null) {
             T(gVar);
@@ -716,10 +716,10 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
 
     public void Y(View view) {
         if (((ArrayList) this.d).remove(view)) {
-            k2.c0 c0Var = (k2.c0) this.b;
+            ka.c cVar = (ka.c) this.b;
             c1 V = RecyclerView.V(view);
             if (V != null) {
-                RecyclerView recyclerView = (RecyclerView) c0Var.b;
+                RecyclerView recyclerView = (RecyclerView) cVar.b;
                 int i10 = V.r;
                 if (recyclerView.c0()) {
                     V.s = i10;
@@ -742,7 +742,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         iVar.b = str;
     }
 
-    @Override // t0.i
+    @Override // t0.h
     public Uri c() {
         return (Uri) this.b;
     }
@@ -752,7 +752,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         return true;
     }
 
-    @Override // t0.i
+    @Override // t0.h
     public Uri f() {
         return (Uri) this.d;
     }
@@ -767,49 +767,49 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         return new i((Context) ((fd.a) this.b).get(), (s5.d) ((fd.a) this.c).get(), (r5.a) ((qb.b) this.d).get(), 24);
     }
 
-    @Override // t0.i
+    @Override // t0.h
     public ClipDescription getDescription() {
         return (ClipDescription) this.c;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.fk0
+    @Override // org.telegram.ui.Components.pk0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void h(View view, p0 p0Var, boolean z10, boolean z11) {
+    public void h(View view, o0 o0Var, boolean z10, boolean z11) {
         float f7;
-        q0 q0Var;
-        n0 m10;
+        p0 p0Var;
+        zg.m0 m10;
         float f10;
         int i10;
         float f11;
-        bo boVar = (bo) this.d;
-        org.telegram.ui.Cells.a0 q82 = boVar.q8(((MessageObject) this.b).getId(), true);
+        zn znVar = (zn) this.d;
+        org.telegram.ui.Cells.a0 q82 = znVar.q8(((MessageObject) this.b).getId(), true);
         float f12 = 0.0f;
-        if (q82 instanceof t1) {
-            q0 q0Var2 = ((t1) q82).N;
-            n0 m11 = q0Var2.m(p0Var);
+        if (q82 instanceof u1) {
+            p0 p0Var2 = ((u1) q82).N;
+            zg.m0 m11 = p0Var2.m(o0Var);
             if (m11 == null) {
                 f11 = 0.0f;
                 f7 = f11;
-                boVar.ab(q82, (MessageObject) this.b, (gk0) this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+                znVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
             } else {
-                f12 = q0Var2.c + m11.x + (m11.A / 2.0f);
-                f10 = q0Var2.d + m11.y;
+                f12 = p0Var2.c + m11.x + (m11.A / 2.0f);
+                f10 = p0Var2.d + m11.y;
                 i10 = m11.B;
             }
-        } else if (!(q82 instanceof w0) || (m10 = (q0Var = ((w0) q82).C0).m(p0Var)) == null) {
+        } else if (!(q82 instanceof w0) || (m10 = (p0Var = ((w0) q82).C0).m(o0Var)) == null) {
             f7 = 0.0f;
-            boVar.ab(q82, (MessageObject) this.b, (gk0) this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+            znVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
         } else {
-            f12 = q0Var.c + m10.x + (m10.A / 2.0f);
-            f10 = q0Var.d + m10.y;
+            f12 = p0Var.c + m10.x + (m10.A / 2.0f);
+            f10 = p0Var.d + m10.y;
             i10 = m10.B;
         }
         f11 = f10 + (i10 / 2.0f);
         f7 = f11;
-        boVar.ab(q82, (MessageObject) this.b, (gk0) this.c, view, f12, f7, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+        znVar.ab(q82, (MessageObject) this.b, (qk0) this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
     }
 
     @Override // org.telegram.ui.br0
@@ -849,20 +849,20 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
                 sendingMediaInfo.ttl = photoEntry.ttl;
             }
         }
-        c5.a0(viVar.J1, viVar.j1() + arrayList2.size(), viVar.n1(), new d4(i10, 1, okVar, arrayList2, z11));
+        e5.a0(viVar.J1, viVar.j1() + arrayList2.size(), viVar.n1(), new d4(i10, 1, okVar, arrayList2, z11));
     }
 
-    @Override // org.telegram.ui.Components.fk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ boolean j() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.fk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ boolean k() {
         return false;
     }
 
-    @Override // t0.i
+    @Override // t0.h
     public Object l() {
         return null;
     }
@@ -874,12 +874,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         return this;
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    public void r(of.g gVar) {
+    public void q(of.g gVar) {
         if (((of.d) this.b) == null) {
             this.b = new of.d();
         }
@@ -891,10 +886,15 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         }
     }
 
+    @Override // org.telegram.ui.Components.pk0
+    public /* synthetic */ boolean r() {
+        return false;
+    }
+
     public void s(View view, int i10, boolean z10) {
-        RecyclerView recyclerView = (RecyclerView) ((k2.c0) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((ka.c) this.b).b;
         int childCount = i10 < 0 ? recyclerView.getChildCount() : J(i10);
-        ((e6.n) this.c).A(childCount, z10);
+        ((e6.n) this.c).E(childCount, z10);
         if (z10) {
             N(view);
         }
@@ -914,9 +914,9 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
     }
 
     public void t(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
-        RecyclerView recyclerView = (RecyclerView) ((k2.c0) this.b).b;
+        RecyclerView recyclerView = (RecyclerView) ((ka.c) this.b).b;
         int childCount = i10 < 0 ? recyclerView.getChildCount() : J(i10);
-        ((e6.n) this.c).A(childCount, z10);
+        ((e6.n) this.c).E(childCount, z10);
         if (z10) {
             N(view);
         }
@@ -1008,8 +1008,8 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
     public void y(int i10) {
         c1 V;
         int J = J(i10);
-        ((e6.n) this.c).B(J);
-        RecyclerView recyclerView = (RecyclerView) ((k2.c0) this.b).b;
+        ((e6.n) this.c).F(J);
+        RecyclerView recyclerView = (RecyclerView) ((ka.c) this.b).b;
         View childAt = recyclerView.getChildAt(J);
         if (childAt != null && (V = RecyclerView.V(childAt)) != null) {
             if (V.l() && !V.r()) {
@@ -1025,12 +1025,12 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         int i10 = fVar.c;
         InputStream inputStream2 = (mf.a) this.b;
         if (fVar.d) {
-            k2.c0 c0Var = (k2.c0) this.d;
-            c0Var.getClass();
+            a4.m mVar = (a4.m) this.d;
+            mVar.getClass();
             byte[] bArr = new byte[i10];
             int i11 = 0;
             while (i11 < i10) {
-                int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr, i11, i10 - i11);
+                int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr, i11, i10 - i11);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -1087,7 +1087,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         this.a = 0;
         mf.a aVar = new mf.a(inputStream, j3, i10);
         this.b = aVar;
-        this.d = new k2.c0(aVar, 3);
+        this.d = new a4.m(aVar, 27);
         this.c = jVar;
     }
 
@@ -1121,21 +1121,21 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
     public void a() {
     }
 
-    @Override // t0.i
+    @Override // t0.h
     public void d() {
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ void o() {
+    @Override // t0.h
+    public void o() {
     }
 
-    @Override // t0.i
-    public void p() {
+    @Override // org.telegram.ui.Components.pk0
+    public /* synthetic */ void p() {
     }
 
-    public i(k2.c0 c0Var) {
+    public i(ka.c cVar) {
         this.a = 25;
-        this.b = c0Var;
+        this.b = cVar;
         this.c = new e6.n(6);
         this.d = new ArrayList();
     }
@@ -1183,16 +1183,16 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         this.d = wVar;
     }
 
-    public i(ka.c cVar) {
-        this.a = 10;
-        this.a = 10;
-        this.b = cVar;
+    public i(u uVar) {
+        this.a = 9;
+        this.a = 9;
+        this.b = uVar;
         this.c = Choreographer.getInstance();
         this.d = new o1.a(this, 0);
     }
 
     public i(String str, String str2) {
-        this.a = 9;
+        this.a = 11;
         this.b = str;
         this.c = str2;
         this.d = str2.isEmpty() ? str : a4.a.C(str, "/", str2);
@@ -1229,7 +1229,7 @@ public class i implements fk0, br0, n5.b, t0.i, ja.a {
         this.d = w(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.fk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

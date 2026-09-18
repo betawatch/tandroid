@@ -8,15 +8,15 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class dd extends View {
     public final Paint a;
-    public final org.telegram.ui.Components.m6 b;
+    public final org.telegram.ui.Components.o6 b;
     public boolean c;
 
     public dd(Activity activity) {
@@ -25,21 +25,21 @@ public final class dd extends View {
         this.a = paint;
         this.c = true;
         paint.setColor(TLObject.FLAG_31);
-        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true, false);
-        this.b = m6Var;
-        m6Var.k(0.2f, 200L, qr.h);
-        m6Var.t(AndroidUtilities.dp(13.0f));
-        m6Var.r(-1);
-        m6Var.u(AndroidUtilities.bold());
-        m6Var.setCallback(this);
-        m6Var.b = 1;
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
+        this.b = o6Var;
+        o6Var.k(0.2f, 200L, qr.h);
+        o6Var.t(AndroidUtilities.dp(13.0f));
+        o6Var.r(-1);
+        o6Var.u(AndroidUtilities.bold());
+        o6Var.setCallback(this);
+        o6Var.b = 1;
         StringBuilder sb2 = new StringBuilder(8);
         sb2.append("00:00:00");
-        if (TextUtils.equals(sb2, m6Var.g)) {
+        if (TextUtils.equals(sb2, o6Var.g)) {
             return;
         }
-        m6Var.b();
-        m6Var.q(sb2, false, true);
+        o6Var.b();
+        o6Var.q(sb2, false, true);
     }
 
     public final void a(boolean z10) {
@@ -47,7 +47,7 @@ public final class dd extends View {
             this.c = false;
             animate().cancel();
             if (z10) {
-                wl.q(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), qr.h, 220L);
+                wh.r(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), qr.h, 220L);
                 return;
             }
             setTranslationY(AndroidUtilities.dp(6.0f));
@@ -60,13 +60,13 @@ public final class dd extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        org.telegram.ui.Components.m6 m6Var = this.b;
-        float d = m6Var.d();
+        org.telegram.ui.Components.o6 o6Var = this.b;
+        float d = o6Var.d();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(((getWidth() - d) / 2.0f) - AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), ((getWidth() + d) / 2.0f) + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(23.0f));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.a);
-        m6Var.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
-        m6Var.draw(canvas);
+        o6Var.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
+        o6Var.draw(canvas);
     }
 
     @Override // android.view.View

@@ -5,9 +5,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class h0 extends org.telegram.ui.Components.i9 {
+public final class h0 extends org.telegram.ui.Components.k9 {
     public final /* synthetic */ int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -33,11 +33,11 @@ public final class h0 extends org.telegram.ui.Components.i9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
+    @Override // org.telegram.ui.Components.k9, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.e) {
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : hg.k0.g(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : hg.k0.f(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
                 break;
             default:
                 super.onMeasure(i10, i11);

@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.view.ViewGroup;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jq0 extends org.telegram.ui.Components.ll0 {
+public final class jq0 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ lq0 d;
 
@@ -16,7 +16,7 @@ public final class jq0 extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -36,21 +36,21 @@ public final class jq0 extends org.telegram.ui.Components.ll0 {
 
     @Override // s4.h0
     public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) c1Var.a;
+        org.telegram.ui.Cells.y5 y5Var = (org.telegram.ui.Cells.y5) c1Var.a;
         lq0 lq0Var = this.d;
-        x5Var.setAlbumsCount(lq0Var.f);
+        y5Var.setAlbumsCount(lq0Var.f);
         int i11 = 0;
         while (true) {
             int i12 = lq0Var.f;
             if (i11 >= i12) {
-                x5Var.requestLayout();
+                y5Var.requestLayout();
                 return;
             }
             int i13 = (i12 * i10) + i11;
             if (i13 < lq0Var.d.size()) {
-                x5Var.a(i11, (MediaController.AlbumEntry) lq0Var.d.get(i13));
+                y5Var.a(i11, (MediaController.AlbumEntry) lq0Var.d.get(i13));
             } else {
-                x5Var.a(i11, null);
+                y5Var.a(i11, null);
             }
             i11++;
         }
@@ -59,18 +59,18 @@ public final class jq0 extends org.telegram.ui.Components.ll0 {
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        org.telegram.ui.Cells.x5 x5Var = new org.telegram.ui.Cells.x5(context);
-        x5Var.e = new Paint();
-        x5Var.b = new MediaController.AlbumEntry[4];
-        x5Var.a = new org.telegram.ui.Cells.v5[4];
+        org.telegram.ui.Cells.y5 y5Var = new org.telegram.ui.Cells.y5(context);
+        y5Var.e = new Paint();
+        y5Var.b = new MediaController.AlbumEntry[4];
+        y5Var.a = new org.telegram.ui.Cells.w5[4];
         for (int i11 = 0; i11 < 4; i11++) {
-            x5Var.a[i11] = new org.telegram.ui.Cells.v5(x5Var, context);
-            x5Var.addView(x5Var.a[i11]);
-            x5Var.a[i11].setVisibility(4);
-            x5Var.a[i11].setTag(Integer.valueOf(i11));
-            x5Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(x5Var, 9));
+            y5Var.a[i11] = new org.telegram.ui.Cells.w5(y5Var, context);
+            y5Var.addView(y5Var.a[i11]);
+            y5Var.a[i11].setVisibility(4);
+            y5Var.a[i11].setTag(Integer.valueOf(i11));
+            y5Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(y5Var, 9));
         }
-        x5Var.setDelegate(new nl0(this, 2));
-        return new org.telegram.ui.Components.wk0(x5Var);
+        y5Var.setDelegate(new ol0(this, 2));
+        return new org.telegram.ui.Components.gl0(y5Var);
     }
 }

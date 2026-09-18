@@ -1,17 +1,25 @@
 package p2;
 
-import android.net.Uri;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class i {
-    public final Uri a;
-    public final long b;
-    public final int c;
+public final class i extends j {
+    public final String w;
+    public final i0 x;
 
-    public i(Uri uri, long j3, int i10) {
-        this.a = uri;
-        this.b = j3;
-        this.c = i10;
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public i(String str, long j3, long j10, String str2, String str3) {
+        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j3, j10, false, a1.e);
+        g0 g0Var = i0.b;
+    }
+
+    public i(String str, i iVar, String str2, long j3, int i10, long j10, b2.o oVar, String str3, String str4, long j11, long j12, boolean z10, List list) {
+        super(str, iVar, j3, i10, j10, oVar, str3, str4, j11, j12, z10);
+        this.w = str2;
+        this.x = i0.v(list);
     }
 }

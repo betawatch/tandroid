@@ -22,9 +22,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import w7.n6;
+import w7.o6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((n7.a1) ((k2.c0) this.c).b).getClass();
+        ((n7.z0) ((ka.c) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -92,28 +92,28 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        k2.c0 c0Var = (k2.c0) this.c;
+        ka.c cVar = (ka.c) this.c;
         if (inputConnection == null) {
-            c0Var.getClass();
+            cVar.getClass();
             inputConnection = null;
         } else {
-            n7.a1 a1Var = (n7.a1) c0Var.b;
-            a1Var.getClass();
+            n7.z0 z0Var = (n7.z0) cVar.b;
+            z0Var.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) a1Var.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) z0Var.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((n7.a1) ((k2.c0) this.c).b).c;
+        q1.i iVar = (q1.i) ((n7.z0) ((ka.c) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                n6.a(hVar, "initCallback cannot be null");
+                o6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -177,6 +177,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new k2.c0(editText);
+        this.c = new ka.c(editText);
     }
 }

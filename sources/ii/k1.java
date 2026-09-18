@@ -9,11 +9,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.xg;
-import org.telegram.ui.dj0;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.yg;
+import org.telegram.ui.cj0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,14 +70,14 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                         if (indexOfChild < 0) {
                             indexOfChild = d2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams e = w7.x5.e(-1, d2Var2.j0(), 87);
+                        FrameLayout.LayoutParams e = w7.y5.e(-1, d2Var2.j0(), 87);
                         e.bottomMargin = d2Var2.T0;
                         d2Var2.O.addView(d2Var2.A0, indexOfChild, e);
                     }
                     int j02 = d2Var2.j0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) d2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = w7.x5.e(-1, j02, 87);
+                        layoutParams = w7.y5.e(-1, j02, 87);
                     } else {
                         layoutParams.height = j02;
                     }
@@ -91,7 +91,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                         AndroidUtilities.hideKeyboard(Q2);
                     }
                     d2Var2.h0();
-                    d2Var2.b0.j(xg.d, true);
+                    d2Var2.b0.j(yg.d, true);
                     break;
                 } else {
                     d2Var2.k0(true);
@@ -105,12 +105,12 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 6:
                 final d2 d2Var3 = this.b;
-                n70 n70Var = d2Var3.x0;
-                if (n70Var != null) {
-                    n70Var.u();
+                w70 w70Var = d2Var3.x0;
+                if (w70Var != null) {
+                    w70Var.u();
                     d2Var3.x0 = null;
                 }
-                final n70 H = n70.H(d2Var3, view);
+                final w70 H = w70.H(d2Var3, view);
                 H.Q = true;
                 a R2 = d2Var3.P.R2();
                 H.j(R2 == null || !R2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new n1(d2Var3, R2, 5));
@@ -170,10 +170,10 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 7:
                 d2 d2Var4 = this.b;
-                n70 n70Var2 = d2Var4.x0;
+                w70 w70Var2 = d2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (n70Var2 != null) {
-                    n70Var2.u();
+                if (w70Var2 != null) {
+                    w70Var2.u();
                     d2Var4.x0 = null;
                 }
                 w3 w3Var2 = d2Var4.P;
@@ -202,10 +202,10 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 8:
                 d2 d2Var5 = this.b;
-                n70 n70Var3 = d2Var5.x0;
+                w70 w70Var3 = d2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (n70Var3 != null) {
-                    n70Var3.u();
+                if (w70Var3 != null) {
+                    w70Var3.u();
                     d2Var5.x0 = null;
                 }
                 a R22 = d2Var5.P.R2();
@@ -225,9 +225,9 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
             case 10:
                 d2 d2Var7 = this.b;
                 d2Var7.r0();
-                dj0 dj0Var = d2Var7.O0;
-                if (dj0Var != null) {
-                    dj0Var.h(true);
+                cj0 cj0Var = d2Var7.O0;
+                if (cj0Var != null) {
+                    cj0Var.h(true);
                     d2Var7.O0 = null;
                     break;
                 }

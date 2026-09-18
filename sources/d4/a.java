@@ -26,11 +26,10 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import v7.r6;
 import v7.y7;
-import w.f;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -99,7 +98,7 @@ public final class a implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         Charset charset;
         long j3;
         b4.b bVar;
@@ -642,10 +641,10 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = d0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder m10 = k0.m("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
-                                        m10.append(k12);
-                                        m10.append("'");
-                                        e2.a.n("SsaStyle", m10.toString());
+                                        StringBuilder k13 = k0.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
+                                        k13.append(k12);
+                                        k13.append("'");
+                                        e2.a.n("SsaStyle", k13.toString());
                                     } else {
                                         try {
                                             String trim = split3[bVar.a].trim();
@@ -720,7 +719,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return f.a(this, bArr, i11);
+        return t8.b.a(this, bArr, i11);
     }
 
     @Override // z3.m

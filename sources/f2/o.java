@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final byte[] a = {0, 0, 0, 1};
@@ -250,7 +250,7 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static k h(byte[] bArr, int i10, int i11, ni.f fVar) {
+    public static k h(byte[] bArr, int i10, int i11, oi.f fVar) {
         int i12;
         int i13;
         int i14;
@@ -648,7 +648,7 @@ public abstract class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ni.f i(int i10, int i11, byte[] bArr) {
+    public static oi.f i(int i10, int i11, byte[] bArr) {
         int[] iArr;
         int[] iArr2;
         i iVar;
@@ -696,7 +696,7 @@ public abstract class o {
         int i28 = i27 + 1;
         boolean z15 = i28 >= i24;
         if (!z13 || !z14 || !z15) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         Class cls = Integer.TYPE;
         int[][] iArr5 = (int[][]) Array.newInstance((Class<?>) cls, m10, i28);
@@ -802,7 +802,7 @@ public abstract class o {
         int[][] iArr10 = iArr5;
         int[] iArr11 = iArr7;
         if (!hVar.h()) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int i37 = hVar.e;
         if (i37 > 0) {
@@ -820,7 +820,7 @@ public abstract class o {
             }
         }
         if (i38 == 0 || !zArr3[1]) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int[] iArr12 = new int[i38];
         for (int i40 = 0; i40 < i38 - (h16 ? 1 : 0); i40++) {
@@ -908,7 +908,7 @@ public abstract class o {
         int[] iArr19 = iArr17;
         int i53 = hVar.i(4);
         if (i47 < 2 || i53 == 0) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int[] iArr20 = new int[i47];
         for (int i54 = 0; i54 < i47; i54++) {
@@ -938,7 +938,7 @@ public abstract class o {
         int[] iArr25 = iArr16;
         a1 i58 = u10.i();
         if (((g) i58.get(0)).b == -1) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int i59 = 1;
         while (true) {
@@ -952,7 +952,7 @@ public abstract class o {
             i59++;
         }
         if (i59 == -1) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         Class cls2 = Boolean.TYPE;
         boolean[][] zArr4 = (boolean[][]) Array.newInstance((Class<?>) cls2, i24, i24);
@@ -1006,7 +1006,7 @@ public abstract class o {
             }
         }
         if (i68 > 1) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int[] iArr27 = new int[i24];
         int[] iArr28 = new int[m10];
@@ -1069,7 +1069,7 @@ public abstract class o {
         a1 i80 = u11.i();
         int m13 = hVar.m() + m10;
         if (m13 > m10) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int i81 = hVar.i(2);
         boolean[][] zArr13 = (boolean[][]) Array.newInstance((Class<?>) cls2, m13, i28);
@@ -1195,7 +1195,7 @@ public abstract class o {
         a1 a1Var3 = i80;
         boolean[][] zArr17 = zArr15;
         if (i88 == 0) {
-            return new ni.f(null, iVar2, null, null);
+            return new oi.f(null, iVar2, null, null);
         }
         int m14 = hVar.m();
         int i96 = m14 + 1;
@@ -1353,7 +1353,7 @@ public abstract class o {
         } else {
             iVar = null;
         }
-        return new ni.f(i58, new i(a1Var3, iArr36, 0), bVar, iVar);
+        return new oi.f(i58, new i(a1Var3, iArr36, 0), bVar, iVar);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:101:0x0260  */

@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class sw extends og.d {
     public boolean Y2;
@@ -19,7 +19,7 @@ public final class sw extends og.d {
         this.Z2 = kzVar;
     }
 
-    @Override // og.d, org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // og.d, org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         this.Z2.m2.g++;
@@ -49,19 +49,19 @@ public final class sw extends og.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         kz kzVar = this.Z2;
         if (kzVar.f) {
             return false;
         }
-        org.telegram.ui.ut q6 = org.telegram.ui.ut.q();
+        org.telegram.ui.st q6 = org.telegram.ui.st.q();
         sw swVar = kzVar.D0;
         kzVar.getMeasuredHeight();
         return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, swVar, kzVar.g2, this.p2);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         kz kzVar = this.Z2;
         if (kzVar.I0 && kzVar.y0.h() > 0) {
@@ -74,7 +74,7 @@ public final class sw extends og.d {
         kzVar.q(true);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.Y2) {
             return;

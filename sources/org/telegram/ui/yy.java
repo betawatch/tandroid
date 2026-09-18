@@ -1,271 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yy extends View implements NotificationCenter.NotificationCenterDelegate {
-    public final Paint a;
-    public final Paint b;
-    public final int c;
-    public final ArrayList d;
-    public float e;
-    public float f;
-    public float h;
-    public final ImageReceiver n;
-    public final ImageReceiver r;
-    public final org.telegram.ui.Components.yi0 s;
-    public final org.telegram.ui.Components.yi0 v;
-    public boolean w;
-    public int x;
-    public boolean y;
+public final /* synthetic */ class yy implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public yy(Context context, int i10) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Paint(1);
-        this.d = new ArrayList();
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.n = imageReceiver;
-        ImageReceiver imageReceiver2 = new ImageReceiver(this);
-        this.r = imageReceiver2;
-        this.c = i10;
-        imageReceiver.ignoreNotifications = true;
-        imageReceiver2.ignoreNotifications = true;
-        org.telegram.ui.Components.yi0 yi0Var = new org.telegram.ui.Components.yi0(R.raw.download_progress, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.s = yi0Var;
-        org.telegram.ui.Components.yi0 yi0Var2 = new org.telegram.ui.Components.yi0(R.raw.download_finish, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = yi0Var2;
-        imageReceiver.setImageBitmap(yi0Var);
-        imageReceiver2.setImageBitmap(yi0Var2);
-        imageReceiver.setAutoRepeat(1);
-        yi0Var.K(1);
-        yi0Var.start();
+    public /* synthetic */ yy(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    public final void a() {
-        int i10 = org.telegram.ui.ActionBar.j6.v8;
-        this.s.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i10, false), PorterDuff.Mode.SRC_IN));
-        this.v.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i10, false), PorterDuff.Mode.SRC));
-        invalidate();
-    }
-
-    public final void b() {
-        ArrayList arrayList;
-        int i10 = this.c;
-        DownloadController downloadController = DownloadController.getInstance(i10);
-        HashMap hashMap = new HashMap();
-        int i11 = 0;
-        while (true) {
-            arrayList = this.d;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            hashMap.put(((xy) arrayList.get(i11)).c, (xy) arrayList.get(i11));
-            DownloadController.getInstance(i10).removeLoadingFileObserver((DownloadController.FileDownloadProgressListener) arrayList.get(i11));
-            i11++;
-        }
-        arrayList.clear();
-        for (int i12 = 0; i12 < downloadController.downloadingFiles.size(); i12++) {
-            String fileName = downloadController.downloadingFiles.get(i12).getFileName();
-            if (FileLoader.getInstance(i10).isLoadingFile(fileName)) {
-                xy xyVar = (xy) hashMap.get(fileName);
-                if (xyVar == null) {
-                    xyVar = new xy(this, fileName);
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                dz dzVar = ((zy) this.c).b;
+                if (i10 == 0) {
+                    dzVar.e.remove(this.b - dzVar.n);
+                    dzVar.Z();
+                    cz czVar = dzVar.f;
+                    if (czVar != null) {
+                        czVar.a();
+                        break;
+                    }
                 }
-                DownloadController.getInstance(i10).addLoadingFileObserver(fileName, xyVar);
-                arrayList.add(xyVar);
-            }
-        }
-        if (arrayList.size() != 0 || this.y) {
-            return;
-        }
-        if (DownloadController.getInstance(i10).hasUnviewedDownloads()) {
-            this.e = 1.0f;
-            this.f = 1.0f;
-            this.w = true;
-        } else {
-            this.e = 0.0f;
-            this.f = 0.0f;
-            this.w = false;
-        }
-    }
-
-    public final void c() {
-        MessagesStorage.getInstance(this.c);
-        int i10 = 0;
-        long j3 = 0;
-        long j10 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i10 >= arrayList.size()) {
                 break;
-            }
-            j3 += ((xy) arrayList.get(i10)).a;
-            j10 += ((xy) arrayList.get(i10)).b;
-            i10++;
+            case 1:
+                NotificationsSettingsActivity.X((NotificationsSettingsActivity) this.c, this.b, i10);
+                break;
+            default:
+                ThemeActivity themeActivity = (ThemeActivity) this.c;
+                themeActivity.getClass();
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                edit.putInt("sortContactsBy", i10);
+                edit.commit();
+                fc1 fc1Var = themeActivity.a;
+                if (fc1Var != null) {
+                    fc1Var.m(this.b);
+                    break;
+                }
+                break;
         }
-        if (j3 == 0) {
-            this.e = 1.0f;
-        } else {
-            this.e = j10 / j3;
-        }
-        float f7 = this.e;
-        if (f7 > 1.0f) {
-            this.e = 1.0f;
-        } else if (f7 < 0.0f) {
-            this.e = 0.0f;
-        }
-        this.h = ((this.e - this.f) * 16.0f) / 150.0f;
-        invalidate();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.onDownloadingFilesChanged) {
-            b();
-            c();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        b();
-        NotificationCenter.getInstance(this.c).addObserver(this, NotificationCenter.onDownloadingFilesChanged);
-        this.n.onAttachedToWindow();
-        this.r.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            int size = arrayList.size();
-            int i11 = this.c;
-            if (i10 >= size) {
-                arrayList.clear();
-                NotificationCenter.getInstance(i11).removeObserver(this, NotificationCenter.onDownloadingFilesChanged);
-                this.n.onDetachedFromWindow();
-                this.r.onDetachedFromWindow();
-                return;
-            }
-            DownloadController.getInstance(i11).removeLoadingFileObserver((DownloadController.FileDownloadProgressListener) arrayList.get(i10));
-            i10++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (getAlpha() == 0.0f) {
-            return;
-        }
-        int i10 = this.x;
-        int i11 = org.telegram.ui.ActionBar.j6.v8;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
-        ImageReceiver imageReceiver = this.r;
-        ImageReceiver imageReceiver2 = this.n;
-        Paint paint = this.a;
-        Paint paint2 = this.b;
-        if (i10 != w02) {
-            this.x = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
-            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
-            int w03 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
-            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-            imageReceiver2.setColorFilter(new PorterDuffColorFilter(w03, mode));
-            imageReceiver.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), mode));
-            paint2.setAlpha(100);
-        }
-        float f7 = this.f;
-        float f10 = this.e;
-        if (f7 != f10) {
-            float f11 = this.h;
-            float f12 = f7 + f11;
-            this.f = f12;
-            if (f11 > 0.0f && f12 > f10) {
-                this.f = f10;
-            } else if (f11 >= 0.0f || f12 >= f10) {
-                invalidate();
-            } else {
-                this.f = f10;
-            }
-        }
-        int dp = AndroidUtilities.dp(8.0f) + (getMeasuredHeight() / 2);
-        float dp2 = AndroidUtilities.dp(1.0f);
-        float dp3 = AndroidUtilities.dp(16.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f13 = dp;
-        float f14 = f13 - dp2;
-        float f15 = f13 + dp2;
-        rectF.set(dp3, f14, getMeasuredWidth() - dp3, f15);
-        canvas.drawRoundRect(rectF, dp2, dp2, paint2);
-        rectF.set(dp3, f14, ((getMeasuredWidth() - (2.0f * dp3)) * this.f) + dp3, f15);
-        canvas.drawRoundRect(rectF, dp2, dp2, paint);
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getMeasuredWidth(), f14);
-        if (this.e != 1.0f) {
-            this.w = false;
-        }
-        if (this.w) {
-            imageReceiver.draw(canvas);
-        } else {
-            imageReceiver2.draw(canvas);
-        }
-        if (this.e == 1.0f && !this.w && this.s.a0 == 0) {
-            org.telegram.ui.Components.yi0 yi0Var = this.v;
-            yi0Var.N(0, false, false);
-            yi0Var.start();
-            this.w = true;
-        }
-        canvas.restore();
-        if (getAlpha() != 0.0f) {
-            this.y = true;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
-        int dp = AndroidUtilities.dp(15.0f);
-        float f7 = dp;
-        int i12 = dp * 2;
-        this.n.setImageCoords(f7, f7, getMeasuredWidth() - i12, getMeasuredHeight() - i12);
-        this.r.setImageCoords(f7, f7, getMeasuredWidth() - i12, getMeasuredHeight() - i12);
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f7) {
-        if (f7 == 0.0f) {
-            this.y = false;
-        }
-        super.setAlpha(f7);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        if (i10 != 0) {
-            this.y = false;
-        }
-        super.setVisibility(i10);
     }
 }

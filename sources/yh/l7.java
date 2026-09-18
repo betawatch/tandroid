@@ -1,97 +1,194 @@
 package yh;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wl;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.r00;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.lk;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class l7 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.f6 a;
-    public final Drawable b;
-    public final Drawable c;
-    public final TextView d;
-    public final org.telegram.ui.Components.n6 e;
-    public SpannableString f;
-    public boolean h;
-    public int n;
-    public final org.telegram.ui.Components.c6 r;
+public final class l7 extends bb implements NotificationCenter.NotificationCenterDelegate {
+    public final FrameLayout X;
+    public l61 Y;
+    public boolean Z;
 
-    public l7(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.r = new org.telegram.ui.Components.c6(this, 0L, 500L, qr.h);
-        this.a = f6Var;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var), PorterDuff.Mode.SRC_IN));
-        this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
-        setWillNotDraw(false);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        wl.j(15.0f, 1, textView);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        addView(textView, w7.x5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(context, false, false, false);
-        this.e = n6Var;
-        n6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        n6Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-        n6Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(n6Var, w7.x5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
+    public l7(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, null, false, false, e6Var);
+        wl0 wl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        wl0Var.setPadding(i10, 0, i10, 0);
+        this.d.setOnItemClickListener(new ai.g(this, 24));
+        s4.j jVar = new s4.j();
+        jVar.m = false;
+        jVar.C = false;
+        jVar.o(qr.h);
+        jVar.n(350L);
+        this.d.setItemAnimator(jVar);
+        int i11 = org.telegram.ui.ActionBar.j6.d6;
+        setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
+        this.e.setTitle(LocaleController.getString(R.string.StarsBuy));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.X = frameLayout;
+        l90 l90Var = new l90(context, e6Var);
+        frameLayout.setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
+        l90Var.setTextSize(1, 12.0f);
+        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.B6, e6Var));
+        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, e6Var));
+        l90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsTOS), new w2(this, 7)));
+        l90Var.setGravity(17);
+        l90Var.setMaxWidth(ci.f4.a(l90Var.getText(), l90Var.getPaint()));
+        frameLayout.addView(l90Var, w7.y5.e(-2, -1, 17));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var));
+        this.containerView.addView(new r00(getContext()), w7.y5.c(-1.0f, -1));
+        l61 l61Var = this.Y;
+        if (l61Var != null) {
+            l61Var.N(false);
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.r.d(this.n, false);
-        float f7 = LocaleController.isRTL ? -1.0f : 1.0f;
-        float dp = AndroidUtilities.dp(24.0f);
-        float dp2 = AndroidUtilities.dp(24.0f);
-        float dp3 = AndroidUtilities.dp(2.5f);
-        float width = LocaleController.isRTL ? (getWidth() - AndroidUtilities.dp(19.0f)) - dp : AndroidUtilities.dp(19.0f);
-        for (int ceil = ((int) Math.ceil(d)) - 1; ceil >= 0; ceil--) {
-            float clamp = Utilities.clamp(d - ceil, 1.0f, 0.0f);
-            float f10 = (((ceil - 1) - (1.0f - clamp)) * dp3 * f7) + width;
-            float measuredHeight = (getMeasuredHeight() - dp2) / 2.0f;
-            int i10 = (int) f10;
-            int i11 = (int) measuredHeight;
-            int i12 = (int) (f10 + dp);
-            int i13 = (int) (measuredHeight + dp2);
-            Drawable drawable = this.b;
-            drawable.setBounds(i10, i11, i12, i13);
-            int i14 = (int) (clamp * 255.0f);
-            drawable.setAlpha(i14);
-            drawable.draw(canvas);
-            Drawable drawable2 = this.c;
-            drawable2.setBounds(i10, i11, i12, i13);
-            drawable2.setAlpha(i14);
-            drawable2.draw(canvas);
+    public static void P(l7 l7Var, int i10) {
+        x51 G;
+        l61 l61Var = l7Var.Y;
+        if (l61Var == null || (G = l61Var.G(i10 - 1)) == null) {
+            return;
         }
-        if (this.h) {
-            org.telegram.ui.ActionBar.f6 f6Var = this.a;
-            Paint G = f6Var != null ? f6Var.G("paintDivider") : null;
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.j6.k0;
+        l61 l61Var2 = l7Var.Y;
+        if (G.d == -1) {
+            l7Var.Z = !l7Var.Z;
+            l61Var2.N(true);
+            l7Var.d.w0(0, AndroidUtilities.dp(300.0f), null);
+        } else if (G.G(h7.class) && (G.G instanceof TL_stars.TL_starsTopupOption)) {
+            Activity findActivity = AndroidUtilities.findActivity(l7Var.getContext());
+            if (findActivity == null) {
+                findActivity = LaunchActivity.G1;
             }
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), G);
+            if (findActivity == null) {
+                return;
+            }
+            t5.y(l7Var.currentAccount, false).f(findActivity, (TL_stars.TL_starsTopupOption) G.G, new ai.m0(26, l7Var, G), null);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    public static void Q(l7 l7Var, x51 x51Var, Boolean bool, String str) {
+        if (l7Var.getContext() == null) {
+            return;
+        }
+        l7Var.dismiss();
+        t5.y(l7Var.currentAccount, false).T(true);
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        if (U == null) {
+            return;
+        }
+        if (bool.booleanValue()) {
+            xc.a0(U).M(LocaleController.getString(R.string.StarsAcquired), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsAcquiredInfo", (int) x51Var.B, new Object[0])), R.raw.stars_topup).j();
+            LaunchActivity launchActivity = LaunchActivity.G1;
+            if (launchActivity != null) {
+                launchActivity.x0.c(true);
+                return;
+            }
+            return;
+        }
+        if (str != null) {
+            hg.k0.p(R.string.UnknownErrorCode, new Object[]{str}, xc.a0(U), R.raw.error, 36);
+        }
+    }
+
+    public final void R(ArrayList arrayList, l61 l61Var) {
+        com.google.android.gms.internal.vision.e2.n(R.string.TelegramStarsChoose, arrayList);
+        ArrayList z10 = t5.y(this.currentAccount, false).z();
+        if (z10 == null || z10.isEmpty()) {
+            arrayList.add(x51.n(31));
+            arrayList.add(x51.n(31));
+            arrayList.add(x51.n(31));
+            arrayList.add(x51.n(31));
+            arrayList.add(x51.n(31));
+        } else {
+            int i10 = 0;
+            int i11 = 1;
+            for (int i12 = 0; i12 < z10.size(); i12++) {
+                TL_stars.TL_starsTopupOption tL_starsTopupOption = (TL_stars.TL_starsTopupOption) z10.get(i12);
+                if (!tL_starsTopupOption.extended || this.Z) {
+                    arrayList.add(h7.a(i12, i11, tL_starsTopupOption));
+                    i11++;
+                } else {
+                    i10++;
+                }
+            }
+            boolean z11 = this.Z;
+            if (!z11 && i10 > 0) {
+                String string = LocaleController.getString(z11 ? R.string.NotifyLessOptions : R.string.NotifyMoreOptions);
+                boolean z12 = !this.Z;
+                int i13 = d7.a;
+                x51 J = x51.J(d7.class);
+                J.d = -1;
+                J.l = string;
+                J.f = z12;
+                J.q = true;
+                arrayList.add(J);
+            }
+        }
+        arrayList.add(x51.k(this.X));
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        l61 l61Var;
+        if ((i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) && (l61Var = this.Y) != null) {
+            l61Var.N(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        lk lkVar;
+        long j3 = t5.y(this.currentAccount, false).p().amount;
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        if (R instanceof zn) {
+            zn znVar = (zn) R;
+            if (znVar.x9() && (lkVar = znVar.Y) != null) {
+                lkVar.P();
+            }
+        }
+        super.show();
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starOptionsLoaded);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final vl0 v(wl0 wl0Var) {
+        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 29), this.resourcesProvider);
+        this.Y = l61Var;
+        l61Var.r = false;
+        return l61Var;
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.StarsBuy);
     }
 }

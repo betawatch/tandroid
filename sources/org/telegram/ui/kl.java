@@ -1,85 +1,97 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class kl extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ bo c;
+public final class kl implements mm {
+    public final /* synthetic */ zn a;
+    public final /* synthetic */ zn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kl(bo boVar, Activity activity) {
-        super(activity);
-        this.c = boVar;
-        setOnLongClickListener(new u(this, 2));
+    public kl(zn znVar, zn znVar2) {
+        this.b = znVar;
+        this.a = znVar2;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        bo boVar = this.c;
-        if (view == boVar.z2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.k5[] k5VarArr = boVar.D2;
-        if (view != k5VarArr[0] && view != k5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j3);
-            if (view == boVar.z2) {
-                canvas.restore();
+    @Override // org.telegram.ui.mm
+    public final void S0(int i10) {
+        this.b.F(i10, 0, 0, 0, true, true);
+    }
+
+    @Override // org.telegram.ui.mm
+    public final void W(boolean z10, boolean z11) {
+        org.telegram.ui.Components.nb nbVar;
+        int i10;
+        zn znVar = this.b;
+        if (!z10) {
+            MessageObject messageObject = (MessageObject) znVar.J4.get(Integer.valueOf(znVar.L4));
+            if (messageObject == null) {
+                messageObject = (MessageObject) znVar.o6[0].get(znVar.L4);
             }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild2;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        bo boVar = this.c;
-        if (!boVar.A2) {
+            znVar.cc(messageObject);
             return;
         }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = boVar.H2;
-            if (i12 >= animatorSetArr.length) {
-                boVar.A2 = false;
-                return;
+        ArrayList arrayList = new ArrayList(znVar.H4);
+        ArrayList arrayList2 = new ArrayList(znVar.J4.values());
+        org.telegram.ui.Components.qc qcVar = null;
+        if (z11) {
+            i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
+            if (znVar.H4.isEmpty()) {
+                notificationsSettings.edit().remove("pin_" + znVar.T5).commit();
+            } else {
+                notificationsSettings.edit().putInt("pin_" + znVar.T5, ((Integer) znVar.H4.get(0)).intValue()).commit();
             }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
+            znVar.yc(0, true);
+        } else {
+            znVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(znVar.T5), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
         }
+        org.telegram.ui.Components.qc qcVar2 = znVar.A3;
+        if (qcVar2 != null) {
+            qcVar2.b();
+        }
+        znVar.B3 = true;
+        int i11 = znVar.C3 + 1;
+        znVar.C3 = i11;
+        boolean z12 = znVar.h4;
+        zn znVar2 = this.a;
+        int G8 = z12 ? znVar2.G8() : znVar.G8();
+        ArrayList arrayList3 = new ArrayList(znVar.h4 ? znVar2.H4 : znVar.H4);
+        org.telegram.messenger.y7 y7Var = new org.telegram.messenger.y7(this, z11, arrayList, arrayList2, G8, i11);
+        org.telegram.messenger.voip.l0 l0Var = new org.telegram.messenger.voip.l0(this, z11, arrayList3, i11);
+        xn xnVar = znVar.ea;
+        if (znVar.getParentActivity() == null) {
+            l0Var.run();
+        } else {
+            if (z11) {
+                org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(znVar.getParentActivity(), xnVar);
+                ncVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                ncVar.b.setText(LocaleController.getString(R.string.PinnedMessagesHidden));
+                ncVar.c.setText(LocaleController.getString(R.string.PinnedMessagesHiddenInfo));
+                nbVar = ncVar;
+            } else {
+                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(znVar.getParentActivity(), xnVar);
+                ybVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
+                ybVar.b.setText(LocaleController.formatPluralString("MessagesUnpinned", G8, new Object[0]));
+                nbVar = ybVar;
+            }
+            org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(znVar.getParentActivity(), xnVar, true);
+            ocVar.a = y7Var;
+            ocVar.b = l0Var;
+            nbVar.setButton(ocVar);
+            qcVar = org.telegram.ui.Components.qc.g(znVar, nbVar, 5000);
+        }
+        znVar.A3 = qcVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        bo boVar = this.c;
-        if (action == 1) {
-            boVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            boVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.mm
+    public final void s0(String str) {
+        this.b.da(str, false);
     }
 }

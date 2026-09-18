@@ -1,102 +1,76 @@
 package yh;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class z2 extends Drawable {
-    public Drawable g;
-    public int h;
-    public int i;
-    public final Paint b = new Paint(1);
-    public final Shader[] c = new Shader[2];
-    public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.c6 e = new org.telegram.ui.Components.c6(1.0f, new y2(this, 0), 0, 420, qr.h);
-    public final RectF f = new RectF();
-    public final int a = 1;
+public final class z2 extends View {
+    public final m3 a;
+    public final ImageReceiver b;
+    public final Drawable c;
 
-    public final void a(int i10, int i11) {
-        if (this.h == i10 && this.i == i11) {
-            return;
-        }
-        Shader[] shaderArr = this.c;
-        shaderArr[0] = shaderArr[1];
-        if (this.a == 0) {
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            float dp = AndroidUtilities.dp(340.0f);
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new RadialGradient(0.0f, 0.0f, dp, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        this.e.d(0.0f, true);
-        invalidateSelf();
+    public z2(Context context, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLObject tLObject) {
+        super(context);
+        m3 m3Var = new m3(this, tL_starGiftUnique, 60, 0.27f);
+        this.a = m3Var;
+        m3Var.t = 3;
+        h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
+        h9Var.p(tLObject);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
+        imageReceiver.setForUserOrChat(tLObject, h9Var);
+        Drawable mutate = context.getDrawable(R.drawable.chats_undo).mutate();
+        this.c = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.z6, false), PorterDuff.Mode.MULTIPLY));
+        mutate.setBounds(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        rectF.right = rectF.width() + rectF.left;
-        int i10 = 0;
-        float d = this.e.d(1.0f, false);
-        while (true) {
-            Shader[] shaderArr = this.c;
-            if (i10 >= shaderArr.length) {
-                break;
-            }
-            if (shaderArr[i10] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.25d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.d;
-                    matrix.reset();
-                    if (this.a == 1) {
-                        matrix.postTranslate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-                    } else {
-                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
-                    }
-                    shaderArr[i10].setLocalMatrix(matrix);
-                    Shader shader = shaderArr[i10];
-                    Paint paint = this.b;
-                    paint.setShader(shader);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
-                }
-            }
-            i10++;
-        }
-        if (this.g != null) {
-            canvas.save();
-            canvas.translate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-            j0.a(canvas, 0, this.g, rectF.width(), AndroidUtilities.dp(290.0f), 2.0f, 1.0f);
-            canvas.restore();
-        }
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b.onAttachedToWindow();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.b.onDetachedFromWindow();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int width = (getWidth() / 2) - (AndroidUtilities.dp(156.0f) / 2);
+        int height = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
+        int dp = AndroidUtilities.dp(60.0f) + width;
+        int dp2 = AndroidUtilities.dp(60.0f) + height;
+        m3 m3Var = this.a;
+        m3Var.setBounds(width, height, dp, dp2);
+        m3Var.draw(canvas);
+        canvas.save();
+        canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
+        this.c.draw(canvas);
+        canvas.restore();
+        float dp3 = AndroidUtilities.dp(60.0f);
+        float dp4 = AndroidUtilities.dp(60.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.setImageCoords(AndroidUtilities.dp(96.0f) + width, height, dp3, dp4);
+        imageReceiver.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
     }
 }

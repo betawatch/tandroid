@@ -12,69 +12,68 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qr;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
     public final Drawable b;
     public final Drawable c;
-    public final n6 d;
-    public final n6 e;
+    public final p6 d;
+    public final p6 e;
     public final TextView f;
     public final SpannableString h;
     public final SpannableString n;
     public TL_stars.TL_starsGiveawayOption r;
     public int s;
-    public final c6 v;
+    public final e6 v;
 
-    public w(Context context, f6 f6Var) {
+    public w(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.v = new c6(this, 0L, 500L, qr.h);
+        this.v = new e6(this, 0L, 500L, qr.h);
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
         this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.h5, f6Var), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.h5, e6Var), PorterDuff.Mode.SRC_IN));
         this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
         setWillNotDraw(false);
-        n6 n6Var = new n6(context, false, false, false);
-        this.d = n6Var;
-        n6Var.setTextColor(j6.v0(j6.G6, f6Var));
-        n6Var.setTypeface(AndroidUtilities.bold());
-        n6Var.setTextSize(AndroidUtilities.dp(16.0f));
-        addView(n6Var, x5.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
+        p6 p6Var = new p6(context, false, false, false);
+        this.d = p6Var;
+        p6Var.setTextColor(j6.v0(j6.G6, e6Var));
+        p6Var.setTypeface(AndroidUtilities.bold());
+        p6Var.setTextSize(AndroidUtilities.dp(16.0f));
+        addView(p6Var, y5.d(-1, 20.0f, 51, 64.0f, 8.0f, 80.0f, 0.0f));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new h90(AndroidUtilities.dp(90.0f), n6Var), 0, 1, 33);
-        n6 n6Var2 = new n6(context, false, true, true);
-        this.e = n6Var2;
+        spannableString.setSpan(new q90(AndroidUtilities.dp(90.0f), p6Var), 0, 1, 33);
+        p6 p6Var2 = new p6(context, false, true, true);
+        this.e = p6Var2;
         int i10 = j6.z6;
-        n6Var2.setTextColor(j6.v0(i10, f6Var));
-        n6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(n6Var2, x5.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
+        p6Var2.setTextColor(j6.v0(i10, e6Var));
+        p6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        addView(p6Var2, y5.d(-1, 14.0f, 51, 64.0f, 31.0f, 80.0f, 0.0f));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new h90(AndroidUtilities.dp(70.0f), n6Var2), 0, 1, 33);
+        spannableString2.setSpan(new q90(AndroidUtilities.dp(70.0f), p6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        wl.n(i10, f6Var, textView, 1, 16.0f);
+        wh.m(i10, e6Var, textView, 1, 16.0f);
         textView.setGravity(5);
-        addView(textView, x5.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
+        addView(textView, y5.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(j6.v0(j6.j7, f6Var), j6.v0(j6.E5, f6Var));
-        addView(radioButton, x5.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
+        radioButton.b(j6.v0(j6.j7, e6Var), j6.v0(j6.E5, e6Var));
+        addView(radioButton, y5.d(20, 20.0f, 19, 22.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public TL_stars.TL_starsGiveawayOption getOption() {

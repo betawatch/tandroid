@@ -1,61 +1,27 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.KeyEvent;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fk0;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.xp0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class g2 implements xp0, fk0 {
-    public final /* synthetic */ KeyEvent.Callback a;
+public final class g2 extends ClickableSpan {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ y3 b;
 
-    public /* synthetic */ g2(KeyEvent.Callback callback) {
-        this.a = callback;
+    public g2(y3 y3Var, long j3) {
+        this.b = y3Var;
+        this.a = j3;
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public void h(View view, zg.p0 p0Var, boolean z10, boolean z11) {
-        zg.t tVar = (zg.t) this.a;
-        tVar.a.ab(null, tVar.e, tVar.b, view, 0.0f, 0.0f, p0Var, false, z10, z11, false);
-        AndroidUtilities.runOnUIThread(new y2(this, 8));
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.b.X1(this.a);
     }
 
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ boolean j() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.xp0
-    public void u0() {
-        oc k10 = ((a4) this.a).getBulletinFactory().k(false);
-        k10.t = true;
-        k10.j();
-    }
-
-    @Override // org.telegram.ui.Components.xp0
-    public /* synthetic */ void U() {
-    }
-
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.fk0
-    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(textPaint.linkColor);
     }
 }

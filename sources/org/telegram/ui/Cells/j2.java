@@ -1,70 +1,28 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.wy;
+import android.view.ViewGroup;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class j2 extends ai.ca {
-    public final /* synthetic */ r2 S;
+public final /* synthetic */ class j2 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(r2 r2Var) {
-        super(null, false);
-        this.S = r2Var;
+    public /* synthetic */ j2(ViewGroup viewGroup, int i10) {
+        this.a = i10;
+        this.b = viewGroup;
     }
 
-    @Override // ai.ca
-    public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.O0) ? false : true;
-    }
-
-    @Override // ai.ca
-    public final boolean d(long j3) {
-        r2 r2Var = this.S;
-        int i10 = r2Var.F0;
-        wy wyVar = r2Var.z4;
-        if (wyVar == null || r2Var.O0) {
-            return false;
-        }
-        if (j3 > 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-            if (user == null || user.linked_community_id == 0) {
-                return false;
-            }
-            wyVar.showDialog(new fi.k0(wyVar, user.linked_community_id));
-            return true;
-        }
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        wyVar.showDialog(new fi.k0(wyVar, chat.linked_community_id));
-        return true;
-    }
-
-    @Override // ai.ca
-    public final void e() {
-        r2 r2Var = this.S;
-        n2 n2Var = r2Var.d0;
-        if (n2Var == null) {
-            return;
-        }
-        n2Var.f(r2Var);
-    }
-
-    @Override // ai.ca
-    public final void f(long j3) {
-        r2 r2Var = this.S;
-        n2 n2Var = r2Var.d0;
-        if (n2Var == null) {
-            return;
-        }
-        if (r2Var.J0 != 0) {
-            n2Var.c();
-        } else {
-            n2Var.e(r2Var);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((s2) this.b).d0(true);
+                break;
+            default:
+                ((n4) this.b).c(true);
+                break;
         }
     }
 }

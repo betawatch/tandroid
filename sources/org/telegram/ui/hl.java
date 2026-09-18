@@ -1,37 +1,85 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ il b;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ hl(il ilVar, int i10) {
-        this.a = i10;
-        this.b = ilVar;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class hl extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ zn c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hl(zn znVar, Activity activity) {
+        super(activity);
+        this.c = znVar;
+        setOnLongClickListener(new u(this, 2));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                nk nkVar = this.b.H.Y;
-                if (nkVar != null) {
-                    nkVar.T0 = false;
-                    org.telegram.ui.Components.cg cgVar = nkVar.U0;
-                    if (cgVar != null) {
-                        cgVar.u(false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                nk nkVar2 = this.b.H.Y;
-                if (nkVar2 != null) {
-                    nkVar2.I0();
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        zn znVar = this.c;
+        if (view == znVar.z2) {
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
         }
+        org.telegram.ui.ActionBar.j5[] j5VarArr = znVar.D2;
+        if (view != j5VarArr[0] && view != j5VarArr[1]) {
+            boolean drawChild = super.drawChild(canvas, view, j3);
+            if (view == znVar.z2) {
+                canvas.restore();
+            }
+            return drawChild;
+        }
+        canvas.save();
+        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
+        boolean drawChild2 = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild2;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        zn znVar = this.c;
+        if (!znVar.A2) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            AnimatorSet[] animatorSetArr = znVar.H2;
+            if (i12 >= animatorSetArr.length) {
+                znVar.A2 = false;
+                return;
+            }
+            AnimatorSet animatorSet = animatorSetArr[i12];
+            if (animatorSet != null) {
+                animatorSet.start();
+            }
+            i12++;
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.a = motionEvent.getY();
+        int action = motionEvent.getAction();
+        zn znVar = this.c;
+        if (action == 1) {
+            znVar.finishPreviewFragment();
+        } else if (motionEvent.getAction() == 2) {
+            float f7 = this.b - this.a;
+            znVar.movePreviewFragment(f7);
+            if (f7 < 0.0f) {
+                this.b = this.a;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

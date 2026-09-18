@@ -12,42 +12,42 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.al0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class i9 extends org.telegram.ui.ActionBar.g3 implements NotificationCenter.NotificationCenterDelegate {
+public final class i9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
     public ArrayList c;
     public final TLRPC.InputPeer d;
     public final Utilities.Callback e;
-    public final ml0 f;
+    public final wl0 f;
     public final h9 h;
     public final TextView n;
 
-    public i9(Context context, final int i10, boolean z10, TLRPC.InputPeer inputPeer, final Utilities.Callback callback, final org.telegram.ui.ActionBar.f6 f6Var) {
-        super(1, context, f6Var, false);
+    public i9(Context context, final int i10, boolean z10, TLRPC.InputPeer inputPeer, final Utilities.Callback callback, final org.telegram.ui.ActionBar.e6 e6Var) {
+        super(1, context, e6Var, false);
         fixNavigationBar();
         MessagesController.getInstance(i10).getStoriesController().R();
         this.b = i10;
         this.c = MessagesController.getInstance(i10).getStoriesController().T;
         this.d = inputPeer;
         this.e = callback;
-        this.containerView = new f9(this, context, f6Var);
-        ml0 ml0Var = new ml0(context, f6Var);
-        this.f = ml0Var;
+        this.containerView = new f9(this, context, e6Var);
+        wl0 wl0Var = new wl0(context, e6Var);
+        this.f = wl0Var;
         int i11 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i11, 0, i11, 0);
+        wl0Var.setPadding(i11, 0, i11, 0);
         h9 h9Var = new h9(this);
         this.h = h9Var;
-        ml0Var.setAdapter(h9Var);
-        ml0Var.setLayoutManager(new s4.c0());
-        this.containerView.addView(ml0Var, w7.x5.e(-1, -1, 119));
-        ml0Var.setOnItemClickListener(new al0() { // from class: ci.e9
-            @Override // org.telegram.ui.Components.al0
+        wl0Var.setAdapter(h9Var);
+        wl0Var.setLayoutManager(new s4.c0());
+        this.containerView.addView(wl0Var, w7.y5.e(-1, -1, 119));
+        wl0Var.setOnItemClickListener(new kl0() { // from class: ci.e9
+            @Override // org.telegram.ui.Components.kl0
             public final void d(int i12, View view) {
                 if (i12 <= 1) {
                     return;
@@ -62,25 +62,25 @@ public final class i9 extends org.telegram.ui.ActionBar.g3 implements Notificati
                     return;
                 }
                 Context context2 = i9Var.getContext();
-                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-                org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(context2, 3, f6Var2);
-                c2Var.q(200L);
-                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new s7(c2Var, callback2, inputPeer2, 1), true, f6Var2);
+                org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
+                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context2, 3, e6Var2);
+                b2Var.q(200L);
+                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new s7(b2Var, callback2, inputPeer2, 1), true, e6Var2);
                 i9Var.dismiss();
             }
         });
-        ml0Var.setOnScrollListener(new g9(this));
+        wl0Var.setOnScrollListener(new g9(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        wl.n(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 20.0f);
+        wh.m(org.telegram.ui.ActionBar.j6.G6, e6Var, textView, 1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
-        textView.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
+        textView.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(z10 ? R.string.StoryPrivacyPublishLiveAs : R.string.StoryPrivacyPublishAs));
-        this.containerView.addView(textView, w7.x5.c(-2.0f, -1));
+        this.containerView.addView(textView, w7.y5.c(-2.0f, -1));
     }
 
-    @Override // org.telegram.ui.ActionBar.g3
+    @Override // org.telegram.ui.ActionBar.f3
     public final boolean canDismissWithSwipe() {
         return s() > ((float) ((int) (((float) AndroidUtilities.displaySize.y) * 0.5f)));
     }
@@ -110,11 +110,11 @@ public final class i9 extends org.telegram.ui.ActionBar.g3 implements Notificati
         float measuredHeight = this.containerView.getMeasuredHeight();
         int i10 = 0;
         while (true) {
-            ml0 ml0Var = this.f;
-            if (i10 >= ml0Var.getChildCount()) {
+            wl0 wl0Var = this.f;
+            if (i10 >= wl0Var.getChildCount()) {
                 return measuredHeight;
             }
-            View childAt = ml0Var.getChildAt(i10);
+            View childAt = wl0Var.getChildAt(i10);
             if (childAt != null && (S = RecyclerView.S(childAt)) != -1 && S > 0) {
                 measuredHeight = Math.min(AndroidUtilities.lerp(measuredHeight, childAt.getY(), childAt.getAlpha()), measuredHeight);
             }

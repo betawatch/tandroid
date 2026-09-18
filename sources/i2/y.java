@@ -2,9 +2,9 @@ package i2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y implements e2.m, m4.f1 {
+public final /* synthetic */ class y implements e2.m, m4.e1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ List b;
 
@@ -13,8 +13,8 @@ public final /* synthetic */ class y implements e2.m, m4.f1 {
         this.b = a1Var;
     }
 
-    @Override // m4.f1
-    public Object h(m4.a0 a0Var, m4.r rVar, int i10) {
+    @Override // m4.e1
+    public Object i(m4.a0 a0Var, m4.r rVar, int i10) {
         switch (this.a) {
         }
         return a0Var.l(rVar, this.b);

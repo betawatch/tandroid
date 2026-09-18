@@ -6,7 +6,7 @@ import android.webkit.WebChromeClient;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class o1 extends WebChromeClient {
     public final /* synthetic */ int a;
@@ -77,18 +77,18 @@ public final class o1 extends WebChromeClient {
                 } else {
                     h4Var.O = view;
                     h4Var.S = customViewCallback;
-                    AndroidUtilities.runOnUIThread(new ou0(this, 7), 100L);
+                    AndroidUtilities.runOnUIThread(new mu0(this, 7), 100L);
                     break;
                 }
             default:
                 org.telegram.ui.Components.vu vuVar = (org.telegram.ui.Components.vu) this.b;
                 FrameLayout frameLayout = vuVar.e;
-                if (vuVar.d == null && !org.telegram.ui.Components.fg0.p0.P) {
+                if (vuVar.d == null && !org.telegram.ui.Components.pg0.p0.P) {
                     vuVar.I();
                     vuVar.d = view;
                     vuVar.getSheetContainer().setVisibility(4);
                     frameLayout.setVisibility(0);
-                    frameLayout.addView(view, w7.x5.c(-1.0f, -1));
+                    frameLayout.addView(view, w7.y5.c(-1.0f, -1));
                     vuVar.f = customViewCallback;
                     break;
                 } else {

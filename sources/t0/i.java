@@ -2,19 +2,26 @@ package t0;
 
 import android.content.ClipDescription;
 import android.net.Uri;
+import android.os.Build;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public interface i {
-    Uri c();
+public final class i {
+    public final h a;
 
-    void d();
+    public i(Uri uri, ClipDescription clipDescription, Uri uri2) {
+        if (Build.VERSION.SDK_INT >= 25) {
+            this.a = new g(uri, clipDescription, uri2);
+        } else {
+            this.a = new lf.i(uri, clipDescription, uri2, 26);
+        }
+    }
 
-    Uri f();
+    public final ClipDescription a() {
+        return this.a.getDescription();
+    }
 
-    ClipDescription getDescription();
-
-    Object l();
-
-    void p();
+    public i(g gVar) {
+        this.a = gVar;
+    }
 }

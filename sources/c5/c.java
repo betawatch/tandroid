@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class c extends b {
     public final Long A;
@@ -863,13 +863,13 @@ public class c extends b {
     }
 
     @Override // c5.b
-    public void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
-        if (f(new u(this, c0Var, mVar, 1), 30000L, new i9.s(5, this, c0Var), r(), e()) == null) {
+    public void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
+        if (f(new u(this, d0Var, mVar, 1), 30000L, new i9.s(5, this, d0Var), r(), e()) == null) {
             h u10 = u();
             y(25, 7, u10);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            c0Var.a(u10, new s(vVar, vVar));
+            d0Var.a(u10, new s(vVar, vVar));
         }
     }
 

@@ -1,157 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class h51 extends mw0 {
-    public final int a = UserConfig.selectedAccount;
-    public boolean b = false;
-    public final float[] c = new float[3];
-    public final float[] d = {0.0f, 150.0f, 300.0f};
-    public final float[] e = {0.0f, 0.0f, 0.0f};
-    public long f = 0;
-    public boolean g = false;
-    public final DecelerateInterpolator h = new DecelerateInterpolator();
-    public boolean i;
-    public final Paint j;
+public final class h51 {
+    public final /* synthetic */ q51 a;
+    public final /* synthetic */ t51 b;
 
-    public h51(boolean z10) {
+    public h51(t51 t51Var, q51 q51Var) {
+        this.b = t51Var;
+        this.a = q51Var;
+    }
+
+    public final int a() {
+        return this.b.s.v;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        t51 t51Var = this.b;
+        j51 j51Var = t51Var.n;
         if (z10) {
-            this.j = new Paint(1);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final void b(int i10) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final void c(boolean z10) {
-        this.b = z10;
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final void d() {
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp;
-        int i10;
-        int i11 = getBounds().left;
-        if (this.b) {
-            dp = AndroidUtilities.dp(8.5f);
-            i10 = getBounds().top;
-        } else {
-            dp = AndroidUtilities.dp(9.3f);
-            i10 = getBounds().top;
-        }
-        int i12 = dp + i10;
-        Paint paint = this.j;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.j6.c2;
-            paint.setAlpha(255);
-        }
-        float dp2 = AndroidUtilities.dp(3.0f) + i11;
-        float f7 = i12;
-        float[] fArr = this.c;
-        canvas.drawCircle(dp2, f7, fArr[0] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(9.0f) + i11, f7, fArr[1] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(15.0f) + i11, f7, fArr[2] * AndroidUtilities.density, paint);
-        f();
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final void e() {
-        for (int i10 = 0; i10 < 3; i10++) {
-            this.e[i10] = 0.0f;
-            this.c[i10] = 1.33f;
-        }
-        float[] fArr = this.d;
-        fArr[0] = 0.0f;
-        fArr[1] = 150.0f;
-        fArr[2] = 300.0f;
-        this.g = false;
-    }
-
-    public final void f() {
-        if (this.g) {
-            if (NotificationCenter.getInstance(this.a).isAnimationInProgress() && !this.i) {
-                AndroidUtilities.runOnUIThread(new kq0(this, 26), 100L);
+            s4.h0 adapter = j51Var.getAdapter();
+            gg.g2 g2Var = t51Var.v;
+            if (adapter != g2Var) {
+                j51Var.setAdapter(g2Var);
+                if (j51Var.getAdapter().h() <= 0) {
+                    t51Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-j51Var.getPaddingTop()) + t51Var.E, false);
+                    return;
+                }
                 return;
             }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = currentTimeMillis - this.f;
-            this.f = currentTimeMillis;
-            if (j3 > 50) {
-                j3 = 50;
-            }
-            for (int i10 = 0; i10 < 3; i10++) {
-                float[] fArr = this.e;
-                float f7 = fArr[i10] + j3;
-                fArr[i10] = f7;
-                float[] fArr2 = this.d;
-                float f10 = f7 - fArr2[i10];
-                float[] fArr3 = this.c;
-                if (f10 > 0.0f) {
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f10 <= 320.0f) {
-                        fArr3[i10] = decelerateInterpolator.getInterpolation(f10 / 320.0f) + 1.33f;
-                    } else if (f10 <= 640.0f) {
-                        fArr3[i10] = (1.0f - decelerateInterpolator.getInterpolation((f10 - 320.0f) / 320.0f)) + 1.33f;
-                    } else if (f10 >= 800.0f) {
-                        fArr[i10] = 0.0f;
-                        fArr2[i10] = 0.0f;
-                        fArr3[i10] = 1.33f;
-                    } else {
-                        fArr3[i10] = 1.33f;
-                    }
-                } else {
-                    fArr3[i10] = 1.33f;
-                }
-            }
-            a();
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColorFilter(colorFilter);
+        if (z10) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+        s4.h0 adapter2 = j51Var.getAdapter();
+        s51 s51Var = t51Var.s;
+        if (adapter2 == s51Var) {
+            return;
+        }
+        j51Var.setAdapter(s51Var);
+        if (j51Var.getAdapter().h() <= 0) {
+        }
     }
 }

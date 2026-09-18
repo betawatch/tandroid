@@ -1,61 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y61 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class y61 extends NestedScrollView {
+    public boolean W;
+    public final /* synthetic */ z61 a0;
 
-    public /* synthetic */ y61(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y61(z61 z61Var, Context context) {
+        super(context);
+        this.a0 = z61Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                h71 h71Var = (h71) this.b;
-                i2.e0 e0Var = h71Var.d;
-                if (e0Var != null) {
-                    TextureView textureView = h71Var.n;
-                    e0Var.B1();
-                    if (textureView != null && textureView == e0Var.V) {
-                        e0Var.B1();
-                        e0Var.o1();
-                        e0Var.t1(null);
-                        e0Var.m1(0, 0);
-                    }
-                    h71Var.d.v1(h71Var.n);
-                    ArrayList arrayList = h71Var.N;
-                    if (arrayList != null) {
-                        h71Var.F(arrayList, h71Var.O);
-                    } else if (h71Var.U) {
-                        h71Var.G(h71Var.Q, h71Var.S, h71Var.R, h71Var.T);
-                    } else {
-                        h71Var.D(h71Var.Q, h71Var.S);
-                    }
-                    h71Var.C();
-                    break;
-                }
-                break;
-            case 1:
-                h71 h71Var2 = ((g71) this.b).f;
-                h71Var2.a0.removeCallbacksAndMessages(null);
-                h71Var2.K.onVisualizerUpdate(false, true, null);
-                break;
-            case 2:
-                ((j71) this.b).g = false;
-                break;
-            case 3:
-                ((d91) ((j50) ((org.telegram.ui.Cells.fa) this.b).b).b).v.b();
-                break;
-            default:
-                ((z81) this.b).d(false, true);
-                break;
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        z61.m(this.a0);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
+    
+        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
+     */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        z61 z61Var = this.a0;
+        measureChildWithMargins(z61Var.f, i10, 0, i11, 0);
+        int measuredHeight = z61Var.f.getMeasuredHeight();
+        int i12 = (size / 5) * 2;
+        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
         }
+        i12 = size - measuredHeight;
+        if (i12 < 0) {
+            i12 = 0;
+        }
+        if (getPaddingTop() != i12) {
+            this.W = true;
+            setPadding(0, i12, 0, 0);
+            this.W = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        super.onScrollChanged(i10, i11, i12, i13);
+        z61.m(this.a0);
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W) {
+            return;
+        }
+        super.requestLayout();
     }
 }

@@ -10,13 +10,13 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.zk0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class p1 extends ml0 {
-    public pk0 X2;
+public final class p1 extends wl0 {
+    public zk0 X2;
     public boolean Y2;
     public float Z2;
     public float a3;
@@ -57,7 +57,7 @@ public final class p1 extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -108,7 +108,7 @@ public final class p1 extends ml0 {
                     int y3 = this.b3 ? (int) o1Var.getY() : o1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.z(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.v(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(o1Var);
@@ -151,7 +151,7 @@ public final class p1 extends ml0 {
                     n1Var = new n1(this);
                     n1Var.l(7);
                 } else {
-                    n1Var = (n1) hg.k0.z(1, arrayList2);
+                    n1Var = (n1) hg.k0.v(1, arrayList2);
                 }
                 n1Var.M = S;
                 n1Var.e();
@@ -198,10 +198,10 @@ public final class p1 extends ml0 {
         super.setLayoutManager(o0Var);
         this.X2 = null;
         if (o0Var instanceof s4.c0) {
-            pk0 pk0Var = new pk0(this, (s4.c0) o0Var);
-            this.X2 = pk0Var;
-            pk0Var.i = new l1(this, 0);
-            pk0Var.h = new a1.c(this, 15);
+            zk0 zk0Var = new zk0(this, (s4.c0) o0Var);
+            this.X2 = zk0Var;
+            zk0Var.i = new l1(this, 0);
+            zk0Var.h = new a1.c(this, 15);
         }
     }
 }

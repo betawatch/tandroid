@@ -13,13 +13,13 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.yd;
+import org.telegram.ui.Components.ae;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dj0;
-import org.telegram.ui.sf;
+import org.telegram.ui.cj0;
+import org.telegram.ui.rf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 break;
             case 2:
                 ((w7) this.b).dismiss();
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.showDialog(new rg.x0(R, 14, false));
                     break;
@@ -97,13 +97,13 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 }
                 break;
             case 13:
-                ((sf) this.b).run();
+                ((rf) this.b).run();
                 break;
             case 14:
-                ((sf) this.b).run();
+                ((rf) this.b).run();
                 break;
             case 15:
-                ChatActivityEnterView.h(((yd) ((ei.p0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                ChatActivityEnterView.h(((ae) ((ei.p0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 16:
                 ((i5) this.b).run();
@@ -145,28 +145,28 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 23:
                 gg.g2 g2Var = (gg.g2) this.b;
                 LongSparseArray longSparseArray = g2Var.n;
-                org.telegram.ui.Cells.r3 r3Var = (org.telegram.ui.Cells.r3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = r3Var.getStickerSet();
+                org.telegram.ui.Cells.s3 s3Var = (org.telegram.ui.Cells.s3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = s3Var.getStickerSet();
                 if (stickerSet != null && g2Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
-                    if (!r3Var.r) {
-                        g2Var.F(stickerSet, r3Var);
+                    if (!s3Var.r) {
+                        g2Var.F(stickerSet, s3Var);
                         break;
                     } else {
                         longSparseArray.put(stickerSet.set.id, stickerSet);
-                        g2Var.e.a.h(r3Var.getStickerSet());
+                        g2Var.e.a.h(s3Var.getStickerSet());
                         break;
                     }
                 }
                 break;
             case 24:
                 hg.e eVar2 = (hg.e) this.b;
-                org.telegram.ui.Components.n6 n6Var = eVar2.f;
+                org.telegram.ui.Components.p6 p6Var = eVar2.f;
                 int i10 = eVar2.a;
                 boolean z10 = eVar2.r;
                 eVar2.r = !z10;
                 eVar2.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
-                n6Var.a();
-                n6Var.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                p6Var.a();
+                p6Var.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
                 if (eVar2.r) {
                     eVar2.w |= 1;
                 } else {
@@ -182,7 +182,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 TL_account.TL_businessChatLink tL_businessChatLink = ((hg.t) this.b).f;
                 if (tL_businessChatLink != null) {
                     AndroidUtilities.addToClipboard(tL_businessChatLink.link);
-                    vc.a0(LaunchActivity.R()).k(false).j();
+                    xc.a0(LaunchActivity.R()).k(false).j();
                     break;
                 }
                 break;
@@ -192,9 +192,9 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 27:
                 ii.r rVar = (ii.r) this.b;
                 rVar.I(0, true, 0, false, 0L);
-                dj0 dj0Var = rVar.O;
-                if (dj0Var != null) {
-                    dj0Var.h(true);
+                cj0 cj0Var = rVar.O;
+                if (cj0Var != null) {
+                    cj0Var.h(true);
                     rVar.O = null;
                     break;
                 }
@@ -225,7 +225,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 ii.o4 o4Var = (ii.o4) this.b;
                 ii.a aVar2 = o4Var.a;
                 if (aVar2 != null && (m4Var = o4Var.G) != null) {
-                    ((ii.s3) m4Var).a.h3.q(aVar2);
+                    ((ii.s3) m4Var).a.h3.p(aVar2);
                     break;
                 }
                 break;

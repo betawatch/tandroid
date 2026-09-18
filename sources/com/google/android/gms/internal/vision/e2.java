@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e2 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -106,9 +106,9 @@ public abstract /* synthetic */ class e2 {
         return str + str2 + str3 + str4;
     }
 
-    public static wk0 k(View view, View view2, int i10, int i11) {
+    public static gl0 k(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new s4.p0(i10, i11));
-        return new wk0(view2);
+        return new gl0(view2);
     }
 
     public static void l(float f7, int i10, TextView textView) {
@@ -121,7 +121,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void n(int i10, ArrayList arrayList) {
-        arrayList.add(j51.t(LocaleController.getString(i10)));
+        arrayList.add(x51.t(LocaleController.getString(i10)));
     }
 
     public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -161,7 +161,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void w(int i10, ArrayList arrayList) {
-        arrayList.add(j51.B(LocaleController.getString(i10)));
+        arrayList.add(x51.B(LocaleController.getString(i10)));
     }
 
     public static float x(float f7, float f10, float f11, float f12) {

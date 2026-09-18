@@ -1,124 +1,126 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class u41 extends org.telegram.ui.Components.za {
-    public final LinearLayout X;
-    public org.telegram.ui.Components.x51 Y;
+public final /* synthetic */ class u41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public u41(Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.ny nyVar) {
-        super(context, null, false, false, f6Var);
-        fixNavigationBar();
-        this.v = 0.2f;
-        Paint paint = new Paint(1);
-        paint.setStyle(Paint.Style.FILL);
-        int i10 = org.telegram.ui.ActionBar.j6.Oh;
-        paint.setColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.X = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(6.0f) + this.backgroundPaddingLeft, 0);
-        linearLayout.setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.bj0 bj0Var = new org.telegram.ui.Components.bj0(getContext());
-        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        bj0Var.setImageResource(R.drawable.large_ads_info);
-        bj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        bj0Var.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-        frameLayout.addView(bj0Var, w7.x5.d(80, 80.0f, 1, 0.0f, 20.0f, 0.0f, 0.0f));
-        linearLayout.addView(frameLayout, w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, 100));
-        TextView textView = new TextView(context);
-        textView.setText(LocaleController.getString(R.string.SearchAdsAboutTitle));
-        textView.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.messenger.wl.n(i11, f6Var, textView, 1, 20.0f);
-        textView.setGravity(1);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-2, -2, 1, 22, 14, 22, 0), context);
-        h.setText(LocaleController.getString(R.string.SearchAdsAboutSubtitle));
-        h.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        h.setTextSize(1, 14.0f);
-        h.setGravity(1);
-        linearLayout.addView(h, w7.x5.t(-2, -2, 1, 22, 8, 22, 0));
-        linearLayout.addView(new t41(this, context, R.drawable.menu_privacy, LocaleController.getString(R.string.SearchAdsAbout1Title), LocaleController.getString(R.string.SearchAdsAbout1Subtitle)), w7.x5.p(-1, -2, 0.0f, 0, 0, 20, 0, 0));
-        boolean isPremium = UserConfig.getInstance(this.currentAccount).isPremium();
-        linearLayout.addView(new t41(this, context, R.drawable.menu_feature_noads, LocaleController.getString(R.string.SearchAdsAbout2Title), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(isPremium ? R.string.SearchAdsAbout2SubtitlePremium : R.string.SearchAdsAbout2Subtitle), new dm0(this, isPremium, nyVar, 7)), true)), w7.x5.p(-1, -2, 0.0f, 0, 0, 16, 0, 0));
-        View view = new View(getContext());
-        view.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, f6Var));
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, 1);
-        layoutParams.setMargins(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(20.0f));
-        linearLayout.addView(view, layoutParams);
-        TextView textView2 = new TextView(context);
-        textView2.setText(LocaleController.getString(R.string.SearchAdsAboutLaunchTitle));
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        textView2.setTextSize(1, 20.0f);
-        textView2.setTextAlignment(4);
-        textView2.setGravity(17);
-        linearLayout.addView(textView2, w7.x5.t(-2, -2, 1, 22, 0, 22, 0));
-        SpannableStringBuilder replaceCharSequence = AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceTags(LocaleController.getString(R.string.SearchAdsAboutLaunchSubtitle)), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SearchAdsAboutLaunchLearnMore), new g01(this, 10)), true));
-        org.telegram.ui.Components.c90 c90Var = new org.telegram.ui.Components.c90(context, null);
-        c90Var.setText(replaceCharSequence);
-        c90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        c90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, f6Var));
-        c90Var.setTextSize(1, 14.0f);
-        c90Var.setGravity(1);
-        c90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        linearLayout.addView(c90Var, w7.x5.t(-2, -2, 1, 26, 8, 26, 0));
-        TextView textView3 = new TextView(context);
-        textView3.setLines(1);
-        textView3.setSingleLine(true);
-        textView3.setGravity(17);
-        textView3.setEllipsize(TextUtils.TruncateAt.END);
-        textView3.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Sh, f6Var));
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextSize(1, 14.0f);
-        textView3.setText(LocaleController.getString(R.string.SearchAdsAboutUnderstood));
-        textView3.setBackground(org.telegram.ui.ActionBar.z5.e(new float[]{24.0f}, org.telegram.ui.ActionBar.j6.v0(i10, f6Var)));
-        textView3.setOnClickListener(new i41(this, 2));
-        linearLayout.addView(textView3, w7.x5.t(-1, 48, 0, 14, 22, 14, 14));
-        this.Y.N(false);
+    public /* synthetic */ u41(SecretMediaViewer secretMediaViewer, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 
-    public static void P(u41 u41Var, boolean z10, org.telegram.ui.Components.ny nyVar) {
-        if (z10) {
-            MessagesController.getInstance(u41Var.currentAccount).disableAds(true);
-            nyVar.run();
-        } else {
-            org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-            if (U == null) {
-                return;
-            } else {
-                U.presentFragment(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(3)));
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = 4;
+        SecretMediaViewer secretMediaViewer = this.b;
+        switch (i10) {
+            case 0:
+                secretMediaViewer.K0 = null;
+                secretMediaViewer.m0 = 0;
+                secretMediaViewer.e.setLayerType(0, null);
+                secretMediaViewer.e.setVisibility(4);
+                secretMediaViewer.s = false;
+                secretMediaViewer.N = null;
+                secretMediaViewer.M = false;
+                secretMediaViewer.i();
+                new ArrayList();
+                AndroidUtilities.runOnUIThread(new u41(secretMediaViewer, i11), 50L);
+                break;
+            case 1:
+                ci.n6 n6Var = secretMediaViewer.e;
+                if (n6Var != null) {
+                    n6Var.setLayerType(0, null);
+                    secretMediaViewer.e.setVisibility(4);
+                    secretMediaViewer.m0 = 0;
+                    secretMediaViewer.s = false;
+                    secretMediaViewer.N = null;
+                    secretMediaViewer.M = false;
+                    secretMediaViewer.i();
+                    new ArrayList();
+                    AndroidUtilities.runOnUIThread(new u41(secretMediaViewer, i11), 50L);
+                    secretMediaViewer.e.setScaleX(1.0f);
+                    secretMediaViewer.e.setScaleY(1.0f);
+                    break;
+                }
+                break;
+            case 2:
+                a51 a51Var = secretMediaViewer.y;
+                if (a51Var != null) {
+                    long n10 = a51Var.n();
+                    long p5 = secretMediaViewer.y.p();
+                    if (p5 == -9223372036854775807L) {
+                        n10 = 0;
+                        p5 = 0;
+                    }
+                    if (p5 > 0) {
+                        org.telegram.ui.Components.w71 w71Var = secretMediaViewer.Q;
+                        if (!w71Var.f) {
+                            w71Var.h(n10 / p5, false);
+                            secretMediaViewer.R.invalidate();
+                        }
+                    }
+                    int[] iArr = secretMediaViewer.j1;
+                    Arrays.fill(iArr, 0);
+                    int[] iArr2 = secretMediaViewer.k1;
+                    Arrays.fill(iArr2, 0);
+                    a51 a51Var2 = secretMediaViewer.y;
+                    if (a51Var2 != null) {
+                        long max = Math.max(0L, a51Var2.n()) / 1000;
+                        long max2 = Math.max(0L, secretMediaViewer.y.p()) / 1000;
+                        iArr[0] = (int) (max / 60);
+                        iArr[1] = (int) (max % 60);
+                        iArr2[0] = (int) (max2 / 60);
+                        iArr2[1] = (int) (max2 % 60);
+                    }
+                    int i12 = iArr[0];
+                    String format = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr[1]));
+                    int i13 = iArr2[0];
+                    String format2 = i13 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i13 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i13), Integer.valueOf(iArr2[1]));
+                    org.telegram.ui.ActionBar.j5 j5Var = secretMediaViewer.S;
+                    Locale locale = Locale.ROOT;
+                    j5Var.l(format + " / " + format2, false);
+                    if (secretMediaViewer.y.y()) {
+                        AndroidUtilities.runOnUIThread(secretMediaViewer.i1, 17L);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                secretMediaViewer.m(false, true);
+                break;
+            default:
+                ImageReceiver.BitmapHolder bitmapHolder = secretMediaViewer.i0;
+                if (bitmapHolder != null) {
+                    bitmapHolder.release();
+                    secretMediaViewer.i0 = null;
+                }
+                secretMediaViewer.h.setImageBitmap((Bitmap) null);
+                try {
+                    if (secretMediaViewer.d.getParent() != null) {
+                        ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                secretMediaViewer.j0 = false;
+                break;
         }
-        u41Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final org.telegram.ui.Components.ll0 v(org.telegram.ui.Components.ml0 ml0Var) {
-        org.telegram.ui.Components.x51 x51Var = new org.telegram.ui.Components.x51(ml0Var, getContext(), this.currentAccount, 0, true, new b5(this, 21), this.resourcesProvider);
-        this.Y = x51Var;
-        return x51Var;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.AboutRevenueSharingAds);
+    public /* synthetic */ u41(SecretMediaViewer secretMediaViewer, dv0 dv0Var, int i10) {
+        this.a = i10;
+        this.b = secretMediaViewer;
     }
 }

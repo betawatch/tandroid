@@ -4,9 +4,9 @@ import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wo;
+import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements e2.h {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class l implements e2.h {
             case 0:
                 b0 b0Var = (b0) obj4;
                 a0 a0Var = (a0) obj2;
-                ((org.telegram.ui.ActionBar.c2) obj3).dismiss();
+                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
                 if (((Boolean) obj).booleanValue()) {
                     ci.oc E = ci.oc.E(b0Var.e0.getParentActivity(), b0Var.f);
                     E.N = j3;
@@ -68,7 +68,7 @@ public final /* synthetic */ class l implements e2.h {
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj2;
                 ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
                 if (canApplyBoost != null) {
-                    org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                     j jVar = l9Var2.j(j3) ? new j(l9Var2, j3, 3) : null;
                     int i11 = rg.j0.V0;
                     if (R != null && tL_premium_boostsStatus2 != null && R.getContext() != null) {
@@ -86,10 +86,10 @@ public final /* synthetic */ class l implements e2.h {
                     break;
                 }
             case 3:
-                wo.X((wo) obj4, (org.telegram.ui.ActionBar.c2) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                uo.X((uo) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                yh.a4.d0((yh.a4) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
+                yh.y3.d0((yh.y3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
         }
     }

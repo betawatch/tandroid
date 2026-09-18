@@ -10,18 +10,18 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.gg0;
+import org.telegram.ui.Components.qg0;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class qb extends r6 {
     public final /* synthetic */ oc A2;
     public boolean z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qb(oc ocVar, Context context, boolean z10, File file, boolean z11, boolean z12, nc ncVar, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, o8 o8Var, int i12, int i13, MediaController.CropState cropState, org.telegram.ui.Components.ha haVar, ai.d dVar, c7 c7Var, cc ccVar) {
-        super(context, z10, file, z11, z12, ncVar, activity, i10, bitmap, bitmap2, i11, arrayList, o8Var, i12, i13, cropState, haVar, dVar, c7Var, ccVar);
+    public qb(oc ocVar, Context context, boolean z10, File file, boolean z11, boolean z12, nc ncVar, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, o8 o8Var, int i12, int i13, MediaController.CropState cropState, org.telegram.ui.Components.ja jaVar, ai.d dVar, c7 c7Var, cc ccVar) {
+        super(context, z10, file, z11, z12, ncVar, activity, i10, bitmap, bitmap2, i11, arrayList, o8Var, i12, i13, cropState, jaVar, dVar, c7Var, ccVar);
         this.A2 = ocVar;
     }
 
@@ -140,13 +140,13 @@ public final class qb extends r6 {
         ocVar.c1.f.d();
         ocVar.l0(0, false, true);
         qg.j jVar = this.J0;
-        if (!(jVar instanceof qg.x2) || this.K0) {
+        if (!(jVar instanceof qg.u2) || this.K0) {
             return;
         }
-        qg.x2 x2Var = (qg.x2) jVar;
+        qg.u2 u2Var = (qg.u2) jVar;
         this.K0 = true;
-        x2Var.q();
-        View focusedView = x2Var.getFocusedView();
+        u2Var.q();
+        View focusedView = u2Var.getFocusedView();
         focusedView.requestFocus();
         AndroidUtilities.showKeyboard(focusedView);
     }
@@ -164,7 +164,7 @@ public final class qb extends r6 {
             ccVar.x(6, z10);
             s6 s6Var = ocVar.j1;
             if (s6Var != null) {
-                ((gg0) s6Var.c).a(ocVar.X0.k(), true);
+                ((qg0) s6Var.c).a(ocVar.X0.k(), true);
             }
         }
         ec ecVar = ocVar.c1;

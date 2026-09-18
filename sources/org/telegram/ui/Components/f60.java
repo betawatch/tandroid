@@ -1,27 +1,74 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.TextureView;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class f60 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ r60 b;
+public abstract class f60 extends FrameLayout {
+    public static volatile boolean c = true;
+    public c60 a;
+    public e60 b;
 
-    public f60(r60 r60Var, s4.c0 c0Var) {
-        this.b = r60Var;
-        this.a = c0Var;
+    public static void setUseCamera2Implementation(boolean z10) {
+        c = z10;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        r60 r60Var = this.b;
-        r60.O(r60Var);
-        if (!r60Var.R || r60Var.Q) {
+    public abstract void a(boolean z10);
+
+    public abstract void b(float f7, int i10);
+
+    public final void c(float f7, float f10) {
+        org.telegram.ui.lk lkVar;
+        j81 j81Var;
+        e60 e60Var = this.b;
+        if (e60Var == null || (lkVar = ((org.telegram.ui.qe) e60Var).b.Y) == null || (j81Var = lkVar.f1) == null) {
             return;
         }
-        if (r60Var.S - this.a.N0() < 10) {
-            r60Var.X();
-        }
+        float max = Math.max(0.0f, Math.min(1.0f, f7));
+        j81Var.b = max;
+        j81Var.c = Math.max(max, Math.min(1.0f, f10));
+        j81Var.invalidate();
+    }
+
+    public abstract void d(boolean z10);
+
+    public abstract boolean e();
+
+    public abstract void f(float f7);
+
+    public abstract void g(int i10, int i11, int i12, long j3, long j10, boolean z10);
+
+    public abstract View getButtonsLayout();
+
+    public abstract d60 getCameraContainer();
+
+    public abstract RectF getCameraRect();
+
+    public abstract View getMuteImageView();
+
+    public abstract Paint getPaint();
+
+    public abstract TextureView getTextureView();
+
+    public abstract void h(ah.c cVar, org.telegram.ui.ij ijVar);
+
+    public abstract void i(boolean z10);
+
+    public abstract void j();
+
+    public final void setAnimationCallback(c60 c60Var) {
+        this.a = c60Var;
+    }
+
+    public abstract void setInternalPadding(int i10);
+
+    public abstract void setIsMessageTransition(boolean z10);
+
+    public final void setTrimCallback(e60 e60Var) {
+        this.b = e60Var;
     }
 }

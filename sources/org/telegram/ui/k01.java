@@ -1,39 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class k01 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l01 b;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 
-    public /* synthetic */ k01(l01 l01Var, int i10) {
-        this.a = i10;
-        this.b = l01Var;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class k01 implements ci.fc {
+    public final /* synthetic */ ProfileActivity a;
+
+    public k01(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b.D0;
-                xz0 xz0Var = profileActivity.B5;
-                if (xz0Var != null) {
-                    xz0Var.dismiss();
-                    profileActivity.B5 = null;
-                    break;
-                }
-                break;
-            default:
-                try {
-                    org.telegram.ui.Components.ml0 currentListView = this.b.x0.O.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
+    @Override // ci.fc
+    public final ci.jc a(long j3) {
+        ProfileActivity profileActivity = this.a;
+        if (j3 != profileActivity.a()) {
+            return null;
         }
+        profileActivity.e0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.k2));
+        oz0 oz0Var = profileActivity.e0;
+        boolean isForum = ChatObject.isForum(profileActivity.E2);
+        if (oz0Var == null || oz0Var.getRootView() == null) {
+            return null;
+        }
+        float scaleX = ((View) oz0Var.getParent()).getScaleX();
+        float imageWidth = oz0Var.getImageReceiver().getImageWidth() * scaleX;
+        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
+        ci.hc hcVar = new ci.hc(oz0Var, 0);
+        float[] fArr = new float[2];
+        oz0Var.getRootView().getLocationOnScreen(new int[2]);
+        AndroidUtilities.getViewPositionInParent(oz0Var, (ViewGroup) oz0Var.getRootView(), fArr);
+        float imageX = (oz0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
+        float imageY = (oz0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
+        hcVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
+        hcVar.e = oz0Var.getImageReceiver();
+        hcVar.b = f7;
+        return hcVar;
+    }
+
+    @Override // ci.fc
+    public final void b(long j3, ai.j jVar) {
+        ProfileActivity profileActivity = this.a;
+        profileActivity.e0.setHasStories(profileActivity.j4());
+        if (j3 == profileActivity.a() && profileActivity.o2 && profileActivity.k2 > 0.0f) {
+            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
+            profileActivity.a.post(new zb0(profileActivity, 14));
+        }
+        AndroidUtilities.runOnUIThread(jVar, 30L);
     }
 }

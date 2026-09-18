@@ -1,38 +1,34 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.h01;
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class y6 extends ReplacementSpan {
-    public final Paint a;
-    public final h01 b;
-    public final /* synthetic */ int c;
+public final class y6 extends l61 {
+    public final /* synthetic */ v7 N;
 
-    public y6(int i10, String str) {
-        this.c = i10;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(org.telegram.ui.ActionBar.j6.l1(0.1f, i10));
-        this.b = new h01(str, 13.0f, AndroidUtilities.bold());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y6(v7 v7Var, wl0 wl0Var, Activity activity, int i10, int i11, hi.a aVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(wl0Var, activity, i10, i11, true, aVar, e6Var);
+        this.N = v7Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, (r12 - AndroidUtilities.dp(20.0f)) / 2.0f, AndroidUtilities.dp(12.0f) + f7 + this.b.c, (AndroidUtilities.dp(20.0f) + r12) / 2.0f);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.a);
-        int i15 = this.c;
-        this.b.c(f7 + AndroidUtilities.dp(6.0f), (i12 + i14) / 2.0f, 1.0f, i15, canvas);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(12.0f) + this.b.c);
+    @Override // org.telegram.ui.Components.l61, s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
+        }
+        v7 v7Var = this.N;
+        Activity parentActivity = v7Var.getParentActivity();
+        int i11 = org.telegram.ui.ActionBar.j6.L6;
+        e6Var = ((org.telegram.ui.ActionBar.n2) v7Var).resourceProvider;
+        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, e6Var);
+        m4Var.setHeight(25);
+        return new gl0(m4Var);
     }
 }

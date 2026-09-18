@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class wl implements CameraView.CameraViewDelegate {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -52,7 +52,7 @@ public final class wl implements CameraView.CameraViewDelegate {
         chatAttachAlertPhotoLayout.O = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.P, (Property<dm, Float>) View.ALPHA, 0.0f, 1.0f));
         chatAttachAlertPhotoLayout.O.setDuration(180L);
-        chatAttachAlertPhotoLayout.O.addListener(new p8(this, 9));
+        chatAttachAlertPhotoLayout.O.addListener(new r8(this, 9));
         chatAttachAlertPhotoLayout.O.start();
     }
 }

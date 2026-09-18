@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class ka implements Runnable {
                     ai.j jVar = new ai.j(ocVar, j14, 6);
                     fc fcVar = ocVar.x;
                     if (fcVar != null) {
-                        fcVar.d(j14, jVar);
+                        fcVar.b(j14, jVar);
                     } else {
                         jVar.run();
                     }
@@ -194,8 +194,8 @@ public final /* synthetic */ class ka implements Runnable {
                     if (qbVar != null && qbVar.R0 != null) {
                         while (r10 < ocVar.v1.R0.getChildCount()) {
                             View childAt = ocVar.v1.R0.getChildAt(r10);
-                            if (childAt instanceof qg.h1) {
-                                ((qg.h1) childAt).setupTheme(ocVar.K1);
+                            if (childAt instanceof qg.e1) {
+                                ((qg.e1) childAt).setupTheme(ocVar.K1);
                             }
                             r10++;
                         }
@@ -323,7 +323,7 @@ public final /* synthetic */ class ka implements Runnable {
                                 zcVar.G = true;
                                 sc scVar = zcVar.a;
                                 if (scVar != null) {
-                                    scVar.Q(true);
+                                    scVar.O(true);
                                     break;
                                 }
                             }
@@ -344,7 +344,7 @@ public final /* synthetic */ class ka implements Runnable {
             case 19:
                 nc ncVar2 = ocVar.n;
                 ai.d dVar = ocVar.a;
-                new org.telegram.ui.Components.vc(ncVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.j6.gc, 0, new ka(ocVar, 27), dVar)).k(true);
+                new org.telegram.ui.Components.xc(ncVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.j6.gc, 0, new ka(ocVar, 27), dVar)).k(true);
                 break;
             case 20:
                 ia iaVar = ocVar.q0;
@@ -398,11 +398,11 @@ public final /* synthetic */ class ka implements Runnable {
                 oc.F2 = null;
                 nc ncVar3 = ocVar.n;
                 if (ncVar3 != null) {
-                    org.telegram.ui.Components.oc.h(ncVar3);
+                    org.telegram.ui.Components.qc.h(ncVar3);
                 }
                 ai.f0 f0Var = ocVar.l0;
                 if (f0Var != null) {
-                    org.telegram.ui.Components.oc.h(f0Var);
+                    org.telegram.ui.Components.qc.h(f0Var);
                 }
                 bc bcVar3 = ocVar.A0;
                 if (bcVar3 != null) {

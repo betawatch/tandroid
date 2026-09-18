@@ -30,10 +30,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.x9;
+import org.telegram.ui.w9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -61,7 +61,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(2));
+        basePendingResult.b(new w9(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -269,7 +269,7 @@ public abstract class d {
             b = new AtomicInteger(0);
         }
         b.incrementAndGet();
-        e7.q(new c6.p(j3)).b(new x9(3));
+        e7.q(new c6.p(j3)).b(new w9(3));
     }
 
     public static void w(int i10, TextView textView) {
@@ -296,7 +296,7 @@ public abstract class d {
             } else {
                 basePendingResult2 = e6.h.t();
             }
-            basePendingResult2.b(new x9(0));
+            basePendingResult2.b(new w9(0));
             return;
         }
         n6.l.e("Must be called from the main thread.");
@@ -307,7 +307,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(1));
+        basePendingResult.b(new w9(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i10) {
@@ -333,6 +333,6 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(4));
+        basePendingResult.b(new w9(4));
     }
 }

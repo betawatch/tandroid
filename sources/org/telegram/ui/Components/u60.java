@@ -1,49 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class u60 extends zw0 {
-    public final /* synthetic */ int K;
+public final class u60 implements d90 {
+    public final /* synthetic */ v60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u60(Context context, View view, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(context, view, i10, f6Var);
-        this.K = i11;
+    public u60(v60 v60Var) {
+        this.a = v60Var;
     }
 
-    @Override // org.telegram.ui.Components.zw0, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.K) {
-            case 0:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            case 1:
-                super.onAttachedToWindow();
-                this.b.getImageReceiver().startAnimation();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+    @Override // org.telegram.ui.Components.d90
+    public final void c() {
+        a70 a70Var = this.a.c;
+        org.telegram.ui.ActionBar.n2 n2Var = a70Var.U;
+        if (n2Var instanceof org.telegram.ui.zh0) {
+            org.telegram.ui.zh0 zh0Var = (org.telegram.ui.zh0) n2Var;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = a70Var.b;
+            org.telegram.ui.yb0 yb0Var = new org.telegram.ui.yb0(1, zh0Var.n);
+            yb0Var.T = zh0Var.s0;
+            yb0Var.Y(tL_chatInviteExported);
+            zh0Var.presentFragment(yb0Var);
+        } else {
+            org.telegram.ui.yb0 yb0Var2 = new org.telegram.ui.yb0(1, a70Var.g0);
+            yb0Var2.Y(a70Var.b);
+            yb0Var2.T = new t60(this);
+            a70Var.U.presentFragment(yb0Var2);
         }
+        a70Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.zw0, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.K) {
-            case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    e(false, false);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
+    @Override // org.telegram.ui.Components.d90
+    public final void e() {
+        int i10;
+        int i11;
+        a70 a70Var = this.a.c;
+        org.telegram.ui.ActionBar.n2 n2Var = a70Var.U;
+        if (n2Var instanceof org.telegram.ui.zh0) {
+            ((org.telegram.ui.zh0) n2Var).e0(a70Var.b);
+        } else {
+            TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
+            tL_messages_editExportedChatInvite.link = a70Var.b.link;
+            tL_messages_editExportedChatInvite.revoked = true;
+            i10 = ((org.telegram.ui.ActionBar.f3) a70Var).currentAccount;
+            tL_messages_editExportedChatInvite.peer = MessagesController.getInstance(i10).getInputPeer(-a70Var.g0);
+            i11 = ((org.telegram.ui.ActionBar.f3) a70Var).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editExportedChatInvite, new s60(this, 0));
         }
+        a70Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.d90
+    public final void k() {
+        int i10;
+        int i11;
+        a70 a70Var = this.a.c;
+        org.telegram.ui.ActionBar.n2 n2Var = a70Var.U;
+        if (n2Var instanceof org.telegram.ui.zh0) {
+            ((org.telegram.ui.zh0) n2Var).b0(a70Var.b);
+        } else {
+            TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
+            tL_messages_deleteExportedChatInvite.link = a70Var.b.link;
+            i10 = ((org.telegram.ui.ActionBar.f3) a70Var).currentAccount;
+            tL_messages_deleteExportedChatInvite.peer = MessagesController.getInstance(i10).getInputPeer(-a70Var.g0);
+            i11 = ((org.telegram.ui.ActionBar.f3) a70Var).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(tL_messages_deleteExportedChatInvite, new s60(this, 1));
+        }
+        a70Var.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.d90
+    public final /* synthetic */ void j() {
     }
 }

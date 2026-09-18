@@ -9,6 +9,9 @@ import android.media.metrics.PlaybackMetrics;
 import android.media.metrics.PlaybackStateEvent;
 import android.media.metrics.TrackChangeEvent;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.view.View;
 import ii.a5;
@@ -24,6 +27,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
@@ -41,12 +45,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.id;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.x2;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,22 +63,20 @@ public final /* synthetic */ class x1 implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(12:132|(2:133|134)|(3:181|182|(10:184|185|(2:176|177)|138|(1:140)|141|142|143|(1:(1:146))(7:148|149|150|151|152|153|154)|147))|136|(0)|138|(0)|141|142|143|(0)(0)|147) */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x030f, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(13:154|155|156|(3:203|204|(10:206|207|(2:198|199)|160|(1:162)|163|164|165|(1:(1:168))(7:170|171|172|173|174|175|176)|169))|158|(0)|160|(0)|163|164|165|(0)(0)|169) */
+    /* JADX WARN: Code restructure failed: missing block: B:196:0x035e, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:175:0x0361, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x03b0, code lost:
     
         org.telegram.messenger.FileLog.e(r0);
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x036b  */
-    /* JADX WARN: Removed duplicated region for block: B:131:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:140:0x02db  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x0309  */
-    /* JADX WARN: Removed duplicated region for block: B:148:0x0311 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:176:0x02cd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x032a  */
+    /* JADX WARN: Removed duplicated region for block: B:167:0x0358  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0360 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x031c A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -157,16 +159,16 @@ public final /* synthetic */ class x1 implements Runnable {
                 fVar.d();
                 return;
             case 3:
-                hg.l0.R((hg.l0) this.b, (id) this.c);
+                hg.l0.R((hg.l0) this.b, (x2) this.c);
                 return;
             case 4:
                 MessagesController.getInstance(((hg.u0) this.b).currentAccount).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 5:
                 hg.g1 g1Var = (hg.g1) this.b;
-                j51 j51Var = (j51) this.c;
+                x51 x51Var = (x51) this.c;
                 g1Var.getClass();
-                g1Var.X(j51Var.d);
+                g1Var.X(x51Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -180,20 +182,20 @@ public final /* synthetic */ class x1 implements Runnable {
                         sQLitePreparedStatement2.bindInteger(3, a2Var2.c);
                         sQLitePreparedStatement2.bindInteger(4, a2Var2.f);
                         sQLitePreparedStatement2.step();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        if (sQLitePreparedStatement2 == null) {
-                            return;
+                    } catch (Throwable th2) {
+                        if (sQLitePreparedStatement2 != null) {
+                            sQLitePreparedStatement2.dispose();
                         }
+                        throw th2;
                     }
-                    sQLitePreparedStatement2.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement2 != null) {
-                        sQLitePreparedStatement2.dispose();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    if (sQLitePreparedStatement2 == null) {
+                        return;
                     }
-                    throw th2;
                 }
+                sQLitePreparedStatement2.dispose();
+                return;
             case 7:
                 hg.b2 b2Var = (hg.b2) this.b;
                 MessagesStorage messagesStorage2 = (MessagesStorage) this.c;
@@ -337,7 +339,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((h71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((u71) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -370,9 +372,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.P();
-                x51 x51Var = xVar.Z;
-                if (x51Var != null) {
-                    x51Var.N(true);
+                l61 l61Var = xVar.Z;
+                if (l61Var != null) {
+                    l61Var.N(true);
                     return;
                 }
                 return;
@@ -385,22 +387,12 @@ public final /* synthetic */ class x1 implements Runnable {
                     FileLog.e(e11);
                     str = null;
                 }
-                if (TextUtils.isEmpty(str) || !w.f.o(str)) {
+                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
                     try {
                         query = w3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e12) {
                         e = e12;
                         str2 = null;
-                        FileLog.e(e);
-                        if (TextUtils.isEmpty(str2)) {
-                        }
-                        String replace = str2.replace('/', '_').replace('\\', '_');
-                        openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                        if (openInputStream == null) {
-                        }
-                        str = str3;
-                        if (TextUtils.isEmpty(str)) {
-                        }
                     }
                     if (query != null) {
                         try {
@@ -414,9 +406,9 @@ public final /* synthetic */ class x1 implements Runnable {
                                         FileLog.e(e);
                                         if (TextUtils.isEmpty(str2)) {
                                         }
-                                        String replace2 = str2.replace('/', '_').replace('\\', '_');
+                                        String replace = str2.replace('/', '_').replace('\\', '_');
                                         openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                                        if (openInputStream == null) {
+                                        if (openInputStream != null) {
                                         }
                                         str = str3;
                                         if (TextUtils.isEmpty(str)) {
@@ -429,11 +421,11 @@ public final /* synthetic */ class x1 implements Runnable {
                                 if (TextUtils.isEmpty(str2)) {
                                     str2 = "document_" + SharedConfig.getLastLocalId();
                                 }
-                                String replace22 = str2.replace('/', '_').replace('\\', '_');
+                                String replace2 = str2.replace('/', '_').replace('\\', '_');
                                 openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                                if (openInputStream == null) {
+                                if (openInputStream != null) {
                                     try {
-                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace22);
+                                        File file = new File(FileLoader.getDirectory(4), "rich_document_" + Math.abs(uri.hashCode()) + "_" + replace2);
                                         FileOutputStream fileOutputStream = new FileOutputStream(file);
                                         try {
                                             AndroidUtilities.copyFile(openInputStream, fileOutputStream);
@@ -458,13 +450,13 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     if (TextUtils.isEmpty(str2)) {
                     }
-                    String replace222 = str2.replace('/', '_').replace('\\', '_');
+                    String replace22 = str2.replace('/', '_').replace('\\', '_');
                     openInputStream = w3Var.getContext().getContentResolver().openInputStream(uri);
-                    if (openInputStream == null) {
+                    if (openInputStream != null) {
                     }
                     str = str3;
                 }
-                if (TextUtils.isEmpty(str) || !w.f.o(str)) {
+                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
                     return;
                 }
                 AndroidUtilities.runOnUIThread(new x1(14, w3Var, str));
@@ -632,26 +624,53 @@ public final /* synthetic */ class x1 implements Runnable {
                 fVar2.q(p5, 1012, new j2.c(p5, str5, 27));
                 return;
             case 26:
-                ((k2.n) this.b).Y((k2.k) this.c);
+                ((k2.n) this.b).V((k2.k) this.c);
                 return;
             case 27:
-                ((i9.c0) this.c).m(Boolean.valueOf(((m4.a0) this.b).o()));
+                ki.g gVar = (ki.g) this.b;
+                HandlerThread handlerThread = (HandlerThread) this.c;
+                gVar.f();
+                ki.i iVar = gVar.s;
+                if (iVar != null) {
+                    iVar.o();
+                    gVar.s = null;
+                }
+                handlerThread.quitSafely();
                 return;
             case 28:
-                m4.a0 a0Var = (m4.a0) this.b;
-                Runnable runnable = (Runnable) this.c;
-                a0Var.getClass();
-                runnable.run();
+                ki.m mVar = (ki.m) this.b;
+                CountDownLatch countDownLatch = (CountDownLatch) this.c;
+                mVar.getClass();
+                try {
+                    try {
+                        mVar.c();
+                        mVar.T = true;
+                    } finally {
+                        countDownLatch.countDown();
+                    }
+                } catch (RuntimeException e14) {
+                    mVar.X = e14;
+                    mVar.d();
+                }
                 return;
             default:
-                ((m4.a0) this.b).u(null, (m4.k1) this.c);
+                ki.m mVar2 = (ki.m) this.b;
+                Handler handler = (Handler) this.c;
+                if (mVar2.T && mVar2.E == 0 && mVar2.B) {
+                    mVar2.u.f(mVar2.t, mVar2.p, false);
+                    mVar2.C = false;
+                    mVar2.D = false;
+                    mVar2.E = 1;
+                    long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+                    mVar2.F = elapsedRealtimeNanos;
+                    mVar2.G = elapsedRealtimeNanos;
+                    mVar2.d.b("synthetic camera switch started");
+                    mVar2.y = -1L;
+                    handler.removeCallbacks(mVar2.Y);
+                    handler.post(mVar2.Y);
+                    return;
+                }
                 return;
         }
-    }
-
-    public /* synthetic */ x1(m4.a0 a0Var, m4.r rVar, Runnable runnable) {
-        this.a = 28;
-        this.b = a0Var;
-        this.c = runnable;
     }
 }

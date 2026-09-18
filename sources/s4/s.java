@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.gv;
+import org.telegram.ui.fv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class s extends c0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new gv(1);
+        this.O = new fv(1);
         this.P = new Rect();
         y1(i10);
     }
@@ -190,7 +190,7 @@ public class s extends c0 {
                             } else {
                                 if (view4 == null) {
                                     i14 = i19;
-                                    if (!(this.c.v(q6) && this.d.v(q6))) {
+                                    if (!(this.c.H(q6) && this.d.H(q6))) {
                                         if (min <= i21) {
                                             if (min == i21) {
                                             }
@@ -329,7 +329,7 @@ public class s extends c0 {
             int i22 = a0Var.d;
             int v12 = v1(i22, eVar, z0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hg.k0.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a4.a.n(this.J, " spans.", hg.k0.k("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = a0Var.c(eVar)) == null) {
@@ -767,7 +767,7 @@ public class s extends c0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(hg.k0.i(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(hg.k0.h(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();
@@ -784,7 +784,7 @@ public class s extends c0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new gv(1);
+        this.O = new fv(1);
         this.P = new Rect();
         y1(i10);
     }

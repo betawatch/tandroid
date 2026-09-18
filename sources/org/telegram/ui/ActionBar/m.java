@@ -8,17 +8,17 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements le.k {
-    public final f6 a;
+    public final e6 a;
     public final com.google.firebase.messaging.m b;
     public final le.l c;
 
-    public m(Context context, f6 f6Var, com.google.firebase.messaging.m mVar) {
+    public m(Context context, e6 e6Var, com.google.firebase.messaging.m mVar) {
         super(context);
         this.c = new le.l(this, qr.h, 350L);
-        this.a = f6Var;
+        this.a = e6Var;
         this.b = mVar;
     }
 
@@ -44,16 +44,16 @@ public abstract class m extends FrameLayout implements le.k {
         }
         l lVar2 = new l(this, getContext());
         int i10 = j6.gl;
-        f6 f6Var = this.a;
-        lVar2.setTextColor(j6.v0(i10, f6Var));
-        lVar2.setLinkTextColor(j6.v0(i10, f6Var));
+        e6 e6Var = this.a;
+        lVar2.setTextColor(j6.v0(i10, e6Var));
+        lVar2.setLinkTextColor(j6.v0(i10, e6Var));
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
         if (z10) {
             mVar.c(lVar2);
         }
-        addView(lVar2, w7.x5.c(-2.0f, -2));
+        addView(lVar2, w7.y5.c(-2.0f, -2));
         lVar.i(lVar2, true);
     }
 
@@ -78,9 +78,9 @@ public abstract class m extends FrameLayout implements le.k {
             le.g gVar = (le.g) it.next();
             l lVar = (l) gVar.a;
             int i10 = j6.gl;
-            f6 f6Var = this.a;
-            lVar.setTextColor(j6.v0(i10, f6Var));
-            ((l) gVar.a).setLinkTextColor(j6.v0(i10, f6Var));
+            e6 e6Var = this.a;
+            lVar.setTextColor(j6.v0(i10, e6Var));
+            ((l) gVar.a).setLinkTextColor(j6.v0(i10, e6Var));
         }
     }
 

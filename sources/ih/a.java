@@ -13,13 +13,13 @@ import android.widget.ImageView;
 import le.d;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout implements d {
     public final le.b a;
@@ -27,7 +27,7 @@ public final class a extends FrameLayout implements d {
     public ImageView c;
     public ImageView d;
     public tp e;
-    public f6 f;
+    public e6 f;
     public float h;
     public ch.d n;
 
@@ -39,10 +39,10 @@ public final class a extends FrameLayout implements d {
         this.h = 1.0f;
     }
 
-    public static a c(c cVar, Context context, dh.a aVar, f6 f6Var) {
-        int v02 = j6.v0(j6.Wk, f6Var);
+    public static a c(c cVar, Context context, dh.a aVar, e6 e6Var) {
+        int v02 = j6.v0(j6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
@@ -52,10 +52,10 @@ public final class a extends FrameLayout implements d {
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, dh.a aVar, f6 f6Var, int i10, int i11) {
-        int v02 = j6.v0(j6.Wk, f6Var);
+    public static a d(Context context, c cVar, dh.a aVar, e6 e6Var, int i10, int i11) {
+        int v02 = j6.v0(j6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = f6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
         aVar2.setIconColor(v02);
@@ -130,7 +130,7 @@ public final class a extends FrameLayout implements d {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, x5.e(i11, i11, 17));
+            addView(this.c, y5.e(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);

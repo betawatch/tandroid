@@ -1,16 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s81 implements org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ Object a;
+public final class s81 extends s4.j {
+    public final /* synthetic */ w81 F;
 
-    public /* synthetic */ s81(Object obj) {
-        this.a = obj;
+    public s81(w81 w81Var) {
+        this.F = w81Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
-        ((hu) this.a).a.d.r();
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
     }
 }

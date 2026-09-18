@@ -18,10 +18,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.mg;
 import v7.d8;
 import v7.r1;
 import w7.j7;
@@ -33,7 +32,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -68,10 +67,10 @@ public final /* synthetic */ class v implements Runnable {
         String str;
         ua uaVar;
         la laVar = (la) this.b;
-        a1 a1Var = (a1) this.c;
+        z0 z0Var = (z0) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        r1 r1Var = (r1) a1Var.b;
+        r1 r1Var = (r1) z0Var.b;
         r1Var.d = j7Var;
         l9 l9Var = (l9) r1Var.b;
         if (l9Var != null) {
@@ -87,7 +86,7 @@ public final /* synthetic */ class v implements Runnable {
         synchronized (la.class) {
             uaVar = la.j;
             if (uaVar == null) {
-                n0.c a2 = w7.z.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -125,8 +124,8 @@ public final /* synthetic */ class v implements Runnable {
         d8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
         d8Var.i = 10;
         d8Var.j = Integer.valueOf(laVar.h);
-        a1Var.c = d8Var;
-        laVar.c.a(a1Var);
+        z0Var.c = d8Var;
+        laVar.c.a(z0Var);
     }
 
     @Override // java.lang.Runnable
@@ -143,7 +142,7 @@ public final /* synthetic */ class v implements Runnable {
                 jVar.a(hVar, iVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.c0) this.d);
+                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((i) this.d, (j) this.c);
@@ -213,7 +212,7 @@ public final /* synthetic */ class v implements Runnable {
                 ((Handler) this.d).post(new i9.s(20, (z) this.c, obj));
                 return;
             case 9:
-                ((lg) this.d).n((File) this.c, (ArrayList) this.b);
+                ((mg) this.d).n((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 u4.f fVar2 = (u4.f) this.d;
@@ -259,7 +258,7 @@ public final /* synthetic */ class v implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e7) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e7);
-                    throw new RuntimeException(p6.i("Unable to write bitmap to file ", str3), e7);
+                    throw new RuntimeException(t8.b.i("Unable to write bitmap to file ", str3), e7);
                 }
             case 12:
                 b();
@@ -273,7 +272,7 @@ public final /* synthetic */ class v implements Runnable {
                     x8.m.M0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new ka.c(e0Var, 21));
+                    onRequest.addOnCompleteListener(new l.d(e0Var));
                     return;
                 }
         }
@@ -300,10 +299,10 @@ public final /* synthetic */ class v implements Runnable {
         this.c = obj3;
     }
 
-    public /* synthetic */ v(la laVar, a1 a1Var, String str) {
+    public /* synthetic */ v(la laVar, z0 z0Var, String str) {
         this.a = 12;
         this.b = laVar;
-        this.c = a1Var;
+        this.c = z0Var;
         this.d = str;
     }
 }

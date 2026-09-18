@@ -1,60 +1,39 @@
 package yh;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t4 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ v5 b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ String g;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ TLObject i;
-    public final /* synthetic */ TLObject j;
+public final /* synthetic */ class t4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t5 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ t4(v5 v5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = v5Var;
-        this.c = callback2;
-        this.d = context;
-        this.e = f6Var;
-        this.f = j3;
-        this.g = str;
-        this.h = j10;
-        this.i = tLObject;
-        this.j = tL_textWithEntities;
+    public /* synthetic */ t4(t5 t5Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+        this.a = i10;
+        this.b = t5Var;
+        this.c = tL_payments_paymentResult;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new u4(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, (TLRPC.TL_payments_paymentFormStarGift) this.i, (TL_stars.StarGift) this.j, this.h));
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 1:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 2:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
+                break;
+            case 3:
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new u4(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, this.h, this.i, (TLRPC.TL_textWithEntities) this.j));
+                MessagesController.getInstance(this.b.a).processUpdates(this.c.updates, false);
                 break;
         }
-    }
-
-    public /* synthetic */ t4(v5 v5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.f6 f6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
-        this.b = v5Var;
-        this.c = callback2;
-        this.d = context;
-        this.e = f6Var;
-        this.f = j3;
-        this.g = str;
-        this.i = tL_payments_paymentFormStarGift;
-        this.j = starGift;
-        this.h = j10;
     }
 }

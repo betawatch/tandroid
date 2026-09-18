@@ -3,12 +3,12 @@ package bi;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.vv0;
 import s4.z0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class i extends nz {
     public final /* synthetic */ int X = 0;
@@ -16,7 +16,7 @@ public final class i extends nz {
 
     public i() {
         super(100, false);
-        this.Y = new kv0();
+        this.Y = new vv0();
     }
 
     @Override // s4.o0
@@ -30,13 +30,13 @@ public final class i extends nz {
     }
 
     @Override // org.telegram.ui.Components.nz
-    public kv0 D1(int i10) {
+    public vv0 D1(int i10) {
         switch (this.X) {
             case 0:
-                kv0 kv0Var = (kv0) this.Y;
-                kv0Var.b = 100.0f;
-                kv0Var.a = 100.0f;
-                return kv0Var;
+                vv0 vv0Var = (vv0) this.Y;
+                vv0Var.b = 100.0f;
+                vv0Var.a = 100.0f;
+                return vv0Var;
             default:
                 return super.D1(i10);
         }
@@ -49,9 +49,9 @@ public final class i extends nz {
                 super.U(eVar, z0Var, view, cVar);
                 AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
                 AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                n7.b bVar = collectionItemInfo != null ? new n7.b(collectionItemInfo) : null;
-                if (bVar != null) {
-                    Object obj = bVar.a;
+                he.c cVar2 = collectionItemInfo != null ? new he.c(collectionItemInfo) : null;
+                if (cVar2 != null) {
+                    Object obj = cVar2.a;
                     if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
                         accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
                         break;
@@ -68,7 +68,7 @@ public final class i extends nz {
     public int W0(z0 z0Var) {
         switch (this.X) {
             case 1:
-                if (!((f61) this.Y).a3) {
+                if (!((t61) this.Y).a3) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class i extends nz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(f61 f61Var, int i10) {
+    public i(t61 t61Var, int i10) {
         super(i10, false);
-        this.Y = f61Var;
+        this.Y = t61Var;
     }
 }

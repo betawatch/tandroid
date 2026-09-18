@@ -1,71 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.R;
+import android.content.Context;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class t7 extends s4.v {
-    public final /* synthetic */ h8 d;
+public final class t7 extends ld {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public t7(h8 h8Var) {
-        this.d = h8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
+        super(context);
+        this.b = i10;
+        this.c = notificationCenterDelegate;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        View view = c1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        if (c1Var.f != 0) {
-            return 0;
+    @Override // org.telegram.ui.Components.ld
+    public final void c(boolean z10) {
+        switch (this.b) {
+            case 0:
+                j8 j8Var = (j8) this.c;
+                j8Var.D0();
+                org.telegram.ui.yr yrVar = j8Var.O;
+                if (yrVar != null) {
+                    yrVar.a(b5.d.u());
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var = photoViewer.F0;
+                if (f1Var != null) {
+                    f1Var.d(z10);
+                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
+                }
+                u71 u71Var = photoViewer.F2;
+                if (u71Var != null) {
+                    u71Var.O(b5.d.u() || photoViewer.r);
+                }
+                org.telegram.ui.yr yrVar2 = photoViewer.w0;
+                if (yrVar2 != null) {
+                    yrVar2.a(b5.d.u());
+                    break;
+                }
+                break;
         }
-        return s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        h8 h8Var = this.d;
-        if (!h8Var.v0) {
-            h8Var.w0.move(b10, b11);
-        } else {
-            if (b10 <= 0 || b11 <= 0) {
-                return false;
-            }
-            h8Var.w0.move(b10 - 1, b11 - 1);
-        }
-        h8Var.x0.clear();
-        h8Var.x0.addAll(h8Var.w0.list);
-        h8Var.s.p(b10, b11);
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        s7 s7Var = this.d.n;
-        if (c1Var != null) {
-            s7Var.e1(false);
-        }
-        if (i10 != 0) {
-            s7Var.J0(false);
-            if (c1Var != null) {
-                c1Var.a.setPressed(true);
-            }
-        }
-        if (c1Var != null) {
-            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
     }
 }

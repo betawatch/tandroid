@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
+        org.telegram.ui.ActionBar.n1 n1Var;
         int i10;
         Runnable runnable;
         switch (this.a) {
             case 0:
                 h4 h4Var = (h4) this.b;
                 h4Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (o1Var = h4Var.H) != null && o1Var.isShowing()) {
+                if (motionEvent.getActionMasked() == 0 && (n1Var = h4Var.H) != null && n1Var.isShowing()) {
                     view.getHitRect(h4Var.C0);
                     if (!h4Var.C0.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                         h4Var.H.d(true);
@@ -41,14 +41,14 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                ut utVar = (ut) this.b;
-                utVar.getClass();
+                st stVar = (st) this.b;
+                stVar.getClass();
                 if (motionEvent.getAction() == 1 || motionEvent.getAction() == 6 || motionEvent.getAction() == 3) {
-                    if (!utVar.n) {
-                        utVar.n();
+                    if (!stVar.n) {
+                        stVar.n();
                         break;
                     } else {
-                        utVar.o();
+                        stVar.o();
                         break;
                     }
                 }
@@ -67,7 +67,7 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                             if (!externalActionActivity.d.getFragmentStack().isEmpty()) {
                                 while (externalActionActivity.d.getFragmentStack().size() - 1 > 0) {
                                     ActionBarLayout actionBarLayout = externalActionActivity.d;
-                                    actionBarLayout.a0((org.telegram.ui.ActionBar.o2) actionBarLayout.getFragmentStack().get(0), false);
+                                    actionBarLayout.a0((org.telegram.ui.ActionBar.n2) actionBarLayout.getFragmentStack().get(0), false);
                                 }
                                 externalActionActivity.d.l(true, false);
                                 break;
@@ -362,35 +362,35 @@ public final /* synthetic */ class d0 implements View.OnTouchListener {
                 }
                 break;
             case 5:
-                ow0 ow0Var = (ow0) this.b;
-                if (ow0Var.T != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ow0Var.T).getBackgroundDrawable();
+                mw0 mw0Var = (mw0) this.b;
+                if (mw0Var.T != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) mw0Var.T).getBackgroundDrawable();
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(backgroundDrawable.getBounds());
-                    rectF.offset(ow0Var.T.getX(), ow0Var.T.getY());
+                    rectF.offset(mw0Var.T.getX(), mw0Var.T.getY());
                     if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        ow0Var.c(true);
+                        mw0Var.c(true);
                         break;
                     }
                 }
                 break;
             case 6:
-                i71 i71Var = (i71) this.b;
-                i71Var.getClass();
-                if (motionEvent.getAction() == 0 && (runnable = i71Var.T1) != null) {
+                g71 g71Var = (g71) this.b;
+                g71Var.getClass();
+                if (motionEvent.getAction() == 0 && (runnable = g71Var.T1) != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                me1 me1Var = (me1) this.b;
-                if (me1Var.S != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) me1Var.S).getBackgroundDrawable();
+                ke1 ke1Var = (ke1) this.b;
+                if (ke1Var.S != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ke1Var.S).getBackgroundDrawable();
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     rectF2.set(backgroundDrawable2.getBounds());
-                    rectF2.offset(me1Var.S.getX(), me1Var.S.getY());
+                    rectF2.offset(ke1Var.S.getX(), ke1Var.S.getY());
                     if (!rectF2.contains(motionEvent.getX(), motionEvent.getY())) {
-                        me1Var.c(true);
+                        ke1Var.c(true);
                         break;
                     }
                 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class f5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -20,22 +20,22 @@ public final class f5 implements View.OnAttachStateChangeListener {
                 ((g5) this.b).b.onAttachedToWindow();
                 break;
             case 1:
-                ((org.telegram.ui.Components.m5) this.b).a();
+                ((org.telegram.ui.Components.o5) this.b).a();
                 break;
             case 2:
-                ((z70) this.b).b.onAttachedToWindow();
+                ((x70) this.b).b.onAttachedToWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.m5 m5Var = ((xp0) this.b).i;
-                if (m5Var != null) {
-                    m5Var.a();
+                org.telegram.ui.Components.o5 o5Var = ((xp0) this.b).i;
+                if (o5Var != null) {
+                    o5Var.a();
                     break;
                 }
                 break;
             default:
-                b91 b91Var = (b91) this.b;
-                b91Var.h.a();
-                b91Var.n.a();
+                a91 a91Var = (a91) this.b;
+                a91Var.h.a();
+                a91Var.n.a();
                 break;
         }
     }
@@ -47,22 +47,22 @@ public final class f5 implements View.OnAttachStateChangeListener {
                 ((g5) this.b).b.onDetachedFromWindow();
                 break;
             case 1:
-                ((org.telegram.ui.Components.m5) this.b).b();
+                ((org.telegram.ui.Components.o5) this.b).b();
                 break;
             case 2:
-                ((z70) this.b).b.onDetachedFromWindow();
+                ((x70) this.b).b.onDetachedFromWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.m5 m5Var = ((xp0) this.b).i;
-                if (m5Var != null) {
-                    m5Var.b();
+                org.telegram.ui.Components.o5 o5Var = ((xp0) this.b).i;
+                if (o5Var != null) {
+                    o5Var.b();
                     break;
                 }
                 break;
             default:
-                b91 b91Var = (b91) this.b;
-                b91Var.h.b();
-                b91Var.n.b();
+                a91 a91Var = (a91) this.b;
+                a91Var.h.b();
+                a91Var.n.b();
                 break;
         }
     }

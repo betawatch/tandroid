@@ -1,39 +1,36 @@
 package xh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.i81;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.l01;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s1 implements Utilities.Callback {
+public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r2 b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ s1(r2 r2Var, int i10) {
+    public /* synthetic */ s1(ProfileActivity profileActivity, int i10) {
         this.a = i10;
-        this.b = r2Var;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                r2 r2Var = this.b;
-                r2Var.e.b((String) obj, new s1(r2Var, 1));
+                this.b.G4(true);
+                break;
+            case 1:
+                this.b.G4(true);
                 break;
             default:
-                r2 r2Var2 = this.b;
-                r2Var2.f(true);
-                i81 i81Var = r2Var2.n;
-                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                i81Var.d(i10, r2Var2.e.f(i10) + 1);
-                org.telegram.ui.ActionBar.o2 o2Var = r2Var2.a;
-                if (o2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) o2Var).G4(true);
+                ProfileActivity profileActivity = this.b;
+                l01 l01Var = profileActivity.O;
+                if (l01Var != null) {
+                    l01Var.Y0(14);
+                    profileActivity.G4(false);
+                    break;
                 }
-                r2Var2.n();
                 break;
         }
     }

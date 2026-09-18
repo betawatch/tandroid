@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import m.p3;
 import n6.i;
 import n6.l;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import qb.m;
 import v7.r1;
@@ -21,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -94,7 +94,7 @@ public final class a {
         e7 e7Var = new e7(p3Var);
         r1 r1Var = new r1(5, false);
         r1Var.c = e7Var;
-        m.a.execute(new v(a2, new a1(r1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        m.a.execute(new v(a2, new z0(r1Var), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

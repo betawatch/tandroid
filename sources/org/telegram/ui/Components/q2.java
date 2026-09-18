@@ -10,34 +10,34 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    public /* synthetic */ q2(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
+    public /* synthetic */ q2(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = o2Var;
+        this.b = n2Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0084  */
-    @Override // org.telegram.ui.ActionBar.b2
+    @Override // org.telegram.ui.ActionBar.a2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         TLRPC.User user;
         String string;
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.o2 o2Var = this.b;
-                MessagesController.getInstance(o2Var.getCurrentAccount()).openByUserName("spambot", o2Var, 1);
+                org.telegram.ui.ActionBar.n2 n2Var = this.b;
+                MessagesController.getInstance(n2Var.getCurrentAccount()).openByUserName("spambot", n2Var, 1);
                 break;
             default:
-                org.telegram.ui.ActionBar.o2 o2Var2 = this.b;
-                int currentAccount = o2Var2.getCurrentAccount();
+                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
+                int currentAccount = n2Var2.getCurrentAccount();
                 SharedPreferences mainSettings = MessagesController.getMainSettings(currentAccount);
                 long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(mainSettings, "support_id2", 0L);
                 if (prefIntOrLong != 0) {
@@ -62,13 +62,13 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.b2 {
                         MessagesController.getInstance(currentAccount).putUser(user, true);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        o2Var2.presentFragment(new org.telegram.ui.bo(bundle));
+                        n2Var2.presentFragment(new org.telegram.ui.zn(bundle));
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.c2 c2Var2 = new org.telegram.ui.ActionBar.c2(o2Var2.getParentActivity(), 3, null);
-                        c2Var2.g0 = false;
-                        c2Var2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new ai.za(mainSettings, c2Var2, currentAccount, o2Var2, 3));
+                        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(n2Var2.getParentActivity(), 3, null);
+                        b2Var2.g0 = false;
+                        b2Var2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new ai.za(mainSettings, b2Var2, currentAccount, n2Var2, 3));
                         break;
                     }
                 }

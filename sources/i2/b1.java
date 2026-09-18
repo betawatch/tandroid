@@ -24,27 +24,26 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.c2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.eu;
+import org.telegram.ui.du;
+import org.telegram.ui.fp;
 import org.telegram.ui.hp;
-import org.telegram.ui.jp;
-import org.telegram.ui.kp;
-import org.telegram.ui.le;
-import org.telegram.ui.yd;
-import w7.x5;
+import org.telegram.ui.ip;
+import org.telegram.ui.ke;
+import org.telegram.ui.xd;
+import org.telegram.ui.zn;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -83,13 +82,13 @@ public final /* synthetic */ class b1 implements Runnable {
                 ((MessagesController) this.c).lambda$processDialogsUpdate$228((TLRPC.messages_Dialogs) this.d, (a0.i) this.e, (a0.i) this.f, this.b, (LongSparseIntArray) this.h);
                 break;
             case 4:
-                ((SendMessagesHelper) this.c).lambda$requestUrlAuth$36((TLObject) this.d, (TLRPC.TL_messages_requestUrlAuth) this.e, (bo) this.f, (String) this.h, this.b);
+                ((SendMessagesHelper) this.c).lambda$requestUrlAuth$36((TLObject) this.d, (TLRPC.TL_messages_requestUrlAuth) this.e, (zn) this.f, (String) this.h, this.b);
                 break;
             case 5:
                 ((CameraController) this.c).lambda$recordVideo$13(this.d, (CameraController.ICameraView) this.e, (File) this.f, this.b, (Runnable) this.h);
                 break;
             case 6:
-                le leVar = (le) this.c;
+                ke keVar = (ke) this.c;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.e;
                 Activity activity = (Activity) this.f;
@@ -99,12 +98,12 @@ public final /* synthetic */ class b1 implements Runnable {
                     twoStepVerificationActivity.o0();
                     twoStepVerificationActivity.finishFragment();
                     if (tLObject instanceof TLRPC.TL_payments_starsRevenueWithdrawalUrl) {
-                        nf.f.s(leVar.getContext(), ((TLRPC.TL_payments_starsRevenueWithdrawalUrl) tLObject).url);
+                        nf.f.s(keVar.getContext(), ((TLRPC.TL_payments_starsRevenueWithdrawalUrl) tLObject).url);
                         if (z10) {
-                            leVar.c0(true);
+                            keVar.c0(true);
                         }
                     }
-                    leVar.e0();
+                    keVar.e0();
                     break;
                 } else if (!"PASSWORD_MISSING".equals(tL_error.text) && !tL_error.text.startsWith("PASSWORD_TOO_FRESH_") && !tL_error.text.startsWith("SESSION_TOO_FRESH_")) {
                     if (!"SRP_ID_INVALID".equals(tL_error.text)) {
@@ -112,10 +111,10 @@ public final /* synthetic */ class b1 implements Runnable {
                             twoStepVerificationActivity.o0();
                             twoStepVerificationActivity.finishFragment();
                         }
-                        vc.b0(tL_error);
+                        xc.b0(tL_error);
                         break;
                     } else {
-                        ConnectionsManager.getInstance(leVar.y0).sendRequest(new TL_account.getPassword(), new v1(leVar, twoStepVerificationActivity, z10, 2), 8);
+                        ConnectionsManager.getInstance(keVar.y0).sendRequest(new TL_account.getPassword(), new v1(keVar, twoStepVerificationActivity, z10, 2), 8);
                         break;
                     }
                 } else {
@@ -134,10 +133,10 @@ public final /* synthetic */ class b1 implements Runnable {
                     textView.setTextSize(1, 16.0f);
                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                     textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.WithdrawChannelAlertText)));
-                    linearLayout.addView(textView, x5.n(-1, -2));
+                    linearLayout.addView(textView, y5.n(-1, -2));
                     LinearLayout linearLayout2 = new LinearLayout(activity);
                     linearLayout2.setOrientation(0);
-                    linearLayout.addView(linearLayout2, x5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    linearLayout.addView(linearLayout2, y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView = new ImageView(activity);
                     imageView.setImageResource(R.drawable.list_circle);
                     imageView.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -148,16 +147,16 @@ public final /* synthetic */ class b1 implements Runnable {
                     textView2.setTextColor(j6.w0(null, i10, false));
                     textView2.setTextSize(1, 16.0f);
                     textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    w1.n(R.string.EditAdminTransferAlertText1, textView2);
+                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
                     if (LocaleController.isRTL) {
-                        linearLayout2.addView(textView2, x5.n(-1, -2));
-                        linearLayout2.addView(imageView, x5.q(-2, -2, 5));
+                        linearLayout2.addView(textView2, y5.n(-1, -2));
+                        linearLayout2.addView(imageView, y5.q(-2, -2, 5));
                     } else {
-                        linearLayout2.addView(imageView, x5.n(-2, -2));
-                        linearLayout2.addView(textView2, x5.n(-1, -2));
+                        linearLayout2.addView(imageView, y5.n(-2, -2));
+                        linearLayout2.addView(textView2, y5.n(-1, -2));
                     }
-                    LinearLayout f7 = w1.f(activity, 0);
-                    linearLayout.addView(f7, x5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                    LinearLayout f7 = org.telegram.messenger.q.f(activity, 0);
+                    linearLayout.addView(f7, y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                     ImageView imageView2 = new ImageView(activity);
                     imageView2.setImageResource(R.drawable.list_circle);
                     imageView2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(11.0f) : 0, AndroidUtilities.dp(9.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(11.0f), 0);
@@ -166,16 +165,16 @@ public final /* synthetic */ class b1 implements Runnable {
                     textView3.setTextColor(j6.w0(null, i10, false));
                     textView3.setTextSize(1, 16.0f);
                     textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                    w1.n(R.string.EditAdminTransferAlertText2, textView3);
+                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
                     if (LocaleController.isRTL) {
-                        f7.addView(textView3, x5.n(-1, -2));
-                        f7.addView(imageView2, x5.q(-2, -2, 5));
+                        f7.addView(textView3, y5.n(-1, -2));
+                        f7.addView(imageView2, y5.q(-2, -2, 5));
                     } else {
-                        f7.addView(imageView2, x5.n(-2, -2));
-                        f7.addView(textView3, x5.n(-1, -2));
+                        f7.addView(imageView2, y5.n(-2, -2));
+                        f7.addView(textView3, y5.n(-1, -2));
                     }
                     if ("PASSWORD_MISSING".equals(tL_error.text)) {
-                        alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new yd(leVar));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferSetPassword), new xd(keVar));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                     } else {
                         TextView textView4 = new TextView(activity);
@@ -183,11 +182,11 @@ public final /* synthetic */ class b1 implements Runnable {
                         textView4.setTextSize(1, 16.0f);
                         textView4.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                         textView4.setText(LocaleController.getString(R.string.EditAdminTransferAlertText3));
-                        linearLayout.addView(textView4, x5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+                        linearLayout.addView(textView4, y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                         alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
                     }
                     if (twoStepVerificationActivity == null) {
-                        leVar.w0.showDialog(alertDialog$Builder.a);
+                        keVar.w0.showDialog(alertDialog$Builder.a);
                         break;
                     } else {
                         twoStepVerificationActivity.showDialog(alertDialog$Builder.a);
@@ -195,57 +194,57 @@ public final /* synthetic */ class b1 implements Runnable {
                     }
                 }
             case 7:
-                bo boVar = (bo) this.c;
-                c2 c2Var = (c2) this.d;
+                zn znVar = (zn) this.c;
+                b2 b2Var = (b2) this.d;
                 boolean[] zArr = (boolean[]) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) this.h;
                 try {
-                    c2Var.dismiss();
+                    b2Var.dismiss();
                 } catch (Throwable unused) {
                 }
                 if (!zArr[0]) {
                     if (this.b) {
-                        boVar.createArticleViewer(false).N(messageObject, webPage, null, null);
+                        znVar.createArticleViewer(false).N(messageObject, webPage, null, null);
                         break;
                     } else {
                         try {
-                            AndroidUtilities.openForView(messageObject, boVar.getParentActivity(), boVar.ea, false);
+                            AndroidUtilities.openForView(messageObject, znVar.getParentActivity(), znVar.ea, false);
                             break;
                         } catch (Exception e) {
                             FileLog.e(e);
-                            boVar.z6(messageObject);
+                            znVar.z6(messageObject);
                             return;
                         }
                     }
                 }
                 break;
             case 8:
-                hp hpVar = (hp) this.c;
+                fp fpVar = (fp) this.c;
                 TLRPC.TL_channels_toggleUsername tL_channels_toggleUsername = (TLRPC.TL_channels_toggleUsername) this.d;
                 TLObject tLObject2 = (TLObject) this.e;
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.f;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
-                jp jpVar = hpVar.a;
-                kp kpVar = jpVar.a3;
-                kpVar.P.remove(tL_channels_toggleUsername.username);
+                hp hpVar = fpVar.a;
+                ip ipVar = hpVar.a3;
+                ipVar.P.remove(tL_channels_toggleUsername.username);
                 boolean z11 = tLObject2 instanceof TLRPC.TL_boolTrue;
                 boolean z12 = this.b;
                 if (z11) {
-                    jpVar.x1(tL_username, !z12, false);
+                    hpVar.x1(tL_username, !z12, false);
                 } else if (tL_error2 == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error2.text)) {
-                    jpVar.x1(tL_username, z12, true);
-                    kpVar.V();
+                    hpVar.x1(tL_username, z12, true);
+                    ipVar.V();
                 } else {
-                    AndroidUtilities.runOnUIThread(new ci.y0(hpVar, tL_username, z12, 14));
+                    AndroidUtilities.runOnUIThread(new ci.y0(fpVar, tL_username, z12, 15));
                 }
-                kpVar.getMessagesController().updateUsernameActiveness(kpVar.X, tL_username.username, tL_username.active);
+                ipVar.getMessagesController().updateUsernameActiveness(ipVar.X, tL_username.username, tL_username.active);
                 break;
             case 9:
                 ((kz) this.c).J((nh.b) this.d, (TLObject) this.e, (TLRPC.StickerSet) this.f, (TLRPC.Document) this.h, this.b, true);
                 break;
             default:
-                eu.Q((eu) this.c, (TLObject) this.d, (ci.d) this.e, this.b, (HashSet) this.f, (TLRPC.TL_error) this.h);
+                du.Q((du) this.c, (TLObject) this.d, (ci.d) this.e, this.b, (HashSet) this.f, (TLRPC.TL_error) this.h);
                 break;
         }
     }

@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f7 implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class f7 implements ToIntFunction {
             case 1:
                 return ((TL_stories.StoryItem) obj).date;
             case 2:
-                return -((TL_stories.StoryItem) hg.k0.h(1, ((TL_stories.PeerStories) obj).stories)).date;
+                return -((TL_stories.StoryItem) hg.k0.g(1, ((TL_stories.PeerStories) obj).stories)).date;
             case 3:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 4:
@@ -36,9 +36,9 @@ public final /* synthetic */ class f7 implements ToIntFunction {
             case 7:
                 return ((TLRPC.Message) obj).id;
             case 8:
-                return ((org.telegram.ui.Components.d6) obj).d;
+                return ((org.telegram.ui.Components.f6) obj).d;
             case 9:
-                return ((org.telegram.ui.Components.d6) obj).e;
+                return ((org.telegram.ui.Components.f6) obj).e;
             case 10:
                 ad.c cVar = (ad.c) obj;
                 return cVar.d - cVar.b;

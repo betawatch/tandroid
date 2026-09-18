@@ -1,39 +1,51 @@
 package r0;
 
-import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class g1 extends f1 {
-    public static final l1 r;
+    public i0.b o;
+    public i0.b p;
+    public i0.b q;
 
-    static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        r = l1.h(null, windowInsets);
+    public g1(m1 m1Var, WindowInsets windowInsets) {
+        super(m1Var, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
     }
 
-    public g1(l1 l1Var, WindowInsets windowInsets) {
-        super(l1Var, windowInsets);
+    @Override // r0.j1
+    public i0.b h() {
+        if (this.p == null) {
+            this.p = i0.b.c(this.c.getMandatorySystemGestureInsets());
+        }
+        return this.p;
     }
 
-    @Override // r0.c1, r0.i1
-    public i0.b f(int i10) {
-        return i0.b.c(this.c.getInsets(j1.a(i10)));
+    @Override // r0.j1
+    public i0.b j() {
+        if (this.o == null) {
+            this.o = i0.b.c(this.c.getSystemGestureInsets());
+        }
+        return this.o;
     }
 
-    @Override // r0.c1, r0.i1
-    public i0.b g(int i10) {
-        return i0.b.c(this.c.getInsetsIgnoringVisibility(j1.a(i10)));
+    @Override // r0.j1
+    public i0.b l() {
+        if (this.q == null) {
+            this.q = i0.b.c(this.c.getTappableElementInsets());
+        }
+        return this.q;
     }
 
-    @Override // r0.c1, r0.i1
-    public boolean p(int i10) {
-        return this.c.isVisible(j1.a(i10));
+    @Override // r0.d1, r0.j1
+    public m1 m(int i10, int i11, int i12, int i13) {
+        return m1.h(null, this.c.inset(i10, i11, i12, i13));
     }
 
-    @Override // r0.c1, r0.i1
-    public final void d(View view) {
+    @Override // r0.e1, r0.j1
+    public void s(i0.b bVar) {
     }
 }

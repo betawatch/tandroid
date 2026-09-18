@@ -25,11 +25,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.z80;
+import org.telegram.ui.Components.vw0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class wa extends View implements org.telegram.ui.Cells.z9 {
     public int E;
@@ -91,9 +91,9 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = kw0.a();
+            alignment = vw0.a();
         } else {
-            Layout.Alignment[] alignmentArr = kw0.a;
+            Layout.Alignment[] alignmentArr = vw0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -391,8 +391,8 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         int i10 = 0;
         va vaVar = this.r[0];
         wa waVar = vaVar.v;
-        org.telegram.ui.Components.x5.release(waVar, vaVar.d);
-        org.telegram.ui.Components.x5.release(waVar, vaVar.f);
+        org.telegram.ui.Components.z5.release(waVar, vaVar.d);
+        org.telegram.ui.Components.z5.release(waVar, vaVar.f);
         if (vaVar.h == null) {
             return;
         }
@@ -403,7 +403,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
             }
             ta taVar = taVarArr[i10];
             if (taVar != null) {
-                org.telegram.ui.Components.x5.release(waVar, taVar.a);
+                org.telegram.ui.Components.z5.release(waVar, taVar.a);
             }
             i10++;
         }
@@ -598,7 +598,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
     
         r3.d(true);
         r1.b = null;
-        r13 = new org.telegram.ui.Components.d90(r9[0], null, r20.getX(), r20.getY(), 0);
+        r13 = new org.telegram.ui.Components.m90(r9[0], null, r20.getX(), r20.getY(), 0);
         r1.a = r13;
         r13.d(org.telegram.ui.ActionBar.j6.l1(0.2f, -1));
         r3.a(r1.a, null);
@@ -622,7 +622,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:53:0x0178, code lost:
     
-        r5 = (org.telegram.ui.Components.x5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.x5.class);
+        r5 = (org.telegram.ui.Components.z5[]) r5.getSpans(r11, r11, org.telegram.ui.Components.z5.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0180, code lost:
     
@@ -706,7 +706,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.m51.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.a61.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0197, code lost:
     
@@ -735,7 +735,7 @@ public final class wa extends View implements org.telegram.ui.Cells.z9 {
         if (!this.J.s0 && (vaVarArr = this.r) != null) {
             va vaVar = vaVarArr[0];
             if (vaVar.e != null) {
-                z80 z80Var = vaVar.c;
+                i90 i90Var = vaVar.c;
                 wa waVar = vaVar.v;
                 StaticLayout staticLayout = waVar.v;
                 xa xaVar = waVar.J;

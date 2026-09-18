@@ -1,114 +1,152 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.animation.ValueAnimator;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
+import android.opengl.Matrix;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class p2 extends Drawable {
-    public final Paint a;
-    public final LinearGradient[] b;
-    public final Matrix c;
-    public final org.telegram.ui.Components.c6 d;
-    public final Path e;
-    public final k8 f;
+public final class p2 {
+    public final q2 a;
+    public k1 d;
+    public int f;
     public int g;
-    public int h;
+    public float j;
+    public float k;
+    public final ArrayList b = new ArrayList();
+    public int c = 0;
+    public boolean e = false;
+    public final float[] h = new float[16];
+    public float[] i = new float[16];
+    public boolean l = false;
 
-    public p2() {
-        Paint paint = new Paint(1);
-        Paint paint2 = new Paint(1);
-        this.a = new Paint(1);
-        this.b = new LinearGradient[2];
-        this.c = new Matrix();
-        this.d = new org.telegram.ui.Components.c6(1.0f, new rg.w1(this, 27), 0L, 420L, qr.h);
-        this.e = new Path();
-        this.f = new k8(1, 45);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setColor(117440511);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        paint2.setStyle(style);
-        paint2.setColor(301989887);
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
+    public p2(q2 q2Var) {
+        this.a = q2Var;
     }
 
-    public final void a(int i10, int i11) {
-        if (this.g == i10 && this.h == i11) {
-            return;
-        }
-        LinearGradient[] linearGradientArr = this.b;
-        linearGradientArr[0] = linearGradientArr[1];
-        this.g = i10;
-        this.h = i11;
-        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.d.d(0.0f, true);
-        invalidateSelf();
+    public final void a(int i10) {
+        this.b.add(new o2(3, 0.0f, 0.0f, i10, -1, 0.0f, null, null));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        AndroidUtilities.rectTmp.set(getBounds());
-        float dp = AndroidUtilities.dp(24.0f);
-        int i10 = 0;
-        float d = this.d.d(1.0f, false);
-        while (true) {
-            LinearGradient[] linearGradientArr = this.b;
-            if (i10 >= linearGradientArr.length) {
-                Path path = this.e;
-                path.rewind();
-                RectF rectF = AndroidUtilities.rectTmp;
-                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-                canvas.save();
-                canvas.clipPath(path);
-                k8 k8Var = this.f;
-                k8Var.g(rectF);
-                k8Var.h = 30.0f;
-                k8Var.d();
-                k8Var.a(canvas, org.telegram.ui.ActionBar.j6.l1(0.6f, -1));
-                invalidateSelf();
-                canvas.restore();
-                AndroidUtilities.drawStroke(canvas, rectF, dp);
+    public final void b() {
+        k1 k1Var;
+        boolean z10 = this.e;
+        q2 q2Var = this.a;
+        if (!z10) {
+            int i10 = this.c;
+            ArrayList arrayList = this.b;
+            if (i10 < arrayList.size()) {
+                o2 o2Var = (o2) arrayList.get(this.c);
+                this.c++;
+                int i11 = o2Var.a;
+                int i12 = o2Var.e;
+                float f7 = o2Var.b;
+                int i13 = o2Var.d;
+                int c10 = m1.j.c(i11);
+                if (c10 == 0) {
+                    Runnable runnable = o2Var.h;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    b();
+                    return;
+                }
+                if (c10 == 1) {
+                    q2Var.d = (o2Var.c * 0.01f) + q2Var.d;
+                    q2Var.e = (f7 * 0.01f) + q2Var.e;
+                    this.f = 1;
+                    this.g = 1;
+                    return;
+                }
+                if (c10 == 2) {
+                    this.f = i13;
+                    this.g = i13;
+                    return;
+                }
+                if (c10 == 3) {
+                    System.arraycopy(q2Var.c, 0, this.h, 0, 16);
+                    float f10 = o2Var.f;
+                    float[] fArr = new float[16];
+                    Matrix.setIdentityM(fArr, 0);
+                    if (f10 != 0.0f) {
+                        Matrix.rotateM(fArr, 0, -f10, 0.0f, 0.0f, 1.0f);
+                    }
+                    if (i12 == 0) {
+                        Matrix.rotateM(fArr, 0, 90.0f, 0.0f, 1.0f, 0.0f);
+                    } else if (i12 == 1) {
+                        Matrix.rotateM(fArr, 0, -90.0f, 0.0f, 1.0f, 0.0f);
+                    } else if (i12 == 2) {
+                        Matrix.rotateM(fArr, 0, 90.0f, 1.0f, 0.0f, 0.0f);
+                    } else if (i12 == 3) {
+                        Matrix.rotateM(fArr, 0, -90.0f, 1.0f, 0.0f, 0.0f);
+                    } else if (i12 == 4) {
+                        Matrix.rotateM(fArr, 0, 180.0f, 0.0f, 1.0f, 0.0f);
+                    }
+                    this.i = fArr;
+                    this.g = i13;
+                    this.f = i13;
+                    this.j = q2Var.d;
+                    this.k = q2Var.e;
+                    return;
+                }
+                if (c10 != 4) {
+                    if (c10 != 5) {
+                        return;
+                    }
+                    q2Var.f = f7 > 0.0f;
+                    b();
+                    return;
+                }
+                this.l = true;
+                View view = o2Var.g;
+                ValueAnimator valueAnimator = q2Var.G;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    q2Var.G = null;
+                }
+                RectF rectF = new RectF();
+                rectF.left = view.getX() - q2Var.getX();
+                rectF.top = view.getY() - q2Var.getY();
+                rectF.right = rectF.left + view.getWidth();
+                rectF.bottom = rectF.top + view.getHeight();
+                AndroidUtilities.removeFromParent(view);
+                int childCount = q2Var.getChildCount();
+                q2Var.addView(view, w7.y5.e(64, 64, 17));
+                q2Var.v.add(Integer.valueOf(i12));
+                q2Var.w.put(Integer.valueOf(childCount), Integer.valueOf(i12));
+                q2Var.x.put(Integer.valueOf(childCount), rectF);
+                q2Var.F = childCount;
+                q2Var.E = 0.0f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                q2Var.G = ofFloat;
+                ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(q2Var, 22));
+                q2Var.G.addListener(new pg.d0(q2Var, 10));
+                q2Var.G.setDuration(i13 * 16);
+                q2Var.G.setInterpolator(qr.h);
+                q2Var.G.start();
                 return;
             }
-            if (linearGradientArr[i10] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.5d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.c;
-                    matrix.reset();
-                    RectF rectF2 = AndroidUtilities.rectTmp;
-                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
-                    linearGradientArr[i10].setLocalMatrix(matrix);
-                    LinearGradient linearGradient = linearGradientArr[i10];
-                    Paint paint = this.a;
-                    paint.setShader(linearGradient);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF2, dp, dp, paint);
-                }
-            }
-            i10++;
         }
+        q2Var.H = null;
+        if (this.e || (k1Var = this.d) == null) {
+            return;
+        }
+        k1Var.run();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void c(float f7, float f10) {
+        this.b.add(new o2(2, f7, f10, 0, -1, 0.0f, null, null));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void d(boolean z10) {
+        this.b.add(new o2(6, z10 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void e(v2 v2Var, int i10, float f7) {
+        this.b.add(new o2(5, 0.0f, 0.0f, 32, i10, f7, v2Var, null));
     }
 }

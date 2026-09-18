@@ -8,9 +8,9 @@ import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.UnknownServiceException;
 import kotlin.jvm.internal.i;
-import w7.h6;
+import w7.i6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class zzhl {
     private final HttpURLConnection zza;
@@ -61,7 +61,7 @@ public final class zzhl {
             InputStream zzf = zzf();
             i.e(zzf, "<this>");
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(8192, zzf.available()));
-            h6.a(zzf, byteArrayOutputStream);
+            i6.a(zzf, byteArrayOutputStream);
             byte[] byteArray = byteArrayOutputStream.toByteArray();
             i.d(byteArray, "toByteArray(...)");
             if (byteArray.length == 0) {

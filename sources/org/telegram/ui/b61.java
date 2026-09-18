@@ -1,52 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class b61 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ i71 c;
+public final class b61 extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ g71 c;
 
-    public /* synthetic */ b61(i71 i71Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = i71Var;
-        this.b = z10;
+    public b61(g71 g71Var, Integer num) {
+        this.c = g71Var;
+        this.b = num;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                i71 i71Var = this.c;
-                v51 v51Var = i71Var.i0;
-                boolean z10 = this.b;
-                v51Var.setVisibility(z10 ? 0 : 8);
-                i71Var.h0.setVisibility(z10 ? 8 : 0);
-                i71Var.E1 = null;
-                if (!z10 && (arrayList2 = i71Var.A1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = i71Var.D1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    i71Var.q0.E(false);
-                }
-                if (!z10 && (arrayList = i71Var.B1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                i71 i71Var2 = this.c;
-                i71Var2.j0.setVisibility((this.b && i71Var2.i0.getVisibility() == 0) ? 0 : 8);
-                i71Var2.H1 = null;
-                break;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        g71 g71Var = this.c;
+        boolean n10 = g71Var.n();
+        Rect rect = this.a;
+        if (n10) {
+            rect.set((int) ((width - (g71Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.vision.e2.z(1.0f, g71Var.b1, AndroidUtilities.dp(g71Var.d1), com.google.android.gms.internal.vision.e2.z(1.0f, g71Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * g71Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.vision.e2.z(1.0f, g71Var.b1, AndroidUtilities.dp(g71Var.d1), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (g71Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * g71Var.a1) + view.getPaddingLeft() + width), (int) ((height * g71Var.b1) + view.getPaddingTop()));
         }
+        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
     }
 }

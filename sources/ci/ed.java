@@ -9,14 +9,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class ed extends View implements x2 {
     public Paint a;
     public Paint b;
-    public org.telegram.ui.Components.m6 c;
+    public org.telegram.ui.Components.o6 c;
     public boolean d;
-    public org.telegram.ui.Components.c6 e;
+    public org.telegram.ui.Components.e6 e;
 
     public final void a(long j3, boolean z10) {
         long j10 = j3 % 60;
@@ -45,11 +45,11 @@ public final class ed extends View implements x2 {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Paint paint = this.b;
-        org.telegram.ui.Components.m6 m6Var = this.c;
+        org.telegram.ui.Components.o6 o6Var = this.c;
         super.onDraw(canvas);
         float d = this.e.d(this.d ? 1.0f : 0.0f, false);
         float dp = AndroidUtilities.dp(12.66f) * d;
-        float d10 = m6Var.d() + dp;
+        float d10 = o6Var.d() + dp;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(((getWidth() - d10) / 2.0f) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(18.0f), ((getWidth() + d10) / 2.0f) + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(40.0f));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.a);
@@ -58,8 +58,8 @@ public final class ed extends View implements x2 {
             invalidate();
             canvas.drawCircle(rectF.left + AndroidUtilities.dp(10.66f), rectF.centerY(), AndroidUtilities.dp(4.0f) * d, paint);
         }
-        m6Var.setBounds((int) (rectF.left + dp), ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
-        m6Var.draw(canvas);
+        o6Var.setBounds((int) (rectF.left + dp), ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
+        o6Var.draw(canvas);
     }
 
     @Override // android.view.View

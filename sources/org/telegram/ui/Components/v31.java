@@ -1,44 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class v31 extends s4.h0 {
-    public Context c;
-    public View d;
-    public int e;
+public final /* synthetic */ class v31 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public final void D(View view) {
-        if (this.d == view) {
-            return;
-        }
-        this.e++;
-        this.d = view;
-        m(1);
+    public /* synthetic */ v31(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return 2;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        k41.x(this.a, str, this.b, this.c);
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        return this.e;
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return i10 == 0 ? new wk0(new kn(this.c, 13)) : new wk0(this.d);
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        k41.x(this.a, "en", this.b, this.c);
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class h5 extends androidx.fragment.app.v {
     public int O = -1;
@@ -28,9 +28,9 @@ public abstract class h5 extends androidx.fragment.app.v {
                 x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
                 return true;
             }
-            k60 k60Var = k60.D3;
-            if (k60Var != null) {
-                k60Var.n.callOnClick();
+            i60 i60Var = i60.D3;
+            if (i60Var != null) {
+                i60Var.n.callOnClick();
                 return true;
             }
         } else {
@@ -94,7 +94,7 @@ public abstract class h5 extends androidx.fragment.app.v {
         return true;
     }
 
-    public final org.telegram.ui.ActionBar.c2 w(int i10, String str) {
+    public final org.telegram.ui.ActionBar.b2 w(int i10, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
         alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);

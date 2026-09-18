@@ -14,21 +14,21 @@ import org.telegram.ui.Cells.ba;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class g5 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
-    public final org.telegram.ui.ActionBar.f6 n;
+public final class g5 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
+    public final org.telegram.ui.ActionBar.e6 n;
     public final i1 r;
     public e5 s;
     public final ArrayList v;
     public boolean w;
 
-    public g5(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public g5(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.v = new ArrayList();
-        this.n = f6Var;
+        this.n = e6Var;
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
-        i1 i1Var = new i1(context, f6Var);
+        i1 i1Var = new i1(context, e6Var);
         this.r = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
         i1Var.setAllowNewlines(false);
@@ -39,9 +39,9 @@ public final class g5 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
         i1Var.setTextColorKey(j6.Oh);
         i1Var.setAccentHint(true);
         i1Var.setHint(LocaleController.getString(R.string.ArticleHintAuthor));
-        i1Var.setListener(new a4.m(this, 22));
+        i1Var.setListener(new a4.m(this, 23));
         i1Var.setDelegate(new ei.d5(this, 20));
-        addView(i1Var, w7.x5.e(-1, -2, 51));
+        addView(i1Var, w7.y5.e(-1, -2, 51));
         e();
     }
 
@@ -64,14 +64,14 @@ public final class g5 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         i1 i1Var = this.r;
         i1Var.t();
         int i10 = j6.Oh;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        i1Var.setTextColor(j6.v0(i10, f6Var));
-        i1Var.setHintTextColor(j6.l1(0.5f, j6.v0(i10, f6Var)));
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        i1Var.setTextColor(j6.v0(i10, e6Var));
+        i1Var.setHintTextColor(j6.l1(0.5f, j6.v0(i10, e6Var)));
     }
 
     @Override // org.telegram.ui.Cells.p9

@@ -2,7 +2,7 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class k1 {
     public static int a(int i10) {
@@ -26,8 +26,6 @@ public abstract class k1 {
                     statusBars = WindowInsets.Type.tappableElement();
                 } else if (i12 == 128) {
                     statusBars = WindowInsets.Type.displayCutout();
-                } else if (i12 == 512) {
-                    statusBars = WindowInsets.Type.systemOverlays();
                 }
                 i11 |= statusBars;
             }

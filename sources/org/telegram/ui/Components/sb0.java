@@ -1,18 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class sb0 {
-    public final int a;
-    public final h01 b;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
+public final class sb0 extends ji.n {
+    public int W;
+    public Runnable X;
+    public final /* synthetic */ yb0 Y;
 
-    public sb0(int i10, String str) {
-        this.a = i10;
-        this.b = new h01(str, 14.0f, AndroidUtilities.bold());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sb0(yb0 yb0Var, qb0 qb0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(null, qb0Var, e6Var);
+        this.Y = yb0Var;
+        this.W = -1;
+    }
+
+    @Override // ji.n, s4.j
+    public final void N() {
+        super.N();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        rb0 rb0Var = new rb0(this, 0);
+        this.X = rb0Var;
+        AndroidUtilities.runOnUIThread(rb0Var);
+        yb0 yb0Var = this.Y;
+        if (yb0Var.V) {
+            yb0Var.V = false;
+            AndroidUtilities.runOnUIThread(new rb0(this, 1));
+        }
+    }
+
+    @Override // ji.n
+    public final void W() {
+        ec0 ec0Var = this.Y.c0;
+        AndroidUtilities.cancelRunOnUIThread(ec0Var.y);
+        ec0Var.y.run();
+        if (this.W == -1) {
+            this.W = NotificationCenter.getInstance(ec0Var.w).setAnimationInProgress(this.W, null, false);
+        }
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.X = null;
+        }
+    }
+
+    @Override // ji.n, s4.j, s4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.X;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        rb0 rb0Var = new rb0(this, 2);
+        this.X = rb0Var;
+        AndroidUtilities.runOnUIThread(rb0Var);
     }
 }

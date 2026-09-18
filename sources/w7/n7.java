@@ -1,10 +1,9 @@
 package w7;
 
-import java.lang.reflect.Field;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class n7 {
-    public static Field a;
-    public static boolean b;
+    public static int a(int i10) {
+        return (int) (Integer.rotateLeft((int) (i10 * (-862048943)), 15) * 461845907);
+    }
 }

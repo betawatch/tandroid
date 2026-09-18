@@ -13,16 +13,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class er extends ll0 {
+public final class er extends vl0 {
     public final /* synthetic */ gr c;
 
     public er(gr grVar) {
         this.c = grVar;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -64,10 +64,10 @@ public final class er extends ll0 {
                 }
                 return;
             } else {
-                org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
-                l4Var.setTextSize(15.0f);
-                l4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-                l4Var.setText(LocaleController.getString(R.string.VoipChatDisplayedAs).replace(":", ""));
+                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                m4Var.setTextSize(15.0f);
+                m4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
+                m4Var.setText(LocaleController.getString(R.string.VoipChatDisplayedAs).replace(":", ""));
                 return;
             }
         }
@@ -75,64 +75,64 @@ public final class er extends ll0 {
         TLRPC.Peer peer = (TLRPC.Peer) grVar.Y.get(i10 - 3);
         long peerId = MessageObject.getPeerId(peer);
         if (peerId > 0) {
-            i12 = ((org.telegram.ui.ActionBar.g3) grVar).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.f3) grVar).currentAccount;
             chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
             str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
         } else {
-            i11 = ((org.telegram.ui.ActionBar.g3) grVar).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.f3) grVar).currentAccount;
             chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
             str = null;
         }
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
-        f4Var.e(chat, null, str, i10 != h() - 1);
-        f4Var.c(peer == grVar.d0, false);
+        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
+        g4Var.e(chat, null, str, i10 != h() - 1);
+        g4Var.c(peer == grVar.d0, false);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup, android.widget.LinearLayout] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         FrameLayout frameLayout;
         Context context = viewGroup.getContext();
         gr grVar = this.c;
         if (i10 == 1) {
             org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context);
             int i11 = org.telegram.ui.ActionBar.j6.a7;
-            f6Var = ((org.telegram.ui.ActionBar.g3) grVar).resourcesProvider;
-            e9Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+            e6Var = ((org.telegram.ui.ActionBar.f3) grVar).resourcesProvider;
+            e9Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, e6Var));
             e9Var.setTopPadding(17);
             e9Var.setBottomPadding(17);
             frameLayout = e9Var;
         } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.l4(context, 22);
+            frameLayout = new org.telegram.ui.Cells.m4(context, 22);
         } else if (i10 != 3) {
             boolean z10 = grVar.b0;
             ?? frVar = new fr(context);
             frVar.setOrientation(1);
-            bj0 bj0Var = new bj0(context);
-            bj0Var.setAutoRepeat(true);
-            bj0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            bj0Var.d();
-            frVar.addView(bj0Var, w7.x5.t(112, 112, 49, 0, 24, 0, 0));
+            lj0 lj0Var = new lj0(context);
+            lj0Var.setAutoRepeat(true);
+            lj0Var.f(R.raw.utyan_schedule, 112, 112, null);
+            lj0Var.d();
+            frVar.addView(lj0Var, w7.y5.t(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-            frVar.addView(textView, w7.x5.t(-2, -2, 1, 0, 14, 0, 7));
+            frVar.addView(textView, w7.y5.t(-2, -2, 1, 0, 14, 0, 7));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(1);
             textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.j5, false));
             textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
             textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            frVar.addView(textView2, w7.x5.t(-2, -2, 1, 28, 0, 28, 17));
+            frVar.addView(textView2, w7.y5.t(-2, -2, 1, 28, 0, 28, 17));
             frameLayout = frVar;
         } else {
-            frameLayout = new org.telegram.ui.Cells.f4(context, 1, 0, false);
+            frameLayout = new org.telegram.ui.Cells.g4(context, 1, 0, false);
         }
         frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new wk0(frameLayout);
+        return new gl0(frameLayout);
     }
 }

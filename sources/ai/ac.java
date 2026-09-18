@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class ac implements y5 {
     public final /* synthetic */ d9 a;
@@ -39,16 +39,16 @@ public final class ac implements y5 {
 
     public final void b(boolean z10) {
         jc jcVar = this.d;
-        org.telegram.ui.ActionBar.o2 o2Var = jcVar.f;
+        org.telegram.ui.ActionBar.n2 n2Var = jcVar.f;
         if (jcVar.b) {
             if (jcVar.c) {
                 return;
             }
             if (z10) {
-                AndroidUtilities.requestAdjustNothing(o2Var.getParentActivity(), o2Var.getClassGuid());
+                AndroidUtilities.requestAdjustNothing(n2Var.getParentActivity(), n2Var.getClassGuid());
                 return;
             } else {
-                AndroidUtilities.requestAdjustResize(o2Var.getParentActivity(), o2Var.getClassGuid());
+                AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
                 return;
             }
         }

@@ -1,51 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sn implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class sn implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tn b;
+    public final /* synthetic */ xn b;
 
-    public /* synthetic */ sn(tn tnVar, int i10) {
+    public /* synthetic */ sn(xn xnVar, int i10) {
         this.a = i10;
-        this.b = tnVar;
+        this.b = xnVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.d5 d5Var;
+        org.telegram.ui.ActionBar.d5 d5Var2;
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tn tnVar = this.b;
-                tnVar.f = floatValue;
-                View view = tnVar.h.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tn tnVar2 = this.b;
-                tnVar2.f = floatValue2;
-                View view2 = tnVar2.h.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
+                SparseIntArray sparseIntArray = new SparseIntArray();
+                xn xnVar = this.b;
+                xnVar.e = sparseIntArray;
+                zn znVar = xnVar.V;
+                org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) znVar.getThemedDrawable("drawableMsgOut");
+                xnVar.I = f5Var;
+                d5Var = ((org.telegram.ui.ActionBar.n2) znVar).parentLayout;
+                f5Var.H = d5Var.getMessageDrawableOutStart();
+                org.telegram.ui.ActionBar.f5 f5Var2 = (org.telegram.ui.ActionBar.f5) znVar.getThemedDrawable("drawableMsgOutMedia");
+                xnVar.J = f5Var2;
+                d5Var2 = ((org.telegram.ui.ActionBar.n2) znVar).parentLayout;
+                f5Var2.H = d5Var2.getMessageDrawableOutMediaStart();
+                xnVar.I.I = 0.0f;
+                xnVar.J.I = 0.0f;
+                znVar.uc();
+                xnVar.k(0.0f);
                 break;
             default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tn tnVar3 = this.b;
-                tnVar3.f = floatValue3;
-                View view3 = tnVar3.h.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
+                xn xnVar2 = this.b;
+                xnVar2.I.H = null;
+                xnVar2.J.H = null;
+                xnVar2.e = null;
+                xnVar2.k(1.0f);
                 break;
         }
     }

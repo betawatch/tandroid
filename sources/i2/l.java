@@ -8,19 +8,19 @@ import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class l {
     public final Context a;
-    public final k2.c0 b;
+    public final ka.c b;
     public int c = 0;
 
     public l(Context context) {
         this.a = context;
-        this.b = new k2.c0(context, 21);
+        this.b = new ka.c(context, 17);
     }
 
-    public k2.g0 a(Context context) {
+    public k2.f0 a(Context context) {
         return new e6(context).a();
     }
 
@@ -70,8 +70,8 @@ public class l {
         Class<?> cls2 = Long.TYPE;
         Context context = this.a;
         a3.k kVar = new a3.k(context);
-        k2.c0 c0Var = this.b;
-        kVar.c = c0Var;
+        ka.c cVar = this.b;
+        kVar.c = cVar;
         kVar.d = 5000L;
         kVar.e = handler;
         kVar.f = b0Var;
@@ -113,10 +113,10 @@ public class l {
                     int i18 = ExperimentalFfmpegVideoRenderer.r0;
                     arrayList.add(i17, (f) ExperimentalFfmpegVideoRenderer.class.getConstructor(cls2, Handler.class, a3.l0.class, cls).newInstance(5000L, handler, b0Var, num));
                     e2.a.i("DefaultRenderersFactory", "Loaded FfmpegVideoRenderer.");
-                    k2.g0 a2 = a(context);
+                    k2.f0 a2 = a(context);
                     i11 = this.c;
                     Context context2 = this.a;
-                    arrayList.add(new k2.j0(context2, c0Var, handler, b0Var2, a2));
+                    arrayList.add(new k2.i0(context2, cVar, handler, b0Var2, a2));
                     if (i11 != 0) {
                     }
                     arrayList.add(new w2.e(b0Var3, handler.getLooper()));
@@ -124,7 +124,7 @@ public class l {
                     arrayList.add(new s2.b(b0Var4, looper));
                     arrayList.add(new s2.b(b0Var4, looper));
                     arrayList.add(new b3.a());
-                    arrayList.add(new q2.f(new l5.j(context, 1)));
+                    arrayList.add(new q2.g(new q2.b(context, 0)));
                     return (f[]) arrayList.toArray(new f[0]);
                 }
                 int i172 = i10 + 1;
@@ -142,10 +142,10 @@ public class l {
                 throw new IllegalStateException("Error instantiating AV1 extension", e10);
             }
         }
-        k2.g0 a22 = a(context);
+        k2.f0 a22 = a(context);
         i11 = this.c;
         Context context22 = this.a;
-        arrayList.add(new k2.j0(context22, c0Var, handler, b0Var2, a22));
+        arrayList.add(new k2.i0(context22, cVar, handler, b0Var2, a22));
         if (i11 != 0) {
             int size2 = arrayList.size();
             if (i11 == 2) {
@@ -187,7 +187,7 @@ public class l {
                                         arrayList.add(new s2.b(b0Var4, looper2));
                                         arrayList.add(new s2.b(b0Var4, looper2));
                                         arrayList.add(new b3.a());
-                                        arrayList.add(new q2.f(new l5.j(context, 1)));
+                                        arrayList.add(new q2.g(new q2.b(context, 0)));
                                         return (f[]) arrayList.toArray(new f[0]);
                                     }
                                     Object[] objArr2 = {context22, handler, b0Var2, a22};
@@ -201,7 +201,7 @@ public class l {
                                     arrayList.add(new s2.b(b0Var4, looper22));
                                     arrayList.add(new s2.b(b0Var4, looper22));
                                     arrayList.add(new b3.a());
-                                    arrayList.add(new q2.f(new l5.j(context, 1)));
+                                    arrayList.add(new q2.g(new q2.b(context, 0)));
                                     return (f[]) arrayList.toArray(new f[0]);
                                 } catch (Exception e11) {
                                     throw new IllegalStateException("Error instantiating IAMF extension", e11);
@@ -255,7 +255,7 @@ public class l {
                     arrayList.add(new s2.b(b0Var4, looper222));
                     arrayList.add(new s2.b(b0Var4, looper222));
                     arrayList.add(new b3.a());
-                    arrayList.add(new q2.f(new l5.j(context, 1)));
+                    arrayList.add(new q2.g(new q2.b(context, 0)));
                     return (f[]) arrayList.toArray(new f[0]);
                 }
                 int i19222 = i14 + 1;
@@ -281,7 +281,7 @@ public class l {
         arrayList.add(new s2.b(b0Var4, looper2222));
         arrayList.add(new s2.b(b0Var4, looper2222));
         arrayList.add(new b3.a());
-        arrayList.add(new q2.f(new l5.j(context, 1)));
+        arrayList.add(new q2.g(new q2.b(context, 0)));
         return (f[]) arrayList.toArray(new f[0]);
     }
 }

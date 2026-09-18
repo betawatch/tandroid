@@ -1,45 +1,38 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class fb0 extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ int L;
+public final class fb0 extends o81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ ec0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fb0(int i10, int i11, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10, boolean z11) {
-        super(i10, context, f6Var, z10, z11);
-        this.L = i11;
+    public fb0(ec0 ec0Var, Context context) {
+        this.b = ec0Var;
+        this.a = context;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1
-    public final void i() {
-        switch (this.L) {
-            case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
-        }
+    @Override // org.telegram.ui.Components.o81
+    public final void b(View view, int i10, int i11) {
+        yb0 yb0Var = (yb0) view;
+        yb0Var.h();
+        yb0Var.k(false);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-            default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.o81
+    public final View d(int i10) {
+        return new yb0(this.b, this.a, i10);
+    }
+
+    @Override // org.telegram.ui.Components.o81
+    public final int e() {
+        return this.b.e.a.size();
+    }
+
+    @Override // org.telegram.ui.Components.o81
+    public final int h(int i10) {
+        return ((bc0) this.b.e.a.get(i10)).a;
     }
 }

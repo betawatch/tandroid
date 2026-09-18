@@ -17,10 +17,9 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.lo0;
+import org.telegram.ui.ko0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -64,7 +63,7 @@ public final class f {
         JSONArray jSONArray = new JSONArray();
         for (int i10 = 0; i10 < list.size(); i10++) {
             try {
-                jSONArray.put(new JSONObject(l.a.e(list.get(i10))));
+                jSONArray.put(new JSONObject(l.a.J(list.get(i10))));
             } catch (JSONException e) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e);
             }
@@ -164,7 +163,7 @@ public final class f {
                 closeable = r32;
             }
         }
-        String i10 = p6.i("No userId set for session ", str);
+        String i10 = t8.b.i("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", i10, null);
         }
@@ -250,9 +249,9 @@ public final class f {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                lo0 lo0Var = new lo0();
-                lo0Var.put("userId", str2);
-                obj = lo0Var.toString();
+                ko0 ko0Var = new ko0();
+                ko0Var.put("userId", str2);
+                obj = ko0Var.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
             } catch (Exception e) {
                 e = e;

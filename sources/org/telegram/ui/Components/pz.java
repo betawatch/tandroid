@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class pz extends s4.c0 {
     public final SparseArray I;
@@ -21,13 +21,13 @@ public class pz extends s4.c0 {
     public int S;
     public final boolean T;
 
-    public pz(ml0 ml0Var, int i10) {
+    public pz(wl0 wl0Var, int i10) {
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = ml0Var;
+        this.N = wl0Var;
         this.M = i10;
     }
 
@@ -146,14 +146,14 @@ public class pz extends s4.c0 {
         }
     }
 
-    public pz(int i10, int i11, ml0 ml0Var) {
+    public pz(int i10, int i11, wl0 wl0Var) {
         super(1, false);
         this.I = new SparseArray();
         this.J = -1;
         this.P = true;
         this.Q = true;
         this.T = true;
-        this.N = ml0Var;
+        this.N = wl0Var;
         this.M = i10;
     }
 }

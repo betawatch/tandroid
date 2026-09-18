@@ -1,60 +1,513 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ll0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+public abstract class ll0 {
+    public static org.telegram.ui.ActionBar.f3 a;
 
-    public /* synthetic */ ll0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
+    public static org.telegram.ui.Components.xc a() {
+        Context context;
+        Context context2;
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        HashSet hashSet = ei.k3.W0;
+        if (!hashSet.isEmpty()) {
+            Iterator it = hashSet.iterator();
+            ei.k3 k3Var = null;
+            while (it.hasNext()) {
+                ei.k3 k3Var2 = (ei.k3) it.next();
+                if (k3Var2.V0) {
+                    k3Var = k3Var2;
+                }
+            }
+            if (k3Var != null) {
+                if (U == null || U.getParentActivity() == null) {
+                    context2 = LaunchActivity.G1;
+                    if (context2 == null) {
+                        context2 = ApplicationLoader.applicationContext;
+                    }
+                } else {
+                    context2 = U.getParentActivity();
+                }
+                return new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(context2), null);
+            }
+        }
+        HashSet hashSet2 = h4.b1;
+        if (!hashSet2.isEmpty()) {
+            Iterator it2 = hashSet2.iterator();
+            h4 h4Var = null;
+            while (it2.hasNext()) {
+                h4 h4Var2 = (h4) it2.next();
+                if (h4Var2.V) {
+                    h4Var = h4Var2;
+                }
+            }
+            if (h4Var != null) {
+                if (U == null || U.getParentActivity() == null) {
+                    context = LaunchActivity.G1;
+                    if (context == null) {
+                        context = ApplicationLoader.applicationContext;
+                    }
+                } else {
+                    context = U.getParentActivity();
+                }
+                return new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(context), null);
+            }
+        }
+        return (U == null || U.getLastSheet() == null || U.getLastSheet().getBulletinFactory() == null) ? org.telegram.ui.Components.xc.a0(U) : U.getLastSheet().getBulletinFactory();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                passcodeActivity.n.postDelayed(passcodeActivity.O, 3000L);
-                passcodeActivity.N = true;
-                break;
-            case 1:
-                PasscodeActivity passcodeActivity2 = new PasscodeActivity(0);
-                PasscodeActivity passcodeActivity3 = this.b;
-                passcodeActivity3.presentFragment(passcodeActivity2, true);
-                cc0 cc0Var = passcodeActivity3.Q;
-                if (cc0Var != null) {
-                    AndroidUtilities.runOnUIThread(cc0Var);
-                    passcodeActivity3.Q = null;
-                    break;
-                }
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity4 = this.b;
-                AndroidUtilities.runOnUIThread(new ll0(passcodeActivity4, 3), passcodeActivity4.e0() ? 150L : 1000L);
-                break;
-            case 3:
-                PasscodeActivity passcodeActivity5 = this.b;
-                if (passcodeActivity5.e0()) {
-                    for (is isVar : passcodeActivity5.n.f) {
-                        isVar.i(0.0f);
+    public static void b(boolean z10, final int i10, final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, TLRPC.UrlAuthResult urlAuthResult, String str, TLRPC.UrlAuthResult urlAuthResult2, String str2, boolean z11, org.telegram.ui.web.d1 d1Var) {
+        final Context context;
+        FrameLayout frameLayout;
+        FrameLayout frameLayout2;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        int[] iArr;
+        boolean z12;
+        org.telegram.ui.Cells.w8 w8Var;
+        ArrayList arrayList;
+        boolean z13;
+        org.telegram.ui.ActionBar.n2 U;
+        String str3;
+        org.telegram.ui.ActionBar.n2 U2;
+        Context context2;
+        if (urlAuthResult instanceof TLRPC.TL_urlAuthResultAccepted) {
+            TLRPC.TL_urlAuthResultAccepted tL_urlAuthResultAccepted = (TLRPC.TL_urlAuthResultAccepted) urlAuthResult;
+            if (d1Var == null || (!TextUtils.isEmpty(tL_messages_requestUrlAuth.in_app_origin) && TextUtils.equals(d1Var.getOriginHost(), tL_messages_requestUrlAuth.in_app_origin))) {
+                if (!TextUtils.isEmpty(tL_urlAuthResultAccepted.url)) {
+                    if (d1Var != null) {
+                        d1Var.z("oauth_result_confirmed", org.telegram.ui.web.d1.B(tL_urlAuthResultAccepted.url, "result_url"));
+                        return;
                     }
-                    break;
+                    org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                    if (U3 == null) {
+                        return;
+                    }
+                    nf.f.u(U3.getContext(), tL_urlAuthResultAccepted.url);
+                    return;
+                }
+                boolean z14 = urlAuthResult2 instanceof TLRPC.TL_urlAuthResultRequest;
+                if (z14) {
+                    TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) urlAuthResult2;
+                    str3 = tL_urlAuthResultRequest.is_app ? !TextUtils.isEmpty(tL_urlAuthResultRequest.verified_app_name) ? tL_urlAuthResultRequest.verified_app_name : LocaleController.getString(R.string.UnverifiedApp) : tL_urlAuthResultRequest.domain;
                 } else {
-                    passcodeActivity5.f.a(0.0f);
+                    str3 = null;
+                }
+                if (!TextUtils.isEmpty(str3)) {
+                    a().M(LocaleController.getString(R.string.BotAuthLoggedInSuccessTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(z14 && ((TLRPC.TL_urlAuthResultRequest) urlAuthResult2).request_phone_number && !z11 ? R.string.BotAuthLoggedInSuccessWithoutPhoneNumber : R.string.BotAuthLoggedInSuccess, str3), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Gi, false)), R.raw.contact_check).j();
+                }
+                if (d1Var != null) {
+                    d1Var.z("oauth_result_confirmed", org.telegram.ui.web.d1.B(null, "result_url"));
+                    return;
+                } else {
+                    if (!z10 || (U2 = LaunchActivity.U()) == null || (context2 = U2.getContext()) == null) {
+                        return;
+                    }
+                    AndroidUtilities.runOnUIThread(new pv(context2, r13 ? 1 : 0), 800L);
+                    return;
+                }
+            }
+            return;
+        }
+        if (urlAuthResult instanceof TLRPC.TL_urlAuthResultDefault) {
+            if (d1Var != null) {
+                return;
+            }
+            if (TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
+                if (TextUtils.isEmpty(str) || (U = LaunchActivity.U()) == null) {
+                    return;
+                }
+                org.telegram.ui.Components.e5.q0(U, str, false, urlAuthResult2 == null);
+                return;
+            }
+            org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
+            if (U4 == null) {
+                return;
+            }
+            org.telegram.ui.Components.e5.q0(U4, tL_messages_requestUrlAuth.url, false, urlAuthResult2 == null);
+            return;
+        }
+        if (urlAuthResult instanceof TLRPC.TL_urlAuthResultRequest) {
+            final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest2 = (TLRPC.TL_urlAuthResultRequest) urlAuthResult;
+            final org.telegram.ui.ActionBar.n2 U5 = LaunchActivity.U();
+            if (U5 == null || (context = U5.getContext()) == null) {
+                return;
+            }
+            org.telegram.ui.ActionBar.e6 resourceProvider = U5.getResourceProvider();
+            final org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.wh.i(1, context, U5.getResourceProvider(), false);
+            FrameLayout frameLayout3 = new FrameLayout(context);
+            i11.customView = frameLayout3;
+            ArrayList arrayList2 = new ArrayList();
+            boolean isTestBackend = ConnectionsManager.getInstance(i10).isTestBackend();
+            arrayList2.clear();
+            for (int i12 = 0; i12 < 4; i12++) {
+                if (UserConfig.getInstance(i12).isClientActivated() && ConnectionsManager.getInstance(i12).isTestBackend() == isTestBackend) {
+                    arrayList2.add(Integer.valueOf(i12));
+                }
+            }
+            Collections.sort(arrayList2, new df(24));
+            final boolean z15 = tL_messages_requestUrlAuth.peer != null;
+            boolean z16 = tL_urlAuthResultRequest2.is_app;
+            FrameLayout frameLayout4 = new FrameLayout(context);
+            FrameLayout frameLayout5 = new FrameLayout(context);
+            frameLayout5.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(14.0f), U5.getThemedColor(org.telegram.ui.ActionBar.j6.i5)));
+            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+            w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
+            w9Var.getImageReceiver().setCrossfadeWithOldImage(true);
+            org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+            int[] iArr2 = {i10};
+            TLRPC.User currentUser = UserConfig.getInstance(iArr2[0]).getCurrentUser();
+            h9Var.r(currentUser);
+            w9Var.e(currentUser, h9Var);
+            frameLayout5.addView(w9Var, w7.y5.e(28, 28, 115));
+            ImageView imageView = new ImageView(context);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            int themedColor = U5.getThemedColor(org.telegram.ui.ActionBar.j6.r5);
+            PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+            imageView.setColorFilter(new PorterDuffColorFilter(themedColor, mode));
+            imageView.setImageResource(R.drawable.arrows_select);
+            frameLayout5.addView(imageView, w7.y5.d(18, 18.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
+            frameLayout4.addView(frameLayout5, w7.y5.e(52, 28, 17));
+            frameLayout4.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), 0);
+            frameLayout3.addView(frameLayout4, w7.y5.p(-2, -2, 0.0f, 51, 6, 4, 6, 0));
+            w7.a6.a(frameLayout4);
+            if (arrayList2.size() <= 1 || tL_messages_requestUrlAuth.peer != null) {
+                frameLayout4.setVisibility(8);
+            }
+            LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+            frameLayout3.addView(e, w7.y5.e(-1, -1, 119));
+            org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
+            w9Var2.setRoundRadius(AndroidUtilities.dp(40.0f));
+            org.telegram.ui.Components.h9 h9Var2 = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+            h9Var2.r(tL_urlAuthResultRequest2.bot);
+            w9Var2.e(tL_urlAuthResultRequest2.bot, h9Var2);
+            e.addView(w9Var2, w7.y5.t(80, 80, 49, 0, 21, 0, 16));
+            final String string = tL_urlAuthResultRequest2.is_app ? !TextUtils.isEmpty(tL_urlAuthResultRequest2.verified_app_name) ? tL_urlAuthResultRequest2.verified_app_name : LocaleController.getString(R.string.UnverifiedApp) : tL_urlAuthResultRequest2.domain;
+            int i13 = org.telegram.ui.ActionBar.j6.j5;
+            TextView b10 = w7.c6.b(context, 20.0f, i13, true, null);
+            b10.setGravity(17);
+            b10.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.BotAuthTitle, string), U5.getThemedColor(org.telegram.ui.ActionBar.j6.Oh)));
+            e.addView(b10, w7.y5.r(-1, -2, 49, 32.0f, 0.0f, 32.0f, 9.66f));
+            TextView b11 = w7.c6.b(context, 14.0f, i13, false, null);
+            b11.setGravity(17);
+            org.telegram.messenger.q.n(z16 ? R.string.BotAuthAppSubtitle : z15 ? R.string.BotAuthBotSubtitle : R.string.BotAuthSiteSubtitle, b11);
+            e.addView(b11, w7.y5.t(-1, -2, 49, 32, 0, 32, 24));
+            if (TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest2.browser) && TextUtils.isEmpty(tL_urlAuthResultRequest2.region) && TextUtils.isEmpty(tL_urlAuthResultRequest2.ip)) {
+                frameLayout = frameLayout4;
+                frameLayout2 = frameLayout5;
+                e6Var = resourceProvider;
+                iArr = iArr2;
+            } else {
+                LinearLayout linearLayout = new LinearLayout(context);
+                linearLayout.setClipToPadding(false);
+                linearLayout.setClipChildren(false);
+                linearLayout.setOrientation(1);
+                linearLayout.setBackground(org.telegram.ui.ActionBar.j6.d0(AndroidUtilities.dp(16.0f), U5.getThemedColor(org.telegram.ui.ActionBar.j6.d6)));
+                e.addView(linearLayout, w7.y5.t(-1, -2, 55, 9, -3, 9, -3));
+                if (TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) && TextUtils.isEmpty(tL_urlAuthResultRequest2.browser)) {
+                    frameLayout = frameLayout4;
+                    frameLayout2 = frameLayout5;
+                    e6Var = resourceProvider;
+                    iArr = iArr2;
+                } else {
+                    LinearLayout e7 = org.telegram.messenger.wh.e(context, 0);
+                    ImageView imageView2 = new ImageView(context);
+                    imageView2.setImageResource(R.drawable.msg2_devices);
+                    frameLayout = frameLayout4;
+                    imageView2.setColorFilter(new PorterDuffColorFilter(U5.getThemedColor(i13), mode));
+                    e7.addView(imageView2, w7.y5.t(24, 24, 19, 17, 0, 20, 0));
+                    LinearLayout linearLayout2 = new LinearLayout(context);
+                    linearLayout2.setOrientation(1);
+                    e7.addView(linearLayout2, w7.y5.r(-1, -2, 55, 0.0f, 10.66f, 20.0f, 11.0f));
+                    frameLayout2 = frameLayout5;
+                    e6Var = resourceProvider;
+                    TextView b12 = w7.c6.b(context, 16.0f, i13, false, null);
+                    b12.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.platform) ? "—" : tL_urlAuthResultRequest2.platform);
+                    linearLayout2.addView(b12, w7.y5.r(-1, -2, 55, 0.0f, 0.0f, 0.0f, 4.33f));
+                    TextView b13 = w7.c6.b(context, 13.0f, org.telegram.ui.ActionBar.j6.y6, false, null);
+                    b13.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.browser) ? "—" : tL_urlAuthResultRequest2.browser);
+                    iArr = iArr2;
+                    linearLayout2.addView(b13, w7.y5.q(-1, -2, 55));
+                    linearLayout.addView(e7, w7.y5.n(-1, -2));
+                }
+                if (TextUtils.isEmpty(tL_urlAuthResultRequest2.region) && TextUtils.isEmpty(tL_urlAuthResultRequest2.ip)) {
+                    z12 = false;
+                } else {
+                    LinearLayout e10 = org.telegram.messenger.wh.e(context, 0);
+                    ImageView imageView3 = new ImageView(context);
+                    imageView3.setImageResource(R.drawable.msg2_language);
+                    imageView3.setColorFilter(new PorterDuffColorFilter(U5.getThemedColor(i13), mode));
+                    e10.addView(imageView3, w7.y5.t(24, 24, 19, 17, 0, 20, 0));
+                    LinearLayout linearLayout3 = new LinearLayout(context);
+                    linearLayout3.setOrientation(1);
+                    e10.addView(linearLayout3, w7.y5.r(-1, -2, 55, 0.0f, 10.66f, 20.0f, 11.0f));
+                    TextView b14 = w7.c6.b(context, 16.0f, i13, false, null);
+                    b14.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.region) ? "—" : tL_urlAuthResultRequest2.region);
+                    linearLayout3.addView(b14, w7.y5.r(-1, -2, 55, 0.0f, 0.0f, 0.0f, 4.33f));
+                    z12 = false;
+                    TextView b15 = w7.c6.b(context, 13.0f, org.telegram.ui.ActionBar.j6.y6, false, null);
+                    b15.setText(TextUtils.isEmpty(tL_urlAuthResultRequest2.ip) ? "—" : LocaleController.formatString(R.string.BotAuthBasedOnIP, tL_urlAuthResultRequest2.ip));
+                    linearLayout3.addView(b15, w7.y5.q(-1, -2, 55));
+                    linearLayout.addView(e10, w7.y5.n(-1, -2));
+                }
+                TextView b16 = w7.c6.b(context, 14.0f, org.telegram.ui.ActionBar.j6.y6, z12, null);
+                b16.setText(LocaleController.getString(R.string.BotAuthInfo));
+                e.addView(b16, w7.y5.t(-1, -2, 55, 22, 5, 22, 20));
+            }
+            if (tL_urlAuthResultRequest2.request_write_access) {
+                FrameLayout frameLayout6 = new FrameLayout(context);
+                int dp = AndroidUtilities.dp(16.0f);
+                int i14 = org.telegram.ui.ActionBar.j6.d6;
+                frameLayout6.setBackground(org.telegram.ui.ActionBar.j6.d0(dp, U5.getThemedColor(i14)));
+                org.telegram.ui.Cells.w8 w8Var2 = new org.telegram.ui.Cells.w8(context, U5.getResourceProvider());
+                w8Var2.f(LocaleController.getString(R.string.BotAuthAllowMessages), true, false);
+                w8Var2.setBackground(org.telegram.ui.ActionBar.j6.Z(U5.getThemedColor(i14), U5.getThemedColor(org.telegram.ui.ActionBar.j6.i6), 16, 16));
+                w8Var2.setOnClickListener(new k60(w8Var2, 11));
+                frameLayout6.addView(w8Var2, w7.y5.e(-1, -1, 119));
+                e.addView(frameLayout6, w7.y5.t(-1, -2, 7, 9, -3, 9, -3));
+                TextView b17 = w7.c6.b(context, 14.0f, org.telegram.ui.ActionBar.j6.y6, false, null);
+                b17.setText(LocaleController.formatString(R.string.BotAuthAllowMessagesInfo, UserObject.getUserName(tL_urlAuthResultRequest2.bot)));
+                e.addView(b17, w7.y5.t(-1, -2, 55, 22, 6, 22, 20));
+                w8Var = w8Var2;
+            } else {
+                w8Var = null;
+            }
+            LinearLayout e11 = org.telegram.messenger.wh.e(context, 0);
+            final ci.d dVar = new ci.d(context, U5.getResourceProvider(), true);
+            dVar.setRoundRadius(24);
+            dVar.setColor(U5.getThemedColor(org.telegram.ui.ActionBar.j6.p7));
+            dVar.setText(LocaleController.getString(R.string.Decline));
+            e11.addView(dVar, w7.y5.p(-1, 48, 1.0f, 119, 0, 0, 5, 0));
+            final ci.d dVar2 = new ci.d(context, U5.getResourceProvider(), true);
+            dVar2.setRoundRadius(24);
+            dVar2.setText(LocaleController.getString(R.string.BotAuthLogin));
+            e11.addView(dVar2, w7.y5.p(-1, 48, 1.0f, 119, 5, 0, 0, 0));
+            e.addView(e11, w7.y5.t(-1, -2, 7, 12, 12, 12, 8));
+            i11.setBackgroundColor(U5.getThemedColor(org.telegram.ui.ActionBar.j6.a7));
+            final String[] strArr = {str2};
+            ArrayList arrayList3 = arrayList2;
+            FrameLayout frameLayout7 = frameLayout;
+            final org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
+            final int[] iArr3 = iArr;
+            il0 il0Var = new il0(iArr3, tL_messages_requestUrlAuth, i11, z10, str, urlAuthResult2, strArr, z11, d1Var, string, e6Var2);
+            if (tL_urlAuthResultRequest2.user_id_hint != 0 && UserConfig.getInstance(i10).getClientUserId() != tL_urlAuthResultRequest2.user_id_hint) {
+                int size = arrayList3.size();
+                int i15 = 0;
+                while (i15 < size) {
+                    arrayList = arrayList3;
+                    Object obj = arrayList.get(i15);
+                    i15++;
+                    Integer num = (Integer) obj;
+                    z13 = z16;
+                    if (UserConfig.getInstance(num.intValue()).getClientUserId() == tL_urlAuthResultRequest2.user_id_hint) {
+                        il0Var.run(num);
+                        break;
+                    } else {
+                        arrayList3 = arrayList;
+                        z16 = z13;
+                    }
+                }
+            }
+            arrayList = arrayList3;
+            z13 = z16;
+            frameLayout7.setOnClickListener(new ai.s0(i11, frameLayout2, arrayList, iArr3, il0Var));
+            boolean[] zArr = new boolean[1];
+            dVar.setOnClickListener(new ei.m3(tL_messages_requestUrlAuth, zArr, i11, dVar, d1Var, i10));
+            final boolean[] zArr2 = new boolean[1];
+            final boolean z17 = z13;
+            final ai.cb cbVar = new ai.cb(tL_urlAuthResultRequest2, strArr, context, i10, new jl0(dVar2, dVar, tL_messages_requestUrlAuth, strArr, w8Var, zArr2, iArr3, zArr, i11, string, e6Var2, z10, str, tL_urlAuthResultRequest2, d1Var), U5, 10);
+            dVar2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.cl0
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    if (ci.d.this.N || dVar.N) {
+                        return;
+                    }
+                    TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest3 = tL_urlAuthResultRequest2;
+                    boolean z18 = tL_urlAuthResultRequest3.request_phone_number;
+                    final ai.cb cbVar2 = cbVar;
+                    if (!z18) {
+                        cbVar2.run();
+                        return;
+                    }
+                    final int i16 = 0;
+                    TLRPC.User currentUser2 = UserConfig.getInstance(iArr3[0]).getCurrentUser();
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, U5.getResourceProvider());
+                    String string2 = LocaleController.getString(R.string.BotAuthPhoneNumber);
+                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                    b2Var.R = string2;
+                    int i17 = R.string.BotAuthPhoneNumberText;
+                    String userName = (!z15 || z17) ? string : UserObject.getUserName(tL_urlAuthResultRequest3.bot);
+                    final int i18 = 1;
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(i17, userName, gf.b.c().b("+" + currentUser2.phone).replaceAll(" ", " ")));
+                    String string3 = LocaleController.getString(R.string.BotAuthPhoneNumberDeny);
+                    final boolean[] zArr3 = zArr2;
+                    alertDialog$Builder.h(string3, new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.hl0
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i19) {
+                            switch (i16) {
+                                case 0:
+                                    zArr3[0] = false;
+                                    cbVar2.run();
+                                    break;
+                                default:
+                                    zArr3[0] = true;
+                                    cbVar2.run();
+                                    break;
+                            }
+                        }
+                    });
+                    alertDialog$Builder.k(LocaleController.getString(R.string.BotAuthPhoneNumberAccept), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.hl0
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i19) {
+                            switch (i18) {
+                                case 0:
+                                    zArr3[0] = false;
+                                    cbVar2.run();
+                                    break;
+                                default:
+                                    zArr3[0] = true;
+                                    cbVar2.run();
+                                    break;
+                            }
+                        }
+                    });
+                    alertDialog$Builder.d(-2);
+                    alertDialog$Builder.o();
+                }
+            });
+            i11.setOnDismissListener(new r5(new org.telegram.ui.ActionBar.f3[1], 9));
+            org.telegram.ui.ActionBar.f3 f3Var = a;
+            if (f3Var != null) {
+                f3Var.dismiss();
+                a = null;
+            }
+            if (tL_urlAuthResultRequest2.match_codes_first && !tL_urlAuthResultRequest2.match_codes.isEmpty() && TextUtils.isEmpty(strArr[0])) {
+                a = c(context, i10, tL_urlAuthResultRequest2.match_codes, string, new Utilities.Callback() { // from class: org.telegram.ui.fl0
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj2) {
+                        String str4 = (String) obj2;
+                        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
+                        b2Var.q(200L);
+                        TLRPC.TL_messages_checkUrlAuthMatchCode tL_messages_checkUrlAuthMatchCode = new TLRPC.TL_messages_checkUrlAuthMatchCode();
+                        strArr[0] = str4;
+                        tL_messages_checkUrlAuthMatchCode.match_code = str4;
+                        tL_messages_checkUrlAuthMatchCode.url = tL_messages_requestUrlAuth.url;
+                        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_messages_checkUrlAuthMatchCode, new org.telegram.messenger.a(), new gl0(b2Var, i11, string, e6Var2, 0));
+                    }
+                }, false, new org.telegram.ui.Components.h21(zArr, d1Var, tL_messages_requestUrlAuth, i10, 6), U5.getResourceProvider());
+            } else {
+                a = i11;
+                i11.show();
+            }
+        }
+    }
+
+    public static org.telegram.ui.ActionBar.f3 c(Context context, int i10, ArrayList arrayList, String str, Utilities.Callback callback, boolean z10, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
+        int i11;
+        Drawable drawable;
+        org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.wh.i(1, context, null, false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        i12.customView = linearLayout;
+        TextView textView = new TextView(context);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setTextSize(1, 18.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
+        linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 0, 25, 0, 19));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        linearLayout2.setGravity(17);
+        linearLayout2.setPadding(0, AndroidUtilities.dp(19.0f), 0, AndroidUtilities.dp(19.0f));
+        linearLayout.addView(linearLayout2, w7.y5.t(-1, -2, 1, 0, 0, 0, 0));
+        if (ConnectionsManager.getInstance(i10).isTestBackend()) {
+            i11 = 0;
+            while (i11 < 4) {
+                if (UserConfig.getInstance(i11).isClientActivated() && !ConnectionsManager.getInstance(i11).isTestBackend()) {
                     break;
                 }
-            case 4:
-                PasscodeActivity passcodeActivity6 = this.b;
-                passcodeActivity6.N = false;
-                AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity6.r, false);
-                break;
-            default:
-                this.b.k0();
-                break;
+                i11++;
+            }
         }
+        i11 = i10;
+        org.telegram.ui.Components.w9[] w9VarArr = new org.telegram.ui.Components.w9[arrayList.size()];
+        int i13 = 0;
+        boolean z11 = true;
+        while (i13 < arrayList.size()) {
+            String str2 = (String) arrayList.get(i13);
+            FrameLayout frameLayout = new FrameLayout(context);
+            org.telegram.ui.ActionBar.f3 f3Var = i12;
+            frameLayout.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(70.0f), org.telegram.ui.ActionBar.j6.l1(0.05f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var))));
+            Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(str2);
+            if (emojiBigDrawable == null) {
+                drawable = new kl0(new org.telegram.ui.Components.v01(str2, 30.0f, AndroidUtilities.bold()), e6Var);
+                z11 = false;
+            } else {
+                drawable = emojiBigDrawable;
+            }
+            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+            w9VarArr[i13] = w9Var;
+            w9Var.getImageReceiver().setCurrentAccount(i11);
+            w9Var.l(null, null, null, null, drawable, null);
+            NotificationCenter.listenEmojiLoading(w9Var);
+            frameLayout.addView(w9Var, w7.y5.e(40, 40, 17));
+            linearLayout2.addView(frameLayout, w7.y5.t(70, 70, 16, i13 == 0 ? 0 : 24, 0, 0, 0));
+            w7.a6.a(frameLayout);
+            frameLayout.setOnClickListener(new z(f3VarArr, callback, str2));
+            i13++;
+            i12 = f3Var;
+        }
+        org.telegram.ui.ActionBar.f3 f3Var2 = i12;
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+        tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
+        MediaDataController.getInstance(i11).getStickerSet(tL_inputStickerSetShortName, null, false, new nj0(2, arrayList, w9VarArr));
+        textView.setText(LocaleController.getString(z11 ? R.string.BotAuthSelectEmoji : R.string.BotAuthSelectCode));
+        TextView textView2 = new TextView(context);
+        textView2.setGravity(17);
+        textView2.setTextSize(1, 12.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, e6Var));
+        textView2.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.BotAuthLoginRequestFrom, str), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false)));
+        linearLayout.addView(textView2, w7.y5.t(-1, -2, 1, 0, 23, 0, 11));
+        ci.d f7 = org.telegram.messenger.wh.f(24, context, e6Var, true);
+        if (z10) {
+            f7.d();
+            f7.setText(LocaleController.getString(R.string.Cancel));
+        } else {
+            f7.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, e6Var));
+            f7.setText(LocaleController.getString(R.string.Decline));
+        }
+        linearLayout.addView(f7, w7.y5.t(-1, 48, 7, 12, 12, 12, 12));
+        f7.setOnClickListener(new z(f7, f3VarArr, runnable, 13));
+        f3Var2.show();
+        f3VarArr[0] = f3Var2;
+        return f3Var2;
     }
 }

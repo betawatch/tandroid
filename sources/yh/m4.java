@@ -1,29 +1,30 @@
 package yh;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ai.m0 b;
+    public final /* synthetic */ m80 b;
 
-    public /* synthetic */ m4(ai.m0 m0Var, int i10) {
+    public /* synthetic */ m4(m80 m80Var, int i10) {
         this.a = i10;
-        this.b = m0Var;
+        this.b = m80Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                AndroidUtilities.runOnUIThread(new m4(this.b, 3));
                 break;
             case 1:
-                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new m4(this.b, 3));
+                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
                 break;
             default:
                 this.b.run(Boolean.FALSE, null);

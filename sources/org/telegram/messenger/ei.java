@@ -1,30 +1,32 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ei implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 d;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ ei(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    public /* synthetic */ ei(SecretChatHelper secretChatHelper, long j3, int i10) {
         this.a = i10;
         this.b = secretChatHelper;
-        this.c = context;
-        this.d = c2Var;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startSecretChat$27(this.c, this.d);
+                this.b.lambda$processDecryptedObject$12(this.c);
+                break;
+            case 1:
+                this.b.lambda$processDecryptedObject$10(this.c);
+                break;
+            case 2:
+                this.b.lambda$processDecryptedObject$11(this.c);
                 break;
             default:
-                this.b.lambda$startSecretChat$29(this.c, this.d);
+                this.b.lambda$processUpdateEncryption$3(this.c);
                 break;
         }
     }

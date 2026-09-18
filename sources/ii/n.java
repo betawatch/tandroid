@@ -6,11 +6,11 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class n implements ti {
     public final /* synthetic */ vi a;
@@ -61,12 +61,8 @@ public final class n implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        NotificationCenter.getInstance(this.b.n).doOnIdle(fhVar);
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void K0() {
+    public final void x0(gh ghVar) {
+        NotificationCenter.getInstance(this.b.n).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ti
@@ -75,6 +71,10 @@ public final class n implements ti {
 
     @Override // org.telegram.ui.Components.ti
     public final void j1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.ti
+    public final void K0() {
     }
 
     @Override // org.telegram.ui.Components.ti

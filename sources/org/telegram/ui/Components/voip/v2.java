@@ -18,12 +18,12 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.aa;
+import org.telegram.ui.Components.ca;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.w81;
-import w7.x5;
+import org.telegram.ui.Components.r81;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class v2 extends FrameLayout {
     public String E;
@@ -81,7 +81,7 @@ public class v2 extends FrameLayout {
             textView.setTextSize(1, 11.0f);
             textView.setTextColor(-1);
             textView.setImportantForAccessibility(2);
-            this.f.addView(textView, x5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
+            this.f.addView(textView, y5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
             this.h[i10] = textView;
         }
         this.h[1].setVisibility(8);
@@ -118,7 +118,7 @@ public class v2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new u2(this, 0));
-            this.U.addListener(new w81(this, 9));
+            this.U.addListener(new r81(this, 10));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -202,7 +202,7 @@ public class v2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
         ofFloat.addUpdateListener(new bb(8, this, z14));
-        this.v.addListener(new aa(25, this, z14));
+        this.v.addListener(new ca(25, this, z14));
         this.v.setDuration(150L).start();
         invalidate();
     }

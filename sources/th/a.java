@@ -3,10 +3,9 @@ package th;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
-import k2.u;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,10 +22,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
         f fVar = this.b;
         switch (i10) {
             case 0:
-                u uVar = fVar.k0;
-                if (uVar != null) {
+                l.d dVar = fVar.k0;
+                if (dVar != null) {
                     ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    un unVar = (un) uVar.b;
+                    un unVar = (un) dVar.a;
                     ArrayList arrayList2 = unVar.P0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
@@ -38,10 +37,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 fVar.dismiss();
                 break;
             case 1:
-                u uVar2 = fVar.k0;
-                if (uVar2 != null) {
+                l.d dVar2 = fVar.k0;
+                if (dVar2 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    un unVar2 = (un) uVar2.b;
+                    un unVar2 = (un) dVar2.a;
                     ArrayList arrayList4 = unVar2.P0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);

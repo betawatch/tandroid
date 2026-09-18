@@ -6,9 +6,8 @@ import hg.k0;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import k2.c0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class h extends jf.a {
     public static final Logger s = Logger.getLogger(h.class.getName());
@@ -74,25 +73,25 @@ public final class h extends jf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    c0 c0Var = eVar.d;
+                    a4.m mVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte o9 = c0Var.o();
+                    byte y02 = mVar.y0();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;
                     while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) c0Var.b).read(bArr, i13, e - i13);
+                        int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr, i13, e - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i13 += read;
                     }
-                    if (this.o == null || o9 == 3 || o9 == 0) {
+                    if (this.o == null || y02 == 3 || y02 == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -119,7 +118,7 @@ public final class h extends jf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = o9;
+                            this.r = y02;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
@@ -130,7 +129,7 @@ public final class h extends jf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = o9;
+                        this.r = y02;
                         return;
                     }
                     return;

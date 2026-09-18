@@ -12,15 +12,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ar0;
 import org.telegram.ui.Components.e40;
-import org.telegram.ui.Components.nq0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.f9;
-import org.telegram.ui.fa;
-import org.telegram.ui.oy0;
+import org.telegram.ui.e9;
+import org.telegram.ui.ea;
+import org.telegram.ui.my0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ u(int i10, HashSet hashSet, o2 o2Var) {
+    public /* synthetic */ u(int i10, HashSet hashSet, n2 n2Var) {
         this.a = 4;
         this.b = i10;
         this.d = hashSet;
-        this.c = o2Var;
+        this.c = n2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -51,22 +51,22 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new c9((f9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                AndroidUtilities.runOnUIThread(new c9((e9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (o2) this.c, 14));
+                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new c9((o2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
+                AndroidUtilities.runOnUIThread(new c9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new c9((e40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((nq0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new c9((ar0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new oy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new my0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
@@ -88,11 +88,11 @@ public final /* synthetic */ class u implements RequestDelegate {
                     }
                     boolean isEmpty = arrayList2.isEmpty();
                     int i11 = this.b;
-                    if (isEmpty || !tg.t.h()) {
-                        AndroidUtilities.runOnUIThread(new tg.p(chat, i11, arrayList, callback, 0));
+                    if (isEmpty || !tg.s.h()) {
+                        AndroidUtilities.runOnUIThread(new tg.n(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new fa(arrayList, chat, i11, callback, 9));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new ea(arrayList, chat, i11, callback, 9));
                         break;
                     }
                 }

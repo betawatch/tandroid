@@ -15,16 +15,16 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class b1 extends ImageView {
     public static final /* synthetic */ int L = 0;
     public ImageReceiver E;
-    public o5 F;
+    public q5 F;
     public float G;
     public boolean H;
     public boolean I;
@@ -33,7 +33,7 @@ public class b1 extends ImageView {
     public final int a;
     public final float[] b;
     public final u1 c;
-    public final f6 d;
+    public final e6 d;
     public boolean e;
     public final float f;
     public boolean h;
@@ -45,7 +45,7 @@ public class b1 extends ImageView {
     public Paint x;
     public Paint y;
 
-    public b1(Context context, int i10, f6 f6Var) {
+    public b1(Context context, int i10, e6 e6Var) {
         super(context);
         this.b = new float[3];
         this.f = 1.0f;
@@ -56,7 +56,7 @@ public class b1 extends ImageView {
         this.x = new Paint(1);
         this.G = 1.0f;
         this.a = i10;
-        this.d = f6Var;
+        this.d = e6Var;
         setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i10 == 0) {
             u1 u1Var = new u1(5);
@@ -95,9 +95,9 @@ public class b1 extends ImageView {
         }
         int HSVToColor = Color.HSVToColor(fArr);
         int i11 = j6.d6;
-        f6 f6Var = this.d;
-        int d = i0.a.d(0.5f, HSVToColor, j6.v0(i11, f6Var));
-        int d10 = i0.a.d(0.4f, HSVToColor, j6.v0(i11, f6Var));
+        e6 e6Var = this.d;
+        int d = i0.a.d(0.5f, HSVToColor, j6.v0(i11, e6Var));
+        int d10 = i0.a.d(0.4f, HSVToColor, j6.v0(i11, e6Var));
         if (this.v != null && this.r == d10 && this.s == d) {
             return;
         }
@@ -155,19 +155,19 @@ public class b1 extends ImageView {
         if (this.H) {
             ImageReceiver imageReceiver = this.E;
             if (imageReceiver == null || imageReceiver.getBitmap() == null) {
-                o5 o5Var = this.F;
-                if (o5Var != null) {
-                    SparseArray sparseArray = o5.q;
-                    long i10 = o5Var.i();
+                q5 q5Var = this.F;
+                if (q5Var != null) {
+                    SparseArray sparseArray = q5.q;
+                    long i10 = q5Var.i();
                     if (i10 != 0) {
-                        if (o5.w == null) {
-                            o5.w = new HashMap();
+                        if (q5.w == null) {
+                            q5.w = new HashMap();
                         }
-                        Integer num = (Integer) o5.w.get(Long.valueOf(i10));
-                        if (num == null && (l4Var = o5Var.k) != null && l4Var.getBitmap() != null) {
-                            HashMap hashMap = o5.w;
+                        Integer num = (Integer) q5.w.get(Long.valueOf(i10));
+                        if (num == null && (l4Var = q5Var.k) != null && l4Var.getBitmap() != null) {
+                            HashMap hashMap = q5.w;
                             Long valueOf = Long.valueOf(i10);
-                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(o5Var.k.getBitmap()));
+                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(q5Var.k.getBitmap()));
                             hashMap.put(valueOf, valueOf2);
                             num = valueOf2;
                         }
@@ -284,9 +284,9 @@ public class b1 extends ImageView {
         u1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
     }
 
-    public void setAnimatedEmojiDrawable(o5 o5Var) {
-        this.F = o5Var;
-        if (o5Var != null) {
+    public void setAnimatedEmojiDrawable(q5 q5Var) {
+        this.F = q5Var;
+        if (q5Var != null) {
             this.H = true;
             invalidate();
         }

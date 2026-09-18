@@ -3,15 +3,15 @@ package ai;
 import android.content.Context;
 import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class v4 extends mb {
     public final /* synthetic */ jc H;
     public final /* synthetic */ f6 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v4(f6 f6Var, Context context, a5 a5Var, org.telegram.ui.ActionBar.f6 f6Var2, jc jcVar) {
-        super(context, a5Var, f6Var2);
+    public v4(f6 f6Var, Context context, a5 a5Var, org.telegram.ui.ActionBar.e6 e6Var, jc jcVar) {
+        super(context, a5Var, e6Var);
         this.I = f6Var;
         this.H = jcVar;
     }

@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final k2 a;
@@ -171,7 +171,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (p5 != null) {
                 int height = this.e.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.r = height;
-                dp = org.telegram.messenger.w1.C(4.0f, height, dp);
+                dp = org.telegram.messenger.q.D(4.0f, height, dp);
                 a3 a3Var = this.e;
                 a3Var.s = i13;
                 a3Var.v = this.n;
@@ -181,7 +181,7 @@ public final class p2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.d;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.kw0.a();
+                alignment = org.telegram.ui.Components.vw0.a();
             }
             a3 p10 = h4.p(h4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
             this.f = p10;

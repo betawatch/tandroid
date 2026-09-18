@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout {
     public int E;
@@ -489,9 +489,9 @@ class ArticleViewer$WindowView extends FrameLayout {
         h4Var.l0.setAlpha(i10);
         h4Var.x0.setAlpha(i10);
         this.w = f7;
-        mb0 mb0Var = h4Var.U0;
-        if (mb0Var != null) {
-            mb0Var.a(h4Var.V && f7 == 1.0f && this.v == 0.0f);
+        lb0 lb0Var = h4Var.U0;
+        if (lb0Var != null) {
+            lb0Var.a(h4Var.V && f7 == 1.0f && this.v == 0.0f);
         }
         invalidate();
     }
@@ -499,9 +499,9 @@ class ArticleViewer$WindowView extends FrameLayout {
     public void setInnerTranslationX(float f7) {
         this.v = f7;
         h4 h4Var = this.H;
-        mb0 mb0Var = h4Var.U0;
-        if (mb0Var != null) {
-            mb0Var.a(h4Var.V && this.w == 1.0f && f7 == 0.0f);
+        lb0 lb0Var = h4Var.U0;
+        if (lb0Var != null) {
+            lb0Var.a(h4Var.V && this.w == 1.0f && f7 == 0.0f);
         }
         invalidate();
     }

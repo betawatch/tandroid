@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class p40 implements ti {
     public final /* synthetic */ u40 a;
@@ -20,8 +20,8 @@ public final class p40 implements ti {
     public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
         vi viVar;
         u40 u40Var = this.a;
-        org.telegram.ui.ActionBar.o2 o2Var = u40Var.a;
-        if (o2Var == null || o2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
+        org.telegram.ui.ActionBar.n2 n2Var = u40Var.a;
+        if (n2Var == null || n2Var.getParentActivity() == null || (viVar = u40Var.c) == null) {
             return;
         }
         if (i10 != 8 && i10 != 7) {
@@ -114,8 +114,8 @@ public final class p40 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
+    public final void x0(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti

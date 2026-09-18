@@ -31,6 +31,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import e9.a1;
+import e9.g0;
 import e9.i0;
 import e9.k0;
 import j$.util.DesugarCollections;
@@ -58,16 +59,15 @@ import m.m2;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lb1;
+import org.telegram.ui.kb1;
 import v7.d8;
 import v7.v7;
-import w7.g6;
+import w7.h6;
 import y9.a2;
 import y9.l0;
 import y9.m0;
@@ -87,9 +87,9 @@ import y9.x0;
 import y9.y0;
 import y9.z1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class n implements f6 {
+public final class n implements e6 {
     public Object a;
     public Object b;
     public Object c;
@@ -197,8 +197,8 @@ public final class n implements f6 {
         w9.p pVar = new w9.p(context, uVar, aVar, yVar, bVar);
         ba.b bVar2 = new ba.b(cVar, bVar, jVar);
         z9.a aVar3 = ca.a.b;
-        l5.t.b(context);
-        return new n(pVar, bVar2, new ca.a(new ca.c(l5.t.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), aVar2)), eVar, p3Var, uVar);
+        l5.s.b(context);
+        return new n(pVar, bVar2, new ca.a(new ca.c(l5.s.a().c(new j5.a(ca.a.c, ca.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new i5.c("json"), ca.a.e), bVar.d(), aVar2)), eVar, p3Var, uVar);
     }
 
     public static ColorStateList l(Context context, int i10) {
@@ -272,7 +272,7 @@ public final class n implements f6 {
             }
             arrayList.add(new y9.d0(str, str2));
         }
-        Collections.sort(arrayList, new lb1(9));
+        Collections.sort(arrayList, new kb1(9));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
@@ -409,7 +409,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new vx0(this, i10, 0));
+                ofFloat.addUpdateListener(new gy0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -418,7 +418,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new vx0(this, i11, 1));
+                ofFloat2.addUpdateListener(new gy0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -427,7 +427,7 @@ public final class n implements f6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new vx0(this, i12, 2));
+                ofFloat3.addUpdateListener(new gy0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -453,7 +453,7 @@ public final class n implements f6 {
         bitmapShader.setLocalMatrix(matrix);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public Paint G(String str) {
         str.getClass();
         switch (str) {
@@ -472,7 +472,7 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public int G0(int i10) {
         return ((c6) this.f).C0.get(i10, j6.w0(null, i10, false));
     }
@@ -541,7 +541,7 @@ public final class n implements f6 {
                     e0Var.getClass();
                     Bundle bundle = new Bundle();
                     Bundle bundle2 = new Bundle();
-                    e9.g0 g0Var = i0.b;
+                    g0 g0Var = i0.b;
                     a1 a1Var = a1.e;
                     this.f = new m4.t(launchActivity2, e0Var, a1Var, a1Var, a1Var, dVar, bundle, bundle2, new n4.y(new g2.i(launchActivity2), 25));
                 }
@@ -594,7 +594,7 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public boolean a() {
         return ((c6) this.f).B0;
     }
@@ -623,78 +623,78 @@ public final class n implements f6 {
 
     public l5.h g() {
         String str = ((String) this.a) == null ? " transportName" : "";
-        if (((l5.m) this.c) == null) {
+        if (((l5.l) this.c) == null) {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = p6.t(str, " eventMillis");
+            str = t8.b.v(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = p6.t(str, " uptimeMillis");
+            str = t8.b.v(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = p6.t(str, " autoMetadata");
+            str = t8.b.v(str, " autoMetadata");
         }
         if (str.isEmpty()) {
-            return new l5.h((String) this.a, (Integer) this.b, (l5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
+            return new l5.h((String) this.a, (Integer) this.b, (l5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public int g0(int i10) {
         return G0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public int g1(int i10) {
         return G0(i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public Drawable getDrawable(String str) {
         c6 c6Var = (c6) this.f;
         n nVar = c6Var.D0;
         if (str.equals("drawableMsgIn")) {
             if (c6Var.E0 == null) {
-                c6Var.E0 = new g5(0, false, false, nVar);
+                c6Var.E0 = new f5(0, false, false, nVar);
             }
             return c6Var.E0;
         }
         if (str.equals("drawableMsgInSelected")) {
             if (c6Var.F0 == null) {
-                c6Var.F0 = new g5(0, false, true, nVar);
+                c6Var.F0 = new f5(0, false, true, nVar);
             }
             return c6Var.F0;
         }
         if (str.equals("drawableMsgOut")) {
             if (c6Var.G0 == null) {
-                c6Var.G0 = new g5(0, true, false, nVar);
+                c6Var.G0 = new f5(0, true, false, nVar);
             }
             return c6Var.G0;
         }
         if (str.equals("drawableMsgOutSelected")) {
             if (c6Var.H0 == null) {
-                c6Var.H0 = new g5(0, true, true, nVar);
+                c6Var.H0 = new f5(0, true, true, nVar);
             }
             return c6Var.H0;
         }
         if (str.equals("drawableMsgInMedia")) {
             if (c6Var.I0 == null) {
-                c6Var.I0 = new g5(1, false, false, nVar);
+                c6Var.I0 = new f5(1, false, false, nVar);
             }
             c6Var.I0.invalidateSelf();
             return c6Var.I0;
         }
         if (str.equals("drawableMsgInMediaSelected")) {
             if (c6Var.J0 == null) {
-                c6Var.J0 = new g5(1, false, true, nVar);
+                c6Var.J0 = new f5(1, false, true, nVar);
             }
             return c6Var.J0;
         }
         if (str.equals("drawableMsgOutMedia")) {
             if (c6Var.K0 == null) {
-                c6Var.K0 = new g5(1, true, false, nVar);
+                c6Var.K0 = new f5(1, true, false, nVar);
             }
             return c6Var.K0;
         }
@@ -702,7 +702,7 @@ public final class n implements f6 {
             return j6.O0(str);
         }
         if (c6Var.L0 == null) {
-            c6Var.L0 = new g5(1, true, true, nVar);
+            c6Var.L0 = new f5(1, true, true, nVar);
         }
         return c6Var.L0;
     }
@@ -735,10 +735,10 @@ public final class n implements f6 {
             str = str.concat(" type");
         }
         if (((u1) this.c) == null) {
-            str = p6.t(str, " app");
+            str = t8.b.v(str, " app");
         }
         if (((v1) this.d) == null) {
-            str = p6.t(str, " device");
+            str = t8.b.v(str, " device");
         }
         if (str.isEmpty()) {
             return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
@@ -752,13 +752,13 @@ public final class n implements f6 {
             str = str.concat(" proximityOn");
         }
         if (((Integer) this.d) == null) {
-            str = p6.t(str, " orientation");
+            str = t8.b.v(str, " orientation");
         }
         if (((Long) this.e) == null) {
-            str = p6.t(str, " ramUsed");
+            str = t8.b.v(str, " ramUsed");
         }
         if (((Long) this.f) == null) {
-            str = p6.t(str, " diskUsed");
+            str = t8.b.v(str, " diskUsed");
         }
         if (str.isEmpty()) {
             return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
@@ -766,7 +766,7 @@ public final class n implements f6 {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public void m(float f7, float f10, int i10, int i11) {
         j6.q(f7, f10, i10, i11);
     }
@@ -797,7 +797,7 @@ public final class n implements f6 {
         return task.continueWith(new a3.b(2), new a1.c(this, 22));
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public /* synthetic */ boolean p0() {
         return false;
     }
@@ -947,7 +947,7 @@ public final class n implements f6 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            g6.a("String array is empty and is ignored by put method.");
+            h6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -959,7 +959,7 @@ public final class n implements f6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                g6.a(sb2.toString());
+                h6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -967,7 +967,7 @@ public final class n implements f6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    g6.a(sb3.toString());
+                    h6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -983,14 +983,14 @@ public final class n implements f6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                g6.a("Input Array of elements is too big, cutting off.");
+                h6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public ColorFilter x() {
         return j6.v3;
     }
@@ -1029,7 +1029,7 @@ public final class n implements f6 {
                 ca.a aVar2 = (ca.a) this.c;
                 if (bVar2.a.f == null) {
                     try {
-                        str2 = (String) w9.x.a(((qa.c) ((w9.u) this.f).d).d());
+                        str2 = (String) w9.w.a(((qa.c) ((w9.u) this.f).d).d());
                     } catch (Exception e10) {
                         Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e10);
                         str2 = null;
@@ -1087,7 +1087,7 @@ public final class n implements f6 {
                         arrayBlockingQueue = arrayBlockingQueue2;
                     }
                 }
-                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new t0.a(this, 21)));
+                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new s9.b(this, 23)));
             }
             i12 = i13;
         }
@@ -1159,7 +1159,7 @@ public final class n implements f6 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
+    @Override // org.telegram.ui.ActionBar.e6
     public /* synthetic */ void L0(int i10, int i11) {
     }
 }

@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(String str, boolean z10) {
@@ -105,7 +105,7 @@ public abstract class d {
 
     public static void o(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(k0.i(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(k0.h(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

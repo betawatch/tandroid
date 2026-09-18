@@ -14,10 +14,10 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.da;
-import org.telegram.ui.le;
+import org.telegram.ui.ca;
+import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class o {
     public static volatile o[] m = new o[4];
@@ -121,15 +121,15 @@ public final class o {
                 }
             }
         }
-        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(context, 3, null);
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
         TL_payments.getConnectedStarRefBot getconnectedstarrefbot = new TL_payments.getConnectedStarRefBot();
         int i11 = this.a;
         getconnectedstarrefbot.peer = MessagesController.getInstance(i11).getInputPeer(j3);
         getconnectedstarrefbot.bot = MessagesController.getInstance(i11).getInputUser(j10);
-        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new ja(this, c2Var, j10, callback, 6));
-        c2Var.g0 = true;
-        c2Var.setOnCancelListener(new da(this, sendRequest, 9));
-        c2Var.q(200L);
+        int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(getconnectedstarrefbot, new ja(this, b2Var, j10, callback, 6));
+        b2Var.g0 = true;
+        b2Var.setOnCancelListener(new ca(this, sendRequest, 9));
+        b2Var.q(200L);
     }
 
     public final TLRPC.TL_payments_starsRevenueStats h(long j3, boolean z10) {
@@ -250,14 +250,14 @@ public final class o {
             l(peerDialogId);
             return;
         }
-        le leVar = le.x1;
-        if (leVar == null || leVar.z0 != DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer)) {
+        ke keVar = ke.x1;
+        if (keVar == null || keVar.z0 != DialogObject.getPeerDialogId(tL_updateStarsRevenueStatus.peer)) {
             return;
         }
-        le leVar2 = le.x1;
+        ke keVar2 = ke.x1;
         TLRPC.TL_starsRevenueStatus tL_starsRevenueStatus = tL_updateStarsRevenueStatus.status;
-        leVar2.g0(tL_starsRevenueStatus.current_balance instanceof TL_stars.TL_starsTonAmount, tL_starsRevenueStatus);
-        le.x1.e0();
+        keVar2.g0(tL_starsRevenueStatus.current_balance instanceof TL_stars.TL_starsTonAmount, tL_starsRevenueStatus);
+        ke.x1.e0();
     }
 
     public final void r(long j3) {

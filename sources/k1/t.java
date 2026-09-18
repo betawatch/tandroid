@@ -3,7 +3,7 @@ package k1;
 import org.telegram.tgnet.TLObject;
 import v7.t7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class t {
     public final /* synthetic */ ie.a a;
@@ -107,7 +107,7 @@ public final class t {
                             sVar.b = pVar;
                             sVar.c = obj2;
                             sVar.n = 3;
-                            if (a0Var2.i(obj2, sVar) != aVar3) {
+                            if (a0Var2.j(obj2, sVar) != aVar3) {
                                 obj = obj2;
                                 pVar3 = pVar;
                                 aVar = aVar2;

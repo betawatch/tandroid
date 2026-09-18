@@ -1,73 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ve extends tg {
-    public final /* synthetic */ int l0;
-    public final /* synthetic */ ChatActivityEnterView m0;
+public final class ve extends ah {
+    public final Rect x;
+    public final /* synthetic */ ChatActivityEnterView y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ve(ChatActivityEnterView chatActivityEnterView, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, true);
-        this.l0 = i11;
-        this.m0 = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public boolean d() {
-        switch (this.l0) {
-            case 0:
-                return this.m0.c();
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public final boolean e() {
-        switch (this.l0) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.m0;
-                return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
-            default:
-                return !this.m0.p3;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public final boolean f() {
-        switch (this.l0) {
-            case 0:
-                kf kfVar = this.m0.L0;
-                return !(kfVar == null || kfVar.q0) || this.r > 0;
-            default:
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tg
-    public boolean j() {
-        switch (this.l0) {
-            case 0:
-                return this.m0.y4;
-            default:
-                return super.j();
-        }
+    public ve(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity, 24);
+        this.y = chatActivityEnterView;
+        this.x = new Rect();
     }
 
     @Override // android.view.View
-    public void setAlpha(float f7) {
-        switch (this.l0) {
-            case 0:
-                super.setAlpha(f7);
-                int i10 = ChatActivityEnterView.n5;
-                this.m0.z1();
-                break;
-            default:
-                super.setAlpha(f7);
-                break;
+    public final void draw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.y;
+        if (!chatActivityEnterView.a1) {
+            super.draw(canvas);
+            return;
         }
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        Rect rect = this.x;
+        rect.set(0, 0, measuredWidth, measuredHeight);
+        rect.inset(AndroidUtilities.dp(7.5f), AndroidUtilities.dp(7.5f));
+        Drawable drawable = getCurrentState() == yg.b ? chatActivityEnterView.N3 : chatActivityEnterView.M3;
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
     }
 }

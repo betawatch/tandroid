@@ -1,80 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AccountInstance;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o70 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+public final /* synthetic */ class o70 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w70 b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ o70(Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, vc vcVar, org.telegram.messenger.video.d dVar, int i10) {
-        this.b = context;
-        this.e = a1Var;
-        this.c = j3;
-        this.f = bArr;
-        this.g = aVar;
-        this.h = vcVar;
-        this.i = dVar;
-        this.d = i10;
+    public /* synthetic */ o70(w70 w70Var, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = w70Var;
+        this.c = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ei.g1((org.telegram.ui.ActionBar.c2) this.e, tLObject, (AccountInstance) this.f, (u70) this.g, this.c, this.b, (org.telegram.ui.ActionBar.o2) this.h, this.d, (TLRPC.Peer) this.i));
+                this.b.u();
+                Runnable runnable = this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                this.c.run();
+                w70 w70Var = this.b;
+                if (w70Var.J) {
+                    w70Var.u();
+                    break;
+                }
+                break;
+            case 2:
+                w70 w70Var2 = this.b;
+                Runnable runnable2 = this.c;
+                if (runnable2 == null) {
+                    w70Var2.getClass();
+                    break;
+                } else {
+                    int i10 = -w70Var2.K;
+                    w70Var2.K = i10;
+                    AndroidUtilities.shakeViewSpring(view, i10);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    runnable2.run();
+                    break;
+                }
+            case 3:
+                Runnable runnable3 = this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
+                }
+                w70 w70Var3 = this.b;
+                if (w70Var3.J) {
+                    w70Var3.u();
+                    break;
+                }
+                break;
+            case 4:
+                this.c.run();
+                w70 w70Var4 = this.b;
+                if (w70Var4.J) {
+                    w70Var4.u();
+                    break;
+                }
                 break;
             default:
-                ai.a1 a1Var = (ai.a1) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
-                vc vcVar = (vc) this.h;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
-                Context context = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.s31(aVar, vcVar, context, a1Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.gm0(aVar, vcVar, this.d, 8), 200L);
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.s31(aVar, vcVar, context, a1Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.gw(tLObject, context, a1Var, this.c, bArr, aVar, vcVar, dVar));
+                Runnable runnable4 = this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
+                }
+                w70 w70Var5 = this.b;
+                if (w70Var5.J) {
+                    w70Var5.u();
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ o70(org.telegram.ui.ActionBar.c2 c2Var, AccountInstance accountInstance, u70 u70Var, long j3, Context context, org.telegram.ui.ActionBar.o2 o2Var, int i10, TLRPC.Peer peer) {
-        this.e = c2Var;
-        this.f = accountInstance;
-        this.g = u70Var;
-        this.c = j3;
-        this.b = context;
-        this.h = o2Var;
-        this.d = i10;
-        this.i = peer;
     }
 }

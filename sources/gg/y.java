@@ -12,13 +12,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.cl0;
-import org.telegram.ui.iy;
-import org.telegram.ui.wy;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.gy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y implements g0, cl0 {
+public final /* synthetic */ class y implements g0, ml0 {
     public final /* synthetic */ i0 a;
 
     public /* synthetic */ y(i0 i0Var) {
@@ -46,26 +46,26 @@ public final /* synthetic */ class y implements g0, cl0 {
         i0Var.l();
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         TLRPC.User user;
-        iy iyVar = this.a.U;
-        if (iyVar != null) {
+        gy gyVar = this.a.U;
+        if (gyVar != null) {
             Long l4 = (Long) view.getTag();
             long longValue = l4.longValue();
-            wy wyVar = iyVar.a;
-            if (wyVar.getParentActivity() != null && (user = wyVar.getMessagesController().getUser(l4)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wyVar.getParentActivity());
+            uy uyVar = gyVar.a;
+            if (uyVar.getParentActivity() != null && (user = uyVar.getMessagesController().getUser(l4)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uyVar.getParentActivity());
                 String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
-                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                c2Var.R = string;
-                c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
-                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ai.z1(iyVar, longValue, 9));
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
+                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ai.z1(gyVar, longValue, 9));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                wyVar.showDialog(c2Var);
-                TextView textView = (TextView) c2Var.d(-1);
+                uyVar.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
                 if (textView != null) {
-                    textView.setTextColor(wyVar.getThemedColor(j6.q7));
+                    textView.setTextColor(uyVar.getThemedColor(j6.q7));
                 }
             }
         }

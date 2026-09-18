@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import v7.t7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class e0 extends kd.j implements rd.p {
     public g0 a;
@@ -127,7 +127,7 @@ public final class e0 extends kd.j implements rd.p {
                     int i12 = g0.g;
                     g0Var.getClass();
                     try {
-                        g0Var.d.g(a0Var);
+                        g0Var.d.a(a0Var);
                         Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str2));
                     } catch (RuntimeException e) {
                         Log.e("SessionFirelogPublisher", "Error logging Session Start event to DataTransport: ", e);
@@ -190,7 +190,7 @@ public final class e0 extends kd.j implements rd.p {
                     a0 a0Var2 = new a0(new j0(str22, str32, i112, j32, new j(iVar4, iVar5, sessionsSettings.a()), str4), b0.a(firebaseApp));
                     int i122 = g0.g;
                     g0Var.getClass();
-                    g0Var.d.g(a0Var2);
+                    g0Var.d.a(a0Var2);
                     Log.d("SessionFirelogPublisher", "Successfully logged Session Start event: ".concat(str22));
                     return gd.i.a;
                 }

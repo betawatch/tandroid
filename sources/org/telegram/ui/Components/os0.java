@@ -1,31 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class os0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ st0 b;
-    public final /* synthetic */ zu0 c;
+public final class os0 extends org.telegram.ui.zn {
+    public boolean Pc;
+    public final /* synthetic */ int Qc;
+    public final /* synthetic */ kv0 Rc;
 
-    public /* synthetic */ os0(zu0 zu0Var, st0 st0Var, int i10) {
-        this.a = i10;
-        this.c = zu0Var;
-        this.b = st0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public os0(kv0 kv0Var, Bundle bundle, int i10) {
+        super(bundle);
+        this.Rc = kv0Var;
+        this.Qc = i10;
+        this.Pc = true;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-            default:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        kv0 kv0Var = this.Rc;
+        vu0 vu0Var = kv0Var.S;
+        if (this.Pc) {
+            if (this.j0 != null) {
+                la("");
+                this.j0.H(vu0Var.w, false);
+            }
+            org.telegram.ui.xk xkVar = this.o1;
+            if (xkVar != null) {
+                xkVar.e(vu0Var.x, false);
+            }
+            kv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), vu0Var.x, vu0Var.w, vu0Var.n, vu0Var.h, this.Qc, vu0Var.v, vu0Var.s);
+            this.Pc = false;
         }
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

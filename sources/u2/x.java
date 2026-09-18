@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class x implements d0, c0 {
     public final f0 a;
@@ -17,14 +17,7 @@ public final class x implements d0, c0 {
         this.b = j3;
     }
 
-    @Override // u2.c0
-    public final void a(d0 d0Var) {
-        c0 c0Var = this.f;
-        String str = e2.d0.a;
-        c0Var.a(this);
-    }
-
-    public final void b(f0 f0Var) {
+    public final void a(f0 f0Var) {
         long j3 = this.h;
         if (j3 == -9223372036854775807L) {
             j3 = this.b;
@@ -36,6 +29,13 @@ public final class x implements d0, c0 {
         if (this.f != null) {
             c10.k(this, j3);
         }
+    }
+
+    @Override // u2.c0
+    public final void b(d0 d0Var) {
+        c0 c0Var = this.f;
+        String str = e2.d0.a;
+        c0Var.b(this);
     }
 
     @Override // u2.d1
@@ -98,20 +98,27 @@ public final class x implements d0, c0 {
         return d0Var.l();
     }
 
+    @Override // u2.c1
+    public final void m(d1 d1Var) {
+        c0 c0Var = this.f;
+        String str = e2.d0.a;
+        c0Var.m(this);
+    }
+
     @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
+    public final boolean p(i2.r0 r0Var) {
         d0 d0Var = this.e;
-        return d0Var != null && d0Var.m(r0Var);
+        return d0Var != null && d0Var.p(r0Var);
     }
 
     @Override // u2.d0
-    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         long j10 = this.h;
         long j11 = (j10 == -9223372036854775807L || j3 != this.b) ? j3 : j10;
         this.h = -9223372036854775807L;
         d0 d0Var = this.e;
         String str = e2.d0.a;
-        return d0Var.p(rVarArr, zArr, b1VarArr, zArr2, j11);
+        return d0Var.q(rVarArr, zArr, b1VarArr, zArr2, j11);
     }
 
     @Override // u2.d0
@@ -140,12 +147,5 @@ public final class x implements d0, c0 {
         d0 d0Var = this.e;
         String str = e2.d0.a;
         d0Var.u(j3);
-    }
-
-    @Override // u2.c1
-    public final void v(d1 d1Var) {
-        c0 c0Var = this.f;
-        String str = e2.d0.a;
-        c0Var.v(this);
     }
 }

@@ -1,28 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LanguageSelectActivity b;
+import android.view.View;
 
-    public /* synthetic */ s80(LanguageSelectActivity languageSelectActivity, int i10) {
-        this.a = i10;
-        this.b = languageSelectActivity;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class s80 extends s4.j {
+    public final /* synthetic */ LanguageSelectActivity F;
+
+    public s80(LanguageSelectActivity languageSelectActivity) {
+        this.F = languageSelectActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                LanguageSelectActivity.Y(this.b);
-                break;
-            case 1:
-                LanguageSelectActivity.W(this.b);
-                break;
-            default:
-                this.b.a.l();
-                break;
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        View view;
+        LanguageSelectActivity languageSelectActivity = this.F;
+        languageSelectActivity.b.invalidate();
+        org.telegram.ui.Components.wl0 wl0Var = languageSelectActivity.b;
+        int i10 = wl0Var.E1;
+        if (i10 == -1 || (view = wl0Var.F1) == null) {
+            return;
         }
+        wl0Var.j1(i10, view);
+        wl0Var.invalidate();
     }
 }

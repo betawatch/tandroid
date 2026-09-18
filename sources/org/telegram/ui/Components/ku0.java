@@ -1,259 +1,234 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ku0 extends ll0 {
-    public int E;
-    public final /* synthetic */ zu0 G;
-    public final Context c;
-    public final int d;
-    public boolean r;
-    public String w;
-    public zg.p0 x;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList h = new ArrayList();
-    public final ArrayList n = new ArrayList();
-    public boolean s = false;
-    public int v = 0;
-    public int y = -1;
-    public final kq0 F = new kq0(this, 6);
+public final class ku0 implements org.telegram.ui.qt {
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll a;
+    public final /* synthetic */ TLRPC.PollAnswer b;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 c;
+    public final /* synthetic */ pu0 d;
 
-    public ku0(zu0 zu0Var, Context context) {
-        this.G = zu0Var;
-        this.c = context;
-        this.d = zu0Var.v1.getCurrentAccount();
-        C(true);
+    public ku0(pu0 pu0Var, TLRPC.TL_messageMediaPoll tL_messageMediaPoll, TLRPC.PollAnswer pollAnswer, org.telegram.ui.Cells.u1 u1Var) {
+        this.d = pu0Var;
+        this.a = tL_messageMediaPoll;
+        this.b = pollAnswer;
+        this.c = u1Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
+    @Override // org.telegram.ui.qt
+    public final MessageObject A() {
+        return this.c.getMessageObject();
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean B() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean E(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ String G(boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean I() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean J() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final void K() {
+        ArrayList<TLRPC.PollAnswer> arrayList = new ArrayList<>(1);
+        arrayList.add(this.b);
+        SendMessagesHelper.getInstance(this.d.a).sendVote(this.c.getMessageObject(), arrayList, null);
+    }
+
+    @Override // org.telegram.ui.qt
+    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+        pu0 pu0Var = this.d;
+        ru0 ru0Var = pu0Var.c;
+        if (inputStickerSet == null || ru0Var.s.getContext() == null) {
+            return;
+        }
+        TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
+        tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
+        tL_inputStickerSetID.id = inputStickerSet.id;
+        hy0 hy0Var = new hy0(ru0Var.s.getContext(), ru0Var.s.v1, tL_inputStickerSetID, null, null, pu0Var.b);
+        hy0Var.setCalcMandatoryInsets(true);
+        hy0Var.i0 = z10;
+        hy0Var.show();
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean N(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ Boolean P(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean Q() {
         return true;
     }
 
-    public final void E(zg.p0 p0Var, String str) {
-        if (TextUtils.equals(str, this.w)) {
-            zg.p0 p0Var2 = this.x;
-            if (p0Var2 == null && p0Var == null) {
-                return;
-            }
-            if (p0Var2 != null && p0Var2.equals(p0Var)) {
-                return;
-            }
-        }
-        this.w = str;
-        this.x = p0Var;
-        int i10 = this.y;
-        int i11 = this.d;
-        if (i10 >= 0) {
-            ConnectionsManager.getInstance(i11).cancelRequest(this.y, true);
-            this.y = -1;
-        }
-        this.n.clear();
-        this.h.clear();
-        this.f.clear();
-        int i12 = 0;
-        this.v = 0;
-        this.s = false;
-        this.r = true;
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        if (this.x == null) {
-            arrayList.addAll(MessagesController.getInstance(i11).getSavedMessagesController().searchDialogs(str));
-        }
-        while (true) {
-            st0[] st0VarArr = this.G.k0;
-            if (i12 >= st0VarArr.length) {
-                break;
-            }
-            st0 st0Var = st0VarArr[i12];
-            if (st0Var.F == 11) {
-                st0Var.w.e(true, true);
-            }
-            i12++;
-        }
-        if (this.x == null) {
-            l();
-        }
-        kq0 kq0Var = this.F;
-        AndroidUtilities.cancelRunOnUIThread(kq0Var);
-        AndroidUtilities.runOnUIThread(kq0Var, this.x != null ? 60L : 600L);
+    @Override // org.telegram.ui.qt
+    public final long a() {
+        return this.d.c.s.j1;
     }
 
-    public final void F() {
-        if (TextUtils.isEmpty(this.w) && this.x == null) {
-            this.r = false;
-            return;
-        }
-        TLRPC.TL_messages_search tL_messages_search = new TLRPC.TL_messages_search();
-        int i10 = this.d;
-        tL_messages_search.peer = MessagesController.getInstance(i10).getInputPeer(UserConfig.getInstance(i10).getClientUserId());
-        tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        tL_messages_search.q = this.w;
-        zg.p0 p0Var = this.x;
-        if (p0Var != null) {
-            tL_messages_search.flags |= 8;
-            tL_messages_search.saved_reaction.add(p0Var.g());
-        }
-        ArrayList arrayList = this.h;
-        if (arrayList.size() > 0) {
-            tL_messages_search.offset_id = ((MessageObject) hg.k0.h(1, arrayList)).getId();
-        }
-        tL_messages_search.limit = 10;
-        this.s = false;
-        int i11 = this.E + 1;
-        this.E = i11;
-        wm wmVar = new wm(this, i11, tL_messages_search, 15);
-        if (this.x != null) {
-            MessagesStorage.getInstance(i10).searchSavedByTag(this.x.g(), 0L, this.w, 100, this.n.size(), new ai.k3(1, this, wmVar), false);
-        } else {
-            wmVar.run();
-        }
+    @Override // org.telegram.ui.qt
+    public final boolean b() {
+        return false;
     }
 
-    public final void G(boolean z10) {
-        ArrayList arrayList;
-        CharSequence formatString;
-        CharSequence charSequence;
-        st0[] st0VarArr = this.G.k0;
-        ArrayList arrayList2 = this.f;
-        arrayList2.clear();
-        HashSet hashSet = new HashSet();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList3 = this.h;
-            if (i10 >= arrayList3.size()) {
-                break;
-            }
-            MessageObject messageObject = (MessageObject) arrayList3.get(i10);
-            if (messageObject != null && !hashSet.contains(Integer.valueOf(messageObject.getId()))) {
-                hashSet.add(Integer.valueOf(messageObject.getId()));
-                arrayList2.add(messageObject);
-            }
-            i10++;
-        }
-        int i11 = 0;
-        while (true) {
-            arrayList = this.n;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            MessageObject messageObject2 = (MessageObject) arrayList.get(i11);
-            if (messageObject2 != null && !hashSet.contains(Integer.valueOf(messageObject2.getId()))) {
-                hashSet.add(Integer.valueOf(messageObject2.getId()));
-                arrayList2.add(messageObject2);
-            }
-            i11++;
-        }
-        if (!z10 || !arrayList.isEmpty()) {
-            for (int i12 = 0; i12 < st0VarArr.length; i12++) {
-                if (st0VarArr[i12].F == 11 && arrayList2.isEmpty() && this.e.isEmpty()) {
-                    vh.o oVar = st0VarArr[i12].w.d;
-                    if (this.x == null || !TextUtils.isEmpty(this.w)) {
-                        formatString = LocaleController.formatString(R.string.NoResultFoundFor, this.w);
-                    } else {
-                        String string = LocaleController.getString(R.string.NoResultFoundForTag);
-                        zg.p0 p0Var = this.x;
-                        Paint.FontMetricsInt fontMetricsInt = st0VarArr[i12].w.d.getPaint().getFontMetricsInt();
-                        if (TextUtils.isEmpty(p0Var.f)) {
-                            SpannableString spannableString = new SpannableString("😀");
-                            spannableString.setSpan(new x5(p0Var.g, fontMetricsInt), 0, spannableString.length(), 17);
-                            charSequence = spannableString;
-                        } else {
-                            charSequence = p0Var.f;
-                        }
-                        formatString = AndroidUtilities.replaceCharSequence("%s", string, charSequence);
-                    }
-                    oVar.setText(formatString);
-                    st0VarArr[i12].w.f.setVisibility(8);
-                    st0VarArr[i12].w.e(false, true);
-                }
-            }
-        }
-        l();
+    @Override // org.telegram.ui.qt
+    public final boolean c() {
+        return false;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.f.size() + this.e.size();
+    @Override // org.telegram.ui.qt
+    public final TLRPC.TL_messageMediaPoll d() {
+        return this.a;
     }
 
-    @Override // s4.h0
-    public final long i(int i10) {
-        int hash;
-        if (i10 < 0) {
-            return i10;
-        }
-        ArrayList arrayList = this.e;
-        if (i10 < arrayList.size()) {
-            hash = Objects.hash(1, Long.valueOf(((SavedMessagesController.SavedDialog) arrayList.get(i10)).dialogId));
-        } else {
-            int size = i10 - arrayList.size();
-            ArrayList arrayList2 = this.f;
-            if (size >= arrayList2.size()) {
-                return size;
-            }
-            hash = Objects.hash(2, Long.valueOf(((MessageObject) arrayList2.get(size)).getSavedDialogId()), Integer.valueOf(((MessageObject) arrayList2.get(size)).getId()));
-        }
-        return hash;
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean e(TLRPC.Document document) {
+        return false;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 23;
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean f() {
+        return false;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (i10 < 0) {
-            return;
-        }
-        View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.r2) {
-            org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) view;
-            r2Var.s2 = i10 + 1 < h();
-            ArrayList arrayList = this.e;
-            if (i10 < arrayList.size()) {
-                SavedMessagesController.SavedDialog savedDialog = (SavedMessagesController.SavedDialog) arrayList.get(i10);
-                r2Var.W(savedDialog.dialogId, savedDialog.message, savedDialog.getDate(), false, false);
-                return;
-            }
-            int size = i10 - arrayList.size();
-            ArrayList arrayList2 = this.f;
-            if (size < arrayList2.size()) {
-                MessageObject messageObject = (MessageObject) arrayList2.get(size);
-                r2Var.W(messageObject.getSavedDialogId(), messageObject, messageObject.messageOwner.date, false, false);
-            }
-        }
+    @Override // org.telegram.ui.qt
+    public final TLRPC.PollAnswer g() {
+        return this.b;
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        gg.a0 a0Var = new gg.a0(1, this.c, true);
-        zu0 zu0Var = this.G;
-        a0Var.setDialogCellDelegate(zu0Var);
-        a0Var.r0 = true;
-        a0Var.setBackgroundColor(zu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
-        return new wk0(a0Var);
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ w70 i(ci.n6 n6Var) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final boolean l(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final void r() {
+        SendMessagesHelper.getInstance(this.d.a).sendVote(this.c.getMessageObject(), null, null);
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean y() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void C(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void F(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void H(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void O(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void j(SendMessagesHelper.ImportingSticker importingSticker) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void n(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void o(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void q(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void t() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void v(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void z(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void u(CharSequence charSequence, String str, org.telegram.ui.of ofVar) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void s(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final void m(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
     }
 }

@@ -1,10 +1,39 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class m61 extends FrameLayout {
-    public TextView a;
+public final /* synthetic */ class m61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p61 b;
+
+    public /* synthetic */ m61(p61 p61Var, int i10) {
+        this.a = i10;
+        this.b = p61Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p61 p61Var = this.b;
+                p61Var.N = floatValue;
+                p61Var.V.h0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p61 p61Var2 = this.b;
+                p61Var2.N = floatValue2;
+                p61Var2.V.h0.invalidate();
+                break;
+            default:
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                p61 p61Var3 = this.b;
+                p61Var3.N = floatValue3;
+                p61Var3.V.h0.invalidate();
+                break;
+        }
+    }
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class qf implements Runnable {
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
                 Bitmap[] bitmapArr = (Bitmap[]) this.h;
                 int i10 = this.b;
-                yf.z[] zVarArr = (yf.z[]) this.n;
+                yf.a0[] a0VarArr = (yf.a0[]) this.n;
                 int i11 = this.c;
                 RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
                 ArrayList arrayList = this.d;
@@ -58,16 +58,16 @@ public final /* synthetic */ class qf implements Runnable {
                 if (Build.VERSION.SDK_INT <= 28) {
                     compressFormat = Bitmap.CompressFormat.PNG;
                 }
-                bitmapArr[i10].compress(compressFormat, eVar.l, zVarArr[i10]);
-                int i12 = zVarArr[i10].b;
+                bitmapArr[i10].compress(compressFormat, eVar.l, a0VarArr[i10]);
+                int i12 = a0VarArr[i10].b;
                 try {
                     synchronized (eVar.h) {
                         yf.d dVar = new yf.d(i11);
                         dVar.c = (int) randomAccessFile.length();
                         arrayList.add(dVar);
-                        randomAccessFile.write(zVarArr[i10].a, 0, i12);
+                        randomAccessFile.write(a0VarArr[i10].a, 0, i12);
                         dVar.b = i12;
-                        zVarArr[i10].b();
+                        a0VarArr[i10].b();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -86,12 +86,12 @@ public final /* synthetic */ class qf implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ qf(yf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, yf.z[] zVarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+    public /* synthetic */ qf(yf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, yf.a0[] a0VarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
         this.e = eVar;
         this.f = atomicBoolean;
         this.h = bitmapArr;
         this.b = i10;
-        this.n = zVarArr;
+        this.n = a0VarArr;
         this.c = i11;
         this.r = randomAccessFile;
         this.d = arrayList;

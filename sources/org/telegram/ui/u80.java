@@ -1,27 +1,61 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class u80 extends s4.j {
-    public final /* synthetic */ LanguageSelectActivity F;
+public final /* synthetic */ class u80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
 
-    public u80(LanguageSelectActivity languageSelectActivity) {
-        this.F = languageSelectActivity;
+    public /* synthetic */ u80(LaunchActivity launchActivity, int i10, int i11) {
+        this.a = i11;
+        this.b = launchActivity;
+        this.c = i10;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        View view;
-        LanguageSelectActivity languageSelectActivity = this.F;
-        languageSelectActivity.b.invalidate();
-        org.telegram.ui.Components.ml0 ml0Var = languageSelectActivity.b;
-        int i10 = ml0Var.E1;
-        if (i10 == -1 || (view = ml0Var.F1) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        File directory;
+        int i10 = this.a;
+        int i11 = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
+            case 0:
+                Pattern pattern = LaunchActivity.B1;
+                if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                    try {
+                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.w1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
+                            StatFs statFs = new StatFs(directory.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i11 > 0 || availableBlocksLong < 52428800) {
+                                if (i11 > 0) {
+                                    launchActivity.w1 = System.currentTimeMillis();
+                                }
+                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                AndroidUtilities.runOnUIThread(new g90(launchActivity, 6));
+                                break;
+                            }
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                Pattern pattern2 = LaunchActivity.B1;
+                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
+                break;
         }
-        ml0Var.j1(i10, view);
-        ml0Var.invalidate();
     }
 }

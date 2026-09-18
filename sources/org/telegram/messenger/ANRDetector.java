@@ -6,7 +6,7 @@ import android.os.Message;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.g10;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class ANRDetector implements f10 {
     private static final int MSG_UI_PING = 1;
@@ -36,7 +36,7 @@ public class ANRDetector implements f10 {
         g10 g10Var = g10.getInstance();
         this.foreground = g10Var.isForeground();
         g10Var.addListener(this);
-        Thread thread = new Thread(new d1(this, 11), "ANRDetector");
+        Thread thread = new Thread(new e1(this, 11), "ANRDetector");
         this.detectorThread = thread;
         thread.start();
     }

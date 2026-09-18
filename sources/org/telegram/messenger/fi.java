@@ -1,31 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fi implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
 
-    public /* synthetic */ fi(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
+    public /* synthetic */ fi(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         this.a = i10;
         this.b = secretChatHelper;
-        this.c = encryptedChat;
+        this.c = context;
+        this.d = b2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processAcceptedSecretChat$18(this.c);
-                break;
-            case 1:
-                this.b.lambda$acceptSecretChat$21(this.c);
+                this.b.lambda$startSecretChat$27(this.c, this.d);
                 break;
             default:
-                this.b.lambda$applyPeerLayer$9(this.c);
+                this.b.lambda$startSecretChat$29(this.c, this.d);
                 break;
         }
     }

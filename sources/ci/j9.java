@@ -11,10 +11,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class j9 extends FrameLayout {
     public final /* synthetic */ int a = 2;
@@ -71,13 +71,13 @@ public final class j9 extends FrameLayout {
                         ba baVar = (ba) view;
                         float clamp = Utilities.clamp(1.0f - Math.abs(baVar.getTranslationX() / baVar.getMeasuredWidth()), 1.0f, f11);
                         float f12 = this.c;
-                        ml0 ml0Var = baVar.f;
+                        wl0 wl0Var = baVar.f;
                         FrameLayout frameLayout = baVar.e;
                         s4.c0 c0Var = baVar.h;
                         float f13 = (c0Var.t || baVar.a == 0) ? AndroidUtilities.displaySize.y : 0.0f;
                         int i15 = 0;
-                        while (i15 < ml0Var.getChildCount()) {
-                            View childAt = ml0Var.getChildAt(i15);
+                        while (i15 < wl0Var.getChildCount()) {
+                            View childAt = wl0Var.getChildAt(i15);
                             if (c0Var.t) {
                                 float y3 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();
@@ -93,7 +93,7 @@ public final class j9 extends FrameLayout {
                                             f7 = childAt.getTranslationY();
                                             f13 = f7 + f10;
                                             this.c = (f13 * clamp) + f12;
-                                            z10 = ((org.telegram.ui.ActionBar.g3) iaVar).keyboardVisible;
+                                            z10 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
                                             if (z10) {
                                                 int i16 = baVar.a;
                                             }
@@ -109,7 +109,7 @@ public final class j9 extends FrameLayout {
                                         f7 = childAt.getY();
                                         f13 = f7 + f10;
                                         this.c = (f13 * clamp) + f12;
-                                        z10 = ((org.telegram.ui.ActionBar.g3) iaVar).keyboardVisible;
+                                        z10 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
                                         if (z10) {
                                         }
                                         if (baVar.getVisibility() == 0) {
@@ -128,7 +128,7 @@ public final class j9 extends FrameLayout {
                         }
                         viewArr = viewPages;
                         this.c = (f13 * clamp) + f12;
-                        z10 = ((org.telegram.ui.ActionBar.g3) iaVar).keyboardVisible;
+                        z10 = ((org.telegram.ui.ActionBar.f3) iaVar).keyboardVisible;
                         if (z10) {
                         }
                         if (baVar.getVisibility() == 0) {
@@ -138,13 +138,13 @@ public final class j9 extends FrameLayout {
                     viewPages = viewArr;
                     f11 = 0.0f;
                 }
-                float d = ((org.telegram.ui.Components.c6) this.b).d(this.c <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
+                float d = ((org.telegram.ui.Components.e6) this.b).d(this.c <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
                 this.c = Math.max(AndroidUtilities.statusBarHeight, this.c) - (AndroidUtilities.statusBarHeight * d);
                 RectF rectF = AndroidUtilities.rectTmp;
-                i10 = ((org.telegram.ui.ActionBar.g3) iaVar).backgroundPaddingLeft;
+                i10 = ((org.telegram.ui.ActionBar.f3) iaVar).backgroundPaddingLeft;
                 float f14 = this.c;
                 int width = getWidth();
-                i11 = ((org.telegram.ui.ActionBar.g3) iaVar).backgroundPaddingLeft;
+                i11 = ((org.telegram.ui.ActionBar.f3) iaVar).backgroundPaddingLeft;
                 rectF.set(i10, f14, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
                 float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), 0, d);
                 canvas.drawRoundRect(rectF, lerp, lerp, iaVar.R);
@@ -169,13 +169,13 @@ public final class j9 extends FrameLayout {
                         }
                     }
                 }
-                float d10 = ((org.telegram.ui.Components.c6) this.b).d(this.c <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
+                float d10 = ((org.telegram.ui.Components.e6) this.b).d(this.c <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
                 this.c = (Math.max(AndroidUtilities.statusBarHeight, this.c) - (AndroidUtilities.statusBarHeight * d10)) - (AndroidUtilities.dp(10.0f) * Math.max(k0Var.b.e, k0Var.c.e));
                 RectF rectF2 = AndroidUtilities.rectTmp;
-                i12 = ((org.telegram.ui.ActionBar.g3) k0Var).backgroundPaddingLeft;
+                i12 = ((org.telegram.ui.ActionBar.f3) k0Var).backgroundPaddingLeft;
                 float f15 = this.c;
                 int width2 = getWidth();
-                i13 = ((org.telegram.ui.ActionBar.g3) k0Var).backgroundPaddingLeft;
+                i13 = ((org.telegram.ui.ActionBar.f3) k0Var).backgroundPaddingLeft;
                 rectF2.set(i12, f15, width2 - i13, AndroidUtilities.dp(8.0f) + getHeight());
                 float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), 0, d10);
                 canvas.drawRoundRect(rectF2, lerp2, lerp2, k0Var.P);
@@ -259,7 +259,7 @@ public final class j9 extends FrameLayout {
     public j9(fi.k0 k0Var, Context context) {
         super(context);
         this.e = k0Var;
-        this.b = new org.telegram.ui.Components.c6(this, 250L, qr.h);
+        this.b = new org.telegram.ui.Components.e6(this, 250L, qr.h);
         this.d = new Path();
     }
 
@@ -267,7 +267,7 @@ public final class j9 extends FrameLayout {
     public j9(ia iaVar, Context context) {
         super(context);
         this.e = iaVar;
-        this.b = new org.telegram.ui.Components.c6(this, 250L, qr.h);
+        this.b = new org.telegram.ui.Components.e6(this, 250L, qr.h);
         this.d = new Path();
     }
 }

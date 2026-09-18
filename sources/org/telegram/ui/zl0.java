@@ -5,15 +5,15 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zl0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn0 b;
+    public final /* synthetic */ pn0 b;
 
-    public /* synthetic */ zl0(qn0 qn0Var, int i10) {
+    public /* synthetic */ zl0(pn0 pn0Var, int i10) {
         this.a = i10;
-        this.b = qn0Var;
+        this.b = pn0Var;
     }
 
     @Override // java.lang.Runnable
@@ -21,24 +21,24 @@ public final /* synthetic */ class zl0 implements Runnable {
         ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                qn0 qn0Var = this.b;
-                ViewGroup[] viewGroupArr = qn0Var.Z;
+                pn0 pn0Var = this.b;
+                ViewGroup[] viewGroupArr = pn0Var.Z;
                 if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
-                    qn0Var.Y[0].requestFocus();
-                    AndroidUtilities.showKeyboard(qn0Var.Y[0]);
+                    pn0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(pn0Var.Y[0]);
                     break;
                 }
                 break;
             case 1:
-                qn0 qn0Var2 = this.b;
-                qn0Var2.presentFragment(qn0Var2.h1, true);
-                qn0Var2.h1 = null;
+                pn0 pn0Var2 = this.b;
+                pn0Var2.presentFragment(pn0Var2.h1, true);
+                pn0Var2.h1 = null;
                 break;
             case 2:
-                qn0 qn0Var3 = this.b;
-                EditTextBoldCursor[] editTextBoldCursorArr = qn0Var3.a0;
+                pn0 pn0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = pn0Var3.a0;
                 if (editTextBoldCursorArr != null) {
-                    qn0Var3.I1(editTextBoldCursorArr[0]);
+                    pn0Var3.I1(editTextBoldCursorArr[0]);
                     break;
                 }
                 break;
@@ -51,18 +51,18 @@ public final /* synthetic */ class zl0 implements Runnable {
             case 5:
                 int i10 = 0;
                 while (true) {
-                    qn0 qn0Var4 = this.b;
-                    if (i10 >= qn0Var4.c0.getChildCount()) {
-                        qn0Var4.x1();
-                        qn0Var4.q1.clear();
-                        qn0Var4.p1.clear();
-                        qn0Var4.y.values.clear();
-                        qn0Var4.Q1();
+                    pn0 pn0Var4 = this.b;
+                    if (i10 >= pn0Var4.c0.getChildCount()) {
+                        pn0Var4.x1();
+                        pn0Var4.q1.clear();
+                        pn0Var4.p1.clear();
+                        pn0Var4.y.values.clear();
+                        pn0Var4.Q1();
                         break;
                     } else {
-                        View childAt = qn0Var4.c0.getChildAt(i10);
-                        if (childAt instanceof pn0) {
-                            qn0Var4.c0.removeView(childAt);
+                        View childAt = pn0Var4.c0.getChildAt(i10);
+                        if (childAt instanceof on0) {
+                            pn0Var4.c0.removeView(childAt);
                             i10--;
                         }
                         i10++;

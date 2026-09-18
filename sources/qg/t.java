@@ -8,18 +8,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+    public final /* synthetic */ m0 b;
     public final /* synthetic */ j c;
 
-    public /* synthetic */ t(p0 p0Var, j jVar, int i10) {
+    public /* synthetic */ t(m0 m0Var, j jVar, int i10) {
         this.a = i10;
-        this.b = p0Var;
+        this.b = m0Var;
         this.c = jVar;
     }
 
@@ -30,12 +30,12 @@ public final /* synthetic */ class t implements Runnable {
                 this.b.q0(this.c);
                 break;
             default:
-                final p0 p0Var = this.b;
-                LinearLayout linearLayout = new LinearLayout(p0Var.getContext());
+                final m0 m0Var = this.b;
+                LinearLayout linearLayout = new LinearLayout(m0Var.getContext());
                 linearLayout.setOrientation(0);
-                TextView textView = new TextView(p0Var.getContext());
+                TextView textView = new TextView(m0Var.getContext());
                 int i10 = j6.E8;
-                eh.a aVar = p0Var.Q1;
+                eh.a aVar = m0Var.Q1;
                 textView.setTextColor(j6.v0(i10, aVar));
                 textView.setBackground(j6.K0(false));
                 textView.setGravity(16);
@@ -53,30 +53,30 @@ public final /* synthetic */ class t implements Runnable {
                         switch (i11) {
                             case 0:
                                 j jVar2 = jVar;
-                                p0 p0Var2 = p0Var;
-                                p0Var2.q0(jVar2);
-                                org.telegram.ui.ActionBar.o1 o1Var = p0Var2.R1;
-                                if (o1Var != null && o1Var.isShowing()) {
-                                    p0Var2.R1.d(true);
+                                m0 m0Var2 = m0Var;
+                                m0Var2.q0(jVar2);
+                                org.telegram.ui.ActionBar.n1 n1Var = m0Var2.R1;
+                                if (n1Var != null && n1Var.isShowing()) {
+                                    m0Var2.R1.d(true);
                                     break;
                                 }
                                 break;
                             default:
-                                p0 p0Var3 = p0Var;
-                                p0Var3.getClass();
-                                ((q2) jVar).r(true);
-                                org.telegram.ui.ActionBar.o1 o1Var2 = p0Var3.R1;
-                                if (o1Var2 != null && o1Var2.isShowing()) {
-                                    p0Var3.R1.d(true);
+                                m0 m0Var3 = m0Var;
+                                m0Var3.getClass();
+                                ((n2) jVar).r(true);
+                                org.telegram.ui.ActionBar.n1 n1Var2 = m0Var3.R1;
+                                if (n1Var2 != null && n1Var2.isShowing()) {
+                                    m0Var3.R1.d(true);
                                     break;
                                 }
                                 break;
                         }
                     }
                 });
-                linearLayout.addView(textView, x5.n(-2, 48));
-                if (jVar instanceof x2) {
-                    TextView textView2 = new TextView(p0Var.getContext());
+                linearLayout.addView(textView, y5.n(-2, 48));
+                if (jVar instanceof u2) {
+                    TextView textView2 = new TextView(m0Var.getContext());
                     textView2.setTextColor(j6.v0(i10, aVar));
                     textView2.setBackground(j6.K0(false));
                     textView2.setGravity(16);
@@ -85,11 +85,11 @@ public final /* synthetic */ class t implements Runnable {
                     textView2.setEllipsize(truncateAt);
                     textView2.setTag(1);
                     textView2.setText(LocaleController.getString(R.string.PaintEdit));
-                    textView2.setOnClickListener(new k(p0Var, 2));
-                    linearLayout.addView(textView2, x5.n(-2, 48));
+                    textView2.setOnClickListener(new k(m0Var, 2));
+                    linearLayout.addView(textView2, y5.n(-2, 48));
                 }
-                if (jVar instanceof q2) {
-                    TextView textView3 = new TextView(p0Var.getContext());
+                if (jVar instanceof n2) {
+                    TextView textView3 = new TextView(m0Var.getContext());
                     textView3.setTextColor(j6.v0(i10, aVar));
                     textView3.setBackgroundDrawable(j6.K0(false));
                     textView3.setGravity(16);
@@ -105,31 +105,31 @@ public final /* synthetic */ class t implements Runnable {
                             switch (i12) {
                                 case 0:
                                     j jVar2 = jVar;
-                                    p0 p0Var2 = p0Var;
-                                    p0Var2.q0(jVar2);
-                                    org.telegram.ui.ActionBar.o1 o1Var = p0Var2.R1;
-                                    if (o1Var != null && o1Var.isShowing()) {
-                                        p0Var2.R1.d(true);
+                                    m0 m0Var2 = m0Var;
+                                    m0Var2.q0(jVar2);
+                                    org.telegram.ui.ActionBar.n1 n1Var = m0Var2.R1;
+                                    if (n1Var != null && n1Var.isShowing()) {
+                                        m0Var2.R1.d(true);
                                         break;
                                     }
                                     break;
                                 default:
-                                    p0 p0Var3 = p0Var;
-                                    p0Var3.getClass();
-                                    ((q2) jVar).r(true);
-                                    org.telegram.ui.ActionBar.o1 o1Var2 = p0Var3.R1;
-                                    if (o1Var2 != null && o1Var2.isShowing()) {
-                                        p0Var3.R1.d(true);
+                                    m0 m0Var3 = m0Var;
+                                    m0Var3.getClass();
+                                    ((n2) jVar).r(true);
+                                    org.telegram.ui.ActionBar.n1 n1Var2 = m0Var3.R1;
+                                    if (n1Var2 != null && n1Var2.isShowing()) {
+                                        m0Var3.R1.d(true);
                                         break;
                                     }
                                     break;
                             }
                         }
                     });
-                    linearLayout.addView(textView3, x5.n(-2, 48));
+                    linearLayout.addView(textView3, y5.n(-2, 48));
                 }
-                if (!(jVar instanceof a2)) {
-                    TextView textView4 = new TextView(p0Var.getContext());
+                if (!(jVar instanceof x1)) {
+                    TextView textView4 = new TextView(m0Var.getContext());
                     textView4.setTextColor(j6.v0(i10, aVar));
                     textView4.setBackgroundDrawable(j6.K0(false));
                     textView4.setGravity(16);
@@ -138,10 +138,10 @@ public final /* synthetic */ class t implements Runnable {
                     textView4.setTextSize(1, 14.0f);
                     textView4.setTag(2);
                     textView4.setText(LocaleController.getString(R.string.PaintDuplicate));
-                    textView4.setOnClickListener(new k(p0Var, 3));
-                    linearLayout.addView(textView4, x5.n(-2, 48));
+                    textView4.setOnClickListener(new k(m0Var, 3));
+                    linearLayout.addView(textView4, y5.n(-2, 48));
                 }
-                p0Var.S1.addView(linearLayout);
+                m0Var.S1.addView(linearLayout);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();
                 layoutParams.width = -2;
                 layoutParams.height = -2;

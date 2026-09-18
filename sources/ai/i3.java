@@ -30,14 +30,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.uc;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.dm0;
-import org.telegram.ui.j01;
+import org.telegram.ui.h01;
+import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,8 +65,8 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 f6 f6Var = (f6) this.c;
                 boolean z10 = this.b;
                 a5 a5Var = f6Var.c1;
-                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var.B0;
-                new vc(a5Var, f6Var2).o(z10 ? uc.h : uc.e, f6Var2).j();
+                org.telegram.ui.ActionBar.e6 e6Var = f6Var.B0;
+                new xc(a5Var, e6Var).o(z10 ? wc.h : wc.e, e6Var).j();
                 break;
             case 1:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -84,13 +84,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                         callback.run(null);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.c2 c2Var = z11 ? new org.telegram.ui.ActionBar.c2(activity, 3, new d()) : null;
+                        org.telegram.ui.ActionBar.b2 b2Var = z11 ? new org.telegram.ui.ActionBar.b2(activity, 3, new d()) : null;
                         if (z11) {
-                            c2Var.q(200L);
+                            b2Var.q(200L);
                         }
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
-                        hd hdVar = new hd(z11, c2Var, callback, i10);
+                        hd hdVar = new hd(z11, b2Var, callback, i10);
                         Date date = new Date();
                         Calendar calendar = Calendar.getInstance(DesugarTimeZone.getTimeZone("UTC"));
                         calendar.setTime(date);
@@ -116,7 +116,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                             hdVar.run(od.b);
                         }
                         if (z11 && b9Var != null) {
-                            c2Var.setOnCancelListener(new id(b9Var, i10));
+                            b2Var.setOnCancelListener(new id(b9Var, i10));
                             break;
                         }
                     }
@@ -195,30 +195,30 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                     i3Var.run(location2);
                 }
             case 3:
-                j01 j01Var = (j01) this.c;
+                h01 h01Var = (h01) this.c;
                 boolean z13 = this.b;
-                ProfileActivity profileActivity = j01Var.b;
+                ProfileActivity profileActivity = h01Var.b;
                 if (profileActivity.getParentActivity() != null) {
-                    vc.a0(profileActivity).o(z13 ? uc.h : uc.e, null).j();
+                    xc.a0(profileActivity).o(z13 ? wc.h : wc.e, null).j();
                     break;
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new dm0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 10));
+                AndroidUtilities.runOnUIThread(new ja0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 11));
                 break;
             case 5:
-                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.c;
-                z1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                z1Var.a.Y2.N(true);
+                org.telegram.ui.web.a2 a2Var = (org.telegram.ui.web.a2) this.c;
+                a2Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                a2Var.a.Y2.N(true);
                 break;
             default:
-                yh.v5 v5Var = (yh.v5) this.c;
+                yh.t5 t5Var = (yh.t5) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    SendMessagesHelper.getInstance(v5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
+                    SendMessagesHelper.getInstance(t5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
                     break;
                 } else {
-                    v5Var.getClass();
+                    t5Var.getClass();
                     break;
                 }
         }

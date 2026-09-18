@@ -6,10 +6,10 @@ import android.widget.EditText;
 import e2.m;
 import java.util.List;
 import m4.a0;
-import m4.d1;
+import m4.c1;
+import m4.e1;
 import m4.f1;
-import m4.g1;
-import m4.k1;
+import m4.j1;
 import m4.r;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
@@ -22,13 +22,13 @@ import org.telegram.tgnet.RequestDelegateTimestamp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimestamp, b2, MessagesStorage.StringCallback {
+public final /* synthetic */ class d implements m, c1, e1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -41,8 +41,14 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         this.d = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(c2 c2Var, int i10) {
+    @Override // m4.c1
+    public void d(j1 j1Var, r rVar) {
+        f1 f1Var = (f1) this.d;
+        j1Var.s(f1Var.K0(rVar, j1Var, this.b), this.c);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(b2 b2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
@@ -57,7 +63,7 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
                         String str = userFull.about;
                         if ((str != null ? str : "").equals(trim)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
+                            b2Var.dismiss();
                             break;
                         } else {
                             userFull.about = trim;
@@ -77,7 +83,7 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
                         String str2 = chatFull.about;
                         if ((str2 != null ? str2 : "").equals(obj2)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            c2Var.dismiss();
+                            b2Var.dismiss();
                             break;
                         } else {
                             chatFull.about = obj2;
@@ -90,7 +96,7 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
                     MessagesController.getInstance(i12).updateChatAbout(j10, obj2, chatFull);
                 }
-                c2Var.dismiss();
+                b2Var.dismiss();
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
@@ -117,14 +123,8 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         }
     }
 
-    @Override // m4.d1
-    public void g(k1 k1Var, r rVar) {
-        g1 g1Var = (g1) this.d;
-        k1Var.s(g1Var.K0(rVar, k1Var, this.b), this.c);
-    }
-
-    @Override // m4.f1
-    public Object h(a0 a0Var, r rVar, int i10) {
+    @Override // m4.e1
+    public Object i(a0 a0Var, r rVar, int i10) {
         List list = (List) this.d;
         int i11 = this.b;
         return a0Var.q(rVar, list, i11 == -1 ? a0Var.t.l0() : i11, i11 == -1 ? a0Var.t.J0() : this.c);
@@ -137,7 +137,7 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        zu0.i((zu0) this.d, this.c, this.b, str);
+        kv0.i((kv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {
@@ -159,9 +159,9 @@ public final /* synthetic */ class d implements m, d1, f1, RequestDelegateTimest
         this.c = j3;
     }
 
-    public /* synthetic */ d(zu0 zu0Var, long j3, int i10) {
+    public /* synthetic */ d(kv0 kv0Var, long j3, int i10) {
         this.a = 6;
-        this.d = zu0Var;
+        this.d = kv0Var;
         this.c = j3;
         this.b = i10;
     }

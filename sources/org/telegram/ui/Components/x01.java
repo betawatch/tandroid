@@ -1,48 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.view.View;
-import java.util.ArrayList;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class x01 {
-    public final View a;
-    public final ArrayList b;
-    public final Runnable c;
-    public Runnable d;
-    public final Bitmap e;
-    public final Matrix f;
-    public float g;
+public final class x01 extends MetricAffectingSpan {
+    public TextPaint a;
 
-    public x01(View view, Runnable runnable) {
-        this.g = 1.0f;
-        this.a = view;
-        this.b = null;
-        this.c = null;
-        this.d = runnable;
-        this.e = null;
-        this.f = null;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
     }
 
-    public x01(ArrayList arrayList, gg.t tVar) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = arrayList;
-        this.c = null;
-        this.d = tVar;
-        this.e = null;
-        this.f = null;
-    }
-
-    public x01(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = null;
-        this.c = runnable;
-        this.d = runnable2;
-        this.f = matrix;
-        this.e = bitmap;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
+        }
     }
 }

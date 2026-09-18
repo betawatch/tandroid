@@ -13,49 +13,49 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.x51;
-import org.telegram.ui.f10;
+import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class a4 extends i51 {
+public final class a4 extends w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        i51.setup(new a4());
+        w51.setup(new a4());
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
-        Object obj = j51Var.G;
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+        Object obj = x51Var.G;
         if (!(obj instanceof TL_payments.connectedBotStarRef)) {
             if (obj instanceof TL_payments.starRefProgram) {
                 b4 b4Var = (b4) view;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z11 = j51Var.r;
+                boolean z11 = x51Var.r;
                 TLRPC.User user = MessagesController.getInstance(b4Var.a).getUser(Long.valueOf(starrefprogram.bot_id));
-                f9 f9Var = new f9((f6) null);
-                f9Var.r(user);
-                b4Var.c.e(user, f9Var);
+                h9 h9Var = new h9((e6) null);
+                h9Var.r(user);
+                b4Var.c.e(user, h9Var);
                 b4Var.h.setText(UserObject.getUserName(user));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 if (starrefprogram.commission_permille > 0) {
                     spannableStringBuilder.append((CharSequence) " d");
-                    f10 f10Var = new f10();
-                    f10Var.f = j6.w0(null, j6.uj, false);
-                    f10Var.n = l.G0(starrefprogram.commission_permille);
-                    if (f10Var.c != null) {
-                        f10Var.c = null;
-                        f10Var.a();
+                    d10 d10Var = new d10();
+                    d10Var.f = j6.w0(null, j6.uj, false);
+                    d10Var.n = l.G0(starrefprogram.commission_permille);
+                    if (d10Var.c != null) {
+                        d10Var.c = null;
+                        d10Var.a();
                     }
-                    spannableStringBuilder.setSpan(f10Var, 1, 2, 33);
+                    spannableStringBuilder.setSpan(d10Var, 1, 2, 33);
                 }
                 int i10 = starrefprogram.duration_months;
                 if (i10 == 0) {
@@ -78,26 +78,26 @@ public final class a4 extends i51 {
         }
         b4 b4Var2 = (b4) view;
         TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z12 = j51Var.r;
+        boolean z12 = x51Var.r;
         View view2 = b4Var2.e;
         ImageView imageView = b4Var2.f;
         TLRPC.User user2 = MessagesController.getInstance(b4Var2.a).getUser(Long.valueOf(connectedbotstarref.bot_id));
-        f9 f9Var2 = new f9((f6) null);
-        f9Var2.r(user2);
-        b4Var2.c.e(user2, f9Var2);
+        h9 h9Var2 = new h9((e6) null);
+        h9Var2.r(user2);
+        b4Var2.c.e(user2, h9Var2);
         TextView textView = b4Var2.h;
         textView.setText(Emoji.replaceEmoji(UserObject.getUserName(user2), textView.getPaint().getFontMetricsInt(), false));
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
         if (connectedbotstarref.commission_permille > 0) {
             spannableStringBuilder2.append((CharSequence) " d");
-            f10 f10Var2 = new f10();
-            f10Var2.f = j6.w0(null, j6.uj, false);
-            f10Var2.n = l.G0(connectedbotstarref.commission_permille);
-            if (f10Var2.c != null) {
-                f10Var2.c = null;
-                f10Var2.a();
+            d10 d10Var2 = new d10();
+            d10Var2.f = j6.w0(null, j6.uj, false);
+            d10Var2.n = l.G0(connectedbotstarref.commission_permille);
+            if (d10Var2.c != null) {
+                d10Var2.c = null;
+                d10Var2.a();
             }
-            spannableStringBuilder2.setSpan(f10Var2, 1, 2, 33);
+            spannableStringBuilder2.setSpan(d10Var2, 1, 2, 33);
         }
         int i11 = connectedbotstarref.duration_months;
         if (i11 == 0) {
@@ -120,8 +120,8 @@ public final class a4 extends i51 {
         b4Var2.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, f6 f6Var) {
-        return new b4(context, i10, f6Var);
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, e6 e6Var) {
+        return new b4(context, i10, e6Var);
     }
 }

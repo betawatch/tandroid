@@ -12,12 +12,12 @@ import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.n70;
-import w7.x5;
+import org.telegram.ui.Components.w70;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class p3 implements n5.b {
     public Object a;
@@ -49,9 +49,9 @@ public final class p3 implements n5.b {
 
     public void a() {
         c(null);
-        n70 n70Var = (n70) this.c;
-        if (n70Var != null) {
-            n70Var.u();
+        w70 w70Var = (w70) this.c;
+        if (w70Var != null) {
+            w70Var.u();
             this.c = null;
         }
         this.d = null;
@@ -60,7 +60,7 @@ public final class p3 implements n5.b {
     }
 
     public void b(d6 d6Var, ArrayList arrayList) {
-        f6 f6Var = (f6) this.b;
+        e6 e6Var = (e6) this.b;
         LinearLayout linearLayout = (LinearLayout) this.d;
         if (linearLayout == null) {
             return;
@@ -72,11 +72,11 @@ public final class p3 implements n5.b {
             Object obj = arrayList.get(i10);
             i10++;
             ii.o0 o0Var = (ii.o0) obj;
-            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, f6Var);
+            ii.n0 n0Var = new ii.n0(d6Var.getContext(), o0Var, e6Var);
             n0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
-            n0Var.setBackground(j6.Y(j6.v0(j6.i6, f6Var), 0, 0));
+            n0Var.setBackground(j6.Y(j6.v0(j6.i6, e6Var), 0, 0));
             n0Var.setOnClickListener(new ai.d0(this, d6Var, o0Var, 10));
-            ((LinearLayout) this.d).addView(n0Var, x5.n(-1, 48));
+            ((LinearLayout) this.d).addView(n0Var, y5.n(-1, 48));
         }
     }
 
@@ -95,8 +95,8 @@ public final class p3 implements n5.b {
     }
 
     public void d(d6 d6Var, String str) {
-        n70 n70Var;
-        n70 n70Var2;
+        w70 w70Var;
+        w70 w70Var2;
         if (str == null) {
             a();
             return;
@@ -107,13 +107,13 @@ public final class p3 implements n5.b {
             return;
         }
         c(d6Var);
-        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (n70Var2 = (n70) this.c) != null && n70Var2.D()) {
+        if (((d6) this.f) == d6Var && a2.equals((ArrayList) this.e) && (w70Var2 = (w70) this.c) != null && w70Var2.D()) {
             return;
         }
-        if (((d6) this.f) == d6Var && (n70Var = (n70) this.c) != null && n70Var.D() && ((LinearLayout) this.d) != null) {
+        if (((d6) this.f) == d6Var && (w70Var = (w70) this.c) != null && w70Var.D() && ((LinearLayout) this.d) != null) {
             this.e = a2;
             b(d6Var, a2);
-            ((n70) this.c).O();
+            ((w70) this.c).O();
             return;
         }
         a();
@@ -124,11 +124,11 @@ public final class p3 implements n5.b {
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         b(d6Var, a2);
-        n70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
+        w70 a10 = ((ii.p0) this.a).a(d6Var.getEditText());
         a10.Q = true;
         a10.s = 0;
         a10.t = false;
-        a10.r((LinearLayout) this.d, x5.n(220, -2));
+        a10.r((LinearLayout) this.d, y5.n(220, -2));
         a10.X = AndroidUtilities.dp(240.0f);
         a10.i = 3;
         a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
@@ -165,9 +165,9 @@ public final class p3 implements n5.b {
         return bVar2;
     }
 
-    public p3(ii.p0 p0Var, f6 f6Var) {
+    public p3(ii.p0 p0Var, e6 e6Var) {
         this.a = p0Var;
-        this.b = f6Var;
+        this.b = e6Var;
     }
 
     public p3(String str, ba.c cVar, com.google.firebase.messaging.t tVar) {

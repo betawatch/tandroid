@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class to extends FrameLayout {
-    public i81 a;
+    public w81 a;
     public float b;
     public boolean c;
     public float d;
@@ -27,10 +27,10 @@ public abstract class to extends FrameLayout {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
         this.e = ofFloat;
-        ofFloat.addUpdateListener(new i6(this, 12));
+        ofFloat.addUpdateListener(new k6(this, 12));
         this.e.setInterpolator(qr.h);
         this.e.setDuration(320L);
-        this.e.addListener(new aa(4, this, z10));
+        this.e.addListener(new ca(4, this, z10));
         this.e.start();
     }
 
@@ -45,9 +45,9 @@ public abstract class to extends FrameLayout {
 
     public void setShown(float f7) {
         this.b = f7;
-        i81 i81Var = this.a;
-        if (i81Var != null) {
-            i81Var.setPivotX(i81Var.getWidth() / 2.0f);
+        w81 w81Var = this.a;
+        if (w81Var != null) {
+            w81Var.setPivotX(w81Var.getWidth() / 2.0f);
             this.a.setPivotY(0.0f);
             this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
             this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
@@ -56,8 +56,8 @@ public abstract class to extends FrameLayout {
         invalidate();
     }
 
-    public void setTabs(i81 i81Var) {
-        this.a = i81Var;
-        addView(i81Var, w7.x5.c(-1.0f, -1));
+    public void setTabs(w81 w81Var) {
+        this.a = w81Var;
+        addView(w81Var, w7.y5.c(-1.0f, -1));
     }
 }

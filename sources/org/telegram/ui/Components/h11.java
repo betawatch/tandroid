@@ -1,24 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ThemeEditorView;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class h11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+public final /* synthetic */ class h11 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k11 b;
+    public final /* synthetic */ j11 c;
 
-    public h11(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+    public /* synthetic */ h11(k11 k11Var, j11 j11Var, int i10) {
+        this.a = i10;
+        this.b = k11Var;
+        this.c = j11Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.a;
-        editorAlert.c.setVisibility(4);
-        editorAlert.f.setVisibility(4);
-        editorAlert.s.setVisibility(4);
-        editorAlert.H = false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b(this.c);
+                break;
+            case 1:
+                this.b.b(this.c);
+                break;
+            default:
+                this.b.b(this.c);
+                break;
+        }
     }
 }

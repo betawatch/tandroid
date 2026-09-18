@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.gj1;
+import org.telegram.ui.fj1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class dp implements ti {
     public final /* synthetic */ mp a;
@@ -42,7 +42,7 @@ public final class dp implements ti {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                ap apVar = new ap(new gj1(file, file, ""), loadBitmap, false, 2);
+                ap apVar = new ap(new fj1(file, file, ""), loadBitmap, false, 2);
                 apVar.V1 = mpVar.f0;
                 apVar.F1 = false;
                 apVar.E1 = false;
@@ -78,8 +78,8 @@ public final class dp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
+    public final void x0(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti

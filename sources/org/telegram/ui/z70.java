@@ -1,91 +1,107 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
+import org.telegram.messenger.Intro;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z70 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+public final class z70 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public z70(View view, float f7, int i10) {
-        f5 f5Var = new f5(this, 2);
-        this.f = true;
-        this.n = 255;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.setCurrentAccount(i10);
-        this.c = f7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 == view) {
-            return;
-        }
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(f5Var);
-            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.onDetachedFromWindow();
-            }
-        }
-        View view3 = this.e;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
-        }
-        this.e = view;
-        imageReceiver.setParentView(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(f5Var);
+    public /* synthetic */ z70(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                d80 d80Var = (d80) this.b;
+                if (d80Var.I == null && surfaceTexture != null) {
+                    d80Var.I = new b80(d80Var, surfaceTexture);
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    d80Var.I.postRunnable(new g10(this, 11));
+                    b80 b80Var = d80Var.I;
+                    b80Var.postRunnable(b80Var.w);
+                    break;
+                }
+                break;
         }
     }
 
-    public final void a(float f7) {
-        float dp = AndroidUtilities.dp(f7);
-        this.d = dp;
-        this.b.setRoundRadius((int) dp);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                d80 d80Var = (d80) this.b;
+                b80 b80Var = d80Var.I;
+                if (b80Var == null) {
+                    return true;
+                }
+                b80Var.postRunnable(new g10(b80Var, 13));
+                d80Var.I = null;
+                return true;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.B2 != null) {
+                    org.telegram.ui.Components.pg0 pg0Var = org.telegram.ui.Components.pg0.p0;
+                    if (pg0Var.P && org.telegram.ui.Components.pg0.p() != null && org.telegram.ui.Components.pg0.p().b.a != 0) {
+                        (pg0Var != null ? pg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
+                        (pg0Var != null ? pg0Var.l0 : null).setVisibility(0);
+                        return false;
+                    }
+                    if (photoViewer.F3) {
+                        if (photoViewer.L3) {
+                            photoViewer.G3 = 2;
+                        }
+                        photoViewer.B2.setSurfaceTexture(surfaceTexture);
+                        photoViewer.B2.setVisibility(0);
+                        photoViewer.F3 = false;
+                        photoViewer.e0.invalidate();
+                        return false;
+                    }
+                }
+                return true;
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10 = this.f;
-        Paint paint2 = this.a;
-        if (z10 && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.j6.l1(this.n / 255.0f, 855638016));
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                if (((d80) this.b).I != null) {
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    break;
+                }
+                break;
         }
-        float f10 = this.h + f7;
-        float dp = (((i12 + i14) / 2.0f) + 0.0f) - (AndroidUtilities.dp(this.c) / 2.0f);
-        if (this.f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(f10, dp, AndroidUtilities.dp(this.c) + f10, AndroidUtilities.dp(this.c) + dp);
-            float f11 = this.d;
-            canvas.drawRoundRect(rectF, f11, f11, paint2);
-        }
-        float dp2 = AndroidUtilities.dp(this.c);
-        float dp3 = AndroidUtilities.dp(this.c);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(f10, dp, dp2, dp3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.draw(canvas);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.G3 == 1) {
+                    photoViewer.x0(true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void c(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
     }
 }

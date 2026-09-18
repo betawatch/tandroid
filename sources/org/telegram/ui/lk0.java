@@ -4,16 +4,16 @@ import android.widget.EditText;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class lk0 extends org.telegram.ui.ActionBar.h5 {
+public final class lk0 extends org.telegram.ui.ActionBar.g5 {
     public final /* synthetic */ NotificationsCustomSettingsActivity f;
 
     public lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
         this.f = notificationsCustomSettingsActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void m() {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
         notificationsCustomSettingsActivity.d.F(null);
@@ -27,14 +27,14 @@ public final class lk0 extends org.telegram.ui.ActionBar.h5 {
         notificationsCustomSettingsActivity.c.setShowAtCenter(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
         notificationsCustomSettingsActivity.f = true;
         notificationsCustomSettingsActivity.c.setShowAtCenter(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
         if (notificationsCustomSettingsActivity.d == null) {

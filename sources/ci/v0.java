@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class v0 extends View {
     public final Paint a;
@@ -25,7 +25,7 @@ public final class v0 extends View {
     public final Path f;
     public androidx.fragment.app.a0 h;
     public boolean n;
-    public final org.telegram.ui.Components.c6 r;
+    public final org.telegram.ui.Components.e6 r;
 
     public v0(Context context) {
         super(context);
@@ -34,8 +34,8 @@ public final class v0 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.b = textPaint;
         this.f = new Path();
-        org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this);
-        this.r = c6Var;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(this);
+        this.r = e6Var;
         paint.setColor(-869783512);
         paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(6.0f)));
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
@@ -44,7 +44,7 @@ public final class v0 extends View {
         this.c = staticLayout;
         this.d = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
         this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        c6Var.d(0.0f, true);
+        e6Var.d(0.0f, true);
     }
 
     public final void a(boolean z10) {

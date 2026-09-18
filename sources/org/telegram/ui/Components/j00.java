@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j00 extends s4.v {
     public final xp d = new xp(this, 17);
@@ -77,18 +77,18 @@ public final class j00 extends s4.v {
             e00 e00Var = k00Var.J;
             int i14 = g00Var2.a;
             int i15 = g00Var.a;
-            org.telegram.ui.vw vwVar = (org.telegram.ui.vw) e00Var;
+            org.telegram.ui.tw twVar = (org.telegram.ui.tw) e00Var;
             while (true) {
-                org.telegram.ui.vy[] vyVarArr = vwVar.b.e0;
-                if (i10 >= vyVarArr.length) {
+                org.telegram.ui.ty[] tyVarArr = twVar.b.e0;
+                if (i10 >= tyVarArr.length) {
                     break;
                 }
-                org.telegram.ui.vy vyVar = vyVarArr[i10];
-                int i16 = vyVar.h;
+                org.telegram.ui.ty tyVar = tyVarArr[i10];
+                int i16 = tyVar.h;
                 if (i16 == i14) {
-                    vyVar.h = i15;
+                    tyVar.h = i15;
                 } else if (i16 == i15) {
-                    vyVar.h = i14;
+                    tyVar.h = i14;
                 }
                 i10++;
             }

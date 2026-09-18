@@ -9,9 +9,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class c6 {
     public final Paint a;
@@ -33,8 +33,8 @@ public final class c6 {
     public final Drawable q;
     public final Drawable r;
     public final Drawable s;
-    public final yi0 t;
-    public final yi0 u;
+    public final ij0 t;
+    public final ij0 u;
 
     public c6(Context context) {
         new RectF();
@@ -49,11 +49,11 @@ public final class c6 {
         this.q = context.getDrawable(R.drawable.media_more);
         this.r = context.getDrawable(R.drawable.menu_stream_pip);
         this.s = context.getDrawable(R.drawable.msg_delete);
-        this.u = new yi0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        yi0 yi0Var = new yi0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.t = yi0Var;
-        yi0Var.N(20, false, true);
-        yi0Var.stop();
+        this.u = new ij0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        ij0 ij0Var = new ij0(R.raw.media_mute_unmute, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.t = ij0Var;
+        ij0Var.N(20, false, true);
+        ij0Var.stop();
         Paint paint = new Paint(1);
         this.a = paint;
         paint.setColor(1442840575);
@@ -70,25 +70,25 @@ public final class c6 {
     }
 
     public final void a(boolean z10, boolean z11) {
-        yi0 yi0Var = this.u;
+        ij0 ij0Var = this.u;
         if (!z11) {
-            yi0Var.N(z10 ? 20 : 0, false, false);
-            yi0Var.P(z10 ? 20 : 0);
+            ij0Var.N(z10 ? 20 : 0, false, false);
+            ij0Var.P(z10 ? 20 : 0);
             return;
         }
         if (z10) {
-            if (yi0Var.a0 > 20) {
-                yi0Var.N(0, false, false);
+            if (ij0Var.a0 > 20) {
+                ij0Var.N(0, false, false);
             }
-            yi0Var.P(20);
-            yi0Var.start();
+            ij0Var.P(20);
+            ij0Var.start();
             return;
         }
-        int i10 = yi0Var.a0;
+        int i10 = ij0Var.a0;
         if (i10 == 0 || i10 >= 43) {
             return;
         }
-        yi0Var.P(43);
-        yi0Var.start();
+        ij0Var.P(43);
+        ij0Var.start();
     }
 }

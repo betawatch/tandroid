@@ -1,91 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class np0 extends ju {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ iq0 c0;
+public final /* synthetic */ class np0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ View d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public np0(iq0 iq0Var, Context context, tp0 tp0Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, tp0Var, null, 1, true, f6Var);
-        this.c0 = iq0Var;
+    public /* synthetic */ np0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
+        this.a = i10;
+        this.c = notificationCenterDelegate;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // org.telegram.ui.Components.ju
-    public final void c(float f7) {
-        this.c0.Y0();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            bu editText = this.c0.d.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new h70(editText, 18));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(qr.f);
-            ofFloat.start();
-            this.V = false;
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                ((vq0) this.c).Q0((org.telegram.ui.Cells.g7) this.d, this.b, f7 / 1000.0f);
+                break;
+            default:
+                ((cq0) this.c).d.Q0(this.d, this.b, f7 / 1000.0f);
+                break;
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ju
-    public final void f() {
-        super.f();
-        kz emojiView = getEmojiView();
-        iq0 iq0Var = this.c0;
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.w2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(iq0Var.G0.d);
-        }
-        FrameLayout frameLayout = iq0Var.c0;
-        if (frameLayout != null) {
-            frameLayout.bringToFront();
-        }
-        mp0 mp0Var = iq0Var.c;
-        if (mp0Var != null) {
-            mp0Var.bringToFront();
-        }
-        mp0 mp0Var2 = iq0Var.f;
-        if (mp0Var2 != null) {
-            mp0Var2.bringToFront();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ju
-    public final void q(int i10, int i11) {
-        iq0 iq0Var = this.c0;
-        mp0 mp0Var = iq0Var.c;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        iq0Var.v0 = mp0Var.getTop() + iq0Var.u0;
-        mp0Var.invalidate();
     }
 }

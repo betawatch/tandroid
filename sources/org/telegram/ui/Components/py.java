@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class py extends ll0 {
-    public ny E;
+public final class py extends vl0 {
+    public uw E;
     public boolean F;
     public int G;
     public int H;
@@ -48,7 +48,7 @@ public final class py extends ll0 {
         this.e = z10 ? null : new ry(kzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -180,7 +180,7 @@ public final class py extends ll0 {
         }
         this.n = (TLRPC.User) userOrChat;
         final String j3 = com.google.android.gms.internal.vision.e2.j("gif_search_", str, "_", str2);
-        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.my
+        RequestDelegate requestDelegate = new RequestDelegate() { // from class: org.telegram.ui.Components.ny
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
                 final py pyVar = py.this;
@@ -248,9 +248,9 @@ public final class py extends ll0 {
         if (ryVar != null) {
             ryVar.a(false);
         }
-        ny nyVar = this.E;
-        if (nyVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(nyVar);
+        uw uwVar = this.E;
+        if (uwVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(uwVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class py extends ll0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            ny nyVar2 = new ny(0, this, str);
-            this.E = nyVar2;
-            AndroidUtilities.runOnUIThread(nyVar2, z10 ? 300L : 0L);
+            uw uwVar2 = new uw(4, this, str);
+            this.E = uwVar2;
+            AndroidUtilities.runOnUIThread(uwVar2, z10 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -268,9 +268,9 @@ public final class py extends ll0 {
             F("", "", true, true, true);
             return;
         }
-        qx qxVar = kzVar.p0;
+        rx rxVar = kzVar.p0;
         mw mwVar = kzVar.h0;
-        int currentPosition = qxVar.getCurrentPosition();
+        int currentPosition = rxVar.getCurrentPosition();
         if (currentPosition != kzVar.r0 && currentPosition != kzVar.s0) {
             H(MessagesController.getInstance(kzVar.c1).gifSearchEmojies.get(currentPosition - kzVar.t0));
             return;
@@ -351,7 +351,7 @@ public final class py extends ll0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) kzVar.i1.get(i15);
-                        kv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
+                        vv0 C1 = nz.C1(qyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;
@@ -380,15 +380,15 @@ public final class py extends ll0 {
         if (c1Var.f != 0) {
             return;
         }
-        org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) c1Var.a;
+        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) c1Var.a;
         int i11 = this.J;
         if (i11 >= 0 && i10 >= i11) {
-            e2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
+            f2Var.e((TLRPC.BotInlineResult) this.x.get(i10 - i11), this.n, true, false, false, true);
             return;
         }
         TLRPC.Document document = (TLRPC.Document) this.L.i1.get(i10);
-        e2Var.getClass();
-        e2Var.d(0, document, "gif" + document);
+        f2Var.getClass();
+        f2Var.d(0, document, "gif" + document);
     }
 
     @Override // s4.h0
@@ -415,11 +415,11 @@ public final class py extends ll0 {
                 view = o8Var;
             }
         } else {
-            org.telegram.ui.Cells.e2 e2Var = new org.telegram.ui.Cells.e2(this.c);
-            e2Var.setIsKeyboard(true);
-            e2Var.setCanPreviewGif(true);
-            view = e2Var;
+            org.telegram.ui.Cells.f2 f2Var = new org.telegram.ui.Cells.f2(this.c);
+            f2Var.setIsKeyboard(true);
+            f2Var.setCanPreviewGif(true);
+            view = f2Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

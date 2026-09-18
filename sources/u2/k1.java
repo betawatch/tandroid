@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class k1 implements d0, y2.h {
     public final g2.m a;
@@ -38,7 +38,7 @@ public final class k1 implements d0, y2.h {
     }
 
     @Override // y2.h
-    public final void V(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
         Uri uri = ((j1) jVar).b.c;
         t tVar = new t(j10);
         this.d.getClass();
@@ -73,32 +73,12 @@ public final class k1 implements d0, y2.h {
 
     @Override // u2.d0
     public final void k(c0 c0Var, long j3) {
-        c0Var.a(this);
+        c0Var.b(this);
     }
 
     @Override // u2.d0
     public final long l() {
         return -9223372036854775807L;
-    }
-
-    @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
-        if (this.w) {
-            return false;
-        }
-        y2.m mVar = this.r;
-        if (mVar.d() || mVar.c()) {
-            return false;
-        }
-        g2.h createDataSource = this.b.createDataSource();
-        g2.c0 c0Var = this.c;
-        if (c0Var != null) {
-            createDataSource.addTransferListener(c0Var);
-        }
-        j1 j1Var = new j1(createDataSource, this.a);
-        this.d.getClass();
-        mVar.f(j1Var, this, 3);
-        return true;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x0074  */
@@ -107,7 +87,7 @@ public final class k1 implements d0, y2.h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
         Uri uri = ((j1) jVar).b.c;
@@ -146,7 +126,7 @@ public final class k1 implements d0, y2.h {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10, int i10) {
+    public final void n(y2.j jVar, long j3, long j10, int i10) {
         t tVar;
         j1 j1Var = (j1) jVar;
         g2.b0 b0Var = j1Var.b;
@@ -159,8 +139,42 @@ public final class k1 implements d0, y2.h {
         this.e.s(tVar, 1, -1, this.s, 0, null, 0L, this.n, i10);
     }
 
+    @Override // y2.h
+    public final void o(y2.j jVar, long j3, long j10) {
+        j1 j1Var = (j1) jVar;
+        this.y = (int) j1Var.b.b;
+        byte[] bArr = j1Var.c;
+        bArr.getClass();
+        this.x = bArr;
+        this.w = true;
+        Uri uri = j1Var.b.c;
+        t tVar = new t(j10);
+        this.d.getClass();
+        this.e.p(tVar, 1, -1, this.s, 0, null, 0L, this.n);
+    }
+
+    @Override // u2.d1
+    public final boolean p(i2.r0 r0Var) {
+        if (this.w) {
+            return false;
+        }
+        y2.m mVar = this.r;
+        if (mVar.d() || mVar.c()) {
+            return false;
+        }
+        g2.h createDataSource = this.b.createDataSource();
+        g2.c0 c0Var = this.c;
+        if (c0Var != null) {
+            createDataSource.addTransferListener(c0Var);
+        }
+        j1 j1Var = new j1(createDataSource, this.a);
+        this.d.getClass();
+        mVar.f(j1Var, this, 3);
+        return true;
+    }
+
     @Override // u2.d0
-    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         for (int i10 = 0; i10 < rVarArr.length; i10++) {
             b1 b1Var = b1VarArr[i10];
             ArrayList arrayList = this.h;
@@ -176,20 +190,6 @@ public final class k1 implements d0, y2.h {
             }
         }
         return j3;
-    }
-
-    @Override // y2.h
-    public final void q(y2.j jVar, long j3, long j10) {
-        j1 j1Var = (j1) jVar;
-        this.y = (int) j1Var.b.b;
-        byte[] bArr = j1Var.c;
-        bArr.getClass();
-        this.x = bArr;
-        this.w = true;
-        Uri uri = j1Var.b.c;
-        t tVar = new t(j10);
-        this.d.getClass();
-        this.e.p(tVar, 1, -1, this.s, 0, null, 0L, this.n);
     }
 
     @Override // u2.d0

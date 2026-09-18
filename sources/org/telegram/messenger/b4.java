@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b4 implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class b4 implements Runnable {
                 ((TranslateController) this.c).lambda$pushRichMessageToTranslate$30(this.b, (TranslateController.PendingRichTranslation) this.d);
                 break;
             case 3:
-                AndroidUtilities.lambda$showProxyAlert$17((boolean[]) this.c, this.b, (org.telegram.ui.Components.xc[]) this.d);
+                AndroidUtilities.lambda$showProxyAlert$17((boolean[]) this.c, this.b, (org.telegram.ui.Components.zc[]) this.d);
                 break;
             case 4:
                 ((ChatThemeController) this.c).lambda$processUpdate$13(this.b, (TLRPC.UserFull) this.d);

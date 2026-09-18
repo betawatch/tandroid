@@ -7,7 +7,6 @@ import ai.c3;
 import ai.d2;
 import ai.d9;
 import ai.da;
-import ai.e6;
 import ai.f6;
 import ai.fb;
 import ai.h1;
@@ -71,9 +70,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.q;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.w1;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
@@ -81,18 +80,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.a2;
 import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Cells.l4;
-import org.telegram.ui.Cells.z1;
+import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.ProfileActivity;
 import rg.x0;
 import v0.i;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -179,99 +179,99 @@ public final /* synthetic */ class e implements Runnable {
                     long j10 = m1Var.c;
                     q0 q0Var = new q0(r7, r3Var2, m1Var);
                     b1 b1Var = new b1();
-                    g3 g3Var = new g3(1, context, (org.telegram.ui.ActionBar.f6) b1Var, false);
-                    g3Var.fixNavigationBar();
-                    LinearLayout f7 = wl.f(context, 1);
-                    TextView g10 = w1.g(context, 1, 20.0f);
+                    f3 f3Var = new f3(1, context, (e6) b1Var, false);
+                    f3Var.fixNavigationBar();
+                    LinearLayout e = wh.e(context, 1);
+                    TextView g10 = q.g(context, 1, 20.0f);
                     g10.setTextColor(b1Var.G0(j6.j5));
                     g10.setTypeface(AndroidUtilities.bold());
                     g10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    f7.addView(g10, x5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-                    l4 l4Var = new l4(context, b1Var);
-                    l4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    f7.addView(l4Var, x5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
-                    final z1 z1Var = new z1(4, 21, context, b1Var, true);
-                    np checkBoxRound = z1Var.getCheckBoxRound();
+                    e.addView(g10, y5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    m4 m4Var = new m4(context, b1Var);
+                    m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
+                    e.addView(m4Var, y5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    final a2 a2Var = new a2(4, 21, context, b1Var, true);
+                    np checkBoxRound = a2Var.getCheckBoxRound();
                     int i13 = j6.V6;
                     int i14 = j6.g7;
                     int i15 = j6.k7;
                     checkBoxRound.b(i13, i14, i15);
-                    z1Var.e(LocaleController.getString(R.string.DeleteReportSpam), null, false, true, false);
-                    z1Var.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                    a2Var.e(LocaleController.getString(R.string.DeleteReportSpam), null, false, true, false);
+                    a2Var.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (r2) {
                                 case 0:
-                                    z1Var.c(!r3.b(), true);
+                                    a2Var.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    z1Var.c(!r3.b(), true);
+                                    a2Var.c(!r3.b(), true);
                                     break;
                                 default:
-                                    z1Var.c(!r3.b(), true);
+                                    a2Var.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
                     int i16 = j6.i6;
-                    z1Var.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    f7.addView(z1Var, x5.n(-1, -2));
-                    final z1 z1Var2 = new z1(4, 21, context, b1Var, true);
-                    z1Var2.getCheckBoxRound().b(i13, i14, i15);
+                    a2Var.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
+                    e.addView(a2Var, y5.n(-1, -2));
+                    final a2 a2Var2 = new a2(4, 21, context, b1Var, true);
+                    a2Var2.getCheckBoxRound().b(i13, i14, i15);
                     final int i17 = 1;
-                    z1Var2.e(LocaleController.formatString(R.string.DeleteAllFrom, DialogObject.getName(j10)), null, false, true, false);
-                    z1Var2.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                    a2Var2.e(LocaleController.formatString(R.string.DeleteAllFrom, DialogObject.getName(j10)), null, false, true, false);
+                    a2Var2.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i17) {
                                 case 0:
-                                    z1Var2.c(!r3.b(), true);
+                                    a2Var2.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    z1Var2.c(!r3.b(), true);
+                                    a2Var2.c(!r3.b(), true);
                                     break;
                                 default:
-                                    z1Var2.c(!r3.b(), true);
+                                    a2Var2.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
-                    z1Var2.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    f7.addView(z1Var2, x5.n(-1, -2));
-                    final z1 z1Var3 = new z1(4, 21, context, b1Var, true);
-                    z1Var3.getCheckBoxRound().b(i13, i14, i15);
-                    z1Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
+                    a2Var2.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
+                    e.addView(a2Var2, y5.n(-1, -2));
+                    final a2 a2Var3 = new a2(4, 21, context, b1Var, true);
+                    a2Var3.getCheckBoxRound().b(i13, i14, i15);
+                    a2Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
                     final int i18 = 2;
-                    z1Var3.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
+                    a2Var3.setOnClickListener(new View.OnClickListener() { // from class: ai.r0
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             switch (i18) {
                                 case 0:
-                                    z1Var3.c(!r3.b(), true);
+                                    a2Var3.c(!r3.b(), true);
                                     break;
                                 case 1:
-                                    z1Var3.c(!r3.b(), true);
+                                    a2Var3.c(!r3.b(), true);
                                     break;
                                 default:
-                                    z1Var3.c(!r3.b(), true);
+                                    a2Var3.c(!r3.b(), true);
                                     break;
                             }
                         }
                     });
-                    z1Var3.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
-                    f7.addView(z1Var3, x5.n(-1, -2));
+                    a2Var3.setBackground(j6.f0(b1Var.G0(i16), 2, -1));
+                    e.addView(a2Var3, y5.n(-1, -2));
                     e9 e9Var = new e9(context, b1Var);
                     e9Var.setBackgroundColor(-16777216);
                     e9Var.setFixedSize(12);
-                    f7.addView(e9Var, x5.n(-1, -2));
+                    e.addView(e9Var, y5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     ci.d dVar = new ci.d(context, b1Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
-                    dVar.setOnClickListener(new s0(z1Var, z1Var2, z1Var3, q0Var, g3Var, 0));
-                    frameLayout.addView(dVar, x5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-                    f7.addView(frameLayout, x5.n(-1, -2));
-                    g3Var.setCustomView(f7);
-                    g3Var.show();
+                    dVar.setOnClickListener(new s0(a2Var, a2Var2, a2Var3, q0Var, f3Var, 0));
+                    frameLayout.addView(dVar, y5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
+                    e.addView(frameLayout, y5.n(-1, -2));
+                    f3Var.setCustomView(e);
+                    f3Var.show();
                     break;
                 }
                 TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
@@ -308,7 +308,7 @@ public final /* synthetic */ class e implements Runnable {
             case 11:
                 f6 f6Var3 = (f6) this.b;
                 oc E = oc.E((Activity) this.c, f6Var3.C2);
-                e6 e6Var = f6Var3.M2;
+                ai.e6 e6Var = f6Var3.M2;
                 long j11 = (e6Var == null || (icVar = (ic) e6Var.c) == null) ? 0L : icVar.currentPosition;
                 File h = f6Var3.O1.h();
                 TL_stories.StoryItem storyItem = f6Var3.O1.a;
@@ -657,8 +657,8 @@ public final /* synthetic */ class e implements Runnable {
                     while (queryFinalized4.next()) {
                         longSparseIntArray.put(queryFinalized4.longValue(0), queryFinalized4.intValue(1));
                     }
-                } catch (Exception e) {
-                    messagesStorage2.checkSQLException(e);
+                } catch (Exception e7) {
+                    messagesStorage2.checkSQLException(e7);
                 }
                 AndroidUtilities.runOnUIThread(new e(27, h8Var, longSparseIntArray));
                 break;

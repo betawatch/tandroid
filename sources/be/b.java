@@ -15,7 +15,7 @@ import v7.t7;
 import zd.i2;
 import zd.l;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class b {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(b.class, "sendersAndCloseStatus$volatile");
@@ -41,7 +41,7 @@ public class b {
     public b(int i10) {
         this.a = i10;
         if (i10 < 0) {
-            throw new IllegalArgumentException(k0.j(i10, "Invalid channel capacity: ", ", should be >=0").toString());
+            throw new IllegalArgumentException(k0.i(i10, "Invalid channel capacity: ", ", should be >=0").toString());
         }
         h hVar = d.a;
         this.bufferEnd$volatile = i10 != 0 ? i10 != Integer.MAX_VALUE ? i10 : Long.MAX_VALUE : 0L;
@@ -442,7 +442,7 @@ public class b {
                 }
             } else {
                 if (i10 != 3) {
-                    throw new IllegalStateException(k0.i(i10, "unexpected close status: ").toString());
+                    throw new IllegalStateException(k0.h(i10, "unexpected close status: ").toString());
                 }
                 h b10 = b(1152921504606846975L & j3);
                 Object obj = null;

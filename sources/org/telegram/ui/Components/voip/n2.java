@@ -12,11 +12,11 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.w80;
-import org.telegram.ui.yg0;
+import org.telegram.ui.Components.f90;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.xg0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class n2 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -43,27 +43,27 @@ public class n2 extends TextView {
 
     public void c() {
         CharSequence text;
-        g90 g90Var = (g90) this.c;
+        p90 p90Var = (p90) this.c;
         Layout layout = getLayout();
         if (layout == null || (text = layout.getText()) == null) {
             return;
         }
-        w80 w80Var = new w80(0);
+        f90 f90Var = new f90(0);
         float dp = AndroidUtilities.dp(3.0f);
         float dp2 = AndroidUtilities.dp(6.0f);
-        w80Var.q = dp;
-        w80Var.r = dp2;
+        f90Var.q = dp;
+        f90Var.r = dp2;
         int length = text.length();
-        w80Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, w80Var);
+        f90Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, f90Var);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(w80Var.s, w80Var.u, w80Var.t, w80Var.v);
+        rectF.set(f90Var.s, f90Var.u, f90Var.t, f90Var.v);
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        g90Var.x = w80Var;
-        g90Var.j(4.0f);
-        int themedColor = ((yg0) this.d).getThemedColor(j6.Ld);
-        g90Var.f(j6.l1(0.85f, themedColor), j6.l1(2.0f, themedColor), j6.l1(3.5f, themedColor), j6.l1(6.0f, themedColor));
-        g90Var.k();
+        p90Var.x = f90Var;
+        p90Var.j(4.0f);
+        int themedColor = ((xg0) this.d).getThemedColor(j6.Ld);
+        p90Var.f(j6.l1(0.85f, themedColor), j6.l1(2.0f, themedColor), j6.l1(3.5f, themedColor), j6.l1(6.0f, themedColor));
+        p90Var.k();
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -83,7 +83,7 @@ public class n2 extends TextView {
                 super.onDraw(canvas);
                 break;
             default:
-                g90 g90Var = (g90) this.c;
+                p90 p90Var = (p90) this.c;
                 canvas.save();
                 if ((getGravity() & 16) == 0 || getLayout() == null) {
                     paddingTop = getPaddingTop();
@@ -94,10 +94,10 @@ public class n2 extends TextView {
                 ((org.telegram.ui.Cells.z) this.b).draw(canvas);
                 canvas.restore();
                 super.onDraw(canvas);
-                if (a() || g90Var.c()) {
+                if (a() || p90Var.c()) {
                     canvas.save();
                     canvas.translate(getPaddingLeft(), paddingTop);
-                    g90Var.draw(canvas);
+                    p90Var.draw(canvas);
                     canvas.restore();
                     invalidate();
                     break;
@@ -159,15 +159,15 @@ public class n2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(yg0 yg0Var, Context context) {
+    public n2(xg0 xg0Var, Context context) {
         super(context);
-        this.d = yg0Var;
+        this.d = xg0Var;
         org.telegram.ui.Cells.z f02 = j6.f0(j6.l1(0.1f, j6.w0(null, j6.I6, false)), 7, -1);
         this.b = f02;
-        g90 g90Var = new g90();
-        this.c = g90Var;
+        p90 p90Var = new p90();
+        this.c = p90Var;
         f02.setCallback(this);
-        g90Var.C = true;
-        g90Var.u = 0.8f;
+        p90Var.C = true;
+        p90Var.u = 0.8f;
     }
 }

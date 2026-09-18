@@ -1,11 +1,17 @@
 package pg;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j1 {
-    public int a;
-    public ArrayList b = new ArrayList();
-    public int c;
+    public double a;
+    public double b;
+
+    public j1(double d, double d10) {
+        this.a = d;
+        this.b = d10;
+    }
+
+    public final double a(double d, double d10) {
+        return Math.sqrt(Math.pow(d10 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
+    }
 }

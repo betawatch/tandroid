@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
@@ -15,7 +15,7 @@ public final class c {
     public pe.b e;
     public hh.k f;
     public ViewGroup g;
-    public ki.i h;
+    public li.i h;
     public boolean i;
 
     public c(fh.a aVar) {
@@ -32,33 +32,33 @@ public final class c {
 
     public final ch.d c(View view, dh.a aVar, boolean z10) {
         ViewGroup viewGroup;
-        ch.d l4 = this.a.l();
-        if (this.i && Build.VERSION.SDK_INT >= 33 && (l4 instanceof ch.e)) {
-            ch.e eVar = (ch.e) l4;
+        ch.d d = this.a.d();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (d instanceof ch.e)) {
+            ch.e eVar = (ch.e) d;
             eVar.P = new j(eVar.K);
         }
-        l4.o(aVar);
+        d.o(aVar);
         int i10 = this.b;
         int i11 = this.c;
-        l4.h = i10;
-        l4.i = i11;
+        d.h = i10;
+        d.i = i11;
         pe.b bVar = this.e;
         if (bVar != null && view != null) {
             bVar.add(view);
         }
-        ki.i iVar = this.h;
+        li.i iVar = this.h;
         if (iVar != null && view != null) {
-            iVar.c.add(new ki.h(view, l4));
+            iVar.c.add(new li.h(view, d));
         }
         hh.k kVar = this.f;
         if (kVar != null && (viewGroup = this.g) != null && view != null) {
-            kVar.d(view, viewGroup, new b(0, l4, view), z10);
+            kVar.d(view, viewGroup, new b(0, d, view), z10);
         }
         pe.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.add(l4);
+            bVar2.add(d);
         }
-        return l4;
+        return d;
     }
 
     public final void d() {

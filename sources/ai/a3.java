@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.g80;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.wy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -39,20 +39,20 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 f6Var.J0.H(new ProfileActivity(bundle, null));
                 break;
             case 1:
-                g80.q((g80) this.c, this.b);
+                p80.q((p80) this.c, this.b);
                 break;
             case 2:
-                wy wyVar = (wy) this.c;
-                MessagesController messagesController = wyVar.getMessagesController();
+                uy uyVar = (uy) this.c;
+                MessagesController messagesController = uyVar.getMessagesController();
                 long j10 = this.b;
                 boolean isDialogMuted = messagesController.isDialogMuted(j10, 0L);
                 if (isDialogMuted) {
-                    wyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 4);
+                    uyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 4);
                 } else {
-                    wyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 3);
+                    uyVar.getNotificationsController().setDialogNotificationsSettings(j10, 0L, 3);
                 }
-                vc.A(wyVar, !isDialogMuted, null).j();
-                wyVar.finishPreviewFragment();
+                xc.A(uyVar, !isDialogMuted, null).j();
+                uyVar.finishPreviewFragment();
                 break;
             case 3:
                 Utilities.Callback callback = ((qh.p) this.c).f;
@@ -65,11 +65,11 @@ public final /* synthetic */ class a3 implements View.OnClickListener {
                 xh.m.P((xh.m) this.c, this.b);
                 break;
             default:
-                xh.q1 q1Var = (xh.q1) this.c;
-                q1Var.getClass();
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                xh.r1 r1Var = (xh.r1) this.c;
+                r1Var.getClass();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    q1Var.dismiss();
+                    r1Var.dismiss();
                     U.presentFragment(ProfileActivity.m4(this.b));
                     break;
                 }

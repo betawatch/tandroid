@@ -3,9 +3,9 @@ package w9;
 import android.util.Log;
 import java.io.File;
 import java.util.concurrent.Callable;
-import n7.a1;
+import n7.z0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class n implements Callable {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final class n implements Callable {
         switch (this.a) {
             case 0:
                 try {
-                    a1 a1Var = this.b.d;
-                    ba.c cVar = (ba.c) a1Var.c;
-                    String str = (String) a1Var.b;
+                    z0 z0Var = this.b.d;
+                    ba.c cVar = (ba.c) z0Var.c;
+                    String str = (String) z0Var.b;
                     cVar.getClass();
                     boolean delete = new File(cVar.b, str).delete();
                     if (!delete) {
@@ -36,16 +36,16 @@ public final class n implements Callable {
                 }
             default:
                 m mVar = this.b.f;
-                a1 a1Var2 = mVar.c;
-                ba.c cVar2 = (ba.c) a1Var2.c;
-                String str2 = (String) a1Var2.b;
+                z0 z0Var2 = mVar.c;
+                ba.c cVar2 = (ba.c) z0Var2.c;
+                String str2 = (String) z0Var2.b;
                 cVar2.getClass();
                 boolean z10 = true;
                 if (new File(cVar2.b, str2).exists()) {
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", "Found previous crash marker.", null);
                     }
-                    ba.c cVar3 = (ba.c) a1Var2.c;
+                    ba.c cVar3 = (ba.c) z0Var2.c;
                     cVar3.getClass();
                     new File(cVar3.b, str2).delete();
                 } else {

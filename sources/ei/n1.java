@@ -1,11 +1,11 @@
 package ei;
 
 import android.os.Bundle;
-import org.telegram.ui.wy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class n1 extends wy {
+public final class n1 extends uy {
     public final /* synthetic */ org.telegram.tgnet.e A4;
     public final /* synthetic */ p1 B4;
 
@@ -16,12 +16,12 @@ public final class n1 extends wy {
         this.A4 = eVar;
     }
 
-    @Override // org.telegram.ui.wy
+    @Override // org.telegram.ui.uy
     public final boolean I3() {
         return true;
     }
 
-    @Override // org.telegram.ui.wy, org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.uy, org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         p1 p1Var = this.B4;

@@ -18,15 +18,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class s0 extends ml0 {
+public final class s0 extends wl0 {
     public static final q0[] c3 = {new q0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new q0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new q0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new q0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new q0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern d3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern e3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
@@ -40,8 +39,8 @@ public final class s0 extends ml0 {
     public boolean a3;
     public final m0 b3;
 
-    public s0(Context context, f6 f6Var) {
-        super(context, f6Var);
+    public s0(Context context, e6 e6Var) {
+        super(context, e6Var);
         this.X2 = new ArrayList();
         this.Y2 = new ArrayList();
         this.a3 = true;
@@ -321,7 +320,7 @@ public final class s0 extends ml0 {
                     TLRPC.Chat chat = (TLRPC.Chat) obj;
                     String str = chat.title;
                     if (str.length() > 12) {
-                        str = p6.t(str.substring(0, 10), "...");
+                        str = t8.b.v(str.substring(0, 10), "...");
                     }
                     q0 q0Var2 = new q0(R.drawable.search_users_filled, 4, str);
                     q0Var2.f = chat;
@@ -391,7 +390,7 @@ public final class s0 extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -399,7 +398,7 @@ public final class s0 extends ml0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             return super.onTouchEvent(motionEvent);

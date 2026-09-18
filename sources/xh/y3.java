@@ -1,8 +1,6 @@
 package xh;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y3 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,12 +15,37 @@ public final /* synthetic */ class y3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.Z();
+                v3 v3Var = this.b.c;
+                if (!v3Var.j.isEmpty()) {
+                    v3Var.j.clear();
+                    v3Var.h();
+                    break;
+                }
+                break;
+            case 1:
+                v3 v3Var2 = this.b.c;
+                if (!v3Var2.k.isEmpty()) {
+                    v3Var2.k.clear();
+                    v3Var2.h();
+                    break;
+                }
+                break;
+            case 2:
+                v3 v3Var3 = this.b.c;
+                if (!v3Var3.l.isEmpty()) {
+                    v3Var3.l.clear();
+                    v3Var3.h();
+                    break;
+                }
+                break;
+            case 3:
+                this.b.c.i(u3.b);
+                break;
+            case 4:
+                this.b.c.i(u3.c);
                 break;
             default:
-                g4 g4Var = this.b;
-                g4Var.i0.N(true);
-                AndroidUtilities.runOnUIThread(new y3(g4Var, 0), 150L);
+                this.b.c.i(u3.d);
                 break;
         }
     }

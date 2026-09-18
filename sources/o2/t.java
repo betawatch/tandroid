@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
@@ -60,7 +60,7 @@ public final class t implements c3.o {
         rVar.q = r0.n("text/vtt");
         rVar.d = this.a;
         rVar.v = j3;
-        k0.u(rVar, Z1);
+        k0.r(rVar, Z1);
         this.f.e1();
         return Z1;
     }

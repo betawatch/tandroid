@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class w1 extends View implements org.telegram.ui.Cells.p9, d3 {
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public a3 c;
     public TL_iv.pageBlockKicker d;
     public int e;
     public int f;
 
-    public w1(Context context, w70 w70Var, f4 f4Var) {
+    public w1(Context context, u70 u70Var, f4 f4Var) {
         super(context);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
     }
 
@@ -69,7 +69,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.p9, d3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.wl.b(this);
+        return org.telegram.messenger.wh.a(this);
     }
 
     @Override // android.view.View
@@ -120,8 +120,8 @@ public final class w1 extends View implements org.telegram.ui.Cells.p9, d3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        w70 w70Var = this.a;
-        w70Var.getClass();
+        u70 u70Var = this.a;
+        u70Var.getClass();
         this.e = AndroidUtilities.dp(18);
         TL_iv.pageBlockKicker pageblockkicker = this.d;
         if (pageblockkicker != null) {
@@ -133,16 +133,16 @@ public final class w1 extends View implements org.telegram.ui.Cells.p9, d3 {
                 i12 = 0;
             }
             TL_iv.RichText richText = this.d.text;
-            w70 w70Var2 = this.a;
-            w70Var2.getClass();
+            u70 u70Var2 = this.a;
+            u70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             int i13 = this.f;
             TL_iv.pageBlockKicker pageblockkicker2 = this.d;
             f4 f4Var = this.b;
-            a3 p5 = h4.p(w70Var2, this, null, richText, dp, i13, pageblockkicker2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+            a3 p5 = h4.p(u70Var2, this, null, richText, dp, i13, pageblockkicker2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
-                w70Var.getClass();
+                u70Var.getClass();
                 i12 += this.c.d.getHeight() + AndroidUtilities.dp(16);
                 a3 a3Var = this.c;
                 a3Var.s = this.e;

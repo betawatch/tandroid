@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -27,8 +27,8 @@ public class CheckBoxBase {
     public float B;
     public String C;
     public op D;
-    public org.telegram.ui.ActionBar.g5 E;
-    public org.telegram.ui.ActionBar.f6 F;
+    public org.telegram.ui.ActionBar.f5 E;
+    public org.telegram.ui.ActionBar.e6 F;
     public GenericProvider G;
     public long H;
     public View a;
@@ -58,7 +58,7 @@ public class CheckBoxBase {
     public float m = 1.0f;
     public int r = org.telegram.ui.ActionBar.j6.k7;
 
-    public CheckBoxBase(int i10, View view, org.telegram.ui.ActionBar.f6 f6Var) {
+    public CheckBoxBase(int i10, View view, org.telegram.ui.ActionBar.e6 e6Var) {
         int i11 = org.telegram.ui.ActionBar.j6.lc;
         this.s = i11;
         this.t = i11;
@@ -66,9 +66,9 @@ public class CheckBoxBase {
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new l2(11);
+        this.G = new j2(13);
         this.H = 200L;
-        this.F = f6Var;
+        this.F = e6Var;
         this.a = view;
         this.B = i10;
         if (I == null) {
@@ -422,13 +422,13 @@ public class CheckBoxBase {
                         }
                         i17 = 6;
                         paint.setStyle(Paint.Style.FILL);
-                        org.telegram.ui.ActionBar.g5 g5Var = this.E;
-                        if (g5Var == null || !g5Var.l()) {
+                        org.telegram.ui.ActionBar.f5 f5Var = this.E;
+                        if (f5Var == null || !f5Var.l()) {
                             paint.setShader(null);
                         } else {
-                            org.telegram.ui.ActionBar.g5 g5Var2 = this.E;
-                            Shader shader = g5Var2.a;
-                            Matrix matrix = g5Var2.k;
+                            org.telegram.ui.ActionBar.f5 f5Var2 = this.E;
+                            Shader shader = f5Var2.a;
+                            Matrix matrix = f5Var2.k;
                             matrix.reset();
                             this.E.a();
                             matrix.postTranslate(0.0f, (-this.E.r) + rect.top);
@@ -629,7 +629,7 @@ public class CheckBoxBase {
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new p8(this, 13));
+        ofFloat.addListener(new r8(this, 13));
         this.p.setInterpolator(qr.g);
         this.p.setDuration(this.H);
         this.p.start();

@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.util.StateSet;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class dq extends n6 {
+public final class dq extends p6 {
     public final Rect s;
     public Drawable v;
     public boolean w;
@@ -24,7 +24,7 @@ public final class dq extends n6 {
         return this.s;
     }
 
-    @Override // org.telegram.ui.Components.n6, android.view.View
+    @Override // org.telegram.ui.Components.p6, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.v != null) {
             Rect bounds = getDrawable().getBounds();

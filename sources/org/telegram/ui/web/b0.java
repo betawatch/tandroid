@@ -34,13 +34,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.n6;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class b0 implements Runnable {
     /* JADX WARN: Type inference failed for: r4v7, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
     /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     /* JADX WARN: Type inference failed for: r6v8, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.n6] */
+    /* JADX WARN: Type inference failed for: r8v12, types: [android.view.View, java.lang.Object, org.telegram.ui.Components.p6] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -116,9 +116,9 @@ public final /* synthetic */ class b0 implements Runnable {
                     HashMap hashMap = ei.l0.g;
                     ?? alertDialog$Builder = new AlertDialog$Builder(context);
                     String string = LocaleController.getString(R.string.BotDownloadFileTitle);
-                    org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                    c2Var.R = string;
-                    c2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotDownloadFileText, userName));
+                    org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                    b2Var.R = string;
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotDownloadFileText, userName));
                     ?? linearLayout = new LinearLayout(context);
                     linearLayout.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
                     linearLayout.setOrientation(0);
@@ -126,23 +126,23 @@ public final /* synthetic */ class b0 implements Runnable {
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
                     imageView.setBackground(j6.K(AndroidUtilities.dp(44.0f), j6.w0(null, j6.Oh, false)));
                     imageView.setImageResource(R.drawable.msg_round_file_s);
-                    linearLayout.addView(imageView, x5.t(44, 44, 19, 0, 0, 10, 0));
+                    linearLayout.addView(imageView, y5.t(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
-                    TextView g10 = org.telegram.messenger.w1.g(context, 1, 15.0f);
+                    TextView g10 = org.telegram.messenger.q.g(context, 1, 15.0f);
                     g10.setTypeface(AndroidUtilities.bold());
                     g10.setText(str6);
                     g10.setTextColor(j6.w0(null, j6.n5, false));
-                    linearLayout2.addView(g10, x5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
-                    ?? n6Var = new n6(context, true, true, true);
-                    n6Var.setTextSize(AndroidUtilities.dp(12.0f));
+                    linearLayout2.addView(g10, y5.k(0.0f, 0.0f, 0.0f, 3.0f, -1, -2));
+                    ?? p6Var = new p6(context, true, true, true);
+                    p6Var.setTextSize(AndroidUtilities.dp(12.0f));
                     SpannableString spannableString = new SpannableString("l");
-                    h90 h90Var = new h90(AndroidUtilities.dp(55.0f), n6Var);
+                    q90 q90Var = new q90(AndroidUtilities.dp(55.0f), p6Var);
                     int i13 = j6.Ed;
-                    h90Var.a(j6.l1(0.35f, j6.w0(null, i13, false)), j6.l1(0.075f, j6.w0(null, i13, false)));
-                    spannableString.setSpan(h90Var, 0, 1, 33);
-                    n6Var.setText(spannableString);
-                    bi.v vVar = new bi.v(n6Var, 14);
+                    q90Var.a(j6.l1(0.35f, j6.w0(null, i13, false)), j6.l1(0.075f, j6.w0(null, i13, false)));
+                    spannableString.setSpan(q90Var, 0, 1, 33);
+                    p6Var.setText(spannableString);
+                    bi.v vVar = new bi.v(p6Var, 14);
                     HashMap hashMap2 = ei.l0.h;
                     if (hashMap2.containsKey(str5)) {
                         Pair pair = (Pair) hashMap2.get(str5);
@@ -150,14 +150,14 @@ public final /* synthetic */ class b0 implements Runnable {
                     } else {
                         new ei.f0(str5, vVar).execute(str5);
                     }
-                    n6Var.setTextColor(j6.w0(null, i13, false));
-                    linearLayout2.addView(n6Var, x5.n(-1, 15));
-                    linearLayout.addView(linearLayout2, x5.t(-1, -2, 23, 0, 0, 0, 2));
+                    p6Var.setTextColor(j6.w0(null, i13, false));
+                    linearLayout2.addView(p6Var, y5.n(-1, 15));
+                    linearLayout.addView(linearLayout2, y5.t(-1, -2, 23, 0, 0, 0, 2));
                     alertDialog$Builder.n(linearLayout);
                     final boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.b2() { // from class: ei.d0
-                        @Override // org.telegram.ui.ActionBar.b2
-                        public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i14) {
+                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i12) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -178,9 +178,9 @@ public final /* synthetic */ class b0 implements Runnable {
                             }
                         }
                     });
-                    alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.b2() { // from class: ei.d0
-                        @Override // org.telegram.ui.ActionBar.b2
-                        public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i14) {
+                    alertDialog$Builder.k(LocaleController.getString(R.string.BotDownloadFileDownload), new org.telegram.ui.ActionBar.a2() { // from class: ei.d0
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i14) {
                             switch (i11) {
                                 case 0:
                                     boolean[] zArr2 = zArr;
@@ -201,8 +201,8 @@ public final /* synthetic */ class b0 implements Runnable {
                             }
                         }
                     });
-                    c2Var.setOnDismissListener(new ei.e0(i12, zArr, e4Var));
-                    c2Var.show();
+                    b2Var.setOnDismissListener(new ei.e0(i12, zArr, e4Var));
+                    b2Var.show();
                     break;
                 }
             case 2:
@@ -222,7 +222,7 @@ public final /* synthetic */ class b0 implements Runnable {
                 TLObject tLObject2 = (TLObject) obj;
                 String[] strArr = (String[]) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj4;
-                org.telegram.ui.ActionBar.c2 c2Var2 = (org.telegram.ui.ActionBar.c2) obj3;
+                org.telegram.ui.ActionBar.b2 b2Var2 = (org.telegram.ui.ActionBar.b2) obj3;
                 d1Var4.getClass();
                 if (tLObject2 != null) {
                     strArr[0] = "allowed";
@@ -233,7 +233,7 @@ public final /* synthetic */ class b0 implements Runnable {
                 if (tL_error != null) {
                     d1Var4.Z(tL_error.text);
                 }
-                c2Var2.dismiss();
+                b2Var2.dismiss();
                 break;
             case 4:
                 String str9 = (String) obj2;
@@ -255,7 +255,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     }
                     d1 d1Var5 = z0Var.Q;
                     if (d1Var5 != null) {
-                        new vc(d1Var5, d1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
+                        new xc(d1Var5, d1Var5.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, str12))).k(true);
                         break;
                     }
                 } catch (Exception e) {
@@ -348,7 +348,7 @@ public final /* synthetic */ class b0 implements Runnable {
                                         File directory = FileLoader.getDirectory(4);
                                         StringBuilder sb3 = new StringBuilder();
                                         sb3.append(FileLoader.fixFileName(str14 == null ? "file" : str14));
-                                        sb3.append(i14 > 0 ? hg.k0.j(i14, " (", ")") : "");
+                                        sb3.append(i14 > 0 ? hg.k0.i(i14, " (", ")") : "");
                                         file = new File(directory, sb3.toString());
                                         i14++;
                                     } else {
@@ -395,23 +395,23 @@ public final /* synthetic */ class b0 implements Runnable {
             default:
                 boolean[] zArr2 = (boolean[]) obj5;
                 WebView webView = (WebView) obj4;
-                c2 c2Var3 = (c2) obj3;
+                d2 d2Var = (d2) obj3;
                 String str16 = (String) obj2;
-                a2 a2Var = (a2) obj;
+                b2 b2Var3 = (b2) obj;
                 if (!zArr2[0]) {
                     zArr2[0] = true;
                     if (!BuildVars.DEBUG_PRIVATE_VERSION) {
                         webView.onPause();
                         webView.destroy();
                         AndroidUtilities.removeFromParent(webView);
-                        AndroidUtilities.removeFromParent(c2Var3);
+                        AndroidUtilities.removeFromParent(d2Var);
                     }
                     try {
                         file = new JSONObject(str16);
                     } catch (Exception e14) {
                         FileLog.e(e14);
                     }
-                    a2Var.run(file);
+                    b2Var3.run(file);
                     break;
                 }
                 break;
@@ -437,13 +437,13 @@ public final /* synthetic */ class b0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ b0(d1 d1Var, TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.c2 c2Var) {
+    public /* synthetic */ b0(d1 d1Var, TLObject tLObject, String[] strArr, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.b2 b2Var) {
         this.a = 3;
         this.b = d1Var;
         this.c = tLObject;
         this.d = strArr;
         this.e = tL_error;
-        this.f = c2Var;
+        this.f = b2Var;
     }
 
     public /* synthetic */ b0(d1 d1Var, TLRPC.TL_error tL_error, String str, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, TLObject tLObject) {

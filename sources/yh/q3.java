@@ -1,36 +1,41 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.gm0;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class q3 extends xc {
-    public final org.telegram.ui.ActionBar.f6 N;
-    public String O;
-    public int P;
+public final /* synthetic */ class q3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v3 b;
 
-    public q3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, null);
-        this.N = f6Var;
-        setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        setTextSize(1, 14.0f);
-        setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+    public /* synthetic */ q3(v3 v3Var, int i10) {
+        this.a = i10;
+        this.b = v3Var;
     }
 
-    public final void e(String str, int i10, x0 x0Var) {
-        if (str == this.O && this.P == i10) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        View.OnClickListener onClickListener;
+        switch (this.a) {
+            case 0:
+                CharSequence text = this.b.v.getText();
+                if (text instanceof Spanned) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
+                    if (clickableSpanArr.length > 0) {
+                        clickableSpanArr[0].onClick(view);
+                        break;
+                    }
+                }
+                break;
+            default:
+                v3 v3Var = this.b;
+                if (v3Var.N.getVisibility() == 0 && (onClickListener = v3Var.T) != null) {
+                    onClickListener.onClick(view);
+                    break;
+                }
+                break;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(str, getPaint().getFontMetricsInt(), false));
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) yc.b(ei.l.G0(i10), x0Var != null ? new gm0(this, x0Var, i10, 16) : null, this.N, null));
-        setText(spannableStringBuilder);
-        this.O = str;
-        this.P = i10;
     }
 }

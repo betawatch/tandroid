@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class iq extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -59,9 +59,9 @@ public final class iq extends EditTextBoldCursor {
         xy xyVar;
         View view;
         s4.c0 c0Var;
-        ml0 ml0Var;
+        View view2;
         iq iqVar2;
-        ky kyVar;
+        ly lyVar;
         int i10 = this.b;
         int i11 = this.c;
         FrameLayout frameLayout = this.d;
@@ -102,10 +102,10 @@ public final class iq extends EditTextBoldCursor {
                         if (kzVar.t1.z()) {
                             iqVar = iqVar3;
                         } else {
-                            ml0 ml0Var2 = kzVar.D0;
-                            ml0 ml0Var3 = kzVar.P;
+                            View view3 = kzVar.D0;
+                            View view4 = kzVar.P;
                             py pyVar = kzVar.j0;
-                            ml0 ml0Var4 = kzVar.h0;
+                            mw mwVar = kzVar.h0;
                             AnimatorSet animatorSet = kzVar.M0;
                             if (animatorSet != null) {
                                 animatorSet.cancel();
@@ -121,24 +121,24 @@ public final class iq extends EditTextBoldCursor {
                                     view = kzVar.I;
                                     c10 = 0;
                                     c0Var = kzVar.Q;
-                                    ml0Var = ml0Var3;
+                                    view2 = view4;
                                 } else {
                                     c10 = 0;
                                     if (i14 == i12) {
                                         xyVar = kzVar.o0;
                                         view = kzVar.p0;
                                         c0Var = kzVar.i0;
-                                        ml0Var = ml0Var4;
+                                        view2 = mwVar;
                                     } else {
                                         xyVar = kzVar.G0;
                                         view = kzVar.B0;
                                         c0Var = kzVar.E0;
-                                        ml0Var = ml0Var2;
+                                        view2 = view3;
                                     }
                                 }
                                 if (xyVar == null) {
                                     iqVar2 = iqVar3;
-                                } else if (xyVar2 == xyVar && (kyVar = kzVar.t1) != null && kyVar.A()) {
+                                } else if (xyVar2 == xyVar && (lyVar = kzVar.t1) != null && lyVar.A()) {
                                     AnimatorSet animatorSet2 = new AnimatorSet();
                                     kzVar.M0 = animatorSet2;
                                     Property property = View.TRANSLATION_Y;
@@ -146,7 +146,7 @@ public final class iq extends EditTextBoldCursor {
                                         iqVar2 = iqVar3;
                                         float[] fArr = new float[1];
                                         fArr[c10] = i14 == 2 ? 0.0f : -AndroidUtilities.dp(36.0f);
-                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ml0Var, (Property<ml0, Float>) property, fArr);
+                                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view2, (Property<View, Float>) property, fArr);
                                         float[] fArr2 = new float[1];
                                         fArr2[c10] = AndroidUtilities.dp(0.0f);
                                         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(xyVar, (Property<xy, Float>) property, fArr2);
@@ -161,7 +161,7 @@ public final class iq extends EditTextBoldCursor {
                                         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(view, (Property<View, Float>) property, fArr3);
                                         float[] fArr4 = new float[1];
                                         fArr4[c10] = -AndroidUtilities.dp(36.0f);
-                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(ml0Var, (Property<ml0, Float>) property, fArr4);
+                                        ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(view2, (Property<View, Float>) property, fArr4);
                                         float[] fArr5 = new float[1];
                                         fArr5[c10] = AndroidUtilities.dp(0.0f);
                                         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(xyVar, (Property<xy, Float>) property, fArr5);
@@ -173,7 +173,7 @@ public final class iq extends EditTextBoldCursor {
                                     }
                                     kzVar.M0.setDuration(220L);
                                     kzVar.M0.setInterpolator(qr.f);
-                                    kzVar.M0.addListener(new ai.z(24, kzVar, ml0Var));
+                                    kzVar.M0.addListener(new ai.z(24, kzVar, view2));
                                     kzVar.M0.start();
                                 } else {
                                     iqVar2 = iqVar3;
@@ -181,20 +181,20 @@ public final class iq extends EditTextBoldCursor {
                                     if (view != null && i14 != 2) {
                                         view.setTranslationY(-AndroidUtilities.dp(40.0f));
                                     }
-                                    if (ml0Var == ml0Var2) {
-                                        ml0Var.setPadding(0, 0, 0, kzVar.p2);
-                                    } else if (ml0Var == ml0Var3) {
-                                        ml0Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), kzVar.p2);
-                                    } else if (ml0Var == ml0Var4) {
-                                        ml0Var.setPadding(0, kzVar.b1, 0, kzVar.p2);
+                                    if (view2 == view3) {
+                                        view2.setPadding(0, 0, 0, kzVar.p2);
+                                    } else if (view2 == view4) {
+                                        view2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), kzVar.p2);
+                                    } else if (view2 == mwVar) {
+                                        view2.setPadding(0, kzVar.b1, 0, kzVar.p2);
                                     }
-                                    if (ml0Var == ml0Var4) {
+                                    if (view2 == mwVar) {
                                         boolean z10 = kzVar.n0.x.size() > 0;
                                         pyVar.K = z10;
                                         if (z10) {
                                             pyVar.G("", true);
-                                            if (ml0Var4.getAdapter() != pyVar) {
-                                                ml0Var4.setAdapter(pyVar);
+                                            if (mwVar.getAdapter() != pyVar) {
+                                                mwVar.setAdapter(pyVar);
                                             }
                                         }
                                     }

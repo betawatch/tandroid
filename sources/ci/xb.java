@@ -3,9 +3,9 @@ package ci;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.cq0;
-import org.telegram.ui.xd1;
+import org.telegram.ui.vd1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class xb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final class xb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.cd cdVar = (org.telegram.ui.cd) this.c;
-                cdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                cdVar.m0.invalidate();
-                if (!this.b && cdVar.n0 > 0.5f) {
+                org.telegram.ui.bd bdVar = (org.telegram.ui.bd) this.c;
+                bdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bdVar.m0.invalidate();
+                if (!this.b && bdVar.n0 > 0.5f) {
                     this.b = true;
                     break;
                 }
@@ -51,10 +51,10 @@ public final class xb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             default:
-                xd1 xd1Var = (xd1) this.c;
-                xd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                xd1Var.h2.invalidate();
-                if (!this.b && xd1Var.i2 > 0.5f) {
+                vd1 vd1Var = (vd1) this.c;
+                vd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vd1Var.h2.invalidate();
+                if (!this.b && vd1Var.i2 > 0.5f) {
                     this.b = true;
                     break;
                 }

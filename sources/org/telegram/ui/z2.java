@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class z2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class z2 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        h4Var.Z(((org.telegram.ui.Components.l01) h4Var.b.i).b);
+                        h4Var.Z(((org.telegram.ui.Components.z01) h4Var.b.i).b);
                         h4Var.b = null;
                         h4Var.d = null;
                         View view = h4Var.f;
@@ -73,8 +73,8 @@ public final class z2 implements Runnable {
                             h4Var.f.invalidate();
                             h4Var.h = true;
                             View view3 = h4Var.f;
-                            org.telegram.ui.ActionBar.o1 o1Var = h4Var.H;
-                            if (o1Var == null || !o1Var.isShowing()) {
+                            org.telegram.ui.ActionBar.n1 n1Var = h4Var.H;
+                            if (n1Var == null || !n1Var.isShowing()) {
                                 if (h4Var.A0 == null) {
                                     h4Var.C0 = new Rect();
                                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(h4Var.L, null);
@@ -94,11 +94,11 @@ public final class z2 implements Runnable {
                                     h4Var.B0.setTypeface(AndroidUtilities.bold());
                                     h4Var.B0.setText(LocaleController.getString(R.string.Copy).toUpperCase());
                                     h4Var.B0.setOnClickListener(new s(h4Var, 5));
-                                    h4Var.A0.addView(h4Var.B0, w7.x5.c(48.0f, -2));
-                                    org.telegram.ui.ActionBar.o1 o1Var2 = new org.telegram.ui.ActionBar.o1(h4Var.A0, -2, -2);
-                                    h4Var.H = o1Var2;
-                                    o1Var2.b = false;
-                                    o1Var2.setAnimationStyle(R.style.PopupContextAnimation);
+                                    h4Var.A0.addView(h4Var.B0, w7.y5.c(48.0f, -2));
+                                    org.telegram.ui.ActionBar.n1 n1Var2 = new org.telegram.ui.ActionBar.n1(h4Var.A0, -2, -2);
+                                    h4Var.H = n1Var2;
+                                    n1Var2.b = false;
+                                    n1Var2.setAnimationStyle(R.style.PopupContextAnimation);
                                     h4Var.H.setOutsideTouchable(true);
                                     h4Var.H.setClippingEnabled(true);
                                     h4Var.H.setInputMethodMode(2);

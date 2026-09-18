@@ -1,28 +1,102 @@
 package xh;
 
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.x51;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.kk;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.vy0;
+import yh.l5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class j4 extends g.p {
-    public final /* synthetic */ l4 c;
+public final class j4 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ org.telegram.ui.ActionBar.v0 a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ m4 c;
 
-    public j4(l4 l4Var) {
-        this.c = l4Var;
+    public j4(m4 m4Var, org.telegram.ui.ActionBar.v0 v0Var, long j3) {
+        this.c = m4Var;
+        this.a = v0Var;
+        this.b = j3;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        e6 e6Var;
         int i11;
-        l4 l4Var = this.c;
-        nz nzVar = l4Var.a0;
-        x51 x51Var = l4Var.e0;
-        if (x51Var == null) {
-            return nzVar.J;
+        int i12;
+        boolean canUserDoAction;
+        org.telegram.ui.ActionBar.f1 f1Var;
+        org.telegram.ui.ActionBar.f1 f1Var2;
+        m4 m4Var = this.c;
+        l5 l5Var = m4Var.Y;
+        if (i10 != 1) {
+            if (i10 == -1) {
+                m4Var.dismiss();
+                return;
+            }
+            return;
         }
-        j51 G = x51Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? nzVar.J : i11;
+        w70 w70Var = m4Var.d0;
+        if (w70Var != null) {
+            w70Var.u();
+        }
+        org.telegram.ui.ActionBar.d3 d3Var = m4Var.container;
+        e6Var = ((org.telegram.ui.ActionBar.f3) m4Var).resourcesProvider;
+        w70 F = w70.F(d3Var, e6Var, this.a);
+        m4Var.d0 = F;
+        i11 = ((org.telegram.ui.ActionBar.f3) m4Var).currentAccount;
+        long clientUserId = UserConfig.getInstance(i11).getClientUserId();
+        long j3 = this.b;
+        if (j3 == clientUserId) {
+            canUserDoAction = true;
+        } else if (j3 >= 0) {
+            canUserDoAction = false;
+        } else {
+            i12 = ((org.telegram.ui.ActionBar.f3) m4Var).currentAccount;
+            canUserDoAction = ChatObject.canUserDoAction(MessagesController.getInstance(i12).getChat(Long.valueOf(-j3)), 5);
+        }
+        org.telegram.ui.ActionBar.f1 f1Var3 = new org.telegram.ui.ActionBar.f1(0, F.e, F.d, false, false);
+        F.d(f1Var3);
+        F.k();
+        org.telegram.ui.ActionBar.f1 h = F.h();
+        h.setText(LocaleController.getString(R.string.Gift2FilterUnlimited));
+        org.telegram.ui.ActionBar.f1 h10 = F.h();
+        h10.setText(LocaleController.getString(R.string.Gift2FilterLimited));
+        org.telegram.ui.ActionBar.f1 h11 = F.h();
+        h11.setText(LocaleController.getString(R.string.Gift2FilterUpgradable));
+        org.telegram.ui.ActionBar.f1 h12 = F.h();
+        h12.setText(LocaleController.getString(R.string.Gift2FilterUnique));
+        if (canUserDoAction) {
+            F.k();
+            org.telegram.ui.ActionBar.f1 h13 = F.h();
+            h13.setText(LocaleController.getString(R.string.Gift2FilterDisplayed));
+            org.telegram.ui.ActionBar.f1 h14 = F.h();
+            h14.setText(LocaleController.getString(R.string.Gift2FilterHidden));
+            f1Var = h13;
+            f1Var2 = h14;
+        } else {
+            f1Var = null;
+            f1Var2 = null;
+        }
+        kk kkVar = new kk(this, f1Var3, h, h10, h11, h12, canUserDoAction, f1Var, f1Var2, 4);
+        kkVar.run();
+        f1Var3.setOnClickListener(new vy0(28, this, kkVar));
+        s2.j(h, l5Var, kkVar, 1);
+        s2.j(h10, l5Var, kkVar, 2);
+        s2.j(h11, l5Var, kkVar, 4);
+        s2.j(h12, l5Var, kkVar, 8);
+        if (canUserDoAction) {
+            s2.j(f1Var, l5Var, kkVar, 256);
+            s2.j(f1Var2, l5Var, kkVar, 512);
+        }
+        F.Y = true;
+        F.J = false;
+        F.s = 0;
+        F.Z();
     }
 }

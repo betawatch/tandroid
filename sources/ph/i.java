@@ -5,11 +5,11 @@ import le.m;
 import le.n;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.ActionBar.q1;
+import org.telegram.ui.ActionBar.p1;
 import org.telegram.ui.web.b1;
-import r0.l1;
+import r0.m1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class i implements g, f, d {
     public View E;
@@ -18,7 +18,7 @@ public final class i implements g, f, d {
     public final le.e a;
     public final Runnable h;
     public boolean n;
-    public l1 r;
+    public m1 r;
     public int v;
     public int w;
     public e y;
@@ -33,7 +33,7 @@ public final class i implements g, f, d {
     /* JADX WARN: Multi-variable type inference failed */
     public i(Runnable runnable) {
         this.h = runnable;
-        this.a = new le.e(0, new o0.a(this, runnable, 0 == true ? 1 : 0, 11), q1.w, 250L);
+        this.a = new le.e(0, new o0.a(this, runnable, 0 == true ? 1 : 0, 11), p1.w, 250L);
     }
 
     @Override // ph.d
@@ -81,8 +81,8 @@ public final class i implements g, f, d {
     }
 
     public final i0.b e(int i10) {
-        l1 l1Var = this.r;
-        return l1Var != null ? l1Var.a.f(i10) : i0.b.e;
+        m1 m1Var = this.r;
+        return m1Var != null ? m1Var.a.f(i10) : i0.b.e;
     }
 
     public final void f(int i10) {
@@ -117,24 +117,24 @@ public final class i implements g, f, d {
         }
     }
 
-    public final void i(l1 l1Var) {
-        k(l1Var, this.r != null);
+    public final void i(m1 m1Var) {
+        k(m1Var, this.r != null);
     }
 
     @Override // ph.d
-    public final void j(l1 l1Var) {
-        this.F = l1Var.a.f(8).d;
+    public final void j(m1 m1Var) {
+        this.F = m1Var.a.f(8).d;
         this.h.run();
     }
 
-    public final void k(l1 l1Var, boolean z10) {
+    public final void k(m1 m1Var, boolean z10) {
         int i10;
         le.e eVar;
-        this.r = l1Var;
+        this.r = m1Var;
         i0.b bVar = i0.b.e;
-        i0.b g10 = l1Var != null ? l1Var.a.g(647) : bVar;
-        if (l1Var != null) {
-            bVar = l1Var.a.f(8);
+        i0.b g10 = m1Var != null ? m1Var.a.g(647) : bVar;
+        if (m1Var != null) {
+            bVar = m1Var.a.f(8);
         }
         c cVar = this.f;
         b bVar2 = cVar.c;

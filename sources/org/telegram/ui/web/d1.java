@@ -1,6 +1,5 @@
 package org.telegram.ui.web;
 
-import ai.d5;
 import ai.da;
 import ai.g5;
 import ai.p3;
@@ -82,39 +81,39 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.ActionBar.o3;
 import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Cells.l4;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.gr0;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.dn0;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u9;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bs0;
-import org.telegram.ui.er0;
-import org.telegram.ui.hs0;
-import org.telegram.ui.qb1;
-import org.telegram.ui.s9;
-import org.telegram.ui.w9;
-import w7.b6;
-import w7.x5;
+import org.telegram.ui.fs0;
+import org.telegram.ui.gp0;
+import org.telegram.ui.r9;
+import org.telegram.ui.v9;
+import org.telegram.ui.wk0;
+import org.telegram.ui.x81;
+import w7.c6;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class d1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -152,21 +151,21 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public gr0 V;
+    public dn0 V;
     public Activity W;
     public z0 a;
     public boolean a0;
     public String b;
     public String b0;
     public h0 c;
-    public org.telegram.ui.ActionBar.c2 c0;
+    public org.telegram.ui.ActionBar.b2 c0;
     public c1 d;
     public int d0;
-    public final f6 e;
+    public final e6 e;
     public long e0;
     public final TextView f;
     public long f0;
-    public s9 g0;
+    public r9 g0;
     public boolean h;
     public boolean h0;
     public String i0;
@@ -195,7 +194,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     public boolean y0;
     public float z0;
 
-    public d1(int i10, Context context, f6 f6Var, boolean z10) {
+    public d1(int i10, Context context, e6 e6Var, boolean z10) {
         super(context);
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.n = hVar;
@@ -219,7 +218,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         Q0 = i13 + 1;
         this.N0 = i13;
         this.o0 = z10;
-        this.e = f6Var;
+        this.e = e6Var;
         h("created new webview container");
         if (context instanceof Activity) {
             this.W = (Activity) context;
@@ -232,7 +231,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         this.p0 = k10;
         z5Var.setColorFilter(new PorterDuffColorFilter(k10, PorterDuff.Mode.SRC_IN));
         z5Var.getImageReceiver().setAspectFit(true);
-        addView(z5Var, x5.e(-1, -2, 48));
+        addView(z5Var, y5.e(-1, -2, 48));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setText(LocaleController.getString(R.string.BotWebViewNotAvailablePlaceholder));
@@ -242,7 +241,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         textView.setVisibility(8);
         int dp = AndroidUtilities.dp(16.0f);
         textView.setPadding(dp, dp, dp, dp);
-        addView(textView, x5.e(-1, -2, 17));
+        addView(textView, y5.e(-1, -2, 17));
         setFocusable(false);
     }
 
@@ -312,7 +311,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                 aVar.accept(Boolean.TRUE);
                 return;
             }
-            d1Var.V = new gr0(d1Var, aVar, strArr, 16);
+            d1Var.V = new dn0(d1Var, aVar, strArr, 19);
             Activity activity = d1Var.W;
             if (activity != null) {
                 activity.requestPermissions(strArr, 4000);
@@ -413,7 +412,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         if (z0Var == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).doOnIdle(new hs0(z0Var, daVar, str, jSONObject, 21));
+        NotificationCenter.getInstance(i10).doOnIdle(new fs0(z0Var, daVar, str, jSONObject, 21));
     }
 
     public final void A() {
@@ -441,11 +440,11 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:895:0x07bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:912:0x07b9, code lost:
     
         r5.vibrate();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:896:0x07bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:913:0x07bc, code lost:
     
         return;
      */
@@ -456,12 +455,12 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
      */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x0d3b  */
+    /* JADX WARN: Removed duplicated region for block: B:389:0x0d32  */
     /* JADX WARN: Removed duplicated region for block: B:395:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:437:0x0e1b  */
+    /* JADX WARN: Removed duplicated region for block: B:437:0x0e12  */
     /* JADX WARN: Removed duplicated region for block: B:439:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:651:0x11f5  */
-    /* JADX WARN: Removed duplicated region for block: B:653:0x1201  */
+    /* JADX WARN: Removed duplicated region for block: B:652:0x11ea  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x11f6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -471,7 +470,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         final int i12;
-        s9 s9Var;
+        r9 r9Var;
         final d1 d1Var;
         final d1 d1Var2;
         da daVar2;
@@ -968,12 +967,12 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
             char c11 = c10;
             t tVar = this.J0;
             long j12 = 1000;
-            f6 f6Var = this.e;
+            e6 e6Var = this.e;
             BotWebViewVibrationEffect botWebViewVibrationEffect2 = null;
             String str11 = null;
             String str12 = null;
             String str13 = null;
-            o3 o3Var = null;
+            n3 n3Var = null;
             botWebViewVibrationEffect2 = null;
             botWebViewVibrationEffect2 = null;
             botWebViewVibrationEffect2 = null;
@@ -1018,10 +1017,10 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         }
                     }
                 case 1:
-                    if (!this.h0 || (s9Var = this.g0) == null) {
+                    if (!this.h0 || (r9Var = this.g0) == null) {
                         return;
                     }
-                    s9Var.dismiss();
+                    r9Var.dismiss();
                     return;
                 case 2:
                     w(daVar);
@@ -1098,15 +1097,15 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                         try {
                                             final a1 a1Var = (a1) arrayList.get(0);
                                             final int i17 = 0;
-                                            alertDialog$Builder.k(a1Var.b, new org.telegram.ui.ActionBar.b2(d1Var) { // from class: org.telegram.ui.web.q
+                                            alertDialog$Builder.k(a1Var.b, new org.telegram.ui.ActionBar.a2(d1Var) { // from class: org.telegram.ui.web.q
                                                 public final /* synthetic */ d1 b;
 
                                                 {
                                                     this.b = d1Var;
                                                 }
 
-                                                @Override // org.telegram.ui.ActionBar.b2
-                                                public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i18) {
+                                                @Override // org.telegram.ui.ActionBar.a2
+                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i18) {
                                                     switch (i17) {
                                                         case 0:
                                                             da daVar3 = daVar;
@@ -1114,7 +1113,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                             d1 d1Var3 = this.b;
                                                             d1Var3.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var3.P = System.currentTimeMillis();
                                                                 d1Var3.y(daVar3, "popup_closed", new JSONObject().put("button_id", a1Var2.a));
@@ -1130,7 +1129,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean3 = atomicBoolean;
                                                             d1 d1Var4 = this.b;
                                                             d1Var4.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var4.P = System.currentTimeMillis();
                                                                 d1Var4.y(daVar4, "popup_closed", new JSONObject().put("button_id", a1Var3.a));
@@ -1146,7 +1145,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                             d1 d1Var5 = this.b;
                                                             d1Var5.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var5.P = System.currentTimeMillis();
                                                                 d1Var5.y(daVar5, "popup_closed", new JSONObject().put("button_id", a1Var4.a));
@@ -1167,15 +1166,15 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                     if (arrayList.size() >= 2) {
                                         final a1 a1Var2 = (a1) arrayList.get(1);
                                         final int i18 = 1;
-                                        alertDialog$Builder.h(a1Var2.b, new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.q
+                                        alertDialog$Builder.h(a1Var2.b, new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.q
                                             public final /* synthetic */ d1 b;
 
                                             {
                                                 this.b = this;
                                             }
 
-                                            @Override // org.telegram.ui.ActionBar.b2
-                                            public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i182) {
+                                            @Override // org.telegram.ui.ActionBar.a2
+                                            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i182) {
                                                 switch (i18) {
                                                     case 0:
                                                         da daVar3 = daVar;
@@ -1183,7 +1182,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                         AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                         d1 d1Var3 = this.b;
                                                         d1Var3.getClass();
-                                                        c2Var.dismiss();
+                                                        b2Var.dismiss();
                                                         try {
                                                             d1Var3.P = System.currentTimeMillis();
                                                             d1Var3.y(daVar3, "popup_closed", new JSONObject().put("button_id", a1Var22.a));
@@ -1199,7 +1198,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                         AtomicBoolean atomicBoolean3 = atomicBoolean;
                                                         d1 d1Var4 = this.b;
                                                         d1Var4.getClass();
-                                                        c2Var.dismiss();
+                                                        b2Var.dismiss();
                                                         try {
                                                             d1Var4.P = System.currentTimeMillis();
                                                             d1Var4.y(daVar4, "popup_closed", new JSONObject().put("button_id", a1Var3.a));
@@ -1215,7 +1214,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                         AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                         d1 d1Var5 = this.b;
                                                         d1Var5.getClass();
-                                                        c2Var.dismiss();
+                                                        b2Var.dismiss();
                                                         try {
                                                             d1Var5.P = System.currentTimeMillis();
                                                             d1Var5.y(daVar5, "popup_closed", new JSONObject().put("button_id", a1Var4.a));
@@ -1234,15 +1233,15 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                         final int i19 = 2;
                                         d1Var2 = this;
                                         try {
-                                            org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(d1Var2) { // from class: org.telegram.ui.web.q
+                                            org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(d1Var2) { // from class: org.telegram.ui.web.q
                                                 public final /* synthetic */ d1 b;
 
                                                 {
                                                     this.b = d1Var2;
                                                 }
 
-                                                @Override // org.telegram.ui.ActionBar.b2
-                                                public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i182) {
+                                                @Override // org.telegram.ui.ActionBar.a2
+                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i182) {
                                                     switch (i19) {
                                                         case 0:
                                                             da daVar3 = daVar;
@@ -1250,7 +1249,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                             d1 d1Var3 = this.b;
                                                             d1Var3.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var3.P = System.currentTimeMillis();
                                                                 d1Var3.y(daVar3, "popup_closed", new JSONObject().put("button_id", a1Var22.a));
@@ -1266,7 +1265,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean3 = atomicBoolean;
                                                             d1 d1Var4 = this.b;
                                                             d1Var4.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var4.P = System.currentTimeMillis();
                                                                 d1Var4.y(daVar4, "popup_closed", new JSONObject().put("button_id", a1Var32.a));
@@ -1282,7 +1281,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                             AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                             d1 d1Var5 = this.b;
                                                             d1Var5.getClass();
-                                                            c2Var.dismiss();
+                                                            b2Var.dismiss();
                                                             try {
                                                                 d1Var5.P = System.currentTimeMillis();
                                                                 d1Var5.y(daVar5, "popup_closed", new JSONObject().put("button_id", a1Var4.a));
@@ -1295,7 +1294,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                                                 }
                                             };
                                             daVar2 = daVar;
-                                            alertDialog$Builder.i(str14, b2Var);
+                                            alertDialog$Builder.i(str14, a2Var);
                                         } catch (JSONException e12) {
                                             e = e12;
                                             FileLog.e(e);
@@ -1361,18 +1360,16 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     }
                 case 7:
                     d1Var = this;
-                    long j13 = 0;
                     if (d1Var.U != null && System.currentTimeMillis() - d1Var.P <= 10000) {
                         try {
                             jSONObject = new JSONObject(str2);
                             j3 = Long.parseLong(jSONObject.getString("custom_emoji_id"));
                         } catch (Exception unused) {
+                            j3 = 0;
                         }
                         try {
                             i13 = jSONObject.getInt("duration");
                         } catch (Exception unused2) {
-                            j13 = j3;
-                            j3 = j13;
                             i13 = 0;
                             user = d1Var.U;
                             if (user != null) {
@@ -1438,7 +1435,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             if (Build.VERSION.SDK_INT < 23 || d1Var.W.checkSelfPermission("android.permission.CAMERA") == 0) {
                                 Activity activity = d1Var.W;
                                 if (activity != null) {
-                                    d1Var.g0 = w9.e0(activity, 3, new k2.u(d1Var, 16));
+                                    d1Var.g0 = v9.e0(activity, 3, new n2.e(d1Var, 11));
                                     return;
                                 }
                                 break;
@@ -1468,7 +1465,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     final int i20 = this.M;
                     final z0 z0Var2 = this.a;
                     final String[] strArr = {"cancelled"};
-                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getContext(), f6Var);
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getContext(), e6Var);
                     alertDialog$Builder2.l(LocaleController.getString(R.string.ShareYouPhoneNumberTitle));
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     String userName = UserObject.getUserName(this.U);
@@ -1483,18 +1480,18 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AreYouSureShareMyContactInfoBotUnblock));
                     }
                     alertDialog$Builder2.g(spannableStringBuilder);
-                    alertDialog$Builder2.k(LocaleController.getString(R.string.ShareContact), new org.telegram.ui.ActionBar.b2() { // from class: org.telegram.ui.web.w
-                        @Override // org.telegram.ui.ActionBar.b2
-                        public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i21) {
+                    alertDialog$Builder2.k(LocaleController.getString(R.string.ShareContact), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.web.w
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i21) {
                             strArr[0] = null;
-                            c2Var.dismiss();
+                            b2Var.dismiss();
                             d1 d1Var3 = d1.this;
                             boolean z20 = z19;
                             int i22 = i20;
                             z0 z0Var3 = z0Var2;
                             da daVar3 = daVar;
                             if (z20) {
-                                MessagesController.getInstance(d1Var3.M).unblockPeer(d1Var3.U.id, new t11(d1Var3, i22, z0Var3, daVar3, 13));
+                                MessagesController.getInstance(d1Var3.M).unblockPeer(d1Var3.U.id, new h21(d1Var3, i22, z0Var3, daVar3, 13));
                                 return;
                             }
                             SendMessagesHelper.getInstance(d1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(d1Var3.M).getCurrentUser(), d1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -1507,7 +1504,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             }
                         }
                     });
-                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new bs0(9));
+                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new wk0(11));
                     Y(4, alertDialog$Builder2.a(), new x(strArr, i20, z0Var2, daVar, 0));
                     return;
                 case '\f':
@@ -1538,11 +1535,11 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     this.P = 0L;
-                    o2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U == null || U.getParentLayout() == null) {
                         return;
                     }
-                    e5 parentLayout = U.getParentLayout();
+                    d5 parentLayout = U.getParentLayout();
                     U.presentFragment(ProfileActivity.m4(this.U.id));
                     AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionBiometry");
                     h0 h0Var = this.c;
@@ -1722,12 +1719,12 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             return;
                         }
                         if (!MessagesController.getInstance(this.M).storiesEnabled()) {
-                            new rg.x0((o2) new y3(this), 14, true).show();
+                            new rg.x0((org.telegram.ui.ActionBar.n2) new y3(this), 14, true).show();
                             return;
                         }
-                        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(this.W);
-                        new HttpGetFileTask(new a0(this, c2Var, str8, str10, str9), null).execute(str7);
-                        c2Var.q(250L);
+                        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(this.W);
+                        new HttpGetFileTask(new a0(this, b2Var, str8, str10, str9), null).execute(str7);
+                        b2Var.q(250L);
                         return;
                     }
                     str7 = str5;
@@ -1791,21 +1788,21 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         if (this.E0 == null || (launchActivity = LaunchActivity.G1) == null || launchActivity.P() == null) {
                             return;
                         }
-                        org.telegram.ui.ActionBar.p3 P = LaunchActivity.G1.P();
-                        ArrayList<o3> tabs = P.getTabs();
+                        o3 P = LaunchActivity.G1.P();
+                        ArrayList<n3> tabs = P.getTabs();
                         int i25 = 0;
                         while (true) {
                             if (i25 < tabs.size()) {
-                                o3 o3Var2 = tabs.get(i25);
-                                if (!this.E0.equals(o3Var2.a) || o3Var2.b == this.a) {
+                                n3 n3Var2 = tabs.get(i25);
+                                if (!this.E0.equals(n3Var2.a) || n3Var2.b == this.a) {
                                     i25++;
                                 } else {
-                                    o3Var = o3Var2;
+                                    n3Var = n3Var2;
                                 }
                             }
                         }
-                        if (o3Var != null) {
-                            P.e(o3Var);
+                        if (n3Var != null) {
+                            P.e(n3Var);
                             return;
                         }
                         return;
@@ -2006,11 +2003,11 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     this.P = 0L;
-                    o2 U2 = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                     if (U2 == null || U2.getParentLayout() == null) {
                         return;
                     }
-                    e5 parentLayout2 = U2.getParentLayout();
+                    d5 parentLayout2 = U2.getParentLayout();
                     U2.presentFragment(ProfileActivity.m4(this.U.id));
                     AndroidUtilities.scrollToFragmentRow(parentLayout2, "botPermissionLocation");
                     h0 h0Var3 = this.c;
@@ -2055,8 +2052,8 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         w(daVar);
                         return;
                     }
-                    final Runnable[] runnableArr = {new qb1(21, this, daVar)};
-                    AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), f6Var);
+                    final Runnable[] runnableArr = {new x81(25, this, daVar)};
+                    AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), e6Var);
                     if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(LocaleController.getString(R.string.BotAllowBiometryTitle));
                         i12 = 0;
@@ -2066,15 +2063,15 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         alertDialog$Builder3.l(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.U))));
                         alertDialog$Builder3.g(str12);
                     }
-                    alertDialog$Builder3.k(LocaleController.getString(R.string.Allow), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.z
+                    alertDialog$Builder3.k(LocaleController.getString(R.string.Allow), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.z
                         public final /* synthetic */ d1 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // org.telegram.ui.ActionBar.b2
-                        public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i30) {
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i30) {
                             switch (i12) {
                                 case 0:
                                     Runnable[] runnableArr2 = runnableArr;
@@ -2107,15 +2104,15 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         }
                     });
                     final int i30 = 1;
-                    alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.b2(this) { // from class: org.telegram.ui.web.z
+                    alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.z
                         public final /* synthetic */ d1 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // org.telegram.ui.ActionBar.b2
-                        public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i302) {
+                        @Override // org.telegram.ui.ActionBar.a2
+                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i302) {
                             switch (i30) {
                                 case 0:
                                     Runnable[] runnableArr2 = runnableArr;
@@ -2321,7 +2318,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             return;
                         }
                         if (rVar3.e) {
-                            rVar3.l(str13, string8, new d5(this, string8, daVar, 7));
+                            rVar3.l(str13, string8, new ai.d5(this, string8, daVar, 7));
                             return;
                         }
                         try {
@@ -2346,7 +2343,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                 case ':':
                     try {
                         String optString10 = new JSONObject(str2).optString("color", null);
-                        int v02 = TextUtils.isEmpty(optString10) ? j6.v0(j6.a7, f6Var) : Color.parseColor(optString10);
+                        int v02 = TextUtils.isEmpty(optString10) ? j6.v0(j6.a7, e6Var) : Color.parseColor(optString10);
                         h0 h0Var4 = this.c;
                         if (h0Var4 != null) {
                             h0Var4.r(v02);
@@ -2385,7 +2382,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                             i11 = -1;
                         }
                         if (i11 >= 0) {
-                            this.c.u(i11, j6.v0(i11, f6Var), false);
+                            this.c.u(i11, j6.v0(i11, e6Var), false);
                             return;
                         }
                         return;
@@ -2574,34 +2571,34 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                     }
                     Context context = getContext();
                     a0 a0Var = new a0(this, daVar, string, t1Var, optString);
-                    o2 U = LaunchActivity.U();
-                    f6 resourceProvider = U != null ? U.getResourceProvider() : null;
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    e6 resourceProvider = U != null ? U.getResourceProvider() : null;
                     int i10 = 1;
                     String[] strArr = new String[1];
                     boolean[] zArr = new boolean[1];
-                    g3 i11 = wl.i(1, context, resourceProvider, false);
-                    LinearLayout f7 = wl.f(context, 1);
-                    u9 u9Var = new u9(context);
+                    f3 i11 = wh.i(1, context, resourceProvider, false);
+                    LinearLayout e = wh.e(context, 1);
+                    w9 w9Var = new w9(context);
                     TLRPC.User user = MessagesController.getInstance(t1Var.a).getUser(Long.valueOf(t1Var.b));
-                    f9 f9Var = new f9((f6) null);
-                    f9Var.r(user);
-                    u9Var.e(user, f9Var);
-                    f7.addView(u9Var, x5.t(80, 80, 49, 0, 21, 0, 13));
+                    h9 h9Var = new h9((e6) null);
+                    h9Var.r(user);
+                    w9Var.e(user, h9Var);
+                    e.addView(w9Var, y5.t(80, 80, 49, 0, 21, 0, 13));
                     int i12 = j6.G6;
-                    TextView b10 = b6.b(context, 20.0f, i12, true, null);
-                    wl.k(R.string.BotRestoreStorageTitle, b10, 17);
-                    f7.addView(b10, x5.t(-1, -2, 7, 32, 0, 32, 10));
-                    TextView b11 = b6.b(context, 14.0f, i12, false, null);
+                    TextView b10 = c6.b(context, 20.0f, i12, true, null);
+                    wh.k(R.string.BotRestoreStorageTitle, b10, 17);
+                    e.addView(b10, y5.t(-1, -2, 7, 32, 0, 32, 10));
+                    TextView b11 = c6.b(context, 14.0f, i12, false, null);
                     b11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
                     b11.setGravity(17);
-                    f7.addView(b11, x5.t(-1, -2, 7, 32, 0, 32, 19));
+                    e.addView(b11, y5.t(-1, -2, 7, 32, 0, 32, 19));
                     e9 e9Var = new e9(context, resourceProvider);
                     e9Var.setBackground(new pq(new ColorDrawable(j6.v0(j6.a7, resourceProvider)), j6.U0(context, R.drawable.greydivider, j6.v0(j6.b7, resourceProvider))));
                     e9Var.setFixedSize(12);
-                    f7.addView(e9Var, x5.t(-1, 12, 7, 0, 0, 0, 0));
-                    l4 l4Var = new l4(context, resourceProvider);
-                    l4Var.setText(LocaleController.getString(R.string.BotRestoreStorageHeader));
-                    f7.addView(l4Var, x5.t(-1, -2, 7, 0, 0, 0, 0));
+                    e.addView(e9Var, y5.t(-1, 12, 7, 0, 0, 0, 0));
+                    m4 m4Var = new m4(context, resourceProvider);
+                    m4Var.setText(LocaleController.getString(R.string.BotRestoreStorageHeader));
+                    e.addView(m4Var, y5.t(-1, -2, 7, 0, 0, 0, 0));
                     ci.d dVar = new ci.d(context, resourceProvider, true);
                     ArrayList arrayList = new ArrayList();
                     int i13 = 0;
@@ -2609,34 +2606,34 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
                         ei.s1 s1Var = (ei.s1) h.get(i13);
                         ei.r1 r1Var = new ei.r1(s1Var, i13 < h.size() - i10, context);
                         r1Var.setBackground(j6.f0(j6.v0(j6.i6, resourceProvider), 2, -1));
-                        LinearLayout linearLayout = f7;
+                        LinearLayout linearLayout = e;
                         String[] strArr2 = strArr;
                         r1Var.setOnClickListener(new p5(strArr2, s1Var, arrayList, dVar, 2));
-                        linearLayout.addView(r1Var, x5.n(-1, 56));
+                        linearLayout.addView(r1Var, y5.n(-1, 56));
                         arrayList.add(r1Var);
-                        f7 = linearLayout;
+                        e = linearLayout;
                         strArr = strArr2;
                         i10 = 1;
                         i13++;
                     }
                     String[] strArr3 = strArr;
-                    LinearLayout linearLayout2 = f7;
+                    LinearLayout linearLayout2 = e;
                     dVar.g(LocaleController.getString(R.string.BotRestoreStorageButton), false, true);
                     dVar.setEnabled(strArr3[0] != null);
-                    linearLayout2.addView(dVar, x5.t(-1, 48, 7, 8, 8, 8, 4));
+                    linearLayout2.addView(dVar, y5.t(-1, 48, 7, 8, 8, 8, 4));
                     i11.customView = linearLayout2;
                     i11.fixNavigationBar(j6.v0(j6.h5, resourceProvider));
                     dVar.setOnClickListener(new p5(zArr, a0Var, strArr3, i11, 3));
                     i11.setOnDismissListener(new ei.e0(1, zArr, a0Var));
                     i11.show();
-                } catch (Exception e) {
-                    y(daVar, "secure_storage_failed", C("req_id", string, "error", e.getMessage()));
+                } catch (Exception e7) {
+                    y(daVar, "secure_storage_failed", C("req_id", string, "error", e7.getMessage()));
                 }
             } catch (Exception unused) {
                 y(daVar, "secure_storage_failed", C("req_id", string, "error", "KEY_INVALID"));
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             if (TextUtils.isEmpty("")) {
                 return;
             }
@@ -2673,7 +2670,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
             AnimatorSet animatorSet = new AnimatorSet();
             Property property = View.ALPHA;
             animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<z0, Float>) property, 1.0f), ObjectAnimator.ofFloat(z5Var, (Property<z5, Float>) property, 0.0f));
-            animatorSet.addListener(new er0(this, 28));
+            animatorSet.addListener(new gp0(this, 29));
             animatorSet.start();
         }
         this.b = str;
@@ -2897,14 +2894,14 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         P0 = false;
     }
 
-    public final void Y(int i10, org.telegram.ui.ActionBar.c2 c2Var, Runnable runnable) {
-        if (c2Var == null || n(i10)) {
+    public final void Y(int i10, org.telegram.ui.ActionBar.b2 b2Var, Runnable runnable) {
+        if (b2Var == null || n(i10)) {
             return;
         }
-        c2Var.setOnDismissListener(new ei.e0(13, this, runnable));
-        this.c0 = c2Var;
-        c2Var.h0 = false;
-        c2Var.show();
+        b2Var.setOnDismissListener(new ei.e0(13, this, runnable));
+        this.c0 = b2Var;
+        b2Var.h0 = false;
+        b2Var.show();
         if (this.K0 != i10) {
             this.K0 = i10;
             this.L0 = 0;
@@ -2949,7 +2946,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        gr0 gr0Var;
+        dn0 dn0Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             z0 z0Var = this.a;
@@ -2976,10 +2973,10 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (gr0Var = this.V) == null) {
+                if (intValue != 4000 || (dn0Var = this.V) == null) {
                     return;
                 }
-                gr0Var.run();
+                dn0Var.run();
                 this.V = null;
                 return;
             }
@@ -3167,12 +3164,12 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public final void j(String str) {
-        new vc(this, this.e).Q(R.raw.error, 36, str).j();
+        new xc(this, this.e).Q(R.raw.error, 36, str).j();
     }
 
     public final int k(int i10) {
-        f6 f6Var = this.e;
-        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
+        e6 e6Var = this.e;
+        return e6Var != null ? e6Var.G0(i10) : j6.w0(null, i10, false);
     }
 
     public final void m(da daVar, ei.t1 t1Var, String str, String str2, String str3) {
@@ -3264,7 +3261,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onActivityResultReceived);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onRequestPermissionResultReceived);
-        oc.a(this, new w4(this, 9));
+        qc.a(this, new w4(this, 9));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -3274,7 +3271,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onRequestPermissionResultReceived);
-        oc.h(this);
+        qc.h(this);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -3464,7 +3461,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
             }
             return;
         }
-        f6 f6Var = this.e;
+        e6 e6Var = this.e;
         if (userFull != null && (botInfo = userFull.bot_info) != null && (botappsettings = botInfo.app_settings) != null && botappsettings.placeholder_svg_path != null) {
             z5Var.setVisibility(0);
             z5Var.setAlpha(1.0f);
@@ -3472,7 +3469,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
             this.r = drawableByPath;
             if (drawableByPath != null) {
                 drawableByPath.setColor(this.p0);
-                this.r.setupGradient(j6.Ki, f6Var, 1.0f, false);
+                this.r.setupGradient(j6.Ki, e6Var, 1.0f, false);
             }
             z5Var.f(null, null, this.r);
             setupFlickerParams(true);
@@ -3495,7 +3492,7 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         this.r = drawableByPath2;
         if (drawableByPath2 != null) {
             drawableByPath2.setColor(this.p0);
-            this.r.setupGradient(j6.Ki, f6Var, 1.0f, false);
+            this.r.setupGradient(j6.Ki, e6Var, 1.0f, false);
         }
         z5Var.f(null, null, this.r);
         setupFlickerParams(true);
@@ -3547,13 +3544,13 @@ public abstract class d1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getInstance(this.M).doOnIdle(new y(this, "window.Telegram.WebView.receiveEvent('" + str + "', " + jSONObject + ");", 0));
     }
 
-    public void I() {
-    }
-
     public void L(z0 z0Var) {
     }
 
     public void setKeyboardFocusable(boolean z10) {
+    }
+
+    public void I() {
     }
 
     public void E(String str, boolean z10) {

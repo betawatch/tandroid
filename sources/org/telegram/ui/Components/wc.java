@@ -1,79 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class wc {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public boolean h;
-    public float i;
+public final class wc {
+    public static final wc E;
+    public static final wc F;
+    public static final wc G;
+    public static final wc H;
+    public static final wc I;
+    public static final /* synthetic */ wc[] J;
+    public static final wc e;
+    public static final wc f;
+    public static final wc h;
+    public static final wc n;
+    public static final wc r;
+    public static final wc s;
+    public static final wc v;
+    public static final wc w;
+    public static final wc x;
+    public static final wc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final vc d;
 
-    public wc(View view) {
-        this(view, 1.0f, 5.0f);
+    static {
+        int i10 = R.string.PhotoSavedHint;
+        vc vcVar = vc.e;
+        wc wcVar = new wc("PHOTO", 0, "PhotoSavedHint", i10, vcVar);
+        e = wcVar;
+        wc wcVar2 = new wc("PHOTOS", 1, "PhotosSavedHint", vcVar);
+        f = wcVar2;
+        wc wcVar3 = new wc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, vcVar);
+        h = wcVar3;
+        wc wcVar4 = new wc("VIDEOS", 3, "VideosSavedHint", vcVar);
+        n = wcVar4;
+        wc wcVar5 = new wc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, vcVar);
+        r = wcVar5;
+        wc wcVar6 = new wc("LIVEPHOTOS", 5, "LivePhotosSavedHint", vcVar);
+        s = wcVar6;
+        wc wcVar7 = new wc("MEDIA", 6, "MediaSavedHint", vcVar);
+        v = wcVar7;
+        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
+        vc vcVar2 = vc.d;
+        wc wcVar8 = new wc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, vcVar2);
+        w = wcVar8;
+        wc wcVar9 = new wc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, vcVar2);
+        x = wcVar9;
+        wc wcVar10 = new wc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, vc.h);
+        y = wcVar10;
+        wc wcVar11 = new wc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, vcVar2);
+        E = wcVar11;
+        int i12 = R.string.AudioSavedHint;
+        vc vcVar3 = vc.f;
+        wc wcVar12 = new wc("AUDIO", 11, "AudioSavedHint", i12, vcVar3);
+        F = wcVar12;
+        wc wcVar13 = new wc("AUDIOS", 12, "AudiosSavedHint", vcVar3);
+        G = wcVar13;
+        wc wcVar14 = new wc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, vcVar2);
+        H = wcVar14;
+        wc wcVar15 = new wc("UNKNOWNS", 14, "FilesSavedHintLinked", vcVar2);
+        I = wcVar15;
+        J = new wc[]{wcVar, wcVar2, wcVar3, wcVar4, wcVar5, wcVar6, wcVar7, wcVar8, wcVar9, wcVar10, wcVar11, wcVar12, wcVar13, wcVar14, wcVar15};
     }
 
-    public final float a(float f7) {
-        return com.google.android.gms.internal.vision.e2.z(1.0f, this.i, f7, 1.0f - f7);
+    public wc(String str, int i10, String str2, int i11, vc vcVar) {
+        this.a = str2;
+        this.b = i11;
+        this.d = vcVar;
+        this.c = false;
     }
 
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
-        }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
+    public static wc valueOf(String str) {
+        return (wc) Enum.valueOf(wc.class, str);
     }
 
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new i6(this, 7));
-            this.g.addListener(new aa(1, this, z10));
-            if (this.h) {
-                this.g.setInterpolator(qr.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
-        }
+    public static wc[] values() {
+        return (wc[]) J.clone();
     }
 
-    public wc(View view, float f7, float f10) {
-        this.e = 0L;
-        this.a = view;
-        this.c = f7;
-        this.b = f7;
-        this.d = f10;
-    }
-
-    public wc(ci.p6 p6Var) {
-        this.e = 0L;
-        this.a = p6Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
+    public wc(String str, int i10, String str2, vc vcVar) {
+        this.a = str2;
+        this.d = vcVar;
+        this.b = 0;
+        this.c = true;
     }
 }

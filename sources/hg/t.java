@@ -15,24 +15,24 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k5;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final k5 a;
+    public final j5 a;
     public final vh.o b;
-    public final k5 c;
-    public final f6 d;
+    public final j5 c;
+    public final e6 d;
     public boolean e;
     public TL_account.TL_businessChatLink f;
 
-    public t(Context context, f6 f6Var) {
+    public t(Context context, e6 e6Var) {
         super(context);
-        this.d = f6Var;
+        this.d = e6Var;
         setWillNotDraw(false);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -41,31 +41,31 @@ public final class t extends FrameLayout {
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setBackground(j6.K(AndroidUtilities.dp(36.0f), j6.w0(null, j6.Oh, false)));
         imageView.setOnClickListener(new ai.v0(this, 25));
-        addView(imageView, x5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        k5 k5Var = new k5(context);
-        this.a = k5Var;
-        k5Var.setTextSize(15);
-        k5Var.setTextColor(j6.w0(null, j6.G6, false));
-        k5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(k5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        k5 k5Var2 = new k5(context);
-        this.c = k5Var2;
-        k5Var2.setTextSize(14);
+        addView(imageView, y5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        j5 j5Var = new j5(context);
+        this.a = j5Var;
+        j5Var.setTextSize(15);
+        j5Var.setTextColor(j6.w0(null, j6.G6, false));
+        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(j5Var, y5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        j5 j5Var2 = new j5(context);
+        this.c = j5Var2;
+        j5Var2.setTextSize(14);
         int i10 = j6.z6;
-        k5Var2.setTextColor(j6.w0(null, i10, false));
-        k5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(k5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        j5Var2.setTextColor(j6.w0(null, i10, false));
+        j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(j5Var2, y5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         vh.o oVar = new vh.o(context);
         this.b = oVar;
         oVar.setTextSize(1, 13.0f);
         oVar.setMaxLines(1);
         oVar.setEllipsize(TextUtils.TruncateAt.END);
-        oVar.setTextColor(j6.v0(i10, f6Var));
+        oVar.setTextColor(j6.v0(i10, e6Var));
         oVar.setGravity(LocaleController.isRTL ? 5 : 3);
         oVar.f = false;
         oVar.setUseAlphaForEmoji(false);
         NotificationCenter.listenEmojiLoading(oVar);
-        addView(oVar, x5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        addView(oVar, y5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View
@@ -84,12 +84,12 @@ public final class t extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         boolean z11 = LocaleController.isRTL;
-        k5 k5Var = this.c;
-        k5 k5Var2 = this.a;
+        j5 j5Var = this.c;
+        j5 j5Var2 = this.a;
         if (z11) {
-            k5Var2.setPadding(k5Var.getTextWidth(), 0, 0, 0);
+            j5Var2.setPadding(j5Var.getTextWidth(), 0, 0, 0);
         } else {
-            k5Var2.setPadding(0, 0, k5Var.getTextWidth(), 0);
+            j5Var2.setPadding(0, 0, j5Var.getTextWidth(), 0);
         }
     }
 

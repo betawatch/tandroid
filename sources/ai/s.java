@@ -3,18 +3,18 @@ package ai;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.nx;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class s extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
     public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(nx nxVar, Context context, com.google.firebase.messaging.m mVar) {
+    public s(lx lxVar, Context context, com.google.firebase.messaging.m mVar) {
         super(context, null, mVar);
-        this.e = nxVar;
+        this.e = lxVar;
     }
 
     @Override // org.telegram.ui.ActionBar.m, le.k
@@ -22,7 +22,7 @@ public final class s extends org.telegram.ui.ActionBar.m {
         switch (this.d) {
             case 0:
                 super.c(lVar);
-                ((nx) this.e).invalidate();
+                ((lx) this.e).invalidate();
                 break;
             default:
                 super.c(lVar);
@@ -37,8 +37,8 @@ public final class s extends org.telegram.ui.ActionBar.m {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, com.google.firebase.messaging.m mVar) {
-        super(context, f6Var, mVar);
+    public s(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, com.google.firebase.messaging.m mVar) {
+        super(context, e6Var, mVar);
         this.e = kVar;
     }
 }

@@ -1,44 +1,81 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cb0 b;
-    public final /* synthetic */ AccountInstance c;
+public final class bb0 implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ y80 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 e;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity g;
 
-    public /* synthetic */ bb0(cb0 cb0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.o2 o2Var, int i10) {
-        this.a = i10;
-        this.b = cb0Var;
-        this.c = accountInstance;
+    public bb0(LaunchActivity launchActivity, y80 y80Var, String str, org.telegram.ui.ActionBar.n2 n2Var, long j3, Integer num, Bundle bundle) {
+        this.g = launchActivity;
+        this.a = y80Var;
+        this.b = str;
+        this.c = n2Var;
         this.d = j3;
-        this.e = o2Var;
+        this.e = num;
+        this.f = bundle;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new bb0(this.b, this.c, this.d, this.e, 1));
-                break;
-            default:
-                AccountInstance accountInstance = this.c;
-                MessagesController messagesController = accountInstance.getMessagesController();
-                long j3 = this.d;
-                long j10 = -j3;
-                ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
-                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
-                accountInstance.getMessagesController().getInputPeer(j3);
-                org.telegram.ui.Components.voip.f2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
-                break;
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        LaunchActivity launchActivity = this.g;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.e5.u0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
         }
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        LaunchActivity launchActivity = this.g;
+        if (launchActivity.isFinishing()) {
+            return;
+        }
+        String str = this.b;
+        long j3 = this.d;
+        org.telegram.ui.ActionBar.n2 n2Var = this.c;
+        if (str == null || !(n2Var instanceof zn) || ((zn) n2Var).a() != j3) {
+            if (n2Var instanceof zn) {
+                zn znVar = (zn) n2Var;
+                if (znVar.a() == j3 && this.e == null) {
+                    AndroidUtilities.shakeViewSpring(znVar.x0, 5.0f);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    lk lkVar = znVar.Y;
+                    for (int i10 = 0; i10 < lkVar.getChildCount(); i10++) {
+                        AndroidUtilities.shakeViewSpring(lkVar.getChildAt(i10), 5.0f);
+                    }
+                    org.telegram.ui.ActionBar.k actionBar = znVar.getActionBar();
+                    for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
+                        AndroidUtilities.shakeViewSpring(actionBar.getChildAt(i11), 5.0f);
+                    }
+                }
+            }
+            n2Var = new zn(this.f);
+            ((ActionBarLayout) launchActivity.O()).P(n2Var);
+        }
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.y21(this, this.b, this.d, n2Var, 4), 150L);
     }
 }

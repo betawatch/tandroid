@@ -19,18 +19,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bl0;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.mr;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.j01;
-import org.telegram.ui.k60;
-import org.telegram.ui.vg1;
-import org.telegram.ui.wy;
+import org.telegram.ui.h01;
+import org.telegram.ui.i60;
+import org.telegram.ui.tg1;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, bl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, pa.a, vg1 {
+public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, ll0, MessagesController.IsInChatCheckedCallback, t5.b, s5.f, pa.a, tg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -43,7 +43,7 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
         this.d = obj2;
     }
 
-    @Override // s5.e
+    @Override // s5.f
     public Object apply(Object obj) {
         String str = (String) this.c;
         SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
@@ -54,7 +54,7 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
             rawQuery.close();
             long j3 = this.b;
             if (z10) {
-                sQLiteDatabase.execSQL(org.telegram.ui.Cells.p6.h(j3, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
+                sQLiteDatabase.execSQL(org.telegram.ui.Cells.c1.h(j3, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
                 return null;
             }
             ContentValues contentValues = new ContentValues();
@@ -69,12 +69,12 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
         ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -110,13 +110,13 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
         org.telegram.messenger.h5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.vg1
+    @Override // org.telegram.ui.tg1
     public void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((yh.g) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 ba baVar = (ba) this.c;
@@ -132,34 +132,34 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
                 baVar.i(true);
                 baVar.e(true);
                 baVar.f(true);
-                c2Var.dismiss();
+                b2Var.dismiss();
                 baVar.x.K = true;
                 break;
             case 3:
                 mr.Q((mr) this.c, (d) this.d, this.b);
                 break;
             default:
-                k60 k60Var = (k60) this.c;
-                k60Var.d.getMessagesController().addUserToChat(k60Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.o2) k60Var.i0.O().getFragmentStack().get(k60Var.i0.O().getFragmentStack().size() - 1), new ai.j(k60Var, this.b, 24));
+                i60 i60Var = (i60) this.c;
+                i60Var.d.getMessagesController().addUserToChat(i60Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) i60Var.i0.O().getFragmentStack().get(i60Var.i0.O().getFragmentStack().size() - 1), new ai.j(i60Var, this.b, 24));
                 break;
         }
     }
 
+    @Override // pa.a
+    public void g(pa.b bVar) {
+        ((t9.a) bVar.get()).d((String) this.c, this.b, (y9.b1) this.d);
+    }
+
     @Override // t5.b
-    public Object i() {
+    public Object h() {
         da.b bVar = (da.b) this.c;
         l5.i iVar = (l5.i) this.d;
         s5.d dVar = (s5.d) bVar.c;
         long q6 = ((u5.a) bVar.g).q() + this.b;
-        s5.g gVar = (s5.g) dVar;
-        gVar.getClass();
-        gVar.c(new ai.z1(q6, iVar));
+        s5.h hVar = (s5.h) dVar;
+        hVar.getClass();
+        hVar.c(new ai.z1(q6, iVar));
         return null;
-    }
-
-    @Override // pa.a
-    public void j(pa.b bVar) {
-        ((t9.a) bVar.get()).d((String) this.c, this.b, (y9.b1) this.d);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -174,7 +174,7 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new ai.h3((j01) this.c, this.b, tL_chatAdminRights, str, z10, (wy) this.d));
+        AndroidUtilities.runOnUIThread(new ai.h3((h01) this.c, this.b, tL_chatAdminRights, str, z10, (uy) this.d));
     }
 
     public /* synthetic */ t9(Object obj, Object obj2, long j3, int i10) {
@@ -184,7 +184,7 @@ public final /* synthetic */ class t9 implements org.telegram.ui.ActionBar.b2, C
         this.b = j3;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

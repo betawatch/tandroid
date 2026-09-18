@@ -27,11 +27,11 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.w70;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.nb0;
+import org.telegram.ui.mb0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -55,7 +55,7 @@ public class ApplicationLoader extends Application {
     private static volatile ConnectivityManager.NetworkCallback networkCallback;
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
     public static long startTime;
-    private final Runnable debugEverySecondChecks = new u1(3);
+    private final Runnable debugEverySecondChecks = new v1(3);
 
     public static void appCenterLog(Throwable th2) {
         applicationLoaderInstance.appCenterLogInternal(th2);
@@ -158,7 +158,7 @@ public class ApplicationLoader extends Application {
     }
 
     private void initPushServices() {
-        AndroidUtilities.runOnUIThread(new u1(7), 1000L);
+        AndroidUtilities.runOnUIThread(new v1(7), 1000L);
     }
 
     public static boolean isAndroidTestEnvironment() {
@@ -315,7 +315,7 @@ public class ApplicationLoader extends Application {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$new$1() {
-        AndroidUtilities.runOnUIThread(new u1(4));
+        AndroidUtilities.runOnUIThread(new v1(4));
     }
 
     public static void logDualCamera(boolean z10, boolean z11) {
@@ -493,7 +493,7 @@ public class ApplicationLoader extends Application {
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            hg.k0.w(sb2, elapsedRealtime);
+            q.s(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
                 int i11 = packageInfo.versionCode % 10;
@@ -534,19 +534,19 @@ public class ApplicationLoader extends Application {
                     }
                 }
             };
-            new ANRDetector(new u1(5));
+            new ANRDetector(new v1(5));
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
-            AndroidUtilities.runOnUIThread(new u1(6));
-            nb0[] values = nb0.values();
+            AndroidUtilities.runOnUIThread(new v1(6));
+            mb0[] values = mb0.values();
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.e6.b(nb0.h);
+                    w7.f6.b(mb0.h);
                     break;
-                } else if (w7.e6.a(values[i10])) {
+                } else if (w7.f6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -590,7 +590,7 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    public org.telegram.ui.ActionBar.o2 openSettings(int i10) {
+    public org.telegram.ui.ActionBar.n2 openSettings(int i10) {
         return null;
     }
 
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(n70 n70Var) {
+    public void addItemOptions(w70 w70Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

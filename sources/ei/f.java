@@ -3,9 +3,9 @@ package ei;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.r20;
+import org.telegram.ui.p20;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class f extends rg.v1 {
     public final /* synthetic */ int n;
@@ -38,19 +38,19 @@ public final class f extends rg.v1 {
                 u1Var2.c();
                 break;
             case 2:
-                r20 r20Var = new r20(50);
-                this.a = r20Var;
-                r20Var.N = 100;
-                r20Var.M = false;
-                r20Var.G = false;
-                r20Var.K = true;
-                r20Var.H = true;
-                r20Var.J = false;
-                r20Var.r = 4;
-                r20Var.w = 0.98f;
-                r20Var.v = 0.98f;
-                r20Var.u = 0.98f;
-                r20Var.c();
+                p20 p20Var = new p20(50);
+                this.a = p20Var;
+                p20Var.N = 100;
+                p20Var.M = false;
+                p20Var.G = false;
+                p20Var.K = true;
+                p20Var.H = true;
+                p20Var.J = false;
+                p20Var.r = 4;
+                p20Var.w = 0.98f;
+                p20Var.v = 0.98f;
+                p20Var.u = 0.98f;
+                p20Var.c();
                 break;
             case 3:
                 rg.u1 u1Var3 = this.a;

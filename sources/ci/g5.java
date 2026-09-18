@@ -2,7 +2,7 @@ package ci;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g5 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,21 +17,21 @@ public final /* synthetic */ class g5 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                qg.z1 z1Var = this.b.d1;
-                if (z1Var != null) {
-                    z1Var.invalidate();
+                qg.w1 w1Var = this.b.d1;
+                if (w1Var != null) {
+                    w1Var.invalidate();
                     break;
                 }
                 break;
             case 1:
-                new rg.x0((org.telegram.ui.ActionBar.o2) new ai.y3(this.b, 3), 14, true).show();
+                new rg.x0((org.telegram.ui.ActionBar.n2) new ai.y3(this.b, 3), 14, true).show();
                 break;
             case 2:
                 this.b.z0(false);
                 break;
             default:
                 r6 r6Var = this.b;
-                boolean z10 = pg.s0.e(r6Var.F1).k;
+                boolean z10 = pg.u0.e(r6Var.F1).k;
                 int i10 = 0;
                 while (true) {
                     List list = pg.l.b;
@@ -48,7 +48,7 @@ public final /* synthetic */ class g5 implements Runnable {
                         o6Var.setSelected(false);
                         o6Var.setOnClickListener(new ai.v0(s1Var, 10));
                         o6Var.setOnLongClickListener(new n5(r6Var, 0));
-                        r6Var.I1.a(o6Var, w7.x5.n(-1, 48));
+                        r6Var.I1.a(o6Var, w7.y5.n(-1, 48));
                         i10++;
                     }
                 }

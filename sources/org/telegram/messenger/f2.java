@@ -14,12 +14,12 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.kr0;
-import org.telegram.ui.qy;
-import org.telegram.ui.vx;
-import org.telegram.ui.wy;
+import org.telegram.ui.jr0;
+import org.telegram.ui.oy;
+import org.telegram.ui.tx;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -54,24 +54,24 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                 ((TranslateController) obj4).lambda$checkTranslation$6((MessageObject) obj3, (String) obj2, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
             case 3:
-                vx vxVar = (vx) obj4;
-                org.telegram.ui.ActionBar.o2[] o2VarArr = (org.telegram.ui.ActionBar.o2[]) obj2;
-                vxVar.getClass();
-                ((org.telegram.ui.ActionBar.c2) obj3).dismiss();
-                wy wyVar = vxVar.b;
-                wyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
-                qy qyVar = wyVar.C2;
-                wyVar.removeSelfFromStack();
-                if (o2VarArr[1] != null) {
-                    o2VarArr[0].removeSelfFromStack();
-                    o2VarArr[1].finishFragment();
+                tx txVar = (tx) obj4;
+                org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj2;
+                txVar.getClass();
+                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
+                uy uyVar = txVar.b;
+                uyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
+                oy oyVar = uyVar.C2;
+                uyVar.removeSelfFromStack();
+                if (n2VarArr[1] != null) {
+                    n2VarArr[0].removeSelfFromStack();
+                    n2VarArr[1].finishFragment();
                 } else {
-                    o2VarArr[0].finishFragment();
+                    n2VarArr[0].finishFragment();
                 }
-                if (qyVar != null) {
+                if (oyVar != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(-j3, 0L));
-                    qyVar.u(wyVar, arrayList, null, false, wyVar.J2, wyVar.K2, wyVar.L2, null);
+                    oyVar.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
                     break;
                 }
                 break;
@@ -82,7 +82,7 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new kr0(photoViewer, 16));
+                    AndroidUtilities.runOnUIThread(new jr0(photoViewer, 16));
                     break;
                 } else {
                     try {
@@ -100,15 +100,15 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                         break;
                     } catch (Exception e) {
                         FileLog.e(e);
-                        AndroidUtilities.runOnUIThread(new kr0(photoViewer, 17));
+                        AndroidUtilities.runOnUIThread(new jr0(photoViewer, 17));
                         return;
                     }
                 }
             default:
-                xh.b1 b1Var = (xh.b1) obj3;
+                xh.c1 c1Var = (xh.c1) obj3;
                 nf.e eVar = (nf.e) obj;
                 eVar.d();
-                b1Var.v1(j3, new ai.e4((xh.q1) obj4, eVar, (Utilities.Callback) obj2, b1Var, 17));
+                c1Var.v1(j3, new ai.e4((xh.r1) obj4, eVar, (Utilities.Callback) obj2, c1Var, 17));
                 break;
         }
     }

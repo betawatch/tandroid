@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.o01;
+import org.telegram.ui.m01;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -73,14 +73,14 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 4:
                 a4 a4Var = (a4) obj;
-                a4Var.s5.invalidate();
+                a4Var.r5.invalidate();
                 a4Var.setAnimatedTop(0);
-                a4Var.s5.V2 = true;
+                a4Var.r5.V2 = true;
                 View view = a4Var.F1;
                 if (view != null && view.getVisibility() == 0) {
                     a4Var.F1.setTranslationY(((1.0f - a4Var.getTopViewEnterProgress()) * a4Var.F1.getLayoutParams().height) + a4Var.S1);
                 }
-                a4Var.s5.e2 = null;
+                a4Var.r5.e2 = null;
                 break;
             case 5:
                 b6 b6Var = (b6) obj;
@@ -90,10 +90,10 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 6:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                o01 o01Var = profileStoriesView.h;
+                m01 m01Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                o01Var.R = 1.0f;
-                o01Var.invalidate();
+                m01Var.R = 1.0f;
+                m01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 7:
@@ -249,9 +249,9 @@ public final class b extends AnimatorListenerAdapter {
             case 9:
                 super.onAnimationStart(animator);
                 p9 p9Var = (p9) this.b;
-                yi0 yi0Var = ((o9) p9Var.a.get(p9Var.d)).c;
-                yi0Var.L = 2;
-                yi0Var.start();
+                ij0 ij0Var = ((o9) p9Var.a.get(p9Var.d)).c;
+                ij0Var.L = 2;
+                ij0Var.start();
                 break;
             case 29:
                 ((org.telegram.ui.q4) this.b).setVisibility(0);

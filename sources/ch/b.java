@@ -7,16 +7,16 @@ import android.view.ViewOutlineProvider;
 import ci.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.pb0;
+import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.voip.s2;
 import org.telegram.ui.Components.voip.u1;
-import org.telegram.ui.Components.w50;
+import org.telegram.ui.Components.yb0;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 2:
-                int i11 = ((w50) obj).N0;
+                int i11 = ((b60) obj).Q0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((pb0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((yb0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
                 u1 u1Var = (u1) obj;
@@ -104,7 +104,7 @@ public final class b extends ViewOutlineProvider {
                 }
             default:
                 int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((o2) ((PremiumPreviewFragment) obj)).actionBar;
+                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
         }

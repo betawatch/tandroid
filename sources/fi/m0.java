@@ -18,18 +18,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.bx0;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.mx0;
+import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sv;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                o2 o2Var = (o2) this.c;
+                n2 n2Var = (n2) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 long j3 = ((TLRPC.Chat) this.e).id;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
@@ -58,12 +58,12 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 int i10 = this.b;
                 if (isChannel) {
                     long j10 = chat.id;
-                    MessagesController.getInstance(i10).linkCommunity(-j10, j3, booleanValue, new o0(o2Var, j10, 0));
+                    MessagesController.getInstance(i10).linkCommunity(-j10, j3, booleanValue, new o0(n2Var, j10, 0));
                     break;
                 } else {
-                    c2 c2Var = new c2(o2Var.getContext(), 3, null);
-                    c2Var.q(250L);
-                    MessagesController.getInstance(i10).convertToMegaGroup(o2Var.getParentActivity(), chat.id, o2Var, new n0(c2Var, o2Var, i10, j3, booleanValue));
+                    b2 b2Var = new b2(n2Var.getContext(), 3, null);
+                    b2Var.q(250L);
+                    MessagesController.getInstance(i10).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new n0(b2Var, n2Var, i10, j3, booleanValue));
                     break;
                 }
             case 1:
@@ -95,14 +95,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 sv svVar = (sv) this.c;
                 int[] iArr = (int[]) this.d;
                 ArrayList arrayList = (ArrayList) this.e;
-                o2 o2Var2 = svVar.c;
+                n2 n2Var2 = svVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == this.b && iArr[1] > 0) {
                     svVar.dismiss();
-                    oc.g(o2Var2, new bx0(o2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, o2Var2.getResourceProvider()), 1500).j();
+                    qc.g(n2Var2, new mx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
@@ -129,14 +129,14 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             default:
-                xc xcVar = (xc) this.c;
+                zc zcVar = (zc) this.c;
                 Context context = (Context) this.d;
-                f6 f6Var = (f6) this.e;
+                e6 e6Var = (e6) this.e;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(xcVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) yc.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new t11(this.b, context, f6Var, savedStarGift, 18), f6Var, null));
-                    xcVar.setText(spannableStringBuilder);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(zcVar.getText());
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new h21(this.b, context, e6Var, savedStarGift, 18), e6Var, null));
+                    zcVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;

@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c implements View.OnAttachStateChangeListener {
     @Override // android.view.View.OnAttachStateChangeListener
@@ -20,7 +20,7 @@ public final class c implements View.OnAttachStateChangeListener {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((pe.b) a2.a.b).add((ki.c) obj);
+            ((pe.b) a2.a.b).add((li.c) obj);
         }
     }
 
@@ -37,7 +37,7 @@ public final class c implements View.OnAttachStateChangeListener {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((pe.b) bVar.a.b).remove((ki.c) obj);
+            ((pe.b) bVar.a.b).remove((li.c) obj);
         }
         dVar.b = null;
     }

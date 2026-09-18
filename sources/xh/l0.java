@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.x5;
+import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class l0 extends View {
     public final k0 a;
@@ -39,7 +39,7 @@ public final class l0 extends View {
         super.onDetachedFromWindow();
         k0 k0Var = this.a;
         k0Var.d.onDetachedFromWindow();
-        x5.release((View) null, k0Var.q);
+        z5.release((View) null, k0Var.q);
         k0Var.q = null;
     }
 

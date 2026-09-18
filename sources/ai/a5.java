@@ -19,17 +19,17 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.iz;
-import org.telegram.ui.rv0;
+import org.telegram.ui.gz;
+import org.telegram.ui.pv0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class a5 extends i0 {
-    public final org.telegram.ui.Components.c6 d;
-    public final org.telegram.ui.Components.c6 e;
+    public final org.telegram.ui.Components.e6 d;
+    public final org.telegram.ui.Components.e6 e;
     public final org.telegram.ui.Components.voip.h f;
-    public final org.telegram.ui.Components.c6 h;
-    public final org.telegram.ui.Components.c6 n;
+    public final org.telegram.ui.Components.e6 h;
+    public final org.telegram.ui.Components.e6 n;
     public boolean r;
     public boolean s;
     public final /* synthetic */ c6 v;
@@ -43,15 +43,15 @@ public final class a5 extends i0 {
         this.v = c6Var;
         this.w = jcVar;
         qr qrVar = qr.f;
-        this.d = new org.telegram.ui.Components.c6(this, 150L, qrVar);
-        this.e = new org.telegram.ui.Components.c6(this, 150L, qrVar);
+        this.d = new org.telegram.ui.Components.e6(this, 150L, qrVar);
+        this.e = new org.telegram.ui.Components.e6(this, 150L, qrVar);
         this.f = new org.telegram.ui.Components.voip.h(32, 102, 240);
-        org.telegram.ui.Components.c6 c6Var2 = new org.telegram.ui.Components.c6(this);
-        this.h = c6Var2;
-        org.telegram.ui.Components.c6 c6Var3 = new org.telegram.ui.Components.c6(this);
-        this.n = c6Var3;
-        c6Var2.g = 500L;
-        c6Var3.g = 100L;
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(this);
+        this.h = e6Var;
+        org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(this);
+        this.n = e6Var2;
+        e6Var.g = 500L;
+        e6Var2.g = 100L;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0158, code lost:
@@ -180,25 +180,25 @@ public final class a5 extends i0 {
             f13 = 2.0f;
             b6 b6Var = f6Var.o1;
             f14 = 8.0f;
-            org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) lVar.d;
+            org.telegram.ui.Components.o6 o6Var = (org.telegram.ui.Components.o6) lVar.d;
             int i15 = (g10 << 12) + i14;
             if (lVar.a != i15) {
                 lVar.a = i15;
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) String.valueOf(i14 + 1)).append((CharSequence) lVar.b).append((CharSequence) "/").append((CharSequence) lVar.c).append((CharSequence) String.valueOf(g10));
-                m6Var.q(spannableStringBuilder, false, true);
+                o6Var.q(spannableStringBuilder, false, true);
             }
             canvas.save();
             float y10 = b6Var.getY();
             a6 a6Var = b6Var.b;
-            float top = ((m6Var.e / 2.0f) + (y10 + a6Var.getTop())) - 1.0f;
-            a6Var.setRightPadding((int) m6Var.d());
+            float top = ((o6Var.e / 2.0f) + (y10 + a6Var.getTop())) - 1.0f;
+            a6Var.setRightPadding((int) o6Var.d());
             canvas.translate((a6Var.getRightDrawableWidth() + (a6Var.getTextWidth() + (a6Var.getLeft() + (b6Var.getLeft() + AndroidUtilities.dp(4.0f))))) - Utilities.clamp(((a6Var.getRightDrawableWidth() + a6Var.getTextWidth()) + r0) - a6Var.getWidth(), r0, 0), top);
             float dp = AndroidUtilities.dp(8.0f);
             float dp2 = AndroidUtilities.dp(2.0f);
-            AndroidUtilities.rectTmp.set(-dp, -dp2, m6Var.d() + dp, m6Var.e + dp2);
-            m6Var.w = (int) (f20 * 160.0f);
-            m6Var.draw(canvas);
+            AndroidUtilities.rectTmp.set(-dp, -dp2, o6Var.d() + dp, o6Var.e + dp2);
+            o6Var.w = (int) (f20 * 160.0f);
+            o6Var.draw(canvas);
             canvas.restore();
         }
         canvas.save();
@@ -370,12 +370,12 @@ public final class a5 extends i0 {
         float f11;
         float f12;
         float f13;
-        iz izVar;
+        gz gzVar;
         m6 m6Var;
         boolean z10;
         float f14;
         boolean z11;
-        org.telegram.ui.Components.c6 c6Var2;
+        org.telegram.ui.Components.e6 e6Var;
         boolean hasNotThumb;
         fh.d dVar;
         ic icVar;
@@ -386,36 +386,36 @@ public final class a5 extends i0 {
         v4 v4Var = f6Var.j1;
         d6 d6Var = f6Var.O1;
         l4 l4Var = f6Var.e1;
-        e6 e6Var = f6Var.M2;
+        e6 e6Var2 = f6Var.M2;
         h5 h5Var = f6Var.K0;
         if (!f6Var.K1) {
             f6Var.o1.a.getImageReceiver().setVisible(true, true);
         }
         boolean z12 = f6Var.c3;
-        c6 c6Var3 = this.v;
+        c6 c6Var2 = this.v;
         if (z12) {
             f7 = 1.0f;
             canvas2.drawColor(i0.a.d(0.2f, -16777216, -1));
         } else {
             f7 = 1.0f;
-            if (((org.telegram.ui.k4) e6Var.e) != null || (v4Var != null && (((kbVar = v4Var.b) != null && (kbVar.w || kbVar.s)) || v4Var.y.i))) {
+            if (((org.telegram.ui.k4) e6Var2.e) != null || (v4Var != null && (((kbVar = v4Var.b) != null && (kbVar.w || kbVar.s)) || v4Var.y.i))) {
                 invalidate();
             }
             canvas2.save();
-            rv0 rv0Var = f6Var.X2;
-            if (rv0Var.n) {
+            pv0 pv0Var = f6Var.X2;
+            if (pv0Var.n) {
                 canvas2.save();
-                float f15 = rv0Var.O;
-                float f16 = rv0Var.A;
+                float f15 = pv0Var.O;
+                float f16 = pv0Var.A;
                 float f17 = ((f15 * f16) + 1.0f) - f16;
-                canvas2.scale(f17, f17, rv0Var.o + rv0Var.s, rv0Var.p + rv0Var.t);
-                float f18 = rv0Var.o;
-                float f19 = rv0Var.J;
-                float f20 = rv0Var.A;
-                canvas2.translate((f19 * f20) + f18, (rv0Var.K * f20) + rv0Var.p);
+                canvas2.scale(f17, f17, pv0Var.o + pv0Var.s, pv0Var.p + pv0Var.t);
+                float f18 = pv0Var.o;
+                float f19 = pv0Var.J;
+                float f20 = pv0Var.A;
+                canvas2.translate((f19 * f20) + f18, (pv0Var.K * f20) + pv0Var.p);
             }
-            org.telegram.ui.k4 k4Var = (org.telegram.ui.k4) e6Var.e;
-            if (k4Var == null || (!e6Var.a && ((d2) e6Var.b) == null)) {
+            org.telegram.ui.k4 k4Var = (org.telegram.ui.k4) e6Var2.e;
+            if (k4Var == null || (!e6Var2.a && ((d2) e6Var2.b) == null)) {
                 if (k4Var != null) {
                     invalidate();
                 }
@@ -423,33 +423,33 @@ public final class a5 extends i0 {
                     canvas2.drawColor(i0.a.d(0.2f, -16777216, -1));
                 } else {
                     if (!l4Var.hasBitmapImage()) {
-                        c6Var3.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight() + 1);
-                        c6Var3.f.draw(canvas2);
+                        c6Var2.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight() + 1);
+                        c6Var2.f.draw(canvas2);
                     }
                     f14 = 0.0f;
                     l4Var.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() + 1);
                     l4Var.draw(canvas2);
                     canvas2.restore();
                     z11 = f6Var.Y2;
-                    org.telegram.ui.Components.c6 c6Var4 = this.h;
-                    c6Var2 = this.n;
+                    org.telegram.ui.Components.e6 e6Var3 = this.h;
+                    e6Var = this.n;
                     if (z11) {
-                        c6Var4.d(f14, true);
-                        c6Var2.d(f14, true);
+                        e6Var3.d(f14, true);
+                        e6Var.d(f14, true);
                     }
                     if (!d6Var.f) {
-                        d2 d2Var = (d2) e6Var.b;
+                        d2 d2Var = (d2) e6Var2.b;
                         if (d2Var != null) {
-                            if (!e6Var.a) {
+                            if (!e6Var2.a) {
                             }
                             hasNotThumb = true;
                         }
                         hasNotThumb = false;
                     } else if (d6Var.e) {
-                        if (((org.telegram.ui.k4) e6Var.e) != null) {
-                            ic icVar2 = (ic) e6Var.c;
+                        if (((org.telegram.ui.k4) e6Var2.e) != null) {
+                            ic icVar2 = (ic) e6Var2.c;
                             if (icVar2 != null) {
-                                if (e6Var.a) {
+                                if (e6Var2.a) {
                                     if (icVar2.progress == 0.0f) {
                                         if (icVar2 != null) {
                                             if (icVar2.isBuffering()) {
@@ -464,12 +464,12 @@ public final class a5 extends i0 {
                     } else {
                         hasNotThumb = l4Var.hasNotThumb();
                     }
-                    c6Var4.d((f6Var.K1 || hasNotThumb || d6Var.b != null) ? 0.0f : 1.0f, false);
-                    c6Var2.d(c6Var4.c != 1.0f ? 1.0f : 0.0f, false);
-                    if (c6Var2.c > 0.0f) {
+                    e6Var3.d((f6Var.K1 || hasNotThumb || d6Var.b != null) ? 0.0f : 1.0f, false);
+                    e6Var.d(e6Var3.c != 1.0f ? 1.0f : 0.0f, false);
+                    if (e6Var.c > 0.0f) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                        int i10 = (int) (c6Var2.c * 255.0f);
+                        int i10 = (int) (e6Var.c * 255.0f);
                         org.telegram.ui.Components.voip.h hVar = this.f;
                         hVar.a.setAlpha(i10);
                         hVar.c.setAlpha(i10);
@@ -481,24 +481,24 @@ public final class a5 extends i0 {
                 }
             } else {
                 if (!l4Var.hasBitmapImage()) {
-                    c6Var3.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight() + 1);
-                    c6Var3.f.draw(canvas2);
+                    c6Var2.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight() + 1);
+                    c6Var2.f.draw(canvas2);
                 }
                 l4Var.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() + 1);
                 l4Var.draw(canvas2);
                 if (f6Var.K1) {
                     jc jcVar = this.w;
                     boolean z13 = jcVar.a;
-                    if (z13 && (icVar = (ic) e6Var.c) != null && icVar.paused && icVar.playerStubBitmap != null && icVar.stubAvailable) {
+                    if (z13 && (icVar = (ic) e6Var2.c) != null && icVar.paused && icVar.playerStubBitmap != null && icVar.stubAvailable) {
                         canvas2.save();
-                        canvas2.scale(getMeasuredWidth() / ((ic) e6Var.c).playerStubBitmap.getWidth(), getMeasuredHeight() / ((ic) e6Var.c).playerStubBitmap.getHeight());
-                        ic icVar3 = (ic) e6Var.c;
+                        canvas2.scale(getMeasuredWidth() / ((ic) e6Var2.c).playerStubBitmap.getWidth(), getMeasuredHeight() / ((ic) e6Var2.c).playerStubBitmap.getHeight());
+                        ic icVar3 = (ic) e6Var2.c;
                         canvas2.drawBitmap(icVar3.playerStubBitmap, 0.0f, 0.0f, icVar3.playerStubPaint);
                         canvas2.restore();
                     } else {
                         boolean z14 = Build.VERSION.SDK_INT >= 29 && (dVar = f6Var.H3) != null && canvas2 == dVar.r;
                         if (!z13 || (f6Var.b1 && !jcVar.H0 && !z14)) {
-                            ((org.telegram.ui.k4) e6Var.e).draw(canvas2);
+                            ((org.telegram.ui.k4) e6Var2.e).draw(canvas2);
                         }
                     }
                 }
@@ -506,25 +506,25 @@ public final class a5 extends i0 {
             f14 = 0.0f;
             canvas2.restore();
             z11 = f6Var.Y2;
-            org.telegram.ui.Components.c6 c6Var42 = this.h;
-            c6Var2 = this.n;
+            org.telegram.ui.Components.e6 e6Var32 = this.h;
+            e6Var = this.n;
             if (z11) {
             }
             if (!d6Var.f) {
             }
-            c6Var42.d((f6Var.K1 || hasNotThumb || d6Var.b != null) ? 0.0f : 1.0f, false);
-            c6Var2.d(c6Var42.c != 1.0f ? 1.0f : 0.0f, false);
-            if (c6Var2.c > 0.0f) {
+            e6Var32.d((f6Var.K1 || hasNotThumb || d6Var.b != null) ? 0.0f : 1.0f, false);
+            e6Var.d(e6Var32.c != 1.0f ? 1.0f : 0.0f, false);
+            if (e6Var.c > 0.0f) {
             }
             f6Var.Y2 = false;
         }
         if (h5Var.getAlpha() > 0.0f) {
             if (h5Var.getAlpha() == f7) {
                 canvas2.save();
-                c6Var = c6Var3;
+                c6Var = c6Var2;
                 z10 = false;
             } else {
-                c6Var = c6Var3;
+                c6Var = c6Var2;
                 z10 = false;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, h5Var.getMeasuredWidth(), h5Var.getMeasuredHeight(), (int) (h5Var.getAlpha() * 255.0f), 31);
             }
@@ -532,7 +532,7 @@ public final class a5 extends i0 {
             canvas2.restore();
             r15 = z10;
         } else {
-            c6Var = c6Var3;
+            c6Var = c6Var2;
             r15 = 0;
         }
         if (!f6Var.Z0 && l4Var.hasNotThumb()) {
@@ -663,9 +663,9 @@ public final class a5 extends i0 {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                izVar = f6Var.k1;
-                if (izVar == null) {
-                    izVar.e(canvas2);
+                gzVar = f6Var.k1;
+                if (gzVar == null) {
+                    gzVar.e(canvas2);
                     return;
                 }
                 return;
@@ -692,8 +692,8 @@ public final class a5 extends i0 {
         }
         if (f11 <= 0.0f) {
         }
-        izVar = f6Var.k1;
-        if (izVar == null) {
+        gzVar = f6Var.k1;
+        if (gzVar == null) {
         }
     }
 
@@ -716,8 +716,8 @@ public final class a5 extends i0 {
         if (!this.r) {
             return super.drawChild(canvas, view, j3);
         }
-        org.telegram.ui.Components.oc ocVar = org.telegram.ui.Components.oc.w;
-        if (ocVar == null || view != ocVar.e) {
+        org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
+        if (qcVar == null || view != qcVar.e) {
             return super.drawChild(canvas, view, j3);
         }
         if (this.s) {
@@ -730,7 +730,7 @@ public final class a5 extends i0 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.x.k1.j();
-        org.telegram.ui.Components.oc.a(this, new w4(this, 0));
+        org.telegram.ui.Components.qc.a(this, new w4(this, 0));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -738,7 +738,7 @@ public final class a5 extends i0 {
         super.onDetachedFromWindow();
         f6 f6Var = this.x;
         f6Var.k1.k();
-        org.telegram.ui.Components.oc.h(this);
+        org.telegram.ui.Components.qc.h(this);
         y5 y5Var = f6Var.Q1;
         if (y5Var != null) {
             jc jcVar = ((ac) y5Var).d;

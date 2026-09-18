@@ -1,30 +1,47 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ht0 extends wu0 {
-    public final /* synthetic */ zu0 G;
+public final class ht0 implements org.telegram.ui.Cells.m7 {
+    public final /* synthetic */ kv0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ht0(zu0 zu0Var, Context context) {
-        super(zu0Var, context, 0, false);
-        this.G = zu0Var;
+    public ht0(kv0 kv0Var) {
+        this.a = kv0Var;
     }
 
-    @Override // org.telegram.ui.Components.wu0, s4.h0
-    public final void l() {
-        super.l();
-        zu0 zu0Var = this.G;
-        st0 W = zu0Var.W(8);
-        if (W != null && W.r.getVisibility() == 0) {
-            zu0Var.d0.l();
+    @Override // org.telegram.ui.Cells.m7
+    public final void a(String str, boolean z10) {
+        kv0 kv0Var = this.a;
+        org.telegram.ui.ActionBar.n2 n2Var = kv0Var.v1;
+        if (!z10) {
+            kv0Var.R0(str);
+            return;
         }
-        if (W != null) {
-            js0 js0Var = W.w;
-            ai.d9 d9Var = this.s;
-            js0Var.e(d9Var != null && (d9Var.k() || (zu0Var.i0() && this.s.g() > 0)), true);
-        }
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) n2Var.getParentActivity(), (org.telegram.ui.ActionBar.e6) null, false);
+        f3Var.fixNavigationBar();
+        f3Var.title = str;
+        f3Var.bigTitle = false;
+        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
+        lg.j jVar = new lg.j(6, this, str);
+        f3Var.items = charSequenceArr;
+        f3Var.onClickListener = jVar;
+        n2Var.showDialog(f3Var);
+    }
+
+    @Override // org.telegram.ui.Cells.m7
+    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
+        kv0 kv0Var = this.a;
+        vu.J(kv0Var.v1, messageObject, kv0Var.r1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // org.telegram.ui.Cells.m7
+    public final boolean e() {
+        return !this.a.C1;
     }
 }

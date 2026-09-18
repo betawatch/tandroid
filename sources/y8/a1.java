@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a1 extends o6.a {
     public static final Parcelable.Creator<a1> CREATOR = new c(26);
@@ -40,17 +40,17 @@ public final class a1 extends o6.a {
 
     public final String toString() {
         Locale locale = Locale.US;
-        return a4.a.s(hg.k0.m("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
+        return a4.a.s(hg.k0.k("WebIconParcelable{", this.b, "x", this.c, " - "), this.a, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.e0.q(parcel, 20293);
-        w7.e0.l(parcel, 1, this.a);
-        w7.e0.s(parcel, 2, 4);
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.l(parcel, 1, this.a);
+        w7.f0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        w7.e0.s(parcel, 3, 4);
+        w7.f0.s(parcel, 3, 4);
         parcel.writeInt(this.c);
-        w7.e0.r(parcel, q6);
+        w7.f0.r(parcel, q6);
     }
 }

@@ -25,10 +25,10 @@ import java.util.zip.GZIPOutputStream;
 import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.c1;
 import qa.e;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -83,7 +83,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", p6.j("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : p6.i(", ", str)));
+        Log.w("Firebase-Installations", c1.i("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : t8.b.i(", ", str)));
     }
 
     public static long d(String str) {
@@ -206,7 +206,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo b10;
+        PackageInfo e7;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -225,19 +225,19 @@ public final class c {
             if (eVar != null) {
                 try {
                     httpURLConnection.addRequestProperty("x-firebase-client", (String) Tasks.await(((na.c) eVar).b()));
-                } catch (InterruptedException e7) {
+                } catch (InterruptedException e10) {
                     Thread.currentThread().interrupt();
-                    Log.w("ContentValues", "Failed to get heartbeats header", e7);
-                } catch (ExecutionException e10) {
                     Log.w("ContentValues", "Failed to get heartbeats header", e10);
+                } catch (ExecutionException e11) {
+                    Log.w("ContentValues", "Failed to get heartbeats header", e11);
                 }
             }
             String str2 = null;
             try {
-                b10 = w6.b.a(context).b(64, context.getPackageName());
-                signatureArr = b10.signatures;
-            } catch (PackageManager.NameNotFoundException e11) {
-                Log.e("ContentValues", "No such package: " + context.getPackageName(), e11);
+                e7 = w6.b.a(context).e(64, context.getPackageName());
+                signatureArr = e7.signatures;
+            } catch (PackageManager.NameNotFoundException e12) {
+                Log.e("ContentValues", "No such package: " + context.getPackageName(), e12);
             }
             if (signatureArr != null && signatureArr.length == 1) {
                 int i10 = 0;
@@ -256,7 +256,7 @@ public final class c {
                     i10++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(e7.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {

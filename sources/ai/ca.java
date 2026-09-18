@@ -12,19 +12,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public class ca {
     public int A;
     public boolean D;
     public final boolean E;
     public float G;
-    public wc H;
-    public org.telegram.ui.ActionBar.f6 J;
+    public yc H;
+    public org.telegram.ui.ActionBar.e6 J;
     public float K;
     public boolean L;
     public float M;
@@ -64,9 +64,9 @@ public class ca {
     public final RectF F = new RectF();
     public boolean I = false;
 
-    public ca(org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+    public ca(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         this.E = z10;
-        this.J = f6Var;
+        this.J = e6Var;
     }
 
     public final boolean a(MotionEvent motionEvent, View view) {
@@ -99,11 +99,11 @@ public class ca {
                     z10 = z11;
                 }
                 if (this.x != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId && z10) {
-                    wc wcVar = this.H;
-                    if (wcVar == null) {
-                        this.H = new wc(view, 1.5f, 5.0f);
+                    yc ycVar = this.H;
+                    if (ycVar == null) {
+                        this.H = new yc(view, 1.5f, 5.0f);
                     } else {
-                        wcVar.a = view;
+                        ycVar.a = view;
                     }
                     view.getParent().requestDisallowInterceptTouchEvent(true);
                     this.H.c(true);
@@ -125,10 +125,10 @@ public class ca {
         }
         if (motionEvent.getAction() == 2 && this.N) {
             if (Math.abs(this.O - motionEvent.getX()) > AndroidUtilities.touchSlop || Math.abs(this.P - motionEvent.getY()) > AndroidUtilities.touchSlop) {
-                wc wcVar2 = this.H;
-                if (wcVar2 != null) {
-                    wcVar2.a = view;
-                    wcVar2.c(false);
+                yc ycVar2 = this.H;
+                if (ycVar2 != null) {
+                    ycVar2.a = view;
+                    ycVar2.c(false);
                 }
                 ba baVar3 = this.Q;
                 if (baVar3 != null) {
@@ -138,10 +138,10 @@ public class ca {
                 this.N = false;
             }
         } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            wc wcVar3 = this.H;
-            if (wcVar3 != null) {
-                wcVar3.a = view;
-                wcVar3.c(false);
+            yc ycVar3 = this.H;
+            if (ycVar3 != null) {
+                ycVar3.a = view;
+                ycVar3.c(false);
             }
             if (this.N && motionEvent.getAction() == 1 && !d(this.x)) {
                 MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
@@ -181,11 +181,11 @@ public class ca {
     }
 
     public final float b() {
-        wc wcVar = this.H;
-        if (wcVar == null) {
+        yc ycVar = this.H;
+        if (ycVar == null) {
             return 1.0f;
         }
-        return wcVar.a(0.08f);
+        return ycVar.a(0.08f);
     }
 
     public boolean c(TLRPC.Chat chat, TLRPC.User user) {
@@ -197,13 +197,13 @@ public class ca {
     }
 
     public void f(long j3) {
-        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (R == null || this.R == null) {
             return;
         }
         R.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((ml0) parent) : null);
+        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((wl0) parent) : null);
     }
 
     public final void g() {

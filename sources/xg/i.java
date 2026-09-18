@@ -26,19 +26,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.w1;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.qr;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class i extends ScrollView {
     public final Paint E;
@@ -46,7 +45,7 @@ public abstract class i extends ScrollView {
     public boolean G;
     public int H;
     public float I;
-    public final f6 a;
+    public final e6 a;
     public final h2 b;
     public final int c;
     public final ea d;
@@ -54,25 +53,25 @@ public abstract class i extends ScrollView {
     public m30 f;
     public boolean h;
     public Utilities.Callback n;
-    public final c6 r;
+    public final org.telegram.ui.Components.e6 r;
     public final LinearGradient s;
     public final Paint v;
     public final Matrix w;
-    public final c6 x;
+    public final org.telegram.ui.Components.e6 x;
     public final LinearGradient y;
 
-    public i(Context context, f6 f6Var) {
+    public i(Context context, e6 e6Var) {
         super(context);
         this.e = new ArrayList();
         qr qrVar = qr.h;
-        this.r = new c6(this, 0L, 300L, qrVar);
+        this.r = new org.telegram.ui.Components.e6(this, 0L, 300L, qrVar);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
         this.s = linearGradient;
         Paint paint = new Paint(1);
         this.v = paint;
         this.w = new Matrix();
-        this.x = new c6(this, 0L, 300L, qrVar);
+        this.x = new org.telegram.ui.Components.e6(this, 0L, 300L, qrVar);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
         this.y = linearGradient2;
         Paint paint2 = new Paint(1);
@@ -83,23 +82,23 @@ public abstract class i extends ScrollView {
         paint.setXfermode(new PorterDuffXfermode(mode));
         paint2.setShader(linearGradient2);
         paint2.setXfermode(new PorterDuffXfermode(mode));
-        this.a = f6Var;
+        this.a = e6Var;
         setVerticalScrollBarEnabled(false);
         AndroidUtilities.setScrollViewEdgeEffectColor(this, j6.w0(null, j6.d6, false));
         ea eaVar = new ea(this, context);
         this.d = eaVar;
-        addView(eaVar, x5.c(-2.0f, -1));
+        addView(eaVar, y5.c(-2.0f, -1));
         h2 h2Var = new h2(this, context, 10);
         this.b = h2Var;
         if (Build.VERSION.SDK_INT >= 25) {
             h2Var.setRevealOnFocusHint(false);
         }
         h2Var.setTextSize(1, 16.0f);
-        h2Var.setHintColor(j6.v0(j6.Xh, f6Var));
-        h2Var.setTextColor(j6.v0(j6.G6, f6Var));
+        h2Var.setHintColor(j6.v0(j6.Xh, e6Var));
+        h2Var.setTextColor(j6.v0(j6.G6, e6Var));
         int i10 = j6.Yh;
-        h2Var.setCursorColor(j6.v0(i10, f6Var));
-        h2Var.setHandlesColor(j6.v0(i10, f6Var));
+        h2Var.setCursorColor(j6.v0(i10, e6Var));
+        h2Var.setHandlesColor(j6.v0(i10, e6Var));
         h2Var.setCursorWidth(1.5f);
         h2Var.setInputType(h2Var.getInputType() | 176);
         h2Var.setSingleLine(true);
@@ -139,7 +138,7 @@ public abstract class i extends ScrollView {
             eaVar.c = false;
             AnimatorSet animatorSet = new AnimatorSet();
             eaVar.b = animatorSet;
-            animatorSet.addListener(new qk0(22, eaVar, m30Var));
+            animatorSet.addListener(new al0(22, eaVar, m30Var));
             ArrayList arrayList = eaVar.h;
             arrayList.clear();
             arrayList.add(m30Var);
@@ -331,8 +330,8 @@ public abstract class i extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = w1.C(20.0f, this.H, rect.top);
-        rect.bottom = w1.C(50.0f, this.H, rect.bottom);
+        rect.top = q.D(20.0f, this.H, rect.top);
+        rect.bottom = q.D(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

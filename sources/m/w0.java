@@ -19,9 +19,9 @@ import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import v7.v7;
-import w7.q7;
+import w7.r7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -64,12 +64,12 @@ public final class w0 {
         }
         CharSequence text = textView.getText();
         if (i10 >= 30) {
-            t0.b.a(editorInfo, text);
+            t0.a.a(editorInfo, text);
             return;
         }
         text.getClass();
         if (i10 >= 30) {
-            t0.b.a(editorInfo, text);
+            t0.a.a(editorInfo, text);
             return;
         }
         int i11 = editorInfo.initialSelStart;
@@ -80,16 +80,16 @@ public final class w0 {
         }
         int length = text.length();
         if (i13 < 0 || i11 > length) {
-            t0.c.c(editorInfo, null, 0, 0);
+            t0.b.c(editorInfo, null, 0, 0);
             return;
         }
         int i14 = editorInfo.inputType & 4095;
         if (i14 == 129 || i14 == 225 || i14 == 18) {
-            t0.c.c(editorInfo, null, 0, 0);
+            t0.b.c(editorInfo, null, 0, 0);
             return;
         }
         if (length <= 2048) {
-            t0.c.c(editorInfo, text, i13, i11);
+            t0.b.c(editorInfo, text, i13, i11);
             return;
         }
         int i15 = i11 - i13;
@@ -106,7 +106,7 @@ public final class w0 {
             min--;
         }
         int i19 = min2 + i16;
-        t0.c.c(editorInfo, i16 != i15 ? TextUtils.concat(text.subSequence(i18, i18 + min2), text.subSequence(i11, min + i11)) : text.subSequence(i18, i19 + min + i18), min2, i19);
+        t0.b.c(editorInfo, i16 != i15 ? TextUtils.concat(text.subSequence(i18, i18 + min2), text.subSequence(i11, min + i11)) : text.subSequence(i18, i19 + min + i18), min2, i19);
     }
 
     public final void a(Drawable drawable, c3 c3Var) {
@@ -492,10 +492,10 @@ public final class w0 {
                 dimensionPixelSize3 = obtainStyledAttributes2.getDimensionPixelSize(19, -1);
                 obtainStyledAttributes2.recycle();
                 if (dimensionPixelSize != -1) {
-                    q7.b(dimensionPixelSize, textView);
+                    r7.b(dimensionPixelSize, textView);
                 }
                 if (dimensionPixelSize2 != -1) {
-                    q7.c(dimensionPixelSize2, textView);
+                    r7.c(dimensionPixelSize2, textView);
                 }
                 if (dimensionPixelSize3 == -1) {
                     if (dimensionPixelSize3 < 0) {
@@ -679,7 +679,7 @@ public final class w0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(hg.k0.i(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(hg.k0.h(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = g1Var.j.getResources().getDisplayMetrics();
             g1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);

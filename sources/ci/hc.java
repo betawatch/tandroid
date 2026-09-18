@@ -1,8 +1,8 @@
 package ci;
 
-import org.telegram.ui.o01;
+import org.telegram.ui.m01;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class hc extends jc {
     public final /* synthetic */ int g;
@@ -17,9 +17,9 @@ public final class hc extends jc {
     public final void e() {
         switch (this.g) {
             case 0:
-                o01 o01Var = (o01) this.h;
-                o01Var.Q = false;
-                o01Var.invalidate();
+                m01 m01Var = (m01) this.h;
+                m01Var.Q = false;
+                m01Var.invalidate();
                 break;
             case 1:
                 ai.f6 t10 = ((ai.jc) this.h).t();
@@ -29,8 +29,8 @@ public final class hc extends jc {
                 }
                 break;
             default:
-                org.telegram.ui.Components.u9 u9Var = (org.telegram.ui.Components.u9) this.h;
-                u9Var.post(new androidx.fragment.app.a0(u9Var, 27));
+                org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) this.h;
+                w9Var.post(new androidx.fragment.app.a0(w9Var, 27));
                 break;
         }
     }
@@ -39,9 +39,9 @@ public final class hc extends jc {
     public final void f(boolean z10) {
         switch (this.g) {
             case 0:
-                o01 o01Var = (o01) this.h;
-                o01Var.Q = true;
-                o01Var.invalidate();
+                m01 m01Var = (m01) this.h;
+                m01Var.Q = true;
+                m01Var.invalidate();
                 break;
             case 1:
                 ai.f6 t10 = ((ai.jc) this.h).t();
@@ -56,7 +56,7 @@ public final class hc extends jc {
                 }
                 break;
             default:
-                ((org.telegram.ui.Components.u9) this.h).setVisibility(0);
+                ((org.telegram.ui.Components.w9) this.h).setVisibility(0);
                 break;
         }
     }

@@ -14,22 +14,23 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.h6;
+import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.e10;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.bt;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.zs;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class u1 extends ll0 {
+public abstract class u1 extends vl0 {
     public int E;
     public int F;
     public ArrayList G;
@@ -49,7 +50,7 @@ public abstract class u1 extends ll0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -107,7 +108,7 @@ public abstract class u1 extends ll0 {
         }
         Timer timer2 = new Timer();
         this.n = timer2;
-        timer2.schedule(new s1((bt) this, str, 0), 200L, 300L);
+        timer2.schedule(new s1((zs) this, str, 0), 200L, 300L);
     }
 
     @Override // s4.h0
@@ -155,15 +156,15 @@ public abstract class u1 extends ll0 {
         View view = c1Var.a;
         if (i11 != 0) {
             if (i11 == 1) {
-                u3 u3Var = (u3) view;
+                v3 v3Var = (v3) view;
                 if (i10 == this.J) {
-                    u3Var.setText(LocaleController.getString(R.string.InviteToTelegramShort));
+                    v3Var.setText(LocaleController.getString(R.string.InviteToTelegramShort));
                     return;
                 } else if (E(i10) == null) {
-                    u3Var.setText(LocaleController.getString(R.string.GlobalSearch));
+                    v3Var.setText(LocaleController.getString(R.string.GlobalSearch));
                     return;
                 } else {
-                    u3Var.setText(LocaleController.getString(R.string.PhoneNumberSearch));
+                    v3Var.setText(LocaleController.getString(R.string.PhoneNumberSearch));
                     return;
                 }
             }
@@ -172,7 +173,7 @@ public abstract class u1 extends ll0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((h6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), org.telegram.messenger.w1.j(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
+                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), wh.g(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);
@@ -221,12 +222,12 @@ public abstract class u1 extends ll0 {
                         charSequence = charSequence4;
                         if (startsWith) {
                             charSequence2 = charSequence4;
-                            h6 h6Var = (h6) view;
+                            i6 i6Var = (i6) view;
                             if (z10) {
                                 charSequence3 = LocaleController.getString(R.string.SavedMessages);
                             }
-                            h6Var.t(tLObject, null, charSequence3, charSequence2, false, z10);
-                            h6Var.s(this.h.h(j10) >= 0, false);
+                            i6Var.t(tLObject, null, charSequence3, charSequence2, false, z10);
+                            i6Var.s(this.h.h(j10) >= 0, false);
                         }
                     }
                 }
@@ -259,11 +260,11 @@ public abstract class u1 extends ll0 {
             }
             charSequence2 = charSequence3;
             charSequence3 = charSequence;
-            h6 h6Var2 = (h6) view;
+            i6 i6Var2 = (i6) view;
             if (z10) {
             }
-            h6Var2.t(tLObject, null, charSequence3, charSequence2, false, z10);
-            h6Var2.s(this.h.h(j10) >= 0, false);
+            i6Var2.t(tLObject, null, charSequence3, charSequence2, false, z10);
+            i6Var2.s(this.h.h(j10) >= 0, false);
         }
     }
 
@@ -272,19 +273,19 @@ public abstract class u1 extends ll0 {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            h6 h6Var = new h6(context, null);
-            h6Var.M0 = true;
-            h6Var.E0 = true;
-            view = h6Var;
+            i6 i6Var = new i6(context, null);
+            i6Var.M0 = true;
+            i6Var.E0 = true;
+            view = i6Var;
         } else if (i10 == 1) {
-            u3 u3Var = new u3(context, 26, null);
-            u3Var.setNoBackground(true);
-            view = u3Var;
+            v3 v3Var = new v3(context, 26, null);
+            v3Var.setNoBackground(true);
+            view = v3Var;
         } else if (i10 == 3) {
-            h6 h6Var2 = new h6(context, null);
-            h6Var2.M0 = true;
-            h6Var2.E0 = true;
-            view = h6Var2;
+            i6 i6Var2 = new i6(context, null);
+            i6Var2.M0 = true;
+            i6Var2.E0 = true;
+            view = i6Var2;
         } else if (i10 == 4) {
             View knVar = new kn(context, 7);
             knVar.setId(9);
@@ -299,6 +300,6 @@ public abstract class u1 extends ll0 {
             t00Var.setBackgroundColor(j6.w0(null, j6.d6, false));
             view = t00Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

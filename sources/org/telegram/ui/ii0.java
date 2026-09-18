@@ -1,45 +1,58 @@
 package org.telegram.ui;
 
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ii0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dj0 b;
+    public final /* synthetic */ cj0 b;
+    public final /* synthetic */ EditText c;
 
-    public /* synthetic */ ii0(dj0 dj0Var, int i10) {
+    public /* synthetic */ ii0(cj0 cj0Var, EditText editText, int i10) {
         this.a = i10;
-        this.b = dj0Var;
+        this.b = cj0Var;
+        this.c = editText;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 1:
-                dj0 dj0Var = this.b;
-                dj0Var.getClass();
-                vh.g.f(false);
-                vh.g gVar = dj0Var.i0;
-                if (gVar != null) {
-                    gVar.b(dj0Var.F);
+                cj0 cj0Var = this.b;
+                if (!cj0Var.p0) {
+                    try {
+                        Window window = cj0Var.getWindow();
+                        WindowManager.LayoutParams attributes = window.getAttributes();
+                        attributes.flags &= -131073;
+                        window.setAttributes(attributes);
+                        cj0Var.p0 = true;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
                 }
-                AndroidUtilities.runOnUIThread(new ii0(dj0Var, 0));
-                break;
-            case 2:
-                vh.g.f(false);
-                dj0 dj0Var2 = this.b;
-                vh.g gVar2 = dj0Var2.i0;
-                if (gVar2 != null) {
-                    gVar2.b(dj0Var2.F);
-                }
-                AndroidUtilities.runOnUIThread(new ii0(dj0Var2, 3));
+                AndroidUtilities.runOnUIThread(new ii0(cj0Var, this.c, 1), 100L);
                 break;
             default:
-                super/*android.app.Dialog*/.dismiss();
+                cj0 cj0Var2 = this.b;
+                int[] iArr = cj0Var2.o0;
+                AndroidUtilities.showKeyboard(this.c);
+                org.telegram.ui.Components.ug ugVar = cj0Var2.W;
+                if (ugVar != null) {
+                    ugVar.getLocationOnScreen(iArr);
+                    int i10 = iArr[0];
+                    int width = cj0Var2.W.getWidth();
+                    org.telegram.ui.Components.ug ugVar2 = cj0Var2.W;
+                    ugVar2.getHeight();
+                    iArr[0] = org.telegram.messenger.wh.D(6.0f, width - ugVar2.m(), i10);
+                    cj0Var2.X.setScaleX(cj0Var2.W.getScaleX());
+                    cj0Var2.X.setScaleY(cj0Var2.W.getScaleY());
+                    break;
+                }
                 break;
         }
     }

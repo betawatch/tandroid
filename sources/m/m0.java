@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -48,7 +48,7 @@ public final class m0 extends d2 implements o0 {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
-        q();
+        r();
         xVar.setInputMethodMode(2);
         h();
         r1 r1Var = this.c;
@@ -79,7 +79,7 @@ public final class m0 extends d2 implements o0 {
         this.T = (j0) listAdapter;
     }
 
-    public final void q() {
+    public final void r() {
         int i10;
         p0 p0Var = this.W;
         Rect rect = p0Var.n;
@@ -103,11 +103,11 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            p(Math.max(a2, (width - paddingLeft) - paddingRight));
+            q(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            p((width - paddingLeft) - paddingRight);
+            q((width - paddingLeft) - paddingRight);
         } else {
-            p(i11);
+            q(i11);
         }
         this.f = s3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }

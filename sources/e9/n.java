@@ -8,11 +8,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import v7.s6;
-import w7.i9;
-import w7.l8;
+import w7.j9;
+import w7.m8;
 import z7.lg;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry2 : dVar2.entrySet()) {
-                        if (l8.a(obj, entry2.getValue())) {
+                        if (m8.a(obj, entry2.getValue())) {
                             dVar2.remove(entry2.getKey());
                             return true;
                         }
@@ -156,7 +156,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry3 : dVar3.entrySet()) {
-                        if (i9.a(obj, entry3.getValue())) {
+                        if (j9.a(obj, entry3.getValue())) {
                             dVar3.remove(entry3.getKey());
                             return true;
                         }

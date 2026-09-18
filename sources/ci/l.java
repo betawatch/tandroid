@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class l extends Drawable {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class l extends Drawable {
     public final k c;
     public final k d;
     public boolean e;
-    public final org.telegram.ui.Components.c6 f;
+    public final org.telegram.ui.Components.e6 f;
     public final Path g;
     public final int h;
     public float i;
@@ -43,7 +43,7 @@ public final class l extends Drawable {
         this.e = false;
         androidx.fragment.app.a0 a0Var = new androidx.fragment.app.a0(this, 6);
         qr qrVar = qr.h;
-        this.f = new org.telegram.ui.Components.c6(a0Var, 350L, qrVar, 0);
+        this.f = new org.telegram.ui.Components.e6(a0Var, 350L, qrVar, 0);
         this.g = new Path();
         this.i = 21.0f;
         this.h = i10;

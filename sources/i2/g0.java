@@ -16,18 +16,18 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.g3;
-import org.telegram.ui.Cells.i3;
+import org.telegram.ui.Cells.h3;
+import org.telegram.ui.Cells.j3;
 import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.Components.voip.p2;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.voip.x2;
-import org.telegram.ui.bo;
-import org.telegram.ui.fg1;
-import w7.x5;
+import org.telegram.ui.dg1;
+import org.telegram.ui.zn;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -51,9 +51,9 @@ public final /* synthetic */ class g0 implements Runnable {
                     throw new RuntimeException(e);
                 }
             case 1:
-                g3 g3Var = ((i3) this.b).b;
-                g3Var.requestFocus();
-                AndroidUtilities.showKeyboard(g3Var);
+                h3 h3Var = ((j3) this.b).b;
+                h3Var.requestFocus();
+                AndroidUtilities.showKeyboard(h3Var);
                 return;
             case 2:
                 AndroidUtilities.showKeyboard(((ii.x) this.b).e0.b);
@@ -82,10 +82,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 fVar.f.d();
                 return;
             case 8:
-                k2.g0 g0Var = (k2.g0) this.b;
-                if (g0Var.k0 >= 300000) {
-                    g0Var.t.p();
-                    g0Var.k0 = 0L;
+                k2.f0 f0Var = (k2.f0) this.b;
+                if (f0Var.k0 >= 300000) {
+                    f0Var.t.o();
+                    f0Var.k0 = 0L;
                     return;
                 }
                 return;
@@ -109,9 +109,9 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (dVar.c) {
                     return;
                 }
-                n2.g gVar = dVar.b;
-                if (gVar != null) {
-                    gVar.a(dVar.a);
+                n2.h hVar = dVar.b;
+                if (hVar != null) {
+                    hVar.a(dVar.a);
                 }
                 dVar.d.x.remove(dVar);
                 dVar.c = true;
@@ -120,23 +120,23 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((n2.b) this.b).a(null);
                 return;
             case 14:
-                fg1 fg1Var = (fg1) this.b;
-                if (fg1Var.getParentLayout() != null) {
-                    fg1Var.H = true;
+                dg1 dg1Var = (dg1) this.b;
+                if (dg1Var.getParentLayout() != null) {
+                    dg1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", fg1Var.a);
-                    bo boVar = new bo(bundle);
-                    boVar.ja = true;
-                    fg1Var.presentFragment(boVar);
+                    bundle.putLong("chat_id", dg1Var.a);
+                    zn znVar = new zn(bundle);
+                    znVar.ja = true;
+                    dg1Var.presentFragment(znVar);
                     return;
                 }
                 return;
             case 15:
-                ni.d dVar2 = (ni.d) this.b;
-                AndroidUtilities.runOnUIThread(new ni.c(dVar2.a, dVar2.b, i10), 500L);
+                ((ka.c) this.b).Z();
                 return;
             case 16:
-                ((a4.m) this.b).w0();
+                oi.d dVar2 = (oi.d) this.b;
+                AndroidUtilities.runOnUIThread(new oi.c(dVar2.a, dVar2.b, i10), 500L);
                 return;
             case 17:
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);
@@ -196,7 +196,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     i11++;
                 }
                 for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                    h2Var.addView((View) arrayList2.get(i13), x5.t(-2, -2, 1, 4, 0, 0, 4));
+                    h2Var.addView((View) arrayList2.get(i13), y5.t(-2, -2, 1, 4, 0, 0, 4));
                 }
                 for (int i14 = 0; i14 < arrayList.size(); i14++) {
                     h2Var.removeView((View) arrayList.get(i14));

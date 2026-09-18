@@ -1,5 +1,6 @@
 package yc;
 
+import c5.m;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -18,12 +19,11 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
-import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class d {
-    public final ia a;
+    public final m a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -37,9 +37,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, ia iaVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, m mVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = iaVar;
+        this.a = mVar;
         this.c = new BufferedInputStream(inputStream, 8192);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -140,7 +140,7 @@ public final class d {
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        ia iaVar = this.a;
+        m mVar = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -189,7 +189,7 @@ public final class d {
                                 this.i.put("remote-addr", str);
                                 this.i.put("http-client-ip", str);
                             }
-                            int b10 = w.f.b((String) hashMap2.get("method"));
+                            int b10 = t8.b.b((String) hashMap2.get("method"));
                             this.g = b10;
                             if (b10 == 0) {
                                 throw new h("BAD REQUEST: Syntax error. HTTP verb " + ((String) hashMap2.get("method")) + " unhandled.");
@@ -212,7 +212,7 @@ public final class d {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
                             i.d(e);
-                            iaVar.a();
+                            mVar.a();
                         } catch (SSLException e7) {
                             throw e7;
                         } catch (IOException unused) {
@@ -224,18 +224,18 @@ public final class d {
                         i.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        iaVar.a();
+                        mVar.a();
                     }
                 } catch (SSLException e11) {
                     i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    iaVar.a();
+                    mVar.a();
                 } catch (IOException e12) {
                     i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    iaVar.a();
+                    mVar.a();
                 }
             } catch (SocketException e13) {
                 throw e13;
@@ -244,7 +244,7 @@ public final class d {
             }
         } catch (Throwable th2) {
             i.d(null);
-            iaVar.a();
+            mVar.a();
             throw th2;
         }
     }

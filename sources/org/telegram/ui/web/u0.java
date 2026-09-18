@@ -10,16 +10,14 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.b6;
-import org.telegram.ui.Cells.l7;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.gr0;
-import org.telegram.ui.Components.pk0;
-import org.telegram.ui.ab1;
-import org.telegram.ui.ro;
-import qg.x2;
+import org.telegram.ui.Components.dn0;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.zk0;
+import org.telegram.ui.po;
+import org.telegram.ui.za1;
+import qg.u2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,16 +36,16 @@ public final /* synthetic */ class u0 implements Runnable {
                 return;
             case 1:
                 g1 g1Var = (g1) this.b;
-                Utilities.searchQueue.postRunnable(new gr0(g1Var, new ArrayList(g1Var.h.f), g1Var.h.r));
+                Utilities.searchQueue.postRunnable(new dn0(g1Var, new ArrayList(g1Var.h.f), g1Var.h.r, 22));
                 return;
             case 2:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
                 return;
             case 3:
-                ((org.telegram.ui.Cells.n1) this.b).invalidateSelf();
+                ((org.telegram.ui.Cells.o1) this.b).invalidateSelf();
                 return;
             case 4:
-                z1 z1Var = (z1) this.b;
+                a2 a2Var = (a2) this.b;
                 File databasePath = ApplicationLoader.applicationContext.getDatabasePath("webview.db");
                 long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
                 File databasePath2 = ApplicationLoader.applicationContext.getDatabasePath("webviewCache.db");
@@ -56,14 +54,14 @@ public final /* synthetic */ class u0 implements Runnable {
                 }
                 File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
                 if (file.exists()) {
-                    length += z1.Z(file, Boolean.FALSE);
+                    length += a2.Z(file, Boolean.FALSE);
                 }
                 File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
                 if (file2.exists()) {
-                    length += z1.Z(file2, null);
+                    length += a2.Z(file2, null);
                 }
                 File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                AndroidUtilities.runOnUIThread(new ro(z1Var, length, file3.exists() ? z1.Z(file3, Boolean.TRUE) : 0L, 1));
+                AndroidUtilities.runOnUIThread(new po(a2Var, length, file3.exists() ? a2.Z(file3, Boolean.TRUE) : 0L, 1));
                 return;
             case 5:
                 ((boolean[]) this.b)[0] = true;
@@ -75,43 +73,43 @@ public final /* synthetic */ class u0 implements Runnable {
                 ((p4.g) this.b).n = -1;
                 return;
             case 8:
-                ((pk0) this.b).b();
+                ((zk0) this.b).b();
                 return;
             case 9:
-                k2.u uVar = ((pg.p0) this.b).b.a;
-                if (uVar != null) {
-                    uVar.W();
+                n2.e eVar = ((pg.r0) this.b).b.a;
+                if (eVar != null) {
+                    eVar.t();
                     return;
                 }
                 return;
             case 10:
-                pg.q0 q0Var = ((pg.p0) this.b).b;
-                if (q0Var.d == null) {
-                    q0Var.L = null;
+                pg.s0 s0Var = ((pg.r0) this.b).b;
+                if (s0Var.d == null) {
+                    s0Var.L = null;
                     return;
                 }
-                int currentColor = q0Var.f.getCurrentColor();
-                q0Var.l(q0Var.b, false, false);
-                a5.a d = q0Var.d(q0Var.b, currentColor, new RectF(q0Var.h));
-                q0Var.b();
-                pg.f1 f1Var = q0Var.d;
+                int currentColor = s0Var.f.getCurrentColor();
+                s0Var.l(s0Var.b, false, false);
+                a5.a d = s0Var.d(s0Var.b, currentColor, new RectF(s0Var.h));
+                s0Var.b();
+                pg.h1 h1Var = s0Var.d;
                 RectF rectF = new RectF();
-                q0Var.h = rectF;
-                f1Var.a(rectF);
-                q0Var.p(q0Var.e(f1Var, currentColor, new RectF(q0Var.h)), false);
-                q0Var.p(d, false);
-                q0Var.e(f1Var, currentColor, null);
-                q0Var.d = null;
-                q0Var.J = 0.0f;
-                q0Var.L = null;
+                s0Var.h = rectF;
+                h1Var.a(rectF);
+                s0Var.p(s0Var.e(h1Var, currentColor, new RectF(s0Var.h)), false);
+                s0Var.p(d, false);
+                s0Var.e(h1Var, currentColor, null);
+                s0Var.d = null;
+                s0Var.J = 0.0f;
+                s0Var.L = null;
                 return;
             case 11:
-                ((pg.a1) ((l7) this.b).b).y.a.a();
+                ((pg.c1) ((p8.b) this.b).b).y.a.a();
                 return;
             case 12:
-                pg.s1 s1Var = ((pg.t1) this.b).a;
-                if (s1Var != null) {
-                    s1Var.e();
+                pg.u1 u1Var = ((pg.v1) this.b).a;
+                if (u1Var != null) {
+                    u1Var.e();
                     return;
                 }
                 return;
@@ -137,18 +135,18 @@ public final /* synthetic */ class u0 implements Runnable {
                 ((View) this.b).performClick();
                 return;
             case 16:
-                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((qg.n2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((qg.k2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
                 return;
             case 17:
-                AndroidUtilities.showKeyboard(((x2) this.b).q0);
+                AndroidUtilities.showKeyboard(((u2) this.b).q0);
                 return;
             case 18:
                 AndroidUtilities.showKeyboard(((qh.c) this.b).a);
                 return;
             case 19:
-                qh.c cVar2 = (qh.c) ((b6) this.b).d;
-                org.telegram.ui.Cells.t1 t1Var = cVar2.n;
-                if (t1Var == null || t1Var.getDelegate() == null) {
+                qh.c cVar2 = (qh.c) ((org.telegram.ui.Cells.c6) this.b).d;
+                org.telegram.ui.Cells.u1 u1Var2 = cVar2.n;
+                if (u1Var2 == null || u1Var2.getDelegate() == null) {
                     return;
                 }
                 cVar2.n.getDelegate().D1(cVar2.n, false);
@@ -183,19 +181,19 @@ public final /* synthetic */ class u0 implements Runnable {
                 }
             case 23:
                 com.google.firebase.messaging.t tVar = (com.google.firebase.messaging.t) this.b;
-                ((s5.g) ((t5.c) tVar.e)).f(new r5.d(tVar, 2));
+                ((s5.h) ((t5.c) tVar.e)).f(new r5.d(tVar, 2));
                 return;
             case 24:
-                ((cf.c) this.b).y();
+                ((cf.c) this.b).z();
                 return;
             case 25:
                 rg.j0 j0Var = ((rg.c0) this.b).c;
-                j0Var.n.presentFragment(ab1.d0(j0Var.s1(), true));
+                j0Var.n.presentFragment(za1.d0(j0Var.s1(), true));
                 return;
             case 26:
-                bj0 bj0Var = ((rg.p0) this.b).y;
-                bj0Var.getAnimatedDrawable().N(0, true, false);
-                bj0Var.d();
+                lj0 lj0Var = ((rg.p0) this.b).y;
+                lj0Var.getAnimatedDrawable().N(0, true, false);
+                lj0Var.d();
                 return;
             case 27:
                 ((rg.v0) this.b).b.y();

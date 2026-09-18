@@ -1,81 +1,59 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class hu0 extends s4.v {
-    public final /* synthetic */ ju0 d;
+public final class hu0 extends FrameLayout {
+    public final org.telegram.ui.Cells.i6 a;
 
-    public hu0(ju0 ju0Var) {
-        this.d = ju0Var;
+    public hu0(int i10, Context context, boolean z10, org.telegram.ui.ActionBar.e6 e6Var, xq0 xq0Var) {
+        super(context);
+        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, e6Var);
+        this.a = i6Var;
+        i6Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var), 2, -1));
+        addView(i6Var, w7.y5.c(-2.0f, -1));
+        View view = new View(context);
+        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
+        int i11 = org.telegram.ui.ActionBar.j6.d6;
+        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.j6.l1(0.4f, org.telegram.ui.ActionBar.j6.v0(i11, e6Var)), org.telegram.ui.ActionBar.j6.v0(i11, e6Var)}));
+        addView(view, w7.y5.c(60.0f, -1));
+        ci.d dVar = new ci.d(context, e6Var, true);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(z10 ? R.string.MoreSimilarBotsButton : R.string.MoreSimilarButton));
+        spannableStringBuilder.append((CharSequence) " ");
+        SpannableString spannableString = new SpannableString("l");
+        spannableString.setSpan(new oq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) spannableString);
+        dVar.g(spannableStringBuilder, false, true);
+        addView(dVar, w7.y5.d(-1, 48.0f, 48, 14.0f, 38.0f, 14.0f, 0.0f));
+        dVar.setOnClickListener(new g80(xq0Var, 17));
+        l90 l90Var = new l90(context, e6Var);
+        l90Var.setTextSize(1, 13.0f);
+        l90Var.setTextAlignment(4);
+        l90Var.setGravity(17);
+        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var));
+        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.n6, e6Var));
+        l90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
+        SpannableStringBuilder premiumText = AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.MoreSimilarBotsText : R.string.MoreSimilarText), new xq0(xq0Var, 4));
+        SpannableString spannableString2 = new SpannableString("" + MessagesController.getInstance(i10).recommendedChannelsLimitPremium);
+        spannableString2.setSpan(new u51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+        l90Var.setText(AndroidUtilities.replaceCharSequence("%s", premiumText, spannableString2));
+        addView(l90Var, w7.y5.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        c1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        SavedMessagesController.SavedDialog r10;
-        int l4 = s4.v.l(0, 0);
-        zu0 zu0Var = this.d.x;
-        return (!zu0Var.C1 || recyclerView.getAdapter() == zu0Var.S || (r10 = r(c1Var)) == null || !r10.pinned) ? l4 : s4.v.l(3, 0);
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        ju0 ju0Var = this.d;
-        ArrayList arrayList = ju0Var.f;
-        zu0 zu0Var = ju0Var.x;
-        if (!zu0Var.C1 || recyclerView.getAdapter() == zu0Var.S) {
-            return false;
-        }
-        SavedMessagesController.SavedDialog r10 = r(c1Var);
-        SavedMessagesController.SavedDialog r11 = r(c1Var2);
-        if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        arrayList.remove(b10);
-        arrayList.add(b11, r10);
-        ju0Var.p(b10, b11);
-        ju0Var.h = true;
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        rt0 rt0Var;
-        ju0 ju0Var = this.d;
-        kq0 kq0Var = ju0Var.n;
-        if (c1Var != null && (rt0Var = ju0Var.s) != null) {
-            rt0Var.e1(false);
-        }
-        if (i10 == 0) {
-            AndroidUtilities.cancelRunOnUIThread(kq0Var);
-            AndroidUtilities.runOnUIThread(kq0Var, 300L);
-        }
-    }
-
-    public final SavedMessagesController.SavedDialog r(s4.c1 c1Var) {
-        int b10;
-        if (c1Var != null && (b10 = c1Var.b()) >= 0) {
-            ju0 ju0Var = this.d;
-            if (b10 < ju0Var.f.size()) {
-                return (SavedMessagesController.SavedDialog) ju0Var.f.get(b10);
-            }
-        }
-        return null;
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), TLObject.FLAG_30));
     }
 }

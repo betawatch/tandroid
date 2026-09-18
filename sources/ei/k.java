@@ -8,38 +8,38 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wl;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.messenger.wh;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final ImageView a;
     public final TextView b;
     public final TextView c;
 
-    public k(Context context, f6 f6Var, boolean z10) {
+    public k(Context context, e6 e6Var, boolean z10) {
         super(context);
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         int i10 = j6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, x5.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, y5.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, x5.d(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
+        addView(linearLayout, y5.d(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
         TextView textView = new TextView(context);
         this.b = textView;
-        textView.setTextColor(j6.v0(i10, f6Var));
+        textView.setTextColor(j6.v0(i10, e6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 14.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 1), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.t(-1, -2, 55, 0, 0, 0, 1), context);
         this.c = h;
-        wl.n(j6.z6, f6Var, h, 1, 14.0f);
-        linearLayout.addView(h, x5.t(-1, -2, 55, 0, 0, 0, 0));
+        wh.m(j6.z6, e6Var, h, 1, 14.0f);
+        linearLayout.addView(h, y5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
     public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {

@@ -12,7 +12,7 @@ import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class wu extends View {
     public Utilities.Callback2 E;
@@ -31,11 +31,11 @@ public final class wu extends View {
     public final int[] r;
     public final Paint s;
     public final RectF v;
-    public final c6 w;
-    public final c6 x;
-    public final org.telegram.ui.ActionBar.f6 y;
+    public final e6 w;
+    public final e6 x;
+    public final org.telegram.ui.ActionBar.e6 y;
 
-    public wu(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public wu(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.a = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
         this.b = new Drawable[11];
@@ -44,11 +44,11 @@ public final class wu extends View {
         this.s = new Paint(1);
         this.v = new RectF();
         qr qrVar = qr.h;
-        this.w = new c6(this, 125L, qrVar);
-        this.x = new c6(this, 125L, qrVar);
+        this.w = new e6(this, 125L, qrVar);
+        this.x = new e6(this, 125L, qrVar);
         this.F = -1;
         this.G = true;
-        this.y = f6Var;
+        this.y = e6Var;
         this.c = getResources().getDrawable(R.drawable.stickers_back_all);
         this.d = getResources().getDrawable(R.drawable.stickers_back_arrow);
         a();
@@ -56,10 +56,10 @@ public final class wu extends View {
 
     public final void a() {
         int i10 = org.telegram.ui.ActionBar.j6.h5;
-        org.telegram.ui.ActionBar.f6 f6Var = this.y;
-        org.telegram.ui.ActionBar.j6.w1(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), this.c);
-        org.telegram.ui.ActionBar.j6.w1(org.telegram.ui.ActionBar.j6.v0(i10, f6Var), this.d);
-        CompoundEmoji.setPlaceholderColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, f6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.y;
+        org.telegram.ui.ActionBar.j6.w1(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), this.c);
+        org.telegram.ui.ActionBar.j6.w1(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), this.d);
+        CompoundEmoji.setPlaceholderColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Me, e6Var));
     }
 
     public String getEmoji() {
@@ -84,21 +84,21 @@ public final class wu extends View {
         drawable2.draw(canvas);
         if (wuVar.e != null) {
             boolean z11 = wuVar.f;
-            org.telegram.ui.ActionBar.f6 f6Var = wuVar.y;
+            org.telegram.ui.ActionBar.e6 e6Var = wuVar.y;
             int[] iArr = wuVar.n;
-            c6 c6Var = wuVar.w;
+            e6 e6Var2 = wuVar.w;
             Paint paint = wuVar.s;
             Drawable[] drawableArr = wuVar.b;
             RectF rectF = wuVar.v;
             float f7 = 1.0f;
             int i10 = wuVar.a;
             if (!z11) {
-                float d = c6Var.d(iArr[0], false);
+                float d = e6Var2.d(iArr[0], false);
                 int dp3 = AndroidUtilities.dp(5.0f);
                 float f10 = dp3;
                 rectF.set((int) ((i10 * d) + AndroidUtilities.dp((d * 4.0f) + 5.0f)), f10, r3 + i10, dp3 + i10);
                 rectF.inset(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(-2.0f));
-                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var));
+                paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var));
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
                 for (int i11 = 0; i11 < 6; i11++) {
                     Drawable drawable3 = drawableArr[i11];
@@ -116,11 +116,11 @@ public final class wu extends View {
             }
             int i12 = 0;
             while (i12 < 2) {
-                float d10 = (i12 == 0 ? c6Var : wuVar.x).d(iArr[i12], z10);
+                float d10 = (i12 == 0 ? e6Var2 : wuVar.x).d(iArr[i12], z10);
                 float max = Math.max(0.0f, Math.min(f7, -d10));
                 rectF.set((int) ((i10 * (d10 + f7)) + AndroidUtilities.dp((r6 * 4.0f) + (Math.max(0.0f, Math.min(f7, r6)) * 3.0f) + 5.0f)), AndroidUtilities.lerp(((AndroidUtilities.dp(f7) + i10) * i12) + AndroidUtilities.dp(3.0f), (wuVar.getMeasuredHeight() - i10) / 2, max), r6 + i10, r9 + i10);
                 rectF.inset(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(max * (-2.0f)));
-                paint.setColor(org.telegram.ui.ActionBar.j6.l1(AndroidUtilities.lerp(f7, 0.5f, max), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var)));
+                paint.setColor(org.telegram.ui.ActionBar.j6.l1(AndroidUtilities.lerp(f7, 0.5f, max), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, e6Var)));
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
                 int i13 = 0;
                 while (i13 < 5) {

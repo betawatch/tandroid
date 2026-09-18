@@ -1,29 +1,37 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class d9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ org.telegram.ui.Components.c90 b;
-    public final /* synthetic */ String c;
+public final class d9 extends org.telegram.ui.Components.vq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b1;
 
-    public d9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.c90 c90Var, String str) {
-        this.a = atomicBoolean;
-        this.b = c90Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d9(Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.f3 f3Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.b1 = f3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        AtomicBoolean atomicBoolean = this.a;
-        if (atomicBoolean.get()) {
-            return;
+    @Override // org.telegram.ui.Components.vq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", iVar == null ? 1 : iVar.m(), new Object[0]));
+            } else {
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
+            }
+            org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
+            Q.r = false;
+            Q.j();
         }
-        atomicBoolean.set(true);
-        this.b.setText(this.c);
     }
 }

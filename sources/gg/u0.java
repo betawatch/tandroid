@@ -7,28 +7,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Cells.t4;
-import org.telegram.ui.Cells.u3;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.u4;
+import org.telegram.ui.Cells.v3;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class u0 extends c {
     public final Context K;
-    public final f6 L;
+    public final e6 L;
     public boolean M;
 
-    public u0(Context context, f6 f6Var, boolean z10, boolean z11) {
+    public u0(Context context, e6 e6Var, boolean z10, boolean z11) {
         super(z10, z11);
         this.M = false;
         this.K = context;
-        this.L = f6Var;
+        this.L = e6Var;
         new t00(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -93,10 +93,10 @@ public abstract class u0 extends c {
         if (i12 != 0) {
             if (i12 == 1) {
                 if (i10 != 0 || arrayList.isEmpty()) {
-                    ((u3) view).setText(LocaleController.getString(R.string.NearbyVenue));
+                    ((v3) view).setText(LocaleController.getString(R.string.NearbyVenue));
                     return;
                 } else {
-                    ((u3) view).setText(LocaleController.getString(R.string.LocationOnMap));
+                    ((v3) view).setText(LocaleController.getString(R.string.LocationOnMap));
                     return;
                 }
             }
@@ -123,17 +123,17 @@ public abstract class u0 extends c {
             tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i13);
             i11 = 2;
         }
-        t4 t4Var = (t4) view;
+        u4 u4Var = (u4) view;
         if (i10 == h() - 1 || (!this.n && !arrayList.isEmpty() && i10 == arrayList.size())) {
             z10 = false;
         }
-        t4Var.b(tL_messageMediaVenue, i11, z10, false);
+        u4Var.b(tL_messageMediaVenue, i11, z10, false);
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        f6 f6Var = this.L;
+        e6 e6Var = this.L;
         Context context = this.K;
-        return new wk0(i10 == 0 ? new t4(context, f6Var) : new u3(context, f6Var));
+        return new gl0(i10 == 0 ? new u4(context, e6Var) : new v3(context, e6Var));
     }
 }

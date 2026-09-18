@@ -6,7 +6,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a0 implements k0 {
     public final m0 a;
@@ -16,7 +16,7 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean G() {
+    public final boolean H() {
         m0 m0Var = this.a;
         m0Var.o.getClass();
         m0Var.h();
@@ -24,7 +24,7 @@ public final class a0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e M(e eVar) {
+    public final e L(e eVar) {
         m0 m0Var = this.a;
         try {
             g1 g1Var = m0Var.o.M;
@@ -58,7 +58,7 @@ public final class a0 implements k0 {
     public final void x(int i10) {
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.p(i10);
+        m0Var.p.q(i10);
     }
 
     @Override // com.google.android.gms.common.api.internal.k0

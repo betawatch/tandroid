@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -302,7 +302,7 @@ public class r1 extends ListView {
         }
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 10 && this.w == null) {
-            q4 q4Var = new q4(this, 24);
+            q4 q4Var = new q4(this, 25);
             this.w = q4Var;
             post(q4Var);
         }

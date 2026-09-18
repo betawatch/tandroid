@@ -1,136 +1,146 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class in0 extends View {
-    public hn0 a;
-    public final c6 b;
-    public final ch.d c;
-    public zg.p0 d;
-    public boolean e;
-    public final Path f;
-    public final RectF h;
-    public final RectF n;
-    public boolean r;
-    public final /* synthetic */ jn0 s;
+public final class in0 extends vl0 {
+    public final /* synthetic */ jn0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public in0(jn0 jn0Var, Context context) {
-        super(context);
-        this.s = jn0Var;
-        this.b = new c6(this, 0L, 260L, qr.h);
-        this.f = new Path();
-        this.h = new RectF();
-        this.n = new RectF();
-        w7.z5.a(this);
-        ah.c cVar = jn0Var.v;
-        if (cVar != null) {
-            ch.d c10 = cVar.c(this, null, false);
-            c10.o(jn0Var.w);
-            c10.u(AndroidUtilities.dp(5.0f));
-            ch.d n10 = c10.n();
-            n10.q(AndroidUtilities.dp(6.0f));
-            n10.p(AndroidUtilities.dp(4.0f));
-            this.c = n10;
-        }
+    public in0(jn0 jn0Var) {
+        this.c = jn0Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.e == z10) {
+    @Override // org.telegram.ui.Components.vl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 1 || i10 == 2;
+    }
+
+    public final MessageObject E(int i10) {
+        jn0 jn0Var = this.c;
+        int i11 = jn0Var.v;
+        if (i10 >= i11 && i10 < jn0Var.w) {
+            return (MessageObject) jn0Var.e.get(i10 - i11);
+        }
+        int i12 = jn0Var.y;
+        if (i10 < i12 || i10 >= jn0Var.E) {
+            return null;
+        }
+        return (MessageObject) jn0Var.f.get(i10 - i12);
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.c.r;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        jn0 jn0Var = this.c;
+        if (i10 == jn0Var.s || i10 == jn0Var.x) {
+            return 0;
+        }
+        MessageObject E = E(i10);
+        return (E != null && E.isMusic()) ? 2 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        boolean z10;
+        jn0 jn0Var = this.c;
+        org.telegram.ui.p10 p10Var = jn0Var.J;
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view;
+            if (i10 != jn0Var.s) {
+                if (i10 == jn0Var.x) {
+                    v3Var.c(LocaleController.getString(R.string.RecentlyDownloaded), LocaleController.getString(R.string.Settings), new g80(this, 11));
+                    return;
+                }
+                return;
+            }
+            String string = LocaleController.getString(R.string.Downloading);
+            if (!v3Var.getText().equals(string)) {
+                v3Var.c(string, LocaleController.getString(jn0Var.H ? R.string.PauseAll : R.string.ResumeAll), new hn0(this));
+                return;
+            }
+            String string2 = LocaleController.getString(jn0Var.H ? R.string.PauseAll : R.string.ResumeAll);
+            boolean z11 = jn0Var.H;
+            org.telegram.ui.Cells.u3 u3Var = v3Var.b;
+            u3Var.c(string2, true, z11);
+            u3Var.setVisibility(0);
             return;
         }
-        this.e = z10;
-        hn0 hn0Var = this.a;
-        if (hn0Var != null) {
-            hn0Var.p = z10;
-            c6 c6Var = this.b;
-            if (z11) {
-                hn0Var.i = hn0Var.N;
-                hn0Var.g = hn0Var.O;
-                hn0Var.h = hn0Var.P;
-                c6Var.d(0.0f, true);
-            } else {
-                c6Var.d(1.0f, true);
+        MessageObject E = E(i10);
+        if (E != null) {
+            boolean z12 = jn0Var.I.g() && i10 >= jn0Var.v && i10 < jn0Var.w;
+            if (i11 == 1) {
+                fn0 fn0Var = (fn0) view;
+                fn0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                org.telegram.ui.Cells.k7 k7Var = fn0Var.a;
+                int id2 = k7Var.getMessage() == null ? 0 : k7Var.getMessage().getId();
+                k7Var.c(E, true);
+                int id3 = k7Var.getMessage().getId();
+                p10Var.a = k7Var.getMessage().getDialogId();
+                p10Var.b = id3;
+                k7Var.b(jn0Var.I.c(p10Var), id2 == E.getId());
+                z10 = id2 == E.getId();
+                if (k7Var.O == z12) {
+                    return;
+                }
+                k7Var.O = z12;
+                if (!z10) {
+                    k7Var.P = z12 ? 1.0f : 0.0f;
+                }
+                k7Var.invalidate();
+                return;
             }
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.r) {
-            return;
-        }
-        hn0 hn0Var = this.a;
-        if (hn0Var != null) {
-            hn0Var.a();
-        }
-        this.r = true;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.r) {
-            hn0 hn0Var = this.a;
-            if (hn0Var != null) {
-                hn0Var.b();
+            if (i11 == 2) {
+                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
+                int id4 = j7Var.getMessage() == null ? 0 : j7Var.getMessage().getId();
+                j7Var.f(E, true);
+                int id5 = j7Var.getMessage().getId();
+                p10Var.a = j7Var.getMessage().getDialogId();
+                p10Var.b = id5;
+                j7Var.e(jn0Var.I.c(p10Var), id4 == E.getId());
+                z10 = id4 == E.getId();
+                if (j7Var.d0 == z12) {
+                    return;
+                }
+                j7Var.d0 = z12;
+                if (!z10) {
+                    j7Var.e0 = z12 ? 1.0f : 0.0f;
+                }
+                j7Var.invalidate();
             }
-            this.r = false;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        jn0 jn0Var = this.s;
-        Paint paint = jn0Var.x;
-        int width = (getWidth() - this.a.A) / 2;
-        int height = getHeight();
-        hn0 hn0Var = this.a;
-        int i10 = hn0Var.B;
-        int i11 = (height - i10) / 2;
-        ch.d dVar = this.c;
-        if (dVar != null) {
-            Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(width, i11, hn0Var.A + width, i10 + i11);
-            RectF rectF = this.n;
-            rectF.set(rect);
-            RectF rectF2 = this.h;
-            boolean equals = rectF.equals(rectF2);
-            Path path = this.f;
-            if (!equals) {
-                rectF2.set(rectF);
-                zg.q0.h(rectF2, rectF, path);
-            }
-            rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-            rect.right = AndroidUtilities.dp(1.0f) + rect.right;
-            dVar.setBounds(rect);
-            canvas.save();
-            canvas.clipPath(path);
-            dVar.draw(canvas);
-            org.telegram.ui.ActionBar.f6 f6Var = jn0Var.c;
-            paint.setColor((f6Var == null ? !org.telegram.ui.ActionBar.j6.I.q() : !f6Var.a()) ? -1 : 687865855);
-            canvas.drawPath(path, paint);
-            canvas.restore();
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        if (i10 == 0) {
+            frameLayout = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
+        } else if (i10 == 1) {
+            Context context = viewGroup.getContext();
+            fn0 fn0Var = new fn0(context);
+            org.telegram.ui.Cells.k7 k7Var = new org.telegram.ui.Cells.k7(context, 2, null);
+            fn0Var.a = k7Var;
+            k7Var.r.setVisibility(8);
+            fn0Var.addView(k7Var);
+            frameLayout = fn0Var;
+        } else {
+            frameLayout = new gn0(viewGroup.getContext());
         }
-        this.a.d(canvas, width, i11, this.b.d(1.0f, false), 1.0f, false, false, 0.0f);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int dp = AndroidUtilities.dp(8.67f);
-        hn0 hn0Var = this.a;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp + (hn0Var != null ? hn0Var.A : AndroidUtilities.dp(44.33f)), TLObject.FLAG_30), i11);
+        frameLayout.setLayoutParams(new s4.p0(-1, -2));
+        return new gl0(frameLayout);
     }
 }

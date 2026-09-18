@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements e2.h {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class f3 implements e2.h {
                 if (view2 instanceof ci.t4) {
                     p4Var.getClass();
                     int S = RecyclerView.S(view2);
-                    j51 G = p4Var.Y2.G(S);
+                    x51 G = p4Var.Y2.G(S);
                     if (G != null) {
                         ci.t4 t4Var = (ci.t4) view2;
                         t4Var.setPosition(u4Var.b(S));
@@ -111,13 +111,13 @@ public final /* synthetic */ class f3 implements e2.h {
                 ci.g8.P((ci.g8) this.b, (Long) obj);
                 break;
             case 6:
-                ((m4.k1) obj).f((b2.v0) this.b);
+                ((m4.j1) obj).f((b2.v0) this.b);
                 break;
             case 7:
-                ((m4.k1) obj).n((Surface) this.b);
+                ((m4.j1) obj).n((Surface) this.b);
                 break;
             case 8:
-                ((m4.k1) obj).C((b2.n0) this.b);
+                ((m4.j1) obj).C((b2.n0) this.b);
                 break;
             case 9:
                 z3.h hVar = (z3.h) this.b;

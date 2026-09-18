@@ -1,98 +1,39 @@
 package s9;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
-import b5.g;
-import c5.x;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.t;
-import com.google.firebase.messaging.w;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.p3;
-import w9.m;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import tg.r;
+import u4.g;
 import w9.o;
-import w9.r;
+import w9.w;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class c {
-    public final o a;
+public final class c implements Callable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ o b;
+    public final /* synthetic */ da.b c;
 
-    public c(o oVar) {
-        this.a = oVar;
+    public c(boolean z10, o oVar, da.b bVar) {
+        this.a = z10;
+        this.b = oVar;
+        this.c = bVar;
     }
 
-    public final void a(Throwable th2) {
-        if (th2 == null) {
-            Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
-            return;
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        if (!this.a) {
+            return null;
         }
-        m mVar = this.a.f;
-        Thread currentThread = Thread.currentThread();
-        mVar.getClass();
-        long currentTimeMillis = System.currentTimeMillis();
-        t tVar = mVar.e;
-        w wVar = new w(mVar, currentTimeMillis, th2, currentThread);
-        tVar.getClass();
-        tVar.k(new x(wVar, 7));
-    }
-
-    public final void b() {
-        o oVar = this.a;
-        Boolean bool = Boolean.TRUE;
-        r rVar = oVar.b;
-        synchronized (rVar) {
-            rVar.f = false;
-            rVar.g = bool;
-            SharedPreferences.Editor edit = rVar.a.edit();
-            edit.putBoolean("firebase_crashlytics_collection_enabled", true);
-            edit.apply();
-            synchronized (rVar.c) {
-                try {
-                    if (rVar.a()) {
-                        if (!rVar.e) {
-                            rVar.d.trySetResult(null);
-                            rVar.e = true;
-                        }
-                    } else if (rVar.e) {
-                        rVar.d = new TaskCompletionSource();
-                        rVar.e = false;
-                    }
-                } finally {
-                }
-            }
-        }
-    }
-
-    public final void c(String str, String str2) {
-        m mVar = this.a.f;
-        mVar.getClass();
-        try {
-            ((com.google.firebase.messaging.m) mVar.d.d).u(str, str2);
-        } catch (IllegalArgumentException e) {
-            Context context = mVar.a;
-            if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e;
-            }
-            Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
-        }
-    }
-
-    public final void d(String str) {
-        p3 p3Var = this.a.f.d;
-        p3Var.getClass();
-        String b10 = x9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) p3Var.h)) {
-            try {
-                String str2 = (String) ((AtomicMarkableReference) p3Var.h).getReference();
-                if (b10 == null ? str2 == null : b10.equals(str2)) {
-                    return;
-                }
-                ((AtomicMarkableReference) p3Var.h).set(b10, true);
-                ((t) p3Var.b).k(new g(p3Var, 1));
-            } finally {
-            }
-        }
+        o oVar = this.b;
+        ExecutorService executorService = oVar.k;
+        int i10 = 3;
+        g gVar = new g(i10, oVar, this.c);
+        ExecutorService executorService2 = w.a;
+        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+        executorService.execute(new r(gVar, executorService, taskCompletionSource, i10));
+        taskCompletionSource.getTask();
+        return null;
     }
 }

@@ -10,9 +10,9 @@ import v8.f;
 import v8.g;
 import v8.q;
 import v8.r;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class MaskedWallet extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MaskedWallet> CREATOR = new r(13);
@@ -30,18 +30,18 @@ public final class MaskedWallet extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.l(parcel, 2, this.a);
-        e0.l(parcel, 3, this.b);
-        e0.m(parcel, 4, this.c);
-        e0.l(parcel, 5, this.d);
-        e0.k(parcel, 6, this.e, i10);
-        e0.k(parcel, 7, this.f, i10);
-        e0.o(parcel, 8, this.h, i10);
-        e0.o(parcel, 9, this.n, i10);
-        e0.k(parcel, 10, this.r, i10);
-        e0.k(parcel, 11, this.s, i10);
-        e0.o(parcel, 12, this.v, i10);
-        e0.r(parcel, q6);
+        int q6 = f0.q(parcel, 20293);
+        f0.l(parcel, 2, this.a);
+        f0.l(parcel, 3, this.b);
+        f0.m(parcel, 4, this.c);
+        f0.l(parcel, 5, this.d);
+        f0.k(parcel, 6, this.e, i10);
+        f0.k(parcel, 7, this.f, i10);
+        f0.o(parcel, 8, this.h, i10);
+        f0.o(parcel, 9, this.n, i10);
+        f0.k(parcel, 10, this.r, i10);
+        f0.k(parcel, 11, this.s, i10);
+        f0.o(parcel, 12, this.v, i10);
+        f0.r(parcel, q6);
     }
 }

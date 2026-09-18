@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class q extends db.u {
     public static final p b = new p(new q(db.t.b), 0);
@@ -21,7 +21,7 @@ public final class q extends db.u {
             aVar.t();
             return null;
         }
-        throw new db.j("Expecting number, got: " + hg.k0.E(x10) + "; at path " + aVar.h());
+        throw new db.j("Expecting number, got: " + hg.k0.D(x10) + "; at path " + aVar.h());
     }
 
     @Override // db.u

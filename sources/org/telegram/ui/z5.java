@@ -1,91 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
 import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z5 extends og.b {
-    public final /* synthetic */ b6 d;
+public final class z5 extends og.a {
+    public final CacheByChatsController.KeepMediaException c;
 
-    public z5(b6 b6Var) {
-        this.d = b6Var;
+    public z5(int i10, CacheByChatsController.KeepMediaException keepMediaException) {
+        super(i10, false);
+        this.c = keepMediaException;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 1 || i10 == 2 || i10 == 4;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return ((a6) this.d.c.get(i10)).a;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        String str;
-        b6 b6Var = this.d;
-        ArrayList arrayList = b6Var.c;
-        if (((a6) arrayList.get(i10)).a == 2) {
-            org.telegram.ui.Cells.ab abVar = (org.telegram.ui.Cells.ab) c1Var.a;
-            CacheByChatsController.KeepMediaException keepMediaException = ((a6) arrayList.get(i10)).c;
-            TLObject userOrChat = b6Var.getMessagesController().getUserOrChat(keepMediaException.dialogId);
-            if (userOrChat instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) userOrChat;
-                str = user.self ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name);
-            } else {
-                str = userOrChat instanceof TLRPC.Chat ? ((TLRPC.Chat) userOrChat).title : null;
-            }
-            boolean z10 = true;
-            abVar.setSelfAsSavedMessages(true);
-            String keepMediaString = CacheByChatsController.getKeepMediaString(keepMediaException.keepMedia);
-            if (i10 != arrayList.size() - 1 && ((a6) arrayList.get(i10 + 1)).a != 2) {
-                z10 = false;
-            }
-            abVar.d(userOrChat, str, keepMediaString, z10);
+    public final boolean equals(Object obj) {
+        CacheByChatsController.KeepMediaException keepMediaException;
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        View view2 = null;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                View abVar = new org.telegram.ui.Cells.ab(4, 0, viewGroup.getContext(), null, false, false);
-                abVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                view2 = abVar;
-            } else if (i10 == 3) {
-                view = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.p6) null);
-            } else if (i10 == 4) {
-                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-                r8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                r8Var.e(-1, org.telegram.ui.ActionBar.j6.p7);
-                r8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                view = r8Var;
-            }
-            return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
+        if (obj == null || z5.class != obj.getClass()) {
+            return false;
         }
-        org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-        r8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
-        r8Var2.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
-        r8Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        view = r8Var2;
-        view2 = view;
-        return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
+        z5 z5Var = (z5) obj;
+        if (this.a != z5Var.a) {
+            return false;
+        }
+        CacheByChatsController.KeepMediaException keepMediaException2 = this.c;
+        return keepMediaException2 == null || (keepMediaException = z5Var.c) == null || keepMediaException2.dialogId == keepMediaException.dialogId;
     }
 }

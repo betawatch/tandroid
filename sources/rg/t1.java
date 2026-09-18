@@ -9,10 +9,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.zd;
+import org.telegram.ui.yd;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public long a;
@@ -80,8 +79,8 @@ public final class t1 {
                 if (j10 < 200) {
                     f10 = Utilities.clamp(1.0f - (j10 / 150.0f), 1.0f, 0.0f);
                     f11 = this.o;
-                    if (f11 >= 1.0f || zd.b != 1.0f) {
-                        float interpolation = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * zd.b;
+                    if (f11 >= 1.0f || yd.b != 1.0f) {
+                        float interpolation = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * yd.b;
                         canvas.scale(interpolation, interpolation, 0.0f, 0.0f);
                     }
                     if (u1Var.f[this.l]) {
@@ -106,7 +105,7 @@ public final class t1 {
             f11 = this.o;
             if (f11 >= 1.0f) {
             }
-            float interpolation2 = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * zd.b;
+            float interpolation2 = AndroidUtilities.overshootInterpolator.getInterpolation(f11) * yd.b;
             canvas.scale(interpolation2, interpolation2, 0.0f, 0.0f);
             if (u1Var.f[this.l]) {
             }
@@ -206,18 +205,18 @@ public final class t1 {
             if (u1Var.J) {
                 float width = rectF.width();
                 float f18 = u1Var.j;
-                float z10 = e2.z(width, f18, p6.c(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f18);
-                float c10 = p6.c(Utilities.fastRandom, 360);
+                float z10 = e2.z(width, f18, org.telegram.ui.Cells.c1.d(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f18);
+                float d = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 360);
                 if (!u1Var.f[this.l] || this.q) {
                     f11 = 0.0f;
                 } else {
                     z10 = Math.min(z10, AndroidUtilities.dp(10.0f));
                     f11 = AndroidUtilities.dp(30.0f) + 0.0f;
                 }
-                double d = z10;
-                double d10 = c10;
-                this.d = rectF.centerX() + 0.0f + ((float) (Math.sin(Math.toRadians(d10)) * d));
-                this.e = rectF.centerY() + f11 + u1Var.k + ((float) (Math.cos(Math.toRadians(d10)) * d));
+                double d10 = z10;
+                double d11 = d;
+                this.d = rectF.centerX() + 0.0f + ((float) (Math.sin(Math.toRadians(d11)) * d10));
+                this.e = rectF.centerY() + f11 + u1Var.k + ((float) (Math.cos(Math.toRadians(d11)) * d10));
             } else {
                 this.d = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
                 this.e = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;

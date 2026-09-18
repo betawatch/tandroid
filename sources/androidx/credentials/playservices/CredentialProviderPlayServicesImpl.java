@@ -28,16 +28,15 @@ import kotlin.jvm.internal.p;
 import org.json.JSONException;
 import rd.l;
 import v0.j;
-import v0.o;
+import v0.n;
 import v0.q;
 import v0.r;
-import v0.s;
 import w0.a;
 import w0.c;
 import w0.h;
-import w7.g8;
+import w7.h8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final g Companion = new g();
@@ -162,7 +161,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        i7.b a2 = g8.a(this.context);
+        i7.b a2 = h8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;
@@ -321,20 +320,20 @@ public final class CredentialProviderPlayServicesImpl implements j {
         }
     }
 
-    public void onGetCredential(Context context, r pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, q pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(pendingGetCredentialHandle, "pendingGetCredentialHandle");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onPrepareCredential(o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onPrepareCredential(n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(request, "request");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onSignalCredentialState(s request, Executor executor, v0.i iVar) {
+    public void onSignalCredentialState(r request, Executor executor, v0.i iVar) {
         i.e(request, "request");
         throw null;
     }
@@ -354,24 +353,24 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     @Override // v0.j
-    public void onGetCredential(Context context, o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(request, "request");
-        List<q> list = request.a;
+        List<v0.p> list = request.a;
         i.e(executor, "executor");
         i.e(callback, "callback");
         Companion.getClass();
         if (g.a(cancellationSignal)) {
             return;
         }
-        for (q qVar : list) {
+        for (v0.p pVar : list) {
         }
         Companion.getClass();
-        for (q qVar2 : list) {
+        for (v0.p pVar2 : list) {
         }
         if (!isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION)) {
             Companion.getClass();
-            for (q qVar3 : list) {
+            for (v0.p pVar3 : list) {
             }
             new c1.e(context).g(request, cancellationSignal, executor, callback);
             return;
@@ -387,11 +386,11 @@ public final class CredentialProviderPlayServicesImpl implements j {
         Bundle i10 = a4.a.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
         i10.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", request.b);
         i10.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
-        List<q> list2 = list;
+        List<v0.p> list2 = list;
         ArrayList arrayList = new ArrayList(hd.i.d(list2));
-        for (q qVar4 : list2) {
-            qVar4.getClass();
-            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", qVar4.a, qVar4.b, "", "", ""));
+        for (v0.p pVar4 : list2) {
+            pVar4.getClass();
+            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, i10, null, new ResultReceiver(null));
         Context context2 = aVar.e;
@@ -399,7 +398,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
         h7.g gVar = new h7.g(context2, h7.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
         v e = w.e();
         e.d = new k6.c[]{q7.b.a};
-        e.c = new a4.m(getCredentialRequest, 16);
+        e.c = new a4.m(getCredentialRequest, 17);
         e.a = 32701;
         Task e7 = gVar.e(0, e.a());
         i.d(e7, "doRead(...)");

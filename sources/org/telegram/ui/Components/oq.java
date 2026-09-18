@@ -11,7 +11,7 @@ import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class oq extends ReplacementSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -79,16 +79,16 @@ public class oq extends ReplacementSpan {
                             i15 = this.verticalAlignment;
                             if (i15 != 1) {
                                 if (i15 == 2) {
-                                    int C = hg.k0.C(i14, i12, 2, i12);
+                                    int x10 = hg.k0.x(i14, i12, 2, i12);
                                     Drawable drawable2 = this.drawable;
-                                    i17 = C - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
+                                    i17 = x10 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
                                 } else if (i15 == 0) {
                                     int i18 = i14 - i12;
                                     int i19 = this.size;
                                     if (i19 == 0) {
                                         i19 = this.drawable.getIntrinsicHeight();
                                     }
-                                    i17 = hg.k0.C(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
+                                    i17 = hg.k0.x(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
                                 }
                             }
                             canvas.translate(f7 + this.translateX, i17 + this.translateY);

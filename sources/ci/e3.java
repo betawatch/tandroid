@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class e3 extends org.telegram.ui.ActionBar.h5 {
+public final class e3 extends org.telegram.ui.ActionBar.g5 {
     public AnimatorSet f;
     public final /* synthetic */ x3 h;
 
@@ -24,7 +24,7 @@ public final class e3 extends org.telegram.ui.ActionBar.h5 {
         this.h = x3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void m() {
         x3 x3Var = this.h;
         f3 f3Var = x3Var.d;
@@ -64,7 +64,7 @@ public final class e3 extends org.telegram.ui.ActionBar.h5 {
         this.f.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
         x3 x3Var = this.h;
         f3 f3Var = x3Var.d;
@@ -107,7 +107,7 @@ public final class e3 extends org.telegram.ui.ActionBar.h5 {
         this.f.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         String obj = editText.getText().toString();
         m3 m3Var = this.h.r;

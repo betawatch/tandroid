@@ -1,72 +1,220 @@
 package yh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gg0;
-import org.telegram.ui.ib0;
+import android.os.Build;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class i8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ zg.n0 a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ ai.h1[] c;
-    public final /* synthetic */ boolean[] d;
-    public final /* synthetic */ RectF e;
-    public final /* synthetic */ Runnable f;
-    public final /* synthetic */ q8 h;
+public final class i8 {
+    public final int a;
+    public final ArrayList b;
+    public final Bitmap d;
+    public int e;
+    public int j;
+    public e0.i0 l;
+    public final Paint m;
+    public long n;
+    public long o;
+    public final RectF c = new RectF();
+    public final Paint f = new Paint(3);
+    public final Rect g = new Rect();
+    public float h = 1.0f;
+    public final float i = 1.0f;
+    public boolean k = true;
 
-    public i8(q8 q8Var, zg.n0 n0Var, View view, ai.h1[] h1VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
-        this.h = q8Var;
-        this.a = n0Var;
-        this.b = view;
-        this.c = h1VarArr;
-        this.d = zArr;
-        this.e = rectF;
-        this.f = runnable;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ib0 ib0Var;
-        q8 q8Var = this.h;
-        gg0 gg0Var = q8Var.J;
-        gg0Var.setVisibility(4);
-        gg0Var.setPaused(true);
-        zg.n0 n0Var = this.a;
-        if (n0Var != null) {
-            n0Var.l = true;
+    public i8(int i10, int i11) {
+        this.a = i10;
+        this.j = i11;
+        this.b = new ArrayList(i11);
+        for (int i12 = 0; i12 < i11; i12++) {
+            this.b.add(new h8(this));
         }
-        View view = this.b;
-        if (view != null) {
-            view.invalidate();
-        }
-        ai.h1 h1Var = this.c[0];
-        if (h1Var != null) {
-            h1Var.setDrawStar(true);
-        }
-        super/*org.telegram.ui.ActionBar.g3*/.dismissInternal();
-        boolean[] zArr = this.d;
-        if (!zArr[0]) {
-            zArr[0] = true;
-            RectF rectF = this.e;
-            LaunchActivity.b0(rectF.centerX(), rectF.centerY(), 1.5f);
-            try {
-                q8Var.container.performHapticFeedback(0, 1);
-            } catch (Exception unused) {
-            }
-            Runnable runnable = this.f;
-            if (runnable != null) {
-                runnable.run();
-            }
-        }
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity == null || (ib0Var = launchActivity.x0) == null) {
+        int dp = AndroidUtilities.dp(10.0f);
+        Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
+        this.d = createBitmap;
+        Path path = new Path();
+        float f7 = dp >> 1;
+        int i13 = (int) (0.85f * f7);
+        path.moveTo(0.0f, f7);
+        float f10 = i13;
+        path.lineTo(f10, f10);
+        path.lineTo(f7, 0.0f);
+        float f11 = dp - i13;
+        path.lineTo(f11, f10);
+        float f12 = dp;
+        path.lineTo(f12, f7);
+        path.lineTo(f11, f11);
+        path.lineTo(f7, f12);
+        path.lineTo(f10, f11);
+        path.lineTo(0.0f, f7);
+        path.close();
+        Canvas canvas = new Canvas(createBitmap);
+        Paint paint = new Paint();
+        paint.setColor(org.telegram.ui.ActionBar.j6.l1(0.75f, -1));
+        canvas.drawPath(path, paint);
+        if (Build.VERSION.SDK_INT < 29) {
+            this.l = null;
+            this.m = null;
             return;
         }
-        ib0Var.c(true);
+        e0.i0 i0Var = new e0.i0(i11);
+        this.l = i0Var;
+        float width = createBitmap.getWidth();
+        float height = createBitmap.getHeight();
+        for (int i14 = 0; i14 < i0Var.a; i14++) {
+            e0.i0.c((float[]) i0Var.c, i14, 0.0f, 0.0f, width, height);
+        }
+        this.m = g0.a.a(createBitmap);
+    }
+
+    public final void a(Canvas canvas, int i10) {
+        b(canvas, i10, 1.0f);
+    }
+
+    public final void b(Canvas canvas, int i10, float f7) {
+        if (LiteMode.isEnabled(131072)) {
+            int i11 = this.j;
+            ArrayList arrayList = this.b;
+            int min = Math.min(i11, arrayList.size());
+            float f10 = 2.0f;
+            if (this.l != null) {
+                Bitmap bitmap = this.d;
+                float width = bitmap.getWidth();
+                float height = bitmap.getHeight();
+                for (int i12 = 0; i12 < min; i12++) {
+                    h8 h8Var = (h8) arrayList.get(i12);
+                    float f11 = h8Var.i * h8Var.e * f7;
+                    float f12 = (width / 2.0f) * f11;
+                    float f13 = (height / 2.0f) * f11;
+                    e0.i0 i0Var = this.l;
+                    float f14 = h8Var.a;
+                    float f15 = h8Var.b;
+                    e0.i0.c((float[]) i0Var.b, i12, f14 - f12, f15 - f13, f14 + f12, f15 + f13);
+                    this.l.e(i12, i0.a.k(i10, (int) (Utilities.clamp01(h8Var.h * f7) * 255.0f)));
+                }
+                g0.a.b(canvas, this.l, min, this.m);
+            } else {
+                if (this.e != i10) {
+                    this.e = i10;
+                    this.f.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+                }
+                int i13 = 0;
+                while (i13 < min) {
+                    h8 h8Var2 = (h8) arrayList.get(i13);
+                    float f16 = h8Var2.h * f7;
+                    i8 i8Var = h8Var2.j;
+                    Paint paint = i8Var.f;
+                    Rect rect = i8Var.g;
+                    Bitmap bitmap2 = i8Var.d;
+                    paint.setAlpha((int) (f16 * 255.0f));
+                    rect.set((int) (h8Var2.a - ((((bitmap2.getWidth() / f10) * h8Var2.i) * h8Var2.e) * f16)), (int) (h8Var2.b - ((((bitmap2.getHeight() / f10) * h8Var2.i) * h8Var2.e) * f16)), (int) com.google.android.gms.internal.vision.e2.x((bitmap2.getWidth() / f10) * h8Var2.i, h8Var2.e, f16, h8Var2.a), (int) com.google.android.gms.internal.vision.e2.x((bitmap2.getHeight() / 2.0f) * h8Var2.i, h8Var2.e, f16, h8Var2.b));
+                    canvas.drawBitmap(bitmap2, (Rect) null, rect, paint);
+                    i13++;
+                    f10 = 2.0f;
+                }
+            }
+            this.k = false;
+        }
+    }
+
+    public final void c(h8 h8Var, long j3, boolean z10) {
+        h8Var.f = j3;
+        long lerp = (long) (AndroidUtilities.lerp(500, 2500, Utilities.fastRandom.nextFloat()) * this.i);
+        h8Var.g = lerp;
+        if (z10) {
+            h8Var.f -= (long) (Utilities.clamp01(Utilities.fastRandom.nextFloat()) * lerp);
+        }
+        RectF rectF = this.c;
+        h8Var.a = AndroidUtilities.lerp(rectF.left, rectF.right, Utilities.fastRandom.nextFloat());
+        h8Var.b = AndroidUtilities.lerp(rectF.top, rectF.bottom, Utilities.fastRandom.nextFloat());
+        if (this.a == 0) {
+            h8Var.c = AndroidUtilities.dp(AndroidUtilities.lerp(-7.0f, -18.0f, Utilities.fastRandom.nextFloat()));
+            h8Var.d = AndroidUtilities.dp(AndroidUtilities.lerp(-2.0f, 2.0f, Utilities.fastRandom.nextFloat()));
+        } else {
+            h8Var.c = rectF.centerX() - h8Var.a;
+            h8Var.d = rectF.centerY() - h8Var.b;
+            float dp = AndroidUtilities.dp(AndroidUtilities.lerp(1.0f, 4.0f, Utilities.fastRandom.nextFloat()));
+            float f7 = h8Var.c;
+            float f10 = h8Var.d;
+            float sqrt = dp / ((float) Math.sqrt((f10 * f10) + (f7 * f7)));
+            h8Var.c *= sqrt;
+            h8Var.d *= sqrt;
+        }
+        h8Var.i = AndroidUtilities.lerp(0.4f, 1.0f, Utilities.fastRandom.nextFloat());
+        h8Var.e = AndroidUtilities.lerp(0.8f, 1.2f, Utilities.fastRandom.nextFloat()) * 0.7f;
+    }
+
+    public final boolean d() {
+        if (LiteMode.isEnabled(131072)) {
+            long currentTimeMillis = System.currentTimeMillis();
+            float min = (Math.min(this.o - currentTimeMillis, 16L) / 1000.0f) * this.h;
+            int i10 = 0;
+            while (true) {
+                int i11 = this.j;
+                ArrayList arrayList = this.b;
+                if (i10 >= Math.min(i11, arrayList.size())) {
+                    break;
+                }
+                h8 h8Var = (h8) arrayList.get(i10);
+                long j3 = h8Var.g;
+                float f7 = j3 <= 0 ? 2.0f : (currentTimeMillis - h8Var.f) / j3;
+                if (f7 > 1.0f) {
+                    c(h8Var, currentTimeMillis, this.k);
+                    f7 = 0.0f;
+                }
+                h8Var.a = (h8Var.c * min) + h8Var.a;
+                h8Var.b = (h8Var.d * min) + h8Var.b;
+                float f10 = 4.0f * f7;
+                h8Var.h = f10 - (f7 * f10);
+                i10++;
+            }
+            this.o = currentTimeMillis;
+            long j10 = this.n;
+            if (j10 == 0 || j10 - currentTimeMillis >= 66) {
+                this.n = currentTimeMillis;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void e() {
+        if (this.a != 2) {
+            return;
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            h8 h8Var = (h8) arrayList.get(i10);
+            if (!this.c.contains((int) h8Var.a, (int) h8Var.b)) {
+                c(h8Var, currentTimeMillis, this.k);
+            }
+            i10++;
+        }
+    }
+
+    public final void f(int i10, int i11, int i12, int i13) {
+        this.c.set(i10, i11, i12, i13);
+        e();
+    }
+
+    public final void g(RectF rectF) {
+        this.c.set(rectF);
+        e();
     }
 }

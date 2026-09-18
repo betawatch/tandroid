@@ -1,19 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class o51 extends n51 {
-    public o51(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (p01) null);
+public final class o51 implements fy0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ t51 b;
+
+    public o51(t51 t51Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = t51Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // org.telegram.ui.Components.n51, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.ui.Components.fy0
+    public final void a() {
+        t51 t51Var = this.b;
+        s4.h0 adapter = t51Var.n.getAdapter();
+        s51 s51Var = t51Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == s51Var) {
+            while (i10 < s51Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) s51Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    s51Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
+        }
+        gg.g2 g2Var = t51Var.v;
+        ArrayList arrayList = g2Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                g2Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

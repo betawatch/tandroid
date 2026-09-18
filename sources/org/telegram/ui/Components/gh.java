@@ -1,0 +1,56 @@
+package org.telegram.ui.Components;
+
+import android.text.TextUtils;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi b;
+
+    public /* synthetic */ gh(vi viVar, int i10) {
+        this.a = i10;
+        this.b = viVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean G1;
+        switch (this.a) {
+            case 0:
+                vi viVar = this.b;
+                ju juVar = viVar.c0 ? viVar.P0 : viVar.E0;
+                viVar.M1(juVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(juVar.getText().toString().trim()));
+                break;
+            case 1:
+                vi viVar2 = this.b;
+                mf mfVar = viVar2.h0;
+                long k10 = mfVar != null ? mfVar.k() : 0L;
+                fi fiVar = viVar2.I0;
+                viVar2.N0 = k10;
+                fiVar.setEffect(k10);
+                ni niVar = viVar2.y0;
+                if (niVar == viVar2.j0 || niVar == viVar2.q0) {
+                    G1 = viVar2.G1(0, false, 0, viVar2.s1(), k10);
+                } else {
+                    if (!niVar.I(0, false, 0, viVar2.s1(), k10)) {
+                        viVar2.dismiss();
+                    }
+                    G1 = false;
+                }
+                mf mfVar2 = viVar2.h0;
+                if (mfVar2 != null) {
+                    mfVar2.h(!G1);
+                    viVar2.h0 = null;
+                    break;
+                }
+                break;
+            case 2:
+                this.b.F1();
+                break;
+            default:
+                vi.w(this.b);
+                break;
+        }
+    }
+}

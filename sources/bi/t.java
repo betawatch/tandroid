@@ -17,15 +17,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.yr0;
 import s4.c1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public class t extends uk0 {
+public class t extends el0 {
     public final Context c;
     public d9 e;
     public t f;
@@ -41,12 +41,12 @@ public class t extends uk0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(c1 c1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.uk0
+    @Override // org.telegram.ui.Components.el0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
@@ -57,14 +57,14 @@ public class t extends uk0 {
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.uk0
-    public final void G(ml0 ml0Var, float f7, int[] iArr) {
-        int measuredHeight = ml0Var.getChildAt(0).getMeasuredHeight();
+    @Override // org.telegram.ui.Components.el0
+    public final void G(wl0 wl0Var, float f7, int[] iArr) {
+        int measuredHeight = wl0Var.getChildAt(0).getMeasuredHeight();
         t tVar = this.f;
         u uVar = this.s;
         int i10 = this == tVar ? uVar.e : uVar.d;
         int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
-        int measuredHeight2 = ml0Var.getMeasuredHeight() - ml0Var.getPaddingTop();
+        int measuredHeight2 = wl0Var.getMeasuredHeight() - wl0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -76,13 +76,13 @@ public class t extends uk0 {
     }
 
     public final boolean L(int i10) {
-        nr0 nr0Var = this.s.W;
+        yr0 yr0Var = this.s.W;
         d9 d9Var = this.e;
         if (d9Var == null) {
             return false;
         }
         if (d9Var instanceof t8) {
-            TLRPC.User user = MessagesController.getInstance(nr0Var.b).getUser(Long.valueOf(nr0Var.d));
+            TLRPC.User user = MessagesController.getInstance(yr0Var.b).getUser(Long.valueOf(yr0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= d9Var.i.size()) {
@@ -201,29 +201,29 @@ public class t extends uk0 {
             t7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
             t7Var.setReorder(true);
             t7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
-            nr0 nr0Var = uVar.W;
-            if (!nr0Var.G.C1 || messageObject == null) {
+            yr0 yr0Var = uVar.W;
+            if (!yr0Var.G.C1 || messageObject == null) {
                 t7Var.i(false, false);
             } else {
-                t7Var.i(nr0Var.c(messageObject), true);
+                t7Var.i(yr0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.h0
     public final c1 x(ViewGroup viewGroup, int i10) {
-        nr0 nr0Var = this.s.W;
+        yr0 yr0Var = this.s.W;
         if (this.h == null) {
-            this.h = new s7(viewGroup.getContext(), nr0Var.c);
+            this.h = new s7(viewGroup.getContext(), yr0Var.c);
         }
-        t7 t7Var = new t7(this.c, this.h, nr0Var.b);
+        t7 t7Var = new t7(this.c, this.h, yr0Var.b);
         t7Var.w0 = true;
         t7Var.setGradientView(null);
         t7Var.d0 = true;
-        return new wk0(t7Var);
+        return new gl0(t7Var);
     }
 
-    @Override // org.telegram.ui.Components.uk0
+    @Override // org.telegram.ui.Components.el0
     public final void I() {
     }
 }

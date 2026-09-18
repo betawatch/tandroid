@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ki extends org.telegram.ui.ActionBar.q1 {
+public final class ki extends org.telegram.ui.ActionBar.p1 {
     public final /* synthetic */ li x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class ki extends org.telegram.ui.ActionBar.q1 {
         this.x = liVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
+    @Override // org.telegram.ui.ActionBar.p1
     public final boolean b() {
         kz kzVar;
         vi viVar = this.x.B0;
@@ -37,7 +37,7 @@ public final class ki extends org.telegram.ui.ActionBar.q1 {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
+    @Override // org.telegram.ui.ActionBar.p1
     public final void e(float f7, float f10, boolean z10) {
         li liVar = this.x;
         vi viVar = liVar.B0;
@@ -48,13 +48,13 @@ public final class ki extends org.telegram.ui.ActionBar.q1 {
         }
         viVar.X0.setTranslationY(viVar.l2);
         viVar.a1.setTranslationY(viVar.l2);
-        org.telegram.ui.ActionBar.w0 w0Var = viVar.e1;
-        if (w0Var != null) {
-            w0Var.setTranslationY(viVar.l2);
+        org.telegram.ui.ActionBar.v0 v0Var = viVar.e1;
+        if (v0Var != null) {
+            v0Var.setTranslationY(viVar.l2);
         }
-        org.telegram.ui.ActionBar.w0 w0Var2 = viVar.c1;
-        if (w0Var2 != null) {
-            w0Var2.setTranslationY(viVar.a1.getTranslationY());
+        org.telegram.ui.ActionBar.v0 v0Var2 = viVar.c1;
+        if (v0Var2 != null) {
+            v0Var2.setTranslationY(viVar.a1.getTranslationY());
         }
         ci.f4 f4Var = viVar.d1;
         if (f4Var != null) {
@@ -72,7 +72,7 @@ public final class ki extends org.telegram.ui.ActionBar.q1 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
+    @Override // org.telegram.ui.ActionBar.p1
     public final void f() {
         boolean z10;
         vi viVar = this.x.B0;
@@ -82,14 +82,14 @@ public final class ki extends org.telegram.ui.ActionBar.q1 {
         if (!(viVar.y0 instanceof ei.q4) || viVar.D1) {
             return;
         }
-        z10 = ((org.telegram.ui.ActionBar.g3) viVar).keyboardVisible;
+        z10 = ((org.telegram.ui.ActionBar.f3) viVar).keyboardVisible;
         int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
         for (int i10 = 0; i10 < viVar.x0.size(); i10++) {
             ((ei.q4) viVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
+    @Override // org.telegram.ui.ActionBar.p1
     public final void g(int i10, boolean z10) {
         int i11;
         li liVar = this.x;

@@ -2,12 +2,12 @@ package k2;
 
 import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class r {
     public final q a;
     public final int b;
-    public final c0 c;
+    public final a6.i c;
     public int d;
     public long e;
     public long f;
@@ -15,10 +15,10 @@ public final class r {
     public long h;
     public long i;
 
-    public r(AudioTrack audioTrack, c0 c0Var) {
+    public r(AudioTrack audioTrack, a6.i iVar) {
         this.a = new q(audioTrack);
         this.b = audioTrack.getSampleRate();
-        this.c = c0Var;
+        this.c = iVar;
         a(0);
     }
 

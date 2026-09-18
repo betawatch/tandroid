@@ -1,145 +1,88 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.WeakHashMap;
+import android.graphics.Canvas;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.a6 {
-    public final org.telegram.ui.Components.w5 a;
-    public final t3 b;
-    public final FrameLayout.LayoutParams c;
-    public final org.telegram.ui.ActionBar.f6 d;
-    public int e;
-    public boolean f;
+public final class u3 extends org.telegram.ui.Components.p6 {
+    public final /* synthetic */ int s;
 
-    public u3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(context, 16, f6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ u3(Context context, boolean z10, boolean z11, boolean z12, int i10) {
+        super(context, z10, z11, z12);
+        this.s = i10;
     }
 
-    public static void a(ArrayList arrayList, ml0 ml0Var) {
-        int i10 = org.telegram.ui.ActionBar.j6.f7;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(ml0Var, 0, new Class[]{u3.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(ml0Var, 0, new Class[]{u3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(ml0Var, 16, new Class[]{u3.class}, null, null, null, org.telegram.ui.ActionBar.j6.e7));
+    @Override // android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.s) {
+            case 0:
+                return Button.class.getName();
+            case 1:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
     }
 
-    public final void b(CharSequence charSequence, View.OnClickListener onClickListener) {
-        t3 t3Var = this.b;
-        t3Var.c(charSequence, true, true);
-        t3Var.setOnClickListener(onClickListener);
-        t3Var.setVisibility(0);
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.s) {
+            case 4:
+                if (!zg.e0.b(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 
-    public final void c(CharSequence charSequence, CharSequence charSequence2, View.OnClickListener onClickListener) {
-        this.a.setText(charSequence);
-        t3 t3Var = this.b;
-        t3Var.c(charSequence2, false, true);
-        t3Var.setOnClickListener(onClickListener);
-        t3Var.setVisibility(0);
+    @Override // org.telegram.ui.Components.p6, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.s) {
+            case 2:
+                canvas.save();
+                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
-    public final void e() {
-        boolean z10 = this.f;
-        org.telegram.ui.ActionBar.f6 f6Var = this.d;
-        setBackgroundColor(z10 ? 0 : org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.e7, f6Var));
-        int i10 = org.telegram.ui.ActionBar.j6.f7;
-        this.a.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        this.b.setTextColor(org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+    @Override // org.telegram.ui.Components.p6, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.s) {
+            case 3:
+                super.onMeasure(i10, i11);
+                setPivotX(getMeasuredWidth());
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    public CharSequence getText() {
-        return this.a.getText();
-    }
-
-    public TextView getTextView() {
-        return this.a;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.e), TLObject.FLAG_30));
-    }
-
-    public void setLayerHeight(int i10) {
-        this.e = i10;
-        requestLayout();
-    }
-
-    public void setNoBackground(boolean z10) {
-        this.f = z10;
-        e();
-    }
-
-    public void setRightText(CharSequence charSequence) {
-        t3 t3Var = this.b;
-        t3Var.c(charSequence, true, true);
-        t3Var.setVisibility(0);
-    }
-
-    public void setRightTextMargin(int i10) {
-        float f7 = i10;
-        int dp = AndroidUtilities.dp(f7);
-        FrameLayout.LayoutParams layoutParams = this.c;
-        layoutParams.leftMargin = dp;
-        layoutParams.rightMargin = AndroidUtilities.dp(f7);
-        this.b.setLayoutParams(layoutParams);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
-        t3 t3Var = this.b;
-        t3Var.setVisibility(8);
-        t3Var.setOnClickListener(null);
-    }
-
-    public void setTextColor(int i10) {
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, this.d);
-        this.a.setTextColor(v02);
-        this.b.setTextColor(v02);
-    }
-
-    public u3(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.e = 32;
-        this.d = f6Var;
-        setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.e7, f6Var));
-        org.telegram.ui.Components.w5 w5Var = new org.telegram.ui.Components.w5(getContext());
-        this.a = w5Var;
-        boolean z10 = true;
-        w5Var.setTextSize(1, 14.0f);
-        w5Var.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.j6.f7;
-        w5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        w5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        float f7 = i10;
-        addView(w5Var, w7.x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, 0.0f, f7, 0.0f));
-        t3 t3Var = new t3(getContext(), z10, z10, z10, 0);
-        this.b = t3Var;
-        t3Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
-        t3Var.b(0.9f, 420L, qr.h);
-        t3Var.setTextSize(AndroidUtilities.dp(14.0f));
-        t3Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        t3Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        FrameLayout.LayoutParams d = w7.x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, f7, 0.0f, f7, 0.0f);
-        this.c = d;
-        addView(t3Var, d);
-        WeakHashMap weakHashMap = r0.i0.a;
-        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.s) {
+            case 4:
+                if (!zg.e0.b(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
     }
 }

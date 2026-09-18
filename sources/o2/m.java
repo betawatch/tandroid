@@ -9,7 +9,7 @@ import n4.y;
 import u2.b1;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m implements b1 {
     public final int a;
@@ -155,7 +155,7 @@ public final class m implements b1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = k0.h(1, arrayList);
+                obj = k0.g(1, arrayList);
             }
             obj = null;
         } else {

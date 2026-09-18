@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
 import v7.l7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class h implements Callable {
                 }
                 try {
                     if (c10.e(context)) {
-                        startService = d0.d(context, intent2);
+                        startService = c0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
                         Log.d("FirebaseMessaging", "Missing wake lock permission, service start may be delayed");

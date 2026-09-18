@@ -17,9 +17,9 @@ import hg.k0;
 import org.json.JSONException;
 import t7.u;
 import v7.g5;
-import w7.d9;
+import w7.e9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class l extends b8.b {
     public final /* synthetic */ int b = 0;
@@ -54,7 +54,7 @@ public final class l extends b8.b {
                         }
                         googleSignInOptions = null;
                     }
-                    v0 a10 = d9.a(revocationBoundService, googleSignInOptions);
+                    v0 a10 = e9.a(revocationBoundService, googleSignInOptions);
                     if (b10 != null) {
                         t0 t0Var = a10.h;
                         Context context = a10.a;
@@ -103,7 +103,7 @@ public final class l extends b8.b {
 
     public void L0() {
         if (!u6.b.e((RevocationBoundService) this.c, Binder.getCallingUid())) {
-            throw new SecurityException(k0.j(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
+            throw new SecurityException(k0.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
         }
     }
 

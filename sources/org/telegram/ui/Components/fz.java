@@ -20,9 +20,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class fz extends ll0 {
+public final class fz extends vl0 {
     public int L;
     public int M;
     public String N;
@@ -62,7 +62,7 @@ public final class fz extends ll0 {
         ezVar.setOnTouchListener(new m.c2(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 7;
     }
@@ -311,14 +311,14 @@ public final class fz extends ll0 {
         }
         Integer num = null;
         if (i11 == 1) {
-            org.telegram.ui.Cells.k3 k3Var = (org.telegram.ui.Cells.k3) view;
+            org.telegram.ui.Cells.l3 l3Var = (org.telegram.ui.Cells.l3) view;
             if (i10 != this.x) {
-                k3Var.setHeight(AndroidUtilities.dp(82.0f));
+                l3Var.setHeight(AndroidUtilities.dp(82.0f));
                 return;
             }
             int i12 = this.v.get(i10 - 1, TLObject.FLAG_31);
             if (i12 == Integer.MIN_VALUE) {
-                k3Var.setHeight(1);
+                l3Var.setHeight(1);
                 return;
             }
             Object obj = this.n.get(i12);
@@ -328,14 +328,14 @@ public final class fz extends ll0 {
                 num = (Integer) obj;
             }
             if (num == null) {
-                k3Var.setHeight(1);
+                l3Var.setHeight(1);
                 return;
             } else if (num.intValue() == 0) {
-                k3Var.setHeight(AndroidUtilities.dp(8.0f));
+                l3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.wl.A(82.0f, (int) Math.ceil(num.intValue() / kzVar.y0.d), kzVar.h.getHeight());
-                k3Var.setHeight(A > 0 ? A : 1);
+                int B = org.telegram.messenger.wh.B(82.0f, (int) Math.ceil(num.intValue() / kzVar.y0.d), kzVar.h.getHeight());
+                l3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
@@ -371,32 +371,32 @@ public final class fz extends ll0 {
             return;
         }
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) sparseArray.get(i10);
-        org.telegram.ui.Cells.r3 r3Var = (org.telegram.ui.Cells.r3) view;
+        org.telegram.ui.Cells.s3 s3Var = (org.telegram.ui.Cells.s3) view;
         boolean z11 = longSparseArray2.indexOfKey(stickerSetCovered.set.id) >= 0;
         char c10 = longSparseArray.indexOfKey(stickerSetCovered.set.id) < 0 ? (char) 0 : (char) 1;
         if (z11 || c10 != 0) {
-            if (z11 && r3Var.r) {
+            if (z11 && s3Var.r) {
                 longSparseArray2.remove(stickerSetCovered.set.id);
                 z11 = false;
-            } else if (c10 != 0 && !r3Var.r) {
+            } else if (c10 != 0 && !s3Var.r) {
                 longSparseArray.remove(stickerSetCovered.set.id);
             }
         }
-        r3Var.b(z11, false);
+        s3Var.b(z11, false);
         int indexOfIgnoreCase = TextUtils.isEmpty(this.N) ? -1 : AndroidUtilities.indexOfIgnoreCase(stickerSetCovered.set.title, this.N);
         if (indexOfIgnoreCase >= 0) {
-            r3Var.c(stickerSetCovered, false, false, indexOfIgnoreCase, this.N.length(), false);
+            s3Var.c(stickerSetCovered, false, false, indexOfIgnoreCase, this.N.length(), false);
             return;
         }
-        r3Var.c(stickerSetCovered, false, false, 0, 0, false);
+        s3Var.c(stickerSetCovered, false, false, 0, 0, false);
         if (TextUtils.isEmpty(this.N) || AndroidUtilities.indexOfIgnoreCase(stickerSetCovered.set.short_name, this.N) != 0) {
             return;
         }
         String str = stickerSetCovered.set.short_name;
         int length = this.N.length();
-        r3Var.F = str;
-        r3Var.G = length;
-        r3Var.f();
+        s3Var.F = str;
+        s3Var.G = length;
+        s3Var.f();
     }
 
     @Override // s4.h0
@@ -411,15 +411,15 @@ public final class fz extends ll0 {
                 f2Var = new gg.f2(2, context, kzVar.Z1, z10);
                 break;
             case 1:
-                f2Var = new org.telegram.ui.Cells.k3(context);
+                f2Var = new org.telegram.ui.Cells.l3(context);
                 break;
             case 2:
                 f2Var = new org.telegram.ui.Cells.o8(this.h, false, false, kzVar.Z1, kzVar.i2);
                 break;
             case 3:
-                org.telegram.ui.Cells.r3 r3Var = new org.telegram.ui.Cells.r3(17, this.h, kzVar.Z1, false, true);
-                r3Var.setAddOnClickListener(new f0(this, 15));
-                f2Var = r3Var;
+                org.telegram.ui.Cells.s3 s3Var = new org.telegram.ui.Cells.s3(17, this.h, kzVar.Z1, false, true);
+                s3Var.setAddOnClickListener(new f0(this, 15));
+                f2Var = s3Var;
                 break;
             case 4:
                 f2Var = new View(context);
@@ -433,12 +433,12 @@ public final class fz extends ll0 {
                 int i11 = org.telegram.ui.ActionBar.j6.Le;
                 imageView.setColorFilter(new PorterDuffColorFilter(kzVar.z(i11), PorterDuff.Mode.MULTIPLY));
                 imageView.setTranslationY(-AndroidUtilities.dp(24.0f));
-                f0Var.addView(imageView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
+                f0Var.addView(imageView, w7.y5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 28.0f));
                 TextView textView = new TextView(context);
                 textView.setText(LocaleController.getString(R.string.NoStickersFound));
                 textView.setTextSize(1, 16.0f);
                 textView.setTextColor(kzVar.z(i11));
-                f0Var.addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
+                f0Var.addView(textView, w7.y5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 9.0f));
                 f0Var.setLayoutParams(new s4.p0(-1, -2));
                 f2Var = f0Var;
                 break;
@@ -457,6 +457,6 @@ public final class fz extends ll0 {
                 f2Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(68.0f)));
                 break;
         }
-        return new wk0(f2Var);
+        return new gl0(f2Var);
     }
 }

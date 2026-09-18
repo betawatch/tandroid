@@ -3,7 +3,7 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qa implements o1.g {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class qa implements o1.g {
                 ci.r6 r6Var = (ci.r6) this.b;
                 float f11 = f7 / 1000.0f;
                 r6Var.t1 = f11;
-                qg.w1 w1Var = r6Var.m1;
-                w1Var.setAlpha(f11);
-                w1Var.invalidate();
+                qg.t1 t1Var = r6Var.m1;
+                t1Var.setAlpha(f11);
+                t1Var.invalidate();
                 r6Var.U0.invalidate();
                 r6Var.l1.getTypefaceCell().setAlpha(1.0f - r6Var.t1);
                 break;
@@ -40,18 +40,18 @@ public final /* synthetic */ class qa implements o1.g {
                 n6Var.setPivotY(AndroidUtilities.dp(28.0f));
                 n6Var.setScaleX(f12);
                 n6Var.setScaleY(f12);
-                n6Var.setAlpha(w7.p.a(f12, 0.0f, 1.0f));
+                n6Var.setAlpha(w7.q.a(f12, 0.0f, 1.0f));
                 iVar.invalidate();
                 break;
             default:
-                qg.p0 p0Var = (qg.p0) this.b;
+                qg.m0 m0Var = (qg.m0) this.b;
                 float f13 = f7 / 1000.0f;
-                p0Var.D1 = f13;
-                qg.w1 w1Var2 = p0Var.v1;
-                w1Var2.setAlpha(f13);
-                w1Var2.invalidate();
-                p0Var.d1.invalidate();
-                p0Var.u1.getTypefaceCell().setAlpha(1.0f - p0Var.D1);
+                m0Var.D1 = f13;
+                qg.t1 t1Var2 = m0Var.v1;
+                t1Var2.setAlpha(f13);
+                t1Var2.invalidate();
+                m0Var.d1.invalidate();
+                m0Var.u1.getTypefaceCell().setAlpha(1.0f - m0Var.D1);
                 break;
         }
     }

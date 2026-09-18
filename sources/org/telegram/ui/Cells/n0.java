@@ -15,18 +15,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h01;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.wc;
+import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.vw0;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class n0 {
-    public final t1 a;
-    public final org.telegram.ui.Components.f9[] b;
+    public final u1 a;
+    public final org.telegram.ui.Components.h9[] b;
     public final ImageReceiver[] c;
     public final TextPaint d;
     public final CharSequence e;
@@ -35,31 +35,31 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final h01 k;
+    public final v01 k;
     public boolean l;
     public boolean m;
-    public final wc n;
+    public final yc n;
     public final TLObject o;
 
-    public n0(int i10, t1 t1Var, TLObject[] tLObjectArr, int i11) {
+    public n0(int i10, u1 u1Var, TLObject[] tLObjectArr, int i11) {
         TLObject tLObject;
         this.d = new TextPaint(1);
         this.i = new Paint(1);
         this.j = new Paint(1);
         new Paint(1);
-        this.a = t1Var;
+        this.a = u1Var;
         this.o = tLObjectArr[0];
-        this.n = new l0(t1Var, t1Var, 0);
+        this.n = new l0(u1Var, u1Var, 0);
         this.c = new ImageReceiver[3];
-        this.b = new org.telegram.ui.Components.f9[3];
+        this.b = new org.telegram.ui.Components.h9[3];
         for (int i12 = 0; i12 < 3; i12++) {
-            this.c[i12] = new ImageReceiver(t1Var);
-            this.c[i12].setParentView(t1Var);
+            this.c[i12] = new ImageReceiver(u1Var);
+            this.c[i12].setParentView(u1Var);
             this.c[i12].setRoundRadius(AndroidUtilities.dp(54.0f));
-            this.b[i12] = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
+            this.b[i12] = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
             if (i12 >= tLObjectArr.length || (tLObject = tLObjectArr[i12]) == null) {
                 Paint paint = new Paint(1);
-                int v = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ra, t1Var.Id), org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, t1Var.Id)));
+                int v = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ra, u1Var.Id), org.telegram.ui.ActionBar.j6.l1(0.5f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, u1Var.Id)));
                 paint.setColor(v);
                 this.c[i12].setImageBitmap(new m0(paint, v));
             } else {
@@ -67,19 +67,19 @@ public final class n0 {
                 this.c[i12].setForUserOrChat(tLObjectArr[i12], this.b[i12]);
             }
         }
-        if (t1Var.M0) {
+        if (u1Var.M0) {
             a();
         }
         this.d.setTextSize(AndroidUtilities.dp(11.0f));
-        boolean isPremium = UserConfig.getInstance(t1Var.I7).isPremium();
+        boolean isPremium = UserConfig.getInstance(u1Var.I7).isPremium();
         this.e = LocaleController.getString(isPremium ? R.string.MoreSimilar : R.string.UnlockSimilar);
         this.i.setStyle(Paint.Style.STROKE);
         this.g = true;
-        this.h = isPremium ? null : t1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
+        this.h = isPremium ? null : u1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         if (c(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new h01(hg.k0.i(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new v01(hg.k0.h(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -120,32 +120,32 @@ public final class n0 {
                 CharSequence charSequence = this.e;
                 this.f = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setMaxLines(2).setEllipsize(TextUtils.TruncateAt.END).setBreakStrategy(0).setAlignment(Layout.Alignment.ALIGN_CENTER).build();
             } else {
-                this.f = kw0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
+                this.f = vw0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
             }
         }
         if (this.f != null) {
             canvas.save();
             canvas.translate((i10 - this.f.getWidth()) / 2.0f, AndroidUtilities.dp(66.33f));
             int length = this.c.length;
-            t1 t1Var = this.a;
+            u1 u1Var = this.a;
             if (length <= 1) {
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ec, t1Var.Id));
+                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ec, u1Var.Id));
             } else {
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, t1Var.Id));
+                textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.y6, u1Var.Id));
             }
             textPaint.setAlpha((int) (textPaint.getAlpha() * f7));
             this.f.draw(canvas);
             canvas.restore();
         }
-        h01 h01Var = this.k;
-        if (h01Var != null) {
-            h01Var.p = i10 - AndroidUtilities.dp(32.0f);
+        v01 v01Var = this.k;
+        if (v01Var != null) {
+            v01Var.p = i10 - AndroidUtilities.dp(32.0f);
             Drawable drawable = this.h;
-            float l4 = (f10 - (h01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
+            float l4 = (f10 - (v01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
             float dp = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
             boolean z10 = this.g;
             if (drawable != null) {
-                drawable.setBounds((int) ((z10 ? h01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) wl.c(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + h01Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
+                drawable.setBounds((int) ((z10 ? v01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) wh.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + v01Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
                 drawable.draw(canvas);
             }
             this.k.c(l4 + AndroidUtilities.dp(!z10 ? 12.66f : 4.0f), dp, f7, -1, canvas);
@@ -153,29 +153,29 @@ public final class n0 {
         canvas.restore();
     }
 
-    public n0(int i10, t1 t1Var, TLObject tLObject) {
+    public n0(int i10, u1 u1Var, TLObject tLObject) {
         CharSequence charSequence;
         TextPaint textPaint = new TextPaint(1);
         this.d = textPaint;
         this.i = new Paint(1);
         this.j = new Paint(1);
         new Paint(1);
-        this.a = t1Var;
+        this.a = u1Var;
         this.o = tLObject;
-        this.n = new l0(t1Var, t1Var, 1);
+        this.n = new l0(u1Var, u1Var, 1);
         ImageReceiver[] imageReceiverArr = {r3};
         this.c = imageReceiverArr;
-        ImageReceiver imageReceiver = new ImageReceiver(t1Var);
-        imageReceiver.setParentView(t1Var);
+        ImageReceiver imageReceiver = new ImageReceiver(u1Var);
+        imageReceiver.setParentView(u1Var);
         imageReceiverArr[0].setRoundRadius(AndroidUtilities.dp(54.0f));
-        if (t1Var.M0) {
+        if (u1Var.M0) {
             a();
         }
-        org.telegram.ui.Components.f9[] f9VarArr = {r3};
-        this.b = f9VarArr;
-        org.telegram.ui.Components.f9 f9Var = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
-        f9Var.j(i10, tLObject);
-        imageReceiverArr[0].setForUserOrChat(tLObject, f9VarArr[0]);
+        org.telegram.ui.Components.h9[] h9VarArr = {r3};
+        this.b = h9VarArr;
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
+        h9Var.j(i10, tLObject);
+        imageReceiverArr[0].setForUserOrChat(tLObject, h9VarArr[0]);
         textPaint.setTextSize(AndroidUtilities.dp(11.0f));
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
@@ -191,11 +191,11 @@ public final class n0 {
         this.e = charSequence;
         this.i.setStyle(Paint.Style.STROKE);
         this.g = false;
-        this.h = t1Var.getContext().getResources().getDrawable(R.drawable.mini_reply_user).mutate();
+        this.h = u1Var.getContext().getResources().getDrawable(R.drawable.mini_reply_user).mutate();
         if (c(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new h01(c(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new v01(c(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

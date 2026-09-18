@@ -28,9 +28,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class e0 extends b2.g implements r {
     public final com.google.firebase.messaging.m A;
@@ -83,7 +82,7 @@ public final class e0 extends b2.g implements r {
     public final o0 l;
     public long l0;
     public final e2.p m;
-    public org.telegram.messenger.b1 m0;
+    public org.telegram.messenger.c1 m0;
     public final CopyOnWriteArraySet n;
     public final ArrayList n0;
     public final b2.h1 o;
@@ -215,9 +214,9 @@ public final class e0 extends b2.g implements r {
             j2.f fVar = this.s;
             b11.getClass();
             fVar.getClass();
-            k2.u uVar2 = b11.c;
-            uVar2.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) uVar2.b;
+            n2.e eVar = b11.c;
+            eVar.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) eVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 y2.b bVar = (y2.b) it.next();
@@ -275,9 +274,9 @@ public final class e0 extends b2.g implements r {
                 e0Var.h0 = x1.d;
                 e0Var.X = e2.w.c;
                 zVar.a(38, e0Var.K).b();
-                b2.e eVar = e0Var.Y;
+                b2.e eVar2 = e0Var.Y;
                 e2.y b12 = e2.z.b();
-                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar);
+                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar2);
                 b12.b();
                 e0Var.p1(1, 3, e0Var.Y);
                 e0Var.p1(2, 4, Integer.valueOf(e0Var.W));
@@ -365,11 +364,11 @@ public final class e0 extends b2.g implements r {
             String name2 = looper.getThread().getName();
             String str = e2.d0.a;
             Locale locale = Locale.US;
-            String j3 = p6.j("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            String i10 = org.telegram.ui.Cells.c1.i("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
             if (this.c0) {
-                throw new IllegalStateException(j3);
+                throw new IllegalStateException(i10);
             }
-            e2.a.o("ExoPlayerImpl", j3, this.d0 ? null : new IllegalStateException());
+            e2.a.o("ExoPlayerImpl", i10, this.d0 ? null : new IllegalStateException());
             this.d0 = true;
         }
     }
@@ -413,6 +412,7 @@ public final class e0 extends b2.g implements r {
     @Override // b2.b1
     public final void D(b2.z0 z0Var) {
         B1();
+        z0Var.getClass();
         e2.p pVar = this.m;
         pVar.f();
         CopyOnWriteArraySet copyOnWriteArraySet = pVar.d;
@@ -1228,9 +1228,9 @@ public final class e0 extends b2.g implements r {
             return;
         }
         this.X = new e2.w(i10, i11);
-        org.telegram.messenger.b1 b1Var = this.m0;
-        if (b1Var != null) {
-            b1Var.execute(new gg.n(this, i10, i11, 1));
+        org.telegram.messenger.c1 c1Var = this.m0;
+        if (c1Var != null) {
+            c1Var.execute(new gg.n(this, i10, i11, 1));
             return;
         }
         this.m.e(24, new dh.c(i10, i11, 1));

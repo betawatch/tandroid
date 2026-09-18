@@ -11,17 +11,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.kb0;
+import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.bo;
-import org.telegram.ui.ik;
-import org.telegram.ui.vj;
+import org.telegram.ui.Components.tb0;
+import org.telegram.ui.gk;
+import org.telegram.ui.tj;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final bo a;
+    public final zn a;
     public s b;
     public List c;
     public boolean d;
@@ -36,17 +36,17 @@ public final class t extends FrameLayout {
     public boolean x;
     public final int[] y;
 
-    public t(bo boVar, Context context) {
+    public t(zn znVar, Context context) {
         super(context);
         this.c = Collections.EMPTY_LIST;
         this.f = 22;
         this.h = 24;
         this.y = new int[2];
         setVisibility(8);
-        this.a = boVar;
+        this.a = znVar;
         setClipToPadding(false);
         setClipChildren(false);
-        boVar.x0.j(new kb0(this, 23));
+        znVar.x0.j(new tb0(this, 23));
     }
 
     public final void a(boolean z10) {
@@ -58,7 +58,7 @@ public final class t extends FrameLayout {
         this.x = false;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
         duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 27));
-        duration.addListener(new qg.n0(this, 12));
+        duration.addListener(new pg.d0(this, 13));
         duration.start();
     }
 
@@ -114,20 +114,20 @@ public final class t extends FrameLayout {
             }
             AndroidUtilities.runOnUIThread(new r(this, 0));
         }
-        bo boVar = this.a;
-        vj vjVar = boVar.x0;
+        zn znVar = this.a;
+        tj tjVar = znVar.x0;
         int[] iArr = this.y;
-        vjVar.getLocationInWindow(iArr);
+        tjVar.getLocationInWindow(iArr);
         boolean z13 = true;
         float f12 = iArr[1];
         getLocationInWindow(iArr);
-        float f13 = (f12 - iArr[1]) - boVar.N9;
+        float f13 = (f12 - iArr[1]) - znVar.N9;
         boolean z14 = false;
-        for (int i10 = 0; i10 < vjVar.getChildCount(); i10++) {
-            View childAt = vjVar.getChildAt(i10);
-            if (childAt instanceof t1) {
-                t1 t1Var = (t1) childAt;
-                MessageObject messageObject = t1Var.getMessageObject();
+        for (int i10 = 0; i10 < tjVar.getChildCount(); i10++) {
+            View childAt = tjVar.getChildAt(i10);
+            if (childAt instanceof u1) {
+                u1 u1Var = (u1) childAt;
+                MessageObject messageObject = u1Var.getMessageObject();
                 if (messageObject.getId() == this.e.getId()) {
                     boolean isOutOwner = messageObject.isOutOwner();
                     s sVar2 = this.b;
@@ -146,19 +146,19 @@ public final class t extends FrameLayout {
                         }
                         sVar3.setPadding(i12, dp2, dp3 + i11, AndroidUtilities.dp(f14));
                     }
-                    int height2 = getHeight() != 0 ? getHeight() : vjVar.getHeight();
-                    if (t1Var.getCurrentMessagesGroup() != null) {
-                        MessageObject.GroupedMessages.TransitionParams transitionParams = t1Var.getCurrentMessagesGroup().transitionParams;
+                    int height2 = getHeight() != 0 ? getHeight() : tjVar.getHeight();
+                    if (u1Var.getCurrentMessagesGroup() != null) {
+                        MessageObject.GroupedMessages.TransitionParams transitionParams = u1Var.getCurrentMessagesGroup().transitionParams;
                         height = transitionParams.bottom - transitionParams.top;
                     } else {
-                        height = t1Var.getHeight();
+                        height = u1Var.getHeight();
                     }
-                    float y3 = (t1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
+                    float y3 = (u1Var.getY() + f13) - AndroidUtilities.dp(74.0f);
                     float dp4 = AndroidUtilities.dp(14.0f);
                     float dp5 = height2 - AndroidUtilities.dp(218.0f);
-                    ik ikVar = boVar.X1;
-                    if (ikVar != null && ikVar.getVisibility() == 0) {
-                        dp4 += ikVar.getHeight();
+                    gk gkVar = znVar.X1;
+                    if (gkVar != null && gkVar.getVisibility() == 0) {
+                        dp4 += gkVar.getHeight();
                     }
                     float f15 = height;
                     if (y3 > dp4 - (f15 / 2.0f) && y3 < dp5) {
@@ -187,23 +187,23 @@ public final class t extends FrameLayout {
                                     this.b.setVisibility(0);
                                     if (!this.x) {
                                         this.x = true;
-                                        this.b.p(this.e, boVar.Z7, true);
+                                        this.b.p(this.e, znVar.Z7, true);
                                     }
                                 }
                             }
-                            this.b.setTranslationY(w7.p.a(interpolation, dp4, dp5));
-                            this.b.setTranslationX(t1Var.E2(true));
+                            this.b.setTranslationY(w7.q.a(interpolation, dp4, dp5));
+                            this.b.setTranslationX(u1Var.E2(true));
                             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
-                            int f16 = hg.k0.f(32.0f, t1Var.getBackgroundDrawableLeft(), 0);
-                            int f17 = hg.k0.f(32.0f, t1Var.getWidth() - t1Var.getBackgroundDrawableRight(), (int) t1Var.E2(true));
+                            int c10 = org.telegram.messenger.q.c(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
+                            int c11 = org.telegram.messenger.q.c(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
                             int dp6 = AndroidUtilities.dp(40.0f) * 8;
-                            if ((getWidth() - f17) - f16 < dp6) {
+                            if ((getWidth() - c11) - c10 < dp6) {
                                 if (isOutOwner) {
-                                    f16 = Math.min(f16, getWidth() - dp6);
-                                    f17 = 0;
+                                    c10 = Math.min(c10, getWidth() - dp6);
+                                    c11 = 0;
                                 } else {
-                                    f17 = Math.min(f17, getWidth() - dp6);
-                                    f16 = 0;
+                                    c11 = Math.min(c11, getWidth() - dp6);
+                                    c10 = 0;
                                 }
                             }
                             int i13 = isOutOwner ? 5 : 3;
@@ -211,12 +211,12 @@ public final class t extends FrameLayout {
                                 layoutParams.gravity = i13;
                                 z14 = true;
                             }
-                            if (f16 != layoutParams.leftMargin) {
-                                layoutParams.leftMargin = f16;
+                            if (c10 != layoutParams.leftMargin) {
+                                layoutParams.leftMargin = c10;
                                 z14 = true;
                             }
-                            if (f17 != layoutParams.rightMargin) {
-                                layoutParams.rightMargin = f17;
+                            if (c11 != layoutParams.rightMargin) {
+                                layoutParams.rightMargin = c11;
                             } else {
                                 z13 = z14;
                             }
@@ -267,10 +267,10 @@ public final class t extends FrameLayout {
         TLRPC.ChatFull chatFull;
         TLRPC.Message message;
         this.c = list;
-        bo boVar = this.a;
-        int i10 = boVar.R3;
+        zn znVar = this.a;
+        int i10 = znVar.R3;
         boolean z10 = true;
-        if (i10 != 1 && i10 != 5 && i10 != 6 && !boVar.A9() && !boVar.v() && (((chatFull = boVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
+        if (i10 != 1 && i10 != 5 && i10 != 6 && !znVar.A9() && !znVar.v() && (((chatFull = znVar.Z7) == null || !(chatFull.available_reactions instanceof TLRPC.TL_chatReactionsNone)) && !list.isEmpty())) {
             long j3 = 0;
             boolean z11 = false;
             for (MessageObject messageObject : list) {

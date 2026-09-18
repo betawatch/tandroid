@@ -1,34 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.ActionMode;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class vv0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cw0 b;
+public final class vv0 extends org.telegram.ui.Cells.d6 {
+    public final /* synthetic */ yv0 F;
 
-    public /* synthetic */ vv0(cw0 cw0Var, int i10) {
-        this.a = i10;
-        this.b = cw0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vv0(yv0 yv0Var, Context context, int i10) {
+        super(context, i10, null, null);
+        this.F = yv0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.R.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.R.setTranslationY(0.0f);
-                break;
-            default:
-                cw0 cw0Var = this.b;
-                cw0Var.getClass();
-                cw0Var.R.setTranslationY(0.0f);
-                cw0Var.l0();
-                break;
+    @Override // org.telegram.ui.Cells.d6
+    public final void i(boolean z10) {
+        aw0.d0(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void j(org.telegram.ui.Cells.d6 d6Var) {
+        aw0.e0(this.F.d, d6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final boolean l(ArrayList arrayList) {
+        aw0 aw0Var = this.F.d;
+        if (arrayList.isEmpty()) {
+            return false;
         }
+        org.telegram.ui.Cells.c6 c6Var = this.d;
+        c6Var.getText().replace(c6Var.getSelectionStart(), c6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+        int i10 = 0;
+        while (!arrayList.isEmpty() && i10 < aw0Var.n) {
+            for (int length = aw0Var.v.length - 1; length > i10; length--) {
+                CharSequence[] charSequenceArr = aw0Var.v;
+                charSequenceArr[length] = charSequenceArr[length - 1];
+            }
+            aw0Var.v[i10] = (CharSequence) arrayList.remove(0);
+            aw0Var.y++;
+            i10++;
+        }
+        aw0Var.r0();
+        aw0Var.g0 = (aw0Var.n0 + i10) - 1;
+        aw0Var.b.l();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
     }
 }

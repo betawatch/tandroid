@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d4 extends FrameLayout {
-    public final org.telegram.ui.Components.go0 a;
+    public final org.telegram.ui.Components.to0 a;
     public final int b;
     public final int c;
     public int d;
@@ -28,12 +28,12 @@ public final class d4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.go0 go0Var = new org.telegram.ui.Components.go0(context, null, false);
-        this.a = go0Var;
-        go0Var.setReportChanges(true);
-        go0Var.setSeparatorsCount(19);
-        go0Var.setDelegate(new g(this, 3));
-        addView(go0Var, w7.x5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.to0 to0Var = new org.telegram.ui.Components.to0(context, null, false);
+        this.a = to0Var;
+        to0Var.setReportChanges(true);
+        to0Var.setSeparatorsCount(19);
+        to0Var.setDelegate(new g(this, 3));
+        addView(to0Var, w7.y5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View

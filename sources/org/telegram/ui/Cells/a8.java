@@ -4,26 +4,26 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.xa1;
+import org.telegram.ui.wa1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class a8 extends org.telegram.ui.Components.u9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 G;
+public final class a8 extends org.telegram.ui.Components.w9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 G;
     public final /* synthetic */ c8 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a8(c8 c8Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public a8(c8 c8Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.H = c8Var;
-        this.G = f6Var;
+        this.G = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.u9, android.view.View
+    @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onDraw(Canvas canvas) {
         c8 c8Var = this.H;
-        xa1 xa1Var = c8Var.v;
-        if (xa1Var == null || !(xa1Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
+        wa1 wa1Var = c8Var.v;
+        if (wa1Var == null || !(wa1Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
             super.onDraw(canvas);
             return;
         }

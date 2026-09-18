@@ -19,10 +19,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class h2 extends View implements org.telegram.ui.Cells.p9 {
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public a3 c;
     public a3 d;
@@ -35,11 +35,11 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
     public final int v;
     public int w;
 
-    public h2(Context context, w70 w70Var, f4 f4Var) {
+    public h2(Context context, u70 u70Var, f4 f4Var) {
         super(context);
         this.s = AndroidUtilities.dp(18.0f);
         this.v = AndroidUtilities.dp(10.0f);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.h = imageReceiver;
@@ -96,10 +96,10 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
         canvas.save();
         canvas.translate(this.s, AndroidUtilities.dp(10.0f));
         a3 a3Var = this.c;
-        w70 w70Var = this.a;
+        u70 u70Var = this.a;
         int i11 = 0;
         if (a3Var != null) {
-            h4.v(w70Var, canvas, this, 0);
+            h4.v(u70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             i10 = 1;
         } else {
@@ -107,7 +107,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
         }
         if (this.d != null) {
             canvas.translate(0.0f, this.w);
-            h4.v(w70Var, canvas, this, i10);
+            h4.v(u70Var, canvas, this, i10);
             this.d.draw(canvas, this);
         }
         canvas.restore();
@@ -133,12 +133,12 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         a3 a3Var = this.c;
         f4 f4Var = this.b;
-        w70 w70Var = this.a;
-        if (a3Var != null && (j10 = h4.j(w70Var, f4Var, a3Var)) != null) {
+        u70 u70Var = this.a;
+        if (a3Var != null && (j10 = h4.j(u70Var, f4Var, a3Var)) != null) {
             spannableStringBuilder.append(j10);
         }
         a3 a3Var2 = this.d;
-        if (a3Var2 != null && (j3 = h4.j(w70Var, f4Var, a3Var2)) != null) {
+        if (a3Var2 != null && (j3 = h4.j(u70Var, f4Var, a3Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -206,7 +206,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
         if (a3Var != null) {
             int lineCount = a3Var.d.getLineCount();
             int i17 = 4 - lineCount;
-            this.w = org.telegram.messenger.w1.C(f7, this.c.d.getHeight(), dp);
+            this.w = org.telegram.messenger.q.D(f7, this.c.d.getHeight(), dp);
             dp5 = this.c.d.getHeight() + dp5;
             int i18 = 0;
             while (true) {
@@ -241,12 +241,12 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9 {
             objArr[c10] = str2;
             formatString = LocaleController.formatString(i19, objArr);
         }
-        a3 p5 = h4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((f4Var == null || !f4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), i13, this.b);
+        a3 p5 = h4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((f4Var == null || !f4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a(), i13, this.b);
         this.d = p5;
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;
             if (this.c != null) {
-                height = org.telegram.messenger.w1.C(f7, dp, height);
+                height = org.telegram.messenger.q.D(f7, dp, height);
             }
             dp5 = height;
             a3 a3Var3 = this.d;

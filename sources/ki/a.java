@@ -1,87 +1,102 @@
 package ki;
 
-import ah.o;
-import ai.w0;
-import ai.x5;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.jh;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a7;
-import org.telegram.ui.bv;
-import org.telegram.ui.i6;
-import org.telegram.ui.x6;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CaptureRequest;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements bh.a {
+public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ a(int i10, Object obj, Object obj2) {
+    public /* synthetic */ a(g gVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = gVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        i iVar;
+        boolean z10;
         switch (this.a) {
             case 0:
-                ml0 ml0Var = (ml0) this.b;
-                gh.d.a(ml0Var, canvas, rectF, ml0Var, (FrameLayout) this.c);
-                break;
+                g gVar = this.b;
+                Handler handler = gVar.j;
+                if (handler != null) {
+                    handler.post(new a(gVar, 1));
+                    return;
+                }
+                return;
             case 1:
-                a7 a7Var = (a7) this.b;
-                i6 i6Var = (i6) this.c;
-                w0 w0Var = a7Var.b;
-                gh.d.a(w0Var, canvas, rectF, w0Var, i6Var);
-                x6 x6Var = a7Var.M;
-                if (x6Var != null) {
-                    int childCount = x6Var.h.getChildCount();
-                    for (int i10 = 0; i10 < childCount; i10++) {
-                        View childAt = a7Var.M.h.getChildAt(i10);
-                        if (childAt instanceof ml0) {
-                            ml0 ml0Var2 = (ml0) childAt;
-                            gh.d.a(ml0Var2, canvas, rectF, ml0Var2, i6Var);
+                g gVar2 = this.b;
+                if (!gVar2.B || gVar2.u == null || (iVar = gVar2.s) == null) {
+                    return;
+                }
+                synchronized (iVar) {
+                    z10 = iVar.s;
+                }
+                if (z10) {
+                    return;
+                }
+                try {
+                    gVar2.s.n();
+                    m mVar = gVar2.r;
+                    if (mVar != null) {
+                        long j3 = gVar2.s.t;
+                        if (j3 <= 0) {
+                            throw new IllegalArgumentException("Invalid recording time origin");
                         }
+                        mVar.f = j3;
+                        mVar.y = -1L;
+                        mVar.z = 0L;
+                        mVar.A = -1L;
+                        mVar.U = true;
                     }
-                    break;
+                    gVar2.f.b("first camera frame received; codecs started: segmentElapsedMs=" + g.g(gVar2.I));
+                    h0 h0Var = (h0) gVar2.g.b;
+                    h0Var.h.post(new w(h0Var, 3));
+                    return;
+                } catch (RuntimeException e) {
+                    gVar2.k(e);
+                    return;
                 }
-                break;
             case 2:
-                bv bvVar = (bv) this.b;
-                x5 x5Var = (x5) this.c;
-                int childCount2 = bvVar.a.getChildCount();
-                for (int i11 = 0; i11 < childCount2; i11++) {
-                    View childAt2 = bvVar.a.getChildAt(i11);
-                    if (childAt2 instanceof ml0) {
-                        ml0 ml0Var3 = (ml0) childAt2;
-                        gh.d.a(ml0Var3, canvas, rectF, ml0Var3, x5Var);
-                    }
+                this.b.i();
+                return;
+            case 3:
+                g gVar3 = this.b;
+                CameraCaptureSession cameraCaptureSession = gVar3.u;
+                CaptureRequest.Builder builder = gVar3.v;
+                if (!gVar3.B || cameraCaptureSession == null || builder == null) {
+                    return;
                 }
-                break;
+                try {
+                    gVar3.b(builder);
+                    builder.set(CaptureRequest.FLASH_MODE, Integer.valueOf((gVar3.A && gVar3.h()) ? 2 : 0));
+                    cameraCaptureSession.setRepeatingRequest(builder.build(), null, gVar3.j);
+                    return;
+                } catch (CameraAccessException e7) {
+                    gVar3.k(e7);
+                    return;
+                }
+            case 4:
+                g gVar4 = this.b;
+                gVar4.B = false;
+                gVar4.f();
+                i iVar2 = gVar4.s;
+                if (iVar2 != null) {
+                    iVar2.o();
+                    gVar4.s = null;
+                }
+                gVar4.F = false;
+                h0 h0Var2 = (h0) gVar4.g.b;
+                h0Var2.h.post(new w(h0Var2, 2));
+                return;
             default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                ((o) this.c).f(canvas, rectF);
-                jh jhVar = profileActivity.O.c2;
-                if (jhVar != null) {
-                    jhVar.f(canvas, rectF);
-                    break;
-                }
-                break;
+                this.b.s();
+                return;
         }
     }
 }

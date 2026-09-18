@@ -5,12 +5,12 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.ui.Components.kk0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class m0 {
-    public ka.c a;
+    public l.d a;
     public ArrayList b;
     public long c;
     public long d;
@@ -44,9 +44,9 @@ public abstract class m0 {
     public abstract boolean c(c1 c1Var, List list);
 
     public final void d(c1 c1Var) {
-        ka.c cVar = this.a;
-        if (cVar != null) {
-            RecyclerView recyclerView = (RecyclerView) cVar.b;
+        l.d dVar = this.a;
+        if (dVar != null) {
+            RecyclerView recyclerView = (RecyclerView) dVar.a;
             boolean z10 = true;
             c1Var.q(true);
             View view = c1Var.a;
@@ -61,14 +61,14 @@ public abstract class m0 {
             recyclerView.z0();
             lf.i iVar = recyclerView.e;
             e6.n nVar = (e6.n) iVar.c;
-            k2.c0 c0Var = (k2.c0) iVar.b;
-            int indexOfChild = ((RecyclerView) c0Var.b).indexOfChild(view);
+            ka.c cVar = (ka.c) iVar.b;
+            int indexOfChild = ((RecyclerView) cVar.b).indexOfChild(view);
             if (indexOfChild == -1) {
                 iVar.Y(view);
-            } else if (nVar.z(indexOfChild)) {
-                nVar.B(indexOfChild);
+            } else if (nVar.D(indexOfChild)) {
+                nVar.F(indexOfChild);
                 iVar.Y(view);
-                c0Var.r(indexOfChild);
+                cVar.j0(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -89,8 +89,8 @@ public abstract class m0 {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            kk0 kk0Var = (kk0) arrayList.get(i10);
-            kk0Var.a.d(kk0Var.b, kk0Var.c, kk0Var.d, false);
+            uk0 uk0Var = (uk0) arrayList.get(i10);
+            uk0Var.a.d(uk0Var.b, uk0Var.c, uk0Var.d, false);
         }
         arrayList.clear();
     }

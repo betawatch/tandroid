@@ -1,16 +1,49 @@
 package t0;
 
-import android.os.Build;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
+import android.content.ClipDescription;
+import android.net.Uri;
+import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public abstract class g {
-    public static InputConnection a(InputConnection inputConnection, EditorInfo editorInfo, f fVar) {
-        if (editorInfo != null) {
-            return Build.VERSION.SDK_INT >= 25 ? new d(inputConnection, fVar) : c.a(editorInfo).length == 0 ? inputConnection : new e(inputConnection, fVar);
-        }
-        throw new NullPointerException("editorInfo must be non-null");
+public final class g implements h {
+    public final InputContentInfo a;
+
+    public g(Object obj) {
+        this.a = (InputContentInfo) obj;
+    }
+
+    @Override // t0.h
+    public final Uri c() {
+        return this.a.getContentUri();
+    }
+
+    @Override // t0.h
+    public final void d() {
+        this.a.requestPermission();
+    }
+
+    @Override // t0.h
+    public final Uri f() {
+        return this.a.getLinkUri();
+    }
+
+    @Override // t0.h
+    public final ClipDescription getDescription() {
+        return this.a.getDescription();
+    }
+
+    @Override // t0.h
+    public final Object l() {
+        return this.a;
+    }
+
+    @Override // t0.h
+    public final void o() {
+        this.a.releasePermission();
+    }
+
+    public g(Uri uri, ClipDescription clipDescription, Uri uri2) {
+        this.a = new InputContentInfo(uri, clipDescription, uri2);
     }
 }

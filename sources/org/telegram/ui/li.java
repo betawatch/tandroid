@@ -1,82 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.text.TextUtils;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class li implements org.telegram.ui.Components.dl0 {
-    public final /* synthetic */ bo a;
+public final class li extends bi0 {
+    public final /* synthetic */ zn e;
 
-    public li(bo boVar) {
-        this.a = boVar;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.dl0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(float f7, float f10, int i10, View view) {
-        boolean z10;
-        boolean z11;
-        org.telegram.ui.ActionBar.k kVar;
-        View view2;
-        boolean z12;
-        bo boVar = this.a;
-        um umVar = boVar.c9;
-        if ((umVar == null || !umVar.z) && !boVar.b9()) {
-            z10 = ((org.telegram.ui.ActionBar.o2) boVar).inPreviewMode;
-            if (!z10 && !boVar.Oa) {
-                boVar.D4 = true;
-                if (view instanceof org.telegram.ui.Cells.w0) {
-                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-                    MessageObject messageObject = w0Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
-                            z11 = false;
-                            kVar = ((org.telegram.ui.ActionBar.o2) boVar).actionBar;
-                            if (!kVar.s() || (boVar.A9() && !z11)) {
-                                view2 = view;
-                                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
-                                z12 = true;
-                            } else {
-                                view2 = view;
-                                z12 = boVar.I7(view2, false, true, f7, f10, true, true, false);
-                            }
-                            if (view2 instanceof org.telegram.ui.Cells.t1) {
-                                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
-                                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().type != 27) {
-                                    bo.c2(boVar, i10);
-                                    return true;
-                                }
-                            }
-                            return z12;
-                        }
-                    }
-                }
-                z11 = true;
-                kVar = ((org.telegram.ui.ActionBar.o2) boVar).actionBar;
-                if (kVar.s()) {
-                }
-                view2 = view;
-                bo.b2(boVar, view2, view2 instanceof org.telegram.ui.Cells.t1 ? !((org.telegram.ui.Cells.t1) view2).i3(f7) : false, f7, f10);
-                z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.t1) {
-                }
-                return z12;
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public li(zn znVar, Context context, int i10, MessageObject messageObject) {
+        super(context);
+        this.e = znVar;
+        this.a = null;
+        if (!messageObject.isRoundVideo()) {
+            messageObject.isVoice();
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.dl0
-    public final /* synthetic */ void g() {
-    }
-
-    @Override // org.telegram.ui.Components.dl0
-    public final /* synthetic */ void q(float f7) {
+        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(context, null);
+        this.c = t00Var;
+        t00Var.f(org.telegram.ui.ActionBar.j6.G8, org.telegram.ui.ActionBar.j6.i6, -1);
+        t00Var.setViewType(13);
+        t00Var.setIsSingleCell(false);
+        addView(t00Var, w7.y5.c(-1.0f, -2));
+        org.telegram.ui.Components.l90 l90Var = new org.telegram.ui.Components.l90(context, null);
+        this.b = l90Var;
+        l90Var.setTextSize(1, 14.0f);
+        l90Var.setGravity(19);
+        l90Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E8, false));
+        l90Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.gc, false));
+        l90Var.setEllipsize(TextUtils.TruncateAt.END);
+        l90Var.setSingleLine();
+        l90Var.setLines(1);
+        l90Var.setMaxLines(1);
+        addView(l90Var, w7.y5.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
+        tL_channels_getMessageAuthor.id = messageObject.getId();
+        l90Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.g8(this, i10, 6));
+        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), 6, 0));
+        setEnabled(false);
     }
 }

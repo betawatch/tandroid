@@ -1,60 +1,55 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
-import android.text.TextPaint;
+import android.view.View;
 import ci.c6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.la;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class b1 extends org.telegram.ui.Cells.w0 {
-    public final la l2;
-    public final TextPaint m2;
-    public final /* synthetic */ d1 n2;
+public final class b1 extends s4.t {
+    public final /* synthetic */ c6 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(d1 d1Var, Context context, com.google.firebase.messaging.n nVar) {
-        super(context, nVar, false);
-        this.n2 = d1Var;
-        this.l2 = new la(d1Var.d, this, 10, false);
-        TextPaint textPaint = new TextPaint(1);
-        this.m2 = textPaint;
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
-        textPaint.setColor(-1);
+    public b1(c6 c6Var) {
+        super(true);
+        this.S = c6Var;
     }
 
-    @Override // org.telegram.ui.Cells.w0
-    public final Paint H(String str) {
-        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
-            return this.m2;
-        }
-        if ("paintChatActionBackground".equals(str)) {
-            c6 c6Var = this.n2.h;
-            c6Var.v0 = true;
-            boolean z10 = c6Var.B0;
-            la laVar = this.l2;
-            if (laVar.r != z10) {
-                laVar.r = z10;
-                if (laVar.i == 10) {
-                    ColorMatrix colorMatrix = new ColorMatrix();
-                    colorMatrix.setSaturation(1.6f);
-                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, laVar.r ? 0.97f : 0.92f);
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, laVar.r ? 0.12f : -0.06f);
-                    laVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                    laVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        MessageObject.GroupedMessagePosition position;
+        byte b10;
+        c6 c6Var = this.S;
+        ArrayList arrayList = c6Var.s0;
+        int size = (arrayList.size() - 1) - i10;
+        MessageObject.GroupedMessages groupedMessages = c6Var.t0;
+        if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+            int size2 = groupedMessages.posArray.size();
+            for (int i11 = 0; i11 < size2; i11++) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = groupedMessages.posArray.get(i11);
+                if (groupedMessagePosition != position) {
+                    byte b11 = groupedMessagePosition.minY;
+                    byte b12 = position.minY;
+                    if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                        return true;
+                    }
                 }
             }
-            Paint c10 = laVar.c(1.0f);
-            if (c10 != null) {
-                return c10;
-            }
         }
-        return super.H(str);
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
+        }
+        return false;
+    }
+
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

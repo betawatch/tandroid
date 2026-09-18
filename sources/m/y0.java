@@ -1,23 +1,23 @@
 package m;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class y0 extends k2.c0 {
+public final class y0 extends a4.m {
     public final /* synthetic */ z0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public y0(z0 z0Var) {
-        super(z0Var, 4);
+        super(z0Var, 28);
         this.c = z0Var;
     }
 
-    @Override // k2.c0, m.x0
-    public final void e(int i10) {
+    @Override // a4.m, m.x0
+    public final void H(int i10) {
         super/*android.widget.TextView*/.setLastBaselineToBottomHeight(i10);
     }
 
-    @Override // k2.c0, m.x0
-    public final void g(int i10) {
+    @Override // a4.m, m.x0
+    public final void d0(int i10) {
         super/*android.widget.TextView*/.setFirstBaselineToTopHeight(i10);
     }
 }

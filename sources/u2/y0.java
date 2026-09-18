@@ -1,13 +1,13 @@
 package u2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class y0 {
     public final b2.s a;
-    public final n2.l b;
+    public final n2.m b;
 
-    public y0(b2.s sVar, n2.l lVar) {
+    public y0(b2.s sVar, n2.m mVar) {
         this.a = sVar;
-        this.b = lVar;
+        this.b = mVar;
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.r6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -142,17 +142,17 @@ public abstract class w {
             boolean p02 = uVar.p0();
             int i12 = 0;
             while (i12 < g02) {
-                MediaCodecInfo c10 = uVar.c(i12);
+                MediaCodecInfo b10 = uVar.b(i12);
                 int i13 = Build.VERSION.SDK_INT;
-                if (i13 < 29 || !c10.isAlias()) {
-                    String name = c10.getName();
-                    if (g(c10, name, p02, str2)) {
+                if (i13 < 29 || !b10.isAlias()) {
+                    String name = b10.getName();
+                    if (g(b10, name, p02, str2)) {
                         int i14 = i12;
-                        String c11 = c(c10, name, str2);
-                        if (c11 != null) {
+                        String c10 = c(b10, name, str2);
+                        if (c10 != null) {
                             try {
-                                capabilitiesForType = c10.getCapabilitiesForType(c11);
-                                v = uVar.v("tunneled-playback", c11, capabilitiesForType);
+                                capabilitiesForType = b10.getCapabilitiesForType(c10);
+                                v = uVar.v("tunneled-playback", c10, capabilitiesForType);
                                 Z = uVar.Z("tunneled-playback", capabilitiesForType);
                                 z11 = sVar2.c;
                             } catch (Exception e) {
@@ -162,19 +162,19 @@ public abstract class w {
                             }
                             if (z11 || !Z) {
                                 if (!z11 || v) {
-                                    boolean v9 = uVar.v("secure-playback", c11, capabilitiesForType);
+                                    boolean v9 = uVar.v("secure-playback", c10, capabilitiesForType);
                                     boolean Z2 = uVar.Z("secure-playback", capabilitiesForType);
                                     if (z13 || !Z2) {
                                         if (!z13 || v9) {
-                                            boolean h = h(c10, str2);
+                                            boolean h = h(b10, str2);
                                             z10 = p02;
                                             try {
-                                                i11 = i(c10, str2);
+                                                i11 = i(b10, str2);
                                                 if (i13 >= 29) {
-                                                    z12 = c10.isVendor();
+                                                    z12 = b10.isVendor();
                                                 } else {
-                                                    String b10 = r6.b(c10.getName());
-                                                    z12 = (b10.startsWith("omx.google.") || b10.startsWith("c2.android.") || b10.startsWith("c2.google.")) ? false : true;
+                                                    String b11 = r6.b(b10.getName());
+                                                    z12 = (b11.startsWith("omx.google.") || b11.startsWith("c2.android.") || b11.startsWith("c2.google.")) ? false : true;
                                                 }
                                             } catch (Exception e7) {
                                                 e = e7;
@@ -182,7 +182,7 @@ public abstract class w {
                                                 i10 = i14;
                                                 if (Build.VERSION.SDK_INT > 23) {
                                                 }
-                                                e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c11 + ")");
+                                                e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                 throw e;
                                             }
                                             if (!(z10 && z13 == v9) && (z10 || z13)) {
@@ -191,13 +191,13 @@ public abstract class w {
                                                 if (!z10 && v9) {
                                                     str = name;
                                                     try {
-                                                        arrayList.add(o.i(name + ".secure", str2, c11, capabilitiesForType, h, i11, z14, true));
+                                                        arrayList.add(o.i(name + ".secure", str2, c10, capabilitiesForType, h, i11, z14, true));
                                                         break;
                                                     } catch (Exception e10) {
                                                         e = e10;
                                                         if (Build.VERSION.SDK_INT > 23) {
                                                         }
-                                                        e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c11 + ")");
+                                                        e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                         throw e;
                                                     }
                                                 }
@@ -207,12 +207,12 @@ public abstract class w {
                                             } else {
                                                 i10 = i14;
                                                 try {
-                                                    arrayList.add(o.i(name, str2, c11, capabilitiesForType, h, i11, z12, false));
+                                                    arrayList.add(o.i(name, str2, c10, capabilitiesForType, h, i11, z12, false));
                                                 } catch (Exception e11) {
                                                     e = e11;
                                                     str = name;
                                                     if (Build.VERSION.SDK_INT > 23 || arrayList.isEmpty()) {
-                                                        e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c11 + ")");
+                                                        e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                         throw e;
                                                     }
                                                     e2.a.e("MediaCodecUtil", "Skipping codec " + str + " (failed to query capabilities)");

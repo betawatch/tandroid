@@ -1,27 +1,33 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class rn0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.gy b;
+public final class rn0 extends s4.o {
+    public final /* synthetic */ vn0 b;
 
-    public /* synthetic */ rn0(org.telegram.ui.gy gyVar, int i10) {
-        this.a = i10;
-        this.b = gyVar;
+    public rn0(vn0 vn0Var) {
+        this.b = vn0Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                this.b.T(i10, i11);
-                break;
-            default:
-                this.b.T(i10, i11);
-                break;
-        }
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        vn0 vn0Var = this.b;
+        return ((sn0) vn0Var.n.get(i10)).equals(vn0Var.r.get(i11));
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        vn0 vn0Var = this.b;
+        return ((sn0) vn0Var.n.get(i10)).a.h == ((sn0) vn0Var.r.get(i11)).a.h;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.n.size();
     }
 }

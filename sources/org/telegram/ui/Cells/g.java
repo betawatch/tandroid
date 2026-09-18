@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.wy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,35 +24,35 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                g90 g90Var = hVar.d;
-                if (g90Var != null) {
-                    hVar.h.E.l(g90Var, true);
+                p90 p90Var = hVar.d;
+                if (p90Var != null) {
+                    hVar.h.E.l(p90Var, true);
                     break;
                 }
                 break;
             case 1:
-                k1 k1Var = ((u1) this.b).e;
-                if (k1Var != null) {
-                    k1Var.k();
+                l1 l1Var = ((v1) this.b).e;
+                if (l1Var != null) {
+                    l1Var.k();
                     break;
                 }
                 break;
             case 2:
-                ((a2) this.b).a();
+                ((b2) this.b).a();
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard(((xh.t4) this.b).b.getEditText());
+                AndroidUtilities.hideKeyboard(((xh.u4) this.b).b.getEditText());
                 break;
             case 4:
-                AndroidUtilities.hideKeyboard(((i3) this.b).b);
+                AndroidUtilities.hideKeyboard(((j3) this.b).b);
                 break;
             case 5:
-                h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof ml0)) {
-                    h6Var.callOnClick();
+                i6 i6Var = (i6) this.b;
+                if (!(i6Var.getParent() instanceof wl0)) {
+                    i6Var.callOnClick();
                     break;
                 } else {
-                    ((ml0) h6Var.getParent()).getOnItemClickListener().d(RecyclerView.S(h6Var), h6Var);
+                    ((wl0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.S(i6Var), i6Var);
                     break;
                 }
             case 6:
@@ -67,30 +67,30 @@ public final /* synthetic */ class g implements Runnable {
                 ((n9) this.b).b.U();
                 break;
             case 9:
-                ja jaVar = (ja) this.b;
-                jaVar.s = -1;
+                ia iaVar = (ia) this.b;
+                iaVar.s = -1;
                 int i10 = 0;
                 while (true) {
-                    t1[] t1VarArr = jaVar.e;
-                    if (i10 >= t1VarArr.length) {
+                    u1[] u1VarArr = iaVar.e;
+                    if (i10 >= u1VarArr.length) {
                         break;
                     } else {
-                        t1 t1Var = t1VarArr[i10];
-                        if (t1Var != null) {
-                            t1Var.invalidate();
+                        u1 u1Var = u1VarArr[i10];
+                        if (u1Var != null) {
+                            u1Var.invalidate();
                         }
                         i10++;
                     }
                 }
             case 10:
-                wy wyVar = (wy) this.b;
-                oc.e();
-                wyVar.presentFragment(new SessionsActivity(0));
+                uy uyVar = (uy) this.b;
+                qc.e();
+                uyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.b;
-                g3Var.setCanDismissWithSwipe(true);
-                g3Var.setCanDismissWithTouchOutside(true);
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
+                f3Var.setCanDismissWithSwipe(true);
+                f3Var.setCanDismissWithTouchOutside(true);
                 break;
         }
     }

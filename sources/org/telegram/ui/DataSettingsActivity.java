@@ -27,9 +27,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
+public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int E;
     public int F;
     public int G;
@@ -51,7 +51,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
     public boolean W;
     public boolean X;
     public long Y;
-    public pu a;
+    public ou a;
     public ai.w0 b;
     public ArrayList c;
     private int clearDraftsRow;
@@ -110,7 +110,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                 i14 = 1;
             }
             if ((!LocaleController.isRTL || f7 > AndroidUtilities.dp(76.0f)) && (LocaleController.isRTL || f7 < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
-                dataSettingsActivity.presentFragment(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.p6.e(i14, TeXSymbolParser.TYPE_ATTR)));
+                dataSettingsActivity.presentFragment(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.c1.f(i14, TeXSymbolParser.TYPE_ATTR)));
                 return;
             } else {
                 SaveToGallerySettingsHelper.getSettings(i14).toggle();
@@ -126,8 +126,8 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                 return;
             }
             dataSettingsActivity.a.getClass();
-            org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view;
-            boolean z12 = i5Var.e.h;
+            org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+            boolean z12 = j5Var.e.h;
             if (i10 == dataSettingsActivity.e) {
                 preset = DownloadController.getInstance(dataSettingsActivity.currentAccount).mobilePreset;
                 preset2 = DownloadController.getInstance(dataSettingsActivity.currentAccount).mediumPreset;
@@ -155,7 +155,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
             edit.putString(str, preset.toString());
             edit.putInt(str2, 3);
             edit.commit();
-            i5Var.setChecked(!z12);
+            j5Var.setChecked(!z12);
             s4.c1 H = dataSettingsActivity.b.H(view);
             if (H != null) {
                 dataSettingsActivity.a.v(H, i10);
@@ -171,18 +171,18 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
             String string = LocaleController.getString(R.string.ResetAutomaticMediaDownloadAlertTitle);
-            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-            c2Var.R = string;
-            c2Var.T = LocaleController.getString(R.string.ResetAutomaticMediaDownloadAlert);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new org.telegram.ui.ActionBar.b2(dataSettingsActivity) { // from class: org.telegram.ui.nu
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            b2Var.R = string;
+            b2Var.T = LocaleController.getString(R.string.ResetAutomaticMediaDownloadAlert);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.mu
                 public final /* synthetic */ DataSettingsActivity b;
 
                 {
                     this.b = dataSettingsActivity;
                 }
 
-                @Override // org.telegram.ui.ActionBar.b2
-                public final void f(org.telegram.ui.ActionBar.c2 c2Var2, int i18) {
+                @Override // org.telegram.ui.ActionBar.a2
+                public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i18) {
                     switch (i16) {
                         case 0:
                             DataSettingsActivity.V(this.b);
@@ -196,8 +196,8 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                 }
             });
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            dataSettingsActivity.showDialog(c2Var);
-            TextView textView = (TextView) c2Var.d(-1);
+            dataSettingsActivity.showDialog(b2Var);
+            TextView textView = (TextView) b2Var.d(-1);
             if (textView != null) {
                 textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                 return;
@@ -205,7 +205,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
             return;
         }
         if (i10 == dataSettingsActivity.s) {
-            dataSettingsActivity.presentFragment(new a7());
+            dataSettingsActivity.presentFragment(new z6());
             return;
         }
         float f10 = 4.0f;
@@ -223,51 +223,51 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                 Activity parentActivity = dataSettingsActivity.getParentActivity();
                 String[] strArr = {LocaleController.getString(R.string.UseLessDataNever), LocaleController.getString(R.string.UseLessDataOnRoaming), LocaleController.getString(R.string.UseLessDataOnMobile), LocaleController.getString(R.string.UseLessDataAlways)};
                 String string2 = LocaleController.getString(R.string.VoipUseLessData);
-                ou ouVar = new ou(dataSettingsActivity, globalMainSettings, i10);
-                Pattern pattern = org.telegram.ui.Components.c5.a;
-                LinearLayout f11 = org.telegram.messenger.w1.f(parentActivity, 1);
+                nu nuVar = new nu(dataSettingsActivity, globalMainSettings, i10);
+                Pattern pattern = org.telegram.ui.Components.e5.a;
+                LinearLayout f11 = org.telegram.messenger.q.f(parentActivity, 1);
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(parentActivity);
                 i12 = 0;
                 while (i12 < 4) {
-                    org.telegram.ui.Cells.k6 k6Var = new org.telegram.ui.Cells.k6(parentActivity, null);
-                    k6Var.setPadding(AndroidUtilities.dp(f10), 0, AndroidUtilities.dp(4.0f), 0);
-                    k6Var.setTag(Integer.valueOf(i12));
-                    k6Var.a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.g7, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E5, false));
-                    k6Var.b(strArr[i12], i15 == i12);
-                    f11.addView(k6Var);
-                    k6Var.setOnClickListener(new tf(13, alertDialog$Builder2, ouVar));
+                    org.telegram.ui.Cells.l6 l6Var = new org.telegram.ui.Cells.l6(parentActivity, null);
+                    l6Var.setPadding(AndroidUtilities.dp(f10), 0, AndroidUtilities.dp(4.0f), 0);
+                    l6Var.setTag(Integer.valueOf(i12));
+                    l6Var.a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.g7, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E5, false));
+                    l6Var.b(strArr[i12], i15 == i12);
+                    f11.addView(l6Var);
+                    l6Var.setOnClickListener(new sf(13, alertDialog$Builder2, nuVar));
                     i12++;
                     f10 = 4.0f;
                 }
-                org.telegram.ui.ActionBar.c2 c2Var2 = alertDialog$Builder2.a;
-                c2Var2.R = string2;
+                org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder2.a;
+                b2Var2.R = string2;
                 alertDialog$Builder2.n(f11);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.Cancel), null);
-                dataSettingsActivity.setVisibleDialog(c2Var2);
-                c2Var2.show();
+                dataSettingsActivity.setVisibleDialog(b2Var2);
+                b2Var2.show();
                 return;
             }
             i15 = 0;
             Activity parentActivity2 = dataSettingsActivity.getParentActivity();
             String[] strArr2 = {LocaleController.getString(R.string.UseLessDataNever), LocaleController.getString(R.string.UseLessDataOnRoaming), LocaleController.getString(R.string.UseLessDataOnMobile), LocaleController.getString(R.string.UseLessDataAlways)};
             String string22 = LocaleController.getString(R.string.VoipUseLessData);
-            ou ouVar2 = new ou(dataSettingsActivity, globalMainSettings, i10);
-            Pattern pattern2 = org.telegram.ui.Components.c5.a;
-            LinearLayout f112 = org.telegram.messenger.w1.f(parentActivity2, 1);
+            nu nuVar2 = new nu(dataSettingsActivity, globalMainSettings, i10);
+            Pattern pattern2 = org.telegram.ui.Components.e5.a;
+            LinearLayout f112 = org.telegram.messenger.q.f(parentActivity2, 1);
             AlertDialog$Builder alertDialog$Builder22 = new AlertDialog$Builder(parentActivity2);
             i12 = 0;
             while (i12 < 4) {
             }
-            org.telegram.ui.ActionBar.c2 c2Var22 = alertDialog$Builder22.a;
-            c2Var22.R = string22;
+            org.telegram.ui.ActionBar.b2 b2Var22 = alertDialog$Builder22.a;
+            b2Var22.R = string22;
             alertDialog$Builder22.n(f112);
             alertDialog$Builder22.k(LocaleController.getString(R.string.Cancel), null);
-            dataSettingsActivity.setVisibleDialog(c2Var22);
-            c2Var22.show();
+            dataSettingsActivity.setVisibleDialog(b2Var22);
+            b2Var22.show();
             return;
         }
         if (i10 == dataSettingsActivity.v) {
-            dataSettingsActivity.presentFragment(new bv());
+            dataSettingsActivity.presentFragment(new av());
             return;
         }
         if (i10 != dataSettingsActivity.n) {
@@ -296,9 +296,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                 return;
             }
             if (i10 == dataSettingsActivity.N) {
-                i31 i31Var = new i31(null);
-                i31Var.n = new org.telegram.ui.Cells.j3[4];
-                dataSettingsActivity.presentFragment(i31Var);
+                g31 g31Var = new g31(null);
+                g31Var.n = new org.telegram.ui.Cells.k3[4];
+                dataSettingsActivity.presentFragment(g31Var);
                 return;
             }
             if (i10 == dataSettingsActivity.J) {
@@ -320,19 +320,19 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
             if (i10 == dataSettingsActivity.clearDraftsRow) {
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
                 String string3 = LocaleController.getString(R.string.AreYouSureClearDraftsTitle);
-                org.telegram.ui.ActionBar.c2 c2Var3 = alertDialog$Builder3.a;
-                c2Var3.R = string3;
-                c2Var3.T = LocaleController.getString(R.string.AreYouSureClearDrafts);
+                org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder3.a;
+                b2Var3.R = string3;
+                b2Var3.T = LocaleController.getString(R.string.AreYouSureClearDrafts);
                 final int i19 = 1;
-                alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.b2(dataSettingsActivity) { // from class: org.telegram.ui.nu
+                alertDialog$Builder3.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.ActionBar.a2(dataSettingsActivity) { // from class: org.telegram.ui.mu
                     public final /* synthetic */ DataSettingsActivity b;
 
                     {
                         this.b = dataSettingsActivity;
                     }
 
-                    @Override // org.telegram.ui.ActionBar.b2
-                    public final void f(org.telegram.ui.ActionBar.c2 c2Var23, int i182) {
+                    @Override // org.telegram.ui.ActionBar.a2
+                    public final void f(org.telegram.ui.ActionBar.b2 b2Var23, int i182) {
                         switch (i19) {
                             case 0:
                                 DataSettingsActivity.V(this.b);
@@ -346,8 +346,8 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                     }
                 });
                 alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), null);
-                dataSettingsActivity.showDialog(c2Var3);
-                TextView textView2 = (TextView) c2Var3.d(-1);
+                dataSettingsActivity.showDialog(b2Var3);
+                TextView textView2 = (TextView) b2Var3.d(-1);
                 if (textView2 != null) {
                     textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                     return;
@@ -358,8 +358,8 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         }
         AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(dataSettingsActivity.getParentActivity());
         String string4 = LocaleController.getString(R.string.StoragePath);
-        org.telegram.ui.ActionBar.c2 c2Var4 = alertDialog$Builder4.a;
-        c2Var4.R = string4;
+        org.telegram.ui.ActionBar.b2 b2Var4 = alertDialog$Builder4.a;
+        b2Var4.R = string4;
         LinearLayout linearLayout = new LinearLayout(dataSettingsActivity.getParentActivity());
         linearLayout.setOrientation(1);
         alertDialog$Builder4.n(linearLayout);
@@ -389,9 +389,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                     File file = (File) dataSettingsActivity.c.get(i11);
                     int i21 = i11;
                     String absolutePath3 = file.getAbsolutePath();
-                    org.telegram.ui.Cells.p4 p4Var = new org.telegram.ui.Cells.p4(context);
-                    p4Var.setPadding(AndroidUtilities.dp(4.0f), i16, AndroidUtilities.dp(4.0f), i16);
-                    p4Var.setTag(Integer.valueOf(i21));
+                    org.telegram.ui.Cells.q4 q4Var = new org.telegram.ui.Cells.q4(context);
+                    q4Var.setPadding(AndroidUtilities.dp(4.0f), i16, AndroidUtilities.dp(4.0f), i16);
+                    q4Var.setTag(Integer.valueOf(i21));
                     boolean contains = absolutePath3.contains("/storage/emulated/");
                     if (!z10 || contains) {
                         formatString = contains ? LocaleController.formatString(R.string.StoragePathFreeInternal, AndroidUtilities.formatFileSize(file.getFreeSpace())) : LocaleController.formatString(R.string.StoragePathFreeExternal, AndroidUtilities.formatFileSize(file.getFreeSpace()));
@@ -402,23 +402,23 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
                         objArr[1] = absolutePath3;
                         formatString = LocaleController.formatString(i22, objArr);
                     }
-                    p4Var.b.setText(LocaleController.getString(contains ? R.string.InternalStorage : R.string.SdCard));
-                    p4Var.c.setText(formatString);
-                    RadioButton radioButton = p4Var.a;
+                    q4Var.b.setText(LocaleController.getString(contains ? R.string.InternalStorage : R.string.SdCard));
+                    q4Var.c.setText(formatString);
+                    RadioButton radioButton = q4Var.a;
                     radioButton.a(false, false);
-                    p4Var.e = null;
-                    p4Var.d = false;
+                    q4Var.e = null;
+                    q4Var.d = false;
                     radioButton.a(absolutePath3.startsWith(str3), false);
-                    p4Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), 2, -1));
-                    linearLayout.addView(p4Var);
-                    p4Var.setOnClickListener(new ai.m5(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
+                    q4Var.setBackground(org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.I5, false), 2, -1));
+                    linearLayout.addView(q4Var);
+                    q4Var.setOnClickListener(new ai.m5(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
                     i11 = i21 + 1;
                     size = size;
                     i15 = 2;
                     i16 = 0;
                 }
                 alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-                dataSettingsActivity.showDialog(c2Var4);
+                dataSettingsActivity.showDialog(b2Var4);
             }
         }
         z11 = true;
@@ -428,7 +428,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         while (i11 < size) {
         }
         alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-        dataSettingsActivity.showDialog(c2Var4);
+        dataSettingsActivity.showDialog(b2Var4);
     }
 
     public static /* synthetic */ void V(DataSettingsActivity dataSettingsActivity) {
@@ -469,17 +469,17 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         dataSettingsActivity.o0(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setTitle(LocaleController.getString(R.string.DataSettings));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new to(this, 18));
-        org.telegram.ui.ActionBar.e5 e5Var = this.parentLayout;
-        if (e5Var != null && ((ActionBarLayout) e5Var).N0) {
+        this.actionBar.setActionBarMenuOnItemClick(new ro(this, 18));
+        org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
+        if (d5Var != null && ((ActionBarLayout) d5Var).N0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-        this.a = new pu(this, context);
+        this.a = new ou(this, context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
@@ -489,9 +489,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         w0Var.q1();
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutManager(new s4.c0(1, false));
-        frameLayout2.addView(this.b, w7.x5.e(-1, -1, 51));
+        frameLayout2.addView(this.b, w7.y5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new org.telegram.ui.Components.mf(23, this, context));
+        this.b.setOnItemClickListener(new org.telegram.ui.Components.b3(24, this, context));
         s4.j jVar = new s4.j();
         jVar.n(350L);
         jVar.o(org.telegram.ui.Components.qr.h);
@@ -501,33 +501,33 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final org.telegram.ui.Components.ml0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.wl0 getListViewForSimpleGlass() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 16, new Class[]{org.telegram.ui.Cells.ea.class, org.telegram.ui.Cells.w8.class, org.telegram.ui.Cells.l4.class, org.telegram.ui.Cells.i5.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 16, new Class[]{org.telegram.ui.Cells.ea.class, org.telegram.ui.Cells.w8.class, org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.j5.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.j6.v8));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.j6.A8));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.j6.t8));
         int i10 = org.telegram.ui.ActionBar.j6.G6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.j5.class}, new String[]{"textView"}, null, null, -1, null, i10));
         int i11 = org.telegram.ui.ActionBar.j6.z6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.j5.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
         int i12 = org.telegram.ui.ActionBar.j6.M6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.j5.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
         int i13 = org.telegram.ui.ActionBar.j6.N6;
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"checkBox"}, null, null, -1, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.j5.class}, new String[]{"checkBox"}, null, null, -1, null, i13));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.j6.i6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.j6.k0, null, null, org.telegram.ui.ActionBar.j6.d7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"textView"}, null, null, -1, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.l4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.L6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.m4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.L6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"textView"}, null, null, -1, null, i10));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.b, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
@@ -536,7 +536,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
@@ -584,15 +584,15 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
             this.U = i10 + 1;
         }
         this.resetDownloadRow = i10;
-        pu puVar = this.a;
-        if (puVar != null && !z10) {
+        ou ouVar = this.a;
+        if (ouVar != null && !z10) {
             if (i13 < 0 && i10 >= 0) {
-                puVar.m(this.f);
+                ouVar.m(this.f);
                 this.a.o(this.resetDownloadRow);
             } else if (i13 < 0 || i10 >= 0) {
                 z10 = true;
             } else {
-                puVar.m(this.f);
+                ouVar.m(this.f);
                 this.a.u(i13);
             }
         }
@@ -627,19 +627,19 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         this.clearDraftsRow = i16 + 7;
         this.U = i16 + 9;
         this.R = i16 + 8;
-        pu puVar2 = this.a;
-        if (puVar2 == null || !z10) {
+        ou ouVar2 = this.a;
+        if (ouVar2 == null || !z10) {
             return;
         }
-        puVar2.l();
+        ouVar2.l();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onDialogDismiss(Dialog dialog) {
         DownloadController.getInstance(this.currentAccount).checkAutodownloadSettings();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         super.onFragmentCreate();
         DownloadController.getInstance(this.currentAccount).loadAutoDownloadConfig(true);
@@ -647,26 +647,26 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.o2 {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        a7.l0 = true;
+        z6.l0 = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        lu luVar = new lu(this, 1);
-        AndroidUtilities.runOnUIThread(luVar, 100L);
-        a7.j0(new mu(this, luVar, System.currentTimeMillis(), 0));
+        ku kuVar = new ku(this, 1);
+        AndroidUtilities.runOnUIThread(kuVar, 100L);
+        z6.j0(new lu(this, kuVar, System.currentTimeMillis(), 0));
         if (this.b != null && this.a != null) {
             for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
                 View childAt = this.b.getChildAt(i10);
                 s4.c1 U = this.b.U(childAt);
                 if (U != null) {
-                    pu puVar = this.a;
+                    ou ouVar = this.a;
                     this.b.getClass();
-                    puVar.v(U, RecyclerView.S(childAt));
+                    ouVar.v(U, RecyclerView.S(childAt));
                 }
             }
         }

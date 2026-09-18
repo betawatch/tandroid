@@ -9,9 +9,9 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.kd0;
+import org.telegram.ui.jd0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class a8 implements RequestDelegate {
                 ((SendMessagesHelper) this.c).lambda$sendGame$47(this.b, tLObject, tL_error);
                 break;
             default:
-                kd0 kd0Var = (kd0) this.c;
+                jd0 jd0Var = (jd0) this.c;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new a3.h0(kd0Var, tLObject, this.b, 28));
+                    AndroidUtilities.runOnUIThread(new a3.h0(jd0Var, tLObject, this.b, 28));
                     break;
                 }
                 break;

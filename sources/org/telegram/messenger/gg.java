@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gg implements Runnable {
     public final /* synthetic */ int a;
@@ -61,11 +61,11 @@ public final /* synthetic */ class gg implements Runnable {
                     if (storyItem != null) {
                         long j3 = this.b;
                         storyItem.dialogId = j3;
-                        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                         if (R != null) {
-                            if (R instanceof wy) {
+                            if (R instanceof uy) {
                                 try {
-                                    u9Var = ai.u9.a(((wy) R).E0.h);
+                                    u9Var = ai.u9.a(((uy) R).E0.h);
                                 } catch (Exception unused) {
                                 }
                             }
@@ -81,7 +81,7 @@ public final /* synthetic */ class gg implements Runnable {
                         }
                     }
                 }
-                org.telegram.ui.Components.vc.X().Q(R.raw.error, 36, LocaleController.getString(R.string.StoryNotFound)).k(false);
+                org.telegram.ui.Components.xc.X().Q(R.raw.error, 36, LocaleController.getString(R.string.StoryNotFound)).k(false);
                 break;
         }
     }

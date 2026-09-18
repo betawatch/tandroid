@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.hl0;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class y extends n0 {
     public int E;
@@ -27,7 +27,7 @@ public class y extends n0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public k2.u N;
+    public n2.e N;
     public w O;
     public Rect Q;
     public long R;
@@ -46,9 +46,9 @@ public class y extends n0 {
     public int w = -1;
     public int y = 0;
     public final ArrayList F = new ArrayList();
-    public final qg.b0 I = new qg.b0(this, 2);
+    public final p8.b I = new p8.b(this, 4);
     public View M = null;
-    public final hl0 P = new hl0(this);
+    public final rl0 P = new rl0(this);
 
     public y(v vVar) {
         this.x = vVar;
@@ -147,17 +147,17 @@ public class y extends n0 {
         }
     }
 
-    public final void e(ml0 ml0Var) {
+    public final void e(wl0 wl0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == ml0Var) {
+        if (recyclerView == wl0Var) {
             return;
         }
-        hl0 hl0Var = this.P;
+        rl0 rl0Var = this.P;
         if (recyclerView != null) {
             recyclerView.q0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(hl0Var);
-            if (recyclerView2.F == hl0Var) {
+            recyclerView2.E.remove(rl0Var);
+            if (recyclerView2.F == rl0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -189,21 +189,21 @@ public class y extends n0 {
                 this.N = null;
             }
         }
-        this.H = ml0Var;
-        if (ml0Var != null) {
-            ml0Var.getResources();
+        this.H = wl0Var;
+        if (wl0Var != null) {
+            wl0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(hl0Var);
+            this.H.E.add(rl0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new k2.u(this.H.getContext(), this.O);
+            this.N = new n2.e(this.H.getContext(), this.O);
         }
     }
 

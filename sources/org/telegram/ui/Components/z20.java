@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class z20 implements NotificationCenter.NotificationCenterDelegate {
     public static z20 d0 = null;
@@ -45,7 +45,7 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     public float Q;
     public float R;
     public final f30 U;
-    public final bj0 V;
+    public final lj0 V;
     public boolean W;
     public boolean X;
     public boolean Y;
@@ -55,13 +55,13 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     public final ci.s6 c;
     public ValueAnimator c0;
     public final FrameLayout d;
-    public final org.telegram.ui.w7 e;
+    public final org.telegram.ui.v7 e;
     public final d30 f;
     public final int h;
     public WindowManager n;
     public WindowManager.LayoutParams r;
-    public final i9 s;
-    public final yi0 v;
+    public final k9 s;
+    public final ij0 v;
     public boolean w;
     public boolean x;
     public boolean y;
@@ -82,15 +82,15 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         x20Var.setAlpha(0.7f);
         f30 f30Var = new f30(i10, context, false);
         this.U = f30Var;
-        x20Var.addView(f30Var, w7.x5.e(-1, -1, 17));
-        i9 i9Var = new i9(context, true);
-        this.s = i9Var;
-        i9Var.setStyle(5);
-        i9Var.setCentered(true);
-        i9Var.setVisibility(8);
-        i9Var.setDelegate(new xp(this, 19));
+        x20Var.addView(f30Var, w7.y5.e(-1, -1, 17));
+        k9 k9Var = new k9(context, true);
+        this.s = k9Var;
+        k9Var.setStyle(5);
+        k9Var.setCentered(true);
+        k9Var.setVisibility(8);
+        k9Var.setDelegate(new xp(this, 19));
         g(false);
-        x20Var.addView(i9Var, w7.x5.e(108, 36, 49));
+        x20Var.addView(k9Var, w7.y5.e(108, 36, 49));
         ai.f0 f0Var = new ai.f0(this, context, 15);
         this.b = f0Var;
         ci.s6 s6Var = new ci.s6(this, context);
@@ -98,19 +98,19 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         f0Var.addView(s6Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        bj0 bj0Var = new bj0(context);
-        this.V = bj0Var;
-        bj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        yi0 yi0Var = new yi0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f), true, null);
-        this.v = yi0Var;
-        yi0Var.h = true;
-        bj0Var.setAnimation(yi0Var);
-        bj0Var.setColorFilter(-1);
-        frameLayout.addView(bj0Var, w7.x5.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
-        org.telegram.ui.w7 w7Var = new org.telegram.ui.w7(this, context, 2);
-        this.e = w7Var;
-        w7Var.setOnClickListener(new f0(this, 21));
-        w7Var.setClipChildren(false);
+        lj0 lj0Var = new lj0(context);
+        this.V = lj0Var;
+        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        ij0 ij0Var = new ij0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f), true, null);
+        this.v = ij0Var;
+        ij0Var.h = true;
+        lj0Var.setAnimation(ij0Var);
+        lj0Var.setColorFilter(-1);
+        frameLayout.addView(lj0Var, w7.y5.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
+        org.telegram.ui.v7 v7Var = new org.telegram.ui.v7(this, context, 2);
+        this.e = v7Var;
+        v7Var.setOnClickListener(new f0(this, 21));
+        v7Var.setClipChildren(false);
         final d30 d30Var = new d30(context);
         d30Var.f = new RectF();
         Paint paint = new Paint(1);
@@ -121,10 +121,10 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         paint.setAlpha(234);
         c30 c30Var = new c30(context);
         c30Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        u9 u9Var = new u9(context);
-        d30Var.e = u9Var;
-        u9Var.setRoundRadius(AndroidUtilities.dp(22.0f));
-        c30Var.addView(u9Var, w7.x5.c(44.0f, 44));
+        w9 w9Var = new w9(context);
+        d30Var.e = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(22.0f));
+        c30Var.addView(w9Var, w7.y5.c(44.0f, 44));
         int dp = AndroidUtilities.dp(6.0f);
         int k10 = i0.a.k(-1, 76);
         c30Var.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, 0, k10, k10));
@@ -138,13 +138,13 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         textView.setMaxLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.n(-1, -2), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.y5.n(-1, -2), context);
         d30Var.b = h;
         h.setTextSize(12.0f);
         h.setTextColor(i0.a.k(-1, 153));
-        linearLayout.addView(h, w7.x5.n(-1, -2));
-        c30Var.addView(linearLayout, w7.x5.d(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
-        d30Var.addView(c30Var, w7.x5.t(-1, -2, 0, 10, 10, 10, 10));
+        linearLayout.addView(h, w7.y5.n(-1, -2));
+        c30Var.addView(linearLayout, w7.y5.d(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
+        d30Var.addView(c30Var, w7.y5.t(-1, -2, 0, 10, 10, 10, 10));
         org.telegram.ui.Components.voip.v2 v2Var = new org.telegram.ui.Components.voip.v2(context, 44.0f);
         d30Var.c = v2Var;
         v2Var.setTextSize(12);
@@ -276,13 +276,13 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         org.telegram.ui.Components.voip.r1 r1Var = new org.telegram.ui.Components.voip.r1(context);
         r1Var.setChildSize(68);
         r1Var.setUseStartPadding(false);
-        r1Var.addView(v2Var, w7.x5.c(63.0f, 68));
-        r1Var.addView(v2Var2, w7.x5.c(63.0f, 68));
-        r1Var.addView(v2Var3, w7.x5.c(63.0f, 68));
+        r1Var.addView(v2Var, w7.y5.c(63.0f, 68));
+        r1Var.addView(v2Var2, w7.y5.c(63.0f, 68));
+        r1Var.addView(v2Var3, w7.y5.c(63.0f, 68));
         d30Var.setWillNotDraw(false);
-        d30Var.addView(r1Var, w7.x5.t(-1, -2, 0, 6, 0, 6, 0));
+        d30Var.addView(r1Var, w7.y5.t(-1, -2, 0, 6, 0, 6, 0));
         this.f = d30Var;
-        w7Var.addView(d30Var, w7.x5.c(-2.0f, -2));
+        v7Var.addView(d30Var, w7.y5.c(-2.0f, -2));
     }
 
     public static WindowManager.LayoutParams b(Context context) {
@@ -310,13 +310,13 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         if ((Build.VERSION.SDK_INT >= 23 && !ApplicationLoader.canDrawOverlays) || (sharedInstance = VoIPService.getSharedInstance()) == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp() || e0) {
             return false;
         }
-        return ApplicationLoader.mainInterfaceStopped || !org.telegram.ui.k60.E3;
+        return ApplicationLoader.mainInterfaceStopped || !org.telegram.ui.i60.E3;
     }
 
     public static void j(Context context) {
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         boolean z10 = (sharedInstance == null || sharedInstance.groupCall == null || sharedInstance.isHangingUp()) ? false : true;
-        if (!AndroidUtilities.checkInlinePermissions(ApplicationLoader.applicationContext) || !z10 || e0 || (!ApplicationLoader.mainInterfaceStopped && org.telegram.ui.k60.E3)) {
+        if (!AndroidUtilities.checkInlinePermissions(ApplicationLoader.applicationContext) || !z10 || e0 || (!ApplicationLoader.mainInterfaceStopped && org.telegram.ui.i60.E3)) {
             z20 z20Var = d0;
             if (z20Var != null) {
                 z20Var.e(false);
@@ -366,19 +366,19 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
             NotificationCenter.getGlobalInstance().addObserver(d0, NotificationCenter.webRtcSpeakerAmplitudeEvent);
             NotificationCenter.getGlobalInstance().addObserver(d0, NotificationCenter.didEndCall);
         }
-        i9 i9Var = d0.s;
-        if (i9Var.getTag() != null) {
+        k9 k9Var = d0.s;
+        if (k9Var.getTag() != null) {
             return;
         }
-        i9Var.animate().setListener(null).cancel();
-        if (i9Var.getVisibility() != 0) {
-            i9Var.setVisibility(0);
-            i9Var.setAlpha(0.0f);
-            i9Var.setScaleX(0.5f);
-            i9Var.setScaleY(0.5f);
+        k9Var.animate().setListener(null).cancel();
+        if (k9Var.getVisibility() != 0) {
+            k9Var.setVisibility(0);
+            k9Var.setAlpha(0.0f);
+            k9Var.setScaleX(0.5f);
+            k9Var.setScaleY(0.5f);
         }
-        i9Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
-        i9Var.setTag(1);
+        k9Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
+        k9Var.setTag(1);
     }
 
     public final void a() {
@@ -414,23 +414,23 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     public final void e(boolean z10) {
         if (z10 != this.w) {
             this.w = z10;
-            org.telegram.ui.w7 w7Var = this.e;
-            w7Var.animate().setListener(null).cancel();
+            org.telegram.ui.v7 v7Var = this.e;
+            v7Var.animate().setListener(null).cancel();
             boolean z11 = this.w;
             d30 d30Var = this.f;
             if (z11) {
-                if (w7Var.getVisibility() != 0) {
-                    w7Var.setVisibility(0);
-                    w7Var.setAlpha(0.0f);
+                if (v7Var.getVisibility() != 0) {
+                    v7Var.setVisibility(0);
+                    v7Var.setAlpha(0.0f);
                     d30Var.setScaleX(0.7f);
                     d30Var.setScaleY(0.7f);
                 }
-                w7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 2));
-                w7Var.animate().alpha(1.0f).setDuration(150L).start();
+                v7Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 2));
+                v7Var.animate().alpha(1.0f).setDuration(150L).start();
                 d30Var.animate().scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
             } else {
                 d30Var.animate().scaleX(0.7f).scaleY(0.7f).setDuration(150L).start();
-                w7Var.animate().alpha(0.0f).setDuration(150L).setListener(new u20(this, 1)).start();
+                v7Var.animate().alpha(0.0f).setDuration(150L).setListener(new u20(this, 1)).start();
             }
         }
         a();
@@ -471,10 +471,10 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
     }
 
     public final void g(boolean z10) {
-        i9 i9Var = this.s;
-        h9 h9Var = i9Var.a;
-        if (h9Var.f != null) {
-            h9Var.g = true;
+        k9 k9Var = this.s;
+        j9 j9Var = k9Var.a;
+        if (j9Var.f != null) {
+            j9Var.g = true;
             return;
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -483,10 +483,10 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         int i11 = this.h;
         if (call == null) {
             while (i10 < 3) {
-                i9Var.b(i10, null, i11);
+                k9Var.b(i10, null, i11);
                 i10++;
             }
-            i9Var.a(z10);
+            k9Var.a(z10);
             return;
         }
         long selfId = sharedInstance.getSelfId();
@@ -496,17 +496,17 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
             if (i12 < size) {
                 TLRPC.GroupCallParticipant groupCallParticipant = call.sortedParticipants.get(i12);
                 if (MessageObject.getPeerId(groupCallParticipant.peer) != selfId && SystemClock.uptimeMillis() - groupCallParticipant.lastSpeakTime <= 500) {
-                    i9Var.b(i10, groupCallParticipant, i11);
+                    k9Var.b(i10, groupCallParticipant, i11);
                 }
                 i12++;
             } else {
-                i9Var.b(i10, null, i11);
+                k9Var.b(i10, null, i11);
             }
             i10++;
             i12++;
         }
-        i9Var.b(2, null, i11);
-        i9Var.a(z10);
+        k9Var.b(2, null, i11);
+        k9Var.a(z10);
     }
 
     public final void h() {
@@ -514,13 +514,13 @@ public final class z20 implements NotificationCenter.NotificationCenterDelegate 
         int i10 = AndroidUtilities.displaySize.x;
         x20 x20Var = this.a;
         float min = Math.min(max, AndroidUtilities.dp(36.0f) + (i10 - x20Var.getMeasuredWidth()));
-        i9 i9Var = this.s;
+        k9 k9Var = this.s;
         if (min < 0.0f) {
-            i9Var.setTranslationX(Math.abs(min) / 3.0f);
+            k9Var.setTranslationX(Math.abs(min) / 3.0f);
         } else if (min > i10 - x20Var.getMeasuredWidth()) {
-            i9Var.setTranslationX((-Math.abs(min - (i10 - x20Var.getMeasuredWidth()))) / 3.0f);
+            k9Var.setTranslationX((-Math.abs(min - (i10 - x20Var.getMeasuredWidth()))) / 3.0f);
         } else {
-            i9Var.setTranslationX(0.0f);
+            k9Var.setTranslationX(0.0f);
         }
     }
 

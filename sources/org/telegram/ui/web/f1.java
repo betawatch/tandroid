@@ -4,9 +4,9 @@ import android.util.LongSparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.p91;
+import org.telegram.ui.o91;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class f1 {
     public static boolean a;
@@ -40,7 +40,7 @@ public abstract class f1 {
         a = true;
         c = new ArrayList();
         d = new LongSparseArray();
-        Utilities.globalQueue.postRunnable(new p91(5));
+        Utilities.globalQueue.postRunnable(new o91(5));
     }
 
     public static void c(e1 e1Var) {
@@ -56,7 +56,7 @@ public abstract class f1 {
             d.put(e1Var.a, e1Var);
         }
         int i10 = 4;
-        AndroidUtilities.cancelRunOnUIThread(new p91(i10));
-        AndroidUtilities.runOnUIThread(new p91(i10), 1000L);
+        AndroidUtilities.cancelRunOnUIThread(new o91(i10));
+        AndroidUtilities.runOnUIThread(new o91(i10), 1000L);
     }
 }

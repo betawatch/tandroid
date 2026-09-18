@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.p3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -289,9 +289,9 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         try {
-            int a02 = hVar.h.a0(hVar.e, cVar);
-            if (a02 != 0) {
-                k6.a aVar = new k6.a(a02, null);
+            int b02 = hVar.h.b0(hVar.e, cVar);
+            if (b02 != 0) {
+                k6.a aVar = new k6.a(b02, null);
                 Log.w("GoogleApiManager", "The service for " + cVar.getClass().getName() + " is not available: " + aVar.toString());
                 m(aVar, null);
                 return;

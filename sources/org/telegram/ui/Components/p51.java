@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class p51 extends URLSpan {
-    public final p01 a;
-    public boolean b;
+public final class p51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public p51(String str, p01 p01Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = p01Var;
+    public p51(org.telegram.ui.ev evVar, int i10, int i11) {
+        this.a = 1;
+        this.d = evVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        if (this.b && (view.getContext() instanceof LaunchActivity)) {
-            ((LaunchActivity) view.getContext()).X0 = true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
+                t51 t51Var = (t51) this.d;
+                t51Var.N = true;
+                t51Var.n.scrollBy(0, floatValue - this.b);
+                t51Var.N = false;
+                this.b = floatValue;
+                break;
+            default:
+                ((org.telegram.ui.ev) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
+                break;
         }
-        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        p01 p01Var = this.a;
-        if (p01Var != null) {
-            p01Var.a(textPaint);
-            textPaint.setUnderlineText(textPaint.linkColor == color);
-        }
+    public p51(t51 t51Var, int i10) {
+        this.a = 0;
+        this.d = t51Var;
+        this.c = i10;
+        this.b = 0;
     }
 }

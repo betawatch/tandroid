@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.lc0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class f0 extends qv0 {
+public final class f0 extends bw0 {
     public final /* synthetic */ j0 w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,20 +18,20 @@ public final class f0 extends qv0 {
         this.w0 = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.bw0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.bw0
     public final boolean Q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.bw0
     public final void U(Drawable drawable) {
-        if (drawable instanceof cc0) {
-            ((cc0) drawable).p();
+        if (drawable instanceof lc0) {
+            ((lc0) drawable).p();
         }
         j0 j0Var = this.w0;
         j0Var.d.a = j0Var.c.c(drawable);
@@ -45,19 +45,19 @@ public final class f0 extends qv0 {
         j0 j0Var = this.w0;
         fh.a aVar = j0Var.d.a;
         if (aVar instanceof fh.b) {
-            ((fh.b) aVar).b(getWidth(), getHeight());
+            ((fh.b) aVar).c(getWidth(), getHeight());
         }
         j0Var.d.y(canvas, 0.0f, 0.0f, getWidth(), getHeight());
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.bw0
     public final Drawable getNewDrawable() {
         Drawable drawable = this.w0.y;
         return drawable != null ? drawable : super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.w0.o();

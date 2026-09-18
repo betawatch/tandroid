@@ -3,9 +3,9 @@ package org.telegram.ui.web;
 import ai.da;
 import android.content.DialogInterface;
 import org.telegram.messenger.Utilities;
-import yh.v5;
+import yh.t5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class d0 implements DialogInterface.OnDismissListen
         }
     }
 
-    public /* synthetic */ d0(v5 v5Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
+    public /* synthetic */ d0(t5 t5Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
         this.a = i10;
         this.c = callback;
         this.b = zArr;

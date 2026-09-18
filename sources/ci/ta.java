@@ -23,17 +23,17 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.de0;
-import org.telegram.ui.Components.e91;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.jf0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.me0;
+import org.telegram.ui.Components.r91;
+import org.telegram.ui.Components.s91;
+import org.telegram.ui.Components.sf0;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.wz;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.b2, e91, Utilities.CallbackVoidReturn, u61, k9, m8 {
+public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, r91, Utilities.CallbackVoidReturn, i71, k9, m8 {
     public final /* synthetic */ int a;
     public final /* synthetic */ oc b;
 
@@ -43,8 +43,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
     }
 
     @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+    public r0.m1 Q0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
         int i10 = defaultWindowInsets.a;
         oc ocVar = this.b;
         ocVar.Y = i10;
@@ -52,10 +52,10 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         ocVar.a0 = defaultWindowInsets.c;
         ocVar.b0 = defaultWindowInsets.d;
         ocVar.n.requestLayout();
-        return r0.l1.b;
+        return r0.m1.b;
     }
 
-    @Override // org.telegram.ui.Components.e91
+    @Override // org.telegram.ui.Components.r91
     public void a(float f7) {
         oc ocVar = this.b;
         rb rbVar = ocVar.B0;
@@ -66,8 +66,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         ocVar.j0(true);
     }
 
-    @Override // org.telegram.ui.Components.u61
-    public void b(vz vzVar) {
+    @Override // org.telegram.ui.Components.i71
+    public void c(vz vzVar) {
         MediaController.SavedFilterState savedFilterState;
         oc ocVar = this.b;
         if (vzVar == null) {
@@ -81,13 +81,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         vzVar.f(new wz(savedFilterState));
     }
 
-    @Override // ci.m8
-    public Bitmap c(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.b.K1.L.getAbsolutePath(), options);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 oc ocVar = this.b;
@@ -192,6 +187,11 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
         }
     }
 
+    @Override // ci.m8
+    public Bitmap g(BitmapFactory.Options options) {
+        return BitmapFactory.decodeFile(this.b.K1.L.getAbsolutePath(), options);
+    }
+
     @Override // ci.k9
     public void k(final ga gaVar, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i10, b9 b9Var, final androidx.fragment.app.a0 a0Var) {
         switch (this.a) {
@@ -245,7 +245,7 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
                 int i15 = R.string.PermissionNoCameraMicVideo;
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
                 final oc ocVar2 = this.b;
-                de0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.ra
+                me0.d(i14, i15, strArr, new Utilities.Callback() { // from class: ci.ra
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj2) {
                         final oc ocVar3 = oc.this;
@@ -289,10 +289,10 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
             C = null;
         }
         ocVar.e0(ocVar.f0 == 0 ? C : null);
-        f91 f91Var = ocVar.V0;
-        if (f91Var != null) {
+        s91 s91Var = ocVar.V0;
+        if (s91Var != null) {
             ocVar.T1 = 0.0f;
-            f91Var.b(0.0f, false);
+            s91Var.b(0.0f, false);
         }
         ocVar.m0(true);
     }
@@ -301,8 +301,8 @@ public final /* synthetic */ class ta implements CameraView.CameraViewDelegate, 
     public Object run() {
         cc ccVar;
         oc ocVar = this.b;
-        jf0 jf0Var = ocVar.B1;
-        Bitmap uiBlurBitmap = jf0Var != null ? jf0Var.getUiBlurBitmap() : null;
+        sf0 sf0Var = ocVar.B1;
+        Bitmap uiBlurBitmap = sf0Var != null ? sf0Var.getUiBlurBitmap() : null;
         return (uiBlurBitmap != null || (ccVar = ocVar.X0) == null || ccVar.getTextureView() == null) ? uiBlurBitmap : ocVar.X0.getTextureView().getUiBlurBitmap();
     }
 }

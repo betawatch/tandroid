@@ -7,13 +7,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.sb;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.ub;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class t8 extends org.telegram.ui.Components.p6 {
+public final class t8 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -22,7 +22,7 @@ public final class t8 extends org.telegram.ui.Components.p6 {
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.p6
+    @Override // org.telegram.ui.Components.r6
     public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
@@ -41,10 +41,10 @@ public final class t8 extends org.telegram.ui.Components.p6 {
                 g9Var.invalidate();
                 break;
             case 3:
-                org.telegram.ui.Components.f6 f6Var = (org.telegram.ui.Components.f6) obj;
-                if (f6Var.e != f7) {
-                    f6Var.e = f7;
-                    f6Var.g.invalidate();
+                org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) obj;
+                if (h6Var.e != f7) {
+                    h6Var.e = f7;
+                    h6Var.g.invalidate();
                     break;
                 }
                 break;
@@ -58,16 +58,16 @@ public final class t8 extends org.telegram.ui.Components.p6 {
                 ((PhotoViewer) obj).setAnimationValue(f7);
                 break;
             case 7:
-                ((r2) obj).setClipProgress(f7);
+                ((s2) obj).setClipProgress(f7);
                 break;
             case 8:
-                ((sb) obj).setInOutOffset(f7);
+                ((ub) obj).setInOutOffset(f7);
                 break;
             case 9:
                 ((PollVotesAlert$UserCell) obj).setPlaceholderAlpha(f7);
                 break;
             case 10:
-                ((p61) obj).H(f7);
+                ((d71) obj).H(f7);
                 break;
             case 11:
                 uh.h hVar = (uh.h) obj;
@@ -176,7 +176,7 @@ public final class t8 extends org.telegram.ui.Components.p6 {
             case 2:
                 return Float.valueOf(((g9) obj).f);
             case 3:
-                return Float.valueOf(((org.telegram.ui.Components.f6) obj).e);
+                return Float.valueOf(((org.telegram.ui.Components.h6) obj).e);
             case 4:
                 return Float.valueOf(((ImageReceiver) obj).getCurrentAlpha());
             case 5:
@@ -184,13 +184,13 @@ public final class t8 extends org.telegram.ui.Components.p6 {
             case 6:
                 return Float.valueOf(((PhotoViewer) obj).getAnimationValue());
             case 7:
-                return Float.valueOf(((r2) obj).getClipProgress());
+                return Float.valueOf(((s2) obj).getClipProgress());
             case 8:
-                return Float.valueOf(((sb) obj).inOutOffset);
+                return Float.valueOf(((ub) obj).inOutOffset);
             case 9:
                 return Float.valueOf(((PollVotesAlert$UserCell) obj).getPlaceholderAlpha());
             case 10:
-                return Float.valueOf(((p61) obj).E);
+                return Float.valueOf(((d71) obj).E);
             case 11:
                 return Float.valueOf(((uh.h) obj).G);
             default:

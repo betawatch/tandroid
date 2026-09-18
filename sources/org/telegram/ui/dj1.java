@@ -1,46 +1,34 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class dj1 extends org.telegram.ui.ActionBar.h5 {
-    public final /* synthetic */ WallpapersListActivity f;
+public final class dj1 extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
 
-    public dj1(WallpapersListActivity wallpapersListActivity) {
-        this.f = wallpapersListActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dj1(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void k() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        ij1 ij1Var = wallpapersListActivity.H;
-        ij1Var.n = null;
-        ij1Var.E(null, true);
-        wallpapersListActivity.J.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.s);
+        if (this.a == org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false)) {
+            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.v);
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void m() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.F.setAdapter(wallpapersListActivity.G);
-        wallpapersListActivity.F.invalidate();
-        wallpapersListActivity.H.E(null, true);
-        wallpapersListActivity.J.setSearchFieldCaption(null);
-        k();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void n() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.F.setAdapter(wallpapersListActivity.H);
-        wallpapersListActivity.F.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void q(EditText editText) {
-        this.f.H.E(editText.getText().toString(), false);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
     }
 }

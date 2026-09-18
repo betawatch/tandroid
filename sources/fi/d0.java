@@ -1,46 +1,46 @@
 package fi;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mb;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class d0 implements mb {
-    @Override // org.telegram.ui.Components.mb
+public final class d0 implements ob {
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.mb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.mb
+    @Override // org.telegram.ui.Components.ob
     public final int f(int i10) {
         return AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight;
     }
 
-    @Override // org.telegram.ui.Components.mb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ boolean g(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.mb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ int h(int i10) {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.mb
-    public final /* synthetic */ void b(oc ocVar) {
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void b(qc qcVar) {
     }
 
-    @Override // org.telegram.ui.Components.mb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ void c(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.mb
-    public final /* synthetic */ void d(oc ocVar) {
+    @Override // org.telegram.ui.Components.ob
+    public final /* synthetic */ void d(qc qcVar) {
     }
 }

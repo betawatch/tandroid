@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class x4 {
     public static ColorMatrixColorFilter f;
@@ -26,10 +26,10 @@ public final class x4 {
     public final RadialProgress2 d;
     public u e;
 
-    public x4(u4 u4Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public x4(u4 u4Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.a = new ImageReceiver(u4Var);
         this.b = new ImageReceiver(u4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(u4Var, e6Var);
         this.d = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
@@ -58,28 +58,28 @@ public final class x4 {
         } else {
             String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
             if (uVar2.e != null) {
-                StringBuilder g10 = w.f.g(str, ":local:");
-                g10.append(this.e.e);
-                sb2 = g10.toString();
+                StringBuilder j3 = t8.b.j(str, ":local:");
+                j3.append(this.e.e);
+                sb2 = j3.toString();
             } else {
-                long j3 = 0;
+                long j10 = 0;
                 if (uVar2.b()) {
                     u uVar3 = this.e;
                     TLRPC.Document document2 = uVar3.h;
                     if (document2 != null) {
-                        j3 = document2.id;
+                        j10 = document2.id;
                     } else {
                         TLRPC.Photo photo2 = uVar3.g;
                         if (photo2 != null) {
-                            j3 = photo2.id;
+                            j10 = photo2.id;
                         }
                     }
                 }
-                StringBuilder g11 = w.f.g(str, ":");
-                g11.append(this.e.a);
-                g11.append(":");
-                g11.append(j3);
-                sb2 = g11.toString();
+                StringBuilder j11 = t8.b.j(str, ":");
+                j11.append(this.e.a);
+                j11.append(":");
+                j11.append(j10);
+                sb2 = j11.toString();
             }
         }
         sb3.append(sb2);

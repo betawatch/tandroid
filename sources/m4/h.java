@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public IBinder a;
@@ -14,7 +14,7 @@ public final class h implements i {
         try {
             obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
             obtain.writeInt(i10);
-            w7.r.a(obtain, bundle);
+            w7.s.a(obtain, bundle);
             this.a.transact(3001, obtain, null, 1);
         } finally {
             obtain.recycle();

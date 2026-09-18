@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u implements Callable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class u implements Callable {
         int i11;
         int i12;
         c cVar2 = (c) this.b;
-        org.telegram.messenger.c0 c0Var = (org.telegram.messenger.c0) this.c;
+        org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
         a4.m mVar = (a4.m) this.d;
         Exception exc = null;
         if (!cVar2.n()) {
@@ -53,7 +53,7 @@ public final /* synthetic */ class u implements Callable {
             cVar2.y(2, 7, hVar);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            c0Var.a(hVar, new s(vVar, vVar));
+            d0Var.a(hVar, new s(vVar, vVar));
             return null;
         }
         if (!cVar2.r) {
@@ -62,7 +62,7 @@ public final /* synthetic */ class u implements Callable {
             cVar2.y(20, 7, hVar2);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar2 = com.google.android.gms.internal.play_billing.v.e;
-            c0Var.a(hVar2, new s(vVar2, vVar2));
+            d0Var.a(hVar2, new s(vVar2, vVar2));
             return null;
         }
         ArrayList arrayList = new ArrayList();
@@ -197,17 +197,17 @@ public final /* synthetic */ class u implements Callable {
                     } else {
                         int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", c12);
                         String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", c12);
-                        lVar = a2 != 0 ? cVar2.s(g0.a(a2, f7), 23, k0.i(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(g0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                        lVar = a2 != 0 ? cVar2.s(g0.a(a2, f7), 23, k0.h(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(g0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
                     }
                 } catch (DeadObjectException e10) {
                     e = e10;
                     lVar = cVar2.s(g0.h, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 } catch (Exception e11) {
                     e = e11;
                     lVar = cVar2.s(g0.f, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
                     return null;
                 }
             } catch (DeadObjectException e12) {
@@ -218,7 +218,7 @@ public final /* synthetic */ class u implements Callable {
                 i10 = 43;
             }
         }
-        c0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
+        d0Var.a(g0.a(lVar.a, (String) lVar.d), new s((ArrayList) lVar.b, (ArrayList) lVar.c));
         return null;
     }
 

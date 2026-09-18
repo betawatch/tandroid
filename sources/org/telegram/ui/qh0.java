@@ -1,51 +1,84 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class qh0 implements yb0 {
-    public final /* synthetic */ ai0 a;
+public final class qh0 extends s4.o {
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final SparseIntArray i = new SparseIntArray();
+    public final SparseIntArray j = new SparseIntArray();
+    public final ArrayList k = new ArrayList();
+    public final ArrayList l = new ArrayList();
+    public final /* synthetic */ zh0 m;
 
-    public qh0(ai0 ai0Var) {
-        this.a = ai0Var;
+    public qh0(zh0 zh0Var) {
+        this.m = zh0Var;
     }
 
-    @Override // org.telegram.ui.yb0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-        this.a.e0(tL_chatInviteExported);
-    }
-
-    @Override // org.telegram.ui.yb0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        if (tLObject instanceof TLRPC.TL_messages_exportedChatInvite) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvite) tLObject).invite;
-            ai0 ai0Var = this.a;
-            ai0Var.c0(tL_chatInviteExported2);
-            for (int i10 = 0; i10 < ai0Var.i0.size(); i10++) {
-                if (((TLRPC.TL_chatInviteExported) ai0Var.i0.get(i10)).link.equals(tL_chatInviteExported.link)) {
-                    if (!tL_chatInviteExported2.revoked) {
-                        ai0Var.i0.set(i10, tL_chatInviteExported2);
-                        ai0Var.i0(true);
-                        return;
-                    } else {
-                        rh0 f02 = ai0Var.f0();
-                        ai0Var.i0.remove(i10);
-                        ai0Var.j0.add(0, tL_chatInviteExported2);
-                        ai0Var.h0(f02);
-                        return;
-                    }
-                }
-            }
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // org.telegram.ui.yb0
-    public final void c(TLObject tLObject) {
-        if (tLObject instanceof TLRPC.TL_chatInviteExported) {
-            AndroidUtilities.runOnUIThread(new oa0(23, this, tLObject), 200L);
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14 = this.c;
+        zh0 zh0Var = this.m;
+        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = zh0Var.y) && i11 < zh0Var.E) || (i11 >= zh0Var.H && i11 < zh0Var.I))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= zh0Var.E) ? (TLRPC.TL_chatInviteExported) zh0Var.j0.get(i11 - zh0Var.H) : (TLRPC.TL_chatInviteExported) zh0Var.i0.get(i11 - i13);
+            int i15 = this.c;
+            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
         }
+        int i16 = this.g;
+        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = zh0Var.U) && i11 < zh0Var.V) {
+            return i10 - i16 == i11 - i12;
+        }
+        int i17 = this.i.get(i10, -1);
+        return i17 >= 0 && i17 == this.j.get(i11, -1);
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.m.X;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        sparseIntArray.clear();
+        zh0 zh0Var = this.m;
+        g(1, zh0Var.r, sparseIntArray);
+        g(2, zh0Var.s, sparseIntArray);
+        g(3, zh0Var.v, sparseIntArray);
+        g(4, zh0Var.w, sparseIntArray);
+        g(5, zh0Var.x, sparseIntArray);
+        g(6, zh0Var.L, sparseIntArray);
+        g(7, zh0Var.N, sparseIntArray);
+        g(8, zh0Var.O, sparseIntArray);
+        g(9, zh0Var.Q, sparseIntArray);
+        g(10, zh0Var.R, sparseIntArray);
+        g(11, zh0Var.S, sparseIntArray);
+        g(12, zh0Var.P, sparseIntArray);
+        g(13, zh0Var.F, sparseIntArray);
     }
 }

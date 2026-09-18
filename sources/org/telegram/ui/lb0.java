@@ -1,35 +1,77 @@
 package org.telegram.ui;
 
-import android.window.OnBackInvokedCallback;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.view.Window;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class lb0 implements OnBackInvokedCallback {
-    public final /* synthetic */ LaunchActivity a;
+public final class lb0 implements yf.l0 {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public boolean c;
+    public final Object d;
 
-    public lb0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    public lb0(yf.m0 m0Var) {
+        this.d = m0Var;
     }
 
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        if (AndroidUtilities.isTablet()) {
-            this.a.onBackPressed();
-            return;
+    @Override // yf.l0
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
+                    if (launchActivity != null) {
+                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
+                        launchActivity.A1 = i10;
+                        j0 j0Var = launchActivity.w0;
+                        if (j0Var != null) {
+                            j0Var.setVisibility(i10 > 0 ? 8 : 0);
+                        }
+                        launchActivity.getWindow();
+                        break;
+                    }
+                }
+                break;
+            default:
+                yf.m0 m0Var = (yf.m0) this.d;
+                if (this.b != z10 && !this.c) {
+                    this.b = z10;
+                    if (z10) {
+                        m0Var.a++;
+                    } else {
+                        m0Var.a--;
+                    }
+                    boolean z11 = m0Var.a > 0;
+                    if (m0Var.b != z11) {
+                        m0Var.b = z11;
+                        Window window = (Window) ((WeakReference) m0Var.c.b).get();
+                        if (window != null) {
+                            window.getDecorView().setVisibility(z11 ? 8 : 0);
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        if (this.a.c0(true)) {
-            LaunchActivity launchActivity = this.a;
-            ActionBarLayout actionBarLayout = launchActivity.q0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.c1) {
-                actionBarLayout.G();
-            } else {
-                actionBarLayout.c1 = false;
-                actionBarLayout.e(false);
-            }
+    }
+
+    @Override // yf.l0
+    public final void destroy() {
+        switch (this.a) {
+            case 0:
+                a(false);
+                this.c = true;
+                break;
+            default:
+                a(false);
+                this.c = true;
+                break;
         }
+    }
+
+    public lb0(LaunchActivity launchActivity, boolean z10) {
+        this.d = new WeakReference(launchActivity);
     }
 }

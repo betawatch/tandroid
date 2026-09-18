@@ -14,12 +14,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.bo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Runnable {
     public final /* synthetic */ int a;
@@ -142,7 +143,7 @@ public final /* synthetic */ class x4 implements Runnable {
                                         i11 = i20;
                                         for (int i22 = 0; i22 < 3; i22++) {
                                             String str3 = strArr2[i22];
-                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.w1.w(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || wh.u(" ", str2, str3))) {
                                                 z10 = true;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 r42 = (z10 && publicUsername != null && publicUsername.startsWith(str2)) ? 2 : z10;
@@ -282,13 +283,13 @@ public final /* synthetic */ class x4 implements Runnable {
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
             default:
-                bo boVar = (bo) this.d;
+                zn znVar = (zn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
-                org.telegram.ui.Cells.t1 t1Var3 = (org.telegram.ui.Cells.t1) this.f;
-                boVar.vb = this.b;
-                boVar.wb = this.c;
-                boVar.xb = characterStyle;
-                t1Var3.invalidate();
+                org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.f;
+                znVar.vb = this.b;
+                znVar.wb = this.c;
+                znVar.xb = characterStyle;
+                u1Var2.invalidate();
                 break;
         }
     }
@@ -311,12 +312,12 @@ public final /* synthetic */ class x4 implements Runnable {
         this.c = i11;
     }
 
-    public /* synthetic */ x4(bo boVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.t1 t1Var) {
+    public /* synthetic */ x4(zn znVar, int i10, int i11, CharacterStyle characterStyle, org.telegram.ui.Cells.u1 u1Var) {
         this.a = 8;
-        this.d = boVar;
+        this.d = znVar;
         this.b = i10;
         this.c = i11;
         this.e = characterStyle;
-        this.f = t1Var;
+        this.f = u1Var;
     }
 }

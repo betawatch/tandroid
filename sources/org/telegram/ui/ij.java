@@ -1,36 +1,46 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ij extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ bo o;
+public final class ij extends dh.b {
+    public final /* synthetic */ int n;
+    public final /* synthetic */ zn r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ij(bo boVar, gj gjVar) {
-        super(gjVar, -2, -2);
-        this.o = boVar;
+    public /* synthetic */ ij(zn znVar, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11) {
+        super(i10, e6Var);
+        this.n = i11;
+        this.r = znVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        bo boVar = this.o;
-        if (boVar.Q8 != this) {
-            return;
+    @Override // dh.b, dh.a
+    public final int H() {
+        int i10;
+        int i11;
+        switch (this.n) {
+            case 0:
+                zn znVar = this.r;
+                i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+                if (!eh.b.c(i10, znVar.ea)) {
+                    break;
+                } else if (znVar.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                zn znVar2 = this.r;
+                i11 = ((org.telegram.ui.ActionBar.n2) znVar2).currentAccount;
+                if (!eh.b.c(i11, znVar2.ea)) {
+                    break;
+                } else if (znVar2.ea != null && !org.telegram.ui.ActionBar.j6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
         }
-        boVar.Q8 = null;
-        boVar.T8 = null;
-        boVar.S8 = null;
-        boVar.z0.R = true;
-        if (boVar.R8) {
-            boVar.g8(false, true, 0.0f);
-        } else {
-            boVar.R8 = true;
-        }
-        nk nkVar = boVar.Y;
-        if (nkVar == null || nkVar.getEditField() == null) {
-            return;
-        }
-        boVar.Y.getEditField().setAllowDrawCursor(true);
+        return this.d;
     }
 }

@@ -15,10 +15,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class l1 extends View implements Drawable.Callback, org.telegram.ui.Cells.p9 {
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public a3 c;
     public int d;
@@ -26,11 +26,11 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
     public final AnimatedArrowDrawable f;
     public TL_iv.pageBlockDetails h;
 
-    public l1(Context context, w70 w70Var, f4 f4Var) {
+    public l1(Context context, u70 u70Var, f4 f4Var) {
         super(context);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
-        this.f = new AnimatedArrowDrawable(w70Var.a(), true);
+        this.f = new AnimatedArrowDrawable(u70Var.a(), true);
     }
 
     @Override // org.telegram.ui.Cells.p9
@@ -70,15 +70,15 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
             return;
         }
         canvas.save();
-        w70 w70Var = this.a;
-        w70Var.getClass();
+        u70 u70Var = this.a;
+        u70Var.getClass();
         canvas.translate(AndroidUtilities.dp(18), ((getMeasuredHeight() - AndroidUtilities.dp(13.0f)) - 1) / 2);
         this.f.draw(canvas);
         canvas.restore();
         if (this.c != null) {
             canvas.save();
             canvas.translate(this.d, this.e);
-            h4.v(w70Var, canvas, this, 0);
+            h4.v(u70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             canvas.restore();
         }
@@ -112,12 +112,12 @@ public final class l1 extends View implements Drawable.Callback, org.telegram.ui
         TL_iv.pageBlockDetails pageblockdetails = this.h;
         if (pageblockdetails != null) {
             TL_iv.RichText richText = pageblockdetails.title;
-            w70 w70Var = this.a;
-            w70Var.getClass();
+            u70 u70Var = this.a;
+            u70Var.getClass();
             int dp2 = size - AndroidUtilities.dp(54);
             TL_iv.pageBlockDetails pageblockdetails2 = this.h;
             f4 f4Var = this.b;
-            a3 p5 = h4.p(w70Var, this, null, richText, dp2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
+            a3 p5 = h4.p(u70Var, this, null, richText, dp2, 0, pageblockdetails2, (f4Var == null || !f4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.vw0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
                 dp = Math.max(dp, this.c.d.getHeight() + AndroidUtilities.dp(21.0f));

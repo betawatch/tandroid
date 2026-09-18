@@ -1,38 +1,72 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class qz0 extends o01 {
-    public qz0(Context context) {
+public final class qz0 extends org.telegram.ui.Components.g90 {
+    public final /* synthetic */ ProfileActivity P0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qz0(ProfileActivity profileActivity, Context context) {
         super(context);
+        this.P0 = profileActivity;
     }
 
     @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ai.l4 l4Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.o5 o5Var = this.e;
-        if (o5Var == null || (l4Var = o5Var.k) == null) {
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        this.P0.B3();
+    }
+
+    @Override // org.telegram.ui.ActionBar.j5
+    public final void setTextColor(int i10) {
+        int l1;
+        super.setTextColor(i10);
+        ProfileActivity profileActivity = this.P0;
+        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
+        org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[2];
+        if (j5Var != null) {
+            j5Var.setTextColor(i10);
+            j5VarArr[3].setTextColor(i10);
+        }
+        k11 k11Var = profileActivity.b6;
+        if (k11Var == null || k11Var.c == (l1 = org.telegram.ui.ActionBar.j6.l1(1.4f, org.telegram.ui.ActionBar.j6.b(-0.02f, 0.15f, i10)))) {
             return;
         }
-        l4Var.startAnimation();
+        k11Var.c = l1;
+        k11Var.invalidateSelf();
     }
 
     @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
+    public final void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        ProfileActivity profileActivity = this.P0;
+        profileActivity.Z3();
+        profileActivity.getClass();
+        profileActivity.r[2].setTranslationX(f7);
+        profileActivity.r[3].setTranslationX(f7);
+        org.telegram.ui.Components.uw0 uw0Var = profileActivity.T;
+        if (uw0Var != null) {
+            uw0Var.setTranslationX(f7 - profileActivity.Z3());
         }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        ProfileActivity profileActivity = this.P0;
+        org.telegram.ui.ActionBar.j5[] j5VarArr = profileActivity.r;
+        if (profileActivity.T != null) {
+            AndroidUtilities.dp(3.0f);
+            profileActivity.T.getVisibilityFactor();
+        }
+        j5VarArr[2].setTranslationY(f7);
+        j5VarArr[3].setTranslationY(f7);
+        org.telegram.ui.Components.uw0 uw0Var = profileActivity.T;
+        if (uw0Var != null) {
+            uw0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
+        }
     }
 }

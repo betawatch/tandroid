@@ -20,10 +20,10 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 import v7.u7;
-import w7.p;
-import yf.e0;
+import w7.q;
+import yf.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -126,7 +126,7 @@ public abstract class d extends Drawable {
         if (z10) {
             if (z11) {
                 canvas.save();
-                if (canvas.clipRect(0.0f, 0.0f, f7, p.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
+                if (canvas.clipRect(0.0f, 0.0f, f7, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
                     float f20 = fArr[0];
                     canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, f20, f20, paint);
                 }
@@ -135,7 +135,7 @@ public abstract class d extends Drawable {
             }
             float f21 = (0.0f + f7) / 2.0f;
             canvas.save();
-            if (canvas.clipRect(0.0f, 0.0f, f21, p.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
+            if (canvas.clipRect(0.0f, 0.0f, f21, q.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f10))) {
                 f12 = 0.0f;
                 canvas.drawRoundRect(0.0f - f19, 0.0f + f19, f7 + f19, f10 + f19, fArr[0], fArr[1], paint);
             } else {
@@ -143,7 +143,7 @@ public abstract class d extends Drawable {
             }
             canvas.restore();
             canvas.save();
-            if (canvas.clipRect(f21, f12, f7, p.a((fArr[0] * 2.0f) + f12, f12, f10))) {
+            if (canvas.clipRect(f21, f12, f7, q.a((fArr[0] * 2.0f) + f12, f12, f10))) {
                 canvas.drawRoundRect(f12 - f19, f12 + f19, f7 + f19, f10 + f19, fArr[2], fArr[3], paint);
             }
             canvas.restore();
@@ -151,7 +151,7 @@ public abstract class d extends Drawable {
         }
         if (z11) {
             canvas.save();
-            if (canvas.clipRect(0.0f, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
+            if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
                 float f22 = 0.0f - f19;
                 float f23 = fArr[4];
                 canvas.drawRoundRect(f22, f22, f7 + f19, f10 - f19, f23, f23, paint);
@@ -161,13 +161,13 @@ public abstract class d extends Drawable {
         }
         float f24 = (0.0f + f7) / 2.0f;
         canvas.save();
-        if (canvas.clipRect(0.0f, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f24, f10)) {
+        if (canvas.clipRect(0.0f, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f24, f10)) {
             float f25 = 0.0f - f19;
             canvas.drawRoundRect(f25, f25, f7 + f19, f10 - f19, fArr[6], fArr[7], paint);
         }
         canvas.restore();
         canvas.save();
-        if (canvas.clipRect(f24, p.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
+        if (canvas.clipRect(f24, q.a(f10 - (fArr[4] * 2.0f), 0.0f, f10), f7, f10)) {
             float f26 = 0.0f - f19;
             canvas.drawRoundRect(f26, f26, f7 + f19, f10 - f19, fArr[4], fArr[5], paint);
         }
@@ -184,13 +184,13 @@ public abstract class d extends Drawable {
         if (z10) {
             float f16 = f11 - f15;
             float f17 = f13 + f15;
-            if (canvas.clipRect(f16, f12, f17, p.a((2.0f * f7) + f12, f12, f14))) {
+            if (canvas.clipRect(f16, f12, f17, q.a((2.0f * f7) + f12, f12, f14))) {
                 canvas.drawRoundRect(f16, f12 + f15, f17, f14 + f15, f7, f7, paint);
             }
         } else {
             float f18 = f11 - f15;
             float f19 = f13 + f15;
-            if (canvas.clipRect(f18, p.a(f14 - (2.0f * f7), f12, f14), f19, f14)) {
+            if (canvas.clipRect(f18, q.a(f14 - (2.0f * f7), f12, f14), f19, f14)) {
                 canvas.drawRoundRect(f18, f12 - f15, f19, f14 - f15, f7, f7, paint);
             }
         }
@@ -198,7 +198,7 @@ public abstract class d extends Drawable {
     }
 
     public static void h(Outline outline, Rect rect, float[] fArr) {
-        if (e0.c(fArr)) {
+        if (f0.c(fArr)) {
             outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
             return;
         }

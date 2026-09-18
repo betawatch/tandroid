@@ -12,14 +12,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.fs;
+import org.telegram.ui.Components.h21;
+import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.ls;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.si0;
-import org.telegram.ui.w70;
+import org.telegram.ui.ri0;
+import org.telegram.ui.u70;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ za(int i10, si0 si0Var, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ za(int i10, ri0 ri0Var, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 7;
         this.b = i10;
-        this.c = si0Var;
-        this.d = o2Var;
+        this.c = ri0Var;
+        this.d = n2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
 
@@ -58,29 +58,29 @@ public final /* synthetic */ class za implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.l3(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj, 1));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new cb((w70) obj3, (org.telegram.ui.f4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.c1) obj));
+                AndroidUtilities.runOnUIThread(new cb((u70) obj3, (org.telegram.ui.f4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.c1) obj));
                 break;
             case 3:
                 SharedPreferences sharedPreferences = (SharedPreferences) obj3;
-                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) obj2;
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.b2(c2Var, 0));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.b2(b2Var, 0));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new ei.l3(sharedPreferences, (TLRPC.TL_help_support) tLObject, c2Var, this.b, o2Var, 20));
+                    AndroidUtilities.runOnUIThread(new ei.l3(sharedPreferences, (TLRPC.TL_help_support) tLObject, b2Var, this.b, n2Var, 21));
                     break;
                 }
             case 4:
-                AndroidUtilities.runOnUIThread(new ei.l3((fs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 21));
+                AndroidUtilities.runOnUIThread(new ei.l3((fs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
                 break;
             case 5:
-                zu0 zu0Var = (zu0) obj3;
+                kv0 kv0Var = (kv0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
-                AndroidUtilities.runOnUIThread(new ls((org.telegram.ui.ActionBar.c2[]) obj2, 2));
+                AndroidUtilities.runOnUIThread(new ls((org.telegram.ui.ActionBar.b2[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new c9(zu0Var, i11, tL_error, tL_messages_editMessage, 25));
+                    AndroidUtilities.runOnUIThread(new c9(kv0Var, i11, tL_error, tL_messages_editMessage, 25));
                     break;
                 } else {
                     MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
@@ -88,22 +88,22 @@ public final /* synthetic */ class za implements RequestDelegate {
                 }
             case 6:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new ei.l3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.c2) obj, 23), 2L);
+                AndroidUtilities.runOnUIThread(new ei.l3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.b2) obj, 24), 2L);
                 break;
             case 7:
-                si0 si0Var = (si0) obj3;
-                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) obj2;
+                ri0 ri0Var = (ri0) obj3;
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new t11(i12, tL_error, o2Var2, tL_payments_assignPlayMarketTransaction, 10));
+                        AndroidUtilities.runOnUIThread(new h21(i12, tL_error, n2Var2, tL_payments_assignPlayMarketTransaction, 10));
                         break;
                     }
                 } else {
                     MessagesController.getInstance(i12).processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(si0Var);
+                    AndroidUtilities.runOnUIThread(ri0Var);
                     break;
                 }
                 break;

@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wk implements b5 {
+public final /* synthetic */ class wk implements d5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ gl b;
     public final /* synthetic */ TLRPC.TL_messageMediaVenue c;
@@ -15,7 +15,7 @@ public final /* synthetic */ class wk implements b5 {
         this.c = tL_messageMediaVenue;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public final void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:

@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Paint a;
@@ -78,9 +78,9 @@ public final class s extends View {
         int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
         int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
         float f7 = width;
-        float a2 = w7.p.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
+        float a2 = w7.q.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
         float f10 = height;
-        float a10 = w7.p.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
+        float a10 = w7.q.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
         Rect rect = AndroidUtilities.rectTmp2;
         Drawable drawable = this.f;
         drawable.getPadding(rect);
@@ -90,7 +90,7 @@ public final class s extends View {
         drawable.setBounds(i10, i11, (int) (a2 + dp + i12), (int) (a10 + dp + i12));
         drawable.draw(canvas);
         canvas.drawCircle(a2, a10, dp, paint);
-        qg.l1.y1(a2, a10, strokeWidth, i0.a.k(this.n.f, 255), canvas);
+        qg.i1.y1(a2, a10, strokeWidth, i0.a.k(this.n.f, 255), canvas);
     }
 
     @Override // android.view.View

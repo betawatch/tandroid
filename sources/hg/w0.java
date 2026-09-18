@@ -18,21 +18,21 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.tp;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.x51;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class w0 extends o2 implements NotificationCenter.NotificationCenterDelegate {
+public final class w0 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public pr a;
-    public org.telegram.ui.ActionBar.w0 b;
-    public f61 c;
+    public org.telegram.ui.ActionBar.v0 b;
+    public t61 c;
     public a0 d;
     public final int[] e;
     public final String[] f;
@@ -61,40 +61,40 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
         }
     }
 
-    public static void U(w0 w0Var, ArrayList arrayList, x51 x51Var) {
+    public static void U(w0 w0Var, ArrayList arrayList, l61 l61Var) {
         String string = LocaleController.getString(R.string.BusinessGreet);
         String string2 = LocaleController.getString(R.string.BusinessGreetInfo);
-        j51 j51Var = new j51(2);
-        j51Var.l = string;
-        j51Var.o = string2;
-        j51Var.m = "RestrictedEmoji";
-        j51Var.n = "👋";
-        arrayList.add(j51Var);
-        j51 i10 = j51.i(1, LocaleController.getString(R.string.BusinessGreetSend));
+        x51 x51Var = new x51(2);
+        x51Var.l = string;
+        x51Var.o = string2;
+        x51Var.m = "RestrictedEmoji";
+        x51Var.n = "👋";
+        arrayList.add(x51Var);
+        x51 i10 = x51.i(1, LocaleController.getString(R.string.BusinessGreetSend));
         i10.K(w0Var.s);
         arrayList.add(i10);
-        arrayList.add(j51.B(null));
+        arrayList.add(x51.B(null));
         if (w0Var.s) {
             a2 d = b2.f(w0Var.currentAccount).d("hello");
             if (d != null) {
-                j51 j51Var2 = new j51(17);
-                j51Var2.G = d;
-                arrayList.add(j51Var2);
+                x51 x51Var2 = new x51(17);
+                x51Var2.G = d;
+                arrayList.add(x51Var2);
             } else {
-                j51 c10 = j51.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessGreetCreate));
+                x51 c10 = x51.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessGreetCreate));
                 c10.q = true;
                 arrayList.add(c10);
             }
-            arrayList.add(j51.B(null));
+            arrayList.add(x51.B(null));
             com.google.android.gms.internal.vision.e2.n(R.string.BusinessRecipients, arrayList);
-            j51 w10 = j51.w(3, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
+            x51 w10 = x51.w(3, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
             w10.K(w0Var.v);
             arrayList.add(w10);
-            j51 w11 = j51.w(4, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
+            x51 w11 = x51.w(4, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
             w11.K(!w0Var.v);
             arrayList.add(w11);
-            arrayList.add(j51.B(null));
-            w0Var.d.a(arrayList, x51Var, true);
+            arrayList.add(x51.B(null));
+            w0Var.d.a(arrayList, l61Var, true);
             com.google.android.gms.internal.vision.e2.w(R.string.BusinessGreetRecipientsInfo, arrayList);
             com.google.android.gms.internal.vision.e2.n(R.string.BusinessGreetPeriod, arrayList);
             int i11 = 0;
@@ -111,12 +111,12 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
             }
             String[] strArr = w0Var.f;
             ai.y1 y1Var = new ai.y1(w0Var, 22);
-            j51 j51Var3 = new j51(14);
-            j51Var3.p = strArr;
-            j51Var3.z = i11;
-            j51Var3.C = y1Var;
-            j51Var3.B = -1L;
-            arrayList.add(j51Var3);
+            x51 x51Var3 = new x51(14);
+            x51Var3.p = strArr;
+            x51Var3.z = i11;
+            x51Var3.C = y1Var;
+            x51Var3.B = -1L;
+            arrayList.add(x51Var3);
             com.google.android.gms.internal.vision.e2.w(R.string.BusinessGreetPeriodInfo, arrayList);
         }
     }
@@ -195,7 +195,7 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
     }
 
     public final void Y() {
-        x51 x51Var;
+        l61 l61Var;
         if (this.h) {
             return;
         }
@@ -213,15 +213,15 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
         if (a0Var != null) {
             a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
         }
-        f61 f61Var = this.c;
-        if (f61Var != null && (x51Var = f61Var.Y2) != null) {
-            x51Var.N(true);
+        t61 t61Var = this.c;
+        if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+            l61Var.N(true);
         }
         V(true);
         this.h = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
@@ -240,12 +240,12 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
         a0Var.n = true;
         TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = this.r;
         a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
-        f61 f61Var = new f61(this, new bi.v(this, 25), new v0(this, 2), null);
-        this.c = f61Var;
-        f61Var.q1();
-        f61 f61Var2 = this.c;
-        f61Var2.Y2.r = false;
-        frameLayout.addView(f61Var2, x5.c(-1.0f, -1));
+        t61 t61Var = new t61(this, new bi.v(this, 25), new v0(this, 2), null);
+        this.c = t61Var;
+        t61Var.q1();
+        t61 t61Var2 = this.c;
+        t61Var2.Y2.r = false;
+        frameLayout.addView(t61Var2, y5.c(-1.0f, -1));
         Y();
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -253,31 +253,31 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        x51 x51Var;
+        l61 l61Var;
         if (i10 != NotificationCenter.quickRepliesUpdated) {
             if (i10 == NotificationCenter.userInfoDidLoad) {
                 Y();
             }
         } else {
-            f61 f61Var = this.c;
-            if (f61Var != null && (x51Var = f61Var.Y2) != null) {
-                x51Var.N(true);
+            t61 t61Var = this.c;
+            if (t61Var != null && (l61Var = t61Var.Y2) != null) {
+                l61Var.N(true);
             }
             V(true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final ml0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final wl0 getListViewForSimpleGlass() {
         return this.c;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onBackPressed(boolean z10) {
         if (!W()) {
             return super.onBackPressed(z10);
@@ -297,7 +297,7 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.quickRepliesUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
@@ -306,7 +306,7 @@ public final class w0 extends o2 implements NotificationCenter.NotificationCente
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.quickRepliesUpdated);
         getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);

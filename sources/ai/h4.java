@@ -8,10 +8,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class h4 implements ti {
     public final /* synthetic */ f6 a;
@@ -97,7 +97,7 @@ public final class h4 implements ti {
 
     @Override // org.telegram.ui.Components.ti
     public final void K0() {
-        this.a.b2.Q();
+        this.a.b2.P();
     }
 
     @Override // org.telegram.ui.Components.ti
@@ -124,8 +124,8 @@ public final class h4 implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        NotificationCenter.getInstance(this.a.C2).doOnIdle(fhVar);
+    public final void x0(gh ghVar) {
+        NotificationCenter.getInstance(this.a.C2).doOnIdle(ghVar);
     }
 
     @Override // org.telegram.ui.Components.ti

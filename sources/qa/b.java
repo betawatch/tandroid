@@ -1,9 +1,9 @@
 package qa;
 
 import java.io.IOException;
-import n7.a1;
+import n7.z0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -36,15 +36,15 @@ public final /* synthetic */ class b implements Runnable {
                     try {
                         k9.h hVar = cVar.a;
                         hVar.a();
-                        a1 e = a1.e(hVar.a);
+                        z0 f7 = z0.f(hVar.a);
                         try {
                             E = cVar.c.E();
-                            if (e != null) {
-                                e.I();
+                            if (f7 != null) {
+                                f7.I();
                             }
                         } catch (Throwable th2) {
-                            if (e != null) {
-                                e.I();
+                            if (f7 != null) {
+                                f7.I();
                             }
                             throw th2;
                         }
@@ -85,8 +85,8 @@ public final /* synthetic */ class b implements Runnable {
                     i11 = i10.b;
                     if (i11 != 5) {
                     }
-                } catch (e e7) {
-                    cVar.j(e7);
+                } catch (e e) {
+                    cVar.j(e);
                     return;
                 }
             default:

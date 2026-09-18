@@ -1,35 +1,38 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ig0 implements Comparator {
-    public final /* synthetic */ qg0 a;
+public final class ig0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    public ig0(qg0 qg0Var) {
-        this.a = qg0Var;
+    public /* synthetic */ ig0(PipRoundVideoView pipRoundVideoView, int i10) {
+        this.a = i10;
+        this.b = pipRoundVideoView;
     }
 
-    public final int a(pg0 pg0Var) {
-        qg0 qg0Var = this.a;
-        int size = qg0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(qg0Var.r.answers.get(i10).option, pg0Var.d)) {
-                return i10;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
+                    break;
+                }
+                break;
+            default:
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
-        return 0;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((pg0) obj);
-        int a10 = a((pg0) obj2);
-        if (a2 > a10) {
-            return 1;
-        }
-        return a2 < a10 ? -1 : 0;
     }
 }

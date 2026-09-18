@@ -1,16 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class e41 extends vh.o {
-    @Override // vh.o, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(getPaddingLeft(), getPaddingTop());
-        cw0.a(canvas, getLayout());
-        canvas.restore();
+public final class e41 extends k41 {
+    public final /* synthetic */ Runnable T;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e41(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
+        super(context, str, str2, charSequence, null, 0, false, null);
+        this.T = runnable;
+    }
+
+    @Override // org.telegram.ui.Components.k41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        Runnable runnable = this.T;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

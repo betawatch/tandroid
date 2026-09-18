@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class lp0 extends Drawable {
-    public final org.telegram.ui.Components.h01 a;
+    public final org.telegram.ui.Components.v01 a;
     public final Drawable b;
     public final rg.z0 c;
 
-    public lp0(int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
-        this.a = new org.telegram.ui.Components.h01(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+    public lp0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        this.a = new org.telegram.ui.Components.v01(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.c = new rg.z0(org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, -1, -1, f6Var);
+        this.c = new rg.z0(org.telegram.ui.ActionBar.j6.Lj, org.telegram.ui.ActionBar.j6.Mj, -1, -1, e6Var);
     }
 
     @Override // android.graphics.drawable.Drawable

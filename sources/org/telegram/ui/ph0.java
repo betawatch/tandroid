@@ -1,32 +1,51 @@
 package org.telegram.ui;
 
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ph0 implements Runnable {
-    public final /* synthetic */ ai0 a;
+public final class ph0 implements xb0 {
+    public final /* synthetic */ zh0 a;
 
-    public ph0(ai0 ai0Var) {
-        this.a = ai0Var;
+    public ph0(zh0 zh0Var) {
+        this.a = zh0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ai0 ai0Var = this.a;
-        if (ai0Var.b == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < ai0Var.b.getChildCount(); i10++) {
-            View childAt = ai0Var.b.getChildAt(i10);
-            if (childAt instanceof xh0) {
-                xh0 xh0Var = (xh0) childAt;
-                if (xh0Var.I) {
-                    xh0Var.b(xh0Var.n, xh0Var.r);
+    @Override // org.telegram.ui.xb0
+    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+        this.a.e0(tL_chatInviteExported);
+    }
+
+    @Override // org.telegram.ui.xb0
+    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
+        if (tLObject instanceof TLRPC.TL_messages_exportedChatInvite) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = (TLRPC.TL_chatInviteExported) ((TLRPC.TL_messages_exportedChatInvite) tLObject).invite;
+            zh0 zh0Var = this.a;
+            zh0Var.c0(tL_chatInviteExported2);
+            for (int i10 = 0; i10 < zh0Var.i0.size(); i10++) {
+                if (((TLRPC.TL_chatInviteExported) zh0Var.i0.get(i10)).link.equals(tL_chatInviteExported.link)) {
+                    if (!tL_chatInviteExported2.revoked) {
+                        zh0Var.i0.set(i10, tL_chatInviteExported2);
+                        zh0Var.i0(true);
+                        return;
+                    } else {
+                        qh0 f02 = zh0Var.f0();
+                        zh0Var.i0.remove(i10);
+                        zh0Var.j0.add(0, tL_chatInviteExported2);
+                        zh0Var.h0(f02);
+                        return;
+                    }
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(this, 500L);
+    }
+
+    @Override // org.telegram.ui.xb0
+    public final void c(TLObject tLObject) {
+        if (tLObject instanceof TLRPC.TL_chatInviteExported) {
+            AndroidUtilities.runOnUIThread(new y80(27, this, tLObject), 200L);
+        }
     }
 }

@@ -5,9 +5,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j7 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,23 +79,23 @@ public final /* synthetic */ class j7 implements Runnable {
                 }
                 break;
             case 12:
-                ((org.telegram.ui.n6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
+                ((org.telegram.ui.m6) this.b).run(Float.valueOf(((int[]) this.e)[0] / this.d), Boolean.valueOf(System.currentTimeMillis() - this.c > 250));
                 break;
             case 13:
                 ((ProfileActivity) this.b).getMessagesController().getStoriesController().b(this.d, this.c, (ArrayList) this.e);
                 break;
             default:
                 ci.d dVar = (ci.d) this.b;
-                org.telegram.ui.ActionBar.g3[] g3VarArr = (org.telegram.ui.ActionBar.g3[]) this.e;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.e;
                 dVar.setLoading(false);
-                org.telegram.ui.ActionBar.g3 g3Var = g3VarArr[0];
-                if (g3Var != null) {
-                    g3Var.dismiss();
+                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
                 }
-                yh.v5.y(this.d, false).S();
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                yh.t5.y(this.d, false).S();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(bo.R9(this.c));
+                    U.presentFragment(zn.R9(this.c));
                     break;
                 }
                 break;

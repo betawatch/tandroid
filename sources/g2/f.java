@@ -5,9 +5,8 @@ import android.util.Base64;
 import b2.s0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -53,7 +52,7 @@ public final class f extends c {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e) {
-                throw new s0(p6.i("Error while parsing Base64 encoded string: ", str2), e, true, 0);
+                throw new s0(t8.b.i("Error while parsing Base64 encoded string: ", str2), e, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);

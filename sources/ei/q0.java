@@ -6,9 +6,9 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Activity b;
 
@@ -17,8 +17,8 @@ public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2 {
         this.b = activity;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 Activity activity = this.b;

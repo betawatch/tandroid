@@ -4,7 +4,7 @@ import android.os.Parcel;
 import androidx.car.app.navigation.model.Maneuver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class a extends b8.b implements f0 {
     public a() {
@@ -20,48 +20,48 @@ public abstract class a extends b8.b implements f0 {
     public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
         switch (i10) {
             case 2:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 3:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 4:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 5:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 6:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 7:
                 t0 t0Var = (t0) f8.a.a(parcel, t0.CREATOR);
                 f8.a.b(parcel);
                 q0(t0Var);
                 break;
             case 8:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 9:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 10:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 11:
                 f8.a.b(parcel);
                 D();
                 break;
             case 12:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 13:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 14:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 15:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 16:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 17:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 18:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 19:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 20:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 21:
             case 24:
             case 25:
@@ -71,33 +71,33 @@ public abstract class a extends b8.b implements f0 {
             default:
                 return false;
             case 22:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 23:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 26:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 27:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 28:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 29:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 34:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 35:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 36:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 37:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case 38:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case Maneuver.TYPE_DESTINATION /* 39 */:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
             case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                throw w.f.h(parcel);
+                throw t8.b.k(parcel);
         }
         parcel2.writeNoException();
         return true;

@@ -6,14 +6,14 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class di extends ju {
     public final /* synthetic */ vi V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di(vi viVar, Context context, li liVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, liVar, null, 1, true, f6Var);
+    public di(vi viVar, Context context, li liVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, liVar, null, 1, true, e6Var);
         this.V = viVar;
     }
 
@@ -31,9 +31,9 @@ public final class di extends ju {
 
     @Override // org.telegram.ui.Components.ju
     public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.o2 o2Var = this.V.f0;
-        if (o2Var instanceof org.telegram.ui.bo) {
-            org.telegram.ui.bo.k8(menu, ((org.telegram.ui.bo) o2Var).h, true, true, true, true);
+        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
+        if (n2Var instanceof org.telegram.ui.zn) {
+            org.telegram.ui.zn.k8(menu, ((org.telegram.ui.zn) n2Var).h, true, true, true, true);
         }
     }
 

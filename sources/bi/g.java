@@ -14,27 +14,27 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.b81;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.f81;
-import org.telegram.ui.Components.i81;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.j81;
+import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.o81;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.t81;
 import org.telegram.ui.Components.un;
-import org.telegram.ui.Components.wm0;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.x81;
 import org.telegram.ui.aw0;
-import org.telegram.ui.cw0;
-import org.telegram.ui.fc1;
+import org.telegram.ui.dc1;
+import org.telegram.ui.gp;
+import org.telegram.ui.hp;
 import org.telegram.ui.ip;
-import org.telegram.ui.jp;
-import org.telegram.ui.kp;
-import org.telegram.ui.pa;
+import org.telegram.ui.oa;
+import org.telegram.ui.yv0;
 import s4.c1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class g extends s4.v {
     public final /* synthetic */ int d;
@@ -67,7 +67,7 @@ public final class g extends s4.v {
                 c1Var.a.setPressed(false);
                 break;
             case 4:
-                f61 f61Var = (f61) this.e;
+                t61 t61Var = (t61) this.e;
                 super.a(recyclerView, c1Var);
                 View view2 = c1Var.a;
                 view2.setPressed(false);
@@ -78,8 +78,8 @@ public final class g extends s4.v {
                         a2Var.invalidateSelf();
                     }
                 }
-                if (f61Var.B1()) {
-                    f61Var.G1(c1Var);
+                if (t61Var.B1()) {
+                    t61Var.G1(c1Var);
                     view2.animate().scaleX(0.5f).scaleY(0.5f).setDuration(200L).setInterpolator(qr.h).start();
                     break;
                 }
@@ -107,7 +107,7 @@ public final class g extends s4.v {
                     break;
                 }
             case 1:
-                if (c1Var.f != 1 || !((pa) c1Var.a).G) {
+                if (c1Var.f != 1 || !((oa) c1Var.a).G) {
                     break;
                 } else {
                     break;
@@ -121,22 +121,22 @@ public final class g extends s4.v {
                 }
             case 3:
                 int b10 = c1Var.b();
-                wm0 wm0Var = (wm0) this.e;
-                if (b10 >= wm0Var.v && c1Var.b() < wm0Var.w) {
+                jn0 jn0Var = (jn0) this.e;
+                if (b10 >= jn0Var.v && c1Var.b() < jn0Var.w) {
                     break;
                 } else {
                     break;
                 }
                 break;
             case 4:
-                f61 f61Var = (f61) this.e;
-                if (f61Var.c3 && f61Var.Y2.H(c1Var.b()) >= 0) {
+                t61 t61Var = (t61) this.e;
+                if (t61Var.c3 && t61Var.Y2.H(c1Var.b()) >= 0) {
                     int i10 = 15;
-                    if (f61Var.X2.o == 0) {
-                        if (!f61Var.b3) {
+                    if (t61Var.X2.o == 0) {
+                        if (!t61Var.b3) {
                             i10 = 12;
                         }
-                    } else if (!f61Var.b3) {
+                    } else if (!t61Var.b3) {
                         i10 = 3;
                     }
                     break;
@@ -145,7 +145,7 @@ public final class g extends s4.v {
                 }
                 break;
             case 5:
-                if (!((ka.c) ((i81) this.e).y).d(c1Var.b())) {
+                if (!((l.d) ((w81) this.e).y).G(c1Var.b())) {
                     break;
                 } else {
                     break;
@@ -172,10 +172,10 @@ public final class g extends s4.v {
             default:
                 return super.k();
             case 3:
-                return ((wm0) this.e).I.g();
+                return ((jn0) this.e).I.g();
             case 4:
-                f61 f61Var = (f61) this.e;
-                return f61Var.c3 && f61Var.e3;
+                t61 t61Var = (t61) this.e;
+                return t61Var.c3 && t61Var.e3;
             case 6:
                 return true;
         }
@@ -185,18 +185,18 @@ public final class g extends s4.v {
     public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {
         switch (this.d) {
             case 4:
-                f61 f61Var = (f61) this.e;
-                if (i10 != 2 || z10 || !f61Var.B1()) {
+                t61 t61Var = (t61) this.e;
+                if (i10 != 2 || z10 || !t61Var.B1()) {
                     super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
                     if (i10 == 2 && z10) {
-                        f61Var.F1(c1Var);
+                        t61Var.F1(c1Var);
                         break;
                     }
                 }
                 break;
             case 5:
                 super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
-                ((i81) this.e).invalidate();
+                ((w81) this.e).invalidate();
                 break;
             default:
                 super.m(canvas, recyclerView, c1Var, f7, f10, i10, z10);
@@ -244,31 +244,31 @@ public final class g extends s4.v {
             case 1:
                 if (c1Var.f == c1Var2.f) {
                     View view = c1Var2.a;
-                    if (!(view instanceof pa) || ((pa) view).G) {
-                        ip ipVar = ((jp) this.e).X2;
+                    if (!(view instanceof oa) || ((oa) view).G) {
+                        gp gpVar = ((hp) this.e).X2;
                         int b12 = c1Var.b();
                         int b13 = c1Var2.b();
                         int i14 = b12 - 1;
                         int i15 = b13 - 1;
-                        jp jpVar = ipVar.c;
-                        kp kpVar = jpVar.a3;
-                        ArrayList arrayList3 = kpVar.N;
-                        if (i14 >= kpVar.N.size() || i15 >= arrayList3.size()) {
+                        hp hpVar = gpVar.c;
+                        ip ipVar = hpVar.a3;
+                        ArrayList arrayList3 = ipVar.N;
+                        if (i14 >= ipVar.N.size() || i15 >= arrayList3.size()) {
                             return true;
                         }
                         if (b12 != b13) {
-                            jpVar.Y2 = true;
+                            hpVar.Y2 = true;
                         }
                         TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList3.get(i14);
                         arrayList3.set(i14, (TLRPC.TL_username) arrayList3.get(i15));
                         arrayList3.set(i15, tL_username);
-                        ipVar.p(b12, b13);
+                        gpVar.p(b12, b13);
                         int size = arrayList3.size();
                         if (b12 != size && b13 != size) {
                             return true;
                         }
-                        ipVar.n(b12, 3);
-                        ipVar.n(b13, 3);
+                        gpVar.n(b12, 3);
+                        gpVar.n(b13, 3);
                         return true;
                     }
                 }
@@ -303,80 +303,80 @@ public final class g extends s4.v {
                 return true;
             case 3:
                 int b17 = c1Var2.b();
-                wm0 wm0Var = (wm0) this.e;
-                ArrayList arrayList4 = wm0Var.e;
-                if (b17 < wm0Var.v || c1Var2.b() >= wm0Var.w) {
+                jn0 jn0Var = (jn0) this.e;
+                ArrayList arrayList4 = jn0Var.e;
+                if (b17 < jn0Var.v || c1Var2.b() >= jn0Var.w) {
                     return false;
                 }
                 int b18 = c1Var.b();
                 int b19 = c1Var2.b();
-                int i19 = wm0Var.v;
+                int i19 = jn0Var.v;
                 int i20 = b18 - i19;
                 int i21 = b19 - i19;
                 arrayList4.indexOf(Integer.valueOf(i20));
-                arrayList4.get(b18 - wm0Var.v);
+                arrayList4.get(b18 - jn0Var.v);
                 MessageObject messageObject2 = (MessageObject) arrayList4.get(i20);
                 MessageObject messageObject3 = (MessageObject) arrayList4.get(i21);
                 arrayList4.set(i20, messageObject3);
                 arrayList4.set(i21, messageObject2);
-                DownloadController.getInstance(wm0Var.d).swapLoadingPriority(messageObject2, messageObject3);
-                wm0Var.c.p(b18, b19);
+                DownloadController.getInstance(jn0Var.d).swapLoadingPriority(messageObject2, messageObject3);
+                jn0Var.c.p(b18, b19);
                 return false;
             case 4:
-                f61 f61Var = (f61) this.e;
-                x51 x51Var = f61Var.Y2;
-                if (x51Var.H(c1Var.b()) < 0 || x51Var.H(c1Var.b()) != x51Var.H(c1Var2.b())) {
+                t61 t61Var = (t61) this.e;
+                l61 l61Var = t61Var.Y2;
+                if (l61Var.H(c1Var.b()) < 0 || l61Var.H(c1Var.b()) != l61Var.H(c1Var2.b())) {
                     return false;
                 }
                 int b20 = c1Var.b();
                 int b21 = c1Var2.b();
-                ArrayList arrayList5 = x51Var.x;
-                if (x51Var.L != null) {
-                    int H = x51Var.H(b20);
-                    int H2 = x51Var.H(b21);
+                ArrayList arrayList5 = l61Var.x;
+                if (l61Var.L != null) {
+                    int H = l61Var.H(b20);
+                    int H2 = l61Var.H(b21);
                     if (H >= 0 && H == H2) {
-                        boolean J = x51Var.J(b20);
-                        boolean J2 = x51Var.J(b21);
-                        arrayList5.add(b21, (j51) arrayList5.remove(b20));
-                        x51Var.p(b20, b21);
-                        if (x51Var.J(b21) != J) {
-                            x51Var.n(b21, 3);
+                        boolean J = l61Var.J(b20);
+                        boolean J2 = l61Var.J(b21);
+                        arrayList5.add(b21, (x51) arrayList5.remove(b20));
+                        l61Var.p(b20, b21);
+                        if (l61Var.J(b21) != J) {
+                            l61Var.n(b21, 3);
                         }
-                        if (x51Var.J(b20) != J2) {
-                            x51Var.n(b20, 3);
+                        if (l61Var.J(b20) != J2) {
+                            l61Var.n(b20, 3);
                         }
-                        if (x51Var.K && (i11 = x51Var.J) != H) {
-                            x51Var.F(i11);
+                        if (l61Var.K && (i11 = l61Var.J) != H) {
+                            l61Var.F(i11);
                         }
-                        x51Var.K = true;
-                        x51Var.J = H;
+                        l61Var.K = true;
+                        l61Var.J = H;
                     }
                 }
-                f61Var.I1();
+                t61Var.I1();
                 return true;
             case 5:
                 int b22 = c1Var.b();
                 int b23 = c1Var2.b();
-                i81 i81Var = (i81) this.e;
-                ArrayList arrayList6 = i81Var.h;
+                w81 w81Var = (w81) this.e;
+                ArrayList arrayList6 = w81Var.h;
                 boolean z11 = false;
                 int i22 = 0;
                 z11 = false;
-                if (((ka.c) i81Var.y).d(b22) && ((ka.c) i81Var.y).d(b23)) {
+                if (((l.d) w81Var.y).G(b22) && ((l.d) w81Var.y).G(b23)) {
                     Utilities.swapItems(arrayList6, b22, b23);
-                    i81Var.x.p(b22, b23);
+                    w81Var.x.p(b22, b23);
                     ArrayList arrayList7 = new ArrayList();
                     int size2 = arrayList6.size();
                     while (i22 < size2) {
                         Object obj = arrayList6.get(i22);
                         i22++;
-                        arrayList7.add(Integer.valueOf(((f81) obj).a));
+                        arrayList7.add(Integer.valueOf(((t81) obj).a));
                     }
-                    b81 b81Var = ((j81) ((ka.c) i81Var.y).b).L;
+                    o81 o81Var = ((x81) ((l.d) w81Var.y).a).L;
                     z11 = true;
                     z11 = true;
-                    if (b81Var != null) {
-                        b81Var.a(arrayList7);
+                    if (o81Var != null) {
+                        o81Var.a(arrayList7);
                     }
                 }
                 return z11;
@@ -384,29 +384,29 @@ public final class g extends s4.v {
                 if (c1Var.f != c1Var2.f || !r(c1Var.b()) || !r(c1Var2.b())) {
                     return false;
                 }
-                aw0 aw0Var = ((cw0) this.e).b;
+                yv0 yv0Var = ((aw0) this.e).b;
                 int b24 = c1Var.b();
                 int b25 = c1Var2.b();
-                cw0 cw0Var = aw0Var.d;
-                int i23 = cw0Var.n0;
+                aw0 aw0Var = yv0Var.d;
+                int i23 = aw0Var.n0;
                 int i24 = b24 - i23;
                 int i25 = b25 - i23;
-                if (i24 >= 0 && i25 >= 0 && i24 < (i12 = cw0Var.y) && i25 < i12) {
-                    CharSequence[] charSequenceArr2 = cw0Var.v;
+                if (i24 >= 0 && i25 >= 0 && i24 < (i12 = aw0Var.y) && i25 < i12) {
+                    CharSequence[] charSequenceArr2 = aw0Var.v;
                     CharSequence charSequence2 = charSequenceArr2[i24];
                     charSequenceArr2[i24] = charSequenceArr2[i25];
                     charSequenceArr2[i25] = charSequence2;
-                    int[] iArr = cw0Var.r;
+                    int[] iArr = aw0Var.r;
                     if (iArr != null) {
                         int i26 = iArr[i24];
                         iArr[i24] = iArr[i25];
                         iArr[i25] = i26;
                     }
-                    boolean[] zArr2 = cw0Var.w;
+                    boolean[] zArr2 = aw0Var.w;
                     boolean z12 = zArr2[i24];
                     zArr2[i24] = zArr2[i25];
                     zArr2[i25] = z12;
-                    aw0Var.p(b24, b25);
+                    yv0Var.p(b24, b25);
                 }
                 return true;
         }
@@ -475,24 +475,24 @@ public final class g extends s4.v {
                 }
                 break;
             case 1:
-                jp jpVar = (jp) this.e;
-                kp kpVar = jpVar.a3;
+                hp hpVar = (hp) this.e;
+                ip ipVar = hpVar.a3;
                 if (i10 != 0) {
-                    kpVar.L = true;
-                    jpVar.J0(false);
+                    ipVar.L = true;
+                    hpVar.J0(false);
                     c1Var.a.setPressed(true);
                     break;
                 } else {
-                    kpVar.L = false;
-                    if (jpVar.Y2) {
-                        TLRPC.Chat chat = kpVar.X;
-                        ArrayList arrayList3 = kpVar.N;
-                        ArrayList arrayList4 = kpVar.M;
+                    ipVar.L = false;
+                    if (hpVar.Y2) {
+                        TLRPC.Chat chat = ipVar.X;
+                        ArrayList arrayList3 = ipVar.N;
+                        ArrayList arrayList4 = ipVar.M;
                         if (chat != null) {
-                            jpVar.Y2 = false;
+                            hpVar.Y2 = false;
                             TLRPC.TL_channels_reorderUsernames tL_channels_reorderUsernames = new TLRPC.TL_channels_reorderUsernames();
                             TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
-                            TLRPC.Chat chat2 = kpVar.X;
+                            TLRPC.Chat chat2 = ipVar.X;
                             tL_inputChannel.channel_id = chat2.id;
                             tL_inputChannel.access_hash = chat2.access_hash;
                             tL_channels_reorderUsernames.channel = tL_inputChannel;
@@ -508,11 +508,11 @@ public final class g extends s4.v {
                                 }
                             }
                             tL_channels_reorderUsernames.order = arrayList5;
-                            kpVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new t7(10));
-                            kpVar.X.usernames.clear();
-                            kpVar.X.usernames.addAll(arrayList4);
-                            kpVar.X.usernames.addAll(arrayList3);
-                            kpVar.getMessagesController().putChat(kpVar.X, true);
+                            ipVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new t7(10));
+                            ipVar.X.usernames.clear();
+                            ipVar.X.usernames.addAll(arrayList4);
+                            ipVar.X.usernames.addAll(arrayList3);
+                            ipVar.getMessagesController().putChat(ipVar.X, true);
                             break;
                         }
                     }
@@ -520,10 +520,10 @@ public final class g extends s4.v {
                 break;
             case 2:
                 un unVar = (un) this.e;
-                fc1 fc1Var = unVar.s;
+                dc1 dc1Var = unVar.s;
                 if (i10 != 0) {
-                    fc1Var.setItemAnimator(unVar.v);
-                    fc1Var.J0(false);
+                    dc1Var.setItemAnimator(unVar.v);
+                    dc1Var.J0(false);
                     c1Var.a.setPressed(true);
                     c1Var.a.setBackgroundColor(j6.v0(j6.h5, unVar.a));
                     break;
@@ -531,28 +531,28 @@ public final class g extends s4.v {
                 break;
             case 3:
                 if (i10 != 0) {
-                    ((wm0) this.e).b.J0(false);
+                    ((jn0) this.e).b.J0(false);
                     c1Var.a.setPressed(true);
                     break;
                 }
                 break;
             case 4:
-                f61 f61Var = (f61) this.e;
+                t61 t61Var = (t61) this.e;
                 if (c1Var != null) {
-                    f61Var.e1(false);
+                    t61Var.e1(false);
                 }
                 if (i10 == 0) {
-                    x51 x51Var = f61Var.Y2;
-                    if (x51Var.K) {
-                        x51Var.F(x51Var.J);
+                    l61 l61Var = t61Var.Y2;
+                    if (l61Var.K) {
+                        l61Var.F(l61Var.J);
                     }
-                    if (f61Var.d3 != null) {
-                        f61Var.E1();
-                        f61Var.d3 = null;
+                    if (t61Var.d3 != null) {
+                        t61Var.E1();
+                        t61Var.d3 = null;
                         break;
                     }
                 } else {
-                    f61Var.J0(false);
+                    t61Var.J0(false);
                     if (c1Var != null) {
                         View view = c1Var.a;
                         view.setPressed(true);
@@ -564,8 +564,8 @@ public final class g extends s4.v {
                             }
                         }
                         if (i10 == 2) {
-                            f61Var.d3 = c1Var;
-                            f61Var.H1(c1Var);
+                            t61Var.d3 = c1Var;
+                            t61Var.H1(c1Var);
                             break;
                         }
                     }
@@ -573,7 +573,7 @@ public final class g extends s4.v {
                 break;
             case 6:
                 if (i10 != 0) {
-                    ((cw0) this.e).c.J0(false);
+                    ((aw0) this.e).c.J0(false);
                     c1Var.a.setPressed(true);
                     break;
                 }
@@ -587,8 +587,8 @@ public final class g extends s4.v {
     }
 
     public boolean r(int i10) {
-        cw0 cw0Var = (cw0) this.e;
-        return !cw0Var.I || i10 - cw0Var.n0 >= cw0Var.x;
+        aw0 aw0Var = (aw0) this.e;
+        return !aw0Var.I || i10 - aw0Var.n0 >= aw0Var.x;
     }
 
     private final void t(c1 c1Var) {

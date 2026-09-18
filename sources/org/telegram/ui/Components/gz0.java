@@ -1,37 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gz0 extends ViewGroup.MarginLayoutParams {
-    public iz0 a;
-    public iz0 b;
+public final class gz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gz0() {
-        super(-2, -2);
-        iz0 iz0Var = iz0.e;
-        this.a = iz0Var;
-        this.b = iz0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = iz0Var;
-        this.b = iz0Var;
+    public /* synthetic */ gz0(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
         }
-        if (obj == null || gz0.class != obj.getClass()) {
-            return false;
-        }
-        gz0 gz0Var = (gz0) obj;
-        return this.b.equals(gz0Var.b) && this.a.equals(gz0Var.a);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

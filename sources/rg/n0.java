@@ -8,29 +8,29 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.nb0;
-import w7.x5;
+import org.telegram.ui.mb0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout implements l0 {
-    public final f6 a;
+    public final e6 a;
     public final ArrayList b;
     public final m0 c;
     public final m0 d;
     public final m0 e;
     public final boolean f;
 
-    public n0(Context context, f6 f6Var) {
+    public n0(Context context, e6 e6Var) {
         super(context);
         this.b = new ArrayList();
-        this.a = f6Var;
-        for (nb0 nb0Var : nb0.values()) {
-            if (nb0Var.e) {
-                this.b.add(nb0Var);
+        this.a = e6Var;
+        for (mb0 mb0Var : mb0.values()) {
+            if (mb0Var.e) {
+                this.b.add(mb0Var);
             }
             if (this.b.size() == 3) {
                 break;
@@ -48,7 +48,7 @@ public final class n0 extends FrameLayout implements l0 {
     }
 
     public final m0 a(Context context, int i10) {
-        nb0 nb0Var = (nb0) this.b.get(i10);
+        mb0 mb0Var = (mb0) this.b.get(i10);
         m0 m0Var = new m0(context);
         u1 u1Var = new u1(20);
         m0Var.e = u1Var;
@@ -67,9 +67,9 @@ public final class n0 extends FrameLayout implements l0 {
         u1Var.P = j6.Zj;
         u1Var.c();
         paint.setColor(-1);
-        m0Var.setLayoutParams(x5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
-        m0Var.setForeground(nb0Var.c);
-        m0Var.setBackgroundResource(nb0Var.b);
+        m0Var.setLayoutParams(y5.d(-2, -2.0f, 17, 0.0f, 52.0f, 0.0f, 0.0f));
+        m0Var.setForeground(mb0Var.c);
+        m0Var.setBackgroundResource(mb0Var.b);
         m0Var.setPadding(AndroidUtilities.dp(8.0f));
         m0Var.setBackgroundOuterPadding(AndroidUtilities.dp(32.0f));
         addView(m0Var);

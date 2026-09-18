@@ -5,9 +5,9 @@ import ci.b9;
 import com.google.android.gms.common.api.r;
 import java.util.concurrent.Executor;
 import v0.i;
-import v0.p;
+import v0.o;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements rd.a {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class b implements rd.a {
                 this.b.execute(new ba(5, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new ba(6, this.c, (p) this.d));
+                this.b.execute(new ba(6, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));

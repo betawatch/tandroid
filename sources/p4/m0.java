@@ -8,9 +8,9 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 import android.util.SparseArray;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
@@ -65,16 +65,16 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i10, int i11) {
-        Bundle e = p6.e(i11, "volume");
+        Bundle f7 = c1.f(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(7, i12, i10, null, e);
+        b(7, i12, i10, null, f7);
     }
 
     public final void d(int i10, int i11) {
-        Bundle e = p6.e(i11, "volume");
+        Bundle f7 = c1.f(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(8, i12, i10, null, e);
+        b(8, i12, i10, null, f7);
     }
 }

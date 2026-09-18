@@ -1,92 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import java.util.List;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ki implements RequestDelegate {
-    public final /* synthetic */ int a = 2;
+public final /* synthetic */ class ki implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
-    public final /* synthetic */ boolean j;
-    public final /* synthetic */ Object k;
-    public final /* synthetic */ Object l;
+    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ TLRPC.Message d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ ki(SendMessagesHelper sendMessagesHelper, String str, List list, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, bo boVar, TwoStepVerificationActivity twoStepVerificationActivity, TLObject[] tLObjectArr, TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, boolean z11) {
+    public /* synthetic */ ki(SendMessagesHelper sendMessagesHelper, TLRPC.Updates updates, TLRPC.Message message, boolean z10, int i10) {
+        this.a = i10;
         this.b = sendMessagesHelper;
-        this.d = str;
-        this.k = list;
-        this.f = z10;
-        this.c = messageObject;
-        this.l = keyboardButtonProto;
-        this.e = boVar;
-        this.g = twoStepVerificationActivity;
-        this.h = tLObjectArr;
-        this.i = inputCheckPasswordSRP;
-        this.j = z11;
+        this.c = updates;
+        this.d = message;
+        this.e = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$performSendMessageRequest$76((TLRPC.TL_messages_addPollAnswer) this.k, (TLRPC.TL_messages_addPollAnswer) this.l, this.c, this.d, (SendMessagesHelper.DelayedMessage) this.e, this.f, (SendMessagesHelper.DelayedMessage) this.g, this.h, (HashMap) this.i, this.j, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$performSendMessageRequest$101((TLObject) this.k, this.c, this.d, (SendMessagesHelper.DelayedMessage) this.e, this.f, (SendMessagesHelper.DelayedMessage) this.g, this.h, (HashMap) this.i, this.j, (TLRPC.Message) this.l, tLObject, tL_error);
+                this.b.lambda$performSendMessageRequest$88(this.c, this.d, this.e);
                 break;
             default:
-                List list = (List) this.k;
-                TL_keyboard.KeyboardButtonProto keyboardButtonProto = (TL_keyboard.KeyboardButtonProto) this.l;
-                bo boVar = (bo) this.e;
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.g;
-                TLObject[] tLObjectArr = (TLObject[]) this.h;
-                TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.i;
-                boolean z10 = this.j;
-                this.b.lambda$sendCallback$46(this.d, list, this.f, this.c, keyboardButtonProto, boVar, twoStepVerificationActivity, tLObjectArr, inputCheckPasswordSRP, z10, tLObject, tL_error);
+                this.b.lambda$performSendMessageRequest$85(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ ki(SendMessagesHelper sendMessagesHelper, TLObject tLObject, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11, TLRPC.Message message) {
-        this.b = sendMessagesHelper;
-        this.k = tLObject;
-        this.c = messageObject;
-        this.d = str;
-        this.e = delayedMessage;
-        this.f = z10;
-        this.g = delayedMessage2;
-        this.h = obj;
-        this.i = hashMap;
-        this.j = z11;
-        this.l = message;
-    }
-
-    public /* synthetic */ ki(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer2, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
-        this.b = sendMessagesHelper;
-        this.k = tL_messages_addPollAnswer;
-        this.l = tL_messages_addPollAnswer2;
-        this.c = messageObject;
-        this.d = str;
-        this.e = delayedMessage;
-        this.f = z10;
-        this.g = delayedMessage2;
-        this.h = obj;
-        this.i = hashMap;
-        this.j = z11;
     }
 }

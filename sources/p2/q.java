@@ -1,18 +1,8 @@
 package p2;
 
-import j$.util.DesugarCollections;
-import java.util.List;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public abstract class q implements t2.a {
-    public final String a;
-    public final List b;
-    public final boolean c;
-
-    public q(String str, List list, boolean z10) {
-        this.a = str;
-        this.b = DesugarCollections.unmodifiableList(list);
-        this.c = z10;
-    }
+public final class q extends IOException {
 }

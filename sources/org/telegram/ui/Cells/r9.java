@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class r9 extends da {
     public boolean A0;
@@ -35,7 +35,7 @@ public abstract class r9 extends da {
         RichMessageLayout richMessageLayout;
         CharSequence s10;
         String str;
-        if (!this.z0 || (y9Var = this.W) == null || ((t1) y9Var).getMessageObject() == null || (richMessageLayout = ((t1) this.W).getMessageObject().richLayout) == null || richMessageLayout.textBlocks.isEmpty() || (s10 = s()) == null || s10.length() == 0) {
+        if (!this.z0 || (y9Var = this.W) == null || ((u1) y9Var).getMessageObject() == null || (richMessageLayout = ((u1) this.W).getMessageObject().richLayout) == null || richMessageLayout.textBlocks.isEmpty() || (s10 = s()) == null || s10.length() == 0) {
             return false;
         }
         try {
@@ -54,22 +54,22 @@ public abstract class r9 extends da {
     @Override // org.telegram.ui.Cells.da
     public final void F(boolean z10) {
         y9 y9Var = this.W;
-        if (y9Var == null || !((t1) y9Var).g3() || z10) {
+        if (y9Var == null || !((u1) y9Var).g3() || z10) {
             return;
         }
-        t1 t1Var = (t1) this.W;
-        int id2 = t1Var.getMessageObject().getId();
+        u1 u1Var = (u1) this.W;
+        int id2 = u1Var.getMessageObject().getId();
         SparseArray sparseArray = this.u0;
         Animator animator = (Animator) sparseArray.get(id2);
         if (animator != null) {
             animator.removeAllListeners();
             animator.cancel();
         }
-        t1Var.setSelectedBackgroundProgress(0.01f);
+        u1Var.setSelectedBackgroundProgress(0.01f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
         int i10 = 1;
-        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.r2(t1Var, id2, i10));
-        ofFloat.addListener(new j1(i10, t1Var));
+        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(u1Var, id2, i10));
+        ofFloat.addListener(new k1(i10, u1Var));
         ofFloat.setDuration(300L);
         ofFloat.start();
         sparseArray.put(id2, ofFloat);
@@ -77,12 +77,12 @@ public abstract class r9 extends da {
 
     @Override // org.telegram.ui.Cells.da
     public final void M(y9 y9Var, y9 y9Var2) {
-        t1 t1Var = (t1) y9Var;
-        t1 t1Var2 = (t1) y9Var2;
-        boolean z10 = t1Var2 == null || !(t1Var2.getMessageObject() == null || t1Var2.getMessageObject().getId() == t1Var.getMessageObject().getId());
-        this.w = t1Var.getMessageObject().getId();
+        u1 u1Var = (u1) y9Var;
+        u1 u1Var2 = (u1) y9Var2;
+        boolean z10 = u1Var2 == null || !(u1Var2.getMessageObject() == null || u1Var2.getMessageObject().getId() == u1Var.getMessageObject().getId());
+        this.w = u1Var.getMessageObject().getId();
         try {
-            int i10 = t1Var.getMessageObject().messageOwner.edit_date;
+            int i10 = u1Var.getMessageObject().messageOwner.edit_date;
         } catch (Exception unused) {
         }
         this.U = 0.0f;
@@ -102,7 +102,7 @@ public abstract class r9 extends da {
         ofFloat.start();
         sparseArray.put(this.w, ofFloat);
         if (!z10) {
-            t1Var.setSelectedBackgroundProgress(0.0f);
+            u1Var.setSelectedBackgroundProgress(0.0f);
         }
         SharedConfig.removeTextSelectionHint();
     }
@@ -137,7 +137,7 @@ public abstract class r9 extends da {
     public final void Z(MessageObject messageObject, RichMessageLayout richMessageLayout, Canvas canvas) {
         y9 y9Var;
         Canvas canvas2;
-        if (!this.z0 || richMessageLayout == null || (y9Var = this.W) == null || ((t1) y9Var).getMessageObject() == null || ((t1) this.W).getMessageObject().getId() != messageObject.getId()) {
+        if (!this.z0 || richMessageLayout == null || (y9Var = this.W) == null || ((u1) y9Var).getMessageObject() == null || ((u1) this.W).getMessageObject().getId() != messageObject.getId()) {
             return;
         }
         boolean isOutOwner = messageObject.isOutOwner();
@@ -178,18 +178,18 @@ public abstract class r9 extends da {
         }
     }
 
-    public final void a0(t1 t1Var, int i10, int i11) {
-        if (t1Var == null) {
+    public final void a0(u1 u1Var, int i10, int i11) {
+        if (u1Var == null) {
             return;
         }
-        this.W = t1Var;
-        this.w = t1Var.getMessageObject().getId();
+        this.W = u1Var;
+        this.w = u1Var.getMessageObject().getId();
         this.u = i10;
         this.v = i11;
         x();
-        w7.h0 h0Var = this.D;
-        if (h0Var != null) {
-            h0Var.a(true);
+        w7.i0 i0Var = this.D;
+        if (i0Var != null) {
+            i0Var.a(true);
         }
         this.g = 0.0f;
         this.f = 0.0f;
@@ -201,40 +201,40 @@ public abstract class r9 extends da {
         V();
     }
 
-    public final void b0(t1 t1Var) {
+    public final void b0(u1 u1Var) {
         ArrayList<MessageObject.TextLayoutBlock> arrayList;
         RichMessageLayout richMessageLayout;
-        this.X = t1Var;
-        MessageObject messageObject = t1Var.getMessageObject();
-        s1 s1Var = t1Var.Zc;
+        this.X = u1Var;
+        MessageObject messageObject = u1Var.getMessageObject();
+        t1 t1Var = u1Var.Zc;
         boolean z10 = this.w0;
         Rect rect = this.B;
-        if (z10 && t1Var.getDescriptionlayout() != null) {
+        if (z10 && u1Var.getDescriptionlayout() != null) {
             int i10 = this.c;
-            rect.set(i10, this.d, t1Var.getDescriptionlayout().getWidth() + i10, t1Var.getDescriptionlayout().getHeight() + this.d);
+            rect.set(i10, this.d, u1Var.getDescriptionlayout().getWidth() + i10, u1Var.getDescriptionlayout().getHeight() + this.d);
             return;
         }
-        if (this.y0 && t1Var.getFactCheckLayout() != null) {
+        if (this.y0 && u1Var.getFactCheckLayout() != null) {
             int i11 = this.c;
-            rect.set(i11, this.d, t1Var.getFactCheckLayout().getWidth() + i11, t1Var.getFactCheckLayout().getHeight() + this.d);
+            rect.set(i11, this.d, u1Var.getFactCheckLayout().getWidth() + i11, u1Var.getFactCheckLayout().getHeight() + this.d);
             return;
         }
         if (this.A0 && messageObject != null && (richMessageLayout = messageObject.richLayout) != null && !richMessageLayout.textBlocks.isEmpty()) {
             RichMessageLayout richMessageLayout2 = messageObject.richLayout;
             int i12 = this.c;
             rect.set(i12, this.d, richMessageLayout2.getMinWidth() + i12, richMessageLayout2.getHeight() + this.d);
-        } else if (t1Var.P2() && t1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) hg.k0.h(1, t1Var.getCaptionLayout().textLayoutBlocks);
+        } else if (u1Var.P2() && u1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
+            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) hg.k0.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
             int i13 = this.c;
-            rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(t1Var.getCaptionLayout().textLayoutBlocks, s1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
+            rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(u1Var.getCaptionLayout().textLayoutBlocks, t1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
         } else {
             if (messageObject == null || (arrayList = messageObject.textLayoutBlocks) == null || arrayList.size() <= 0) {
                 this.X = null;
                 return;
             }
-            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) hg.k0.h(1, messageObject.textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) hg.k0.g(1, messageObject.textLayoutBlocks);
             int i14 = this.c;
-            rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, s1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
+            rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, t1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
         }
     }
 
@@ -257,21 +257,21 @@ public abstract class r9 extends da {
 
     @Override // org.telegram.ui.Cells.da
     public final void j(int i10, t9 t9Var, boolean z10) {
-        t1 t1Var = (t1) (z10 ? this.X : this.W);
-        if (t1Var == null) {
+        u1 u1Var = (u1) (z10 ? this.X : this.W);
+        if (u1Var == null) {
             t9Var.b = null;
             return;
         }
-        MessageObject messageObject = t1Var.getMessageObject();
+        MessageObject messageObject = u1Var.getMessageObject();
         if (this.v0) {
-            t9Var.b = t1Var.getDescriptionlayout();
+            t9Var.b = u1Var.getDescriptionlayout();
             t9Var.c = 0.0f;
             t9Var.d = 0.0f;
             t9Var.a = 0;
             return;
         }
         if (this.x0) {
-            t9Var.b = t1Var.getFactCheckLayout();
+            t9Var.b = u1Var.getFactCheckLayout();
             t9Var.c = 0.0f;
             t9Var.d = 0.0f;
             t9Var.a = 0;
@@ -305,8 +305,8 @@ public abstract class r9 extends da {
             t9Var.a = richMessageLayout.textBlockCharOffsets.get(r4).intValue();
             return;
         }
-        if (t1Var.P2()) {
-            MessageObject.TextLayoutBlocks captionLayout = t1Var.getCaptionLayout();
+        if (u1Var.P2()) {
+            MessageObject.TextLayoutBlocks captionLayout = u1Var.getCaptionLayout();
             if (captionLayout.textLayoutBlocks.size() == 1) {
                 t9Var.b = captionLayout.textLayoutBlocks.get(0).textLayout;
                 t9Var.c = r9.padTop;
@@ -388,8 +388,8 @@ public abstract class r9 extends da {
         StaticLayout staticLayout2;
         int i15;
         Layout layout;
-        t1 t1Var = (t1) y9Var;
-        if (t1Var == null) {
+        u1 u1Var = (u1) y9Var;
+        if (u1Var == null) {
             return 0;
         }
         int i16 = i10 - i12;
@@ -398,28 +398,28 @@ public abstract class r9 extends da {
         boolean z12 = z10 ? this.y0 : this.x0;
         boolean z13 = z10 ? this.A0 : this.z0;
         if (z11) {
-            staticLayout2 = t1Var.getDescriptionlayout();
+            staticLayout2 = u1Var.getDescriptionlayout();
         } else {
             if (!z12) {
                 if (z13) {
-                    RichMessageLayout richMessageLayout = t1Var.getMessageObject() != null ? t1Var.getMessageObject().richLayout : null;
+                    RichMessageLayout richMessageLayout = u1Var.getMessageObject() != null ? u1Var.getMessageObject().richLayout : null;
                     if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                        ba baVar = (ba) hg.k0.h(1, richMessageLayout.textBlocks);
+                        ba baVar = (ba) hg.k0.g(1, richMessageLayout.textBlocks);
                         Layout layout2 = baVar.getLayout();
                         staticLayout = layout2 instanceof StaticLayout ? (StaticLayout) layout2 : null;
                         f7 = baVar.getY();
                     }
                     return -1;
                 }
-                if (t1Var.P2()) {
-                    MessageObject.TextLayoutBlock textLayoutBlock = t1Var.getCaptionLayout().textLayoutBlocks.get(t1Var.getCaptionLayout().textLayoutBlocks.size() - 1);
+                if (u1Var.P2()) {
+                    MessageObject.TextLayoutBlock textLayoutBlock = u1Var.getCaptionLayout().textLayoutBlocks.get(u1Var.getCaptionLayout().textLayoutBlocks.size() - 1);
                     staticLayout = textLayoutBlock.textLayout;
-                    textYOffset = textLayoutBlock.textYOffset(t1Var.getCaptionLayout().textLayoutBlocks);
+                    textYOffset = textLayoutBlock.textYOffset(u1Var.getCaptionLayout().textLayoutBlocks);
                     i14 = textLayoutBlock.padTop;
                 } else {
-                    MessageObject.TextLayoutBlock textLayoutBlock2 = t1Var.getMessageObject().textLayoutBlocks.get(t1Var.getMessageObject().textLayoutBlocks.size() - 1);
+                    MessageObject.TextLayoutBlock textLayoutBlock2 = u1Var.getMessageObject().textLayoutBlocks.get(u1Var.getMessageObject().textLayoutBlocks.size() - 1);
                     staticLayout = textLayoutBlock2.textLayout;
-                    textYOffset = textLayoutBlock2.textYOffset(t1Var.getMessageObject().textLayoutBlocks);
+                    textYOffset = textLayoutBlock2.textYOffset(u1Var.getMessageObject().textLayoutBlocks);
                     i14 = textLayoutBlock2.padTop;
                 }
                 f7 = i14 + textYOffset;
@@ -434,11 +434,11 @@ public abstract class r9 extends da {
                     if (i17 > lineBottom) {
                         i17 = lineBottom - 1;
                     }
-                    s1 s1Var = t1Var.Zc;
-                    MessageObject messageObject = t1Var.getMessageObject();
+                    t1 t1Var = u1Var.Zc;
+                    MessageObject messageObject = u1Var.getMessageObject();
                     t9 t9Var = this.a0;
                     if (!z10 ? this.v0 : this.w0) {
-                        t9Var.b = t1Var.getDescriptionlayout();
+                        t9Var.b = u1Var.getDescriptionlayout();
                         t9Var.d = 0.0f;
                         t9Var.c = 0.0f;
                         t9Var.a = 0;
@@ -446,7 +446,7 @@ public abstract class r9 extends da {
                         if (!z10 ? this.x0 : this.y0) {
                             if (!z10 ? !this.z0 : !this.A0) {
                                 i15 = -1;
-                                if (!t1Var.P2()) {
+                                if (!u1Var.P2()) {
                                     int i18 = 0;
                                     while (true) {
                                         if (i18 >= messageObject.textLayoutBlocks.size()) {
@@ -454,7 +454,7 @@ public abstract class r9 extends da {
                                         }
                                         MessageObject.TextLayoutBlock textLayoutBlock3 = messageObject.textLayoutBlocks.get(i18);
                                         float f11 = i17;
-                                        if (f11 < textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) || f11 > textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) + textLayoutBlock3.padTop + textLayoutBlock3.height(s1Var)) {
+                                        if (f11 < textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) || f11 > textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) + textLayoutBlock3.padTop + textLayoutBlock3.height(t1Var)) {
                                             i18++;
                                         } else {
                                             t9Var.b = textLayoutBlock3.textLayout;
@@ -468,7 +468,7 @@ public abstract class r9 extends da {
                                         }
                                     }
                                 } else {
-                                    MessageObject.TextLayoutBlocks captionLayout = t1Var.getCaptionLayout();
+                                    MessageObject.TextLayoutBlocks captionLayout = u1Var.getCaptionLayout();
                                     int i19 = 0;
                                     while (true) {
                                         if (i19 >= captionLayout.textLayoutBlocks.size()) {
@@ -476,7 +476,7 @@ public abstract class r9 extends da {
                                         }
                                         MessageObject.TextLayoutBlock textLayoutBlock4 = captionLayout.textLayoutBlocks.get(i19);
                                         float f13 = i17;
-                                        if (f13 < textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) || f13 > textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) + textLayoutBlock4.padTop + textLayoutBlock4.height(s1Var)) {
+                                        if (f13 < textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) || f13 > textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) + textLayoutBlock4.padTop + textLayoutBlock4.height(t1Var)) {
                                             i19++;
                                         } else {
                                             t9Var.b = textLayoutBlock4.textLayout;
@@ -566,7 +566,7 @@ public abstract class r9 extends da {
                             }
                             return i15;
                         }
-                        t9Var.b = t1Var.getFactCheckLayout();
+                        t9Var.b = u1Var.getFactCheckLayout();
                         t9Var.d = 0.0f;
                         t9Var.c = 0.0f;
                         t9Var.a = 0;
@@ -578,7 +578,7 @@ public abstract class r9 extends da {
                 }
                 return -1;
             }
-            staticLayout2 = t1Var.getFactCheckLayout();
+            staticLayout2 = u1Var.getFactCheckLayout();
         }
         f10 = 0.0f;
         if (staticLayout2 != null) {
@@ -590,20 +590,20 @@ public abstract class r9 extends da {
     public final int n() {
         Layout layout;
         y9 y9Var = this.W;
-        if (y9Var != null && ((t1) y9Var).getMessageObject() != null) {
-            MessageObject messageObject = ((t1) this.W).getMessageObject();
+        if (y9Var != null && ((u1) y9Var).getMessageObject() != null) {
+            MessageObject messageObject = ((u1) this.W).getMessageObject();
             if (this.v0) {
-                layout = ((t1) this.W).getDescriptionlayout();
+                layout = ((u1) this.W).getDescriptionlayout();
             } else if (this.x0) {
-                layout = ((t1) this.W).getFactCheckLayout();
+                layout = ((u1) this.W).getFactCheckLayout();
             } else if (this.z0) {
                 RichMessageLayout richMessageLayout = messageObject != null ? messageObject.richLayout : null;
                 if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
                     layout = richMessageLayout.textBlocks.get(0).getLayout();
                 }
                 layout = null;
-            } else if (((t1) this.W).P2()) {
-                layout = ((t1) this.W).getCaptionLayout().textLayoutBlocks.get(0).textLayout;
+            } else if (((u1) this.W).P2()) {
+                layout = ((u1) this.W).getCaptionLayout().textLayoutBlocks.get(0).textLayout;
             } else {
                 ArrayList<MessageObject.TextLayoutBlock> arrayList = messageObject.textLayoutBlocks;
                 if (arrayList != null) {
@@ -620,20 +620,20 @@ public abstract class r9 extends da {
 
     @Override // org.telegram.ui.Cells.da
     public final CharSequence t(y9 y9Var, boolean z10) {
-        t1 t1Var = (t1) y9Var;
-        if (t1Var == null || t1Var.getMessageObject() == null) {
+        u1 u1Var = (u1) y9Var;
+        if (u1Var == null || u1Var.getMessageObject() == null) {
             return null;
         }
         if (!z10 ? !this.v0 : !this.w0) {
-            return t1Var.getDescriptionlayout().getText();
+            return u1Var.getDescriptionlayout().getText();
         }
         if (!z10 ? !this.x0 : !this.y0) {
-            return t1Var.getFactCheckLayout().getText();
+            return u1Var.getFactCheckLayout().getText();
         }
         if (!z10 ? this.z0 : this.A0) {
-            return t1Var.P2() ? t1Var.getCaptionLayout().text : t1Var.getMessageObject().messageText;
+            return u1Var.P2() ? u1Var.getCaptionLayout().text : u1Var.getMessageObject().messageText;
         }
-        RichMessageLayout richMessageLayout = t1Var.getMessageObject().richLayout;
+        RichMessageLayout richMessageLayout = u1Var.getMessageObject().richLayout;
         return richMessageLayout != null ? richMessageLayout.joinedText : "";
     }
 
@@ -641,13 +641,13 @@ public abstract class r9 extends da {
     public void x() {
         super.x();
         y9 y9Var = this.W;
-        if (y9Var != null && ((t1) y9Var).getCurrentMessagesGroup() != null) {
+        if (y9Var != null && ((u1) y9Var).getCurrentMessagesGroup() != null) {
             this.F.invalidate();
         }
         y9 y9Var2 = this.W;
         if (y9Var2 != null) {
             if (this.x0 || this.y0) {
-                ((t1) y9Var2).a3();
+                ((u1) y9Var2).a3();
             }
         }
     }

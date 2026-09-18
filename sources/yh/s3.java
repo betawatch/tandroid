@@ -1,40 +1,42 @@
 package yh;
 
-import android.text.Spanned;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s3 implements View.OnClickListener {
+public final class s3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x3 b;
+    public final /* synthetic */ v3 b;
 
-    public /* synthetic */ s3(x3 x3Var, int i10) {
+    public /* synthetic */ s3(v3 v3Var, int i10) {
         this.a = i10;
-        this.b = x3Var;
+        this.b = v3Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        View.OnClickListener onClickListener;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                CharSequence text = this.b.v.getText();
-                if (text instanceof Spanned) {
-                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
-                    if (clickableSpanArr.length > 0) {
-                        clickableSpanArr[0].onClick(view);
-                        break;
-                    }
-                }
+                this.b.d0 = false;
+                break;
+            case 1:
+                this.b.d0 = false;
+                break;
+            case 2:
+                this.b.N.setVisibility(4);
+                break;
+            case 3:
+                v3 v3Var = this.b;
+                v3Var.s0 = v3Var.r0;
+                v3Var.d(v3Var.U);
                 break;
             default:
-                x3 x3Var = this.b;
-                if (x3Var.N.getVisibility() == 0 && (onClickListener = x3Var.T) != null) {
-                    onClickListener.onClick(view);
-                    break;
-                }
+                v3 v3Var2 = this.b;
+                v3Var2.t0 = 1.0f;
+                v3Var2.b.setScaleX(1.0f);
+                v3Var2.b.setScaleY(v3Var2.t0);
+                v3Var2.invalidate();
                 break;
         }
     }

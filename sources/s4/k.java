@@ -2,9 +2,8 @@ package s4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -127,9 +126,9 @@ public final class k {
                                 }
                             } else {
                                 if (i21 != 16) {
-                                    StringBuilder l4 = hg.k0.l(i18, "unknown flag for pos ", " ");
-                                    l4.append(Long.toBinaryString(i21));
-                                    throw new IllegalStateException(l4.toString());
+                                    StringBuilder j3 = hg.k0.j(i18, "unknown flag for pos ", " ");
+                                    j3.append(Long.toBinaryString(i21));
+                                    throw new IllegalStateException(j3.toString());
                                 }
                                 arrayList.add(new l(i18, i18, true));
                                 i10 = i17;
@@ -167,9 +166,9 @@ public final class k {
                         if (i30 != 0) {
                             if (i30 != 4 && i30 != 8) {
                                 if (i30 != 16) {
-                                    StringBuilder l10 = hg.k0.l(i28, "unknown flag for pos ", " ");
-                                    l10.append(Long.toBinaryString(i30));
-                                    throw new IllegalStateException(l10.toString());
+                                    StringBuilder j10 = hg.k0.j(i28, "unknown flag for pos ", " ");
+                                    j10.append(Long.toBinaryString(i30));
+                                    throw new IllegalStateException(j10.toString());
                                 }
                                 arrayList.add(new l(i28, i14, false));
                             }
@@ -209,7 +208,7 @@ public final class k {
     }
 
     public final void b(h0 h0Var) {
-        a(new ia(h0Var, 12));
+        a(new k2.u(h0Var, 24));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

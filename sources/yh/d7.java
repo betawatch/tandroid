@@ -1,41 +1,50 @@
 package yh;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.yi0;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class d7 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ boolean[] a;
+public final class d7 extends w51 {
+    public static final /* synthetic */ int a = 0;
 
-    public d7(boolean[] zArr) {
-        this.a = zArr;
+    static {
+        w51.setup(new d7());
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        yi0 lottieAnimation;
-        if (!z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
-            return;
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+        e7 e7Var = (e7) view;
+        org.telegram.ui.Components.p6 p6Var = e7Var.a;
+        ImageView imageView = e7Var.b;
+        int i10 = e7Var.c;
+        int i11 = x51Var.d;
+        boolean z11 = i10 == i11;
+        e7Var.c = i11;
+        p6Var.c(x51Var.l, z11, true);
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, x51Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, false);
+        p6Var.setTextColor(w02);
+        imageView.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        if (z11) {
+            imageView.animate().rotation(x51Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(qr.h);
+        } else {
+            imageView.setRotation(x51Var.f ? 0.0f : 180.0f);
         }
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
-        }
-        lottieAnimation.N(0, false, false);
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(lottieAnimation, 0));
-        zArr[0] = true;
+        e7Var.d = z10;
+        e7Var.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.h5.b(this, imageReceiver);
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new e7(context);
     }
 }

@@ -1,13 +1,57 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class wp0 {
-    public final TLRPC.TL_dialog a = new TLRPC.TL_dialog();
-    public TLObject b;
-    public int c;
-    public CharSequence d;
+public final class wp0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vq0 b;
+
+    public /* synthetic */ wp0(vq0 vq0Var, int i10) {
+        this.a = i10;
+        this.b = vq0Var;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.i iVar;
+        ub ubVar;
+        switch (this.a) {
+            case 0:
+                if (i11 != 0) {
+                    vq0 vq0Var = this.b;
+                    vq0.s0(vq0Var);
+                    vq0Var.q0 = vq0Var.p0;
+                    break;
+                }
+                break;
+            case 1:
+                vq0 vq0Var2 = this.b;
+                if (i11 != 0) {
+                    vq0.s0(vq0Var2);
+                    vq0Var2.q0 = vq0Var2.p0;
+                }
+                qc qcVar = qc.w;
+                if (qcVar != null && (ubVar = qcVar.e) != null && (ubVar.getParent() instanceof View) && ((View) qc.w.e.getParent()).getParent() == vq0Var2.w) {
+                    qc.e();
+                }
+                if (Build.VERSION.SDK_INT >= 31 && (iVar = vq0Var2.O0) != null) {
+                    iVar.f(i10, i11);
+                    vq0.A0(vq0Var2);
+                    break;
+                }
+                break;
+            default:
+                if (i11 != 0) {
+                    vq0 vq0Var3 = this.b;
+                    vq0.s0(vq0Var3);
+                    vq0Var3.q0 = vq0Var3.p0;
+                    break;
+                }
+                break;
+        }
+    }
 }

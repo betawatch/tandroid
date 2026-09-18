@@ -1,73 +1,59 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.animation.AnimatorSet;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ef0;
+import org.telegram.ui.Components.ff0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class v5 extends FrameLayout {
-    public final org.telegram.ui.Components.u9 a;
-    public final TextView b;
-    public final TextView c;
-    public final View d;
-    public final /* synthetic */ x5 e;
+    public TextView a;
+    public TextView b;
+    public ff0 c;
+    public AnimatorSet d;
+    public ai.q4 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v5(x5 x5Var, Context context) {
-        super(context);
-        this.e = x5Var;
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        this.a = u9Var;
-        addView(u9Var, w7.x5.c(-1.0f, -1));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setBackgroundResource(R.drawable.album_shadow);
-        addView(linearLayout, w7.x5.e(-1, 60, 83));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 13.0f);
-        textView.setTextColor(-1);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        textView.setMaxLines(1);
-        textView.setGravity(80);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.m(1.0f, 0, -1, 8, 0, 5), context);
-        this.c = h;
-        h.setTextSize(1, 13.0f);
-        h.setTextColor(-1);
-        h.setSingleLine(true);
-        h.setEllipsize(truncateAt);
-        h.setMaxLines(1);
-        h.setGravity(80);
-        linearLayout.addView(h, w7.x5.k(4.0f, 0.0f, 7.0f, 5.0f, -2, -1));
-        View view = new View(context);
-        this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.K0(false));
-        addView(view, w7.x5.c(-1.0f, -1));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.u9 u9Var = this.a;
-        if (u9Var.getImageReceiver().hasNotThumb() && u9Var.getImageReceiver().getCurrentAlpha() == 1.0f) {
-            return;
+    public final void a(String str, int i10, float f7) {
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
         }
-        x5 x5Var = this.e;
-        x5Var.e.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.X9, false));
-        canvas.drawRect(0.0f, 0.0f, u9Var.getMeasuredWidth(), u9Var.getMeasuredHeight(), x5Var.e);
+        AndroidUtilities.cancelRunOnUIThread(this.e);
+        textView2.setTag(null);
+        textView.setText(str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase());
+        if (f7 > 0.0f) {
+            textView2.setText("+" + ((int) f7));
+        } else {
+            textView2.setText("" + ((int) f7));
+        }
+        textView2.setAlpha(0.0f);
+        textView.setAlpha(1.0f);
+        ff0 ff0Var = this.c;
+        ff0Var.h = i10;
+        ff0Var.n = 100;
+        ff0Var.a((int) f7, false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
+    }
+
+    public void setSeekBarDelegate(ef0 ef0Var) {
+        this.c.setDelegate(new m9(this, ef0Var));
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.d.drawableHotspotChanged(motionEvent.getX(), motionEvent.getY());
-        return super.onTouchEvent(motionEvent);
+    public void setTag(Object obj) {
+        super.setTag(obj);
+        this.c.setTag(obj);
     }
 }

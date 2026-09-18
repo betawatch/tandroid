@@ -1,64 +1,59 @@
 package xh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.qr;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.vq0;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.zr0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class z1 extends bu {
-    public final f5 c;
-    public int d;
-    public final m6 e;
-    public final /* synthetic */ r2 f;
+public final class z1 extends vq0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
+    public final /* synthetic */ zr0 c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(r2 r2Var, Context context, f6 f6Var) {
-        super(context, f6Var);
-        this.f = r2Var;
-        this.c = new f5(this);
-        m6 m6Var = new m6(false, true, true, false);
-        this.e = m6Var;
-        m6Var.k(0.2f, 160L, qr.h);
-        m6Var.t(AndroidUtilities.dp(15.33f));
-        m6Var.setCallback(this);
-        m6Var.b = 5;
+    public z1(zr0 zr0Var, Context context, String str, String str2, e6 e6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.c1 = zr0Var;
+        this.b1 = n2Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.c.a(j6.v0(this.d < 0 ? j6.p7 : j6.P5, this.f.f), false);
-        m6 m6Var = this.e;
-        m6Var.r(a2);
-        m6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        m6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.du, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        m6 m6Var = this.e;
-        if (m6Var != null) {
-            this.d = 12 - charSequence.length();
-            m6Var.b();
-            String str = "";
-            if (this.d <= 4) {
-                str = "" + this.d;
+    @Override // org.telegram.ui.Components.vq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        xc a02;
+        if (z10 && (a02 = xc.a0(this.b1)) != null) {
+            if (iVar.m() == 1) {
+                long j3 = iVar.j(0);
+                if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                    qc G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
+                    G.r = false;
+                    G.j();
+                } else if (j3 < 0) {
+                    qc G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    G2.r = false;
+                    G2.j();
+                } else {
+                    qc G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    G3.r = false;
+                    G3.j();
+                }
+            } else {
+                qc Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                Q.r = false;
+                Q.j();
             }
-            m6Var.q(str, true, true);
+            try {
+                this.c1.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.e || super.verifyDrawable(drawable);
     }
 }

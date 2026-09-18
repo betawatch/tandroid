@@ -3,7 +3,7 @@ package androidx.media;
 import hg.k0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -141,7 +141,7 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = k0.i(i10, "unknown usage ");
+                str = k0.h(i10, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";

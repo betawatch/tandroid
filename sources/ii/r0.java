@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class r0 implements h1 {
     public final /* synthetic */ u0 a;
@@ -15,7 +15,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void D(i1 i1Var, int i10, int i11) {
+    public final void B(i1 i1Var, int i10, int i11) {
         d3 d3Var;
         q9 textSelectionHelper;
         u0 u0Var = this.a;
@@ -29,7 +29,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void M(CharSequence charSequence) {
+    public final void K(CharSequence charSequence) {
         d3 d3Var = this.a.h;
         if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
@@ -38,7 +38,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void W(Editable editable) {
+    public final void U(Editable editable) {
         u0 u0Var = this.a;
         a aVar = u0Var.f;
         if (aVar != null) {
@@ -64,7 +64,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean b0(boolean z10) {
+    public final /* synthetic */ boolean X(boolean z10) {
         return false;
     }
 
@@ -112,7 +112,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean q(i1 i1Var) {
+    public final /* synthetic */ boolean p(i1 i1Var) {
         return false;
     }
 

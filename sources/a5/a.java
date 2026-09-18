@@ -35,7 +35,6 @@ import e9.j0;
 import e9.k0;
 import e9.m0;
 import g2.g;
-import gg.x1;
 import h0.c;
 import i9.r;
 import ia.d;
@@ -57,19 +56,18 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Deflater;
 import m.p3;
-import m4.a0;
-import m4.l0;
-import ni.f;
+import oi.f;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.gi;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.wa0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.va0;
 import org.telegram.ui.web.m;
+import org.telegram.ui.web.p1;
 import org.xmlpull.v1.XmlPullParserException;
 import rg.w1;
 import u2.f0;
@@ -89,15 +87,15 @@ import x7.e0;
 import x7.i9;
 import x7.ia;
 import x7.p7;
+import yf.a0;
 import yf.e;
-import yf.z;
 import z7.ib;
 import z7.we;
 import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -456,9 +454,9 @@ public class a implements i, r {
                 }
                 ((Bitmap[]) this.d)[i13] = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
             }
-            z[] zVarArr = (z[]) this.c;
-            if (zVarArr[i13] == null) {
-                zVarArr[i13] = new z(i11 * i10 * 2);
+            a0[] a0VarArr = (a0[]) this.c;
+            if (a0VarArr[i13] == null) {
+                a0VarArr[i13] = new a0(i11 * i10 * 2);
             }
         }
     }
@@ -471,7 +469,7 @@ public class a implements i, r {
                 long position = pVar.getPosition();
                 long l4 = l(pVar);
                 long i10 = pVar.i();
-                pVar.k(Math.max(6, ((u) this.c).c));
+                pVar.l(Math.max(6, ((u) this.c).c));
                 long l10 = l(pVar);
                 return (l4 > j3 || l10 <= j3) ? l10 <= j3 ? new h(-2, l10, pVar.i()) : new h(-1, l4, position) : new h(0, -9223372036854775807L, i10);
             default:
@@ -605,7 +603,7 @@ public class a implements i, r {
         Iterator it = ((CopyOnWriteArrayList) this.d).iterator();
         while (it.hasNext()) {
             u2.j0 j0Var = (u2.j0) it.next();
-            e2.d0.U(j0Var.a, new p2.b(24, hVar, j0Var.b));
+            e2.d0.U(j0Var.a, new p1(28, hVar, j0Var.b));
         }
     }
 
@@ -626,7 +624,7 @@ public class a implements i, r {
             pVar.a(0, 2, bArr);
             if ((((bArr[0] & 255) << 8) | (bArr[1] & 255)) != i10) {
                 pVar.p();
-                pVar.k((int) (i11 - pVar.getPosition()));
+                pVar.l((int) (i11 - pVar.getPosition()));
             } else {
                 e2.v vVar = new e2.v(16);
                 System.arraycopy(bArr, 0, vVar.a, 0, 2);
@@ -636,18 +634,18 @@ public class a implements i, r {
                 }
                 vVar.I(i12);
                 pVar.p();
-                pVar.k((int) (i11 - pVar.getPosition()));
+                pVar.l((int) (i11 - pVar.getPosition()));
                 b10 = c3.b.b(vVar, uVar, i10, sVar);
             }
             if (b10) {
                 break;
             }
-            pVar.k(1);
+            pVar.l(1);
         }
         if (pVar.i() < pVar.getLength() - 6) {
             return sVar.a;
         }
-        pVar.k((int) (pVar.getLength() - pVar.i()));
+        pVar.l((int) (pVar.getLength() - pVar.i()));
         return uVar.j;
     }
 
@@ -681,10 +679,10 @@ public class a implements i, r {
     @Override // i9.r
     public void onSuccess(Object obj) {
         List list = (List) obj;
-        a0 a0Var = ((l0) this.d).g;
+        m4.a0 a0Var = ((m4.k0) this.d).g;
         Handler handler = a0Var.l;
         m4.r rVar = (m4.r) this.c;
-        e2.d0.U(handler, new x1(a0Var, rVar, new c9(this, this.b, list, rVar, 6)));
+        e2.d0.U(handler, new ki.c0(a0Var, rVar, new c9(this, this.b, list, rVar, 6)));
     }
 
     public void p(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10) {
@@ -700,7 +698,7 @@ public class a implements i, r {
     }
 
     public void s(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, int i13) {
-        j(new wa0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 1));
+        j(new va0(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), i13, 1));
     }
 
     public a u(Object obj, Object obj2) {
@@ -823,7 +821,7 @@ public class a implements i, r {
                 break;
             case 25:
                 int i11 = e.y;
-                this.c = new z[i11];
+                this.c = new a0[i11];
                 this.d = new Bitmap[i11];
                 break;
             default:
@@ -891,9 +889,9 @@ public class a implements i, r {
         this.b = i10;
     }
 
-    public a(ml0 ml0Var) {
+    public a(wl0 wl0Var) {
         this.a = 15;
-        this.d = ml0Var;
+        this.d = wl0Var;
     }
 
     public a(ByteBuffer byteBuffer, int i10, RectF rectF) {
@@ -984,9 +982,9 @@ public class a implements i, r {
         this.b = ConnectionsManager.DEFAULT_DATACENTER_ID;
     }
 
-    public a(l0 l0Var, m4.r rVar, int i10) {
+    public a(m4.k0 k0Var, m4.r rVar, int i10) {
         this.a = 12;
-        this.d = l0Var;
+        this.d = k0Var;
         this.c = rVar;
         this.b = i10;
     }

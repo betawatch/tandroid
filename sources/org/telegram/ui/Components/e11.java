@@ -1,22 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class e11 extends ml0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert X2;
+public final class e11 extends MetricAffectingSpan {
+    public final int a;
+    public final d11 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e11(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context, null);
-        this.X2 = editorAlert;
+    public e11(d11 d11Var, int i10) {
+        this.b = d11Var;
+        if (i10 > 0) {
+            this.a = i10;
+        }
     }
 
-    @Override // org.telegram.ui.Components.ml0
-    public final boolean F0(float f7) {
-        return f7 >= ((float) ((AndroidUtilities.dp(48.0f) + this.X2.E) + AndroidUtilities.statusBarHeight));
+    public final void a(TextPaint textPaint) {
+        d11 d11Var = this.b;
+        if (w7.d0.a(d11Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (w7.d0.a(d11Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (w7.d0.a(d11Var.a, 16384)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
+            }
+        }
+    }
+
+    public final d11 b() {
+        return this.b;
+    }
+
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            textPaint.setTextSize(i10);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChangeListener {
     public final float a;
@@ -40,12 +40,12 @@ public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChan
         }
     }
 
-    public abstract l.b0 b();
+    public abstract l.c0 b();
 
     public abstract boolean c();
 
     public boolean d() {
-        l.b0 b10 = b();
+        l.c0 b10 = b();
         if (b10 == null || !b10.a()) {
             return true;
         }
@@ -72,7 +72,7 @@ public abstract class u1 implements View.OnTouchListener, View.OnAttachStateChan
         boolean z11 = this.h;
         View view2 = this.d;
         if (z11) {
-            l.b0 b10 = b();
+            l.c0 b10 = b();
             if (b10 != null && b10.a() && (f7 = b10.f()) != null && f7.isShown()) {
                 MotionEvent obtainNoHistory = MotionEvent.obtainNoHistory(motionEvent);
                 int[] iArr = this.r;

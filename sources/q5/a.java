@@ -2,15 +2,15 @@ package q5;
 
 import java.util.concurrent.Executor;
 import java.util.logging.Logger;
-import l5.t;
+import l5.s;
 import lf.i;
 import m5.d;
 import t5.c;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements b {
-    public static final Logger f = Logger.getLogger(t.class.getName());
+    public static final Logger f = Logger.getLogger(s.class.getName());
     public final i a;
     public final Executor b;
     public final d c;

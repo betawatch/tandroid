@@ -1,11 +1,13 @@
 package qg;
 
-import android.graphics.Point;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class l2 extends Point {
-    public l2(float f7, int i10, int i11) {
-        super((int) (i10 * f7), (int) (i11 * f7));
-    }
+public final class l2 {
+    public Bitmap a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 }

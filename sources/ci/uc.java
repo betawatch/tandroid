@@ -21,11 +21,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ int a;
@@ -140,15 +140,15 @@ public final /* synthetic */ class uc implements Runnable {
                 }
                 return;
             case 3:
-                com.google.firebase.messaging.f0 f0Var = (com.google.firebase.messaging.f0) this.b;
-                Log.w("FirebaseMessaging", "Service took too long to process intent: " + f0Var.a.getAction() + " finishing.");
-                f0Var.b.trySetResult(null);
+                com.google.firebase.messaging.e0 e0Var = (com.google.firebase.messaging.e0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + e0Var.a.getAction() + " finishing.");
+                e0Var.b.trySetResult(null);
                 return;
             case 4:
                 di.f fVar = (di.f) this.b;
                 fVar.getClass();
                 try {
-                    ml0 currentListView = ((di.i) fVar.L0).R.getCurrentListView();
+                    wl0 currentListView = ((di.i) fVar.L0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -208,13 +208,13 @@ public final /* synthetic */ class uc implements Runnable {
                 return;
             case 19:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
-                org.telegram.ui.Components.vc.a0(LaunchActivity.R()).k(false).j();
+                org.telegram.ui.Components.xc.a0(LaunchActivity.R()).k(false).j();
                 return;
             case 20:
                 hg.l0 l0Var = (hg.l0) this.b;
-                x51 x51Var = l0Var.d0;
-                if (x51Var != null) {
-                    x51Var.N(true);
+                l61 l61Var = l0Var.d0;
+                if (l61Var != null) {
+                    l61Var.N(true);
                 }
                 l0Var.T(true);
                 return;
@@ -251,9 +251,9 @@ public final /* synthetic */ class uc implements Runnable {
                 }
                 return;
             case 28:
-                i2.e0 e0Var = (i2.e0) this.b;
-                e2.c cVar3 = e0Var.E;
-                Context context = e0Var.e;
+                i2.e0 e0Var2 = (i2.e0) this.b;
+                e2.c cVar3 = e0Var2.E;
+                Context context = e0Var2.e;
                 String str2 = e2.d0.a;
                 Integer valueOf = Integer.valueOf(c2.d.e(context).generateAudioSessionId());
                 cVar3.f = valueOf;
@@ -265,9 +265,9 @@ public final /* synthetic */ class uc implements Runnable {
                 }
                 return;
             default:
-                i2.e0 e0Var2 = ((i2.b0) this.b).a;
-                e0Var2.t1(null);
-                e0Var2.m1(0, 0);
+                i2.e0 e0Var3 = ((i2.b0) this.b).a;
+                e0Var3.t1(null);
+                e0Var3.m1(0, 0);
                 return;
         }
     }

@@ -1,74 +1,71 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.widget.HorizontalScrollView;
+import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ji implements z4.e {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ HorizontalScrollView d;
-    public final /* synthetic */ SparseIntArray e;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final /* synthetic */ int[] g;
+public final class ji implements View.OnClickListener {
+    public final /* synthetic */ gi0 a;
+    public final /* synthetic */ org.telegram.ui.Components.wl0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ zn f;
 
-    public ji(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.a = atomicBoolean;
-        this.b = linearLayout;
-        this.c = i10;
-        this.d = horizontalScrollView;
-        this.e = sparseIntArray;
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.g = iArr;
+    public ji(zn znVar, gi0 gi0Var, org.telegram.ui.Components.wl0 wl0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = znVar;
+        this.a = gi0Var;
+        this.b = wl0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    @Override // z4.e
-    public final void a(int i10) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
-    }
-
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        HorizontalScrollView horizontalScrollView;
-        if (this.a.get()) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gi0 gi0Var = this.a;
+        ArrayList arrayList = gi0Var.b;
+        ArrayList arrayList2 = gi0Var.c;
+        zn znVar = this.f;
+        if (znVar.Q8 == null || arrayList2.isEmpty()) {
             return;
         }
-        int i12 = 0;
-        float f10 = -1.0f;
-        float f11 = -1.0f;
-        while (true) {
-            LinearLayout linearLayout = this.b;
-            int childCount = linearLayout.getChildCount();
-            horizontalScrollView = this.d;
-            if (i12 >= childCount) {
-                break;
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
             }
-            org.telegram.ui.Components.rj0 rj0Var = (org.telegram.ui.Components.rj0) linearLayout.getChildAt(i12);
-            rj0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
-            if (i12 == i10) {
-                f10 = rj0Var.getX() - ((horizontalScrollView.getWidth() - rj0Var.getWidth()) / 2.0f);
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
             }
-            if (i12 == i10 + 1) {
-                f11 = rj0Var.getX() - ((horizontalScrollView.getWidth() - rj0Var.getWidth()) / 2.0f);
-            }
-            i12++;
+            znVar.presentFragment(new ProfileActivity(bundle, null));
+            znVar.A7(true);
+            return;
         }
-        if (f10 != -1.0f && f11 != -1.0f) {
-            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.z(f11, f10, f7, f10));
+        if (SharedConfig.messageSeenHintCount > 0 && znVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(znVar.getParentActivity()), znVar.ea).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            znVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
         }
-        SparseIntArray sparseIntArray = this.e;
-        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f7) + ((1.0f - f7) * sparseIntArray.get(i10, 0))), false);
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
-        if (i10 == 0) {
-            this.a.set(false);
-        }
+        org.telegram.ui.Components.wl0 wl0Var = this.b;
+        wl0Var.requestLayout();
+        this.c.requestLayout();
+        wl0Var.getAdapter().l();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

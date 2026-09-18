@@ -4,10 +4,10 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.util.SparseIntArray;
 import android.widget.ImageView;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class c2 {
     public final SparseIntArray a = new SparseIntArray();
@@ -32,14 +32,14 @@ public final class c2 {
         kVar.A(a(j6.u8), false);
     }
 
-    public final void c(SparseIntArray sparseIntArray, int i10, f6 f6Var) {
+    public final void c(SparseIntArray sparseIntArray, int i10, e6 e6Var) {
         int i11;
         int[] iArr = this.c;
         int i12 = 0;
         if (i10 == 0) {
             while (i12 < iArr.length) {
                 int i13 = iArr[i12];
-                sparseIntArray.put(i13, j6.v0(i13, f6Var));
+                sparseIntArray.put(i13, j6.v0(i13, e6Var));
                 i12++;
             }
             return;
@@ -49,7 +49,7 @@ public final class c2 {
         while (i12 < iArr.length) {
             int i15 = iArr[i12];
             if (i15 == j6.G8 || i15 == j6.E8 || i15 == j6.F8 || i15 == (i11 = j6.I5)) {
-                sparseIntArray.put(i15, j6.v0(i15, f6Var));
+                sparseIntArray.put(i15, j6.v0(i15, e6Var));
             } else if (i15 == j6.Ii) {
                 sparseIntArray.put(i15, i0.a.d(0.5f, i10, i14));
             } else if (i15 == j6.u8 || i15 == i11) {

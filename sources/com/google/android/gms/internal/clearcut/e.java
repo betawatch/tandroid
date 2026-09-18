@@ -4,7 +4,6 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
 import java.util.HashMap;
-import org.telegram.ui.Cells.p6;
 
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements h, fb.n {
@@ -67,7 +66,7 @@ public final /* synthetic */ class e implements h, fb.n {
                     bool = Boolean.TRUE;
                     z11 = true;
                 } else if (!f2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", p6.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    Log.w("Gservices", org.telegram.ui.Cells.c1.i("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
                 f2.e(obj, hashMap, str, bool);
                 z10 = z11;

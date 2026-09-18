@@ -1,59 +1,112 @@
 package yh;
 
-import android.text.TextUtils;
+import android.app.Activity;
+import android.content.Context;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ ci.d d;
-    public final /* synthetic */ EditTextBoldCursor e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g3[] f;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ KeyEvent.Callback f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Context r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ l6(boolean[] zArr, Utilities.Callback2 callback2, ci.d dVar, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.g3[] g3VarArr) {
-        this.b = zArr;
-        this.c = callback2;
-        this.d = dVar;
-        this.e = editTextBoldCursor;
-        this.f = g3VarArr;
+    public /* synthetic */ l6(ci.d dVar, int i10, TL_stars.StarsSubscription starsSubscription, org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, String str) {
+        this.f = dVar;
+        this.b = i10;
+        this.h = starsSubscription;
+        this.n = f3VarArr;
+        this.e = j3;
+        this.r = activity;
+        this.d = e6Var;
+        this.c = z10;
+        this.s = str;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    EditTextBoldCursor editTextBoldCursor = this.e;
-                    String obj = editTextBoldCursor.getText().toString();
-                    zArr[0] = true;
-                    this.d.setLoading(true);
-                    this.c.run(Long.valueOf(TextUtils.isEmpty(obj) ? 0L : Long.parseLong(obj)), new m6(editTextBoldCursor, this.f, 1));
-                    break;
+                ci.d dVar = (ci.d) this.f;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.n;
+                Activity activity = (Activity) this.r;
+                String str = (String) this.s;
+                if (!dVar.N) {
+                    int i10 = this.b;
+                    t5 y3 = t5.y(i10, false);
+                    long j3 = this.e;
+                    ai.l8 l8Var = new ai.l8(dVar, starsSubscription, i10, f3VarArr, j3, 12);
+                    if (y3.f.amount >= starsSubscription.pricing.amount) {
+                        l8Var.run();
+                        break;
+                    } else {
+                        new k7(activity, this.d, starsSubscription.pricing.amount, this.c ? 8 : j3 < 0 ? 2 : 7, str, l8Var, j3).show();
+                        break;
+                    }
                 }
                 break;
             default:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    this.d.setLoading(true);
-                    this.c.run(0L, new w9.v(zArr2, this.e, this.f, 17));
-                    break;
+                o8 o8Var = (o8) this.f;
+                MessageObject messageObject = (MessageObject) this.h;
+                zn znVar = (zn) this.n;
+                TLRPC.Chat chat = (TLRPC.Chat) this.s;
+                if (!o8Var.R) {
+                    long value = o8Var.r.getValue();
+                    if ((o8Var.P != null || (messageObject != null && znVar != null)) && o8Var.V == null) {
+                        int i11 = this.b;
+                        if (!MessagesController.getInstance(i11).isFrozen()) {
+                            t5 y10 = t5.y(i11, false);
+                            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(o8Var, value, y10, messageObject, znVar, 15);
+                            if (y10.e && y10.p().amount < value) {
+                                boolean z10 = this.c;
+                                Context context = this.r;
+                                org.telegram.ui.ActionBar.e6 e6Var = this.d;
+                                long j10 = this.e;
+                                if (!z10) {
+                                    new k7(context, e6Var, value, 5, chat == null ? "" : chat.title, fVar, j10).show();
+                                    break;
+                                } else {
+                                    new k7(context, e6Var, value, 17, DialogObject.getShortName(i11, j10), fVar, j10).show();
+                                    break;
+                                }
+                            } else {
+                                fVar.run();
+                                break;
+                            }
+                        } else {
+                            org.telegram.ui.b.b(i11);
+                            break;
+                        }
+                    }
                 }
                 break;
         }
     }
 
-    public /* synthetic */ l6(boolean[] zArr, Utilities.Callback2 callback2, EditTextBoldCursor editTextBoldCursor, ci.d dVar, org.telegram.ui.ActionBar.g3[] g3VarArr) {
-        this.b = zArr;
-        this.c = callback2;
-        this.e = editTextBoldCursor;
-        this.d = dVar;
-        this.f = g3VarArr;
+    public /* synthetic */ l6(o8 o8Var, MessageObject messageObject, zn znVar, int i10, boolean z10, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, TLRPC.Chat chat) {
+        this.f = o8Var;
+        this.h = messageObject;
+        this.n = znVar;
+        this.b = i10;
+        this.c = z10;
+        this.r = context;
+        this.d = e6Var;
+        this.e = j3;
+        this.s = chat;
     }
 }

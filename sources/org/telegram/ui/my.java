@@ -1,20 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class my extends org.telegram.ui.Components.b20 {
-    public my(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
+public final /* synthetic */ class my implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ny b;
+
+    public /* synthetic */ my(ny nyVar, int i10) {
+        this.a = i10;
+        this.b = nyVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
-            return super.dispatchTouchEvent(motionEvent);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                ny nyVar = this.b;
+                uy uyVar = nyVar.E0;
+                Context context = nyVar.getContext();
+                i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
+                uyVar.showDialog(new rg.j0(3, i10, context, uyVar, null));
+                break;
+            default:
+                uy uyVar2 = this.b.E0;
+                qx qxVar = uyVar2.M0;
+                if (qxVar != null) {
+                    qxVar.dismiss();
+                    uyVar2.M0 = null;
+                    break;
+                }
+                break;
         }
-        return false;
     }
 }

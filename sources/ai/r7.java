@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class r7 extends FrameLayout {
     public final l7 E;
@@ -60,8 +60,8 @@ public final class r7 extends FrameLayout {
         o7 o7Var = new o7(this, jcVar, context);
         this.a = o7Var;
         l7Var.setAdapter(o7Var);
-        p7Var.addView(l7Var, w7.x5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(k7Var, w7.x5.c(-1.0f, -1));
+        p7Var.addView(l7Var, w7.y5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(k7Var, w7.y5.c(-1.0f, -1));
         addView(p7Var);
         setVisibility(4);
     }
@@ -176,7 +176,7 @@ public final class r7 extends FrameLayout {
         if (z11 != z10) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, z11 ? 1.0f : 0.0f);
             ofFloat.addUpdateListener(new a(this, 11));
-            ofFloat.setInterpolator(org.telegram.ui.ActionBar.q1.w);
+            ofFloat.setInterpolator(org.telegram.ui.ActionBar.p1.w);
             ofFloat.setDuration(250L);
             ofFloat.start();
         }
@@ -187,7 +187,7 @@ public final class r7 extends FrameLayout {
         currentPage.r.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
         FrameLayout frameLayout = currentPage.c;
         if (frameLayout.getTranslationY() != 0.0f) {
-            currentPage.d.w((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.q1.w);
+            currentPage.d.w((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.p1.w);
         }
     }
 

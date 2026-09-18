@@ -1,100 +1,61 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+public final class yi extends nf.e {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
+    public final /* synthetic */ zn g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ yi(bo boVar, int i10) {
-        this.a = i10;
-        this.b = boVar;
+    public /* synthetic */ yi(zn znVar, int i10, Object obj, org.telegram.ui.Cells.u1 u1Var, int i11) {
+        this.d = i11;
+        this.g = znVar;
+        this.e = i10;
+        this.h = obj;
+        this.f = u1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        vj vjVar;
-        switch (this.a) {
+    @Override // nf.e
+    public final void c(boolean z10) {
+        switch (this.d) {
             case 0:
-                bo boVar = this.b;
-                gl glVar = boVar.b3;
-                if (glVar != null) {
-                    glVar.setIsMessageTransition(false);
-                    boVar.b3.h(true);
-                    boVar.b3.setVisibility(4);
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ai.n8(this, this.e, 22), 240L);
                     break;
                 }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                bo boVar2 = this.b;
-                boVar2.A9 = dp;
-                boVar2.o9();
-                break;
-            case 2:
-                bo boVar3 = this.b;
-                if (boVar3.fragmentView != null && (vjVar = boVar3.x0) != null) {
-                    vjVar.invalidate();
-                    boVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new ej(this, 3), 2000L);
-                break;
-            case 5:
-                bo boVar4 = this.b;
-                if (animator.equals(boVar4.g3)) {
-                    boVar4.g3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                bo boVar5 = this.b;
-                if (animator.equals(boVar5.g3)) {
-                    boVar5.g3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                bo boVar6 = this.b;
-                if (animator.equals(boVar6.h3)) {
-                    boVar6.i3 = 1.0f;
-                    boVar6.lc();
-                    boVar6.h3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                bo boVar7 = this.b;
-                if (animator.equals(boVar7.h3)) {
-                    boVar7.i3 = 0.0f;
-                    boVar7.lc();
-                    boVar7.h3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.T4 = null;
-                break;
-            case 10:
-                bo boVar8 = this.b;
-                boVar8.Da = 1.0f;
-                boVar8.Y.setVisibility(4);
-                boVar8.O0.setVisibility(4);
-                boVar8.o9();
                 break;
             default:
-                bo boVar9 = this.b;
-                boVar9.Da = 0.0f;
-                boVar9.o9();
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ai.n8(this, this.e, 24), 240L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // nf.e
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                zn znVar = this.g;
+                znVar.vb = i10;
+                znVar.wb = 1;
+                znVar.xb = (CharacterStyle) this.h;
+                this.f.invalidate();
+                break;
+            default:
+                int i11 = this.e;
+                zn znVar2 = this.g;
+                znVar2.vb = i11;
+                znVar2.wb = 3;
+                znVar2.yb = (String) this.h;
+                this.f.invalidate();
                 break;
         }
     }

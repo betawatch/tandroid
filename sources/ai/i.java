@@ -6,9 +6,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.sh;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cd;
+import org.telegram.ui.bd;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements e2.h {
     public final /* synthetic */ int a;
@@ -49,80 +49,80 @@ public final /* synthetic */ class i implements e2.h {
                 }
                 break;
             case 5:
-                ((m4.k1) obj).e();
+                ((m4.j1) obj).e();
                 break;
             case 6:
-                ((m4.k1) obj).e0();
+                ((m4.j1) obj).e0();
                 break;
             case 7:
-                ((m4.k1) obj).z0();
+                ((m4.j1) obj).z0();
                 break;
             case 8:
-                ((m4.k1) obj).G0();
+                ((m4.j1) obj).G0();
                 break;
             case 9:
-                ((m4.k1) obj).V();
+                ((m4.j1) obj).V();
                 break;
             case 10:
-                ((m4.k1) obj).F();
+                ((m4.j1) obj).F();
                 break;
             case 11:
-                ((m4.k1) obj).F0();
+                ((m4.j1) obj).F0();
                 break;
             case 12:
-                ((m4.k1) obj).E0();
+                ((m4.j1) obj).E0();
                 break;
             case 13:
-                ((m4.k1) obj).L();
+                ((m4.j1) obj).L();
                 break;
             case 14:
-                ((m4.k1) obj).stop();
+                ((m4.j1) obj).stop();
                 break;
             case 15:
-                ((m4.k1) obj).b();
+                ((m4.j1) obj).b();
                 break;
             case 16:
-                ((m4.k1) obj).H();
+                ((m4.j1) obj).H();
                 break;
             case 17:
-                ((m4.k1) obj).v();
+                ((m4.j1) obj).v();
                 break;
             case 18:
                 ((View) obj).invalidate();
                 break;
             case 19:
-                ((n2.j) obj).a();
+                ((n2.k) obj).a();
                 break;
             case 20:
-                cd.Y0((View) obj);
+                bd.Y0((View) obj);
                 break;
             case 21:
                 View view4 = (View) obj;
-                if ((view4 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view4).getMessageObject()) != null) {
+                if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
                     messageObject.forceUpdate = true;
+                    messageObject.reactionsChanged = true;
                     break;
                 }
                 break;
             case 22:
                 View view5 = (View) obj;
-                if ((view5 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view5).getMessageObject()) != null) {
+                if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
                     messageObject2.forceUpdate = true;
-                    messageObject2.reactionsChanged = true;
                     break;
                 }
                 break;
             case 23:
                 View view6 = (View) obj;
-                if (!(view6 instanceof org.telegram.ui.ActionBar.z2)) {
+                if (!(view6 instanceof org.telegram.ui.ActionBar.y2)) {
                     view6.invalidate();
                     break;
                 } else {
-                    ((org.telegram.ui.ActionBar.z2) view6).getTextView().invalidate();
+                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
                     break;
                 }
             case 24:
                 View view7 = (View) obj;
-                if (!(view7 instanceof org.telegram.ui.Cells.g5)) {
+                if (!(view7 instanceof org.telegram.ui.Cells.h5)) {
                     if (!(view7 instanceof hg.x1)) {
                         view7.invalidate();
                         break;
@@ -131,9 +131,9 @@ public final /* synthetic */ class i implements e2.h {
                         break;
                     }
                 } else {
-                    org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view7;
-                    g5Var.b.invalidate();
-                    g5Var.c.invalidate();
+                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view7;
+                    h5Var.b.invalidate();
+                    h5Var.c.invalidate();
                     break;
                 }
             case 25:
@@ -153,7 +153,7 @@ public final /* synthetic */ class i implements e2.h {
             case 27:
                 Long l4 = (Long) obj;
                 if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
                         U.presentFragment(ProfileActivity.m4(l4.longValue()));
                         break;
@@ -173,7 +173,7 @@ public final /* synthetic */ class i implements e2.h {
         }
     }
 
-    public /* synthetic */ i(cd cdVar) {
+    public /* synthetic */ i(bd bdVar) {
         this.a = 20;
     }
 }

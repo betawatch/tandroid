@@ -1,48 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ns0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class ns0 extends s4.n0 {
+    public final /* synthetic */ gs0 a;
+    public final /* synthetic */ kv0 b;
 
-    public /* synthetic */ ns0(ViewGroup viewGroup, Object obj, int i10) {
-        this.c = i10;
-        this.e = viewGroup;
-        this.d = obj;
+    public ns0(kv0 kv0Var, gs0 gs0Var) {
+        this.b = kv0Var;
+        this.a = gs0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        switch (this.c) {
-            case 0:
-                st0 st0Var = (st0) this.d;
-                s4.h0 adapter = st0Var.r.getAdapter();
-                zu0 zu0Var = (zu0) this.e;
-                tu0 tu0Var = zu0Var.I;
-                if (adapter == tu0Var) {
-                    if (tu0Var.j(i10) == 2) {
-                        return st0Var.s.J;
-                    }
-                    return 1;
-                }
-                if (zu0.v(zu0Var, adapter) == -1) {
-                    return 1;
-                }
-                ((wu0) adapter).getClass();
-                return 1;
-            default:
-                bi.i iVar = (bi.i) this.d;
-                x51 x51Var = ((f61) this.e).Y2;
-                if (x51Var == null) {
-                    return iVar.J;
-                }
-                j51 G = x51Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? iVar.J : i11;
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        gs0 gs0Var = this.a;
+        if (gs0Var.h.getAdapter() == this.b.O) {
+            recyclerView.getClass();
+            int S = RecyclerView.S(view);
+            rect.left = 0;
+            rect.bottom = 0;
+            hs0 hs0Var = gs0Var.x;
+            hs0Var.B1();
+            if (S <= hs0Var.U) {
+                rect.top = 0;
+            } else {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+            rect.right = gs0Var.x.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
+            return;
         }
+        if (!(view instanceof org.telegram.ui.Cells.t7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
+        }
+        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
+        gs0Var.h.getClass();
+        int S2 = RecyclerView.S(t7Var);
+        int i10 = gs0Var.x.J;
+        t7Var.a0 = S2 < i10;
+        int i11 = S2 % i10;
+        t7Var.V = i11 == 0;
+        t7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

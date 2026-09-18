@@ -1,35 +1,63 @@
 package m4;
 
+import android.os.Bundle;
 import j$.util.Objects;
-import java.util.HashSet;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class n1 {
-    public static final String b;
-    public final e9.m0 a;
+    public static final String d;
+    public static final String e;
+    public static final String f;
+    public final int a;
+    public final String b;
+    public final Bundle c;
 
     static {
-        new n1(new HashSet());
         String str = e2.d0.a;
-        b = Integer.toString(0, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    public n1(HashSet hashSet) {
-        this.a = e9.m0.v(hashSet);
+    public n1(int i10) {
+        this("no error message provided", i10, Bundle.EMPTY);
+    }
+
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
+        }
+        return bundle;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof n1) {
-            return this.a.equals(((n1) obj).a);
+        if (!(obj instanceof n1)) {
+            return false;
         }
-        return false;
+        n1 n1Var = (n1) obj;
+        return this.a == n1Var.a && Objects.equals(this.b, n1Var.b);
     }
 
     public final int hashCode() {
-        return Objects.hash(this.a);
+        return Objects.hash(Integer.valueOf(this.a), this.b);
+    }
+
+    public n1(String str, int i10, Bundle bundle) {
+        boolean z10 = true;
+        if (i10 >= 0 && i10 != 1) {
+            z10 = false;
+        }
+        e2.d.b(z10);
+        this.a = i10;
+        this.b = str;
+        this.c = bundle;
     }
 }

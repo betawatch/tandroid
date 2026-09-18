@@ -5,10 +5,10 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.t1;
+import org.telegram.ui.Cells.u1;
 import s4.c1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -34,8 +34,8 @@ public final class k extends AnimatorListenerAdapter {
                 view.setAlpha(1.0f);
                 view.setScaleX(1.0f);
                 view.setScaleX(1.0f);
-                if (view instanceof t1) {
-                    ((t1) view).setAnimationOffsetX(0.0f);
+                if (view instanceof u1) {
+                    ((u1) view).setAnimationOffsetX(0.0f);
                 } else {
                     view.setTranslationX(0.0f);
                 }
@@ -55,8 +55,8 @@ public final class k extends AnimatorListenerAdapter {
                 view2.setAlpha(1.0f);
                 view2.setScaleX(1.0f);
                 view2.setScaleX(1.0f);
-                if (view2 instanceof t1) {
-                    ((t1) view2).setAnimationOffsetX(0.0f);
+                if (view2 instanceof u1) {
+                    ((u1) view2).setAnimationOffsetX(0.0f);
                 } else {
                     view2.setTranslationX(0.0f);
                 }

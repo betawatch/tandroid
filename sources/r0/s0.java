@@ -1,91 +1,66 @@
 package r0;
 
-import android.os.Build;
-import android.view.WindowInsets;
-import android.view.WindowInsetsAnimation;
-import j$.util.DesugarCollections;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Base64;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class s0 extends WindowInsetsAnimation.Callback {
-    public final ph.e a;
-    public List b;
-    public ArrayList c;
-    public final HashMap d;
+public final /* synthetic */ class s0 implements q9.d, a2, s5.f {
+    public final /* synthetic */ int a;
 
-    public s0(ph.e eVar) {
-        super(0);
-        this.d = new HashMap();
-        this.a = eVar;
+    public /* synthetic */ s0(int i10) {
+        this.a = i10;
     }
 
-    public final v0 a(WindowInsetsAnimation windowInsetsAnimation) {
-        v0 v0Var = (v0) this.d.get(windowInsetsAnimation);
-        if (v0Var == null) {
-            v0Var = new v0(0, 0L, null);
-            if (Build.VERSION.SDK_INT >= 30) {
-                v0Var.a = new t0(windowInsetsAnimation);
+    @Override // q9.d
+    public Object G(cf.c cVar) {
+        switch (this.a) {
+            case 2:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 3:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 4:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            default:
+                q9.n nVar = ExecutorsRegistrar.a;
+                return r9.j.a;
+        }
+    }
+
+    @Override // s5.f
+    public Object apply(Object obj) {
+        Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
+        try {
+            ArrayList arrayList = new ArrayList();
+            while (rawQuery.moveToNext()) {
+                aa.a a2 = l5.i.a();
+                a2.u(rawQuery.getString(1));
+                a2.d = v5.a.b(rawQuery.getInt(2));
+                String string = rawQuery.getString(3);
+                a2.c = string == null ? null : Base64.decode(string, 0);
+                arrayList.add(a2.e());
             }
-            this.d.put(windowInsetsAnimation, v0Var);
+            return arrayList;
+        } finally {
+            rawQuery.close();
         }
-        return v0Var;
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        eVar.S0();
-        this.d.remove(windowInsetsAnimation);
-    }
-
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        eVar.getClass();
-    }
-
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final WindowInsets onProgress(WindowInsets windowInsets, List list) {
-        ArrayList arrayList = this.c;
-        if (arrayList == null) {
-            ArrayList arrayList2 = new ArrayList(list.size());
-            this.c = arrayList2;
-            this.b = DesugarCollections.unmodifiableList(arrayList2);
-        } else {
-            arrayList.clear();
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 6:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
+                break;
         }
-        for (int size = list.size() - 1; size >= 0; size--) {
-            WindowInsetsAnimation windowInsetsAnimation = (WindowInsetsAnimation) list.get(size);
-            v0 a2 = a(windowInsetsAnimation);
-            a2.a.d(windowInsetsAnimation.getFraction());
-            this.c.add(a2);
-        }
-        ph.e eVar = this.a;
-        l1 h = l1.h(null, windowInsets);
-        eVar.T0(h, this.b);
-        return h.g();
-    }
-
-    @Override // android.view.WindowInsetsAnimation.Callback
-    public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
-        ph.e eVar = this.a;
-        a(windowInsetsAnimation);
-        i0.b f7 = t0.f(bounds);
-        i0.b e = t0.e(bounds);
-        if (eVar.c == 0) {
-            Iterator it = eVar.d.iterator();
-            while (it.hasNext()) {
-                ((ph.d) it.next()).s();
-            }
-        }
-        eVar.c++;
-        r0.c();
-        return r0.a(f7.d(), e.d());
     }
 }

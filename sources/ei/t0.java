@@ -8,10 +8,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.b6;
+import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -59,19 +59,19 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 break;
             case 2:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.b;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
                 Activity activity = (Activity) this.d;
                 AndroidUtilities.hideKeyboard(editTextBoldCursor);
-                if (o2Var != null) {
-                    AndroidUtilities.requestAdjustResize(activity, o2Var.getClassGuid());
+                if (n2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, n2Var.getClassGuid());
                     break;
                 }
                 break;
             case 3:
                 Utilities.Callback callback2 = (Utilities.Callback) this.c;
-                org.telegram.ui.Components.o3 o3Var = (org.telegram.ui.Components.o3) this.b;
-                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.d;
-                callback2.run(Integer.valueOf(q3Var.getValue() + (o3Var.getValue() * 60)));
+                org.telegram.ui.Components.q3 q3Var = (org.telegram.ui.Components.q3) this.b;
+                org.telegram.ui.Components.s3 s3Var = (org.telegram.ui.Components.s3) this.d;
+                callback2.run(Integer.valueOf(s3Var.getValue() + (q3Var.getValue() * 60)));
                 break;
             case 4:
                 org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.c;
@@ -85,21 +85,21 @@ public final /* synthetic */ class t0 implements DialogInterface.OnDismissListen
                 d1Var.e0 = System.currentTimeMillis();
                 break;
             case 5:
-                b6 b6Var = (b6) this.c;
-                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) this.b;
+                c6 c6Var = (c6) this.c;
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
                 Activity activity2 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(b6Var);
-                if (o2Var2 != null) {
-                    AndroidUtilities.requestAdjustResize(activity2, o2Var2.getClassGuid());
+                AndroidUtilities.hideKeyboard(c6Var);
+                if (n2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity2, n2Var2.getClassGuid());
                     break;
                 }
                 break;
             default:
-                xh.r2 r2Var = (xh.r2) this.c;
-                xh.z1 z1Var = (xh.z1) this.b;
+                xh.s2 s2Var = (xh.s2) this.c;
+                xh.a2 a2Var = (xh.a2) this.b;
                 Activity activity3 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(z1Var);
-                AndroidUtilities.requestAdjustResize(activity3, r2Var.a.getClassGuid());
+                AndroidUtilities.hideKeyboard(a2Var);
+                AndroidUtilities.requestAdjustResize(activity3, s2Var.a.getClassGuid());
                 break;
         }
     }

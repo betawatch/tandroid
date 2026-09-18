@@ -39,7 +39,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.lu;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.c5;
@@ -49,7 +49,7 @@ import org.telegram.ui.x4;
 import org.telegram.ui.y0;
 import r0.i0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -304,8 +304,8 @@ public final class m implements c3.q {
         throw new cc.k(a4.a.p("Internal error: failed to encode \"", str, "\""));
     }
 
-    public byte[] i(UUID uuid, n2.o oVar) {
-        String str = oVar.b;
+    public byte[] i(UUID uuid, n2.p pVar) {
+        String str = pVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -313,7 +313,7 @@ public final class m implements c3.q {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             e2.d.i(uri, "The uri must be set.");
-            throw new n2.v(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
+            throw new n2.w(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, f1.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
         UUID uuid2 = b2.i.e;
@@ -324,11 +324,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return w7.b0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
     }
 
-    public byte[] j(n2.p pVar) {
-        return w7.a0.a(((g2.o) this.b).createDataSource(), pVar.b + "&signedRequest=" + e2.d0.p(pVar.a), null, Collections.EMPTY_MAP);
+    public byte[] j(n2.q qVar) {
+        return w7.b0.a(((g2.o) this.b).createDataSource(), qVar.b + "&signedRequest=" + e2.d0.p(qVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -503,7 +503,7 @@ public final class m implements c3.q {
         }
     }
 
-    public void v(ViewGroup viewGroup, f6 f6Var, x4 x4Var, v4 v4Var) {
+    public void v(ViewGroup viewGroup, e6 e6Var, x4 x4Var, v4 v4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
@@ -514,7 +514,7 @@ public final class m implements c3.q {
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            r4 r4Var2 = new r4(this, context, f6Var, v4Var);
+            r4 r4Var2 = new r4(this, context, e6Var, v4Var);
             this.d = r4Var2;
             y0 y0Var = new y0(this, 3);
             WeakHashMap weakHashMap = i0.a;

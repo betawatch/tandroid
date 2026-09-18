@@ -1,106 +1,120 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class yg implements zv0, oy {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ yg(bo boVar, org.telegram.ui.ActionBar.c2[] c2VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = boVar;
-        this.c = c2VarArr;
-        this.d = i10;
+    public /* synthetic */ yg(zn znVar, boolean z10, MessageObject messageObject, int i10) {
+        this.c = znVar;
+        this.a = z10;
+        this.d = messageObject;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = this.c;
-                org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
-                if (c2Var != null) {
-                    final int i10 = 0;
-                    final bo boVar = this.b;
-                    final int i11 = this.d;
-                    c2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.hh
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    boVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                                case 1:
-                                    boVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    boVar.getConnectionsManager().cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    boVar.showDialog(c2VarArr[0]);
-                    break;
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(uy uyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.zv0
+    public void a(TLRPC.MessageMedia messageMedia) {
+        int i10;
+        zn znVar = (zn) this.c;
+        MessageObject messageObject = (MessageObject) this.d;
+        if (!this.a) {
+            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+                TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
+                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
                 }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.c2 c2Var2 = c2VarArr2[0];
-                if (c2Var2 != null) {
-                    final int i12 = 1;
-                    final bo boVar2 = this.b;
-                    final int i13 = this.d;
-                    c2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.hh
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    boVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                                case 1:
-                                    boVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    boVar2.getConnectionsManager().cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    boVar2.showDialog(c2VarArr2[0]);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.c2[] c2VarArr3 = this.c;
-                org.telegram.ui.ActionBar.c2 c2Var3 = c2VarArr3[0];
-                if (c2Var3 != null) {
-                    final int i14 = 2;
-                    final bo boVar3 = this.b;
-                    final int i15 = this.d;
-                    c2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.hh
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i14) {
-                                case 0:
-                                    boVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                                case 1:
-                                    boVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                                default:
-                                    boVar3.getConnectionsManager().cancelRequest(i15, true);
-                                    break;
-                            }
-                        }
-                    });
-                    boVar3.showDialog(c2VarArr3[0]);
-                    break;
-                }
-                break;
+            }
+            messageObject.messageOwner.media = messageMedia;
+            znVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
+            return;
         }
+        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
+        tL_messages_appendTodoList.peer = znVar.getMessagesController().getInputPeer(messageObject.getDialogId());
+        tL_messages_appendTodoList.msg_id = messageObject.getId();
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+            int i11 = 0;
+            int i12 = 0;
+            while (true) {
+                i10 = this.b;
+                if (i11 >= i10) {
+                    break;
+                }
+                i12 = Math.max(i12, tL_messageMediaToDo.todo.list.get(i11).id);
+                i11++;
+            }
+            while (i10 < tL_messageMediaToDo.todo.list.size()) {
+                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i10);
+                if (todoItem.id <= i12) {
+                    todoItem.id = i12 + 1;
+                }
+                tL_messages_appendTodoList.list.add(todoItem);
+                i12 = Math.max(i12, todoItem.id);
+                i10++;
+            }
+            TLRPC.MessageMedia messageMedia3 = messageObject.messageOwner.media;
+            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
+                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
+            }
+        }
+        messageObject.messageOwner.media = messageMedia;
+        znVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
+    }
+
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+        LaunchActivity launchActivity = (LaunchActivity) this.c;
+        String str = (String) this.d;
+        Pattern pattern = LaunchActivity.B1;
+        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("scrollToTopOnResume", true);
+        bundle.putBoolean("hasUrl", this.a);
+        if (DialogObject.isEncryptedDialog(j3)) {
+            bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j3));
+        } else if (DialogObject.isUserDialog(j3)) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        int i12 = this.b;
+        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, uyVar)) {
+            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+            MediaDataController.getInstance(i12).saveDraft(j3, 0, str, null, null, false, 0L);
+            ((ActionBarLayout) launchActivity.O()).S(new zn(bundle), true, false);
+        }
+        return true;
+    }
+
+    public /* synthetic */ yg(LaunchActivity launchActivity, boolean z10, int i10, String str) {
+        this.c = launchActivity;
+        this.a = z10;
+        this.b = i10;
+        this.d = str;
     }
 }

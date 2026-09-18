@@ -1,55 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.os.Build;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.voip.VoIPService;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ri1 implements org.telegram.ui.Components.voip.d {
-    public final /* synthetic */ ti1 a;
+public final class ri1 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.j9 b;
+    public org.telegram.ui.Components.v01 c;
 
-    public ri1(ti1 ti1Var) {
-        this.a = ti1Var;
+    public ri1(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9(this, false);
+        this.b = j9Var;
+        j9Var.p = AndroidUtilities.dp(100.0f);
+        j9Var.o = AndroidUtilities.dp(30.0f);
+        j9Var.x = false;
+        j9Var.s = AndroidUtilities.dp(24.0f);
+        j9Var.j(AndroidUtilities.dp(18.0f));
+        j9Var.t = 0.58f;
     }
 
-    public final void a() {
-        ti1 ti1Var = this.a;
-        if (ti1Var.p0 != 17) {
-            if (Build.VERSION.SDK_INT >= 23 && ti1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                ti1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
-                return;
-            } else {
-                if (VoIPService.getSharedState() != null) {
-                    ti1Var.r(new g01(this, 24));
-                    return;
-                }
-                return;
-            }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            return;
         }
-        Intent intent = new Intent(ti1Var.b, (Class<?>) VoIPService.class);
-        intent.putExtra("user_id", ti1Var.d.id);
-        intent.putExtra("is_outgoing", true);
-        intent.putExtra("start_incall_activity", false);
-        intent.putExtra("video_call", ti1Var.U0);
-        intent.putExtra("can_video_call", ti1Var.U0);
-        intent.putExtra("account", ti1Var.a);
-        try {
-            ti1Var.b.startService(intent);
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-        }
+        float dp = AndroidUtilities.dp(4.0f);
+        org.telegram.ui.Components.j9 j9Var = this.b;
+        float e = j9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
+        float dp2 = AndroidUtilities.dp(30.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - e) / 2.0f, 0.0f, (getWidth() + e) / 2.0f, getHeight());
+        float f7 = dp2 / 2.0f;
+        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + AndroidUtilities.dp(4.0f), 0.0f);
+        j9Var.i(canvas);
+        canvas.translate(j9Var.A + AndroidUtilities.dp(7.0f), 0.0f);
+        this.c.c(0.0f, f7, 1.0f, -1, canvas);
+        canvas.restore();
     }
 
-    public final void b() {
-        ti1 ti1Var = this.a;
-        if (ti1Var.p0 == 17) {
-            ti1Var.u0.b();
-        } else if (VoIPService.getSharedState() != null) {
-            VoIPService.getSharedState().declineIncomingCall();
-        } else {
-            ti1Var.u0.b();
-        }
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(30.0f));
     }
 }

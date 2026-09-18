@@ -7,13 +7,13 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class DocumentObject {
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public static class ThemeDocument extends TLRPC.TL_document {
-        public org.telegram.ui.ActionBar.h6 accent;
+        public org.telegram.ui.ActionBar.g6 accent;
         public org.telegram.ui.ActionBar.i6 baseTheme;
         public TLRPC.ThemeSettings themeSettings;
         public TLRPC.Document wallpaper;
@@ -23,10 +23,10 @@ public class DocumentObject {
             org.telegram.ui.ActionBar.i6 N0 = org.telegram.ui.ActionBar.j6.N0(org.telegram.ui.ActionBar.j6.q0(themeSettings));
             this.baseTheme = N0;
             N0.getClass();
-            org.telegram.ui.ActionBar.h6 h6Var = new org.telegram.ui.ActionBar.h6();
-            org.telegram.ui.ActionBar.i6.i(h6Var, themeSettings);
-            h6Var.b = N0;
-            this.accent = h6Var;
+            org.telegram.ui.ActionBar.g6 g6Var = new org.telegram.ui.ActionBar.g6();
+            org.telegram.ui.ActionBar.i6.i(g6Var, themeSettings);
+            g6Var.b = N0;
+            this.accent = g6Var;
             TLRPC.WallPaper wallPaper = this.themeSettings.wallpaper;
             if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
                 this.id = -2147483648L;
@@ -86,7 +86,7 @@ public class DocumentObject {
         return getSvgThumb(arrayList, i10, f7, false);
     }
 
-    public static SvgHelper.SvgDrawable getCircleThumb(float f7, int i10, org.telegram.ui.ActionBar.f6 f6Var, float f10) {
+    public static SvgHelper.SvgDrawable getCircleThumb(float f7, int i10, org.telegram.ui.ActionBar.e6 e6Var, float f10) {
         try {
             SvgHelper.SvgDrawable svgDrawable = new SvgHelper.SvgDrawable();
             SvgHelper.Circle circle = new SvgHelper.Circle(256.0f, 256.0f, f7 * 512.0f);
@@ -130,7 +130,7 @@ public class DocumentObject {
         return getSvgThumb(document, i10, f7, 1.0f, null);
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f7, float f10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f7, float f10, org.telegram.ui.ActionBar.e6 e6Var) {
         int i11;
         int i12;
         if (document == null) {
@@ -158,7 +158,7 @@ public class DocumentObject {
                 if (i11 != 0 && i12 != 0) {
                     SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(((TLRPC.TL_photoPathSize) photoSize).svgPath, (int) (i11 * f10), (int) (i12 * f10));
                     if (drawableByPath != null) {
-                        drawableByPath.setupGradient(i10, f6Var, f7, false);
+                        drawableByPath.setupGradient(i10, e6Var, f7, false);
                     }
                     return drawableByPath;
                 }

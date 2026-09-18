@@ -2,65 +2,53 @@ package yh;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class e7 extends LinearLayout {
-    public final Path a;
-    public final /* synthetic */ Matrix b;
-    public final /* synthetic */ RadialGradient c;
-    public final /* synthetic */ Paint d;
-    public final /* synthetic */ org.telegram.ui.Components.m5 e;
+public final class e7 extends FrameLayout {
+    public final org.telegram.ui.Components.p6 a;
+    public final ImageView b;
+    public int c;
+    public boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e7(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.m5 m5Var) {
+    public e7(Context context) {
         super(context);
-        this.b = matrix;
-        this.c = radialGradient;
-        this.d = paint;
-        this.e = m5Var;
-        this.a = new Path();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float dp = AndroidUtilities.dp(10.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, AndroidUtilities.dp(2.0f) + 1, getWidth(), getHeight() + dp);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        Matrix matrix = this.b;
-        matrix.reset();
-        matrix.postTranslate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        this.c.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
-        canvas.save();
-        canvas.translate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        j0.a(canvas, 0, this.e, getWidth(), AndroidUtilities.dp(180.0f), 1.0f, 1.0f);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e.a();
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
+        this.a = p6Var;
+        p6Var.getDrawable().o(true, true, false);
+        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        addView(p6Var, w7.y5.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.arrow_more);
+        addView(imageView, w7.y5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.e.b();
+        this.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.d) {
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

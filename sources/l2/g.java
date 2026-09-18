@@ -24,10 +24,9 @@ import java.util.Map;
 import k2.u;
 import u2.d0;
 import v7.p7;
-import v8.s;
 import y2.p;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class g extends u2.a {
     public y2.m A;
@@ -50,19 +49,19 @@ public final class g extends u2.a {
     public final g2.g i;
     public final a5.a j;
     public final ob.a k;
-    public final n2.m l;
+    public final n2.n l;
     public final qb.b m;
     public final t n;
     public final long o;
     public final long p;
     public final a5.a q;
     public final y2.o r;
-    public final u s;
+    public final l.d s;
     public final Object t;
     public final SparseArray u;
     public final c v;
     public final c w;
-    public final ka.c x;
+    public final u x;
     public final y2.n y;
     public g2.h z;
 
@@ -72,7 +71,7 @@ public final class g extends u2.a {
 
     /* JADX WARN: Type inference failed for: r2v11, types: [l2.c] */
     /* JADX WARN: Type inference failed for: r2v12, types: [l2.c] */
-    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, ob.a aVar2, n2.m mVar, qb.b bVar, long j3, long j10) {
+    public g(k0 k0Var, g2.g gVar, y2.o oVar, a5.a aVar, ob.a aVar2, n2.n nVar, qb.b bVar, long j3, long j10) {
         this.P = k0Var;
         this.E = k0Var.c;
         f0 f0Var = k0Var.b;
@@ -84,7 +83,7 @@ public final class g extends u2.a {
         this.i = gVar;
         this.r = oVar;
         this.j = aVar;
-        this.l = mVar;
+        this.l = nVar;
         this.m = bVar;
         this.o = j3;
         this.p = j10;
@@ -94,11 +93,11 @@ public final class g extends u2.a {
         this.q = b(null);
         this.t = new Object();
         this.u = new SparseArray();
-        this.x = new ka.c(this, 1);
+        this.x = new u(this, 2);
         this.N = -9223372036854775807L;
         this.L = -9223372036854775807L;
-        this.s = new u(this, 2);
-        this.y = new k2.c0(this, 2);
+        this.s = new l.d(this);
+        this.y = new a4.m(this, 26);
         final int i10 = 0;
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ g b;
@@ -169,9 +168,9 @@ public final class g extends u2.a {
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
         p pVar = new p(this.z, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
-        u uVar = this.s;
+        l.d dVar = this.s;
         this.m.getClass();
-        this.A.f(pVar, uVar, 3);
+        this.A.f(pVar, dVar, 3);
     }
 
     @Override // u2.a
@@ -187,14 +186,14 @@ public final class g extends u2.a {
     public final d0 c(u2.f0 f0Var, y2.d dVar, long j3) {
         int intValue = ((Integer) f0Var.a).intValue() - this.O;
         a5.a b10 = b(f0Var);
-        n2.j jVar = new n2.j(this.d.c, 0, f0Var);
+        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
         int i10 = this.O + intValue;
         m2.c cVar = this.H;
         c0 c0Var = this.B;
         long j10 = this.L;
-        j2.k kVar = this.g;
-        e2.d.h(kVar);
-        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, jVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar);
+        j2.k kVar2 = this.g;
+        e2.d.h(kVar2);
+        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, kVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar2);
         this.u.put(i10, bVar);
         return bVar;
     }
@@ -215,9 +214,9 @@ public final class g extends u2.a {
         Looper myLooper = Looper.myLooper();
         j2.k kVar = this.g;
         e2.d.h(kVar);
-        n2.m mVar = this.l;
-        mVar.C(myLooper, kVar);
-        mVar.b();
+        n2.n nVar = this.l;
+        nVar.C(myLooper, kVar);
+        nVar.b();
         if (this.h) {
             y(false);
             return;
@@ -279,8 +278,8 @@ public final class g extends u2.a {
         boolean z10;
         y2.m mVar = this.A;
         d dVar = new d(this);
-        synchronized (z2.b.b) {
-            z10 = z2.b.c;
+        synchronized (z2.c.b) {
+            z10 = z2.c.c;
         }
         if (z10) {
             dVar.a();
@@ -289,7 +288,7 @@ public final class g extends u2.a {
         if (mVar == null) {
             mVar = new y2.m("SntpClient");
         }
-        mVar.f(new t7.u(), new s(dVar), 1);
+        mVar.f(new t7.u(), new z2.b(dVar), 1);
     }
 
     public final void w(p pVar, long j3) {
@@ -397,7 +396,7 @@ public final class g extends u2.a {
                             e = e7;
                         }
                     }
-                    bVar.G.v(bVar);
+                    bVar.G.m(bVar);
                 }
                 bVar.M = cVar2.b(i12).d;
                 for (l lVar : bVar.I) {
@@ -441,7 +440,7 @@ public final class g extends u2.a {
             boolean z15 = (i15 == 1 || i15 == 2) ? false : true;
             if ((!u10 || !z15) && !list2.isEmpty()) {
                 h d13 = ((m2.m) list2.get(0)).d();
-                if (d13 != null && d13.S(d12, Q2) != 0) {
+                if (d13 != null && d13.A(d12, Q2) != 0) {
                     j21 = Math.max(j21, d13.b(d13.f(d12, Q2)) + j22);
                 }
             }
@@ -472,12 +471,12 @@ public final class g extends u2.a {
                         j11 = j25 + d11;
                         break;
                     }
-                    long S = d.S(d11, Q2);
-                    if (S == j3) {
+                    long A = d.A(d11, Q2);
+                    if (A == j3) {
                         j11 = j25;
                         break;
                     } else {
-                        long f13 = (d.f(d11, Q2) + S) - 1;
+                        long f13 = (d.f(d11, Q2) + A) - 1;
                         j24 = Math.min(j24, d.c(f13, d11) + d.b(f13) + j25);
                     }
                 }
@@ -495,7 +494,7 @@ public final class g extends u2.a {
         if (this.H.d) {
             for (int i18 = 0; i18 < list3.size(); i18++) {
                 h d14 = ((m2.m) ((m2.a) list3.get(i18)).c.get(0)).d();
-                if (d14 != null && !d14.H()) {
+                if (d14 != null && !d14.w()) {
                 }
             }
             z11 = true;
@@ -650,14 +649,14 @@ public final class g extends u2.a {
                 if (z12) {
                     Handler handler2 = this.D;
                     m2.c cVar6 = this.H;
-                    long A = e2.d0.A(this.L);
+                    long A2 = e2.d0.A(this.L);
                     int size2 = cVar6.m.size() - 1;
                     m2.h b12 = cVar6.b(size2);
                     long j40 = b12.b;
                     List list5 = b12.c;
                     long Q7 = e2.d0.Q(j40);
                     long d15 = cVar6.d(size2);
-                    long Q8 = e2.d0.Q(A);
+                    long Q8 = e2.d0.Q(A2);
                     long Q9 = e2.d0.Q(cVar6.a);
                     long Q10 = e2.d0.Q(cVar6.e);
                     if (Q10 == j12 || Q10 >= 5000000) {

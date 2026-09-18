@@ -1,45 +1,72 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kp b;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ zo(kp kpVar, int i10) {
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class zo implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ip b;
+
+    public /* synthetic */ zo(ip ipVar, int i10) {
         this.a = i10;
-        this.b = kpVar;
+        this.b = ipVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        ip ipVar = this.b;
+        switch (i10) {
             case 0:
-                kp kpVar = this.b;
-                kpVar.c0 = true;
-                kpVar.b0();
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ipVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                if (ipVar.a0) {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, ipVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, ipVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new l4(14, ipVar, currentChannel));
+                ipVar.showDialog(b2Var);
                 break;
             case 1:
-                kp kpVar2 = this.b;
-                kpVar2.X = kpVar2.getMessagesController().getChat(Long.valueOf(kpVar2.Z));
-                kpVar2.Y();
+                if (!ipVar.V) {
+                    ipVar.V = true;
+                    ipVar.b0();
+                    break;
+                }
                 break;
             case 2:
-                this.b.a0(false);
+                if (ipVar.V) {
+                    if (!ipVar.c0) {
+                        ipVar.Z();
+                        break;
+                    } else {
+                        ipVar.V = false;
+                        ipVar.b0();
+                        break;
+                    }
+                }
                 break;
             case 3:
-                kp kpVar3 = this.b;
-                kpVar3.c0 = true;
-                if (kpVar3.a.length() > 0) {
-                    kpVar3.W(kpVar3.a.getText().toString());
-                }
-                kpVar3.b0();
-                break;
-            case 4:
-                this.b.Y();
+                zh0 zh0Var = new zh0(ipVar.Z, 0L, 0);
+                zh0Var.g0(ipVar.Y, ipVar.l0);
+                ipVar.presentFragment(zh0Var);
                 break;
             default:
-                this.b.a0(true);
+                boolean z10 = !ipVar.b0;
+                ipVar.b0 = z10;
+                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
                 break;
         }
     }

@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bs implements MessagesStorage.LongCallback, bl0 {
+public final /* synthetic */ class bs implements MessagesStorage.LongCallback, ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ fs b;
 
@@ -21,11 +21,11 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, b
         this.b = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public void c(float f7, float f10, int i10, View view) {
         boolean z10;
         fs fsVar = this.b;
-        j51 G = fsVar.X.G(i10 - 1);
+        x51 G = fsVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -193,7 +193,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, b
                                 if (i15 >= fsVar.X.x.size()) {
                                     break;
                                 }
-                                j51 G2 = fsVar.X.G(i15);
+                                x51 G2 = fsVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.c1 L = fsVar.d.L(i15 + 1);
                                     if (L != null) {
@@ -232,7 +232,7 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, b
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ boolean d1(View view) {
         return false;
     }
@@ -243,25 +243,25 @@ public final /* synthetic */ class bs implements MessagesStorage.LongCallback, b
             case 0:
                 fs fsVar = this.b;
                 fsVar.getClass();
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(org.telegram.ui.bo.R9(j3));
+                    R.presentFragment(org.telegram.ui.zn.R9(j3));
                 }
                 fsVar.dismiss();
                 break;
             default:
                 fs fsVar2 = this.b;
                 fsVar2.getClass();
-                org.telegram.ui.ActionBar.o2 R2 = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                 if (R2 != null) {
-                    R2.presentFragment(org.telegram.ui.bo.R9(j3));
+                    R2.presentFragment(org.telegram.ui.zn.R9(j3));
                 }
                 fsVar2.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

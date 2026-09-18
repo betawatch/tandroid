@@ -2,104 +2,96 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.HashSet;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jg1 extends og.b {
-    public final /* synthetic */ lg1 d;
+public final class jg1 extends org.telegram.ui.ActionBar.n2 {
+    public hg1 a;
+    public org.telegram.ui.Components.wl0 b;
+    public long c;
+    public ArrayList d;
+    public HashSet e;
 
-    public jg1(lg1 lg1Var) {
-        this.d = lg1Var;
+    public static void U(jg1 jg1Var, int i10) {
+        jg1Var.getNotificationsController().getNotificationsSettingsFacade().clearPreference(jg1Var.c, i10);
+        TL_account.updateNotifySettings updatenotifysettings = new TL_account.updateNotifySettings();
+        updatenotifysettings.settings = new TLRPC.TL_inputPeerNotifySettings();
+        TLRPC.TL_inputNotifyForumTopic tL_inputNotifyForumTopic = new TLRPC.TL_inputNotifyForumTopic();
+        tL_inputNotifyForumTopic.peer = jg1Var.getMessagesController().getInputPeer(jg1Var.c);
+        tL_inputNotifyForumTopic.top_msg_id = i10;
+        updatenotifysettings.peer = tL_inputNotifyForumTopic;
+        jg1Var.getConnectionsManager().sendRequest(updatenotifysettings, new ai.t7(8));
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 1 || i10 == 2 || i10 == 4;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.d.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return ((kg1) this.d.d.get(i10)).a;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        lg1 lg1Var = this.d;
-        ArrayList arrayList = lg1Var.d;
-        if (((kg1) arrayList.get(i10)).a == 2) {
-            org.telegram.ui.Cells.sa saVar = (org.telegram.ui.Cells.sa) c1Var.a;
-            long j3 = lg1Var.c;
-            TLRPC.TL_forumTopic tL_forumTopic = ((kg1) arrayList.get(i10)).c;
-            org.telegram.ui.Components.u9 u9Var = saVar.b;
-            ng.d.p(u9Var, tL_forumTopic, false, false, null);
-            if (u9Var != null && u9Var.getImageReceiver() != null && (u9Var.getImageReceiver().getDrawable() instanceof ng.c)) {
-                ((ng.c) u9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.c9, false));
-            }
-            saVar.c.setText(tL_forumTopic.title);
-            saVar.d.setText(MessagesController.getInstance(UserConfig.selectedAccount).getMutedString(j3, tL_forumTopic.id));
-            saVar.a = i10 == arrayList.size() - 1 || ((kg1) arrayList.get(i10 + 1)).a == 2;
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        View view2 = null;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-            r8Var.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
-            r8Var.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
-            r8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-            view = r8Var;
-        } else if (i10 == 2) {
-            Context context = viewGroup.getContext();
-            org.telegram.ui.Cells.sa saVar = new org.telegram.ui.Cells.sa(context);
-            org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-            saVar.b = u9Var;
-            saVar.addView(u9Var, w7.x5.d(30, 30.0f, 16, 20.0f, 0.0f, 0.0f, 0.0f));
-            TextView textView = new TextView(context);
-            saVar.c = textView;
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-            textView.setTextSize(1, 16.0f);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setMaxLines(1);
-            saVar.addView(textView, w7.x5.d(-1, -2.0f, 0, 72.0f, 8.0f, 12.0f, 0.0f));
-            TextView textView2 = new TextView(context);
-            saVar.d = textView2;
-            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.y6, false));
-            textView2.setTextSize(1, 14.0f);
-            saVar.addView(textView2, w7.x5.d(-1, -2.0f, 0, 72.0f, 32.0f, 12.0f, 0.0f));
-            saVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-            view = saVar;
+    public final void V() {
+        ArrayList arrayList;
+        ArrayList arrayList2 = this.d;
+        if (this.isPaused || this.a == null) {
+            arrayList = null;
         } else {
-            if (i10 != 3) {
-                if (i10 == 4) {
-                    org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-                    r8Var2.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                    r8Var2.e(-1, org.telegram.ui.ActionBar.j6.p7);
-                    r8Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                    view = r8Var2;
-                }
-                return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
-            }
-            view = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.p6) null);
+            arrayList = new ArrayList();
+            arrayList.addAll(arrayList2);
         }
-        view2 = view;
-        return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
+        arrayList2.clear();
+        arrayList2.add(new ig1(1, null));
+        ArrayList<TLRPC.TL_forumTopic> topics = getMessagesController().getTopicsController().getTopics(-this.c);
+        int i10 = 0;
+        if (topics != null) {
+            int i11 = 0;
+            while (i10 < topics.size()) {
+                if (this.e.contains(Integer.valueOf(topics.get(i10).id))) {
+                    arrayList2.add(new ig1(2, topics.get(i10)));
+                    i11 = 1;
+                }
+                i10++;
+            }
+            i10 = i11;
+        }
+        if (i10 != 0) {
+            arrayList2.add(new ig1(3, null));
+            arrayList2.add(new ig1(4, null));
+        }
+        arrayList2.add(new ig1(3, null));
+        hg1 hg1Var = this.a;
+        if (hg1Var != null) {
+            hg1Var.E(arrayList, arrayList2);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        hg.k0.t(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new v81(this, 5));
+        this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
+        this.b = new org.telegram.ui.Components.wl0(context, null);
+        s4.j jVar = new s4.j();
+        jVar.C = false;
+        jVar.m = false;
+        this.b.setItemAnimator(jVar);
+        this.b.setLayoutManager(new s4.c0());
+        org.telegram.ui.Components.wl0 wl0Var = this.b;
+        hg1 hg1Var = new hg1(this);
+        this.a = hg1Var;
+        wl0Var.setAdapter(hg1Var);
+        this.b.setOnItemClickListener(new gg1(this));
+        frameLayout.addView(this.b);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        this.c = this.arguments.getLong("dialog_id");
+        V();
+        return super.onFragmentCreate();
     }
 }

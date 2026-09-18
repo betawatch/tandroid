@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
     public static final Map g0;
@@ -41,13 +41,13 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
     public long a0;
     public final g2.h b;
     public long b0;
-    public final n2.m c;
+    public final n2.n c;
     public boolean c0;
     public final qb.b d;
     public int d0;
     public final a5.a e;
     public boolean e0;
-    public final n2.j f;
+    public final n2.k f;
     public boolean f0;
     public final w0 h;
     public final y2.d n;
@@ -68,11 +68,11 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         h0 = new b2.s(rVar);
     }
 
-    public u0(Uri uri, g2.h hVar, lf.i iVar, n2.m mVar, n2.j jVar, qb.b bVar, a5.a aVar, w0 w0Var, y2.d dVar, String str, int i10, b2.s sVar, long j3, z2.a aVar2) {
+    public u0(Uri uri, g2.h hVar, lf.i iVar, n2.n nVar, n2.k kVar, qb.b bVar, a5.a aVar, w0 w0Var, y2.d dVar, String str, int i10, b2.s sVar, long j3, z2.a aVar2) {
         this.a = uri;
         this.b = hVar;
-        this.c = mVar;
-        this.f = jVar;
+        this.c = nVar;
+        this.f = kVar;
         this.d = bVar;
         this.e = aVar;
         this.h = w0Var;
@@ -138,7 +138,7 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
     }
 
     @Override // y2.h
-    public final void V(y2.j jVar, long j3, long j10, boolean z10) {
+    public final void E(y2.j jVar, long j3, long j10, boolean z10) {
         r0 r0Var = (r0) jVar;
         Uri uri = r0Var.b.c;
         t tVar = new t(j10);
@@ -153,13 +153,13 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         if (this.Y > 0) {
             c0 c0Var = this.I;
             c0Var.getClass();
-            c0Var.v(this);
+            c0Var.m(this);
         }
     }
 
     @Override // c3.q
     public final void X1(c3.b0 b0Var) {
-        this.H.post(new p2.b(25, this, b0Var));
+        this.H.post(new org.telegram.ui.web.p1(29, this, b0Var));
     }
 
     @Override // c3.q
@@ -176,9 +176,9 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
     public final void b() {
         for (a1 a1Var : this.K) {
             a1Var.D(true);
-            n2.g gVar = a1Var.h;
-            if (gVar != null) {
-                gVar.a(a1Var.e);
+            n2.h hVar = a1Var.h;
+            if (hVar != null) {
+                hVar.a(a1Var.e);
                 a1Var.h = null;
                 a1Var.g = null;
             }
@@ -368,33 +368,13 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         return this.a0;
     }
 
-    @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
-        if (this.e0) {
-            return false;
-        }
-        y2.m mVar = this.x;
-        if (mVar.c() || this.c0) {
-            return false;
-        }
-        if ((this.N || this.v != null) && this.Y == 0) {
-            return false;
-        }
-        boolean e = this.E.e();
-        if (mVar.d()) {
-            return e;
-        }
-        B();
-        return true;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:23:0x0055  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0059  */
     @Override // y2.h
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d n(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d m(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
         c3.b0 b0Var;
@@ -447,7 +427,7 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
     }
 
     @Override // y2.h
-    public final void o(y2.j jVar, long j3, long j10, int i10) {
+    public final void n(y2.j jVar, long j3, long j10, int i10) {
         t tVar;
         r0 r0Var = (r0) jVar;
         g2.b0 b0Var = r0Var.b;
@@ -460,8 +440,47 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         this.e.s(tVar, 1, -1, null, 0, null, r0Var.r, this.S, i10);
     }
 
+    @Override // y2.h
+    public final void o(y2.j jVar, long j3, long j10) {
+        r0 r0Var = (r0) jVar;
+        if (this.S == -9223372036854775807L && this.R != null) {
+            long j11 = j(true);
+            long j12 = j11 == Long.MIN_VALUE ? 0L : j11 + 10000;
+            this.S = j12;
+            this.h.v(j12, this.R, this.T);
+        }
+        Uri uri = r0Var.b.c;
+        t tVar = new t(j10);
+        this.d.getClass();
+        this.e.p(tVar, 1, -1, null, 0, null, r0Var.r, this.S);
+        this.e0 = true;
+        c0 c0Var = this.I;
+        c0Var.getClass();
+        c0Var.m(this);
+    }
+
+    @Override // u2.d1
+    public final boolean p(i2.r0 r0Var) {
+        if (this.e0) {
+            return false;
+        }
+        y2.m mVar = this.x;
+        if (mVar.c() || this.c0) {
+            return false;
+        }
+        if ((this.N || this.v != null) && this.Y == 0) {
+            return false;
+        }
+        boolean e = this.E.e();
+        if (mVar.d()) {
+            return e;
+        }
+        B();
+        return true;
+    }
+
     @Override // u2.d0
-    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         x2.r rVar;
         e();
         com.google.firebase.messaging.t tVar = this.Q;
@@ -527,25 +546,6 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         }
         this.V = true;
         return j3;
-    }
-
-    @Override // y2.h
-    public final void q(y2.j jVar, long j3, long j10) {
-        r0 r0Var = (r0) jVar;
-        if (this.S == -9223372036854775807L && this.R != null) {
-            long j11 = j(true);
-            long j12 = j11 == Long.MIN_VALUE ? 0L : j11 + 10000;
-            this.S = j12;
-            this.h.v(j12, this.R, this.T);
-        }
-        Uri uri = r0Var.b.c;
-        t tVar = new t(j10);
-        this.d.getClass();
-        this.e.p(tVar, 1, -1, null, 0, null, r0Var.r, this.S);
-        this.e0 = true;
-        c0 c0Var = this.I;
-        c0Var.getClass();
-        c0Var.v(this);
     }
 
     @Override // u2.d0
@@ -661,7 +661,7 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
         this.N = true;
         c0 c0Var = this.I;
         c0Var.getClass();
-        c0Var.a(this);
+        c0Var.b(this);
     }
 
     public final void x(int i10) {
@@ -690,7 +690,7 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
                 }
                 c0 c0Var = this.I;
                 c0Var.getClass();
-                c0Var.v(this);
+                c0Var.m(this);
             }
         }
     }
@@ -706,9 +706,9 @@ public final class u0 implements d0, c3.q, y2.h, y2.k, z0 {
             e2.a.n("ProgressiveMediaPeriod", "Extractor added new track (id=" + t0Var.a + ") after finishing tracks.");
             return new c3.n();
         }
-        n2.m mVar = this.c;
-        mVar.getClass();
-        a1 a1Var = new a1(this.n, mVar, this.f);
+        n2.n nVar = this.c;
+        nVar.getClass();
+        a1 a1Var = new a1(this.n, nVar, this.f);
         a1Var.f = this;
         int i11 = length + 1;
         t0[] t0VarArr = (t0[]) Arrays.copyOf(this.L, i11);

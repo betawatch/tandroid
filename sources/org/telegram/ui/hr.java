@@ -1,41 +1,65 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AnimationNotificationsLocker;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class hr extends s4.j {
-    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
-    public final /* synthetic */ ur G;
+public final class hr implements lr {
+    public final /* synthetic */ sr a;
 
-    public hr(ur urVar) {
-        this.G = urVar;
+    public hr(sr srVar) {
+        this.a = srVar;
     }
 
-    @Override // s4.j
-    public final void N() {
-        this.F.unlock();
+    @Override // org.telegram.ui.lr
+    public final void a(TLRPC.User user) {
+        sr.c0(this.a, user);
     }
 
-    @Override // s4.j
-    public final void O() {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.G.c.invalidate();
-    }
-
-    @Override // s4.j, s4.m0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.s.isEmpty();
-        boolean isEmpty4 = this.q.isEmpty();
-        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
-            this.F.lock();
+    @Override // org.telegram.ui.lr
+    public final void b(long j3) {
+        sr srVar = this.a;
+        ArrayList arrayList = srVar.F;
+        a0.i iVar = srVar.K;
+        TLRPC.User user = srVar.getMessagesController().getUser(Long.valueOf(j3));
+        if (user != null) {
+            AndroidUtilities.runOnUIThread(new qh(22, this, user), 200L);
         }
-        super.m();
+        if (iVar.f(j3) == null) {
+            mr w02 = srVar.w0();
+            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            tL_channelParticipantAdmin.peer = tL_peerUser;
+            tL_peerUser.user_id = user.id;
+            tL_channelParticipantAdmin.date = srVar.getConnectionsManager().getCurrentTime();
+            tL_channelParticipantAdmin.promoted_by = srVar.getAccountInstance().getUserConfig().clientUserId;
+            arrayList.add(tL_channelParticipantAdmin);
+            iVar.k(tL_channelParticipantAdmin, user.id);
+            Collections.sort(arrayList, new df(4));
+            srVar.A0(w02);
+        }
+    }
+
+    @Override // org.telegram.ui.lr
+    public final void c(long j3, TLObject tLObject) {
+        sr srVar = this.a;
+        ArrayList arrayList = srVar.F;
+        a0.i iVar = srVar.K;
+        if (tLObject == null || iVar.f(j3) != null) {
+            return;
+        }
+        mr w02 = srVar.w0();
+        arrayList.add(tLObject);
+        iVar.k(tLObject, j3);
+        Collections.sort(arrayList, new df(4));
+        srVar.A0(w02);
+    }
+
+    @Override // org.telegram.ui.lr
+    public final /* synthetic */ void d(long j3) {
     }
 }

@@ -1,23 +1,51 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class xm extends org.telegram.ui.Components.ml0 implements ai.s9 {
-    public final /* synthetic */ bo X2;
+public final /* synthetic */ class xm implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ln b;
+    public final /* synthetic */ MessageObject c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xm(bo boVar, Context context, zn znVar) {
-        super(context, znVar);
-        this.X2 = boVar;
+    public /* synthetic */ xm(ln lnVar, MessageObject messageObject, int i10) {
+        this.a = i10;
+        this.b = lnVar;
+        this.c = messageObject;
     }
 
-    @Override // ai.s9
-    public final void a(int[] iArr) {
-        bo boVar = this.X2;
-        iArr[0] = ((int) boVar.s9) - AndroidUtilities.dp(4.0f);
-        iArr[1] = org.telegram.messenger.w1.z(3.0f, boVar.x0.getPaddingBottom(), boVar.x0.getMeasuredHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ln lnVar = this.b;
+                zn znVar = lnVar.a;
+                znVar.Q7();
+                UndoView undoView = znVar.y3;
+                if (undoView != null) {
+                    int i10 = (znVar.Y.getVisibility() != 0 || znVar.R.getVisibility() == 0) ? 17 : 16;
+                    MessageObject messageObject = this.c;
+                    undoView.k(0L, i10, messageObject.getDiceEmoji(), null, null, new xm(lnVar, messageObject, 2));
+                    break;
+                }
+                break;
+            case 1:
+                zn znVar2 = this.b.a;
+                znVar2.vb = this.c.getId();
+                znVar2.wb = 0;
+                break;
+            default:
+                zn znVar3 = this.b.a;
+                if (znVar3.f7()) {
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), znVar3.T5, znVar3.n5, znVar3.X3, null, false, null, null, null, true, 0, 0, null, false);
+                    of2.sendMessageChatArguments = znVar3.C8();
+                    znVar3.getSendMessagesHelper().sendMessage(of2);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,34 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ab0 implements Runnable {
+public final class ab0 extends ReplacementSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pb0 b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ ab0(pb0 pb0Var, int i10) {
+    public /* synthetic */ ab0(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = pb0Var;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                pb0 pb0Var = this.b;
-                hb0 hb0Var = pb0Var.f;
-                if (!pb0Var.c0.d.webpageTop) {
-                    hb0Var.x0(hb0Var.computeVerticalScrollRange() - (hb0Var.computeVerticalScrollExtent() + hb0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
-                    break;
-                } else {
-                    hb0Var.x0(-hb0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, ji.n.V);
-                    break;
-                }
+                return ((cb0) this.b).x;
+            case 1:
+                return (int) ((org.telegram.ui.sj0) this.b).n0;
             default:
-                this.b.g(true, false);
-                break;
+                return (int) ((tg.m1) this.b).t0;
         }
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

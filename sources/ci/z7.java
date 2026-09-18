@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import j$.util.Objects;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z7 implements bh.a {
     public final /* synthetic */ int a;
@@ -31,21 +31,21 @@ public final /* synthetic */ class z7 implements bh.a {
         switch (this.a) {
             case 0:
                 g8 g8Var = (g8) this.b;
-                ml0 ml0Var = g8Var.d;
-                gh.d.b(ml0Var, canvas, rectF, ml0Var, g8Var.getContainerView(), 255);
+                wl0 wl0Var = g8Var.d;
+                gh.d.b(wl0Var, canvas, rectF, wl0Var, g8Var.getContainerView(), 255);
                 break;
             default:
-                xh.r2 r2Var = (xh.r2) this.b;
-                for (View view : r2Var.h.getViewPages()) {
-                    if (view instanceof xh.n2) {
-                        xh.n2 n2Var = (xh.n2) view;
-                        if (n2Var.h == null) {
-                            xh.i2 i2Var = n2Var.f;
-                            ViewGroup viewGroup = r2Var.S;
-                            Objects.requireNonNull(i2Var);
-                            n2Var.h = new ah.o(i2Var, viewGroup, new org.telegram.ui.x8(i2Var, 0));
+                xh.s2 s2Var = (xh.s2) this.b;
+                for (View view : s2Var.h.getViewPages()) {
+                    if (view instanceof xh.o2) {
+                        xh.o2 o2Var = (xh.o2) view;
+                        if (o2Var.h == null) {
+                            xh.j2 j2Var = o2Var.f;
+                            ViewGroup viewGroup = s2Var.S;
+                            Objects.requireNonNull(j2Var);
+                            o2Var.h = new ah.o(j2Var, viewGroup, new org.telegram.ui.w8(j2Var, 0));
                         }
-                        n2Var.h.f(canvas, rectF);
+                        o2Var.h.f(canvas, rectF);
                     }
                 }
                 break;

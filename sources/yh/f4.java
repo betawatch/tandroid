@@ -1,36 +1,56 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
+public final /* synthetic */ class f4 implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ f4(int i10, Utilities.Callback2 callback2) {
-        this.a = i10;
-        this.b = callback2;
+    public /* synthetic */ f4(Utilities.Callback callback, boolean[] zArr, Utilities.Callback2 callback2) {
+        this.d = callback;
+        this.b = zArr;
+        this.c = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Long l4 = (Long) obj;
+        Boolean bool = (Boolean) obj2;
         switch (this.a) {
             case 0:
-                FileLog.d("StarsController.buy onCanceled");
-                AndroidUtilities.runOnUIThread(new f4(1, this.b));
-                break;
-            case 1:
-                this.b.run(Boolean.FALSE, null);
-                break;
-            case 2:
-                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                Utilities.Callback callback = this.d;
+                if (callback != null) {
+                    callback.run(Boolean.TRUE);
+                }
+                this.b[0] = true;
+                Utilities.Callback2 callback2 = this.c;
+                if (callback2 != null) {
+                    callback2.run(bool.booleanValue() ? "paid" : "failed", l4);
+                    break;
+                }
                 break;
             default:
-                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                this.b[0] = true;
+                Utilities.Callback2 callback22 = this.c;
+                if (callback22 != null) {
+                    callback22.run(bool.booleanValue() ? "paid" : "failed", l4);
+                }
+                Utilities.Callback callback3 = this.d;
+                if (callback3 != null) {
+                    callback3.run(Boolean.TRUE);
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ f4(boolean[] zArr, Utilities.Callback2 callback2, Utilities.Callback callback) {
+        this.b = zArr;
+        this.c = callback2;
+        this.d = callback;
     }
 }

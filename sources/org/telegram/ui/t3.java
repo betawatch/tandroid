@@ -10,10 +10,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class t3 extends org.telegram.ui.Components.qv0 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.ActionBar.w3 {
-    public final org.telegram.ui.Components.c6 A0;
+public final class t3 extends org.telegram.ui.Components.bw0 implements org.telegram.ui.ActionBar.k2, org.telegram.ui.ActionBar.v3 {
+    public final org.telegram.ui.Components.e6 A0;
     public boolean B0;
     public final Path C0;
     public final RectF D0;
@@ -35,7 +35,7 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
         this.y0 = new Paint(1);
         this.z0 = new Paint(1);
         new Paint(1);
-        this.A0 = new org.telegram.ui.Components.c6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
+        this.A0 = new org.telegram.ui.Components.e6(this, 0L, 420L, org.telegram.ui.Components.qr.h);
         this.C0 = new Path();
         this.D0 = new RectF();
         new RectF();
@@ -43,7 +43,7 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
         this.F0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z10;
         float f7;
@@ -115,7 +115,7 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
             canvas.save();
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, 0, e);
             canvas.translate(0.0f, lerp2);
-            h4Var.h0.a(canvas, org.telegram.messenger.w1.C(20.0f, l4, 1) - lerp2, e, true);
+            h4Var.h0.a(canvas, org.telegram.messenger.q.D(20.0f, l4, 1) - lerp2, e, true);
             canvas.restore();
         }
         canvas.translate(0.0f, -max);
@@ -150,12 +150,12 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.bw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.w3
+    @Override // org.telegram.ui.ActionBar.v3
     public RectF getRect() {
         u3 u3Var = this.H0;
         float max = (Math.max(1.0f - u3Var.w, u3Var.x) * u3Var.k()) + (u3Var.F ? 0 : u3Var.l() - AndroidUtilities.dp(20.0f));
@@ -235,7 +235,7 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
         super.onStopNestedScroll(view);
     }
 
-    @Override // org.telegram.ui.ActionBar.w3
+    @Override // org.telegram.ui.ActionBar.v3
     public void setDrawingFromOverlay(boolean z10) {
         if (this.B0 != z10) {
             this.B0 = z10;
@@ -243,7 +243,7 @@ public final class t3 extends org.telegram.ui.Components.qv0 implements org.tele
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.w3
+    @Override // org.telegram.ui.ActionBar.v3
     public final float x(Canvas canvas, RectF rectF, float f7, RectF rectF2, float f10) {
         rectF2.set(getRect());
         AndroidUtilities.lerp(rectF2, rectF, f7, rectF2);

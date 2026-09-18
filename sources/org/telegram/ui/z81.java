@@ -1,24 +1,34 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z81 extends org.telegram.ui.Components.iq0 {
-    public final /* synthetic */ g91 b1;
+public final class z81 extends org.telegram.ui.Components.w51 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z81(g91 g91Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.b1 = g91Var;
+    static {
+        org.telegram.ui.Components.w51.setup(new z81());
     }
 
-    @Override // org.telegram.ui.Components.iq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new ky0(this, iVar, i10, 26), 250L);
-        }
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, org.telegram.ui.Components.x51 x51Var, boolean z10, org.telegram.ui.Components.l61 l61Var, org.telegram.ui.Components.t61 t61Var) {
+        ((a91) view).set(x51Var.z);
+    }
+
+    @Override // org.telegram.ui.Components.w51
+    public final boolean contentsEquals(org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.x51 x51Var2) {
+        return x51Var.z == x51Var2.z;
+    }
+
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, org.telegram.ui.Components.wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new a91(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.w51
+    public final boolean equals(org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.x51 x51Var2) {
+        return x51Var.d == x51Var2.d;
     }
 }

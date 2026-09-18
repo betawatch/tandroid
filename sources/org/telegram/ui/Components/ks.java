@@ -9,9 +9,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ks extends e6 {
+public final class ks extends g6 {
     public boolean E;
     public boolean F;
     public ch.d s;
@@ -53,10 +53,10 @@ public final class ks extends e6 {
             for (int i10 = 0; i10 < entriesCount; i10++) {
                 le.g n10 = jVar.n(i10);
                 float paddingTop = getPaddingTop() + n10.b().top;
-                View view2 = ((d6) n10.a).a;
+                View view2 = ((f6) n10.a).a;
                 float c10 = n10.c();
                 if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
-                    gd capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
+                    id capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
                     int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
                     int i11 = -dp;
                     capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);
@@ -77,7 +77,7 @@ public final class ks extends e6 {
         while (i12 < entriesCount2) {
             le.g n11 = jVar.n(i12);
             float paddingTop2 = getPaddingTop() + n11.b().top;
-            View view4 = ((d6) n11.a).a;
+            View view4 = ((f6) n11.a).a;
             float min = Math.min(1.0f, n11.c.a) * n11.c();
             if (min > 0.0f && view3 != view4) {
                 int alpha = org.telegram.ui.ActionBar.j6.k0.getAlpha();
@@ -119,7 +119,7 @@ public final class ks extends e6 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.e6
+    @Override // org.telegram.ui.Components.g6
     public final void e() {
         j();
         invalidate();
@@ -142,7 +142,7 @@ public final class ks extends e6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.e6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.g6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         j();

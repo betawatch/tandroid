@@ -5,15 +5,15 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class e8 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 a;
     public final /* synthetic */ f8 b;
 
-    public e8(f8 f8Var, org.telegram.ui.ActionBar.f6 f6Var) {
+    public e8(f8 f8Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.b = f8Var;
-        this.a = f6Var;
+        this.a = e6Var;
     }
 
     @Override // org.telegram.messenger.ImageReceiver

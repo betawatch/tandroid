@@ -3,7 +3,7 @@ package v7;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class y6 {
     public static SharedPreferences a;
@@ -13,7 +13,7 @@ public abstract class y6 {
         synchronized (SharedPreferences.class) {
             try {
                 if (a == null) {
-                    a = (SharedPreferences) w7.g0.a(new c5.x(context, 1));
+                    a = (SharedPreferences) w7.h0.a(new c5.x(context, 1));
                 }
                 sharedPreferences = a;
             } catch (Throwable th2) {

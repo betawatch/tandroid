@@ -1,51 +1,28 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class be1 implements TextWatcher {
-    public final /* synthetic */ ce1 a;
+public final /* synthetic */ class be1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ke1 b;
 
-    public be1(ce1 ce1Var) {
-        this.a = ce1Var;
+    public /* synthetic */ be1(ke1 ke1Var, int i10) {
+        this.a = i10;
+        this.b = ke1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        ce1 ce1Var = this.a;
-        if (ce1Var.I) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c(false);
+                break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                this.b.c(false);
+                break;
         }
-        if (ce1Var.a.length() <= 0) {
-            ce1Var.d.setText(ce1Var.H);
-            return;
-        }
-        String str = "https://" + ce1Var.getMessagesController().linkPrefix + "/addtheme/" + ((Object) ce1Var.a.getText());
-        String formatString = LocaleController.formatString("ThemeHelpLink", R.string.ThemeHelpLink, str);
-        int indexOf = formatString.indexOf(str);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-        if (indexOf >= 0) {
-            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(str, ce1Var, 8), indexOf, str.length() + indexOf, 33);
-        }
-        ce1Var.d.setText(TextUtils.concat(ce1Var.H, "\n\n", spannableStringBuilder));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        ce1 ce1Var = this.a;
-        if (ce1Var.G) {
-            return;
-        }
-        ce1Var.Z(ce1Var.a.getText().toString(), false);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

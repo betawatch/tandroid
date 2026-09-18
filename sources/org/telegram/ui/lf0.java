@@ -1,34 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nf0 b;
+public final class lf0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ mf0 a;
 
-    public /* synthetic */ lf0(nf0 nf0Var, int i10) {
-        this.a = i10;
-        this.b = nf0Var;
+    public lf0(mf0 mf0Var) {
+        this.a = mf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                nf0 nf0Var = this.b;
-                org.telegram.ui.Components.bj0 bj0Var = nf0Var.h;
-                bj0Var.getAnimatedDrawable().N(0, false, false);
-                bj0Var.d();
-                EditTextBoldCursor editTextBoldCursor = nf0Var.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                break;
-            default:
-                this.b.b.requestFocus();
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        mf0 mf0Var = this.a;
+        int intValue = ((Integer) objArr[0]).intValue();
+        ((Integer) objArr[1]).getClass();
+        Intent intent = (Intent) objArr[2];
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
+        if (intValue == 200) {
+            try {
+                mf0Var.y = (GoogleSignInAccount) w7.e9.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                mf0Var.h(null);
+            } catch (com.google.android.gms.common.api.f e) {
+                FileLog.e(e);
+            }
         }
     }
 }

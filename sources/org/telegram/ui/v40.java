@@ -1,38 +1,27 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class v40 implements nv0 {
-    public final /* synthetic */ k60 a;
+public final class v40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.u a;
+    public final /* synthetic */ i60 b;
 
-    public v40(k60 k60Var) {
-        this.a = k60Var;
+    public v40(i60 i60Var, org.telegram.ui.Components.voip.u uVar) {
+        this.b = i60Var;
+        this.a = uVar;
     }
 
-    @Override // org.telegram.ui.nv0
-    public final void E0(MessageObject messageObject) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ViewGroup viewGroup;
-        k60 k60Var = this.a;
-        k60Var.Q.J0(true);
-        k60Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
-        viewGroup = ((org.telegram.ui.ActionBar.g3) k60Var).containerView;
-        viewGroup.invalidate();
-    }
-
-    @Override // org.telegram.ui.nv0
-    public final void H(MessageObject messageObject) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.g3) this.a).containerView;
-        viewGroup.invalidate();
-    }
-
-    @Override // org.telegram.ui.nv0
-    public final /* synthetic */ TextureView j0() {
-        return null;
+        org.telegram.ui.Components.voip.u uVar = this.a;
+        if (uVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.f3) this.b).containerView;
+            viewGroup.removeView(uVar);
+        }
     }
 }

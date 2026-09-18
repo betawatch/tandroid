@@ -1,90 +1,55 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import java.util.Comparator;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class vm0 implements org.telegram.ui.Components.ti {
-    public final /* synthetic */ qn0 a;
+public final class vm0 implements Comparator {
+    public final /* synthetic */ pn0 a;
 
-    public vm0(qn0 qn0Var) {
-        this.a = qn0Var;
+    public vm0(pn0 pn0Var) {
+        this.a = pn0Var;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        org.telegram.ui.Components.vi viVar;
-        qn0 qn0Var = this.a;
-        if (qn0Var.getParentActivity() == null || (viVar = qn0Var.R0) == null) {
-            return;
+    public final int a(TLRPC.SecureValueError secureValueError) {
+        if (secureValueError instanceof TLRPC.TL_secureValueError) {
+            return 0;
         }
-        if (i10 != 8 && i10 != 7) {
-            viVar.dismissWithButtonClick(i10);
-            qn0Var.F1(i10);
-            return;
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
+            return 1;
         }
-        if (i10 != 8) {
-            viVar.dismiss(true);
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
+            return 2;
         }
-        HashMap<Object, Object> selectedPhotos = qn0Var.R0.j0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = qn0Var.R0.j0.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
+            return 3;
         }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            String str = photoEntry.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.path = photoEntry.path;
-            }
-            arrayList.add(sendingMediaInfo);
-            photoEntry.reset();
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
+            return 4;
         }
-        qn0Var.G1(arrayList);
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
+            return 5;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
+            return 6;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
+            return 7;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
+            return pn0.C0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
+        }
+        return 100;
     }
 
-    @Override // org.telegram.ui.Components.ti
-    public final void K0() {
-        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean S1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final void x0(org.telegram.ui.Components.fh fhVar) {
-        fhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a2 = a((TLRPC.SecureValueError) obj);
+        int a10 = a((TLRPC.SecureValueError) obj2);
+        if (a2 < a10) {
+            return -1;
+        }
+        return a2 > a10 ? 1 : 0;
     }
 }

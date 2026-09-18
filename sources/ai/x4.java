@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -87,36 +87,36 @@ public final /* synthetic */ class x4 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 3:
                 ji.m mVar = (ji.m) this.b;
-                org.telegram.ui.Cells.s1 s1Var = (org.telegram.ui.Cells.s1) this.c;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.d;
+                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 if (mVar.l) {
-                    s1Var.g0 = (-mVar.s) * floatValue2;
-                    s1Var.h0 = (-mVar.t) * floatValue2;
-                    s1Var.j0 = (-mVar.u) * floatValue2;
-                    s1Var.i0 = (-mVar.v) * floatValue2;
+                    t1Var.g0 = (-mVar.s) * floatValue2;
+                    t1Var.h0 = (-mVar.t) * floatValue2;
+                    t1Var.j0 = (-mVar.u) * floatValue2;
+                    t1Var.i0 = (-mVar.v) * floatValue2;
                 } else {
-                    s1Var.g0 = ((-mVar.s) * floatValue2) - t1Var.getAnimationOffsetX();
-                    s1Var.h0 = ((-mVar.t) * floatValue2) - t1Var.getAnimationOffsetX();
-                    s1Var.j0 = ((-mVar.u) * floatValue2) - t1Var.getTranslationY();
-                    s1Var.i0 = ((-mVar.v) * floatValue2) - t1Var.getTranslationY();
+                    t1Var.g0 = ((-mVar.s) * floatValue2) - u1Var.getAnimationOffsetX();
+                    t1Var.h0 = ((-mVar.t) * floatValue2) - u1Var.getAnimationOffsetX();
+                    t1Var.j0 = ((-mVar.u) * floatValue2) - u1Var.getTranslationY();
+                    t1Var.i0 = ((-mVar.v) * floatValue2) - u1Var.getTranslationY();
                 }
-                t1Var.invalidate();
+                u1Var.invalidate();
                 break;
             default:
-                qg.p0 p0Var = (qg.p0) this.b;
+                qg.m0 m0Var = (qg.m0) this.b;
                 View view3 = (View) this.c;
                 View view4 = (View) this.d;
-                p0Var.i1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p0Var.f1.invalidate();
-                p0Var.c1.invalidate();
-                p0Var.d1.invalidate();
+                m0Var.i1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m0Var.f1.invalidate();
+                m0Var.c1.invalidate();
+                m0Var.d1.invalidate();
                 int i11 = 0;
-                while (i11 < p0Var.f1.getChildCount()) {
-                    p0Var.f1.getChildAt(i11).setAlpha(((i11 == p0Var.h1 ? p0Var.i1 : i11 == p0Var.g1 ? 1.0f - p0Var.i1 : 0.0f) * 0.4f) + 0.6f);
+                while (i11 < m0Var.f1.getChildCount()) {
+                    m0Var.f1.getChildAt(i11).setAlpha(((i11 == m0Var.h1 ? m0Var.i1 : i11 == m0Var.g1 ? 1.0f - m0Var.i1 : 0.0f) * 0.4f) + 0.6f);
                     i11++;
                 }
-                float interpolation2 = qr.f.getInterpolation(p0Var.i1);
+                float interpolation2 = qr.f.getInterpolation(m0Var.i1);
                 if (view3 != null && view4 != null) {
                     float f12 = 1.0f - interpolation2;
                     float f13 = (f12 * 0.4f) + 0.6f;

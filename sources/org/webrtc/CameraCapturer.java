@@ -7,11 +7,10 @@ import android.os.Looper;
 import hg.k0;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.Cells.p6;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -203,7 +202,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -212,14 +211,6 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     public CameraCapturer(String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler, CameraEnumerator cameraEnumerator) {
         this.eventsHandler = cameraEventsHandler == null ? new CameraVideoCapturer.CameraEventsHandler() { // from class: org.webrtc.CameraCapturer.4
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraClosed() {
-            }
-
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraDisconnected() {
-            }
-
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onCameraError(String str2) {
             }
@@ -230,6 +221,14 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onCameraOpening(String str2) {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraClosed() {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraDisconnected() {
             }
 
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -287,7 +286,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(p6.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(t8.b.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -337,9 +336,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder m10 = k0.m("changeCaptureFormat: ", i10, "x", i11, "@");
-        m10.append(i12);
-        Logging.d(TAG, m10.toString());
+        StringBuilder k10 = k0.k("changeCaptureFormat: ", i10, "x", i11, "@");
+        k10.append(i12);
+        Logging.d(TAG, k10.toString());
         synchronized (this.stateLock) {
             stopCapture();
             startCapture(i10, i11, i12);
@@ -396,9 +395,9 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i10, int i11, int i12) {
-        StringBuilder m10 = k0.m("startCapture: ", i10, "x", i11, "@");
-        m10.append(i12);
-        Logging.d(TAG, m10.toString());
+        StringBuilder k10 = k0.k("startCapture: ", i10, "x", i11, "@");
+        k10.append(i12);
+        Logging.d(TAG, k10.toString());
         if (this.applicationContext == null) {
             throw new RuntimeException("CameraCapturer must be initialized before calling startCapture.");
         }

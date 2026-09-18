@@ -2,7 +2,7 @@ package w7;
 
 import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class va extends sa {
     public final /* synthetic */ wa c;
@@ -14,7 +14,7 @@ public final class va extends sa {
     @Override // java.util.List
     public final /* synthetic */ Object get(int i10) {
         wa waVar = this.c;
-        a8.a(i10, waVar.e);
+        b8.a(i10, waVar.e);
         Object[] objArr = waVar.d;
         int i11 = i10 + i10;
         Object obj = objArr[i11];

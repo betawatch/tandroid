@@ -13,30 +13,30 @@ import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import v7.p8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class y0 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
-    public final org.telegram.ui.ActionBar.f6 n;
+public final class y0 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
+    public final org.telegram.ui.ActionBar.e6 n;
     public final Paint r;
     public final Paint s;
     public s2 v;
     public boolean w;
 
-    public y0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public y0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
-        this.n = f6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.vk;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        this.r.setColor(j6.v0(i10, f6Var));
-        this.s.setColor(j6.v0(j6.uf, f6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        this.r.setColor(j6.v0(i10, e6Var));
+        this.s.setColor(j6.v0(j6.uf, e6Var));
     }
 
     @Override // ii.a0

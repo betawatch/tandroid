@@ -1,52 +1,36 @@
 package m4;
 
-import java.util.List;
+import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n0 implements d1, e1 {
+public final /* synthetic */ class n0 implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g1 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean b;
 
-    public /* synthetic */ n0(g1 g1Var, int i10, int i11) {
-        this.a = i11;
-        this.b = g1Var;
-        this.c = i10;
+    public /* synthetic */ n0(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    @Override // m4.e1
-    public void a(k1 k1Var, r rVar, List list) {
-        switch (this.a) {
-            case 1:
-                k1Var.b0(this.b.K0(rVar, k1Var, this.c), list);
-                break;
-            case 2:
-                g1 g1Var = this.b;
-                g1Var.getClass();
-                int size = list.size();
-                int i10 = this.c;
-                if (size != 1) {
-                    k1Var.P(g1Var.K0(rVar, k1Var, i10), g1Var.K0(rVar, k1Var, i10 + 1), list);
-                    break;
-                } else {
-                    k1Var.s0((b2.k0) list.get(0), g1Var.K0(rVar, k1Var, i10));
-                    break;
-                }
-            default:
-                k1Var.b0(this.b.K0(rVar, k1Var, this.c), list);
-                break;
-        }
-    }
-
-    @Override // m4.d1
-    public void g(k1 k1Var, r rVar) {
+    @Override // e2.h
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                k1Var.Y(this.b.K0(rVar, k1Var, this.c));
+                ((j1) obj).X(this.b);
+                break;
+            case 1:
+                ((j1) obj).o0(this.b);
+                break;
+            case 2:
+                ((j1) obj).x(this.b);
                 break;
             default:
-                k1Var.R(this.b.K0(rVar, k1Var, this.c));
+                View view = (View) obj;
+                if (view instanceof xg.l) {
+                    ((xg.l) view).g(this.b, true);
+                    break;
+                }
                 break;
         }
     }

@@ -1,7 +1,31 @@
 package w7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class z6 {
-    public static Boolean a;
+    public static String a(byte[] bArr) {
+        StringBuilder sb2 = new StringBuilder(bArr.length * 2);
+        for (byte b10 : bArr) {
+            sb2.append(String.format("%02x", Byte.valueOf(b10)));
+        }
+        return sb2.toString();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static long[] b(Serializable serializable) {
+        if (!(serializable instanceof int[])) {
+            if (serializable instanceof long[]) {
+                return (long[]) serializable;
+            }
+            return null;
+        }
+        int[] iArr = (int[]) serializable;
+        long[] jArr = new long[iArr.length];
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            jArr[i10] = iArr[i10];
+        }
+        return jArr;
+    }
 }

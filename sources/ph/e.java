@@ -13,14 +13,14 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import r0.l1;
+import r0.m1;
 import r0.p0;
 import r0.q0;
-import r0.t0;
-import r0.v0;
-import w7.c0;
+import r0.u0;
+import r0.w0;
+import w7.d0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class e extends b2.g {
     public static final RectF e;
@@ -39,7 +39,7 @@ public final class e extends b2.g {
         this.b = viewGroup;
         WeakHashMap weakHashMap = i0.a;
         if (Build.VERSION.SDK_INT >= 30) {
-            t0.g(viewGroup, this);
+            u0.g(viewGroup, this);
             return;
         }
         PathInterpolator pathInterpolator = q0.e;
@@ -50,8 +50,8 @@ public final class e extends b2.g {
         }
     }
 
-    public static l1 Z0(l1 l1Var, View view, View view2) {
-        if (view == null || view2 == null || l1Var == null) {
+    public static m1 Z0(m1 m1Var, View view, View view2) {
+        if (view == null || view2 == null || m1Var == null) {
             return null;
         }
         RectF rectF = e;
@@ -65,9 +65,9 @@ public final class e extends b2.g {
         int width = view2.getWidth() - rect.right;
         int height = view2.getHeight() - rect.bottom;
         if (i10 == 0 && i11 == 0 && width == 0 && height == 0) {
-            return l1Var;
+            return m1Var;
         }
-        return l1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
+        return m1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
     }
 
     @Override // b2.g
@@ -83,22 +83,22 @@ public final class e extends b2.g {
     }
 
     @Override // b2.g
-    public final l1 T0(l1 l1Var, List list) {
+    public final m1 T0(m1 m1Var, List list) {
         Iterator it = list.iterator();
         int i10 = 0;
         while (it.hasNext()) {
-            i10 |= ((v0) it.next()).a.c();
+            i10 |= ((w0) it.next()).a.c();
         }
-        if (c0.a(i10, 8)) {
+        if (d0.a(i10, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 d dVar = (d) it2.next();
-                l1 Z0 = Z0(l1Var, dVar.N(), this.b);
+                m1 Z0 = Z0(m1Var, dVar.N(), this.b);
                 if (Z0 != null) {
                     dVar.j(Z0);
                 }
             }
         }
-        return l1Var;
+        return m1Var;
     }
 }

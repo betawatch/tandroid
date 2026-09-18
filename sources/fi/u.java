@@ -8,12 +8,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.n70;
-import r0.i1;
-import r0.l1;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.x51;
+import r0.j1;
+import r0.m1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utilities.Callback5Return {
     public final /* synthetic */ int a;
@@ -25,15 +25,15 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
     }
 
     @Override // r0.n
-    public l1 Q0(View view, l1 l1Var) {
-        i1 i1Var = l1Var.a;
-        i0.b f7 = i1Var.f(527);
+    public m1 Q0(View view, m1 m1Var) {
+        j1 j1Var = m1Var.a;
+        i0.b f7 = j1Var.f(527);
         k0 k0Var = this.b;
         k0Var.T = f7;
-        k0Var.U = i1Var.f(519);
+        k0Var.U = j1Var.f(519);
         k0Var.F.j(AndroidUtilities.dp(56.0f) + k0Var.T.b, k0Var.T.d, false);
         k0Var.H.invalidate();
-        return l1.b;
+        return m1.b;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -47,7 +47,7 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         int i10 = k0.V;
-        Object obj6 = ((j51) obj).G;
+        Object obj6 = ((x51) obj).G;
         boolean z12 = obj6 instanceof TLRPC.Chat;
         k0 k0Var = this.b;
         boolean z13 = false;
@@ -71,7 +71,7 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
         z11 = false;
         z10 = isChannelAndNotMegaGroup;
         if (canRemoveBotFromCommunity) {
-            n70 F = n70.F(k0Var.container, null, view);
+            w70 F = w70.F(k0Var.container, null, view);
             F.c(R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), new l(k0Var, z11, z10, j3, 1), true);
             F.W(k0Var.v.d.W0(view, true));
             F.Z();
@@ -84,7 +84,7 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         int i10 = this.a;
         k0 k0Var = this.b;
-        j51 j51Var = (j51) obj;
+        x51 x51Var = (x51) obj;
         View view = (View) obj2;
         Integer num = (Integer) obj3;
         switch (i10) {
@@ -92,7 +92,7 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
                 num.getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                k0Var.W(j51Var);
+                k0Var.W(x51Var);
                 break;
             case 1:
             default:
@@ -100,20 +100,20 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 int i11 = k0.V;
-                k0Var.T(j51Var);
+                k0Var.T(x51Var);
                 break;
             case 2:
                 num.getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
                 int i12 = k0.V;
-                k0Var.W(j51Var);
+                k0Var.W(x51Var);
                 break;
             case 3:
                 num.getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                k0.y(k0Var, j51Var, view);
+                k0.y(k0Var, x51Var, view);
                 break;
         }
     }

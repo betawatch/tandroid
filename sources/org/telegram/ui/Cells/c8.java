@@ -13,13 +13,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.ta1;
-import org.telegram.ui.xa1;
+import org.telegram.ui.sa1;
+import org.telegram.ui.wa1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class c8 extends FrameLayout {
     public final a8 a;
@@ -29,28 +29,28 @@ public abstract class c8 extends FrameLayout {
     public final TextView e;
     public final TextView f;
     public final Paint h;
-    public final org.telegram.ui.Components.f9 n;
+    public final org.telegram.ui.Components.h9 n;
     public final ai.ca r;
-    public final org.telegram.ui.ActionBar.f6 s;
-    public xa1 v;
+    public final org.telegram.ui.ActionBar.e6 s;
+    public wa1 v;
     public final TLRPC.ChatFull w;
     public boolean x;
 
-    public c8(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.f6 f6Var) {
+    public c8(Context context, TLRPC.ChatFull chatFull, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.h = new Paint(1);
-        this.n = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
+        this.n = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
         this.r = new ai.ca(null, false);
         this.w = chatFull;
-        this.s = f6Var;
-        a8 a8Var = new a8(this, context, f6Var);
+        this.s = e6Var;
+        a8 a8Var = new a8(this, context, e6Var);
         this.a = a8Var;
         setClipChildren(false);
         boolean z10 = LocaleController.isRTL;
-        addView(a8Var, w7.x5.d(46, 46.0f, (!z10 ? 8388611 : 8388613) | 16, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f));
+        addView(a8Var, w7.y5.d(46, 46.0f, (!z10 ? 8388611 : 8388613) | 16, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout f7 = wl.f(context, 0);
+        LinearLayout e = wh.e(context, 0);
         b8 b8Var = new b8(context);
         this.b = b8Var;
         NotificationCenter.listenEmojiLoading(b8Var);
@@ -64,13 +64,13 @@ public abstract class c8 extends FrameLayout {
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(-16777216);
         if (LocaleController.isRTL) {
-            f7.addView(textView, w7.x5.q(-2, -2, 80));
-            f7.addView(b8Var, w7.x5.p(0, -2, 1.0f, 0, 16, 0, 0, 0));
+            e.addView(textView, w7.y5.q(-2, -2, 80));
+            e.addView(b8Var, w7.y5.p(0, -2, 1.0f, 0, 16, 0, 0, 0));
         } else {
-            f7.addView(b8Var, w7.x5.p(0, -2, 1.0f, 0, 0, 0, 16, 0));
-            f7.addView(textView, w7.x5.q(-2, -2, 80));
+            e.addView(b8Var, w7.y5.p(0, -2, 1.0f, 0, 0, 0, 16, 0));
+            e.addView(textView, w7.y5.q(-2, -2, 80));
         }
-        linearLayout.addView(f7, w7.x5.d(-1, -2.0f, 8388659, 0.0f, 7.0f, 0.0f, 0.0f));
+        linearLayout.addView(e, w7.y5.d(-1, -2.0f, 8388659, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.e = textView2;
         textView2.setTextSize(1, 13.0f);
@@ -87,19 +87,19 @@ public abstract class c8 extends FrameLayout {
         textView4.setTextSize(1, 13.0f);
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
-        LinearLayout f10 = wl.f(context, 0);
+        LinearLayout e7 = wh.e(context, 0);
         if (LocaleController.isRTL) {
-            f10.addView(textView3, w7.x5.t(-2, -2, 16, 0, 0, 10, 0));
-            f10.addView(textView4, w7.x5.q(-2, -2, 16));
-            f10.addView(textView2, w7.x5.p(0, -2, 1.0f, 0, 8, 0, 0, 0));
+            e7.addView(textView3, w7.y5.t(-2, -2, 16, 0, 0, 10, 0));
+            e7.addView(textView4, w7.y5.q(-2, -2, 16));
+            e7.addView(textView2, w7.y5.p(0, -2, 1.0f, 0, 8, 0, 0, 0));
         } else {
-            f10.addView(textView2, w7.x5.p(0, -2, 1.0f, 0, 0, 0, 8, 0));
-            f10.addView(textView4, w7.x5.q(-2, -2, 16));
-            f10.addView(textView3, w7.x5.t(-2, -2, 16, 10, 0, 0, 0));
+            e7.addView(textView2, w7.y5.p(0, -2, 1.0f, 0, 0, 0, 8, 0));
+            e7.addView(textView4, w7.y5.q(-2, -2, 16));
+            e7.addView(textView3, w7.y5.t(-2, -2, 16, 10, 0, 0, 0));
         }
-        linearLayout.addView(f10, w7.x5.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
+        linearLayout.addView(e7, w7.y5.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.x5.d(-1, -2.0f, 0, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f));
+        addView(linearLayout, w7.y5.d(-1, -2.0f, 0, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.j6.j5;
         b8Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i10, false));
@@ -143,11 +143,11 @@ public abstract class c8 extends FrameLayout {
         }
     }
 
-    public org.telegram.ui.Components.u9 getImageView() {
+    public org.telegram.ui.Components.w9 getImageView() {
         return this.a;
     }
 
-    public xa1 getPostInfo() {
+    public wa1 getPostInfo() {
         return this.v;
     }
 
@@ -161,16 +161,16 @@ public abstract class c8 extends FrameLayout {
         this.r.g();
     }
 
-    public void setData(ta1 ta1Var) {
-        TLRPC.User user = ta1Var.a;
-        org.telegram.ui.Components.f9 f9Var = this.n;
-        f9Var.r(user);
-        TLRPC.User user2 = ta1Var.a;
+    public void setData(sa1 sa1Var) {
+        TLRPC.User user = sa1Var.a;
+        org.telegram.ui.Components.h9 h9Var = this.n;
+        h9Var.r(user);
+        TLRPC.User user2 = sa1Var.a;
         a8 a8Var = this.a;
-        a8Var.e(user2, f9Var);
+        a8Var.e(user2, h9Var);
         a8Var.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
-        this.b.k(ta1Var.a.first_name);
-        this.e.setText(ta1Var.b);
+        this.b.k(sa1Var.a.first_name);
+        this.e.setText(sa1Var.b);
         this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.f.setVisibility(8);

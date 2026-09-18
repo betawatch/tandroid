@@ -2,11 +2,10 @@ package zg;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.bo;
-import w7.x5;
-import yh.g2;
+import org.telegram.ui.zn;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -28,9 +27,9 @@ public final /* synthetic */ class r implements Runnable {
                 tVar.e = tVar.b();
                 int i10 = tVar.f;
                 int i11 = tVar.h;
-                bo boVar = tVar.a;
+                zn znVar = tVar.a;
                 if (tVar.b == null) {
-                    s sVar = new s((boVar.getUserConfig().getClientUserId() > boVar.a() ? 1 : (boVar.getUserConfig().getClientUserId() == boVar.a() ? 0 : -1)) == 0 ? 3 : 0, boVar.getCurrentAccount(), tVar.getContext(), tVar.a, boVar.getResourceProvider());
+                    s sVar = new s((znVar.getUserConfig().getClientUserId() > znVar.a() ? 1 : (znVar.getUserConfig().getClientUserId() == znVar.a() ? 0 : -1)) == 0 ? 3 : 0, znVar.getCurrentAccount(), tVar.getContext(), tVar.a, znVar.getResourceProvider());
                     sVar.l1 = 1.0f;
                     sVar.setWillNotDraw(false);
                     tVar.b = sVar;
@@ -41,10 +40,10 @@ public final /* synthetic */ class r implements Runnable {
                         i11 = 0;
                     }
                     sVar.setPadding(dp, dp2, dp3 + i11, AndroidUtilities.dp(i10));
-                    tVar.b.setDelegate(new g2(tVar));
+                    tVar.b.setDelegate(new n2.e(tVar, 28));
                     tVar.b.setClipChildren(false);
                     tVar.b.setClipToPadding(false);
-                    tVar.addView(tVar.b, x5.e(-2, i10 + 70, 5));
+                    tVar.addView(tVar.b, y5.e(-2, i10 + 70, 5));
                 }
                 tVar.c(false);
                 if (!tVar.b.isEnabled()) {
@@ -53,7 +52,7 @@ public final /* synthetic */ class r implements Runnable {
                     break;
                 } else {
                     tVar.x = true;
-                    tVar.b.p(tVar.e, boVar.Z7, true);
+                    tVar.b.p(tVar.e, znVar.Z7, true);
                     tVar.b.r(false);
                     break;
                 }

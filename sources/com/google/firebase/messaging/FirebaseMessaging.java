@@ -3,6 +3,7 @@ package com.google.firebase.messaging;
 import ai.r5;
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -23,11 +24,11 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
-    public static v l;
+    public static a4.m l;
     public static i5.f m;
     public static ScheduledThreadPoolExecutor n;
     public final k9.h a;
@@ -148,31 +149,31 @@ public class FirebaseMessaging {
             }
         });
         final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Topics-Io"));
-        int i12 = a0.j;
-        Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.z
+        int i12 = z.j;
+        Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.y
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                y yVar;
+                x xVar;
                 Context context3 = context2;
                 ScheduledThreadPoolExecutor scheduledThreadPoolExecutor3 = scheduledThreadPoolExecutor2;
                 FirebaseMessaging firebaseMessaging = this;
                 p pVar2 = pVar;
                 n nVar2 = nVar;
-                synchronized (y.class) {
+                synchronized (x.class) {
                     try {
-                        WeakReference weakReference = y.d;
-                        yVar = weakReference != null ? (y) weakReference.get() : null;
-                        if (yVar == null) {
-                            y yVar2 = new y(context3.getSharedPreferences("com.google.android.gms.appid", 0), scheduledThreadPoolExecutor3);
-                            yVar2.b();
-                            y.d = new WeakReference(yVar2);
-                            yVar = yVar2;
+                        WeakReference weakReference = x.d;
+                        xVar = weakReference != null ? (x) weakReference.get() : null;
+                        if (xVar == null) {
+                            x xVar2 = new x(context3.getSharedPreferences("com.google.android.gms.appid", 0), scheduledThreadPoolExecutor3);
+                            xVar2.b();
+                            x.d = new WeakReference(xVar2);
+                            xVar = xVar2;
                         }
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                return new a0(firebaseMessaging, pVar2, yVar, nVar2, context3, scheduledThreadPoolExecutor3);
+                return new z(firebaseMessaging, pVar2, xVar, nVar2, context3, scheduledThreadPoolExecutor3);
             }
         }).addOnSuccessListener(scheduledThreadPoolExecutor, new a1.c(this, 21));
         scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: com.google.firebase.messaging.l
@@ -253,19 +254,19 @@ public class FirebaseMessaging {
         }
     }
 
-    public static synchronized v c(Context context) {
-        v vVar;
+    public static synchronized a4.m c(Context context) {
+        a4.m mVar;
         synchronized (FirebaseMessaging.class) {
             try {
                 if (l == null) {
-                    l = new v(context);
+                    l = new a4.m(context);
                 }
-                vVar = l;
+                mVar = l;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return vVar;
+        return mVar;
     }
 
     public static synchronized FirebaseMessaging getInstance(k9.h hVar) {
@@ -307,13 +308,13 @@ public class FirebaseMessaging {
 
     public final u d() {
         u b10;
-        v c10 = c(this.b);
+        a4.m c10 = c(this.b);
         k9.h hVar = this.a;
         hVar.a();
         String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
         String c11 = p.c(this.a);
         synchronized (c10) {
-            b10 = u.b(c10.a.getString(d + "|T|" + c11 + "|*", null));
+            b10 = u.b(((SharedPreferences) c10.b).getString(d + "|T|" + c11 + "|*", null));
         }
         return b10;
     }
@@ -323,7 +324,7 @@ public class FirebaseMessaging {
     }
 
     public final synchronized void f(long j3) {
-        b(new w(this, Math.min(Math.max(30L, 2 * j3), k)), j3);
+        b(new v(this, Math.min(Math.max(30L, 2 * j3), k)), j3);
         this.j = true;
     }
 

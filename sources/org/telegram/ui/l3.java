@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
     public boolean E;
@@ -42,7 +42,7 @@ public final class l3 extends FrameLayout {
     public boolean v;
     public int w;
     public int x;
-    public org.telegram.ui.web.g2 y;
+    public org.telegram.ui.web.h2 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l3(h4 h4Var, Activity activity) {
@@ -67,7 +67,7 @@ public final class l3 extends FrameLayout {
         this.d = c0Var;
         vVar.setLayoutManager(c0Var);
         vVar.setOnScrollListener(new h3(this, 0));
-        addView(vVar, w7.x5.c(-1.0f, -1));
+        addView(vVar, w7.y5.c(-1.0f, -1));
         i3 i3Var = new i3(this, getContext());
         this.e = i3Var;
         i3Var.setShouldWaitWebViewScroll(true);
@@ -90,12 +90,12 @@ public final class l3 extends FrameLayout {
                         h4 h4Var2 = this.b.K;
                         LaunchActivity launchActivity = LaunchActivity.G1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.p3 P = launchActivity.P();
+                            org.telegram.ui.ActionBar.o3 P = launchActivity.P();
                             if (P != null) {
                                 boolean z10 = false;
                                 int i12 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.p3.K;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.o3.K;
                                     if (i12 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i12));
                                         if (arrayList != null) {
@@ -104,9 +104,9 @@ public final class l3 extends FrameLayout {
                                             while (i13 < size) {
                                                 Object obj = arrayList.get(i13);
                                                 i13++;
-                                                org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) obj;
-                                                if (o3Var.J == h4Var2) {
-                                                    z10 = P.h(i12, o3Var, true);
+                                                org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) obj;
+                                                if (n3Var.J == h4Var2) {
+                                                    z10 = P.h(i12, n3Var, true);
                                                 }
                                             }
                                         }
@@ -139,7 +139,7 @@ public final class l3 extends FrameLayout {
         j3Var.setWebViewProgressListener(new g3(this, i11));
         j3Var.setDelegate(new k3(this));
         j3Var.setWebViewScrollListener(new g(this, 2));
-        i3Var.addView(j3Var, w7.x5.c(-1.0f, -1));
+        i3Var.addView(j3Var, w7.y5.c(-1.0f, -1));
         final int i12 = 1;
         i3Var.setScrollEndListener(new Runnable(this) { // from class: org.telegram.ui.f3
             public final /* synthetic */ l3 b;
@@ -155,12 +155,12 @@ public final class l3 extends FrameLayout {
                         h4 h4Var2 = this.b.K;
                         LaunchActivity launchActivity = LaunchActivity.G1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.p3 P = launchActivity.P();
+                            org.telegram.ui.ActionBar.o3 P = launchActivity.P();
                             if (P != null) {
                                 boolean z10 = false;
                                 int i122 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.p3.K;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.o3.K;
                                     if (i122 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i122));
                                         if (arrayList != null) {
@@ -169,9 +169,9 @@ public final class l3 extends FrameLayout {
                                             while (i13 < size) {
                                                 Object obj = arrayList.get(i13);
                                                 i13++;
-                                                org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) obj;
-                                                if (o3Var.J == h4Var2) {
-                                                    z10 = P.h(i122, o3Var, true);
+                                                org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) obj;
+                                                if (n3Var.J == h4Var2) {
+                                                    z10 = P.h(i122, n3Var, true);
                                                 }
                                             }
                                         }
@@ -217,12 +217,12 @@ public final class l3 extends FrameLayout {
                         h4 h4Var2 = this.b.K;
                         LaunchActivity launchActivity = LaunchActivity.G1;
                         if (launchActivity != null) {
-                            org.telegram.ui.ActionBar.p3 P = launchActivity.P();
+                            org.telegram.ui.ActionBar.o3 P = launchActivity.P();
                             if (P != null) {
                                 boolean z10 = false;
                                 int i122 = 0;
                                 while (true) {
-                                    HashMap hashMap = org.telegram.ui.ActionBar.p3.K;
+                                    HashMap hashMap = org.telegram.ui.ActionBar.o3.K;
                                     if (i122 < hashMap.size()) {
                                         ArrayList arrayList = (ArrayList) hashMap.get(Integer.valueOf(i122));
                                         if (arrayList != null) {
@@ -231,9 +231,9 @@ public final class l3 extends FrameLayout {
                                             while (i132 < size) {
                                                 Object obj = arrayList.get(i132);
                                                 i132++;
-                                                org.telegram.ui.ActionBar.o3 o3Var = (org.telegram.ui.ActionBar.o3) obj;
-                                                if (o3Var.J == h4Var2) {
-                                                    z10 = P.h(i122, o3Var, true);
+                                                org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) obj;
+                                                if (n3Var.J == h4Var2) {
+                                                    z10 = P.h(i122, n3Var, true);
                                                 }
                                             }
                                         }
@@ -264,7 +264,7 @@ public final class l3 extends FrameLayout {
             }
         });
         i3Var.setTopActionBarOffsetY(AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight);
-        addView(i3Var, w7.x5.c(-1.0f, -1));
+        addView(i3Var, w7.y5.c(-1.0f, -1));
         b();
         setType(0);
     }
@@ -409,7 +409,7 @@ public final class l3 extends FrameLayout {
         return height;
     }
 
-    public org.telegram.ui.Components.ml0 getListView() {
+    public org.telegram.ui.Components.wl0 getListView() {
         return this.b;
     }
 
@@ -604,14 +604,14 @@ public final class l3 extends FrameLayout {
                     }
                 }
             }
-            org.telegram.ui.web.g2 g2Var = this.y;
-            if (g2Var != null) {
-                g2Var.a();
-                org.telegram.ui.web.g2 g2Var2 = this.y;
-                TLRPC.TL_webPage tL_webPage = g2Var2.j;
+            org.telegram.ui.web.h2 h2Var = this.y;
+            if (h2Var != null) {
+                h2Var.a();
+                org.telegram.ui.web.h2 h2Var2 = this.y;
+                TLRPC.TL_webPage tL_webPage = h2Var2.j;
                 if (tL_webPage != null) {
-                    org.telegram.ui.web.i2.o(tL_webPage);
-                    g2Var2.j = null;
+                    org.telegram.ui.web.j2.o(tL_webPage);
+                    h2Var2.j = null;
                 }
                 this.y = null;
             }

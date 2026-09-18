@@ -1,41 +1,93 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lf implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class lf implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ lf(bo boVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public /* synthetic */ lf(zn znVar, int i10) {
         this.a = i10;
-        this.b = boVar;
-        this.c = w0Var;
+        this.b = znVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // e2.h
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                bo boVar = this.b;
-                boVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                boVar.o9();
-                this.c.setAlpha(floatValue);
+                this.b.E1 = (ChannelBoostsController.CanApplyBoost) obj;
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z10 = view instanceof org.telegram.ui.Cells.u1;
+                zn znVar = this.b;
+                if (!z10) {
+                    if (!(view instanceof org.telegram.ui.Cells.w0)) {
+                        if (!(view instanceof org.telegram.ui.Cells.w1)) {
+                            if (!(view instanceof org.telegram.ui.Cells.b0)) {
+                                if (view instanceof org.telegram.ui.Cells.h0) {
+                                    view.invalidate();
+                                    break;
+                                }
+                            } else {
+                                view.invalidate();
+                                break;
+                            }
+                        } else {
+                            ((org.telegram.ui.Cells.w1) view).getTextView().setTranslationX(znVar.R8() / 2.0f);
+                            break;
+                        }
+                    } else {
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                        w0Var.e0 = znVar.t9();
+                        w0Var.i0 = znVar.C9();
+                        znVar.B9();
+                        znVar.Q8();
+                        int R8 = znVar.R8();
+                        if (w0Var.j0 != R8) {
+                            w0Var.j0 = R8;
+                            w0Var.invalidate();
+                            break;
+                        }
+                    }
+                } else {
+                    org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+                    u1Var.E8 = znVar.t9();
+                    u1Var.F8 = znVar.C9();
+                    boolean B9 = znVar.B9();
+                    if (u1Var.G8 != B9) {
+                        u1Var.G8 = B9;
+                        znVar.x0.getClass();
+                        int S = RecyclerView.S(view);
+                        u1Var.n8 = true;
+                        u1Var.forceLayout();
+                        if (S >= 0) {
+                            znVar.A0.m(S);
+                        }
+                    }
+                    u1Var.H8 = znVar.Q8();
+                    int R82 = znVar.R8();
+                    if (u1Var.I8 != R82) {
+                        u1Var.I8 = R82;
+                        u1Var.y4();
+                        u1Var.invalidate();
+                        break;
+                    }
+                }
                 break;
             default:
-                bo boVar2 = this.b;
-                boVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                boVar2.o9();
-                boVar2.r9();
-                this.c.setAlpha(floatValue2);
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
+                if (tL_premium_boostsStatus != null) {
+                    zn znVar2 = this.b;
+                    znVar2.D1 = tL_premium_boostsStatus;
+                    znVar2.getMessagesController().getBoostsController().userCanBoostChannel(znVar2.T5, tL_premium_boostsStatus, new lf(znVar2, 0));
+                    break;
+                }
                 break;
         }
     }

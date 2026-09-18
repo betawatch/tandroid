@@ -16,6 +16,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
@@ -23,30 +24,30 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.k41;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.un;
-import org.telegram.ui.Components.vc;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ap0;
-import org.telegram.ui.bo;
-import org.telegram.ui.gm0;
-import org.telegram.ui.hc0;
-import org.telegram.ui.ib0;
+import org.telegram.ui.fm0;
+import org.telegram.ui.gc0;
+import org.telegram.ui.hb0;
+import org.telegram.ui.i60;
 import org.telegram.ui.jp0;
-import org.telegram.ui.k60;
-import org.telegram.ui.kl0;
-import org.telegram.ui.nn;
-import org.telegram.ui.wo;
-import org.telegram.ui.ww0;
+import org.telegram.ui.ll0;
+import org.telegram.ui.ln;
+import org.telegram.ui.uo;
+import org.telegram.ui.uw0;
+import org.telegram.ui.zn;
+import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -83,9 +84,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
         TLRPC.WebPage webPage;
         ArrayList arrayList;
         int i10;
-        yh.x2 x2Var;
-        yh.x2 x2Var2;
-        yh.x2 x2Var3;
+        yh.v2 v2Var;
+        yh.v2 v2Var2;
+        yh.v2 v2Var3;
         int i11;
         boolean z11 = true;
         switch (this.a) {
@@ -174,7 +175,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 ci.r6 r6Var = (ci.r6) this.b;
                 qg.j jVar = (qg.j) this.c;
                 r6Var.getClass();
-                ((qg.w0) jVar).r(r6Var.F1, (TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2);
+                ((qg.t0) jVar).r(r6Var.F1, (TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2);
                 r6Var.d0(jVar);
                 break;
             case 3:
@@ -193,26 +194,26 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 5:
-                bo.h0((bo) this.b, (MessageObject) this.c, (Long) obj, (Runnable) obj2);
+                zn.v1((zn) this.b, (MessageObject) this.c, (Long) obj, (Runnable) obj2);
                 break;
             case 6:
-                bo boVar = (bo) this.b;
-                org.telegram.ui.n6 n6Var = (org.telegram.ui.n6) this.c;
+                zn znVar = (zn) this.b;
+                org.telegram.ui.m6 m6Var = (org.telegram.ui.m6) this.c;
                 TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) obj;
-                boVar.F5 = 0;
+                znVar.F5 = 0;
                 if (webpagepreview != null) {
-                    boVar.getMessagesController().putUsers(webpagepreview.users, false);
-                    boVar.getMessagesController().putChats(webpagepreview.chats, false);
+                    znVar.getMessagesController().putUsers(webpagepreview.users, false);
+                    znVar.getMessagesController().putChats(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                         tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
                         if (tL_messageMediaWebPage != null) {
-                            n6Var.run(Boolean.FALSE, null);
+                            m6Var.run(Boolean.FALSE, null);
                             break;
                         } else {
                             TLRPC.WebPage webPage2 = tL_messageMediaWebPage.webpage;
                             if (webPage2 == null || !"telegram_story".equals(webPage2.type)) {
-                                n6Var.run(Boolean.valueOf(tL_messageMediaWebPage.webpage != null), tL_messageMediaWebPage.webpage);
+                                m6Var.run(Boolean.valueOf(tL_messageMediaWebPage.webpage != null), tL_messageMediaWebPage.webpage);
                                 break;
                             } else {
                                 if (tL_messageMediaWebPage.webpage.attributes != null) {
@@ -220,13 +221,13 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                         if (tL_messageMediaWebPage.webpage.attributes.get(i15) instanceof TLRPC.TL_webPageAttributeStory) {
                                             tL_webPageAttributeStory = (TLRPC.TL_webPageAttributeStory) tL_messageMediaWebPage.webpage.attributes.get(i15);
                                             if (tL_webPageAttributeStory != null) {
-                                                n6Var.run(Boolean.FALSE, null);
+                                                m6Var.run(Boolean.FALSE, null);
                                                 break;
                                             } else if (tL_webPageAttributeStory.storyItem != null) {
-                                                n6Var.run(Boolean.TRUE, tL_messageMediaWebPage.webpage);
+                                                m6Var.run(Boolean.TRUE, tL_messageMediaWebPage.webpage);
                                                 break;
                                             } else {
-                                                boVar.getMessagesStorage().getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.o5((Object) boVar, (Object) tL_messageMediaWebPage, (Object) tL_webPageAttributeStory, (Object) n6Var, 10));
+                                                znVar.getMessagesStorage().getStorageQueue().postRunnable(new org.telegram.ui.ActionBar.n5((Object) znVar, (Object) tL_messageMediaWebPage, (Object) tL_webPageAttributeStory, (Object) m6Var, 10));
                                                 break;
                                             }
                                         }
@@ -244,27 +245,27 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 7:
-                nn nnVar = (nn) this.b;
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
+                ln lnVar = (ln) this.b;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
                 TLRPC.TL_channels_channelParticipant tL_channels_channelParticipant = (TLRPC.TL_channels_channelParticipant) obj;
-                bo boVar2 = nnVar.a;
+                zn znVar2 = lnVar.a;
                 if (tL_channels_channelParticipant != null) {
-                    boVar2.getMessagesController().putUsers(tL_channels_channelParticipant.users, false);
-                    boVar2.getMessagesController().putChats(tL_channels_channelParticipant.chats, false);
+                    znVar2.getMessagesController().putUsers(tL_channels_channelParticipant.users, false);
+                    znVar2.getMessagesController().putChats(tL_channels_channelParticipant.chats, false);
                     TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipant.participant;
                     if (channelParticipant != null) {
-                        nnVar.d(t1Var, channelParticipant);
+                        lnVar.d(u1Var, channelParticipant);
                         break;
                     }
                 }
                 break;
             case 8:
-                wo woVar = (wo) this.b;
+                uo uoVar = (uo) this.b;
                 View view = (View) this.c;
-                woVar.F0 = ((Boolean) obj).booleanValue();
-                woVar.H0 = ((Boolean) obj2).booleanValue();
-                z5 z5Var = woVar.e;
-                int dp = AndroidUtilities.dp(woVar.F0 ? 16.0f : 32.0f);
+                uoVar.F0 = ((Boolean) obj).booleanValue();
+                uoVar.H0 = ((Boolean) obj2).booleanValue();
+                z5 z5Var = uoVar.e;
+                int dp = AndroidUtilities.dp(uoVar.F0 ? 16.0f : 32.0f);
                 if (z5Var.getRoundRadius()[0] != dp) {
                     ValueAnimator valueAnimator = z5Var.x;
                     if (valueAnimator != null) {
@@ -276,23 +277,23 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     z5Var.x.setDuration(200L);
                     z5Var.x.start();
                 }
-                ((org.telegram.ui.Cells.r8) view).setChecked(woVar.F0);
-                woVar.p0(false, true);
-                if (!woVar.N0) {
-                    TLRPC.Chat chat4 = woVar.x0;
-                    if (chat4.forum != woVar.F0 || chat4.forum_tabs != woVar.H0) {
-                        if (ChatObject.isChannel(chat4) || !woVar.F0) {
-                            boolean z12 = woVar.x0.forum_tabs != woVar.H0;
-                            woVar.getMessagesController().toggleChannelForum(woVar.w0, woVar.F0, woVar.H0);
-                            TLRPC.Chat chat5 = woVar.x0;
-                            chat5.forum = woVar.F0;
-                            chat5.forum_tabs = woVar.H0;
+                ((org.telegram.ui.Cells.r8) view).setChecked(uoVar.F0);
+                uoVar.p0(false, true);
+                if (!uoVar.N0) {
+                    TLRPC.Chat chat4 = uoVar.x0;
+                    if (chat4.forum != uoVar.F0 || chat4.forum_tabs != uoVar.H0) {
+                        if (ChatObject.isChannel(chat4) || !uoVar.F0) {
+                            boolean z12 = uoVar.x0.forum_tabs != uoVar.H0;
+                            uoVar.getMessagesController().toggleChannelForum(uoVar.w0, uoVar.F0, uoVar.H0);
+                            TLRPC.Chat chat5 = uoVar.x0;
+                            chat5.forum = uoVar.F0;
+                            chat5.forum_tabs = uoVar.H0;
                             if (z12) {
-                                woVar.q0();
+                                uoVar.q0();
                                 break;
                             }
                         } else {
-                            Context parentActivity = woVar.getParentActivity();
+                            Context parentActivity = uoVar.getParentActivity();
                             if (parentActivity == null) {
                                 parentActivity = LaunchActivity.G1;
                             }
@@ -300,10 +301,10 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                 parentActivity = ApplicationLoader.applicationContext;
                             }
                             if (parentActivity != null) {
-                                org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(parentActivity, 3, null);
-                                woVar.N0 = true;
-                                c2Var.q(250L);
-                                woVar.getMessagesController().convertToMegaGroup(woVar.getParentActivity(), woVar.w0, woVar, new org.telegram.ui.x5(12, woVar, c2Var));
+                                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(parentActivity, 3, null);
+                                uoVar.N0 = true;
+                                b2Var.q(250L);
+                                uoVar.getMessagesController().convertToMegaGroup(uoVar.getParentActivity(), uoVar.w0, uoVar, new org.telegram.ui.l4(13, uoVar, b2Var));
                                 break;
                             }
                         }
@@ -312,18 +313,18 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 break;
             case 9:
                 vi viVar = (vi) this.b;
-                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.c;
                 Long l4 = (Long) obj;
                 ((Runnable) obj2).run();
                 viVar.j0.setStarsPrice(l4.longValue());
                 if (l4.longValue() > 0) {
-                    g1Var.setText(LocaleController.getString(R.string.PaidMediaPriceButton));
-                    g1Var.setSubtext(LocaleController.formatPluralString("Stars", (int) l4.longValue(), new Object[0]));
+                    f1Var.setText(LocaleController.getString(R.string.PaidMediaPriceButton));
+                    f1Var.setSubtext(LocaleController.formatPluralString("Stars", (int) l4.longValue(), new Object[0]));
                     viVar.h0.s(l4.longValue());
                     break;
                 } else {
-                    g1Var.setText(LocaleController.getString(R.string.PaidMediaButton));
-                    g1Var.setSubtext(null);
+                    f1Var.setText(LocaleController.getString(R.string.PaidMediaButton));
+                    f1Var.setSubtext(null);
                     viVar.h0.s(0L);
                     break;
                 }
@@ -380,9 +381,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         }
                     }
-                    ml0 ml0Var = rsVar.d;
-                    if (ml0Var != null) {
-                        ml0Var.v0(0);
+                    wl0 wl0Var = rsVar.d;
+                    if (wl0Var != null) {
+                        wl0Var.v0(0);
                     }
                     rsVar.N(true);
                     break;
@@ -440,7 +441,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                     if (ChatObject.isNotInChat(chat6) && (chat7 == null || ChatObject.isNotInChat(chat7))) {
                                         String lowerCase2 = chat6.title.toLowerCase();
                                         String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                                        if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.w1.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.w1.w(" ", translitSafe, translitSafe2)) {
+                                        if (lowerCase2.startsWith(lowerCase) || wh.u(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || wh.u(" ", translitSafe, translitSafe2)) {
                                             if (!hashSet2.contains(Long.valueOf(chat6.id))) {
                                                 hashSet2.add(Long.valueOf(chat6.id));
                                                 arrayList10.add(chat6);
@@ -471,55 +472,55 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 13:
-                w31.m((w31) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                k41.m((k41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
             case 14:
-                k60.q((k60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
+                i60.q((i60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
                 break;
             case 15:
-                hc0 hc0Var = (hc0) this.b;
+                gc0 gc0Var = (gc0) this.b;
                 String str = (String) this.c;
                 TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                hc0Var.a();
+                gc0Var.a();
                 if (passkeys != null) {
-                    hc0Var.n(new PasskeysActivity(passkeys.passkeys), false);
+                    gc0Var.n(new PasskeysActivity(passkeys.passkeys), false);
                     if ("create".equalsIgnoreCase(str)) {
-                        hc0Var.o("addPasskeyRow");
+                        gc0Var.o("addPasskeyRow");
                         break;
                     }
                 }
                 break;
             case 16:
-                hc0 hc0Var2 = (hc0) this.b;
+                gc0 gc0Var2 = (gc0) this.b;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) this.c;
                 TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                hc0Var2.a();
+                gc0Var2.a();
                 if (tL_error != null) {
                     if ("URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        hc0.b().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain), R.raw.error).j();
+                        gc0.b().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain), R.raw.error).j();
                         break;
                     } else {
-                        hc0.b().d0(tL_error, false);
+                        gc0.b().d0(tL_error, false);
                         break;
                     }
                 } else {
-                    kl0.b(hc0Var2.d, hc0Var2.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
+                    ll0.b(gc0Var2.d, gc0Var2.b, tL_messages_requestUrlAuth, urlAuthResult, null, null, null, false, null);
                     break;
                 }
             case 17:
                 boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.ActionBar.g3 g3Var = (org.telegram.ui.ActionBar.g3) this.c;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
                 zArr[0] = true;
-                g3Var.dismiss();
+                f3Var.dismiss();
                 break;
             case 18:
                 ((nf.e) this.b).b();
-                ((ap0) this.c).run((Boolean) obj);
+                ((zo0) this.c).run((Boolean) obj);
                 break;
             case 19:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                ww0 ww0Var = (ww0) this.c;
+                uw0 uw0Var = (uw0) this.c;
                 Long l10 = (Long) obj;
                 Integer num = (Integer) obj2;
                 premiumPreviewFragment.getClass();
@@ -535,7 +536,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     emojiStatus = tL_emojiStatus;
                 }
                 premiumPreviewFragment.getMessagesController().updateEmojiStatus(emojiStatus);
-                ww0Var.b(l10 == null ? 0L : l10.longValue(), true);
+                uw0Var.b(l10 == null ? 0L : l10.longValue(), true);
                 break;
             case 20:
                 qh.r rVar = (qh.r) this.b;
@@ -570,36 +571,36 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 21:
-                tg.b0 b0Var = (tg.b0) this.b;
+                tg.a0 a0Var = (tg.a0) this.b;
                 TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) this.c;
                 Boolean bool2 = (Boolean) obj;
                 String str3 = (String) obj2;
-                b0Var.q0.a.setLoading(false);
-                if (b0Var.getContext() != null) {
-                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-                    ib0 ib0Var = LaunchActivity.G1.x0;
+                a0Var.q0.a.setLoading(false);
+                if (a0Var.getContext() != null) {
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    hb0 hb0Var = LaunchActivity.G1.x0;
                     if (U != null) {
                         if (bool2.booleanValue()) {
-                            b0Var.dismiss();
-                            bo R9 = bo.R9(-b0Var.b0.id);
+                            a0Var.dismiss();
+                            zn R9 = zn.R9(-a0Var.b0.id);
                             U.presentFragment(R9);
-                            U.whenFullyVisible(new p2.b(21, R9, tL_starsGiveawayOption));
-                            if (ib0Var != null) {
-                                ib0Var.c(true);
+                            U.whenFullyVisible(new org.telegram.ui.web.p1(25, R9, tL_starsGiveawayOption));
+                            if (hb0Var != null) {
+                                hb0Var.c(true);
                                 break;
                             }
                         } else if (str3 != null) {
-                            b0Var.dismiss();
-                            hg.k0.s(R.string.UnknownErrorCode, new Object[]{str3}, vc.a0(U), R.raw.error, 36);
+                            a0Var.dismiss();
+                            hg.k0.p(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
                 }
                 break;
             case 22:
-                xh.q2 q2Var = (xh.q2) this.b;
+                xh.r2 r2Var = (xh.r2) this.b;
                 ArrayList arrayList15 = (ArrayList) obj;
-                ArrayList arrayList16 = ((yh.n5) this.c).l;
+                ArrayList arrayList16 = ((yh.l5) this.c).l;
                 int size7 = arrayList16.size();
                 int i25 = 0;
                 while (i25 < size7) {
@@ -608,35 +609,35 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                     if (savedStarGift.pinned_to_top) {
                         int i26 = jp0.a;
-                        j51 J = j51.J(jp0.class);
+                        x51 J = x51.J(jp0.class);
                         J.G = savedStarGift;
-                        J.K(q2Var.b == savedStarGift.gift.id);
+                        J.K(r2Var.b == savedStarGift.gift.id);
                         J.u = 1;
                         arrayList15.add(J);
                     }
                 }
                 break;
             case 23:
-                yh.a3 a3Var = (yh.a3) this.b;
+                yh.y2 y2Var = (yh.y2) this.b;
                 ArrayList arrayList17 = (ArrayList) this.c;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 Runnable runnable = (Runnable) obj2;
-                yh.x2[] x2VarArr = a3Var.n;
-                ci.f4 f4Var = a3Var.T;
+                yh.v2[] v2VarArr = y2Var.n;
+                ci.f4 f4Var = y2Var.T;
                 if (f4Var != null) {
                     f4Var.e(true);
-                    a3Var.T = null;
+                    y2Var.T = null;
                 }
-                a3Var.i0 = true;
-                a3Var.j0 = starGift == null;
-                a3Var.k0 = runnable;
-                yh.r2 r2Var = new yh.r2(a3Var.h);
-                ArrayList arrayList18 = r2Var.b;
+                y2Var.i0 = true;
+                y2Var.j0 = starGift == null;
+                y2Var.k0 = runnable;
+                yh.p2 p2Var = new yh.p2(y2Var.h);
+                ArrayList arrayList18 = p2Var.b;
                 ArrayList arrayList19 = new ArrayList();
-                for (int i27 = 0; i27 < x2VarArr.length; i27++) {
-                    yh.x2 x2Var4 = x2VarArr[i27];
-                    if (x2Var4 != null) {
-                        TL_stars.StarGift starGift2 = x2Var4.h;
+                for (int i27 = 0; i27 < v2VarArr.length; i27++) {
+                    yh.v2 v2Var4 = v2VarArr[i27];
+                    if (v2Var4 != null) {
+                        TL_stars.StarGift starGift2 = v2Var4.h;
                         if (starGift2 == null) {
                             starGift2 = null;
                         }
@@ -647,125 +648,125 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 int i28 = 4;
                 if (arrayList19.size() == 1) {
-                    r2Var.e(x2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
-                    r2Var.d(false);
-                    r2Var.c(26.0f, -26.0f);
-                    r2Var.a(90);
-                    r2Var.d(true);
-                    r2Var.a(20);
+                    p2Var.e(v2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
+                    p2Var.d(false);
+                    p2Var.c(26.0f, -26.0f);
+                    p2Var.a(90);
+                    p2Var.d(true);
+                    p2Var.a(20);
                     i11 = 40;
                 } else {
                     int[] iArr = {5, 0, 2, 3, 4};
-                    yh.x2 x2Var5 = x2VarArr[0];
-                    if (x2Var5 != null) {
-                        TL_stars.StarGift starGift3 = x2Var5.h;
+                    yh.v2 v2Var5 = v2VarArr[0];
+                    if (v2Var5 != null) {
+                        TL_stars.StarGift starGift3 = v2Var5.h;
                         if (starGift3 == null) {
                             starGift3 = null;
                         }
                         if (starGift3 != null) {
-                            r2Var.e(x2Var5, iArr[0], 0.0f);
-                            r2Var.c(25.0f, -22.0f);
+                            p2Var.e(v2Var5, iArr[0], 0.0f);
+                            p2Var.c(25.0f, -22.0f);
                             i10 = 1;
-                            x2Var = x2VarArr[1];
-                            if (x2Var != null) {
-                                TL_stars.StarGift starGift4 = x2Var.h;
+                            v2Var = v2VarArr[1];
+                            if (v2Var != null) {
+                                TL_stars.StarGift starGift4 = v2Var.h;
                                 if (starGift4 == null) {
                                     starGift4 = null;
                                 }
                                 if (starGift4 != null) {
                                     if (i10 > 0) {
-                                        r2Var.a(42);
+                                        p2Var.a(42);
                                     }
-                                    r2Var.e(x2VarArr[1], iArr[i10], 0.0f);
-                                    r2Var.c(25.0f, 31.0f);
+                                    p2Var.e(v2VarArr[1], iArr[i10], 0.0f);
+                                    p2Var.c(25.0f, 31.0f);
                                     i10++;
                                 }
                             }
-                            x2Var2 = x2VarArr[2];
-                            if (x2Var2 != null) {
-                                TL_stars.StarGift starGift5 = x2Var2.h;
+                            v2Var2 = v2VarArr[2];
+                            if (v2Var2 != null) {
+                                TL_stars.StarGift starGift5 = v2Var2.h;
                                 if (starGift5 == null) {
                                     starGift5 = null;
                                 }
                                 if (starGift5 != null) {
                                     if (i10 > 0) {
-                                        r2Var.a(42);
+                                        p2Var.a(42);
                                     }
-                                    r2Var.e(x2VarArr[2], iArr[i10], 180.0f);
-                                    r2Var.c(-36.0f, -36.0f);
+                                    p2Var.e(v2VarArr[2], iArr[i10], 180.0f);
+                                    p2Var.c(-36.0f, -36.0f);
                                     i10++;
                                 }
                             }
-                            x2Var3 = x2VarArr[3];
-                            if (x2Var3 != null) {
-                                TL_stars.StarGift starGift6 = x2Var3.h;
+                            v2Var3 = v2VarArr[3];
+                            if (v2Var3 != null) {
+                                TL_stars.StarGift starGift6 = v2Var3.h;
                                 if ((starGift6 != null ? starGift6 : null) != null) {
                                     if (i10 > 0) {
-                                        r2Var.a(42);
+                                        p2Var.a(42);
                                     }
-                                    r2Var.e(x2VarArr[3], iArr[i10], 0.0f);
-                                    r2Var.c(-31.0f, 31.0f);
+                                    p2Var.e(v2VarArr[3], iArr[i10], 0.0f);
+                                    p2Var.c(-31.0f, 31.0f);
                                     i10++;
                                 }
                             }
-                            r2Var.d(false);
-                            r2Var.a(40);
-                            r2Var.d(true);
-                            r2Var.a(40);
+                            p2Var.d(false);
+                            p2Var.a(40);
+                            p2Var.d(true);
+                            p2Var.a(40);
                             i28 = iArr[i10];
                             i11 = 80;
                         }
                     }
                     i10 = 0;
-                    x2Var = x2VarArr[1];
-                    if (x2Var != null) {
+                    v2Var = v2VarArr[1];
+                    if (v2Var != null) {
                     }
-                    x2Var2 = x2VarArr[2];
-                    if (x2Var2 != null) {
+                    v2Var2 = v2VarArr[2];
+                    if (v2Var2 != null) {
                     }
-                    x2Var3 = x2VarArr[3];
-                    if (x2Var3 != null) {
+                    v2Var3 = v2VarArr[3];
+                    if (v2Var3 != null) {
                     }
-                    r2Var.d(false);
-                    r2Var.a(40);
-                    r2Var.d(true);
-                    r2Var.a(40);
+                    p2Var.d(false);
+                    p2Var.a(40);
+                    p2Var.d(true);
+                    p2Var.a(40);
                     i28 = iArr[i10];
                     i11 = 80;
                 }
-                arrayList18.add(new yh.q2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new gm0(a3Var, i28, starGift, 15)));
-                arrayList18.add(new yh.q2(4, 0.0f, 0.0f, i11, i28, -90, null, null));
-                yh.k1 k1Var = new yh.k1(a3Var, starGift, arrayList17, runnable);
-                yh.s2 s2Var = r2Var.a;
-                r2Var.d = k1Var;
-                r2Var.e = false;
-                r2Var.c = 0;
-                r2Var.l = false;
+                arrayList18.add(new yh.o2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new fm0(y2Var, i28, starGift, 15)));
+                arrayList18.add(new yh.o2(4, 0.0f, 0.0f, i11, i28, -90, null, null));
+                yh.k1 k1Var = new yh.k1(y2Var, starGift, arrayList17, runnable);
+                yh.q2 q2Var = p2Var.a;
+                p2Var.d = k1Var;
+                p2Var.e = false;
+                p2Var.c = 0;
+                p2Var.l = false;
                 int size8 = arrayList18.size();
                 int i29 = 0;
                 while (i29 < size8) {
                     Object obj5 = arrayList18.get(i29);
                     i29++;
-                    yh.q2 q2Var2 = (yh.q2) obj5;
-                    int i30 = q2Var2.e;
+                    yh.o2 o2Var = (yh.o2) obj5;
+                    int i30 = o2Var.e;
                     if (i30 >= 0 && i30 < 6) {
-                        float f7 = q2Var2.f;
+                        float f7 = o2Var.f;
                         if (f7 != 0.0f) {
-                            s2Var.y[i30] = f7;
+                            q2Var.y[i30] = f7;
                         }
                     }
                 }
-                s2Var.H = r2Var;
-                r2Var.b();
+                q2Var.H = p2Var;
+                p2Var.b();
                 break;
             case 24:
-                yh.y7.z0((yh.y7) this.b, (j51) this.c, (Boolean) obj, (String) obj2);
+                yh.v7.z0((yh.v7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
             case 25:
-                yh.n7.Q((yh.n7) this.b, (j51) this.c, (Boolean) obj, (String) obj2);
+                yh.k7.Q((yh.k7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
             default:
-                yh.o7.Q((yh.o7) this.b, (j51) this.c, (Boolean) obj, (String) obj2);
+                yh.l7.Q((yh.l7) this.b, (x51) this.c, (Boolean) obj, (String) obj2);
                 break;
         }
     }

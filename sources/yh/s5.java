@@ -1,57 +1,184 @@
 package yh;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.jc;
+import org.telegram.ui.Components.kc;
 import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u5 b;
+public final class s5 {
+    public final n5 a;
+    public final MessageObject b;
+    public final zn c;
+    public final qc d;
+    public final kc e;
+    public final jc f;
+    public final boolean g;
+    public long h;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public c4 o;
+    public final q5 p;
+    public final /* synthetic */ t5 q;
+    public boolean i = false;
+    public boolean j = false;
+    public Long n = null;
 
-    public /* synthetic */ s5(u5 u5Var, int i10) {
-        this.a = i10;
-        this.b = u5Var;
+    public s5(t5 t5Var, n5 n5Var, MessageObject messageObject, zn znVar, boolean z10) {
+        this.q = t5Var;
+        q5 q5Var = new q5(this, 0);
+        this.p = q5Var;
+        this.a = n5Var;
+        this.b = messageObject;
+        this.c = znVar;
+        Context t10 = t5.t(znVar);
+        kc kcVar = new kc(t10, znVar.ea);
+        this.e = kcVar;
+        kcVar.c(R.raw.stars_topup, new String[0]);
+        kcVar.b.setText(d());
+        oc ocVar = new oc(t10, znVar.ea, true, false);
+        ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        ocVar.a = new q5(this, 1);
+        jc jcVar = new jc(t10, znVar.ea);
+        this.f = jcVar;
+        jcVar.b = 5000L;
+        jcVar.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, znVar.ea));
+        ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        kcVar.setButton(ocVar);
+        qc b10 = xc.a0(znVar).b(kcVar, -1);
+        this.d = b10;
+        b10.r = false;
+        if (z10) {
+            b10.k(true);
+            this.m = true;
+        }
+        b10.v = q5Var;
+        this.h = 0L;
+        System.currentTimeMillis();
+        this.g = messageObject.isPaidReactionChosen();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        u5 u5Var = this.b;
-        switch (i10) {
-            case 0:
-                u5Var.b();
-                break;
-            case 1:
-                u5Var.a();
-                break;
-            default:
-                oc ocVar = u5Var.d;
-                v5 v5Var = u5Var.q;
-                s5 s5Var = u5Var.p;
-                MessageObject messageObject = u5Var.b;
-                if (!u5Var.l) {
-                    u5Var.l = true;
-                    messageObject.addPaidReactions((int) u5Var.k, true, u5Var.c());
-                    long j3 = v5Var.g;
-                    int i11 = v5Var.a;
-                    v5Var.g = j3 + u5Var.k;
-                    NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-                    u5Var.k = 0L;
-                    NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);
-                }
-                if (!u5Var.m) {
-                    u5Var.m = true;
-                    u5Var.f.b = 5000L;
-                    AndroidUtilities.cancelRunOnUIThread(s5Var);
-                    AndroidUtilities.runOnUIThread(s5Var, 5000L);
-                    ocVar.k(true);
-                    ocVar.v = s5Var;
-                }
-                u5Var.e.b.setText(u5Var.d());
-                break;
+    public final void a() {
+        t5 t5Var = this.q;
+        int i10 = t5Var.a;
+        AndroidUtilities.cancelRunOnUIThread(this.p);
+        this.j = true;
+        this.d.b();
+        c4 c4Var = this.o;
+        if (c4Var != null) {
+            c4Var.c();
         }
+        int i11 = (int) (-this.h);
+        boolean z10 = this.g;
+        long c10 = c();
+        MessageObject messageObject = this.b;
+        messageObject.addPaidReactions(i11, z10, c10);
+        t5Var.g -= this.h;
+        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
+        NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);
+        if (t5Var.B == this) {
+            t5Var.B = null;
+        }
+    }
+
+    public final void b() {
+        MessageObject messageObject;
+        String str;
+        AndroidUtilities.cancelRunOnUIThread(this.p);
+        int i10 = 0;
+        if (!this.l) {
+            this.j = true;
+            this.b.addPaidReactions((int) (-this.h), this.g, c());
+            t5 t5Var = this.q;
+            t5Var.g -= this.h;
+            NotificationCenter.getInstance(t5Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
+        } else if (!this.i && !this.j) {
+            t5 y3 = t5.y(this.q.a, false);
+            MessagesController messagesController = MessagesController.getInstance(this.q.a);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.q.a);
+            long j3 = this.h;
+            if (!y3.e || y3.q(false, false, null).amount >= j3) {
+                this.i = true;
+                TLRPC.TL_messages_sendPaidReaction tL_messages_sendPaidReaction = new TLRPC.TL_messages_sendPaidReaction();
+                tL_messages_sendPaidReaction.peer = messagesController.getInputPeer(this.a.a);
+                tL_messages_sendPaidReaction.msg_id = this.a.b;
+                tL_messages_sendPaidReaction.random_id = (connectionsManager.getCurrentTime() << 32) | (Utilities.random.nextLong() & 4294967295L);
+                tL_messages_sendPaidReaction.count = (int) this.h;
+                tL_messages_sendPaidReaction.flags |= 1;
+                long c10 = c();
+                if (c10 == 0 || c10 == UserConfig.getInstance(this.q.a).getClientUserId()) {
+                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyDefault();
+                } else if (c10 == UserObject.ANONYMOUS) {
+                    tL_messages_sendPaidReaction.privacy = new TL_stars.paidReactionPrivacyAnonymous();
+                } else {
+                    TL_stars.paidReactionPrivacyPeer paidreactionprivacypeer = new TL_stars.paidReactionPrivacyPeer();
+                    tL_messages_sendPaidReaction.privacy = paidreactionprivacypeer;
+                    paidreactionprivacypeer.peer = messagesController.getInputPeer(c10);
+                }
+                this.q.P();
+                connectionsManager.sendRequest(tL_messages_sendPaidReaction, new ai.u1(this, messagesController, j3, 6));
+            } else {
+                this.j = true;
+                this.b.addPaidReactions((int) (-this.h), this.g, c());
+                t5 t5Var2 = this.q;
+                t5Var2.g = 0L;
+                NotificationCenter.getInstance(t5Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
+                NotificationCenter.getInstance(this.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(this.b.getDialogId()), Integer.valueOf(this.b.getId()), this.b.messageOwner.reactions);
+                if (this.a.a >= 0) {
+                    str = UserObject.getForcedFirstName(this.c.getMessagesController().getUser(Long.valueOf(this.a.a)));
+                } else {
+                    TLRPC.Chat chat = this.c.getMessagesController().getChat(Long.valueOf(-this.a.a));
+                    str = chat == null ? "" : chat.title;
+                }
+                String str2 = str;
+                Context parentActivity = this.c.getParentActivity();
+                if (parentActivity == null) {
+                    parentActivity = LaunchActivity.G1;
+                }
+                if (parentActivity == null) {
+                    parentActivity = ApplicationLoader.applicationContext;
+                }
+                new k7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new r5(this, j3, i10), 0L).show();
+            }
+        }
+        this.d.b();
+        c4 c4Var = this.o;
+        if (c4Var != null && (messageObject = this.b) != null && messageObject.getId() == c4Var.c) {
+            this.o.c();
+        }
+        t5 t5Var3 = this.q;
+        if (t5Var3.B == this) {
+            t5Var3.B = null;
+        }
+    }
+
+    public final long c() {
+        Long l4 = this.n;
+        return l4 != null ? l4.longValue() : this.q.A(this.b);
+    }
+
+    public final String d() {
+        return c() == UserObject.ANONYMOUS ? LocaleController.getString(R.string.StarsSentAnonymouslyTitle) : (c() == 0 || c() == UserConfig.getInstance(this.q.a).getClientUserId()) ? LocaleController.getString(R.string.StarsSentTitle) : LocaleController.formatString(R.string.StarsSentTitleChannel, DialogObject.getShortName(c()));
     }
 }

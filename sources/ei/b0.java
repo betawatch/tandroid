@@ -12,19 +12,19 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.wk0;
-import w7.x5;
+import org.telegram.ui.Components.vl0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class b0 extends ll0 {
+public final class b0 extends vl0 {
     public ArrayList c;
     public ArrayList d;
     public ArrayList e;
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }
@@ -89,15 +89,15 @@ public final class b0 extends ll0 {
         p4Var.setTag(Integer.valueOf(i11));
         p4Var.setMaxLines(2);
         p4Var.setEllipsize(TextUtils.TruncateAt.END);
-        a0Var.addView(p4Var, x5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        a0Var.addView(p4Var, y5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         a0Var.a = textView;
         textView.setTextSize(1, 14.0f);
         int i12 = j6.y6;
         textView.setTextColor(j6.w0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        a0Var.addView(textView, x5.o(-2, -2, 0.0f, 16));
+        a0Var.addView(textView, y5.o(-2, -2, 0.0f, 16));
         a0Var.setLayoutParams(new s4.p0(-1, -2));
-        return new wk0(a0Var);
+        return new gl0(a0Var);
     }
 }

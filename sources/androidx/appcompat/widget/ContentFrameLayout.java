@@ -9,7 +9,7 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import g.s;
-import l.k;
+import l.l;
 import m.h;
 import m.i1;
 import m.j1;
@@ -17,7 +17,7 @@ import m.l3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -118,9 +118,9 @@ public class ContentFrameLayout extends FrameLayout {
             if (l0Var != null) {
                 l0Var.b();
             }
-            k kVar = sVar.o(0).h;
-            if (kVar != null) {
-                kVar.c(true);
+            l lVar = sVar.o(0).h;
+            if (lVar != null) {
+                lVar.c(true);
             }
         }
     }

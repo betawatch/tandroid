@@ -3,36 +3,35 @@ package f5;
 import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import k2.c0;
-import w7.t6;
+import w7.u6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ c0 E;
-    public static final /* synthetic */ c0 F;
-    public static final /* synthetic */ c0 G;
-    public static final /* synthetic */ c0 H;
-    public static final /* synthetic */ c0 I;
-    public static final /* synthetic */ c0 J;
-    public static final /* synthetic */ c0 K;
-    public static final /* synthetic */ c0 L;
-    public static final /* synthetic */ c0 M;
-    public static final /* synthetic */ c0 N;
-    public static final /* synthetic */ c0 O;
-    public static final /* synthetic */ c0 P;
-    public static final /* synthetic */ c0 Q;
-    public static final /* synthetic */ c0 R;
-    public static final /* synthetic */ c0 S;
-    public static final /* synthetic */ c0 T;
-    public static final /* synthetic */ c0 U;
-    public static final /* synthetic */ c0 V;
-    public static final /* synthetic */ c0 W;
-    public static final /* synthetic */ c0 X;
-    public static final /* synthetic */ c0 Y;
-    public static final /* synthetic */ c0 Z;
-    public static final /* synthetic */ c0 a0;
-    public static final /* synthetic */ c0 b0;
+    public static final /* synthetic */ ka.c E;
+    public static final /* synthetic */ ka.c F;
+    public static final /* synthetic */ ka.c G;
+    public static final /* synthetic */ ka.c H;
+    public static final /* synthetic */ ka.c I;
+    public static final /* synthetic */ ka.c J;
+    public static final /* synthetic */ ka.c K;
+    public static final /* synthetic */ ka.c L;
+    public static final /* synthetic */ ka.c M;
+    public static final /* synthetic */ ka.c N;
+    public static final /* synthetic */ ka.c O;
+    public static final /* synthetic */ ka.c P;
+    public static final /* synthetic */ ka.c Q;
+    public static final /* synthetic */ ka.c R;
+    public static final /* synthetic */ ka.c S;
+    public static final /* synthetic */ ka.c T;
+    public static final /* synthetic */ ka.c U;
+    public static final /* synthetic */ ka.c V;
+    public static final /* synthetic */ ka.c W;
+    public static final /* synthetic */ ka.c X;
+    public static final /* synthetic */ ka.c Y;
+    public static final /* synthetic */ ka.c Z;
+    public static final /* synthetic */ ka.c a0;
+    public static final /* synthetic */ ka.c b0;
     public Date e;
     public Date f;
     public long h;
@@ -82,8 +81,8 @@ public final class y extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = t6.b(e5.b.j(byteBuffer));
-            this.f = t6.b(e5.b.j(byteBuffer));
+            this.e = u6.b(e5.b.j(byteBuffer));
+            this.f = u6.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             e5.b.i(byteBuffer);
             long j3 = byteBuffer.getLong();
@@ -92,8 +91,8 @@ public final class y extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = t6.b(e5.b.i(byteBuffer));
-            this.f = t6.b(e5.b.i(byteBuffer));
+            this.e = u6.b(e5.b.i(byteBuffer));
+            this.f = u6.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
@@ -116,14 +115,14 @@ public final class y extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.b(c10);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(t6.a(this.e));
-            byteBuffer.putLong(t6.a(this.f));
+            byteBuffer.putLong(u6.a(this.e));
+            byteBuffer.putLong(u6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) t6.a(this.e));
-            byteBuffer.putInt((int) t6.a(this.f));
+            byteBuffer.putInt((int) u6.a(this.e));
+            byteBuffer.putInt((int) u6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);

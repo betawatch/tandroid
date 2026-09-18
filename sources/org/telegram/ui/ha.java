@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.app.Activity;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ha implements org.telegram.ui.Components.al0 {
-    public final /* synthetic */ sa a;
+public final class ha extends oa {
+    public final /* synthetic */ int J = 1;
+    public final /* synthetic */ org.telegram.ui.Components.vl0 K;
 
-    public ha(sa saVar) {
-        this.a = saVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ha(ia iaVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(activity, e6Var);
+        this.K = iaVar;
+        this.a = true;
     }
 
-    @Override // org.telegram.ui.Components.al0
-    public final void d(int i10, View view) {
-        boolean z10 = view instanceof pa;
-        sa saVar = this.a;
-        if (!z10) {
-            if (view instanceof ma) {
-                saVar.e0(true);
-                return;
-            }
-            return;
+    @Override // org.telegram.ui.oa
+    public final String getUsernameEditable() {
+        switch (this.J) {
+            case 0:
+                return ((ia) this.K).c.r;
+            default:
+                ci.h2 h2Var = ((gp) this.K).c.a3.a;
+                if (h2Var == null) {
+                    return null;
+                }
+                return h2Var.getText().toString();
         }
-        pa paVar = (pa) view;
-        TLRPC.TL_username tL_username = paVar.v;
-        if (tL_username == null || paVar.r) {
-            return;
-        }
-        if (tL_username.editable && saVar.x == 0) {
-            saVar.b.y0(0);
-            saVar.e0(true);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(saVar.getParentActivity(), 0, saVar.getResourceProvider());
-        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
-        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage);
-        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new fa(this, tL_username, i10, view, 0));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.u0(19));
-        alertDialog$Builder.o();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ha(gp gpVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.K = gpVar;
     }
 }

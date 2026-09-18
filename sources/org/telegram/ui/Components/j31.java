@@ -1,40 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class j31 extends ml0 {
-    public final /* synthetic */ w31 X2;
+public final /* synthetic */ class j31 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l31 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j31(w31 w31Var, Context context) {
-        super(context, null);
-        this.X2 = w31Var;
+    public /* synthetic */ j31(l31 l31Var, int i10) {
+        this.a = i10;
+        this.b = l31Var;
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y3 = motionEvent.getY();
-            w31 w31Var = this.X2;
-            if (y3 < w31Var.z(true) - getTop()) {
-                w31Var.dismiss();
-                return true;
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                l31 l31Var = this.b;
+                l31Var.getClass();
+                l31Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l31Var.h();
+                l31Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                l31 l31Var2 = this.b;
+                l31Var2.K = max;
+                l31Var2.h.invalidate();
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
     }
 }

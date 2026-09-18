@@ -1,14 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class qp extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final class qp extends org.telegram.ui.Components.t80 {
+    public final /* synthetic */ TLRPC.Chat w;
+    public final /* synthetic */ rp x;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qp(rp rpVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
+        super(context, chat);
+        this.x = rpVar;
+        this.w = chat2;
+    }
+
+    @Override // org.telegram.ui.Components.t80
+    public final boolean a(boolean z10, org.telegram.ui.Components.r80 r80Var) {
+        up upVar = this.x.d;
+        if (upVar.P) {
+            return false;
+        }
+        upVar.P = true;
+        e(new qh(19, this, r80Var), new ai.s4(this, this.w, z10, r80Var, 16));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.t80
+    public final boolean b(boolean z10, org.telegram.ui.Components.s80 s80Var) {
+        up upVar = this.x.d;
+        if (upVar.O) {
+            return false;
+        }
+        upVar.O = true;
+        e(new qh(19, this, s80Var), new ai.s4(this, this.w, z10, s80Var, 15));
+        return true;
+    }
+
+    public final void e(qh qhVar, Runnable runnable) {
+        up upVar = this.x.d;
+        if (ChatObject.isChannel(upVar.f)) {
+            runnable.run();
+        } else {
+            upVar.getMessagesController().convertToMegaGroup(upVar.getParentActivity(), this.w.id, upVar, new l4(16, this, runnable), qhVar);
+        }
     }
 }

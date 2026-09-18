@@ -1,279 +1,158 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class u31 extends FrameLayout {
-    public final ImageView a;
-    public final org.telegram.ui.tk b;
-    public final dc1 c;
-    public final TextView d;
-    public final s31 e;
-    public final View f;
-    public final /* synthetic */ w31 h;
+public final class u31 extends View {
+    public float a;
+    public final Paint b;
+    public final Paint c;
+    public Drawable d;
+    public boolean e;
+    public int f;
+    public final RectF h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u31(w31 w31Var, Context context) {
+    public u31(Context context) {
         super(context);
-        this.h = w31Var;
-        View view = new View(context);
-        int themedColor = w31Var.getThemedColor(org.telegram.ui.ActionBar.j6.h5);
-        String str = w31Var.s;
-        view.setBackgroundColor(themedColor);
-        addView(view, w7.x5.d(-1, 44.0f, 55, 0.0f, 12.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.ic_ab_back);
-        int i10 = org.telegram.ui.ActionBar.j6.j5;
-        int themedColor2 = w31Var.getThemedColor(i10);
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        imageView.setColorFilter(new PorterDuffColorFilter(themedColor2, mode));
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.f0(w31Var.getThemedColor(org.telegram.ui.ActionBar.j6.i6), 1, -1));
-        imageView.setAlpha(0.0f);
-        final int i11 = 0;
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.r31
-            public final /* synthetic */ u31 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                ViewGroup viewGroup;
-                org.telegram.ui.ActionBar.f6 f6Var;
-                switch (i11) {
-                    case 0:
-                        this.b.h.dismiss();
-                        break;
-                    default:
-                        u31 u31Var = this.b;
-                        s31 s31Var = u31Var.e;
-                        t31 t31Var = new t31(u31Var.getContext(), null);
-                        Drawable mutate = u31Var.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
-                        w31 w31Var2 = u31Var.h;
-                        mutate.setColorFilter(new PorterDuffColorFilter(w31Var2.getThemedColor(org.telegram.ui.ActionBar.j6.G8), PorterDuff.Mode.MULTIPLY));
-                        t31Var.setBackground(mutate);
-                        Runnable[] runnableArr = new Runnable[1];
-                        ArrayList<LocaleController.LocaleInfo> locales = TranslateController.getLocales();
-                        int i12 = 0;
-                        boolean z10 = true;
-                        while (i12 < locales.size()) {
-                            LocaleController.LocaleInfo localeInfo = locales.get(i12);
-                            if (!localeInfo.pluralLangCode.equals(w31Var2.s) && "remote".equals(localeInfo.pathToFile)) {
-                                TextUtils.equals(w31Var2.v, localeInfo.pluralLangCode);
-                                Context context2 = u31Var.getContext();
-                                boolean z11 = i12 == locales.size() - 1;
-                                f6Var = ((org.telegram.ui.ActionBar.g3) w31Var2).resourcesProvider;
-                                org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(2, context2, f6Var, z10, z11);
-                                g1Var.setText(w31.y(w31.E(localeInfo.pluralLangCode, null, null)));
-                                g1Var.setChecked(TextUtils.equals(w31Var2.v, localeInfo.pluralLangCode));
-                                g1Var.setOnClickListener(new ai.d0(u31Var, runnableArr, localeInfo, 27));
-                                t31Var.addView(g1Var);
-                                z10 = false;
-                            }
-                            i12++;
-                        }
-                        org.telegram.ui.ActionBar.o1 o1Var = new org.telegram.ui.ActionBar.o1(t31Var, -2, -2);
-                        runnableArr[0] = new kq0(o1Var, 22);
-                        o1Var.e = true;
-                        o1Var.c = 220;
-                        o1Var.setOutsideTouchable(true);
-                        o1Var.setClippingEnabled(true);
-                        o1Var.setAnimationStyle(R.style.PopupContextAnimation);
-                        o1Var.setFocusable(true);
-                        int[] iArr = new int[2];
-                        s31Var.getLocationInWindow(iArr);
-                        t31Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                        int measuredHeight = t31Var.getMeasuredHeight();
-                        int i13 = iArr[1];
-                        int dp = ((float) i13) > (((float) AndroidUtilities.displaySize.y) * 0.9f) - ((float) measuredHeight) ? AndroidUtilities.dp(8.0f) + (i13 - measuredHeight) : (s31Var.getMeasuredHeight() + i13) - AndroidUtilities.dp(8.0f);
-                        viewGroup = ((org.telegram.ui.ActionBar.g3) w31Var2).containerView;
-                        o1Var.showAtLocation(viewGroup, 51, iArr[0] - AndroidUtilities.dp(8.0f), dp);
-                        break;
-                }
-            }
-        });
-        addView(imageView, w7.x5.d(54, 54.0f, 48, 1.0f, 1.0f, 1.0f, 1.0f));
-        org.telegram.ui.tk tkVar = new org.telegram.ui.tk(this, context, 2);
-        this.b = tkVar;
-        tkVar.setTextColor(w31Var.getThemedColor(i10));
-        tkVar.setTextSize(1, 20.0f);
-        tkVar.setTypeface(AndroidUtilities.bold());
-        tkVar.setText(LocaleController.getString(R.string.AutomaticTranslation));
-        tkVar.setPivotX(0.0f);
-        tkVar.setPivotY(0.0f);
-        addView(tkVar, w7.x5.d(-1, -2.0f, 55, 22.0f, 20.0f, 22.0f, 0.0f));
-        dc1 dc1Var = new dc1(this, context, 11);
-        this.c = dc1Var;
-        if (LocaleController.isRTL) {
-            dc1Var.setGravity(5);
-        }
-        dc1Var.setPivotX(0.0f);
-        dc1Var.setPivotY(0.0f);
-        if (!TextUtils.isEmpty(str) && !TranslateController.UNKNOWN_LANGUAGE.equals(str)) {
-            TextView textView = new TextView(context);
-            this.d = textView;
-            textView.setLines(1);
-            textView.setTextColor(w31Var.getThemedColor(org.telegram.ui.ActionBar.j6.Pi));
-            textView.setTextSize(1, 14.0f);
-            textView.setText(w31.y(w31.E(str, null, null)));
-            textView.setPadding(0, AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f));
-        }
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setImageResource(R.drawable.search_arrow);
-        int i12 = org.telegram.ui.ActionBar.j6.Pi;
-        imageView2.setColorFilter(new PorterDuffColorFilter(w31Var.getThemedColor(i12), mode));
-        if (LocaleController.isRTL) {
-            imageView2.setScaleX(-1.0f);
-        }
-        s31 s31Var = new s31(this, context);
-        this.e = s31Var;
-        if (LocaleController.isRTL) {
-            s31Var.setGravity(5);
-        }
-        s31Var.b(0.25f, 350L, qr.h);
-        s31Var.setTextColor(w31Var.getThemedColor(i12));
-        s31Var.setTextSize(AndroidUtilities.dp(14.0f));
-        s31Var.setText(w31.y(w31.E(w31Var.v, null, null)));
-        s31Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
-        final int i13 = 1;
-        s31Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.r31
-            public final /* synthetic */ u31 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                ViewGroup viewGroup;
-                org.telegram.ui.ActionBar.f6 f6Var;
-                switch (i13) {
-                    case 0:
-                        this.b.h.dismiss();
-                        break;
-                    default:
-                        u31 u31Var = this.b;
-                        s31 s31Var2 = u31Var.e;
-                        t31 t31Var = new t31(u31Var.getContext(), null);
-                        Drawable mutate = u31Var.getContext().getDrawable(R.drawable.popup_fixed_alert).mutate();
-                        w31 w31Var2 = u31Var.h;
-                        mutate.setColorFilter(new PorterDuffColorFilter(w31Var2.getThemedColor(org.telegram.ui.ActionBar.j6.G8), PorterDuff.Mode.MULTIPLY));
-                        t31Var.setBackground(mutate);
-                        Runnable[] runnableArr = new Runnable[1];
-                        ArrayList<LocaleController.LocaleInfo> locales = TranslateController.getLocales();
-                        int i122 = 0;
-                        boolean z10 = true;
-                        while (i122 < locales.size()) {
-                            LocaleController.LocaleInfo localeInfo = locales.get(i122);
-                            if (!localeInfo.pluralLangCode.equals(w31Var2.s) && "remote".equals(localeInfo.pathToFile)) {
-                                TextUtils.equals(w31Var2.v, localeInfo.pluralLangCode);
-                                Context context2 = u31Var.getContext();
-                                boolean z11 = i122 == locales.size() - 1;
-                                f6Var = ((org.telegram.ui.ActionBar.g3) w31Var2).resourcesProvider;
-                                org.telegram.ui.ActionBar.g1 g1Var = new org.telegram.ui.ActionBar.g1(2, context2, f6Var, z10, z11);
-                                g1Var.setText(w31.y(w31.E(localeInfo.pluralLangCode, null, null)));
-                                g1Var.setChecked(TextUtils.equals(w31Var2.v, localeInfo.pluralLangCode));
-                                g1Var.setOnClickListener(new ai.d0(u31Var, runnableArr, localeInfo, 27));
-                                t31Var.addView(g1Var);
-                                z10 = false;
-                            }
-                            i122++;
-                        }
-                        org.telegram.ui.ActionBar.o1 o1Var = new org.telegram.ui.ActionBar.o1(t31Var, -2, -2);
-                        runnableArr[0] = new kq0(o1Var, 22);
-                        o1Var.e = true;
-                        o1Var.c = 220;
-                        o1Var.setOutsideTouchable(true);
-                        o1Var.setClippingEnabled(true);
-                        o1Var.setAnimationStyle(R.style.PopupContextAnimation);
-                        o1Var.setFocusable(true);
-                        int[] iArr = new int[2];
-                        s31Var2.getLocationInWindow(iArr);
-                        t31Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
-                        int measuredHeight = t31Var.getMeasuredHeight();
-                        int i132 = iArr[1];
-                        int dp = ((float) i132) > (((float) AndroidUtilities.displaySize.y) * 0.9f) - ((float) measuredHeight) ? AndroidUtilities.dp(8.0f) + (i132 - measuredHeight) : (s31Var2.getMeasuredHeight() + i132) - AndroidUtilities.dp(8.0f);
-                        viewGroup = ((org.telegram.ui.ActionBar.g3) w31Var2).containerView;
-                        o1Var.showAtLocation(viewGroup, 51, iArr[0] - AndroidUtilities.dp(8.0f), dp);
-                        break;
-                }
-            }
-        });
-        if (LocaleController.isRTL) {
-            dc1Var.addView(s31Var, w7.x5.t(-2, -2, 16, 0, 0, this.d != null ? 3 : 0, 0));
-            if (this.d != null) {
-                dc1Var.addView(imageView2, w7.x5.t(-2, -2, 16, 0, 1, 0, 0));
-                dc1Var.addView(this.d, w7.x5.t(-2, -2, 16, 4, 0, 0, 0));
-            }
-        } else {
-            TextView textView2 = this.d;
-            if (textView2 != null) {
-                dc1Var.addView(textView2, w7.x5.t(-2, -2, 16, 0, 0, 4, 0));
-                dc1Var.addView(imageView2, w7.x5.t(-2, -2, 16, 0, 1, 0, 0));
-            }
-            dc1Var.addView(s31Var, w7.x5.t(-2, -2, 16, this.d != null ? 3 : 0, 0, 0, 0));
-        }
-        addView(dc1Var, w7.x5.d(-1, -2.0f, 55, 22.0f, 43.0f, 22.0f, 0.0f));
-        View view2 = new View(context);
-        this.f = view2;
-        view2.setBackgroundColor(w31Var.getThemedColor(org.telegram.ui.ActionBar.j6.V5));
-        view2.setAlpha(0.0f);
-        addView(view2, w7.x5.d(-1, AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 55, 0.0f, 56.0f, 0.0f, 0.0f));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(78.0f), TLObject.FLAG_30));
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.e = true;
+        this.f = 0;
+        this.h = new RectF();
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.P9, false));
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
     @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        float a2 = w7.p.a((f7 - AndroidUtilities.statusBarHeight) / AndroidUtilities.dp(64.0f), 0.0f, 1.0f);
-        if (!w31.u(this.h)) {
-            a2 = 1.0f;
+    public final void drawableHotspotChanged(float f7, float f10) {
+        super.drawableHotspotChanged(f7, f10);
+        Drawable drawable = this.d;
+        if (drawable != null) {
+            drawable.setHotspot(f7, f10);
         }
-        float interpolation = qr.g.getInterpolation(a2);
-        float lerp = AndroidUtilities.lerp(0.85f, 1.0f, interpolation);
-        org.telegram.ui.tk tkVar = this.b;
-        tkVar.setScaleX(lerp);
-        tkVar.setScaleY(AndroidUtilities.lerp(0.85f, 1.0f, interpolation));
-        tkVar.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dpf2(-12.0f), 0.0f, interpolation));
-        boolean z10 = LocaleController.isRTL;
-        dc1 dc1Var = this.c;
-        if (!z10) {
-            tkVar.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dpf2(50.0f), 0.0f, interpolation));
-            dc1Var.setTranslationX(AndroidUtilities.lerp(AndroidUtilities.dpf2(50.0f), 0.0f, interpolation));
+    }
+
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        Drawable drawable = this.d;
+        if (drawable != null) {
+            drawable.setState(getDrawableState());
+            invalidate();
         }
-        dc1Var.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dpf2(-22.0f), 0.0f, interpolation));
-        float lerp2 = AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(-25.0f), interpolation);
-        ImageView imageView = this.a;
-        imageView.setTranslationX(lerp2);
-        float f10 = 1.0f - interpolation;
-        imageView.setAlpha(f10);
-        float lerp3 = AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(22.0f), interpolation);
-        View view = this.f;
-        view.setTranslationY(lerp3);
-        view.setAlpha(f10);
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        Drawable drawable = this.d;
+        if (drawable != null) {
+            drawable.jumpToCurrentState();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2 = canvas;
+        if (this.e) {
+            float dp = AndroidUtilities.dp(((this.f == 0 ? this.a : 1.0f) * 26.0f) + 6.0f);
+            float width = getWidth();
+            float height = getHeight();
+            RectF rectF = this.h;
+            rectF.set(0.0f, 0.0f, width, height);
+            canvas2.drawRoundRect(rectF, dp, dp, this.b);
+        }
+        int i10 = this.f;
+        Paint paint = this.c;
+        if (i10 == 0) {
+            float max = (Math.max(0.4f, this.a) - 0.4f) / 0.6f;
+            if (max != 0.0f) {
+                float B = (org.telegram.messenger.wh.B(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
+                float height2 = getHeight() / 2.0f;
+                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, B, height2, paint);
+                double dp2 = AndroidUtilities.dp(9.0f) * max;
+                float cos = (float) (B - (Math.cos(0.7853981633974483d) * dp2));
+                float sin = (float) (Math.sin(0.7853981633974483d) * dp2);
+                canvas2 = canvas;
+                canvas2.drawLine(B, height2, cos, height2 - sin, paint);
+                canvas2.drawLine(B, height2, cos, height2 + sin, paint);
+            } else {
+                canvas2 = canvas;
+            }
+        } else if (i10 == 1) {
+            float dp3 = AndroidUtilities.dp(21.0f);
+            float width2 = getWidth() - AndroidUtilities.dp(21.0f);
+            float height3 = getHeight() / 2.0f;
+            canvas2.save();
+            canvas2.translate((-AndroidUtilities.dp(2.0f)) * this.a, 0.0f);
+            canvas2.rotate(this.a * 90.0f, getWidth() / 2.0f, getHeight() / 2.0f);
+            canvas2.drawLine(dp3 + ((width2 - dp3) * this.a), height3, width2, height3, paint);
+            int dp4 = AndroidUtilities.dp((this.a * (-1.0f)) + 9.0f);
+            int dp5 = AndroidUtilities.dp((this.a * 7.0f) + 9.0f);
+            double d = width2;
+            double d10 = dp4;
+            double d11 = height3;
+            canvas.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d10)), (float) ((Math.sin(0.7853981633974483d) * d10) + d11), paint);
+            double d12 = dp5;
+            canvas2 = canvas;
+            canvas2.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d12)), (float) (d11 - (Math.sin(0.7853981633974483d) * d12)), paint);
+            canvas.restore();
+        }
+        Drawable drawable = this.d;
+        if (drawable != null) {
+            drawable.setBounds(0, 0, getWidth(), getHeight());
+            this.d.setHotspotBounds(0, 0, getWidth(), getHeight());
+            this.d.draw(canvas2);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.b.setColor(i10);
+        invalidate();
+    }
+
+    public void setColor(int i10) {
+        this.c.setColor(i10);
+        invalidate();
+    }
+
+    public void setDrawBackground(boolean z10) {
+        this.e = z10;
+    }
+
+    public void setProgress(float f7) {
+        this.a = f7;
+        invalidate();
+    }
+
+    public void setRippleDrawable(Drawable drawable) {
+        this.d = drawable;
+        invalidate();
+    }
+
+    public void setTransformType(int i10) {
+        this.f = i10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        if (super.verifyDrawable(drawable)) {
+            return true;
+        }
+        Drawable drawable2 = this.d;
+        return drawable2 != null && drawable == drawable2;
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class hv extends ht {
     public int M;
@@ -64,21 +64,21 @@ public final class hv extends ht {
 
     @Override // org.telegram.ui.Components.ht
     public final void d(Canvas canvas, float f7) {
-        o5 o5Var;
+        q5 q5Var;
         if (this.N != null) {
             for (int i10 = 0; i10 < this.N.size(); i10++) {
                 jv jvVar = (jv) this.N.get(i10);
-                x5 x5Var = jvVar.c;
-                if (x5Var != null && (o5Var = (o5) this.P.y.b.get(x5Var.getDocumentId())) != null && o5Var.k != null && jvVar.b != null) {
-                    o5Var.setAlpha((int) (jvVar.getAlpha() * 255.0f * f7));
+                z5 z5Var = jvVar.c;
+                if (z5Var != null && (q5Var = (q5) this.P.y.b.get(z5Var.getDocumentId())) != null && q5Var.k != null && jvVar.b != null) {
+                    q5Var.setAlpha((int) (jvVar.getAlpha() * 255.0f * f7));
                     float width = ((jvVar.getWidth() - jvVar.getPaddingLeft()) - jvVar.getPaddingRight()) / 2.0f;
                     float height = ((jvVar.getHeight() - jvVar.getPaddingTop()) - jvVar.getPaddingBottom()) / 2.0f;
                     float right = (jvVar.getRight() + jvVar.getLeft()) / 2.0f;
                     float paddingTop = jvVar.getPaddingTop() + height;
                     float f10 = jvVar.e;
                     float f11 = f10 != 0.0f ? 1.0f * (((1.0f - f10) * 0.2f) + 0.8f) : 1.0f;
-                    o5Var.setBounds((int) (right - ((jvVar.getScaleX() * width) * f11)), (int) (paddingTop - ((jvVar.getScaleY() * height) * f11)), (int) ((jvVar.getScaleX() * width * f11) + right), (int) ((jvVar.getScaleY() * height * f11) + paddingTop));
-                    o5Var.draw(canvas);
+                    q5Var.setBounds((int) (right - ((jvVar.getScaleX() * width) * f11)), (int) (paddingTop - ((jvVar.getScaleY() * height) * f11)), (int) ((jvVar.getScaleX() * width * f11) + right), (int) ((jvVar.getScaleY() * height * f11) + paddingTop));
+                    q5Var.draw(canvas);
                 }
             }
         }
@@ -91,7 +91,7 @@ public final class hv extends ht {
         while (true) {
             ArrayList arrayList = this.O;
             if (i10 >= arrayList.size()) {
-                viewGroup = ((org.telegram.ui.ActionBar.g3) this.P.y).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) this.P.y).containerView;
                 viewGroup.invalidate();
                 return;
             } else {
@@ -103,22 +103,22 @@ public final class hv extends ht {
 
     @Override // org.telegram.ui.Components.ht
     public final void i(long j3) {
-        o5 o5Var;
+        q5 q5Var;
         sv svVar = this.P.y;
         ArrayList arrayList = this.O;
         arrayList.clear();
         for (int i10 = 0; i10 < this.N.size(); i10++) {
             jv jvVar = (jv) this.N.get(i10);
-            x5 x5Var = jvVar.c;
+            z5 z5Var = jvVar.c;
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = jvVar.a;
-            if (x5Var != null && (o5Var = (o5) svVar.b.get(x5Var.getDocumentId())) != null && o5Var.k != null) {
-                o5Var.t(j3);
-                ai.l4 l4Var = o5Var.k;
+            if (z5Var != null && (q5Var = (q5) svVar.b.get(z5Var.getDocumentId())) != null && q5Var.k != null) {
+                q5Var.t(j3);
+                ai.l4 l4Var = q5Var.k;
                 int i11 = this.K;
                 ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = l4Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j3;
-                o5Var.setAlpha(255);
+                q5Var.setAlpha(255);
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(jvVar.getPaddingLeft() + jvVar.getLeft(), jvVar.getPaddingTop(), jvVar.getRight() - jvVar.getPaddingRight(), jvVar.getMeasuredHeight() - jvVar.getPaddingBottom());
                 backgroundThreadDrawHolderArr[i11].setBounds(rect);
@@ -127,8 +127,8 @@ public final class hv extends ht {
                     svVar.U = themedColor;
                     svVar.T = new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN);
                 }
-                o5Var.setColorFilter(svVar.T);
-                jvVar.b = o5Var.k;
+                q5Var.setColorFilter(svVar.T);
+                jvVar.b = q5Var.k;
                 arrayList.add(jvVar);
             }
         }

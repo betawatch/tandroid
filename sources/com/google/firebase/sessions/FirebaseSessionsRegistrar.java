@@ -8,12 +8,11 @@ import k9.h;
 import kotlin.jvm.internal.i;
 import m9.a;
 import m9.b;
-import org.telegram.ui.Cells.ia;
 import q9.j;
 import q9.r;
 import qa.d;
-import w7.o8;
-import yh.a2;
+import w7.p8;
+import yf.q;
 import za.c0;
 import za.g0;
 import za.i0;
@@ -25,7 +24,7 @@ import za.s;
 import za.y;
 import zd.a0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
@@ -83,10 +82,10 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         i.d(i12, "container[sessionsSettings]");
         pa.b e = bVar.e(transportFactory);
         i.d(e, "container.getProvider(transportFactory)");
-        ia iaVar = new ia(e, 23);
+        w3.b bVar2 = new w3.b(e);
         Object i13 = bVar.i(backgroundDispatcher);
         i.d(i13, "container[backgroundDispatcher]");
-        return new g0((h) i10, (d) i11, (bb.h) i12, iaVar, (id.h) i13);
+        return new g0((h) i10, (d) i11, (bb.h) i12, bVar2, (id.h) i13);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -130,12 +129,12 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a2.a(j.b(rVar2));
         r rVar3 = backgroundDispatcher;
         a2.a(j.b(rVar3));
-        a2.f = new a2(10);
+        a2.f = new q(12);
         a2.c(2);
         q9.a b10 = a2.b();
         b2.i0 a10 = q9.a.a(i0.class);
         a10.d = "session-generator";
-        a10.f = new a2(11);
+        a10.f = new q(13);
         q9.a b11 = a10.b();
         b2.i0 a11 = q9.a.a(c0.class);
         a11.d = "session-publisher";
@@ -145,7 +144,7 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a11.a(new j(rVar2, 1, 0));
         a11.a(new j(transportFactory, 1, 1));
         a11.a(new j(rVar3, 1, 0));
-        a11.f = new a2(12);
+        a11.f = new q(14);
         q9.a b12 = a11.b();
         b2.i0 a12 = q9.a.a(bb.h.class);
         a12.d = "sessions-settings";
@@ -153,18 +152,18 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a12.a(j.b(blockingDispatcher));
         a12.a(new j(rVar3, 1, 0));
         a12.a(new j(rVar4, 1, 0));
-        a12.f = new a2(13);
+        a12.f = new q(15);
         q9.a b13 = a12.b();
         b2.i0 a13 = q9.a.a(s.class);
         a13.d = "sessions-datastore";
         a13.a(new j(rVar, 1, 0));
         a13.a(new j(rVar3, 1, 0));
-        a13.f = new a2(14);
+        a13.f = new q(16);
         q9.a b14 = a13.b();
         b2.i0 a14 = q9.a.a(m0.class);
         a14.d = "sessions-service-binder";
         a14.a(new j(rVar, 1, 0));
-        a14.f = new a2(15);
-        return hd.h.c(b10, b11, b12, b13, b14, a14.b(), o8.a(LIBRARY_NAME, "1.2.0"));
+        a14.f = new q(17);
+        return hd.h.c(b10, b11, b12, b13, b14, a14.b(), p8.a(LIBRARY_NAME, "1.2.0"));
     }
 }

@@ -1,88 +1,35 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ya implements RequestDelegate {
+public final /* synthetic */ class ya implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wb b;
+    public final /* synthetic */ vb b;
 
-    public /* synthetic */ ya(wb wbVar, int i10) {
+    public /* synthetic */ ya(vb vbVar, int i10) {
         this.a = i10;
-        this.b = wbVar;
+        this.b = vbVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (tLObject != null) {
-                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
-                    final int i10 = 1;
-                    final wb wbVar = this.b;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.va
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i10) {
-                                case 0:
-                                    wb.U(wbVar, tL_channels_adminLogResults);
-                                    break;
-                                default:
-                                    wb.Y(wbVar, tL_channels_adminLogResults);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+                vb vbVar = this.b;
+                vbVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                vbVar.H0 = -1;
+                vbVar.d1();
+                vbVar.I0 = null;
                 break;
             case 1:
-                wb wbVar2 = this.b;
-                wbVar2.getClass();
-                if (tLObject instanceof Vector) {
-                    ArrayList<T> arrayList = ((Vector) tLObject).objects;
-                    ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.User) {
-                            arrayList2.add((TLRPC.User) arrayList.get(i11));
-                        }
-                    }
-                    wbVar2.getMessagesController().putUsers(arrayList2, false);
-                    break;
-                }
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new l4(11, this.b, tLObject));
-                break;
-            case 3:
-                if (tLObject != null) {
-                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
-                    final int i12 = 0;
-                    final wb wbVar3 = this.b;
-                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.va
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            switch (i12) {
-                                case 0:
-                                    wb.U(wbVar3, tL_channels_adminLogResults2);
-                                    break;
-                                default:
-                                    wb.Y(wbVar3, tL_channels_adminLogResults2);
-                                    break;
-                            }
-                        }
-                    });
-                    break;
-                }
+                vb vbVar2 = this.b;
+                vbVar2.W0(false);
+                vbVar2.E.l();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new q1(this.b, tL_error, tLObject, 9));
+                this.b.V0();
                 break;
         }
     }

@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class so extends LinearLayout {
-    public gk0 a;
+    public qk0 a;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
     public FrameLayout c;
     public int d;
@@ -48,11 +48,11 @@ public abstract class so extends LinearLayout {
         int i12 = i10;
         int i13 = this.d;
         int makeMeasureSpec = i13 != 0 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31) : i11;
-        gk0 gk0Var = this.a;
-        if (gk0Var == null || this.b == null) {
+        qk0 qk0Var = this.a;
+        if (qk0Var == null || this.b == null) {
             super.onMeasure(i12, makeMeasureSpec);
         } else {
-            gk0Var.getLayoutParams().width = -2;
+            qk0Var.getLayoutParams().width = -2;
             ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
             this.e = 0.0f;
             super.onMeasure(i12, makeMeasureSpec);
@@ -66,38 +66,38 @@ public abstract class so extends LinearLayout {
             if (this.a.q()) {
                 i12 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
             }
-            gk0 gk0Var2 = this.a;
-            if (!gk0Var2.e1 && gk0Var2.Q0 && gk0Var2.getMeasuredWidth() > 0) {
-                int min = Math.min(AndroidUtilities.dp(320.0f), gk0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
-                StaticLayout staticLayout = new StaticLayout(gk0Var2.R0.getText(), gk0Var2.R0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                gk0Var2.T0 = staticLayout.getHeight();
-                gk0Var2.S0 = 0;
+            qk0 qk0Var2 = this.a;
+            if (!qk0Var2.e1 && qk0Var2.Q0 && qk0Var2.getMeasuredWidth() > 0) {
+                int min = Math.min(AndroidUtilities.dp(320.0f), qk0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
+                StaticLayout staticLayout = new StaticLayout(qk0Var2.R0.getText(), qk0Var2.R0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                qk0Var2.T0 = staticLayout.getHeight();
+                qk0Var2.S0 = 0;
                 for (int i14 = 0; i14 < staticLayout.getLineCount(); i14++) {
-                    gk0Var2.S0 = Math.max(gk0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
+                    qk0Var2.S0 = Math.max(qk0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
                 }
-                if (staticLayout.getLineCount() <= 1 || gk0Var2.R0.getText().toString().contains("\n")) {
-                    gk0Var2.R0.setWidth(AndroidUtilities.dp(16.0f) + min);
+                if (staticLayout.getLineCount() <= 1 || qk0Var2.R0.getText().toString().contains("\n")) {
+                    qk0Var2.R0.setWidth(AndroidUtilities.dp(16.0f) + min);
                 } else {
-                    int a2 = ci.f4.a(gk0Var2.R0.getText(), gk0Var2.R0.getPaint());
-                    StaticLayout staticLayout2 = new StaticLayout(gk0Var2.R0.getText(), gk0Var2.R0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    gk0Var2.T0 = staticLayout2.getHeight();
-                    gk0Var2.S0 = 0;
+                    int a2 = ci.f4.a(qk0Var2.R0.getText(), qk0Var2.R0.getPaint());
+                    StaticLayout staticLayout2 = new StaticLayout(qk0Var2.R0.getText(), qk0Var2.R0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    qk0Var2.T0 = staticLayout2.getHeight();
+                    qk0Var2.S0 = 0;
                     for (int i15 = 0; i15 < staticLayout2.getLineCount(); i15++) {
-                        gk0Var2.S0 = Math.max(gk0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
+                        qk0Var2.S0 = Math.max(qk0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
                     }
-                    gk0Var2.R0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
-                    gk0Var2.R0.setWidth(AndroidUtilities.dp(48.0f) + a2);
+                    qk0Var2.R0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+                    qk0Var2.R0.setWidth(AndroidUtilities.dp(48.0f) + a2);
                 }
-                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + gk0Var2.T0);
-                int i16 = gk0Var2.M0;
+                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + qk0Var2.T0);
+                int i16 = qk0Var2.M0;
                 if (i16 == 1 || i16 == 2) {
                     max = AndroidUtilities.dp(20.0f);
                 } else {
-                    gk0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
+                    qk0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
                 }
-                ((FrameLayout.LayoutParams) gk0Var2.z0.getLayoutParams()).topMargin = max;
-                ((FrameLayout.LayoutParams) gk0Var2.b.getLayoutParams()).topMargin = max;
-                gk0Var2.e1 = true;
+                ((FrameLayout.LayoutParams) qk0Var2.z0.getLayoutParams()).topMargin = max;
+                ((FrameLayout.LayoutParams) qk0Var2.b.getLayoutParams()).topMargin = max;
+                qk0Var2.e1 = true;
             }
             int totalWidth = this.a.getTotalWidth();
             View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
@@ -183,11 +183,11 @@ public abstract class so extends LinearLayout {
 
     public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new mf(8, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new b3(9, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
         if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-            vg0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
-            swipeBack.x.add(new ug0() { // from class: org.telegram.ui.Components.ro
-                @Override // org.telegram.ui.Components.ug0
+            fh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+            swipeBack.x.add(new eh0() { // from class: org.telegram.ui.Components.ro
+                @Override // org.telegram.ui.Components.eh0
                 public final void a(float f7, float f10) {
                     so soVar = so.this;
                     FrameLayout frameLayout = soVar.c;
@@ -201,10 +201,10 @@ public abstract class so extends LinearLayout {
         }
     }
 
-    public void setReactionsLayout(gk0 gk0Var) {
-        this.a = gk0Var;
-        if (gk0Var != null) {
-            gk0Var.setChatScrimView(this);
+    public void setReactionsLayout(qk0 qk0Var) {
+        this.a = qk0Var;
+        if (qk0Var != null) {
+            qk0Var.setChatScrimView(this);
         }
     }
 

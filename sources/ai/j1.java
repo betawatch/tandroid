@@ -7,18 +7,18 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.n20;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class j1 extends TextView {
     public int a;
-    public final n20 b;
+    public final l20 b;
 
     public j1(Context context) {
         super(context);
         this.a = -1;
-        this.b = new n20();
+        this.b = new l20();
     }
 
     @Override // android.widget.TextView, android.view.View

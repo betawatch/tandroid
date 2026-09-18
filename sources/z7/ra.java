@@ -2,15 +2,15 @@ package z7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class ra {
     public final qa a;
     public final Integer b;
 
-    public /* synthetic */ ra(n7.a1 a1Var) {
-        this.a = (qa) a1Var.b;
-        this.b = (Integer) a1Var.c;
+    public /* synthetic */ ra(n7.z0 z0Var) {
+        this.a = (qa) z0Var.b;
+        this.b = (Integer) z0Var.c;
     }
 
     public final boolean equals(Object obj) {

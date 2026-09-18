@@ -1,33 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Vibrator;
-import android.text.Spanned;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class m3 extends gq {
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ NumberTextView c;
+public final class m3 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.Cells.a2[] a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m3(int i10, Context context, NumberTextView numberTextView) {
-        super(i10);
-        this.b = context;
-        this.c = numberTextView;
+    public m3(Activity activity, org.telegram.ui.Cells.a2[] a2VarArr) {
+        super(activity);
+        this.a = a2VarArr;
     }
 
-    @Override // org.telegram.ui.Components.gq, android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
-        if (filter != null && charSequence != null && filter.length() != charSequence.length()) {
-            Vibrator vibrator = (Vibrator) this.b.getSystemService("vibrator");
-            if (vibrator != null) {
-                vibrator.vibrate(200L);
-            }
-            AndroidUtilities.shakeView(this.c);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        org.telegram.ui.Cells.a2[] a2VarArr = this.a;
+        if (a2VarArr[0] != null) {
+            setMeasuredDimension(getMeasuredWidth(), a2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
         }
-        return filter;
     }
 }

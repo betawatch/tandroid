@@ -31,24 +31,24 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.bn0;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.jg0;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.sh;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final jv0 b0 = new jv0(new bn0(13), new bn0(14));
-    public static final jv0 c0 = new jv0(new bn0(15), new bn0(16));
+    public static final uv0 b0 = new uv0(new jg0(15), new jg0(16));
+    public static final uv0 c0 = new uv0(new jg0(17), new jg0(18));
     public static final j1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
-    public k2.u G;
+    public n2.e G;
     public boolean H;
     public boolean I;
     public View J;
@@ -77,7 +77,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
     public s2 f;
     public FrameLayout h;
     public h n;
-    public u9 r;
+    public w9 r;
     public eb s;
     public TLRPC.GroupCallParticipant v;
     public boolean w;
@@ -164,17 +164,17 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         if (i11 >= 23) {
             j1Var.F.setStylusScaleEnabled(false);
         }
-        j1Var.G = new k2.u(activity2, new h1(j1Var, scaledTouchSlop));
+        j1Var.G = new n2.e(activity2, new h1(j1Var, scaledTouchSlop));
         j1Var.e = new n6(j1Var, activity2);
         org.telegram.ui.f fVar = new org.telegram.ui.f(j1Var, activity2, i10);
         j1Var.d = fVar;
-        fVar.addView(j1Var.e, x5.c(-1.0f, -1));
-        j1Var.e.setOutlineProvider(new ai.k2(15));
+        fVar.addView(j1Var.e, y5.c(-1.0f, -1));
+        j1Var.e.setOutlineProvider(new ai.k2(17));
         j1Var.e.setClipToOutline(true);
         j1Var.e.setBackgroundColor(j6.w0(null, j6.gg, false));
-        u9 u9Var = new u9(activity2);
-        j1Var.r = u9Var;
-        j1Var.e.addView(u9Var, x5.c(-1.0f, -1));
+        w9 w9Var = new w9(activity2);
+        j1Var.r = w9Var;
+        j1Var.e.addView(w9Var, y5.c(-1.0f, -1));
         s2 s2Var = new s2(activity2, false, false, false, false);
         j1Var.f = s2Var;
         s2Var.setAlpha(0.0f);
@@ -183,10 +183,10 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         s2Var2.a0 = 0;
         s2Var2.d.setRotateTextureWithScreen(true);
         j1Var.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new i1(j1Var));
-        j1Var.e.addView(j1Var.f, x5.c(-1.0f, -1));
+        j1Var.e.addView(j1Var.f, y5.c(-1.0f, -1));
         eb ebVar = new eb(j1Var, activity2, 27);
         j1Var.s = ebVar;
-        j1Var.e.addView(ebVar, x5.c(-1.0f, -1));
+        j1Var.e.addView(ebVar, y5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(activity2);
         j1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -195,7 +195,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         gradientDrawable.setColors(new int[]{1140850688, 0});
         gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
         view.setBackground(gradientDrawable);
-        j1Var.h.addView(view, x5.c(-1.0f, -1));
+        j1Var.h.addView(view, y5.c(-1.0f, -1));
         int dp = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(activity2);
         imageView.setImageResource(R.drawable.pip_video_close);
@@ -207,15 +207,15 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         imageView.setOnClickListener(new ai.e2(13));
         float f7 = 38;
         float f10 = 4;
-        j1Var.h.addView(imageView, x5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
+        j1Var.h.addView(imageView, y5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_expand);
         imageView2.setColorFilter(j6.w0(null, i12, false));
         imageView2.setBackground(j6.f0(j6.w0(null, i13, false), 1, -1));
         imageView2.setPadding(dp, dp, dp, dp);
         imageView2.setOnClickListener(new o(activity2, 3));
-        j1Var.h.addView(imageView2, x5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
-        j1Var.e.addView(j1Var.h, x5.c(-1.0f, -1));
+        j1Var.h.addView(imageView2, y5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
+        j1Var.e.addView(j1Var.h, y5.c(-1.0f, -1));
         j1Var.b = (WindowManager) activity2.getSystemService("window");
         WindowManager.LayoutParams b10 = sf.c.b(activity2, false);
         j1Var.c = b10;
@@ -377,12 +377,12 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
                 if (peerId > 0) {
                     TLRPC.User user = messagesController.getUser(Long.valueOf(peerId));
                     ImageLocation forUser = ImageLocation.getForUser(accountInstance.getCurrentAccount(), user, 1);
-                    int d = user != null ? f9.d(user.id) : i0.a.d(0.2f, -16777216, -1);
+                    int d = user != null ? h9.d(user.id) : i0.a.d(0.2f, -16777216, -1);
                     this.r.getImageReceiver().setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.d(0.2f, d, -16777216), i0.a.d(0.4f, d, -16777216)}), null, user, 0);
                 } else {
                     TLRPC.Chat chat = messagesController.getChat(Long.valueOf(-peerId));
                     ImageLocation forChat = ImageLocation.getForChat(accountInstance.getCurrentAccount(), chat, 1);
-                    int d10 = chat != null ? f9.d(chat.id) : i0.a.d(0.2f, -16777216, -1);
+                    int d10 = chat != null ? h9.d(chat.id) : i0.a.d(0.2f, -16777216, -1);
                     this.r.getImageReceiver().setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.d(0.2f, d10, -16777216), i0.a.d(0.4f, d10, -16777216)}), null, chat, 0);
                 }
                 this.v = groupCallParticipant3;
@@ -428,7 +428,7 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         o1.k kVar2 = this.T;
         kVar2.b = this.R;
         kVar2.c = true;
-        kVar2.u.i = w7.p.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (l() * this.P)) - AndroidUtilities.dp(16.0f));
+        kVar2.u.i = w7.q.a(r2, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - (l() * this.P)) - AndroidUtilities.dp(16.0f));
         this.T.f();
     }
 

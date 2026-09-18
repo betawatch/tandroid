@@ -7,24 +7,24 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.n20;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class x1 extends HorizontalScrollView {
-    public final n20 a;
-    public final org.telegram.ui.Components.c6 b;
-    public final org.telegram.ui.Components.c6 c;
+    public final l20 a;
+    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.e6 c;
     public final /* synthetic */ d2 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public x1(d2 d2Var, Context context) {
         super(context);
         this.d = d2Var;
-        this.a = new n20();
+        this.a = new l20();
         qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.c6(this, 300L, qrVar);
-        this.c = new org.telegram.ui.Components.c6(this, 300L, qrVar);
+        this.b = new org.telegram.ui.Components.e6(this, 300L, qrVar);
+        this.c = new org.telegram.ui.Components.e6(this, 300L, qrVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -41,16 +41,16 @@ public final class x1 extends HorizontalScrollView {
         super.dispatchDraw(canvas2);
         if (e > 0.0f || e7 > 0.0f) {
             canvas2.save();
-            n20 n20Var = this.a;
+            l20 l20Var = this.a;
             if (e > 0.0f) {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(getScrollX(), 0.0f, AndroidUtilities.dp(48.0f) + getScrollX(), getHeight());
-                n20Var.b(canvas2, rectF, 0, e);
+                l20Var.b(canvas2, rectF, 0, e);
             }
             if (e7 > 0.0f) {
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set((getWidth() + getScrollX()) - AndroidUtilities.dp(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                n20Var.b(canvas2, rectF2, 2, e7);
+                l20Var.b(canvas2, rectF2, 2, e7);
             }
             canvas2.restore();
         }

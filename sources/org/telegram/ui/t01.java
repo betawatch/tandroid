@@ -1,29 +1,21 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class t01 extends URLSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ b11 b;
+public final class t01 extends org.telegram.ui.Cells.c9 {
+    public final /* synthetic */ z01 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t01(b11 b11Var, String str, String str2) {
-        super(str);
-        this.b = b11Var;
-        this.a = str2;
+    public t01(z01 z01Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11) {
+        super(18, context, e6Var, z10, z11);
+        this.r = z01Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        nf.f.s(this.b.e.getParentActivity(), this.a);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(true);
+    @Override // org.telegram.ui.Cells.c9
+    public final int a(int i10) {
+        this.r.e.getClass();
+        return i10;
     }
 }

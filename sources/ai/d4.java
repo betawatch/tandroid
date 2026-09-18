@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ok;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class d4 implements Utilities.Callback {
                 hashMap.put("bot", "" + j3);
                 TLRPC.User user2 = f6Var.d3.getAdapter().w0;
                 hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.o2 o2Var = f6Var.J0.f;
+                org.telegram.ui.ActionBar.n2 n2Var = f6Var.J0.f;
                 long j10 = j3;
                 accountInstance = f6Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingBotContextResult(o2Var, accountInstance, botInlineResult, hashMap, f6Var.B1, null, null, f6Var.O1.a, null, this.b, this.c, 0, null, 0L, l4.longValue());
+                SendMessagesHelper.prepareSendingBotContextResult(n2Var, accountInstance, botInlineResult, hashMap, f6Var.B1, null, null, f6Var.O1.a, null, this.b, this.c, 0, null, 0L, l4.longValue());
                 f6Var.b2.setFieldText("");
                 f6Var.k0(l4.longValue() <= 0);
                 MediaDataController.getInstance(f6Var.C2).increaseInlineRating(j10);

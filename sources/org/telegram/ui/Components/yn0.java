@@ -1,161 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yn0 extends b81 {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ org.telegram.ui.gy b;
+public final class yn0 extends kx0 {
+    public final /* synthetic */ int K;
+    public final /* synthetic */ org.telegram.ui.ey L;
 
-    public yn0(org.telegram.ui.gy gyVar) {
-        this.b = gyVar;
-        i();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yn0(org.telegram.ui.ey eyVar, Context context, t00 t00Var, int i10) {
+        super(context, t00Var, 1, null);
+        this.K = i10;
+        this.L = eyVar;
     }
 
-    @Override // org.telegram.ui.Components.b81
-    public final void b(View view, int i10, int i11) {
-        org.telegram.ui.gy gyVar = this.b;
-        gyVar.P(view, i10, gyVar.L0, true);
-    }
-
-    @Override // org.telegram.ui.Components.b81
-    public final View d(int i10) {
-        org.telegram.ui.gy gyVar = this.b;
-        org.telegram.ui.wy wyVar = gyVar.K0;
-        if (i10 == 1) {
-            return gyVar.V;
+    @Override // org.telegram.ui.Components.kx0, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K) {
+            case 0:
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 1:
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            default:
+                if (this.L.N0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
         }
-        if (i10 == 3) {
-            return gyVar.g0;
-        }
-        if (i10 == 4) {
-            return gyVar.l0;
-        }
-        if (i10 == 5) {
-            return gyVar.s0;
-        }
-        if (i10 == 2) {
-            wm0 wm0Var = new wm0(gyVar.I0, wyVar);
-            gyVar.H0 = wm0Var;
-            wm0Var.b(gyVar.V0, gyVar.W0, false);
-            gyVar.H0.b.setClipToPadding(false);
-            gyVar.H0.b.j(new wn0(this, 0));
-            gyVar.H0.b.D0(new bc0(gyVar, 23));
-            gyVar.H0.setUiCallback(gyVar);
-            return gyVar.H0;
-        }
-        if (i10 == 6) {
-            return gyVar.q0;
-        }
-        org.telegram.ui.z10 z10Var = new org.telegram.ui.z10(wyVar);
-        z10Var.setChatPreviewDelegate(gyVar.Q0);
-        z10Var.setUiCallback(gyVar);
-        z10Var.j(gyVar.V0, gyVar.W0, false);
-        ah.c cVar = gyVar.Y0;
-        if (cVar != null) {
-            z10Var.setBlurredBackgroundDrawableFactory(cVar);
-        }
-        ai.w0 w0Var = z10Var.b;
-        w0Var.setClipToPadding(false);
-        w0Var.j(new wn0(this, 1));
-        w0Var.D0(new bc0(gyVar, 23));
-        return z10Var;
-    }
-
-    @Override // org.telegram.ui.Components.b81
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.b81
-    public final CharSequence g(int i10) {
-        ArrayList arrayList = this.a;
-        if (((xn0) arrayList.get(i10)).a == 0) {
-            return LocaleController.getString(R.string.SearchAllChatsShort);
-        }
-        if (((xn0) arrayList.get(i10)).a == 1) {
-            return LocaleController.getString(R.string.ChannelsTab);
-        }
-        if (((xn0) arrayList.get(i10)).a == 4) {
-            return LocaleController.getString(R.string.AppsTab);
-        }
-        if (((xn0) arrayList.get(i10)).a == 6) {
-            return LocaleController.getString(R.string.SearchPosts);
-        }
-        if (((xn0) arrayList.get(i10)).a == 2) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        if (((xn0) arrayList.get(i10)).a == 5) {
-            return LocaleController.getString(R.string.PublicPostsTabs);
-        }
-        gg.q0 q0Var = gg.s0.c3[((xn0) arrayList.get(i10)).b];
-        String str = q0Var.c;
-        return str != null ? str : LocaleController.getString(q0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.b81
-    public final int h(int i10) {
-        ArrayList arrayList = this.a;
-        if (((xn0) arrayList.get(i10)).a == 0) {
-            return 1;
-        }
-        if (((xn0) arrayList.get(i10)).a == 1) {
-            return 3;
-        }
-        if (((xn0) arrayList.get(i10)).a == 4) {
-            return 4;
-        }
-        if (((xn0) arrayList.get(i10)).a == 2) {
-            return 2;
-        }
-        if (((xn0) arrayList.get(i10)).a == 5) {
-            return 5;
-        }
-        if (((xn0) arrayList.get(i10)).a == 6) {
-            return 6;
-        }
-        return ((xn0) arrayList.get(i10)).a + i10;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        arrayList.add(new xn0(0));
-        org.telegram.ui.gy gyVar = this.b;
-        if (gyVar.U0 != 0) {
-            return;
-        }
-        if (gyVar.r0) {
-            arrayList.add(new xn0(5));
-        }
-        arrayList.add(new xn0(1));
-        arrayList.add(new xn0(4));
-        arrayList.add(new xn0(6));
-        if (gyVar.P0) {
-            return;
-        }
-        xn0 xn0Var = new xn0(3);
-        xn0Var.b = 0;
-        arrayList.add(xn0Var);
-        org.telegram.ui.qx qxVar = gyVar.c1.F3;
-        if (qxVar == null || !qxVar.c()) {
-            arrayList.add(new xn0(2));
-        }
-        xn0 xn0Var2 = new xn0(3);
-        xn0Var2.b = 1;
-        arrayList.add(xn0Var2);
-        xn0 xn0Var3 = new xn0(3);
-        xn0Var3.b = 2;
-        arrayList.add(xn0Var3);
-        xn0 xn0Var4 = new xn0(3);
-        xn0Var4.b = 3;
-        arrayList.add(xn0Var4);
-        xn0 xn0Var5 = new xn0(3);
-        xn0Var5.b = 4;
-        arrayList.add(xn0Var5);
     }
 }

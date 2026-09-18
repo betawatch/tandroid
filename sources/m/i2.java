@@ -8,11 +8,11 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import androidx.appcompat.view.menu.ListMenuItemView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class i2 extends r1 {
     public e2 E;
-    public l.m F;
+    public l.n F;
     public final int x;
     public final int y;
 
@@ -29,7 +29,7 @@ public final class i2 extends r1 {
 
     @Override // m.r1, android.view.View
     public final boolean onHoverEvent(MotionEvent motionEvent) {
-        l.h hVar;
+        l.i iVar;
         int i10;
         int pointToPosition;
         int i11;
@@ -38,21 +38,21 @@ public final class i2 extends r1 {
             if (adapter instanceof HeaderViewListAdapter) {
                 HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
                 i10 = headerViewListAdapter.getHeadersCount();
-                hVar = (l.h) headerViewListAdapter.getWrappedAdapter();
+                iVar = (l.i) headerViewListAdapter.getWrappedAdapter();
             } else {
-                hVar = (l.h) adapter;
+                iVar = (l.i) adapter;
                 i10 = 0;
             }
-            l.m item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i11 = pointToPosition - i10) < 0 || i11 >= hVar.getCount()) ? null : hVar.getItem(i11);
-            l.m mVar = this.F;
-            if (mVar != item) {
-                l.k kVar = hVar.a;
-                if (mVar != null) {
-                    this.E.s(kVar, mVar);
+            l.n item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i11 = pointToPosition - i10) < 0 || i11 >= iVar.getCount()) ? null : iVar.getItem(i11);
+            l.n nVar = this.F;
+            if (nVar != item) {
+                l.l lVar = iVar.a;
+                if (nVar != null) {
+                    this.E.p(lVar, nVar);
                 }
                 this.F = item;
                 if (item != null) {
-                    this.E.G(kVar, item);
+                    this.E.v(lVar, item);
                 }
             }
         }
@@ -73,7 +73,7 @@ public final class i2 extends r1 {
         }
         setSelection(-1);
         ListAdapter adapter = getAdapter();
-        (adapter instanceof HeaderViewListAdapter ? (l.h) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (l.h) adapter).a.c(false);
+        (adapter instanceof HeaderViewListAdapter ? (l.i) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (l.i) adapter).a.c(false);
         return true;
     }
 

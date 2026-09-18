@@ -1,13 +1,30 @@
 package w7;
 
+import android.os.Build;
 import android.util.Log;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class g6 {
-    public static void a(String str) {
-        if (Log.isLoggable("FirebaseAppIndex", 3) ? true : Log.isLoggable("FirebaseAppIndex", 3)) {
-            Log.d("FirebaseAppIndex", str);
+    public static void a(Object obj, String str, String str2) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, String.format(str2, obj));
         }
+    }
+
+    public static void b(String str, String str2, Exception exc) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 6)) {
+            Log.e(c10, str2, exc);
+        }
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

@@ -22,12 +22,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.wx;
-import org.telegram.ui.i71;
+import org.telegram.ui.Components.xx;
+import org.telegram.ui.g71;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class d2 extends s4.h0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -95,7 +95,7 @@ public final class d2 extends s4.h0 {
         }
         c2Var.n(true);
         AndroidUtilities.cancelRunOnUIThread(a0Var);
-        i10 = ((org.telegram.ui.ActionBar.g3) t2Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.f3) t2Var).currentAccount;
         MediaDataController mediaDataController = MediaDataController.getInstance(i10);
         this.x = 0;
         ArrayList arrayList3 = this.s;
@@ -163,19 +163,19 @@ public final class d2 extends s4.h0 {
             }
             c2 c2Var2 = c2Var;
             t2 t2Var2 = t2Var;
-            wx wxVar = new wx();
-            wxVar.c = tL_messages_stickerSet3.documents;
-            wxVar.b = tL_messages_stickerSet3.set;
-            wxVar.f = true;
-            wxVar.g = false;
-            wxVar.h = true;
-            wxVar.e = true;
+            xx xxVar = new xx();
+            xxVar.c = tL_messages_stickerSet3.documents;
+            xxVar.b = tL_messages_stickerSet3.set;
+            xxVar.f = true;
+            xxVar.g = false;
+            xxVar.h = true;
+            xxVar.e = true;
             if (tL_messages_stickerSet3 == this.F) {
-                wxVar.j = R.drawable.emoji_tabs_faves;
+                xxVar.j = R.drawable.emoji_tabs_faves;
             } else if (tL_messages_stickerSet3 == this.G) {
-                wxVar.j = R.drawable.msg_emoji_recent;
+                xxVar.j = R.drawable.msg_emoji_recent;
             }
-            arrayList6.add(wxVar);
+            arrayList6.add(xxVar);
             arrayList5.add(tL_messages_stickerSet3);
             i17++;
             t2Var = t2Var2;
@@ -192,7 +192,7 @@ public final class d2 extends s4.h0 {
                 while (i19 < featuredEmojiSets.size()) {
                     TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        i15 = ((org.telegram.ui.ActionBar.g3) t2Var3).currentAccount;
+                        i15 = ((org.telegram.ui.ActionBar.f3) t2Var3).currentAccount;
                         tL_messages_stickerSet = MediaDataController.getInstance(i15).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
                         if (tL_messages_stickerSet != null) {
                             e2Var2 = e2Var4;
@@ -202,7 +202,7 @@ public final class d2 extends s4.h0 {
                                 int i20 = 0;
                                 while (true) {
                                     if (i20 < arrayList6.size()) {
-                                        TLRPC.StickerSet stickerSet2 = ((wx) arrayList6.get(i20)).b;
+                                        TLRPC.StickerSet stickerSet2 = ((xx) arrayList6.get(i20)).b;
                                         if (stickerSet2 != null) {
                                             i14 = i20;
                                             if (stickerSet2.id == tL_messages_stickerSet.set.id) {
@@ -224,14 +224,14 @@ public final class d2 extends s4.h0 {
                                         for (int i21 = 0; i21 < tL_messages_stickerSet.documents.size(); i21++) {
                                             hashMap2.put(Long.valueOf(tL_messages_stickerSet.documents.get(i21).id), tL_messages_stickerSet);
                                         }
-                                        wx wxVar2 = new wx();
-                                        wxVar2.c = tL_messages_stickerSet.documents;
-                                        wxVar2.b = tL_messages_stickerSet.set;
-                                        wxVar2.f = false;
-                                        wxVar2.g = true;
-                                        wxVar2.h = true;
-                                        wxVar2.e = true;
-                                        arrayList6.add(wxVar2);
+                                        xx xxVar2 = new xx();
+                                        xxVar2.c = tL_messages_stickerSet.documents;
+                                        xxVar2.b = tL_messages_stickerSet.set;
+                                        xxVar2.f = false;
+                                        xxVar2.g = true;
+                                        xxVar2.h = true;
+                                        xxVar2.e = true;
+                                        arrayList6.add(xxVar2);
                                     }
                                 }
                             }
@@ -437,7 +437,7 @@ public final class d2 extends s4.h0 {
                 int i13 = this.K;
                 if (b2Var.b != i13) {
                     b2Var.b = i13;
-                    i71.D(UserConfig.selectedAccount, b2Var.a);
+                    g71.D(UserConfig.selectedAccount, b2Var.a);
                     return;
                 }
                 return;
@@ -488,9 +488,9 @@ public final class d2 extends s4.h0 {
         if (o1Var.f == longValue) {
             return;
         }
-        org.telegram.ui.Components.o5 o5Var = o1Var.c;
-        if (o5Var != null) {
-            o5Var.o(o1Var);
+        org.telegram.ui.Components.q5 q5Var = o1Var.c;
+        if (q5Var != null) {
+            q5Var.o(o1Var);
         }
         if (longValue == 0) {
             o1Var.a = false;
@@ -500,7 +500,7 @@ public final class d2 extends s4.h0 {
         }
         o1Var.a = true;
         o1Var.f = longValue;
-        org.telegram.ui.Components.o5 n10 = org.telegram.ui.Components.o5.n(o1Var.b, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
+        org.telegram.ui.Components.q5 n10 = org.telegram.ui.Components.q5.n(o1Var.b, longValue, null, LiteMode.isEnabled(z10 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
         o1Var.c = n10;
         if (o1Var.s) {
             n10.a(o1Var);
@@ -509,7 +509,7 @@ public final class d2 extends s4.h0 {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         View o8Var;
         e2 e2Var = this.N;
         t2 t2Var = e2Var.s;
@@ -517,21 +517,21 @@ public final class d2 extends s4.h0 {
             o8Var = new View(e2Var.getContext());
         } else if (i10 == 1) {
             Context context = e2Var.getContext();
-            f6Var = ((org.telegram.ui.ActionBar.g3) t2Var).resourcesProvider;
-            o8Var = new org.telegram.ui.Cells.o8(context, true, false, f6Var, false);
+            e6Var = ((org.telegram.ui.ActionBar.f3) t2Var).resourcesProvider;
+            o8Var = new org.telegram.ui.Cells.o8(context, true, false, e6Var, false);
         } else if (i10 == 3) {
             Context context2 = e2Var.getContext();
             boolean z10 = e2Var.a == 0;
             b2 b2Var = new b2(context2);
             b2Var.b = -1;
-            org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context2);
-            b2Var.a = u9Var;
-            b2Var.addView(u9Var, w7.x5.e(36, 36, 17));
+            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context2);
+            b2Var.a = w9Var;
+            b2Var.addView(w9Var, w7.y5.e(36, 36, 17));
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
-            b2Var.addView(textView, w7.x5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
+            b2Var.addView(textView, w7.y5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             o8Var = b2Var;
         } else if (i10 == 4) {
             r2 r2Var = new r2(t2Var, e2Var.getContext());
@@ -540,6 +540,6 @@ public final class d2 extends s4.h0 {
         } else {
             o8Var = new o1(e2Var.getContext(), e2Var.b);
         }
-        return new wk0(o8Var);
+        return new gl0(o8Var);
     }
 }

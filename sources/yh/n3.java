@@ -1,45 +1,156 @@
 package yh;
 
+import android.content.Context;
+import android.graphics.Camera;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class n3 extends Drawable {
-    public final float a;
-    public final Paint b;
+public final class n3 extends View {
+    public float E;
+    public final Camera F;
+    public final l20 G;
+    public final RectF H;
+    public i3 a;
+    public i3 b;
+    public i3 c;
+    public float d;
+    public float e;
+    public float f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public h3 s;
+    public h3 v;
+    public h3 w;
+    public float x;
+    public float y;
 
-    public n3(float f7, int i10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = f7;
-        paint.setColor(i10);
+    public n3(Context context) {
+        super(context);
+        this.F = new Camera();
+        this.G = new l20();
+        this.H = new RectF();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        Paint paint = this.b;
-        float f7 = this.a;
-        canvas.drawRoundRect(rectF, f7, f7, paint);
-        AndroidUtilities.drawStroke(canvas, rectF, f7);
+    public final void a(Canvas canvas, h3 h3Var, float f7, float f10, float f11, int[] iArr, int[] iArr2, int[] iArr3) {
+        if (h3Var != null) {
+            Matrix matrix = h3Var.d;
+            Paint paint = h3Var.c;
+            if (paint == null) {
+                return;
+            }
+            float f12 = (f7 - 0.5f) / 1.5f;
+            float clamp01 = Utilities.clamp01(1.0f - Math.abs(f12));
+            float max = Math.max(0.8f * f10, AndroidUtilities.dp(180.0f));
+            float f13 = (f10 / 2.0f) - ((f12 * max) * 1.8f);
+            float min = Math.min(AndroidUtilities.dp(176.0f), f11) / 2.0f;
+            float f14 = f13 - max;
+            float f15 = f13 + max;
+            canvas.saveLayerAlpha(f14, 0.0f, f15, f11, 255, 31);
+            matrix.reset();
+            matrix.postTranslate(f13, min);
+            h3Var.e.setLocalMatrix(matrix);
+            paint.setAlpha((int) (clamp01 * 255.0f));
+            canvas.drawRect(f14, 0.0f, f15, f11, paint);
+            canvas.save();
+            float dp = AndroidUtilities.dp(90.0f);
+            RectF rectF = this.H;
+            rectF.set(f14, 0.0f, f14 + dp, f11);
+            l20 l20Var = this.G;
+            l20Var.b(canvas, rectF, 0, 1.0f);
+            rectF.set(f15 - dp, 0.0f, f15, f11);
+            l20Var.b(canvas, rectF, 2, 1.0f);
+            canvas.restore();
+            canvas.restore();
+            for (int i10 = 0; i10 < iArr.length; i10++) {
+                float width = (getWidth() / (iArr.length - 1)) * i10;
+                iArr[i10] = org.telegram.ui.ActionBar.j6.v(iArr[i10], org.telegram.ui.ActionBar.j6.l1(clamp01 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.clamp01((width - f14) / max), Utilities.clamp01(1.0f - ((width - (f15 - max)) / max)))), h3Var.g));
+            }
+            for (int i11 = 0; i11 < iArr2.length; i11++) {
+                float width2 = (getWidth() / (iArr2.length - 1)) * i11;
+                iArr2[i11] = org.telegram.ui.ActionBar.j6.v(iArr2[i11], org.telegram.ui.ActionBar.j6.l1(clamp01 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.clamp01((width2 - f14) / max), Utilities.clamp01(1.0f - ((width2 - (f15 - max)) / max)))), h3Var.f));
+            }
+            for (int i12 = 0; i12 < iArr3.length; i12++) {
+                float width3 = (getWidth() / (iArr2.length - 1)) * i12;
+                iArr3[i12] = org.telegram.ui.ActionBar.j6.v(iArr3[i12], org.telegram.ui.ActionBar.j6.l1(clamp01 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.clamp01((width3 - f14) / max), Utilities.clamp01(1.0f - ((width3 - (f15 - max)) / max)))), h3Var.h));
+            }
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void b(Canvas canvas, i3 i3Var, float f7, boolean z10) {
+        if (i3Var == null) {
+            return;
+        }
+        ImageReceiver imageReceiver = i3Var.d;
+        float f10 = f7;
+        if (z10) {
+            f10 = Math.max(0.5f, f10);
+        }
+        float imageX = imageReceiver.getImageX();
+        float imageY = imageReceiver.getImageY();
+        float imageWidth = imageReceiver.getImageWidth();
+        float imageHeight = imageReceiver.getImageHeight();
+        float alpha = imageReceiver.getAlpha();
+        float f11 = (f10 - 0.5f) / 1.5f;
+        float clamp01 = Utilities.clamp01(1.0f - Math.abs(f11));
+        float width = (getWidth() / 2.0f) - (AndroidUtilities.dp(220.0f) * f11);
+        float dp = AndroidUtilities.dp(80.0f);
+        float lerp = AndroidUtilities.lerp(0.85f, 1.0f, clamp01);
+        float dp2 = AndroidUtilities.dp(160.0f);
+        canvas.save();
+        float f12 = ((dp2 / 2.0f) * f11) + width;
+        canvas.translate(f12, dp);
+        Camera camera = this.F;
+        camera.save();
+        camera.rotateY(f11 * (-30.0f));
+        camera.applyToCanvas(canvas);
+        camera.restore();
+        canvas.translate(-f12, -dp);
+        float f13 = dp2 * lerp;
+        float f14 = f13 / 2.0f;
+        imageReceiver.setImageCoords(width - f14, dp - f14, f13, f13);
+        imageReceiver.setAlpha(clamp01);
+        imageReceiver.draw(canvas);
+        imageReceiver.setImageCoords(imageX, imageY, imageWidth, imageHeight);
+        imageReceiver.setAlpha(alpha);
+        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void c() {
+        boolean z10 = (this.a == null && this.b == null && this.c == null && this.s == null && this.v == null && this.w == null) ? false : true;
+        this.c = null;
+        this.b = null;
+        this.a = null;
+        this.f = 0.0f;
+        this.e = 0.0f;
+        this.d = 0.0f;
+        this.r = false;
+        this.n = false;
+        this.h = false;
+        this.w = null;
+        this.v = null;
+        this.s = null;
+        this.E = 0.0f;
+        this.y = 0.0f;
+        this.x = 0.0f;
+        if (z10) {
+            invalidate();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        b(canvas, this.a, this.d, this.h);
+        b(canvas, this.b, this.e, this.n);
+        b(canvas, this.c, this.f, this.r);
     }
 }

@@ -1,8 +1,8 @@
 package ii;
 
-import org.telegram.ui.dj0;
+import org.telegram.ui.cj0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class j1 implements Runnable {
             case 5:
                 d2 d2Var4 = this.b;
                 d2Var4.s0(2147483646, 0, true);
-                dj0 dj0Var = d2Var4.O0;
-                if (dj0Var != null) {
-                    dj0Var.h(false);
+                cj0 cj0Var = d2Var4.O0;
+                if (cj0Var != null) {
+                    cj0Var.h(false);
                     d2Var4.O0 = null;
                     break;
                 }
@@ -56,9 +56,9 @@ public final /* synthetic */ class j1 implements Runnable {
             default:
                 d2 d2Var5 = this.b;
                 d2Var5.s0(0, 0, false);
-                dj0 dj0Var2 = d2Var5.O0;
-                if (dj0Var2 != null) {
-                    dj0Var2.h(true);
+                cj0 cj0Var2 = d2Var5.O0;
+                if (cj0Var2 != null) {
+                    cj0Var2.h(true);
                     d2Var5.O0 = null;
                     break;
                 }

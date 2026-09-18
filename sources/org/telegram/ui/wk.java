@@ -1,38 +1,20 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class wk extends rv0 {
-    public wk(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class wk extends gz {
+    public final /* synthetic */ zn N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wk(zn znVar, zn znVar2, FrameLayout frameLayout, tj tjVar, int i10, long j3, long j10) {
+        super(znVar2, frameLayout, tjVar, i10, j3, j10);
+        this.N = znVar;
     }
 
-    @Override // org.telegram.ui.rv0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        if (f7 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.t1) {
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-                int max = (int) Math.max(f12, f11);
-                int min = (int) Math.min(f13, t1Var.getMeasuredHeight() + f11);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(f10, max, t1Var.getMeasuredWidth() + f10, min);
-                canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-                canvas.translate(f10, f11 + t1Var.getPaddingTop());
-                t1Var.Ed = true;
-                t1Var.Y1(canvas);
-                if (t1Var.f4() && t1Var.getCurrentMessagesGroup() == null) {
-                    t1Var.m2(1.0f, canvas, false);
-                }
-                t1Var.Ed = false;
-                canvas.restore();
-            }
-        }
+    @Override // org.telegram.ui.gz
+    public final void i() {
+        this.N.uc();
     }
 }

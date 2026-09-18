@@ -5,16 +5,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.gb0;
+import org.telegram.ui.Components.ec0;
 import org.telegram.ui.Components.pb0;
-import org.telegram.ui.Components.vb0;
-import org.telegram.ui.bo;
-import org.telegram.ui.rl;
-import org.telegram.ui.rn;
+import org.telegram.ui.Components.yb0;
+import org.telegram.ui.ol;
+import org.telegram.ui.pn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class s3 extends w7.h0 {
+public final class s3 extends w7.i0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -23,7 +23,7 @@ public final class s3 extends w7.h0 {
         this.b = obj;
     }
 
-    @Override // w7.h0
+    @Override // w7.i0
     public final void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -35,55 +35,55 @@ public final class s3 extends w7.h0 {
                 jcVar.P();
                 break;
             case 1:
-                org.telegram.ui.ActionBar.g3 g3Var = ((org.telegram.ui.h4) this.b).I;
-                if (g3Var != null) {
-                    g3Var.setDisableScroll(z10);
+                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.h4) this.b).I;
+                if (f3Var != null) {
+                    f3Var.setDisableScroll(z10);
                     break;
                 }
                 break;
             case 2:
-                bo boVar = (bo) this.b;
-                boVar.n9 = !z10;
+                zn znVar = (zn) this.b;
+                znVar.n9 = !z10;
                 if (z10) {
-                    if (boVar.d9 != null) {
-                        bo.V1(boVar, 0.0f);
-                        boVar.d9 = null;
+                    if (znVar.d9 != null) {
+                        zn.V1(znVar, 0.0f);
+                        znVar.d9 = null;
                     }
-                    boVar.e9 = false;
-                    boVar.f9 = false;
-                    rl rlVar = boVar.h9;
-                    if (rlVar != null) {
-                        AndroidUtilities.cancelRunOnUIThread(rlVar.H);
-                        rlVar.a();
+                    znVar.e9 = false;
+                    znVar.f9 = false;
+                    ol olVar = znVar.h9;
+                    if (olVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(olVar.H);
+                        olVar.a();
                     }
                 }
-                boVar.vc();
+                znVar.vc();
                 break;
             default:
-                pb0 pb0Var = (pb0) this.b;
-                gb0 gb0Var = pb0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = pb0Var.s;
-                vb0 vb0Var = pb0Var.c0;
-                if (vb0Var.s) {
+                yb0 yb0Var = (yb0) this.b;
+                pb0 pb0Var = yb0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = yb0Var.s;
+                ec0 ec0Var = yb0Var.c0;
+                if (ec0Var.s) {
                     if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z10) {
-                        if (gb0Var.v - gb0Var.u <= MessagesController.getInstance(vb0Var.w).quoteLengthMax) {
-                            org.telegram.ui.Cells.y9 y9Var = gb0Var.W;
-                            MessageObject c10 = pb0Var.c(y9Var != null ? ((org.telegram.ui.Cells.t1) y9Var).getMessageObject() : null);
-                            MessagePreviewParams messagePreviewParams = vb0Var.d;
+                        if (pb0Var.v - pb0Var.u <= MessagesController.getInstance(ec0Var.w).quoteLengthMax) {
+                            org.telegram.ui.Cells.y9 y9Var = pb0Var.W;
+                            MessageObject c10 = yb0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
+                            MessagePreviewParams messagePreviewParams = ec0Var.d;
                             if (messagePreviewParams.quote == null) {
-                                int i10 = gb0Var.u;
+                                int i10 = pb0Var.u;
                                 messagePreviewParams.quoteStart = i10;
-                                int i11 = gb0Var.v;
+                                int i11 = pb0Var.v;
                                 messagePreviewParams.quoteEnd = i11;
-                                messagePreviewParams.quote = rn.b(i10, i11, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(pb0Var.I);
+                                messagePreviewParams.quote = pn.b(i10, i11, c10);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(yb0Var.I);
                                 break;
                             }
                         } else {
-                            pb0Var.f();
+                            yb0Var.f();
                             break;
                         }
                     }
@@ -92,22 +92,22 @@ public final class s3 extends w7.h0 {
         }
     }
 
-    @Override // w7.h0
+    @Override // w7.i0
     public void b() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         switch (this.a) {
             case 2:
-                bo boVar = (bo) this.b;
-                kVar = ((org.telegram.ui.ActionBar.o2) boVar).actionBar;
+                zn znVar = (zn) this.b;
+                kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
                 if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.o2) boVar).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
                     if (kVar2.s()) {
-                        boVar.z7(false);
+                        znVar.z7(false);
                     }
                 }
-                boVar.Q7();
-                boVar.y3.j(58, 0L, null);
+                znVar.Q7();
+                znVar.y3.j(58, 0L, null);
                 break;
         }
     }

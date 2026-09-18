@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import v7.z6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class d extends FrameLayout {
     public boolean a;
@@ -26,7 +26,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (this.a && (view instanceof d2)) {
+        if (this.a && (view instanceof a2)) {
             return true;
         }
         return super.drawChild(canvas, view, j3);
@@ -34,7 +34,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        if (!(view instanceof x2)) {
+        if (!(view instanceof u2)) {
             super.measureChildWithMargins(view, i10, i11, i12, i13);
             return;
         }

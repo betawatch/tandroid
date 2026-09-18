@@ -3,7 +3,7 @@ package ce;
 import org.telegram.tgnet.TLObject;
 import zd.f1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m extends kd.c {
     public n a;
@@ -25,7 +25,7 @@ public final class m extends kd.c {
     public final Object invokeSuspend(Object obj) {
         this.f = obj;
         this.n |= TLObject.FLAG_31;
-        this.h.H(null, this);
+        this.h.l(null, this);
         return jd.a.a;
     }
 }

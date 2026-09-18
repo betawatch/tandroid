@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class j0 extends com.google.android.gms.common.api.m implements v0 {
     public final a0.f E;
@@ -86,7 +86,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     throw th2;
                 }
             }
-            if (sVar.a.v0()) {
+            if (sVar.a.s0()) {
                 com.google.android.gms.internal.cast.c0 c0Var = sVar.n;
                 c0Var.sendMessage(c0Var.obtainMessage(1, kVar));
             }
@@ -381,7 +381,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void p(int i10) {
+    public final void q(int i10) {
         if (i10 == 1) {
             if (!this.r) {
                 this.r = true;
@@ -500,7 +500,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
                     Object obj = arrayList.get(i11);
                     i11++;
                     com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
-                    if (!sVar.e || !sVar.a.v0() || sVar.f.get() != i10) {
+                    if (!sVar.e || !sVar.a.s0() || sVar.f.get() != i10) {
                         break;
                     } else if (!sVar.c.contains(kVar)) {
                         kVar.onConnected(bundle);

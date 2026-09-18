@@ -13,9 +13,9 @@ import java.util.HashMap;
 import n6.l;
 import o6.a;
 import org.telegram.messenger.MediaDataController;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
     public static final Parcelable.Creator<DataHolder> CREATOR = new j(20);
@@ -119,15 +119,15 @@ public final class DataHolder extends a implements Closeable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.m(parcel, 1, this.b);
-        e0.o(parcel, 2, this.d, i10);
-        e0.s(parcel, 3, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.m(parcel, 1, this.b);
+        f0.o(parcel, 2, this.d, i10);
+        f0.s(parcel, 3, 4);
         parcel.writeInt(this.e);
-        e0.b(parcel, 4, this.f);
-        e0.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
+        f0.b(parcel, 4, this.f);
+        f0.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
         parcel.writeInt(this.a);
-        e0.r(parcel, q6);
+        f0.r(parcel, q6);
         if ((i10 & 1) != 0) {
             close();
         }

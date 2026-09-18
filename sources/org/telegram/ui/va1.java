@@ -1,20 +1,8 @@
 package org.telegram.ui;
 
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stats;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class va1 {
-    public String A;
-    public boolean B;
-    public boolean C;
-    public String D;
-    public String E;
-    public String F;
-    public boolean G;
-    public boolean H;
     public String a;
     public String b;
     public String c;
@@ -30,54 +18,5 @@ public final class va1 {
     public String m;
     public String n;
     public String o;
-    public String p;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public String t;
-    public String u;
-    public String v;
-    public boolean w;
-    public boolean x;
-    public String y;
-    public String z;
-
-    public static com.google.firebase.messaging.t a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
-        String str;
-        double d = tL_statsAbsValueAndPrev.current;
-        double d10 = tL_statsAbsValueAndPrev.previous;
-        int i10 = (int) (d - d10);
-        float abs = d10 == 0.0d ? 0.0f : Math.abs((i10 / ((float) d10)) * 100.0f);
-        String formatWholeNumber = AndroidUtilities.formatWholeNumber((int) tL_statsAbsValueAndPrev.current, 0);
-        boolean z10 = true;
-        str = "";
-        if (i10 != 0 && abs != 0.0f) {
-            int i11 = (int) abs;
-            if (abs == i11) {
-                Locale locale = Locale.ENGLISH;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(i10 > 0 ? "+" : "");
-                sb2.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = sb2.toString() + " (" + i11 + "%)";
-            } else {
-                Locale locale2 = Locale.ENGLISH;
-                StringBuilder sb3 = new StringBuilder();
-                sb3.append(i10 > 0 ? "+" : "");
-                sb3.append(AndroidUtilities.formatWholeNumber(i10, 0));
-                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
-            }
-        }
-        boolean z11 = i10 >= 0;
-        if (i10 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
-            z10 = false;
-        }
-        Boolean valueOf = Boolean.valueOf(z11);
-        Boolean valueOf2 = Boolean.valueOf(z10);
-        com.google.firebase.messaging.t tVar = new com.google.firebase.messaging.t(8, false);
-        tVar.b = formatWholeNumber;
-        tVar.e = str;
-        tVar.c = valueOf;
-        tVar.d = valueOf2;
-        return tVar;
-    }
+    public boolean p;
 }

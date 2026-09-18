@@ -1,39 +1,11 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kq implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public interface kq {
+    void a(TLRPC.User user);
 
-    public /* synthetic */ kq(int i10, View view) {
-        this.a = i10;
-        this.b = view;
-    }
-
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                DatePicker datePicker = (DatePicker) this.b;
-                int childCount = datePicker.getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = datePicker.getChildAt(i10);
-                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                    layoutParams.width = -1;
-                    childAt.setLayoutParams(layoutParams);
-                }
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new lh(1, (EditTextBoldCursor) this.b));
-                break;
-        }
-    }
+    void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str);
 }

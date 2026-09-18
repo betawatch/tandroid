@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class ip implements ResultCallback {
     public final /* synthetic */ ChatThemeController a;
@@ -22,10 +22,10 @@ public final class ip implements ResultCallback {
     public final void onComplete(Object obj) {
         int i10;
         ChatThemeController chatThemeController = this.a;
-        List<org.telegram.ui.ActionBar.e4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        List<org.telegram.ui.ActionBar.d4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
         mp mpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.g3) mpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new oh(16, this, emojiThemes));
+        i10 = ((org.telegram.ui.ActionBar.f3) mpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new zd(20, this, emojiThemes));
         mpVar.b0 = false;
     }
 

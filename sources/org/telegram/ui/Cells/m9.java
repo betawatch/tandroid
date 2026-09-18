@@ -10,11 +10,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LanguageDetector;
-import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.ef0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, ve0 {
+public final /* synthetic */ class m9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, ef0 {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
 
@@ -23,13 +23,13 @@ public final /* synthetic */ class m9 implements LanguageDetector.StringCallback
         this.b = obj2;
     }
 
-    @Override // org.telegram.ui.Components.ve0
-    public void k(int i10, int i11) {
-        u5 u5Var = (u5) this.a;
-        ve0 ve0Var = (ve0) this.b;
-        ai.q4 q4Var = u5Var.e;
-        TextView textView = u5Var.b;
-        ve0Var.k(i10, i11);
+    @Override // org.telegram.ui.Components.ef0
+    public void l(int i10, int i11) {
+        v5 v5Var = (v5) this.a;
+        ef0 ef0Var = (ef0) this.b;
+        ai.q4 q4Var = v5Var.e;
+        TextView textView = v5Var.b;
+        ef0Var.l(i10, i11);
         if (i11 > 0) {
             textView.setText("+" + i11);
         } else {
@@ -40,19 +40,19 @@ public final /* synthetic */ class m9 implements LanguageDetector.StringCallback
             AndroidUtilities.runOnUIThread(q4Var, 1000L);
             return;
         }
-        AnimatorSet animatorSet = u5Var.d;
+        AnimatorSet animatorSet = v5Var.d;
         if (animatorSet != null) {
             animatorSet.cancel();
         }
         textView.setTag(1);
         AnimatorSet animatorSet2 = new AnimatorSet();
-        u5Var.d = animatorSet2;
+        v5Var.d = animatorSet2;
         Property property = View.ALPHA;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 0.0f));
-        u5Var.d.setDuration(250L);
-        u5Var.d.setInterpolator(new DecelerateInterpolator());
-        u5Var.d.addListener(new org.telegram.ui.t4(u5Var, 10));
-        u5Var.d.start();
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 0.0f));
+        v5Var.d.setDuration(250L);
+        v5Var.d.setInterpolator(new DecelerateInterpolator());
+        v5Var.d.addListener(new org.telegram.ui.t4(v5Var, 10));
+        v5Var.d.start();
     }
 
     @Override // org.telegram.messenger.LanguageDetector.StringCallback

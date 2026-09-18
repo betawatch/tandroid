@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class e implements AutoCloseable {
     public final String[] a;
@@ -30,7 +30,7 @@ public final class e implements AutoCloseable {
                     this.a[min] = str2;
                 }
                 sb2.append(str2);
-                sb2.append(h.i(obj.getClass()) + " " + str);
+                sb2.append(g.i(obj.getClass()) + " " + str);
                 Log.v("CarApp.Bun", sb2.toString());
             }
         }

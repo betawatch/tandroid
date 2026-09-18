@@ -5,10 +5,10 @@ import android.view.View;
 import android.view.WindowInsets;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class z implements View.OnApplyWindowInsetsListener {
-    public l1 a = null;
+    public m1 a = null;
     public final /* synthetic */ View b;
     public final /* synthetic */ n c;
 
@@ -19,7 +19,7 @@ public final class z implements View.OnApplyWindowInsetsListener {
 
     @Override // android.view.View.OnApplyWindowInsetsListener
     public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        l1 h = l1.h(view, windowInsets);
+        m1 h = m1.h(view, windowInsets);
         int i10 = Build.VERSION.SDK_INT;
         n nVar = this.c;
         if (i10 < 30) {
@@ -29,7 +29,7 @@ public final class z implements View.OnApplyWindowInsetsListener {
             }
         }
         this.a = h;
-        l1 Q0 = nVar.Q0(view, h);
+        m1 Q0 = nVar.Q0(view, h);
         if (i10 >= 30) {
             return Q0.g();
         }

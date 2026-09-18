@@ -1,34 +1,31 @@
 package xh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.or0;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v1 implements le.d, Utilities.Callback2Return {
-    public final /* synthetic */ or0 a;
+public final /* synthetic */ class v1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o2 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ v1(or0 or0Var) {
-        this.a = or0Var;
+    public /* synthetic */ v1(o2 o2Var, int i10, int i11) {
+        this.a = i11;
+        this.b = o2Var;
+        this.c = i10;
     }
 
-    @Override // le.d
-    public void D(int i10, float f7, float f10, le.e eVar) {
-        this.a.l();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2Return
-    public Object run(Object obj, Object obj2) {
-        or0 or0Var = this.a;
-        or0Var.i();
-        if (((Integer) obj).intValue() != -1) {
-            return Boolean.FALSE;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.f.scrollBy(0, this.c);
+                break;
+            default:
+                j2 j2Var = this.b.f;
+                if (j2Var != null) {
+                    j2Var.setSpanCount(this.c);
+                    break;
+                }
+                break;
         }
-        or0Var.h(null, new s1(or0Var, 0));
-        return Boolean.TRUE;
-    }
-
-    @Override // le.d
-    public /* synthetic */ void C(float f7, int i10) {
     }
 }

@@ -17,25 +17,25 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n7.a1;
+import n7.z0;
 import org.json.JSONException;
 import org.json.JSONObject;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final a1 c;
+    public final z0 c;
     public final j d;
     public final n e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final r9.j i;
+    public final r9.i i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -44,10 +44,10 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.j jVar) {
+    public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        a1 a1Var = new a1(hVar);
+        z0 z0Var = new z0(hVar);
         if (u.b == null) {
             u.b = new u();
         }
@@ -55,7 +55,7 @@ public final class c implements d {
         if (j.d == null) {
             j.d = new j(uVar);
         }
-        j jVar2 = j.d;
+        j jVar = j.d;
         n nVar = new n(new q9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
@@ -63,12 +63,12 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = a1Var;
-        this.d = jVar2;
+        this.c = z0Var;
+        this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
         this.h = executorService;
-        this.i = jVar;
+        this.i = iVar;
     }
 
     public final void a(i iVar) {
@@ -97,7 +97,7 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                a1 e = a1.e(hVar.a);
+                z0 f7 = z0.f(hVar.a);
                 try {
                     E = this.c.E();
                     int i10 = E.b;
@@ -105,12 +105,12 @@ public final class c implements d {
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (e != null) {
-                        e.I();
+                    if (f7 != null) {
+                        f7.I();
                     }
                 } catch (Throwable th2) {
-                    if (e != null) {
-                        e.I();
+                    if (f7 != null) {
+                        f7.I();
                     }
                     throw th2;
                 }
@@ -238,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                a1 e = a1.e(hVar.a);
+                z0 f7 = z0.f(hVar.a);
                 try {
                     this.c.z(bVar);
-                    if (e != null) {
-                        e.I();
+                    if (f7 != null) {
+                        f7.I();
                     }
                 } catch (Throwable th2) {
-                    if (e != null) {
-                        e.I();
+                    if (f7 != null) {
+                        f7.I();
                     }
                     throw th2;
                 }

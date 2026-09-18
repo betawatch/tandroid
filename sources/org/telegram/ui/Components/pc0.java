@@ -1,20 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final class pc0 implements Runnable {
-    public boolean a;
-    public final /* synthetic */ uc0 b;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.Build;
+import java.lang.ref.WeakReference;
 
-    public pc0(uc0 uc0Var) {
-        this.b = uc0Var;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class pc0 {
+    public final Shader.TileMode a;
+    public final Matrix b = new Matrix();
+    public boolean c;
+    public BitmapShader d;
+    public WeakReference e;
+
+    public pc0(Shader.TileMode tileMode) {
+        this.a = tileMode;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10 = this.a;
-        uc0 uc0Var = this.b;
-        uc0Var.a(z10);
-        uc0Var.postDelayed(this, uc0Var.L);
+    public final void a(boolean z10) {
+        BitmapShader bitmapShader;
+        if (this.c != z10) {
+            this.c = z10;
+            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
+                return;
+            }
+            bitmapShader.setFilterMode(z10 ? 1 : 2);
+        }
+    }
+
+    public final boolean b(Bitmap bitmap) {
+        WeakReference weakReference = this.e;
+        if (weakReference != null && weakReference.get() == bitmap) {
+            return false;
+        }
+        this.e = new WeakReference(bitmap);
+        Shader.TileMode tileMode = this.a;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        this.d = bitmapShader;
+        bitmapShader.setLocalMatrix(this.b);
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d.setFilterMode(this.c ? 1 : 2);
+        }
+        return true;
     }
 }

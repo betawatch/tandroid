@@ -1,59 +1,36 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class nb0 {
-    public static final nb0 h;
-    public static final /* synthetic */ nb0[] n;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
+public final /* synthetic */ class nb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yb0 b;
 
-    static {
-        int i10 = R.drawable.icon_background_sa;
-        int i11 = R.mipmap.icon_foreground_sa;
-        nb0 nb0Var = new nb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
-        h = nb0Var;
-        n = new nb0[]{nb0Var, new nb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new nb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new nb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new nb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new nb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
+    public /* synthetic */ nb0(yb0 yb0Var, int i10) {
+        this.a = i10;
+        this.b = yb0Var;
     }
 
-    public nb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = z10;
-    }
-
-    public static nb0 valueOf(String str) {
-        return (nb0) Enum.valueOf(nb0.class, str);
-    }
-
-    public static nb0[] values() {
-        return (nb0[]) n.clone();
-    }
-
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yb0 yb0Var = this.b;
+                yb0Var.r.b.requestFocus();
+                AndroidUtilities.showKeyboard(yb0Var.r.b);
+                break;
+            case 1:
+                yb0 yb0Var2 = this.b;
+                yb0Var2.r.b.clearFocus();
+                AndroidUtilities.hideKeyboard(yb0Var2.r.b);
+                break;
+            default:
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
+                break;
         }
-        return this.f;
     }
 }

@@ -7,11 +7,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.ur;
-import org.telegram.ui.vw0;
+import org.telegram.ui.sr;
+import org.telegram.ui.tw0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,14 +31,14 @@ public final /* synthetic */ class b2 implements Runnable {
                 SendMessagesHelper.getInstance(this.c).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", this.b, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 1:
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(bo.Q9(this.c, this.b));
+                    U.presentFragment(zn.Q9(this.c, this.b));
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.o2 U2 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
                     long j3 = this.b;
                     if (j3 < 0) {
@@ -48,12 +48,12 @@ public final /* synthetic */ class b2 implements Runnable {
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", j10);
                             bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
-                            ur urVar = new ur(bundle);
-                            urVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
-                            U2.presentFragment(urVar);
+                            sr srVar = new sr(bundle);
+                            srVar.x0(MessagesController.getInstance(i10).getChatFull(j10));
+                            U2.presentFragment(srVar);
                             break;
                         } else {
-                            U2.presentFragment(new vw0(j10));
+                            U2.presentFragment(new tw0(j10));
                             break;
                         }
                     } else {

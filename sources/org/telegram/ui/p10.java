@@ -1,36 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class p10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ br b;
+public final class p10 {
+    public long a;
+    public int b;
 
-    public p10(br brVar) {
-        this.b = brVar;
+    public p10(int i10, long j3) {
+        this.a = j3;
+        this.b = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((z10) this.b.d).l0.unlock();
-                break;
-            default:
-                br brVar = this.b;
-                View view = brVar.b;
-                view.setAlpha(1.0f);
-                s4.o0.x0(view);
-                ((z10) brVar.d).b.removeView(view);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && p10.class == obj.getClass()) {
+            p10 p10Var = (p10) obj;
+            if (this.a == p10Var.a && this.b == p10Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public p10(br brVar, s4.o0 o0Var) {
-        this.b = brVar;
+    public final int hashCode() {
+        return this.b;
     }
 }

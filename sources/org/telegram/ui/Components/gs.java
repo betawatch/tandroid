@@ -8,16 +8,16 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class gs {
     public int a;
     public int b;
-    public h01 c;
+    public v01 c;
     public int d;
     public int e;
 
-    public static gs b(org.telegram.ui.Cells.r2 r2Var, MessagesController.DialogFilter dialogFilter) {
+    public static gs b(org.telegram.ui.Cells.s2 s2Var, MessagesController.DialogFilter dialogFilter) {
         gs gsVar = new gs();
         gsVar.a = dialogFilter.id;
         gsVar.b = dialogFilter.color;
@@ -26,15 +26,15 @@ public final class gs {
             str = "";
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        h01 h01Var = new h01(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        h01Var.s(r2Var);
-        gsVar.c = h01Var;
-        gsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, h01Var.a.getFontMetricsInt(), false), dialogFilter.entities, gsVar.c.a.getFontMetricsInt()));
+        v01 v01Var = new v01(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        v01Var.s(s2Var);
+        gsVar.c = v01Var;
+        gsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, v01Var.a.getFontMetricsInt(), false), dialogFilter.entities, gsVar.c.a.getFontMetricsInt()));
         gsVar.c.p(26);
         int dp = AndroidUtilities.dp(9.32f);
-        h01 h01Var2 = gsVar.c;
-        gsVar.e = dp + ((int) h01Var2.c);
-        h01Var2.j();
+        v01 v01Var2 = gsVar.c;
+        gsVar.e = dp + ((int) v01Var2.c);
+        v01Var2.j();
         int[] iArr = org.telegram.ui.ActionBar.j6.r8;
         gsVar.d = org.telegram.ui.ActionBar.j6.w0(null, iArr[dialogFilter.color % iArr.length], false);
         return gsVar;

@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class c implements b1 {
     public final b1 a;
@@ -19,13 +19,13 @@ public final class c implements b1 {
 
     @Override // u2.b1
     public final boolean e() {
-        return !this.c.b() && this.a.e();
+        return !this.c.a() && this.a.e();
     }
 
     @Override // u2.b1
     public final int f(n4.y yVar, h2.h hVar, int i10) {
         d dVar = this.c;
-        if (dVar.b()) {
+        if (dVar.a()) {
             return -3;
         }
         if (this.b) {
@@ -66,7 +66,7 @@ public final class c implements b1 {
 
     @Override // u2.b1
     public final int j(long j3) {
-        if (this.c.b()) {
+        if (this.c.a()) {
             return -3;
         }
         return this.a.j(j3);

@@ -26,11 +26,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public TL_iv.pageBlockChannel E;
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public final org.telegram.ui.Components.tq c;
     public final TextView d;
@@ -45,11 +45,11 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public AnimatorSet x;
     public final int y;
 
-    public c1(Context context, w70 w70Var, f4 f4Var, int i10) {
+    public c1(Context context, u70 u70Var, f4 f4Var, int i10) {
         super(context);
         this.r = AndroidUtilities.dp(18.0f);
         this.s = AndroidUtilities.dp(11.0f);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
         setWillNotDraw(false);
         this.w = new Paint();
@@ -57,17 +57,17 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
-        org.telegram.messenger.wl.k(R.string.ChannelJoin, textView, 19);
-        addView(textView, w7.x5.e(-2, 39, 53));
-        textView.setOnClickListener(new ai.f2(23, this, w70Var));
+        org.telegram.messenger.wh.k(R.string.ChannelJoin, textView, 19);
+        addView(textView, w7.y5.e(-2, 39, 53));
+        textView.setOnClickListener(new ai.f2(23, this, u70Var));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.list_check);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.x5.e(39, 39, 53));
+        addView(imageView, w7.y5.e(39, 39, 53));
         org.telegram.ui.Components.tq tqVar = new org.telegram.ui.Components.tq(context, 0);
         this.c = tqVar;
-        addView(tqVar, w7.x5.e(39, 39, 53));
+        addView(tqVar, w7.y5.e(39, 39, 53));
     }
 
     public final void a(int i10, boolean z10) {
@@ -194,7 +194,7 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             String str = pageblockchannel.channel.title;
             int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
             TL_iv.pageBlockChannel pageblockchannel2 = this.E;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.kw0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.vw0.a;
             this.h = h4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
             int i12 = this.r;
             f4 f4Var = this.b;
@@ -225,10 +225,10 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         ImageView imageView = this.e;
         Paint paint = this.w;
         TextView textView = this.d;
-        w70 w70Var = this.a;
+        u70 u70Var = this.a;
         if (i10 == 0) {
             int i11 = org.telegram.ui.ActionBar.j6.M6;
-            h4 h4Var = (h4) w70Var;
+            h4 h4Var = (h4) u70Var;
             h4Var.getClass();
             int w02 = org.telegram.ui.ActionBar.j6.w0(null, i11, false);
             int red = Color.red(w02);
@@ -237,25 +237,25 @@ public final class c1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             h4Var.getClass();
             textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
             paint.setColor(Color.argb(34, red, green, blue));
-            imageView.setColorFilter(new PorterDuffColorFilter(w70Var.a(), PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(u70Var.a(), PorterDuff.Mode.MULTIPLY));
         } else {
             textView.setTextColor(-1);
             paint.setColor(2130706432);
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         }
-        TLRPC.Chat chat = MessagesController.getInstance(((h4) w70Var).X).getChat(Long.valueOf(pageblockchannel.channel.id));
+        TLRPC.Chat chat = MessagesController.getInstance(((h4) u70Var).X).getChat(Long.valueOf(pageblockchannel.channel.id));
         if (chat == null || chat.min) {
             TLRPC.Chat chat2 = pageblockchannel.channel;
-            if (!w70Var.r && ChatObject.isPublic(chat2)) {
-                w70Var.r = true;
-                int i12 = ((h4) w70Var).X;
+            if (!u70Var.r && ChatObject.isPublic(chat2)) {
+                u70Var.r = true;
+                int i12 = ((h4) u70Var).X;
                 TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                 tL_contacts_resolveUsername.username = chat2.username;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new ai.za(w70Var, this.b, i12, this, 2));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new ai.za(u70Var, this.b, i12, this, 2));
             }
             a(1, false);
         } else {
-            w70Var.n = chat;
+            u70Var.n = chat;
             if (!chat.left || chat.kicked) {
                 a(4, false);
             } else {

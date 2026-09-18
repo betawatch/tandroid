@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -36,7 +36,7 @@ public abstract class g extends Service {
 
     public final void a(Intent intent) {
         if (intent != null) {
-            d0.b(intent);
+            c0.b(intent);
         }
         synchronized (this.lock) {
             try {
@@ -75,7 +75,7 @@ public abstract class g extends Service {
                 Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
-                this.binder = new e0(new xa.c(this, 13));
+                this.binder = new d0(new xa.c(this, 13));
             }
         } catch (Throwable th2) {
             throw th2;

@@ -9,12 +9,12 @@ import e9.x0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import yh.a2;
+import yf.q;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final p c = new p(new a2(2), x0.b);
+    public static final p c = new p(new q(4), x0.b);
     public final i0 a;
     public final long[] b;
 
@@ -109,11 +109,6 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int A() {
-        return this.a.size();
-    }
-
-    @Override // z3.d
     public final int d(long j3) {
         int a2 = d0.a(this.b, j3, false);
         if (a2 < this.a.size()) {
@@ -129,12 +124,17 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final List l(long j3) {
+    public final List s(long j3) {
         int e = d0.e(this.b, j3, false);
         if (e != -1) {
             return (i0) this.a.get(e);
         }
         g0 g0Var = i0.b;
         return a1.e;
+    }
+
+    @Override // z3.d
+    public final int v() {
+        return this.a.size();
     }
 }

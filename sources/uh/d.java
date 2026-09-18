@@ -17,15 +17,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
-    public final t1 b;
+    public final u1 b;
     public final ImageReceiver c;
     public final long d;
     public b e;
@@ -45,7 +45,7 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver;
         String str;
         String str2;
-        f9 f9Var = new f9((f6) null);
+        h9 h9Var = new h9((e6) null);
         int i10 = UserConfig.selectedAccount;
         this.l = 1.0f;
         this.m = true;
@@ -54,22 +54,22 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver2 = new ImageReceiver(hVar.a);
         this.c = imageReceiver2;
         this.a = hVar;
-        t1 t1Var = hVar.y;
-        this.b = t1Var;
+        u1 u1Var = hVar.y;
+        this.b = u1Var;
         this.d = j3;
-        f9Var.p = 1.0f;
+        h9Var.p = 1.0f;
         if (DialogObject.isUserDialog(j3)) {
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-            f9Var.m(i10, user);
+            h9Var.m(i10, user);
             if (UserObject.isUserSelf(user)) {
                 str2 = LocaleController.getString(R.string.SavedMessages);
-                f9Var.g(1);
-                f9Var.p = 0.75f;
+                h9Var.g(1);
+                h9Var.p = 0.75f;
                 imageReceiver = imageReceiver2;
-                imageReceiver.setImage(null, null, null, null, f9Var, 0L, null, user, 0);
+                imageReceiver.setImage(null, null, null, null, h9Var, 0L, null, user, 0);
                 imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
                 imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-                Paint M2 = t1Var.M2("paintChatActionText");
+                Paint M2 = u1Var.M2("paintChatActionText");
                 if (str2 != null || M2 == null) {
                 }
                 int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(48);
@@ -79,18 +79,18 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
             }
             imageReceiver = imageReceiver2;
             str = user != null ? ContactsController.formatName(user.first_name, user.last_name) : "";
-            imageReceiver.setForUserOrChat(user, f9Var);
+            imageReceiver.setForUserOrChat(user, h9Var);
         } else {
             imageReceiver = imageReceiver2;
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
             str = chat != null ? chat.title : "";
-            f9Var.k(i10, chat);
-            imageReceiver.setForUserOrChat(chat, f9Var);
+            h9Var.k(i10, chat);
+            imageReceiver.setForUserOrChat(chat, h9Var);
         }
         str2 = str;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
         imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-        Paint M22 = t1Var.M2("paintChatActionText");
+        Paint M22 = u1Var.M2("paintChatActionText");
         if (str2 != null) {
         }
     }

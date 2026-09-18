@@ -1,35 +1,47 @@
 package r0;
 
-import android.view.animation.Interpolator;
+import android.view.ViewGroup;
+import android.view.WindowInsetsAnimation;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public abstract class u0 {
-    public final int a;
-    public float b;
-    public final Interpolator c;
-    public final long d;
+public final class u0 extends v0 {
+    public final WindowInsetsAnimation e;
 
-    public u0(int i10, long j3, Interpolator interpolator) {
-        this.a = i10;
-        this.c = interpolator;
-        this.d = j3;
+    public u0(WindowInsetsAnimation windowInsetsAnimation) {
+        super(0, 0L, null);
+        this.e = windowInsetsAnimation;
     }
 
-    public long a() {
-        return this.d;
+    public static i0.b e(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getUpperBound());
     }
 
-    public float b() {
-        Interpolator interpolator = this.c;
-        return interpolator != null ? interpolator.getInterpolation(this.b) : this.b;
+    public static i0.b f(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getLowerBound());
     }
 
-    public int c() {
-        return this.a;
+    public static void g(ViewGroup viewGroup, ph.e eVar) {
+        viewGroup.setWindowInsetsAnimationCallback(new t0(eVar));
     }
 
-    public void d(float f7) {
-        this.b = f7;
+    @Override // r0.v0
+    public final long a() {
+        return this.e.getDurationMillis();
+    }
+
+    @Override // r0.v0
+    public final float b() {
+        return this.e.getInterpolatedFraction();
+    }
+
+    @Override // r0.v0
+    public final int c() {
+        return this.e.getTypeMask();
+    }
+
+    @Override // r0.v0
+    public final void d(float f7) {
+        this.e.setFraction(f7);
     }
 }

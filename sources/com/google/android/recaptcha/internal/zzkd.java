@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import ud.b;
 import ud.e;
-import w7.t7;
+import w7.u7;
 import xd.a;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class zzkd implements zzjt {
     public static final zzkd zza = new zzkd();
@@ -174,7 +174,7 @@ public final class zzkd implements zzjt {
             int length4 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length4, bArr4.length);
-            e a2 = t7.a(0, length4);
+            e a2 = u7.a(0, length4);
             ArrayList arrayList15 = new ArrayList(i.d(a2));
             Iterator it = a2.iterator();
             while (true) {
@@ -190,7 +190,7 @@ public final class zzkd implements zzjt {
             int length5 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length5, sArr4.length);
-            e a10 = t7.a(0, length5);
+            e a10 = u7.a(0, length5);
             ArrayList arrayList16 = new ArrayList(i.d(a10));
             Iterator it2 = a10.iterator();
             while (true) {
@@ -206,7 +206,7 @@ public final class zzkd implements zzjt {
             int length6 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length6, iArr4.length);
-            e a11 = t7.a(0, length6);
+            e a11 = u7.a(0, length6);
             ArrayList arrayList17 = new ArrayList(i.d(a11));
             Iterator it3 = a11.iterator();
             while (true) {
@@ -222,7 +222,7 @@ public final class zzkd implements zzjt {
             int length7 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length7, jArr4.length);
-            e a12 = t7.a(0, length7);
+            e a12 = u7.a(0, length7);
             ArrayList arrayList18 = new ArrayList(i.d(a12));
             Iterator it4 = a12.iterator();
             while (true) {
@@ -238,7 +238,7 @@ public final class zzkd implements zzjt {
             int length8 = fArr3.length;
             float[] fArr4 = (float[]) obj2;
             zzjs.zza(this, length8, fArr4.length);
-            e a13 = t7.a(0, length8);
+            e a13 = u7.a(0, length8);
             ArrayList arrayList19 = new ArrayList(i.d(a13));
             Iterator it5 = a13.iterator();
             while (true) {
@@ -257,7 +257,7 @@ public final class zzkd implements zzjt {
             int length9 = dArr3.length;
             double[] dArr4 = (double[]) obj2;
             zzjs.zza(this, length9, dArr4.length);
-            e a14 = t7.a(0, length9);
+            e a14 = u7.a(0, length9);
             ArrayList arrayList20 = new ArrayList(i.d(a14));
             Iterator it6 = a14.iterator();
             while (true) {

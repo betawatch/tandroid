@@ -19,16 +19,16 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k5;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.u9;
-import w7.x5;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.ww0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class l extends vg.c {
     public final ImageView E;
@@ -36,7 +36,7 @@ public final class l extends vg.c {
     public TLRPC.User G;
     public TLRPC.Chat H;
     public TL_stories.TL_myBoost I;
-    public final lw0 J;
+    public final ww0 J;
     public final boolean[] r;
     public final np s;
     public final ImageView v;
@@ -44,24 +44,24 @@ public final class l extends vg.c {
     public final ImageView x;
     public boolean y;
 
-    public l(Context context, boolean z10, boolean z11, f6 f6Var, boolean z12) {
-        super(context, f6Var);
+    public l(Context context, boolean z10, boolean z11, e6 e6Var, boolean z12) {
+        super(context, e6Var);
         this.r = new boolean[1];
         this.F = true;
-        this.J = new lw0(this);
+        this.J = new ww0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
-            np npVar = new np(context, 21, f6Var);
+            np npVar = new np(context, 21, e6Var);
             this.s = npVar;
             npVar.b(j6.B5, j6.h5, j6.k7);
             npVar.setDrawUnchecked(false);
             npVar.setDrawBackgroundAsArc(3);
             boolean z13 = LocaleController.isRTL;
-            addView(npVar, x5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
+            addView(npVar, y5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
-            np npVar2 = new np(context, 21, f6Var);
+            np npVar2 = new np(context, 21, e6Var);
             this.s = npVar2;
             if (z12) {
                 npVar2.b(j6.i7, j6.j7, j6.C5);
@@ -72,7 +72,7 @@ public final class l extends vg.c {
             npVar2.setDrawBackgroundAsArc(10);
             addView(npVar2);
             npVar2.a(false, false);
-            npVar2.setLayoutParams(x5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+            npVar2.setLayoutParams(y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.s = null;
@@ -82,25 +82,25 @@ public final class l extends vg.c {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.ic_ab_other);
-        int v02 = j6.v0(j6.Ac, f6Var);
+        int v02 = j6.v0(j6.Ac, e6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        addView(imageView, x5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        addView(imageView, y5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.x = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_phone);
         int i10 = j6.Oh;
-        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), mode));
+        imageView2.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, e6Var), mode));
         boolean z14 = LocaleController.isRTL;
-        addView(imageView2, x5.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
+        addView(imageView2, y5.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
         this.E = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
-        imageView3.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), mode));
-        addView(imageView3, x5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
+        imageView3.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, e6Var), mode));
+        addView(imageView3, y5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -231,12 +231,12 @@ public final class l extends vg.c {
         this.v.setVisibility(8);
         this.H = chat;
         this.G = null;
-        f9 f9Var = this.b;
-        f9Var.q(chat);
+        h9 h9Var = this.b;
+        h9Var.q(chat);
         int dp = AndroidUtilities.dp(ChatObject.isForum(chat) ? 12.0f : 20.0f);
-        u9 u9Var = this.c;
-        u9Var.setRoundRadius(dp);
-        u9Var.e(chat, f9Var);
+        w9 w9Var = this.c;
+        w9Var.setRoundRadius(dp);
+        w9Var.e(chat, h9Var);
         String str = chat.title;
         a6 a6Var = this.d;
         a6Var.k(str);
@@ -286,28 +286,28 @@ public final class l extends vg.c {
         this.I = tL_myBoost;
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_myBoost.peer)));
         this.H = chat;
-        f9 f9Var = this.b;
-        f9Var.q(chat);
+        h9 h9Var = this.b;
+        h9Var.q(chat);
         int dp = AndroidUtilities.dp(20.0f);
-        u9 u9Var = this.c;
-        u9Var.setRoundRadius(dp);
-        u9Var.e(this.H, f9Var);
+        w9 w9Var = this.c;
+        w9Var.setRoundRadius(dp);
+        w9Var.e(this.H, h9Var);
         String str = this.H.title;
         a6 a6Var = this.d;
         a6Var.k(str);
         int v02 = j6.v0(j6.r5, this.a);
-        k5 k5Var = this.e;
-        k5Var.setTextColor(v02);
+        j5 j5Var = this.e;
+        j5Var.setTextColor(v02);
         setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
             a6Var.setAlpha(1.0f);
-            k5Var.setAlpha(1.0f);
+            j5Var.setAlpha(1.0f);
             i(1.0f, false);
         } else {
             setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, f((i10 * 1000) - System.currentTimeMillis())));
             a6Var.setAlpha(0.65f);
-            k5Var.setAlpha(0.65f);
+            j5Var.setAlpha(0.65f);
             i(0.3f, false);
         }
     }
@@ -326,12 +326,12 @@ public final class l extends vg.c {
         this.v.setVisibility(8);
         this.G = user;
         this.H = null;
-        f9 f9Var = this.b;
-        f9Var.r(user);
+        h9 h9Var = this.b;
+        h9Var.r(user);
         int dp = AndroidUtilities.dp(20.0f);
-        u9 u9Var = this.c;
-        u9Var.setRoundRadius(dp);
-        u9Var.e(user, f9Var);
+        w9 w9Var = this.c;
+        w9Var.setRoundRadius(dp);
+        w9Var.e(user, h9Var);
         String userName = UserObject.getUserName(user);
         a6 a6Var = this.d;
         a6Var.k(userName);
@@ -354,7 +354,7 @@ public final class l extends vg.c {
         }
         int w02 = j6.w0(null, j6.z9, false);
         boolean u10 = e2.u(user);
-        lw0 lw0Var = this.J;
-        a6Var.i(u10 ? lw0Var.a(user, null, w02, false) : lw0Var.a(null, null, w02, false));
+        ww0 ww0Var = this.J;
+        a6Var.i(u10 ? ww0Var.a(user, null, w02, false) : ww0Var.a(null, null, w02, false));
     }
 }

@@ -1,19 +1,44 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class f11 extends s4.s0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert a;
-
-    public f11(ThemeEditorView.EditorAlert editorAlert) {
-        this.a = editorAlert;
+public class f11 extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
+        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z10) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
+            }
+        }
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ThemeEditorView.EditorAlert.s(this.a);
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        if (!(view instanceof TextView)) {
+            throw new IllegalArgumentException();
+        }
+        super.addView(view, i10, layoutParams);
+    }
+
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
     }
 }

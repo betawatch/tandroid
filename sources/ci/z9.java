@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.widget.LinearLayout;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class z9 extends LinearLayout {
     public float a;
@@ -15,7 +15,7 @@ public final class z9 extends LinearLayout {
     public ValueAnimator c;
     public ValueAnimator d;
     public final Paint e;
-    public final org.telegram.ui.Components.c6 f;
+    public final org.telegram.ui.Components.e6 f;
     public final /* synthetic */ ba h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -23,7 +23,7 @@ public final class z9 extends LinearLayout {
         super(context);
         this.h = baVar;
         this.e = new Paint(1);
-        this.f = new org.telegram.ui.Components.c6(this);
+        this.f = new org.telegram.ui.Components.e6(this);
     }
 
     public static /* synthetic */ void a(z9 z9Var, ValueAnimator valueAnimator) {
@@ -56,12 +56,12 @@ public final class z9 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.f6 f6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         super.dispatchDraw(canvas);
         int i10 = org.telegram.ui.ActionBar.j6.a7;
         ba baVar = this.h;
-        f6Var = ((org.telegram.ui.ActionBar.g3) baVar.W).resourcesProvider;
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+        e6Var = ((org.telegram.ui.ActionBar.f3) baVar.W).resourcesProvider;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
         Paint paint = this.e;
         paint.setColor(v02);
         paint.setAlpha((int) (this.f.d(baVar.f.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));

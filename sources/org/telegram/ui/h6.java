@@ -1,30 +1,27 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.content.Context;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h6 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h6 extends org.telegram.ui.Components.fg0 {
+    public final /* synthetic */ z6 F0;
 
-    public /* synthetic */ h6(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h6(z6 z6Var, Context context) {
+        super(context);
+        this.F0 = z6Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.a) {
-            case 0:
-                ((a7) this.b).z0();
-                break;
-            default:
-                kVar = ((org.telegram.ui.ActionBar.o2) ((cl) this.b).d).actionBar;
-                kVar.invalidate();
-                break;
-        }
-        return true;
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        getViewTreeObserver().addOnPreDrawListener(this.F0.k0);
+    }
+
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        getViewTreeObserver().removeOnPreDrawListener(this.F0.k0);
+        super.onDetachedFromWindow();
     }
 }

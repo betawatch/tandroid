@@ -2,27 +2,25 @@ package org.telegram.messenger.video;
 
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ VideoPlayerHolderBase.2 b;
 
-    public /* synthetic */ p(Object obj, long j3, int i10) {
+    public /* synthetic */ p(VideoPlayerHolderBase.2 r12, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = j3;
+        this.b = r12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((VideoPlayerHolderBase.2) this.c).lambda$onError$0(this.b);
+                this.b.lambda$onRenderedFirstFrame$2();
                 break;
             default:
-                ((VideoPlayerHolderBase) this.c).lambda$seekTo$11(this.b);
+                this.b.lambda$onError$1();
                 break;
         }
     }

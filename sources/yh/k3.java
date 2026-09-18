@@ -1,41 +1,83 @@
 package yh;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.u9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class k3 extends h3 {
-    public final boolean c;
-    public final ImageReceiver d;
+public final class k3 {
+    public final v3 a;
+    public p3 b;
+    public p3 c;
+    public p3 d;
+    public g3 h;
+    public g3 i;
+    public g3 j;
+    public g3 k;
+    public TL_stars.TL_starGiftUnique l;
+    public long m;
+    public b1 r;
+    public b1 s;
+    public float t;
+    public boolean u;
+    public boolean v;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public float n = 0.0f;
+    public boolean o = false;
+    public boolean p = false;
+    public boolean q = false;
 
-    public k3(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = true;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.d = imageReceiver;
-        y7.Z0(imageReceiver, stargiftattributemodel.document, 160);
+    public k3(v3 v3Var) {
+        this.a = v3Var;
+        v3Var.c.addOnAttachStateChangeListener(new ai.u2(this, 15));
     }
 
-    @Override // yh.h3
     public final void a() {
-        if (this.c) {
-            this.d.onDetachedFromWindow();
+        this.o = false;
+        this.a.c.c();
+        g3 g3Var = this.h;
+        if (g3Var != null) {
+            g3Var.a();
+        }
+        g3 g3Var2 = this.i;
+        if (g3Var2 != null) {
+            g3Var2.a();
+        }
+        g3 g3Var3 = this.j;
+        if (g3Var3 != null) {
+            g3Var3.a();
+        }
+        g3 g3Var4 = this.k;
+        if (g3Var4 != null) {
+            g3Var4.a();
+        }
+        c();
+    }
+
+    public final void b() {
+        if (this.o && !this.v) {
+            this.v = true;
+            AndroidUtilities.runOnUIThread(new e3(this, 1));
         }
     }
 
-    @Override // yh.h3
-    public final boolean b() {
-        return this.d.getLottieAnimation() != null;
-    }
-
-    public k3(u9 u9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = false;
-        this.d = u9Var.getImageReceiver();
+    public final void c() {
+        if (this.o) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((i3) obj).a();
+        }
+        arrayList.clear();
+        this.f.clear();
+        this.g.clear();
     }
 }

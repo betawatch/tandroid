@@ -1,69 +1,67 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class j51 implements org.telegram.ui.Components.e71, org.telegram.ui.Components.a71 {
-    public final /* synthetic */ k51 a;
+public final /* synthetic */ class j51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g71 b;
 
-    public /* synthetic */ j51(k51 k51Var) {
-        this.a = k51Var;
+    public /* synthetic */ j51(g71 g71Var, int i10) {
+        this.a = i10;
+        this.b = g71Var;
     }
 
-    @Override // org.telegram.ui.Components.a71
-    public boolean needUpdate() {
-        return this.a.V.i != null;
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public void onStateChanged(boolean z10, int i10) {
-        k51 k51Var = this.a;
-        if (i10 == 4) {
-            k51Var.dismiss();
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(k51Var.Z);
-            AndroidUtilities.runOnUIThread(k51Var.Z, 16L);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                g71 g71Var = this.b;
+                g71Var.getClass();
+                g71Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.m();
+                break;
+            case 2:
+                g71 g71Var2 = this.b;
+                View view = g71Var2.t0;
+                if (view != null) {
+                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                }
+                int v = org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, g71Var2.Z0), i0.a.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
+                View view2 = g71Var2.m0;
+                if (view2 != null) {
+                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                }
+                org.telegram.ui.Components.kn knVar = g71Var2.n0;
+                if (knVar != null) {
+                    knVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
+                    break;
+                }
+                break;
+            default:
+                g71 g71Var3 = this.b;
+                a61 a61Var = g71Var3.a0;
+                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g71Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
+                View view3 = g71Var3.m0;
+                if (view3 != null) {
+                    view3.setAlpha(floatValue);
+                }
+                org.telegram.ui.Components.kn knVar2 = g71Var3.n0;
+                if (knVar2 != null) {
+                    knVar2.setAlpha(floatValue * floatValue);
+                }
+                a61Var.setAlpha(floatValue);
+                a61Var.invalidate();
+                g71Var3.invalidate();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.a71
-    public void onVisualizerUpdate(boolean z10, boolean z11, float[] fArr) {
-        this.a.V.e(z10, true, fArr);
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public void onRenderedFirstFrame() {
-        AndroidUtilities.runOnUIThread(new g01(this, 12));
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public /* synthetic */ void onSeekFinished(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public /* synthetic */ void onSeekStarted(j2.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public void onError(org.telegram.ui.Components.h71 h71Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

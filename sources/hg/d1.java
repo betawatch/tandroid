@@ -8,10 +8,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d1 extends View {
     public final Drawable a;
@@ -20,11 +20,11 @@ public final class d1 extends View {
     public d1(e1 e1Var, Context context) {
         super(context);
         this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
-        f9 f9Var = new f9((f6) null);
+        h9 h9Var = new h9((e6) null);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
-        f9Var.r(e1Var.getUserConfig().getCurrentUser());
-        imageReceiver.setForUserOrChat(e1Var.getUserConfig().getCurrentUser(), f9Var);
+        h9Var.r(e1Var.getUserConfig().getCurrentUser());
+        imageReceiver.setForUserOrChat(e1Var.getUserConfig().getCurrentUser(), h9Var);
     }
 
     @Override // android.view.View

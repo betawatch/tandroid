@@ -1,14 +1,12 @@
 package y8;
 
-import org.telegram.ui.Cells.ia;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class d implements x8.c {
-    public final ia a;
+    public final w3.b a;
 
-    public d(ia iaVar) {
-        this.a = iaVar;
+    public d(w3.b bVar) {
+        this.a = bVar;
     }
 
     public final boolean equals(Object obj) {
@@ -28,24 +26,24 @@ public final class d implements x8.c {
     @Override // x8.c
     public final void onChannelClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.b).onChannelClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.a).onChannelClosed((x8.d) bVar, i10, i11);
     }
 
     @Override // x8.c
     public final void onChannelOpened(x8.b bVar) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.b).onChannelOpened((x8.d) bVar);
+        ((x8.k) this.a.a).onChannelOpened((x8.d) bVar);
     }
 
     @Override // x8.c
     public final void onInputClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.b).onInputClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.a).onInputClosed((x8.d) bVar, i10, i11);
     }
 
     @Override // x8.c
     public final void onOutputClosed(x8.b bVar, int i10, int i11) {
         n6.l.i(bVar, "channel must not be null");
-        ((x8.k) this.a.b).onOutputClosed((x8.d) bVar, i10, i11);
+        ((x8.k) this.a.a).onOutputClosed((x8.d) bVar, i10, i11);
     }
 }

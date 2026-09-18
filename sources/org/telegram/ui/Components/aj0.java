@@ -2,35 +2,70 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Rect;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class aj0 extends Drawable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ bj0 c;
+    public final View a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public boolean e;
+    public final e6 f;
 
-    public aj0(bj0 bj0Var, int i10, int i11) {
-        this.c = bj0Var;
-        this.a = i10;
-        this.b = i11;
+    public aj0(View view) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Path path = new Path();
+        this.c = path;
+        this.d = 255;
+        this.a = view;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.f = new e6(view, 0L, 350L, qr.h);
+        float dpf2 = AndroidUtilities.dpf2(4.66f);
+        float dpf22 = AndroidUtilities.dpf2(2.16f);
+        path.rewind();
+        path.moveTo(dpf2 / 2.0f, 0.0f);
+        float f7 = (-dpf2) / 2.0f;
+        path.lineTo(f7, 0.0f);
+        float f10 = f7 + dpf22;
+        path.lineTo(f10, -dpf22);
+        path.moveTo(f7, 0.0f);
+        path.lineTo(f10, dpf22);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        Rect rect = AndroidUtilities.rectTmp2;
         int centerX = getBounds().centerX();
-        float f7 = this.a;
-        int dp = centerX - (AndroidUtilities.dp(f7) / 2);
         int centerY = getBounds().centerY();
-        float f10 = this.b;
-        rect.set(dp, centerY - (AndroidUtilities.dp(f10) / 2), (AndroidUtilities.dp(f7) / 2) + getBounds().centerX(), (AndroidUtilities.dp(f10) / 2) + getBounds().centerY());
-        bj0 bj0Var = this.c;
-        bj0Var.c.setImageCoords(rect);
-        bj0Var.c.draw(canvas);
+        float e = this.f.e(this.e);
+        float dpf2 = AndroidUtilities.dpf2(2.51f);
+        canvas.save();
+        canvas.translate(centerX, centerY);
+        canvas.save();
+        canvas.translate(dpf2, dpf2);
+        canvas.rotate(45.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e), 1.0f);
+        Path path = this.c;
+        Paint paint = this.b;
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.save();
+        float f7 = -dpf2;
+        canvas.translate(f7, f7);
+        canvas.rotate(225.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e), 1.0f);
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.restore();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -40,11 +75,11 @@ public final class aj0 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        this.c.c.setAlpha(i10 / 255.0f);
+        this.d = i10;
+        this.b.setAlpha(i10);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.c.setColorFilter(colorFilter);
     }
 }

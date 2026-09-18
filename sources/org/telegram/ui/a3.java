@@ -12,24 +12,24 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.Components.dz0 {
+public final class a3 implements org.telegram.ui.Cells.ba, tj0, org.telegram.ui.Components.oz0 {
     public int E = -1;
     public int F = -1;
     public int G = -1;
-    public org.telegram.ui.Components.t5 H;
+    public org.telegram.ui.Components.v5 H;
     public ArrayList I;
     public Stack J;
     public AtomicReference K;
     public View L;
-    public final w70 a;
+    public final u70 a;
     public View b;
     public boolean c;
     public StaticLayout d;
-    public org.telegram.ui.Components.w80 e;
-    public org.telegram.ui.Components.w80 f;
-    public org.telegram.ui.Components.w80 h;
+    public org.telegram.ui.Components.f90 e;
+    public org.telegram.ui.Components.f90 f;
+    public org.telegram.ui.Components.f90 h;
     public TL_iv.PageBlock n;
     public TL_iv.RichText r;
     public int s;
@@ -38,8 +38,8 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
     public CharSequence x;
     public SpannableStringBuilder y;
 
-    public a3(w70 w70Var) {
-        this.a = w70Var;
+    public a3(u70 u70Var) {
+        this.a = u70Var;
     }
 
     public final int a() {
@@ -54,12 +54,12 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
         return this.E;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void attach(View view) {
         this.L = view;
         StaticLayout staticLayout = this.d;
         if (staticLayout != null) {
-            this.H = org.telegram.ui.Components.x5.update(0, view, false, this.H, staticLayout);
+            this.H = org.telegram.ui.Components.z5.update(0, view, false, this.H, staticLayout);
         }
     }
 
@@ -87,58 +87,58 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
         return this.G;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void detach(View view) {
         if (view == null) {
             view = this.L;
         }
-        org.telegram.ui.Components.x5.release(view, this.H);
+        org.telegram.ui.Components.z5.release(view, this.H);
         this.L = null;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void draw(Canvas canvas, View view) {
         float width;
         Object obj;
         TL_iv.RichText richText;
         this.c = true;
         this.b = view;
-        w70 w70Var = this.a;
+        u70 u70Var = this.a;
         float f7 = 0.0f;
-        if (w70Var.E.isEmpty()) {
+        if (u70Var.E.isEmpty()) {
             this.h = null;
         } else {
-            q3 q3Var = (q3) w70Var.E.get(w70Var.G);
+            q3 q3Var = (q3) u70Var.E.get(u70Var.G);
             if (q3Var.c != this.n || ((obj = q3Var.b) != (richText = this.r) && (!(obj instanceof String) || richText != null))) {
                 this.h = null;
             } else if (-1 != q3Var.a) {
-                org.telegram.ui.Components.w80 w80Var = new org.telegram.ui.Components.w80(0);
-                this.h = w80Var;
-                w80Var.n = false;
-                w80Var.d(this.d, q3Var.a, 0.0f);
+                org.telegram.ui.Components.f90 f90Var = new org.telegram.ui.Components.f90(0);
+                this.h = f90Var;
+                f90Var.n = false;
+                f90Var.d(this.d, q3Var.a, 0.0f);
                 this.h.o = 0;
                 StaticLayout staticLayout = this.d;
                 int i10 = q3Var.a;
-                staticLayout.getSelectionPath(i10, w70Var.F.length() + i10, this.h);
+                staticLayout.getSelectionPath(i10, u70Var.F.length() + i10, this.h);
                 this.h.n = true;
             }
         }
-        org.telegram.ui.Components.w80 w80Var2 = this.h;
-        if (w80Var2 != null) {
-            canvas.drawPath(w80Var2, h4.y1);
+        org.telegram.ui.Components.f90 f90Var2 = this.h;
+        if (f90Var2 != null) {
+            canvas.drawPath(f90Var2, h4.y1);
         }
-        org.telegram.ui.Components.w80 w80Var3 = this.e;
-        if (w80Var3 != null) {
-            canvas.drawPath(w80Var3, h4.x1);
+        org.telegram.ui.Components.f90 f90Var3 = this.e;
+        if (f90Var3 != null) {
+            canvas.drawPath(f90Var3, h4.x1);
         }
-        org.telegram.ui.Components.w80 w80Var4 = this.f;
-        if (w80Var4 != null) {
-            canvas.drawPath(w80Var4, h4.z1);
+        org.telegram.ui.Components.f90 f90Var4 = this.f;
+        if (f90Var4 != null) {
+            canvas.drawPath(f90Var4, h4.z1);
         }
-        if (w70Var.c.g(canvas, this)) {
+        if (u70Var.c.g(canvas, this)) {
             view.invalidate();
         }
-        if (w70Var.d == this && w70Var.b == null && w70Var.h) {
+        if (u70Var.d == this && u70Var.b == null && u70Var.h) {
             if (this.d.getLineCount() == 1) {
                 width = this.d.getLineWidth(0);
                 f7 = this.d.getLineLeft(0);
@@ -156,7 +156,7 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
         this.c = false;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final /* synthetic */ int getEmojiOnlyCount() {
         return 0;
     }
@@ -166,7 +166,7 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
         return this.d;
     }
 
-    @Override // org.telegram.ui.uj0
+    @Override // org.telegram.ui.tj0
     public final View getParentView() {
         View view = this.L;
         return view != null ? view : this.b;
@@ -202,17 +202,17 @@ public final class a3 implements org.telegram.ui.Cells.ba, uj0, org.telegram.ui.
         return this.v;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void setRow(int i10) {
         this.w = i10;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void setX(int i10) {
         this.s = i10;
     }
 
-    @Override // org.telegram.ui.Components.dz0
+    @Override // org.telegram.ui.Components.oz0
     public final void setY(int i10) {
         this.v = i10;
     }

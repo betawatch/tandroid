@@ -7,29 +7,29 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public final ci.d a;
     public final View b;
-    public final f6 c;
+    public final e6 c;
     public final Paint d;
     public boolean e;
 
-    public a(Context context, f6 f6Var) {
+    public a(Context context, e6 e6Var) {
         super(context);
         this.d = new Paint(1);
-        this.c = f6Var;
+        this.c = e6Var;
         View view = new View(context);
         this.b = view;
-        addView(view, x5.n(-1, -1));
-        ci.d dVar = new ci.d(context, f6Var, true);
+        addView(view, y5.n(-1, -1));
+        ci.d dVar = new ci.d(context, e6Var, true);
         this.a = dVar;
-        addView(dVar, x5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+        addView(dVar, y5.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
     }
 
     public final void a(int i10, boolean z10) {

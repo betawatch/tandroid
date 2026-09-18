@@ -9,22 +9,22 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg1;
-import org.telegram.ui.wy;
+import org.telegram.ui.dg1;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Utilities.Callback {
-    public final /* synthetic */ fg1 a;
-    public final /* synthetic */ wy b;
+    public final /* synthetic */ dg1 a;
+    public final /* synthetic */ uy b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ v1(fg1 fg1Var, wy wyVar, long j3, int i10) {
-        this.a = fg1Var;
-        this.b = wyVar;
+    public /* synthetic */ v1(dg1 dg1Var, uy uyVar, long j3, int i10) {
+        this.a = dg1Var;
+        this.b = uyVar;
         this.c = j3;
         this.d = i10;
     }
@@ -35,15 +35,15 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        fg1 fg1Var = this.a;
-        wy wyVar = this.b;
-        if (fg1Var != null) {
-            fg1Var.finishFragment();
-            wyVar.removeSelfFromStack();
+        dg1 dg1Var = this.a;
+        uy uyVar = this.b;
+        if (dg1Var != null) {
+            dg1Var.finishFragment();
+            uyVar.removeSelfFromStack();
         } else {
-            wyVar.finishFragment();
+            uyVar.finishFragment();
         }
-        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
@@ -63,7 +63,7 @@ public final /* synthetic */ class v1 implements Utilities.Callback {
                 chat = chat2;
             }
         }
-        vc a02 = vc.a0(U);
+        xc a02 = xc.a0(U);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(bool.booleanValue() ? R.string.BotSentRevokeVerifyRequest : R.string.BotSentVerifyRequest, str));
         a02.getClass();
         a02.V(Arrays.asList(chat), replaceTags, null, null).k(false);

@@ -14,31 +14,31 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ik0;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class ec extends r {
     public final Path R1;
     public final /* synthetic */ oc S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ec(oc ocVar, Activity activity, FrameLayout frameLayout, qv0 qv0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ha haVar) {
-        super(activity, frameLayout, qv0Var, frameLayout2, dVar, haVar);
+    public ec(oc ocVar, Activity activity, FrameLayout frameLayout, bw0 bw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ja jaVar) {
+        super(activity, frameLayout, bw0Var, frameLayout2, dVar, jaVar);
         this.S1 = ocVar;
         this.R1 = new Path();
     }
 
     @Override // ci.m
     public final boolean e() {
-        org.telegram.ui.Components.oc ocVar;
+        org.telegram.ui.Components.qc qcVar;
         int i10 = 0;
-        if (MessagesController.getInstance(this.U).premiumFeaturesBlocked() || ((ocVar = org.telegram.ui.Components.oc.w) != null && ocVar.a == 2)) {
+        if (MessagesController.getInstance(this.U).premiumFeaturesBlocked() || ((qcVar = org.telegram.ui.Components.qc.w) != null && qcVar.a == 2)) {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.k0.i(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.k0.h(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -49,7 +49,7 @@ public final class ec extends r {
                 replaceTags.setSpan(new dc(this, i10), indexOf, indexOf2, 33);
             }
         }
-        org.telegram.ui.Components.oc M = new org.telegram.ui.Components.vc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
+        org.telegram.ui.Components.qc M = new org.telegram.ui.Components.xc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
         M.a = 2;
         M.j = 5000;
         M.k(false);
@@ -72,7 +72,7 @@ public final class ec extends r {
     }
 
     @Override // ci.m
-    public final void h(org.telegram.ui.Components.la laVar, Canvas canvas, RectF rectF, float f7, boolean z10, float f10, float f11, boolean z11) {
+    public final void h(org.telegram.ui.Components.na naVar, Canvas canvas, RectF rectF, float f7, boolean z10, float f10, float f11, boolean z11) {
         if (canvas.isHardwareAccelerated()) {
             canvas.save();
             Path path = this.R1;
@@ -80,7 +80,7 @@ public final class ec extends r {
             path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
             canvas.clipPath(path);
             canvas.translate(f10, f11);
-            laVar.b(canvas, true);
+            naVar.b(canvas, true);
             canvas.restore();
         }
     }
@@ -107,7 +107,7 @@ public final class ec extends r {
                 for (int i10 = 0; i10 < ocVar.v1.R0.getChildCount(); i10++) {
                     View childAt = ocVar.v1.R0.getChildAt(i10);
                     if (childAt instanceof qg.j) {
-                        ik0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
+                        sk0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
                         RectF rectF = AndroidUtilities.rectTmp;
                         float f11 = selectionBounds.a;
                         float f12 = selectionBounds.b;

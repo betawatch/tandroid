@@ -1,79 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
+import android.app.Activity;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v80 b;
+public final class o80 extends org.telegram.ui.zn {
+    public boolean Pc;
+    public final /* synthetic */ boolean Qc;
+    public final /* synthetic */ long Rc;
+    public final /* synthetic */ p80 Sc;
 
-    public /* synthetic */ o80(v80 v80Var, int i10) {
-        this.a = i10;
-        this.b = v80Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o80(p80 p80Var, Bundle bundle, boolean z10, long j3) {
+        super(bundle);
+        this.Sc = p80Var;
+        this.Qc = z10;
+        this.Rc = j3;
+        this.Pc = false;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.r.i();
-                break;
-            case 1:
-                v80 v80Var = this.b;
-                org.telegram.ui.ActionBar.o1 o1Var = v80Var.s;
-                if (o1Var != null) {
-                    o1Var.d(true);
-                }
-                v80Var.r.a();
-                break;
-            case 2:
-                v80 v80Var2 = this.b;
-                String str = v80Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = v80Var2.getContext();
-                String string = LocaleController.getString(R.string.InviteByQRCode);
-                String str2 = v80Var2.b;
-                String str3 = v80Var2.J;
-                if (str3 == null) {
-                    str3 = LocaleController.getString(v80Var2.H ? z10 ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
-                }
-                s80 s80Var = new s80(v80Var2, context, string, str2, str3);
-                v80Var2.E = s80Var;
-                s80Var.m(R.raw.qr_code_logo);
-                v80Var2.E.show();
-                org.telegram.ui.ActionBar.o1 o1Var2 = v80Var2.s;
-                if (o1Var2 != null) {
-                    o1Var2.d(true);
-                    break;
-                }
-                break;
-            default:
-                v80 v80Var3 = this.b;
-                org.telegram.ui.ActionBar.o1 o1Var3 = v80Var3.s;
-                if (o1Var3 != null) {
-                    o1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.o2 o2Var = v80Var3.c;
-                if (o2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o2Var.getParentActivity());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RevokeLink);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.RevokeAlert);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new n80(v80Var3, 1));
-                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                    TextView textView = (TextView) alertDialog$Builder.a.d(-1);
-                    if (textView != null) {
-                        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
-                    }
-                    alertDialog$Builder.o();
-                    break;
-                }
-                break;
+    public static void Xc(o80 o80Var, long j3, TLRPC.Chat chat) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        if (AndroidUtilities.isContextSafe(o80Var.getParentActivity())) {
+            Activity parentActivity = o80Var.getParentActivity();
+            int i10 = o80Var.currentAccount;
+            long j10 = -j3;
+            TLRPC.User currentUser = o80Var.getUserConfig().getCurrentUser();
+            boolean z10 = chat.admin_rights != null;
+            boolean z11 = chat.creator;
+            e6Var = ((org.telegram.ui.ActionBar.f3) o80Var.Sc).resourcesProvider;
+            n01.c(parentActivity, i10, j10, currentUser, null, z10, z11, e6Var);
+        }
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Pc || !this.Qc) {
+            return;
+        }
+        this.Pc = true;
+        MessagesController messagesController = getMessagesController();
+        long j3 = this.Rc;
+        TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
+        if (ChatObject.canManageMyTag(chat)) {
+            qc J = xc.a0(this).J(R.raw.contact_check, LocaleController.getString(R.string.JoinedGroup), LocaleController.getString(R.string.JoinedGroupAddTag), new a3.h0(this, j3, chat, 21));
+            J.r = false;
+            J.k(true);
+        } else {
+            qc Q = xc.a0(this).Q(R.raw.contact_check, 36, LocaleController.getString(R.string.JoinedGroup));
+            Q.r = false;
+            Q.k(true);
         }
     }
 }

@@ -1,34 +1,18 @@
 package xh;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.x51;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class j3 extends i51 {
-    static {
-        i51.setup(new j3());
-    }
-
-    public static j51 a(String str) {
-        j51 J = j51.J(j3.class);
-        J.l = str;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
-        ((k3) view).set(j51Var.l);
-    }
-
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, f6 f6Var) {
-        return new k3(context, f6Var);
+public final class j3 extends org.telegram.ui.ActionBar.f1 {
+    @Override // org.telegram.ui.ActionBar.f1, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 }

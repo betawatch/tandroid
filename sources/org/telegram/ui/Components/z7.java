@@ -1,24 +1,34 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.os.SystemClock;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class z7 extends go0 {
-    public final /* synthetic */ h8 l0;
+public final class z7 extends e8 {
+    public long d;
+    public final /* synthetic */ j8 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z7(h8 h8Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var, false);
-        this.l0 = h8Var;
+    public z7(j8 j8Var, Context context) {
+        super(context);
+        this.e = j8Var;
     }
 
-    @Override // org.telegram.ui.Components.go0
-    public final boolean d(MotionEvent motionEvent) {
-        if (this.l0.H0 != 0) {
-            return false;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        j8 j8Var = this.e;
+        if (action == 0) {
+            if (this.a[this.b].getImageReceiver().hasBitmapImage()) {
+                j8Var.A0(true, true);
+                this.d = SystemClock.elapsedRealtime();
+                return true;
+            }
+        } else if (action != 2 && SystemClock.elapsedRealtime() - this.d >= 400) {
+            j8Var.A0(false, true);
         }
-        return super.d(motionEvent);
+        return true;
     }
 }

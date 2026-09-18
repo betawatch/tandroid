@@ -9,11 +9,12 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import org.telegram.ui.Components.z5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class n0 extends FrameLayout {
     public final vh.o a;
@@ -36,14 +37,14 @@ public final class n0 extends FrameLayout {
         oVar.setTextSize(1, 14.0f);
         oVar.setTypeface(AndroidUtilities.bold());
         NotificationCenter.listenEmojiLoading(oVar);
-        addView(oVar, x5.e(-2, -2, 17));
+        addView(oVar, y5.e(-2, -2, 17));
         NotificationCenter.listenEmojiLoading(oVar);
         setTag(keyboardButton);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
         if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
             spannableStringBuilder.append((CharSequence) "* ");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.x5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.setSpan(new z5(keyboardButton.style.icon, oVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
         spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, oVar.getPaint().getFontMetricsInt(), false));
         ImageView imageView = new ImageView(getContext());
@@ -55,7 +56,7 @@ public final class n0 extends FrameLayout {
         } else {
             imageView.setVisibility(8);
         }
-        addView(imageView, x5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
+        addView(imageView, y5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
         oVar.setText(spannableStringBuilder);
     }
 
@@ -67,21 +68,21 @@ public final class n0 extends FrameLayout {
         int dp = AndroidUtilities.dp(21.0f);
         int dp2 = AndroidUtilities.dp(11.0f);
         int i12 = j6.Ye;
-        f6 f6Var = this.n.a;
-        int v02 = j6.v0(i12, f6Var);
-        int v03 = j6.v0(j6.Ze, f6Var);
-        int v04 = j6.v0(j6.Xe, f6Var);
+        e6 e6Var = this.n.a;
+        int v02 = j6.v0(i12, e6Var);
+        int v03 = j6.v0(j6.Ze, e6Var);
+        int v04 = j6.v0(j6.Xe, e6Var);
         TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
         if (keyboardButtonStyle != null) {
             if (keyboardButtonStyle.bg_primary) {
-                l1 = j6.l1(0.8f, j6.v0(j6.dl, f6Var));
-                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.dl, e6Var));
+                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
             } else if (keyboardButtonStyle.bg_danger) {
-                l1 = j6.l1(0.8f, j6.v0(j6.el, f6Var));
-                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.el, e6Var));
+                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
             } else if (keyboardButtonStyle.bg_success) {
-                l1 = j6.l1(0.8f, j6.v0(j6.fl, f6Var));
-                h = i0.a.h(j6.v0(j6.i6, f6Var), l1);
+                l1 = j6.l1(0.8f, j6.v0(j6.fl, e6Var));
+                h = i0.a.h(j6.v0(j6.i6, e6Var), l1);
             }
             i10 = l1;
             i11 = h;

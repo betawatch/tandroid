@@ -1,46 +1,54 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class w6 extends org.telegram.ui.Components.bd {
-    public final /* synthetic */ y6 e0;
+public final class w6 extends t7 {
+    public final /* synthetic */ int F = 1;
+    public final /* synthetic */ Object G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w6(y6 y6Var, Context context) {
-        super(context, 11, org.telegram.ui.Components.bd.W, 0, org.telegram.ui.Components.bd.a0);
-        this.e0 = y6Var;
+    public w6(kv kvVar, Context context, z6 z6Var) {
+        super(context, z6Var, null);
+        this.G = kvVar;
     }
 
-    @Override // org.telegram.ui.Components.bd
-    public final void d(int i10, boolean z10) {
-        a7 a7Var = this.e0.e;
+    public void f(boolean z10) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        z6 z6Var = ((x6) this.G).e;
         if (!z10) {
-            a7Var.b.k1();
+            kVar = ((org.telegram.ui.ActionBar.n2) z6Var).actionBar;
+            kVar.r();
             return;
         }
-        int i11 = -1;
-        if (i10 == 8) {
-            i10 = -1;
+        le.b bVar = z6Var.Q;
+        if (bVar != null) {
+            bVar.a(true, true);
         }
-        int i12 = 0;
-        while (true) {
-            if (i12 < a7Var.e0.size()) {
-                v6 v6Var = (v6) a7Var.e0.get(i12);
-                if (v6Var != null && v6Var.a == 11 && v6Var.f == i10) {
-                    i11 = i12;
-                    break;
-                }
-                i12++;
-            } else {
+        kVar2 = ((org.telegram.ui.ActionBar.n2) z6Var).actionBar;
+        kVar2.O(null, null);
+    }
+
+    @Override // org.telegram.ui.t7, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.F) {
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((kv) this.G).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
                 break;
-            }
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (i11 >= 0) {
-            a7Var.b.f1(new i2.v(i11, 3), 0, true);
-        } else {
-            a7Var.b.k1();
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w6(x6 x6Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, li.i iVar) {
+        super(context, n2Var, iVar);
+        this.G = x6Var;
     }
 }

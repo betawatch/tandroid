@@ -10,7 +10,7 @@ import v7.a8;
 import v7.t6;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -56,7 +56,7 @@ public final class v {
         if (j3 >= 0) {
             return j3;
         }
-        throw new IllegalStateException(k0.i(j3, "Top bit not zero: "));
+        throw new IllegalStateException(k0.h(j3, "Top bit not zero: "));
     }
 
     public final long C() {
@@ -398,7 +398,7 @@ public final class v {
         if (l4 >= 0) {
             return l4;
         }
-        throw new IllegalStateException(k0.i(l4, "Top bit not zero: "));
+        throw new IllegalStateException(k0.h(l4, "Top bit not zero: "));
     }
 
     public final int q() {

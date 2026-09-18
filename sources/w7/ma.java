@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final q9.n a;
@@ -15,8 +15,8 @@ public final class ma implements ja {
     public ma(Context context, ia iaVar) {
         this.b = iaVar;
         j5.a aVar = j5.a.e;
-        l5.t.b(context);
-        l5.r c10 = l5.t.a().c(aVar);
+        l5.s.b(context);
+        l5.q c10 = l5.s.a().c(aVar);
         if (j5.a.d.contains(new i5.c("json"))) {
             new q9.n(new v7.a9(c10, 2));
         }
@@ -24,17 +24,17 @@ public final class ma implements ja {
     }
 
     @Override // w7.ja
-    public final void a(n7.a1 a1Var) {
+    public final void a(n7.z0 z0Var) {
         f fVar;
         ia.d dVar;
         ia iaVar = this.b;
         iaVar.getClass();
-        l5.s sVar = (l5.s) this.a.get();
+        l5.r rVar = (l5.r) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        v7.r1 r1Var = (v7.r1) a1Var.b;
-        ((v7.d8) a1Var.c).h = false;
-        v7.d8 d8Var = (v7.d8) a1Var.c;
+        v7.r1 r1Var = (v7.r1) z0Var.b;
+        ((v7.d8) z0Var.c).h = false;
+        v7.d8 d8Var = (v7.d8) z0Var.c;
         d8Var.f = Boolean.FALSE;
         r1Var.b = new l9(d8Var);
         try {
@@ -55,7 +55,7 @@ public final class ma implements ja {
                 throw new ia.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(18));
+            rVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(20));
         } catch (UnsupportedEncodingException e) {
             throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e);
         }

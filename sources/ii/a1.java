@@ -28,9 +28,9 @@ import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0, DownloadController.FileDownloadProgressListener {
+public final class a1 extends a0 implements org.telegram.ui.ActionBar.z5, p9, m0, DownloadController.FileDownloadProgressListener {
     public final ImageReceiver E;
     public final l0 F;
     public final int G;
@@ -49,14 +49,14 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
     public MessageObject T;
     public TLRPC.Document U;
     public final int n;
-    public final org.telegram.ui.ActionBar.f6 r;
+    public final org.telegram.ui.ActionBar.e6 r;
     public final Paint s;
     public final Paint v;
     public final TextPaint w;
     public final TextPaint x;
     public final RadialProgress2 y;
 
-    public a1(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public a1(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.s = new Paint(1);
         this.v = new Paint(1);
@@ -69,11 +69,11 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         this.J = AndroidUtilities.dp(16.0f);
         this.K = AndroidUtilities.dp(16.0f);
         this.n = i10;
-        this.r = f6Var;
+        this.r = e6Var;
         setWillNotDraw(false);
         setMinimumHeight(AndroidUtilities.dp(66.0f));
         this.G = DownloadController.getInstance(i10).generateObserverTag();
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, e6Var);
         this.y = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
         int i11 = this.J;
@@ -82,9 +82,9 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         this.E = imageReceiver;
         imageReceiver.setAllowLoadingOnAttachedOnly(true);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
-        l0 l0Var = new l0(context, f6Var, new a4.m(this, 20));
+        l0 l0Var = new l0(context, e6Var, new a4.m(this, 21));
         this.F = l0Var;
-        addView(l0Var.a, w7.x5.e(-2, -2, 51));
+        addView(l0Var.a, w7.y5.e(-2, -2, 51));
         e();
     }
 
@@ -104,7 +104,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         this.F.c(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         this.s.setColor(j6.v0(j6.uf, this.r));
         l0 l0Var = this.F;
@@ -265,14 +265,14 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         File pathToAttach;
         u uVar;
         boolean z11 = this.L;
-        org.telegram.ui.ActionBar.f6 f6Var = this.r;
+        org.telegram.ui.ActionBar.e6 e6Var = this.r;
         RadialProgress2 radialProgress2 = this.y;
         if (z11) {
             radialProgress2.g(j6.le, j6.me, j6.ne, j6.oe);
-            radialProgress2.d = j6.v0(j6.hd, f6Var);
+            radialProgress2.d = j6.v0(j6.hd, e6Var);
         } else {
             radialProgress2.g(j6.ie, j6.je, j6.uc, j6.vc);
-            radialProgress2.d = j6.v0(j6.Bd, f6Var);
+            radialProgress2.d = j6.v0(j6.Bd, e6Var);
         }
         boolean j3 = j();
         int i10 = this.n;
@@ -343,9 +343,9 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             return;
         }
         boolean z10 = this.L;
-        org.telegram.ui.ActionBar.f6 f6Var = this.r;
+        org.telegram.ui.ActionBar.e6 e6Var = this.r;
         if (z10 && !this.E.draw(canvas)) {
-            int v02 = j6.v0(j6.Gd, f6Var);
+            int v02 = j6.v0(j6.Gd, e6Var);
             Paint paint = this.v;
             paint.setColor(v02);
             canvas.drawRoundRect(this.K, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(86.0f) + this.K, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
@@ -359,7 +359,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             f7 = 54.0f;
         }
         int dp = AndroidUtilities.dp(f7) + i10;
-        this.w.setColor(j6.v0(j6.Dd, f6Var));
+        this.w.setColor(j6.v0(j6.Dd, e6Var));
         int dp2 = AndroidUtilities.dp(12.0f);
         if (this.Q != null) {
             canvas.save();
@@ -367,7 +367,7 @@ public final class a1 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             this.Q.draw(canvas);
             canvas.restore();
         }
-        this.x.setColor(j6.v0(j6.nd, f6Var));
+        this.x.setColor(j6.v0(j6.nd, e6Var));
         StaticLayout staticLayout = this.Q;
         int dp3 = AndroidUtilities.dp(2.0f) + dp2 + (staticLayout == null ? 0 : staticLayout.getHeight());
         if (this.R != null) {

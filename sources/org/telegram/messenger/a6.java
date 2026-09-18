@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class a6 implements Runnable {
                 break;
             default:
                 org.telegram.ui.h4 h4Var = (org.telegram.ui.h4) this.c;
-                n70 n70Var = (n70) this.d;
+                w70 w70Var = (w70) this.d;
                 h4Var.h0.M.c(0.0f, true);
-                n70Var.p = new org.telegram.ui.b0(h4Var, this.b, 0);
-                n70Var.Z();
+                w70Var.p = new org.telegram.ui.b0(h4Var, this.b, 0);
+                w70Var.Z();
                 break;
         }
     }

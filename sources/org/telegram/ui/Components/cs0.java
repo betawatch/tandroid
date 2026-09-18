@@ -1,57 +1,86 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class cs0 extends s4.n0 {
-    public final /* synthetic */ vr0 a;
-    public final /* synthetic */ zu0 b;
+public final class cs0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    public cs0(zu0 zu0Var, vr0 vr0Var) {
-        this.b = zu0Var;
-        this.a = vr0Var;
+    public cs0(zr0 zr0Var) {
+        this.a = 1;
+        this.b = org.telegram.ui.ActionBar.j6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        vr0 vr0Var = this.a;
-        if (vr0Var.h.getAdapter() == this.b.O) {
-            recyclerView.getClass();
-            int S = RecyclerView.S(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            wr0 wr0Var = vr0Var.x;
-            wr0Var.B1();
-            if (S <= wr0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
-            rect.right = vr0Var.x.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
-            return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
+                break;
+            default:
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
+                break;
         }
-        if (!(view instanceof org.telegram.ui.Cells.t7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
         }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        vr0Var.h.getClass();
-        int S2 = RecyclerView.S(t7Var);
-        int i10 = vr0Var.x.J;
-        t7Var.a0 = S2 < i10;
-        int i11 = S2 % i10;
-        t7Var.V = i11 == 0;
-        t7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i10);
+                break;
+            default:
+                this.b.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i10 = this.a;
+    }
+
+    public cs0(ds0 ds0Var) {
+        this.a = 0;
+        int dp = AndroidUtilities.dp(16.0f);
+        int dp2 = AndroidUtilities.dp(16.0f);
+        int i10 = org.telegram.ui.ActionBar.j6.d6;
+        org.telegram.ui.ActionBar.e6 e6Var = ds0Var.c;
+        this.b = org.telegram.ui.ActionBar.j6.c0(dp, dp2, org.telegram.ui.ActionBar.j6.v(org.telegram.ui.ActionBar.j6.v0(i10, e6Var), org.telegram.ui.ActionBar.j6.l1(0.04f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, e6Var))));
+        this.c = new Rect();
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

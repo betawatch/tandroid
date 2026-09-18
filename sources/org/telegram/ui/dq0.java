@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dq0 implements org.telegram.ui.Components.b5, org.telegram.ui.ActionBar.m1 {
+public final /* synthetic */ class dq0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ lq0 b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class dq0 implements org.telegram.ui.Components.b5,
         this.b = lq0Var;
     }
 
-    @Override // org.telegram.ui.Components.b5
+    @Override // org.telegram.ui.Components.d5
     public void J(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 0:
@@ -29,12 +29,12 @@ public final /* synthetic */ class dq0 implements org.telegram.ui.Components.b5,
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public void o(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
+    @Override // org.telegram.ui.ActionBar.l1
+    public void p(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
         lq0 lq0Var = this.b;
         lq0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = lq0Var.I) != null && o1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = lq0Var.I) != null && n1Var.isShowing()) {
             lq0Var.I.d(true);
         }
     }

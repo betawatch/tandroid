@@ -19,13 +19,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                             f4Var.l0 = new c3(f6Var, 9);
                             f6Var.F0 = f4Var;
                             f4Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                            a5Var.addView(f6Var.F0, w7.x5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
+                            a5Var.addView(f6Var.F0, w7.y5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User user = MessagesController.getInstance(f6Var.C2).getUser(Long.valueOf(f6Var.B1));
                         if (user != null) {
@@ -179,7 +179,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
             case 6:
                 r3 r3Var = f6Var.L0;
                 if (!f6Var.D0(false)) {
-                    yh.v5 y3 = yh.v5.y(f6Var.C2, false);
+                    yh.t5 y3 = yh.t5.y(f6Var.C2, false);
                     if (y3.e && y3.f.amount <= 0) {
                         r3Var.k(f6Var.D0(false));
                         break;
@@ -193,38 +193,38 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 }
             case 7:
                 Context context = f6Var.getContext();
-                org.telegram.ui.ActionBar.f6 f6Var2 = f6Var.B0;
-                org.telegram.ui.ActionBar.g3 g3Var = new org.telegram.ui.ActionBar.g3(1, context, f6Var2, false);
-                g3Var.fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var2));
+                org.telegram.ui.ActionBar.e6 e6Var = f6Var.B0;
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, e6Var, false);
+                f3Var.fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var));
                 LinearLayout linearLayout = new LinearLayout(f6Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(f6Var.getContext());
-                u9Var.getImageReceiver().setAutoRepeat(1);
-                MediaDataController.getInstance(f6Var.C2).setPlaceholderImage(u9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
-                linearLayout.addView(u9Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
+                org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(f6Var.getContext());
+                w9Var.getImageReceiver().setAutoRepeat(1);
+                MediaDataController.getInstance(f6Var.C2).setPlaceholderImage(w9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
+                linearLayout.addView(w9Var, w7.y5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(f6Var.getContext());
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(17);
-                wl.n(org.telegram.ui.ActionBar.j6.j5, f6Var2, textView, 1, 20.0f);
+                wh.m(org.telegram.ui.ActionBar.j6.j5, e6Var, textView, 1, 20.0f);
                 textView.setText(LocaleController.getString(R.string.StoryQualityPremium));
-                linearLayout.addView(textView, w7.x5.t(-1, -2, 1, 12, 0, 12, 0));
+                linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(f6Var.getContext());
                 textView2.setGravity(17);
-                wl.n(org.telegram.ui.ActionBar.j6.r5, f6Var2, textView2, 1, 14.0f);
-                org.telegram.messenger.w1.n(R.string.StoryQualityPremiumText, textView2);
-                linearLayout.addView(textView2, w7.x5.t(-1, -2, 1, 32, 9, 32, 19));
-                ci.d dVar = new ci.d(f6Var.getContext(), f6Var2, true);
+                wh.m(org.telegram.ui.ActionBar.j6.r5, e6Var, textView2, 1, 14.0f);
+                org.telegram.messenger.q.n(R.string.StoryQualityPremiumText, textView2);
+                linearLayout.addView(textView2, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
+                ci.d dVar = new ci.d(f6Var.getContext(), e6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
                 oq oqVar = new oq(R.drawable.mini_switch_lock, 0);
                 oqVar.setTopOffset(1);
                 spannableStringBuilder.setSpan(oqVar, 0, 1, 33);
                 dVar.f(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) LocaleController.getString(R.string.OptionPremiumRequiredTitle)), false);
-                linearLayout.addView(dVar, w7.x5.q(-1, 48, 1));
-                dVar.setOnClickListener(new f2(2, f6Var, g3Var));
-                g3Var.setCustomView(linearLayout);
-                ((ac) f6Var.Q1).h(g3Var);
+                linearLayout.addView(dVar, w7.y5.q(-1, 48, 1));
+                dVar.setOnClickListener(new f2(2, f6Var, f3Var));
+                f3Var.setCustomView(linearLayout);
+                ((ac) f6Var.Q1).h(f3Var);
                 w5 w5Var = f6Var.t1;
                 if (w5Var != null) {
                     w5Var.a();

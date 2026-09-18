@@ -2,25 +2,25 @@ package com.google.firebase.messaging;
 
 import hg.k0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements ia.d {
     public static final a a = new a();
-    public static final ia.c b = new ia.c("projectNumber", k0.o(k0.n(la.e.class, new la.a(1))));
-    public static final ia.c c = new ia.c("messageId", k0.o(k0.n(la.e.class, new la.a(2))));
-    public static final ia.c d = new ia.c("instanceId", k0.o(k0.n(la.e.class, new la.a(3))));
-    public static final ia.c e = new ia.c("messageType", k0.o(k0.n(la.e.class, new la.a(4))));
-    public static final ia.c f = new ia.c("sdkPlatform", k0.o(k0.n(la.e.class, new la.a(5))));
-    public static final ia.c g = new ia.c("packageName", k0.o(k0.n(la.e.class, new la.a(6))));
-    public static final ia.c h = new ia.c("collapseKey", k0.o(k0.n(la.e.class, new la.a(7))));
-    public static final ia.c i = new ia.c("priority", k0.o(k0.n(la.e.class, new la.a(8))));
-    public static final ia.c j = new ia.c("ttl", k0.o(k0.n(la.e.class, new la.a(9))));
-    public static final ia.c k = new ia.c("topic", k0.o(k0.n(la.e.class, new la.a(10))));
-    public static final ia.c l = new ia.c("bulkId", k0.o(k0.n(la.e.class, new la.a(11))));
-    public static final ia.c m = new ia.c("event", k0.o(k0.n(la.e.class, new la.a(12))));
-    public static final ia.c n = new ia.c("analyticsLabel", k0.o(k0.n(la.e.class, new la.a(13))));
-    public static final ia.c o = new ia.c("campaignId", k0.o(k0.n(la.e.class, new la.a(14))));
-    public static final ia.c p = new ia.c("composerLabel", k0.o(k0.n(la.e.class, new la.a(15))));
+    public static final ia.c b = new ia.c("projectNumber", k0.m(k0.l(la.e.class, new la.a(1))));
+    public static final ia.c c = new ia.c("messageId", k0.m(k0.l(la.e.class, new la.a(2))));
+    public static final ia.c d = new ia.c("instanceId", k0.m(k0.l(la.e.class, new la.a(3))));
+    public static final ia.c e = new ia.c("messageType", k0.m(k0.l(la.e.class, new la.a(4))));
+    public static final ia.c f = new ia.c("sdkPlatform", k0.m(k0.l(la.e.class, new la.a(5))));
+    public static final ia.c g = new ia.c("packageName", k0.m(k0.l(la.e.class, new la.a(6))));
+    public static final ia.c h = new ia.c("collapseKey", k0.m(k0.l(la.e.class, new la.a(7))));
+    public static final ia.c i = new ia.c("priority", k0.m(k0.l(la.e.class, new la.a(8))));
+    public static final ia.c j = new ia.c("ttl", k0.m(k0.l(la.e.class, new la.a(9))));
+    public static final ia.c k = new ia.c("topic", k0.m(k0.l(la.e.class, new la.a(10))));
+    public static final ia.c l = new ia.c("bulkId", k0.m(k0.l(la.e.class, new la.a(11))));
+    public static final ia.c m = new ia.c("event", k0.m(k0.l(la.e.class, new la.a(12))));
+    public static final ia.c n = new ia.c("analyticsLabel", k0.m(k0.l(la.e.class, new la.a(13))));
+    public static final ia.c o = new ia.c("campaignId", k0.m(k0.l(la.e.class, new la.a(14))));
+    public static final ia.c p = new ia.c("composerLabel", k0.m(k0.l(la.e.class, new la.a(15))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

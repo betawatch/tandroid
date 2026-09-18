@@ -13,9 +13,9 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
+public final /* synthetic */ class ew implements li.f, ml0, tm0, le.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ kz b;
 
@@ -29,7 +29,7 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
         this.b.R();
     }
 
-    @Override // org.telegram.ui.Components.hm0
+    @Override // org.telegram.ui.Components.tm0
     public void a(int i10) {
         int i11;
         wy wyVar;
@@ -46,8 +46,8 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                     if (i10 == kzVar.r0 || i10 == kzVar.s0) {
                         kzVar.o0.d.setText("");
                         if (i10 != kzVar.s0 || (i11 = pyVar.I) < 1) {
-                            ky kyVar = kzVar.t1;
-                            qyVar.h1((kyVar == null || !kyVar.A()) ? 1 : 0, 0);
+                            ly lyVar = kzVar.t1;
+                            qyVar.h1((lyVar == null || !lyVar.A()) ? 1 : 0, 0);
                         } else {
                             qyVar.h1(i11, -AndroidUtilities.dp(4.0f));
                         }
@@ -74,15 +74,15 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                 break;
             default:
                 kz kzVar2 = this.b;
-                vw vwVar = kzVar2.G0;
+                ww wwVar = kzVar2.G0;
                 ArrayList arrayList3 = kzVar2.d1;
-                ww wwVar = kzVar2.B0;
+                xw xwVar = kzVar2.B0;
                 bz bzVar = kzVar2.y0;
                 sw swVar = kzVar2.D0;
                 if (!kzVar2.S0) {
                     if (i10 != kzVar2.H1) {
-                        if (vwVar != null && (wyVar = vwVar.r) != null && wyVar.getSelectedCategory() != null) {
-                            vwVar.c(null, false);
+                        if (wwVar != null && (wyVar = wwVar.r) != null && wyVar.getSelectedCategory() != null) {
+                            wwVar.c(null, false);
                             wyVar.G1(null);
                         }
                         if (i10 != kzVar2.F1) {
@@ -102,7 +102,7 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                                         if (i15 <= 0 && (i15 = kzVar2.F1) <= 0) {
                                             i15 = kzVar2.E1;
                                         }
-                                        wwVar.k(i10, i15);
+                                        xwVar.k(i10, i15);
                                         kzVar2.X1 = false;
                                         kzVar2.Y();
                                         break;
@@ -112,7 +112,7 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                                     kzVar2.H(bzVar.E("premium"), 0);
                                     kzVar2.F(0);
                                     int i16 = kzVar2.I1;
-                                    wwVar.k(i16, i16 > 0 ? i16 : kzVar2.E1);
+                                    xwVar.k(i16, i16 > 0 ? i16 : kzVar2.E1);
                                     break;
                                 }
                             } else {
@@ -120,7 +120,7 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                                 kzVar2.H(bzVar.E("fav"), 0);
                                 kzVar2.F(0);
                                 int i17 = kzVar2.G1;
-                                wwVar.k(i17, i17 > 0 ? i17 : kzVar2.E1);
+                                xwVar.k(i17, i17 > 0 ? i17 : kzVar2.E1);
                                 break;
                             }
                         } else {
@@ -128,11 +128,11 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
                             kzVar2.H(bzVar.E("recent"), 0);
                             kzVar2.F(0);
                             int i18 = kzVar2.F1;
-                            wwVar.k(i18, i18 > 0 ? i18 : kzVar2.E1);
+                            xwVar.k(i18, i18 > 0 ? i18 : kzVar2.E1);
                             break;
                         }
                     } else {
-                        kzVar2.t1.o(new f51(kzVar2.getContext(), new ex(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, null, kzVar2.Z1));
+                        kzVar2.t1.o(new t51(kzVar2.getContext(), new fx(kzVar2), kzVar2.x1, kzVar2.y1, kzVar2.z1, null, kzVar2.Z1));
                         break;
                     }
                 }
@@ -140,13 +140,13 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
         }
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         String str;
         int i11;
         kz kzVar = this.b;
         int i12 = kzVar.C1;
-        vx vxVar = kzVar.P;
+        wx wxVar = kzVar.P;
         int[] iArr = kzVar.D1;
         xu xuVar = kzVar.B1;
         if (!(view instanceof ty)) {
@@ -154,12 +154,12 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
         }
         ty tyVar = (ty) view;
         if (tyVar.c) {
-            View G = vxVar.G(view);
-            s4.c1 U = G != null ? vxVar.U(G) : null;
+            View G = wxVar.G(view);
+            s4.c1 U = G != null ? wxVar.U(G) : null;
             if (U != null && U.b() <= kzVar.getRecentEmoji().size()) {
                 kzVar.t1.n();
             }
-            vxVar.y1(view);
+            wxVar.y1(view);
             return true;
         }
         if (tyVar.getSpan() != null || (str = (String) tyVar.getTag()) == null) {
@@ -240,7 +240,7 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
             i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (wuVar2.n[0] * i12);
         }
         if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-            i11 = org.telegram.messenger.wl.D(5.0f, iArr[0] - i11, i11);
+            i11 = org.telegram.messenger.wh.D(5.0f, iArr[0] - i11, i11);
         } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
             i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
         }
@@ -250,12 +250,12 @@ public final /* synthetic */ class ew implements ki.f, cl0, hm0, le.d {
         xuVar.setFocusable(true);
         xuVar.showAsDropDown(view, i15, (((view.getMeasuredHeight() - i12) / 2) + ((-view.getMeasuredHeight()) - dp2)) - top);
         kzVar.h.requestDisallowInterceptTouchEvent(true);
-        vxVar.e1(true);
-        vxVar.y1(view);
+        wxVar.e1(true);
+        wxVar.y1(view);
         return true;
     }
 
-    @Override // ki.f
+    @Override // li.f
     public void j(int i10) {
         kz kzVar = this.b;
         ah.i iVar = kzVar.j2;

@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import org.telegram.ui.Components.x51;
-import yh.d7;
+import yh.a7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ e0(l0 l0Var, int i10, n4.a0 a0Var, k0 k0Var, boolean z10) {
+    public /* synthetic */ e0(k0 k0Var, int i10, n4.a0 a0Var, j0 j0Var, boolean z10) {
         this.a = 0;
-        this.d = l0Var;
+        this.d = k0Var;
         this.c = i10;
         this.e = a0Var;
-        this.f = k0Var;
+        this.f = j0Var;
         this.b = z10;
     }
 
@@ -47,21 +47,21 @@ public final /* synthetic */ class e0 implements Runnable {
         TLRPC.Document document;
         switch (this.a) {
             case 0:
-                l0 l0Var = (l0) this.d;
+                k0 k0Var = (k0) this.d;
                 n4.a0 a0Var = (n4.a0) this.e;
-                k0 k0Var = (k0) this.f;
-                a0 a0Var2 = l0Var.g;
+                j0 j0Var = (j0) this.f;
+                a0 a0Var2 = k0Var.g;
                 if (!a0Var2.j()) {
-                    boolean isActive = ((n4.r) l0Var.k.b).a.isActive();
+                    boolean isActive = ((n4.r) k0Var.k.b).a.isActive();
                     int i10 = this.c;
                     if (isActive) {
-                        r L = l0Var.L(a0Var);
-                        if (l0Var.f.B(L, i10)) {
+                        r L = k0Var.L(a0Var);
+                        if (k0Var.f.B(L, i10)) {
                             na.d dVar = a0Var2.e;
                             a0Var2.s(L);
                             dVar.getClass();
                             try {
-                                k0Var.g(L);
+                                j0Var.g(L);
                             } catch (RemoteException e) {
                                 e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
                             }
@@ -75,9 +75,9 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder l4 = hg.k0.l(i10, "Ignore incoming player command before initialization. command=", ", pid=");
-                        l4.append(a0Var.a.b);
-                        e2.a.n("MediaSessionLegacyStub", l4.toString());
+                        StringBuilder j3 = hg.k0.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        j3.append(a0Var.a.b);
+                        e2.a.n("MediaSessionLegacyStub", j3.toString());
                         break;
                     }
                 }
@@ -154,13 +154,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 break;
             case 4:
-                pg.q0 q0Var = (pg.q0) this.d;
-                pg.r0 r0Var = (pg.r0) this.e;
+                pg.s0 s0Var = (pg.s0) this.d;
+                pg.t0 t0Var = (pg.t0) this.e;
                 Runnable runnable = (Runnable) this.f;
                 boolean z10 = this.b;
-                q0Var.d(r0Var, this.c, z10 ? q0Var.h : null);
+                s0Var.d(t0Var, this.c, z10 ? s0Var.h : null);
                 if (z10) {
-                    q0Var.h = null;
+                    s0Var.h = null;
                 }
                 if (runnable != null) {
                     runnable.run();
@@ -217,7 +217,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new d7(zArr));
+                    imageReceiver.setDelegate(new a7(zArr));
                     SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, j6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
@@ -240,19 +240,19 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = x51Var;
+        this.d = l61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;
         this.f = tLObject;
     }
 
-    public /* synthetic */ e0(pg.q0 q0Var, pg.r0 r0Var, int i10, boolean z10, Runnable runnable) {
+    public /* synthetic */ e0(pg.s0 s0Var, pg.t0 t0Var, int i10, boolean z10, Runnable runnable) {
         this.a = 4;
-        this.d = q0Var;
-        this.e = r0Var;
+        this.d = s0Var;
+        this.e = t0Var;
         this.c = i10;
         this.b = z10;
         this.f = runnable;

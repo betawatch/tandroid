@@ -13,12 +13,12 @@ import android.text.TextPaint;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
 import yf.p;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class a extends c implements le.d {
     public final le.b d;
@@ -29,13 +29,13 @@ public final class a extends c implements le.d {
     public int r;
     public int s;
 
-    public a(Context context, f6 f6Var) {
-        super(f6Var);
+    public a(Context context, e6 e6Var) {
+        super(e6Var);
         this.d = new le.b(0, this, qr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
         this.h = new TextPaint(j6.P2);
-        int v02 = j6.v0(j6.i6, f6Var);
+        int v02 = j6.v0(j6.i6, e6Var);
         if (this.b != v02) {
             j6.B1(this.a, v02, false);
             this.b = v02;

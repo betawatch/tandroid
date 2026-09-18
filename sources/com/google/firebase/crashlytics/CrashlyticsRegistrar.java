@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Map;
 import k9.h;
 import q9.j;
-import r9.i;
-import w7.o8;
+import s9.b;
+import w7.p8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -33,15 +33,15 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
 
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        i0 a2 = q9.a.a(s9.c.class);
+        i0 a2 = q9.a.a(s9.d.class);
         a2.d = "fire-cls";
         a2.a(j.a(h.class));
         a2.a(j.a(qa.d.class));
         a2.a(new j(0, 2, t9.a.class));
         a2.a(new j(0, 2, l9.a.class));
         a2.a(new j(0, 2, ya.a.class));
-        a2.f = new i(this, 29);
+        a2.f = new b(this, 1);
         a2.c(2);
-        return Arrays.asList(a2.b(), o8.a("fire-cls", "18.6.0"));
+        return Arrays.asList(a2.b(), p8.a("fire-cls", "18.6.0"));
     }
 }

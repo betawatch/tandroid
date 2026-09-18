@@ -17,15 +17,15 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.l6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.we;
-import w7.x5;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.qe;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d {
-    public final o2 a;
+    public final n2 a;
     public final TLRPC.Chat b;
     public final int c;
     public FrameLayout d;
@@ -39,10 +39,10 @@ public final class d {
     public int l = -1;
     public c m;
 
-    public d(TLRPC.Chat chat, o2 o2Var) {
-        this.a = o2Var;
+    public d(TLRPC.Chat chat, n2 n2Var) {
+        this.a = n2Var;
         this.b = chat;
-        this.c = o2Var.getCurrentAccount();
+        this.c = n2Var.getCurrentAccount();
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -51,10 +51,10 @@ public final class d {
         }
         if (z10) {
             int i10 = this.l;
-            o2 o2Var = this.a;
+            n2 n2Var = this.a;
             TLRPC.Chat chat = this.b;
             if (i10 == -1 && chat != null) {
-                this.l = o2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
+                this.l = n2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
             }
             int i11 = this.k;
             int i12 = this.l;
@@ -62,7 +62,7 @@ public final class d {
                 return;
             }
             if (i12 != 0 && chat != null) {
-                o2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
             }
         }
         c cVar = this.m;
@@ -78,8 +78,8 @@ public final class d {
 
     public final FrameLayout c() {
         if (this.d == null) {
-            o2 o2Var = this.a;
-            FrameLayout frameLayout = new FrameLayout(o2Var.getParentActivity());
+            n2 n2Var = this.a;
+            FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
             this.d = frameLayout;
             frameLayout.setBackground(j6.K0(false));
             final int i10 = 0;
@@ -95,11 +95,11 @@ public final class d {
                     switch (i10) {
                         case 0:
                             d dVar = this.b;
-                            o2 o2Var2 = dVar.a;
+                            n2 n2Var2 = dVar.a;
                             if (dVar.i == null) {
-                                dVar.i = new b(dVar, o2Var2, dVar.b.id);
+                                dVar.i = new b(dVar, n2Var2, dVar.b.id);
                             }
-                            o2Var2.showDialog(dVar.i);
+                            n2Var2.showDialog(dVar.i);
                             break;
                         default:
                             d dVar2 = this.b;
@@ -110,32 +110,32 @@ public final class d {
                     }
                 }
             });
-            LinearLayout linearLayout = new LinearLayout(o2Var.getParentActivity());
+            LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, x5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
+            this.d.addView(this.f, y5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             int i11 = 1;
-            h0 h0Var = new h0(i11, o2Var.getParentActivity(), false);
+            h0 h0Var = new h0(i11, n2Var.getParentActivity(), false);
             this.e = h0Var;
             h0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            h9 h9Var = this.e.a;
-            for (int i12 = 0; i12 < h9Var.c.length; i12++) {
-                h9Var.l(0, null, 0);
+            j9 j9Var = this.e.a;
+            for (int i12 = 0; i12 < j9Var.c.length; i12++) {
+                j9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, x5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
-            TextView textView = new TextView(o2Var.getParentActivity());
+            this.f.addView(this.e, y5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            TextView textView = new TextView(n2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
             this.g.setGravity(16);
             this.g.setSingleLine();
             this.g.setText((CharSequence) null);
-            this.g.setTextColor(o2Var.getThemedColor(j6.fe));
+            this.g.setTextColor(n2Var.getThemedColor(j6.fe));
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, x5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
-            ImageView imageView = new ImageView(o2Var.getParentActivity());
+            this.f.addView(this.g, y5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            ImageView imageView = new ImageView(n2Var.getParentActivity());
             this.h = imageView;
-            imageView.setBackground(j6.f0(o2Var.getThemedColor(j6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
-            this.h.setColorFilter(new PorterDuffColorFilter(o2Var.getThemedColor(j6.de), PorterDuff.Mode.MULTIPLY));
+            imageView.setBackground(j6.f0(n2Var.getThemedColor(j6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+            this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(j6.de), PorterDuff.Mode.MULTIPLY));
             this.h.setContentDescription(LocaleController.getString(R.string.Close));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
@@ -152,11 +152,11 @@ public final class d {
                     switch (i13) {
                         case 0:
                             d dVar = this.b;
-                            o2 o2Var2 = dVar.a;
+                            n2 n2Var2 = dVar.a;
                             if (dVar.i == null) {
-                                dVar.i = new b(dVar, o2Var2, dVar.b.id);
+                                dVar.i = new b(dVar, n2Var2, dVar.b.id);
                             }
-                            o2Var2.showDialog(dVar.i);
+                            n2Var2.showDialog(dVar.i);
                             break;
                         default:
                             d dVar2 = this.b;
@@ -167,7 +167,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, x5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
+            this.d.addView(this.h, y5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 e(chatFull.requests_pending, chatFull.recent_requesters, false);
@@ -176,19 +176,19 @@ public final class d {
         return this.d;
     }
 
-    public final void d(we weVar) {
-        this.m = weVar;
+    public final void d(qe qeVar) {
+        this.m = qeVar;
     }
 
     public final void e(int i10, List list, boolean z10) {
         if (this.d == null) {
             return;
         }
-        o2 o2Var = this.a;
+        n2 n2Var = this.a;
         if (i10 <= 0) {
             TLRPC.Chat chat = this.b;
             if (chat != null) {
-                o2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+                n2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
                 this.l = 0;
             }
             a(false, z10);
@@ -204,7 +204,7 @@ public final class d {
             }
             int min = Math.min(3, list.size());
             for (int i11 = 0; i11 < min; i11++) {
-                TLRPC.User user = o2Var.getMessagesController().getUser((Long) list.get(i11));
+                TLRPC.User user = n2Var.getMessagesController().getUser((Long) list.get(i11));
                 if (user != null) {
                     this.e.b(i11, user, this.c);
                 }

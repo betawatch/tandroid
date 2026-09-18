@@ -11,14 +11,13 @@ import org.telegram.ui.Components.gj;
 import org.telegram.ui.Components.oi;
 import org.telegram.ui.Components.vi;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
-import org.telegram.ui.cd;
-import org.telegram.ui.g91;
-import org.telegram.ui.le;
-import org.telegram.ui.qo;
-import org.telegram.ui.tc;
+import org.telegram.ui.bd;
+import org.telegram.ui.f91;
+import org.telegram.ui.ke;
+import org.telegram.ui.oo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements e2.h {
     public final /* synthetic */ int a;
@@ -48,17 +47,17 @@ public final /* synthetic */ class g3 implements e2.h {
                 }
                 break;
             case 1:
-                m4.g1 g1Var = (m4.g1) this.b;
+                m4.f1 f1Var = (m4.f1) this.b;
                 b2.q1 q1Var = (b2.q1) this.c;
-                m4.k1 k1Var = (m4.k1) obj;
-                g1Var.getClass();
+                m4.j1 j1Var = (m4.j1) obj;
+                f1Var.getClass();
                 e9.k0 k0Var = q1Var.D;
                 if (!k0Var.isEmpty()) {
                     b2.p1 c10 = q1Var.a().c();
                     e9.o1 it = k0Var.values().iterator();
                     while (it.hasNext()) {
                         b2.m1 m1Var = (b2.m1) it.next();
-                        b2.l1 l1Var = (b2.l1) g1Var.d.n.get(m1Var.a.b);
+                        b2.l1 l1Var = (b2.l1) f1Var.d.n.get(m1Var.a.b);
                         if (l1Var == null || m1Var.a.a != l1Var.a) {
                             c10.a(m1Var);
                         } else {
@@ -67,64 +66,64 @@ public final /* synthetic */ class g3 implements e2.h {
                     }
                     q1Var = c10.b();
                 }
-                k1Var.q(q1Var);
+                j1Var.q(q1Var);
                 break;
             case 2:
-                m4.g1 g1Var2 = (m4.g1) this.b;
+                m4.f1 f1Var2 = (m4.f1) this.b;
                 m4.r rVar = (m4.r) this.c;
-                m4.a0 a0Var = (m4.a0) g1Var2.a.get();
+                m4.a0 a0Var = (m4.a0) f1Var2.a.get();
                 if (a0Var != null && !a0Var.j()) {
                     a0Var.g(rVar, false);
                     break;
                 }
                 break;
             case 3:
-                cd cdVar = (cd) this.b;
+                bd bdVar = (bd) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
-                cdVar.c = tL_premium_boostsStatus2;
+                bdVar.c = tL_premium_boostsStatus2;
                 if (tL_premium_boostsStatus2 != null) {
                     int i10 = tL_premium_boostsStatus2.level;
-                    cdVar.b = i10;
+                    bdVar.b = i10;
                     if (chat != null) {
                         chat.flags |= 1024;
                         chat.level = i10;
                     }
                 }
-                cdVar.X0(true);
-                ci.d dVar = cdVar.P;
+                bdVar.X0(true);
+                ci.d dVar = bdVar.P;
                 if (dVar != null) {
                     dVar.setLoading(false);
                     break;
                 }
                 break;
             case 4:
-                tc tcVar = (tc) this.b;
+                org.telegram.ui.sc scVar = (org.telegram.ui.sc) this.b;
                 MessagesController.PeerColors peerColors = (MessagesController.PeerColors) this.c;
                 View view = (View) obj;
-                tcVar.getClass();
-                if (view instanceof org.telegram.ui.sc) {
-                    org.telegram.ui.sc scVar = (org.telegram.ui.sc) view;
-                    scVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, tcVar.a));
-                    tcVar.b.getClass();
+                scVar.getClass();
+                if (view instanceof org.telegram.ui.rc) {
+                    org.telegram.ui.rc rcVar = (org.telegram.ui.rc) view;
+                    rcVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, scVar.a));
+                    scVar.b.getClass();
                     int S = RecyclerView.S(view);
                     if (peerColors != null && S >= 0 && S < peerColors.colors.size()) {
-                        scVar.a(peerColors.colors.get(S));
+                        rcVar.a(peerColors.colors.get(S));
                         break;
                     }
                 }
                 break;
             case 5:
-                le leVar = (le) this.b;
+                ke keVar = (ke) this.b;
                 rg.j0 j0Var = (rg.j0) this.c;
                 j0Var.G1((ChannelBoostsController.CanApplyBoost) obj);
-                leVar.w0.showDialog(j0Var);
+                keVar.w0.showDialog(j0Var);
                 break;
             case 6:
-                bo boVar = (bo) this.b;
-                org.telegram.ui.l4 l4Var = (org.telegram.ui.l4) this.c;
-                boVar.ib = true;
-                l4Var.run();
+                zn znVar = (zn) this.b;
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) this.c;
+                znVar.ib = true;
+                h6Var.run();
                 break;
             case 7:
                 vi viVar = (vi) this.b;
@@ -134,7 +133,7 @@ public final /* synthetic */ class g3 implements e2.h {
                 tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i11).getInputUser(oiVar.c.bot_id);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new qo(5, viVar, oiVar), 66);
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_toggleBotInAttachMenu, new oo(5, viVar, oiVar), 66);
                 break;
             case 8:
                 gj gjVar = (gj) this.b;
@@ -151,7 +150,7 @@ public final /* synthetic */ class g3 implements e2.h {
                 break;
             case 9:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
-                ((org.telegram.ui.ActionBar.c2) this.c).dismiss();
+                ((org.telegram.ui.ActionBar.b2) this.c).dismiss();
                 if (((Boolean) obj).booleanValue()) {
                     ci.oc E = ci.oc.E(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
                     long a2 = profileActivity.a();
@@ -165,7 +164,7 @@ public final /* synthetic */ class g3 implements e2.h {
                 }
                 break;
             case 10:
-                g91.V((g91) this.b, (TLRPC.TL_attachMenuBot) this.c);
+                f91.V((f91) this.b, (TLRPC.TL_attachMenuBot) this.c);
                 break;
             default:
                 a5.a aVar = (a5.a) this.b;

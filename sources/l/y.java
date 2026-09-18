@@ -1,9 +1,23 @@
 package l;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public interface y {
-    void b(m mVar);
+    boolean b(n nVar);
 
-    m getItemData();
+    boolean c();
+
+    void d();
+
+    void e(x xVar);
+
+    void g(l lVar, boolean z10);
+
+    void i(Context context, l lVar);
+
+    boolean j(e0 e0Var);
+
+    boolean k(n nVar);
 }

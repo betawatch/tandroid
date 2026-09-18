@@ -9,9 +9,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -248,7 +247,7 @@ public final class b {
                 cVar.e = g12;
                 int indexOf = g12.indexOf("[[");
                 if (indexOf != -1) {
-                    cVar.e = p6.t(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
+                    cVar.e = t8.b.v(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
                 }
                 arrayList4.add(cVar);
                 i15++;

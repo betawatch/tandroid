@@ -36,7 +36,7 @@ import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class i {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -226,7 +226,7 @@ public final class i {
                         if (yVar != null || !g6.a.d(uri, (Uri) yVar.b)) {
                             cf.c cVar = gVar.i;
                             cVar.e = new of.b(16, gVar, yVar2);
-                            cVar.z(uri);
+                            cVar.A(uri);
                         }
                     }
                     z10 = false;
@@ -253,7 +253,7 @@ public final class i {
                     }
                     cf.c cVar2 = gVar.i;
                     cVar2.e = new of.b(16, gVar, yVar22);
-                    cVar2.z(uri);
+                    cVar2.A(uri);
                 }
             }
             if (hVar.k()) {
@@ -350,7 +350,7 @@ public final class i {
             mediaMetadataCompat = createFromParcel;
         }
         a4.m mVar = mediaMetadataCompat == null ? new a4.m(1) : new a4.m(mediaMetadataCompat);
-        mVar.y0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        mVar.t0(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
         b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
     }
 
@@ -683,18 +683,18 @@ public final class i {
             createFromParcel.b = metadata;
         }
         a4.m mVar = createFromParcel == null ? new a4.m(1) : new a4.m(createFromParcel);
-        mVar.z0(j10);
+        mVar.v0(j10);
         if (string != null) {
-            mVar.A0("android.media.metadata.TITLE", string);
-            mVar.A0("android.media.metadata.DISPLAY_TITLE", string);
+            mVar.w0("android.media.metadata.TITLE", string);
+            mVar.w0("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            mVar.A0("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            mVar.w0("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
         b0Var.e(new MediaMetadataCompat((Bundle) mVar.b));
         Uri d = d(lVar);
         if (d != null) {
-            this.h.z(d);
+            this.h.A(d);
             bitmap = null;
         } else {
             bitmap = null;
@@ -702,7 +702,7 @@ public final class i {
         }
         Uri d10 = d(lVar);
         if (d10 != null) {
-            this.i.z(d10);
+            this.i.A(d10);
         } else {
             e(bitmap, 3);
         }

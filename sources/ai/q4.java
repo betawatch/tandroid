@@ -4,7 +4,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.graphics.RectF;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Property;
@@ -16,10 +15,9 @@ import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,6 +44,7 @@ public final class q4 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         Object obj;
+        i2.e0 e0Var;
         m.h hVar;
         int i10 = 0;
         switch (this.a) {
@@ -82,14 +81,14 @@ public final class q4 implements Runnable {
                     return;
                 }
             case 4:
-                androidx.biometric.e0 e0Var = (androidx.biometric.e0) this.b;
-                Context n10 = e0Var.n();
+                androidx.biometric.e0 e0Var2 = (androidx.biometric.e0) this.b;
+                Context n10 = e0Var2.n();
                 if (n10 == null) {
                     Log.w("FingerprintFragment", "Not resetting the dialog. Context is null.");
                     return;
                 } else {
-                    e0Var.C0.f(1);
-                    e0Var.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
+                    e0Var2.C0.f(1);
+                    e0Var2.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
                     return;
                 }
             case 5:
@@ -140,8 +139,8 @@ public final class q4 implements Runnable {
                 return;
             case 12:
                 qg.j jVar = ((ci.qb) this.b).J0;
-                if (jVar instanceof qg.x2) {
-                    ((qg.x2) jVar).getEditText();
+                if (jVar instanceof qg.u2) {
+                    ((qg.u2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -213,21 +212,35 @@ public final class q4 implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
+                ki.h0 h0Var = (ki.h0) this.b;
+                if (h0Var.Q == 5 && (e0Var = h0Var.L) != null && h0Var.r) {
+                    long J0 = e0Var.J0();
+                    long j3 = h0Var.A;
+                    if (J0 < j3 || J0 >= h0Var.B) {
+                        h0Var.L.W0(5, j3);
+                        J0 = h0Var.A;
+                    }
+                    h0Var.c.M(J0);
+                    h0Var.h.postDelayed(this, 33L);
+                    return;
+                }
+                return;
+            case 25:
                 m.r1 r1Var = (m.r1) this.b;
                 r1Var.w = null;
                 r1Var.drawableStateChanged();
                 return;
-            case 25:
+            case 26:
                 ActionMenuView actionMenuView = ((Toolbar) this.b).a;
                 if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
                     return;
                 }
                 hVar.l();
                 return;
-            case 26:
+            case 27:
                 Object obj2 = ((a6.i) this.b).b;
                 return;
-            case 27:
+            case 28:
                 org.telegram.ui.Cells.a0 a0Var = (org.telegram.ui.Cells.a0) this.b;
                 if (a0Var.b == null) {
                     a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
@@ -238,25 +251,18 @@ public final class q4 implements Runnable {
                 jVar2.b = i11;
                 a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
-            case 28:
-                org.telegram.ui.Cells.u5 u5Var = (org.telegram.ui.Cells.u5) this.b;
-                TextView textView = u5Var.b;
+            default:
+                org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) this.b;
+                TextView textView = v5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
-                u5Var.d = animatorSet;
+                v5Var.d = animatorSet;
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 1.0f));
-                u5Var.d.setDuration(250L);
-                u5Var.d.setInterpolator(new DecelerateInterpolator());
-                u5Var.d.addListener(new org.telegram.ui.t4(this, 9));
-                u5Var.d.start();
-                return;
-            default:
-                org.telegram.ui.Cells.t6 t6Var = (org.telegram.ui.Cells.t6) this.b;
-                t6Var.a();
-                RectF rectF = t6Var.f;
-                t6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                AndroidUtilities.runOnUIThread(t6Var.v, 1000L);
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
+                v5Var.d.setDuration(250L);
+                v5Var.d.setInterpolator(new DecelerateInterpolator());
+                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
+                v5Var.d.start();
                 return;
         }
     }
@@ -267,7 +273,7 @@ public final class q4 implements Runnable {
     }
 
     public q4(a6.i iVar, int i10) {
-        this.a = 26;
+        this.a = 27;
         this.b = iVar;
     }
 }

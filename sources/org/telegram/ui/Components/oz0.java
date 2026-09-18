@@ -1,79 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class oz0 extends FrameLayout {
-    public final qz0 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public interface oz0 extends org.telegram.ui.Cells.ba {
+    void attach(View view);
 
-    public oz0(qz0 qz0Var, View view, boolean z10) {
-        super(qz0Var.getContext());
-        this.a = qz0Var;
-        setWillNotDraw(false);
-        if (!z10) {
-            setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        }
-        addView(view, w7.x5.c(-1.0f, -1));
-    }
+    void detach(View view);
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10 = this.c;
-        qz0 qz0Var = this.a;
-        if (z10 || this.d) {
-            canvas2 = canvas;
-            float dp = AndroidUtilities.dp(10.0f);
-            float[] fArr = qz0Var.c;
-            boolean z11 = this.c;
-            float f7 = z11 ? dp : 0.0f;
-            fArr[1] = f7;
-            fArr[0] = f7;
-            float f10 = z11 ? dp : 0.0f;
-            fArr[3] = f10;
-            fArr[2] = f10;
-            boolean z12 = this.d;
-            float f11 = z12 ? dp : 0.0f;
-            fArr[5] = f11;
-            fArr[4] = f11;
-            if (!z12) {
-                dp = 0.0f;
-            }
-            fArr[7] = dp;
-            fArr[6] = dp;
-            qz0Var.b.rewind();
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f12 = qz0Var.h;
-            rectF.set(f12, f12, getWidth() - qz0Var.h, (qz0Var.h * AndroidUtilities.dp(this.d ? -1.0f : 1.0f)) + getHeight());
-            qz0Var.b.addRoundRect(rectF, qz0Var.c, Path.Direction.CW);
-            if (this.b) {
-                canvas2.drawPath(qz0Var.b, qz0Var.d);
-            }
-            canvas2.drawPath(qz0Var.b, qz0Var.e);
-        } else {
-            if (this.b) {
-                float f13 = qz0Var.h;
-                canvas2 = canvas;
-                canvas2.drawRect(f13, f13, getWidth() + qz0Var.h, getHeight() + qz0Var.h, qz0Var.d);
-            } else {
-                canvas2 = canvas;
-            }
-            float f14 = qz0Var.h;
-            canvas2.drawRect(f14, f14, getWidth() - qz0Var.h, getHeight() + qz0Var.h, qz0Var.e);
-        }
-        super.onDraw(canvas2);
-    }
+    void draw(Canvas canvas, View view);
 
-    public void setFilled(boolean z10) {
-        this.b = z10;
-    }
+    int getEmojiOnlyCount();
+
+    void setRow(int i10);
+
+    void setX(int i10);
+
+    void setY(int i10);
 }

@@ -27,16 +27,16 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import v7.h8;
-import w7.z7;
+import w7.a8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final h8 a;
     public static final k b;
 
     static {
-        z7.a("TypefaceCompat static init");
+        a8.a("TypefaceCompat static init");
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 29) {
             a = new j();
@@ -93,7 +93,7 @@ public abstract class e {
             boolean z11 = gVar.d == 0;
             int i14 = gVar.c;
             Handler handler = new Handler(Looper.getMainLooper());
-            a6.i iVar = new a6.i(24, z10);
+            a6.i iVar = new a6.i(23, z10);
             iVar.b = a0Var;
             o0.e eVar = gVar.b;
             int i15 = 2;

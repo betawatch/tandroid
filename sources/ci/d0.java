@@ -9,11 +9,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
-    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.e6 b;
     public final ImageReceiver c;
     public c0 d;
     public TextureView e;
@@ -31,7 +31,7 @@ public final class d0 {
 
     public d0(e0 e0Var) {
         this.p = e0Var;
-        this.b = new org.telegram.ui.Components.c6(e0Var, 0L, 1200L, qr.g);
+        this.b = new org.telegram.ui.Components.e6(e0Var, 0L, 1200L, qr.g);
         this.c = new ImageReceiver(e0Var);
     }
 

@@ -1,68 +1,74 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fw0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ ow0 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.PollAnswer d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 e;
-    public final /* synthetic */ ArrayList f;
+public final class fw0 implements View.OnClickListener {
+    public final /* synthetic */ gi0 a;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ org.telegram.ui.Components.wl0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.w70 e;
+    public final /* synthetic */ org.telegram.ui.Components.w70 f;
+    public final /* synthetic */ mw0 h;
 
-    public /* synthetic */ fw0(ow0 ow0Var, boolean z10, TLRPC.PollAnswer pollAnswer, org.telegram.ui.ActionBar.o2 o2Var, ArrayList arrayList) {
-        this.b = ow0Var;
-        this.c = z10;
-        this.d = pollAnswer;
-        this.e = o2Var;
-        this.f = arrayList;
+    public fw0(mw0 mw0Var, gi0 gi0Var, zn znVar, org.telegram.ui.Components.wl0 wl0Var, LinearLayout linearLayout, org.telegram.ui.Components.w70 w70Var, org.telegram.ui.Components.w70 w70Var2) {
+        this.h = mw0Var;
+        this.a = gi0Var;
+        this.b = znVar;
+        this.c = wl0Var;
+        this.d = linearLayout;
+        this.e = w70Var;
+        this.f = w70Var2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ow0 ow0Var = this.b;
-                ow0Var.getClass();
-                boolean z10 = this.c;
-                org.telegram.ui.ActionBar.o2 o2Var = this.e;
-                if (z10) {
-                    ArrayList<TLRPC.PollAnswer> arrayList = this.f;
-                    arrayList.remove(this.d);
-                    o2Var.getSendMessagesHelper().sendVote(ow0Var.H, arrayList, null);
-                } else {
-                    o2Var.getSendMessagesHelper().sendVote(ow0Var.H, null, null);
-                }
-                ow0Var.c(true);
-                break;
-            default:
-                ow0 ow0Var2 = this.b;
-                ow0Var2.getClass();
-                boolean z11 = this.c;
-                TLRPC.PollAnswer pollAnswer = this.d;
-                org.telegram.ui.ActionBar.o2 o2Var2 = this.e;
-                if (z11) {
-                    ArrayList<TLRPC.PollAnswer> arrayList2 = this.f;
-                    arrayList2.add(pollAnswer);
-                    o2Var2.getSendMessagesHelper().sendVote(ow0Var2.H, arrayList2, null);
-                } else {
-                    ArrayList<TLRPC.PollAnswer> arrayList3 = new ArrayList<>(1);
-                    arrayList3.add(pollAnswer);
-                    o2Var2.getSendMessagesHelper().sendVote(ow0Var2.H, arrayList3, null);
-                }
-                ow0Var2.c(true);
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gi0 gi0Var = this.a;
+        ArrayList arrayList = gi0Var.b;
+        ArrayList arrayList2 = gi0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-    }
-
-    public /* synthetic */ fw0(ow0 ow0Var, boolean z10, org.telegram.ui.ActionBar.o2 o2Var, ArrayList arrayList, TLRPC.PollAnswer pollAnswer) {
-        this.b = ow0Var;
-        this.c = z10;
-        this.e = o2Var;
-        this.f = arrayList;
-        this.d = pollAnswer;
+        int size = arrayList2.size();
+        mw0 mw0Var = this.h;
+        zn znVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            znVar.presentFragment(new ProfileActivity(bundle, null));
+            mw0Var.c(false);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && znVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(mw0Var.getContext()), mw0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            znVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.wl0 wl0Var = this.c;
+        wl0Var.requestLayout();
+        this.d.requestLayout();
+        wl0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

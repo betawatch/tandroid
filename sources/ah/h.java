@@ -4,9 +4,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
 import org.telegram.messenger.AndroidUtilities;
-import yf.f0;
+import yf.g0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class h {
     public final g b;
@@ -21,7 +21,7 @@ public final class h {
             this.c = gVar;
             gVar.e = 4;
             gVar.f = 4;
-            gVar.d(AndroidUtilities.dpf2(6.0f), f0.b());
+            gVar.d(AndroidUtilities.dpf2(6.0f), g0.b());
             g gVar2 = new g(iVar, "blur", 0, false);
             this.b = gVar2;
             gVar2.e = 8;
@@ -35,7 +35,7 @@ public final class h {
             gVar3.e = 8;
             gVar3.f = 8;
             gVar3.c(AndroidUtilities.dpf2(40.0f));
-            gVar3.e(f0.b());
+            gVar3.e(g0.b());
             this.c = null;
             return;
         }
@@ -46,7 +46,7 @@ public final class h {
         int i11 = z10 ? 16 : 8;
         gVar4.e = i10;
         gVar4.f = i11;
-        gVar4.d(AndroidUtilities.dpf2(40.0f), f0.b());
+        gVar4.d(AndroidUtilities.dpf2(40.0f), g0.b());
         this.c = null;
     }
 

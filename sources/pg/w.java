@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.r2;
-import org.telegram.ui.mm0;
-import w7.x5;
+import org.telegram.ui.lm0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class w extends LinearLayout {
     public final v a;
@@ -32,25 +32,25 @@ public final class w extends LinearLayout {
         v vVar = new v(xVar, context);
         this.a = vVar;
         vVar.a(0);
-        addView(vVar, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        addView(vVar, y5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
         v vVar2 = new v(xVar, context);
         this.b = vVar2;
         vVar2.a(1);
-        addView(vVar2, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        addView(vVar2, y5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
         v vVar3 = new v(xVar, context);
         this.c = vVar3;
         vVar3.a(2);
-        addView(vVar3, x5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
+        addView(vVar3, y5.p(-1, -2, 0.0f, 0, 0, 0, 0, 16));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(21);
-        addView(linearLayout, x5.c(64.0f, -1));
+        addView(linearLayout, y5.c(64.0f, -1));
         TextView textView = new TextView(context);
         textView.setTextColor(-1711276033);
         textView.setTextSize(1, 16.0f);
         textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersHexColor).toUpperCase());
         textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, x5.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
+        linearLayout.addView(textView, y5.k(0.0f, 0.0f, 8.0f, 0.0f, -2, -2));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.d = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 16.0f);
@@ -62,9 +62,9 @@ public final class w extends LinearLayout {
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
         editTextBoldCursor.setTypeface(AndroidUtilities.bold());
-        editTextBoldCursor.addTextChangedListener(new mm0(this));
+        editTextBoldCursor.addTextChangedListener(new lm0(this));
         editTextBoldCursor.setOnFocusChangeListener(new v5(this, 2));
         editTextBoldCursor.setOnEditorActionListener(new r2(5));
-        linearLayout.addView(editTextBoldCursor, x5.n(72, 36));
+        linearLayout.addView(editTextBoldCursor, y5.n(72, 36));
     }
 }

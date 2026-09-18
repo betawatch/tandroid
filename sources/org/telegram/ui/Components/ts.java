@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class ts extends x51 {
+public abstract class ts extends l61 {
     public final int N;
     public final int O;
     public final ArrayList P;
@@ -29,16 +29,16 @@ public abstract class ts extends x51 {
     public String b0;
     public final xp c0;
 
-    public ts(ml0 ml0Var, Context context, int i10, int i11) {
-        super(ml0Var, context, i10, 0, false, null, null);
+    public ts(wl0 wl0Var, Context context, int i10, int i11) {
+        super(wl0Var, context, i10, 0, false, null, null);
         this.P = new ArrayList();
         this.Q = new ArrayList();
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.V = new ArrayList();
-        un0 un0Var = (un0) this;
-        this.c0 = new xp(un0Var, 6);
-        this.s = new d(un0Var, 9);
+        go0 go0Var = (go0) this;
+        this.c0 = new xp(go0Var, 6);
+        this.s = new d(go0Var, 9);
         this.N = i10;
         this.O = i11;
         N(false);
@@ -69,7 +69,7 @@ public abstract class ts extends x51 {
         if (z10) {
             ArrayList arrayList = this.P;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.k0.h(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.Z;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {

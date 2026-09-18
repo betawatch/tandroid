@@ -3,26 +3,26 @@ package bi;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class w extends i51 {
+public final class w extends w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        i51.setup(new w());
+        w51.setup(new w());
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
         x xVar = (x) view;
-        TranslateController.Language language = (TranslateController.Language) j51Var.G;
+        TranslateController.Language language = (TranslateController.Language) x51Var.G;
         xVar.a.setText(language.displayName);
         xVar.b.setText(language.ownDisplayName);
         if (xVar.c != z10) {
@@ -32,8 +32,8 @@ public final class w extends i51 {
         xVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, f6 f6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, e6 e6Var) {
         return new x(context);
     }
 }

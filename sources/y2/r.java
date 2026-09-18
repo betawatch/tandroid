@@ -3,13 +3,13 @@ package y2;
 import hg.k0;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.lb1;
+import org.telegram.ui.kb1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class r {
-    public static final lb1 g = new lb1(18);
-    public static final lb1 h = new lb1(19);
+    public static final kb1 g = new kb1(18);
+    public static final kb1 h = new kb1(19);
     public int d;
     public int e;
     public int f;
@@ -83,6 +83,6 @@ public final class r {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((q) k0.h(1, arrayList)).c;
+        return ((q) k0.g(1, arrayList)).c;
     }
 }

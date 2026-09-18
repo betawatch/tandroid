@@ -1,54 +1,38 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class et implements TextWatcher {
-    public final /* synthetic */ EditTextBoldCursor a;
+public final /* synthetic */ class et implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ st b;
 
-    public et(EditTextBoldCursor editTextBoldCursor) {
-        this.a = editTextBoldCursor;
+    public /* synthetic */ et(st stVar, int i10) {
+        this.a = i10;
+        this.b = stVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        try {
-            String obj = editable.toString();
-            if (obj.isEmpty()) {
-                return;
-            }
-            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
-            EditTextBoldCursor editTextBoldCursor = this.a;
-            if (intValue < 0) {
-                editTextBoldCursor.setText("0");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (intValue > 300) {
-                editTextBoldCursor.setText("300");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (obj.equals("" + intValue)) {
-                return;
-            }
-            editTextBoldCursor.setText("" + intValue);
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c0 = null;
+                break;
+            case 1:
+                st stVar = this.b;
+                stVar.A.setImageBitmap((Bitmap) null);
+                org.telegram.ui.Components.pd0 pd0Var = stVar.C;
+                if (pd0Var != null) {
+                    pd0Var.a();
+                    stVar.z.removeView(stVar.C);
+                    stVar.C = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.Q.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(420L).setInterpolator(org.telegram.ui.Components.qr.h).start();
+                break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

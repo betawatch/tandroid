@@ -1,48 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wd0 implements Runnable {
+public final class wd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jf0 b;
+    public final /* synthetic */ xg0 b;
 
-    public /* synthetic */ wd0(jf0 jf0Var, int i10) {
+    public /* synthetic */ wd0(xg0 xg0Var, int i10) {
         this.a = i10;
-        this.b = jf0Var;
+        this.b = xg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.L.n();
-                break;
-            case 1:
-                jf0 jf0Var = this.b;
-                jf0Var.M = null;
-                jf0Var.N = null;
-                jf0Var.p(true);
-                jf0Var.e.h(null, null, jf0Var.f, null);
-                kd kdVar = jf0Var.n;
-                org.telegram.ui.Components.yi0 yi0Var = jf0Var.I;
-                kdVar.setAnimation(yi0Var);
-                yi0Var.M(0);
-                jf0Var.K = true;
-                break;
-            case 2:
-                this.b.K = true;
-                break;
-            default:
-                EditTextBoldCursor editTextBoldCursor = this.b.c;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                xg0 xg0Var = this.b;
+                if (xg0Var.d == animator) {
+                    xg0Var.d = null;
                     break;
                 }
+                break;
+            default:
+                xg0 xg0Var2 = this.b;
+                xg0Var2.c.setVisibility(8);
+                if (xg0Var2.d == animator) {
+                    xg0Var2.d = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

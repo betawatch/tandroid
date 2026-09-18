@@ -22,9 +22,9 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import w7.q7;
+import w7.r7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -100,7 +100,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return q7.d(super.getCustomSelectionActionModeCallback());
+        return r7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -143,10 +143,10 @@ public final class s extends EditText implements r0.o, u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.i0.e(this)) != null) {
-            t0.c.b(editorInfo, e);
-            onCreateInputConnection = t0.g.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
+            t0.b.b(editorInfo, e);
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -243,7 +243,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class eu extends bu {
     public Drawable c;
@@ -18,8 +18,8 @@ public final class eu extends bu {
     public final /* synthetic */ ju e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eu(ju juVar, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
+    public eu(ju juVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, e6Var);
         this.e = juVar;
         this.d = i10;
         this.c = null;
@@ -34,7 +34,7 @@ public final class eu extends bu {
     public final void extendActionMode(ActionMode actionMode, Menu menu) {
         ju juVar = this.e;
         if (juVar.a()) {
-            org.telegram.ui.bo.k8(menu, null, juVar.L == 3, true, true, true);
+            org.telegram.ui.zn.k8(menu, null, juVar.L == 3, true, true, true);
         } else {
             juVar.i(menu);
         }
@@ -58,8 +58,8 @@ public final class eu extends bu {
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         ju juVar = this.e;
-        rl0 rl0Var = juVar.c;
-        if (rl0Var != null) {
+        bm0 bm0Var = juVar.c;
+        if (bm0Var != null) {
             boolean z10 = false;
             boolean z11 = i11 != i10;
             if (juVar.a() && z11) {
@@ -69,10 +69,10 @@ public final class eu extends bu {
             if (juVar.n != z10) {
                 juVar.n = z10;
                 if (z10) {
-                    this.c = rl0Var.d;
-                    rl0Var.a(R.drawable.msg_edit, true);
+                    this.c = bm0Var.d;
+                    bm0Var.a(R.drawable.msg_edit, true);
                 } else {
-                    rl0Var.b(this.c, true);
+                    bm0Var.b(this.c, true);
                     this.c = null;
                 }
             }

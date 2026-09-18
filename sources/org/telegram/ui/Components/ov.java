@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ov implements Runnable {
     public final /* synthetic */ int a;
@@ -22,9 +22,9 @@ public final /* synthetic */ class ov implements Runnable {
             default:
                 sv svVar = this.b.f;
                 svVar.dismiss();
-                org.telegram.ui.ActionBar.o2 o2Var = svVar.c;
-                if (o2Var != null && o2Var.getParentActivity() != null) {
-                    org.telegram.messenger.w1.p(R.string.AddEmojiNotFound, vc.a0(o2Var), null);
+                org.telegram.ui.ActionBar.n2 n2Var = svVar.c;
+                if (n2Var != null && n2Var.getParentActivity() != null) {
+                    org.telegram.messenger.wh.o(R.string.AddEmojiNotFound, xc.a0(n2Var), null);
                     break;
                 }
                 break;

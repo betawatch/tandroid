@@ -1,38 +1,45 @@
 package pg;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
+public final class w0 {
+    public final double a;
+    public final double b;
+    public final double c;
+    public boolean d;
 
-    public /* synthetic */ w0(c1 c1Var, int i10) {
-        this.a = i10;
-        this.b = c1Var;
+    public w0(double d, double d10, double d11) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b1 b1Var = this.b.a;
-                if (b1Var != null) {
-                    b1Var.b();
-                    break;
-                }
-                break;
-            case 1:
-                c1 c1Var = this.b;
-                c1Var.c.a(c1Var.r);
-                a1 a1Var = c1Var.d;
-                a1Var.getClass();
-                a1Var.postRunnable(new z0(a1Var, 2));
-                c1Var.d = null;
-                break;
-            default:
-                c1 c1Var2 = this.b;
-                c1Var2.c.q(c1Var2.x);
-                break;
+    public final float a(w0 w0Var) {
+        return (float) Math.sqrt(Math.pow(this.c - w0Var.c, 2.0d) + Math.pow(this.b - w0Var.b, 2.0d) + Math.pow(this.a - w0Var.a, 2.0d));
+    }
+
+    public final w0 b(w0 w0Var) {
+        return new w0((this.a + w0Var.a) * 0.5d, (this.b + w0Var.b) * 0.5d, (this.c + w0Var.c) * 0.5d);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
         }
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof w0)) {
+            return false;
+        }
+        w0 w0Var = (w0) obj;
+        return this.a == w0Var.a && this.b == w0Var.b && this.c == w0Var.c;
+    }
+
+    public w0(double d, double d10, double d11, int i10) {
+        this.a = d;
+        this.b = d10;
+        this.c = d11;
+        this.d = true;
     }
 }

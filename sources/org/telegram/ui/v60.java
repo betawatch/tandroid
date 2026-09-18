@@ -3,44 +3,45 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v60 implements org.telegram.ui.Components.c20, org.telegram.ui.ActionBar.b2, r0.n {
+public final /* synthetic */ class v60 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g70 b;
+    public final /* synthetic */ e70 b;
 
-    public /* synthetic */ v60(g70 g70Var, int i10) {
+    public /* synthetic */ v60(e70 e70Var, int i10) {
         this.a = i10;
-        this.b = g70Var;
+        this.b = e70Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
-        g70 g70Var = this.b;
-        g70Var.m0 = i10;
-        ai.v7 v7Var = g70Var.F;
-        if (v7Var != null) {
-            v7Var.setPadding(0, 0, 0, i10);
-        }
-        g70Var.j0();
-        g70Var.h0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.c20
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
+            case 0:
+                e70 e70Var = this.b;
+                e70Var.f.r.clearFocus();
+                e70Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(e70Var.f.r);
+                break;
             case 1:
                 this.b.o0();
                 break;
+            case 2:
+                e70 e70Var2 = this.b;
+                e70Var2.n0(e70Var2.l0());
+                break;
+            case 3:
+                e70 e70Var3 = this.b;
+                e70Var3.n0(e70Var3.l0());
+                break;
             default:
-                this.b.finishFragment();
+                e70 e70Var4 = this.b;
+                e70Var4.X = null;
+                e70Var4.Z.b();
+                e70Var4.h.b();
+                e70Var4.k0();
+                e70Var4.r0();
+                e70Var4.s0();
                 break;
         }
     }

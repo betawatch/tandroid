@@ -44,7 +44,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -368,13 +368,13 @@ public final class u extends g.g {
         n4.y yVar = this.i0;
         r rVar = this.j0;
         if (yVar != null) {
-            yVar.Z(rVar);
+            yVar.a0(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
             n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
             this.i0 = yVar2;
-            yVar2.V(rVar);
+            yVar2.W(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;

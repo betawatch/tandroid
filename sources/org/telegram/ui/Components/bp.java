@@ -14,27 +14,27 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.gj1;
+import org.telegram.ui.fj1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class bp implements ti {
     public final /* synthetic */ vi a;
     public final /* synthetic */ TL_stories.TL_premium_boostsStatus b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
     public final /* synthetic */ org.telegram.ui.g d;
     public final /* synthetic */ long e;
     public final /* synthetic */ org.telegram.ui.s3 f;
-    public final /* synthetic */ org.telegram.ui.cd h;
+    public final /* synthetic */ org.telegram.ui.bd h;
 
-    public bp(vi viVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.g gVar, long j3, org.telegram.ui.s3 s3Var, org.telegram.ui.cd cdVar) {
+    public bp(vi viVar, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.g gVar, long j3, org.telegram.ui.s3 s3Var, org.telegram.ui.bd bdVar) {
         this.a = viVar;
         this.b = tL_premium_boostsStatus;
-        this.c = f6Var;
+        this.c = e6Var;
         this.d = gVar;
         this.e = j3;
         this.f = s3Var;
-        this.h = cdVar;
+        this.h = bdVar;
     }
 
     @Override // org.telegram.ui.Components.ti
@@ -55,7 +55,7 @@ public final class bp implements ti {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                ap apVar = new ap(new gj1(file, file, ""), loadBitmap, false, 0);
+                ap apVar = new ap(new fj1(file, file, ""), loadBitmap, false, 0);
                 apVar.V1 = this.b;
                 apVar.a.a = this.c;
                 apVar.p1 = this.d;
@@ -64,10 +64,10 @@ public final class bp implements ti {
                 apVar.n1 = 0.2f;
                 apVar.c1(this.e);
                 apVar.I1 = new zo(viVar, this.f, 0);
-                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                m2Var.a = true;
-                m2Var.e = true;
-                this.h.showAsSheet(apVar, m2Var);
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                l2Var.e = true;
+                this.h.showAsSheet(apVar, l2Var);
                 viVar.dismiss();
             }
         } catch (Throwable th2) {
@@ -89,10 +89,10 @@ public final class bp implements ti {
         apVar.p1 = this.d;
         apVar.c1(this.e);
         apVar.I1 = new zo(this.a, this.f, 1);
-        org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-        m2Var.a = true;
-        m2Var.e = true;
-        this.h.showAsSheet(apVar, m2Var);
+        org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+        l2Var.a = true;
+        l2Var.e = true;
+        this.h.showAsSheet(apVar, l2Var);
     }
 
     @Override // org.telegram.ui.Components.ti
@@ -101,8 +101,8 @@ public final class bp implements ti {
     }
 
     @Override // org.telegram.ui.Components.ti
-    public final void x0(fh fhVar) {
-        fhVar.run();
+    public final void x0(gh ghVar) {
+        ghVar.run();
     }
 
     @Override // org.telegram.ui.Components.ti

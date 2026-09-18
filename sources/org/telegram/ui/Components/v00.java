@@ -4,16 +4,16 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v00 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e5 b;
-    public final /* synthetic */ org.telegram.ui.pf c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d5 b;
+    public final /* synthetic */ org.telegram.ui.of c;
 
-    public /* synthetic */ v00(org.telegram.ui.ActionBar.e5 e5Var, org.telegram.ui.pf pfVar) {
-        this.b = e5Var;
-        this.c = pfVar;
+    public /* synthetic */ v00(org.telegram.ui.ActionBar.d5 d5Var, org.telegram.ui.of ofVar) {
+        this.b = d5Var;
+        this.c = ofVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
@@ -34,44 +34,44 @@ public final /* synthetic */ class v00 implements Utilities.Callback {
                 Integer num = (Integer) obj;
                 List fragmentStack = this.b.getFragmentStack();
                 boolean z11 = true;
-                org.telegram.ui.ActionBar.o2 o2Var = null;
+                org.telegram.ui.ActionBar.n2 n2Var = null;
                 for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                    o2Var = (org.telegram.ui.ActionBar.o2) fragmentStack.get(size);
-                    if (!(o2Var instanceof org.telegram.ui.wy) && !(o2Var instanceof org.telegram.ui.gh0)) {
+                    n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(size);
+                    if (!(n2Var instanceof org.telegram.ui.uy) && !(n2Var instanceof org.telegram.ui.fh0)) {
                         if (z11) {
-                            o2Var.finishFragment();
+                            n2Var.finishFragment();
                             z11 = false;
                         } else {
-                            o2Var.removeSelfFromStack();
+                            n2Var.removeSelfFromStack();
                         }
                     }
-                    org.telegram.ui.ActionBar.o2 o2Var2 = o2Var;
-                    org.telegram.ui.ActionBar.o2 o2Var3 = !(o2Var2 instanceof org.telegram.ui.gh0) ? ((org.telegram.ui.gh0) o2Var2).J : o2Var2;
-                    z10 = o2Var3 instanceof org.telegram.ui.wy;
-                    org.telegram.ui.pf pfVar = this.c;
+                    org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
+                    org.telegram.ui.ActionBar.n2 n2Var3 = !(n2Var2 instanceof org.telegram.ui.fh0) ? ((org.telegram.ui.fh0) n2Var2).J : n2Var2;
+                    z10 = n2Var3 instanceof org.telegram.ui.uy;
+                    org.telegram.ui.of ofVar = this.c;
                     if (z10) {
-                        pfVar.run(o2Var2);
+                        ofVar.run(n2Var2);
                         break;
                     } else {
-                        org.telegram.ui.wy wyVar = (org.telegram.ui.wy) o2Var3;
-                        wyVar.K3();
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.o5(wyVar, num, pfVar, o2Var2, 23), 80L);
+                        org.telegram.ui.uy uyVar = (org.telegram.ui.uy) n2Var3;
+                        uyVar.K3();
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5(uyVar, num, ofVar, n2Var2, 23), 80L);
                         break;
                     }
                 }
-                org.telegram.ui.ActionBar.o2 o2Var22 = o2Var;
-                if (!(o2Var22 instanceof org.telegram.ui.gh0)) {
+                org.telegram.ui.ActionBar.n2 n2Var22 = n2Var;
+                if (!(n2Var22 instanceof org.telegram.ui.fh0)) {
                 }
-                z10 = o2Var3 instanceof org.telegram.ui.wy;
-                org.telegram.ui.pf pfVar2 = this.c;
+                z10 = n2Var3 instanceof org.telegram.ui.uy;
+                org.telegram.ui.of ofVar2 = this.c;
                 if (z10) {
                 }
                 break;
         }
     }
 
-    public /* synthetic */ v00(org.telegram.ui.pf pfVar, org.telegram.ui.ActionBar.e5 e5Var) {
-        this.c = pfVar;
-        this.b = e5Var;
+    public /* synthetic */ v00(org.telegram.ui.of ofVar, org.telegram.ui.ActionBar.d5 d5Var) {
+        this.c = ofVar;
+        this.b = d5Var;
     }
 }

@@ -2,18 +2,18 @@ package yh;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a4 b;
+    public final /* synthetic */ y3 b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ v1(a4 a4Var, String str, int i10) {
+    public /* synthetic */ v1(y3 y3Var, String str, int i10) {
         this.a = i10;
-        this.b = a4Var;
+        this.b = y3Var;
         this.c = str;
     }
 
@@ -21,7 +21,7 @@ public final /* synthetic */ class v1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                a4.i1(this.b, this.c);
+                y3.i1(this.b, this.c);
                 break;
             case 1:
                 nf.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
@@ -43,12 +43,12 @@ public final /* synthetic */ class v1 implements Runnable {
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                oc k10 = this.b.getBulletinFactory().k(false);
+                qc k10 = this.b.getBulletinFactory().k(false);
                 k10.t = true;
                 k10.j();
                 break;
             default:
-                a4.p0(this.b, this.c);
+                y3.p0(this.b, this.c);
                 break;
         }
     }

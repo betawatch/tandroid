@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class ck0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ int G;
@@ -24,25 +24,25 @@ public final class ck0 extends AnimatedPhoneNumberEditText {
             case 0:
                 super.onFocusChanged(z10, i10, rect);
                 ek0 ek0Var = (ek0) this.H;
-                org.telegram.ui.Components.yc0 yc0Var = ek0Var.s;
+                org.telegram.ui.Components.id0 id0Var = ek0Var.s;
                 float f7 = (z10 || ek0Var.Q.isFocused()) ? 1.0f : 0.0f;
-                yc0Var.b(f7, f7, true);
+                id0Var.b(f7, f7, true);
                 break;
             case 1:
                 super.onFocusChanged(z10, i10, rect);
                 ek0 ek0Var2 = (ek0) this.H;
-                org.telegram.ui.Components.yc0 yc0Var2 = ek0Var2.s;
+                org.telegram.ui.Components.id0 id0Var2 = ek0Var2.s;
                 float f10 = (z10 || ek0Var2.O.isFocused()) ? 1.0f : 0.0f;
-                yc0Var2.b(f10, f10, true);
+                id0Var2.b(f10, f10, true);
                 break;
             default:
                 super.onFocusChanged(z10, i10, rect);
-                xg0 xg0Var = (xg0) this.H;
-                org.telegram.ui.Components.yc0 yc0Var3 = xg0Var.f;
-                float f11 = (z10 || xg0Var.b.isFocused()) ? 1.0f : 0.0f;
-                yc0Var3.b(f11, f11, true);
+                wg0 wg0Var = (wg0) this.H;
+                org.telegram.ui.Components.id0 id0Var3 = wg0Var.f;
+                float f11 = (z10 || wg0Var.b.isFocused()) ? 1.0f : 0.0f;
+                id0Var3.b(f11, f11, true);
                 if (z10) {
-                    xg0Var.V.c.setEditText(this);
+                    wg0Var.V.c.setEditText(this);
                     break;
                 }
                 break;

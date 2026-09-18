@@ -5,16 +5,16 @@ import android.view.View;
 import java.util.List;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.g3;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.i40;
-import org.telegram.ui.k60;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.Components.qk0;
+import org.telegram.ui.g40;
+import org.telegram.ui.i60;
 import s4.c1;
 import s4.j;
-import zg.l0;
-import zg.p0;
+import zg.k0;
+import zg.o0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class f extends j {
     public final /* synthetic */ h F;
@@ -30,7 +30,7 @@ public final class f extends j {
 
     @Override // s4.f1
     public final void w(c1 c1Var) {
-        p0 p0Var;
+        o0 o0Var;
         g gVar;
         int i10;
         h hVar = this.F;
@@ -41,22 +41,22 @@ public final class f extends j {
         if (list != null && b10 >= 0 && b10 < list.size()) {
             groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
         }
-        if (groupCallMessage == null || (p0Var = groupCallMessage.visibleReaction) == null) {
+        if (groupCallMessage == null || (o0Var = groupCallMessage.visibleReaction) == null) {
             return;
         }
         View view = c1Var.a;
         if (!(view instanceof c) || (gVar = hVar.Z0) == null) {
             return;
         }
-        k60 k60Var = ((i40) gVar).a;
-        Context context = k60Var.getContext();
-        gk0 gk0Var = k60Var.K;
-        i10 = ((g3) k60Var).currentAccount;
-        l0 l0Var = new l0(context, null, gk0Var, (c) view, null, 0.0f, 0.0f, p0Var, i10, 1, false);
-        l0.B = l0Var;
-        l0Var.i.setTag(R.id.parent_tag, 1);
-        k60Var.container.addView(l0Var.i);
-        l0Var.s = true;
-        l0Var.y = System.currentTimeMillis();
+        i60 i60Var = ((g40) gVar).a;
+        Context context = i60Var.getContext();
+        qk0 qk0Var = i60Var.K;
+        i10 = ((f3) i60Var).currentAccount;
+        k0 k0Var = new k0(context, null, qk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
+        k0.B = k0Var;
+        k0Var.i.setTag(R.id.parent_tag, 1);
+        i60Var.container.addView(k0Var.i);
+        k0Var.s = true;
+        k0Var.y = System.currentTimeMillis();
     }
 }

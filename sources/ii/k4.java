@@ -11,14 +11,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k4 extends ReplacementSpan {
     public final TL_iv.textButton a;
     public RichMessageLayout.RichButtonSpan b;
     public View c;
     public int d = UserConfig.selectedAccount;
-    public org.telegram.ui.ActionBar.f6 e;
+    public org.telegram.ui.ActionBar.e6 e;
 
     public k4(TL_iv.textButton textbutton) {
         this.a = textbutton;
@@ -28,7 +28,7 @@ public final class k4 extends ReplacementSpan {
         return (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) || (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile);
     }
 
-    public final void a(int i10, View view, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void a(int i10, View view, org.telegram.ui.ActionBar.e6 e6Var) {
         View view2;
         RichMessageLayout.RichButtonSpan richButtonSpan = this.b;
         if (richButtonSpan != null && (view2 = this.c) != null) {
@@ -36,7 +36,7 @@ public final class k4 extends ReplacementSpan {
         }
         this.c = view;
         this.d = i10;
-        this.e = f6Var;
+        this.e = e6Var;
         this.b = null;
         b();
     }

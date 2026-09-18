@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class qk0 extends og.b {
     public final Context d;
@@ -21,7 +21,7 @@ public final class qk0 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return (i10 == 0 || i10 == 4) ? false : true;
@@ -57,13 +57,13 @@ public final class qk0 extends og.b {
         View view = c1Var.a;
         switch (i12) {
             case 0:
-                ((org.telegram.ui.Cells.l4) view).setText(pk0Var.e);
+                ((org.telegram.ui.Cells.m4) view).setText(pk0Var.e);
                 break;
             case 1:
                 ((org.telegram.ui.Cells.w8) view).f("" + ((Object) pk0Var.e), pk0Var.i, z10);
                 break;
             case 2:
-                ((org.telegram.ui.Cells.ab) view).g(pk0Var.g, null, z10);
+                ((org.telegram.ui.Cells.za) view).g(pk0Var.g, null, z10);
                 break;
             case 3:
                 ((org.telegram.ui.Cells.y8) view).b(pk0Var.h, "" + ((Object) pk0Var.e), z10);
@@ -83,10 +83,10 @@ public final class qk0 extends og.b {
                 ((org.telegram.ui.Cells.ea) view).c(pk0Var.e, pk0Var.f, false, z10);
                 break;
             case 6:
-                org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view;
-                i5Var.setDrawLine(true);
-                i5Var.setChecked(pk0Var.i);
-                i5Var.b(pk0Var.e, pk0Var.f, pk0Var.d, pk0Var.i, 0, false, z10, true);
+                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
+                j5Var.setDrawLine(true);
+                j5Var.setChecked(pk0Var.i);
+                j5Var.b(pk0Var.e, pk0Var.f, pk0Var.d, pk0Var.i, 0, false, z10, true);
                 break;
             case 7:
                 org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
@@ -103,7 +103,7 @@ public final class qk0 extends og.b {
                 ok0 ok0Var = (ok0) view;
                 ok0Var.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
                 CharSequence charSequence = pk0Var.e;
-                org.telegram.messenger.wl.q(ok0Var.Q.animate().rotation(pk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.qr.h, 340L);
+                org.telegram.messenger.wh.r(ok0Var.Q.animate().rotation(pk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.qr.h, 340L);
                 ok0Var.i(charSequence, z10);
                 break;
         }
@@ -111,36 +111,36 @@ public final class qk0 extends og.b {
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
-        org.telegram.ui.ActionBar.f6 f6Var;
+        View m4Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
         Context context = this.d;
         switch (i10) {
             case 0:
-                l4Var = new org.telegram.ui.Cells.l4(context);
+                m4Var = new org.telegram.ui.Cells.m4(context);
                 break;
             case 1:
-                l4Var = new org.telegram.ui.Cells.w8(context);
+                m4Var = new org.telegram.ui.Cells.w8(context);
                 break;
             case 2:
-                l4Var = new org.telegram.ui.Cells.ab(context, 6, 0, false);
+                m4Var = new org.telegram.ui.Cells.za(context, 6, 0, false);
                 break;
             case 3:
-                l4Var = new org.telegram.ui.Cells.y8(context, null);
+                m4Var = new org.telegram.ui.Cells.y8(context, null);
                 break;
             case 4:
-                l4Var = new org.telegram.ui.Cells.e9(context);
+                m4Var = new org.telegram.ui.Cells.e9(context);
                 break;
             case 5:
-                l4Var = new org.telegram.ui.Cells.ea(context);
+                m4Var = new org.telegram.ui.Cells.ea(context);
                 break;
             case 6:
-                f6Var = ((org.telegram.ui.ActionBar.o2) notificationsCustomSettingsActivity).resourceProvider;
-                l4Var = new org.telegram.ui.Cells.i5(21, 64, this.d, f6Var, true);
+                e6Var = ((org.telegram.ui.ActionBar.n2) notificationsCustomSettingsActivity).resourceProvider;
+                m4Var = new org.telegram.ui.Cells.j5(21, 64, this.d, e6Var, true);
                 break;
             case 7:
             default:
-                l4Var = new org.telegram.ui.Cells.r8(context);
+                m4Var = new org.telegram.ui.Cells.r8(context);
                 break;
             case 8:
                 ok0 ok0Var = new ok0(context);
@@ -149,11 +149,11 @@ public final class qk0 extends og.b {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setColorFilter(new PorterDuffColorFilter(notificationsCustomSettingsActivity.getThemedColor(org.telegram.ui.ActionBar.j6.v6), PorterDuff.Mode.SRC_IN));
                 imageView.setImageResource(R.drawable.msg_expand);
-                ok0Var.addView(imageView, w7.x5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
-                l4Var = ok0Var;
+                ok0Var.addView(imageView, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
+                m4Var = ok0Var;
                 break;
         }
-        return new org.telegram.ui.Components.wk0(l4Var);
+        return new org.telegram.ui.Components.gl0(m4Var);
     }
 
     @Override // s4.h0
@@ -177,7 +177,7 @@ public final class qk0 extends og.b {
             if (pk0Var == null || pk0Var.c != 102) {
                 int i11 = c1Var.f;
                 if (i11 == 0) {
-                    ((org.telegram.ui.Cells.l4) view).a(null, isGlobalNotificationsEnabled);
+                    ((org.telegram.ui.Cells.m4) view).a(null, isGlobalNotificationsEnabled);
                     return;
                 }
                 if (i11 == 1) {

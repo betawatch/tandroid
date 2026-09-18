@@ -8,16 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ay;
+import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.hu;
+import org.telegram.ui.Components.jd0;
 import org.telegram.ui.Components.nv;
-import org.telegram.ui.Components.zc0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class y3 extends org.telegram.ui.ActionBar.o2 {
+public final class y3 extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -28,7 +28,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public View createView(Context context) {
         switch (this.a) {
             case 7:
@@ -42,7 +42,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public Context getContext() {
         switch (this.a) {
             case 1:
@@ -52,13 +52,13 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
             case 4:
                 return ((hu) this.b).a.getContext();
             case 12:
-                return ((yh.a4) this.b).getContext();
+                return ((yh.y3) this.b).getContext();
             default:
                 return super.getContext();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public int getCurrentAccount() {
         switch (this.a) {
             case 1:
@@ -77,7 +77,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
             case 5:
                 return this.currentAccount;
             case 6:
-                return ((ay) this.b).E.c1;
+                return ((cy) this.b).E.c1;
             case 9:
                 return this.currentAccount;
             case 12:
@@ -85,35 +85,35 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public View getFragmentView() {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.g3) ((nv) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) ((nv) this.b).x).containerView;
                 return viewGroup;
             case 6:
-                return ((ay) this.b).E.r;
+                return ((cy) this.b).E.r;
             case 7:
             case 8:
             default:
                 return super.getFragmentView();
             case 9:
-                viewGroup2 = ((org.telegram.ui.ActionBar.g3) ((rg.k1) this.b)).containerView;
+                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((rg.k1) this.b)).containerView;
                 return viewGroup2;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public FrameLayout getLayoutContainer() {
         ViewGroup viewGroup;
         switch (this.a) {
             case 5:
-                viewGroup = ((org.telegram.ui.ActionBar.g3) ((nv) this.b).x).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) ((nv) this.b).x).containerView;
                 return (FrameLayout) viewGroup;
             case 6:
-                return ((ay) this.b).E.r;
+                return ((cy) this.b).E.r;
             case 7:
             case 8:
             default:
@@ -123,7 +123,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public Activity getParentActivity() {
         switch (this.a) {
             case 0:
@@ -149,22 +149,22 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
             case 8:
                 return ((org.telegram.ui.web.d1) this.b).W;
             case 9:
-                org.telegram.ui.ActionBar.o2 o2Var = ((rg.k1) this.b).t0;
-                if (o2Var == null) {
+                org.telegram.ui.ActionBar.n2 n2Var = ((rg.k1) this.b).t0;
+                if (n2Var == null) {
                     return null;
                 }
-                return o2Var.getParentActivity();
+                return n2Var.getParentActivity();
             case 10:
-                return ((org.telegram.ui.ActionBar.o2) this.b).getParentActivity();
+                return ((org.telegram.ui.ActionBar.n2) this.b).getParentActivity();
             case 11:
-                xh.y4 y4Var = (xh.y4) this.b;
-                Activity ownerActivity = y4Var.getOwnerActivity();
+                xh.z4 z4Var = (xh.z4) this.b;
+                Activity ownerActivity = z4Var.getOwnerActivity();
                 if (ownerActivity == null) {
                     ownerActivity = LaunchActivity.G1;
                 }
-                return ownerActivity == null ? AndroidUtilities.findActivity(y4Var.getContext()) : ownerActivity;
+                return ownerActivity == null ? AndroidUtilities.findActivity(z4Var.getContext()) : ownerActivity;
             case 12:
-                for (Context context2 = ((yh.a4) this.b).getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
+                for (Context context2 = ((yh.y3) this.b).getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
                     if (context2 instanceof Activity) {
                         return (Activity) context2;
                     }
@@ -173,19 +173,19 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public org.telegram.ui.ActionBar.f6 getResourceProvider() {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.ActionBar.f6 f6Var2;
-        org.telegram.ui.ActionBar.f6 f6Var3;
+    @Override // org.telegram.ui.ActionBar.n2
+    public org.telegram.ui.ActionBar.e6 getResourceProvider() {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.e6 e6Var3;
         switch (this.a) {
             case 0:
                 return new x3(0, ((f6) this.b).B0);
             case 1:
                 return ((s6) this.b).b.s;
             case 2:
-                f6Var = ((org.telegram.ui.ActionBar.g3) ((ci.z5) this.b)).resourcesProvider;
-                return new x3(5, f6Var);
+                e6Var = ((org.telegram.ui.ActionBar.f3) ((ci.z5) this.b)).resourcesProvider;
+                return new x3(5, e6Var);
             case 3:
                 return ((ci.r6) this.b).G1;
             case 4:
@@ -194,21 +194,21 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
             default:
                 return super.getResourceProvider();
             case 5:
-                f6Var2 = ((org.telegram.ui.ActionBar.g3) ((nv) this.b).x).resourcesProvider;
-                return f6Var2;
+                e6Var2 = ((org.telegram.ui.ActionBar.f3) ((nv) this.b).x).resourcesProvider;
+                return e6Var2;
             case 6:
-                return ((ay) this.b).E.Z1;
+                return ((cy) this.b).E.Z1;
             case 8:
                 return new x3(9, ((org.telegram.ui.web.d1) this.b).e);
             case 10:
                 return new o0.a(new d());
             case 11:
-                f6Var3 = ((org.telegram.ui.ActionBar.g3) ((xh.y4) this.b)).resourcesProvider;
-                return f6Var3;
+                e6Var3 = ((org.telegram.ui.ActionBar.f3) ((xh.z4) this.b)).resourcesProvider;
+                return e6Var3;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public Dialog getVisibleDialog() {
         switch (this.a) {
             case 4:
@@ -218,7 +218,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public boolean isLightStatusBar() {
         switch (this.a) {
             case 0:
@@ -234,12 +234,12 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public void onTransitionAnimationEnd(boolean z10, boolean z11) {
         switch (this.a) {
             case 7:
                 if (z10 && z11) {
-                    ((zc0) this.b).dismiss();
+                    ((jd0) this.b).dismiss();
                     break;
                 }
                 break;
@@ -249,33 +249,33 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public boolean presentFragment(org.telegram.ui.ActionBar.o2 o2Var) {
+    @Override // org.telegram.ui.ActionBar.n2
+    public boolean presentFragment(org.telegram.ui.ActionBar.n2 n2Var) {
         switch (this.a) {
             case 0:
                 jc jcVar = ((f6) this.b).J0;
                 if (jcVar == null) {
                     return true;
                 }
-                jcVar.H(o2Var);
+                jcVar.H(n2Var);
                 return true;
             case 3:
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R == null) {
                     return false;
                 }
-                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                m2Var.a = true;
-                R.showAsSheet(o2Var, m2Var);
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                R.showAsSheet(n2Var, l2Var);
                 return true;
             case 10:
                 return false;
             default:
-                return super.presentFragment(o2Var);
+                return super.presentFragment(n2Var);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public Dialog showDialog(Dialog dialog) {
         switch (this.a) {
             case 0:
@@ -304,10 +304,10 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(org.telegram.ui.ActionBar.o2 o2Var) {
+    public y3(org.telegram.ui.ActionBar.n2 n2Var) {
         super(null);
         this.a = 10;
-        this.b = o2Var;
+        this.b = n2Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -316,7 +316,7 @@ public final class y3 extends org.telegram.ui.ActionBar.o2 {
         int i10;
         this.a = 2;
         this.b = z5Var;
-        i10 = ((org.telegram.ui.ActionBar.g3) z5Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.f3) z5Var).currentAccount;
         this.currentAccount = i10;
     }
 

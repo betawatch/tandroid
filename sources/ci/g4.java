@@ -2,7 +2,7 @@ package ci;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -19,10 +19,13 @@ public final /* synthetic */ class g4 implements View.OnLayoutChangeListener {
             case 0:
                 ((j4) this.b).d();
                 break;
-            default:
+            case 1:
                 kg.c cVar = (kg.c) this.b;
                 cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
                 cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
+                break;
+            default:
+                ((ki.g) this.b).s();
                 break;
         }
     }

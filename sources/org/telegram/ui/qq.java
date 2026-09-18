@@ -1,26 +1,60 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class qq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ur b;
+import android.view.View;
+import org.telegram.messenger.MessagesStorage;
 
-    public /* synthetic */ qq(ur urVar, int i10) {
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class qq implements MessagesStorage.LongCallback, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ll0, org.telegram.ui.Components.ml0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sr b;
+
+    public /* synthetic */ qq(sr srVar, int i10) {
         this.a = i10;
-        this.b = urVar;
+        this.b = srVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.ll0
+    public void c(float f7, float f10, int i10, View view) {
+        sr.V(this.b, view, i10);
+    }
+
+    @Override // org.telegram.ui.Components.ml0
+    public boolean d(int i10, View view) {
+        sr srVar = this.b;
+        if (srVar.getParentActivity() != null) {
+            s4.h0 adapter = srVar.c.getAdapter();
+            or orVar = srVar.a;
+            if (adapter == orVar) {
+                return srVar.h0(orVar.E(i10), false, view);
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
-            case 0:
-                this.b.r0();
+            case 1:
+                this.b.u0();
                 break;
             default:
-                ur urVar = this.b;
-                urVar.getMessagesController().loadFullChat(urVar.N, 0, true);
+                this.b.finishFragment();
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j3) {
+        sr.U(this.b, j3);
+    }
+
+    @Override // org.telegram.ui.Components.ll0
+    public /* synthetic */ void r0(View view, float f7, float f10) {
     }
 }

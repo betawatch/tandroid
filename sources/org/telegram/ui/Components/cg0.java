@@ -1,27 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class cg0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class cg0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fg0 b;
+    public final /* synthetic */ eg0 b;
 
-    public /* synthetic */ cg0(fg0 fg0Var, int i10) {
+    public /* synthetic */ cg0(eg0 eg0Var, int i10) {
         this.a = i10;
-        this.b = fg0Var;
+        this.b = eg0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.F = null;
+                eg0 eg0Var = this.b;
+                eg0Var.getClass();
+                eg0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                eg0Var.invalidate();
                 break;
             default:
-                this.b.u();
+                eg0 eg0Var2 = this.b;
+                eg0Var2.getClass();
+                eg0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                eg0Var2.invalidate();
                 break;
         }
     }

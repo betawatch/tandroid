@@ -19,12 +19,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.hv0;
-import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Components.tv0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, hv0, iv0, org.telegram.ui.ActionBar.b2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
+public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, sv0, tv0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w1(int i10) {
@@ -267,11 +267,11 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
                 return byteArrayOutputStream.toByteArray();
             case 20:
                 ca.a.b.getClass();
-                return z9.a.a.e((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
+                return z9.a.a.J((y9.e2) obj).getBytes(Charset.forName("UTF-8"));
         }
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.tv0
     public void b(Object obj, float f7) {
         m2 m2Var = (m2) obj;
         switch (this.a) {
@@ -290,19 +290,19 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 5:
-                c2Var.dismiss();
+                b2Var.dismiss();
                 break;
             default:
-                c2Var.dismiss();
+                b2Var.dismiss();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.hv0
+    @Override // org.telegram.ui.Components.sv0
     public float get(Object obj) {
         m2 m2Var = (m2) obj;
         switch (this.a) {

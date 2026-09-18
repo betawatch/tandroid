@@ -6,9 +6,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.gl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class t extends s4.n0 {
     public final /* synthetic */ int a;
@@ -57,38 +57,38 @@ public final class t extends s4.n0 {
                 rect.right = AndroidUtilities.dp(2.0f);
                 break;
             case 5:
-                wk0 wk0Var = (wk0) recyclerView.U(view);
-                if (wk0Var == null) {
+                gl0 gl0Var = (gl0) recyclerView.U(view);
+                if (gl0Var == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    int b10 = wk0Var.b() % 4;
+                    int b10 = gl0Var.b() % 4;
                     rect.left = b10 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                     rect.right = b10 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                     break;
                 }
             case 6:
-                wk0 wk0Var2 = (wk0) recyclerView.U(view);
-                if (wk0Var2 == null) {
+                gl0 gl0Var2 = (gl0) recyclerView.U(view);
+                if (gl0Var2 == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    int b11 = wk0Var2.b() % 4;
+                    int b11 = gl0Var2.b() % 4;
                     rect.left = b11 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                     rect.right = b11 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                     break;
                 }
             case 7:
-                wk0 wk0Var3 = (wk0) recyclerView.U(view);
-                if (wk0Var3 == null) {
+                gl0 gl0Var3 = (gl0) recyclerView.U(view);
+                if (gl0Var3 == null) {
                     rect.left = AndroidUtilities.dp(4.0f);
                     rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    if (wk0Var3.f == 5) {
-                        int b12 = wk0Var3.b() % 4;
+                    if (gl0Var3.f == 5) {
+                        int b12 = gl0Var3.b() % 4;
                         rect.left = b12 == 0 ? 0 : AndroidUtilities.dp(4.0f);
                         rect.right = b12 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                         break;
@@ -133,7 +133,7 @@ public final class t extends s4.n0 {
                 while (i11 < i10) {
                     View childAt = recyclerView.getChildAt(i11);
                     View childAt2 = i11 < childCount + (-2) ? recyclerView.getChildAt(i11 + 1) : null;
-                    if (RecyclerView.S(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.u3) && !(childAt2 instanceof org.telegram.ui.Cells.u3)) {
+                    if (RecyclerView.S(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.v3) && !(childAt2 instanceof org.telegram.ui.Cells.v3)) {
                         float bottom = childAt.getBottom();
                         canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), bottom, width - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), bottom, org.telegram.ui.ActionBar.j6.k0);
                     }

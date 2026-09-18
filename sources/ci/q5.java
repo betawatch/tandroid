@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class q5 extends FrameLayout {
     public final /* synthetic */ qb a;
@@ -25,14 +25,14 @@ public final class q5 extends FrameLayout {
         super.onDraw(canvas);
         qb qbVar = this.a;
         Paint paint = qbVar.r1;
-        qg.r1 r1Var = qbVar.l1;
-        paint.setAlpha((int) ((1.0f - qbVar.t1) * r1Var.getAlpha() * 20.0f));
+        qg.o1 o1Var = qbVar.l1;
+        paint.setAlpha((int) ((1.0f - qbVar.t1) * o1Var.getAlpha() * 20.0f));
         RectF rectF = AndroidUtilities.rectTmp;
-        r1Var.b(rectF);
-        float translationY = r1Var.getTranslationY() + qbVar.T0.getTranslationY() + r1Var.getTop() + r4.getTop();
+        o1Var.b(rectF);
+        float translationY = o1Var.getTranslationY() + qbVar.T0.getTranslationY() + o1Var.getTop() + r4.getTop();
         float f7 = rectF.left;
-        qg.w1 w1Var = qbVar.m1;
-        rectF.set(AndroidUtilities.lerp(f7, w1Var.getLeft(), qbVar.t1), AndroidUtilities.lerp(rectF.top + translationY, w1Var.getTop() - w1Var.getTranslationY(), qbVar.t1), AndroidUtilities.lerp(rectF.right, w1Var.getRight(), qbVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, w1Var.getBottom() - w1Var.getTranslationY(), qbVar.t1));
+        qg.t1 t1Var = qbVar.m1;
+        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), qbVar.t1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), qbVar.t1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), qbVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), qbVar.t1));
         float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, qbVar.t1));
         Paint paint2 = qbVar.s1;
         int alpha = paint2.getAlpha();

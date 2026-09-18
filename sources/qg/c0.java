@@ -1,31 +1,31 @@
 package qg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Bitmap;
+import org.telegram.ui.au0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class c0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+public final class c0 extends pg.e1 {
+    public final /* synthetic */ Bitmap E;
+    public final /* synthetic */ au0 F;
 
-    public /* synthetic */ c0(p0 p0Var, int i10) {
-        this.a = i10;
-        this.b = p0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c0(au0 au0Var, Context context, pg.s0 s0Var, Bitmap bitmap, Bitmap bitmap2) {
+        super(context, s0Var, bitmap, null, null);
+        this.F = au0Var;
+        this.E = bitmap2;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.f2.setTranslationY(0.0f);
-                break;
-            default:
-                p0 p0Var = this.b;
-                p0Var.i2 = false;
-                p0Var.f2.setTranslationY(0.0f);
-                p0Var.m0();
-                break;
+    @Override // pg.e1
+    public final void g(pg.m mVar) {
+        int indexOf = pg.m.a.indexOf(mVar);
+        int i10 = indexOf + 1;
+        if (i10 <= 1 || this.E != null) {
+            indexOf = i10;
         }
+        au0 au0Var = this.F;
+        au0Var.t1.b(indexOf);
+        au0Var.b(mVar);
     }
 }

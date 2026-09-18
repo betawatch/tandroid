@@ -9,9 +9,8 @@ import android.os.Looper;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import java.util.List;
-import org.telegram.ui.Cells.ia;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class k extends Service implements c {
     public static final String BIND_LISTENER_INTENT_ACTION = "com.google.android.gms.wearable.BIND_LISTENER";
@@ -22,7 +21,7 @@ public abstract class k extends Service implements c {
     private Looper zze;
     private boolean zzg;
     private final Object zzf = new Object();
-    private y8.d zzh = new y8.d(new ia(this, 21));
+    private y8.d zzh = new y8.d(new w3.b(this));
 
     public Looper getLooper() {
         if (this.zze == null) {

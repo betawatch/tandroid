@@ -1,25 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class zj extends g.p {
-    public final /* synthetic */ bo c;
+public final /* synthetic */ class zj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
 
-    public zj(bo boVar) {
-        this.c = boVar;
+    public /* synthetic */ zj(zn znVar, int i10) {
+        this.a = i10;
+        this.b = znVar;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages X8;
-        bo boVar = this.c;
-        nm nmVar = boVar.A0;
-        int i12 = nmVar.J;
-        return (i10 < i12 || i10 >= nmVar.K || (i11 = i10 - i12) < 0 || i11 >= nmVar.L().size() || (X8 = boVar.X8((messageObject = (MessageObject) boVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        zn znVar = this.b;
+        switch (i10) {
+            case 0:
+                zn.i2(znVar);
+                break;
+            case 1:
+                zn.i2(znVar);
+                break;
+            case 2:
+                int i11 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 3:
+                int i12 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 4:
+                int i13 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 5:
+                int i14 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 6:
+                int i15 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 7:
+                int i16 = zn.Gc;
+                znVar.Ma();
+                break;
+            case 8:
+                int i17 = zn.Gc;
+                znVar.Ma();
+                break;
+            default:
+                int i18 = zn.Gc;
+                znVar.Ma();
+                break;
+        }
     }
 }

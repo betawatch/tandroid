@@ -1,27 +1,78 @@
 package pg;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import android.animation.ValueAnimator;
+import android.graphics.RectF;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.ui.Components.qr;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
-    public final /* synthetic */ a5.a c;
+    public final /* synthetic */ s0 b;
+    public final /* synthetic */ h1 c;
 
-    public /* synthetic */ o0(q0 q0Var, a5.a aVar, int i10) {
+    public /* synthetic */ o0(s0 s0Var, h1 h1Var, int i10) {
         this.a = i10;
-        this.b = q0Var;
-        this.c = aVar;
+        this.b = s0Var;
+        this.c = h1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        h1 h1Var = this.c;
+        s0 s0Var = this.b;
+        switch (i10) {
             case 0:
-                this.b.p(this.c, true);
+                s0Var.c = h1Var;
+                if (s0Var.h == null) {
+                    s0Var.h = new RectF();
+                }
+                s0Var.c.a(s0Var.h);
+                n2.e eVar = s0Var.a;
+                if (eVar != null) {
+                    eVar.t();
+                    break;
+                }
                 break;
             default:
-                q0 q0Var = this.b;
-                q0Var.f.f(new o0(q0Var, this.c, 0));
+                if (h1Var != null && s0Var.q == 0) {
+                    s0Var.q = t1.b(s0Var.g);
+                }
+                int i11 = 0;
+                if (s0Var.H == (h1Var != null)) {
+                    if (h1Var != s0Var.d) {
+                        s0Var.d = h1Var;
+                        n2.e eVar2 = s0Var.a;
+                        if (eVar2 != null) {
+                            eVar2.t();
+                            break;
+                        }
+                    }
+                } else {
+                    s0Var.H = h1Var != null;
+                    ValueAnimator valueAnimator = s0Var.K;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        s0Var.K = null;
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(s0Var.I, s0Var.H ? 1.0f : 0.0f);
+                    s0Var.K = ofFloat;
+                    ofFloat.addUpdateListener(new n0(s0Var, i11));
+                    s0Var.K.addListener(new r0(s0Var, i11));
+                    s0Var.K.setInterpolator(qr.h);
+                    s0Var.K.start();
+                    s0Var.d = h1Var;
+                    n2.e eVar3 = s0Var.a;
+                    if (eVar3 != null) {
+                        eVar3.t();
+                    }
+                    if (s0Var.H) {
+                        BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();
+                        break;
+                    }
+                }
                 break;
         }
     }

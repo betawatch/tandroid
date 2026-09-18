@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kk implements Runnable {
     public final /* synthetic */ int a;
@@ -19,17 +19,17 @@ public final /* synthetic */ class kk implements Runnable {
     public final /* synthetic */ boolean r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ kk(Object obj, Object obj2, org.telegram.ui.ActionBar.g1 g1Var, org.telegram.ui.ActionBar.g1 g1Var2, org.telegram.ui.ActionBar.g1 g1Var3, org.telegram.ui.ActionBar.g1 g1Var4, boolean z10, org.telegram.ui.ActionBar.g1 g1Var5, org.telegram.ui.ActionBar.g1 g1Var6, int i10) {
+    public /* synthetic */ kk(Object obj, Object obj2, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, org.telegram.ui.ActionBar.f1 f1Var3, org.telegram.ui.ActionBar.f1 f1Var4, boolean z10, org.telegram.ui.ActionBar.f1 f1Var5, org.telegram.ui.ActionBar.f1 f1Var6, int i10) {
         this.a = i10;
         this.b = obj;
         this.c = obj2;
-        this.d = g1Var;
-        this.e = g1Var2;
-        this.f = g1Var3;
-        this.h = g1Var4;
+        this.d = f1Var;
+        this.e = f1Var2;
+        this.f = f1Var3;
+        this.h = f1Var4;
         this.r = z10;
-        this.n = g1Var5;
-        this.s = g1Var6;
+        this.n = f1Var5;
+        this.s = f1Var6;
     }
 
     @Override // java.lang.Runnable
@@ -45,45 +45,45 @@ public final /* synthetic */ class kk implements Runnable {
                 ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$100(this.r, (TLRPC.TL_error) this.c, (TLRPC.Message) this.d, (TLObject) this.e, (MessageObject) this.f, (HashMap) this.n, (String) this.h, (TLObject) this.s);
                 break;
             case 3:
-                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) this.b;
-                yh.n5 n5Var = (yh.n5) this.c;
-                org.telegram.ui.ActionBar.g1 g1Var2 = (org.telegram.ui.ActionBar.g1) this.d;
-                org.telegram.ui.ActionBar.g1 g1Var3 = (org.telegram.ui.ActionBar.g1) this.e;
-                org.telegram.ui.ActionBar.g1 g1Var4 = (org.telegram.ui.ActionBar.g1) this.f;
-                org.telegram.ui.ActionBar.g1 g1Var5 = (org.telegram.ui.ActionBar.g1) this.h;
-                org.telegram.ui.ActionBar.g1 g1Var6 = (org.telegram.ui.ActionBar.g1) this.n;
-                org.telegram.ui.ActionBar.g1 g1Var7 = (org.telegram.ui.ActionBar.g1) this.s;
-                if (g1Var != null) {
-                    g1Var.g(LocaleController.getString(n5Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), n5Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.b;
+                yh.l5 l5Var = (yh.l5) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var2 = (org.telegram.ui.ActionBar.f1) this.d;
+                org.telegram.ui.ActionBar.f1 f1Var3 = (org.telegram.ui.ActionBar.f1) this.e;
+                org.telegram.ui.ActionBar.f1 f1Var4 = (org.telegram.ui.ActionBar.f1) this.f;
+                org.telegram.ui.ActionBar.f1 f1Var5 = (org.telegram.ui.ActionBar.f1) this.h;
+                org.telegram.ui.ActionBar.f1 f1Var6 = (org.telegram.ui.ActionBar.f1) this.n;
+                org.telegram.ui.ActionBar.f1 f1Var7 = (org.telegram.ui.ActionBar.f1) this.s;
+                if (f1Var != null) {
+                    f1Var.g(LocaleController.getString(l5Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l5Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
                 }
-                g1Var2.setChecked(TLObject.hasFlag(n5Var.g, 1));
-                g1Var3.setChecked(TLObject.hasFlag(n5Var.g, 2));
-                g1Var4.setChecked(TLObject.hasFlag(n5Var.g, 4));
-                g1Var5.setChecked(TLObject.hasFlag(n5Var.g, 8));
+                f1Var2.setChecked(TLObject.hasFlag(l5Var.g, 1));
+                f1Var3.setChecked(TLObject.hasFlag(l5Var.g, 2));
+                f1Var4.setChecked(TLObject.hasFlag(l5Var.g, 4));
+                f1Var5.setChecked(TLObject.hasFlag(l5Var.g, 8));
                 if (this.r) {
-                    g1Var6.setChecked(TLObject.hasFlag(n5Var.g, 256));
-                    g1Var7.setChecked(TLObject.hasFlag(n5Var.g, 512));
+                    f1Var6.setChecked(TLObject.hasFlag(l5Var.g, 256));
+                    f1Var7.setChecked(TLObject.hasFlag(l5Var.g, 512));
                     break;
                 }
                 break;
             default:
-                xh.i4 i4Var = (xh.i4) this.b;
-                org.telegram.ui.ActionBar.g1 g1Var8 = (org.telegram.ui.ActionBar.g1) this.c;
-                org.telegram.ui.ActionBar.g1 g1Var9 = (org.telegram.ui.ActionBar.g1) this.d;
-                org.telegram.ui.ActionBar.g1 g1Var10 = (org.telegram.ui.ActionBar.g1) this.e;
-                org.telegram.ui.ActionBar.g1 g1Var11 = (org.telegram.ui.ActionBar.g1) this.f;
-                org.telegram.ui.ActionBar.g1 g1Var12 = (org.telegram.ui.ActionBar.g1) this.h;
-                org.telegram.ui.ActionBar.g1 g1Var13 = (org.telegram.ui.ActionBar.g1) this.n;
-                org.telegram.ui.ActionBar.g1 g1Var14 = (org.telegram.ui.ActionBar.g1) this.s;
-                yh.n5 n5Var2 = i4Var.c.Y;
-                g1Var8.g(LocaleController.getString(n5Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), n5Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                g1Var9.setChecked(TLObject.hasFlag(n5Var2.g, 1));
-                g1Var10.setChecked(TLObject.hasFlag(n5Var2.g, 2));
-                g1Var11.setChecked(TLObject.hasFlag(n5Var2.g, 4));
-                g1Var12.setChecked(TLObject.hasFlag(n5Var2.g, 8));
+                xh.j4 j4Var = (xh.j4) this.b;
+                org.telegram.ui.ActionBar.f1 f1Var8 = (org.telegram.ui.ActionBar.f1) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var9 = (org.telegram.ui.ActionBar.f1) this.d;
+                org.telegram.ui.ActionBar.f1 f1Var10 = (org.telegram.ui.ActionBar.f1) this.e;
+                org.telegram.ui.ActionBar.f1 f1Var11 = (org.telegram.ui.ActionBar.f1) this.f;
+                org.telegram.ui.ActionBar.f1 f1Var12 = (org.telegram.ui.ActionBar.f1) this.h;
+                org.telegram.ui.ActionBar.f1 f1Var13 = (org.telegram.ui.ActionBar.f1) this.n;
+                org.telegram.ui.ActionBar.f1 f1Var14 = (org.telegram.ui.ActionBar.f1) this.s;
+                yh.l5 l5Var2 = j4Var.c.Y;
+                f1Var8.g(LocaleController.getString(l5Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l5Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
+                f1Var9.setChecked(TLObject.hasFlag(l5Var2.g, 1));
+                f1Var10.setChecked(TLObject.hasFlag(l5Var2.g, 2));
+                f1Var11.setChecked(TLObject.hasFlag(l5Var2.g, 4));
+                f1Var12.setChecked(TLObject.hasFlag(l5Var2.g, 8));
                 if (this.r) {
-                    g1Var13.setChecked(TLObject.hasFlag(n5Var2.g, 256));
-                    g1Var14.setChecked(TLObject.hasFlag(n5Var2.g, 512));
+                    f1Var13.setChecked(TLObject.hasFlag(l5Var2.g, 256));
+                    f1Var14.setChecked(TLObject.hasFlag(l5Var2.g, 512));
                     break;
                 }
                 break;

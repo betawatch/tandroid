@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class r0 extends oh.c implements le.d {
     public static final /* synthetic */ int s = 0;
@@ -15,15 +15,15 @@ public final class r0 extends oh.c implements le.d {
     public final oh.b[] n;
     public int r;
 
-    public r0(Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.web.b1 b1Var) {
+    public r0(Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.web.b1 b1Var) {
         super(context);
         this.f = new le.e(0, this, qr.h, 1600L);
         this.h = b1Var;
         int i10 = org.telegram.ui.ActionBar.j6.Wk;
-        int l1 = org.telegram.ui.ActionBar.j6.l1(0.09411765f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
-        org.telegram.ui.ActionBar.j6.l1(0.1254902f, org.telegram.ui.ActionBar.j6.v0(i10, f6Var));
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.09411765f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
+        org.telegram.ui.ActionBar.j6.l1(0.1254902f, org.telegram.ui.ActionBar.j6.v0(i10, e6Var));
         this.e.setColor(l1);
-        this.n = new oh.b[]{oh.b.b(context, f6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, f6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, f6Var, oh.a.J, R.string.GiftPreviewSymbols)};
+        this.n = new oh.b[]{oh.b.b(context, e6Var, oh.a.G, R.string.GiftPreviewModels), oh.b.b(context, e6Var, oh.a.v, R.string.GiftPreviewBackdrops), oh.b.b(context, e6Var, oh.a.J, R.string.GiftPreviewSymbols)};
         int i11 = 0;
         while (true) {
             oh.b[] bVarArr = this.n;
@@ -31,7 +31,7 @@ public final class r0 extends oh.c implements le.d {
                 bVarArr[0].e(true, false);
                 return;
             } else {
-                this.a.addView(bVarArr[i11], w7.x5.l(1.0f, 0, -1));
+                this.a.addView(bVarArr[i11], w7.y5.l(1.0f, 0, -1));
                 this.n[i11].setOnClickListener(new ci.o4(this, i11, 27));
                 i11++;
             }

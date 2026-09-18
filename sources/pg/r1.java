@@ -1,94 +1,99 @@
 package pg;
 
-import android.graphics.Bitmap;
-import android.opengl.GLES20;
-import android.opengl.GLUtils;
-import android.os.Build;
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.kv0;
-import w7.m6;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.vv0;
+import org.telegram.ui.fm0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class r1 {
-    public final Bitmap a;
-    public int b;
+    public e1 a;
+    public y0 b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public Paint f;
+    public Paint g;
+    public h1 h;
+    public float i;
+    public float j;
+    public q1 k;
+    public n1 l;
+    public ArrayList m;
+    public ArrayList n;
+    public Matrix o;
+    public float[] p;
 
-    public r1(Bitmap bitmap) {
-        this.a = bitmap;
+    public static float a(float f7, float f10, float f11, float f12, float f13, float f14) {
+        float f15 = f13 - f11;
+        float f16 = f14 - f12;
+        float max = Math.max(Math.min((((f10 - f12) * f16) + ((f7 - f11) * f15)) / ((f16 * f16) + (f15 * f15)), 1.0f), 0.0f);
+        float f17 = ((f15 * max) + f11) - f7;
+        float f18 = ((max * f16) + f12) - f10;
+        return (float) Math.sqrt((f18 * f18) + (f17 * f17));
     }
 
-    public static int b(kv0 kv0Var) {
-        int i10 = (int) kv0Var.a;
-        int i11 = (int) kv0Var.b;
-        int[] iArr = new int[1];
-        GLES20.glGenTextures(1, iArr, 0);
-        int i12 = iArr[0];
-        GLES20.glBindTexture(3553, i12);
-        GLES20.glTexParameteri(3553, 10242, 33071);
-        GLES20.glTexParameteri(3553, 10243, 33071);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        GLES20.glTexImage2D(3553, 0, 6408, i10, i11, 0, 6408, 5121, null);
-        return i12;
+    public final void b(Canvas canvas, vv0 vv0Var, q1 q1Var) {
+        float width = (q1Var.d / vv0Var.a) * canvas.getWidth();
+        float height = (q1Var.e / vv0Var.b) * canvas.getHeight();
+        float dp = AndroidUtilities.dp(5.0f);
+        boolean z10 = q1Var.a;
+        canvas.drawCircle(width, height, dp, z10 ? this.d : this.f);
+        canvas.drawCircle((q1Var.d / vv0Var.a) * canvas.getWidth(), (q1Var.e / vv0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
     }
 
-    public final void a(boolean z10) {
-        Bitmap bitmap;
-        int i10 = this.b;
-        if (i10 == 0) {
-            return;
-        }
-        GLES20.glDeleteTextures(1, new int[]{i10}, 0);
-        this.b = 0;
-        if (!z10 || (bitmap = this.a) == null || bitmap.isRecycled()) {
-            return;
-        }
-        bitmap.recycle();
+    public final void c(float f7, float f10, boolean z10) {
+        float[] fArr = this.p;
+        fArr[0] = f7;
+        fArr[1] = f10;
+        d(z10);
     }
 
-    public final int c() {
-        int i10 = this.b;
-        if (i10 != 0) {
-            return i10;
-        }
-        Bitmap bitmap = this.a;
-        if (bitmap == null || bitmap.isRecycled()) {
-            return 0;
-        }
-        int[] iArr = new int[1];
-        GLES20.glGenTextures(1, iArr, 0);
-        int i11 = iArr[0];
-        this.b = i11;
-        GLES20.glBindTexture(3553, i11);
-        GLES20.glTexParameteri(3553, 10242, 33071);
-        GLES20.glTexParameteri(3553, 10243, 33071);
-        GLES20.glTexParameteri(3553, 10240, 9729);
-        GLES20.glTexParameteri(3553, 10241, 9729);
-        try {
-            GLUtils.texImage2D(3553, 0, 6408, this.a, 5121, 0);
-        } catch (Exception e) {
-            FileLog.e(e);
-            int width = bitmap.getWidth();
-            int height = bitmap.getHeight();
-            int i12 = width * height;
-            int[] iArr2 = new int[i12];
-            this.a.getPixels(iArr2, 0, width, 0, 0, width, height);
-            for (int i13 = 0; i13 < i12; i13++) {
-                int i14 = iArr2[i13];
-                iArr2[i13] = ((i14 >> 16) & 255) | (i14 & (-16711936)) | ((i14 & 255) << 16);
+    public final void d(boolean z10) {
+        float[] fArr = this.p;
+        h1 h1Var = this.h;
+        if (h1Var != null) {
+            float f7 = h1Var.h;
+            if (f7 != 0.0f) {
+                float f10 = fArr[0] - h1Var.b;
+                fArr[0] = f10;
+                fArr[1] = fArr[1] - h1Var.c;
+                double d = f7 * (z10 ? -1 : 1);
+                float cos = (float) ((Math.cos(d) * f10) - (Math.sin(d) * fArr[1]));
+                float a2 = (float) org.telegram.messenger.q.a(d, fArr[1], Math.sin(d) * fArr[0]);
+                h1 h1Var2 = this.h;
+                fArr[0] = cos + h1Var2.b;
+                fArr[1] = a2 + h1Var2.c;
             }
-            GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, IntBuffer.wrap(iArr2));
         }
-        if (!bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
-            int pixel = bitmap.getPixel(0, 0);
-            ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
-            allocateDirect.putInt(((pixel >> 16) & 255) | (pixel & (-16711936)) | ((pixel & 255) << 16)).position(0);
-            GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
+    }
+
+    public final void e() {
+        h1 h1Var;
+        e1 e1Var = this.a;
+        if (e1Var == null || e1Var.getPainting() == null || (h1Var = this.h) == null) {
+            return;
         }
-        m6.a();
-        return this.b;
+        h1Var.f = e1Var.getCurrentWeight();
+        s0 painting = e1Var.getPainting();
+        h1 h1Var2 = this.h;
+        int currentColor = e1Var.getCurrentColor();
+        if (h1Var2 == null) {
+            painting.getClass();
+        } else if (painting.r != null) {
+            painting.f.f(new fm0(painting, h1Var2, currentColor, 11));
+        }
+        this.m.clear();
+        this.n.clear();
+        this.h = null;
+        d1 d1Var = e1Var.a;
+        if (d1Var != null) {
+            d1Var.c();
+        }
+        e1Var.e.z = true;
     }
 }

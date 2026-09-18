@@ -1,37 +1,36 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gj extends FrameLayout {
-    public final /* synthetic */ bo a;
+public final class gj extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ zn o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gj(bo boVar, Activity activity) {
-        super(activity);
-        this.a = boVar;
+    public gj(zn znVar, ej ejVar) {
+        super(ejVar, -2, -2);
+        this.o = znVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.A7(true);
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        zn znVar = this.o;
+        if (znVar.Q8 != this) {
+            return;
         }
-        return super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
-        if (min == 0) {
-            min = AndroidUtilities.dp(300.0f);
+        znVar.Q8 = null;
+        znVar.T8 = null;
+        znVar.S8 = null;
+        znVar.z0.R = true;
+        if (znVar.R8) {
+            znVar.g8(false, true, 0.0f);
+        } else {
+            znVar.R8 = true;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
+        lk lkVar = znVar.Y;
+        if (lkVar == null || lkVar.getEditField() == null) {
+            return;
+        }
+        znVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

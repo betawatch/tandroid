@@ -5,9 +5,9 @@ import android.util.Pair;
 import ei.l3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class c1 implements u2.k0, n2.k {
+public final class c1 implements u2.k0, n2.l {
     public final e1 a;
     public final /* synthetic */ f1 b;
 
@@ -16,7 +16,7 @@ public final class c1 implements u2.k0, n2.k {
         this.a = e1Var;
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void a(int i10, u2.f0 f0Var, int i11) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -24,7 +24,7 @@ public final class c1 implements u2.k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void b(int i10, u2.f0 f0Var, Exception exc) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -64,7 +64,7 @@ public final class c1 implements u2.k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void g(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -80,7 +80,7 @@ public final class c1 implements u2.k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void i(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -96,7 +96,7 @@ public final class c1 implements u2.k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void k(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {

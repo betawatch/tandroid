@@ -1,22 +1,17 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gm extends org.telegram.ui.Cells.b0 {
-    public final /* synthetic */ nm f;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gm(nm nmVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i10, f6Var);
-        this.f = nmVar;
+public final class gm extends org.telegram.ui.Components.r6 {
+    @Override // org.telegram.ui.Components.r6
+    public final void c(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).currentScale = f7;
     }
 
-    @Override // org.telegram.ui.Cells.b0
-    public final int getSideMenuWidth() {
-        bo boVar = this.f.Q;
-        int i10 = bo.Gc;
-        return boVar.R8();
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).currentScale);
     }
 }

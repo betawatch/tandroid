@@ -12,31 +12,30 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.wl;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.messenger.wh;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.o90;
+import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.wq;
-import org.telegram.ui.j70;
-import w7.x5;
-import w7.z5;
+import org.telegram.ui.h70;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class p0 extends FrameLayout implements f90 {
+public class p0 extends FrameLayout implements o90 {
     public boolean E;
     public boolean F;
     public wq G;
     public boolean H;
     public boolean I;
-    public final c6 J;
-    public final c6 K;
+    public final e6 J;
+    public final e6 K;
     public tp L;
     public float M;
     public boolean N;
@@ -54,10 +53,10 @@ public class p0 extends FrameLayout implements f90 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final bj0 y;
+    public final lj0 y;
 
-    public p0(Context context, f6 f6Var, boolean z10) {
-        this(AndroidUtilities.dp(8.0f), context, f6Var, z10);
+    public p0(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        this(AndroidUtilities.dp(8.0f), context, e6Var, z10);
     }
 
     public final void a(String str, View.OnClickListener onClickListener, boolean z10) {
@@ -87,7 +86,7 @@ public class p0 extends FrameLayout implements f90 {
         d(z11);
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.o90
     public final boolean c() {
         return this.N;
     }
@@ -106,7 +105,7 @@ public class p0 extends FrameLayout implements f90 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, this.h ? 1.0f : 0.0f);
         this.s = ofFloat;
         ofFloat.addUpdateListener(new l6(this, 11));
-        this.s.addListener(new qg.n0(this, 3));
+        this.s.addListener(new pg.d0(this, 4));
         this.s.setDuration(250L);
         this.s.setInterpolator(qr.f);
         this.s.start();
@@ -124,13 +123,13 @@ public class p0 extends FrameLayout implements f90 {
             } else {
                 dp = AndroidUtilities.dp(vqVar.C - 0.5f) + vqVar.s;
             }
-            c6 c6Var = this.J;
-            c6Var.d(((dp * 0.85f) + AndroidUtilities.dp(3.0f)) / 2.0f, false);
+            e6 e6Var = this.J;
+            e6Var.d(((dp * 0.85f) + AndroidUtilities.dp(3.0f)) / 2.0f, false);
             float e = (o0Var.getDrawable().e() / 2.0f) + (getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(3.0f);
-            c6 c6Var2 = this.K;
-            c6Var2.d(e, false);
-            o0Var.setTranslationX(-c6Var.c);
-            this.G.setTranslationX(c6Var2.c - c6Var.c);
+            e6 e6Var2 = this.K;
+            e6Var2.d(e, false);
+            o0Var.setTranslationX(-e6Var.c);
+            this.G.setTranslationX(e6Var2.c - e6Var.c);
         } else if (o0Var != null) {
             o0Var.setTranslationX(0.0f);
         }
@@ -204,11 +203,11 @@ public class p0 extends FrameLayout implements f90 {
         invalidate();
     }
 
-    public bj0 getIconView() {
+    public lj0 getIconView() {
         return this.y;
     }
 
-    public n6 getTextView() {
+    public p6 getTextView() {
         return this.d;
     }
 
@@ -234,16 +233,16 @@ public class p0 extends FrameLayout implements f90 {
     }
 
     public void setIcon(int i10) {
-        bj0 bj0Var = this.y;
-        bj0Var.f(i10, 24, 24, null);
+        lj0 lj0Var = this.y;
+        lj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
         hVar.p = new org.telegram.ui.web.u0(this, 26);
         invalidate();
-        bj0Var.setVisibility(0);
+        lj0Var.setVisibility(0);
     }
 
-    @Override // org.telegram.ui.Components.f90
+    @Override // org.telegram.ui.Components.o90
     public void setLoading(boolean z10) {
         if (this.N != z10) {
             ValueAnimator valueAnimator = this.O;
@@ -257,21 +256,21 @@ public class p0 extends FrameLayout implements f90 {
             this.O = ofFloat;
             int i10 = 16;
             ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, i10));
-            this.O.addListener(new j70(i10, this, z10));
+            this.O.addListener(new h70(i10, this, z10));
             this.O.setDuration(320L);
             this.O.setInterpolator(qr.h);
             this.O.start();
         }
     }
 
-    public p0(int i10, Context context, f6 f6Var, boolean z10) {
+    public p0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
         this.v = new Path();
         this.H = true;
-        this.J = new c6(this);
-        this.K = new c6(this);
+        this.J = new e6(this);
+        this.K = new e6(this);
         this.M = 0.0f;
         this.f = i10;
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
@@ -279,7 +278,7 @@ public class p0 extends FrameLayout implements f90 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout f7 = wl.f(context, 0);
+        LinearLayout e = wh.e(context, 0);
         o0 o0Var = new o0(this, context, 0);
         this.d = o0Var;
         o0Var.b(0.35f, 350L, qr.h);
@@ -287,27 +286,27 @@ public class p0 extends FrameLayout implements f90 {
         o0Var.setTextColor(-1);
         o0Var.setTextSize(AndroidUtilities.dp(14.0f));
         o0Var.setTypeface(AndroidUtilities.bold());
-        bj0 bj0Var = new bj0(context);
-        this.y = bj0Var;
-        bj0Var.setColorFilter(-1);
-        bj0Var.setVisibility(8);
+        lj0 lj0Var = new lj0(context);
+        this.y = lj0Var;
+        lj0Var.setColorFilter(-1);
+        lj0Var.setVisibility(8);
         ai.f0 f0Var = new ai.f0(this, context, 27);
         this.r = f0Var;
-        f0Var.addView(f7, x5.e(-2, -2, 17));
+        f0Var.addView(e, y5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         f0Var.setBackground(j6.i0(i10, i10, i10, i10, 0, k10, k10));
-        f7.addView(o0Var, x5.q(-2, -2, 16));
-        f7.addView(bj0Var, x5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        e.addView(o0Var, y5.q(-2, -2, 16));
+        e.addView(lj0Var, y5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(f0Var);
-        setOutlineProvider(yf.j0.b);
+        setOutlineProvider(yf.k0.b);
         setClipToOutline(true);
-        z5.b(this, 0.02f, 1.2f);
+        a6.b(this, 0.02f, 1.2f);
         if (z10) {
             o0 o0Var2 = new o0(this, context, 1);
             this.e = o0Var2;
             o0Var2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
             o0Var2.setGravity(17);
-            o0Var2.setTextColor(j6.v0(j6.Sh, f6Var));
+            o0Var2.setTextColor(j6.v0(j6.Sh, e6Var));
             o0Var2.setTextSize(AndroidUtilities.dp(14.0f));
             o0Var2.setTypeface(AndroidUtilities.bold());
             o0Var2.getDrawable().D = true;
@@ -315,7 +314,7 @@ public class p0 extends FrameLayout implements f90 {
             int k11 = i0.a.k(-1, 120);
             o0Var2.setBackground(j6.i0(dp, dp, dp, dp, 0, k11, k11));
             addView(o0Var2);
-            paint.setColor(j6.v0(j6.Oh, f6Var));
+            paint.setColor(j6.v0(j6.Oh, e6Var));
             e();
         }
     }

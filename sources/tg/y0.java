@@ -1,44 +1,26 @@
 package tg;
 
-import android.util.Pair;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a1 b;
-    public final /* synthetic */ boolean c;
+public final class y0 extends xg.i {
+    public final /* synthetic */ z0 J;
 
-    public /* synthetic */ y0(a1 a1Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = a1Var;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y0(z0 z0Var, Context context, e6 e6Var) {
+        super(context, e6Var);
+        this.J = z0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                List list = (List) obj;
-                a1 a1Var = this.b;
-                ArrayList arrayList = a1Var.g0;
-                if (this.c) {
-                    a1Var.h0.addAll(list);
-                }
-                if (a1Var.r0 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    a1Var.b0(true, true);
-                    a1Var.X(true);
-                    break;
-                }
-                break;
-            default:
-                a1.P(this.b, this.c, (Pair) obj);
-                break;
-        }
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = AndroidUtilities.dp(78.0f) + getMeasuredHeight();
+        z0 z0Var = this.J;
+        z0Var.p0 = dp;
+        z0Var.o0.G();
     }
 }

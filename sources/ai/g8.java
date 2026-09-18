@@ -9,26 +9,26 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ku0;
 import org.telegram.ui.Components.sh;
+import org.telegram.ui.Components.vu0;
 import org.telegram.ui.Components.wm;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gm0;
-import org.telegram.ui.ij1;
-import org.telegram.ui.ni;
-import org.telegram.ui.wa0;
+import org.telegram.ui.fm0;
+import org.telegram.ui.hj1;
+import org.telegram.ui.li;
+import org.telegram.ui.va0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g8 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ g8(int i10, wa0 wa0Var) {
+    public /* synthetic */ g8(int i10, va0 va0Var) {
         this.a = 0;
         this.b = i10;
-        this.c = wa0Var;
+        this.c = va0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -38,7 +38,7 @@ public final /* synthetic */ class g8 implements RequestDelegate {
         Object obj = this.c;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new s1(tLObject, i11, (wa0) obj, 1));
+                AndroidUtilities.runOnUIThread(new s1(tLObject, i11, (va0) obj, 1));
                 break;
             case 1:
                 d9 d9Var = (d9) obj;
@@ -61,7 +61,7 @@ public final /* synthetic */ class g8 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i11, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new wm((ku0) obj, tLObject, i11, 16));
+                AndroidUtilities.runOnUIThread(new wm((vu0) obj, tLObject, i11, 16));
                 break;
             case 5:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -80,16 +80,16 @@ public final /* synthetic */ class g8 implements RequestDelegate {
                 }
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new wm((ni) obj, tLObject, i11, 29));
+                AndroidUtilities.runOnUIThread(new wm((li) obj, tLObject, i11, 29));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new gm0((ij1) obj, i11, tLObject, 10));
+                AndroidUtilities.runOnUIThread(new fm0((hj1) obj, i11, tLObject, 10));
                 break;
             case 8:
-                yh.a4.U((yh.a4) obj, i11, tLObject);
+                yh.y3.U((yh.y3) obj, i11, tLObject);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new gm0((yh.v5) obj, i11, tLObject, 17));
+                AndroidUtilities.runOnUIThread(new fm0((yh.t5) obj, i11, tLObject, 17));
                 break;
         }
     }

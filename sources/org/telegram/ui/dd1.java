@@ -1,22 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class dd1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ xd1 a;
+public final class dd1 extends w7.j0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public dd1(xd1 xd1Var) {
-        this.a = xd1Var;
+    public /* synthetic */ dd1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        xd1 xd1Var = this.a;
-        if (xd1Var.W0 == null) {
-            xd1Var.J0[0].setVisibility(4);
+    @Override // w7.j0
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((si1) this.b).v.invalidate();
+                break;
+        }
+    }
+
+    @Override // w7.j0
+    public void b(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((vd1) this.b).x0.invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

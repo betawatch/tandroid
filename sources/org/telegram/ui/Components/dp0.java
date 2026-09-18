@@ -1,42 +1,31 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dp0 implements Runnable {
+public final class dp0 extends LinearLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ iq0 b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ dp0(iq0 iq0Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dp0(Context context, int i10, int i11) {
+        super(context);
         this.a = i10;
-        this.b = iq0Var;
+        this.b = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                iq0 iq0Var = this.b;
-                iq0Var.A0 = true;
-                b20 b20Var = iq0Var.y0;
-                b20Var.r.setText("");
-                AndroidUtilities.showKeyboard(b20Var.r);
-                break;
-            default:
-                sh shVar = new sh(7);
-                iq0 iq0Var2 = this.b;
-                if (!iq0Var2.isKeyboardVisible()) {
-                    shVar.run();
-                    break;
-                } else {
-                    b20 b20Var2 = iq0Var2.y0;
-                    if (b20Var2 != null) {
-                        AndroidUtilities.hideKeyboard(b20Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(shVar, 300L);
-                    break;
-                }
-        }
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return AndroidUtilities.dp(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
     }
 }

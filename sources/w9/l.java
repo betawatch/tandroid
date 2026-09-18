@@ -2,9 +2,9 @@ package w9;
 
 import android.os.Bundle;
 import java.util.concurrent.Callable;
-import org.telegram.ui.Cells.p6;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class l implements Callable {
     public final /* synthetic */ long a;
@@ -17,9 +17,9 @@ public final class l implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        Bundle e = p6.e(1, "fatal");
-        e.putLong("timestamp", this.a);
-        this.b.k.J(e);
+        Bundle f7 = c1.f(1, "fatal");
+        f7.putLong("timestamp", this.a);
+        this.b.k.J(f7);
         return null;
     }
 }

@@ -1,9 +1,9 @@
 package uh;
 
 import android.view.animation.Interpolator;
-import w7.p;
+import w7.q;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Interpolator {
     public final /* synthetic */ boolean a;
@@ -24,6 +24,6 @@ public final /* synthetic */ class e implements Interpolator {
         float f10 = this.b;
         float f11 = this.c;
         Interpolator interpolator = this.d;
-        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f)) : interpolator.getInterpolation(p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f));
+        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - q.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f)) : interpolator.getInterpolation(q.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f));
     }
 }

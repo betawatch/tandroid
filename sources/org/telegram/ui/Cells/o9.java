@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.yt;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class o9 extends ActionMode.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -100,20 +100,20 @@ public final class o9 extends ActionMode.Callback2 {
                 break;
             case 1:
                 ActionMode.Callback callback = this.b;
-                if (!org.telegram.ui.Components.l2.d(callback)) {
+                if (!org.telegram.ui.Components.j2.d(callback)) {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m4.u0.e(callback).onGetContentRect(actionMode, view, rect);
+                    m4.r0.e(callback).onGetContentRect(actionMode, view, rect);
                     break;
                 }
             default:
                 ActionMode.Callback callback2 = (ActionMode.Callback) this.c;
-                if (!org.telegram.ui.Components.l2.d(callback2)) {
+                if (!org.telegram.ui.Components.j2.d(callback2)) {
                     super.onGetContentRect(actionMode, view, rect);
                     break;
                 } else {
-                    m4.u0.e(callback2).onGetContentRect(actionMode, view, rect);
+                    m4.r0.e(callback2).onGetContentRect(actionMode, view, rect);
                     break;
                 }
         }

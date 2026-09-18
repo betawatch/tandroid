@@ -9,9 +9,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class l {
     public boolean a;
@@ -40,7 +39,7 @@ public final class l {
         RectF rectF = (RectF) u0Var.g;
         this.j = Math.abs(Utilities.fastRandom.nextLong() % 2250) + 2250;
         this.k = (Math.abs(Utilities.fastRandom.nextFloat()) * 0.45f) + 0.6f;
-        String str = m.a[p6.c(Utilities.fastRandom, 49)];
+        String str = m.a[org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 49)];
         if (str.length() > 7) {
             this.k *= 0.6f;
         } else if (str.length() > 5) {

@@ -11,15 +11,15 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class q9 extends View {
     public final c6 a;
     public boolean b;
-    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.e6 c;
     public final ImageReceiver d;
     public final ImageReceiver e;
-    public org.telegram.ui.Components.o5 f;
+    public org.telegram.ui.Components.q5 f;
     public boolean h;
     public boolean n;
     public boolean r;
@@ -27,7 +27,7 @@ public final class q9 extends View {
 
     public q9(Context context, c6 c6Var) {
         super(context);
-        this.c = new org.telegram.ui.Components.c6(this);
+        this.c = new org.telegram.ui.Components.e6(this);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.d = imageReceiver;
         this.e = new ImageReceiver(this);
@@ -43,9 +43,9 @@ public final class q9 extends View {
         this.d.onAttachedToWindow();
         this.e.onAttachedToWindow();
         this.s = true;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.a(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.a(this);
         }
     }
 
@@ -55,9 +55,9 @@ public final class q9 extends View {
         this.d.onDetachedFromWindow();
         this.e.onDetachedFromWindow();
         this.s = false;
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.o(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.o(this);
         }
     }
 
@@ -91,9 +91,9 @@ public final class q9 extends View {
         if (!this.h) {
             return;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
+        org.telegram.ui.Components.q5 q5Var = this.f;
         ImageReceiver imageReceiver = this.d;
-        ImageReceiver imageReceiver2 = o5Var != null ? o5Var.k : imageReceiver;
+        ImageReceiver imageReceiver2 = q5Var != null ? q5Var.k : imageReceiver;
         if (this.r) {
             ImageReceiver imageReceiver3 = this.e;
             if (imageReceiver3.getBitmap() != null) {
@@ -128,29 +128,29 @@ public final class q9 extends View {
         invalidate();
     }
 
-    public void setReaction(zg.p0 p0Var) {
+    public void setReaction(zg.o0 o0Var) {
         String str;
         String str2;
-        this.n = p0Var == null || ((str2 = p0Var.f) != null && str2.equals("❤"));
-        if (p0Var == null || (str = p0Var.f) == null || !str.equals("❤")) {
+        this.n = o0Var == null || ((str2 = o0Var.f) != null && str2.equals("❤"));
+        if (o0Var == null || (str = o0Var.f) == null || !str.equals("❤")) {
             this.b = false;
         } else {
             this.b = true;
         }
-        org.telegram.ui.Components.o5 o5Var = this.f;
-        if (o5Var != null) {
-            o5Var.o(this);
+        org.telegram.ui.Components.q5 q5Var = this.f;
+        if (q5Var != null) {
+            q5Var.o(this);
         }
         this.f = null;
-        if (p0Var != null) {
-            if (p0Var.g != 0) {
-                org.telegram.ui.Components.o5 o5Var2 = new org.telegram.ui.Components.o5(3, UserConfig.selectedAccount, p0Var.g);
-                this.f = o5Var2;
+        if (o0Var != null) {
+            if (o0Var.g != 0) {
+                org.telegram.ui.Components.q5 q5Var2 = new org.telegram.ui.Components.q5(3, UserConfig.selectedAccount, o0Var.g);
+                this.f = q5Var2;
                 if (this.s) {
-                    o5Var2.a(this);
+                    q5Var2.a(this);
                 }
             } else {
-                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(p0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f);
                 if (tL_availableReaction != null) {
                     this.d.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.j6.a7, 1.0f), "webp", tL_availableReaction, 1);
                 }

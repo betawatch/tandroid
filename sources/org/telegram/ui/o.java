@@ -9,9 +9,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class o extends org.telegram.ui.Components.ll0 {
+public final class o extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ p d;
 
@@ -20,7 +20,7 @@ public final class o extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -70,22 +70,22 @@ public final class o extends org.telegram.ui.Components.ll0 {
         org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i12);
         wVar.b(stickerSetCovered, i12 != arrayList.size() - 1);
-        org.telegram.ui.Components.yh0 yh0Var = wVar.f;
-        i11 = ((org.telegram.ui.ActionBar.o2) pVar).currentAccount;
+        org.telegram.ui.Components.ii0 ii0Var = wVar.f;
+        i11 = ((org.telegram.ui.ActionBar.n2) pVar).currentAccount;
         boolean isStickerPackInstalled = MediaDataController.getInstance(i11).isStickerPackInstalled(stickerSetCovered.set.id);
         wVar.a(isStickerPackInstalled, false, false);
         if (isStickerPackInstalled) {
             iVar.l(stickerSetCovered.set.id);
-            if (yh0Var != null) {
-                yh0Var.a(false, false);
+            if (ii0Var != null) {
+                ii0Var.a(false, false);
             }
         } else {
             boolean z10 = iVar.h(stickerSetCovered.set.id) >= 0;
-            if (yh0Var != null) {
-                yh0Var.a(z10, false);
+            if (ii0Var != null) {
+                ii0Var.a(z10, false);
             }
         }
-        wVar.setOnCheckedChangeListener(new ah.b(27, this, stickerSetCovered));
+        wVar.setOnCheckedChangeListener(new ah.b(28, this, stickerSetCovered));
     }
 
     @Override // s4.h0
@@ -97,11 +97,11 @@ public final class o extends org.telegram.ui.Components.ll0 {
             wVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
             view = wVar;
         } else if (i10 == 1) {
-            view = new org.telegram.ui.Cells.r4(context);
+            view = new org.telegram.ui.Cells.s4(context);
         } else if (i10 == 2) {
             view = new org.telegram.ui.Cells.e9(context);
         }
         view.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.wk0(view);
+        return new org.telegram.ui.Components.gl0(view);
     }
 }

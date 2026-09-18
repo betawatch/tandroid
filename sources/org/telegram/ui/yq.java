@@ -1,69 +1,33 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yq implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class yq implements kq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ sr b;
 
-    public /* synthetic */ yq(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public yq(sr srVar, TLObject tLObject) {
+        this.b = srVar;
+        this.a = tLObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00a7 A[RETURN, SYNTHETIC] */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        TLRPC.UserStatus userStatus;
-        TLRPC.UserStatus userStatus2;
-        switch (this.a) {
-            case 0:
-                ur urVar = (ur) this.c;
-                urVar.getClass();
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) ((TLObject) obj);
-                TLRPC.ChannelParticipant channelParticipant2 = (TLRPC.ChannelParticipant) ((TLObject) obj2);
-                long peerId = MessageObject.getPeerId(channelParticipant.peer);
-                long peerId2 = MessageObject.getPeerId(channelParticipant2.peer);
-                int i11 = this.b;
-                int i12 = -100;
-                if (peerId > 0) {
-                    TLRPC.User user = urVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant.peer)));
-                    i10 = (user == null || (userStatus2 = user.status) == null) ? 0 : user.self ? i11 + 50000 : userStatus2.expires;
-                } else {
-                    i10 = -100;
-                }
-                if (peerId2 > 0) {
-                    TLRPC.User user2 = urVar.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(channelParticipant2.peer)));
-                    i12 = (user2 == null || (userStatus = user2.status) == null) ? 0 : user2.self ? i11 + 50000 : userStatus.expires;
-                }
-                if (i10 > 0 && i12 > 0) {
-                    if (i10 <= i12) {
-                        if (i10 >= i12) {
-                            return 0;
-                        }
-                    }
-                }
-                if (i10 < 0 && i12 < 0) {
-                    if (i10 <= i12) {
-                        return i10 < i12 ? -1 : 0;
-                    }
-                }
-                if ((i10 >= 0 || i12 <= 0) && (i10 != 0 || i12 == 0)) {
-                    return ((i12 >= 0 || i10 <= 0) && (i12 != 0 || i10 == 0)) ? 0 : 1;
-                }
-            default:
-                return org.telegram.ui.Components.r30.M((org.telegram.ui.Components.r30) this.c, this.b, (TLObject) obj, (TLObject) obj2);
+    @Override // org.telegram.ui.kq
+    public final void a(TLRPC.User user) {
+        sr.c0(this.b, user);
+    }
+
+    @Override // org.telegram.ui.kq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            sr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
     }
 }

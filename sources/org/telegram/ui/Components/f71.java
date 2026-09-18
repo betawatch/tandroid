@@ -1,145 +1,262 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.io.File;
-import java.net.URLEncoder;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class f71 {
-    public int a;
-    public boolean b;
-    public long c;
-    public Uri d;
-    public long e;
-    public Uri f;
-    public TLRPC.Document g;
-    public TLRPC.Document h;
-    public int i;
-    public int j;
-    public long k;
-    public double l;
-    public String m;
+public final class f71 extends Drawable implements w5, x6, NotificationCenter.NotificationCenterDelegate {
+    public final o20 a;
+    public final int b;
+    public float c;
+    public final boolean d;
+    public ImageReceiver e;
+    public final HashSet f;
+    public final q5 h;
+    public final e71 n;
+    public final ImageReceiver r;
+    public final int s;
+    public boolean v;
+    public final TLRPC.TL_videoSizeStickerMarkup w;
 
-    public static Uri a(int i10, int i11, TLRPC.Document document) {
-        StringBuilder l4 = hg.k0.l(i10, "?account=", "&id=");
-        l4.append(document.id);
-        l4.append("&hash=");
-        l4.append(document.access_hash);
-        l4.append("&dc=");
-        l4.append(document.dc_id);
-        l4.append("&size=");
-        l4.append(document.size);
-        l4.append("&mime=");
-        l4.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-        l4.append("&rid=");
-        l4.append(i11);
-        l4.append("&name=");
-        l4.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
-        l4.append("&reference=");
-        byte[] bArr = document.file_reference;
-        if (bArr == null) {
-            bArr = new byte[0];
+    public f71(TLRPC.VideoSize videoSize, boolean z10, int i10) {
+        o20 o20Var = new o20();
+        this.a = o20Var;
+        this.f = new HashSet();
+        this.r = new ImageReceiver();
+        this.s = UserConfig.selectedAccount;
+        this.b = i10;
+        this.d = z10;
+        o20Var.d(i0.a.k(videoSize.background_colors.get(0).intValue(), 255), videoSize.background_colors.size() > 1 ? i0.a.k(videoSize.background_colors.get(1).intValue(), 255) : 0, videoSize.background_colors.size() > 2 ? i0.a.k(videoSize.background_colors.get(2).intValue(), 255) : 0, videoSize.background_colors.size() > 3 ? i0.a.k(videoSize.background_colors.get(3).intValue(), 255) : 0);
+        if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
+            q5 q5Var = new q5((i10 == 1 && z10) ? 7 : i10 == 2 ? 15 : 8, UserConfig.selectedAccount, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
+            this.h = q5Var;
+            q5Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
         }
-        l4.append(Utilities.bytesToHex(bArr));
-        return Uri.parse("tg://" + MessageObject.getFileName(document) + l4.toString());
+        if (videoSize instanceof TLRPC.TL_videoSizeStickerMarkup) {
+            this.w = (TLRPC.TL_videoSizeStickerMarkup) videoSize;
+            e71 e71Var = new e71(this);
+            this.n = e71Var;
+            e71Var.setInvalidateAll(true);
+            if (i10 == 1) {
+                e71Var.setAutoRepeatCount(2);
+            }
+            d();
+        }
     }
 
-    public static f71 d(int i10, TLRPC.Document document, TLRPC.Document document2, int i11, boolean z10) {
-        TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
+    @Override // org.telegram.ui.Components.x6
+    public final void b(ImageReceiver imageReceiver) {
+        HashSet hashSet = this.f;
+        hashSet.remove(imageReceiver);
+        if (hashSet.isEmpty()) {
+            q5 q5Var = this.h;
+            if (q5Var != null) {
+                q5Var.p(this);
+            }
+            e71 e71Var = this.n;
+            if (e71Var != null) {
+                e71Var.onDetachedFromWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onDetachedFromWindow();
+            }
+        }
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).removeObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.x6
+    public final void c(ImageReceiver imageReceiver) {
+        if (imageReceiver == null) {
+            return;
+        }
+        this.c = imageReceiver.getRoundRadius()[0];
+        HashSet hashSet = this.f;
+        if (hashSet.isEmpty()) {
+            q5 q5Var = this.h;
+            if (q5Var != null) {
+                q5Var.b(this);
+            }
+            e71 e71Var = this.n;
+            if (e71Var != null) {
+                e71Var.onAttachedToWindow();
+            }
+            ImageReceiver imageReceiver2 = this.r;
+            if (imageReceiver2 != null) {
+                imageReceiver2.onAttachedToWindow();
+            }
+        }
+        hashSet.add(imageReceiver);
+        if (this.w != null) {
+            NotificationCenter.getInstance(this.s).addObserver(this, NotificationCenter.groupStickersDidLoad);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d() {
+        TLRPC.Document document;
         String str;
-        f71 f71Var = new f71();
-        int i12 = 0;
-        while (true) {
-            if (i12 >= document.attributes.size()) {
-                tL_documentAttributeVideo = null;
-                break;
-            }
-            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i12);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) documentAttribute;
-                break;
-            }
-            i12++;
-        }
-        String lowerCase = (tL_documentAttributeVideo == null || (str = tL_documentAttributeVideo.video_codec) == null) ? null : str.toLowerCase();
-        f71Var.a = i10;
-        f71Var.g = document;
-        f71Var.c = document.id;
-        f71Var.d = a(i10, i11, document);
-        if (document2 != null) {
-            f71Var.h = document2;
-            f71Var.e = document2.id;
-            f71Var.f = a(i10, i11, document2);
-            File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(document2, null, false, z10);
-            if (pathToAttach == null || !pathToAttach.exists()) {
-                File pathToAttach2 = FileLoader.getInstance(i10).getPathToAttach(document2, null, true, z10);
-                if (pathToAttach2 != null && pathToAttach2.exists()) {
-                    f71Var.f = Uri.fromFile(pathToAttach2);
+        String str2;
+        String str3;
+        MediaDataController mediaDataController = MediaDataController.getInstance(this.s);
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup = this.w;
+        TLRPC.TL_messages_stickerSet stickerSet = mediaDataController.getStickerSet(tL_videoSizeStickerMarkup.stickerset, false);
+        if (stickerSet != null) {
+            this.v = true;
+            for (int i10 = 0; i10 < stickerSet.documents.size(); i10++) {
+                if (stickerSet.documents.get(i10).id == tL_videoSizeStickerMarkup.sticker_id) {
+                    TLRPC.Document document2 = stickerSet.documents.get(i10);
+                    boolean z10 = this.d;
+                    int i11 = this.b;
+                    if (z10 && i11 == 1) {
+                        str3 = "50_50";
+                    } else {
+                        if (i11 != 2) {
+                            document = null;
+                            str = null;
+                            str2 = "50_50_firstframe";
+                            this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.j6.m6, 0.2f), 0L, "tgs", document2, 0);
+                            if (i11 != 3) {
+                                this.r.setImage(ImageLocation.getForDocument(document2), "100_100", null, null, null, 0L, "tgs", document2, 0);
+                                return;
+                            }
+                            return;
+                        }
+                        str3 = "100_100";
+                    }
+                    str2 = str3;
+                    str = "50_50_firstframe";
+                    document = document2;
+                    this.n.setImage(ImageLocation.getForDocument(document2), str2, ImageLocation.getForDocument(document), str, null, null, DocumentObject.getSvgThumb(document2, org.telegram.ui.ActionBar.j6.m6, 0.2f), 0L, "tgs", document2, 0);
+                    if (i11 != 3) {
+                    }
                 }
-            } else {
-                f71Var.f = Uri.fromFile(pathToAttach);
             }
         }
-        f71Var.m = lowerCase;
-        long j3 = document.size;
-        f71Var.k = j3;
-        if (tL_documentAttributeVideo != null) {
-            double d = tL_documentAttributeVideo.duration;
-            f71Var.i = tL_documentAttributeVideo.w;
-            f71Var.j = tL_documentAttributeVideo.h;
-            f71Var.l = j3 / d;
-        }
-        File pathToAttach3 = FileLoader.getInstance(i10).getPathToAttach(document, null, false, z10);
-        if (pathToAttach3 != null && pathToAttach3.exists()) {
-            f71Var.d = Uri.fromFile(pathToAttach3);
-            return f71Var;
-        }
-        File pathToAttach4 = FileLoader.getInstance(i10).getPathToAttach(document, null, true, z10);
-        if (pathToAttach4 != null && pathToAttach4.exists()) {
-            f71Var.d = Uri.fromFile(pathToAttach4);
-        }
-        return f71Var;
     }
 
-    public final boolean b() {
-        Uri uri = this.d;
-        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.groupStickersDidLoad || this.v) {
+            return;
+        }
+        d();
     }
 
-    public final boolean c() {
-        Uri uri = this.f;
-        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = getBounds().left;
+        float f10 = getBounds().top;
+        float f11 = getBounds().right;
+        float f12 = getBounds().bottom;
+        o20 o20Var = this.a;
+        o20Var.b(f7, f10, f11, f12);
+        Paint paint = o20Var.c;
+        if (this.e != null) {
+            this.c = r1.getRoundRadius()[0];
+        }
+        float f13 = this.c;
+        if (f13 == 0.0f) {
+            canvas.drawRect(getBounds(), paint);
+        } else {
+            canvas.drawRoundRect(o20Var.h, f13, f13, paint);
+        }
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        int width = ((int) (getBounds().width() * 0.7f)) >> 1;
+        q5 q5Var = this.h;
+        if (q5Var != null) {
+            ai.l4 l4Var = q5Var.k;
+            if (l4Var != null) {
+                l4Var.setRoundRadius((int) (width * 2 * 0.13f));
+            }
+            q5Var.setBounds(centerX - width, centerY - width, centerX + width, centerY + width);
+            q5Var.draw(canvas);
+        }
+        e71 e71Var = this.n;
+        if (e71Var != null) {
+            float f14 = width * 2;
+            e71Var.setRoundRadius((int) (0.13f * f14));
+            e71Var.setImageCoords(centerX - width, centerY - width, f14, f14);
+            e71Var.draw(canvas);
+        }
     }
 
-    public final void e(boolean z10) {
-        if (!b() && this.g != null) {
-            File pathToAttach = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, false, z10);
-            if (pathToAttach == null || !pathToAttach.exists()) {
-                File pathToAttach2 = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, true, z10);
-                if (pathToAttach2 != null && pathToAttach2.exists()) {
-                    this.d = Uri.fromFile(pathToAttach2);
+    public final boolean equals(Object obj) {
+        TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && f71.class == obj.getClass()) {
+            f71 f71Var = (f71) obj;
+            q5 q5Var = f71Var.h;
+            if (this.b == f71Var.b) {
+                o20 o20Var = this.a;
+                int i10 = o20Var.d;
+                o20 o20Var2 = f71Var.a;
+                if (i10 == o20Var2.d && o20Var.e == o20Var2.e && o20Var.f == o20Var2.f && o20Var.g == o20Var2.g) {
+                    q5 q5Var2 = this.h;
+                    if (q5Var2 != null && q5Var != null) {
+                        return q5Var2.i() == q5Var.i();
+                    }
+                    TLRPC.TL_videoSizeStickerMarkup tL_videoSizeStickerMarkup2 = this.w;
+                    if (tL_videoSizeStickerMarkup2 != null && (tL_videoSizeStickerMarkup = f71Var.w) != null && tL_videoSizeStickerMarkup2.stickerset.id == tL_videoSizeStickerMarkup.stickerset.id && tL_videoSizeStickerMarkup2.sticker_id == tL_videoSizeStickerMarkup.sticker_id) {
+                        return true;
+                    }
                 }
-            } else {
-                this.d = Uri.fromFile(pathToAttach);
             }
         }
-        if (c() || this.h == null) {
-            return;
+        return false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.w5
+    public final void invalidate() {
+        Iterator it = this.f.iterator();
+        while (it.hasNext()) {
+            ((ImageReceiver) it.next()).invalidate();
         }
-        File pathToAttach3 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, false, z10);
-        if (pathToAttach3 != null && pathToAttach3.exists()) {
-            this.f = Uri.fromFile(pathToAttach3);
-            return;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.c.setAlpha(i10);
+        q5 q5Var = this.h;
+        if (q5Var != null) {
+            q5Var.setAlpha(i10);
         }
-        File pathToAttach4 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, true, z10);
-        if (pathToAttach4 == null || !pathToAttach4.exists()) {
-            return;
-        }
-        this.f = Uri.fromFile(pathToAttach4);
+    }
+
+    @Override // org.telegram.ui.Components.x6
+    public final /* synthetic */ void a(lj0 lj0Var) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

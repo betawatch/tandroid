@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class z30 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class z30 implements ValueAnimator.AnimatorUpdateListener {
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.co coVar;
+        org.telegram.ui.ao aoVar;
         ai.w0 w0Var;
         switch (this.a) {
             case 0:
@@ -32,8 +32,8 @@ public final class z30 implements ValueAnimator.AnimatorUpdateListener {
                 b40Var2.E = floatValue2;
                 b40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
                 b40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, b40Var2.E));
-                org.telegram.ui.jk jkVar = b40Var2.f;
-                if (jkVar != null && (coVar = jkVar.a) != null && (w0Var = coVar.L3) != null) {
+                org.telegram.ui.hk hkVar = b40Var2.f;
+                if (hkVar != null && (aoVar = hkVar.a) != null && (w0Var = aoVar.L3) != null) {
                     w0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, b40Var2.E));
                     b40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, b40Var2.E));
                 }

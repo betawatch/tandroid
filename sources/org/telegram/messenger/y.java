@@ -1,24 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import java.util.concurrent.atomic.AtomicInteger;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BillingController b;
+    public final /* synthetic */ AtomicInteger b;
+    public final /* synthetic */ AtomicInteger c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ y(BillingController billingController, int i10) {
+    public /* synthetic */ y(AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = billingController;
+        this.b = atomicInteger;
+        this.c = atomicInteger2;
+        this.d = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onQueriedPremiumProductDetails$14();
+                BillingController.lambda$onPurchasesUpdatedInternal$11(this.b, this.c, this.d);
+                break;
+            case 1:
+                BillingController.lambda$onPurchasesUpdatedInternal$8(this.b, this.c, this.d);
                 break;
             default:
-                this.b.lambda$onBillingServiceDisconnected$13();
+                BillingController.lambda$onPurchasesUpdatedInternal$9(this.b, this.c, this.d);
                 break;
         }
     }

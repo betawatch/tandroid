@@ -1,35 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class b11 extends AnimatorListenerAdapter {
+public final /* synthetic */ class b11 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+    public final /* synthetic */ c11 b;
 
-    public /* synthetic */ b11(ThemeEditorView themeEditorView, int i10) {
+    public /* synthetic */ b11(c11 c11Var, int i10) {
         this.a = i10;
-        this.b = themeEditorView;
+        this.b = c11Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ThemeEditorView themeEditorView = this.b;
-                z01 z01Var = themeEditorView.a;
-                if (z01Var != null) {
-                    z01Var.setBackground(null);
-                    themeEditorView.h.removeView(themeEditorView.a);
-                    break;
-                }
+                c11 c11Var = this.b;
+                c11Var.getClass();
+                c11Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var.invalidate();
+                break;
+            case 1:
+                c11 c11Var2 = this.b;
+                c11Var2.getClass();
+                c11Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var2.invalidate();
+                break;
+            case 2:
+                c11 c11Var3 = this.b;
+                c11Var3.getClass();
+                c11Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var3.invalidate();
+                break;
+            case 3:
+                c11 c11Var4 = this.b;
+                c11Var4.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var4.s = floatValue;
+                c11Var4.w = (int) ((c11Var4.h * floatValue) + 0);
+                c11Var4.invalidate();
                 break;
             default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.j6.r1(themeEditorView2.m, true, false, false);
-                themeEditorView2.a();
+                c11 c11Var5 = this.b;
+                c11Var5.getClass();
+                c11Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c11Var5.x = c11Var5.r + ((int) Math.ceil((c11Var5.n - r1) * r5));
+                c11Var5.invalidate();
                 break;
         }
     }

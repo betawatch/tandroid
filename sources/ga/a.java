@@ -13,13 +13,13 @@ import e2.x;
 import gh.b;
 import i5.f;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.c2;
 import q9.d;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements d, b2, b, e, m, n {
+public final /* synthetic */ class a implements d, a2, b, e, m, n {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -68,14 +68,14 @@ public final /* synthetic */ class a implements d, b2, b, e, m, n {
     public void e(Object obj, q qVar) {
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                c2Var.dismiss();
+                b2Var.dismiss();
                 break;
             default:
-                c2Var.dismiss();
+                b2Var.dismiss();
                 break;
         }
     }

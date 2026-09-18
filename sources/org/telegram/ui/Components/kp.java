@@ -18,10 +18,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class kp extends ll0 {
-    public final org.telegram.ui.ActionBar.f6 c;
+public final class kp extends vl0 {
+    public final org.telegram.ui.ActionBar.e6 c;
     public ArrayList d;
     public WeakReference e;
     public int f;
@@ -31,17 +31,17 @@ public final class kp extends ll0 {
     public final HashMap s;
     public final HashMap v;
 
-    public kp(int i10, long j3, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
+    public kp(int i10, long j3, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
         this.f = -1;
         this.s = new HashMap();
         this.v = new HashMap();
         this.n = i11;
         this.r = j3;
-        this.c = f6Var;
+        this.c = e6Var;
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -54,9 +54,9 @@ public final class kp extends ll0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            v11 v11Var = weakReference == null ? null : (v11) weakReference.get();
-            if (v11Var != null) {
-                v11Var.setSelected(false);
+            j21 j21Var = weakReference == null ? null : (j21) weakReference.get();
+            if (j21Var != null) {
+                j21Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -78,7 +78,7 @@ public final class kp extends ll0 {
         int s10;
         int intValue;
         String[] split;
-        v11 v11Var = (v11) c1Var.a;
+        j21 j21Var = (j21) c1Var.a;
         org.telegram.ui.ActionBar.i6 j3 = ((lp) this.d.get(i10)).a.j(((lp) this.d.get(i10)).c);
         if (j3 != null && j3.b != null && !j3.T && new File(j3.b).exists() && j3.b != null) {
             try {
@@ -87,7 +87,7 @@ public final class kp extends ll0 {
                 boolean z10 = false;
                 while (true) {
                     try {
-                        int read = fileInputStream2.read(org.telegram.ui.Cells.qa.i3);
+                        int read = fileInputStream2.read(org.telegram.ui.Cells.pa.i3);
                         if (read == -1) {
                             fileInputStream = fileInputStream2;
                             break;
@@ -100,7 +100,7 @@ public final class kp extends ll0 {
                                 fileInputStream = fileInputStream2;
                                 break;
                             }
-                            byte[] bArr = org.telegram.ui.Cells.qa.i3;
+                            byte[] bArr = org.telegram.ui.Cells.pa.i3;
                             if (bArr[i13] == 10) {
                                 int i15 = i13 - i14;
                                 int i16 = i15 + 1;
@@ -183,7 +183,7 @@ public final class kp extends ll0 {
                                         break;
                                     }
                                     int indexOf = str.indexOf(61);
-                                    if (indexOf != -1 && ((s10 = org.telegram.ui.ActionBar.h5.s(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.j6.ra || s10 == org.telegram.ui.ActionBar.j6.Aa || s10 == org.telegram.ui.ActionBar.j6.Nd || s10 == org.telegram.ui.ActionBar.j6.Od || s10 == org.telegram.ui.ActionBar.j6.Pd || s10 == org.telegram.ui.ActionBar.j6.Qd)) {
+                                    if (indexOf != -1 && ((s10 = org.telegram.ui.ActionBar.g5.s(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.j6.ra || s10 == org.telegram.ui.ActionBar.j6.Aa || s10 == org.telegram.ui.ActionBar.j6.Nd || s10 == org.telegram.ui.ActionBar.j6.Od || s10 == org.telegram.ui.ActionBar.j6.Pd || s10 == org.telegram.ui.ActionBar.j6.Qd)) {
                                         String substring2 = str.substring(indexOf + 1);
                                         if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
                                             intValue = Utilities.parseInt((CharSequence) substring2).intValue();
@@ -242,31 +242,31 @@ public final class kp extends ll0 {
                     TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
                     tL_inputWallPaperSlug.slug = j3.e;
                     getwallpaper.wallpaper = tL_inputWallPaperSlug;
-                    ConnectionsManager.getInstance(j3.E).sendRequest(getwallpaper, new org.telegram.ui.qo(7, this, j3));
+                    ConnectionsManager.getInstance(j3.E).sendRequest(getwallpaper, new org.telegram.ui.oo(7, this, j3));
                 }
             }
         }
         lp lpVar = (lp) this.d.get(i10);
-        lp lpVar2 = v11Var.G;
-        boolean z11 = lpVar2 != null && fg.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.wy.w4 && v11Var.V == lpVar.c;
-        v11Var.setFocusable(true);
-        v11Var.setEnabled(true);
-        v11Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i5, false));
-        v11Var.f(lpVar, this.r, z11);
-        v11Var.g(i10 == this.f, z11);
+        lp lpVar2 = j21Var.G;
+        boolean z11 = lpVar2 != null && fg.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.uy.w4 && j21Var.V == lpVar.c;
+        j21Var.setFocusable(true);
+        j21Var.setEnabled(true);
+        j21Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i5, false));
+        j21Var.f(lpVar, this.r, z11);
+        j21Var.g(i10 == this.f, z11);
         if (i10 == this.f) {
-            this.e = new WeakReference(v11Var);
+            this.e = new WeakReference(j21Var);
         }
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
-        org.telegram.ui.ActionBar.f6 f6Var = this.c;
-        return new wk0(new v11(this.h, this.n, context, f6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.c;
+        return new gl0(new j21(this.h, this.n, context, e6Var));
     }
 
-    public kp(int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        this(i10, 0L, f6Var, i11);
+    public kp(int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        this(i10, 0L, e6Var, i11);
     }
 }

@@ -20,11 +20,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h01;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.v01;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class w7 extends View {
     public v7 E;
@@ -38,27 +38,27 @@ public final class w7 extends View {
     public final int a;
     public final ka b;
     public la c;
-    public final org.telegram.ui.Components.c6 d;
+    public final org.telegram.ui.Components.e6 d;
     public final RectF e;
     public final RectF f;
     public final ImageReceiver h;
     public boolean n;
-    public h01 r;
-    public h01 s;
+    public v01 r;
+    public v01 s;
     public final Path v;
     public final Paint w;
-    public final org.telegram.ui.Components.wc x;
+    public final org.telegram.ui.Components.yc x;
     public boolean y;
 
     public w7(Activity activity, int i10, ka kaVar) {
         super(activity);
-        this.d = new org.telegram.ui.Components.c6(this, 0L, 320L, qr.h);
+        this.d = new org.telegram.ui.Components.e6(this, 0L, 320L, qr.h);
         this.e = new RectF();
         this.f = new RectF();
         this.h = new ImageReceiver(this);
         this.v = new Path();
         this.w = new Paint(1);
-        this.x = new org.telegram.ui.Components.wc(this);
+        this.x = new org.telegram.ui.Components.yc(this);
         this.J = new int[2];
         this.K = new int[2];
         this.a = i10;
@@ -70,7 +70,7 @@ public final class w7 extends View {
         if (v7Var == null) {
             return;
         }
-        this.r = new h01(v7Var.b(), 16.0f, AndroidUtilities.bold());
+        this.r = new v01(v7Var.b(), 16.0f, AndroidUtilities.bold());
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.E.a());
         if (spannableStringBuilder.toString().contains(">")) {
             spannableStringBuilder.clear();
@@ -82,7 +82,7 @@ public final class w7 extends View {
             oqVar.setScale(1.25f, 1.25f);
             spannableStringBuilder.setSpan(oqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
-        this.s = new h01(spannableStringBuilder, 14.0f, null);
+        this.s = new v01(spannableStringBuilder, 14.0f, null);
         this.E.d(this.h);
         this.n = true;
     }
@@ -93,11 +93,11 @@ public final class w7 extends View {
         float f10;
         Object obj;
         float e = this.d.e(this.y);
-        h01 h01Var = this.r;
-        if (h01Var == null || this.s == null || e <= 0.0f) {
+        v01 v01Var = this.r;
+        if (v01Var == null || this.s == null || e <= 0.0f) {
             return;
         }
-        h01Var.p = getWidth() * 0.7f;
+        v01Var.p = getWidth() * 0.7f;
         this.s.p = getWidth() * 0.7f;
         float dp = AndroidUtilities.dp(5.0f);
         float dp2 = AndroidUtilities.dp(10.0f);
@@ -156,8 +156,8 @@ public final class w7 extends View {
             imageReceiver.draw(canvas);
         }
         float centerY = rectF.centerY() - ((this.s.j() + (this.r.j() + dp4)) / f10);
-        h01 h01Var2 = this.r;
-        h01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (h01Var2.j() / f10) + centerY, e, -1, canvas);
+        v01 v01Var2 = this.r;
+        v01Var2.c(rectF.left + (this.n ? dp5 + dp3 + dp5 : 0.0f) + f7, (v01Var2.j() / f10) + centerY, e, -1, canvas);
         this.s.c(rectF.left + (this.n ? dp3 + dp5 + dp5 : 0.0f) + f7, this.r.j() + centerY + dp4 + (this.s.j() / f10), e, org.telegram.ui.ActionBar.j6.v(-16777216, -1610612737), canvas);
         canvas.restore();
     }
@@ -166,10 +166,10 @@ public final class w7 extends View {
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         la laVar;
         boolean z10 = this.y;
-        org.telegram.ui.Components.wc wcVar = this.x;
+        org.telegram.ui.Components.yc ycVar = this.x;
         if (!z10 || this.E == null) {
             this.L = false;
-            wcVar.c(false);
+            ycVar.c(false);
             return false;
         }
         int action = motionEvent.getAction();
@@ -177,23 +177,23 @@ public final class w7 extends View {
         if (action == 0) {
             if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
                 this.L = true;
-                wcVar.c(true);
+                ycVar.c(true);
             }
         } else if (motionEvent.getAction() == 2) {
-            if (wcVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                wcVar.c(false);
+            if (ycVar.h && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                ycVar.c(false);
             }
         } else if (motionEvent.getAction() == 1) {
-            if (wcVar.h && (laVar = this.c) != null && this.E != null) {
+            if (ycVar.h && (laVar = this.c) != null && this.E != null) {
                 laVar.run(new r7(this, 1));
             }
-            wcVar.c(false);
+            ycVar.c(false);
             this.L = false;
         } else if (motionEvent.getAction() == 3) {
-            wcVar.c(false);
+            ycVar.c(false);
             this.L = false;
         }
-        return this.L || wcVar.h;
+        return this.L || ycVar.h;
     }
 
     @Override // android.view.View

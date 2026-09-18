@@ -17,17 +17,17 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.jb;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.uc0;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.dd0;
+import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ap0;
-import org.telegram.ui.ti1;
-import org.telegram.ui.x51;
+import org.telegram.ui.si1;
+import org.telegram.ui.v51;
+import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -74,24 +74,24 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 3:
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 DialogInterface.OnDismissListener onDismissListener = (DialogInterface.OnDismissListener) obj2;
-                o2Var.getClass();
+                n2Var.getClass();
                 if (onDismissListener != null) {
                     onDismissListener.onDismiss(dialogInterface);
                 }
-                o2Var.onDialogDismiss((Dialog) dialogInterface);
-                if (dialogInterface == o2Var.visibleDialog) {
-                    o2Var.visibleDialog = null;
+                n2Var.onDialogDismiss((Dialog) dialogInterface);
+                if (dialogInterface == n2Var.visibleDialog) {
+                    n2Var.visibleDialog = null;
                     break;
                 }
                 break;
             case 4:
-                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) obj;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;
-                o2Var2.onPause();
-                o2Var2.onFragmentDestroy();
-                if (m2Var != null && (runnable = m2Var.b) != null) {
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj;
+                org.telegram.ui.ActionBar.l2 l2Var = (org.telegram.ui.ActionBar.l2) obj2;
+                n2Var2.onPause();
+                n2Var2.onFragmentDestroy();
+                if (l2Var != null && (runnable = l2Var.b) != null) {
                     runnable.run();
                     break;
                 }
@@ -108,7 +108,7 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 AndroidUtilities.hideKeyboard((EditText) obj2);
                 break;
             case 7:
-                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((uc0) obj2).getValue()));
+                ((org.telegram.ui.web.b1) obj).run(Integer.valueOf(((dd0) obj2).getValue()));
                 break;
             case 8:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj;
@@ -119,18 +119,18 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 break;
             case 9:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
-                org.telegram.ui.ActionBar.c2 c2Var = (org.telegram.ui.ActionBar.c2) obj2;
-                if (c2Var == launchActivity.H0) {
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
+                if (b2Var == launchActivity.H0) {
                     ActionBarLayout actionBarLayout = launchActivity.q0;
-                    org.telegram.ui.ActionBar.o2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
+                    org.telegram.ui.ActionBar.n2 lastFragment = actionBarLayout == null ? null : actionBarLayout.getLastFragment();
                     try {
                         String str = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
                         if (lastFragment != null) {
-                            oc Q = vc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            qc Q = xc.a0(lastFragment).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q.j = 5000;
                             Q.j();
                         } else {
-                            oc Q2 = new vc(jb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
+                            qc Q2 = new xc(lb.a(launchActivity), null).Q(R.raw.msg_translate, 36, LaunchActivity.V(R.string.ChangeLanguageLater, "ChangeLanguageLater", str.equals("en") ? launchActivity.K0 : launchActivity.J0));
                             Q2.j = 5000;
                             Q2.j();
                         }
@@ -138,7 +138,7 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                         FileLog.e(e);
                     }
                     launchActivity.H0 = null;
-                } else if (c2Var == launchActivity.F0) {
+                } else if (b2Var == launchActivity.F0) {
                     MessagesController.getGlobalMainSettings();
                     SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                     edit.putBoolean("proxy_enabled", false);
@@ -147,26 +147,26 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxySettingsChanged, new Object[0]);
                     launchActivity.F0 = null;
                 }
-                launchActivity.E0.remove(c2Var);
+                launchActivity.E0.remove(b2Var);
                 break;
             case 10:
-                ap0 ap0Var = (ap0) obj2;
+                zo0 zo0Var = (zo0) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    ap0Var.run(Boolean.FALSE);
+                    zo0Var.run(Boolean.FALSE);
                     break;
                 }
                 break;
             case 11:
-                x51 x51Var = (x51) obj2;
+                v51 v51Var = (v51) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    x51Var.c(true);
+                    v51Var.c(true);
                 }
-                x51Var.w = null;
+                v51Var.w = null;
                 break;
             case 12:
-                ti1 ti1Var = (ti1) obj2;
+                si1 si1Var = (si1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    ti1Var.u0.b();
+                    si1Var.u0.b();
                     break;
                 }
                 break;
@@ -196,9 +196,9 @@ public final /* synthetic */ class e0 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                xh.m4 m4Var = (xh.m4) obj2;
+                xh.n4 n4Var = (xh.n4) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    m4Var.run(Boolean.FALSE, null);
+                    n4Var.run(Boolean.FALSE, null);
                     break;
                 }
                 break;

@@ -10,12 +10,12 @@ import java.util.List;
 import k.i;
 import m.p3;
 import n6.l;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
 import v7.r1;
-import w7.g9;
+import w7.h9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -28,7 +28,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -126,17 +126,17 @@ public final /* synthetic */ class d implements vf {
             }
             i10 = 0;
         }
-        a1 a1Var = new a1(28);
-        a1Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        a1Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        cVar.b = new ra(a1Var);
+        z0 z0Var = new z0(28);
+        z0Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        z0Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        cVar.b = new ra(z0Var);
         cVar.c = fVar.e.a();
         if (igVar != null) {
             List list = igVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            g9.a(length, array);
+            h9.a(length, array);
             cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {

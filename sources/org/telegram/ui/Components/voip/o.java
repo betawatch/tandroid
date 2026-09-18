@@ -15,20 +15,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.l90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.gm0;
-import org.telegram.ui.mi1;
-import org.telegram.ui.q20;
-import org.telegram.ui.wg;
-import yh.m7;
-import yh.o7;
-import yh.y5;
-import yh.y7;
-import yh.z3;
+import org.telegram.ui.fm0;
+import org.telegram.ui.li1;
+import org.telegram.ui.o20;
+import org.telegram.ui.ug;
+import yh.j7;
+import yh.l7;
+import yh.v7;
+import yh.w5;
+import yh.x3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class o implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.ActionBar.o2 R;
-        org.telegram.ui.ActionBar.o2 R2;
+        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.n2 R2;
         switch (this.a) {
             case 0:
                 u uVar = (u) this.b;
@@ -64,13 +64,13 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             case 2:
-                mi1 mi1Var = (mi1) this.b;
-                if (!mi1Var.a) {
-                    if (mi1Var.w != 0) {
-                        mi1Var.a(false, true);
+                li1 li1Var = (li1) this.b;
+                if (!li1Var.a) {
+                    if (li1Var.w != 0) {
+                        li1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) mi1Var.getContext()).startActivityForResult(((MediaProjectionManager) mi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) li1Var.getContext()).startActivityForResult(((MediaProjectionManager) li1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -94,22 +94,22 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
-                hg.k0.r(R.string.Cancel, alertDialog$Builder, null);
+                hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 5:
                 ((pg.x) this.b).dismiss();
                 break;
             case 6:
-                ((gm0) this.b).run();
+                ((fm0) this.b).run();
                 break;
             case 7:
-                ((qg.v2) this.b).onBackPressed();
+                ((qg.s2) this.b).onBackPressed();
                 break;
             case 8:
-                ((wg) this.b).run();
+                ((ug) this.b).run();
                 break;
             case 9:
-                ((c90) this.b).performClick();
+                ((l90) this.b).performClick();
                 break;
             case 10:
                 rg.k1 k1Var = (rg.k1) this.b;
@@ -117,41 +117,41 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 PremiumPreviewFragment.k0(k1Var.t0, null, "profile", null);
                 break;
             case 11:
-                final tg.h0 h0Var = (tg.h0) this.b;
-                vg.a aVar = h0Var.Q0;
+                final tg.g0 g0Var = (tg.g0) this.b;
+                vg.a aVar = g0Var.Q0;
                 if (!aVar.a.N) {
                     aVar.b(true);
-                    String str = h0Var.R0;
+                    String str = g0Var.R0;
                     final int i10 = 0;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: tg.g0
+                    Utilities.Callback callback = new Utilities.Callback() { // from class: tg.f0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i10) {
                                 case 0:
-                                    h0 h0Var2 = h0Var;
-                                    h0Var2.Q0.b(false);
-                                    h0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new f0(h0Var2, 1), 200L);
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.Q0.b(false);
+                                    g0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new e0(g0Var2, 1), 200L);
                                     break;
                                 default:
-                                    h0.c0(h0Var, (TLRPC.TL_error) obj);
+                                    g0.c0(g0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
                     };
                     final int i11 = 1;
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: tg.g0
+                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: tg.f0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i11) {
                                 case 0:
-                                    h0 h0Var2 = h0Var;
-                                    h0Var2.Q0.b(false);
-                                    h0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new f0(h0Var2, 1), 200L);
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.Q0.b(false);
+                                    g0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new e0(g0Var2, 1), 200L);
                                     break;
                                 default:
-                                    h0.c0(h0Var, (TLRPC.TL_error) obj);
+                                    g0.c0(g0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
@@ -159,15 +159,15 @@ public final /* synthetic */ class o implements View.OnClickListener {
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new tg.q(callback2, callback, 0), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new tg.o(callback2, callback, 0), 2);
                     break;
                 }
                 break;
             case 12:
-                ((tg.k0) this.b).dismiss();
+                ((tg.j0) this.b).dismiss();
                 break;
             case 13:
-                ((tg.c0) ((ug.e) this.b)).r.dismiss();
+                ((tg.b0) ((ug.e) this.b)).r.dismiss();
                 break;
             case 14:
                 Runnable runnable = ((xg.c) this.b).d;
@@ -183,10 +183,10 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((xh.c0) this.b).dismiss();
                 break;
             case 17:
-                if (((xh.q1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    R.showAsSheet(new y7(), m2Var);
+                if (((xh.r1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new v7(), l2Var);
                     break;
                 }
                 break;
@@ -216,28 +216,28 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ((yh.r1) this.b).run();
                 break;
             case 24:
-                yh.f3 f3Var = (yh.f3) this.b;
-                f3Var.getClass();
-                new o7(f3Var.b, f3Var.g).show();
+                yh.d3 d3Var = (yh.d3) this.b;
+                d3Var.getClass();
+                new l7(d3Var.b, d3Var.g).show();
                 break;
             case 25:
-                ((z3) this.b).dismiss();
+                ((x3) this.b).dismiss();
                 break;
             case 26:
-                ((y5) this.b).run();
+                ((w5) this.b).run();
                 break;
             case 27:
-                if (((m7) ((q20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var2 = new org.telegram.ui.ActionBar.m2();
-                    m2Var2.a = true;
-                    R2.showAsSheet(new y7(), m2Var2);
+                if (((j7) ((o20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
+                    l2Var2.a = true;
+                    R2.showAsSheet(new v7(), l2Var2);
                     break;
                 }
                 break;
             default:
-                zg.c0 c0Var = (zg.c0) this.b;
-                if (c0Var.k) {
-                    c0Var.d();
+                zg.b0 b0Var = (zg.b0) this.b;
+                if (b0Var.k) {
+                    b0Var.d();
                     break;
                 }
                 break;

@@ -1,25 +1,73 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BetaUpdaterController b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ t(BetaUpdaterController betaUpdaterController, int i10) {
-        this.a = i10;
-        this.b = betaUpdaterController;
+    public /* synthetic */ t(int i10, int i11, long j3, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = 4;
+        this.b = messagesStorage;
+        this.d = j3;
+        this.f = arrayList;
+        this.c = i10;
+        this.e = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$downloadUpdate$3();
+                AutoMessageHeardReceiver.lambda$onReceive$0((AccountInstance) this.b, (TLRPC.User) this.f, this.c, this.d, this.e);
+                break;
+            case 1:
+                AutoMessageHeardReceiver.lambda$onReceive$2((AccountInstance) this.b, (TLRPC.Chat) this.f, this.c, this.d, this.e);
+                break;
+            case 2:
+                ((MediaDataController) this.b).lambda$putStickersToCache$102((ArrayList) this.f, this.c, this.e, this.d);
+                break;
+            case 3:
+                ((MessagesStorage) this.b).lambda$updateTopicData$49(this.c, (TLRPC.TL_forumTopic) this.f, this.d, this.e);
                 break;
             default:
-                this.b.lambda$new$0();
+                ((MessagesStorage) this.b).lambda$markMessagesContentAsRead$218(this.d, (ArrayList) this.f, this.c, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ t(AccountInstance accountInstance, TLObject tLObject, int i10, long j3, int i11, int i12) {
+        this.a = i12;
+        this.b = accountInstance;
+        this.f = tLObject;
+        this.c = i10;
+        this.d = j3;
+        this.e = i11;
+    }
+
+    public /* synthetic */ t(MediaDataController mediaDataController, ArrayList arrayList, int i10, int i11, long j3) {
+        this.a = 2;
+        this.b = mediaDataController;
+        this.f = arrayList;
+        this.c = i10;
+        this.e = i11;
+        this.d = j3;
+    }
+
+    public /* synthetic */ t(MessagesStorage messagesStorage, int i10, TLRPC.TL_forumTopic tL_forumTopic, long j3, int i11) {
+        this.a = 3;
+        this.b = messagesStorage;
+        this.c = i10;
+        this.f = tL_forumTopic;
+        this.d = j3;
+        this.e = i11;
     }
 }

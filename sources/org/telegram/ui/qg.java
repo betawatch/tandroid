@@ -1,48 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements Utilities.Callback2 {
+public final /* synthetic */ class qg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ qg(bo boVar, String str, int i10) {
+    public /* synthetic */ qg(zn znVar, int i10) {
         this.a = i10;
-        this.b = boVar;
-        this.c = str;
+        this.b = znVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    bo boVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        boVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    boVar.getParentActivity();
-                    nf.f.n(str);
+                Integer num = (Integer) obj;
+                zn znVar = this.b;
+                znVar.getClass();
+                if (num.intValue() != 0) {
+                    znVar.Bc(true);
+                    znVar.F(num.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    znVar.l1 = 0;
+                    znVar.Bc(true);
+                    znVar.getMessagesController().markReactionsAsRead(znVar.T5, znVar.d());
                     break;
                 }
-                break;
-            default:
-                bo boVar2 = this.b;
-                boVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        boVar2.getMessagesController().addWebBrowserException(str2, true);
+            case 1:
+                Integer num2 = (Integer) obj;
+                zn znVar2 = this.b;
+                znVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = znVar2.m1 - 1;
+                    znVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
                     }
-                    nf.f.m(boVar2.getParentActivity(), str2, false, null);
+                    znVar2.Ac(true);
+                    znVar2.F(num2.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    znVar2.m1 = 0;
+                    znVar2.Ac(true);
+                    znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
+                    break;
+                }
+            default:
+                zn znVar3 = this.b;
+                znVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                znVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    znVar3.r8();
                     break;
                 }
                 break;

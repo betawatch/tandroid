@@ -16,12 +16,12 @@ import ci.n5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.j6;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -97,7 +97,7 @@ public final class f extends FrameLayout {
         });
         imageView.setOnLongClickListener(new n5(this, 5));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
-        addView(imageView, x5.e(70, 64, 19));
+        addView(imageView, y5.e(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
@@ -142,7 +142,7 @@ public final class f extends FrameLayout {
         });
         imageView2.setVisibility(8);
         imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
-        addView(imageView2, x5.e(70, 64, 19));
+        addView(imageView2, y5.e(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
-        addView(imageView3, x5.e(70, 64, 21));
+        addView(imageView3, y5.e(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         textPaint.setColor(-1);
@@ -241,7 +241,7 @@ public final class f extends FrameLayout {
                 float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = dp;
-                rectF.top = wl.y(22.0f, height, 2);
+                rectF.top = wh.A(22.0f, height, 2);
                 rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
                 rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);

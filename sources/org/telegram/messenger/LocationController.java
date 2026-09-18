@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.de0;
+import org.telegram.ui.Components.me0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class LocationController extends BaseController implements NotificationCenter.NotificationCenterDelegate, ILocationServiceProvider.IAPIConnectionCallbacks, ILocationServiceProvider.IAPIOnConnectionFailedListener {
     private static final int BACKGROUD_UPDATE_TIME = 30000;
@@ -67,7 +67,7 @@ public class LocationController extends BaseController implements NotificationCe
     public static String[] unnamedRoads = {"Unnamed Road", "Вulicya bez nazvi", "Нeizvestnaya doroga", "İsimsiz Yol", "Ceļš bez nosaukuma", "Kelias be pavadinimo", "Droga bez nazwy", "Cesta bez názvu", "Silnice bez názvu", "Drum fără nume", "Route sans nom", "Vía sin nombre", "Estrada sem nome", "Οdos xoris onomasia", "Rrugë pa emër", "Пat bez ime", "Нeimenovani put", "Strada senza nome", "Straße ohne Straßennamen"};
     private static HashMap<LocationFetchCallback, Runnable> callbacks = new HashMap<>();
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public class FusedLocationListener implements ILocationServiceProvider.ILocationListener {
         private FusedLocationListener() {
         }
@@ -81,12 +81,12 @@ public class LocationController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public interface LocationFetchCallback {
         void onLocationAddressAvailable(String str, String str2, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, TLRPC.TL_messageMediaVenue tL_messageMediaVenue2, Location location);
     }
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public static class SharingLocationInfo {
         public int account;
         public long did;
@@ -449,7 +449,7 @@ public class LocationController extends BaseController implements NotificationCe
                     str = str2;
                     tL_messageMediaVenue3 = tL_messageMediaVenue;
                     tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                    AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                    AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
                 }
             }
             try {
@@ -903,7 +903,7 @@ public class LocationController extends BaseController implements NotificationCe
                         str = str2;
                         tL_messageMediaVenue3 = tL_messageMediaVenue;
                         tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                        AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                        AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
                     }
                 }
                 if (TextUtils.isEmpty(str5)) {
@@ -942,7 +942,7 @@ public class LocationController extends BaseController implements NotificationCe
                         str = str2;
                         tL_messageMediaVenue3 = tL_messageMediaVenue;
                         tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                        AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                        AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
                     }
                 }
                 if (tL_messageMediaVenue5 == null && tL_messageMediaVenue6 == null) {
@@ -968,7 +968,7 @@ public class LocationController extends BaseController implements NotificationCe
                                 str = str2;
                                 tL_messageMediaVenue3 = tL_messageMediaVenue;
                                 tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                                AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                                AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
                             }
                         }
                     } catch (Exception unused10) {
@@ -979,7 +979,7 @@ public class LocationController extends BaseController implements NotificationCe
                         str = str2;
                         tL_messageMediaVenue3 = tL_messageMediaVenue;
                         tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                        AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                        AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
                     }
                 }
                 str2 = format;
@@ -993,12 +993,12 @@ public class LocationController extends BaseController implements NotificationCe
                 str = str2;
                 tL_messageMediaVenue3 = tL_messageMediaVenue;
                 tL_messageMediaVenue2 = tL_messageMediaVenue4;
-                AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+                AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
             }
         } catch (Exception unused12) {
             r16 = 0;
         }
-        AndroidUtilities.runOnUIThread(new a0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
+        AndroidUtilities.runOnUIThread(new b0(locationFetchCallback, str2, str, tL_messageMediaVenue3, tL_messageMediaVenue2, location, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1337,7 +1337,7 @@ public class LocationController extends BaseController implements NotificationCe
         if (location == null || (SystemClock.elapsedRealtimeNanos() - location.getElapsedRealtimeNanos()) / 1000000000 <= 300) {
             this.lastKnownLocation = location;
             if (location != null) {
-                AndroidUtilities.runOnUIThread(new u1(14));
+                AndroidUtilities.runOnUIThread(new v1(14));
             }
         }
     }
@@ -1393,7 +1393,7 @@ public class LocationController extends BaseController implements NotificationCe
 
     private void startService() {
         try {
-            if (!de0.f("android.permission.ACCESS_COARSE_LOCATION") && !de0.f("android.permission.ACCESS_FINE_LOCATION")) {
+            if (!me0.f("android.permission.ACCESS_COARSE_LOCATION") && !me0.f("android.permission.ACCESS_FINE_LOCATION")) {
                 return;
             }
             ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) LocationSharingService.class));
@@ -1448,7 +1448,7 @@ public class LocationController extends BaseController implements NotificationCe
         this.sharingLocations.add(sharingLocationInfo);
         saveSharingLocation(sharingLocationInfo, 0);
         this.lastLocationSendTime = SystemClock.elapsedRealtime() - 25000;
-        AndroidUtilities.runOnUIThread(new f0(this, sharingLocationInfo2, sharingLocationInfo, 26));
+        AndroidUtilities.runOnUIThread(new g0(this, sharingLocationInfo2, sharingLocationInfo, 26));
     }
 
     public void cleanup() {
@@ -1750,12 +1750,12 @@ public class LocationController extends BaseController implements NotificationCe
         Locale locale = systemDefaultLocale;
         Locale locale2 = locale.getLanguage().contains("en") ? locale : Locale.US;
         DispatchQueue dispatchQueue = Utilities.globalQueue;
-        ei.l3 l3Var = new ei.l3(locale, location, i10, locale2, locationFetchCallback, 6);
+        ei.l3 l3Var = new ei.l3(locale, location, i10, locale2, locationFetchCallback, 7);
         dispatchQueue.postRunnable(l3Var, 300L);
         callbacks.put(locationFetchCallback, l3Var);
     }
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public class GpsLocationListener implements LocationListener {
         private GpsLocationListener() {
         }

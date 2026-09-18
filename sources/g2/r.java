@@ -18,9 +18,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -66,7 +65,7 @@ public final class r extends c {
             URL url2 = new URL(url, str);
             String protocol = url2.getProtocol();
             if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(p6.i("Unsupported protocol redirect: ", protocol), 2001);
+                throw new v(t8.b.i("Unsupported protocol redirect: ", protocol), 2001);
             }
             if (this.a || protocol.equals(url.getProtocol())) {
                 return url2;
@@ -118,7 +117,7 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(k0.i(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(k0.h(i13, "Too many redirects: ")), 2001, 1);
             }
             j3 = j(url, i10, bArr, j10, j11, z10, false, mVar.d);
             int responseCode = j3.getResponseCode();
@@ -220,7 +219,7 @@ public final class r extends c {
         return httpURLConnection;
     }
 
-    public final void l(long j3) {
+    public final void k(long j3) {
         if (j3 == 0) {
             return;
         }
@@ -355,7 +354,7 @@ public final class r extends c {
                                         }
                                         this.s = true;
                                         transferStarted(mVar);
-                                        l(j11);
+                                        k(j11);
                                         return this.w;
                                     }
                                 }
@@ -382,7 +381,7 @@ public final class r extends c {
                 this.s = true;
                 transferStarted(mVar);
                 try {
-                    l(j11);
+                    k(j11);
                     return this.w;
                 } catch (IOException e) {
                     b();

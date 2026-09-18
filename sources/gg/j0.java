@@ -7,43 +7,43 @@ import androidx.recyclerview.widget.RecyclerView;
 import ci.n6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.a31;
 import org.telegram.ui.Components.d00;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.gk0;
-import org.telegram.ui.Components.i81;
 import org.telegram.ui.Components.k00;
-import org.telegram.ui.Components.m21;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.q81;
+import org.telegram.ui.Components.qk0;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.w81;
+import org.telegram.ui.Components.wa0;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.a7;
-import org.telegram.ui.ur;
-import org.telegram.ui.vw;
+import org.telegram.ui.sr;
+import org.telegram.ui.tw;
+import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j0 extends s4.c0 {
     public final /* synthetic */ int I;
     public final /* synthetic */ Object J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(int i10, o2 o2Var) {
+    public /* synthetic */ j0(int i10, n2 n2Var) {
         super(1, false);
         this.I = i10;
-        this.J = o2Var;
+        this.J = n2Var;
     }
 
     @Override // s4.o0
     public void P(View view) {
         switch (this.I) {
             case 1:
-                a7 a7Var = (a7) this.J;
-                if (view != a7Var.M) {
+                z6 z6Var = (z6) this.J;
+                if (view != z6Var.M) {
                     super.P(view);
                     break;
                 } else {
-                    view.measure(View.MeasureSpec.makeMeasureSpec(a7Var.b.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(a7Var.b.getMeasuredHeight(), TLObject.FLAG_30));
+                    view.measure(View.MeasureSpec.makeMeasureSpec(z6Var.b.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(z6Var.b.getMeasuredHeight(), TLObject.FLAG_30));
                     break;
                 }
             default:
@@ -64,7 +64,7 @@ public final class j0 extends s4.c0 {
                 break;
             case 7:
                 super.S(eVar, z0Var, cVar);
-                if (((i81) this.J).V) {
+                if (((w81) this.J).V) {
                     cVar.p(false);
                     break;
                 }
@@ -79,7 +79,7 @@ public final class j0 extends s4.c0 {
     public int W0(s4.z0 z0Var) {
         switch (this.I) {
             case 6:
-                if (!((m21) this.J).a3) {
+                if (!((a31) this.J).a3) {
                     break;
                 } else {
                     break;
@@ -93,7 +93,7 @@ public final class j0 extends s4.c0 {
         switch (this.I) {
             case 4:
                 super.k1(z10);
-                ((na0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
+                ((wa0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -105,8 +105,8 @@ public final class j0 extends s4.c0 {
     public int m0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
             case 3:
-                n70 n70Var = ((vw) ((k00) this.J).J).b.L0;
-                if (n70Var != null && n70Var.D()) {
+                w70 w70Var = ((tw) ((k00) this.J).J).b.L0;
+                if (w70Var != null && w70Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, z0Var);
@@ -114,46 +114,46 @@ public final class j0 extends s4.c0 {
             default:
                 return super.m0(i10, eVar, z0Var);
             case 5:
-                gk0 gk0Var = (gk0) this.J;
-                ai.w0 w0Var = gk0Var.b;
-                if (i10 < 0 && gk0Var.B0 != 0.0f) {
-                    float pullingLeftProgress = gk0Var.getPullingLeftProgress();
-                    gk0Var.B0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (gk0Var.getPullingLeftProgress() > 1.0f)) {
+                qk0 qk0Var = (qk0) this.J;
+                ai.w0 w0Var = qk0Var.b;
+                if (i10 < 0 && qk0Var.B0 != 0.0f) {
+                    float pullingLeftProgress = qk0Var.getPullingLeftProgress();
+                    qk0Var.B0 += i10;
+                    if ((pullingLeftProgress > 1.0f) != (qk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    float f7 = gk0Var.B0;
+                    float f7 = qk0Var.B0;
                     if (f7 < 0.0f) {
                         i10 = (int) f7;
-                        gk0Var.B0 = 0.0f;
+                        qk0Var.B0 = 0.0f;
                     } else {
                         i10 = 0;
                     }
-                    n6 n6Var = gk0Var.S;
+                    n6 n6Var = qk0Var.S;
                     if (n6Var != null) {
                         n6Var.invalidate();
                     }
                     w0Var.invalidate();
                 }
                 int m0 = super.m0(i10, eVar, z0Var);
-                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && gk0Var.q()) {
-                    ValueAnimator valueAnimator = gk0Var.y0;
+                if (i10 > 0 && m0 == 0 && w0Var.getScrollState() == 1 && qk0Var.q()) {
+                    ValueAnimator valueAnimator = qk0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        gk0Var.y0.cancel();
+                        qk0Var.y0.cancel();
                     }
-                    float pullingLeftProgress2 = gk0Var.getPullingLeftProgress();
-                    gk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + gk0Var.B0;
-                    if ((pullingLeftProgress2 > 1.0f) != (gk0Var.getPullingLeftProgress() > 1.0f)) {
+                    float pullingLeftProgress2 = qk0Var.getPullingLeftProgress();
+                    qk0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + qk0Var.B0;
+                    if ((pullingLeftProgress2 > 1.0f) != (qk0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
                             w0Var.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
                     }
-                    n6 n6Var2 = gk0Var.S;
+                    n6 n6Var2 = qk0Var.S;
                     if (n6Var2 != null) {
                         n6Var2.invalidate();
                     }
@@ -167,8 +167,8 @@ public final class j0 extends s4.c0 {
     public int o0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
             case 2:
-                ur urVar = (ur) this.J;
-                if (urVar.R || urVar.O != 0 || urVar.F.size() != 0) {
+                sr srVar = (sr) this.J;
+                if (srVar.R || srVar.O != 0 || srVar.F.size() != 0) {
                     break;
                 }
                 break;
@@ -185,9 +185,9 @@ public final class j0 extends s4.c0 {
                 w0(d00Var);
                 break;
             case 7:
-                d81 d81Var = new d81(this, recyclerView.getContext());
-                d81Var.a = i10;
-                w0(d81Var);
+                q81 q81Var = new q81(this, recyclerView.getContext());
+                q81Var.a = i10;
+                w0(q81Var);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);

@@ -7,46 +7,46 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class l8 extends i51 {
+public final class l8 extends w51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        i51.setup(new l8());
+        w51.setup(new l8());
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void attachedView(ml0 ml0Var, View view, j51 j51Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final void attachedView(wl0 wl0Var, View view, x51 x51Var) {
         m8 m8Var = (m8) view;
-        m8Var.b(j51Var.e, true);
-        m8Var.c(ml0Var instanceof f61 ? ((f61) ml0Var).c3 : false);
+        m8Var.b(x51Var.e, true);
+        m8Var.c(wl0Var instanceof t61 ? ((t61) wl0Var).c3 : false);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x006e  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x007a  */
-    @Override // org.telegram.ui.Components.i51
+    @Override // org.telegram.ui.Components.w51
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
-        int i10 = x51Var.f;
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+        int i10 = l61Var.f;
         m8 m8Var = (m8) view;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) j51Var.G;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) x51Var.G;
         boolean z11 = false;
         m8Var.d(tL_messages_stickerSet, z10, false);
-        m8Var.b(j51Var.e, false);
-        m8Var.c(f61Var.c3);
-        m8Var.setOnOptionsClick(j51Var.D);
-        m8Var.y.setOnClickListener(j51Var.E);
-        m8Var.E.setOnClickListener(j51Var.E);
-        m8Var.F.setOnClickListener(j51Var.E);
+        m8Var.b(x51Var.e, false);
+        m8Var.c(t61Var.c3);
+        m8Var.setOnOptionsClick(x51Var.D);
+        m8Var.y.setOnClickListener(x51Var.E);
+        m8Var.E.setOnClickListener(x51Var.E);
+        m8Var.F.setOnClickListener(x51Var.E);
         TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
         if (stickerSet == null || !stickerSet.emojis) {
             return;
@@ -65,20 +65,20 @@ public final class l8 extends i51 {
         m8Var.e(!z11 ? (!isStickerPackInstalled || tL_messages_stickerSet.set.official) ? 1 : 2 : isStickerPackInstalled ? 4 : 3);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
         final m8 m8Var = new m8(context, 1);
-        if (ml0Var instanceof f61) {
-            final f61 f61Var = (f61) ml0Var;
+        if (wl0Var instanceof t61) {
+            final t61 t61Var = (t61) wl0Var;
             m8Var.setOnReorderButtonTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.k8
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    f61 f61Var2;
+                    t61 t61Var2;
                     s4.y yVar;
-                    if (motionEvent.getAction() != 0 || (yVar = (f61Var2 = f61.this).Z2) == null) {
+                    if (motionEvent.getAction() != 0 || (yVar = (t61Var2 = t61.this).Z2) == null) {
                         return false;
                     }
-                    yVar.r(f61Var2.U(m8Var));
+                    yVar.r(t61Var2.U(m8Var));
                     return false;
                 }
             });

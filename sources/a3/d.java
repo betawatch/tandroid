@@ -39,14 +39,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.z80;
+import org.telegram.ui.Components.i90;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.nx;
-import org.telegram.ui.wy;
+import org.telegram.ui.lx;
+import org.telegram.ui.uy;
 import v7.i8;
-import w7.z7;
+import w7.a8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -62,18 +62,18 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.C();
+                ((f) this.b).g.D();
                 return;
             case 1:
                 ((w) this.b).k--;
                 return;
             case 2:
-                wy wyVar = ((nx) this.b).O0;
-                if (wyVar.L && wyVar.X3().G()) {
-                    wyVar.E0.h();
+                uy uyVar = ((lx) this.b).O0;
+                if (uyVar.L && uyVar.X3().G()) {
+                    uyVar.E0.h();
                     return;
                 } else {
-                    wyVar.x4(true, true);
+                    uyVar.x4(true, true);
                     return;
                 }
             case 3:
@@ -184,7 +184,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((z80) this.b).d(true);
+                ((i90) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -273,7 +273,7 @@ public final /* synthetic */ class d implements Runnable {
                                 uVar.getClass();
                                 o0.i[] iVarArr = {d};
                                 v7.h8 h8Var = i0.e.a;
-                                z7.a("TypefaceCompat.createFromFontInfo");
+                                a8.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, iVarArr, 0);
                                     Trace.endSection();

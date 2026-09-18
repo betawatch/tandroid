@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vr implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wr b;
+import android.view.View;
 
-    public /* synthetic */ vr(wr wrVar, int i10) {
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class vr implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.fh0 b;
+
+    public /* synthetic */ vr(org.telegram.ui.Components.fh0 fh0Var, int i10) {
         this.a = i10;
-        this.b = wrVar;
+        this.b = fh0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.z51 z51Var = this.b.a;
-                if (z51Var != null) {
-                    z51Var.Y2.N(true);
-                    break;
-                }
+                this.b.b(true);
                 break;
             default:
-                org.telegram.ui.Components.z51 z51Var2 = this.b.a;
-                if (z51Var2 != null) {
-                    z51Var2.Y2.N(true);
-                    break;
-                }
+                this.b.b(true);
                 break;
         }
     }

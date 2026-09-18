@@ -1,27 +1,46 @@
 package yh;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class i2 extends ClickableSpan {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ a4 b;
+public final class i2 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y3 b;
 
-    public i2(a4 a4Var, long j3) {
-        this.b = a4Var;
-        this.a = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i2(y3 y3Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = y3Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.b.X1(this.a);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.Y0.c(0)) {
+                    break;
+                }
+                break;
+            case 1:
+                if (this.b.Y0.c(1)) {
+                    break;
+                }
+                break;
+            case 2:
+                if (this.b.Y0.c(2)) {
+                    break;
+                }
+                break;
+            default:
+                if (this.b.Y0.c(3)) {
+                    break;
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

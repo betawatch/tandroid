@@ -21,10 +21,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import v7.h8;
 import v7.v7;
-import w7.o6;
-import w7.q7;
+import w7.p6;
+import w7.r7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class z0 extends TextView implements u0.k {
     public final e2.c a;
@@ -32,7 +32,7 @@ public class z0 extends TextView implements u0.k {
     public final y c;
     public t d;
     public boolean e;
-    public k2.c0 f;
+    public a4.m f;
     public Future h;
 
     public z0(Context context, AttributeSet attributeSet) {
@@ -118,7 +118,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return q7.d(super.getCustomSelectionActionModeCallback());
+        return r7.d(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // android.widget.TextView
@@ -137,7 +137,7 @@ public class z0 extends TextView implements u0.k {
             if (i10 >= 28) {
                 this.f = new y0(this);
             } else if (i10 >= 26) {
-                this.f = new k2.c0(this, 4);
+                this.f = new a4.m(this, 28);
             }
         }
         return this.f;
@@ -179,7 +179,7 @@ public class z0 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                q7.a(this);
+                r7.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -198,7 +198,7 @@ public class z0 extends TextView implements u0.k {
     }
 
     public p0.c getTextMetricsParamsCompat() {
-        return q7.a(this);
+        return r7.a(this);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -206,7 +206,7 @@ public class z0 extends TextView implements u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
@@ -232,7 +232,7 @@ public class z0 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                q7.a(this);
+                r7.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -351,7 +351,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -360,24 +360,24 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((o6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((p6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().g(i10);
+            getSuperCaller().d0(i10);
         } else {
-            q7.b(i10, this);
+            r7.b(i10, this);
         }
     }
 
     @Override // android.widget.TextView
     public void setLastBaselineToBottomHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().e(i10);
+            getSuperCaller().H(i10);
         } else {
-            q7.c(i10, this);
+            r7.c(i10, this);
         }
     }
 
@@ -395,7 +395,7 @@ public class z0 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 29) {
             throw null;
         }
-        q7.a(this);
+        r7.a(this);
         throw null;
     }
 

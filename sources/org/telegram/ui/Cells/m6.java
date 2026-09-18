@@ -1,38 +1,53 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.ac0;
+import android.view.View;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.zn;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class m6 extends org.telegram.ui.Components.u9 {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ n6 H;
+public final class m6 extends ai.ca {
+    public final /* synthetic */ int S = 0;
+    public final /* synthetic */ View T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(n6 n6Var, Context context, int i10) {
-        super(context);
-        this.H = n6Var;
-        this.G = i10;
+    public m6(o6 o6Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(e6Var, false);
+        this.T = o6Var;
     }
 
-    @Override // org.telegram.ui.Components.u9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        n6 n6Var = this.H;
-        l6 l6Var = n6Var.y;
-        ac0 ac0Var = n6.G;
-        if (this.G != 1) {
-            super.onDraw(canvas);
-        } else {
-            l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            ai.ia.h(n6Var.x, canvas, getImageReceiver(), l6Var);
+    @Override // ai.ca
+    public final void f(long j3) {
+        switch (this.S) {
+            case 0:
+                ((o6) this.T).b(j3);
+                break;
+            case 1:
+                za zaVar = (za) this.T;
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.getOrCreateStoryViewer().getClass();
+                    R.getOrCreateStoryViewer().D(zaVar.getContext(), j3, ai.u9.a((wl0) zaVar.getParent()));
+                    break;
+                }
+                break;
+            default:
+                zn znVar = (zn) this.T;
+                znVar.H.getOrCreateStoryViewer().D(znVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.H.y.a(motionEvent, this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m6(za zaVar) {
+        super(null, false);
+        this.T = zaVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m6(zn znVar) {
+        super(null, true);
+        this.T = znVar;
     }
 }

@@ -4,18 +4,18 @@ import android.content.ComponentName;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class u {
     public final h3 a;
     public final ArrayList b = new ArrayList();
     public final boolean c;
-    public final k2.u d;
+    public final n2.e d;
     public b2.p e;
 
     public u(h3 h3Var, boolean z10) {
         this.a = h3Var;
-        this.d = (k2.u) h3Var.d;
+        this.d = (n2.e) h3Var.d;
         this.c = z10;
     }
 

@@ -5,7 +5,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ij implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -44,14 +44,14 @@ public final /* synthetic */ class ij implements Runnable {
                 this.b.lambda$performSendMessageRequest$75((TLObject) this.v, (TLRPC.TL_messages_addPollAnswer) this.x, this.w, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
             default:
-                this.b.lambda$performSendMessageRequest$83((org.telegram.ui.ActionBar.o2) this.v, (TLRPC.TL_inputMediaStakeDice) this.w, (TLRPC.TL_messages_sendMedia) this.x, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
+                this.b.lambda$performSendMessageRequest$83((org.telegram.ui.ActionBar.n2) this.v, (TLRPC.TL_inputMediaStakeDice) this.w, (TLRPC.TL_messages_sendMedia) this.x, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
         }
     }
 
-    public /* synthetic */ ij(SendMessagesHelper sendMessagesHelper, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
+    public /* synthetic */ ij(SendMessagesHelper sendMessagesHelper, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
         this.b = sendMessagesHelper;
-        this.v = o2Var;
+        this.v = n2Var;
         this.w = tL_inputMediaStakeDice;
         this.x = tL_messages_sendMedia;
         this.c = messageObject;

@@ -1,34 +1,31 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.kv0;
-import org.telegram.ui.Components.yi0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cu0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class a0 extends q2 {
-    public final /* synthetic */ p0 y0;
+public final class a0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a0(p0 p0Var, Context context, PointF pointF, float f7, float f10, kv0 kv0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, kv0Var, document, obj);
-        this.y0 = p0Var;
+    public /* synthetic */ a0(m0 m0Var, int i10) {
+        this.a = i10;
+        this.b = m0Var;
     }
 
-    @Override // qg.q2
-    public final void q(yi0 yi0Var) {
-        PhotoViewer photoViewer = ((cu0) this.y0).o2;
-        h71 h71Var = photoViewer.F2;
-        if (h71Var == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f2.setTranslationY(0.0f);
+                break;
+            default:
+                m0 m0Var = this.b;
+                m0Var.i2 = false;
+                m0Var.f2.setTranslationY(0.0f);
+                m0Var.m0();
+                break;
         }
-        long n10 = h71Var.n();
-        long j3 = photoViewer.m8;
-        yi0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

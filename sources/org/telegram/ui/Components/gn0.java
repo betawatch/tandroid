@@ -1,18 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes3.dex */
-public final class gn0 {
-    public zg.p0 a;
-    public int b;
-    public String c;
-    public int d;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof gn0)) {
-            return false;
-        }
-        gn0 gn0Var = (gn0) obj;
-        return this.b == gn0Var.b && this.a.h == gn0Var.a.h && this.d == gn0Var.d;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes3.dex */
+public final class gn0 extends org.telegram.ui.Cells.j7 {
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        return MediaController.getInstance().playMessage(messageObject);
     }
 }

@@ -1,133 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.MotionEvent;
-import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ma0 extends ml0 {
-    public boolean X2;
-    public boolean Y2;
-    public int Z2;
-    public int a3;
-    public final /* synthetic */ na0 b3;
+public abstract class ma0 extends d71 {
+    public final int T;
+    public final la0 U;
+    public final t00 V;
+    public final kx0 W;
+    public final kx0 X;
+    public float Y;
+    public boolean Z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ma0(na0 na0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.b3 = na0Var;
-        setOnScrollListener(new ai.r(this, 29));
-        i(new la0(this));
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10, int i11) {
-        na0 na0Var = this.b3;
-        na0Var.invalidate();
-        na0Var.b();
-    }
-
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        na0 na0Var = this.b3;
-        gg.k1 k1Var = na0Var.f;
-        gg.q1 q1Var = na0Var.e;
-        if (!na0Var.c.t ? this.Y2 || q1Var == null || q1Var.e == null || !q1Var.f || motionEvent.getY() >= q1Var.e.getBottom() : this.Y2 || q1Var == null || q1Var.e == null || !q1Var.f || motionEvent.getY() <= q1Var.e.getTop()) {
-            boolean z10 = !this.X2 && org.telegram.ui.ut.q().r(motionEvent, na0Var.b, null, this.p2);
-            if (((k1Var.N() && motionEvent.getAction() == 0) || motionEvent.getAction() == 2) && k1Var.N()) {
-                if (k1Var.n0 == null) {
-                    gg.g1 g1Var = new gg.g1(k1Var, k1Var.f, k1Var.n, k1Var.r, 0);
-                    k1Var.n0 = g1Var;
-                    g1Var.a();
-                }
-                k1Var.n0.b();
-            }
-            if (super.onInterceptTouchEvent(motionEvent) || z10) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15 = i12 - i10;
-        int i16 = i13 - i11;
-        na0 na0Var = this.b3;
-        boolean g10 = na0Var.g();
-        s4.c0 currentLayoutManager = na0Var.getCurrentLayoutManager();
-        int L0 = g10 ? currentLayoutManager.L0() : currentLayoutManager.N0();
-        View m10 = currentLayoutManager.m(L0);
-        if (m10 != null) {
-            i14 = m10.getTop() - (g10 ? 0 : this.a3 - i16);
+    public ma0(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
+        super(n2Var.getParentActivity(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
+        this.T = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        int i10 = org.telegram.ui.ActionBar.j6.a7;
+        setBackgroundColor(getThemedColor(i10));
+        this.L = i10;
+        this.K = i10;
+        H(0.0f);
+        fixNavigationBar(getThemedColor(i10));
+        this.G = false;
+        this.H = false;
+        la0 la0Var = new la0((wh.b) this, n2Var, this.container, j3);
+        this.U = la0Var;
+        la0Var.B = false;
+        setDimBehindAlpha(75);
+        this.w.J.setHint(LocaleController.getString(R.string.SearchMemberRequests));
+        wh.g gVar = la0Var.f;
+        this.f = gVar;
+        this.e = gVar;
+        this.d.setAdapter(gVar);
+        this.d.q1();
+        ai.w0 w0Var = this.d;
+        la0Var.p = w0Var;
+        w0Var.setOnItemClickListener(new ai.g(la0Var, 18));
+        s4.s0 onScrollListener = w0Var.getOnScrollListener();
+        if (onScrollListener == null) {
+            w0Var.setOnScrollListener(la0Var.D);
         } else {
-            i14 = 0;
+            w0Var.setOnScrollListener(new ii.m3(8, la0Var, onScrollListener));
         }
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (na0Var.H) {
-            na0Var.G = true;
-            currentLayoutManager.h1(0, 100000);
-            super.onLayout(false, i10, i11, i12, i13);
-            na0Var.G = false;
-            na0Var.H = false;
-        } else if (L0 != -1 && i15 == this.Z2 && i16 - this.a3 != 0) {
-            na0Var.G = true;
-            currentLayoutManager.i1(L0, i14, false);
-            super.onLayout(false, i10, i11, i12, i13);
-            na0Var.G = false;
-        }
-        this.a3 = i16;
-        this.Z2 = i15;
+        int indexOfChild = ((ViewGroup) this.d.getParent()).indexOfChild(this.d);
+        t00 b10 = la0Var.b();
+        this.V = b10;
+        this.containerView.addView(b10, indexOfChild, w7.y5.c(-1.0f, -1));
+        kx0 a2 = la0Var.a();
+        this.W = a2;
+        this.containerView.addView(a2, indexOfChild, w7.y5.c(-1.0f, -1));
+        kx0 c10 = la0Var.c();
+        this.X = c10;
+        this.containerView.addView(c10, indexOfChild, w7.y5.c(-1.0f, -1));
+        la0Var.e();
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        na0 na0Var = this.b3;
-        gg.q1 q1Var = na0Var.e;
-        if (q1Var != null) {
-            q1Var.d = Integer.valueOf(size);
-            ci.eb ebVar = q1Var.e;
-            if (ebVar != null) {
-                ebVar.requestLayout();
+    @Override // org.telegram.ui.Components.d71
+    public final void E(MotionEvent motionEvent, ci.h2 h2Var) {
+        org.telegram.ui.ActionBar.n2 n2Var;
+        int action = motionEvent.getAction();
+        la0 la0Var = this.U;
+        if (action == 0) {
+            this.Y = this.y;
+            la0Var.i(false);
+        } else if (motionEvent.getAction() == 1 && Math.abs(this.y - this.Y) < this.T && !this.Z) {
+            Activity findActivity = AndroidUtilities.findActivity(getContext());
+            if (findActivity instanceof LaunchActivity) {
+                LaunchActivity launchActivity = (LaunchActivity) findActivity;
+                n2Var = (org.telegram.ui.ActionBar.n2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
+            } else {
+                n2Var = null;
+            }
+            if (n2Var instanceof org.telegram.ui.zn) {
+                boolean P9 = ((org.telegram.ui.zn) n2Var).P9();
+                this.Z = true;
+                AndroidUtilities.runOnUIThread(new uw(20, this, h2Var), P9 ? 200L : 0L);
+            } else {
+                this.Z = true;
+                setFocusable(true);
+                h2Var.requestFocus();
+                AndroidUtilities.runOnUIThread(new q1(4, h2Var));
             }
         }
-        float min = (int) Math.min(AndroidUtilities.dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
-        na0Var.v = min;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        na0 na0Var = this.b3;
-        gg.q1 q1Var = na0Var.e;
-        if (na0Var.c.t) {
-            if (!this.Y2 && q1Var != null && q1Var.e != null && q1Var.f && motionEvent.getY() > q1Var.e.getTop()) {
-                return false;
-            }
-        } else if (!this.Y2 && q1Var != null && q1Var.e != null && q1Var.f && motionEvent.getY() < q1Var.e.getBottom()) {
-            return false;
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            la0Var.i(true);
         }
-        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.b3.G) {
+    @Override // org.telegram.ui.Components.d71
+    public final void G(String str) {
+        this.U.j(str);
+    }
+
+    @Override // org.telegram.ui.Components.d71
+    public final void I(int i10) {
+        super.I(i10);
+        this.V.setTranslationY(this.c.getMeasuredHeight() + i10);
+        float f7 = i10;
+        this.W.setTranslationY(f7);
+        this.X.setTranslationY(f7);
+    }
+
+    @Override // org.telegram.ui.Components.d71
+    public final void L() {
+        ai.w0 w0Var = this.d;
+        if (w0Var.getChildCount() > 0) {
+            super.L();
             return;
         }
-        super.requestLayout();
+        int paddingTop = w0Var.getVisibility() == 0 ? w0Var.getPaddingTop() - AndroidUtilities.dp(8.0f) : 0;
+        if (this.y != paddingTop) {
+            this.y = paddingTop;
+            I(paddingTop);
+        }
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        na0 na0Var = this.b3;
-        na0Var.invalidate();
-        na0Var.b();
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void onBackPressed() {
+        wh.m mVar = this.U.s;
+        if (mVar != null) {
+            mVar.e(false);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        la0 la0Var = this.U;
+        if (la0Var.b && this.y == 0) {
+            this.y = AndroidUtilities.dp(8.0f);
+        }
+        super.show();
+        la0Var.b = false;
     }
 }

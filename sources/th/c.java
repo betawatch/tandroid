@@ -7,26 +7,26 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.al0;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.m30;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class c implements al0 {
-    public final /* synthetic */ f6 a;
+public final class c implements kl0 {
+    public final /* synthetic */ e6 a;
     public final /* synthetic */ Context b;
     public final /* synthetic */ f c;
 
-    public c(Context context, f6 f6Var, f fVar) {
+    public c(Context context, e6 e6Var, f fVar) {
         this.c = fVar;
-        this.a = f6Var;
+        this.a = e6Var;
         this.b = context;
     }
 
-    @Override // org.telegram.ui.Components.al0
+    @Override // org.telegram.ui.Components.kl0
     public final void d(int i10, View view) {
         TLRPC.TL_help_country tL_help_country;
         f fVar = this.c;
@@ -42,7 +42,7 @@ public final class c implements al0 {
             int size = hashMap.size();
             int i11 = fVar.m0;
             if (size >= i11) {
-                new vc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
+                new xc(fVar.n0, this.a).Q(R.raw.info, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2YouCanAddXCountriesOnly, Integer.valueOf(i11)))).j();
                 return;
             }
             m30 m30Var = new m30(this.b, tL_help_country);

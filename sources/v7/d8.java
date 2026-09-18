@@ -2,7 +2,7 @@ package v7;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class d8 {
     public String a;
@@ -23,16 +23,16 @@ public final class d8 {
             str = str.concat(" gmpAppId");
         }
         if (this.i == null) {
-            str = org.telegram.ui.Cells.p6.t(str, " platform");
+            str = t8.b.v(str, " platform");
         }
         if (this.c == null) {
-            str = org.telegram.ui.Cells.p6.t(str, " installationUuid");
+            str = t8.b.v(str, " installationUuid");
         }
         if (((String) this.k) == null) {
-            str = org.telegram.ui.Cells.p6.t(str, " buildVersion");
+            str = t8.b.v(str, " buildVersion");
         }
         if (((String) this.f) == null) {
-            str = org.telegram.ui.Cells.p6.t(str, " displayVersion");
+            str = t8.b.v(str, " displayVersion");
         }
         if (str.isEmpty()) {
             return new y9.a0(this.a, this.b, this.i.intValue(), this.c, this.d, this.e, (String) this.k, (String) this.f, (y9.d2) this.g, (y9.j1) this.h, (y9.g1) this.j);

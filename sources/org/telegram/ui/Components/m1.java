@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,13 +18,13 @@ public final /* synthetic */ class m1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.o2 R;
+        org.telegram.ui.ActionBar.n2 R;
         switch (this.a) {
             case 0:
                 if (this.b != null && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    R.showAsSheet(new PrivacyControlActivity(11, false), m2Var);
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
                     break;
                 }
                 break;
@@ -36,9 +36,9 @@ public final /* synthetic */ class m1 implements Runnable {
                         break;
                     } else {
                         ((View) arrayList.get(i10)).setVisibility(8);
-                        if (arrayList.get(i10) instanceof org.telegram.ui.Cells.t1) {
-                            ((org.telegram.ui.Cells.t1) arrayList.get(i10)).J3(false, false);
-                            ((org.telegram.ui.Cells.t1) arrayList.get(i10)).L3(false, false, false);
+                        if (arrayList.get(i10) instanceof org.telegram.ui.Cells.u1) {
+                            ((org.telegram.ui.Cells.u1) arrayList.get(i10)).J3(false, false);
+                            ((org.telegram.ui.Cells.u1) arrayList.get(i10)).L3(false, false, false);
                         }
                         i10++;
                     }

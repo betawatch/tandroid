@@ -21,7 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class x implements x0 {
     public final Context a;
@@ -60,7 +60,7 @@ public final class x implements x0 {
     }
 
     public static /* bridge */ /* synthetic */ void k(x xVar, int i10) {
-        xVar.b.p(i10);
+        xVar.b.q(i10);
         xVar.m = null;
         xVar.l = null;
     }
@@ -160,7 +160,7 @@ public final class x implements x0 {
             m0 m0Var2 = this.d;
             m0Var2.getClass();
             eVar.l();
-            return m0Var2.m.M(eVar);
+            return m0Var2.m.L(eVar);
         }
         if (j()) {
             com.google.android.gms.common.api.c cVar = this.j;
@@ -170,7 +170,7 @@ public final class x implements x0 {
         m0 m0Var3 = this.e;
         m0Var3.getClass();
         eVar.l();
-        return m0Var3.m.M(eVar);
+        return m0Var3.m.L(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0

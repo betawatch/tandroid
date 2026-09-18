@@ -11,12 +11,12 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class j0 extends FrameLayout {
     public final d7 a;
-    public final org.telegram.ui.Components.c6 b;
-    public final org.telegram.ui.Components.c6 c;
+    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.e6 c;
     public final i0 d;
     public final FrameLayout e;
     public final g0 f;
@@ -39,28 +39,28 @@ public abstract class j0 extends FrameLayout {
         i0 i0Var = new i0(this, context);
         this.d = i0Var;
         qr qrVar = qr.h;
-        this.b = new org.telegram.ui.Components.c6(i0Var, 0L, 320L, qrVar);
-        this.c = new org.telegram.ui.Components.c6(this, 0L, 360L, qrVar);
+        this.b = new org.telegram.ui.Components.e6(i0Var, 0L, 320L, qrVar);
+        this.c = new org.telegram.ui.Components.e6(this, 0L, 360L, qrVar);
         g0 g0Var = new g0(this, context, 0);
         this.f = g0Var;
         g0Var.setListener(new a4.m(this, 8));
         addView(g0Var);
         FrameLayout frameLayout = new FrameLayout(context);
         this.e = frameLayout;
-        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        addView(frameLayout, w7.y5.e(-1, -1, 119));
         lg.f fVar = new lg.f(context);
         this.h = fVar;
         fVar.setListener(new h0(0, this));
-        frameLayout.addView(fVar, w7.x5.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 52.0f));
+        frameLayout.addView(fVar, w7.y5.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 52.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.n = frameLayout2;
-        frameLayout.addView(frameLayout2, w7.x5.d(-1, 52.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(frameLayout2, w7.y5.d(-1, 52.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         com.google.android.gms.internal.vision.e2.l(14.0f, 1, textView);
         textView.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView.setTextColor(-1);
-        textView.setPadding(org.telegram.ui.Cells.p6.b(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView, w7.x5.e(-2, -1, 115));
+        textView.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.Cancel, textView), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView, w7.y5.e(-2, -1, 115));
         final int i10 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
             public final /* synthetic */ j0 b;
@@ -103,8 +103,8 @@ public abstract class j0 extends FrameLayout {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView2.setTextColor(-1);
-        textView2.setPadding(org.telegram.ui.Cells.p6.b(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView2, w7.x5.e(-2, -1, 113));
+        textView2.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.CropReset, textView2), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView2, w7.y5.e(-2, -1, 113));
         final int i11 = 1;
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
             public final /* synthetic */ j0 b;
@@ -147,8 +147,8 @@ public abstract class j0 extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
         textView3.setTextColor(-15098625);
-        textView3.setPadding(org.telegram.ui.Cells.p6.b(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
-        frameLayout2.addView(textView3, w7.x5.e(-2, -1, 117));
+        textView3.setPadding(org.telegram.ui.Cells.c1.b(12.0f, R.string.StoryCrop, textView3), 0, AndroidUtilities.dp(12.0f), 0);
+        frameLayout2.addView(textView3, w7.y5.e(-2, -1, 117));
         final int i12 = 2;
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: ci.f0
             public final /* synthetic */ j0 b;
@@ -262,18 +262,18 @@ public abstract class j0 extends FrameLayout {
         float rotation = g0Var.getRotation();
         lg.f fVar = this.h;
         fVar.setRotation(rotation);
-        org.telegram.ui.Components.c6 c6Var = this.b;
+        org.telegram.ui.Components.e6 e6Var = this.b;
         if (cropState != null) {
             fVar.b(cropState.cropRotate);
             fVar.setRotated(cropState.transformRotation != 0);
             fVar.setMirrored(cropState.mirrored);
-            c6Var.f(cropState.mirrored, false);
+            e6Var.f(cropState.mirrored, false);
         } else {
             fVar.b(0.0f);
             fVar.setRotated(false);
             fVar.setMirrored(false);
-            c6Var.getClass();
-            c6Var.d(0.0f, false);
+            e6Var.getClass();
+            e6Var.d(0.0f, false);
         }
         g0Var.r(false);
         this.c.d(r5.i, true);

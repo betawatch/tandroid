@@ -1,83 +1,104 @@
 package pg;
 
-import android.animation.ValueAnimator;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import yh.l5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ l0(q0 q0Var, int i10) {
+    public /* synthetic */ l0(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
         this.a = i10;
-        this.b = q0Var;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        String string;
+        int i10 = this.a;
+        boolean z10 = this.b;
+        Object obj = this.e;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        int i11 = 0;
+        switch (i10) {
             case 0:
-                final q0 q0Var = this.b;
-                final int i10 = 1;
-                q0Var.f.f(new Runnable() { // from class: pg.k0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                q0 q0Var2 = q0Var;
-                                q0Var2.getClass();
-                                q0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                k2.u uVar = q0Var2.a;
-                                if (uVar != null) {
-                                    uVar.W();
-                                    break;
-                                }
-                                break;
-                            default:
-                                q0 q0Var3 = q0Var;
-                                q0Var3.getClass();
-                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                k2.u uVar2 = q0Var3.a;
-                                if (uVar2 != null) {
-                                    uVar2.W();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                s0 s0Var = (s0) obj3;
+                s0Var.f.f(new q0(s0Var, (a5.a) obj2, i11));
+                s0Var.f.f(new q0(s0Var, (a5.a) obj, i11));
+                s0Var.E = z10;
+                break;
+            case 1:
+                xc xcVar = (xc) obj3;
+                TLRPC.Chat chat = (TLRPC.Chat) obj2;
+                e6 e6Var = (e6) obj;
+                int i12 = R.raw.star_premium_2;
+                String string2 = z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
+                if (z10) {
+                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckStatistic : R.string.BoostingCheckStatisticGroup);
+                } else {
+                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
+                }
+                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, j6.Gi, 0, new tg.c(chat), e6Var), i12);
+                M.j = 5000;
+                M.j();
                 break;
             default:
-                final q0 q0Var2 = this.b;
-                final int i11 = 0;
-                q0Var2.f.f(new Runnable() { // from class: pg.k0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                q0 q0Var22 = q0Var2;
-                                q0Var22.getClass();
-                                q0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                k2.u uVar = q0Var22.a;
-                                if (uVar != null) {
-                                    uVar.W();
-                                    break;
-                                }
-                                break;
-                            default:
-                                q0 q0Var3 = q0Var2;
-                                q0Var3.getClass();
-                                q0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                                k2.u uVar2 = q0Var3.a;
-                                if (uVar2 != null) {
-                                    uVar2.W();
-                                    break;
-                                }
-                                break;
+                l5 l5Var = (l5) obj3;
+                TLObject tLObject = (TLObject) obj;
+                ArrayList arrayList = l5Var.l;
+                int i13 = l5Var.a;
+                if (((int[]) obj2)[0] == l5Var.m) {
+                    l5Var.i = false;
+                    l5Var.m = -1;
+                    if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
+                        TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
+                        MessagesController.getInstance(i13).putUsers(tL_payments_savedStarGifts.users, false);
+                        MessagesController.getInstance(i13).putChats(tL_payments_savedStarGifts.chats, false);
+                        if (z10) {
+                            arrayList.clear();
                         }
+                        arrayList.addAll(tL_payments_savedStarGifts.gifts);
+                        l5Var.k = tL_payments_savedStarGifts.next_offset;
+                        l5Var.n = tL_payments_savedStarGifts.count;
+                        l5Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
+                        l5Var.j = arrayList.size() > l5Var.n || l5Var.k == null;
+                    } else {
+                        l5Var.j = true;
                     }
-                });
+                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(l5Var.b), l5Var);
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ l0(xc xcVar, boolean z10, TLRPC.Chat chat, e6 e6Var) {
+        this.a = 1;
+        this.c = xcVar;
+        this.b = z10;
+        this.d = chat;
+        this.e = e6Var;
     }
 }

@@ -10,16 +10,16 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class np extends View {
     public final CheckBoxBase a;
     public Drawable b;
     public int c;
 
-    public np(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public np(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.a = new CheckBoxBase(i10, this, f6Var);
+        this.a = new CheckBoxBase(i10, this, e6Var);
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -63,7 +63,7 @@ public class np extends View {
         int measuredWidth = getMeasuredWidth() >> 1;
         int measuredHeight = getMeasuredHeight() >> 1;
         Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.messenger.wl.w(2, measuredWidth, drawable), org.telegram.messenger.wl.e(2, measuredHeight, this.b), org.telegram.messenger.wl.B(2, measuredWidth, this.b), org.telegram.messenger.wl.z(2, measuredHeight, this.b));
+        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, this.b), org.telegram.ui.Cells.c1.v(2, measuredWidth, this.b), org.telegram.ui.Cells.c1.u(2, measuredHeight, this.b));
         this.b.draw(canvas);
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);

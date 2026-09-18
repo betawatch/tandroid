@@ -34,15 +34,16 @@ import i2.s;
 import i2.y;
 import java.io.IOException;
 import java.util.List;
+import n2.l;
 import org.telegram.messenger.MediaDataController;
 import u2.b0;
 import u2.f0;
 import u2.k0;
 import u2.t;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class f implements z0, k0, n2.k {
+public final class f implements z0, k0, l {
     public final x a;
     public final h1 b;
     public final j1 c;
@@ -71,13 +72,13 @@ public final class f implements z0, k0, n2.k {
         this.e = new SparseArray();
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void a(int i10, f0 f0Var, int i11) {
         a o9 = o(i10, f0Var);
         q(o9, 1022, new c(o9, i11, 14, (byte) 0));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void b(int i10, f0 f0Var, Exception exc) {
         a o9 = o(i10, f0Var);
         q(o9, 1024, new c(o9, exc, 15));
@@ -107,7 +108,7 @@ public final class f implements z0, k0, n2.k {
         q(o9, 1003, new d5(o9, tVar, b0Var, iOException, z10));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void g(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1027, new c(o9, 24));
@@ -119,7 +120,7 @@ public final class f implements z0, k0, n2.k {
         q(o9, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o9, tVar, b0Var, i11));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void i(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1025, new c(o9, 29));
@@ -131,7 +132,7 @@ public final class f implements z0, k0, n2.k {
         q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 12));
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void k(int i10, f0 f0Var) {
         a o9 = o(i10, f0Var);
         q(o9, 1023, new e((Object) o9, 1));

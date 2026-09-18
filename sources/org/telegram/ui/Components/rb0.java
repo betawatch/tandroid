@@ -1,6 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import org.telegram.messenger.NotificationCenter;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public interface rb0 extends org.telegram.ui.ActionBar.f6 {
+public final /* synthetic */ class rb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sb0 b;
+
+    public /* synthetic */ rb0(sb0 sb0Var, int i10) {
+        this.a = i10;
+        this.b = sb0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sb0 sb0Var = this.b;
+                if (sb0Var.W != -1) {
+                    NotificationCenter.getInstance(sb0Var.Y.c0.w).onAnimationFinish(sb0Var.W);
+                    sb0Var.W = -1;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.Y.h();
+                break;
+            default:
+                sb0 sb0Var2 = this.b;
+                if (sb0Var2.W != -1) {
+                    NotificationCenter.getInstance(sb0Var2.Y.c0.w).onAnimationFinish(sb0Var2.W);
+                    sb0Var2.W = -1;
+                    break;
+                }
+                break;
+        }
+    }
 }

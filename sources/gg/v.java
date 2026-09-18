@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.iy;
+import org.telegram.ui.gy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         boolean z12 = i12 == 2 || i12 == 1;
                         boolean z13 = i12 == 0;
-                        iy iyVar = i0Var.U;
-                        if (iyVar != null) {
-                            j3 = iyVar.a();
+                        gy gyVar = i0Var.U;
+                        if (gyVar != null) {
+                            j3 = gyVar.a();
                         }
                         zVar.h(this.c, true, z11, true, z10, z12, 0L, z13, 0, i14, j3, null);
                         i14 = i14;

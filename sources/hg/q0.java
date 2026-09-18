@@ -2,11 +2,11 @@ package hg;
 
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2, Utilities.Callback5 {
+public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ u0 b;
 
@@ -15,8 +15,8 @@ public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2, U
         this.b = u0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.a0();
@@ -35,6 +35,6 @@ public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.b2, U
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        u0.W(this.b, (j51) obj, (View) obj2);
+        u0.W(this.b, (x51) obj, (View) obj2);
     }
 }

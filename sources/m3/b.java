@@ -8,11 +8,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
-import w7.l;
+import w7.m;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class b extends l {
+public final class b extends m {
     public final /* synthetic */ int a;
 
     public static n3.a c(v vVar) {
@@ -23,7 +23,7 @@ public final class b extends l {
         return new n3.a(s10, s11, vVar.r(), vVar.r(), Arrays.copyOfRange(vVar.a, vVar.b, vVar.c));
     }
 
-    @Override // w7.l
+    @Override // w7.m
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         switch (this.a) {
             case 0:

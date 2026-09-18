@@ -1,13 +1,13 @@
 package x7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class g8 {
     public final h8 a;
     public final s b;
 
-    public /* synthetic */ g8(n7.a1 a1Var) {
-        this.a = (h8) a1Var.b;
-        this.b = (s) a1Var.c;
+    public /* synthetic */ g8(n7.z0 z0Var) {
+        this.a = (h8) z0Var.b;
+        this.b = (s) z0Var.c;
     }
 }

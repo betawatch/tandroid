@@ -1,38 +1,98 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class q91 extends ReplacementSpan {
-    public final org.telegram.ui.Components.h01 a = new org.telegram.ui.Components.h01(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
-    public final Paint b = new Paint(1);
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
+public final class q91 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ org.telegram.ui.Components.id0 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ TextView f;
 
-    public q91(org.telegram.ui.ActionBar.f6 f6Var) {
-        this.c = f6Var;
+    public q91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.id0 id0Var, int[] iArr, TextView textView) {
+        this.b = i10;
+        this.c = editTextBoldCursor;
+        this.d = id0Var;
+        this.e = iArr;
+        this.f = textView;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        int v02 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.c);
-        Paint paint2 = this.b;
-        paint2.setColor(v02);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, dp - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f) + f7 + this.a.c, AndroidUtilities.dp(9.0f) + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
-        this.a.c(f7 + AndroidUtilities.dp(8.0f), dp, 1.0f, -1, canvas);
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00d9  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        double d;
+        org.telegram.ui.Components.id0 id0Var = this.d;
+        int i10 = this.b;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
+        }
+        try {
+            d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
+            try {
+                double d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
+                int[] iArr = this.e;
+                if (d > d10) {
+                    this.a = true;
+                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
+                    editTextBoldCursor.setText(Double.toString(d));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i11 = -iArr[0];
+                    iArr[0] = i11;
+                    AndroidUtilities.shakeViewSpring(id0Var, i11);
+                } else if (d > 0.0d && d < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
+                    this.a = true;
+                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
+                    editTextBoldCursor.setText(Double.toString(d));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i12 = -iArr[0];
+                    iArr[0] = i12;
+                    AndroidUtilities.shakeViewSpring(id0Var, i12);
+                }
+            } catch (Exception unused) {
+                this.a = true;
+                editTextBoldCursor.setText(d <= 0.0d ? "" : Double.toString(d));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                this.a = false;
+                id0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                TextView textView = this.f;
+                if (d != 0.0d) {
+                }
+            }
+        } catch (Exception unused2) {
+            d = 0.0d;
+        }
+        this.a = false;
+        id0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.f;
+        if (d != 0.0d) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * d * 100.0d), "USD", 2));
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(16.0f) + this.a.c);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

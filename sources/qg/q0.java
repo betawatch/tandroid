@@ -1,61 +1,117 @@
 package qg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.sk0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class q0 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final class q0 extends j {
+    public final o0 q0;
+    public int r0;
+    public int s0;
+    public boolean t0;
+    public n0 u0;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z10);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z10);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z10);
-        }
+    public q0(Context context, PointF pointF, int i10, n0 n0Var, float f7, int i11) {
+        super(context, pointF);
+        o0 o0Var = new o0(context, f7);
+        this.q0 = o0Var;
+        o0Var.setMaxWidth(i11);
+        this.u0 = n0Var;
+        o0Var.b(i10, n0Var, false);
+        m();
+        this.s0 = 3;
+        o0Var.c(3, this.r0);
+        addView(o0Var, y5.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i10;
-        int i11 = this.e ? i10 | 8 : i10 & (-9);
-        this.a = i11;
-        int i12 = this.f ? i11 | 16 : i11 & (-17);
-        this.a = i12;
-        outputSerializedData.writeInt32(i12);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
+    @Override // qg.j
+    public final i a() {
+        return new p0(this, getContext());
+    }
+
+    public int getColor() {
+        return this.r0;
+    }
+
+    @Override // qg.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    public int getNextType() {
+        int i10 = this.s0 + 1;
+        return i10 == 4 ? !this.t0 ? 1 : 0 : i10;
+    }
+
+    @Override // qg.j
+    public sk0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new sk0();
         }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
-        }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
-        }
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float x10 = wh.x(dp, 2.0f, getPositionX(), scaleX);
+        return new sk0(x10, wh.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.h;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.f;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingRight() {
+        return this.q0.f;
+    }
+
+    @Override // qg.j
+    public float getStickyPaddingTop() {
+        return this.q0.h;
+    }
+
+    public int getType() {
+        return this.s0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        k();
+    }
+
+    public void setColor(int i10) {
+        this.t0 = true;
+        this.r0 = i10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.q0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.s0 = i10;
+        this.q0.c(i10, this.r0);
     }
 }

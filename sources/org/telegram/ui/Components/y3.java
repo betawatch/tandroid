@@ -1,50 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class y3 extends LinearLayout {
+public final class y3 implements TextWatcher {
     public boolean a;
-    public final /* synthetic */ uc0 b;
-    public final /* synthetic */ uc0 c;
-    public final /* synthetic */ uc0 d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ EditTextBoldCursor c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y3(Context context, uc0 uc0Var, uc0 uc0Var2, uc0 uc0Var3) {
-        super(context);
-        this.b = uc0Var;
-        this.c = uc0Var2;
-        this.d = uc0Var3;
-        this.a = false;
+    public y3(int i10, EditTextBoldCursor editTextBoldCursor) {
+        this.b = i10;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        uc0 uc0Var = this.b;
-        uc0Var.setItemCount(i12);
-        uc0 uc0Var2 = this.c;
-        uc0Var2.setItemCount(i12);
-        uc0 uc0Var3 = this.d;
-        uc0Var3.setItemCount(i12);
-        uc0Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        uc0Var2.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        uc0Var3.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         if (this.a) {
             return;
         }
-        super.requestLayout();
+        int length = editable.length();
+        int i10 = this.b;
+        if (length > i10) {
+            this.a = true;
+            editable.delete(i10, editable.length());
+            EditTextBoldCursor editTextBoldCursor = this.c;
+            AndroidUtilities.shakeView(editTextBoldCursor);
+            try {
+                editTextBoldCursor.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            this.a = false;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

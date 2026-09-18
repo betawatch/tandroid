@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a extends b {
     public static final HashMap U;
@@ -85,20 +85,20 @@ public final class a extends b {
         hashMap2.put(10, "(reserved)");
         hashMap2.put(11, "(reserved)");
         hashMap2.put(12, "TTSI");
-        k0.q(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
-        k0.q(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
-        k0.q(17, hashMap2, "ER AAC LC", 18, "(reserved)");
-        k0.q(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
-        k0.q(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
-        k0.q(23, hashMap2, "ER AAC LD", 24, "ER CELP");
-        k0.q(25, hashMap2, "ER HVXC", 26, "ER HILN");
-        k0.q(27, hashMap2, "ER Parametric", 28, "SSC");
-        k0.q(29, hashMap2, "PS", 30, "MPEG Surround");
-        k0.q(31, hashMap2, "(escape)", 32, "Layer-1");
-        k0.q(33, hashMap2, "Layer-2", 34, "Layer-3");
-        k0.q(35, hashMap2, "DST", 36, "ALS");
-        k0.q(37, hashMap2, "SLS", 38, "SLS non-core");
-        k0.q(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
+        k0.n(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
+        k0.n(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
+        k0.n(17, hashMap2, "ER AAC LC", 18, "(reserved)");
+        k0.n(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
+        k0.n(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
+        k0.n(23, hashMap2, "ER AAC LD", 24, "ER CELP");
+        k0.n(25, hashMap2, "ER HVXC", 26, "ER HILN");
+        k0.n(27, hashMap2, "ER Parametric", 28, "SSC");
+        k0.n(29, hashMap2, "PS", 30, "MPEG Surround");
+        k0.n(31, hashMap2, "(escape)", 32, "Layer-1");
+        k0.n(33, hashMap2, "Layer-2", 34, "Layer-3");
+        k0.n(35, hashMap2, "DST", 36, "ALS");
+        k0.n(37, hashMap2, "SLS", 38, "SLS non-core");
+        k0.n(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
         hashMap2.put(41, "SMR Main");
     }
 

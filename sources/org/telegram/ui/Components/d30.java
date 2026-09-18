@@ -23,7 +23,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class d30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -32,7 +32,7 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     public TextView b;
     public org.telegram.ui.Components.voip.v2 c;
     public org.telegram.ui.Components.voip.v2 d;
-    public u9 e;
+    public w9 e;
     public RectF f;
     public Paint h;
     public LinearGradient n;
@@ -51,7 +51,7 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
     }
 
     public static void b(d30 d30Var, Context context) {
-        org.telegram.ui.k60.t1(d30Var.getContext(), new b30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
+        org.telegram.ui.i60.t1(d30Var.getContext(), new b30(context, 0), Build.VERSION.SDK_INT < 23 || Settings.canDrawOverlays(context), false);
     }
 
     public final void c(float f7, float f10, int i10) {
@@ -130,12 +130,12 @@ public final class d30 extends LinearLayout implements VoIPService.StateListener
         super.onAttachedToWindow();
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null && sharedInstance.groupCall != null) {
-            f9 f9Var = new f9((org.telegram.ui.ActionBar.f6) null);
+            h9 h9Var = new h9((org.telegram.ui.ActionBar.e6) null);
             TLRPC.Chat chat = sharedInstance.getChat();
-            f9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[f9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[f9.e(chat != null ? chat.id : 0L)], false));
-            f9Var.k(i10, chat);
+            h9Var.i(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p8[h9.e(chat != null ? chat.id : 0L)], false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q8[h9.e(chat != null ? chat.id : 0L)], false));
+            h9Var.k(i10, chat);
             if (chat != null) {
-                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", f9Var, null);
+                this.e.h(ImageLocation.getForLocal(chat.photo.photo_small), "50_50", h9Var, null);
             }
             if (!sharedInstance.isConference() || (call = sharedInstance.groupCall) == null) {
                 str = !TextUtils.isEmpty(sharedInstance.groupCall.call.title) ? sharedInstance.groupCall.call.title : chat != null ? chat.title : "";

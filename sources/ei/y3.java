@@ -6,9 +6,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.n70;
+import org.telegram.ui.Components.w70;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class y3 extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class y3 extends ClickableSpan {
 
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        n70 H = n70.H(this.c, view);
+        w70 H = w70.H(this.c, view);
         int i10 = this.a;
         boolean z10 = i10 == 3;
         String string = LocaleController.getString(R.string.ChannelAffiliateProgramProgramsSortDate);

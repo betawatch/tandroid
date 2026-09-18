@@ -2,7 +2,7 @@ package j2;
 
 import e2.m;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements m {
     public final /* synthetic */ int a;
@@ -106,5 +106,9 @@ public final /* synthetic */ class c implements m {
 
     public /* synthetic */ c(a aVar, Object obj, Object obj2, int i10) {
         this.a = i10;
+    }
+
+    public /* synthetic */ c(a aVar, String str, long j3, long j10) {
+        this.a = 2;
     }
 }

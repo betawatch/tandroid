@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class u1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ r1 a;
@@ -18,17 +18,17 @@ public final class u1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ TextView d;
     public final /* synthetic */ e4 e;
     public final /* synthetic */ Utilities.Callback f;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] g;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] g;
     public final /* synthetic */ View h;
 
-    public u1(r1 r1Var, int i10, a2 a2Var, TextView textView, e4 e4Var, Utilities.Callback callback, org.telegram.ui.ActionBar.c2[] c2VarArr, View view) {
+    public u1(r1 r1Var, int i10, a2 a2Var, TextView textView, e4 e4Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
         this.a = r1Var;
         this.b = i10;
         this.c = a2Var;
         this.d = textView;
         this.e = e4Var;
         this.f = callback;
-        this.g = c2VarArr;
+        this.g = b2VarArr;
         this.h = view;
     }
 
@@ -54,12 +54,12 @@ public final class u1 implements TextView.OnEditorActionListener {
             return true;
         }
         this.f.run(obj);
-        org.telegram.ui.ActionBar.c2[] c2VarArr = this.g;
-        org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
-        if (c2Var != null) {
-            c2Var.dismiss();
+        org.telegram.ui.ActionBar.b2[] b2VarArr = this.g;
+        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+        if (b2Var != null) {
+            b2Var.dismiss();
         }
-        if (c2VarArr[0] == y1.h) {
+        if (b2VarArr[0] == y1.h) {
             y1.h = null;
         }
         View view = this.h;

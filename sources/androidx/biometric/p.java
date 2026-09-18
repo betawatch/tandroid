@@ -19,7 +19,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class p extends androidx.fragment.app.s {
     public final Handler k0 = new Handler(Looper.getMainLooper());
@@ -337,7 +337,7 @@ public class p extends androidx.fragment.app.s {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        k6.h hVar = new k6.h(applicationContext, 3);
+        k6.h hVar = new k6.h(applicationContext, (short) 0);
         int i12 = Build.VERSION.SDK_INT;
         int i13 = (i12 < 23 || (g10 = e0.b.g(applicationContext)) == null || !e0.b.q(g10)) ? 12 : (i12 < 23 || (g11 = e0.b.g(applicationContext)) == null || !e0.b.m(g11)) ? 11 : 0;
         if (i13 != 0) {
@@ -429,7 +429,7 @@ public class p extends androidx.fragment.app.s {
         if (k() == null) {
             return;
         }
-        x xVar = (x) new aa.a(k()).m(x.class);
+        x xVar = (x) new aa.a(k()).l(x.class);
         this.l0 = xVar;
         if (xVar.r == null) {
             xVar.r = new androidx.lifecycle.z();

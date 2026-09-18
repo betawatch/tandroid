@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jf extends org.telegram.ui.ActionBar.o1 {
-    public final /* synthetic */ ChatActivityEnterView o;
+public final class jf implements o1.g {
+    public boolean a = false;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ rv0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jf(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = chatActivityEnterView;
+    public jf(float f7, rv0 rv0Var) {
+        this.b = f7;
+        this.c = rv0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.J0.invalidate();
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        if (this.a || f7 < this.b) {
+            return;
+        }
+        this.a = true;
+        try {
+            this.c.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
     }
 }

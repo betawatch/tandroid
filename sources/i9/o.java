@@ -14,10 +14,9 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.p6;
 import v7.k8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
@@ -405,25 +404,25 @@ public abstract class o extends j9.a implements w {
                     t10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t10.toString();
                     if (nanos + 1000 < j10) {
-                        String t11 = p6.t(sb2, " (plus ");
+                        String v = t8.b.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
                         boolean z10 = convert == j10 || nanos2 > 1000;
                         if (convert > j10) {
-                            String str = t11 + convert + " " + lowerCase;
+                            String str = v + convert + " " + lowerCase;
                             if (z10) {
-                                str = p6.t(str, ",");
+                                str = t8.b.v(str, ",");
                             }
-                            t11 = p6.t(str, " ");
+                            v = t8.b.v(str, " ");
                         }
                         if (z10) {
-                            t11 = t11 + nanos2 + " nanoseconds ";
+                            v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = p6.t(t11, "delay)");
+                        sb2 = t8.b.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(p6.t(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(t8.b.v(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(a4.a.C(sb2, " for ", oVar));
                 }

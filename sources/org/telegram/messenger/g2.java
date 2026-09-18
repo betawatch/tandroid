@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.s8) obj);
                 break;
             case 3:
-                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.u9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
+                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.w9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             case 4:
                 MediaDataController.lambda$fillWithAnimatedEmoji$226((boolean[]) this.b, (ArrayList[]) this.c, (Runnable) this.d, (ArrayList) obj);

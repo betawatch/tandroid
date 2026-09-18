@@ -7,11 +7,11 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -31,16 +31,16 @@ public final /* synthetic */ class o0 implements Utilities.Callback2 {
         Object obj3 = this.c;
         switch (i10) {
             case 0:
-                o2 o2Var = (o2) obj3;
+                n2 n2Var = (n2) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null) {
-                    u0.d(o2Var, -j3, 1);
+                    u0.d(n2Var, -j3, 1);
                     break;
                 } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                    vc.a0(o2Var).d0(tL_error, false);
+                    xc.a0(n2Var).d0(tL_error, false);
                     break;
                 } else {
-                    u0.d(o2Var, -j3, 2);
+                    u0.d(n2Var, -j3, 2);
                     break;
                 }
             case 1:

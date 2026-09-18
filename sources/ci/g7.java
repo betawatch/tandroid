@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class g7 {
     public boolean a;
@@ -52,28 +52,28 @@ public final class g7 {
             return;
         }
         this.h = bVar;
-        k2.g0 g0Var = (k2.g0) ((k2.v) this.c).b;
+        k2.f0 f0Var = (k2.f0) ((k2.v) this.c).b;
         Looper myLooper = Looper.myLooper();
-        boolean z10 = g0Var.i0 == myLooper;
+        boolean z10 = f0Var.i0 == myLooper;
         StringBuilder sb2 = new StringBuilder("Current looper (");
         String str = BuildConfig.BETA_URL;
         sb2.append(myLooper == null ? BuildConfig.BETA_URL : myLooper.getThread().getName());
         sb2.append(") is not the playback looper (");
-        Looper looper = g0Var.i0;
+        Looper looper = f0Var.i0;
         if (looper != null) {
             str = looper.getThread().getName();
         }
         sb2.append(str);
         sb2.append(")");
         e2.d.f(sb2.toString(), z10);
-        k2.b bVar2 = g0Var.y;
+        k2.b bVar2 = f0Var.y;
         if (bVar2 == null || bVar.equals(bVar2)) {
             return;
         }
-        g0Var.y = bVar;
-        k2.n nVar = g0Var.t;
+        f0Var.y = bVar;
+        k2.n nVar = f0Var.t;
         if (nVar != null) {
-            nVar.J();
+            nVar.G();
         }
     }
 
@@ -86,11 +86,11 @@ public final class g7 {
             float f10 = f7Var.c;
             PointF[] pointFArr = f7Var.b;
             if (!this.a) {
-                ((org.telegram.ui.Components.c6) this.e).d(f10, true);
-                ((org.telegram.ui.Components.c6) this.f).d(f7, true);
+                ((org.telegram.ui.Components.e6) this.e).d(f10, true);
+                ((org.telegram.ui.Components.e6) this.f).d(f7, true);
                 for (int i10 = 0; i10 < Math.min(4, pointFArr.length); i10++) {
-                    ((org.telegram.ui.Components.c6[]) this.g)[i10].d(pointFArr[i10].x - f10, true);
-                    ((org.telegram.ui.Components.c6[]) this.h)[i10].d(pointFArr[i10].y - f7, true);
+                    ((org.telegram.ui.Components.e6[]) this.g)[i10].d(pointFArr[i10].x - f10, true);
+                    ((org.telegram.ui.Components.e6[]) this.h)[i10].d(pointFArr[i10].y - f7, true);
                 }
             }
         }
@@ -120,10 +120,10 @@ public final class g7 {
         this.j = new Path();
         this.b = a0Var;
         qr qrVar = qr.g;
-        this.d = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 320L, qrVar);
-        this.e = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar);
-        this.f = new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar);
-        this.g = new org.telegram.ui.Components.c6[]{new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar)};
-        this.h = new org.telegram.ui.Components.c6[]{new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.c6(0.0f, a0Var, 0L, 160L, qrVar)};
+        this.d = new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 320L, qrVar);
+        this.e = new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar);
+        this.f = new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar);
+        this.g = new org.telegram.ui.Components.e6[]{new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar)};
+        this.h = new org.telegram.ui.Components.e6[]{new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar), new org.telegram.ui.Components.e6(0.0f, a0Var, 0L, 160L, qrVar)};
     }
 }

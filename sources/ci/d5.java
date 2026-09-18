@@ -5,11 +5,11 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.fm0;
-import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.rm0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -37,18 +37,18 @@ public final /* synthetic */ class d5 implements ValueAnimator.AnimatorUpdateLis
                 r6Var.T0.invalidate();
                 break;
             case 1:
-                org.telegram.ui.Cells.d4 d4Var = (org.telegram.ui.Cells.d4) obj;
-                d4Var.getClass();
+                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) obj;
+                e4Var.getClass();
                 int offsetColor = AndroidUtilities.getOffsetColor(i12, i11, valueAnimator.getAnimatedFraction(), 1.0f);
-                bj0 bj0Var = d4Var.f;
-                bj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
-                org.telegram.ui.ActionBar.j6.B1(bj0Var.getDrawable(), offsetColor & 620756991, true);
+                lj0 lj0Var = e4Var.f;
+                lj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
+                org.telegram.ui.ActionBar.j6.B1(lj0Var.getDrawable(), offsetColor & 620756991, true);
                 break;
             case 2:
-                org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) obj;
-                m6Var.getClass();
-                m6Var.r(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11));
-                m6Var.invalidateSelf();
+                org.telegram.ui.Components.o6 o6Var = (org.telegram.ui.Components.o6) obj;
+                o6Var.getClass();
+                o6Var.r(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11));
+                o6Var.invalidateSelf();
                 break;
             case 3:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
@@ -61,20 +61,20 @@ public final /* synthetic */ class d5 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                wx0 wx0Var = (wx0) ((fm0) obj).b;
-                wx0Var.c.setAlpha(animatedFraction);
-                wx0Var.h.setAlpha(animatedFraction);
+                hy0 hy0Var = (hy0) ((rm0) obj).b;
+                hy0Var.c.setAlpha(animatedFraction);
+                hy0Var.h.setAlpha(animatedFraction);
                 if (i12 != 0) {
                     int i14 = (int) ((1.0f - animatedFraction) * i12);
-                    wx0Var.y0(i11 + i14);
-                    wx0Var.c.setTranslationY(i14);
+                    hy0Var.y0(i11 + i14);
+                    hy0Var.c.setTranslationY(i14);
                     break;
                 }
                 break;
             default:
-                qg.p0 p0Var = (qg.p0) obj;
-                p0Var.K1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                p0Var.c1.invalidate();
+                qg.m0 m0Var = (qg.m0) obj;
+                m0Var.K1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
+                m0Var.c1.invalidate();
                 break;
         }
     }

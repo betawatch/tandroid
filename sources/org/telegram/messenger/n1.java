@@ -1,32 +1,44 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import java.util.HashMap;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ n1(int i10, ContactsController contactsController, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = i10;
-        this.b = contactsController;
-        this.c = tL_error;
-        this.d = tLObject;
+    public /* synthetic */ n1(ContactsController contactsController, HashMap hashMap, boolean z10, boolean z11, boolean z12) {
+        this.e = contactsController;
+        this.f = hashMap;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadGlobalPrivacySetting$60(this.c, this.d);
+                ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
                 break;
             default:
-                this.b.lambda$loadPrivacySettings$62(this.c, this.d);
+                uy.i0((uy) this.e, this.b, this.c, this.d, (Activity) this.f);
                 break;
         }
+    }
+
+    public /* synthetic */ n1(uy uyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
+        this.e = uyVar;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
+        this.f = activity;
     }
 }

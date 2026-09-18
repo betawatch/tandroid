@@ -27,13 +27,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class du extends EditText {
     private static final int SPOILER_TIMEOUT = 10000;
     private static Boolean allowHackingTextCanvasCache;
     private ColorFilter animatedEmojiColorFilter;
-    private t5 animatedEmojiDrawables;
+    private v5 animatedEmojiDrawables;
     private vh.m clickDetector;
     private boolean clipToPadding;
     public boolean drawAnimatedEmojiDrawables;
@@ -49,7 +49,7 @@ public abstract class du extends EditText {
     protected float offsetY;
     private Path path;
     private boolean postedSpoilerTimeout;
-    private ArrayList<pi0> quoteBlocks;
+    private ArrayList<zi0> quoteBlocks;
     private boolean quoteBlocksUpdating;
     public int quoteColor;
     private boolean[] quoteUpdateLayout;
@@ -63,7 +63,7 @@ public abstract class du extends EditText {
     private Stack<vh.h> spoilersPool;
     public boolean suppressOnTextChanged;
     public boolean wrapCanvasToFixClipping;
-    private nc0 wrappedCanvas;
+    private wc0 wrappedCanvas;
 
     public du(Context context) {
         super(context, null, 0, R.style.EditTextNoBackgroundStyle);
@@ -113,10 +113,10 @@ public abstract class du extends EditText {
         boolean z10 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (q01 q01Var : (q01[]) spannable.getSpans(0, spannable.length(), q01.class)) {
-                int spanStart = spannable.getSpanStart(q01Var);
-                int spanEnd = spannable.getSpanEnd(q01Var);
-                if (q01Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
+            for (e11 e11Var : (e11[]) spannable.getSpans(0, spannable.length(), e11.class)) {
+                int spanStart = spannable.getSpanStart(e11Var);
+                int spanEnd = spannable.getSpanEnd(e11Var);
+                if (e11Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
                     removeCallbacks(this.spoilerTimeout);
                     this.postedSpoilerTimeout = false;
                     z10 = true;
@@ -154,7 +154,7 @@ public abstract class du extends EditText {
         boolean z11;
         vh.m mVar;
         int paddingTop = getPaddingTop() - getScrollY();
-        ArrayList<pi0> arrayList = this.quoteBlocks;
+        ArrayList<zi0> arrayList = this.quoteBlocks;
         if (arrayList == null) {
             z10 = false;
         } else {
@@ -162,28 +162,28 @@ public abstract class du extends EditText {
             z10 = false;
             int i10 = 0;
             while (i10 < size) {
-                pi0 pi0Var = arrayList.get(i10);
+                zi0 zi0Var = arrayList.get(i10);
                 i10++;
-                pi0 pi0Var2 = pi0Var;
-                li0 li0Var = pi0Var2.e.J;
-                boolean z12 = pi0Var2.b() && pi0Var2.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
+                zi0 zi0Var2 = zi0Var;
+                vi0 vi0Var = zi0Var2.e.J;
+                boolean z12 = zi0Var2.b() && zi0Var2.g.contains(motionEvent.getX(), motionEvent.getY() - ((float) paddingTop));
                 if (motionEvent.getAction() == 0) {
-                    if (li0Var != null) {
-                        li0Var.b(z12);
+                    if (vi0Var != null) {
+                        vi0Var.b(z12);
                     }
                 } else if (motionEvent.getAction() == 1) {
-                    if (li0Var != null && li0Var.h && z12) {
-                        pi0Var2.e.e = !r5.e;
+                    if (vi0Var != null && vi0Var.h && z12) {
+                        zi0Var2.e.e = !r5.e;
                         invalidateQuotes(true);
                         z10 = true;
                     }
-                    if (li0Var != null) {
-                        li0Var.b(false);
+                    if (vi0Var != null) {
+                        vi0Var.b(false);
                     }
-                } else if (motionEvent.getAction() == 3 && li0Var != null) {
-                    li0Var.b(false);
+                } else if (motionEvent.getAction() == 3 && vi0Var != null) {
+                    vi0Var.b(false);
                 }
-                z10 = (li0Var != null && li0Var.h) || z10;
+                z10 = (vi0Var != null && vi0Var.h) || z10;
             }
         }
         if (!z10) {
@@ -205,7 +205,7 @@ public abstract class du extends EditText {
     }
 
     public int emojiCacheType() {
-        return o5.g();
+        return q5.g();
     }
 
     public float getOffsetY() {
@@ -218,12 +218,12 @@ public abstract class du extends EditText {
             return null;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(text);
-        ri0[] ri0VarArr = (ri0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), ri0.class);
-        for (int length = ri0VarArr.length - 1; length >= 0; length--) {
-            ri0 ri0Var = ri0VarArr[length];
-            int spanStart = spannableStringBuilder.getSpanStart(ri0Var);
-            int spanEnd = spannableStringBuilder.getSpanEnd(ri0Var);
-            spannableStringBuilder.removeSpan(ri0Var);
+        bj0[] bj0VarArr = (bj0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), bj0.class);
+        for (int length = bj0VarArr.length - 1; length >= 0; length--) {
+            bj0 bj0Var = bj0VarArr[length];
+            int spanStart = spannableStringBuilder.getSpanStart(bj0Var);
+            int spanEnd = spannableStringBuilder.getSpanEnd(bj0Var);
+            spannableStringBuilder.removeSpan(bj0Var);
             spannableStringBuilder.delete(spanStart, spanEnd);
         }
         return spannableStringBuilder;
@@ -232,14 +232,14 @@ public abstract class du extends EditText {
     public void invalidateEffects() {
         Editable text = getText();
         if (text != null) {
-            for (q01 q01Var : (q01[]) text.getSpans(0, text.length(), q01.class)) {
-                if (q01Var.c()) {
+            for (e11 e11Var : (e11[]) text.getSpans(0, text.length(), e11.class)) {
+                if (e11Var.c()) {
                     boolean z10 = this.isSpoilersRevealed;
-                    p01 p01Var = q01Var.b;
+                    d11 d11Var = e11Var.b;
                     if (z10) {
-                        p01Var.a |= 512;
+                        d11Var.a |= 512;
                     } else {
-                        p01Var.a &= -513;
+                        d11Var.a &= -513;
                     }
                 }
             }
@@ -265,9 +265,9 @@ public abstract class du extends EditText {
             this.quoteUpdateLayout[0] = false;
             this.editedWhileQuoteUpdating = false;
             this.quoteBlocksUpdating = true;
-            this.quoteBlocks = ti0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
+            this.quoteBlocks = dj0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
             if (this.editedWhileQuoteUpdating) {
-                this.quoteBlocks = ti0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
+                this.quoteBlocks = dj0.d(this, getLayout(), this.quoteBlocks, this.quoteUpdateLayout);
             }
             this.quoteBlocksUpdating = false;
             this.editedWhileQuoteUpdating = false;
@@ -283,8 +283,8 @@ public abstract class du extends EditText {
     }
 
     public void invalidateSpoilers() {
-        t5 t5Var;
-        t5 t5Var2;
+        v5 v5Var;
+        v5 v5Var2;
         List<vh.h> list = this.spoilers;
         if (list == null) {
             return;
@@ -297,22 +297,22 @@ public abstract class du extends EditText {
         }
         Layout layout = getLayout();
         if (layout != null && (layout.getText() instanceof Spannable)) {
-            if (this.drawAnimatedEmojiDrawables && (t5Var2 = this.animatedEmojiDrawables) != null) {
-                ArrayList arrayList = t5Var2.a;
+            if (this.drawAnimatedEmojiDrawables && (v5Var2 = this.animatedEmojiDrawables) != null) {
+                ArrayList arrayList = v5Var2.a;
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((s5) arrayList.get(i10)).d.recordPositions = false;
+                    ((u5) arrayList.get(i10)).d.recordPositions = false;
                 }
             }
             Stack<vh.h> stack = this.spoilersPool;
             List<vh.h> list2 = this.spoilers;
-            ArrayList<pi0> arrayList2 = this.quoteBlocks;
+            ArrayList<zi0> arrayList2 = this.quoteBlocks;
             int i11 = vh.h.A;
             int measuredWidth = getMeasuredWidth();
             vh.h.a(this, getLayout(), 0, measuredWidth > 0 ? measuredWidth : -2, (Spanned) getText(), stack, list2, arrayList2);
-            if (this.drawAnimatedEmojiDrawables && (t5Var = this.animatedEmojiDrawables) != null) {
-                ArrayList arrayList3 = t5Var.a;
+            if (this.drawAnimatedEmojiDrawables && (v5Var = this.animatedEmojiDrawables) != null) {
+                ArrayList arrayList3 = v5Var.a;
                 for (int i12 = 0; i12 < arrayList3.size(); i12++) {
-                    ((s5) arrayList3.get(i12)).d.recordPositions = true;
+                    ((u5) arrayList3.get(i12)).d.recordPositions = true;
                 }
             }
         }
@@ -330,7 +330,7 @@ public abstract class du extends EditText {
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         removeCallbacks(this.spoilerTimeout);
-        x5.release(this, this.animatedEmojiDrawables);
+        z5.release(this, this.animatedEmojiDrawables);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -352,20 +352,20 @@ public abstract class du extends EditText {
         }
         invalidateQuotes(false);
         for (int i10 = 0; i10 < this.quoteBlocks.size(); i10++) {
-            pi0 pi0Var = this.quoteBlocks.get(i10);
+            zi0 zi0Var = this.quoteBlocks.get(i10);
             int width = getWidth();
             int i11 = this.quoteColor;
             getPaint();
-            pi0Var.a(canvas, width, i11);
+            zi0Var.a(canvas, width, i11);
         }
         updateAnimatedEmoji(false);
         if (this.wrapCanvasToFixClipping) {
             if (this.wrappedCanvas == null) {
-                this.wrappedCanvas = new nc0();
+                this.wrappedCanvas = new wc0();
             }
-            nc0 nc0Var = this.wrappedCanvas;
-            nc0Var.a = canvas;
-            super.onDraw(nc0Var);
+            wc0 wc0Var = this.wrappedCanvas;
+            wc0Var.a = canvas;
+            super.onDraw(wc0Var);
         } else {
             super.onDraw(canvas);
         }
@@ -375,7 +375,7 @@ public abstract class du extends EditText {
             canvas.save();
             canvas.translate(getPaddingLeft(), 0.0f);
             canvas2 = canvas;
-            x5.drawAnimatedEmojis(canvas2, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
+            z5.drawAnimatedEmojis(canvas2, getLayout(), this.animatedEmojiDrawables, 0.0f, this.spoilers, computeVerticalScrollOffset() - AndroidUtilities.dp(6.0f), computeVerticalScrollOffset() + computeVerticalScrollExtent(), 0.0f, 1.0f, this.animatedEmojiColorFilter);
             canvas2.restore();
         }
         canvas2.restore();
@@ -392,11 +392,11 @@ public abstract class du extends EditText {
             canvas2.translate(0.0f, -getPaddingTop());
             if (this.wrapCanvasToFixClipping) {
                 if (this.wrappedCanvas == null) {
-                    this.wrappedCanvas = new nc0();
+                    this.wrappedCanvas = new wc0();
                 }
-                nc0 nc0Var2 = this.wrappedCanvas;
-                nc0Var2.a = canvas2;
-                super.onDraw(nc0Var2);
+                wc0 wc0Var2 = this.wrappedCanvas;
+                wc0Var2.a = canvas2;
+                super.onDraw(wc0Var2);
             } else {
                 super.onDraw(canvas2);
             }
@@ -484,7 +484,7 @@ public abstract class du extends EditText {
     }
 
     public void recycleEmojis() {
-        x5.release(this, this.animatedEmojiDrawables);
+        z5.release(this, this.animatedEmojiDrawables);
     }
 
     public void resetFontMetricsCache() {
@@ -516,13 +516,13 @@ public abstract class du extends EditText {
         this.isSpoilersRevealed = z10;
         Editable text = getText();
         if (text != null) {
-            for (q01 q01Var : (q01[]) text.getSpans(0, text.length(), q01.class)) {
-                if (q01Var.c()) {
-                    p01 p01Var = q01Var.b;
+            for (e11 e11Var : (e11[]) text.getSpans(0, text.length(), e11.class)) {
+                if (e11Var.c()) {
+                    d11 d11Var = e11Var.b;
                     if (z10) {
-                        p01Var.a |= 512;
+                        d11Var.a |= 512;
                     } else {
-                        p01Var.a &= -513;
+                        d11Var.a &= -513;
                     }
                 }
             }
@@ -565,7 +565,7 @@ public abstract class du extends EditText {
             if (!z10 && this.lastLayout == getLayout() && this.lastTextLength == length) {
                 return;
             }
-            this.animatedEmojiDrawables = x5.update(emojiCacheType(), this, this.animatedEmojiDrawables, getLayout());
+            this.animatedEmojiDrawables = z5.update(emojiCacheType(), this, this.animatedEmojiDrawables, getLayout());
             this.lastLayout = getLayout();
             this.lastTextLength = length;
         }

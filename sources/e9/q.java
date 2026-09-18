@@ -13,12 +13,11 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Cells.p6;
 import v7.s6;
 import v7.t6;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -34,7 +33,7 @@ public abstract class q {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(hg.k0.i(i11, "at index "));
+                throw new NullPointerException(hg.k0.h(i11, "at index "));
             }
         }
     }
@@ -48,7 +47,7 @@ public abstract class q {
 
     public static Object f(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(hg.k0.i(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(hg.k0.h(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }
@@ -114,7 +113,7 @@ public abstract class q {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return p6.g(1, list);
+            return t8.b.h(1, list);
         }
         Iterator it = iterable.iterator();
         do {

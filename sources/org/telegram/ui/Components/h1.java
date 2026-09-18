@@ -7,9 +7,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h1 implements org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class h1 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
 
@@ -18,14 +18,14 @@ public final /* synthetic */ class h1 implements org.telegram.ui.ActionBar.b2 {
         this.b = launchActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 this.b.p0(new LanguageSelectActivity());
                 break;
             case 1:
-                this.b.p0(new org.telegram.ui.a7());
+                this.b.p0(new org.telegram.ui.z6());
                 break;
             default:
                 LaunchActivity launchActivity = this.b;

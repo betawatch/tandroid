@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class m0 implements d0, c0 {
     public final d0[] a;
@@ -40,7 +40,7 @@ public final class m0 implements d0, c0 {
     }
 
     @Override // u2.c0
-    public final void a(d0 d0Var) {
+    public final void b(d0 d0Var) {
         ArrayList arrayList = this.e;
         arrayList.remove(d0Var);
         if (arrayList.isEmpty()) {
@@ -83,7 +83,7 @@ public final class m0 implements d0, c0 {
             this.n = new o1(l1VarArr);
             c0 c0Var = this.h;
             c0Var.getClass();
-            c0Var.a(this);
+            c0Var.b(this);
         }
     }
 
@@ -164,21 +164,28 @@ public final class m0 implements d0, c0 {
         return j3;
     }
 
+    @Override // u2.c1
+    public final void m(d1 d1Var) {
+        c0 c0Var = this.h;
+        c0Var.getClass();
+        c0Var.m(this);
+    }
+
     @Override // u2.d1
-    public final boolean m(i2.r0 r0Var) {
+    public final boolean p(i2.r0 r0Var) {
         ArrayList arrayList = this.e;
         if (arrayList.isEmpty()) {
-            return this.s.m(r0Var);
+            return this.s.p(r0Var);
         }
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            ((d0) arrayList.get(i10)).m(r0Var);
+            ((d0) arrayList.get(i10)).p(r0Var);
         }
         return false;
     }
 
     @Override // u2.d0
-    public final long p(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+    public final long q(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         IdentityHashMap identityHashMap;
         int[] iArr;
         int[] iArr2 = new int[rVarArr.length];
@@ -232,10 +239,10 @@ public final class m0 implements d0, c0 {
             int[] iArr4 = iArr2;
             d0[] d0VarArr2 = d0VarArr;
             int i13 = i11;
-            long p5 = d0VarArr2[i11].p(rVarArr2, zArr, b1VarArr3, zArr2, j10);
+            long q6 = d0VarArr2[i11].q(rVarArr2, zArr, b1VarArr3, zArr2, j10);
             if (i13 == 0) {
-                j10 = p5;
-            } else if (p5 != j10) {
+                j10 = q6;
+            } else if (q6 != j10) {
                 throw new IllegalStateException("Children enabled at different positions.");
             }
             boolean z10 = false;
@@ -259,7 +266,7 @@ public final class m0 implements d0, c0 {
         }
         System.arraycopy(b1VarArr2, 0, b1VarArr, 0, length2);
         this.r = (d0[]) arrayList.toArray(new d0[0]);
-        AbstractList w10 = e9.q.w(arrayList, new t0.a(9));
+        AbstractList w10 = e9.q.w(arrayList, new s9.b(11));
         this.d.getClass();
         this.s = new n(arrayList, w10);
         return j10;
@@ -286,12 +293,5 @@ public final class m0 implements d0, c0 {
     @Override // u2.d1
     public final void u(long j3) {
         this.s.u(j3);
-    }
-
-    @Override // u2.c1
-    public final void v(d1 d1Var) {
-        c0 c0Var = this.h;
-        c0Var.getClass();
-        c0Var.v(this);
     }
 }

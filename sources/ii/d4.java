@@ -15,13 +15,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.p01;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.q01;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e11;
 import org.webrtc.MediaStreamTrack;
 import v7.q8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -879,7 +879,7 @@ public abstract class d4 {
             a aVar = (a) list3.get(i19);
             if (!aVar.i) {
                 if (aVar.k.size() > i18) {
-                    cVar2.b(sb3);
+                    cVar2.c(sb3);
                     Long l4 = (Long) ((a) list3.get(iArr[0])).k.get(i18);
                     long longValue = l4.longValue();
                     int i20 = iArr[0];
@@ -898,14 +898,14 @@ public abstract class d4 {
                     sb3.append("<blockquote>");
                     d7.c cVar3 = new d7.c(1);
                     F(sb3, list3, iArr, i20, i11, i12, i13, i14, cVar3, z10, i18 + 1, map);
-                    cVar3.b(sb3);
+                    cVar3.c(sb3);
                     c(sb3, map != null ? k((TL_iv.RichText) map.get(l4)) : null);
                     sb3.append("</blockquote>");
                     i17 = i10;
                     i18 = i15;
                 } else {
                     if (w3.y3(aVar)) {
-                        cVar2.b(sb3);
+                        cVar2.c(sb3);
                         a aVar3 = (a) list3.get(iArr[0]);
                         sb3.append(((TL_iv.pageBlockDetails) aVar3.b).open ? "<details open>" : "<details>");
                         sb3.append("<summary>");
@@ -916,7 +916,7 @@ public abstract class d4 {
                         F(sb3, list3, iArr, i10, i11, i12, i13, i14, cVar4, true, i15, map);
                         list2 = list3;
                         i16 = i10;
-                        cVar4.b(sb3);
+                        cVar4.c(sb3);
                         int i22 = iArr[0];
                         if (i22 <= i16 && i22 < list2.size() && ((a) list2.get(iArr[0])).i) {
                             iArr[0] = iArr[0] + 1;
@@ -926,7 +926,7 @@ public abstract class d4 {
                         i16 = i10;
                         list2 = list3;
                         if (aVar.c <= 0 || l(aVar.b) == null) {
-                            cVar2.b(sb3);
+                            cVar2.c(sb3);
                             int i23 = iArr[0];
                             TL_iv.PageBlock pageBlock = aVar.b;
                             if (pageBlock instanceof TL_iv.pageBlockDivider) {
@@ -1118,7 +1118,7 @@ public abstract class d4 {
                             int i26 = aVar.c;
                             boolean z12 = aVar.d > 0;
                             while (arrayList.size() > i26) {
-                                cVar2.a(sb3);
+                                cVar2.b(sb3);
                             }
                             while (true) {
                                 str2 = "<ul>";
@@ -1131,8 +1131,8 @@ public abstract class d4 {
                                 sb3.append(str2);
                                 arrayList.add(Boolean.valueOf(z12));
                             }
-                            if (!arrayList.isEmpty() && ((Boolean) hg.k0.h(1, arrayList)).booleanValue() != z12) {
-                                cVar2.a(sb3);
+                            if (!arrayList.isEmpty() && ((Boolean) hg.k0.g(1, arrayList)).booleanValue() != z12) {
+                                cVar2.b(sb3);
                                 sb3.append(z12 ? "<ol>" : "<ul>");
                                 arrayList.add(Boolean.valueOf(z12));
                             }
@@ -1493,19 +1493,19 @@ public abstract class d4 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (q01 q01Var : (q01[]) spanned.getSpans(i22, nextSpanTransition, q01.class)) {
-                    p01 p01Var = q01Var.b;
-                    if (p01Var != null) {
-                        i24 |= p01Var.a;
+                for (e11 e11Var : (e11[]) spanned.getSpans(i22, nextSpanTransition, e11.class)) {
+                    d11 d11Var = e11Var.b;
+                    if (d11Var != null) {
+                        i24 |= d11Var.a;
                     }
                 }
-                p51[] p51VarArr = (p51[]) spanned.getSpans(i22, nextSpanTransition, p51.class);
-                String url = p51VarArr.length > 0 ? p51VarArr[c10].getURL() : null;
-                org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.x5.class);
-                if (x5VarArr.length > 0) {
-                    org.telegram.ui.Components.x5 x5Var = x5VarArr[c10];
-                    if (!x5Var.standard) {
-                        j3 = x5Var.getDocumentId();
+                d61[] d61VarArr = (d61[]) spanned.getSpans(i22, nextSpanTransition, d61.class);
+                String url = d61VarArr.length > 0 ? d61VarArr[c10].getURL() : null;
+                org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.z5.class);
+                if (z5VarArr.length > 0) {
+                    org.telegram.ui.Components.z5 z5Var = z5VarArr[c10];
+                    if (!z5Var.standard) {
+                        j3 = z5Var.getDocumentId();
                         i11 = i24 & 256;
                         if (i11 != 0) {
                             sb2.append("<spoiler>");
@@ -1857,12 +1857,12 @@ public abstract class d4 {
         spannableStringBuilder.append((CharSequence) str);
         int length2 = spannableStringBuilder.length();
         if (j3 != 0) {
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.x5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(j3, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            p01 p01Var = new p01();
-            p01Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new q01(p01Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            d11 d11Var = new d11();
+            d11Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new e11(d11Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(f6.k(str2), length, length2, 33);
@@ -2322,7 +2322,7 @@ public abstract class d4 {
                             if (arrayList3.isEmpty()) {
                                 arrayList2.add(c4Var);
                             } else {
-                                ((c4) hg.k0.h(1, arrayList3)).e.add(c4Var);
+                                ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var);
                             }
                         }
                     } else if (str.startsWith("<!--", i12)) {
@@ -2437,7 +2437,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var2);
                                 } else {
-                                    ((c4) hg.k0.h(1, arrayList3)).e.add(c4Var2);
+                                    ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var2);
                                 }
                                 if (!endsWith) {
                                     String str3 = c4Var2.a;
@@ -2515,7 +2515,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var3);
                                 } else {
-                                    ((c4) hg.k0.h(1, arrayList3)).e.add(c4Var3);
+                                    ((c4) hg.k0.g(1, arrayList3)).e.add(c4Var3);
                                 }
                             }
                         }

@@ -31,7 +31,7 @@ import w7.la;
 import x7.fa;
 import z7.wf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -277,7 +277,7 @@ public final /* synthetic */ class x implements Callable {
                 laVar.getClass();
                 return n6.i.c.a(laVar.g);
             case 7:
-                ((com.google.firebase.messaging.w) this.b).run();
+                ((com.google.firebase.messaging.v) this.b).run();
                 return null;
             case 8:
                 x1.a aVar3 = (x1.a) this.b;

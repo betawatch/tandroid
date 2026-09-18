@@ -10,9 +10,9 @@ import java.util.Locale;
 import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new j(26);
@@ -48,22 +48,22 @@ public final class a extends o6.a {
     public final String toString() {
         Locale locale = Locale.US;
         String uri = this.b.toString();
-        StringBuilder m10 = k0.m("Image ", this.c, "x", this.d, " ");
-        m10.append(uri);
-        return m10.toString();
+        StringBuilder k10 = k0.k("Image ", this.c, "x", this.d, " ");
+        k10.append(uri);
+        return k10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = e0.q(parcel, 20293);
-        e0.s(parcel, 1, 4);
+        int q6 = f0.q(parcel, 20293);
+        f0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        e0.k(parcel, 2, this.b, i10);
-        e0.s(parcel, 3, 4);
+        f0.k(parcel, 2, this.b, i10);
+        f0.s(parcel, 3, 4);
         parcel.writeInt(this.c);
-        e0.s(parcel, 4, 4);
+        f0.s(parcel, 4, 4);
         parcel.writeInt(this.d);
-        e0.r(parcel, q6);
+        f0.r(parcel, q6);
     }
 
     public a(Uri uri, int i10, int i11) {

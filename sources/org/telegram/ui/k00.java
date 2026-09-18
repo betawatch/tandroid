@@ -1,30 +1,33 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k00 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h10 b;
+public final class k00 extends FrameLayout {
+    public ImageView a;
+    public TextView b;
+    public int c;
+    public boolean d;
+    public Boolean e;
 
-    public /* synthetic */ k00(h10 h10Var, int i10) {
-        this.a = i10;
-        this.b = h10Var;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        TextView textView = this.b;
+        super.onDraw(canvas);
+        if (this.d) {
+            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+        }
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new mw(10, this.b, tLObject));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new xq(this.b, tL_error, tLObject, 6));
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

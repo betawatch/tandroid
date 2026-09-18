@@ -16,7 +16,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public lf.i a;
@@ -35,10 +35,10 @@ public abstract class o0 {
     public int n;
 
     public o0() {
-        k2.u uVar = new k2.u(this, 24);
-        k2.c0 c0Var = new k2.c0(this, 26);
-        this.c = new o0.a(uVar);
-        this.d = new o0.a(c0Var);
+        n2.e eVar = new n2.e(this, 20);
+        ka.c cVar = new ka.c(this, 22);
+        this.c = new o0.a(eVar);
+        this.d = new o0.a(cVar);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -235,7 +235,7 @@ public abstract class o0 {
         }
         c1 V = RecyclerView.V(view);
         V.a(128);
-        this.b.f.L(V);
+        this.b.f.M(V);
     }
 
     public void P(View view) {
@@ -293,7 +293,7 @@ public abstract class o0 {
             }
             i1Var.a |= 1;
         } else {
-            this.b.f.J(V);
+            this.b.f.L(V);
         }
         p0 p0Var = (p0) view.getLayoutParams();
         if (V.s() || V.k()) {
@@ -306,22 +306,22 @@ public abstract class o0 {
         } else if (view.getParent() == this.b) {
             lf.i iVar = this.a;
             e6.n nVar = (e6.n) iVar.c;
-            int indexOfChild = ((RecyclerView) ((k2.c0) iVar.b).b).indexOfChild(view);
-            int w10 = (indexOfChild == -1 || nVar.z(indexOfChild)) ? -1 : indexOfChild - nVar.w(indexOfChild);
+            int indexOfChild = ((RecyclerView) ((ka.c) iVar.b).b).indexOfChild(view);
+            int x10 = (indexOfChild == -1 || nVar.D(indexOfChild)) ? -1 : indexOfChild - nVar.x(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.C();
             }
-            if (w10 == -1) {
+            if (x10 == -1) {
                 throw new IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.D());
             }
-            if (w10 != i10) {
+            if (x10 != i10) {
                 o0 o0Var = this.b.x;
-                View q6 = o0Var.q(w10);
+                View q6 = o0Var.q(x10);
                 if (q6 == null) {
-                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + w10 + o0Var.b.toString());
+                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + x10 + o0Var.b.toString());
                 }
-                o0Var.q(w10);
-                o0Var.a.y(w10);
+                o0Var.q(x10);
+                o0Var.a.y(x10);
                 p0 p0Var2 = (p0) q6.getLayoutParams();
                 c1 V2 = RecyclerView.V(q6);
                 if (V2.j()) {
@@ -333,7 +333,7 @@ public abstract class o0 {
                     }
                     i1Var2.a = 1 | i1Var2.a;
                 } else {
-                    o0Var.b.f.J(V2);
+                    o0Var.b.f.L(V2);
                 }
                 o0Var.a.t(q6, i10, p0Var2, V2.j());
             }
@@ -448,15 +448,15 @@ public abstract class o0 {
         if (q(i10) != null) {
             lf.i iVar = this.a;
             int J = iVar.J(i10);
-            k2.c0 c0Var = (k2.c0) iVar.b;
-            View childAt = ((RecyclerView) c0Var.b).getChildAt(J);
+            ka.c cVar = (ka.c) iVar.b;
+            View childAt = ((RecyclerView) cVar.b).getChildAt(J);
             if (childAt == null) {
                 return;
             }
-            if (((e6.n) iVar.c).B(J)) {
+            if (((e6.n) iVar.c).F(J)) {
                 iVar.Y(childAt);
             }
-            c0Var.r(J);
+            cVar.j0(J);
         }
     }
 

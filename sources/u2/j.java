@@ -5,31 +5,31 @@ import ci.s7;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.wa0;
+import org.telegram.ui.va0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class j implements k0, n2.k {
+public final class j implements k0, n2.l {
     public final Object a;
     public a5.a b;
-    public n2.j c;
+    public n2.k c;
     public final /* synthetic */ l d;
 
     public j(l lVar, Object obj) {
         this.d = lVar;
         this.b = lVar.b(null);
-        this.c = new n2.j(lVar.d.c, 0, null);
+        this.c = new n2.k(lVar.d.c, 0, null);
         this.a = obj;
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void a(int i10, f0 f0Var, int i11) {
         if (l(i10, f0Var)) {
             this.c.c(i11);
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void b(int i10, f0 f0Var, Exception exc) {
         if (l(i10, f0Var)) {
             this.c.d(exc);
@@ -77,7 +77,7 @@ public final class j implements k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void g(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.e();
@@ -90,11 +90,11 @@ public final class j implements k0, n2.k {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.j(new wa0(aVar, tVar, m10, i11, 1));
+            aVar.j(new va0(aVar, tVar, m10, i11, 1));
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void i(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.b();
@@ -111,7 +111,7 @@ public final class j implements k0, n2.k {
         }
     }
 
-    @Override // n2.k
+    @Override // n2.l
     public final void k(int i10, f0 f0Var) {
         if (l(i10, f0Var)) {
             this.c.a();
@@ -135,11 +135,11 @@ public final class j implements k0, n2.k {
         if (aVar.b != w10 || !Objects.equals((f0) aVar.c, f0Var2)) {
             this.b = new a5.a((CopyOnWriteArrayList) lVar.c.d, w10, f0Var2, 20);
         }
-        n2.j jVar = this.c;
-        if (jVar.a == w10 && Objects.equals(jVar.b, f0Var2)) {
+        n2.k kVar = this.c;
+        if (kVar.a == w10 && Objects.equals(kVar.b, f0Var2)) {
             return true;
         }
-        this.c = new n2.j(lVar.d.c, w10, f0Var2);
+        this.c = new n2.k(lVar.d.c, w10, f0Var2);
         return true;
     }
 

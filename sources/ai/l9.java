@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class l9 {
     public static final Comparator X = Comparator$-CC.comparingInt(new f7(1));
@@ -381,7 +381,7 @@ public final class l9 {
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
-        return ((k9) hg.k0.h(1, arrayList)).I;
+        return ((k9) hg.k0.g(1, arrayList)).I;
     }
 
     public final void O(long j3) {
@@ -552,16 +552,16 @@ public final class l9 {
             if (storyItem.media_areas != null) {
                 for (int i11 = 0; i11 < Math.min(2, storyItem.media_areas.size()); i11++) {
                     if (storyItem.media_areas.get(i11) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                        zg.p0 d = zg.p0.d(((TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i11)).reaction);
+                        zg.o0 d = zg.o0.d(((TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i11)).reaction);
                         if (d.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(d.f);
                             if (tL_availableReaction != null) {
                                 FileLoader.getInstance(i10).loadFile(tL_availableReaction.select_animation, d, 0, 0);
                             }
                         } else {
-                            org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(1, i10, d.g);
-                            o5Var.m = true;
-                            o5Var.v();
+                            org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(1, i10, d.g);
+                            q5Var.m = true;
+                            q5Var.v();
                         }
                     }
                 }
@@ -860,7 +860,7 @@ public final class l9 {
             this.d = 0;
         }
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.w1.k(j3, iVar);
+            arrayList = org.telegram.messenger.q.k(j3, iVar);
         }
         arrayList.add(k9Var);
     }
@@ -1007,7 +1007,7 @@ public final class l9 {
         MessagesController.getInstance(i10).checkArchiveFolder();
     }
 
-    public final void g0(long j3, TL_stories.StoryItem storyItem, zg.p0 p0Var) {
+    public final void g0(long j3, TL_stories.StoryItem storyItem, zg.o0 o0Var) {
         if (storyItem == null) {
             return;
         }
@@ -1015,19 +1015,19 @@ public final class l9 {
         tL_stories_sendReaction.story_id = storyItem.id;
         int i10 = this.a;
         tL_stories_sendReaction.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        if (p0Var == null) {
+        if (o0Var == null) {
             tL_stories_sendReaction.reaction = new TLRPC.TL_reactionEmpty();
             storyItem.flags &= -32769;
             storyItem.sent_reaction = null;
-        } else if (p0Var.g != 0) {
+        } else if (o0Var.g != 0) {
             TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
-            tL_reactionCustomEmoji.document_id = p0Var.g;
+            tL_reactionCustomEmoji.document_id = o0Var.g;
             tL_stories_sendReaction.reaction = tL_reactionCustomEmoji;
             storyItem.flags |= 32768;
             storyItem.sent_reaction = tL_reactionCustomEmoji;
-        } else if (p0Var.f != null) {
+        } else if (o0Var.f != null) {
             TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-            tL_reactionEmoji.emoticon = p0Var.f;
+            tL_reactionEmoji.emoticon = o0Var.f;
             tL_stories_sendReaction.reaction = tL_reactionEmoji;
             storyItem.flags |= 32768;
             storyItem.sent_reaction = tL_reactionEmoji;
@@ -1163,11 +1163,11 @@ public final class l9 {
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
     }
 
-    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public final void k(long j3, e2.h hVar, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
         TL_stories.TL_stories_canSendStory tL_stories_canSendStory = new TL_stories.TL_stories_canSendStory();
         int i10 = this.a;
         tL_stories_canSendStory.peer = MessagesController.getInstance(i10).getInputPeer(j3);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, f6Var), 1024);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_stories_canSendStory, new b8(this, z10, j3, hVar, e6Var), 1024);
     }
 
     public final void k0(long j3, List list) {
@@ -1293,7 +1293,7 @@ public final class l9 {
                         if (storyItem.firstFramePath == null) {
                             storyItem.firstFramePath = storyItem2.firstFramePath;
                         }
-                        hg.k0.p(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
+                        org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
                     }
                 } else {
                     i12++;
@@ -1301,9 +1301,9 @@ public final class l9 {
             }
             if (!z11) {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                    hg.k0.p(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
+                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
                 } else if (z10) {
-                    hg.k0.p(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
+                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
                     peerStories.stories.add(storyItem);
                     peerStories.checkedExpired = false;
                 }

@@ -1,15 +1,10 @@
 package ee;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class v implements fb.n {
     public final /* synthetic */ int a;
-    public final String b;
-
-    public /* synthetic */ v(String str, int i10) {
-        this.a = i10;
-        this.b = str;
-    }
+    public String b;
 
     @Override // fb.n
     public Object p2() {
@@ -23,5 +18,10 @@ public final class v implements fb.n {
             default:
                 return super.toString();
         }
+    }
+
+    public /* synthetic */ v(String str, int i10) {
+        this.a = i10;
+        this.b = str;
     }
 }

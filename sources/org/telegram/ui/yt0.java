@@ -2,95 +2,48 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.util.Property;
-import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class yt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public yt0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
-        this.a = i10;
+    public /* synthetic */ yt0(PhotoViewer photoViewer, int i10, int i11) {
+        this.a = i11;
+        this.c = photoViewer;
+        this.b = i10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        PhotoViewer photoViewer = this.b;
-        uu0 uu0Var = photoViewer.X4;
-        photoViewer.q6 = null;
-        photoViewer.P0.setVisibility(8);
-        photoViewer.S0.setVisibility(8);
-        photoViewer.n0.setVisibility(8);
-        photoViewer.e1.setVisibility(8);
-        photoViewer.f1.setVisibility(8);
-        photoViewer.g1.setVisibility(8);
-        photoViewer.o1.setVisibility(8);
-        photoViewer.o1.setAlpha(0.0f);
-        photoViewer.o1.setTranslationY(-AndroidUtilities.dp(10.0f));
-        photoViewer.O0.setRotationX(0.0f);
-        photoViewer.o1.setEnabled(false);
-        photoViewer.K = false;
-        if (photoViewer.i2) {
-            photoViewer.Q1.setVisibility(4);
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.c;
+                zt0 zt0Var = photoViewer.N1;
+                zt0Var.e.setVisibility(0);
+                FrameLayout frameLayout = zt0Var.r;
+                frameLayout.setVisibility(0);
+                frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
+                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
+                org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
+                org.telegram.messenger.wh.r(translationY, qrVar, 320L);
+                zt0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(qrVar).setDuration(320L).start();
+                photoViewer.u4 = this.b;
+                photoViewer.q6 = null;
+                photoViewer.o6 = -1;
+                break;
+            default:
+                int i10 = this.b;
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.u4 = i10;
+                photoViewer2.q6 = null;
+                photoViewer2.o6 = -1;
+                break;
         }
-        int i10 = photoViewer.c2;
-        if (i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) {
-            photoViewer.N0.setVisibility(8);
-            photoViewer.O0.setVisibility(8);
-            photoViewer.r3();
-        }
-        if (photoViewer.c2 == 11) {
-            photoViewer.i6 = photoViewer.Y5;
-            photoViewer.h6 = photoViewer.X5;
-            photoViewer.j6 = photoViewer.a6;
-            photoViewer.k6 = photoViewer.b6;
-            photoViewer.f6 = 0.0f;
-        }
-        Bitmap bitmap = photoViewer.C4.getBitmap();
-        if (bitmap != null || photoViewer.r1) {
-            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.v61) photoViewer.B2 : null, uu0Var.c);
-            photoViewer.C1.a();
-            int bitmapWidth = photoViewer.C4.getBitmapWidth();
-            int bitmapHeight = photoViewer.C4.getBitmapHeight();
-            MediaController.CropState cropState = uu0Var.c;
-            if (cropState != null) {
-                int i11 = cropState.transformRotation;
-                if (i11 == 90 || i11 == 270) {
-                    bitmapHeight = bitmapWidth;
-                    bitmapWidth = bitmapHeight;
-                }
-                bitmapWidth = (int) (bitmapWidth * cropState.cropPw);
-                bitmapHeight = (int) (bitmapHeight * cropState.cropPh);
-            }
-            float f7 = bitmapWidth;
-            float f10 = bitmapHeight;
-            float min = Math.min(photoViewer.k1(photoViewer.u4) / f7, photoViewer.i1() / f10);
-            float min2 = Math.min(photoViewer.k1(1) / f7, photoViewer.h1(1, false) / f10);
-            if (photoViewer.c2 == 1) {
-                float min3 = Math.min(photoViewer.k1(1), photoViewer.h1(1, false));
-                min2 = Math.max(min3 / f7, min3 / f10);
-            }
-            photoViewer.e6 = min2 / min;
-            Rect rect = photoViewer.s2;
-            photoViewer.c6 = (rect.left / 2) - (rect.right / 2);
-            photoViewer.d6 = (-AndroidUtilities.dp(56.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
-            photoViewer.n6 = System.currentTimeMillis();
-            photoViewer.R6 = true;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        photoViewer.p6 = animatorSet;
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.U0, (Property<org.telegram.ui.Components.sf0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(48.0f), 0.0f), ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.q6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.ue0, Float>) View.ALPHA, 0.0f, 1.0f));
-        photoViewer.p6.setDuration(200L);
-        photoViewer.p6.addListener(new er0(this, 2));
-        photoViewer.p6.start();
     }
 }

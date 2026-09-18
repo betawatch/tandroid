@@ -12,7 +12,7 @@ import m.y2;
 import m.z2;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -124,7 +124,7 @@ public abstract class b extends BaseAdapter implements Filterable {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
         if (!this.c.moveToPosition(i10)) {
-            throw new IllegalStateException(k0.i(i10, "couldn't move cursor to position "));
+            throw new IllegalStateException(k0.h(i10, "couldn't move cursor to position "));
         }
         if (view == null) {
             z2 z2Var = (z2) this;

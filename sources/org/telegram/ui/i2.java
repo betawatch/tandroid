@@ -11,20 +11,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class i2 extends View implements org.telegram.ui.Cells.p9, d3 {
-    public final w70 a;
+    public final u70 a;
     public final f4 b;
     public a3 c;
     public final int d;
     public int e;
     public TL_iv.pageBlockRelatedArticles f;
 
-    public i2(Context context, w70 w70Var, f4 f4Var) {
+    public i2(Context context, u70 u70Var, f4 f4Var) {
         super(context);
         this.d = AndroidUtilities.dp(18.0f);
-        this.a = w70Var;
+        this.a = u70Var;
         this.b = f4Var;
     }
 
@@ -70,7 +70,7 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9, d3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.wl.b(this);
+        return org.telegram.messenger.wh.a(this);
     }
 
     @Override // android.view.View

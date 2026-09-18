@@ -27,12 +27,12 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.co0;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
+public final class z extends a0 implements org.telegram.ui.ActionBar.z5, p9, m0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public int E;
     public final int F;
     public final int G;
@@ -51,14 +51,14 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
     public boolean T;
     public final l0 U;
     public final int n;
-    public final org.telegram.ui.ActionBar.f6 r;
+    public final org.telegram.ui.ActionBar.e6 r;
     public final Paint s;
     public final TextPaint v;
     public final RadialProgress2 w;
-    public final co0 x;
+    public final oo0 x;
     public final int y;
 
-    public z(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public z(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.s = new Paint(1);
         this.v = new TextPaint(1);
@@ -68,21 +68,21 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
         int dp2 = AndroidUtilities.dp(44.0f);
         this.G = dp2;
         this.n = i10;
-        this.r = f6Var;
+        this.r = e6Var;
         setWillNotDraw(false);
         this.y = DownloadController.getInstance(i10).generateObserverTag();
-        RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, e6Var);
         this.w = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
         int i11 = this.E;
         radialProgress2.q(i11, dp, i11 + dp2, dp2 + dp);
-        co0 co0Var = new co0(this);
-        this.x = co0Var;
-        co0Var.h = new xa.c(this, 26);
+        oo0 oo0Var = new oo0(this);
+        this.x = oo0Var;
+        oo0Var.h = new xa.c(this, 26);
         setMinimumHeight(AndroidUtilities.dp(66.0f));
-        l0 l0Var = new l0(context, f6Var, new a6.i(this, 26));
+        l0 l0Var = new l0(context, e6Var, new a6.i(this, 25));
         this.U = l0Var;
-        addView(l0Var.a, w7.x5.e(-2, -2, 51));
+        addView(l0Var.a, w7.y5.e(-2, -2, 51));
         e();
     }
 
@@ -149,7 +149,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
         this.U.c(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         this.s.setColor(j6.v0(j6.uf, this.r));
         l0 l0Var = this.U;
@@ -289,7 +289,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a4.a.C(musicAuthor, " - ", musicTitle));
             if (!TextUtils.isEmpty(musicAuthor)) {
-                spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
             }
             float dp2 = AndroidUtilities.dp(16.0f);
             TextPaint textPaint = this.v;
@@ -352,9 +352,9 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
         double d;
         MessageObject messageObject;
         if (!k() && (messageObject = this.P) != null) {
-            co0 co0Var = this.x;
-            if (!co0Var.e) {
-                co0Var.i(messageObject.audioProgress);
+            oo0 oo0Var = this.x;
+            if (!oo0Var.e) {
+                oo0Var.i(messageObject.audioProgress);
             }
         }
         int i10 = 0;
@@ -418,22 +418,22 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
         }
         this.w.draw(canvas);
         int i10 = j6.ud;
-        org.telegram.ui.ActionBar.f6 f6Var = this.r;
-        int v02 = j6.v0(i10, f6Var);
-        int v03 = j6.v0(j6.vd, f6Var);
+        org.telegram.ui.ActionBar.e6 e6Var = this.r;
+        int v02 = j6.v0(i10, e6Var);
+        int v03 = j6.v0(j6.vd, e6Var);
         int i11 = j6.xd;
-        int v04 = j6.v0(i11, f6Var);
-        int v05 = j6.v0(i11, f6Var);
-        int v06 = j6.v0(j6.wd, f6Var);
-        co0 co0Var = this.x;
-        co0Var.h(v02, v03, v04, v05, v06);
+        int v04 = j6.v0(i11, e6Var);
+        int v05 = j6.v0(i11, e6Var);
+        int v06 = j6.v0(j6.wd, e6Var);
+        oo0 oo0Var = this.x;
+        oo0Var.h(v02, v03, v04, v05, v06);
         if (!k()) {
             canvas.save();
             canvas.translate(this.I, this.J);
-            co0Var.b(canvas);
+            oo0Var.b(canvas);
             canvas.restore();
         }
-        int v07 = j6.v0(j6.nd, f6Var);
+        int v07 = j6.v0(j6.nd, e6Var);
         TextPaint textPaint = this.v;
         textPaint.setColor(v07);
         if (this.M != null) {
@@ -443,7 +443,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0,
             canvas.restore();
         }
         if (this.L != null) {
-            textPaint.setColor(j6.v0(j6.G6, f6Var));
+            textPaint.setColor(j6.v0(j6.G6, e6Var));
             canvas.save();
             canvas.translate(AndroidUtilities.dp(54.0f) + this.E, this.J - AndroidUtilities.dp(16.0f));
             this.L.draw(canvas);

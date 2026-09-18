@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class vq {
     public float A;
@@ -23,7 +23,7 @@ public final class vq {
     public final boolean F;
     public boolean G;
     public View H;
-    public final org.telegram.ui.ActionBar.f6 J;
+    public final org.telegram.ui.ActionBar.e6 J;
     public boolean a;
     public Paint d;
     public boolean g;
@@ -53,9 +53,9 @@ public final class vq {
     public final float C = 11.5f;
     public int I = 0;
 
-    public vq(View view, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+    public vq(View view, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
         this.H = view;
-        this.J = f6Var;
+        this.J = e6Var;
         this.F = z10;
         if (z10) {
             Paint paint = new Paint(1);
@@ -73,9 +73,9 @@ public final class vq {
         int i10 = this.I;
         if (i10 != 1 && i10 != 2) {
             int i11 = this.v;
-            org.telegram.ui.ActionBar.f6 f6Var = this.J;
-            int v02 = org.telegram.ui.ActionBar.j6.v0(i11, f6Var);
-            int v03 = org.telegram.ui.ActionBar.j6.v0(this.w, f6Var);
+            org.telegram.ui.ActionBar.e6 e6Var = this.J;
+            int v02 = org.telegram.ui.ActionBar.j6.v0(i11, e6Var);
+            int v03 = org.telegram.ui.ActionBar.j6.v0(this.w, e6Var);
             if (this.u != v02) {
                 this.u = v02;
                 this.e.setColor(v02);
@@ -271,8 +271,8 @@ public final class vq {
             this.l = 0.0f;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.k = ofFloat;
-            ofFloat.addUpdateListener(new i6(this, 14));
-            this.k.addListener(new p8(this, 15));
+            ofFloat.addUpdateListener(new k6(this, 14));
+            this.k.addListener(new r8(this, 15));
             if (this.h <= 0) {
                 this.c = 0;
                 this.k.setDuration(220L);

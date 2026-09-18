@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLObject;
 import v7.r7;
 import v7.s7;
 import v7.t7;
-import w7.i6;
+import w7.j6;
 import zd.e0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a0 implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
@@ -54,20 +54,20 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final Object a(a0 a0Var, j jVar, kd.c cVar) {
+    public static final Object b(a0 a0Var, j jVar, kd.c cVar) {
         q qVar;
         int i10;
         zd.t tVar;
         a0 a0Var2;
-        Object h;
+        Object i11;
         zd.s sVar;
         Throwable a2;
         b0 b0Var;
         if (cVar instanceof q) {
             qVar = (q) cVar;
-            int i11 = qVar.f;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                qVar.f = i11 - TLObject.FLAG_31;
+            int i12 = qVar.f;
+            if ((i12 & TLObject.FLAG_31) != 0) {
+                qVar.f = i12 - TLObject.FLAG_31;
                 Object obj = qVar.d;
                 jd.a aVar = jd.a.a;
                 i10 = qVar.f;
@@ -129,11 +129,11 @@ public final class a0 implements f {
                     id.h hVar = jVar.d;
                     qVar.a = tVar;
                     qVar.f = 1;
-                    h = a0Var.h(r22, hVar, qVar);
-                    if (h == aVar) {
+                    i11 = a0Var.i(r22, hVar, qVar);
+                    if (i11 == aVar) {
                     }
                     zd.t tVar4 = tVar;
-                    obj = h;
+                    obj = i11;
                     sVar = tVar4;
                     a2 = gd.f.a(obj);
                     zd.t tVar3222 = (zd.t) sVar;
@@ -157,9 +157,9 @@ public final class a0 implements f {
                 qVar.b = a0Var;
                 qVar.c = tVar;
                 qVar.f = 2;
-                Object d = a0Var.d(qVar);
+                Object e = a0Var.e(qVar);
                 a0Var2 = a0Var;
-                if (d == aVar) {
+                if (e == aVar) {
                 }
                 return aVar;
                 ?? r23 = jVar.a;
@@ -168,7 +168,7 @@ public final class a0 implements f {
                 qVar.b = null;
                 qVar.c = null;
                 qVar.f = 3;
-                h = a0Var2.h(r23, hVar2, qVar);
+                i11 = a0Var2.i(r23, hVar2, qVar);
             }
         }
         qVar = new q(a0Var, cVar);
@@ -184,11 +184,11 @@ public final class a0 implements f {
         qVar.b = null;
         qVar.c = null;
         qVar.f = 3;
-        h = a0Var2.h(r232, hVar22, qVar);
+        i11 = a0Var2.i(r232, hVar22, qVar);
     }
 
     @Override // k1.f
-    public final Object T(rd.p pVar, kd.c cVar) {
+    public final Object a(rd.p pVar, kd.c cVar) {
         zd.t a2 = e0.a();
         this.n.f(new j(pVar, a2, (b0) this.f.c(), cVar.getContext()));
         Object h = a2.h(cVar);
@@ -196,7 +196,7 @@ public final class a0 implements f {
         return h;
     }
 
-    public final File b() {
+    public final File c() {
         return (File) this.e.a();
     }
 
@@ -211,7 +211,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object c(kd.c cVar) {
+    public final Object d(kd.c cVar) {
         r rVar;
         int i10;
         ie.a a2;
@@ -252,7 +252,7 @@ public final class a0 implements f {
                     rVar.c = pVar;
                     rVar.d = pVar;
                     rVar.r = 1;
-                    obj = g(rVar);
+                    obj = h(rVar);
                     if (obj != aVar3) {
                         a0Var = this;
                         pVar2 = pVar;
@@ -399,7 +399,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object d(kd.c cVar) {
+    public final Object e(kd.c cVar) {
         u uVar;
         int i10;
         a0 a0Var;
@@ -416,7 +416,7 @@ public final class a0 implements f {
                     try {
                         uVar.a = this;
                         uVar.d = 1;
-                        if (c(uVar) == aVar) {
+                        if (d(uVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
@@ -455,7 +455,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object e(kd.c cVar) {
+    public final Object f(kd.c cVar) {
         v vVar;
         int i10;
         a0 a0Var;
@@ -472,7 +472,7 @@ public final class a0 implements f {
                     try {
                         vVar.a = this;
                         vVar.d = 1;
-                        if (c(vVar) == aVar) {
+                        if (d(vVar) == aVar) {
                             return aVar;
                         }
                     } catch (Throwable th2) {
@@ -521,7 +521,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object f(kd.c cVar) {
+    public final Object g(kd.c cVar) {
         ?? r02;
         int i10;
         FileInputStream fileInputStream;
@@ -540,7 +540,7 @@ public final class a0 implements f {
                     if (i10 != 0) {
                         t7.b(obj);
                         try {
-                            FileInputStream fileInputStream2 = new FileInputStream(b());
+                            FileInputStream fileInputStream2 = new FileInputStream(c());
                             try {
                                 n1.g gVar = n1.g.a;
                                 r02.a = this;
@@ -561,7 +561,7 @@ public final class a0 implements f {
                         } catch (FileNotFoundException e) {
                             e = e;
                             r02 = this;
-                            if (r02.b().exists()) {
+                            if (r02.c().exists()) {
                                 throw e;
                             }
                             return new n1.b(z10);
@@ -579,18 +579,18 @@ public final class a0 implements f {
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                i6.a(fileInputStream, th2);
+                                j6.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    i6.a(fileInputStream, null);
+                    j6.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            i6.a(fileInputStream, null);
+            j6.a(fileInputStream, null);
             return obj;
         } catch (FileNotFoundException e7) {
             e = e7;
@@ -602,12 +602,17 @@ public final class a0 implements f {
         boolean z102 = true;
     }
 
+    @Override // k1.f
+    public final ce.b getData() {
+        return this.c;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:40:0x0066  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object g(kd.c cVar) {
+    public final Object h(kd.c cVar) {
         x xVar;
         int i10;
         a0 a0Var;
@@ -643,7 +648,7 @@ public final class a0 implements f {
                             xVar.a = aVar3;
                             xVar.b = obj;
                             xVar.e = 3;
-                            if (a0Var2.i(obj, xVar) != aVar2) {
+                            if (a0Var2.j(obj, xVar) != aVar2) {
                                 return obj;
                             }
                         } catch (IOException e7) {
@@ -670,9 +675,9 @@ public final class a0 implements f {
                 try {
                     xVar.a = this;
                     xVar.e = 1;
-                    Object f7 = f(xVar);
-                    if (f7 != aVar2) {
-                        return f7;
+                    Object g10 = g(xVar);
+                    if (g10 != aVar2) {
+                        return g10;
                     }
                 } catch (a e11) {
                     e = e11;
@@ -695,11 +700,6 @@ public final class a0 implements f {
         return aVar22;
     }
 
-    @Override // k1.f
-    public final ce.b getData() {
-        return this.c;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:13:0x00a7  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x007f  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x0089  */
@@ -710,7 +710,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object h(rd.p pVar, id.h hVar, kd.c cVar) {
+    public final Object i(rd.p pVar, id.h hVar, kd.c cVar) {
         y yVar;
         int i10;
         b bVar;
@@ -775,7 +775,7 @@ public final class a0 implements f {
                 yVar.b = obj4;
                 yVar.c = null;
                 yVar.f = 2;
-                if (a0Var.i(obj4, yVar) != aVar) {
+                if (a0Var.j(obj4, yVar) != aVar) {
                     obj3 = obj4;
                     a0Var2 = a0Var;
                     a0Var2.f.d(new b(obj3, obj3 != null ? obj3.hashCode() : 0));
@@ -814,7 +814,7 @@ public final class a0 implements f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object i(Object obj, kd.c cVar) {
+    public final Object j(Object obj, kd.c cVar) {
         z zVar;
         ?? r32;
         FileOutputStream fileOutputStream;
@@ -832,15 +832,15 @@ public final class a0 implements f {
                     gd.i iVar = gd.i.a;
                     if (r32 != 0) {
                         t7.b(obj2);
-                        File b10 = b();
-                        File parentFile = b10.getCanonicalFile().getParentFile();
+                        File c10 = c();
+                        File parentFile = c10.getCanonicalFile().getParentFile();
                         if (parentFile != null) {
                             parentFile.mkdirs();
                             if (!parentFile.isDirectory()) {
-                                throw new IOException(kotlin.jvm.internal.i.g(b10, "Unable to create parent directories of "));
+                                throw new IOException(kotlin.jvm.internal.i.g(c10, "Unable to create parent directories of "));
                             }
                         }
-                        r32 = new File(kotlin.jvm.internal.i.g(this.d, b().getAbsolutePath()));
+                        r32 = new File(kotlin.jvm.internal.i.g(this.d, c().getAbsolutePath()));
                         FileOutputStream fileOutputStream3 = new FileOutputStream((File) r32);
                         try {
                             n1.g gVar = n1.g.a;
@@ -879,14 +879,14 @@ public final class a0 implements f {
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                i6.a(fileOutputStream, th);
+                                j6.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    i6.a(fileOutputStream, null);
-                    if (!r32.renameTo(a0Var.b())) {
+                    j6.a(fileOutputStream, null);
+                    if (!r32.renameTo(a0Var.c())) {
                         return iVar;
                     }
                     throw new IOException("Unable to rename " + r32 + ".This likely means that there are multiple instances of DataStore for this file. Ensure that you are only creating a single instance of datastore for this file.");
@@ -895,8 +895,8 @@ public final class a0 implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            i6.a(fileOutputStream, null);
-            if (!r32.renameTo(a0Var.b())) {
+            j6.a(fileOutputStream, null);
+            if (!r32.renameTo(a0Var.c())) {
             }
         } catch (IOException e) {
             if (r32.exists()) {

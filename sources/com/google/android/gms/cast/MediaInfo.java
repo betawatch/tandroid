@@ -25,9 +25,9 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
 import v7.o5;
-import w7.e0;
+import w7.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -319,34 +319,34 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.H;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q6 = e0.q(parcel, 20293);
+        int q6 = f0.q(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        e0.l(parcel, 2, str);
-        e0.s(parcel, 3, 4);
+        f0.l(parcel, 2, str);
+        f0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        e0.l(parcel, 4, this.c);
-        e0.k(parcel, 5, this.d, i10);
-        e0.s(parcel, 6, 8);
+        f0.l(parcel, 4, this.c);
+        f0.k(parcel, 5, this.d, i10);
+        f0.s(parcel, 6, 8);
         parcel.writeLong(this.e);
-        e0.p(parcel, 7, this.f);
-        e0.k(parcel, 8, this.h, i10);
-        e0.l(parcel, 9, this.n);
+        f0.p(parcel, 7, this.f);
+        f0.k(parcel, 8, this.h, i10);
+        f0.l(parcel, 9, this.n);
         List list = this.r;
-        e0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        f0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        e0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        e0.l(parcel, 12, this.v);
-        e0.k(parcel, 13, this.w, i10);
-        e0.s(parcel, 14, 8);
+        f0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        f0.l(parcel, 12, this.v);
+        f0.k(parcel, 13, this.w, i10);
+        f0.s(parcel, 14, 8);
         parcel.writeLong(this.x);
-        e0.l(parcel, 15, this.y);
-        e0.l(parcel, 16, this.E);
-        e0.l(parcel, 17, this.F);
-        e0.l(parcel, 18, this.G);
-        e0.r(parcel, q6);
+        f0.l(parcel, 15, this.y);
+        f0.l(parcel, 16, this.E);
+        f0.l(parcel, 17, this.F);
+        f0.l(parcel, 18, this.G);
+        f0.r(parcel, q6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:105:0x02a5  */

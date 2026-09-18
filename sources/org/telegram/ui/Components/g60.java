@@ -1,34 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class g60 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.g3[] a;
-    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
-
-    public g60(org.telegram.ui.ActionBar.g3[] g3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
-        this.a = g3VarArr;
-        this.b = tL_chatInviteImporter;
+public abstract class g60 extends qo0 {
+    @Override // org.telegram.ui.Components.qo0
+    public final boolean a() {
+        return j() > 0;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-        if (U != null) {
-            U.presentFragment(ProfileActivity.m4(this.b.user_id));
+    @Override // org.telegram.ui.Components.qo0
+    public final boolean b() {
+        return j() < i();
+    }
+
+    @Override // org.telegram.ui.Components.qo0
+    public final void c(boolean z10) {
+        int h = h();
+        if (z10) {
+            h *= -1;
         }
+        k(Math.min(i(), Math.max(0, j() + h)));
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    public int h() {
+        return 1;
     }
+
+    public abstract int i();
+
+    public abstract int j();
+
+    public abstract void k(int i10);
 }

@@ -1,48 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.content.Context;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class nt0 extends org.telegram.ui.Components.u00 {
-    public final /* synthetic */ vs0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class nt0 extends OrientationEventListener {
+    public final /* synthetic */ PhotoViewer a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt0(PhotoViewer photoViewer, vs0 vs0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = vs0Var;
+    public nt0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.do0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.m3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.n3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
-    }
-
-    @Override // org.telegram.ui.Components.u00
-    public final float k() {
-        return this.f.q3.c();
-    }
-
-    @Override // org.telegram.ui.Components.u00
-    public final void l(float f7) {
-        this.e.b(f7);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.q3.h(f7, false);
-        photoViewer.r3.invalidate();
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        st0 st0Var;
+        Activity activity;
+        int i11;
+        PhotoViewer photoViewer = this.a;
+        if (photoViewer.W3 == null || (st0Var = photoViewer.y2) == null || st0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
+            return;
+        }
+        if (i11 != 1) {
+            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
+                photoViewer.Z3 = true;
+                return;
+            }
+            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
+                return;
+            }
+            activity.setRequestedOrientation(photoViewer.X3);
+            photoViewer.Y3 = 0;
+            photoViewer.Z3 = false;
+            return;
+        }
+        if (i10 >= 240 && i10 <= 300) {
+            photoViewer.Z3 = true;
+            return;
+        }
+        if (!photoViewer.Z3 || i10 <= 0) {
+            return;
+        }
+        if (i10 >= 330 || i10 <= 30) {
+            activity.setRequestedOrientation(photoViewer.X3);
+            photoViewer.Y3 = 0;
+            photoViewer.Z3 = false;
+        }
     }
 }

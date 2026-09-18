@@ -1,47 +1,108 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
+import android.app.Activity;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eh implements MessagesStorage.IntCallback {
+public final /* synthetic */ class eh implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ eh(bo boVar, int i10) {
+    public /* synthetic */ eh(Object obj, long j3, long j10, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.d = obj;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0089 A[LOOP:1: B:19:0x0085->B:21:0x0089, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00bd  */
+    @Override // org.telegram.messenger.Utilities.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        SpannableStringBuilder spannableStringBuilder;
+        int size;
+        int i10;
+        int i11 = this.a;
+        Object obj2 = this.d;
+        switch (i11) {
             case 0:
-                bo boVar = this.b;
-                if (boVar.getParentActivity() != null && boVar.fragmentView != null && i10 > 0) {
-                    org.telegram.ui.Components.vc.a0(boVar).m(org.telegram.ui.Components.uc.r, i10, 0, 0, boVar.ea).j();
+                zn.r1((zn) obj2, this.b, this.c, (Long) obj);
+                break;
+            case 1:
+                mj mjVar = (mj) obj2;
+                Long l4 = (Long) obj;
+                zn znVar = mjVar.b;
+                if (znVar.getParentActivity() != null) {
+                    Activity parentActivity = znVar.getParentActivity();
+                    String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
+                    int i12 = ChatObject.isMonoForum(znVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
+                    long j3 = this.b;
+                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i12, DialogObject.getShortName(j3)));
+                    String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
+                    String string2 = LocaleController.getString(R.string.Confirm);
+                    lh lhVar = new lh(mjVar, j3, this.c, l4, 1);
+                    e6Var = ((org.telegram.ui.ActionBar.n2) znVar).resourceProvider;
+                    org.telegram.ui.Components.e5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, lhVar, e6Var, true);
                     break;
                 }
                 break;
-            case 1:
-                bo boVar2 = this.b;
-                if (i10 != 0) {
-                    boVar2.F(i10, 0, 0, 0, false, true);
-                    break;
-                } else {
-                    boVar2.m6 = false;
-                    boVar2.H9();
-                    break;
-                }
             default:
-                bo boVar3 = this.b;
-                if (i10 != 0) {
-                    boVar3.finishFragment();
-                    break;
-                } else {
-                    boVar3.Qc(true);
-                    break;
+                yh.y2 y2Var = (yh.y2) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                org.telegram.ui.Components.y5 y5Var = y2Var.E;
+                if (this.b == this.c) {
+                    y2Var.d0 = arrayList;
+                    y5Var.animate().alpha(y2Var.s ? 0.0f : y2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.qr.h).setDuration(420L).start();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                        if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
+                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i13));
+                            if (arrayList2.size() >= 3) {
+                                spannableStringBuilder = new SpannableStringBuilder();
+                                size = arrayList2.size();
+                                i10 = 0;
+                                while (i10 < size) {
+                                    Object obj3 = arrayList2.get(i10);
+                                    i10++;
+                                    spannableStringBuilder.append((CharSequence) "x");
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(((TL_stars.starGiftAttributeModel) obj3).document, y5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                if (spannableStringBuilder.length() > 0) {
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+                                y5Var.setText(spannableStringBuilder);
+                                break;
+                            }
+                        }
+                    }
+                    spannableStringBuilder = new SpannableStringBuilder();
+                    size = arrayList2.size();
+                    i10 = 0;
+                    while (i10 < size) {
+                    }
+                    if (spannableStringBuilder.length() > 0) {
+                    }
+                    spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+                    y5Var.setText(spannableStringBuilder);
                 }
+                break;
         }
     }
 }

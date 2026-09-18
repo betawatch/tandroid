@@ -1,89 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.dg1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class he extends Property {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final /* synthetic */ class he implements org.telegram.ui.rj0, org.telegram.ui.oy {
+    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public he(ChatActivityEnterView chatActivityEnterView, int i10) {
-        super(Float.class, "emoji_button_scale");
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_scale");
-                break;
-            case 2:
-                this.b = chatActivityEnterView;
-                super(Float.class, "emoji_button_alpha");
-                break;
-            case 3:
-                this.b = chatActivityEnterView;
-                super(Float.class, "attach_layout_translation_x");
-                break;
-            case 4:
-                this.b = chatActivityEnterView;
-                super(Float.class, "message_text_translation_x");
-                break;
-            default:
-                this.b = chatActivityEnterView;
-                break;
-        }
+    public /* synthetic */ he(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
+        this.a = chatActivityEnterView;
+        this.b = messageObject;
+        this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.a) {
-            case 0:
-                return Float.valueOf(this.b.h);
-            case 1:
-                return Float.valueOf(this.b.E);
-            case 2:
-                return Float.valueOf(this.b.n);
-            case 3:
-                return Float.valueOf(this.b.x);
-            default:
-                return Float.valueOf(this.b.G);
-        }
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean A() {
+        return false;
     }
 
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.h = floatValue;
-                chatActivityEnterView.F1();
-                break;
-            case 1:
-                float floatValue2 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.E = floatValue2;
-                chatActivityEnterView2.A1();
-                break;
-            case 2:
-                float floatValue3 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                chatActivityEnterView3.n = floatValue3;
-                chatActivityEnterView3.F1();
-                break;
-            case 3:
-                float floatValue4 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView4 = this.b;
-                chatActivityEnterView4.x = floatValue4;
-                chatActivityEnterView4.A1();
-                break;
-            default:
-                float floatValue5 = ((Float) obj2).floatValue();
-                ChatActivityEnterView chatActivityEnterView5 = this.b;
-                chatActivityEnterView5.G = floatValue5;
-                chatActivityEnterView5.J1();
-                break;
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(org.telegram.ui.uy uyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.rj0
+    public void a(ArrayList arrayList) {
+        int i10 = ChatActivityEnterView.m5;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView.Q);
+        MessageObject messageObject = this.b;
+        tL_messages_sendBotRequestedPeer.peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
+        tL_messages_sendBotRequestedPeer.flags |= 1;
+        tL_messages_sendBotRequestedPeer.msg_id = messageObject.getId();
+        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(chatActivityEnterView.Q).getInputPeer(((Long) obj).longValue()));
+        }
+        ConnectionsManager.getInstance(chatActivityEnterView.Q).sendRequest(tL_messages_sendBotRequestedPeer, null);
+    }
+
+    @Override // org.telegram.ui.oy
+    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, dg1 dg1Var) {
+        int i12 = ChatActivityEnterView.m5;
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView.Q);
+            MessageObject messageObject = this.b;
+            tL_messages_sendBotRequestedPeer.peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
+            tL_messages_sendBotRequestedPeer.flags |= 1;
+            tL_messages_sendBotRequestedPeer.msg_id = messageObject.getId();
+            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            int i13 = 0;
+            while (i13 < size) {
+                Object obj = arrayList.get(i13);
+                i13++;
+                hashSet.add(Long.valueOf(((MessagesStorage.TopicKey) obj).dialogId));
+            }
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(chatActivityEnterView.Q).getInputPeer(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(chatActivityEnterView.Q).sendRequest(tL_messages_sendBotRequestedPeer, null);
+        }
+        uyVar.finishFragment();
+        return true;
     }
 }

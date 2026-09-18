@@ -20,16 +20,15 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.p6;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import v7.r6;
-import w7.c9;
+import w7.d9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -503,10 +502,10 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02d1  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02b1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1117,7 +1116,7 @@ public final class e implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(p6.i("Malformed time expression: ", str));
+            throw new z3.f(t8.b.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1212,8 +1211,8 @@ public final class e implements m {
     }
 
     @Override // z3.m
-    public final void B(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        c9.b(r(i10, i11, bArr), lVar, hVar);
+    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        d9.b(r(i10, i11, bArr), lVar, hVar);
     }
 
     @Override // z3.m

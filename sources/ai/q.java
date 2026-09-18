@@ -8,29 +8,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.nx;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.lx;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class q extends ml0 {
+public final class q extends wl0 {
     public final /* synthetic */ int X2;
-    public final /* synthetic */ nx Y2;
+    public final /* synthetic */ lx Y2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q(nx nxVar, Context context, int i10) {
+    public /* synthetic */ q(lx lxVar, Context context, int i10) {
         super(context, null);
         this.X2 = i10;
-        this.Y2 = nxVar;
+        this.Y2 = lxVar;
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         switch (this.X2) {
             case 1:
-                nx nxVar = this.Y2;
-                ArrayList arrayList = nxVar.P;
+                lx lxVar = this.Y2;
+                ArrayList arrayList = lxVar.P;
                 arrayList.clear();
                 int i10 = 0;
                 for (int i11 = 0; i11 < getChildCount(); i11++) {
@@ -40,13 +40,13 @@ public final class q extends ml0 {
                     boolean z10 = true;
                     a0Var.a = true;
                     a0Var.d = S == 0;
-                    if (S != nxVar.y.size() - 1) {
+                    if (S != lxVar.y.size() - 1) {
                         z10 = false;
                     }
                     a0Var.c = z10;
                     arrayList.add(a0Var);
                 }
-                Collections.sort(arrayList, nxVar.w0);
+                Collections.sort(arrayList, lxVar.w0);
                 while (i10 < arrayList.size()) {
                     a0 a0Var2 = (a0) arrayList.get(i10);
                     int save = canvas.save();
@@ -70,13 +70,13 @@ public final class q extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 0:
                 if (motionEvent.getAction() == 0) {
-                    nx nxVar = this.Y2;
-                    if (nxVar.c0 > 0.2f || nxVar.getAlpha() == 0.0f) {
+                    lx lxVar = this.Y2;
+                    if (lxVar.c0 > 0.2f || lxVar.getAlpha() == 0.0f) {
                         return false;
                     }
                 }
@@ -86,7 +86,7 @@ public final class q extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.X2) {
             case 0:
@@ -111,7 +111,7 @@ public final class q extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 1:
@@ -121,7 +121,7 @@ public final class q extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.X2) {
             case 0:
@@ -138,7 +138,7 @@ public final class q extends ml0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.wl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.X2) {
             case 1:

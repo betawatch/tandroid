@@ -1,38 +1,49 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k41 implements ValueAnimator.AnimatorUpdateListener {
+public final class k41 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n41 b;
+    public final /* synthetic */ l41 b;
 
-    public /* synthetic */ k41(n41 n41Var, int i10) {
+    public /* synthetic */ k41(l41 l41Var, int i10) {
         this.a = i10;
-        this.b = n41Var;
+        this.b = l41Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                n41 n41Var = this.b;
-                n41Var.getClass();
-                n41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n41Var.g();
-                break;
-            case 1:
-                n41 n41Var2 = this.b;
-                n41Var2.getClass();
-                n41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n41Var2.g();
+                l41 l41Var = this.b;
+                if (l41Var.h != null) {
+                    l41Var.h = null;
+                    l41Var.e = 0.0f;
+                    l41Var.g();
+                    l41Var.n.unlock();
+                    vx vxVar = l41Var.a;
+                    if (vxVar != null) {
+                        vxVar.onPause();
+                        l41Var.a.onFragmentDestroy();
+                        l41Var.removeAllViews();
+                        l41Var.a = null;
+                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
+                    }
+                    l41Var.d(false);
+                    break;
+                }
                 break;
             default:
-                n41 n41Var3 = this.b;
-                n41Var3.getClass();
-                n41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n41Var3.g();
+                l41 l41Var2 = this.b;
+                if (l41Var2.h != null) {
+                    l41Var2.h = null;
+                    l41Var2.d(true);
+                    break;
+                }
                 break;
         }
     }

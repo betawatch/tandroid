@@ -15,12 +15,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Cells.p6;
 import org.telegram.ui.Components.nr;
-import org.telegram.ui.Components.w81;
-import org.telegram.ui.k60;
+import org.telegram.ui.Components.r81;
+import org.telegram.ui.i60;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class p extends s2 {
     public float g0;
@@ -32,13 +31,13 @@ public final class p extends s2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ k60 p0;
+    public final /* synthetic */ i60 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ u s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(u uVar, Context context, ChatObject.Call call, m0 m0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, k60 k60Var, String str2, float f10) {
+    public p(u uVar, Context context, ChatObject.Call call, m0 m0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, i60 i60Var, String str2, float f10) {
         super(context, false, false, true, true);
         this.s0 = uVar;
         this.h0 = call;
@@ -49,7 +48,7 @@ public final class p extends s2 {
         this.m0 = str;
         this.n0 = f7;
         this.o0 = staticLayout2;
-        this.p0 = k60Var;
+        this.p0 = i60Var;
         this.q0 = str2;
         this.r0 = f10;
     }
@@ -89,7 +88,7 @@ public final class p extends s2 {
         ImageView imageView = uVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (uVar.x0.getAlpha() == 1.0f) {
-                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new w81(this, 3)).start();
+                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new r81(this, 4)).start();
             } else if (uVar.x0.getParent() != null) {
                 pVar.removeView(uVar.x0);
             }
@@ -113,7 +112,7 @@ public final class p extends s2 {
         float f7;
         nr nrVar;
         float f10;
-        int a2;
+        int d;
         float f11;
         int i10;
         float f12;
@@ -184,12 +183,12 @@ public final class p extends s2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (uVar.r || uVar.b) {
                     f10 = 10.0f;
-                    a2 = (int) p6.a(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    d = (int) t8.b.d(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
-                    a2 = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
+                    d = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);
                 }
-                int measuredWidth = (getMeasuredWidth() - a2) / 2;
+                int measuredWidth = (getMeasuredWidth() - d) / 2;
                 boolean z10 = uVar.h;
                 float f19 = (z10 || uVar.f) ? m0Var.n : 0.0f;
                 float f20 = f18;
@@ -200,10 +199,10 @@ public final class p extends s2 {
                     f20 = (z10 || uVar.f) ? m0Var.n : m0Var.c;
                 }
                 float f21 = f11;
-                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - a2) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
+                int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - d) / 2) - AndroidUtilities.dp(28.0f)) - (((((uVar.b || uVar.r) ? m0Var.c : 0.0f) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
                 nrVar = nrVar2;
-                int i11 = dp3 + a2;
-                drawable.setBounds(measuredWidth, dp3, measuredWidth + a2, i11);
+                int i11 = dp3 + d;
+                drawable.setBounds(measuredWidth, dp3, measuredWidth + d, i11);
                 drawable.draw(canvas);
                 float f22 = m0Var.c;
                 if (f22 > f7 || f19 > f7) {
@@ -216,7 +215,7 @@ public final class p extends s2 {
                         rVar.setAlpha(0.0f);
                     }
                     i10 = i11;
-                    canvas.drawText(this.m0, (a2 / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
+                    canvas.drawText(this.m0, (d / 2.0f) + (measuredWidth - (this.n0 / 2.0f)), AndroidUtilities.dp(32.0f) + i11, textPaint2);
                 } else {
                     rVar.setAlpha(0.0f);
                     i10 = i11;
@@ -226,7 +225,7 @@ public final class p extends s2 {
                 if (m0Var.c < 1.0f && f19 < 1.0f) {
                     textPaint.setAlpha((int) ((1.0d - Math.max(r3, f19)) * 255.0d));
                     canvas.save();
-                    canvas.translate((a2 / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
+                    canvas.translate((d / 2.0f) + (measuredWidth - (AndroidUtilities.dp(400.0f) / 2.0f)), AndroidUtilities.dp(f10) + i10);
                     this.o0.draw(canvas);
                     canvas.restore();
                 }
@@ -290,7 +289,7 @@ public final class p extends s2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - AndroidUtilities.dp(80.0f);
         if (uVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
-            if ((uVar.b || uVar.r) && !k60.F3 && !k60.G3) {
+            if ((uVar.b || uVar.r) && !i60.F3 && !i60.G3) {
                 measuredHeight = com.google.android.gms.internal.vision.e2.b(1.0f, m0Var.W, AndroidUtilities.dp(90.0f) * m0Var.c, measuredHeight);
             }
             f12 = 0.0f;

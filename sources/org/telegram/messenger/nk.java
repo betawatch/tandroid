@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.i71;
+import org.telegram.ui.g71;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nk implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -56,13 +56,13 @@ public final /* synthetic */ class nk implements Utilities.Callback {
                     break;
                 }
             default:
-                i71 i71Var = (i71) this.c;
+                g71 g71Var = (g71) this.c;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
                 String str2 = (String) this.f;
                 HashMap hashMap = (HashMap) this.g;
                 ArrayList arrayList3 = (ArrayList) this.d;
                 Runnable runnable = (Runnable) obj;
-                int i10 = i71Var.V;
+                int i10 = g71Var.V;
                 if (this.b) {
                     ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
                     for (int i11 = 0; i11 < stickerSets.size(); i11++) {
@@ -91,7 +91,7 @@ public final /* synthetic */ class nk implements Utilities.Callback {
                     runnable.run();
                     break;
                 } else {
-                    MediaDataController.getInstance(i10).getEmojiSuggestions(i71.a2, str2, false, new ai.h6(i71Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, i71Var.W == 3, false, 30);
+                    MediaDataController.getInstance(i10).getEmojiSuggestions(g71.a2, str2, false, new ai.h6(g71Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, g71Var.W == 3, false, 30);
                     break;
                 }
                 break;
@@ -107,8 +107,8 @@ public final /* synthetic */ class nk implements Utilities.Callback {
         this.g = str;
     }
 
-    public /* synthetic */ nk(i71 i71Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.c = i71Var;
+    public /* synthetic */ nk(g71 g71Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.c = g71Var;
         this.b = z10;
         this.e = linkedHashSet;
         this.f = str;

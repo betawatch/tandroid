@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -399,9 +399,9 @@ public final class TelegramQRCodeWriter {
                                     int i33 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                                     for (int i34 = 3; i31 < i34; i34 = 3) {
                                         aa.a aVar5 = aVarArr[i31];
-                                        int q6 = aVar5.q((hc.f) aVar5.c);
-                                        if (jc.c.c(q6, fVarArr[i31], cVar3) && q6 < i33) {
-                                            i33 = q6;
+                                        int p5 = aVar5.p((hc.f) aVar5.c);
+                                        if (jc.c.c(p5, fVarArr[i31], cVar3) && p5 < i33) {
+                                            i33 = p5;
                                             i32 = i31;
                                         }
                                         i31++;
@@ -567,7 +567,7 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i72 >= arrayList4.size()) {
-                                            fc.b bVar7 = (fc.b) hg.k0.h(1, arrayList4);
+                                            fc.b bVar7 = (fc.b) hg.k0.g(1, arrayList4);
                                             int size2 = arrayList4.size();
                                             fc.b bVar8 = bVar7;
                                             while (size2 <= i72) {
@@ -687,10 +687,10 @@ public final class TelegramQRCodeWriter {
                                         }
                                     }
                                     if (i85 != aVar10.e()) {
-                                        StringBuilder l4 = hg.k0.l(i85, "Interleaving error: ", " and ");
-                                        l4.append(aVar10.e());
-                                        l4.append(" differ.");
-                                        throw new cc.k(l4.toString());
+                                        StringBuilder j3 = hg.k0.j(i85, "Interleaving error: ", " and ");
+                                        j3.append(aVar10.e());
+                                        j3.append(" differ.");
+                                        throw new cc.k(j3.toString());
                                     }
                                     int i90 = (fVar5.a * 4) + 17;
                                     jc.b bVar12 = new jc.b(i90, i90);

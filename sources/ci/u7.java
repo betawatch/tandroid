@@ -4,9 +4,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.bo;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class u7 extends v7 {
     public final /* synthetic */ TLRPC.Chat b;
@@ -28,15 +28,15 @@ public final class u7 extends v7 {
     }
 
     @Override // ci.v7
-    public final void c(org.telegram.ui.ActionBar.o2 o2Var) {
-        o2Var.presentFragment(bo.R9(-this.b.id));
+    public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
+        n2Var.presentFragment(zn.R9(-this.b.id));
     }
 
     @Override // ci.v7
     public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.f9 f9Var = new org.telegram.ui.Components.f9((org.telegram.ui.ActionBar.f6) null);
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.e6) null);
         TLRPC.Chat chat = this.b;
-        f9Var.q(chat);
-        imageReceiver.setForUserOrChat(chat, f9Var);
+        h9Var.q(chat);
+        imageReceiver.setForUserOrChat(chat, h9Var);
     }
 }

@@ -1,6 +1,85 @@
 package w7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.GestureDetector;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class y {
+    public static mg.i a;
+
+    public static void a(LaunchActivity launchActivity, boolean z10, boolean z11) {
+        mg.i iVar = a;
+        if (z10 == (iVar != null)) {
+            return;
+        }
+        if (z10) {
+            mg.i iVar2 = new mg.i(launchActivity);
+            iVar2.r = new mg.c(iVar2, 3);
+            iVar2.E = new ArrayList();
+            mg.f fVar = new mg.f(iVar2);
+            iVar2.e = launchActivity.getSharedPreferences("floating_debug", 0);
+            iVar2.F = ViewConfiguration.get(launchActivity).getScaledTouchSlop();
+            n2.e eVar = new n2.e(launchActivity, fVar);
+            ((GestureDetector) eVar.b).setIsLongpressEnabled(false);
+            ci.n6 n6Var = new ci.n6(iVar2, launchActivity, eVar, 2);
+            iVar2.a = n6Var;
+            ImageView imageView = new ImageView(launchActivity);
+            imageView.setImageResource(R.drawable.device_phone_android);
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.O9, false), PorterDuff.Mode.SRC_IN));
+            n6Var.addView(imageView);
+            n6Var.setVisibility(8);
+            iVar2.addView(n6Var, y5.c(56.0f, 56));
+            LinearLayout linearLayout = new LinearLayout(launchActivity);
+            iVar2.w = linearLayout;
+            linearLayout.setOrientation(1);
+            linearLayout.setVisibility(8);
+            TextView textView = new TextView(launchActivity);
+            iVar2.x = textView;
+            textView.setTextSize(1, 20.0f);
+            textView.setText(LocaleController.getString(R.string.DebugMenu));
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(19.0f));
+            linearLayout.addView(textView, y5.n(-1, -2));
+            wl0 wl0Var = new wl0(launchActivity, null);
+            iVar2.y = wl0Var;
+            wl0Var.setLayoutManager(new s4.c0());
+            wl0Var.setAdapter(new mg.g(iVar2, launchActivity));
+            wl0Var.setOnItemClickListener(new ai.g(iVar2, 13));
+            linearLayout.addView(wl0Var, y5.l(1.0f, -1, 0));
+            iVar2.addView(linearLayout, y5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
+            iVar2.d();
+            iVar2.setFitsSystemWindows(true);
+            iVar2.setWillNotDraw(false);
+            a = iVar2;
+            launchActivity.w0.addView(iVar2, new FrameLayout.LayoutParams(-1, -1));
+            mg.i iVar3 = a;
+            iVar3.a.setVisibility(0);
+            o1.k kVar = new o1.k(new o1.j(0.0f));
+            kVar.u = org.telegram.ui.Cells.c1.j(1000.0f, 750.0f, 0.75f);
+            kVar.b(new ai.qa(2, iVar3));
+            kVar.f();
+        } else {
+            iVar.getClass();
+            launchActivity.w0.removeView(a);
+            a = null;
+        }
+        if (z11) {
+            SharedConfig.isFloatingDebugActive = z10;
+            SharedConfig.saveConfig();
+        }
+    }
 }

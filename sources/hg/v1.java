@@ -11,60 +11,60 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.f9;
+import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.np;
-import w7.x5;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout {
-    public final f9 a;
+    public final h9 a;
     public final ImageReceiver b;
     public final TextView c;
     public final TextView d;
     public final np e;
     public final Path f;
     public final Paint h;
-    public final f6 n;
+    public final e6 n;
     public final int[] r;
     public boolean s;
 
-    public v1(Context context, f6 f6Var) {
+    public v1(Context context, e6 e6Var) {
         super(context);
-        this.a = new f9((f6) null);
+        this.a = new h9((e6) null);
         this.b = new ImageReceiver(this);
         this.f = new Path();
         this.h = new Paint(1);
         this.r = new int[1];
-        this.n = f6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine();
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        textView.setTextColor(j6.v0(j6.G6, f6Var));
+        textView.setTextColor(j6.v0(j6.G6, e6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.d(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f));
+        addView(textView, y5.d(-1, -2.0f, 7, z10 ? 40.0f : 78.0f, 10.33f, z10 ? 78.0f : 40.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setLines(2);
         textView2.setEllipsize(truncateAt);
-        wl.n(j6.z6, f6Var, textView2, 1, 15.0f);
+        wh.m(j6.z6, e6Var, textView2, 1, 15.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, x5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
-        np npVar = new np(getContext(), 21, f6Var);
+        addView(textView2, y5.d(-1, -2.0f, 7, z11 ? 40.0f : 78.0f, 32.0f, z11 ? 78.0f : 40.0f, 0.0f));
+        np npVar = new np(getContext(), 21, e6Var);
         this.e = npVar;
         npVar.b(-1, j6.d6, j6.k7);
         npVar.setDrawUnchecked(false);
         npVar.setDrawBackgroundAsArc(3);
-        addView(npVar, x5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
+        addView(npVar, y5.i(24.0f, 24.0f, 8388659, 33.0f, 25.0f, 0.0f, 0.0f));
     }
 
     @Override // android.view.View

@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final /* synthetic */ class z6 implements RequestDelegate {
                 ((TopicsController) this.b).lambda$getTopicRepliesCount$30((TLRPC.TL_forumTopic) this.e, this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                yh.a4 a4Var = (yh.a4) this.b;
-                yh.a4.J0(this.c, this.d, (Utilities.Callback) this.e, tLObject, tL_error, a4Var);
+                yh.y3 y3Var = (yh.y3) this.b;
+                yh.y3.J0(this.c, this.d, (Utilities.Callback) this.e, tLObject, tL_error, y3Var);
                 break;
         }
     }

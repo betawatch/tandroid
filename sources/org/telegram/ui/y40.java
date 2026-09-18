@@ -1,27 +1,44 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class y40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.voip.u a;
-    public final /* synthetic */ k60 b;
+public final class y40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ChatObject.VideoParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ i60 c;
 
-    public y40(k60 k60Var, org.telegram.ui.Components.voip.u uVar) {
-        this.b = k60Var;
-        this.a = uVar;
+    public y40(i60 i60Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
+        this.c = i60Var;
+        this.a = videoParticipant;
+        this.b = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         ViewGroup viewGroup;
-        org.telegram.ui.Components.voip.u uVar = this.a;
-        if (uVar.getParent() != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.g3) this.b).containerView;
-            viewGroup.removeView(uVar);
+        i60 i60Var = this.c;
+        o50 o50Var = i60Var.Q;
+        o50Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        i60Var.q2 = null;
+        a40 a40Var = i60Var.a2;
+        ChatObject.VideoParticipant videoParticipant = this.a;
+        a40Var.j(videoParticipant);
+        if (i60Var.s0) {
+            i60Var.s0 = false;
+            i60Var.O0(true);
+            if (this.b && videoParticipant != null) {
+                o50Var.v0(0);
+            }
+            i60Var.s0 = true;
+        } else {
+            i60Var.O0(true);
         }
+        viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

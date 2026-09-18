@@ -1,46 +1,32 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class w21 implements v9 {
+public final /* synthetic */ class w21 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
+    public final /* synthetic */ y21 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public w21(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = i10;
-        this.b = o2Var;
+    public /* synthetic */ w21(y21 y21Var, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = y21Var;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ String J0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final void K(String str) {
-        String b10 = nf.f.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sh(27));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b(this.c, this.d);
+                break;
+            case 1:
+                this.b.b(this.c, this.d);
+                break;
+            default:
+                this.b.b(this.c, this.d);
+                break;
         }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new zb(this.b, 4));
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ boolean e1(String str, n9 n9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void onDismiss() {
     }
 }

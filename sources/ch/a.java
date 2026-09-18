@@ -8,12 +8,12 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.c70;
-import yf.e0;
+import org.telegram.ui.a70;
+import yf.f0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements gh.f, c70 {
+public final /* synthetic */ class a implements gh.f, a70 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -49,7 +49,7 @@ public final /* synthetic */ class a implements gh.f, c70 {
         }
         if (this.b) {
             float[] copyOf = Arrays.copyOf(cVar.b, 8);
-            boolean c10 = e0.c(copyOf);
+            boolean c10 = f0.c(copyOf);
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             Paint paint3 = new Paint(1);
             if (Color.alpha(dVar.f) <= 0 || copyOf[0] <= 0.0f) {
@@ -103,7 +103,7 @@ public final /* synthetic */ class a implements gh.f, c70 {
         }
     }
 
-    @Override // org.telegram.ui.c70
+    @Override // org.telegram.ui.a70
     public void b(ArrayList arrayList, boolean z10, boolean z11) {
         PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) this.c;
         boolean[] zArr = privacyControlActivity.E;

@@ -10,12 +10,12 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.n20;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -30,14 +30,14 @@ public final class j extends FrameLayout {
         this.e = mVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new c6(this, 220L, qr.h);
+        this.d = new e6(this, 220L, qr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                n20 n20Var = (n20) this.d;
+                l20 l20Var = (l20) this.d;
                 Path path = (Path) this.c;
                 vi viVar = (vi) this.e;
                 ch.d dVar = viVar.B0;
@@ -58,9 +58,9 @@ public final class j extends FrameLayout {
                 canvas.saveLayerAlpha(rectF, 255, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
-                n20Var.b(canvas, rectF, 1, 1.0f);
+                l20Var.b(canvas, rectF, 1, 1.0f);
                 rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
-                n20Var.b(canvas, rectF, 3, 1.0f);
+                l20Var.b(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -75,9 +75,9 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 0:
                 float width = getWidth() / 2.0f;
-                c6 c6Var = (c6) this.d;
+                e6 e6Var = (e6) this.d;
                 m mVar = (m) this.e;
-                float d = c6Var.d(mVar.r.getWidth(), false);
+                float d = e6Var.d(mVar.r.getWidth(), false);
                 Rect rect = (Rect) this.c;
                 float f7 = d / 2.0f;
                 rect.set((int) (width - (mVar.r.getScaleX() * f7)), (int) (((1.0f - mVar.r.getScaleY()) * mVar.r.getHeight()) + mVar.r.getY()), (int) ((mVar.r.getScaleX() * f7) + width), (int) (mVar.r.getY() + mVar.r.getHeight()));
@@ -134,6 +134,6 @@ public final class j extends FrameLayout {
         super(context);
         this.e = viVar;
         this.c = new Path();
-        this.d = new n20();
+        this.d = new l20();
     }
 }

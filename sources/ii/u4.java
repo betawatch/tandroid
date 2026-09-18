@@ -28,6 +28,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.j6;
@@ -37,9 +38,9 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.qr;
 import v7.o8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0 {
+public final class u4 extends a0 implements org.telegram.ui.ActionBar.z5, p9, m0 {
     public static Paint k0;
     public final ArrayList E;
     public final ArrayList F;
@@ -57,7 +58,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
     public int R;
     public int S;
     public int T;
-    public final org.telegram.ui.Components.c6 U;
+    public final org.telegram.ui.Components.e6 U;
     public int V;
     public int W;
     public float a0;
@@ -70,7 +71,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
     public VelocityTracker h0;
     public ValueAnimator i0;
     public final Path j0;
-    public final org.telegram.ui.ActionBar.f6 n;
+    public final org.telegram.ui.ActionBar.e6 n;
     public final Paint r;
     public final Paint s;
     public final l0 v;
@@ -78,7 +79,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
     public final ImageView x;
     public final ArrayList y;
 
-    public u4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public u4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
@@ -92,31 +93,31 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         this.K = new ArrayList();
         this.L = new HashMap();
         this.T = -1;
-        this.U = new org.telegram.ui.Components.c6(this, 0L, 320L, qr.h);
+        this.U = new org.telegram.ui.Components.e6(this, 0L, 320L, qr.h);
         this.j0 = new Path();
-        this.n = f6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         g(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
-        l0 l0Var = new l0(context, f6Var, new a6.i(this, 28));
+        l0 l0Var = new l0(context, e6Var, new a6.i(this, 27));
         this.v = l0Var;
-        addView(l0Var.a, w7.x5.e(-2, -2, 51));
+        addView(l0Var.a, w7.y5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         if (z10 && i10 >= 31) {
             fh.d dVar = new fh.d(new fh.c());
             this.I = dVar;
-            dVar.g(AndroidUtilities.dp(24.0f));
+            dVar.h(AndroidUtilities.dp(24.0f));
             this.J = new rb.a(11);
         }
         ImageView h = h();
         this.w = h;
         h.setImageResource(R.drawable.iv_media_add);
-        addView(h, w7.x5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
+        addView(h, w7.y5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         h.setOnClickListener(new r4(this, 1));
         ImageView h10 = h();
         this.x = h10;
         h10.setVisibility(8);
-        addView(h10, w7.x5.d(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
+        addView(h10, w7.y5.d(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
         h10.setOnClickListener(new r4(this, 2));
         e();
     }
@@ -207,12 +208,12 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.Gd;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        this.r.setColor(j6.v0(i10, f6Var));
-        this.s.setColor(j6.v0(j6.uf, f6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        this.r.setColor(j6.v0(i10, e6Var));
+        this.s.setColor(j6.v0(j6.uf, e6Var));
         l0 l0Var = this.v;
         if (l0Var != null) {
             l0Var.a();
@@ -243,18 +244,18 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         if (!this.H || Build.VERSION.SDK_INT < 31) {
             int i10 = j6.G6;
-            org.telegram.ui.ActionBar.f6 f6Var = this.n;
-            imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, f6Var), PorterDuff.Mode.SRC_IN));
+            org.telegram.ui.ActionBar.e6 e6Var = this.n;
+            imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(i10, e6Var), PorterDuff.Mode.SRC_IN));
             int i11 = j6.d6;
-            imageView.setBackground(new c2(j6.Z(j6.v0(i11, f6Var), j6.v(j6.v0(i11, f6Var), j6.v0(j6.i6, f6Var)), 20, 20)));
+            imageView.setBackground(new c2(j6.Z(j6.v0(i11, e6Var), j6.v(j6.v0(i11, e6Var), j6.v0(j6.i6, e6Var)), 20, 20)));
         } else {
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            ch.e eVar = (ch.e) this.I.l();
+            ch.e eVar = (ch.e) this.I.d();
             eVar.o(this.J);
             eVar.q(AndroidUtilities.dp(16.0f));
             this.L.put(imageView, eVar);
         }
-        w7.z5.a(imageView);
+        w7.a6.a(imageView);
         this.K.add(imageView);
         return imageView;
     }
@@ -385,7 +386,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             a aVar = this.a;
             w3 w3Var = p3Var.a;
             w3Var.b4 = aVar;
-            w3Var.h3.h(0);
+            w3Var.h3.i(0);
             return;
         }
         if (i10 < 0 || i10 >= m10.size() || !((u) m10.get(i10)).a()) {
@@ -433,7 +434,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             arrayList.add(x4Var);
         }
         while (arrayList.size() > m10.size()) {
-            x4 x4Var2 = (x4) hg.k0.z(1, arrayList);
+            x4 x4Var2 = (x4) hg.k0.v(1, arrayList);
             x4Var2.a.onDetachedFromWindow();
             x4Var2.b.onDetachedFromWindow();
             x4Var2.c = null;
@@ -451,13 +452,13 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             ImageView h = h();
             h.setImageResource(R.drawable.iv_media_dots);
             h.setOnClickListener(new r4(this, 0));
-            addView(h, w7.x5.e(32, 32, 51));
+            addView(h, w7.y5.e(32, 32, 51));
             arrayList2.add(h);
         }
         this.w.bringToFront();
         this.x.bringToFront();
         while (arrayList2.size() > m10.size()) {
-            ImageView imageView = (ImageView) hg.k0.z(1, arrayList2);
+            ImageView imageView = (ImageView) hg.k0.v(1, arrayList2);
             removeView(imageView);
             this.K.remove(imageView);
             this.L.remove(imageView);
@@ -560,8 +561,8 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         float clamp;
         int paddingTop = getPaddingTop();
         j(canvas);
-        org.telegram.ui.Components.c6 c6Var = this.U;
-        float f12 = c6Var.c;
+        org.telegram.ui.Components.e6 e6Var = this.U;
+        float f12 = e6Var.c;
         ArrayList arrayList = this.y;
         if (arrayList.size() >= 2 && f12 > 0.001f) {
             if (k0 == null) {
@@ -572,7 +573,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             }
             int size = arrayList.size();
             float dp = AndroidUtilities.dp(5.0f) + ((getPaddingTop() + this.P) - AndroidUtilities.dp(23.0f));
-            int dp2 = AndroidUtilities.dp(4.0f) + org.telegram.messenger.w1.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+            int dp2 = AndroidUtilities.dp(4.0f) + wh.c(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
             int paddingLeft = getPaddingLeft();
             int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
             float f13 = this.W + this.a0;
@@ -614,7 +615,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
                     try {
                         j(dVar.a(width, height));
                     } finally {
-                        dVar.b();
+                        dVar.c();
                     }
                 }
                 int i11 = 0;
@@ -636,7 +637,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
                 i(canvas, imageView2);
             }
         }
-        if (c6Var.i) {
+        if (e6Var.i) {
             requestLayout();
         }
     }
@@ -728,8 +729,8 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
         int paddingRight = getPaddingRight();
         int max = Math.max(0, (size2 - paddingLeft) - paddingRight);
         float f7 = l() ? 1.0f : 0.0f;
-        org.telegram.ui.Components.c6 c6Var = this.U;
-        float d = c6Var.d(f7, false);
+        org.telegram.ui.Components.e6 e6Var = this.U;
+        float d = e6Var.d(f7, false);
         ArrayList arrayList2 = this.F;
         arrayList2.clear();
         int paddingTop = getPaddingTop();
@@ -926,7 +927,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
                     ((ImageView) arrayList.get(i21)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                     i21++;
                 }
-                if (c6Var.i) {
+                if (e6Var.i) {
                     return;
                 }
                 requestLayout();
@@ -983,7 +984,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.a6, p9, m0
             ((ImageView) arrayList.get(i21)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
             i21++;
         }
-        if (c6Var.i) {
+        if (e6Var.i) {
         }
     }
 

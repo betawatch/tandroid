@@ -3,19 +3,19 @@ package xh;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class b extends FrameLayout {
     public static final /* synthetic */ int c = 0;
-    public final f6 a;
+    public final e6 a;
     public final int b;
 
-    public b(Context context, int i10, f6 f6Var) {
+    public b(Context context, int i10, e6 e6Var) {
         super(context);
         this.b = i10;
-        this.a = f6Var;
+        this.a = e6Var;
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
     }
 }

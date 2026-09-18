@@ -1,15 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class kb extends FrameLayout implements pb {
-    @Override // org.telegram.ui.Components.pb
-    public final void c() {
+public final class kb extends FrameLayout {
+    public final /* synthetic */ lb a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kb(lb lbVar, Context context) {
+        super(context);
+        this.a = lbVar;
     }
 
-    @Override // org.telegram.ui.Components.pb
-    public final void d() {
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
+    }
+
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        lb lbVar = this.a;
+        super.removeView(view);
+        try {
+            lbVar.dismiss();
+        } catch (Exception unused) {
+        }
+        qc.h(lbVar.a);
+    }
+
+    public void setTouchable(boolean z10) {
+        lb lbVar = this.a;
+        WindowManager.LayoutParams layoutParams = lbVar.b;
+        if (layoutParams == null) {
+            return;
+        }
+        if (z10) {
+            layoutParams.flags &= -17;
+        } else {
+            layoutParams.flags |= 16;
+        }
+        lbVar.getWindow().setAttributes(lbVar.b);
     }
 }

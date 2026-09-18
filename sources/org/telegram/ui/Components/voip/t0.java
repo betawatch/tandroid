@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.u9;
-import w7.x5;
+import org.telegram.ui.Components.w9;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class t0 extends FrameLayout {
     public final s0 a;
-    public final u9 b;
+    public final w9 b;
     public AnimatorSet c;
     public boolean d;
     public boolean e;
@@ -33,9 +33,9 @@ public final class t0 extends FrameLayout {
             invalidate();
         }
         s0Var.e = true;
-        u9 u9Var = new u9(activity);
-        this.b = u9Var;
-        addView(u9Var, x5.e(135, 135, 17));
+        w9 w9Var = new w9(activity);
+        this.b = w9Var;
+        addView(w9Var, y5.e(135, 135, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;

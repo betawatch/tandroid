@@ -16,27 +16,27 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.kx0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.zw0;
-import org.telegram.ui.bo;
-import w7.x5;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.zn;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class s extends o2 implements le.d {
+public final class s extends n2 implements le.d {
     public final le.b a;
     public long b;
     public FrameLayout c;
-    public f61 d;
+    public t61 d;
     public jh.f e;
     public LinearLayout f;
     public ci.d h;
     public ci.d n;
-    public zw0 r;
+    public kx0 r;
     public TLRPC.ChatFull s;
     public t0 v;
 
@@ -45,17 +45,17 @@ public final class s extends o2 implements le.d {
         this.a = new le.b(0, this, qr.h, 320L, false);
     }
 
-    public static void U(s sVar, j51 j51Var) {
-        Object obj = j51Var.G;
+    public static void U(s sVar, x51 x51Var) {
+        Object obj = x51Var.G;
         if (obj instanceof gi.f) {
             gi.f fVar = (gi.f) obj;
             long j3 = fVar.a;
             TLRPC.Chat chat = MessagesController.getInstance(sVar.currentAccount).getChat(Long.valueOf(-j3));
             TLRPC.User user = MessagesController.getInstance(sVar.currentAccount).getUser(Long.valueOf(j3));
             if (user != null) {
-                sVar.presentFragment(bo.R9(user.id));
+                sVar.presentFragment(zn.R9(user.id));
             } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
-                sVar.presentFragment(bo.R9(-chat.id));
+                sVar.presentFragment(zn.R9(-chat.id));
             } else {
                 new hi.c(sVar.getParentActivity(), chat, new b9(23, sVar, fVar)).show();
             }
@@ -78,18 +78,18 @@ public final class s extends o2 implements le.d {
         this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f) + i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         boolean z10 = true;
         z10 = true;
         setHasOwnBackground(true);
-        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, vc.a0(this), this.currentAccount, this.b);
+        t0 t0Var = new t0(getParentActivity(), this.resourceProvider, xc.a0(this), this.currentAccount, this.b);
         this.v = t0Var;
         t0Var.h = new xa.c(this, 20);
         t0Var.d();
         this.v.e();
         final int i10 = 0;
-        hg.k0.x(false, this.actionBar);
+        hg.k0.t(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 5));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
@@ -97,22 +97,22 @@ public final class s extends o2 implements le.d {
         this.c = frameLayout;
         int i11 = j6.a7;
         frameLayout.setBackgroundColor(j6.w0(null, i11, false));
-        f61 f61Var = new f61(this, new bi.v(this, 19), new q(this), new q(this));
-        this.d = f61Var;
-        f61Var.setClipToPadding(false);
-        f61 f61Var2 = this.d;
-        f61Var2.Y2.r = false;
-        f61Var2.q1();
+        t61 t61Var = new t61(this, new bi.v(this, 19), new q(this), new q(this));
+        this.d = t61Var;
+        t61Var.setClipToPadding(false);
+        t61 t61Var2 = this.d;
+        t61Var2.Y2.r = false;
+        t61Var2.q1();
         this.d.j(new ai.r(this, 6));
         this.actionBar.setAdaptiveBackground(this.d);
-        this.c.addView(this.d, x5.c(-1.0f, -1));
+        this.c.addView(this.d, y5.c(-1.0f, -1));
         jh.f fVar = new jh.f(context);
         this.e = fVar;
         fVar.setupColorKey(i11);
         this.e.setFadeZoneBottom(AndroidUtilities.dp(72.0f));
         this.e.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
-        this.c.addView(this.e, x5.g());
-        this.c.addView(this.actionBar, x5.e(-1, -2, 48));
+        this.c.addView(this.e, y5.g());
+        this.c.addView(this.actionBar, y5.e(-1, -2, 48));
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(0);
@@ -142,7 +142,7 @@ public final class s extends o2 implements le.d {
                 }
             }
         });
-        this.f.addView(this.n, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.f.addView(this.n, y5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         ci.d dVar2 = new ci.d(context, this.resourceProvider, true);
         this.h = dVar2;
         dVar2.setText(LocaleController.getString(R.string.CommunityPendingRequestAddAll));
@@ -168,15 +168,15 @@ public final class s extends o2 implements le.d {
                 }
             }
         });
-        this.f.addView(this.h, x5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
-        this.c.addView(this.f, x5.e(-1, -2, 80));
-        zw0 zw0Var = new zw0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = zw0Var;
-        zw0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        this.f.addView(this.h, y5.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
+        this.c.addView(this.f, y5.e(-1, -2, 80));
+        kx0 kx0Var = new kx0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = kx0Var;
+        kx0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);
-        this.c.addView(this.r, x5.e(-2, -2, 17));
+        this.c.addView(this.r, y5.e(-2, -2, 17));
         TLRPC.ChatFull chatFull = this.s;
         if (chatFull != null && chatFull.requests_pending != 0) {
             z10 = false;
@@ -193,17 +193,17 @@ public final class s extends o2 implements le.d {
         return frameLayout3;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean drawEdgeNavigationBar() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         this.b = this.arguments.getLong("community_id", 0L);
         getMessagesController().getChat(Long.valueOf(this.b));
@@ -211,7 +211,7 @@ public final class s extends o2 implements le.d {
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         t0 t0Var = this.v;

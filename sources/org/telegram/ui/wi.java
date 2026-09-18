@@ -1,46 +1,100 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wi implements Runnable {
+public final class wi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xi b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.gk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ zg.p0 n;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ wi(xi xiVar, int i10, boolean z10, org.telegram.ui.Components.gk0 gk0Var, float f7, float f10, zg.p0 p0Var, int i11) {
-        this.a = i11;
-        this.b = xiVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = gk0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = p0Var;
+    public /* synthetic */ wi(zn znVar, int i10) {
+        this.a = i10;
+        this.b = znVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        tj tjVar;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new wi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                bo boVar = this.b.s;
-                org.telegram.ui.Cells.a0 q82 = boVar.q8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.o2) boVar).currentAccount;
-                    zg.l0.d(boVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
-                    zg.l0.f();
+                zn znVar = this.b;
+                org.telegram.ui.Components.f60 f60Var = znVar.b3;
+                if (f60Var != null) {
+                    f60Var.setIsMessageTransition(false);
+                    znVar.b3.d(true);
+                    znVar.b3.setVisibility(4);
                     break;
                 }
+                break;
+            case 1:
+                float dp = AndroidUtilities.dp(30.0f);
+                zn znVar2 = this.b;
+                znVar2.A9 = dp;
+                znVar2.o9();
+                break;
+            case 2:
+                zn znVar3 = this.b;
+                if (znVar3.fragmentView != null && (tjVar = znVar3.x0) != null) {
+                    tjVar.invalidate();
+                    znVar3.fragmentView.invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                this.b.P.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new cj(this, 3), 2000L);
+                break;
+            case 5:
+                zn znVar4 = this.b;
+                if (animator.equals(znVar4.g3)) {
+                    znVar4.g3 = null;
+                    break;
+                }
+                break;
+            case 6:
+                zn znVar5 = this.b;
+                if (animator.equals(znVar5.g3)) {
+                    znVar5.g3 = null;
+                    break;
+                }
+                break;
+            case 7:
+                zn znVar6 = this.b;
+                if (animator.equals(znVar6.h3)) {
+                    znVar6.i3 = 1.0f;
+                    znVar6.lc();
+                    znVar6.h3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                zn znVar7 = this.b;
+                if (animator.equals(znVar7.h3)) {
+                    znVar7.i3 = 0.0f;
+                    znVar7.lc();
+                    znVar7.h3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.T4 = null;
+                break;
+            case 10:
+                zn znVar8 = this.b;
+                znVar8.Da = 1.0f;
+                znVar8.Y.setVisibility(4);
+                znVar8.O0.setVisibility(4);
+                znVar8.o9();
+                break;
+            default:
+                zn znVar9 = this.b;
+                znVar9.Da = 0.0f;
+                znVar9.o9();
                 break;
         }
     }

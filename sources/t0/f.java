@@ -1,9 +1,16 @@
 package t0;
 
-import android.os.Bundle;
+import android.os.Build;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public interface f {
-    boolean h(j jVar, int i10, Bundle bundle);
+public abstract class f {
+    public static InputConnection a(InputConnection inputConnection, EditorInfo editorInfo, e eVar) {
+        if (editorInfo != null) {
+            return Build.VERSION.SDK_INT >= 25 ? new c(inputConnection, eVar) : b.a(editorInfo).length == 0 ? inputConnection : new d(inputConnection, eVar);
+        }
+        throw new NullPointerException("editorInfo must be non-null");
+    }
 }

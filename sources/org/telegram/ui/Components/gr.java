@@ -13,10 +13,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class gr extends za {
-    public final u70 X;
+public final class gr extends bb {
+    public final d80 X;
     public final ArrayList Y;
     public final boolean Z;
     public final boolean a0;
@@ -24,25 +24,25 @@ public final class gr extends za {
     public boolean c0;
     public TLRPC.Peer d0;
     public TLRPC.InputPeer e0;
-    public final org.telegram.ui.ActionBar.o2 f0;
+    public final org.telegram.ui.ActionBar.n2 f0;
     public final long g0;
 
-    public gr(org.telegram.ui.ActionBar.o2 o2Var, ArrayList arrayList, long j3, u70 u70Var) {
-        super(o2Var, false);
+    public gr(org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, long j3, d80 d80Var) {
+        super(n2Var, false);
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3));
-        this.f0 = o2Var;
+        this.f0 = n2Var;
         this.g0 = j3;
         this.v = 0.26f;
         ArrayList arrayList2 = new ArrayList(arrayList);
         this.Y = arrayList2;
-        this.X = u70Var;
+        this.X = d80Var;
         boolean isChannelOrGiga = ChatObject.isChannelOrGiga(chat);
         this.b0 = isChannelOrGiga;
         this.d0 = (TLRPC.Peer) arrayList2.get(0);
         this.Z = arrayList2.size() > 1;
         this.a0 = ChatObject.canManageCalls(chat);
         Context context = this.containerView.getContext();
-        this.containerView.addView(new ci.eb(this, context, 16), w7.x5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(new ci.eb(this, context, 16), w7.y5.d(-1, 120.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setGravity(17);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -57,7 +57,7 @@ public final class gr extends za {
         int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
         int k10 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false), 120);
         textView.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, w02, k10, k10));
-        this.containerView.addView(textView, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
+        this.containerView.addView(textView, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 60.0f));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
         textView2.setEllipsize(truncateAt);
@@ -70,7 +70,7 @@ public final class gr extends za {
         int dp2 = AndroidUtilities.dp(8.0f);
         int k11 = i0.a.k(org.telegram.ui.ActionBar.j6.w0(null, i10, false), 120);
         textView2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp2, dp2, dp2, dp2, 0, k11, k11));
-        this.containerView.addView(textView2, w7.x5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
+        this.containerView.addView(textView2, w7.y5.d(-1, 48.0f, 80, 16.0f, 0.0f, 16.0f, 6.0f));
         final int i11 = 0;
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dr
             public final /* synthetic */ gr b;
@@ -111,9 +111,9 @@ public final class gr extends za {
                 }
             }
         });
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
-        ml0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
+        wl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(120.0f));
         this.d.setOnItemClickListener(new j(this, 4));
         fixNavigationBar();
         N();
@@ -130,7 +130,7 @@ public final class gr extends za {
         grVar.dismiss();
     }
 
-    @Override // org.telegram.ui.ActionBar.g3
+    @Override // org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         super.dismissInternal();
         TLRPC.InputPeer inputPeer = this.e0;
@@ -139,12 +139,12 @@ public final class gr extends za {
         }
     }
 
-    @Override // org.telegram.ui.Components.za
-    public final ll0 v(ml0 ml0Var) {
+    @Override // org.telegram.ui.Components.bb
+    public final vl0 v(wl0 wl0Var) {
         return new er(this);
     }
 
-    @Override // org.telegram.ui.Components.za
+    @Override // org.telegram.ui.Components.bb
     public final CharSequence y() {
         return this.b0 ? LocaleController.getString(R.string.StartVoipChannelTitle) : LocaleController.getString(R.string.StartVoipChatTitle);
     }

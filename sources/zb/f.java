@@ -10,11 +10,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import n6.j;
 import n6.l;
-import n7.a1;
+import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.r1;
-import v8.s;
-import w7.j8;
+import w7.k8;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -29,8 +28,9 @@ import x7.n7;
 import x7.o;
 import x7.o7;
 import x7.r0;
+import x7.s;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
@@ -43,9 +43,9 @@ public final class f extends qb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        s sVar = new s();
-        sVar.a = Float.valueOf(aVar.a);
-        this.e = new h8(sVar);
+        ka.c cVar = new ka.c(29, false);
+        cVar.b = Float.valueOf(aVar.a);
+        this.e = new h8(cVar);
         this.h = new o0.a(qb.g.c().b());
     }
 
@@ -55,13 +55,13 @@ public final class f extends qb.e {
         fa faVar = this.g;
         n nVar = new n();
         nVar.c = m7.b;
-        a1 a1Var = new a1(26);
-        a1Var.b = this.e;
+        z0 z0Var = new z0(26);
+        z0Var.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
-        j8.a(1, objArr);
-        a1Var.c = new x7.s(1, objArr);
-        nVar.d = new g8(a1Var);
+        k8.a(1, objArr);
+        z0Var.c = new s(1, objArr);
+        nVar.d = new g8(z0Var);
         qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.e, faVar.b(), 7));
     }
 

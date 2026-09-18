@@ -2,17 +2,17 @@ package zg;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ b b;
-    public final /* synthetic */ e0 c;
+    public final /* synthetic */ d0 c;
 
-    public /* synthetic */ a(b bVar, e0 e0Var, int i10) {
+    public /* synthetic */ a(b bVar, d0 d0Var, int i10) {
         this.a = i10;
         this.b = bVar;
-        this.c = e0Var;
+        this.c = d0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener

@@ -2,14 +2,14 @@ package i2;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class o1 {
     public static final o1 b;
     public final e9.m0 a;
 
     static {
-        a4.m mVar = new a4.m(18, false);
+        a4.m mVar = new a4.m(19);
         mVar.b = e9.m0.u(2, 1, 5);
         b = new o1(mVar);
     }

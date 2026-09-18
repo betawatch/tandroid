@@ -1,15 +1,15 @@
 package qg;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements o1.f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+    public final /* synthetic */ m0 b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ r(p0 p0Var, boolean z10, int i10) {
+    public /* synthetic */ r(m0 m0Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = p0Var;
+        this.b = m0Var;
         this.c = z10;
     }
 
@@ -17,26 +17,26 @@ public final /* synthetic */ class r implements o1.f {
     public final void a(o1.h hVar, boolean z10, float f7, float f10) {
         switch (this.a) {
             case 0:
-                p0 p0Var = this.b;
-                w1 w1Var = p0Var.v1;
-                if (hVar == p0Var.F1) {
-                    p0Var.F1 = null;
+                m0 m0Var = this.b;
+                t1 t1Var = m0Var.v1;
+                if (hVar == m0Var.F1) {
+                    m0Var.F1 = null;
                     if (!this.c) {
-                        w1Var.setVisibility(8);
+                        t1Var.setVisibility(8);
                     }
-                    w1Var.setMaskProvider(null);
+                    t1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
-                p0 p0Var2 = this.b;
-                l0 l0Var = p0Var2.G1;
-                if (hVar == p0Var2.M1) {
-                    p0Var2.M1 = null;
+                m0 m0Var2 = this.b;
+                j0 j0Var = m0Var2.G1;
+                if (hVar == m0Var2.M1) {
+                    m0Var2.M1 = null;
                     if (!this.c) {
-                        l0Var.setVisibility(8);
-                        pg.s0.e(p0Var2.P1).g();
-                        l0Var.getAdapter().l();
+                        j0Var.setVisibility(8);
+                        pg.u0.e(m0Var2.P1).g();
+                        j0Var.getAdapter().l();
                         break;
                     }
                 }

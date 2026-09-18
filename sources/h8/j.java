@@ -12,11 +12,10 @@ import android.widget.TextView;
 import androidx.mediarouter.app.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import k2.u;
 import n6.q;
 import v7.j8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -24,8 +23,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public u g;
-    public final u d = new u(this, 28);
+    public n2.e g;
+    public final n2.e d = new n2.e(this, 25);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -93,13 +92,13 @@ public final class j {
                 if (X0 == null) {
                     return;
                 }
-                this.g.b0(new aa.a(this.e, X0));
+                this.g.G(new aa.a(this.e, X0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.p((f) obj);
+                    this.a.o((f) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

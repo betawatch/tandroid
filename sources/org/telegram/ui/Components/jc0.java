@@ -1,96 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ImageSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class jc0 extends Drawable {
-    public ic0 a;
-    public final Paint b;
-    public int c;
-    public int d;
-    public final long e;
-    public int f;
+public final class jc0 {
+    public SpannableStringBuilder a;
+    public int b;
+    public Drawable c;
+    public float d;
+    public final int e;
+    public final int f;
+    public int g = -1;
+    public int h = -1;
+    public float i = 4.66f;
 
-    public jc0() {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = 255;
-        this.d = 255;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        this.e = System.currentTimeMillis();
+    public jc0(int i10, int i11) {
+        this.e = i10;
+        this.f = i11;
     }
 
-    public final void a(int i10) {
-        if (i10 != this.f) {
-            int alpha = Color.alpha(i10);
-            this.d = alpha;
-            this.b.setColor(i0.a.k(i10, (int) ((alpha / 255.0f) * this.c)));
+    public final CharSequence a(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        SpannableStringBuilder spannableStringBuilder = this.a;
+        int i10 = this.f;
+        if (spannableStringBuilder != null && this.c != null && AndroidUtilities.density == this.d) {
+            if (this.b != org.telegram.ui.ActionBar.j6.v0(i10, e6Var)) {
+                Drawable drawable = this.c;
+                int v02 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
+                this.b = v02;
+                drawable.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
+            }
+            return this.a;
         }
-        this.f = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        int min = Math.min(bounds.width(), bounds.height());
-        float centerX = bounds.centerX();
-        float centerY = bounds.centerY();
-        float dp = (min >> 1) - AndroidUtilities.dp(0.5f);
-        Paint paint = this.b;
-        canvas.drawCircle(centerX, centerY, dp, paint);
-        long currentTimeMillis = System.currentTimeMillis();
-        canvas.save();
-        long j3 = this.e;
-        canvas.rotate((((currentTimeMillis - j3) % 1500.0f) * 360.0f) / 1500.0f, bounds.centerX(), bounds.centerY());
-        canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX(), bounds.centerY() - AndroidUtilities.dp(3.0f), paint);
-        canvas.restore();
-        canvas.save();
-        canvas.rotate((((currentTimeMillis - j3) % 4500.0f) * 360.0f) / 4500.0f, bounds.centerX(), bounds.centerY());
-        canvas.drawLine(bounds.centerX(), bounds.centerY(), AndroidUtilities.dp(2.3f) + bounds.centerX(), bounds.centerY(), paint);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final Drawable.ConstantState getConstantState() {
-        if (this.a == null) {
-            this.a = new ic0();
+        if (context == null) {
+            return null;
         }
-        return this.a;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            this.b.setAlpha((int) ((this.d / 255.0f) * i10));
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("v ");
+        this.d = AndroidUtilities.density;
+        Drawable mutate = context.getResources().getDrawable(this.e).mutate();
+        this.c = mutate;
+        int v03 = org.telegram.ui.ActionBar.j6.v0(i10, e6Var);
+        this.b = v03;
+        mutate.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.SRC_IN));
+        int i11 = this.g;
+        int intrinsicWidth = i11 <= 0 ? this.c.getIntrinsicWidth() : AndroidUtilities.dp(i11);
+        int i12 = this.h;
+        int intrinsicHeight = i12 <= 0 ? this.c.getIntrinsicHeight() : AndroidUtilities.dp(i12);
+        int dp = AndroidUtilities.dp(this.i);
+        this.c.setBounds(0, dp, intrinsicWidth, intrinsicHeight + dp);
+        spannableStringBuilder2.setSpan(new ImageSpan(this.c, 2), 0, 1, 33);
+        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(2.0f)), 1, 2, 33);
+        this.a = spannableStringBuilder2;
+        return spannableStringBuilder2;
     }
 }

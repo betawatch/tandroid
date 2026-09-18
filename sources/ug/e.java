@@ -19,37 +19,36 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.u9;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.vl0;
 import org.telegram.ui.Components.voip.o;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.vy0;
 import org.telegram.ui.web.b1;
-import org.telegram.ui.xy0;
 import s4.c1;
-import uh.i;
 import vg.c0;
 import vg.d0;
 import vg.r;
 import vg.t;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class e extends ll0 {
-    public final f6 c;
+public abstract class e extends vl0 {
+    public final e6 c;
     public boolean d;
-    public o2 e;
+    public n2 e;
     public TLRPC.TL_payments_checkedGiftCode f;
     public String h;
     public FrameLayout n;
 
-    public e(f6 f6Var) {
-        this.c = f6Var;
+    public e(e6 e6Var) {
+        this.c = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(c1 c1Var) {
         return false;
     }
@@ -151,7 +150,7 @@ public abstract class e extends ll0 {
                 }
                 vg.a aVar = (vg.a) view;
                 aVar.setOkStyle(this.d);
-                aVar.setOnClickListener(new xy0(20, this, aVar));
+                aVar.setOnClickListener(new vy0(20, this, aVar));
                 TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode2 = this.f;
                 if (tL_payments_checkedGiftCode2.boost != null || tL_payments_checkedGiftCode2.flags == -1) {
                     aVar.e = false;
@@ -193,16 +192,16 @@ public abstract class e extends ll0 {
         c0 c0Var = (c0) view;
         final TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode4 = this.f;
         final b1 b1Var2 = new b1(this, i13);
-        u9 u9Var = c0Var.h;
+        w9 w9Var = c0Var.h;
         FrameLayout frameLayout = c0Var.w;
-        u9 u9Var2 = c0Var.f;
+        w9 w9Var2 = c0Var.f;
         TextView textView = c0Var.a;
         TextView textView2 = c0Var.b;
-        f6 f6Var = c0Var.n;
+        e6 e6Var = c0Var.n;
         Date date2 = new Date(tL_payments_checkedGiftCode4.date * 1000);
         c0Var.e.setText(LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(date2), LocaleController.getInstance().getFormatterDay().format(date2)));
         TextView textView3 = c0Var.d;
-        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, f6Var));
+        textView3.setTextColor(j6.v0(tL_payments_checkedGiftCode4.via_giveaway ? j6.m5 : j6.j5, e6Var));
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tL_payments_checkedGiftCode4.from_id)));
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         if (tL_payments_checkedGiftCode4.via_giveaway) {
@@ -223,8 +222,8 @@ public abstract class e extends ll0 {
                             break;
                     }
                 }
-            }, f6Var));
-            textView3.setOnClickListener(new xy0(22, b1Var2, tL_payments_checkedGiftCode4));
+            }, e6Var));
+            textView3.setOnClickListener(new vy0(22, b1Var2, tL_payments_checkedGiftCode4));
         } else {
             textView3.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingYouWereSelected : R.string.BoostingYouWereSelectedGroup));
             textView3.setOnClickListener(null);
@@ -250,14 +249,14 @@ public abstract class e extends ll0 {
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append((CharSequence) chat.title);
             spannableStringBuilder2.append((CharSequence) "**");
-            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new i(1, b1Var2, chat), f6Var), textView.getPaint().getFontMetricsInt(), false));
-            u9Var2.e(chat, new f9(chat));
-            frameLayout.setOnClickListener(new xy0(23, b1Var2, chat));
+            textView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceSingleTag(spannableStringBuilder2.toString(), j6.gc, 0, new uf.b(5, b1Var2, chat), e6Var), textView.getPaint().getFontMetricsInt(), false));
+            w9Var2.e(chat, new h9(chat));
+            frameLayout.setOnClickListener(new vy0(23, b1Var2, chat));
         } else {
             final TLRPC.User user2 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.from_id.user_id));
             final int i19 = 0;
             textView.setText(Emoji.replaceEmoji(UserObject.getFirstName(user2), textView.getPaint().getFontMetricsInt(), false));
-            u9Var2.e(user2, new f9(0, user2));
+            w9Var2.e(user2, new h9(0, user2));
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: vg.a0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -290,12 +289,12 @@ public abstract class e extends ll0 {
                             break;
                     }
                 }
-            }, f6Var));
+            }, e6Var));
             textView2.setText(LocaleController.getString(R.string.BoostingNoRecipient));
-            textView2.setTextColor(j6.v0(j6.j5, f6Var));
+            textView2.setTextColor(j6.v0(j6.j5, e6Var));
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).leftMargin = 0;
             ((ViewGroup.MarginLayoutParams) textView2.getLayoutParams()).rightMargin = 0;
-            u9Var.setVisibility(8);
+            w9Var.setVisibility(8);
         } else {
             final TLRPC.User user3 = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(tL_payments_checkedGiftCode4.to_id));
             if (user3 != null) {
@@ -316,8 +315,8 @@ public abstract class e extends ll0 {
                                 break;
                         }
                     }
-                }, f6Var), textView2.getPaint().getFontMetricsInt(), false));
-                u9Var.e(user3, new f9(0, user3));
+                }, e6Var), textView2.getPaint().getFontMetricsInt(), false));
+                w9Var.e(user3, new h9(0, user3));
                 c0Var.x.setOnClickListener(new View.OnClickListener() { // from class: vg.a0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -342,17 +341,17 @@ public abstract class e extends ll0 {
     public final c1 x(ViewGroup viewGroup, int i10) {
         View tVar;
         Context context = viewGroup.getContext();
-        f6 f6Var = this.c;
+        e6 e6Var = this.c;
         if (i10 == 1) {
-            tVar = new t(context, f6Var);
+            tVar = new t(context, e6Var);
         } else if (i10 == 2) {
-            tVar = new c0(context, f6Var);
+            tVar = new c0(context, e6Var);
         } else if (i10 == 3) {
-            tVar = new d0(context, f6Var);
+            tVar = new d0(context, e6Var);
         } else if (i10 != 4) {
-            tVar = i10 != 5 ? new r(context, f6Var) : new View(context);
+            tVar = i10 != 5 ? new r(context, e6Var) : new View(context);
         } else {
-            tVar = new vg.a(context, f6Var);
+            tVar = new vg.a(context, e6Var);
             tVar.setPadding(0, 0, 0, AndroidUtilities.dp(14.0f));
         }
         return e2.k(tVar, tVar, -1, -2);

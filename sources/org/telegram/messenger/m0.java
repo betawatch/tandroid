@@ -1,11 +1,48 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.BotInlineKeyboard;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class m0 {
-    public static boolean a(BotInlineKeyboard.Source source) {
-        return source.getRowsCount() == 0;
+public final /* synthetic */ class m0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ m0(long j3, long j10, long j11, org.telegram.ui.b5 b5Var) {
+        this.a = 2;
+        this.b = j3;
+        this.c = j10;
+        this.d = j11;
+        this.e = b5Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((BotGuardHelper) this.e).lambda$openGuardBotWebApp$0(this.b, this.c, this.d);
+                break;
+            case 1:
+                ((MediaDataController) this.e).lambda$loadMusic$142(this.b, this.c, this.d);
+                break;
+            default:
+                org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.e;
+                long j3 = this.b;
+                long j10 = this.c;
+                org.telegram.ui.z6.o0 = Long.valueOf(j3 * j10);
+                Long valueOf = Long.valueOf(this.d * j10);
+                org.telegram.ui.z6.p0 = valueOf;
+                b5Var.run(org.telegram.ui.z6.o0, valueOf);
+                break;
+        }
+    }
+
+    public /* synthetic */ m0(BaseController baseController, long j3, long j10, long j11, int i10) {
+        this.a = i10;
+        this.e = baseController;
+        this.b = j3;
+        this.c = j10;
+        this.d = j11;
     }
 }

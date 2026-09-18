@@ -1,60 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class l11 extends ll0 {
-    public Context c;
-    public ArrayList d;
+public final class l11 {
+    public final View a;
+    public final ArrayList b;
+    public final Runnable c;
+    public Runnable d;
+    public final Bitmap e;
+    public final Matrix f;
+    public float g;
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
+    public l11(View view, Runnable runnable) {
+        this.g = 1.0f;
+        this.a = view;
+        this.b = null;
+        this.c = null;
+        this.d = runnable;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
-        }
-        return arrayList.size() + 1;
+    public l11(ArrayList arrayList, gg.t tVar) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = arrayList;
+        this.c = null;
+        this.d = tVar;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.d.get(i10 - 1)).get(0);
-            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) c1Var.a;
-            z8Var.a.setText(org.telegram.ui.ActionBar.h5.i(l6Var.f));
-            z8Var.b = b10;
-            z8Var.setWillNotDraw(b10 == 0);
-            z8Var.invalidate();
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View z8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            z8Var = new View(context);
-            z8Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-        } else {
-            z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setLayoutParams(new s4.p0(-1, -2));
-        }
-        return new wk0(z8Var);
+    public l11(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = null;
+        this.c = runnable;
+        this.d = runnable2;
+        this.f = matrix;
+        this.e = bitmap;
     }
 }

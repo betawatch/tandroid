@@ -19,16 +19,16 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.op;
-import org.telegram.ui.nx0;
-import w7.x5;
+import org.telegram.ui.lx0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class p1 extends ViewGroup {
     public p1 E;
@@ -47,7 +47,7 @@ public class p1 extends ViewGroup {
     public final TextView e;
     public final int f;
     public final int h;
-    public nx0 n;
+    public lx0 n;
     public final TextView r;
     public final int s;
     public final int v;
@@ -75,14 +75,14 @@ public class p1 extends ViewGroup {
         textView.setTextColor(j6.w0(null, j6.G6, false));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setSingleLine();
-        addView(textView, x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(textView, y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.r = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(-1);
         textView2.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
         textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView2, y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView3 = new TextView(context);
         this.d = textView3;
         textView3.setTextSize(1, 14.0f);
@@ -90,19 +90,19 @@ public class p1 extends ViewGroup {
         textView3.setTextColor(j6.w0(null, i11, false));
         textView3.getPaint().setStrikeThruText(true);
         textView3.setSingleLine();
-        addView(textView3, x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView3, y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView4 = new TextView(context);
         this.e = textView4;
         textView4.setTextSize(1, 14.0f);
         textView4.setTextColor(j6.w0(null, i11, false));
         textView4.setSingleLine();
-        addView(textView4, x5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
+        addView(textView4, y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 80, 0.0f, 0.0f, 0.0f, 8.0f));
         TextView textView5 = new TextView(context);
         this.c = textView5;
         textView5.setTextSize(1, 15.0f);
         textView5.setTextColor(j6.w0(null, i11, false));
         textView5.setSingleLine();
-        addView(textView5, x5.e(-2, -2, 8388613));
+        addView(textView5, y5.e(-2, -2, 8388613));
         setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f));
         setClipToPadding(false);
         setWillNotDraw(false);
@@ -117,12 +117,12 @@ public class p1 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(nx0 nx0Var, boolean z10) {
+    public final void a(lx0 lx0Var, boolean z10) {
         boolean z11;
-        this.n = nx0Var;
+        this.n = lx0Var;
         this.M = z10;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = nx0Var.a;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = nx0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = lx0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = lx0Var.a;
         int i10 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i10 == 1) {
@@ -136,7 +136,7 @@ public class p1 extends ViewGroup {
         }
         if (!BuildVars.useInvoiceBilling()) {
             if (BillingController.getInstance().isReady()) {
-                nx0Var.a();
+                lx0Var.a();
             }
             z11 = true;
             this.L = z11;
@@ -145,19 +145,19 @@ public class p1 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z11) {
-                if (nx0Var.c() <= 0) {
+                if (lx0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(nx0Var.c())));
+                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(lx0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
-                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(nx0Var.e, nx0Var.b()) : nx0Var.f == null ? "" : BillingController.getInstance().formatCurrency(nx0Var.e, nx0Var.b(), 6));
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, nx0Var.f()));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, nx0Var.e()));
+                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(lx0Var.e, lx0Var.b()) : lx0Var.f == null ? "" : BillingController.getInstance().formatCurrency(lx0Var.e, lx0Var.b(), 6));
+                textView5.setText(LocaleController.formatString(R.string.PricePerYear, lx0Var.f()));
+                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, lx0Var.e()));
                 if (tL_premiumSubscriptionOption2.current) {
                     textView5.setVisibility(0);
                     textView5.setText(LocaleController.getString(R.string.YourCurrentPlan));
@@ -274,7 +274,7 @@ public class p1 extends ViewGroup {
         }
     }
 
-    public nx0 getTier() {
+    public lx0 getTier() {
         return this.n;
     }
 
@@ -355,10 +355,10 @@ public class p1 extends ViewGroup {
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int d = wl.d(6.0f, (size - npVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int y3 = wh.y(6.0f, (size - npVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
-        textView4.measure(d, makeMeasureSpec6);
+        textView4.measure(y3, makeMeasureSpec6);
         if (textView4.getVisibility() != 0) {
             dp -= AndroidUtilities.dp(8.0f);
         }

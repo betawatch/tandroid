@@ -4,29 +4,24 @@ import android.graphics.Outline;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class i0 extends ViewOutlineProvider {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
 
-    public i0(int i10, boolean z10, boolean z11, boolean z12, boolean z13) {
-        this.a = z10;
-        this.b = i10;
-        this.c = z11;
-        this.d = z12;
-        this.e = z13;
+    public i0(int i10, float f7) {
+        this.a = i10;
+        this.b = f7;
     }
 
     @Override // android.view.ViewOutlineProvider
     public final void getOutline(View view, Outline outline) {
         int width = view.getWidth();
-        int height = view.getHeight();
-        boolean z10 = this.a;
-        int i10 = this.b;
-        outline.setRoundRect(-(z10 ? 0 : i10), -(this.c ? 0 : i10), width + (this.d ? 0 : i10), height + (this.e ? 0 : i10), i10);
+        int i10 = this.a;
+        int height = view.getHeight() - i10;
+        float f7 = this.b;
+        int i11 = this.a;
+        outline.setRoundRect(i11, i11, width - i10, height, f7);
     }
 }

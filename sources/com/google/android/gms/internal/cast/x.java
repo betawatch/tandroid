@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -75,11 +75,11 @@ public final /* synthetic */ class x implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((f1) it.next()).a);
-                            String i10 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_reported_feature_", num);
+                            String i10 = t8.b.i("feature_usage_timestamp_reported_feature_", num);
                             if (!sharedPreferences.contains(i10)) {
-                                i10 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_detected_feature_", num);
+                                i10 = t8.b.i("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String i11 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_reported_feature_", num);
+                            String i11 = t8.b.i("feature_usage_timestamp_reported_feature_", num);
                             if (!TextUtils.equals(i10, i11)) {
                                 long j11 = sharedPreferences.getLong(i10, 0L);
                                 edit.remove(i10);

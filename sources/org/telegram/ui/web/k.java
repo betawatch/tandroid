@@ -28,14 +28,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.kn;
-import org.telegram.ui.lb1;
-import w7.x5;
-import w7.z5;
+import org.telegram.ui.kb1;
+import w7.a6;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -73,14 +73,14 @@ public final class k extends FrameLayout {
         int i11 = UserConfig.selectedAccount;
         hi.a aVar = new hi.a(this, 6);
         a aVar2 = new a(this);
-        o0.a aVar3 = new o0.a((f6) null);
+        o0.a aVar3 = new o0.a((e6) null);
         this.a = aVar3;
         c cVar = new c(this, activity, i11, aVar, aVar2, aVar3);
         this.w = cVar;
         cVar.Y2.r = false;
         cVar.setOverScrollMode(2);
         cVar.setPadding(0, 0, 0, 0);
-        addView(cVar, x5.e(-1, -1, 119));
+        addView(cVar, y5.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         FrameLayout frameLayout2 = new FrameLayout(activity);
@@ -88,36 +88,36 @@ public final class k extends FrameLayout {
         org.telegram.ui.Cells.z Z = j6.Z(this.G, this.I, 15, 15);
         this.c = Z;
         frameLayout2.setBackground(Z);
-        z5.b(frameLayout2, 0.04f, 1.25f);
-        frameLayout.addView(frameLayout2, x5.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
+        a6.b(frameLayout2, 0.04f, 1.25f);
+        frameLayout.addView(frameLayout2, y5.d(-1, -2.0f, 7, 12.0f, 0.0f, 12.0f, 15.0f));
         ImageView imageView = new ImageView(activity);
         this.f = imageView;
-        frameLayout2.addView(imageView, x5.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
+        frameLayout2.addView(imageView, y5.d(24, 24.0f, 19, 16.0f, 16.0f, 16.0f, 16.0f));
         ImageView imageView2 = new ImageView(activity);
         this.n = imageView2;
-        z5.a(imageView2);
+        a6.a(imageView2);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.msg_copy);
         org.telegram.ui.Cells.z Z2 = j6.Z(0, 0, 6, 6);
         this.h = Z2;
         imageView2.setBackground(Z2);
-        frameLayout2.addView(imageView2, x5.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
+        frameLayout2.addView(imageView2, y5.d(32, 32.0f, 53, 14.0f, 14.0f, 14.0f, 14.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
-        frameLayout2.addView(linearLayout, x5.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
+        frameLayout2.addView(linearLayout, y5.d(-1, -2.0f, 16, 54.0f, 9.0f, 54.0f, 9.0f));
         TextView textView = new TextView(activity);
         this.r = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setMaxLines(4);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView, x5.t(-1, -2, 55, 0, 0, 0, 2));
+        linearLayout.addView(textView, y5.t(-1, -2, 55, 0, 0, 0, 2));
         TextView textView2 = new TextView(activity);
         this.s = textView2;
         textView2.setTextSize(1, 14.0f);
         textView2.setMaxLines(3);
         textView2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
-        linearLayout.addView(textView2, x5.t(-1, -2, 55, 0, 0, 0, 0));
+        linearLayout.addView(textView2, y5.t(-1, -2, 55, 0, 0, 0, 0));
         this.y = new i(null, i10, new i2.g0(this, 27));
         this.v = new kn(activity, 28);
         int i12 = j6.Pk;
@@ -162,7 +162,7 @@ public final class k extends FrameLayout {
                     jVar2.c = jSONObject.optDouble("rank", 0.0d);
                     arrayList.add(jVar2);
                 }
-                Collections.sort(arrayList, new lb1(4));
+                Collections.sort(arrayList, new kb1(4));
             } catch (Exception e) {
                 FileLog.e(e);
             }

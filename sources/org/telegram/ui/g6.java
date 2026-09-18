@@ -1,31 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g6 implements Runnable {
+public final /* synthetic */ class g6 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a7 b;
-    public final /* synthetic */ n6 c;
-    public final /* synthetic */ o6 d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g6(a7 a7Var, n6 n6Var, o6 o6Var, int i10) {
+    public /* synthetic */ g6(Object obj, int i10) {
         this.a = i10;
-        this.b = a7Var;
-        this.c = n6Var;
-        this.d = o6Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 0:
-                Utilities.globalQueue.postRunnable(new g6(this.b, this.c, this.d, 1));
+                ((z6) this.b).z0();
                 break;
             default:
-                a7.X(this.b, this.c, this.d);
+                kVar = ((org.telegram.ui.ActionBar.n2) ((al) this.b).d).actionBar;
+                kVar.invalidate();
                 break;
         }
+        return true;
     }
 }

@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class hs {
-    public final org.telegram.ui.Cells.r2 a;
+    public final org.telegram.ui.Cells.s2 a;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public gs d = null;
 
-    public hs(org.telegram.ui.Cells.r2 r2Var) {
-        this.a = r2Var;
+    public hs(org.telegram.ui.Cells.s2 s2Var) {
+        this.a = s2Var;
     }
 
     public final void a(Canvas canvas, int i10) {
@@ -36,7 +36,7 @@ public final class hs {
                 break;
             }
             gs gsVar = (gs) arrayList.get(i11);
-            dp = org.telegram.messenger.wl.v(4.0f, gsVar.e, dp);
+            dp = org.telegram.messenger.wh.z(4.0f, gsVar.e, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,13 +56,13 @@ public final class hs {
             if (gsVar2 == null || gsVar2.a != size) {
                 gs gsVar3 = new gs();
                 gsVar3.a = size;
-                h01 h01Var = new h01(hg.k0.i(size, "+"), 10.0f, AndroidUtilities.bold());
-                h01Var.s(this.a);
-                gsVar3.c = h01Var;
+                v01 v01Var = new v01(hg.k0.h(size, "+"), 10.0f, AndroidUtilities.bold());
+                v01Var.s(this.a);
+                gsVar3.c = v01Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                h01 h01Var2 = gsVar3.c;
-                gsVar3.e = dp2 + ((int) h01Var2.c);
-                h01Var2.j();
+                v01 v01Var2 = gsVar3.c;
+                gsVar3.e = dp2 + ((int) v01Var2.c);
+                v01Var2.j();
                 gsVar3.d = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n8, false);
                 this.d = gsVar3;
             }

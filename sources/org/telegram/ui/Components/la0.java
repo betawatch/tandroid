@@ -1,44 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class la0 extends s4.n0 {
-    public final /* synthetic */ ma0 a;
+public final class la0 extends wh.n {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
 
-    public la0(ma0 ma0Var) {
-        this.a = ma0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public la0(org.telegram.ui.ai0 ai0Var, org.telegram.ui.ai0 ai0Var2, FrameLayout frameLayout, long j3) {
+        super(ai0Var2, frameLayout, j3, true);
+        this.F = ai0Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int S;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.o0 layoutManager = recyclerView.getLayoutManager();
-        na0 na0Var = this.a.b3;
-        if (layoutManager != na0Var.d || (S = RecyclerView.S(view)) == 0 || na0Var.f.N()) {
-            return;
+    @Override // wh.n
+    public final void f(String str, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.E) {
+            case 0:
+                wh.b bVar = (wh.b) this.F;
+                kx0 kx0Var = bVar.W;
+                if (!this.e.isEmpty()) {
+                    if (!z11) {
+                        super.f(str, z10, z11);
+                        break;
+                    } else {
+                        bVar.w.J.setText("");
+                        break;
+                    }
+                } else if (kx0Var.getVisibility() != 4) {
+                    kx0Var.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z11) {
+                    super.f(str, z10, z11);
+                    break;
+                } else {
+                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.ai0) this.F)).actionBar;
+                    kVar.setSearchFieldText("");
+                    break;
+                }
         }
-        if (na0Var.f.I() == null && na0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (S == 0) {
-                return;
-            }
-            S--;
-            ga0 ga0Var = na0Var.d;
-            ga0Var.B1();
-            if (S > ga0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
-        }
-        rect.right = na0Var.d.E1(S) ? 0 : AndroidUtilities.dp(2.0f);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public la0(wh.b bVar, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, long j3) {
+        super(n2Var, frameLayout, j3, false);
+        this.F = bVar;
     }
 }

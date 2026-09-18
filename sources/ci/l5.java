@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.dm0;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.ja0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements q0.a {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class l5 implements q0.a {
     public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                r6.Z((qb) this.b, (pg.s0) this.c, (Integer) obj);
+                r6.Z((qb) this.b, (pg.u0) this.c, (Integer) obj);
                 break;
             case 1:
                 org.telegram.ui.c5 c5Var = (org.telegram.ui.c5) this.b;
@@ -53,25 +53,25 @@ public final /* synthetic */ class l5 implements q0.a {
                 break;
             case 3:
                 c5.h hVar2 = (c5.h) this.b;
-                tg.w wVar = (tg.w) this.c;
+                tg.v vVar = (tg.v) this.c;
                 if (hVar2.a == 0) {
-                    AndroidUtilities.runOnUIThread(new rg.w1(wVar, 6));
+                    AndroidUtilities.runOnUIThread(new rg.w1(vVar, 6));
                     break;
                 }
                 break;
             case 4:
                 c5.h hVar3 = (c5.h) this.b;
-                d80 d80Var = (d80) this.c;
+                m80 m80Var = (m80) this.c;
                 int i10 = hVar3.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new dm0(d80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 13));
+                AndroidUtilities.runOnUIThread(new ja0(m80Var, z10, z10 ? null : BillingController.getResponseCodeString(i10), 14));
                 break;
             default:
                 c5.h hVar4 = (c5.h) this.b;
                 ai.m0 m0Var = (ai.m0) this.c;
                 int i11 = hVar4.a;
                 boolean z11 = i11 == 0;
-                AndroidUtilities.runOnUIThread(new dm0(m0Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 14));
+                AndroidUtilities.runOnUIThread(new ja0(m0Var, z11, z11 ? null : BillingController.getResponseCodeString(i11), 15));
                 break;
         }
     }

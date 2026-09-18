@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final ai.w0 a;
@@ -47,7 +47,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         g1 g1Var = new g1(this);
         this.b = g1Var;
         w0Var.setAdapter(g1Var);
-        addView(w0Var, w7.x5.c(-2.0f, -1));
+        addView(w0Var, w7.y5.c(-2.0f, -1));
         setWillNotDraw(false);
     }
 
@@ -153,7 +153,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.e = dp2;
                 this.f = dp2;
-                i12 = org.telegram.messenger.wl.v(18.0f, dp2, size);
+                i12 = org.telegram.messenger.wh.z(18.0f, dp2, size);
                 dp = i12;
             } else {
                 this.e = 0;
@@ -179,7 +179,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (p5 != null) {
                 int height = j1Var.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 j1Var.n = height;
-                measuredHeight = org.telegram.messenger.w1.C(4.0f, height, measuredHeight);
+                measuredHeight = org.telegram.messenger.q.D(4.0f, height, measuredHeight);
                 a3 a3Var = j1Var.c;
                 a3Var.s = j1Var.f;
                 a3Var.v = j1Var.h;
@@ -189,7 +189,7 @@ public final class j1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockCollage pageblockcollage3 = j1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (j1Var.w.G) {
-                alignment = org.telegram.ui.Components.kw0.a();
+                alignment = org.telegram.ui.Components.vw0.a();
             }
             a3 p10 = h4.p(h4Var, j1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, j1Var.w);
             j1Var.d = p10;

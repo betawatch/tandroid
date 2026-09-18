@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public class rs extends x51 {
+public class rs extends l61 {
     public final int N;
     public final int O;
     public final boolean P;
@@ -35,34 +35,34 @@ public class rs extends x51 {
     public String e0;
     public final ms f0;
     public boolean g0;
-    public final x2 h0;
+    public final y2 h0;
 
-    public rs(ml0 ml0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(ml0Var, context, i10, 0, true, null, f6Var);
+    public rs(wl0 wl0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(wl0Var, context, i10, 0, true, null, e6Var);
         this.R = new ArrayList();
         this.S = new ArrayList();
         this.T = new ArrayList();
         this.f0 = new ms(this, 0);
         this.g0 = true;
-        this.h0 = new x2(this, 3);
+        this.h0 = new y2(this, 3);
         this.s = new d(this, 8);
         this.N = i10;
         this.O = i11;
         this.P = z10;
         this.Q = new qs(i10, new ms(this, 1));
-        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, f6Var, context)), true);
+        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ns(this, e6Var, context)), true);
         N(false);
         MediaDataController.getInstance(i10).loadHints(true);
     }
 
     public final void V() {
         boolean isEmpty = TextUtils.isEmpty(this.e0);
-        ml0 ml0Var = this.d;
+        wl0 wl0Var = this.d;
         if (isEmpty) {
             if (!this.g0) {
-                if (ml0Var != null) {
-                    for (int i10 = 0; i10 < ml0Var.getChildCount(); i10++) {
-                        if (!(ml0Var.getChildAt(i10) instanceof t00)) {
+                if (wl0Var != null) {
+                    for (int i10 = 0; i10 < wl0Var.getChildCount(); i10++) {
+                        if (!(wl0Var.getChildAt(i10) instanceof t00)) {
                         }
                     }
                 }
@@ -70,13 +70,13 @@ public class rs extends x51 {
             this.Q.a();
             break;
         }
-        if (this.b0 && !this.Z && ml0Var != null) {
+        if (this.b0 && !this.Z && wl0Var != null) {
             int i11 = 0;
             while (true) {
-                if (i11 >= ml0Var.getChildCount()) {
+                if (i11 >= wl0Var.getChildCount()) {
                     break;
                 }
-                if (!(ml0Var.getChildAt(i11) instanceof t00)) {
+                if (!(wl0Var.getChildAt(i11) instanceof t00)) {
                     i11++;
                 } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
                     W(true);
@@ -111,7 +111,7 @@ public class rs extends x51 {
         if (z10) {
             ArrayList arrayList = this.T;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.k0.h(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.c0;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {

@@ -8,9 +8,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.ol0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class k6 implements GestureDetector.OnGestureListener {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final class k6 implements GestureDetector.OnGestureListener {
                 return false;
             default:
                 float measuredWidth = ((sg.e) this.b).getMeasuredWidth() / 2.0f;
-                AndroidUtilities.runOnUIThread(new el0(this, ((measuredWidth - motionEvent.getX()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, 1), 16L);
+                AndroidUtilities.runOnUIThread(new ol0(this, ((measuredWidth - motionEvent.getX()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, ((measuredWidth - motionEvent.getY()) * (Utilities.random.nextInt(30) + 40)) / measuredWidth, 1), 16L);
                 return true;
         }
     }

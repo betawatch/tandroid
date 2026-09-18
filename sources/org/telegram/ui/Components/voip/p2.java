@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wl;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class p2 extends FrameLayout {
     public TextView[] a;
@@ -95,7 +95,7 @@ public final class p2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            wl.q(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), qr.k, 300L);
+            wh.r(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), qr.k, 300L);
         }
     }
 

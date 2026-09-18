@@ -1,26 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fp0 implements ah.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ml0 b;
+public final class fp0 extends s4.s0 {
+    public final /* synthetic */ ef a;
 
-    public /* synthetic */ fp0(ml0 ml0Var, int i10) {
-        this.a = i10;
-        this.b = ml0Var;
+    public fp0(ef efVar) {
+        this.a = efVar;
     }
 
-    @Override // ah.n
-    public final boolean a(Canvas canvas, View view, long j3) {
-        switch (this.a) {
-            case 0:
-                return ((kp0) this.b).drawChild(canvas, view, j3);
-            default:
-                return ((rt0) this.b).drawChild(canvas, view, j3);
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ef efVar = this.a;
+        View view = efVar.u;
+        boolean z10 = efVar.w.I0() != 0;
+        Boolean bool = efVar.x;
+        if (bool == null || z10 != bool.booleanValue()) {
+            view.animate().cancel();
+            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
+            efVar.x = Boolean.valueOf(z10);
         }
     }
 }

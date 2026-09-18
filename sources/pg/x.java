@@ -12,29 +12,29 @@ import android.widget.LinearLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.r6;
-import org.telegram.ui.xy0;
-import w7.x5;
+import org.telegram.ui.q6;
+import org.telegram.ui.vy0;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class x extends g3 {
+public final class x extends f3 {
     public static final /* synthetic */ int s = 0;
     public final ai.d1 b;
     public final ImageView c;
-    public final r6 d;
+    public final q6 d;
     public final Path e;
     public int f;
     public q0.a h;
     public u n;
     public boolean r;
 
-    public x(Context context, f6 f6Var) {
-        super(1, context, f6Var, true);
+    public x(Context context, e6 e6Var) {
+        super(1, context, e6Var, true);
         this.e = new Path();
         fixNavigationBar(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -49,17 +49,17 @@ public final class x extends g3 {
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
         imageView.setBackground(j6.f0(1090519039, 1, -1));
-        imageView.setOnClickListener(new xy0(13, this, context));
+        imageView.setOnClickListener(new vy0(13, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         imageView2.setBackground(j6.f0(1090519039, 1, -1));
         imageView2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 5));
-        r6 r6Var = new r6(this, context);
-        this.d = r6Var;
-        r6Var.d = Color.alpha(-65536) / 255.0f;
-        r6Var.a();
-        r6Var.invalidate();
+        q6 q6Var = new q6(this, context);
+        this.d = q6Var;
+        q6Var.d = Color.alpha(-65536) / 255.0f;
+        q6Var.a();
+        q6Var.invalidate();
         ai.d1 d1Var = new ai.d1(context, 4);
         d1Var.setOrientation(1);
         t tVar = new t(this, context);
@@ -69,23 +69,23 @@ public final class x extends g3 {
         d1Var.d = new w(this, context);
         p pVar = new p(context, this.resourcesProvider);
         pVar.setAdapter(new q(d1Var));
-        d1Var.addView(pVar, x5.l(1.0f, -1, 0));
-        d1Var.addView(r6Var, x5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        d1Var.addView(pVar, y5.l(1.0f, -1, 0));
+        d1Var.addView(q6Var, y5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, x5.n(28, 28));
-        linearLayout2.addView(pVar.n(8, false), x5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, x5.n(28, 28));
-        d1Var.addView(linearLayout2, x5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout2.addView(imageView, y5.n(28, 28));
+        linearLayout2.addView(pVar.n(8, false), y5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, y5.n(28, 28));
+        d1Var.addView(linearLayout2, y5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         this.b = d1Var;
-        linearLayout.addView(d1Var, x5.n(-1, 0));
+        linearLayout.addView(d1Var, y5.n(-1, 0));
         o oVar = new o(this, context, linearLayout);
         oVar.addView(linearLayout);
         setCustomView(oVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         super.dismiss();
         q0.a aVar = this.h;
@@ -126,11 +126,11 @@ public final class x extends g3 {
             sVar.invalidate();
         }
         if (i11 != 1) {
-            r6 r6Var = this.d;
-            r6Var.getClass();
-            r6Var.d = Color.alpha(i10) / 255.0f;
-            r6Var.a();
-            r6Var.invalidate();
+            q6 q6Var = this.d;
+            q6Var.getClass();
+            q6Var.d = Color.alpha(i10) / 255.0f;
+            q6Var.a();
+            q6Var.invalidate();
         }
         w wVar = (w) d1Var.d;
         wVar.e = true;
@@ -151,7 +151,7 @@ public final class x extends g3 {
         wVar.e = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         if (!this.n.g()) {
             this.c.setVisibility(8);

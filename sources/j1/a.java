@@ -5,39 +5,24 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
-import k2.u;
+import n2.e;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final class a extends u {
+public final class a extends e {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(23);
+        super(18);
         this.c = bVar;
     }
 
-    @Override // k2.u
-    public final c Z(int i10) {
-        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
-    }
-
-    @Override // k2.u
-    public final c a0(int i10) {
-        b bVar = this.c;
-        int i11 = i10 == 2 ? bVar.k : bVar.l;
-        if (i11 == Integer.MIN_VALUE) {
-            return null;
-        }
-        return Z(i11);
-    }
-
-    @Override // k2.u
-    public final boolean c0(int i10, int i11, Bundle bundle) {
+    @Override // n2.e
+    public final boolean H(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
@@ -89,5 +74,20 @@ public final class a extends u {
             return true;
         }
         return false;
+    }
+
+    @Override // n2.e
+    public final c u(int i10) {
+        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    }
+
+    @Override // n2.e
+    public final c v(int i10) {
+        b bVar = this.c;
+        int i11 = i10 == 2 ? bVar.k : bVar.l;
+        if (i11 == Integer.MIN_VALUE) {
+            return null;
+        }
+        return u(i11);
     }
 }

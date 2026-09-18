@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class d1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -188,7 +188,7 @@ public abstract class d1 extends CameraView {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.DualErrorTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.DualErrorMessage);
-                hg.k0.A(R.string.OK, alertDialog$Builder, null);
+                org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
             }
             t(false);
             toggleDual();

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class rl0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -24,19 +24,19 @@ public final class rl0 implements TextWatcher {
         switch (this.a) {
             case 0:
                 PasscodeActivity passcodeActivity = this.b;
-                ll0 ll0Var = passcodeActivity.O;
+                ml0 ml0Var = passcodeActivity.O;
                 if (passcodeActivity.N) {
-                    passcodeActivity.n.removeCallbacks(ll0Var);
-                    ll0Var.run();
+                    passcodeActivity.n.removeCallbacks(ml0Var);
+                    ml0Var.run();
                     break;
                 }
                 break;
             default:
                 PasscodeActivity passcodeActivity2 = this.b;
-                ll0 ll0Var2 = passcodeActivity2.O;
+                ml0 ml0Var2 = passcodeActivity2.O;
                 if (passcodeActivity2.N) {
-                    passcodeActivity2.n.removeCallbacks(ll0Var2);
-                    ll0Var2.run();
+                    passcodeActivity2.n.removeCallbacks(ml0Var2);
+                    ml0Var2.run();
                     break;
                 }
                 break;

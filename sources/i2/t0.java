@@ -15,11 +15,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
-import org.telegram.ui.Components.s50;
-import org.telegram.ui.lb1;
+import org.telegram.ui.Components.r50;
+import org.telegram.ui.kb1;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class t0 {
     public final Object a;
@@ -108,7 +108,7 @@ public final class t0 {
         b();
         this.o = vVar;
         c();
-        long p5 = this.a.p(vVar.c, this.i, this.c, zArr, j3);
+        long q6 = this.a.q(vVar.c, this.i, this.c, zArr, j3);
         for (int i12 = 0; i12 < fVarArr.length; i12++) {
             if (fVarArr[i12].b == -2 && this.o.b(i12)) {
                 b1VarArr[i12] = new u2.q();
@@ -125,7 +125,7 @@ public final class t0 {
                 e2.d.g(vVar.c[i13] == null);
             }
         }
-        return p5;
+        return q6;
     }
 
     public final void b() {
@@ -363,7 +363,7 @@ public final class t0 {
             }
             i26++;
         }
-        Pair j10 = x2.p.j(1, tVar2, iArr5, new ca.b(pVar, iVar, z11, iArr6, 7), new lb1(14));
+        Pair j10 = x2.p.j(1, tVar2, iArr5, new ca.b(pVar, iVar, z11, iArr6, 7), new kb1(14));
         if (j10 != null) {
             qVarArr[((Integer) j10.second).intValue()] = (x2.q) j10.first;
         }
@@ -383,12 +383,12 @@ public final class t0 {
             a1.d dVar = new a1.d(iVar, str, iArr6, (!iVar.k || context2 == null) ? null : e2.d0.w(context2), 20);
             str2 = str;
             l1Var = null;
-            j3 = x2.p.j(2, tVar2, iArr5, dVar, new lb1(i27));
+            j3 = x2.p.j(2, tVar2, iArr5, dVar, new kb1(i27));
         }
         int i28 = 4;
         if ((iVar.A || j3 == null) && o1Var5.a != 2) {
             iArr = iArr8;
-            pair = x2.p.j(4, tVar2, iArr5, new r5.d(iVar, 13), new lb1(12));
+            pair = x2.p.j(4, tVar2, iArr5, new r5.d(iVar, 13), new kb1(12));
         } else {
             iArr = iArr8;
             pair = l1Var;
@@ -408,7 +408,7 @@ public final class t0 {
                 String str3 = e2.d0.a;
                 obj = locale.toLanguageTag();
             }
-            pair2 = x2.p.j(3, tVar2, iArr5, new s50(iVar, str2, obj, 10), new lb1(15));
+            pair2 = x2.p.j(3, tVar2, iArr5, new r50(iVar, str2, obj, 10), new kb1(15));
         }
         if (pair2 != 0) {
             qVarArr[((Integer) pair2.second).intValue()] = (x2.q) pair2.first;
@@ -441,7 +441,7 @@ public final class t0 {
                         int i36 = 0;
                         while (i36 < a10.a) {
                             u2.o1 o1Var8 = o1Var6;
-                            if (hg.k0.d(iArr10[i36], iVar.t0)) {
+                            if (hg.k0.e(iArr10[i36], iVar.t0)) {
                                 i12 = i36;
                                 x2.g gVar2 = new x2.g(a10.d[i36], iArr10[i12]);
                                 if (gVar != 0) {

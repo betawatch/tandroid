@@ -15,15 +15,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.l3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class z0 extends WebView {
     public static final /* synthetic */ int V = 0;
     public boolean E;
-    public g3 F;
+    public f3 F;
     public int G;
     public int H;
     public Runnable I;
@@ -77,8 +77,8 @@ public final class z0 extends WebView {
         if (z0Var.c) {
             return;
         }
-        m2 a2 = m2.a(z0Var);
-        n2 b10 = n2.b();
+        n2 a2 = n2.a(z0Var);
+        o2 b10 = o2.b();
         if (a2 == null) {
             b10.getClass();
         } else {
@@ -99,35 +99,35 @@ public final class z0 extends WebView {
         f1.c(e1Var);
     }
 
-    public final void b(m2 m2Var) {
+    public final void b(n2 n2Var) {
         h0 h0Var;
-        if (m2Var == null) {
+        if (n2Var == null) {
             return;
         }
         d1 d1Var = this.Q;
         boolean z10 = false;
         if (d1Var != null && (h0Var = d1Var.c) != null) {
-            int i10 = m2Var.e;
+            int i10 = n2Var.e;
             if (i10 != 0) {
                 h0Var.o(i10, true);
                 this.s = true;
             }
-            int i11 = m2Var.f;
+            int i11 = n2Var.f;
             if (i11 != 0) {
                 this.Q.c.o(i11, false);
                 this.v = true;
             } else {
                 i11 = -1;
             }
-            Bitmap bitmap = m2Var.i;
+            Bitmap bitmap = n2Var.i;
             if (bitmap != null) {
                 d1 d1Var2 = this.Q;
                 this.O = bitmap;
                 d1Var2.getClass();
                 this.M = true;
             }
-            if (!TextUtils.isEmpty(m2Var.d)) {
-                String str = m2Var.d;
+            if (!TextUtils.isEmpty(n2Var.d)) {
+                String str = n2Var.d;
                 this.r = str;
                 d1 d1Var3 = this.Q;
                 this.K = str;
@@ -178,13 +178,13 @@ public final class z0 extends WebView {
         return super.drawChild(canvas, view, j3);
     }
 
-    public final void e(String str, m2 m2Var) {
-        g3 g3Var = this.F;
-        if (g3Var != null) {
-            g3Var.dismiss();
+    public final void e(String str, n2 n2Var) {
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
             this.F = null;
         }
-        b(m2Var);
+        b(n2Var);
         this.d = str;
         String b10 = d1.b(str);
         c("loadUrl " + b10 + " with cached meta");
@@ -276,13 +276,13 @@ public final class z0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str) {
-        g3 g3Var = this.F;
-        if (g3Var != null) {
-            g3Var.dismiss();
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
             this.F = null;
         }
         if (!this.c) {
-            b(n2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+            b(o2.b().a(AndroidUtilities.getHostAuthority(str, true)));
         }
         this.d = str;
         String b10 = d1.b(str);
@@ -451,13 +451,13 @@ public final class z0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str, Map map) {
-        g3 g3Var = this.F;
-        if (g3Var != null) {
-            g3Var.dismiss();
+        f3 f3Var = this.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
             this.F = null;
         }
         if (!this.c) {
-            b(n2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+            b(o2.b().a(AndroidUtilities.getHostAuthority(str, true)));
         }
         this.d = str;
         String b10 = d1.b(str);

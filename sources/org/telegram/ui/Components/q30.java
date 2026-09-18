@@ -15,9 +15,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class q30 extends ll0 {
+public final class q30 extends vl0 {
     public final Context c;
     public final gg.c2 d;
     public o30 e;
@@ -40,15 +40,15 @@ public final class q30 extends ll0 {
     @Override // s4.h0
     public final void A(s4.c1 c1Var) {
         View view = c1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+        if (view instanceof org.telegram.ui.Cells.b5) {
+            ((org.telegram.ui.Cells.b5) view).a();
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         View view = c1Var.a;
-        return !((view instanceof org.telegram.ui.Cells.a5) && this.w.f0.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) && c1Var.f == 0;
+        return !((view instanceof org.telegram.ui.Cells.b5) && this.w.f0.contains(Long.valueOf(((org.telegram.ui.Cells.b5) view).getUserId()))) && c1Var.f == 0;
     }
 
     @Override // s4.h0
@@ -119,13 +119,13 @@ public final class q30 extends ll0 {
             if (i13 != 1) {
                 return;
             }
-            org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
+            org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view;
             if (i10 == this.s) {
-                u3Var.setText(LocaleController.getString(R.string.ChannelMembers));
+                v3Var.setText(LocaleController.getString(R.string.ChannelMembers));
                 return;
             } else {
                 if (i10 == this.v) {
-                    u3Var.setText(LocaleController.getString(R.string.GlobalSearch));
+                    v3Var.setText(LocaleController.getString(R.string.GlobalSearch));
                     return;
                 }
                 return;
@@ -142,13 +142,13 @@ public final class q30 extends ll0 {
                 if (z10) {
                     user = (TLRPC.User) tLObject;
                 } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    i12 = ((org.telegram.ui.ActionBar.g3) r30Var).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.f3) r30Var).currentAccount;
                     user = MessagesController.getInstance(i12).getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer)));
                 } else {
                     if (!(tLObject instanceof TLRPC.ChatParticipant)) {
                         return;
                     }
-                    i11 = ((org.telegram.ui.ActionBar.g3) r30Var).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.f3) r30Var).currentAccount;
                     user = MessagesController.getInstance(i11).getUser(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
                 }
                 String publicUsername = UserObject.getPublicUsername(user);
@@ -193,10 +193,10 @@ public final class q30 extends ll0 {
                             }
                             spannableStringBuilder = spannableStringBuilder3;
                         }
-                        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-                        a5Var.setTag(Integer.valueOf(i10));
-                        a5Var.setCustomImageVisible(r30Var.f0.contains(Long.valueOf(user.id)));
-                        a5Var.b(user, spannableStringBuilder, publicUsername, false);
+                        org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
+                        b5Var.setTag(Integer.valueOf(i10));
+                        b5Var.setCustomImageVisible(r30Var.f0.contains(Long.valueOf(user.id)));
+                        b5Var.b(user, spannableStringBuilder, publicUsername, false);
                     }
                     i10 -= i15;
                 }
@@ -207,10 +207,10 @@ public final class q30 extends ll0 {
                 publicUsername = null;
                 if (str != null) {
                 }
-                org.telegram.ui.Cells.a5 a5Var2 = (org.telegram.ui.Cells.a5) view;
-                a5Var2.setTag(Integer.valueOf(i10));
-                a5Var2.setCustomImageVisible(r30Var.f0.contains(Long.valueOf(user.id)));
-                a5Var2.b(user, spannableStringBuilder, publicUsername, false);
+                org.telegram.ui.Cells.b5 b5Var2 = (org.telegram.ui.Cells.b5) view;
+                b5Var2.setTag(Integer.valueOf(i10));
+                b5Var2.setCustomImageVisible(r30Var.f0.contains(Long.valueOf(user.id)));
+                b5Var2.b(user, spannableStringBuilder, publicUsername, false);
             }
         }
         int i16 = this.v;
@@ -232,10 +232,10 @@ public final class q30 extends ll0 {
                 publicUsername2 = null;
                 if (str != null) {
                 }
-                org.telegram.ui.Cells.a5 a5Var22 = (org.telegram.ui.Cells.a5) view;
-                a5Var22.setTag(Integer.valueOf(i10));
-                a5Var22.setCustomImageVisible(r30Var2.f0.contains(Long.valueOf(user.id)));
-                a5Var22.b(user, spannableStringBuilder, publicUsername2, false);
+                org.telegram.ui.Cells.b5 b5Var22 = (org.telegram.ui.Cells.b5) view;
+                b5Var22.setTag(Integer.valueOf(i10));
+                b5Var22.setCustomImageVisible(r30Var2.f0.contains(Long.valueOf(user.id)));
+                b5Var22.b(user, spannableStringBuilder, publicUsername2, false);
             }
         }
         tLObject = null;
@@ -254,10 +254,10 @@ public final class q30 extends ll0 {
         publicUsername22 = null;
         if (str != null) {
         }
-        org.telegram.ui.Cells.a5 a5Var222 = (org.telegram.ui.Cells.a5) view;
-        a5Var222.setTag(Integer.valueOf(i10));
-        a5Var222.setCustomImageVisible(r30Var22.f0.contains(Long.valueOf(user.id)));
-        a5Var222.b(user, spannableStringBuilder, publicUsername22, false);
+        org.telegram.ui.Cells.b5 b5Var222 = (org.telegram.ui.Cells.b5) view;
+        b5Var222.setTag(Integer.valueOf(i10));
+        b5Var222.setCustomImageVisible(r30Var22.f0.contains(Long.valueOf(user.id)));
+        b5Var222.b(user, spannableStringBuilder, publicUsername22, false);
     }
 
     @Override // s4.h0
@@ -266,10 +266,10 @@ public final class q30 extends ll0 {
         if (i10 != 0) {
             Context context = this.c;
             if (i10 == 1) {
-                org.telegram.ui.Cells.u3 u3Var = new org.telegram.ui.Cells.u3(context, null);
-                u3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jg, false));
-                u3Var.setTextColor(org.telegram.ui.ActionBar.j6.Qg);
-                view = u3Var;
+                org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(context, null);
+                v3Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jg, false));
+                v3Var.setTextColor(org.telegram.ui.ActionBar.j6.Qg);
+                view = v3Var;
             } else if (i10 != 2) {
                 view = new View(context);
             } else {
@@ -277,16 +277,16 @@ public final class q30 extends ll0 {
                 view.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
             }
         } else {
-            org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(2, 2, this.c, null, false);
-            a5Var.setCustomRightImage(R.drawable.msg_invited);
-            a5Var.setNameColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ng, false));
+            org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(2, 2, this.c, null, false);
+            b5Var.setCustomRightImage(R.drawable.msg_invited);
+            b5Var.setNameColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ng, false));
             int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.lg, false);
             int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.pg, false);
-            a5Var.H = w02;
-            a5Var.I = w03;
-            a5Var.setDividerColor(org.telegram.ui.ActionBar.j6.tg);
-            view = a5Var;
+            b5Var.H = w02;
+            b5Var.I = w03;
+            b5Var.setDividerColor(org.telegram.ui.ActionBar.j6.tg);
+            view = b5Var;
         }
-        return new wk0(view);
+        return new gl0(view);
     }
 }

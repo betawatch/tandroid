@@ -3,16 +3,23 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements ov0, org.telegram.ui.Components.cl0, org.telegram.ui.ActionBar.m1 {
+public final /* synthetic */ class t implements mv0, org.telegram.ui.Components.ml0, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ h4 a;
 
     public /* synthetic */ t(h4 h4Var) {
         this.a = h4Var;
     }
 
-    @Override // org.telegram.ui.Components.cl0
+    @Override // org.telegram.ui.mv0
+    public void b(float[] fArr) {
+        h4 h4Var = this.a;
+        fArr[0] = h4Var.I0;
+        fArr[1] = h4Var.u0[0].b.getMeasuredHeight();
+    }
+
+    @Override // org.telegram.ui.Components.ml0
     public boolean d(int i10, View view) {
         h4 h4Var = this.a;
         h4Var.getClass();
@@ -24,19 +31,12 @@ public final /* synthetic */ class t implements ov0, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // org.telegram.ui.ov0
-    public void g(float[] fArr) {
-        h4 h4Var = this.a;
-        fArr[0] = h4Var.I0;
-        fArr[1] = h4Var.u0[0].b.getMeasuredHeight();
-    }
-
-    @Override // org.telegram.ui.ActionBar.m1
-    public void o(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
+    @Override // org.telegram.ui.ActionBar.l1
+    public void p(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
         h4 h4Var = this.a;
         h4Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = h4Var.H) != null && o1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = h4Var.H) != null && n1Var.isShowing()) {
             h4Var.H.d(true);
         }
     }

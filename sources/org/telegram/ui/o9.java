@@ -1,28 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o9 implements o1.g {
+public final /* synthetic */ class o9 implements o1.f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w9 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ o9(w9 w9Var, int i10) {
+    public /* synthetic */ o9(Object obj, int i10) {
         this.a = i10;
-        this.b = w9Var;
+        this.b = obj;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
         switch (this.a) {
             case 0:
-                w9 w9Var = this.b;
-                w9Var.y = f7 / 500.0f;
-                w9Var.fragmentView.invalidate();
+                v9 v9Var = (v9) this.b;
+                o1.k kVar = v9Var.x;
+                if (kVar != null) {
+                    kVar.c();
+                    v9Var.x = null;
+                    break;
+                }
+                break;
+            case 1:
+                to0 to0Var = (to0) this.b;
+                if (hVar == to0Var.c) {
+                    to0Var.c = null;
+                    break;
+                }
                 break;
             default:
-                w9 w9Var2 = this.b;
-                w9Var2.a0 = w9Var2.M ? f7 / 500.0f : 1.0f - (f7 / 500.0f);
-                w9Var2.fragmentView.invalidate();
+                ((ou0) this.b).D();
                 break;
         }
     }

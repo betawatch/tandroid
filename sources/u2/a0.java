@@ -2,7 +2,7 @@ package u2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a0 extends p1 {
     public final boolean l;
@@ -98,7 +98,7 @@ public final class a0 extends p1 {
                         if (a2 != null) {
                             x xVar4 = this.p;
                             xVar4.getClass();
-                            xVar4.b(a2);
+                            xVar4.a(a2);
                             return;
                         }
                         return;
@@ -162,7 +162,7 @@ public final class a0 extends p1 {
         if (this.o.g != null && obj.equals(y.h)) {
             obj = this.o.g;
         }
-        xVar.b(f0Var.a(obj));
+        xVar.a(f0Var.a(obj));
         return xVar;
     }
 

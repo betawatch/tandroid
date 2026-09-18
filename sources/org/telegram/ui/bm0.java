@@ -6,63 +6,63 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bm0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn0 b;
+    public final /* synthetic */ pn0 b;
 
-    public /* synthetic */ bm0(qn0 qn0Var, int i10) {
+    public /* synthetic */ bm0(pn0 pn0Var, int i10) {
         this.a = i10;
-        this.b = qn0Var;
+        this.b = pn0Var;
     }
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
         int i10 = this.a;
         int i11 = 2;
-        qn0 qn0Var = this.b;
+        pn0 pn0Var = this.b;
         switch (i10) {
             case 0:
-                if (qn0Var.getParentActivity() != null) {
+                if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        cu cuVar = new cu(null, false);
-                        cuVar.r = new f20(22, qn0Var, view);
-                        qn0Var.presentFragment(cuVar);
+                        au auVar = new au(null, false);
+                        auVar.r = new z10(23, pn0Var, view);
+                        pn0Var.presentFragment(auVar);
                         break;
                     }
                 }
                 break;
             case 1:
-                if (qn0Var.getParentActivity() != null) {
+                if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qn0Var.getParentActivity());
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pn0Var.getParentActivity());
                         String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                        c2Var.R = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new wv(qn0Var, i11));
+                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                        b2Var.R = string;
+                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new vv(pn0Var, i11));
                         alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        qn0Var.showDialog(c2Var);
+                        pn0Var.showDialog(b2Var);
                         break;
                     }
                 }
                 break;
             case 2:
-                if (qn0Var.getParentActivity() != null) {
+                if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        cu cuVar2 = new cu(null, false);
-                        cuVar2.r = new cm0(qn0Var, i11);
-                        qn0Var.presentFragment(cuVar2);
+                        au auVar2 = new au(null, false);
+                        auVar2.r = new cm0(pn0Var, i11);
+                        pn0Var.presentFragment(auVar2);
                         break;
                     }
                 }
                 break;
             default:
-                if (qn0Var.getParentActivity() != null) {
+                if (pn0Var.getParentActivity() != null) {
                     if (motionEvent.getAction() == 1) {
-                        cu cuVar3 = new cu(null, false);
-                        cuVar3.r = new cm0(qn0Var, 3);
-                        qn0Var.presentFragment(cuVar3);
+                        au auVar3 = new au(null, false);
+                        auVar3.r = new cm0(pn0Var, 3);
+                        pn0Var.presentFragment(auVar3);
                         break;
                     }
                 }

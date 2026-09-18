@@ -9,18 +9,18 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class a2 extends Drawable {
     public final Paint a;
-    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.e6 b;
     public boolean c;
     public int d;
 
     public a2(int i10) {
         Paint paint = new Paint(1);
         this.a = paint;
-        this.b = new org.telegram.ui.Components.c6(new i2.g0(this, 5), 420L, qr.h, 0);
+        this.b = new org.telegram.ui.Components.e6(new i2.g0(this, 5), 420L, qr.h, 0);
         this.d = 255;
         paint.setColor(i10);
     }

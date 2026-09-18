@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class iv extends FrameLayout {
     public final Paint a;
@@ -31,10 +31,10 @@ public final class iv extends FrameLayout {
     public final ArrayList h;
     public final ArrayList n;
     public final ArrayList r;
-    public final c6 s;
+    public final e6 s;
     public ImageReceiver v;
     public boolean w;
-    public final c6 x;
+    public final e6 x;
     public final /* synthetic */ sv y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -50,27 +50,27 @@ public final class iv extends FrameLayout {
         this.n = new ArrayList();
         this.r = new ArrayList();
         qr qrVar = qr.h;
-        this.s = new c6(this, 0L, 350L, qrVar);
-        this.x = new c6(this, 0L, 320L, qrVar);
+        this.s = new e6(this, 0L, 350L, qrVar);
+        this.x = new e6(this, 0L, 320L, qrVar);
     }
 
     public final void a() {
-        x5[] x5VarArr;
+        z5[] z5VarArr;
         sv svVar = this.y;
         ci.v vVar = svVar.h;
         if (vVar == null) {
-            x5VarArr = new x5[0];
+            z5VarArr = new z5[0];
         } else {
-            x5[] x5VarArr2 = new x5[vVar.getChildCount()];
+            z5[] z5VarArr2 = new z5[vVar.getChildCount()];
             for (int i10 = 0; i10 < vVar.getChildCount(); i10++) {
                 View childAt = vVar.getChildAt(i10);
                 if (childAt instanceof jv) {
-                    x5VarArr2[i10] = ((jv) childAt).c;
+                    z5VarArr2[i10] = ((jv) childAt).c;
                 }
             }
-            x5VarArr = x5VarArr2;
+            z5VarArr = z5VarArr2;
         }
-        svVar.b = x5.update(3, this, x5VarArr, (LongSparseArray<o5>) svVar.b);
+        svVar.b = z5.update(3, this, z5VarArr, (LongSparseArray<q5>) svVar.b);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -81,7 +81,7 @@ public final class iv extends FrameLayout {
         ArrayList arrayList;
         ArrayList arrayList2;
         hv hvVar;
-        x5 x5Var;
+        z5 z5Var;
         Canvas canvas2 = canvas;
         sv svVar = this.y;
         tp tpVar = svVar.F;
@@ -95,7 +95,7 @@ public final class iv extends FrameLayout {
             Path path = this.b;
             path.reset();
             float V = svVar.V();
-            viewGroup = ((org.telegram.ui.ActionBar.g3) svVar).containerView;
+            viewGroup = ((org.telegram.ui.ActionBar.f3) svVar).containerView;
             float e = this.s.e(V <= ((float) viewGroup.getPaddingTop()));
             float lerp = AndroidUtilities.lerp(V, 0.0f, e);
             if (this.v != null) {
@@ -137,7 +137,7 @@ public final class iv extends FrameLayout {
                 AndroidUtilities.setLightStatusBar(svVar, z11);
             }
             org.telegram.ui.ActionBar.j6.t0.setColor(svVar.getThemedColor(org.telegram.ui.ActionBar.j6.Ii));
-            org.telegram.ui.ActionBar.j6.t0.setAlpha((int) (w7.p.a(lerp / AndroidUtilities.dp(f7), 0.0f, 1.0f) * org.telegram.ui.ActionBar.j6.t0.getAlpha()));
+            org.telegram.ui.ActionBar.j6.t0.setAlpha((int) (w7.q.a(lerp / AndroidUtilities.dp(f7), 0.0f, 1.0f) * org.telegram.ui.ActionBar.j6.t0.getAlpha()));
             int dp4 = AndroidUtilities.dp(36.0f);
             float dp5 = lerp + AndroidUtilities.dp(10.0f);
             rectF.set((getMeasuredWidth() - dp4) / 2, dp5, (getMeasuredWidth() + dp4) / 2, AndroidUtilities.dp(4.0f) + dp5);
@@ -174,18 +174,18 @@ public final class iv extends FrameLayout {
                                 jvVar.invalidate();
                             }
                         }
-                        if (svVar.b != null && (x5Var = jvVar.c) != null) {
-                            o5 o5Var = (o5) svVar.b.get(x5Var.getDocumentId());
-                            if (o5Var != null) {
+                        if (svVar.b != null && (z5Var = jvVar.c) != null) {
+                            q5 q5Var = (q5) svVar.b.get(z5Var.getDocumentId());
+                            if (q5Var != null) {
                                 int themedColor2 = svVar.getThemedColor(org.telegram.ui.ActionBar.j6.G6);
                                 if (themedColor2 != svVar.U || svVar.T == null) {
                                     svVar.U = themedColor2;
                                     svVar.T = new PorterDuffColorFilter(themedColor2, PorterDuff.Mode.SRC_IN);
                                 }
-                                o5Var.setColorFilter(svVar.T);
+                                q5Var.setColorFilter(svVar.T);
                                 ArrayList arrayList4 = (ArrayList) sparseArray.get(childAt.getTop());
                                 if (arrayList4 == null) {
-                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.z(1, arrayList) : new ArrayList();
+                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.v(1, arrayList) : new ArrayList();
                                     sparseArray.put(childAt.getTop(), arrayList4);
                                 }
                                 arrayList4.add(jvVar);
@@ -237,7 +237,7 @@ public final class iv extends FrameLayout {
                             hvVar = new hv(this);
                             hvVar.l(7);
                         } else {
-                            hvVar = (hv) hg.k0.z(1, arrayList2);
+                            hvVar = (hv) hg.k0.v(1, arrayList2);
                         }
                         hvVar.M = S;
                         hvVar.e();
@@ -326,7 +326,7 @@ public final class iv extends FrameLayout {
             i10++;
         }
         arrayList.clear();
-        x5.release(this, (LongSparseArray<o5>) this.y.b);
+        z5.release(this, (LongSparseArray<q5>) this.y.b);
         ImageReceiver imageReceiver = this.v;
         if (imageReceiver != null) {
             imageReceiver.onDetachedFromWindow();

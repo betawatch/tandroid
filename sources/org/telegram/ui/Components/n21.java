@@ -1,35 +1,37 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class n21 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y21 b;
+public final class n21 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public xq0 d;
 
-    public /* synthetic */ n21(y21 y21Var, int i10) {
-        this.a = i10;
-        this.b = y21Var;
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
+        int i10 = 0;
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
+        }
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                y21 y21Var = this.b;
-                if (y21Var.k()) {
-                    y21Var.l();
-                    break;
-                }
-                break;
-            default:
-                y21 y21Var2 = this.b;
-                if (y21Var2.k()) {
-                    y21Var2.l();
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a();
     }
 }

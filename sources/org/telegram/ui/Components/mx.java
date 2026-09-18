@@ -1,51 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import androidx.recyclerview.widget.RecyclerView;
-import j$.util.Objects;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class mx extends jz {
-    public final /* synthetic */ kz d;
+public final class mx extends w7.z5 {
+    public final /* synthetic */ kz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public mx(kz kzVar) {
-        super(kzVar, 1);
-        this.d = kzVar;
+        this.a = kzVar;
     }
 
-    @Override // org.telegram.ui.Components.jz, s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 0) {
-            this.d.f0 = false;
-        }
-        super.a(recyclerView, i10);
+    @Override // w7.z5
+    public final void a() {
+        kz kzVar = this.a;
+        kzVar.f0 = false;
+        kzVar.P.z1();
     }
 
-    @Override // org.telegram.ui.Components.jz, s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.i iVar;
-        kz kzVar = this.d;
-        jy jyVar = kzVar.S;
-        jx jxVar = kzVar.Q;
-        kzVar.U(jxVar.I0());
-        if (Build.VERSION.SDK_INT >= 31 && (iVar = kzVar.j2) != null) {
-            iVar.f(i10, i11);
-        }
-        super.b(recyclerView, i10, i11);
-        if (jyVar == null || kzVar.P.getAdapter() != jyVar) {
-            return;
-        }
-        jy jyVar2 = jyVar.x.a;
-        if (jyVar2.F.V.F || jyVar2.E) {
-            return;
-        }
-        if (jxVar.N0() + 20 > jyVar.h()) {
-            iy iyVar = jyVar.x;
-            Objects.requireNonNull(iyVar);
-            AndroidUtilities.runOnUIThread(new rw(iyVar, 1));
-        }
+    @Override // w7.z5
+    public final void b() {
+        kz kzVar = this.a;
+        kzVar.P.z1();
+        kzVar.f0 = true;
     }
 }

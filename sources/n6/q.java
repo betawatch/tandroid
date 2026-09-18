@@ -9,7 +9,7 @@ import android.util.Log;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public abstract class q {
     public static final a0.m a = new a0.m(0);
@@ -132,7 +132,7 @@ public abstract class q {
         a0.m mVar = a;
         synchronized (mVar) {
             try {
-                Locale locale = w7.z.a(context.getResources().getConfiguration()).a.get(0);
+                Locale locale = w7.a0.a(context.getResources().getConfiguration()).a.get(0);
                 if (!locale.equals(b)) {
                     mVar.clear();
                     b = locale;

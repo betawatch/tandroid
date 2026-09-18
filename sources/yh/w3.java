@@ -1,147 +1,86 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.KeyEvent;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class w3 extends FrameLayout {
-    public final /* synthetic */ int a = 0;
-    public Object b;
-    public Object c;
+public final class w3 extends rq {
+    public final View b;
+    public final Paint c;
+    public final Path d;
+    public final long e;
+    public float f;
 
-    public /* synthetic */ w3(Context context) {
-        super(context);
+    public w3(ci.d dVar, int i10) {
+        super(dVar);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Path path = new Path();
+        this.d = path;
+        this.e = System.currentTimeMillis();
+        this.f = 1.0f;
+        this.b = dVar;
+        this.a.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setColor(i10);
+        path.rewind();
+        path.moveTo(-AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
+        path.lineTo(0.0f, -AndroidUtilities.dpf2(1.08f));
+        path.lineTo(AndroidUtilities.dpf2(2.91f), AndroidUtilities.dpf2(1.08f));
     }
 
-    public void b(int i10, CharSequence charSequence, boolean z10) {
-        ImageView imageView = (ImageView) this.b;
-        if (z10) {
-            AndroidUtilities.updateImageViewImageAnimated(imageView, i10);
-        } else {
-            imageView.setImageResource(i10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) (this.f * 255.0f);
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
+        float currentTimeMillis = ((System.currentTimeMillis() - this.e) % 400) / 400.0f;
+        Paint paint2 = this.c;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * this.f));
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
+        canvas.save();
+        canvas.translate(getBounds().centerX(), getBounds().centerY() - (((AndroidUtilities.dpf2(1.166f) * 2.0f) + (AndroidUtilities.dpf2(2.16f) * 3.0f)) / 2.0f));
+        int i11 = 0;
+        while (i11 < 4) {
+            float f7 = i11 == 0 ? 1.0f - currentTimeMillis : i11 == 3 ? currentTimeMillis : 1.0f;
+            paint2.setAlpha((int) (f7 * 255.0f * this.f));
+            canvas.save();
+            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, f7);
+            canvas.scale(lerp, lerp);
+            canvas.drawPath(this.d, paint2);
+            canvas.restore();
+            canvas.translate(0.0f, AndroidUtilities.dpf2(3.3260002f) * f7);
+            i11++;
         }
-        ((TextView) this.c).setText(charSequence);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        switch (this.a) {
-            case 2:
-                if (keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 4) {
-                    return super.dispatchKeyEvent(keyEvent);
-                }
-                zg.c0 c0Var = (zg.c0) this.c;
-                if (!c0Var.k) {
-                    return true;
-                }
-                c0Var.d();
-                return true;
-            default:
-                return super.dispatchKeyEvent(keyEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSetPressed(boolean z10) {
-        switch (this.a) {
-            case 2:
-                break;
-            default:
-                super.dispatchSetPressed(z10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean fitSystemWindows(Rect rect) {
-        switch (this.a) {
-            case 2:
-                zg.c0 c0Var = (zg.c0) this.c;
-                float f7 = c0Var.u;
-                float f10 = rect.bottom;
-                if (f7 != f10 && c0Var.v) {
-                    c0Var.u = f10;
-                    w3 w3Var = c0Var.c;
-                    zg.b0 b0Var = c0Var.a;
-                    if (!c0Var.q) {
-                        float f11 = c0Var.t;
-                        int dp = AndroidUtilities.dp(32.0f);
-                        int i10 = c0Var.y;
-                        if (i10 == 1 || i10 == 2) {
-                            dp = AndroidUtilities.dp(24.0f);
-                        }
-                        float f12 = dp;
-                        if (b0Var.getMeasuredHeight() + f11 > (w3Var.getMeasuredHeight() - c0Var.u) - f12) {
-                            f11 = ((w3Var.getMeasuredHeight() - c0Var.u) - b0Var.getMeasuredHeight()) - f12;
-                        }
-                        if (f11 < 0.0f) {
-                            f11 = 0.0f;
-                        }
-                        b0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.w(c0Var, 1)).setInterpolator(qr.f).start();
-                    }
-                }
-                return super.fitSystemWindows(rect);
-            default:
-                return super.fitSystemWindows(rect);
+        canvas.restore();
+        paint2.setAlpha(alpha);
+        View view = this.b;
+        if (view != null) {
+            view.invalidate();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 1:
-                super.onAttachedToWindow();
-                ((zg.n) this.b).c();
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                oc.a(this, (ai.w4) this.b);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 1:
-                super.onDetachedFromWindow();
-                ((zg.n) this.b).d();
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                oc.h(this);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(18.0f);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(zg.c0 c0Var, Context context) {
-        super(context);
-        this.c = c0Var;
-        this.b = new ai.w4(this, 11);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w3(zg.q qVar, Context context) {
-        super(context);
-        this.c = qVar;
-        this.b = new zg.n(this, this);
-    }
-
-    private final void a(boolean z10) {
+    @Override // org.telegram.ui.Components.rq, android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.f = i10 / 255.0f;
     }
 }

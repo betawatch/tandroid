@@ -20,14 +20,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class xb extends qv0 {
+public final class xb extends bw0 {
     public final Path A0;
     public final RectF B0;
     public final RectF C0;
@@ -35,7 +35,7 @@ public final class xb extends qv0 {
     public final RectF E0;
     public final RectF F0;
     public final SparseArray G0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 H0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 H0;
     public final /* synthetic */ jc I0;
     public float w0;
     public float x0;
@@ -43,10 +43,10 @@ public final class xb extends qv0 {
     public final float[] z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xb(jc jcVar, Context context, org.telegram.ui.ActionBar.o2 o2Var) {
+    public xb(jc jcVar, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
         super(context, null);
         this.I0 = jcVar;
-        this.H0 = o2Var;
+        this.H0 = n2Var;
         this.z0 = new float[8];
         this.A0 = new Path();
         this.B0 = new RectF();
@@ -61,7 +61,7 @@ public final class xb extends qv0 {
     /* JADX WARN: Removed duplicated region for block: B:224:0x0769  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x07c6  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,7 +98,7 @@ public final class xb extends qv0 {
         ca caVar3;
         int i10;
         f6 t10;
-        cj0 cj0Var;
+        mj0 mj0Var;
         jc jcVar = this.I0;
         RectF rectF5 = jcVar.T;
         gc gcVar = jcVar.s0;
@@ -107,9 +107,9 @@ public final class xb extends qv0 {
             boolean z10 = (1.0f - jcVar.V) * jcVar.U == 1.0f;
             if (jcVar.K0 != z10) {
                 jcVar.K0 = z10;
-                org.telegram.ui.ActionBar.o2 o2Var = this.H0;
-                if (o2Var.getLayoutContainer() != null) {
-                    o2Var.getLayoutContainer().invalidate();
+                org.telegram.ui.ActionBar.n2 n2Var = this.H0;
+                if (n2Var.getLayoutContainer() != null) {
+                    n2Var.getLayoutContainer().invalidate();
                 }
             }
         }
@@ -301,7 +301,7 @@ public final class xb extends qv0 {
                             gcVar.c.draw(canvas);
                             ec ecVar2 = gcVar.e;
                             if (ecVar2 != null) {
-                                ecVar2.h(canvas, rectF11, f33);
+                                ecVar2.i(canvas, rectF11, f33);
                             }
                             gcVar.c.setVisible(visible, false);
                             gcVar.c.setImageCoords(imageX, imageY, imageWidth, imageHeight);
@@ -383,7 +383,7 @@ public final class xb extends qv0 {
                                             gcVar.l.setRoundRadius(i11);
                                         }
                                         if (gcVar != null && (ecVar = gcVar.e) != null) {
-                                            ecVar.h(canvas, rectF11, 1.0f - f18);
+                                            ecVar.i(canvas, rectF11, 1.0f - f18);
                                         }
                                     }
                                 }
@@ -404,7 +404,7 @@ public final class xb extends qv0 {
                                     gcVar.l.setRoundRadius(i112);
                                 }
                                 if (gcVar != null) {
-                                    ecVar.h(canvas, rectF11, 1.0f - f18);
+                                    ecVar.i(canvas, rectF11, 1.0f - f18);
                                 }
                             }
                             canvas.restoreToCount(saveCount2);
@@ -423,7 +423,7 @@ public final class xb extends qv0 {
                                     canvas.save();
                                 }
                                 canvas.translate(jcVar.K, jcVar.L);
-                                ((org.telegram.ui.Cells.r2) jcVar.M).A(canvas);
+                                ((org.telegram.ui.Cells.s2) jcVar.M).A(canvas);
                                 canvas.restore();
                             }
                         }
@@ -436,13 +436,13 @@ public final class xb extends qv0 {
                             jcVar.d = false;
                             jc.x1 = true;
                             jcVar.b0 = jcVar.W;
-                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (cj0Var = t10.o1.d) != null) {
-                                cj0 cj0Var2 = gcVar.d;
-                                cj0Var.c = cj0Var2.c;
-                                cj0Var.f = cj0Var2.f;
-                                cj0Var.b = cj0Var2.b;
-                                cj0Var.a = System.currentTimeMillis();
-                                cj0Var.c();
+                            if (gcVar.d != null && (t10 = jcVar.t()) != null && (mj0Var = t10.o1.d) != null) {
+                                mj0 mj0Var2 = gcVar.d;
+                                mj0Var.c = mj0Var2.c;
+                                mj0Var.f = mj0Var2.f;
+                                mj0Var.b = mj0Var2.b;
+                                mj0Var.a = System.currentTimeMillis();
+                                mj0Var.c();
                             }
                             jcVar.E = true;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -552,7 +552,7 @@ public final class xb extends qv0 {
         boolean z11;
         zb zbVar;
         int i10;
-        gk0 gk0Var;
+        qk0 qk0Var;
         jc jcVar = this.I0;
         float[] fArr = jcVar.o0;
         f6 currentPeerView = jcVar.n0.getCurrentPeerView();
@@ -570,7 +570,7 @@ public final class xb extends qv0 {
         }
         float f7 = 0.0f;
         int i11 = 0;
-        if (jcVar.p1 && currentPeerView != null && (gk0Var = currentPeerView.r3) != null) {
+        if (jcVar.p1 && currentPeerView != null && (qk0Var = currentPeerView.r3) != null) {
             float f10 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f7 += view.getX();
@@ -582,14 +582,14 @@ public final class xb extends qv0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            gk0Var.getHitRect(rect);
+            qk0Var.getHitRect(rect);
             rect.offset((int) f7, (int) f10);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            gk0Var.dispatchTouchEvent(motionEvent);
+            qk0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -710,15 +710,15 @@ public final class xb extends qv0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         jc jcVar = this.I0;
         if (jcVar.b && !jcVar.c) {
-            org.telegram.ui.ActionBar.o2 o2Var = this.H0;
-            AndroidUtilities.requestAdjustResize(o2Var.getParentActivity(), o2Var.getClassGuid());
+            org.telegram.ui.ActionBar.n2 n2Var = this.H0;
+            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
         }
-        org.telegram.ui.Components.oc.a(this, new wb(this));
+        org.telegram.ui.Components.qc.a(this, new wb(this));
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storiesUpdated);
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.articleClosed);
@@ -726,10 +726,10 @@ public final class xb extends qv0 {
         NotificationCenter.getInstance(jcVar.h).addObserver(jcVar, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.bw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.oc.h(this);
+        org.telegram.ui.Components.qc.h(this);
         jc jcVar = this.I0;
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(jcVar.h).removeObserver(jcVar, NotificationCenter.storiesUpdated);

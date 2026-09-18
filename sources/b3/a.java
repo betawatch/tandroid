@@ -10,7 +10,7 @@ import i2.f;
 import java.nio.ByteBuffer;
 import n4.y;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a extends f {
     public final h I;
@@ -75,7 +75,7 @@ public final class a extends f {
             h hVar = this.I;
             hVar.clear();
             y yVar = this.c;
-            yVar.h();
+            yVar.n();
             if (w(yVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }
@@ -101,7 +101,7 @@ public final class a extends f {
                     fArr = fArr2;
                 }
                 if (fArr != null) {
-                    this.K.a();
+                    this.K.b();
                 }
             }
         }

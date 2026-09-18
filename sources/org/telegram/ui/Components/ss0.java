@@ -1,61 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ss0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zu0 b;
+public final class ss0 extends t00 {
+    public final /* synthetic */ gs0 U;
+    public final /* synthetic */ kv0 V;
 
-    public /* synthetic */ ss0(zu0 zu0Var, int i10) {
-        this.a = i10;
-        this.b = zu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ss0(kv0 kv0Var, Context context, gs0 gs0Var) {
+        super(context, null);
+        this.V = kv0Var;
+        this.U = gs0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.L0 = null;
-                break;
-            default:
-                zu0 zu0Var = this.b;
-                org.telegram.ui.ActionBar.w0 w0Var = zu0Var.n0;
-                st0[] st0VarArr = zu0Var.k0;
-                zu0Var.f1 = null;
-                if (zu0Var.i1) {
-                    st0VarArr[1].setVisibility(8);
-                    if (w0Var == null || zu0Var.D()) {
-                        zu0Var.o0 = zu0Var.b0(0.0f);
-                        zu0Var.s1(0.0f);
-                    } else {
-                        w0Var.setVisibility(zu0Var.v0() ? 8 : 4);
-                        zu0Var.o0 = 0.0f;
-                    }
-                    zu0Var.q1(false);
-                    zu0Var.x0 = 0;
-                } else {
-                    st0 st0Var = st0VarArr[0];
-                    st0VarArr[0] = st0VarArr[1];
-                    st0VarArr[1] = st0Var;
-                    st0Var.setVisibility(8);
-                    if (w0Var != null && zu0Var.x0 == 2) {
-                        w0Var.setVisibility(zu0Var.v0() ? 8 : 4);
-                    }
-                    zu0Var.x0 = 0;
-                    zu0Var.Z0(1.0f, st0VarArr[0].F);
-                    zu0Var.L0();
-                    zu0Var.f1();
-                }
-                zu0Var.g1 = false;
-                zu0Var.y1 = false;
-                zu0Var.x1 = false;
-                zu0Var.N0(false);
-                zu0Var.G.setEnabled(true);
-                zu0Var.I0.setEnabled(true);
-                break;
+    @Override // org.telegram.ui.Components.t00
+    public final int getColumnsCount() {
+        return this.V.m1[kv0.p0(this.U.F) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.t00
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i10 = this.U.F;
+        if (i10 == 0 || i10 == 5) {
+            return 2;
         }
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 != 2 && i10 != 4) {
+            if (i10 == 3) {
+                return 5;
+            }
+            if (i10 != 7) {
+                if (i10 == 6) {
+                    if (this.V.I0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (kv0.p0(i10)) {
+                    return 27;
+                }
+                return 1;
+            }
+        }
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.t00, android.view.View
+    public final void onDraw(Canvas canvas) {
+        kv0 kv0Var = this.V;
+        kv0Var.T0.setColor(kv0Var.h0(org.telegram.ui.ActionBar.j6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), kv0Var.T0);
+        super.onDraw(canvas);
     }
 }

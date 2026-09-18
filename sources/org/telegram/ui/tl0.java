@@ -7,9 +7,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class tl0 extends org.telegram.ui.Components.ll0 {
+public final class tl0 extends org.telegram.ui.Components.vl0 {
     public final Context c;
     public final /* synthetic */ PasscodeActivity d;
 
@@ -18,7 +18,7 @@ public final class tl0 extends org.telegram.ui.Components.ll0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         int i10;
         int i11;
@@ -113,10 +113,10 @@ public final class tl0 extends org.telegram.ui.Components.ll0 {
                     ul0Var.a.d();
                     return;
                 }
-                org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
-                l4Var.setHeight(46);
+                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                m4Var.setHeight(46);
                 if (i10 == passcodeActivity.I) {
-                    l4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
+                    m4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
                     return;
                 }
                 return;
@@ -183,13 +183,13 @@ public final class tl0 extends org.telegram.ui.Components.ll0 {
         } else if (i10 == 1) {
             w8Var = new org.telegram.ui.Cells.ea(context);
         } else if (i10 == 3) {
-            w8Var = new org.telegram.ui.Cells.l4(context);
+            w8Var = new org.telegram.ui.Cells.m4(context);
         } else if (i10 != 4) {
             w8Var = new org.telegram.ui.Cells.e9(context);
         } else {
             w8Var = new ul0(context);
             w8Var.setTag(-33024);
         }
-        return new org.telegram.ui.Components.wk0(w8Var);
+        return new org.telegram.ui.Components.gl0(w8Var);
     }
 }

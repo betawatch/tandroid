@@ -1,8 +1,9 @@
 package org.telegram.ui.Components.voip;
 
 import android.widget.TextView;
+import org.telegram.messenger.wh;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +28,7 @@ public final /* synthetic */ class m implements Runnable {
                     pVar.animate().cancel();
                     pVar.animate().alpha(0.0f).setDuration(150L).start();
                     textView.animate().cancel();
-                    textView.animate().alpha(1.0f).setDuration(150L).start();
+                    wh.q(textView.animate(), 1.0f, 150L);
                     break;
                 }
                 break;

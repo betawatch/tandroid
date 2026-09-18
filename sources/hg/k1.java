@@ -15,48 +15,48 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g90;
-import w7.x5;
+import org.telegram.ui.Components.p90;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class k1 extends LinearLayout {
-    public final f6 a;
-    public final g90 b;
+    public final e6 a;
+    public final p90 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
 
-    public k1(Context context, f6 f6Var) {
+    public k1(Context context, e6 e6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
-        this.a = f6Var;
+        this.a = e6Var;
         setOrientation(1);
-        g90 g90Var = new g90();
-        this.b = g90Var;
+        p90 p90Var = new p90();
+        this.b = p90Var;
         int i10 = j6.G6;
-        int v02 = j6.v0(i10, f6Var);
-        g90Var.f(j6.l1(0.05f, v02), j6.l1(0.15f, v02), j6.l1(0.1f, v02), j6.l1(0.3f, v02));
-        g90Var.j(4.0f);
-        g90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        int v02 = j6.v0(i10, e6Var);
+        p90Var.f(j6.l1(0.05f, v02), j6.l1(0.15f, v02), j6.l1(0.1f, v02), j6.l1(0.3f, v02));
+        p90Var.j(4.0f);
+        p90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTextColor(j6.v0(i10, f6Var));
+        textView.setTextColor(j6.v0(i10, e6Var));
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        addView(textView, y5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setTextColor(j6.v0(j6.z6, f6Var));
+        textView2.setTextColor(j6.v0(j6.z6, e6Var));
         textView2.setText(LocaleController.getString(R.string.BusinessProfileLocation));
         textView2.setTextSize(1, 13.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, x5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        addView(textView2, y5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
 

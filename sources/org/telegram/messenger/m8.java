@@ -6,13 +6,13 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.Timer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.t11;
+import org.telegram.ui.Components.h21;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ab0;
-import org.telegram.ui.pq;
-import org.telegram.ui.wy;
+import org.telegram.ui.nq;
+import org.telegram.ui.uy;
+import org.telegram.ui.za0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -64,7 +64,7 @@ public final /* synthetic */ class m8 implements Runnable {
                 TLRPC.TL_chatAdminRights tL_chatAdminRights2 = (TLRPC.TL_chatAdminRights) obj6;
                 String str2 = (String) obj5;
                 TLRPC.Chat chat = (TLRPC.Chat) obj4;
-                wy wyVar = (wy) obj3;
+                uy uyVar = (uy) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 String str3 = (String) obj;
                 Pattern pattern = LaunchActivity.B1;
@@ -142,18 +142,18 @@ public final /* synthetic */ class m8 implements Runnable {
                 boolean z10 = this.b;
                 int i11 = this.c;
                 if (!z10 || tL_chatAdminRights != null || TextUtils.isEmpty(str2)) {
-                    pq pqVar = new pq(user.id, -this.d, tL_chatAdminRights2, null, null, str3, 2, true, !z10, str2);
-                    pqVar.X0 = new ab0(wyVar, i11);
-                    ((ActionBarLayout) launchActivity.O()).Q(pqVar, false);
+                    nq nqVar = new nq(user.id, -this.d, tL_chatAdminRights2, null, null, str3, 2, true, !z10, str2);
+                    nqVar.X0 = new za0(uyVar, i11);
+                    ((ActionBarLayout) launchActivity.O()).Q(nqVar, false);
                     break;
                 } else {
-                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, wyVar, true, new t11(launchActivity, i11, chat, wyVar, 3), null);
+                    MessagesController.getInstance(launchActivity.O).addUserToChat(chat.id, user, 0, str2, uyVar, true, new h21(launchActivity, i11, chat, uyVar, 3), null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ m8(LaunchActivity launchActivity, String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z10, String str2, int i10, TLRPC.Chat chat, wy wyVar, TLRPC.User user, long j3, String str3) {
+    public /* synthetic */ m8(LaunchActivity launchActivity, String str, TLRPC.TL_chatAdminRights tL_chatAdminRights, boolean z10, String str2, int i10, TLRPC.Chat chat, uy uyVar, TLRPC.User user, long j3, String str3) {
         this.e = launchActivity;
         this.f = str;
         this.h = tL_chatAdminRights;
@@ -161,7 +161,7 @@ public final /* synthetic */ class m8 implements Runnable {
         this.n = str2;
         this.c = i10;
         this.r = chat;
-        this.s = wyVar;
+        this.s = uyVar;
         this.v = user;
         this.d = j3;
         this.w = str3;

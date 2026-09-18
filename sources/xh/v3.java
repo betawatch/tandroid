@@ -1,150 +1,194 @@
 package xh;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.aj1;
+import yh.m5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v3 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ f4 c;
-    public final /* synthetic */ ArrayList d;
+public final class v3 implements m5 {
+    public final int a;
+    public final long b;
+    public final Utilities.Callback c;
+    public int e;
+    public long i;
+    public String q;
+    public boolean r;
+    public boolean s;
+    public boolean t;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet j = new HashSet();
+    public final HashSet k = new HashSet();
+    public final HashSet l = new HashSet();
+    public final HashMap m = new HashMap();
+    public final HashMap n = new HashMap();
+    public final HashMap o = new HashMap();
+    public u3 p = u3.b;
+    public boolean u = false;
+    public int v = -1;
 
-    public /* synthetic */ v3(String[] strArr, f4 f4Var, ArrayList arrayList, int i10) {
+    public v3(long j3, int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = strArr;
-        this.c = f4Var;
-        this.d = arrayList;
+        this.b = j3;
+        this.c = callback;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        String str;
-        String str2;
-        String str3;
-        int i10 = this.a;
-        String str4 = " ";
-        ArrayList arrayList = this.d;
-        f4 f4Var = this.c;
-        String[] strArr = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList2 = (ArrayList) obj;
-                String lowerCase = strArr[0].toLowerCase();
-                String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                u3 u3Var = f4Var.c;
-                boolean isEmpty = u3Var.j.isEmpty();
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj3 = arrayList.get(i11);
-                    i11++;
-                    TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
-                    boolean contains = u3Var.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                    boolean z10 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || org.telegram.messenger.w1.w(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || org.telegram.messenger.w1.w(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
-                        Integer num = (Integer) u3Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                        int intValue = num == null ? 0 : num.intValue();
-                        int i12 = o3.a;
-                        j51 J = j51.J(o3.class);
-                        J.G = stargiftattributemodel;
-                        J.l = lowerCase;
-                        J.z = intValue;
-                        if (!TextUtils.isEmpty(lowerCase)) {
-                            z10 = (isEmpty || contains) ? false : true;
-                        }
-                        J.K(z10);
-                        arrayList2.add(J);
-                    }
-                }
-                if (arrayList2.isEmpty()) {
-                    arrayList2.add(j3.a(LocaleController.getString(R.string.Gift2ResaleFiltersModelEmpty)));
-                    break;
-                }
-                break;
-            case 1:
-                ArrayList arrayList3 = (ArrayList) obj;
-                String lowerCase2 = strArr[0].toLowerCase();
-                String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                u3 u3Var2 = f4Var.c;
-                boolean isEmpty2 = u3Var2.k.isEmpty();
-                int size2 = arrayList.size();
-                int i13 = 0;
-                while (i13 < size2) {
-                    Object obj4 = arrayList.get(i13);
-                    i13++;
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
-                    boolean contains2 = u3Var2.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                    boolean z11 = !contains2;
-                    if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(translitSafe2)) {
-                        str2 = str;
-                    } else {
-                        str2 = str;
-                        str = (org.telegram.messenger.w1.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || org.telegram.messenger.w1.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
-                    }
-                    Integer num2 = (Integer) u3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                    int intValue2 = num2 == null ? 0 : num2.intValue();
-                    int i14 = h3.a;
-                    j51 J2 = j51.J(h3.class);
-                    J2.G = stargiftattributebackdrop;
-                    J2.l = lowerCase2;
-                    J2.z = intValue2;
-                    if (!TextUtils.isEmpty(lowerCase2)) {
-                        z11 = (isEmpty2 || contains2) ? false : true;
-                    }
-                    J2.K(z11);
-                    arrayList3.add(J2);
-                }
-                if (arrayList3.isEmpty()) {
-                    arrayList3.add(j3.a(LocaleController.getString(R.string.Gift2ResaleFiltersBackdropEmpty)));
-                    break;
-                }
-                break;
-            default:
-                ArrayList arrayList4 = (ArrayList) obj;
-                String lowerCase3 = strArr[0].toLowerCase();
-                String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
-                u3 u3Var3 = f4Var.c;
-                boolean isEmpty3 = u3Var3.l.isEmpty();
-                int size3 = arrayList.size();
-                int i15 = 0;
-                while (i15 < size3) {
-                    Object obj5 = arrayList.get(i15);
-                    i15++;
-                    TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
-                    boolean contains3 = u3Var3.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                    boolean z12 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || org.telegram.messenger.w1.w(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || org.telegram.messenger.w1.w(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
-                        str3 = str4;
-                        Integer num3 = (Integer) u3Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
-                        int intValue3 = num3 == null ? 0 : num3.intValue();
-                        int i16 = r3.a;
-                        j51 J3 = j51.J(r3.class);
-                        J3.G = stargiftattributepattern;
-                        J3.l = lowerCase3;
-                        J3.z = intValue3;
-                        if (!TextUtils.isEmpty(lowerCase3)) {
-                            z12 = (isEmpty3 || contains3) ? false : true;
-                        }
-                        J3.K(z12);
-                        arrayList4.add(J3);
-                    } else {
-                        str3 = str4;
-                    }
-                    str4 = str3;
-                }
-                if (arrayList4.isEmpty()) {
-                    arrayList4.add(j3.a(LocaleController.getString(R.string.Gift2ResaleFiltersSymbolEmpty)));
-                    break;
-                }
-                break;
+    @Override // yh.m5
+    public final void a() {
+        g(false);
+    }
+
+    @Override // yh.m5
+    public final int b(int i10) {
+        return -1;
+    }
+
+    @Override // yh.m5
+    public final int c() {
+        return this.e;
+    }
+
+    @Override // yh.m5
+    public final int e() {
+        return this.d.size();
+    }
+
+    public final void f() {
+        if (this.v >= 0) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.v, true);
+            this.v = -1;
         }
+        this.t = false;
+    }
+
+    public final void g(boolean z10) {
+        if (this.t) {
+            return;
+        }
+        if (z10 || !this.u) {
+            this.t = true;
+            TL_stars.getResaleStarGifts getresalestargifts = new TL_stars.getResaleStarGifts();
+            getresalestargifts.gift_id = this.b;
+            String str = this.q;
+            if (str == null) {
+                str = "";
+            }
+            getresalestargifts.offset = str;
+            getresalestargifts.limit = 15;
+            getresalestargifts.for_craft = this.s;
+            getresalestargifts.stars_only = this.r;
+            u3 u3Var = this.p;
+            int i10 = 0;
+            if (u3Var == u3.d) {
+                getresalestargifts.sort_by_num = true;
+                getresalestargifts.sort_by_price = false;
+            } else if (u3Var == u3.c) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = false;
+            } else if (u3Var == u3.b) {
+                getresalestargifts.sort_by_num = false;
+                getresalestargifts.sort_by_price = true;
+            }
+            long j3 = this.i;
+            ArrayList arrayList = this.h;
+            ArrayList arrayList2 = this.g;
+            ArrayList arrayList3 = this.f;
+            if (j3 != 0) {
+                getresalestargifts.flags = 1 | getresalestargifts.flags;
+                getresalestargifts.attributes_hash = j3;
+            } else if (arrayList3.isEmpty() && arrayList2.isEmpty() && arrayList.isEmpty()) {
+                getresalestargifts.flags = 1 | getresalestargifts.flags;
+                getresalestargifts.attributes_hash = 0L;
+            }
+            HashSet hashSet = this.j;
+            boolean isEmpty = hashSet.isEmpty();
+            HashSet hashSet2 = this.l;
+            HashSet hashSet3 = this.k;
+            if (!isEmpty || !hashSet3.isEmpty() || !hashSet2.isEmpty()) {
+                getresalestargifts.flags |= 8;
+                if (!hashSet.isEmpty()) {
+                    int size = arrayList3.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList3.get(i11);
+                        i11++;
+                        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj;
+                        if (!hashSet.contains(Long.valueOf(stargiftattributemodel.document.id))) {
+                            TL_stars.starGiftAttributeIdModel stargiftattributeidmodel = new TL_stars.starGiftAttributeIdModel();
+                            stargiftattributeidmodel.document_id = stargiftattributemodel.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidmodel);
+                        }
+                    }
+                }
+                if (!hashSet3.isEmpty()) {
+                    int size2 = arrayList2.size();
+                    int i12 = 0;
+                    while (i12 < size2) {
+                        Object obj2 = arrayList2.get(i12);
+                        i12++;
+                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj2;
+                        if (!hashSet3.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id))) {
+                            TL_stars.starGiftAttributeIdBackdrop stargiftattributeidbackdrop = new TL_stars.starGiftAttributeIdBackdrop();
+                            stargiftattributeidbackdrop.backdrop_id = stargiftattributebackdrop.backdrop_id;
+                            getresalestargifts.attributes.add(stargiftattributeidbackdrop);
+                        }
+                    }
+                }
+                if (!hashSet2.isEmpty()) {
+                    int size3 = arrayList.size();
+                    while (i10 < size3) {
+                        Object obj3 = arrayList.get(i10);
+                        i10++;
+                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
+                        if (!hashSet2.contains(Long.valueOf(stargiftattributepattern.document.id))) {
+                            TL_stars.starGiftAttributeIdPattern stargiftattributeidpattern = new TL_stars.starGiftAttributeIdPattern();
+                            stargiftattributeidpattern.document_id = stargiftattributepattern.document.id;
+                            getresalestargifts.attributes.add(stargiftattributeidpattern);
+                        }
+                    }
+                }
+            }
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new aj1(5, this, getresalestargifts));
+        }
+    }
+
+    @Override // yh.m5
+    public final Object get(int i10) {
+        return this.d.get(i10);
+    }
+
+    public final void h() {
+        f();
+        this.q = null;
+        this.d.clear();
+        g(true);
+        Utilities.Callback callback = this.c;
+        if (callback != null) {
+            callback.run(Boolean.TRUE);
+        }
+    }
+
+    public final void i(u3 u3Var) {
+        if (this.p != u3Var) {
+            this.p = u3Var;
+            h();
+        }
+    }
+
+    @Override // yh.m5
+    public final int indexOf(Object obj) {
+        return this.d.indexOf(obj);
+    }
+
+    @Override // yh.m5
+    public final void d() {
     }
 }

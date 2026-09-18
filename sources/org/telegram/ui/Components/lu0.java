@@ -1,60 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public abstract class lu0 extends ScrollSlidingTextTabStrip {
-    public Paint p0;
-    public int q0;
-    public final Rect r0;
-    public final /* synthetic */ zu0 s0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lu0(zu0 zu0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.s0 = zu0Var;
-        this.q0 = 0;
-        this.r0 = new Rect();
-    }
-
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.q0 != 0) {
-            if (this.p0 == null) {
-                this.p0 = new Paint();
-            }
-            this.p0.setColor(this.q0);
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            Rect rect = this.r0;
-            rect.set(0, 0, measuredWidth, measuredHeight);
-            canvas.save();
-            canvas.translate(getScrollX(), 0.0f);
-            canvas.clipPath(this.f0);
-            if (SharedConfig.chatBlurEnabled()) {
-                this.s0.P(canvas, getY(), rect, this.p0);
-            } else {
-                canvas.drawPaint(this.p0);
-            }
-            canvas.translate(-getScrollX(), 0.0f);
-            canvas.restore();
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        this.q0 = i10;
-        invalidate();
+public final class lu0 extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
+        return false;
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import v7.o8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public abstract class a0 extends FrameLayout implements l4 {
     public a a;
@@ -42,14 +42,14 @@ public abstract class a0 extends FrameLayout implements l4 {
         if (aVar == null || !aVar.n) {
             i11 = this.e;
         } else {
-            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(hg.k0.g(r3, 1, 16, 10));
+            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(hg.k0.f(r3, 1, 16, 10));
         }
         a aVar2 = this.a;
         if (aVar2 == null || !aVar2.o) {
             i12 = this.h;
         } else {
             if (aVar2.m > 0) {
-                i12 = AndroidUtilities.dp(hg.k0.g(r7, 1, 16, 10));
+                i12 = AndroidUtilities.dp(hg.k0.f(r7, 1, 16, 10));
             }
         }
         int i13 = i10 + d10;

@@ -19,7 +19,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class q9 extends da {
     public s4.c0 E0;
@@ -700,9 +700,9 @@ public class q9 extends da {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.h0 h0Var = this.D;
-        if (h0Var != null) {
-            h0Var.a(true);
+        w7.i0 i0Var = this.D;
+        if (i0Var != null) {
+            i0Var.a(true);
         }
     }
 
@@ -744,9 +744,9 @@ public class q9 extends da {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.h0 h0Var = this.D;
-        if (h0Var != null) {
-            h0Var.a(true);
+        w7.i0 i0Var = this.D;
+        if (i0Var != null) {
+            i0Var.a(true);
         }
         p9Var.invalidate();
         return true;
@@ -959,7 +959,7 @@ public class q9 extends da {
         }
         w9[] w9VarArr = (w9[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length() - 1, w9.class);
         if (w9VarArr != null && w9VarArr.length > 0) {
-            Arrays.sort(w9VarArr, new o1(spannableStringBuilder, 1));
+            Arrays.sort(w9VarArr, new p1(spannableStringBuilder, 1));
             for (w9 w9Var : w9VarArr) {
                 int spanStart = spannableStringBuilder.getSpanStart(w9Var);
                 int spanEnd = spannableStringBuilder.getSpanEnd(w9Var);

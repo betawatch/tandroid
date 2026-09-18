@@ -17,10 +17,10 @@ import na.f;
 import q9.a;
 import q9.j;
 import q9.r;
-import w7.o8;
+import w7.p8;
 import xa.b;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -38,7 +38,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         ArrayList arrayList = new ArrayList();
         i0 a2 = a.a(b.class);
         a2.a(new j(2, 0, xa.a.class));
-        a2.f = new t0.a(23);
+        a2.f = new s9.b(25);
         arrayList.add(a2.b());
         r rVar = new r(m9.a.class, Executor.class);
         i0 i0Var = new i0(c.class, new Class[]{e.class, f.class});
@@ -49,15 +49,15 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         i0Var.a(new j(rVar, 1, 0));
         i0Var.f = new v(rVar, 7);
         arrayList.add(i0Var.b());
-        arrayList.add(o8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(o8.a("fire-core", "20.4.2"));
-        arrayList.add(o8.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(o8.a("device-model", b(Build.DEVICE)));
-        arrayList.add(o8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(o8.b("android-target-sdk", new j2.e(13)));
-        arrayList.add(o8.b("android-min-sdk", new j2.e(14)));
-        arrayList.add(o8.b("android-platform", new j2.e(15)));
-        arrayList.add(o8.b("android-installer", new j2.e(16)));
+        arrayList.add(p8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(p8.a("fire-core", "20.4.2"));
+        arrayList.add(p8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(p8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(p8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(p8.b("android-target-sdk", new j2.e(13)));
+        arrayList.add(p8.b("android-min-sdk", new j2.e(14)));
+        arrayList.add(p8.b("android-platform", new j2.e(15)));
+        arrayList.add(p8.b("android-installer", new j2.e(16)));
         try {
             gd.b.b.getClass();
             str = "2.1.20";
@@ -65,7 +65,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
             str = null;
         }
         if (str != null) {
-            arrayList.add(o8.a("kotlin", str));
+            arrayList.add(p8.a("kotlin", str));
         }
         return arrayList;
     }

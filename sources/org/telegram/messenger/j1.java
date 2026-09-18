@@ -1,33 +1,32 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements Comparator {
+public final /* synthetic */ class j1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ContactsController b;
 
-    public /* synthetic */ j1(Object obj, Collator collator, int i10) {
+    public /* synthetic */ j1(ContactsController contactsController, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = collator;
+        this.b = contactsController;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$43;
-        int lambda$processLoadedContacts$30;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                lambda$buildContactsSectionsArrays$43 = ((ContactsController) this.c).lambda$buildContactsSectionsArrays$43(this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$buildContactsSectionsArrays$43;
+                this.b.lambda$checkInviteText$3(tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$loadGlobalPrivacySetting$61(tLObject, tL_error);
+                break;
             default:
-                lambda$processLoadedContacts$30 = ContactsController.lambda$processLoadedContacts$30((a0.i) this.c, this.b, (TLRPC.TL_contact) obj, (TLRPC.TL_contact) obj2);
-                return lambda$processLoadedContacts$30;
+                this.b.lambda$loadPrivacySettings$63(tLObject, tL_error);
+                break;
         }
     }
 }

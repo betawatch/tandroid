@@ -3,13 +3,13 @@ package dh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public class b implements a {
-    public final f6 a;
+    public final e6 a;
     public final int b;
     public final float c;
     public int d;
@@ -17,8 +17,8 @@ public class b implements a {
     public int f;
     public int h;
 
-    public b(int i10, f6 f6Var) {
-        this(f6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    public b(int i10, e6 e6Var) {
+        this(e6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
     @Override // dh.a
@@ -58,8 +58,8 @@ public class b implements a {
         return this.e;
     }
 
-    public b(f6 f6Var, int i10, float f7) {
-        this.a = f6Var;
+    public b(e6 e6Var, int i10, float f7) {
+        this.a = e6Var;
         this.b = i10;
         this.c = f7;
         d();

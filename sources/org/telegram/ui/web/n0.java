@@ -29,9 +29,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.f3;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class n0 extends WebViewClient {
     public boolean a = true;
@@ -57,7 +57,7 @@ public final class n0 extends WebViewClient {
             e1Var2.a = Utilities.fastRandom.nextLong();
             z0Var.e.b = System.currentTimeMillis();
             z0Var.e.c = d1.v(z0Var.getUrl());
-            z0Var.e.d = m2.a(z0Var);
+            z0Var.e.d = n2.a(z0Var);
             f1.c(z0Var.e);
         }
         z0Var.c("doUpdateVisitedHistory " + str + " " + z10);
@@ -149,9 +149,9 @@ public final class n0 extends WebViewClient {
             boolean z11 = d1.P0;
         }
         z0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        g3 g3Var = z0Var.F;
-        if (g3Var != null) {
-            g3Var.dismiss();
+        f3 f3Var = z0Var.F;
+        if (f3Var != null) {
+            f3Var.dismiss();
             z0Var.F = null;
         }
         z0Var.e = null;

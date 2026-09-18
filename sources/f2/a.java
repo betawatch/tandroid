@@ -10,7 +10,7 @@ import java.util.Arrays;
 import v7.u6;
 import v7.y7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
@@ -98,7 +98,7 @@ public final class a implements o0 {
             if (str.equals("auxiliary.tracks.map")) {
                 ArrayList d = d();
                 StringBuilder u10 = a4.a.u("track types = ");
-                new xa.c(String.valueOf(',')).j(u10, d.iterator());
+                new xa.c(String.valueOf(',')).p(u10, d.iterator());
                 sb2 = u10.toString();
             }
             sb2 = d0.c0(bArr);

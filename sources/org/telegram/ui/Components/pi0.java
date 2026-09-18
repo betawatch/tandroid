@@ -1,169 +1,412 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.TextPaint;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Rect;
+import android.location.Location;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class pi0 {
-    public final View a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final ti0 e;
-    public final TextPaint f;
-    public RectF g;
+public final class pi0 extends FrameLayout {
+    public static final /* synthetic */ int R = 0;
+    public boolean E;
+    public qr F;
+    public dd0 G;
+    public dd0 H;
+    public org.telegram.ui.rc0 I;
+    public ni0 J;
+    public TextView K;
+    public boolean L;
+    public TLRPC.User M;
+    public int N;
+    public boolean O;
+    public mi0 P;
+    public org.telegram.ui.tc0 Q;
+    public VelocityTracker a;
+    public int b;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public AnimatorSet h;
+    public Rect n;
+    public boolean r;
+    public AnimatorSet s;
+    public li0 v;
+    public boolean w;
+    public int x;
+    public int y;
 
-    public pi0(du duVar, Layout layout, Spanned spanned, ti0 ti0Var) {
-        int i10;
-        int i11;
-        this.a = duVar;
-        this.e = ti0Var;
-        this.f = layout.getPaint();
-        ti0Var.c = spanned.getSpanStart(ti0Var);
-        boolean z10 = ti0Var.a;
-        int spanEnd = spanned.getSpanEnd(ti0Var);
-        ti0Var.d = spanEnd;
-        if (spanEnd - 1 >= 0 && spanEnd < spanned.length() && spanned.charAt(ti0Var.d) != '\n' && spanned.charAt(ti0Var.d - 1) == '\n') {
-            ti0Var.d--;
+    public final void a() {
+        li0 li0Var = this.v;
+        if (this.r) {
+            return;
         }
-        int lineForOffset = layout.getLineForOffset(ti0Var.c);
-        int lineForOffset2 = layout.getLineForOffset(ti0Var.d);
-        ti0Var.f = lineForOffset2 - lineForOffset < 1;
-        ti0Var.h = lineForOffset <= 0;
-        ti0Var.n = lineForOffset2 + 1 >= layout.getLineCount();
+        this.r = true;
+        AnimatorSet animatorSet = this.s;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.s = null;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.s = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(li0Var, (Property<li0, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(10.0f) + li0Var.getMeasuredHeight()));
+        if (this.E) {
+            float measuredHeight = li0Var.getMeasuredHeight();
+            this.s.setDuration(Math.max(60, (int) (((measuredHeight - li0Var.getTranslationY()) * 250.0f) / measuredHeight)));
+            this.E = false;
+        } else {
+            this.s.setDuration(250L);
+        }
+        this.s.setInterpolator(qr.f);
+        this.s.addListener(new oi0(this, 2));
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+        this.s.start();
+    }
+
+    public final boolean b(MotionEvent motionEvent, boolean z10) {
+        li0 li0Var = this.v;
+        int i10 = 0;
+        if (!this.r) {
+            if (motionEvent == null || (!(motionEvent.getAction() == 0 || motionEvent.getAction() == 2) || this.f || this.e || motionEvent.getPointerCount() != 1)) {
+                if (motionEvent != null && motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.d) {
+                    if (this.a == null) {
+                        this.a = VelocityTracker.obtain();
+                    }
+                    float abs = Math.abs((int) (motionEvent.getX() - this.b));
+                    float y3 = ((int) motionEvent.getY()) - this.c;
+                    this.a.addMovement(motionEvent);
+                    if (this.e && !this.f && y3 > 0.0f && y3 / 3.0f > Math.abs(abs) && Math.abs(y3) >= this.y) {
+                        this.c = (int) motionEvent.getY();
+                        this.e = false;
+                        this.f = true;
+                        requestDisallowInterceptTouchEvent(true);
+                    } else if (this.f) {
+                        float translationY = li0Var.getTranslationY() + y3;
+                        li0Var.setTranslationY(translationY >= 0.0f ? translationY : 0.0f);
+                        this.c = (int) motionEvent.getY();
+                    }
+                } else if (motionEvent == null || (motionEvent.getPointerId(0) == this.d && (motionEvent.getAction() == 3 || motionEvent.getAction() == 1 || motionEvent.getAction() == 6))) {
+                    if (this.a == null) {
+                        this.a = VelocityTracker.obtain();
+                    }
+                    this.a.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
+                    float translationY2 = li0Var.getTranslationY();
+                    if (this.f || translationY2 != 0.0f) {
+                        float xVelocity = this.a.getXVelocity();
+                        float yVelocity = this.a.getYVelocity();
+                        if ((li0Var.getTranslationY() >= AndroidUtilities.getPixelsInCM(0.8f, false) || (yVelocity >= 3500.0f && Math.abs(yVelocity) >= Math.abs(xVelocity))) && (yVelocity >= 0.0f || Math.abs(yVelocity) < 3500.0f)) {
+                            this.E = true;
+                            a();
+                        } else {
+                            AnimatorSet animatorSet = new AnimatorSet();
+                            this.h = animatorSet;
+                            animatorSet.playTogether(ObjectAnimator.ofFloat(li0Var, (Property<li0, Float>) View.TRANSLATION_Y, 0.0f));
+                            this.h.setDuration((int) ((Math.max(0.0f, r6) / AndroidUtilities.getPixelsInCM(0.8f, false)) * 150.0f));
+                            this.h.setInterpolator(qr.g);
+                            this.h.addListener(new oi0(this, i10));
+                            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+                            this.h.start();
+                        }
+                        this.f = false;
+                    } else {
+                        this.e = false;
+                        this.f = false;
+                    }
+                    VelocityTracker velocityTracker = this.a;
+                    if (velocityTracker != null) {
+                        velocityTracker.recycle();
+                        this.a = null;
+                    }
+                    this.d = -1;
+                }
+            } else {
+                this.b = (int) motionEvent.getX();
+                int y10 = (int) motionEvent.getY();
+                this.c = y10;
+                if (y10 < li0Var.getTop() || this.b < li0Var.getLeft() || this.b > li0Var.getRight()) {
+                    requestDisallowInterceptTouchEvent(true);
+                    a();
+                    return true;
+                }
+                this.d = motionEvent.getPointerId(0);
+                this.e = true;
+                AnimatorSet animatorSet2 = this.h;
+                if (animatorSet2 != null) {
+                    animatorSet2.cancel();
+                    this.h = null;
+                }
+                VelocityTracker velocityTracker2 = this.a;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.clear();
+                }
+            }
+            if ((!z10 && this.e) || this.f) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:29:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:34:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0161  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(boolean z10) {
+        boolean z11;
+        TextView textView = this.K;
+        TLRPC.User user = this.M;
+        ni0 ni0Var = this.J;
+        float value = getValue();
+        String formatDistance = LocaleController.formatDistance(value, 2, Boolean.valueOf(this.O));
+        int i10 = (int) value;
+        org.telegram.ui.jd0 jd0Var = this.I.b;
+        ArrayList arrayList = jd0Var.g0;
+        IMapsProvider.ICircle iCircle = jd0Var.O;
+        if (iCircle != null) {
+            iCircle.setRadius(i10);
+            if (z10) {
+                IMapsProvider.ILatLngBoundsBuilder onCreateLatLngBoundsBuilder = ApplicationLoader.getMapsProvider().onCreateLatLngBoundsBuilder();
+                onCreateLatLngBoundsBuilder.include(new IMapsProvider.LatLng(jd0Var.w0.getLatitude(), jd0Var.w0.getLongitude()));
+                try {
+                    int max = Math.max(i10, MediaDataController.MAX_LINKS_COUNT);
+                    IMapsProvider.LatLng center = onCreateLatLngBoundsBuilder.build().getCenter();
+                    double d = max;
+                    IMapsProvider.LatLng p02 = org.telegram.ui.jd0.p0(center, d, d);
+                    double d10 = -max;
+                    onCreateLatLngBoundsBuilder.include(org.telegram.ui.jd0.p0(center, d10, d10));
+                    onCreateLatLngBoundsBuilder.include(p02);
+                    IMapsProvider.ILatLngBounds build = onCreateLatLngBoundsBuilder.build();
+                    try {
+                        jd0Var.I.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), (int) ((jd0Var.R.getCustomView().getMeasuredHeight() - AndroidUtilities.dp(40.0f)) + jd0Var.S.getTranslationY()));
+                        jd0Var.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngBounds(build, 0), 500, null);
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
+                } catch (Exception unused) {
+                }
+            }
+        }
+        if (!DialogObject.isChatDialog(jd0Var.e0)) {
+            int size = arrayList.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                org.telegram.ui.dd0 dd0Var = (org.telegram.ui.dd0) arrayList.get(i11);
+                if (dd0Var.b != null && !UserObject.isUserSelf(dd0Var.c)) {
+                    TLRPC.GeoPoint geoPoint = dd0Var.b.media.geo;
+                    Location location = new Location("network");
+                    location.setLatitude(geoPoint.lat);
+                    location.setLongitude(geoPoint._long);
+                    if (jd0Var.w0.distanceTo(location) > i10) {
+                    }
+                }
+            }
+            z11 = false;
+            if (z11 && user != null) {
+                textView.setText(LocaleController.formatString("LocationNotifiationCloser", R.string.LocationNotifiationCloser, formatDistance));
+                if (ni0Var.getTag() == null) {
+                    ni0Var.setTag(1);
+                    ni0Var.animate().setDuration(180L).alpha(0.0f).scaleX(0.5f).scaleY(0.5f).start();
+                    textView.animate().setDuration(180L).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    return;
+                }
+                return;
+            }
+            if (user != null) {
+                ni0Var.setText(LocaleController.formatString("LocationNotifiationButtonGroup", R.string.LocationNotifiationButtonGroup, formatDistance));
+            } else {
+                ni0Var.setText(LocaleController.formatString("LocationNotifiationButtonUser", R.string.LocationNotifiationButtonUser, TextUtils.ellipsize(UserObject.getFirstName(user), ni0Var.getPaint(), Math.max(AndroidUtilities.dp(10.0f), (int) (((this.N - AndroidUtilities.dp(94.0f)) * 1.5f) - ((int) Math.ceil(ni0Var.getPaint().measureText(LocaleController.getString(R.string.LocationNotifiationButtonUser)))))), TextUtils.TruncateAt.END), formatDistance));
+            }
+            if (ni0Var.getTag() == null) {
+                ni0Var.setTag(null);
+                ni0Var.animate().setDuration(180L).alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                textView.animate().setDuration(180L).alpha(0.0f).scaleX(0.5f).scaleY(0.5f).start();
+                return;
+            }
+            return;
+        }
+        z11 = true;
+        if (z11) {
+        }
+        if (user != null) {
+        }
+        if (ni0Var.getTag() == null) {
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.r) {
+            return true;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public View getCustomView() {
+        return this.P;
+    }
+
+    public boolean getRadiusSet() {
+        return this.L;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x001b, code lost:
+    
+        if (r1 > 1) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x001d, code lost:
+    
+        r1 = r1 - 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x001f, code lost:
+    
+        r1 = r1 * 100;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0028, code lost:
+    
+        if (r1 > 1) goto L8;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public float getValue() {
+        float f7;
+        float value = this.G.getValue() * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int value2 = this.H.getValue();
+        boolean z10 = this.O;
         if (z10) {
-            int lineTop = layout.getLineTop(lineForOffset);
-            if (ti0Var.f) {
-                i10 = 0;
-            } else {
-                i10 = (ti0Var.h ? 2 : 0) + 3;
+            if (value2 == 1) {
+                f7 = 47.349f;
             }
-            this.b = AndroidUtilities.dp(3 - i10) + lineTop;
-            int lineBottom = layout.getLineBottom(lineForOffset2);
-            if (ti0Var.f) {
-                i11 = 0;
-            } else {
-                i11 = (ti0Var.n ? 2 : 0) + 3;
-            }
-            this.c = lineBottom - AndroidUtilities.dp(2 - i11);
-        } else {
-            this.b = AndroidUtilities.dp(3 - (ti0Var.f ? 1 : 2)) + layout.getLineTop(lineForOffset);
-            this.c = layout.getLineBottom(lineForOffset2) - AndroidUtilities.dp(2 - (ti0Var.f ? 1 : 2));
+        } else if (value2 == 1) {
+            f7 = 50.0f;
         }
-        ti0Var.r = false;
-        float f7 = 0.0f;
-        while (lineForOffset <= lineForOffset2) {
-            f7 = Math.max(f7, layout.getLineRight(lineForOffset));
-            if (layout.getLineLeft(lineForOffset) > 0.0f) {
-                ti0Var.r = true;
+        float f10 = value + f7;
+        return z10 ? f10 * 1.60934f : f10;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return this.r || b(motionEvent, true);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x007a  */
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20 = i13 - i11;
+        li0 li0Var = this.v;
+        int measuredHeight = i20 - li0Var.getMeasuredHeight();
+        int i21 = i12 - i10;
+        int measuredWidth = (i21 - li0Var.getMeasuredWidth()) / 2;
+        li0Var.layout(measuredWidth, measuredHeight, li0Var.getMeasuredWidth() + measuredWidth, li0Var.getMeasuredHeight() + measuredHeight);
+        int childCount = getChildCount();
+        for (int i22 = 0; i22 < childCount; i22++) {
+            View childAt = getChildAt(i22);
+            if (childAt.getVisibility() != 8 && childAt != li0Var) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth2 = childAt.getMeasuredWidth();
+                int measuredHeight2 = childAt.getMeasuredHeight();
+                int i23 = layoutParams.gravity;
+                if (i23 == -1) {
+                    i23 = 51;
+                }
+                int i24 = i23 & 112;
+                int i25 = i23 & 7;
+                if (i25 == 1) {
+                    i14 = ((i21 - measuredWidth2) / 2) + layoutParams.leftMargin;
+                    i15 = layoutParams.rightMargin;
+                } else if (i25 != 5) {
+                    i16 = layoutParams.leftMargin;
+                    if (i24 != 16) {
+                        i17 = ((i20 - measuredHeight2) / 2) + layoutParams.topMargin;
+                        i18 = layoutParams.bottomMargin;
+                    } else if (i24 != 80) {
+                        i19 = layoutParams.topMargin;
+                        childAt.layout(i16, i19, measuredWidth2 + i16, measuredHeight2 + i19);
+                    } else {
+                        i17 = i20 - measuredHeight2;
+                        i18 = layoutParams.bottomMargin;
+                    }
+                    i19 = i17 - i18;
+                    childAt.layout(i16, i19, measuredWidth2 + i16, measuredHeight2 + i19);
+                } else {
+                    i14 = i12 - measuredWidth2;
+                    i15 = layoutParams.rightMargin;
+                }
+                i16 = i14 - i15;
+                if (i24 != 16) {
+                }
+                i19 = i17 - i18;
+                childAt.layout(i16, i19, measuredWidth2 + i16, measuredHeight2 + i19);
             }
-            lineForOffset++;
-        }
-        this.d = (int) Math.ceil(f7);
-        if (z10 && duVar != null && ti0Var.J == null) {
-            ti0Var.J = new li0(duVar);
         }
     }
 
-    public final void a(Canvas canvas, int i10, int i11) {
-        RectF rectF;
-        int i12;
-        int i13;
-        Path.Direction direction;
-        ti0 ti0Var = this.e;
-        int i14 = ti0Var.I;
-        float[] fArr = ti0Var.y;
-        boolean z10 = ti0Var.a;
-        Paint paint = ti0Var.x;
-        Paint paint2 = ti0Var.F;
-        Path path = ti0Var.H;
-        float[] fArr2 = ti0Var.G;
-        Path path2 = ti0Var.E;
-        Drawable drawable = ti0Var.w;
-        if (i14 != i11) {
-            ti0Var.I = i11;
-            drawable.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
-            paint2.setColor(i11);
-            paint.setColor(i0.a.k(i11, 30));
-        }
-        int dp = z10 ? i10 : AndroidUtilities.dp(32.0f) + this.d;
-        int i15 = ((double) dp) >= ((double) i10) * 0.95d ? i10 : dp;
-        canvas.save();
-        canvas.translate(0.0f, 0.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        int i16 = this.b;
-        float f7 = i16;
-        float f10 = i15;
-        int i17 = i15;
-        int i18 = this.c;
-        float f11 = i18;
-        rectF2.set(0.0f, f7, f10, f11);
-        fArr[7] = 0.0f;
-        fArr[6] = 0.0f;
-        fArr[1] = 0.0f;
-        fArr[0] = 0.0f;
-        float dp2 = AndroidUtilities.dp(4.0f);
-        fArr[5] = dp2;
-        fArr[4] = dp2;
-        fArr[3] = dp2;
-        fArr[2] = dp2;
-        path2.rewind();
-        Path.Direction direction2 = Path.Direction.CW;
-        path2.addRoundRect(rectF2, fArr, direction2);
-        canvas.drawPath(path2, paint);
-        if (!z10 || this.a == null || ti0Var.J == null) {
-            rectF = rectF2;
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-        } else {
-            if (this.g == null) {
-                this.g = new RectF();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        getRootView();
+        getWindowVisibleDisplayFrame(this.n);
+        setMeasuredDimension(size, size2);
+        li0 li0Var = this.v;
+        li0Var.measure(View.MeasureSpec.makeMeasureSpec((this.x * 2) + size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt.getVisibility() != 8 && childAt != li0Var) {
+                measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30), 0);
             }
-            int dp3 = AndroidUtilities.dp(3.333f);
-            i12 = i16;
-            i13 = i18;
-            direction = direction2;
-            rectF = rectF2;
-            ti0Var.J.a(canvas, this.g, i17 - dp3, i18 - dp3, i11, ti0Var.e, b());
         }
-        rectF.set(-AndroidUtilities.dp(3.0f), f7, 0.0f, f11);
-        float dp4 = AndroidUtilities.dp(4.0f);
-        fArr2[7] = dp4;
-        fArr2[6] = dp4;
-        fArr2[1] = dp4;
-        fArr2[0] = dp4;
-        fArr2[5] = 0.0f;
-        fArr2[4] = 0.0f;
-        fArr2[3] = 0.0f;
-        fArr2[2] = 0.0f;
-        path.rewind();
-        path.addRoundRect(rectF, fArr2, direction);
-        canvas.drawPath(path, paint2);
-        if (!ti0Var.r) {
-            int intrinsicHeight = (int) (((i12 + i13) - drawable.getIntrinsicHeight()) / 2.0f);
-            if (intrinsicHeight > AndroidUtilities.dp(8.0f) + i12) {
-                intrinsicHeight = AndroidUtilities.dp(4.0f) + i12;
-            }
-            drawable.setBounds((i17 - drawable.getIntrinsicWidth()) - AndroidUtilities.dp(4.0f), intrinsicHeight, i17 - AndroidUtilities.dp(4.0f), drawable.getIntrinsicHeight() + intrinsicHeight);
-            drawable.setAlpha((int) 255.0f);
-            drawable.draw(canvas);
-        }
-        canvas.restore();
     }
 
-    public final boolean b() {
-        return this.e.a && ((float) (this.c - this.b)) > (this.f.getTextSize() * 1.3f) * ((float) 3);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.r || b(motionEvent, false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void requestDisallowInterceptTouchEvent(boolean z10) {
+        if (this.e && !this.f) {
+            onTouchEvent(null);
+        }
+        super.requestDisallowInterceptTouchEvent(z10);
     }
 }

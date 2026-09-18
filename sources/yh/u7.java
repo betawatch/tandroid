@@ -1,79 +1,65 @@
 package yh;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.x81;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u7 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class u7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final x81 b;
+    public final t7 c;
 
-    public /* synthetic */ u7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public u7(Context context, int i10, boolean z10, long j3, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        setOrientation(1);
+        x81 x81Var = new x81(context, null);
+        this.b = x81Var;
+        t7 t7Var = new t7(context, i10, z10, j3, i11, e6Var);
+        this.c = t7Var;
+        x81Var.setAdapter(t7Var);
+        View n10 = x81Var.n(3, true);
+        View view = new View(context);
+        view.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, e6Var));
+        addView(n10, w7.y5.n(-1, 48));
+        addView(view, new LinearLayout.LayoutParams(w7.y5.z(-1.0f), w7.y5.z(1.0f / AndroidUtilities.density)));
+        addView(x81Var, w7.y5.n(-1, -1));
+        setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, e6Var));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        int i10 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i10) {
-            case 0:
-                v7 v7Var = (v7) notificationCenterDelegate;
-                ArrayList arrayList = (ArrayList) obj;
-                int i11 = v7Var.c;
-                int i12 = v7Var.d;
-                long j3 = v7Var.f;
-                int i13 = 0;
-                if (j3 == 0) {
-                    v5 y3 = v5.y(i11, v7Var.e);
-                    ArrayList arrayList2 = y3.q[i12];
-                    int size = arrayList2.size();
-                    int i14 = 0;
-                    while (i14 < size) {
-                        Object obj3 = arrayList2.get(i14);
-                        i14++;
-                        int i15 = r7.a;
-                        j51 J = j51.J(r7.class);
-                        J.G = (TL_stars.StarsTransaction) obj3;
-                        J.q = false;
-                        arrayList.add(J);
-                    }
-                    if (!y3.u[i12]) {
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        break;
-                    }
-                } else {
-                    o g10 = o.g(i11);
-                    ArrayList arrayList3 = g10.k(j3).a[i12];
-                    int size2 = arrayList3.size();
-                    while (i13 < size2) {
-                        Object obj4 = arrayList3.get(i13);
-                        i13++;
-                        int i16 = r7.a;
-                        j51 J2 = j51.J(r7.class);
-                        J2.G = (TL_stars.StarsTransaction) obj4;
-                        J2.q = true;
-                        arrayList.add(J2);
-                    }
-                    if (!g10.k(j3).e[i12]) {
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        arrayList.add(j51.o(arrayList.size(), 7));
-                        break;
-                    }
-                }
-                break;
-            default:
-                hg.e2.V((hg.e2) notificationCenterDelegate, (ArrayList) obj, (x51) obj2);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.starTransactionsLoaded) {
+            this.c.i();
+            this.b.o(true);
         }
+    }
+
+    public wl0 getCurrentListView() {
+        View currentView = this.b.getCurrentView();
+        if (currentView instanceof s7) {
+            return ((s7) currentView).a;
+        }
+        return null;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        this.c.i();
+        this.b.o(false);
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.starTransactionsLoaded);
+        super.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starTransactionsLoaded);
+        super.onDetachedFromWindow();
     }
 }

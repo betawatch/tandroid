@@ -1,138 +1,173 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yu0 extends org.telegram.ui.Components.ll0 {
-    public final Context c;
-    public final /* synthetic */ PhotoViewer d;
+public final class yu0 extends View {
+    public final Paint a;
+    public final org.telegram.ui.Components.o6 b;
+    public final TextPaint c;
+    public StaticLayout d;
+    public float e;
+    public float f;
+    public final org.telegram.ui.Components.o6 h;
+    public String n;
+    public boolean r;
+    public final org.telegram.ui.Components.e6 s;
+    public boolean v;
+    public int w;
 
-    public yu0(Context context, PhotoViewer photoViewer) {
-        this.d = photoViewer;
-        this.c = context;
+    public yu0(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.r = false;
+        org.telegram.ui.Components.qr qrVar = org.telegram.ui.Components.qr.h;
+        this.s = new org.telegram.ui.Components.e6(this, 0L, 350L, qrVar);
+        paint.setColor(2130706432);
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
+        this.b = o6Var;
+        o6Var.k(0.3f, 320L, qrVar);
+        o6Var.r(-1);
+        o6Var.t(AndroidUtilities.dp(14.0f));
+        o6Var.u(AndroidUtilities.bold());
+        o6Var.setCallback(this);
+        o6Var.q("0", true, true);
+        o6Var.G = AndroidUtilities.displaySize.x;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        c();
+        org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(false, true, true, false);
+        this.h = o6Var2;
+        o6Var2.k(0.3f, 320L, qrVar);
+        o6Var2.r(-1);
+        o6Var2.t(AndroidUtilities.dp(14.0f));
+        o6Var2.u(AndroidUtilities.bold());
+        o6Var2.setCallback(this);
+        o6Var2.q("0", true, true);
+        o6Var2.G = AndroidUtilities.displaySize.x;
     }
 
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
+    public final void a(int i10, int i11) {
+        b(i10, i11, true);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        PhotoViewer photoViewer = this.d;
-        dv0 dv0Var = photoViewer.d;
-        if (dv0Var == null || dv0Var.c() == null) {
-            return 0;
+    public final void b(int i10, int i11, boolean z10) {
+        boolean z11 = false;
+        int max = Math.max(0, i10);
+        int max2 = Math.max(max, i11);
+        if (LocaleController.getInstance().getCurrentLocaleInfo() != null && !TextUtils.equals(this.n, LocaleController.getInstance().getCurrentLocaleInfo().shortName)) {
+            c();
         }
-        return photoViewer.d.c().size();
+        this.b.q(String.format("%d", Integer.valueOf(LocaleController.isRTL ? max2 : max)), (!z10 || this.v || LocaleController.isRTL) ? false : true, true);
+        if (!LocaleController.isRTL) {
+            max = max2;
+        }
+        String format = String.format("%d", Integer.valueOf(max));
+        if (z10 && !this.v && !LocaleController.isRTL) {
+            z11 = true;
+        }
+        this.h.q(format, z11, true);
+        this.v = !z10;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
+    public final void c() {
+        this.n = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
+        StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Of).replace("%1$d", "").replace("%2$d", ""), this.c, AndroidUtilities.dp(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        this.d = staticLayout;
+        if (staticLayout.getLineCount() >= 1) {
+            this.e = this.d.getLineWidth(0);
+            this.f = this.d.getLineDescent(0);
+        } else {
+            this.e = 0.0f;
+            this.f = 0.0f;
+        }
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        org.telegram.ui.Cells.y5 y5Var = (org.telegram.ui.Cells.y5) c1Var.a;
-        int dp = AndroidUtilities.dp(85.0f);
-        int dp2 = i10 != 0 ? AndroidUtilities.dp(6.0f) : 0;
-        y5Var.f = dp;
-        org.telegram.ui.Components.np npVar = y5Var.c;
-        org.telegram.ui.Components.u9 u9Var = y5Var.a;
-        t5 t5Var = y5Var.e;
-        y5Var.h = dp2;
-        ((FrameLayout.LayoutParams) y5Var.b.getLayoutParams()).rightMargin = dp2;
-        ((FrameLayout.LayoutParams) u9Var.getLayoutParams()).rightMargin = dp2;
-        ((FrameLayout.LayoutParams) t5Var.getLayoutParams()).rightMargin = dp2;
-        u9Var.q(0, true);
-        PhotoViewer photoViewer = this.d;
-        Object obj = photoViewer.d.v().get(photoViewer.d.c().get(i10));
-        if (!(obj instanceof MediaController.PhotoEntry)) {
-            if (obj instanceof MediaController.SearchImage) {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                y5Var.setTag(searchImage);
-                y5Var.setImage(searchImage);
-                t5Var.setVisibility(4);
-                npVar.a.f(-1, true, false);
-                npVar.setVisibility(0);
-                return;
+    public final void d(boolean z10, boolean z11) {
+        if (this.r != z10) {
+            this.r = z10;
+            if (!z10) {
+                this.v = true;
             }
+            if (!z11) {
+                this.s.d(z10 ? 1.0f : 0.0f, true);
+            }
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean isShown() {
+        return this.r;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float d = this.s.d(this.r ? 1.0f : 0.0f, false);
+        if (d <= 0.0f) {
             return;
         }
-        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-        y5Var.setTag(photoEntry);
-        t5Var.setVisibility(4);
-        String str = photoEntry.thumbPath;
-        Context context = this.c;
-        if (str != null) {
-            u9Var.f(str, null, context.getResources().getDrawable(R.drawable.nophotos));
-        } else if (photoEntry.path != null) {
-            u9Var.p(photoEntry.orientation, photoEntry.invert, true);
-            if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
-                u9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, context.getResources().getDrawable(R.drawable.nophotos));
-            } else {
-                t5Var.setVisibility(0);
-                y5Var.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
-                u9Var.f("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, context.getResources().getDrawable(R.drawable.nophotos));
-            }
-        } else {
-            u9Var.setImageResource(R.drawable.nophotos);
-        }
-        npVar.a.f(-1, true, false);
-        npVar.setVisibility(0);
+        org.telegram.ui.Components.o6 o6Var = this.b;
+        float d10 = o6Var.d() + this.e;
+        org.telegram.ui.Components.o6 o6Var2 = this.h;
+        float d11 = o6Var2.d() + d10 + AndroidUtilities.dp(18.0f);
+        float f7 = ((1.0f - d) * (-AndroidUtilities.dp(8.0f))) + this.w;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - d11) / 2.0f, AndroidUtilities.dpf2(10.0f) + f7, (getWidth() + d11) / 2.0f, AndroidUtilities.dpf2(33.0f) + f7);
+        Paint paint = this.a;
+        int alpha = paint.getAlpha();
+        paint.setAlpha((int) (alpha * d));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(12.0f), AndroidUtilities.dpf2(12.0f), paint);
+        paint.setAlpha(alpha);
+        canvas.save();
+        canvas.translate(((getWidth() - d11) / 2.0f) + AndroidUtilities.dp(9.0f), f7 + AndroidUtilities.dp(9.5f));
+        o6Var.setBounds(0, 0, (int) o6Var.d(), AndroidUtilities.dp(23.0f));
+        int i10 = (int) (d * 255.0f);
+        o6Var.w = i10;
+        o6Var.draw(canvas);
+        canvas.translate(o6Var.d(), 0.0f);
+        canvas.save();
+        canvas.translate((-(this.d.getWidth() - this.e)) / 2.0f, ((this.f / 2.0f) + (AndroidUtilities.dp(23.0f) - this.d.getHeight())) / 2.0f);
+        this.c.setAlpha(i10);
+        this.d.draw(canvas);
+        canvas.restore();
+        canvas.translate(this.e, 0.0f);
+        o6Var2.setBounds(0, 0, (int) o6Var2.d(), AndroidUtilities.dp(23.0f));
+        o6Var2.w = i10;
+        o6Var2.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        Context context = this.c;
-        org.telegram.ui.Cells.y5 y5Var = new org.telegram.ui.Cells.y5(context);
-        new Paint();
-        y5Var.setWillNotDraw(false);
-        org.telegram.ui.Components.u9 u9Var = new org.telegram.ui.Components.u9(context);
-        y5Var.a = u9Var;
-        u9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
-        y5Var.addView(u9Var, w7.x5.c(-1.0f, -1));
-        FrameLayout frameLayout = new FrameLayout(context);
-        y5Var.b = frameLayout;
-        y5Var.addView(frameLayout, w7.x5.e(42, 42, 53));
-        t5 t5Var = new t5(context);
-        t5Var.c = new Path();
-        t5Var.d = new float[8];
-        t5Var.b = new RectF();
-        t5Var.e = new Paint(1);
-        y5Var.e = t5Var;
-        t5Var.setWillNotDraw(false);
-        t5Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        y5Var.addView(t5Var, w7.x5.e(-1, 16, 83));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(R.drawable.ic_video);
-        t5Var.addView(imageView, w7.x5.e(-2, -2, 19));
-        TextView textView = new TextView(context);
-        y5Var.d = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 12.0f);
-        textView.setImportantForAccessibility(2);
-        t5Var.addView(textView, w7.x5.d(-2, -2.0f, 19, 18.0f, -0.7f, 0.0f, 0.0f));
-        org.telegram.ui.Components.np npVar = new org.telegram.ui.Components.np(context, 24, null);
-        y5Var.c = npVar;
-        npVar.setDrawBackgroundAsArc(11);
-        npVar.b(org.telegram.ui.ActionBar.j6.W9, org.telegram.ui.ActionBar.j6.X9, org.telegram.ui.ActionBar.j6.V9);
-        y5Var.addView(npVar, w7.x5.d(26, 26.0f, 51, 55.0f, 4.0f, 0.0f, 0.0f));
-        npVar.setVisibility(0);
-        y5Var.setFocusable(true);
-        frameLayout.setOnClickListener(new m60(this, 20));
-        return new org.telegram.ui.Components.wk0(y5Var);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.w = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
+        this.b.G = size;
+        this.h.G = size;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.wh.C(43.0f, this.w, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.b == drawable || this.h == drawable || super.verifyDrawable(drawable);
     }
 }

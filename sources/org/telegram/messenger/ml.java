@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ml implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class ml implements RequestDelegate {
                 ((TranslateController) this.b).lambda$translateStory$38((TL_stories.StoryItem) this.c, (String) this.d, (TranslateController.StoryKey) this.e, (Runnable) this.f, (TLRPC.TL_textWithEntities) this.g, tLObject, tL_error);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$270((Context) this.c, (org.telegram.ui.ActionBar.c2) this.d, (MessagesStorage.BooleanCallback) this.e, (org.telegram.ui.ActionBar.o2) this.f, (TLRPC.TL_channels_convertToGigagroup) this.g, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$270((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (MessagesStorage.BooleanCallback) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_channels_convertToGigagroup) this.g, tLObject, tL_error);
                 break;
             default:
                 ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$7((TLRPC.DecryptedMessage) this.c, (TLRPC.EncryptedChat) this.e, (TLRPC.Message) this.f, (MessageObject) this.g, (String) this.d, tLObject, tL_error);

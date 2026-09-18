@@ -1,16 +1,16 @@
 package ci;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ r6 b;
-    public final /* synthetic */ qg.e2 c;
+    public final /* synthetic */ qg.b2 c;
 
-    public /* synthetic */ v4(r6 r6Var, qg.e2 e2Var, int i10) {
+    public /* synthetic */ v4(r6 r6Var, qg.b2 b2Var, int i10) {
         this.a = i10;
         this.b = r6Var;
-        this.c = e2Var;
+        this.c = b2Var;
     }
 
     @Override // java.lang.Runnable

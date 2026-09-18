@@ -5,9 +5,9 @@ import android.text.Layout;
 import android.text.Spanned;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class k9 implements Runnable {
     public final /* synthetic */ da a;
@@ -28,9 +28,9 @@ public final class k9 implements Runnable {
         }
         y9 y9Var2 = daVar.W;
         CharSequence t10 = daVar.t(y9Var, true);
-        ml0 ml0Var = daVar.E;
-        if (ml0Var != null) {
-            ml0Var.J0(false);
+        wl0 wl0Var = daVar.E;
+        if (wl0Var != null) {
+            wl0Var.J0(false);
         }
         int i10 = daVar.s;
         int i11 = daVar.t;
@@ -84,16 +84,16 @@ public final class k9 implements Runnable {
                 int i19 = 0;
                 while (true) {
                     if (i19 >= length) {
-                        org.telegram.ui.Components.x5[] x5VarArr = (org.telegram.ui.Components.x5[]) spanned.getSpans(0, t10.length(), org.telegram.ui.Components.x5.class);
-                        int length2 = x5VarArr.length;
+                        org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) spanned.getSpans(0, t10.length(), org.telegram.ui.Components.z5.class);
+                        int length2 = z5VarArr.length;
                         int i20 = 0;
                         while (true) {
                             if (i20 >= length2) {
                                 break;
                             }
-                            org.telegram.ui.Components.x5 x5Var = x5VarArr[i20];
-                            int spanStart = spanned.getSpanStart(x5Var);
-                            int spanEnd = spanned.getSpanEnd(x5Var);
+                            org.telegram.ui.Components.z5 z5Var = z5VarArr[i20];
+                            int spanStart = spanned.getSpanStart(z5Var);
+                            int spanEnd = spanned.getSpanEnd(z5Var);
                             if (l4 >= spanStart && l4 <= spanEnd) {
                                 daVar.u = spanStart;
                                 daVar.v = spanEnd;
@@ -141,9 +141,9 @@ public final class k9 implements Runnable {
             if (y9Var2 != null) {
                 y9Var2.invalidate();
             }
-            w7.h0 h0Var = daVar.D;
-            if (h0Var != null) {
-                h0Var.a(true);
+            w7.i0 i0Var = daVar.D;
+            if (i0Var != null) {
+                i0Var.a(true);
             }
             daVar.i = true;
             daVar.R = true;

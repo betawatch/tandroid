@@ -1,60 +1,67 @@
 package org.telegram.ui.ActionBar;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.wh;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class x1 extends l5 {
-    public final /* synthetic */ int d;
+public final class x1 extends FrameLayout {
+    public final TextView a;
+    public final ImageView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x1(Context context, int i10) {
+    public x1(Context context, e6 e6Var) {
         super(context);
-        this.d = i10;
+        setBackground(j6.f0(j6.v0(j6.I5, e6Var), 2, -1));
+        setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(j6.v0(j6.J5, e6Var), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.y5.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        wh.m(j6.j5, e6Var, textView, 1, 16.0f);
+        addView(textView, w7.y5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void setEnabled(boolean z10) {
-        switch (this.d) {
-            case 0:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            case 1:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            case 2:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
-            default:
-                super.setEnabled(z10);
-                setAlpha(z10 ? 1.0f : 0.5f);
-                break;
+    public final void a(int i10, CharSequence charSequence) {
+        TextView textView = this.a;
+        textView.setText(charSequence);
+        ImageView imageView = this.b;
+        if (i10 == 0) {
+            imageView.setVisibility(4);
+            textView.setPadding(0, 0, 0, 0);
+        } else {
+            imageView.setImageResource(i10);
+            imageView.setVisibility(0);
+            textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(56.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(56.0f) : 0, 0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.l5, android.widget.TextView
-    public final void setTextColor(int i10) {
-        switch (this.d) {
-            case 0:
-                super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
-                break;
-            case 1:
-                super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
-                break;
-            case 2:
-                super.setTextColor(i10);
-                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
-                break;
-            default:
-                super.setTextColor(i10);
-                setBackgroundDrawable(j6.G0(AndroidUtilities.dp(20.0f), i10));
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    }
+
+    public void setGravity(int i10) {
+        this.a.setGravity(i10);
+    }
+
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
     }
 }

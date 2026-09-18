@@ -1,45 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ed1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ xd1 e;
+public final class ed1 extends vd1 {
+    public final /* synthetic */ zn k2;
+    public final /* synthetic */ boolean l2;
 
-    public ed1(xd1 xd1Var, boolean z10, int i10, int i11, boolean z11) {
-        this.e = xd1Var;
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = z11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ed1(Object obj, zn znVar, boolean z10) {
+        super(obj, null, true);
+        this.k2 = znVar;
+        this.l2 = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        xd1 xd1Var = this.e;
-        FrameLayout[] frameLayoutArr = xd1Var.L0;
-        xd1Var.r1 = null;
-        int i10 = this.c;
-        int i11 = this.b;
-        boolean z10 = this.a;
-        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
-            frameLayoutArr[i11].setAlpha(1.0f);
-            frameLayoutArr[i11].setVisibility(4);
-        } else if (!z10) {
-            frameLayoutArr[i10].setVisibility(4);
-        }
-        int i12 = xd1Var.b;
-        if (i12 == 1 || i12 == 2) {
-            xd1Var.J0[this.d ? (char) 0 : (char) 2].setVisibility(4);
-        } else if (i10 == 1) {
-            frameLayoutArr[i11].setAlpha(0.0f);
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        xn xnVar = this.k2.ea;
+        xnVar.i(xnVar.f, xnVar.h, false, Boolean.valueOf(this.l2), false);
     }
 }

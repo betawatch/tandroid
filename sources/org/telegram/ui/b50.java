@@ -3,28 +3,24 @@ package org.telegram.ui;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class b50 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ k60 b;
+    public final /* synthetic */ i60 a;
 
-    public b50(k60 k60Var, ChatObject.VideoParticipant videoParticipant) {
-        this.b = k60Var;
-        this.a = videoParticipant;
+    public b50(i60 i60Var) {
+        this.a = i60Var;
     }
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
         ViewGroup viewGroup;
-        k60 k60Var = this.b;
-        k60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        k60Var.q2 = null;
-        k60Var.a2.j(this.a);
-        AndroidUtilities.updateVisibleRows(k60Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.g3) k60Var).containerView;
+        i60 i60Var = this.a;
+        i60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
+        i60Var.a2.j(null);
+        AndroidUtilities.updateVisibleRows(i60Var.m2);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
         viewGroup.requestLayout();
         return false;
     }

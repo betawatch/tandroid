@@ -1,9 +1,9 @@
 package ci;
 
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.na0;
+import org.telegram.ui.Components.wa0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z4 implements o1.f {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class z4 implements o1.f {
                     r6Var.C1 = null;
                     if (!this.c) {
                         r5Var.setVisibility(8);
-                        pg.s0.e(r6Var.F1).g();
+                        pg.u0.e(r6Var.F1).g();
                         r5Var.getAdapter().l();
                         break;
                     }
@@ -34,27 +34,27 @@ public final /* synthetic */ class z4 implements o1.f {
                 break;
             case 1:
                 r6 r6Var2 = (r6) this.b;
-                qg.w1 w1Var = r6Var2.m1;
+                qg.t1 t1Var = r6Var2.m1;
                 if (hVar == r6Var2.v1) {
                     r6Var2.v1 = null;
                     if (!this.c) {
-                        w1Var.setVisibility(8);
+                        t1Var.setVisibility(8);
                     }
-                    w1Var.setMaskProvider(null);
+                    t1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
-                na0 na0Var = (na0) this.b;
+                wa0 wa0Var = (wa0) this.b;
                 if (!z10) {
-                    na0Var.K = null;
+                    wa0Var.K = null;
                     boolean z11 = this.c;
-                    na0Var.setVisibility(z11 ? 8 : 0);
-                    if (na0Var.N && z11) {
-                        na0Var.N = false;
-                        na0Var.b.setLayoutManager(na0Var.getNeededLayoutManager());
-                        na0Var.I = true;
-                        na0Var.o(true);
+                    wa0Var.setVisibility(z11 ? 8 : 0);
+                    if (wa0Var.N && z11) {
+                        wa0Var.N = false;
+                        wa0Var.b.setLayoutManager(wa0Var.getNeededLayoutManager());
+                        wa0Var.I = true;
+                        wa0Var.o(true);
                         break;
                     }
                 }

@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.kt;
-import org.telegram.ui.Components.pi0;
-import w7.p;
+import org.telegram.ui.Components.zi0;
+import w7.q;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -46,8 +46,8 @@ public final class a extends Path {
                 if (i10 >= arrayList.size()) {
                     break;
                 }
-                pi0 pi0Var = (pi0) arrayList.get(i10);
-                if (f13 >= pi0Var.b && f13 <= pi0Var.c) {
+                zi0 zi0Var = (zi0) arrayList.get(i10);
+                if (f13 >= zi0Var.b && f13 <= zi0Var.c) {
                     hVar.y = true;
                     break;
                 }
@@ -68,7 +68,7 @@ public final class a extends Path {
         hVar.t = kt.c;
         int width = hVar.getBounds().width() / AndroidUtilities.dp(6.0f);
         int i13 = h.B;
-        int b10 = p.b(width * i13, i13, h.A);
+        int b10 = q.b(width * i13, i13, h.A);
         Stack stack2 = hVar.c;
         hVar.d = b10;
         while (hVar.h.size() + stack2.size() < b10) {

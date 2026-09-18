@@ -15,7 +15,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class sh implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        vc a02;
+        xc a02;
         switch (this.a) {
             case 0:
                 break;
@@ -52,29 +52,29 @@ public final /* synthetic */ class sh implements Runnable {
                 }
                 break;
             case 7:
-                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), m2Var);
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
                     break;
                 }
                 break;
             case 8:
-                int i12 = i01.f;
+                int i12 = w01.f;
                 break;
             case 9:
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-                y01.f = Boolean.TRUE;
+                m11.f = Boolean.TRUE;
                 edit.putBoolean("nothanos", true).apply();
                 break;
             case 10:
                 SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
-                y01.f = Boolean.TRUE;
+                m11.f = Boolean.TRUE;
                 edit2.putBoolean("nothanos", true).apply();
                 break;
             case 11:
-                int i13 = y21.f0;
+                int i13 = m31.f0;
                 break;
             case 12:
                 SavedMessagesController.openSavedMessages();
@@ -89,9 +89,9 @@ public final /* synthetic */ class sh implements Runnable {
                 ai.w7.p();
                 break;
             case 16:
-                org.telegram.ui.k60 k60Var = org.telegram.ui.k60.D3;
-                if (k60Var != null) {
-                    k60Var.show();
+                org.telegram.ui.i60 i60Var = org.telegram.ui.i60.D3;
+                if (i60Var != null) {
+                    i60Var.show();
                     break;
                 }
                 break;
@@ -121,24 +121,24 @@ public final /* synthetic */ class sh implements Runnable {
                 CallReceiver.checkLastReceivedCall();
                 break;
             case 24:
-                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 25:
-                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 26:
                 Drawable[] drawableArr = PhotoViewer.U8;
                 break;
             case 27:
-                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 28:
-                vc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             default:
-                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-                if (U != null && (a02 = vc.a0(U)) != null) {
-                    oc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && (a02 = xc.a0(U)) != null) {
+                    qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
                     M.j = 5000;
                     M.j();
                     break;

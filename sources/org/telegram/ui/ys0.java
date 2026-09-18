@@ -1,22 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.SharedConfig;
+
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ys0 extends org.telegram.ui.Cells.aa {
-    public final /* synthetic */ int v0 = 0;
+public final class ys0 extends org.telegram.ui.Components.f81 {
+    public final org.telegram.ui.Components.na g0;
+    public final /* synthetic */ PhotoViewer h0;
 
-    public /* synthetic */ ys0(ai.wa waVar, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(waVar, f6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ys0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h0 = photoViewer;
+        new Path();
+        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Cells.da
-    public final int p() {
-        switch (this.v0) {
+    @Override // org.telegram.ui.Components.f81
+    public final void b(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        float f7 = -getX();
+        PhotoViewer photoViewer = this.h0;
+        canvas.translate(f7 - photoViewer.R7.getX(), (-getY()) - photoViewer.R7.getY());
+        photoViewer.T0(canvas, this.g0, -14803426, 855638016, false, true, false);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10;
+        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
+            return;
         }
-        return 0;
+        super.invalidate();
     }
 
-    public ys0(ai.d dVar) {
-        super(null, dVar);
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.h0.e0.invalidate();
+        }
     }
 }

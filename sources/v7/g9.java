@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class g9 extends h9 {
     public final transient int c;
@@ -15,7 +15,7 @@ public final class g9 extends h9 {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        w7.w7.a(i10, this.d);
+        w7.x7.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -37,7 +37,7 @@ public final class g9 extends h9 {
     @Override // v7.h9, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final h9 subList(int i10, int i11) {
-        w7.w7.b(i10, i11, this.d);
+        w7.x7.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

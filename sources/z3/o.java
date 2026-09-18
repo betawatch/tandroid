@@ -10,7 +10,7 @@ import e2.v;
 import hg.k0;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class o implements h0 {
     public final h0 a;
@@ -55,7 +55,7 @@ public final class o implements h0 {
         a2.j = str;
         a2.v = Long.MAX_VALUE;
         a2.O = kVar.D(sVar);
-        k0.u(a2, h0Var);
+        k0.r(a2, h0Var);
     }
 
     @Override // c3.h0
@@ -67,7 +67,7 @@ public final class o implements h0 {
         e2.d.a("DRM on subtitles is not supported", g0Var == null);
         int i13 = (this.e - i12) - i11;
         try {
-            this.g.B(this.f, i13, i11, l.c, new e2.h() { // from class: z3.n
+            this.g.C(this.f, i13, i11, l.c, new e2.h() { // from class: z3.n
                 @Override // e2.h
                 public final void accept(Object obj) {
                     a aVar = (a) obj;

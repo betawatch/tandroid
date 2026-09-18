@@ -1,23 +1,47 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class vi extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ bo l2;
+public final class vi implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.qk0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ zg.o0 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ zn s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vi(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, bo boVar) {
-        super(activity, f6Var, false);
-        this.l2 = boVar;
+    public vi(zn znVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.qk0 qk0Var, float f7, float f10, zg.o0 o0Var, MessageObject messageObject) {
+        this.s = znVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i10;
+        this.d = z12;
+        this.e = qk0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = o0Var;
+        this.r = messageObject;
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        bo boVar = this.l2;
-        W(boVar.R0.getY() + y3, boVar.X0.getBackgroundSizeY());
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            zn znVar = this.s;
+            if (znVar.bc != null) {
+                znVar.bc = null;
+                if (this.b) {
+                    znVar.h8(new ui(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    znVar.h8(new qh(8, this, this.r));
+                }
+                znVar.A7(true);
+            }
+        }
     }
 }

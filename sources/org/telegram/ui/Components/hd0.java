@@ -1,44 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Typeface;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hd0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sd0 b;
+public final class hd0 extends id0 {
+    public final ci.h2 L;
 
-    public /* synthetic */ hd0(sd0 sd0Var, int i10) {
-        this.a = i10;
-        this.b = sd0Var;
+    public hd0(Context context) {
+        super(context, null);
+        ci.h2 h2Var = new ci.h2(this, context, 5);
+        this.L = h2Var;
+        h2Var.setTextSize(1, 18.0f);
+        h2Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
+        h2Var.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
+        h2Var.setBackground(null);
+        h2Var.setSingleLine(true);
+        h2Var.setInputType(1);
+        h2Var.setTypeface(Typeface.DEFAULT);
+        h2Var.setCursorColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.l6, false));
+        h2Var.setCursorWidth(1.5f);
+        h2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        e(h2Var);
+        addView(h2Var, w7.y5.e(-1, -2, 16));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sd0 sd0Var = this.b;
-                sd0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                sd0Var.P = floatValue;
-                sd0Var.f(floatValue);
-                sd0Var.setAlpha(sd0Var.P);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                sd0 sd0Var2 = this.b;
-                ai.x5 x5Var = sd0Var2.e;
-                x5Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
-                x5Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, floatValue2));
-                x5Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
-                TextView textView = sd0Var2.w;
-                textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
-                textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, floatValue2));
-                textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, floatValue2));
-                sd0Var2.s.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, floatValue2));
-                break;
-        }
+    public EditTextBoldCursor getEditText() {
+        return this.L;
+    }
+
+    public void setHint(String str) {
+        setText(str);
     }
 }

@@ -1,21 +1,20 @@
 package org.telegram.messenger;
 
 import j$.util.concurrent.ConcurrentHashMap;
-import yf.r;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ma implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ r c;
+    public final /* synthetic */ yf.s c;
     public final /* synthetic */ ConcurrentHashMap d;
     public final /* synthetic */ ConcurrentHashMap e;
 
-    public /* synthetic */ ma(MessagesController messagesController, r rVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
+    public /* synthetic */ ma(MessagesController messagesController, yf.s sVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = rVar;
+        this.c = sVar;
         this.d = concurrentHashMap;
         this.e = concurrentHashMap2;
     }

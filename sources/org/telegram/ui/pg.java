@@ -1,76 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pg implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ pg(Object obj, float f7, int i10) {
+    public /* synthetic */ pg(zn znVar, TLRPC.User user, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = znVar;
+        this.c = user;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                bo boVar = (bo) this.c;
-                boVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                boVar.H8 = floatValue;
-                boVar.L8 = floatValue / this.b;
-                View view = boVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
-                    }
-                }
-                break;
-            case 2:
-                ((org.telegram.ui.Components.un) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((cw0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                zn znVar = this.b;
+                znVar.getClass();
+                znVar.presentFragment(zn.R9(this.c.id));
                 break;
             default:
-                h21 h21Var = (h21) this.c;
-                h21Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                h21Var.a.setTranslationX(lerp);
-                h21Var.b.setTranslationX(lerp);
-                ImageView imageView = h21Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.np npVar = h21Var.f;
-                npVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f7 = (floatValue3 * 0.5f) + 0.5f;
-                npVar.setScaleX(f7);
-                npVar.setScaleY(f7);
-                npVar.setAlpha(floatValue3);
-                float f10 = 1.0f - floatValue3;
-                float f11 = (f10 * 0.5f) + 0.5f;
-                imageView.setScaleX(f11);
-                imageView.setScaleY(f11);
-                imageView.setAlpha(f10);
+                this.b.ma(this.c);
                 break;
         }
     }

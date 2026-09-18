@@ -1,27 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Paint;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class x40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.voip.u a;
-    public final /* synthetic */ k60 b;
+public final class x40 extends Paint {
+    public final /* synthetic */ i60 a;
 
-    public x40(k60 k60Var, org.telegram.ui.Components.voip.u uVar) {
-        this.b = k60Var;
-        this.a = uVar;
+    public x40(i60 i60Var) {
+        this.a = i60Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
         ViewGroup viewGroup;
-        org.telegram.ui.Components.voip.u uVar = this.a;
-        if (uVar.getParent() != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.g3) this.b).containerView;
-            viewGroup.removeView(uVar);
+        ViewGroup viewGroup2;
+        super.setAlpha(i10);
+        i60 i60Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
+        if (viewGroup != null) {
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) i60Var).containerView;
+            viewGroup2.invalidate();
         }
     }
 }

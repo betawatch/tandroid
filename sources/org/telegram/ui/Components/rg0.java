@@ -1,328 +1,136 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Point;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class rg0 extends org.telegram.ui.Cells.a0 implements bo0, DownloadController.FileDownloadProgressListener {
-    public int E;
-    public int F;
-    public int G;
-    public StaticLayout H;
-    public int I;
-    public int J;
-    public int K;
-    public boolean f;
-    public MessageObject h;
-    public int n;
-    public TextPaint r;
-    public co0 s;
-    public zh0 v;
-    public int w;
-    public int x;
-    public int y;
+public final class rg0 extends xw0 {
+    public boolean a = false;
+    public final Paint b = new Paint(1);
+    public final int c = UserConfig.selectedAccount;
+    public long d = 0;
+    public boolean e = false;
+    public final RectF f = new RectF();
+    public float g;
+    public final boolean h;
+    public final org.telegram.ui.ActionBar.e6 i;
 
-    @Override // org.telegram.ui.Components.bo0
-    public final void b(float f7) {
-        MessageObject messageObject = this.h;
-        if (messageObject == null) {
-            return;
-        }
-        messageObject.audioProgress = f7;
-        MediaController.getInstance().seekToProgress(this.h, f7);
+    public rg0(org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        this.h = z10;
+        this.i = e6Var;
     }
 
-    public final MessageObject getMessageObject() {
-        return this.h;
+    @Override // org.telegram.ui.Components.xw0
+    public final void c(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public int getObserverTag() {
-        return this.K;
+    @Override // org.telegram.ui.Components.xw0
+    public final void d() {
+        this.d = System.currentTimeMillis();
+        this.e = true;
+        invalidateSelf();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        DownloadController.getInstance(this.n).removeLoadingFileObserver(this);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.h == null) {
-            return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(10.0f);
+        int dp2 = ((AndroidUtilities.dp(18.0f) - dp) / 2) + getBounds().top;
+        if (!this.a) {
+            dp2 += AndroidUtilities.dp(1.0f);
         }
-        if (!this.f) {
-            requestLayout();
-            return;
-        }
-        Point point = AndroidUtilities.displaySize;
-        int i10 = point.y;
-        int i11 = point.x;
-        if (getParent() instanceof View) {
-            View view = (View) getParent();
-            int measuredWidth = view.getMeasuredWidth();
-            i10 = view.getMeasuredHeight();
-            i11 = measuredWidth;
-        }
-        org.telegram.ui.ActionBar.j6.q3.n((int) getY(), i11, i10);
-        org.telegram.ui.ActionBar.g5 g5Var = org.telegram.ui.ActionBar.j6.q3;
-        int measuredWidth2 = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        if (g5Var != null) {
-            g5Var.setBounds(0, 0, measuredWidth2, measuredHeight);
-        }
-        org.telegram.ui.ActionBar.j6.q3.draw(canvas);
-        if (this.h == null) {
-            return;
-        }
-        canvas.save();
-        int i12 = this.y;
-        if (i12 == 0 || i12 == 1) {
-            canvas.translate(this.w, this.x);
-            this.s.b(canvas);
-        } else {
-            canvas.translate(AndroidUtilities.dp(12.0f) + this.w, this.x);
-            zh0 zh0Var = this.v;
-            float f7 = zh0Var.e / 2;
-            float f10 = zh0Var.f / 2.0f;
-            canvas.drawRect(0.0f, f7 - f10, zh0Var.d, f10 + f7, zh0Var.a);
-            float f11 = zh0Var.e / 2;
-            canvas.drawRect(0.0f, f11 - f10, zh0Var.c * zh0Var.d, f10 + f11, zh0Var.b);
-        }
-        canvas.restore();
-        int i13 = this.y;
-        this.r.setColor(-6182221);
-        Drawable drawable = org.telegram.ui.ActionBar.j6.U4[i13][this.G];
-        int dp = AndroidUtilities.dp(36.0f);
-        org.telegram.ui.Cells.a0.o(((dp - drawable.getIntrinsicWidth()) / 2) + this.E, ((dp - drawable.getIntrinsicHeight()) / 2) + this.F, drawable);
-        drawable.draw(canvas);
-        canvas.save();
-        canvas.translate(this.I, AndroidUtilities.dp(18.0f));
-        this.H.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onFailedDownload(String str, boolean z10) {
-        r();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        zh0 zh0Var = this.v;
-        if (this.h == null) {
-            return;
-        }
-        this.w = AndroidUtilities.dp(54.0f);
-        this.E = AndroidUtilities.dp(10.0f);
-        this.I = (getMeasuredWidth() - this.J) - AndroidUtilities.dp(16.0f);
-        this.s.j((getMeasuredWidth() - AndroidUtilities.dp(70.0f)) - this.J, AndroidUtilities.dp(30.0f));
-        zh0Var.d = (getMeasuredWidth() - AndroidUtilities.dp(94.0f)) - this.J;
-        zh0Var.e = AndroidUtilities.dp(30.0f);
-        this.x = AndroidUtilities.dp(13.0f);
-        this.F = AndroidUtilities.dp(10.0f);
-        s();
-        if (z10 || !this.f) {
-            this.f = true;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(56.0f));
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressDownload(String str, long j3, long j10) {
-        this.v.a(Math.min(1.0f, j3 / j10));
-        if (this.y != 3) {
-            r();
-        }
-        invalidate();
-    }
-
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onSuccessDownload(String str) {
-        r();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x012c, code lost:
-    
-        if (r1 <= (r0 + r4)) goto L58;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        boolean f7 = this.s.f(motionEvent.getX() - this.w, motionEvent.getY() - this.x, motionEvent.getAction());
-        if (f7) {
-            if (motionEvent.getAction() == 0) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-            }
-            invalidate();
-            return f7;
-        }
-        int dp = AndroidUtilities.dp(36.0f);
-        if (motionEvent.getAction() == 0) {
-            if (x10 >= this.E && x10 <= r5 + dp) {
-                if (y3 >= this.F && y3 <= r0 + dp) {
-                    this.G = 1;
-                    invalidate();
-                    f7 = true;
-                }
-            }
-        } else if (this.G == 1) {
-            if (motionEvent.getAction() == 1) {
-                this.G = 0;
-                playSoundEffect(0);
-                int i10 = this.y;
-                if (i10 == 0) {
-                    boolean playMessage = MediaController.getInstance().playMessage(this.h);
-                    if (!this.h.isOut() && this.h.isContentUnread() && this.h.messageOwner.peer_id.channel_id == 0) {
-                        MessagesController.getInstance(this.n).markMessageContentAsRead(this.h);
-                        this.h.setContentIsRead();
-                    }
-                    if (playMessage) {
-                        this.y = 1;
-                        invalidate();
-                    }
-                } else if (i10 == 1) {
-                    if (MediaController.getInstance().lambda$startAudioAgain$7(this.h)) {
-                        this.y = 0;
-                        invalidate();
-                    }
-                } else if (i10 == 2) {
-                    FileLoader.getInstance(this.n).loadFile(this.h.getDocument(), this.h, 1, 0);
-                    this.y = 4;
-                    invalidate();
-                } else if (i10 == 3) {
-                    FileLoader.getInstance(this.n).cancelLoadFile(this.h.getDocument());
-                    this.y = 2;
-                    invalidate();
-                }
-                invalidate();
-            } else if (motionEvent.getAction() == 3) {
-                this.G = 0;
-                invalidate();
-            } else if (motionEvent.getAction() == 2) {
-                if (x10 >= this.E && x10 <= r3 + dp) {
-                    if (y3 >= this.F) {
-                    }
-                }
-                this.G = 0;
-                invalidate();
-            }
-        }
-        return !f7 ? super.onTouchEvent(motionEvent) : f7;
-    }
-
-    public final void r() {
-        zh0 zh0Var = this.v;
-        String fileName = this.h.getFileName();
-        if (FileLoader.getInstance(this.n).getPathToMessage(this.h.messageOwner).exists()) {
-            DownloadController.getInstance(this.n).removeLoadingFileObserver(this);
-            boolean isPlayingMessage = MediaController.getInstance().isPlayingMessage(this.h);
-            if (!isPlayingMessage || (isPlayingMessage && MediaController.getInstance().isMessagePaused())) {
-                this.y = 0;
+        int i10 = dp2;
+        boolean z10 = this.h;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(z10 ? org.telegram.ui.ActionBar.j6.p9 : org.telegram.ui.ActionBar.j6.pa, this.i);
+        Paint paint = this.b;
+        paint.setColor(v02);
+        RectF rectF = this.f;
+        rectF.set(0.0f, i10, dp, i10 + dp);
+        float f7 = this.g;
+        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.wh.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        for (int i11 = 0; i11 < 3; i11++) {
+            float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
+            float dp4 = AndroidUtilities.dp(5.0f);
+            float f10 = this.g;
+            float f11 = dp3 - (dp4 * f10);
+            if (i11 == 2) {
+                paint.setAlpha(Math.min(255, (int) ((f10 * 255.0f) / 0.5f)));
+            } else if (i11 != 0) {
+                paint.setAlpha(255);
+            } else if (f10 > 0.5f) {
+                paint.setAlpha((int) ((1.0f - ((f10 - 0.5f) / 0.5f)) * 255.0f));
             } else {
-                this.y = 1;
+                paint.setAlpha(255);
             }
-            zh0Var.a(0.0f);
-        } else {
-            DownloadController.getInstance(this.n).addLoadingFileObserver(fileName, this);
-            if (FileLoader.getInstance(this.n).isLoadingFile(fileName)) {
-                this.y = 3;
-                Float fileProgress = ImageLoader.getInstance().getFileProgress(fileName);
-                if (fileProgress != null) {
-                    zh0Var.a(fileProgress.floatValue());
-                } else {
-                    zh0Var.a(0.0f);
-                }
-            } else {
-                this.y = 2;
-                zh0Var.a(0.0f);
+            canvas.drawCircle(f11, (dp / 2) + i10, AndroidUtilities.dp(1.2f), paint);
+        }
+        paint.setAlpha(255);
+        canvas.drawArc(rectF, x10, 360 - (x10 * 2), true, paint);
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, z10 ? org.telegram.ui.ActionBar.j6.d6 : org.telegram.ui.ActionBar.j6.s8, false));
+        canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i10) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
+        f();
+    }
+
+    @Override // org.telegram.ui.Components.xw0
+    public final void e() {
+        this.g = 0.0f;
+        this.e = false;
+    }
+
+    public final void f() {
+        if (this.e) {
+            if (NotificationCenter.getInstance(this.c).isAnimationInProgress()) {
+                AndroidUtilities.runOnUIThread(new kc0(this, 13), 100L);
+                return;
             }
-        }
-        s();
-    }
-
-    public final void s() {
-        int i10;
-        TextPaint textPaint = this.r;
-        MessageObject messageObject = this.h;
-        if (messageObject == null) {
-            return;
-        }
-        co0 co0Var = this.s;
-        if (!co0Var.e) {
-            co0Var.i(messageObject.audioProgress);
-        }
-        if (!MediaController.getInstance().isPlayingMessage(this.h)) {
-            i10 = 0;
-            int i11 = 0;
-            while (true) {
-                if (i11 >= this.h.getDocument().attributes.size()) {
-                    break;
-                }
-                TLRPC.DocumentAttribute documentAttribute = this.h.getDocument().attributes.get(i11);
-                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
-                    i10 = (int) documentAttribute.duration;
-                    break;
-                }
-                i11++;
+            long currentTimeMillis = System.currentTimeMillis();
+            long j3 = currentTimeMillis - this.d;
+            this.d = currentTimeMillis;
+            if (j3 > 50) {
+                j3 = 50;
             }
-        } else {
-            i10 = this.h.audioProgressSec;
+            if (this.g >= 1.0f) {
+                this.g = 0.0f;
+            }
+            float f7 = (j3 / 300.0f) + this.g;
+            this.g = f7;
+            if (f7 > 1.0f) {
+                this.g = 1.0f;
+            }
+            a();
         }
-        String formatLongDuration = AndroidUtilities.formatLongDuration(i10);
-        this.J = (int) Math.ceil(textPaint.measureText(formatLongDuration));
-        this.H = new StaticLayout(formatLongDuration, textPaint, this.J, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        invalidate();
     }
 
-    public void setMessageObject(MessageObject messageObject) {
-        if (this.h != messageObject) {
-            this.n = messageObject.currentAccount;
-            co0 co0Var = this.s;
-            int i10 = org.telegram.ui.ActionBar.j6.ud;
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-            int w03 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-            int i11 = org.telegram.ui.ActionBar.j6.xd;
-            co0Var.h(w02, w03, org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, i11, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.wd, false));
-            zh0 zh0Var = this.v;
-            zh0Var.a.setColor(-2497813);
-            zh0Var.b.setColor(-7944712);
-            this.h = messageObject;
-            this.f = false;
-            requestLayout();
-        }
-        r();
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
     }
 
-    @Override // org.telegram.ui.Components.bo0
-    public final /* synthetic */ void d(float f7) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(20.0f);
     }
 
-    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // org.telegram.ui.Components.xw0
+    public final void b(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

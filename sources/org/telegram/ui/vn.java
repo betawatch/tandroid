@@ -1,30 +1,20 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.cc0 b;
+public final class vn extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.lc0 a;
 
-    public /* synthetic */ vn(org.telegram.ui.Components.cc0 cc0Var, int i10) {
-        this.a = i10;
-        this.b = cc0Var;
+    public vn(org.telegram.ui.Components.lc0 lc0Var) {
+        this.a = lc0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.s(1.0f);
     }
 }

@@ -1,92 +1,209 @@
 package yh;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.j81;
-import org.telegram.ui.Components.tr0;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.f90;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class j2 extends j81 {
-    public final /* synthetic */ a4 U;
+public final class j2 extends View {
+    public final TextPaint a;
+    public final f90 b;
+    public final Paint c;
+    public final Paint d;
+    public StaticLayout e;
+    public boolean f;
+    public int h;
+    public int n;
+    public BitmapShader r;
+    public Matrix s;
+    public Matrix v;
+    public CharSequence w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(a4 a4Var, Context context) {
-        super(context, null);
-        this.U = a4Var;
+    public j2(Context context) {
+        super(context);
+        this.h = AndroidUtilities.dp(6.0f);
+        this.n = AndroidUtilities.dp(2.0f);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
+        this.b = new f90(0);
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final void F(View view, float f7) {
-        int i10;
-        View view2;
-        xh.m2 m2Var;
-        xh.m2 m2Var2;
-        l2 l2Var;
-        l2 l2Var2;
-        l2 l2Var3;
-        if (getMeasuredWidth() <= 0) {
-            view.setTranslationX(f7);
+    public final void a(int i10, CharSequence charSequence) {
+        if (i10 <= 0) {
+            this.w = charSequence;
             return;
         }
-        float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
-        a4 a4Var = this.U;
-        i10 = ((org.telegram.ui.ActionBar.g3) a4Var).backgroundPaddingLeft;
-        view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
-        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
-        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
-        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
-        view.setRotationY(clamp * 10.0f);
-        if (view instanceof FrameLayout) {
-            FrameLayout frameLayout = (FrameLayout) view;
-            if (frameLayout.getChildCount() > 0) {
-                view2 = frameLayout.getChildAt(0);
-                m2Var = a4Var.b0;
-                if (m2Var != null && view2 == m2Var.Y && (l2Var3 = m2Var.d0) != null) {
-                    l2Var3.invalidate();
-                }
-                if (view2 == a4Var.Y && (l2Var2 = a4Var.d0) != null) {
-                    l2Var2.invalidate();
-                }
-                m2Var2 = a4Var.c0;
-                if (m2Var2 == null && view2 == m2Var2.Y && (l2Var = m2Var2.d0) != null) {
-                    l2Var.invalidate();
-                    return;
-                }
-                return;
+        this.e = new StaticLayout(charSequence, this.a, i10 - AndroidUtilities.dp(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+        f90 f90Var = this.b;
+        f90Var.rewind();
+        int i11 = this.h;
+        int i12 = this.n;
+        f90Var.e = i11;
+        f90Var.f = i12;
+        if (this.f) {
+            f90Var.e(null, 0, 0.0f, 0.0f);
+            float f7 = Float.MAX_VALUE;
+            float width = this.e.getWidth();
+            float f10 = Float.MIN_VALUE;
+            float f11 = 0.0f;
+            for (int i13 = 0; i13 < this.e.getLineCount(); i13++) {
+                width = Math.min(width, this.e.getLineLeft(i13));
+                f10 = Math.min(f10, this.e.getLineTop(i13));
+                f11 = Math.max(f11, this.e.getLineRight(i13));
+                f7 = Math.max(f7, this.e.getLineBottom(i13));
             }
+            this.b.addRect(width, f10, f11, this.e.getHeight(), Path.Direction.CW);
+        } else {
+            f90Var.e(this.e, 0, 0.0f, 0.0f);
+            StaticLayout staticLayout = this.e;
+            staticLayout.getSelectionPath(0, staticLayout.getText().length(), f90Var);
+            f90Var.a();
         }
-        view2 = null;
-        m2Var = a4Var.b0;
-        if (m2Var != null) {
-            l2Var3.invalidate();
+        invalidate();
+    }
+
+    public final void b(int i10, TL_stars.SavedStarGift savedStarGift) {
+        if (savedStarGift == null || savedStarGift.from_id == null || !(savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
+            setVisibility(8);
+            return;
         }
-        if (view2 == a4Var.Y) {
-            l2Var2.invalidate();
-        }
-        m2Var2 = a4Var.c0;
-        if (m2Var2 == null) {
+        setVisibility(0);
+        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
+        long peerDialogId = DialogObject.getPeerDialogId(savedStarGift.from_id);
+        long peerDialogId2 = DialogObject.getPeerDialogId(savedStarGift.gift.owner_id);
+        if (clientUserId == peerDialogId) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(savedStarGift.gift.crafted ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(savedStarGift.date))));
+        } else if (clientUserId == peerDialogId2) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(savedStarGift.date))));
+        } else {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(savedStarGift.date))));
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.j81
-    public final void G() {
-        super.G();
-        int i10 = this.b;
-        a4 a4Var = this.U;
-        if (i10 != a4Var.L1(false)) {
-            AndroidUtilities.runOnUIThread(new tr0(15, this, this.b > a4Var.L1(false)));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e != null) {
+            canvas.save();
+            canvas.translate((getWidth() - this.e.getWidth()) / 2.0f, AndroidUtilities.dp(16.0f));
+            Matrix matrix = this.s;
+            if (matrix != null) {
+                matrix.reset();
+                this.v.reset();
+                View view = this;
+                while (view != null) {
+                    this.v.postConcat(view.getMatrix());
+                    view = view.getParent() instanceof View ? (View) view.getParent() : null;
+                }
+                this.v.invert(this.s);
+                this.s.preTranslate((-this.h) / 2, -AndroidUtilities.dp(16.0f));
+                this.s.preScale(12.0f, 12.0f);
+                this.r.setLocalMatrix(this.s);
+            }
+            Paint paint = this.c;
+            f90 f90Var = this.b;
+            canvas.drawPath(f90Var, paint);
+            int l1 = org.telegram.ui.ActionBar.j6.l1(0.35f, -16777216);
+            Paint paint2 = this.d;
+            paint2.setColor(l1);
+            canvas.drawPath(f90Var, paint2);
+            this.e.draw(canvas);
+            canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.j81
-    public final boolean i(MotionEvent motionEvent) {
-        f4.d dVar = this.U.Y0;
-        return dVar == null || dVar.c(0);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        CharSequence charSequence = this.w;
+        if (charSequence != null) {
+            a(size, charSequence);
+        }
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        StaticLayout staticLayout = this.e;
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(staticLayout == null ? 0 : staticLayout.getHeight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+        setPivotX(getMeasuredWidth() / 2.0f);
+        setPivotY(getMeasuredHeight());
+    }
+
+    public void set(MessageObject messageObject) {
+        TLRPC.Message message;
+        if (messageObject == null || (message = messageObject.messageOwner) == null || message.action == null) {
+            setVisibility(8);
+            return;
+        }
+        int i10 = messageObject.currentAccount;
+        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
+        TLRPC.MessageAction messageAction = messageObject.messageOwner.action;
+        if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+            setVisibility(8);
+            return;
+        }
+        if (!(messageAction instanceof TLRPC.TL_messageActionStarGiftUnique)) {
+            setVisibility(8);
+            return;
+        }
+        TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+        TLRPC.Peer peer = tL_messageActionStarGiftUnique.from_id;
+        if (peer == null) {
+            setVisibility(8);
+            return;
+        }
+        long peerDialogId = DialogObject.getPeerDialogId(peer);
+        long peerDialogId2 = DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.peer);
+        if (clientUserId == peerDialogId) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString((tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(messageObject.messageOwner.date))));
+        } else if (clientUserId == peerDialogId2) {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(messageObject.messageOwner.date))));
+        } else {
+            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(messageObject.messageOwner.date))));
+        }
+        setVisibility(0);
+    }
+
+    public void setFullRect(boolean z10) {
+        this.f = z10;
+    }
+
+    public void setRoundRadius(float f7) {
+        this.c.setPathEffect(new CornerPathEffect(f7));
+        this.d.setPathEffect(new CornerPathEffect(f7));
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        invalidate();
+    }
+
+    public void set(CharSequence charSequence) {
+        a(getMeasuredWidth(), charSequence);
     }
 }

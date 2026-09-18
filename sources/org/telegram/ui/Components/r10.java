@@ -6,9 +6,9 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class r10 extends b8 {
+public final class r10 extends d8 {
     public final /* synthetic */ Context E;
     public final /* synthetic */ FragmentContextView F;
     public final /* synthetic */ int y;
@@ -21,7 +21,7 @@ public final class r10 extends b8 {
         this.E = context2;
     }
 
-    @Override // org.telegram.ui.Components.b8
+    @Override // org.telegram.ui.Components.d8
     public final TextView a() {
         switch (this.y) {
             case 0:

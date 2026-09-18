@@ -4,15 +4,15 @@ import w7.pa;
 import x7.ia;
 import z7.zf;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a9 implements pa.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l5.r b;
+    public final /* synthetic */ l5.q b;
 
-    public /* synthetic */ a9(l5.r rVar, int i10) {
+    public /* synthetic */ a9(l5.q qVar, int i10) {
         this.a = i10;
-        this.b = rVar;
+        this.b = qVar;
     }
 
     @Override // pa.b

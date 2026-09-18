@@ -8,21 +8,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g3;
-import org.telegram.ui.Components.n70;
-import org.telegram.ui.Components.or0;
-import xh.f2;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.Components.w70;
+import org.telegram.ui.Components.zr0;
+import xh.g2;
 import xh.m;
-import xh.n2;
-import xh.r2;
+import xh.o2;
+import xh.s2;
 import xh.v;
 import yh.a0;
-import yh.i5;
-import yh.o7;
-import yh.z4;
+import yh.g5;
+import yh.l7;
+import yh.x4;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -54,56 +54,56 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 ((xh.e) obj3).dismiss();
                 break;
             case 2:
-                m.R((m) obj3, (boolean[]) obj2, (f6) obj);
+                m.R((m) obj3, (boolean[]) obj2, (e6) obj);
                 break;
             case 3:
-                v.R((v) obj3, (Context) obj2, (f6) obj);
+                v.R((v) obj3, (Context) obj2, (e6) obj);
                 break;
             case 4:
-                v.P((v) obj3, (boolean[]) obj2, (f6) obj);
+                v.P((v) obj3, (boolean[]) obj2, (e6) obj);
                 break;
             case 5:
-                n2 n2Var = (n2) obj3;
-                ((n70) obj2).u();
-                or0 or0Var = n2Var.a;
-                f2 f2Var = new f2(n2Var, (TL_stars.SavedStarGift) obj, i12);
-                HashMap hashMap = r2.T;
-                or0Var.h(null, f2Var);
+                o2 o2Var = (o2) obj3;
+                ((w70) obj2).u();
+                zr0 zr0Var = o2Var.a;
+                g2 g2Var = new g2(o2Var, (TL_stars.SavedStarGift) obj, i12);
+                HashMap hashMap = s2.T;
+                zr0Var.h(null, g2Var);
                 break;
             case 6:
                 Context context = (Context) obj2;
-                f6 f6Var = (f6) obj;
+                e6 e6Var = (e6) obj;
                 if (((a0) obj3).m0.a == zf.b.a) {
-                    new o7(context, f6Var).show();
+                    new l7(context, e6Var).show();
                     break;
                 }
                 break;
             case 7:
-                final g3 g3Var = (g3) obj2;
+                final f3 f3Var = (f3) obj2;
                 final ci.d dVar = (ci.d) obj;
-                g3Var.setCanDismissWithSwipe(false);
+                f3Var.setCanDismissWithSwipe(false);
                 dVar.setLoading(true);
-                ((z4) obj3).run(new Utilities.Callback() { // from class: yh.j6
+                ((x4) obj3).run(new Utilities.Callback() { // from class: yh.h6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
                         switch (i12) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.g3 g3Var2 = g3Var;
+                                final org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar2 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.p6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i13) {
                                                 case 0:
-                                                    g3Var2.setCanDismissWithSwipe(false);
+                                                    f3Var2.setCanDismissWithSwipe(false);
                                                     dVar2.setLoading(false);
                                                     break;
                                                 default:
-                                                    g3Var2.setCanDismissWithSwipe(false);
+                                                    f3Var2.setCanDismissWithSwipe(false);
                                                     dVar2.setLoading(false);
                                                     break;
                                             }
@@ -111,25 +111,25 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    g3Var2.dismiss();
+                                    f3Var2.dismiss();
                                     break;
                                 }
                             default:
                                 boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.g3 g3Var3 = g3Var;
+                                final org.telegram.ui.ActionBar.f3 f3Var3 = f3Var;
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.p6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i14) {
                                                 case 0:
-                                                    g3Var3.setCanDismissWithSwipe(false);
+                                                    f3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                                 default:
-                                                    g3Var3.setCanDismissWithSwipe(false);
+                                                    f3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                             }
@@ -137,7 +137,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    g3Var3.dismiss();
+                                    f3Var3.dismiss();
                                     break;
                                 }
                         }
@@ -145,31 +145,31 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 });
                 break;
             default:
-                final g3 g3Var2 = (g3) obj2;
+                final f3 f3Var2 = (f3) obj2;
                 final ci.d dVar2 = (ci.d) obj;
-                g3Var2.setCanDismissWithSwipe(false);
+                f3Var2.setCanDismissWithSwipe(false);
                 dVar2.setLoading(true);
-                ((i5) obj3).run(new Utilities.Callback() { // from class: yh.j6
+                ((g5) obj3).run(new Utilities.Callback() { // from class: yh.h6
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj4) {
                         Boolean bool = (Boolean) obj4;
                         switch (i11) {
                             case 0:
                                 boolean booleanValue = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.g3 g3Var22 = g3Var2;
+                                final org.telegram.ui.ActionBar.f3 f3Var22 = f3Var2;
                                 if (!booleanValue) {
                                     final int i13 = 0;
                                     final ci.d dVar22 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.p6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i13) {
                                                 case 0:
-                                                    g3Var22.setCanDismissWithSwipe(false);
+                                                    f3Var22.setCanDismissWithSwipe(false);
                                                     dVar22.setLoading(false);
                                                     break;
                                                 default:
-                                                    g3Var22.setCanDismissWithSwipe(false);
+                                                    f3Var22.setCanDismissWithSwipe(false);
                                                     dVar22.setLoading(false);
                                                     break;
                                             }
@@ -177,25 +177,25 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    g3Var22.dismiss();
+                                    f3Var22.dismiss();
                                     break;
                                 }
                             default:
                                 boolean booleanValue2 = bool.booleanValue();
-                                final org.telegram.ui.ActionBar.g3 g3Var3 = g3Var2;
+                                final org.telegram.ui.ActionBar.f3 f3Var3 = f3Var2;
                                 if (!booleanValue2) {
                                     final int i14 = 1;
                                     final ci.d dVar3 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.p6
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.n6
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i14) {
                                                 case 0:
-                                                    g3Var3.setCanDismissWithSwipe(false);
+                                                    f3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                                 default:
-                                                    g3Var3.setCanDismissWithSwipe(false);
+                                                    f3Var3.setCanDismissWithSwipe(false);
                                                     dVar3.setLoading(false);
                                                     break;
                                             }
@@ -203,7 +203,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                                     }, 400L);
                                     break;
                                 } else {
-                                    g3Var3.dismiss();
+                                    f3Var3.dismiss();
                                     break;
                                 }
                         }

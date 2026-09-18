@@ -1,109 +1,98 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class m11 extends ll0 {
-    public final Context c;
-    public int d;
-    public ArrayList e = new ArrayList();
-    public ArrayList f = new ArrayList();
-    public wm h;
-    public String n;
-    public final /* synthetic */ ThemeEditorView.EditorAlert r;
+public final class m11 extends TextureView {
+    public static Boolean f;
+    public k11 a;
+    public final o1.a b;
+    public final ArrayList c;
+    public Runnable d;
+    public boolean e;
 
-    public m11(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        this.r = editorAlert;
-        this.c = context;
+    public m11(Context context, Runnable runnable) {
+        super(context);
+        this.b = new o1.a(this, 1);
+        this.c = new ArrayList();
+        this.d = runnable;
+        setOpaque(false);
+        setSurfaceTextureListener(new ki.c(this, 3));
     }
 
-    public static CharSequence E(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            return "";
+    public static void b(Runnable runnable) {
+        if (runnable == null) {
+            return;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String trim = str.trim();
-        String lowerCase = trim.toLowerCase();
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
+            AndroidUtilities.runOnUIThread(runnable);
+        } else {
+            runnable.run();
+        }
+    }
+
+    public static boolean c() {
+        if (f == null) {
+            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
+        }
+        Boolean bool = f;
+        return bool == null || !bool.booleanValue();
+    }
+
+    public final void a(View view) {
         int i10 = 0;
+        int i11 = 0;
+        boolean z10 = false;
         while (true) {
-            int indexOf = lowerCase.indexOf(str2, i10);
-            if (indexOf == -1) {
+            ArrayList arrayList = this.c;
+            if (i11 >= arrayList.size()) {
                 break;
             }
-            int length = str2.length() + indexOf;
-            if (i10 != 0 && i10 != indexOf + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i10, indexOf));
-            } else if (i10 == 0 && indexOf != 0) {
-                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
+            l11 l11Var = (l11) arrayList.get(i11);
+            if (l11Var.a == view) {
+                Runnable runnable = l11Var.d;
+                if (runnable != null) {
+                    b(runnable);
+                    l11Var.d = null;
+                }
+                arrayList.remove(i11);
+                i11--;
+                z10 = true;
             }
-            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
-            if (substring.startsWith(" ")) {
-                spannableStringBuilder.append((CharSequence) " ");
+            i11++;
+        }
+        if (z10) {
+            return;
+        }
+        k11 k11Var = this.a;
+        ArrayList arrayList2 = k11Var.W;
+        if (k11Var.b.get()) {
+            Handler handler = k11Var.getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(5, view));
+                return;
             }
-            String trim2 = substring.trim();
-            int length2 = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
-            i10 = length;
+            while (i10 < arrayList2.size()) {
+                j11 j11Var = (j11) arrayList2.get(i10);
+                if (j11Var.a.contains(view)) {
+                    Runnable runnable2 = j11Var.f;
+                    if (runnable2 != null) {
+                        b(runnable2);
+                        j11Var.f = null;
+                    }
+                    arrayList2.remove(i10);
+                    i10--;
+                }
+                i10++;
+            }
         }
-        if (i10 != -1 && i10 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i10));
-        }
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.ll0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        if (this.e.isEmpty()) {
-            return 0;
-        }
-        return this.e.size() + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            int i11 = i10 - 1;
-            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.e.get(i11)).get(0);
-            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) c1Var.a;
-            z8Var.a.setText((CharSequence) this.f.get(i11));
-            z8Var.b = b10;
-            z8Var.setWillNotDraw(b10 == 0);
-            z8Var.invalidate();
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View z8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            z8Var = new View(context);
-            z8Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-        } else {
-            z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setLayoutParams(new s4.p0(-1, -2));
-        }
-        return new wk0(z8Var);
     }
 }

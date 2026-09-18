@@ -6,20 +6,20 @@ import android.graphics.Path;
 import android.widget.TableLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class b0 extends TableLayout {
-    public final /* synthetic */ f6 a;
+    public final /* synthetic */ e6 a;
     public final /* synthetic */ c0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(c0 c0Var, Context context, f6 f6Var) {
+    public b0(c0 c0Var, Context context, e6 e6Var) {
         super(context);
         this.b = c0Var;
-        this.a = f6Var;
+        this.a = e6Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View

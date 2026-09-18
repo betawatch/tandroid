@@ -1,9 +1,9 @@
 package e2;
 
 import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.yi0;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -14,9 +14,13 @@ public final /* synthetic */ class c0 implements ThreadFactory {
             case 0:
                 return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
             case 1:
-                return new Thread(runnable, "Lottie-" + yi0.P0.getAndIncrement());
+                return new Thread(runnable, "RoundVideoFiles");
+            case 2:
+                return new Thread(runnable, "RoundVideoOutput");
+            case 3:
+                return new Thread(runnable, "Lottie-" + ij0.P0.getAndIncrement());
             default:
-                return new Thread(runnable, "LottieLow-" + yi0.Q0.getAndIncrement());
+                return new Thread(runnable, "LottieLow-" + ij0.Q0.getAndIncrement());
         }
     }
 }

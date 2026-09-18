@@ -1,130 +1,95 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class ad extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.f6 b;
-    public final ArrayList c;
-    public final fc1 d;
-    public final org.telegram.ui.Components.t00 e;
-    public boolean f;
-    public final yc h;
-    public boolean n;
-    public Utilities.Callback r;
-    public String s;
-    public TLRPC.WallPaper v;
-    public final HashMap w;
-    public final HashMap x;
+public final class ad implements org.telegram.ui.ActionBar.e6 {
+    public final /* synthetic */ bd a;
 
-    public ad(int i10, Activity activity, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity);
-        this.c = new ArrayList();
-        this.w = new HashMap();
-        this.x = new HashMap();
-        this.a = i10;
-        this.b = f6Var;
-        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(getContext(), f6Var);
-        this.e = t00Var;
-        t00Var.setViewType(14);
-        t00Var.setVisibility(0);
-        addView(t00Var, w7.x5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        fc1 fc1Var = new fc1(activity, 4, f6Var);
-        this.d = fc1Var;
-        fc1Var.setClipToPadding(false);
-        fc1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
-        getContext();
-        s4.c0 c0Var = new s4.c0();
-        c0Var.j1(0);
-        fc1Var.setLayoutManager(c0Var);
-        fc1Var.setAlpha(0.0f);
-        yc ycVar = new yc(this, i10, f6Var);
-        this.h = ycVar;
-        fc1Var.setAdapter(ycVar);
-        addView(fc1Var, w7.x5.c(130.0f, -1));
-        fc1Var.setOnItemClickListener(new i(this, 2));
-        ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
-        chatThemeController.preloadAllWallpaperThumbs(true);
-        chatThemeController.preloadAllWallpaperThumbs(false);
-        chatThemeController.preloadAllWallpaperImages(true);
-        chatThemeController.preloadAllWallpaperImages(false);
-        chatThemeController.requestAllChatThemes(new zc(this, i10), true);
-        if (this.n) {
-            AndroidUtilities.updateViewVisibilityAnimated(t00Var, false, 1.0f, true, false);
-        } else {
-            AndroidUtilities.updateViewVisibilityAnimated(t00Var, true, 1.0f, true, false);
-        }
+    public ad(bd bdVar) {
+        this.a = bdVar;
     }
 
-    public final void a(String str, boolean z10) {
-        ArrayList arrayList;
-        int S;
-        this.s = str;
-        int i10 = -1;
-        int i11 = 0;
-        while (true) {
-            arrayList = this.c;
-            boolean z11 = true;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            org.telegram.ui.Components.lp lpVar = (org.telegram.ui.Components.lp) arrayList.get(i11);
-            if (!TextUtils.equals(this.s, lpVar.a()) && (!TextUtils.isEmpty(str) || !lpVar.a.a)) {
-                z11 = false;
-            }
-            lpVar.d = z11;
-            if (z11) {
-                i10 = i11;
-            }
-            i11++;
-        }
-        fc1 fc1Var = this.d;
-        if (i10 >= 0 && !z10 && (fc1Var.getLayoutManager() instanceof s4.c0)) {
-            ((s4.c0) fc1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
-        }
-        for (int i12 = 0; i12 < fc1Var.getChildCount(); i12++) {
-            View childAt = fc1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.v11) && (S = RecyclerView.S(childAt)) >= 0 && S < arrayList.size()) {
-                ((org.telegram.ui.Components.v11) childAt).g(((org.telegram.ui.Components.lp) arrayList.get(S)).d, true);
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.e6
+    public final Paint G(String str) {
+        return str.equals("paintDivider") ? this.a.y0 : org.telegram.ui.ActionBar.j6.S0(str);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setGalleryWallpaper(TLRPC.WallPaper wallPaper) {
-        this.v = wallPaper;
-        AndroidUtilities.forEachViews((RecyclerView) this.d, (e2.h) new wc(this, 1));
-        if (this.v != null) {
-            ArrayList arrayList = this.c;
-            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.lp) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.lp(org.telegram.ui.ActionBar.e4.a(this.a)));
-                this.h.l();
-            }
+    @Override // org.telegram.ui.ActionBar.e6
+    public final int G0(int i10) {
+        bd bdVar = this.a;
+        int indexOfKey = bdVar.r0.indexOfKey(i10);
+        if (indexOfKey >= 0) {
+            return bdVar.r0.valueAt(indexOfKey);
         }
+        org.telegram.ui.ActionBar.e6 e6Var = bdVar.q0;
+        return e6Var != null ? e6Var.G0(i10) : org.telegram.ui.ActionBar.j6.w0(null, i10, false);
     }
 
-    public void setOnEmoticonSelected(Utilities.Callback<String> callback) {
-        this.r = callback;
+    @Override // org.telegram.ui.ActionBar.e6
+    public final boolean a() {
+        return this.a.J;
     }
 
-    public void setWithRemovedStub(boolean z10) {
-        this.f = z10;
+    @Override // org.telegram.ui.ActionBar.e6
+    public final int g0(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final int g1(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final Drawable getDrawable(String str) {
+        bd bdVar = this.a;
+        Drawable drawable = bdVar.x0;
+        Drawable drawable2 = bdVar.w0;
+        if (str.equals("drawableMsgIn")) {
+            return bdVar.s0;
+        }
+        if (str.equals("drawableMsgInSelected")) {
+            return bdVar.t0;
+        }
+        if (str.equals("drawableMsgOut")) {
+            return bdVar.u0;
+        }
+        if (str.equals("drawableMsgOutSelected")) {
+            return bdVar.v0;
+        }
+        if (str.equals("drawableMsgOutCheckRead")) {
+            drawable2.setColorFilter(G0(org.telegram.ui.ActionBar.j6.La), PorterDuff.Mode.MULTIPLY);
+            return drawable2;
+        }
+        if (str.equals("drawableMsgOutHalfCheck")) {
+            drawable.setColorFilter(G0(org.telegram.ui.ActionBar.j6.La), PorterDuff.Mode.MULTIPLY);
+            return drawable;
+        }
+        org.telegram.ui.ActionBar.e6 e6Var = bdVar.q0;
+        return e6Var != null ? e6Var.getDrawable(str) : org.telegram.ui.ActionBar.j6.O0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final void m(float f7, float f10, int i10, int i11) {
+        org.telegram.ui.ActionBar.j6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final /* synthetic */ boolean p0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final ColorFilter x() {
+        return org.telegram.ui.ActionBar.j6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

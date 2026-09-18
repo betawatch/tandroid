@@ -33,7 +33,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -285,7 +285,7 @@ public final class r {
             }
             this.j = new ai.m0(3, callback3, (i12 == null || Build.VERSION.SDK_INT >= 30) ? null : i12);
             if (i12 == null || (i10 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.a(d, null);
+                this.i.b(d, null);
                 return;
             }
             a6.m mVar = this.i;
@@ -298,7 +298,7 @@ public final class r {
             if (i10 < 30 && v7.m.a(i14)) {
                 throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
             }
-            mVar.a(d, i12);
+            mVar.b(d, i12);
         } catch (Exception e7) {
             FileLog.e(e7);
             callback3.run(Boolean.FALSE, null, null);

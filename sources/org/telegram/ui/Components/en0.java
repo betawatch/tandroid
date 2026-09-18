@@ -1,53 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class en0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ dn0 a;
+public final class en0 extends s4.o {
     public final /* synthetic */ int b;
-    public final /* synthetic */ TLRPC.Reaction c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] d;
-    public final /* synthetic */ View e;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ jn0 k;
 
-    public en0(dn0 dn0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.c2[] c2VarArr, View view) {
-        this.a = dn0Var;
+    public en0(jn0 jn0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
+        this.k = jn0Var;
         this.b = i10;
-        this.c = reaction;
-        this.d = c2VarArr;
-        this.e = view;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = arrayList;
+        this.h = i15;
+        this.i = i16;
+        this.j = arrayList2;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        if (i10 != 6) {
-            return false;
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        MessageObject messageObject;
+        jn0 jn0Var = this.k;
+        if (i10 >= 0 && i11 >= 0) {
+            if (i10 == this.c && i11 == jn0Var.s) {
+                return true;
+            }
+            if (i10 == this.d && i11 == jn0Var.x) {
+                return true;
+            }
         }
-        dn0 dn0Var = this.a;
-        String obj = dn0Var.getText().toString();
-        if (obj.length() > 12) {
-            AndroidUtilities.shakeView(dn0Var);
-            return true;
+        MessageObject messageObject2 = null;
+        int i12 = this.e;
+        if (i10 < i12 || i10 >= this.f) {
+            int i13 = this.h;
+            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
+        } else {
+            messageObject = (MessageObject) this.g.get(i10 - i12);
         }
-        MessagesController.getInstance(this.b).renameSavedReactionTag(zg.p0.d(this.c), obj);
-        org.telegram.ui.ActionBar.c2[] c2VarArr = this.d;
-        org.telegram.ui.ActionBar.c2 c2Var = c2VarArr[0];
-        if (c2Var != null) {
-            c2Var.dismiss();
+        int i14 = jn0Var.v;
+        if (i11 < i14 || i11 >= jn0Var.w) {
+            int i15 = jn0Var.y;
+            if (i11 >= i15 && i11 < jn0Var.E) {
+                messageObject2 = (MessageObject) jn0Var.f.get(i11 - i15);
+            }
+        } else {
+            messageObject2 = (MessageObject) jn0Var.e.get(i11 - i14);
         }
-        if (c2VarArr[0] == jn0.H) {
-            jn0.H = null;
-        }
-        View view = this.e;
-        if (view != null) {
-            view.requestFocus();
-        }
-        return true;
+        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.k.r;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b;
     }
 }

@@ -5,15 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jo0;
+import org.telegram.ui.Components.b60;
+import org.telegram.ui.Components.cb0;
 import org.telegram.ui.Components.qr;
-import org.telegram.ui.Components.ta0;
-import org.telegram.ui.Components.w50;
-import org.telegram.ui.dj0;
+import org.telegram.ui.Components.wo0;
+import org.telegram.ui.cj0;
+import org.telegram.ui.g51;
 import org.telegram.ui.i51;
-import org.telegram.ui.k51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        i51 i51Var;
+        g51 g51Var;
         switch (this.a) {
             case 0:
                 db dbVar = (db) this.c;
@@ -51,11 +51,11 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 o6Var.b.invalidate();
                 break;
             case 2:
-                org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
-                t1Var.jd = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t1Var.invalidate();
-                if (this.b && t1Var.getParent() != null) {
-                    ((View) t1Var.getParent()).invalidate();
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                u1Var.jd = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u1Var.invalidate();
+                if (this.b && u1Var.getParent() != null) {
+                    ((View) u1Var.getParent()).invalidate();
                     break;
                 }
                 break;
@@ -68,44 +68,44 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                     caVar.invalidate();
                 }
                 org.telegram.ui.Cells.y9 y9Var = r9Var.W;
-                if (y9Var != null && ((org.telegram.ui.Cells.t1) y9Var).getCurrentMessagesGroup() == null && this.b) {
-                    ((org.telegram.ui.Cells.t1) r9Var.W).setSelectedBackgroundProgress(1.0f - r9Var.U);
+                if (y9Var != null && ((org.telegram.ui.Cells.u1) y9Var).getCurrentMessagesGroup() == null && this.b) {
+                    ((org.telegram.ui.Cells.u1) r9Var.W).setSelectedBackgroundProgress(1.0f - r9Var.U);
                     break;
                 }
                 break;
             case 4:
-                org.telegram.ui.Components.u9 u9Var = (org.telegram.ui.Components.u9) this.c;
+                org.telegram.ui.Components.w9 w9Var = (org.telegram.ui.Components.w9) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u9Var.setScaleX(floatValue2);
-                u9Var.setScaleY(floatValue2);
+                w9Var.setScaleX(floatValue2);
+                w9Var.setScaleY(floatValue2);
                 if (!this.b) {
-                    u9Var.setAlpha(valueAnimator.getAnimatedFraction());
+                    w9Var.setAlpha(valueAnimator.getAnimatedFraction());
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Components.c9 c9Var = (org.telegram.ui.Components.c9) this.c;
+                org.telegram.ui.Components.e9 e9Var = (org.telegram.ui.Components.e9) this.c;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c9Var.i0(floatValue3, false);
+                e9Var.i0(floatValue3, false);
                 if (this.b) {
-                    org.telegram.ui.Components.v8 v8Var = c9Var.a;
-                    v8Var.w = floatValue3;
-                    v8Var.invalidate();
+                    org.telegram.ui.Components.x8 x8Var = e9Var.a;
+                    x8Var.w = floatValue3;
+                    x8Var.invalidate();
                     break;
                 }
                 break;
             case 6:
-                w50 w50Var = (w50) this.c;
-                w50Var.u0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (w50Var.getMeasuredHeight() / 2.0f);
-                w50Var.s();
+                b60 b60Var = (b60) this.c;
+                b60Var.x0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (b60Var.getMeasuredHeight() / 2.0f);
+                b60Var.w();
                 break;
             case 7:
-                ta0 ta0Var = (ta0) this.c;
-                ta0Var.getClass();
-                ta0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ta0Var.invalidate();
+                cb0 cb0Var = (cb0) this.c;
+                cb0Var.getClass();
+                cb0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cb0Var.invalidate();
                 if (this.b) {
-                    ta0Var.requestLayout();
+                    cb0Var.requestLayout();
                     break;
                 }
                 break;
@@ -125,60 +125,60 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 9:
-                dj0 dj0Var = (dj0) this.c;
+                cj0 cj0Var = (cj0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dj0Var.E = floatValue4;
-                dj0Var.H.setAlpha(floatValue4);
-                dj0Var.K.setAlpha(dj0Var.E);
-                if (!this.b && (viewGroup = dj0Var.Z) != null) {
-                    viewGroup.setAlpha(dj0Var.E);
+                cj0Var.E = floatValue4;
+                cj0Var.H.setAlpha(floatValue4);
+                cj0Var.K.setAlpha(cj0Var.E);
+                if (!this.b && (viewGroup = cj0Var.Z) != null) {
+                    viewGroup.setAlpha(cj0Var.E);
                 }
-                dj0Var.F.invalidate();
-                dj0Var.G.invalidate();
+                cj0Var.F.invalidate();
+                cj0Var.G.invalidate();
                 break;
             case 10:
-                k51 k51Var = (k51) this.c;
-                k51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k51Var.b.invalidate();
-                k51Var.c.invalidate();
-                if (k51Var.S) {
-                    k51Var.N.invalidate();
+                i51 i51Var = (i51) this.c;
+                i51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                i51Var.b.invalidate();
+                i51Var.c.invalidate();
+                if (i51Var.S) {
+                    i51Var.N.invalidate();
                 }
-                k51Var.e();
-                TextView textView = k51Var.y;
+                i51Var.e();
+                TextView textView = i51Var.y;
                 if (textView != null) {
-                    textView.setAlpha(k51Var.s);
+                    textView.setAlpha(i51Var.s);
                 }
-                if (!k51Var.S && (i51Var = k51Var.N) != null && i51Var.getSeekBarWaveform() != null) {
-                    jo0 seekBarWaveform = k51Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? qr.g : qr.i).getInterpolation(Utilities.clamp(k51Var.s * 1.25f, 1.0f, 0.0f));
-                    org.telegram.ui.Cells.t1 t1Var2 = seekBarWaveform.n;
-                    if (t1Var2 != null) {
-                        t1Var2.invalidate();
+                if (!i51Var.S && (g51Var = i51Var.N) != null && g51Var.getSeekBarWaveform() != null) {
+                    wo0 seekBarWaveform = i51Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? qr.g : qr.i).getInterpolation(Utilities.clamp(i51Var.s * 1.25f, 1.0f, 0.0f));
+                    org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
+                    if (u1Var2 != null) {
+                        u1Var2.invalidate();
                         break;
                     }
                 }
                 break;
             case 11:
-                qg.o0 o0Var = (qg.o0) this.c;
+                qg.l0 l0Var = (qg.l0) this.c;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o0Var.e = floatValue5;
+                l0Var.e = floatValue5;
                 if (!this.b) {
-                    o0Var.c.setAlpha(1.0f - floatValue5);
+                    l0Var.c.setAlpha(1.0f - floatValue5);
                 }
-                o0Var.b.invalidate();
+                l0Var.b.invalidate();
                 break;
             default:
-                zg.c0 c0Var = (zg.c0) this.c;
-                c0Var.x = null;
-                c0Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c0Var.k();
-                c0Var.l();
-                c0Var.n.setCustomEmojiEnterProgress(Utilities.clamp(c0Var.j, 1.0f, 0.0f));
-                c0Var.a.invalidate();
-                c0Var.m.invalidateOutline();
-                if (c0Var.w) {
-                    c0Var.j(c0Var.j, this.b);
+                zg.b0 b0Var = (zg.b0) this.c;
+                b0Var.x = null;
+                b0Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b0Var.k();
+                b0Var.l();
+                b0Var.n.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
+                b0Var.a.invalidate();
+                b0Var.m.invalidateOutline();
+                if (b0Var.w) {
+                    b0Var.j(b0Var.j, this.b);
                     break;
                 }
                 break;

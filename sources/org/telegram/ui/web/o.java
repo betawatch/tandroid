@@ -3,13 +3,12 @@ package org.telegram.ui.web;
 import android.text.TextUtils;
 import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.Components.n61;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class o extends h5 {
+public final class o extends g5 {
     public final i2.g0 f = new i2.g0(this, 28);
     public final /* synthetic */ p h;
 
@@ -17,7 +16,7 @@ public final class o extends h5 {
         this.h = pVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void m() {
         p pVar = this.h;
         pVar.v = null;
@@ -27,14 +26,14 @@ public final class o extends h5 {
             iVar.c();
             pVar.f = null;
         }
-        z51 z51Var = pVar.a;
-        if (z51Var != null) {
-            z51Var.Y2.N(true);
+        n61 n61Var = pVar.a;
+        if (n61Var != null) {
+            n61Var.Y2.N(true);
             pVar.a.X2.h1(0, 0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         int i10;
         p pVar = this.h;
@@ -46,7 +45,7 @@ public final class o extends h5 {
             if (iVar != null) {
                 iVar.c();
             }
-            i10 = ((o2) pVar).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.n2) pVar).currentAccount;
             i iVar2 = new i(obj, i10, new l(pVar, 1));
             pVar.f = iVar2;
             iVar2.a();
@@ -54,16 +53,16 @@ public final class o extends h5 {
             AndroidUtilities.cancelRunOnUIThread(g0Var);
             AndroidUtilities.runOnUIThread(g0Var, 500L);
         }
-        z51 z51Var = pVar.a;
-        if (z51Var != null) {
-            z51Var.Y2.N(true);
+        n61 n61Var = pVar.a;
+        if (n61Var != null) {
+            n61Var.Y2.N(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
                 pVar.a.X2.h1(0, 0);
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.g5
     public final void n() {
     }
 }

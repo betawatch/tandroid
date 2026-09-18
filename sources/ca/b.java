@@ -29,23 +29,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ay0;
+import org.telegram.ui.Components.ly0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bo;
-import w9.x;
+import org.telegram.ui.zn;
+import w9.w;
 import x2.d;
 import x2.e;
 import x2.i;
 import x2.m;
 import x2.p;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, b2, MessagesController.ErrorDelegate, m {
+public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, m {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -60,27 +60,12 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         this.b = z10;
     }
 
-    @Override // x2.m
-    public a1 b(int i10, l1 l1Var, int[] iArr) {
-        p pVar = (p) this.c;
-        i iVar = (i) this.d;
-        int[] iArr2 = (int[]) this.e;
-        pVar.getClass();
-        d dVar = new d(pVar, iVar);
-        int i11 = iArr2[i10];
-        f0 u10 = i0.u();
-        for (int i12 = 0; i12 < l1Var.a; i12++) {
-            u10.b(new e(i10, l1Var, i12, iVar, iArr[i12], this.b, dVar, i11));
-        }
-        return u10.i();
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:24:0x005b  */
     @Override // i5.g
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(Exception exc) {
+    public void a(Exception exc) {
         c cVar = (c) this.c;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.d;
         w9.b bVar = (w9.b) this.e;
@@ -93,7 +78,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
             CountDownLatch countDownLatch = new CountDownLatch(1);
             new Thread(new ba(12, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
-            ExecutorService executorService = x.a;
+            ExecutorService executorService = w.a;
             boolean z11 = false;
             try {
                 long nanos = timeUnit.toNanos(2L);
@@ -132,8 +117,23 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         taskCompletionSource.trySetResult(bVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(c2 c2Var, int i10) {
+    @Override // x2.m
+    public a1 b(int i10, l1 l1Var, int[] iArr) {
+        p pVar = (p) this.c;
+        i iVar = (i) this.d;
+        int[] iArr2 = (int[]) this.e;
+        pVar.getClass();
+        d dVar = new d(pVar, iVar);
+        int i11 = iArr2[i10];
+        f0 u10 = i0.u();
+        for (int i12 = 0; i12 < l1Var.a; i12++) {
+            u10.b(new e(i10, l1Var, i12, iVar, iArr[i12], this.b, dVar, i11));
+        }
+        return u10.i();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
                 boolean z10 = this.b;
@@ -163,14 +163,14 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                 }
                 break;
             case 3:
-                bo boVar = (bo) this.c;
+                zn znVar = (zn) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
                 messagesController.secretWebpagePreview = 1;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", boVar.getMessagesController().secretWebpagePreview).commit();
-                boVar.H5 = null;
-                boVar.Ya(charSequence, z11);
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", znVar.getMessagesController().secretWebpagePreview).commit();
+                znVar.H5 = null;
+                znVar.Ya(charSequence, z11);
                 break;
             case 4:
                 boolean z12 = this.b;
@@ -193,22 +193,22 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     }
                 }
             default:
-                ay0 ay0Var = (ay0) this.c;
+                ly0 ly0Var = (ly0) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = ay0Var.getText().toString().trim();
+                String trim2 = ly0Var.getText().toString().trim();
                 if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(AndroidUtilities.translitSafe(trim2.toString()))) {
-                    AndroidUtilities.hideKeyboard(ay0Var);
-                    c2 c2Var2 = new c2(context2, 3, z13 ? null : new ai.d());
-                    c2Var2.q(250L);
-                    callback2.run(trim2, new d5(c2Var2, c2Var, ay0Var, 6));
+                    AndroidUtilities.hideKeyboard(ly0Var);
+                    b2 b2Var2 = new b2(context2, 3, z13 ? null : new ai.d());
+                    b2Var2.q(250L);
+                    callback2.run(trim2, new d5(b2Var2, b2Var, ly0Var, 6));
                     break;
                 } else {
-                    ay0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(ay0Var, -6.0f);
+                    ly0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(ly0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(ay0Var);
+                    AndroidUtilities.showKeyboard(ly0Var);
                     break;
                 }
                 break;
@@ -217,7 +217,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        return ProfileActivity.Z((ProfileActivity) this.c, (boolean[]) this.d, this.b, (o2) this.e, tL_error);
+        return ProfileActivity.Z((ProfileActivity) this.c, (boolean[]) this.d, this.b, (n2) this.e, tL_error);
     }
 
     public /* synthetic */ b(Object obj, Object obj2, boolean z10, Object obj3, int i10) {
@@ -231,10 +231,10 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j3) {
         f fVar = (f) this.c;
-        c2 c2Var = (c2) this.d;
+        b2 b2Var = (b2) this.d;
         String str = (String) this.e;
         fVar.getClass();
-        c2Var.dismiss();
+        b2Var.dismiss();
         if (j3 == 0) {
             return;
         }

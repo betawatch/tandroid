@@ -13,9 +13,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.CheckedTextView;
 import org.telegram.messenger.beta.R;
 import v7.v7;
-import w7.q7;
+import w7.r7;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class o extends CheckedTextView implements u0.k {
     public final p a;
@@ -104,7 +104,7 @@ public final class o extends CheckedTextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return q7.d(super.getCustomSelectionActionModeCallback());
+        return r7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -150,7 +150,7 @@ public final class o extends CheckedTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.n.a(editorInfo, onCreateInputConnection, this);
+        w7.o.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
@@ -212,7 +212,7 @@ public final class o extends CheckedTextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

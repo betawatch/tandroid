@@ -1,51 +1,76 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class lg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bo b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ lg(bo boVar, int i10) {
+    public /* synthetic */ lg(Object obj, float f7, int i10) {
         this.a = i10;
-        this.b = boVar;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                bo.B0(this.b);
-                break;
-            case 1:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 2:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 3:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 4:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 5:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 6:
-                this.b.g8(false, true, 0.0f);
-                break;
-            case 7:
-                this.b.Fb = null;
-                break;
-            default:
-                ik ikVar = this.b.X1;
-                if (ikVar != null) {
-                    ikVar.c(false);
+                zn znVar = (zn) this.c;
+                znVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar.H8 = floatValue;
+                znVar.L8 = floatValue / this.b;
+                View view = znVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
                     break;
                 }
+                break;
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    View view2 = (View) arrayList.get(i10);
+                    if (view2 != null) {
+                        view2.setTranslationY(this.b * floatValue2);
+                    }
+                }
+                break;
+            case 2:
+                ((org.telegram.ui.Components.un) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 3:
+                ((aw0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            default:
+                f21 f21Var = (f21) this.c;
+                f21Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
+                f21Var.a.setTranslationX(lerp);
+                f21Var.b.setTranslationX(lerp);
+                ImageView imageView = f21Var.c;
+                imageView.setTranslationX(lerp);
+                org.telegram.ui.Components.np npVar = f21Var.f;
+                npVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                float f7 = (floatValue3 * 0.5f) + 0.5f;
+                npVar.setScaleX(f7);
+                npVar.setScaleY(f7);
+                npVar.setAlpha(floatValue3);
+                float f10 = 1.0f - floatValue3;
+                float f11 = (f10 * 0.5f) + 0.5f;
+                imageView.setScaleX(f11);
+                imageView.setScaleY(f11);
+                imageView.setAlpha(f10);
                 break;
         }
     }

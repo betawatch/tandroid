@@ -16,13 +16,11 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import k2.u;
 import n4.y;
 import n6.l;
 import q9.n;
-import r9.k;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -52,13 +50,13 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList g10 = new o0.a(12, context, new u(ComponentDiscoveryService.class, 19)).g();
+        ArrayList q6 = new o0.a(12, context, new n2.e(ComponentDiscoveryService.class, 14)).q();
         Trace.endSection();
         Trace.beginSection("Runtime");
-        k kVar = k.a;
+        r9.j jVar2 = r9.j.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(g10);
+        arrayList.addAll(q6);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));
@@ -69,7 +67,7 @@ public final class h {
         if ((Build.VERSION.SDK_INT >= 24 ? v.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(q9.a.c(aVar, a.class, new Class[0]));
         }
-        q9.g gVar = new q9.g(kVar, arrayList, arrayList2, dVar);
+        q9.g gVar = new q9.g(jVar2, arrayList, arrayList2, dVar);
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
@@ -226,8 +224,8 @@ public final class h {
 
     public final String toString() {
         y yVar = new y(this);
-        yVar.e(this.b, "name");
-        yVar.e(this.c, "options");
+        yVar.k(this.b, "name");
+        yVar.k(this.c, "options");
         return yVar.toString();
     }
 }

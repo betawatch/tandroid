@@ -1,31 +1,39 @@
 package xh;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n2 b;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ c2(n2 n2Var, int i10) {
-        this.a = i10;
-        this.b = n2Var;
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
+/* loaded from: classes.dex */
+public final class c2 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ a2 b;
+
+    public c2(a2 a2Var) {
+        this.b = a2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.setReordering(true);
-                break;
-            case 1:
-                this.b.setReordering(true);
-                break;
-            case 2:
-                this.b.f(false);
-                break;
-            default:
-                this.b.setReordering(true);
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (!this.a && editable.length() > 12) {
+            this.a = true;
+            editable.delete(12, editable.length());
+            a2 a2Var = this.b;
+            AndroidUtilities.shakeView(a2Var);
+            try {
+                a2Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            this.a = false;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

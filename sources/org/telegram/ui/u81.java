@@ -1,48 +1,41 @@
 package org.telegram.ui;
 
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u81 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g91 b;
+public final /* synthetic */ class u81 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
+    public final /* synthetic */ f91 a;
 
-    public /* synthetic */ u81(g91 g91Var, int i10) {
-        this.a = i10;
-        this.b = g91Var;
+    public /* synthetic */ u81(f91 f91Var) {
+        this.a = f91Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                g91 g91Var = this.b;
-                nf.f.s(g91Var.getParentActivity(), g91Var.getMessagesController().premiumManageSubscriptionUrl);
-                g91Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
-                break;
-            case 1:
-                g91 g91Var2 = this.b;
-                g91Var2.getClass();
-                g91Var2.presentFragment(new h(3));
-                break;
-            case 2:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
-                break;
-            case 3:
-                g91 g91Var3 = this.b;
-                g91Var3.getClass();
-                g91Var3.presentFragment(new ih1(8, null));
-                break;
-            case 4:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                break;
-            case 5:
-                g91.W(this.b);
-                break;
-            default:
-                g91.Z(this.b);
-                break;
-        }
+    @Override // r0.n
+    public r0.m1 Q0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        int i10 = defaultWindowInsets.d;
+        f91 f91Var = this.a;
+        f91Var.S = i10;
+        f91Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, f91Var.S + f91Var.T);
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(f91.U(this.a, (org.telegram.ui.Components.x51) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        f91.f0(this.a, (org.telegram.ui.Components.x51) obj);
     }
 }

@@ -1,490 +1,425 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.content.res.Resources;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.util.Property;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.ti1;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class id implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class id extends Drawable {
+    public static final gd H = new gd(0);
+    public int B;
+    public int C;
+    public int D;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
+    public float n;
+    public float o;
+    public float p;
+    public final hd q;
+    public final hd r;
+    public float s;
+    public long t;
+    public boolean u;
+    public float v;
+    public float w;
+    public float x;
+    public final float a = AndroidUtilities.dp(18.0f);
+    public final float b = AndroidUtilities.dp(22.0f);
+    public final float c = 2.4f;
+    public final float d = AndroidUtilities.dp(12.0f);
+    public final float e = AndroidUtilities.dp(1.5f);
+    public final float f = 3600.0f;
+    public final float g = 0.25f;
+    public final Path y = new Path();
+    public final float[] z = new float[4];
+    public int A = -1;
+    public float E = 1.0f;
+    public final og F = new og(this, 16);
+    public int G = 255;
 
-    public /* synthetic */ id(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public id() {
+        hd hdVar = new hd();
+        this.q = hdVar;
+        hdVar.a = 1.0f;
+        hdVar.b = 0.0f;
+        hdVar.c = AndroidUtilities.dp(0.5f);
+        hdVar.d = AndroidUtilities.dp(8.5f);
+        hdVar.e = 1.0f;
+        hdVar.f = 1.0f;
+        hdVar.g = 61;
+        hd hdVar2 = new hd();
+        this.r = hdVar2;
+        hdVar2.a = 0.82f;
+        hdVar2.b = 0.6f;
+        hdVar2.c = AndroidUtilities.dp(0.0f);
+        hdVar2.d = AndroidUtilities.dp(4.25f);
+        hdVar2.e = 0.55f;
+        hdVar2.f = 0.55f;
+        hdVar2.g = 128;
+        e(0, false);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.lang.Runnable
-    public final void run() {
-        CharSequence replaceTags;
-        TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab;
-        int i10;
-        int i11;
-        org.telegram.ui.xu0 xu0Var;
-        int i12 = this.a;
-        int i13 = 5;
-        int i14 = 3;
-        int i15 = 2;
-        int i16 = 1;
-        int i17 = 0;
-        int i18 = this.b;
-        Object obj = this.c;
-        switch (i12) {
-            case 0:
-                jd jdVar = (jd) obj;
-                ci.f4 f4Var = jdVar.d1;
-                if (jdVar.b1 != i18) {
-                    jdVar.setTimer(i18);
-                    Utilities.Callback callback = jdVar.r1;
-                    if (callback != null) {
-                        callback.run(Integer.valueOf(i18));
-                    }
-                    if (i18 == 0) {
-                        replaceTags = LocaleController.getString(jdVar.q1 ? R.string.TimerPeriodVideoKeep : R.string.TimerPeriodPhotoKeep);
-                        f4Var.h = jdVar.getMeasuredWidth();
-                        f4Var.p(false);
-                        f4Var.k(13.0f, 4.0f, 10.0f, 4.0f);
-                        f4Var.e0 = AndroidUtilities.dp(0);
-                        f4Var.d0 = -AndroidUtilities.dp(1.0f);
-                    } else if (i18 == Integer.MAX_VALUE) {
-                        replaceTags = LocaleController.getString(jdVar.q1 ? R.string.TimerPeriodVideoSetOnce : R.string.TimerPeriodPhotoSetOnce);
-                        f4Var.h = jdVar.getMeasuredWidth();
-                        f4Var.p(false);
-                        f4Var.k(13.0f, 4.0f, 10.0f, 4.0f);
-                        f4Var.e0 = AndroidUtilities.dp(0);
-                        f4Var.d0 = -AndroidUtilities.dp(1.0f);
-                    } else if (i18 > 0) {
-                        replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString(jdVar.q1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", i18, new Object[0]));
-                        f4Var.p(true);
-                        f4Var.h = ci.f4.a(replaceTags, f4Var.getTextPaint());
-                        f4Var.k(12.0f, 7.0f, 11.0f, 7.0f);
-                        f4Var.e0 = AndroidUtilities.dp(2);
-                        f4Var.d0 = 0.0f;
-                    }
-                    f4Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), jdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (jdVar instanceof org.telegram.ui.et0 ? -1.0f : 1.0f));
-                    f4Var.s(replaceTags);
-                    yi0 yi0Var = new yi0(i18 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
-                    yi0Var.start();
-                    f4Var.j(yi0Var);
-                    f4Var.u();
-                    jdVar.o1 = false;
-                    AndroidUtilities.cancelRunOnUIThread(jdVar.p1);
-                    jdVar.invalidate();
-                    break;
+    public final void a(float f7, float f10, float f11, float[] fArr) {
+        double d = f11;
+        float cos = (float) Math.cos(d);
+        float sin = (float) Math.sin(d);
+        float f12 = this.j;
+        fArr[0] = (f12 * cos) + f7;
+        fArr[1] = (f12 * sin) + f10;
+        fArr[2] = -sin;
+        fArr[3] = cos;
+    }
+
+    public final void b(Canvas canvas, hd hdVar, float f7, float f10, float f11) {
+        char c10;
+        char c11;
+        int i10 = hdVar.x;
+        if (i10 == 0) {
+            return;
+        }
+        float f12 = hdVar.c;
+        float f13 = hdVar.d - f12;
+        float f14 = this.v;
+        float f15 = (f13 * f14) + f12;
+        float B = com.google.android.gms.internal.vision.e2.B(f14, 1.0f, 0.0f, this.d * hdVar.e);
+        float[] fArr = hdVar.u;
+        float[] fArr2 = hdVar.v;
+        float[] fArr3 = hdVar.w;
+        char c12 = 0;
+        for (int i11 = 0; i11 < i10; i11++) {
+            float interpolation = H.getInterpolation(hdVar.o[i11]);
+            float f16 = 1.0f - interpolation;
+            fArr[i11] = (hdVar.l[i11] * interpolation) + (hdVar.k[i11] * f16);
+            fArr3[i11] = (hdVar.n[i11] * interpolation) + (hdVar.m[i11] * f16);
+        }
+        float f17 = this.g;
+        char c13 = 2;
+        if (f17 > 0.0f) {
+            int i12 = 0;
+            while (i12 < 2) {
+                int i13 = 0;
+                while (i13 < i10) {
+                    int i14 = i13 + 1;
+                    float f18 = (fArr[i13 == 0 ? i10 - 1 : i13 - 1] + fArr[i14 == i10 ? 0 : i14]) * 0.5f;
+                    float f19 = fArr[i13];
+                    fArr2[i13] = com.google.android.gms.internal.vision.e2.z(f18, f19, f17, f19);
+                    i13 = i14;
                 }
-                break;
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                if (i18 == 0) {
-                    chatActivityEnterView.z2 = 0;
-                }
-                chatActivityEnterView.V0 = null;
-                cg cgVar = chatActivityEnterView.U0;
-                if (cgVar != null) {
-                    if (chatActivityEnterView.d5 == null) {
-                        cgVar.setTranslationY(0.0f);
-                    }
-                    chatActivityEnterView.U0.setVisibility(8);
-                    chatActivityEnterView.m1.removeView(chatActivityEnterView.U0);
-                    if (chatActivityEnterView.F3) {
-                        chatActivityEnterView.F3 = false;
-                        chatActivityEnterView.U0 = null;
-                    }
-                }
-                mg mgVar = chatActivityEnterView.Y2;
-                if (mgVar != null) {
-                    mgVar.y(0.0f);
-                }
-                chatActivityEnterView.requestLayout();
-                break;
-            case 2:
-                pm pmVar = (pm) obj;
-                qm qmVar = pmVar.P;
-                if (i18 == pmVar.O && qmVar.w.isShown()) {
-                    qmVar.w.e(1, true);
-                    break;
-                }
-                break;
-            case 3:
-                kz kzVar = (kz) obj;
-                if (kzVar.P1) {
-                    ky kyVar = kzVar.t1;
-                    if (kyVar != null && kyVar.k()) {
-                        try {
-                            kzVar.x.performHapticFeedback(3);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    kzVar.Q1 = true;
-                    int max = Math.max(50, i18 - 100);
-                    AndroidUtilities.runOnUIThread(new id(kzVar, max, i14), max);
-                    break;
-                }
-                break;
-            case 4:
-                ((oa0) obj).b.run(Integer.valueOf(i18));
-                break;
-            case 5:
-                pf0 pf0Var = (pf0) obj;
-                org.telegram.ui.ku0 ku0Var = pf0Var.a;
-                TextView textView = ku0Var.e;
-                ci.eb ebVar = ku0Var.h;
-                RadialProgressView radialProgressView = ku0Var.n;
-                TextView textView2 = ku0Var.d;
-                textView.setVisibility(8);
-                ku0Var.f.setVisibility(8);
-                LinearLayout linearLayout = ku0Var.c;
-                if (linearLayout.getVisibility() == 8) {
-                    linearLayout.setVisibility(0);
-                    linearLayout.animate().cancel();
-                    linearLayout.animate().alpha(1.0f).setDuration(150L).start();
-                }
-                if (radialProgressView.getAlpha() == 1.0f) {
-                    radialProgressView.animate().cancel();
-                    radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new of0(pf0Var, i17));
-                }
-                if (ebVar.getAlpha() == 1.0f) {
-                    ebVar.animate().cancel();
-                    ebVar.animate().alpha(0.0f).setDuration(150L).setListener(new of0(pf0Var, i16));
-                }
-                if (i18 != 2) {
-                    if (i18 != 5) {
-                        if (i18 != 150) {
-                            if (i18 == 100) {
-                                textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorNotFound));
-                                break;
-                            } else if (i18 != 101) {
+                i12++;
+                float[] fArr4 = fArr2;
+                fArr2 = fArr;
+                fArr = fArr4;
+            }
+        }
+        int i15 = 0;
+        while (i15 < i10) {
+            float f20 = (i15 / i10) + fArr3[i15];
+            float floor = (f20 - ((float) Math.floor(f20))) * this.p;
+            float f21 = this.m;
+            float[] fArr5 = this.z;
+            if (floor < f21) {
+                fArr5[c12] = (-this.k) + floor;
+                fArr5[1] = -this.i;
+                fArr5[c13] = 1.0f;
+                fArr5[3] = 0.0f;
+                c10 = 0;
+                c11 = 2;
+            } else {
+                float f22 = floor - f21;
+                float f23 = this.o;
+                c10 = 0;
+                float f24 = this.c;
+                if (f22 < f23) {
+                    c11 = 2;
+                    a(this.k, -this.l, (f22 / (f24 * this.j)) - 1.5707964f, fArr5);
+                } else {
+                    c11 = 2;
+                    float f25 = f22 - f23;
+                    float f26 = this.n;
+                    if (f25 < f26) {
+                        fArr5[0] = this.h;
+                        fArr5[1] = (-this.l) + f25;
+                        fArr5[2] = 0.0f;
+                        fArr5[3] = 1.0f;
+                    } else {
+                        float f27 = f25 - f26;
+                        if (f27 < f23) {
+                            a(this.k, this.l, f27 / (f24 * this.j), fArr5);
+                        } else {
+                            float f28 = f27 - f23;
+                            if (f28 < f21) {
+                                fArr5[0] = this.k - f28;
+                                fArr5[1] = this.i;
+                                fArr5[2] = -1.0f;
+                                fArr5[3] = 0.0f;
+                            } else {
+                                float f29 = f28 - f21;
+                                if (f29 < f23) {
+                                    a(-this.k, this.l, (f29 / (f24 * this.j)) + 1.5707964f, fArr5);
+                                } else {
+                                    float f30 = f29 - f23;
+                                    if (f30 < f26) {
+                                        fArr5[0] = -this.h;
+                                        fArr5[1] = this.l - f30;
+                                        fArr5[2] = 0.0f;
+                                        fArr5[3] = -1.0f;
+                                    } else {
+                                        a(-this.k, -this.l, ((f30 - f26) / (f24 * this.j)) + 3.1415927f, fArr5);
+                                    }
+                                }
                             }
                         }
-                        textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorNotAvailableInApp));
-                        textView.setText(LocaleController.getString(R.string.YouTubeVideoErrorOpenExternal));
-                        textView.setVisibility(0);
-                        textView.setOnClickListener(new x70(pf0Var, 7));
-                        break;
-                    } else {
-                        textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorHTML));
-                        break;
-                    }
-                } else {
-                    textView2.setText(LocaleController.getString(R.string.YouTubeVideoErrorInvalid));
-                    break;
-                }
-                break;
-            case 6:
-                wi0 wi0Var = (wi0) obj;
-                wi0Var.V0 = false;
-                if (wi0Var.W0) {
-                    wi0Var.C(true);
-                    break;
-                } else {
-                    wi0Var.a1 = i18;
-                    wi0Var.I();
-                    wi0Var.x();
-                    break;
-                }
-            case 7:
-                ((zu0) obj).d1(i18);
-                break;
-            case 8:
-                ((st0) obj).h.scrollBy(0, i18);
-                break;
-            case 9:
-                zu0 zu0Var = ((rs0) obj).a;
-                org.telegram.ui.ActionBar.o2 o2Var = zu0Var.v1;
-                if (o2Var != null) {
-                    if (zu0Var.d1 instanceof TLRPC.TL_channelFull) {
-                        TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = zu0.d0(i18, true);
-                        tL_channels_setMainProfileTab.channel = o2Var.getMessagesController().getInputChannel(zu0Var.d1.id);
-                        TLRPC.ChatFull chatFull = zu0Var.d1;
-                        chatFull.flags2 |= TLObject.FLAG_22;
-                        chatFull.main_tab = tL_channels_setMainProfileTab.tab;
-                        tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
-                    } else {
-                        TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab d02 = zu0.d0(i18, true);
-                        tL_account_setMainProfileTab2.tab = d02;
-                        TLRPC.UserFull userFull = zu0Var.e1;
-                        tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
-                        if (userFull != null) {
-                            userFull.flags2 |= 1048576;
-                            userFull.main_tab = d02;
-                            o2Var.getMessagesStorage().updateUserInfo(zu0Var.e1, true);
-                            tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
-                        }
-                    }
-                    o2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    zu0Var.v1(true);
-                    break;
-                }
-                break;
-            case 10:
-                ((xw0) obj).l0(i18, 0);
-                break;
-            case 11:
-                h41 h41Var = (h41) obj;
-                h41Var.U();
-                h41Var.g0 = i18;
-                w31.I(h41Var.f0);
-                h41Var.V();
-                break;
-            case 12:
-                ((i81) obj).v.y0(i18);
-                break;
-            case 13:
-                d91 d91Var = (d91) obj;
-                h71 h71Var = d91Var.a;
-                if (i18 == -1) {
-                    if (h71Var.y()) {
-                        h71Var.B();
-                        d91Var.n();
-                    }
-                    d91Var.J = false;
-                    break;
-                } else if (i18 == 1) {
-                    if (d91Var.K) {
-                        d91Var.K = false;
-                        h71Var.C();
-                        break;
-                    }
-                } else if (i18 != -3 && i18 == -2 && h71Var.y()) {
-                    d91Var.K = true;
-                    h71Var.B();
-                    d91Var.n();
-                    break;
-                }
-                break;
-            case 14:
-                org.telegram.ui.k60 k60Var = (org.telegram.ui.k60) obj;
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    sharedInstance.setAudioOutput(i18);
-                    k60Var.y3 = Integer.valueOf(i18);
-                }
-                vc vcVar = new vc(k60Var.topBulletinContainer, new ai.a1());
-                Resources resources = k60Var.getContext().getResources();
-                if (i18 == 2) {
-                    i10 = R.drawable.msg_voice_bluetooth;
-                } else if (i18 == 0) {
-                    i10 = R.drawable.msg_voice_speaker;
-                } else {
-                    VoIPService sharedInstance2 = VoIPService.getSharedInstance();
-                    i10 = (sharedInstance2 == null || !sharedInstance2.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
-                }
-                vcVar.L(resources.getDrawable(i10).mutate(), org.telegram.ui.k60.g1(i18)).k(k60Var.n1());
-                break;
-            case 15:
-                org.telegram.ui.k60 k60Var2 = ((org.telegram.ui.n50) obj).b;
-                VoIPService sharedInstance3 = VoIPService.getSharedInstance();
-                if (sharedInstance3 != null) {
-                    sharedInstance3.setAudioOutput(i18);
-                    k60Var2.y3 = Integer.valueOf(i18);
-                }
-                vc vcVar2 = new vc(k60Var2.topBulletinContainer, new ai.a1());
-                Resources resources2 = k60Var2.getContext().getResources();
-                if (i18 == 2) {
-                    i11 = R.drawable.msg_voice_bluetooth;
-                } else if (i18 == 0) {
-                    i11 = R.drawable.msg_voice_speaker;
-                } else {
-                    VoIPService sharedInstance4 = VoIPService.getSharedInstance();
-                    i11 = (sharedInstance4 == null || !sharedInstance4.isHeadsetPlugged()) ? R.drawable.msg_voice_phone : R.drawable.msg_voice_headphones;
-                }
-                vcVar2.L(resources2.getDrawable(i11).mutate(), org.telegram.ui.k60.g1(i18)).k(k60Var2.n1());
-                break;
-            case 16:
-                org.telegram.ui.g70 g70Var = (org.telegram.ui.g70) obj;
-                AnimatorSet animatorSet = new AnimatorSet();
-                int childCount = g70Var.n.getChildCount();
-                for (int i19 = 0; i19 < childCount; i19++) {
-                    View childAt = g70Var.n.getChildAt(i19);
-                    g70Var.n.getClass();
-                    if (RecyclerView.S(childAt) >= i18) {
-                        childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(g70Var.n.getMeasuredHeight(), Math.max(0, childAt.getTop())) / g70Var.n.getMeasuredHeight()) * 100.0f);
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                        ofFloat.setStartDelay(min);
-                        ofFloat.setDuration(200L);
-                        animatorSet.playTogether(ofFloat);
                     }
                 }
-                animatorSet.start();
-                break;
-            case 17:
-                org.telegram.ui.kd0 kd0Var = (org.telegram.ui.kd0) obj;
-                kd0Var.Y.h1(0, -AndroidUtilities.dp(i18));
-                kd0Var.A0(false);
-                break;
-            case 18:
-                ((org.telegram.ui.ie0) obj).a.f[i18].l(1.0f);
-                break;
-            case 19:
-                NotificationsSettingsActivity notificationsSettingsActivity = (NotificationsSettingsActivity) obj;
-                notificationsSettingsActivity.V = true;
-                notificationsSettingsActivity.c.m(i18);
-                break;
-            case 20:
-                ((org.telegram.ui.hl0) obj).run(Integer.valueOf(i18));
-                break;
-            case 21:
-                ((org.telegram.ui.pp0) obj).e.p0.I.E(1 - i18);
-                break;
-            case 22:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                int i20 = i18 + 1;
-                if (i20 < 6 && (xu0Var = photoViewer.e0) != null) {
-                    xu0Var.invalidate();
-                    AndroidUtilities.runOnUIThread(new id(photoViewer, i20, 22), 100L);
-                    break;
-                }
-                break;
-            case 23:
-                ProfileActivity profileActivity = (ProfileActivity) obj;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(profileActivity.getParentActivity(), 0, profileActivity.z0);
-                String string = LocaleController.getString(R.string.ProfileNotesRemoveTitle);
-                org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-                c2Var.R = string;
-                c2Var.T = LocaleController.getString(R.string.ProfileNotesRemoveText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new i2.s(profileActivity, i18, 17));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.d(-1);
-                alertDialog$Builder.o();
-                break;
-            case 24:
-                org.telegram.ui.a11 a11Var = (org.telegram.ui.a11) obj;
-                org.telegram.ui.b11 b11Var = a11Var.h;
-                NotificationCenter notificationCenter = b11Var.e.getNotificationCenter();
-                ProfileActivity profileActivity2 = b11Var.e;
-                int i21 = NotificationCenter.newSuggestionsAvailable;
-                notificationCenter.removeObserver(profileActivity2, i21);
-                if (i18 == 2) {
-                    profileActivity2.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
-                    nf.f.s(a11Var.getContext(), profileActivity2.getMessagesController().premiumManageSubscriptionUrl);
-                } else {
-                    profileActivity2.getMessagesController().removeSuggestion(0L, i18 == 0 ? "VALIDATE_PHONE_NUMBER" : "VALIDATE_PASSWORD");
-                }
-                profileActivity2.getNotificationCenter().addObserver(profileActivity2, i21);
-                profileActivity2.e5(false, false);
-                break;
-            case 25:
-                org.telegram.ui.q21 q21Var = (org.telegram.ui.q21) obj;
-                AndroidUtilities.hideKeyboard(q21Var.d.findFocus());
-                while (true) {
-                    EditTextBoldCursor[] editTextBoldCursorArr = q21Var.a;
-                    if (i17 >= editTextBoldCursorArr.length) {
-                        break;
-                    } else {
-                        if (i17 != 0 && ((i18 != 3 || i17 != 4) && ((i18 != 2 || (i17 != 4 && i17 != 1)) && (i18 != 1 || (i17 != 1 && i17 != 2 && i17 != 3))))) {
-                            editTextBoldCursorArr[i17].setText((CharSequence) null);
-                        }
-                        i17++;
-                    }
-                }
-                break;
-            case 26:
-                org.telegram.ui.f31 f31Var = (org.telegram.ui.f31) obj;
-                s4.o0 layoutManager = f31Var.y.getLayoutManager();
-                if (layoutManager != null) {
-                    int min2 = f31Var.R ? i18 > f31Var.L ? Math.min(i18 + 1, f31Var.b.d.size() - 1) : Math.max(i18 - 1, 0) : i18;
-                    org.telegram.ui.c31 c31Var = f31Var.c;
-                    c31Var.a = min2;
-                    layoutManager.w0(c31Var);
-                }
-                f31Var.L = i18;
-                break;
-            case 27:
-                SessionsActivity sessionsActivity = (SessionsActivity) obj;
-                sessionsActivity.h.remove(i18);
-                sessionsActivity.m0();
-                org.telegram.ui.r81 r81Var = sessionsActivity.a;
-                if (r81Var != null) {
-                    r81Var.l();
-                    break;
-                }
-                break;
-            case 28:
-                ti1 ti1Var = (ti1) obj;
-                ti1Var.F.setSignalBarCount(i18);
-                if (i18 <= 1) {
-                    org.telegram.ui.Components.voip.c3 c3Var = ti1Var.v;
-                    if (c3Var.V != 3) {
-                        c3Var.V = 3;
-                        ValueAnimator ofInt = ValueAnimator.ofInt(c3Var.H, 255);
-                        c3Var.O = ofInt;
-                        ofInt.addUpdateListener(new org.telegram.ui.Components.voip.a3(c3Var, 2));
-                        c3Var.O.setDuration(500L);
-                        c3Var.O.start();
-                    }
-                    ti1Var.F.c(true);
-                    break;
-                } else {
-                    org.telegram.ui.Components.voip.c3 c3Var2 = ti1Var.v;
-                    if (c3Var2.V != 2) {
-                        c3Var2.V = 2;
-                        c3Var2.c();
-                        ValueAnimator valueAnimator = c3Var2.O;
-                        if (valueAnimator != null) {
-                            valueAnimator.removeAllUpdateListeners();
-                            c3Var2.O.cancel();
-                        }
-                        ValueAnimator ofInt2 = ValueAnimator.ofInt(c3Var2.H, 0);
-                        c3Var2.O = ofInt2;
-                        ofInt2.addUpdateListener(new org.telegram.ui.Components.voip.a3(c3Var2, 0));
-                        c3Var2.O.setDuration(500L);
-                        c3Var2.O.start();
-                    }
-                    ti1Var.F.c(false);
-                    break;
-                }
-            default:
-                qg.j jVar = (qg.j) obj;
-                jVar.L = i18;
-                jVar.K = true;
-                try {
-                    jVar.performHapticFeedback(3, 2);
-                } catch (Exception unused2) {
-                }
-                ValueAnimator valueAnimator2 = jVar.P;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                ValueAnimator valueAnimator3 = jVar.Q;
-                if (valueAnimator3 != null) {
-                    valueAnimator3.cancel();
-                }
-                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                jVar.P = duration;
-                duration.setInterpolator(qr.f);
-                jVar.P.addUpdateListener(new qg.f(jVar, i13));
-                jVar.P.addListener(new qg.g(jVar, i15));
-                jVar.P.start();
-                break;
+            }
+            float f31 = fArr5[3];
+            float f32 = -fArr5[c11];
+            float f33 = (fArr[i15] * B) + f15 + f11;
+            hdVar.q[i15] = (f31 * f33) + f7 + fArr5[c10];
+            hdVar.r[i15] = (f32 * f33) + f10 + fArr5[1];
+            hdVar.s[i15] = fArr5[c11];
+            hdVar.t[i15] = fArr5[3];
+            i15++;
+            c12 = 0;
+            c13 = 2;
         }
+        Path path = this.y;
+        path.rewind();
+        path.moveTo(hdVar.q[0], hdVar.r[0]);
+        int i16 = 0;
+        while (i16 < i10) {
+            int i17 = i16 + 1;
+            int i18 = i17 < i10 ? i17 : 0;
+            float[] fArr6 = hdVar.q;
+            float f34 = fArr6[i18] - fArr6[i16];
+            float[] fArr7 = hdVar.r;
+            float f35 = fArr7[i18] - fArr7[i16];
+            float sqrt = ((float) Math.sqrt((f35 * f35) + (f34 * f34))) / 3.0f;
+            float[] fArr8 = hdVar.q;
+            float f36 = fArr8[i16];
+            float[] fArr9 = hdVar.s;
+            float f37 = (fArr9[i16] * sqrt) + f36;
+            float[] fArr10 = hdVar.r;
+            float f38 = fArr10[i16];
+            float[] fArr11 = hdVar.t;
+            float f39 = (fArr11[i16] * sqrt) + f38;
+            float f40 = fArr8[i18];
+            float f41 = f40 - (fArr9[i18] * sqrt);
+            float f42 = fArr10[i18];
+            path.cubicTo(f37, f39, f41, f42 - (fArr11[i18] * sqrt), f40, f42);
+            i16 = i17;
+        }
+        path.close();
+        canvas.drawPath(path, hdVar.i);
+    }
+
+    public final float c() {
+        hd hdVar = this.q;
+        float f7 = hdVar.d;
+        float f10 = hdVar.f;
+        float f11 = this.e;
+        float f12 = (f10 * f11) + f7;
+        float f13 = hdVar.e;
+        float f14 = this.d;
+        float f15 = (f13 * f14) + f12;
+        hd hdVar2 = this.r;
+        return Math.max(f15, (f14 * hdVar2.e) + (f11 * hdVar2.f) + hdVar2.d);
+    }
+
+    public final void d(float f7) {
+        this.w = f7;
+        if (LiteMode.isEnabled(512)) {
+            float f10 = this.w - this.v;
+            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.h < 1.0f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
+        this.t = elapsedRealtime;
+        boolean isEnabled = LiteMode.isEnabled(512);
+        hd hdVar = this.r;
+        hd hdVar2 = this.q;
+        if (isEnabled && min > 0) {
+            float f7 = this.w;
+            float f10 = this.v;
+            if (f7 != f10) {
+                float f11 = this.x;
+                float f12 = (min * f11) + f10;
+                this.v = f12;
+                if (f11 > 0.0f) {
+                    if (f12 > f7) {
+                        this.v = f7;
+                    }
+                } else if (f12 < f7) {
+                    this.v = f7;
+                }
+            }
+            this.s = a4.a.e(min, this.f, 6.2831855f, this.s);
+            hdVar2.d(this.v);
+            hdVar.d(this.v);
+        }
+        float f13 = this.E;
+        if (f13 < 1.0f && min > 0) {
+            float f14 = (min / 250.0f) + f13;
+            this.E = f14;
+            if (f14 > 1.0f) {
+                this.E = 1.0f;
+            }
+            int d = i0.a.d(this.E, this.C, this.D);
+            this.B = d;
+            hdVar2.h = d;
+            hdVar.h = d;
+            hdVar2.a();
+            hdVar.a();
+        }
+        float exactCenterX = bounds.exactCenterX();
+        float exactCenterY = bounds.exactCenterY();
+        float f15 = 1.0f - (this.v * 0.7f);
+        float f16 = hdVar2.f;
+        float f17 = this.e;
+        float B = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s), 0.5f, 0.5f, f16 * f17 * f15);
+        float B2 = com.google.android.gms.internal.vision.e2.B((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f17 * hdVar.f * f15);
+        b(canvas, this.q, exactCenterX, exactCenterY, B);
+        b(canvas, this.r, exactCenterX, exactCenterY, B2);
+        if (this.E < 1.0f) {
+            invalidateSelf();
+        }
+    }
+
+    public final void e(int i10, boolean z10) {
+        if (i10 != this.A || this.E < 1.0f) {
+            this.A = i10;
+            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ih, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.jh, false)), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Zg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Xg, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Yg, false));
+            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
+                this.C = this.B;
+                this.D = w02;
+                this.E = 0.0f;
+            } else {
+                this.E = 1.0f;
+                this.B = w02;
+                hd hdVar = this.q;
+                hdVar.h = w02;
+                hd hdVar2 = this.r;
+                hdVar2.h = w02;
+                hdVar.a();
+                hdVar2.a();
+            }
+            invalidateSelf();
+        }
+    }
+
+    public final void f(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
+            return;
+        }
+        int callState = sharedInstance.getCallState();
+        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+            e(2, z10);
+            return;
+        }
+        ChatObject.Call call = sharedInstance.groupCall;
+        if (call == null) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+        } else {
+            sharedInstance.setMicMute(true, false, false);
+            e(3, z10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.G;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        if (getBounds().isEmpty()) {
+            return;
+        }
+        float c10 = c() + AndroidUtilities.dp(1.0f);
+        float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
+        if (c10 > min) {
+            c10 = Math.max(0.0f, min);
+        }
+        this.h = (r6.width() / 2.0f) - c10;
+        float height = (r6.height() / 2.0f) - c10;
+        this.i = height;
+        float f7 = this.h;
+        if (f7 < 1.0f || height < 1.0f) {
+            return;
+        }
+        float min2 = Math.min(this.a, Math.min(f7, height));
+        this.j = min2;
+        float f10 = this.h - min2;
+        this.k = f10;
+        float f11 = this.i - min2;
+        this.l = f11;
+        float f12 = f10 * 2.0f;
+        this.m = f12;
+        float f13 = f11 * 2.0f;
+        this.n = f13;
+        float f14 = this.c * 1.5707964f * min2;
+        this.o = f14;
+        float f15 = (f13 * 2.0f) + (f12 * 2.0f);
+        this.p = (f14 * 4.0f) + f15;
+        int max = Math.max(12, Math.min(80, Math.round(((min2 * 6.2831855f) + f15) / this.b)));
+        hd hdVar = this.q;
+        if (max != hdVar.x) {
+            hdVar.c(max);
+            this.r.c(max);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.G != i10) {
+            this.G = i10;
+            hd hdVar = this.q;
+            hdVar.y = i10;
+            hdVar.a();
+            hd hdVar2 = this.r;
+            hdVar2.y = i10;
+            hdVar2.a();
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.q.i.setColorFilter(colorFilter);
+        this.r.i.setColorFilter(colorFilter);
+        invalidateSelf();
     }
 }

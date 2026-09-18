@@ -22,11 +22,11 @@ import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import v7.p8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class q4 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
+public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, p9 {
     public final int[] E;
-    public final org.telegram.ui.ActionBar.f6 n;
+    public final org.telegram.ui.ActionBar.e6 n;
     public final Paint r;
     public final HorizontalScrollView s;
     public final ImageView v;
@@ -34,12 +34,12 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
     public int x;
     public a3 y;
 
-    public q4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+    public q4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.r = new Paint(1);
         this.x = 0;
         this.E = new int[4];
-        this.n = f6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         g(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         ImageView imageView = new ImageView(context);
@@ -53,7 +53,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
         horizontalScrollView.setPadding(0, 0, 0, 0);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
-        addView(horizontalScrollView, w7.x5.e(-1, -2, 16));
+        addView(horizontalScrollView, w7.y5.e(-1, -2, 16));
         e();
     }
 
@@ -69,12 +69,12 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.a6, p9 {
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.a6
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = j6.uf;
-        org.telegram.ui.ActionBar.f6 f6Var = this.n;
-        this.r.setColor(j6.v0(i10, f6Var));
-        this.x = j6.v0(j6.G6, f6Var);
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        this.r.setColor(j6.v0(i10, e6Var));
+        this.x = j6.v0(j6.G6, e6Var);
         this.v.setColorFilter(new PorterDuffColorFilter(this.x, PorterDuff.Mode.SRC_IN));
         invalidate();
     }

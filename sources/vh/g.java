@@ -13,17 +13,16 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.j50;
-import org.telegram.ui.t41;
+import org.telegram.ui.r41;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class g {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final t41 d;
+    public final r41 d;
     public final e e;
     public f f;
     public final int g;
@@ -34,19 +33,19 @@ public final class g {
     public int l = 0;
     public final d m = new d(this, 0);
 
-    public g(int i10, t41 t41Var, int i11, int i12) {
+    public g(int i10, r41 r41Var, int i11, int i12) {
         double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i10;
         this.g = i11;
         this.h = i12;
-        this.d = t41Var;
-        e eVar = new e(this, t41Var.getContext());
+        this.d = r41Var;
+        e eVar = new e(this, r41Var.getContext());
         this.e = eVar;
-        eVar.setSurfaceTextureListener(new j50(this, 4));
+        eVar.setSurfaceTextureListener(new ki.c(this, 5));
         eVar.setOpaque(false);
-        t41Var.addView(eVar);
+        r41Var.addView(eVar);
     }
 
     public static g d(int i10, View view, ViewGroup viewGroup) {
@@ -75,9 +74,9 @@ public final class g {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i10);
-            t41 t41Var = new t41(viewGroup.getContext(), 12);
-            viewGroup.addView(t41Var);
-            g gVar2 = new g(i10, t41Var, min, min);
+            r41 r41Var = new r41(viewGroup.getContext(), 12);
+            viewGroup.addView(r41Var);
+            g gVar2 = new g(i10, r41Var, min, min);
             hashMap.put(valueOf, gVar2);
             gVar = gVar2;
         }

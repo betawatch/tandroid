@@ -13,52 +13,52 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.iz;
+import org.telegram.ui.gz;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class pb extends kb {
-    public final zg.p0 I;
+    public final zg.o0 I;
     public final ob J;
-    public final zg.g0 K;
+    public final zg.f0 K;
     public final ImageReceiver L;
-    public final org.telegram.ui.Components.c6 M;
-    public final org.telegram.ui.Components.m6 N;
+    public final org.telegram.ui.Components.e6 M;
+    public final org.telegram.ui.Components.o6 N;
     public boolean O;
 
-    public pb(Context context, mb mbVar, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, iz izVar) {
+    public pb(Context context, mb mbVar, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, gz gzVar) {
         super(context, mbVar, tL_mediaAreaSuggestedReaction);
         TLRPC.TL_availableReaction tL_availableReaction;
         ArrayList arrayList;
         ob obVar = new ob(this);
         this.J = obVar;
-        zg.g0 g0Var = new zg.g0(this);
-        this.K = g0Var;
+        zg.f0 f0Var = new zg.f0(this);
+        this.K = f0Var;
         this.L = new ImageReceiver(this);
-        this.M = new org.telegram.ui.Components.c6(this);
-        this.N = new org.telegram.ui.Components.m6(false, false, false, false);
-        zg.p0 d = zg.p0.d(tL_mediaAreaSuggestedReaction.reaction);
+        this.M = new org.telegram.ui.Components.e6(this);
+        this.N = new org.telegram.ui.Components.o6(false, false, false, false);
+        zg.o0 d = zg.o0.d(tL_mediaAreaSuggestedReaction.reaction);
         this.I = d;
         if (tL_mediaAreaSuggestedReaction.flipped) {
             obVar.b(true, false);
         }
         obVar.c(getScaleX());
-        g0Var.e(d);
-        izVar.getClass();
+        f0Var.e(d);
+        gzVar.getClass();
         String str = d.f;
-        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.o5.f(izVar.b, d.g)) : str;
-        if (str != null && (arrayList = (ArrayList) izVar.e.get(str)) != null && !arrayList.isEmpty()) {
+        str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d.g)) : str;
+        if (str != null && (arrayList = (ArrayList) gzVar.e.get(str)) != null && !arrayList.isEmpty()) {
             int min = Math.min(1, arrayList.size());
             for (int i10 = 0; i10 < min; i10++) {
-                izVar.m((TLRPC.Document) arrayList.get(i10));
+                gzVar.m((TLRPC.Document) arrayList.get(i10));
             }
         }
         if (this.I.f != null && (tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(this.I.f)) != null) {
             this.L.setImage(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
         }
-        org.telegram.ui.Components.m6 m6Var = this.N;
-        m6Var.b = 17;
-        m6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        org.telegram.ui.Components.o6 o6Var = this.N;
+        o6Var.b = 17;
+        o6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         this.N.t(AndroidUtilities.dp(18.0f));
         this.N.G = AndroidUtilities.displaySize.x;
         if (tL_mediaAreaSuggestedReaction.dark) {
@@ -86,31 +86,31 @@ public final class pb extends kb {
         Rect rect = AndroidUtilities.rectTmp2;
         rect.set((int) centerX, (int) AndroidUtilities.lerp(centerY, f7, d), (int) centerX2, (int) AndroidUtilities.lerp(centerY2, f10, d));
         int i10 = obVar.a == 1 ? -1 : -16777216;
-        zg.g0 g0Var = this.K;
-        g0Var.d(i10);
-        g0Var.c(rect);
-        g0Var.a(canvas);
+        zg.f0 f0Var = this.K;
+        f0Var.d(i10);
+        f0Var.c(rect);
+        f0Var.a(canvas);
         float height2 = (obVar.getBounds().height() * 0.839f) + obVar.getBounds().top;
-        org.telegram.ui.Components.m6 m6Var = this.N;
-        m6Var.setBounds(obVar.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), obVar.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
+        org.telegram.ui.Components.o6 o6Var = this.N;
+        o6Var.setBounds(obVar.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), obVar.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
         canvas.save();
         canvas.scale(d, d, obVar.getBounds().centerX(), height2);
-        m6Var.draw(canvas);
+        o6Var.draw(canvas);
         canvas.restore();
     }
 
     public final void c(TL_stories.StoryViews storyViews, boolean z10) {
-        org.telegram.ui.Components.c6 c6Var = this.M;
+        org.telegram.ui.Components.e6 e6Var = this.M;
         if (storyViews != null) {
             for (int i10 = 0; i10 < storyViews.reactions.size(); i10++) {
-                if (zg.r0.d(storyViews.reactions.get(i10).reaction, this.I)) {
+                if (zg.q0.d(storyViews.reactions.get(i10).reaction, this.I)) {
                     boolean z11 = z10 && this.O;
                     this.O = storyViews.reactions.get(i10).count > 0;
                     this.N.q(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i10).count, 0), z11, true);
                     if (z10) {
                         return;
                     }
-                    c6Var.d(this.O ? 1.0f : 0.0f, true);
+                    e6Var.d(this.O ? 1.0f : 0.0f, true);
                     return;
                 }
             }
@@ -120,10 +120,10 @@ public final class pb extends kb {
         if (z10) {
             return;
         }
-        c6Var.d(this.O ? 1.0f : 0.0f, true);
+        e6Var.d(this.O ? 1.0f : 0.0f, true);
     }
 
-    public org.telegram.ui.Components.o5 getAnimatedEmojiDrawable() {
+    public org.telegram.ui.Components.q5 getAnimatedEmojiDrawable() {
         return this.K.b;
     }
 

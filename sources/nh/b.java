@@ -4,29 +4,29 @@ import android.content.Context;
 import android.os.Build;
 import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.qr;
-import yf.j0;
+import yf.k0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class b extends ci.d implements le.d {
     public final le.b h0;
-    public final f6 i0;
+    public final e6 i0;
 
-    public b(Context context, f6 f6Var) {
-        super(context, f6Var, true);
+    public b(Context context, e6 e6Var) {
+        super(context, e6Var, true);
         this.h0 = new le.b(0, this, qr.h, 320L, true);
-        this.i0 = f6Var;
+        this.i0 = e6Var;
         e();
-        setOutlineProvider(j0.b);
+        setOutlineProvider(k0.b);
     }
 
     @Override // le.d
     public final void D(int i10, float f7, float f10, e eVar) {
-        f6 f6Var = this.i0;
-        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
+        e6 e6Var = this.i0;
+        boolean a2 = e6Var != null ? e6Var.a() : j6.I.q();
         float f11 = this.h0.e;
         setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
         setColor(i0.a.d(f11, m(j6.d6), m(j6.Oh)));
@@ -43,8 +43,8 @@ public final class b extends ci.d implements le.d {
     }
 
     public final int m(int i10) {
-        f6 f6Var = this.i0;
-        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
+        e6 e6Var = this.i0;
+        return e6Var != null ? e6Var.G0(i10) : j6.w0(null, i10, false);
     }
 
     @Override // le.d

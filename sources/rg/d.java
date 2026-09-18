@@ -11,19 +11,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.messenger.wh;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.s3;
+import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.t41;
-import w7.x5;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.r41;
+import w7.y5;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class d extends ll0 {
-    public final f6 c;
+public final class d extends vl0 {
+    public final e6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
@@ -32,12 +32,12 @@ public final class d extends ll0 {
     public c r;
     public final boolean s;
 
-    public d(int i10, f6 f6Var) {
+    public d(int i10, e6 e6Var) {
         ArrayList arrayList = new ArrayList();
         this.f = arrayList;
         this.s = true;
-        this.c = f6Var;
-        z0 z0Var = new z0(j6.Lj, j6.Mj, j6.Nj, j6.Oj, f6Var);
+        this.c = e6Var;
+        z0 z0Var = new z0(j6.Lj, j6.Mj, j6.Nj, j6.Oj, e6Var);
         this.h = z0Var;
         z0Var.o = 0.0f;
         z0Var.p = 0.0f;
@@ -59,7 +59,7 @@ public final class d extends ll0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.vl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -91,40 +91,40 @@ public final class d extends ll0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.t41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.r41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [rg.f] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        s3 s3Var;
+        t3 t3Var;
         Context context = viewGroup.getContext();
-        f6 f6Var = this.c;
+        e6 e6Var = this.c;
         if (i10 != 1) {
             if (i10 != 2) {
-                ?? fVar = new f(context, f6Var);
+                ?? fVar = new f(context, e6Var);
                 fVar.c.setParentViewForGradien(this.r);
                 fVar.c.setStaticGradinet(this.h);
-                s3Var = fVar;
+                t3Var = fVar;
             } else {
-                s3Var = new s3(context, 16);
+                t3Var = new t3(context, 16);
             }
         } else if (this.s) {
-            ?? t41Var = new t41(context, 11);
-            LinearLayout f7 = wl.f(context, 0);
+            ?? r41Var = new r41(context, 11);
+            LinearLayout e = wh.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(a1.c(context.getDrawable(R.drawable.other_2x_large), a1.d().a));
-            f7.addView(imageView, x5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            e.addView(imageView, y5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(j6.v0(j6.G6, f6Var));
+            textView.setTextColor(j6.v0(j6.G6, e6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            f7.addView(textView, x5.e(-2, -2, 16));
-            t41Var.addView(f7, x5.e(-2, -2, 17));
-            s3Var = t41Var;
+            e.addView(textView, y5.e(-2, -2, 16));
+            r41Var.addView(e, y5.e(-2, -2, 17));
+            t3Var = r41Var;
         } else {
-            s3Var = new s3(context, 64);
+            t3Var = new t3(context, 64);
         }
-        return e2.k(s3Var, s3Var, -1, -2);
+        return e2.k(t3Var, t3Var, -1, -2);
     }
 }

@@ -1,31 +1,128 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class o60 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ q60 h;
+public final class o60 extends org.telegram.ui.Components.vl0 {
+    public ChatObject.Call c;
+    public final int d;
+    public ArrayList f;
+    public a40 h;
+    public final i60 n;
+    public final ArrayList e = new ArrayList();
+    public boolean r = false;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o60(q60 q60Var, Context context) {
-        super(context, true);
-        this.h = q60Var;
+    public o60(ChatObject.Call call, int i10, i60 i60Var) {
+        this.c = call;
+        this.d = i10;
+        this.n = i60Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        q60 q60Var = this.h;
-        if (!q60Var.r || getParticipant() == null) {
+    @Override // org.telegram.ui.Components.vl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    public final void E(org.telegram.ui.Components.voip.l lVar, boolean z10) {
+        if (z10 && lVar.getRenderer() == null) {
+            lVar.setRenderer(org.telegram.ui.Components.voip.u.c(this.f, this.h, null, null, lVar, lVar.getParticipant(), this.c, this.n));
+        } else {
+            if (z10 || lVar.getRenderer() == null) {
+                return;
+            }
+            lVar.getRenderer().setTabletGridView(null);
+            lVar.setRenderer(null);
+        }
+    }
+
+    public final int F() {
+        org.telegram.ui.Components.wl0 wl0Var = this.n.n2;
+        int size = this.e.size();
+        return size <= 1 ? wl0Var.getMeasuredHeight() : size <= 4 ? wl0Var.getMeasuredHeight() / 2 : (int) (wl0Var.getMeasuredHeight() / 2.5f);
+    }
+
+    public final void G(ArrayList arrayList, a40 a40Var) {
+        this.f = arrayList;
+        this.h = a40Var;
+    }
+
+    public final void H(org.telegram.ui.Components.wl0 wl0Var, boolean z10, boolean z11) {
+        this.r = z10;
+        if (z11) {
+            for (int i10 = 0; i10 < wl0Var.getChildCount(); i10++) {
+                View childAt = wl0Var.getChildAt(i10);
+                if (childAt instanceof org.telegram.ui.Components.voip.l) {
+                    org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) childAt;
+                    if (lVar.getParticipant() != null) {
+                        E(lVar, z10);
+                    }
+                }
+            }
+        }
+    }
+
+    public final void I(org.telegram.ui.Components.wl0 wl0Var, boolean z10) {
+        if (this.c == null) {
             return;
         }
-        q60Var.E(this, true);
+        ArrayList arrayList = this.e;
+        if (!z10) {
+            arrayList.clear();
+            arrayList.addAll(this.c.visibleVideoParticipants);
+            l();
+        } else {
+            ArrayList arrayList2 = new ArrayList();
+            arrayList2.addAll(arrayList);
+            arrayList.clear();
+            arrayList.addAll(this.c.visibleVideoParticipants);
+            s4.o.c(new n60(this, arrayList2), true).b(this);
+            AndroidUtilities.updateVisibleRows(wl0Var);
+        }
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.h.E(this, false);
+    @Override // s4.h0
+    public final int h() {
+        return this.e.size();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        org.telegram.ui.Components.voip.l lVar = (org.telegram.ui.Components.voip.l) c1Var.a;
+        ChatObject.VideoParticipant participant = lVar.getParticipant();
+        ArrayList arrayList = this.e;
+        ChatObject.VideoParticipant videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
+        TLRPC.GroupCallParticipant groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
+        int size = arrayList.size();
+        int i11 = 6;
+        if (size > 1 && size != 2 && (size != 3 || i10 == 0 || i10 == 1)) {
+            i11 = 3;
+        }
+        lVar.a = i11;
+        lVar.b = this;
+        if (lVar.getMeasuredHeight() != F()) {
+            lVar.requestLayout();
+        }
+        AccountInstance.getInstance(this.d);
+        MessageObject.getPeerId(this.c.selfPeer);
+        lVar.d = videoParticipant;
+        if (participant != null && !participant.equals(videoParticipant) && lVar.e && lVar.getRenderer() != null) {
+            E(lVar, false);
+            E(lVar, true);
+        } else if (lVar.getRenderer() != null) {
+            lVar.getRenderer().j(true);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.gl0(new m60(this, viewGroup.getContext()));
     }
 }

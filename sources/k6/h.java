@@ -4,41 +4,58 @@ import a3.k0;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
 import android.content.pm.Signature;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.Log;
-import b2.p;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import v0.p;
 import v7.w;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class h implements androidx.emoji2.text.k {
     public static h b;
     public final Context a;
 
-    public h(Context context, int i10) {
-        switch (i10) {
-            case 1:
-                this.a = context.getApplicationContext();
-                break;
-            case 2:
-                this.a = context.getApplicationContext();
-                break;
-            case 3:
-                this.a = context;
-                break;
-            default:
-                this.a = context.getApplicationContext();
-                break;
-        }
+    public /* synthetic */ h(Context context, short s10) {
+        this.a = context;
     }
 
-    public static h c(Context context) {
+    public static v0.j c(h hVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return hVar.f();
+        }
+        if (obj instanceof v0.n) {
+            for (p pVar : ((v0.n) obj).a) {
+            }
+        }
+        Context ctx = hVar.a;
+        kotlin.jvm.internal.i.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return hVar.f();
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            v0.l lVar = new v0.l(ctx);
+            v0.l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
+            return lVar2 == null ? hVar.f() : lVar2;
+        }
+        if (i10 <= 33) {
+            return hVar.f();
+        }
+        return null;
+    }
+
+    public static h d(Context context) {
         n6.l.h(context);
         synchronized (h.class) {
             try {
@@ -53,7 +70,7 @@ public final class h implements androidx.emoji2.text.k {
         return b;
     }
 
-    public static final l d(PackageInfo packageInfo, l... lVarArr) {
+    public static final l g(PackageInfo packageInfo, l... lVarArr) {
         Signature[] signatureArr = packageInfo.signatures;
         if (signatureArr != null) {
             if (signatureArr.length != 1) {
@@ -76,13 +93,13 @@ public final class h implements androidx.emoji2.text.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean e(PackageInfo packageInfo, boolean z10) {
+    public static final boolean h(PackageInfo packageInfo, boolean z10) {
         PackageInfo packageInfo2;
         if (z10) {
             if (packageInfo == null) {
                 packageInfo2 = null;
                 if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
+                    if ((!z10 ? g(packageInfo2, n.a) : g(packageInfo2, n.a[0])) == null) {
                         return true;
                     }
                 }
@@ -95,7 +112,7 @@ public final class h implements androidx.emoji2.text.k {
         }
         packageInfo2 = packageInfo;
         if (packageInfo != null) {
-            if ((!z10 ? d(packageInfo2, n.a) : d(packageInfo2, n.a[0])) == null) {
+            if ((!z10 ? g(packageInfo2, n.a) : g(packageInfo2, n.a[0])) == null) {
             }
         }
         return false;
@@ -108,7 +125,7 @@ public final class h implements androidx.emoji2.text.k {
         threadPoolExecutor.execute(new k0(this, wVar, threadPoolExecutor, 11));
     }
 
-    public void b(aa.a aVar, p pVar, a6.m mVar) {
+    public void b(aa.a aVar, b2.p pVar, a6.m mVar) {
         CancellationSignal cancellationSignal;
         FingerprintManager g10;
         if (pVar != null) {
@@ -132,5 +149,68 @@ public final class h implements androidx.emoji2.text.k {
             return;
         }
         e0.b.a(g10, e0.b.M(aVar), cancellationSignal, new k0.a(mVar));
+    }
+
+    public PackageInfo e(int i10, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i10);
+    }
+
+    public v0.j f() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        List m10 = hd.g.m(arrayList);
+        if (m10.isEmpty()) {
+            return null;
+        }
+        Iterator it = m10.iterator();
+        v0.j jVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                kotlin.jvm.internal.i.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                v0.j jVar2 = (v0.j) newInstance;
+                if (!jVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (jVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
+                    }
+                    jVar = jVar2;
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return jVar;
+    }
+
+    public h(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = context.getApplicationContext();
+                break;
+            case 2:
+                this.a = context.getApplicationContext();
+                break;
+            case 3:
+            default:
+                this.a = context.getApplicationContext();
+                break;
+            case 4:
+                kotlin.jvm.internal.i.e(context, "context");
+                this.a = context;
+                break;
+        }
     }
 }

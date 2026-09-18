@@ -1,66 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.webkit.JavascriptInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class yf0 extends org.telegram.ui.k4 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final class yf0 {
+    public final /* synthetic */ org.telegram.ui.iu0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yf0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public yf0(org.telegram.ui.iu0 iu0Var) {
+        this.a = iu0Var;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        MessageObject playingMessageObject;
-        switch (this.h) {
-            case 0:
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
-                if (view == pipRoundVideoView.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-                    pipRoundVideoView.E.set(AndroidUtilities.dpf2(1.5f), AndroidUtilities.dpf2(1.5f), getMeasuredWidth() - AndroidUtilities.dpf2(1.5f), getMeasuredHeight() - AndroidUtilities.dpf2(1.5f));
-                    canvas.drawArc(pipRoundVideoView.E, -90.0f, playingMessageObject.audioProgress * 360.0f, false, org.telegram.ui.ActionBar.j6.k2);
-                }
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
+    @JavascriptInterface
+    public void onPlayerError(String str) {
+        AndroidUtilities.runOnUIThread(new x2(this, Integer.parseInt(str), 7));
+    }
+
+    @JavascriptInterface
+    public void onPlayerLoaded() {
+        AndroidUtilities.runOnUIThread(new wf0(this, 0));
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyBufferedPosition(float f7) {
+        this.a.J = f7;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyCurrentPosition(int i10) {
+        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+    }
+
+    @JavascriptInterface
+    public void onPlayerNotifyDuration(int i10) {
+        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        org.telegram.ui.iu0 iu0Var = this.a;
+        iu0Var.H = i11;
+        String str = iu0Var.s;
+        if (str != null) {
+            zf0.a(iu0Var, str);
+            iu0Var.s = null;
         }
     }
 
-    @Override // org.telegram.ui.k4, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.h) {
-            case 1:
-                super.onMeasure(i10, i11);
-                d91 d91Var = (d91) this.n;
-                if (d91Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = d91Var.d.getLayoutParams();
-                    layoutParams.width = getMeasuredWidth();
-                    layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = d91Var.e;
-                    if (imageView != null) {
-                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
-                        layoutParams2.width = getMeasuredWidth();
-                        layoutParams2.height = getMeasuredHeight();
-                        break;
-                    }
+    @JavascriptInterface
+    public void onPlayerStateChange(String str) {
+        int parseInt = Integer.parseInt(str);
+        org.telegram.ui.iu0 iu0Var = this.a;
+        boolean z10 = iu0Var.G;
+        boolean z11 = false;
+        int i10 = 1;
+        iu0Var.G = parseInt == 1 || parseInt == 3;
+        iu0Var.b(z10);
+        if (parseInt != 0) {
+            if (parseInt == 1) {
+                z11 = true;
+            } else if (parseInt != 2) {
+                if (parseInt == 3) {
+                    z11 = true;
+                    i10 = 2;
                 }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+            }
+            i10 = 3;
+        } else {
+            i10 = 4;
         }
+        if (i10 == 3 && iu0Var.h.getVisibility() != 4) {
+            AndroidUtilities.runOnUIThread(new wf0(this, 1), 300L);
+        }
+        AndroidUtilities.runOnUIThread(new i2.f0(this, z11, i10, 1));
     }
 }

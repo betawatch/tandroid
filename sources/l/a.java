@@ -14,7 +14,7 @@ import android.view.SubMenu;
 import android.view.View;
 import v7.r8;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final class a implements l0.a {
     public CharSequence a;
@@ -35,12 +35,12 @@ public final class a implements l0.a {
     public int p;
 
     @Override // l0.a
-    public final l0.a a(n nVar) {
+    public final l0.a a(o oVar) {
         throw new UnsupportedOperationException();
     }
 
     @Override // l0.a
-    public final n b() {
+    public final o b() {
         return null;
     }
 

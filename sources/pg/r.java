@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final Paint a;
@@ -52,7 +52,7 @@ public final class r extends View {
 
     public final void b(float f7) {
         float dp = AndroidUtilities.dp(6.0f);
-        float a2 = w7.p.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
+        float a2 = w7.q.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
         int i10 = this.c;
         x xVar = this.e;
         xVar.m(i0.a.k(i10 != 1 ? i10 != 2 ? Color.argb(255, (int) (a2 * 255.0f), Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(255, Color.red(xVar.f), Color.green(xVar.f), (int) (a2 * 255.0f)) : Color.argb(255, Color.red(xVar.f), (int) (a2 * 255.0f), Color.blue(xVar.f)), Color.alpha(xVar.f)), 4);
@@ -75,7 +75,7 @@ public final class r extends View {
         float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
         float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * red) + dp) - strokeWidth);
         canvas.drawCircle(max, height, dp2, paint);
-        qg.l1.y1(max, height, strokeWidth, this.d, canvas);
+        qg.i1.y1(max, height, strokeWidth, this.d, canvas);
     }
 
     @Override // android.view.View

@@ -2,21 +2,21 @@ package yh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class q extends i51 {
+public final class q extends w51 {
     static {
-        i51.setup(new q());
+        w51.setup(new q());
     }
 
-    public static j51 a(String str, CharSequence charSequence, int i10) {
-        j51 J = j51.J(q.class);
+    public static x51 a(String str, CharSequence charSequence, int i10) {
+        x51 J = x51.J(q.class);
         J.b = false;
         J.z = i10;
         J.l = str;
@@ -24,13 +24,13 @@ public final class q extends i51 {
         return J;
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, j51 j51Var, boolean z10, x51 x51Var, f61 f61Var) {
-        ((r) view).a(j51Var.l, j51Var.m, j51Var.z);
+    @Override // org.telegram.ui.Components.w51
+    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
+        ((r) view).a(x51Var.l, x51Var.m, x51Var.z);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, ml0 ml0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new r(context, 0, f6Var);
+    @Override // org.telegram.ui.Components.w51
+    public final View createView(Context context, wl0 wl0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new r(context, 0, e6Var);
     }
 }

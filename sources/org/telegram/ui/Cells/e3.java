@@ -1,63 +1,89 @@
 package org.telegram.ui.Cells;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.bu;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.text.SpannableStringBuilder;
+import android.view.Menu;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.ju;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class e3 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bu b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ f3 d;
+public final class e3 extends ju {
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 V;
+    public final /* synthetic */ boolean W;
+    public final /* synthetic */ g3 a0;
 
-    public e3(f3 f3Var, int i10, bu buVar, boolean z10) {
-        this.d = f3Var;
-        this.a = i10;
-        this.b = buVar;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e3(g3 g3Var, Context context, bw0 bw0Var, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, bw0Var, null, 4, true, null);
+        this.a0 = g3Var;
+        this.V = e6Var;
+        this.W = z10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        f3 f3Var = this.d;
-        boolean z10 = f3Var.a;
-        int i10 = this.a;
-        if (!z10) {
-            if (i10 > 0 && editable != null && editable.length() > i10) {
-                f3Var.a = true;
-                CharSequence subSequence = editable.subSequence(0, i10);
-                bu buVar = this.b;
-                buVar.setText(subSequence);
-                buVar.setSelection(buVar.length());
-                f3Var.a = false;
-            }
-            f3Var.b();
-        }
-        if (this.c) {
-            while (true) {
-                int indexOf = editable.toString().indexOf("\n");
-                if (indexOf < 0) {
-                    break;
-                } else {
-                    editable.delete(indexOf, indexOf + 1);
-                }
-            }
-        }
-        org.telegram.ui.Components.m6 m6Var = f3Var.v;
-        if (m6Var == null || i10 <= 0) {
+    @Override // org.telegram.ui.Components.ju
+    public final boolean a() {
+        return this.a0.n && super.a();
+    }
+
+    @Override // org.telegram.ui.Components.ju
+    public final int h() {
+        return this.a0.a();
+    }
+
+    @Override // org.telegram.ui.Components.ju
+    public final void i(Menu menu) {
+        if (menu.findItem(R.id.menu_bold) != null) {
             return;
         }
-        m6Var.b();
-        f3Var.c();
+        if (Build.VERSION.SDK_INT >= 23) {
+            menu.removeItem(android.R.id.shareText);
+        }
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_spoiler, 6, LocaleController.getString(R.string.Spoiler));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
+        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 7, spannableStringBuilder);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
+        spannableStringBuilder2.setSpan(new u51(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 8, spannableStringBuilder2);
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
+        d11 d11Var = new d11();
+        d11Var.a |= 8;
+        spannableStringBuilder3.setSpan(new e11(d11Var, 0), 0, spannableStringBuilder3.length(), 33);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 9, spannableStringBuilder3);
+        menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 10, LocaleController.getString(R.string.Regular));
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(getPaddingLeft() + getScrollX(), 0, (getWidth() + getScrollX()) - getPaddingRight(), getHeight());
+        super.onDraw(canvas);
+        canvas.restore();
+        g3 g3Var = this.a0;
+        org.telegram.ui.Components.o6 o6Var = g3Var.v;
+        org.telegram.ui.Components.h5 h5Var = g3Var.r;
+        if (h5Var != null) {
+            o6Var.r(h5Var.a(org.telegram.ui.ActionBar.j6.v0(g3Var.s <= 0 ? org.telegram.ui.ActionBar.j6.p7 : org.telegram.ui.ActionBar.j6.P5, this.V), false));
+        }
+        int min = Math.min(AndroidUtilities.dp(48.0f), getHeight());
+        boolean z10 = this.W;
+        float f7 = z10 ? 0.0f : -AndroidUtilities.dp(1.0f);
+        o6Var.l(getScrollX(), (getHeight() + f7) - min, (getWidth() + getScrollX()) - AndroidUtilities.dp((z10 ? 0 : 44) + 12), f7 + getHeight());
+        o6Var.draw(canvas);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a0.v || super.verifyDrawable(drawable);
     }
 }

@@ -1,41 +1,137 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class vo extends ClickableSpan {
+public final /* synthetic */ class vo implements RequestDelegate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ ip b;
 
-    public /* synthetic */ vo(int i10) {
+    public /* synthetic */ vo(ip ipVar, int i10) {
         this.a = i10;
+        this.b = ipVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                nf.f.s(view.getContext(), "https://t.me/BotFather");
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new xo(this.b, 3));
+                    break;
+                }
                 break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
+            case 1:
+                final int i10 = 0;
+                final ip ipVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                ip ipVar2 = ipVar;
+                                if (z10) {
+                                    for (int i11 = 0; i11 < ipVar2.X.usernames.size(); i11++) {
+                                        TLRPC.TL_username tL_username = ipVar2.X.usernames.get(i11);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                ipVar2.t0 = false;
+                                AndroidUtilities.runOnUIThread(new xo(ipVar2, 4));
+                                break;
+                            default:
+                                ip ipVar3 = ipVar;
+                                ArrayList arrayList = ipVar3.f0;
+                                ipVar3.d0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && ipVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        ipVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(ipVar3.getParentActivity(), new zo(ipVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        ipVar3.x.addView(nVar, w7.y5.n(-1, 72));
+                                    }
+                                    ipVar3.b0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 2:
+                final int i11 = 1;
+                final ip ipVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yo
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                                ip ipVar22 = ipVar2;
+                                if (z10) {
+                                    for (int i112 = 0; i112 < ipVar22.X.usernames.size(); i112++) {
+                                        TLRPC.TL_username tL_username = ipVar22.X.usernames.get(i112);
+                                        if (tL_username != null && tL_username.active && !tL_username.editable) {
+                                            tL_username.active = false;
+                                        }
+                                    }
+                                }
+                                ipVar22.t0 = false;
+                                AndroidUtilities.runOnUIThread(new xo(ipVar22, 4));
+                                break;
+                            default:
+                                ip ipVar3 = ipVar2;
+                                ArrayList arrayList = ipVar3.f0;
+                                ipVar3.d0 = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && ipVar3.getParentActivity() != null) {
+                                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                                        ipVar3.h.removeView((View) arrayList.get(i12));
+                                    }
+                                    arrayList.clear();
+                                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
+                                    for (int i13 = 0; i13 < tL_messages_chats.chats.size(); i13++) {
+                                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(ipVar3.getParentActivity(), new zo(ipVar3, 0), false, 0);
+                                        TLRPC.Chat chat = tL_messages_chats.chats.get(i13);
+                                        boolean z11 = true;
+                                        if (i13 != tL_messages_chats.chats.size() - 1) {
+                                            z11 = false;
+                                        }
+                                        nVar.a(chat, z11);
+                                        arrayList.add(nVar);
+                                        ipVar3.x.addView(nVar, w7.y5.n(-1, 72));
+                                    }
+                                    ipVar3.b0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(-1);
+                AndroidUtilities.runOnUIThread(new qh(14, this.b, tL_error));
                 break;
         }
-    }
-
-    private final void a(View view) {
     }
 }

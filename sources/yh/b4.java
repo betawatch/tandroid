@@ -1,22 +1,45 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.h01;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ij0;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
-public final class b4 {
-    public final float a;
-    public final h01 b;
-    public final h01 c;
+public final /* synthetic */ class b4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c4 b;
 
-    public b4(float f7, String str, CharSequence charSequence) {
-        this.b = new h01(str, 12.0f, null);
-        this.c = new h01(charSequence, 12.0f, AndroidUtilities.bold());
-        this.a = (a() / 2.0f) + f7;
+    public /* synthetic */ b4(c4 c4Var, int i10) {
+        this.a = i10;
+        this.b = c4Var;
     }
 
-    public final float a() {
-        return Math.max(this.b.j(), this.c.j());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c4 c4Var = this.b;
+                c4Var.r = false;
+                c4Var.invalidate();
+                c4Var.a();
+                c4Var.c();
+                break;
+            case 1:
+                this.b.invalidate();
+                break;
+            default:
+                c4 c4Var2 = this.b;
+                c4Var2.setMessageCell(null);
+                ArrayList arrayList = c4Var2.J;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((ij0) obj).C(true);
+                }
+                arrayList.clear();
+                break;
+        }
     }
 }

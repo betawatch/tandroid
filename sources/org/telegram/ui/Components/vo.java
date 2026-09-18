@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final /* synthetic */ class vo implements View.OnClickListener {
                     mpVar.Y.C1();
                     jj jjVar = mpVar.Y.r0;
                     boolean z10 = mpVar.N;
-                    xa xaVar = jjVar.v;
-                    ((ArrayList) xaVar.e).clear();
-                    WallpapersListActivity.z0((ArrayList) xaVar.e, z10);
-                    xaVar.l();
+                    za zaVar = jjVar.v;
+                    ((ArrayList) zaVar.e).clear();
+                    WallpapersListActivity.z0((ArrayList) zaVar.e, z10);
+                    zaVar.l();
                     break;
                 }
             case 1:

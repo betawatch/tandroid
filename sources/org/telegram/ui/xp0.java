@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public final class xp0 extends Drawable {
     public static final /* synthetic */ int j = 0;
@@ -22,7 +22,7 @@ public final class xp0 extends Drawable {
     public final Paint f;
     public final Path g;
     public final Path h;
-    public final org.telegram.ui.Components.m5 i;
+    public final org.telegram.ui.Components.o5 i;
 
     public xp0(int i10, int i11, int i12) {
         Paint paint = new Paint(1);
@@ -96,24 +96,24 @@ public final class xp0 extends Drawable {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), this.f);
         }
         canvas.restore();
-        org.telegram.ui.Components.m5 m5Var = this.i;
-        if (m5Var != null) {
+        org.telegram.ui.Components.o5 o5Var = this.i;
+        if (o5Var != null) {
             int dp = AndroidUtilities.dp(14.0f) / 2;
-            m5Var.setBounds(getBounds().centerX() - dp, getBounds().centerY() - dp, getBounds().centerX() + dp, getBounds().centerY() + dp);
-            m5Var.draw(canvas);
+            o5Var.setBounds(getBounds().centerX() - dp, getBounds().centerY() - dp, getBounds().centerX() + dp, getBounds().centerY() + dp);
+            o5Var.draw(canvas);
         }
     }
 
     public final void e(View view) {
-        org.telegram.ui.Components.m5 m5Var = this.i;
+        org.telegram.ui.Components.o5 o5Var = this.i;
         if (view != null) {
-            if (m5Var != null) {
-                m5Var.l(view);
+            if (o5Var != null) {
+                o5Var.l(view);
             }
             view.addOnAttachStateChangeListener(new f5(this, 3));
-        } else if (m5Var != null) {
-            m5Var.b();
-            m5Var.l(null);
+        } else if (o5Var != null) {
+            o5Var.b();
+            o5Var.l(null);
         }
     }
 
@@ -156,9 +156,9 @@ public final class xp0 extends Drawable {
         paint2.setColor(i11);
         paint3.setColor(i12);
         d();
-        org.telegram.ui.Components.m5 m5Var = new org.telegram.ui.Components.m5(AndroidUtilities.dp(14.0f), null);
-        this.i = m5Var;
-        m5Var.j(j3, false);
+        org.telegram.ui.Components.o5 o5Var = new org.telegram.ui.Components.o5(AndroidUtilities.dp(14.0f), null);
+        this.i = o5Var;
+        o5Var.j(j3, false);
     }
 
     @Override // android.graphics.drawable.Drawable

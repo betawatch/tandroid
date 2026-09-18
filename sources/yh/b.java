@@ -4,13 +4,13 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wl;
-import org.telegram.ui.Components.oc;
+import org.telegram.messenger.wh;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.sb;
-import org.telegram.ui.Components.wb;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.yb;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class b implements Runnable {
                 gVar.R.setEnabled(gVar.P > 0 || gVar.G > currentTime);
                 if (currentTime >= gVar.G) {
                     gVar.R.f(null, true);
-                    gVar.R.g(y7.V0(false, gVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) gVar.P), gVar.T), true, true);
+                    gVar.R.g(v7.V0(false, gVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) gVar.P), gVar.T), true, true);
                     break;
                 } else {
                     gVar.R.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
@@ -45,11 +45,11 @@ public final /* synthetic */ class b implements Runnable {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) gVar.m0).append((CharSequence) g.j0(gVar.G - currentTime));
                     gVar.R.f(spannableStringBuilder, true);
-                    oc ocVar = gVar.a0;
-                    if (ocVar != null) {
-                        sb sbVar = ocVar.e;
-                        if ((sbVar instanceof wb) && sbVar.isAttachedToWindow()) {
-                            wl.p(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((wb) gVar.a0.e).b);
+                    qc qcVar = gVar.a0;
+                    if (qcVar != null) {
+                        ub ubVar = qcVar.e;
+                        if ((ubVar instanceof yb) && ubVar.isAttachedToWindow()) {
+                            wh.p(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((yb) gVar.a0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(bVar);

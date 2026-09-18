@@ -21,13 +21,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -46,7 +46,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+    /* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -137,7 +137,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         r7.c cVar = (r7.c) iVar;
         cVar.getClass();
         com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
-        e.c = new k2.u(eVar, 21);
+        e.c = new n2.e(eVar, 16);
         e.a = 2426;
         cVar.e(0, e.a()).addOnCompleteListener(new g4(aVar, 1));
     }
@@ -330,14 +330,14 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
             mainLooper = Looper.myLooper();
             n6.l.i(mainLooper, "invalid null looper");
         }
-        com.google.android.gms.common.api.internal.p o9 = xa.c.o(mainLooper, cVar, g8.c.class.getSimpleName());
-        androidx.activity.n nVar = new androidx.activity.n(cVar2, o9);
+        com.google.android.gms.common.api.internal.p t10 = xa.c.t(mainLooper, cVar, g8.c.class.getSimpleName());
+        androidx.activity.n nVar = new androidx.activity.n(cVar2, t10);
         o0.a aVar2 = new o0.a(14, nVar, locationRequest);
         r rVar = new r();
         rVar.b = true;
         rVar.c = aVar2;
         rVar.d = nVar;
-        rVar.e = o9;
+        rVar.e = t10;
         rVar.a = 2436;
         cVar2.b(rVar.a());
     }

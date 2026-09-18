@@ -8,19 +8,19 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.c6;
-import org.telegram.ui.Components.ik0;
+import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.qr;
+import org.telegram.ui.Components.sk0;
 import v7.z6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public int d;
-    public final c6 e;
+    public final e6 e;
     public boolean f;
     public final /* synthetic */ j h;
 
@@ -34,7 +34,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new c6(this, 0L, 250L, qr.h);
+        this.e = new e6(this, 0L, 250L, qr.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -55,7 +55,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        ik0 selectionBounds = jVar.getSelectionBounds();
+        sk0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;
@@ -185,7 +185,7 @@ public abstract class i extends FrameLayout {
                 if (getParent() instanceof d) {
                     ((d) getParent()).invalidate();
                 }
-                if (a11 == 3 && (jVar instanceof d2)) {
+                if (a11 == 3 && (jVar instanceof a2)) {
                     AndroidUtilities.runOnUIThread(eVar, ViewConfiguration.getLongPressTimeout());
                 }
                 z10 = true;

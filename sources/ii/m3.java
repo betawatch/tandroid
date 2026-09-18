@@ -8,22 +8,22 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.HashtagSearchController;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.jh0;
+import org.telegram.ui.Components.la0;
 import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.zg0;
-import org.telegram.ui.ai0;
-import org.telegram.ui.bo;
-import org.telegram.ui.fe;
-import org.telegram.ui.gr0;
-import org.telegram.ui.ir0;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.zr0;
+import org.telegram.ui.ee;
+import org.telegram.ui.fr0;
+import org.telegram.ui.hr0;
+import org.telegram.ui.nv;
 import org.telegram.ui.ov;
-import org.telegram.ui.pv;
-import org.telegram.ui.us;
-import org.telegram.ui.wy;
+import org.telegram.ui.ss;
+import org.telegram.ui.uy;
+import org.telegram.ui.zh0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -48,26 +48,26 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 5:
-                pv pvVar = (pv) this.c;
-                ov[] ovVarArr = pvVar.f;
+                ov ovVar = (ov) this.c;
+                nv[] nvVarArr = ovVar.f;
                 ((s4.s0) this.b).a(recyclerView, i10);
                 if (i10 != 1) {
-                    kVar = ((org.telegram.ui.ActionBar.o2) pvVar).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) ovVar).actionBar;
                     int i11 = (int) (-kVar.getTranslationY());
                     int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                     if (i11 != 0 && i11 != currentActionBarHeight) {
                         if (i11 >= currentActionBarHeight / 2) {
                             int i12 = currentActionBarHeight - i11;
-                            ovVarArr[0].d.w0(0, i12, null);
-                            ai.w0 w0Var = ovVarArr[0].e;
+                            nvVarArr[0].d.w0(0, i12, null);
+                            ai.w0 w0Var = nvVarArr[0].e;
                             if (w0Var != null) {
                                 w0Var.w0(0, i12, null);
                                 break;
                             }
                         } else {
                             int i13 = -i11;
-                            ovVarArr[0].d.w0(0, i13, null);
-                            ai.w0 w0Var2 = ovVarArr[0].e;
+                            nvVarArr[0].d.w0(0, i13, null);
+                            ai.w0 w0Var2 = nvVarArr[0].e;
                             if (w0Var2 != null) {
                                 w0Var2.w0(0, i13, null);
                                 break;
@@ -77,19 +77,19 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 7:
-                ir0 ir0Var = (ir0) this.c;
-                gr0[] gr0VarArr = ir0Var.n;
+                hr0 hr0Var = (hr0) this.c;
+                fr0[] fr0VarArr = hr0Var.n;
                 ((s4.s0) this.b).a(recyclerView, i10);
                 if (i10 != 1) {
-                    kVar2 = ((org.telegram.ui.ActionBar.o2) ir0Var).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) hr0Var).actionBar;
                     int i14 = (int) (-kVar2.getTranslationY());
                     int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                     if (i14 != 0 && i14 != currentActionBarHeight2) {
                         if (i14 >= currentActionBarHeight2 / 2) {
-                            gr0VarArr[0].d.w0(0, currentActionBarHeight2 - i14, null);
+                            fr0VarArr[0].d.w0(0, currentActionBarHeight2 - i14, null);
                             break;
                         } else {
-                            gr0VarArr[0].d.w0(0, -i14, null);
+                            fr0VarArr[0].d.w0(0, -i14, null);
                             break;
                         }
                     }
@@ -97,7 +97,7 @@ public final class m3 extends s4.s0 {
                 break;
             case 8:
                 ((s4.s0) this.b).a(recyclerView, i10);
-                ((ca0) this.c).D.getClass();
+                ((la0) this.c).D.getClass();
                 break;
         }
     }
@@ -126,10 +126,10 @@ public final class m3 extends s4.s0 {
                 }
                 break;
             case 1:
-                f61 f61Var = ((fe) this.c).a;
-                if (f61Var.canScrollVertically(1)) {
-                    for (int i14 = 0; i14 < f61Var.getChildCount(); i14++) {
-                        if (!(f61Var.getChildAt(i14) instanceof t00)) {
+                t61 t61Var = ((ee) this.c).a;
+                if (t61Var.canScrollVertically(1)) {
+                    for (int i14 = 0; i14 < t61Var.getChildCount(); i14++) {
+                        if (!(t61Var.getChildAt(i14) instanceof t00)) {
                         }
                     }
                     break;
@@ -137,70 +137,70 @@ public final class m3 extends s4.s0 {
                 ((n8) this.b).run();
                 break;
             case 2:
-                bo boVar = (bo) this.c;
-                bo boVar2 = boVar.da;
-                if (boVar2 == null) {
-                    boVar2 = boVar;
+                zn znVar = (zn) this.c;
+                zn znVar2 = znVar.da;
+                if (znVar2 == null) {
+                    znVar2 = znVar;
                 }
                 if (i11 != 0) {
-                    boVar.q9(1);
+                    znVar.q9(1);
                 }
-                if (Build.VERSION.SDK_INT >= 31 && (iVar = boVar2.F) != null) {
+                if (Build.VERSION.SDK_INT >= 31 && (iVar = znVar2.F) != null) {
                     iVar.f(i10, i11);
                 }
                 if (recyclerView.getScrollState() == 1) {
-                    AndroidUtilities.hideKeyboard(boVar.X0);
+                    AndroidUtilities.hideKeyboard(znVar.X0);
                 }
                 int N0 = ((s4.c0) this.b).N0();
-                if ((N0 == -1 ? 0 : N0) > 0 && N0 > boVar.M3.h - 5) {
-                    if (boVar.R3 != 7) {
-                        boVar.getMediaDataController().loadMoreSearchMessages(true);
+                if ((N0 == -1 ? 0 : N0) > 0 && N0 > znVar.M3.h - 5) {
+                    if (znVar.R3 != 7) {
+                        znVar.getMediaDataController().loadMoreSearchMessages(true);
                         break;
-                    } else if (!boVar.G6 && !boVar.C6[0]) {
-                        boVar.G6 = true;
-                        boVar.h6.add(Integer.valueOf(boVar.V5));
-                        i12 = ((org.telegram.ui.ActionBar.o2) boVar).currentAccount;
+                    } else if (!znVar.G6 && !znVar.C6[0]) {
+                        znVar.G6 = true;
+                        znVar.h6.add(Integer.valueOf(znVar.V5));
+                        i12 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
                         HashtagSearchController hashtagSearchController = HashtagSearchController.getInstance(i12);
-                        String str = boVar.u3;
-                        i13 = ((org.telegram.ui.ActionBar.o2) boVar).classGuid;
-                        int i15 = boVar.O3;
-                        int i16 = boVar.V5;
-                        boVar.V5 = i16 + 1;
+                        String str = znVar.u3;
+                        i13 = ((org.telegram.ui.ActionBar.n2) znVar).classGuid;
+                        int i15 = znVar.O3;
+                        int i16 = znVar.V5;
+                        znVar.V5 = i16 + 1;
                         hashtagSearchController.searchHashtag(str, i13, i15, i16);
                         break;
                     }
                 }
                 break;
             case 3:
-                wy wyVar = (wy) this.b;
-                zg0 zg0Var = (zg0) this.c;
-                f61 f61Var2 = zg0Var.c;
-                if (!(TextUtils.isEmpty(zg0Var.w) ? zg0Var.e : zg0Var.n).isEmpty()) {
-                    if (f61Var2.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < f61Var2.getChildCount(); i17++) {
-                            if (!(f61Var2.getChildAt(i17) instanceof t00)) {
+                uy uyVar = (uy) this.b;
+                jh0 jh0Var = (jh0) this.c;
+                t61 t61Var2 = jh0Var.c;
+                if (!(TextUtils.isEmpty(jh0Var.w) ? jh0Var.e : jh0Var.n).isEmpty()) {
+                    if (t61Var2.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < t61Var2.getChildCount(); i17++) {
+                            if (!(t61Var2.getChildAt(i17) instanceof t00)) {
                             }
                         }
                     }
-                    zg0Var.a(false);
+                    jh0Var.a(false);
                 }
-                if (f61Var2.K1 && !zg0Var.Q && wyVar.getParentActivity() != null) {
-                    AndroidUtilities.hideKeyboard(wyVar.getParentActivity().getCurrentFocus());
+                if (t61Var2.K1 && !jh0Var.Q && uyVar.getParentActivity() != null) {
+                    AndroidUtilities.hideKeyboard(uyVar.getParentActivity().getCurrentFocus());
                     break;
                 }
                 break;
             case 4:
-                if (((us) this.c).W.K1) {
+                if (((ss) this.c).W.K1) {
                     AndroidUtilities.hideKeyboard((FrameLayout) this.b);
                     break;
                 }
                 break;
             case 5:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                pv pvVar = (pv) this.c;
-                ov ovVar = pvVar.f[0];
-                if (recyclerView == ovVar.d || recyclerView == ovVar.e) {
-                    kVar = ((org.telegram.ui.ActionBar.o2) pvVar).actionBar;
+                ov ovVar = (ov) this.c;
+                nv nvVar = ovVar.f[0];
+                if (recyclerView == nvVar.d || recyclerView == nvVar.e) {
+                    kVar = ((org.telegram.ui.ActionBar.n2) ovVar).actionBar;
                     float translationY = kVar.getTranslationY();
                     float f7 = translationY - i11;
                     if (f7 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
@@ -209,25 +209,25 @@ public final class m3 extends s4.s0 {
                         f7 = 0.0f;
                     }
                     if (f7 != translationY) {
-                        pv.j0(pvVar, f7);
+                        ov.j0(ovVar, f7);
                         break;
                     }
                 }
                 break;
             case 6:
-                ai0 ai0Var = (ai0) this.c;
-                if (ai0Var.b0 && !ai0Var.W) {
-                    if (ai0Var.X - ((gg.b0) this.b).N0() < 10) {
-                        ai0Var.d0(true);
+                zh0 zh0Var = (zh0) this.c;
+                if (zh0Var.b0 && !zh0Var.W) {
+                    if (zh0Var.X - ((gg.b0) this.b).N0() < 10) {
+                        zh0Var.d0(true);
                         break;
                     }
                 }
                 break;
             case 7:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                ir0 ir0Var = (ir0) this.c;
-                if (recyclerView == ir0Var.n[0].d) {
-                    kVar2 = ((org.telegram.ui.ActionBar.o2) ir0Var).actionBar;
+                hr0 hr0Var = (hr0) this.c;
+                if (recyclerView == hr0Var.n[0].d) {
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) hr0Var).actionBar;
                     float translationY2 = kVar2.getTranslationY();
                     float f10 = translationY2 - i11;
                     if (f10 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
@@ -236,28 +236,28 @@ public final class m3 extends s4.s0 {
                         f10 = 0.0f;
                     }
                     if (f10 != translationY2) {
-                        ir0.g0(ir0Var, f10);
+                        hr0.g0(hr0Var, f10);
                         break;
                     }
                 }
                 break;
             case 8:
                 ((s4.s0) this.b).b(recyclerView, i10, i11);
-                ((ca0) this.c).D.b(recyclerView, i10, i11);
+                ((la0) this.c).D.b(recyclerView, i10, i11);
                 break;
             default:
-                xh.n2 n2Var = (xh.n2) this.c;
-                xh.i2 i2Var = n2Var.f;
-                if (n2Var.isAttachedToWindow()) {
-                    if (i2Var.canScrollVertically(1)) {
-                        for (int i18 = 0; i18 < i2Var.getChildCount(); i18++) {
-                            if (!(i2Var.getChildAt(i18) instanceof t00)) {
+                xh.o2 o2Var = (xh.o2) this.c;
+                xh.j2 j2Var = o2Var.f;
+                if (o2Var.isAttachedToWindow()) {
+                    if (j2Var.canScrollVertically(1)) {
+                        for (int i18 = 0; i18 < j2Var.getChildCount(); i18++) {
+                            if (!(j2Var.getChildAt(i18) instanceof t00)) {
                             }
                         }
                     }
-                    n2Var.e.a();
+                    o2Var.e.a();
                 }
-                ((or0) this.b).o();
+                ((zr0) this.b).o();
                 break;
         }
     }

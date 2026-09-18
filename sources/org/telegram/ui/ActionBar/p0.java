@@ -1,36 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.transition.Transition;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes3.dex */
-public final class p0 implements Transition.TransitionListener {
-    public final /* synthetic */ w0 a;
+public final class p0 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ v0 b;
 
-    public p0(w0 w0Var) {
-        this.a = w0Var;
+    public p0(v0 v0Var, float f7) {
+        this.b = v0Var;
+        this.a = f7;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-        this.a.i0.unlock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.i0.unlock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
-        this.a.i0.lock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        v0 v0Var = this.b;
+        v0Var.e.getViewTreeObserver().removeOnPreDrawListener(this);
+        float x10 = v0Var.e.getX();
+        float f7 = this.a;
+        if (x10 != f7) {
+            ci.h2 h2Var = v0Var.e;
+            h2Var.setTranslationX(f7 - h2Var.getX());
+        }
+        v0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(qr.f).start();
+        return true;
     }
 }

@@ -20,11 +20,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qr;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
-    public n5 F;
+    public l5 F;
     public final ArrayList G;
     public final ArrayList H;
     public final HashSet I;
@@ -45,12 +45,12 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     public float v;
     public float w;
     public float x;
-    public final org.telegram.ui.Components.c6 y;
+    public final org.telegram.ui.Components.e6 y;
 
     public g0(Context context, int i10, long j3, org.telegram.ui.j0 j0Var) {
         super(context);
         this.d = true;
-        this.y = new org.telegram.ui.Components.c6(this, 0L, 350L, qr.h);
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, qr.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();
@@ -76,7 +76,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     */
     public final void a() {
         TLRPC.EmojiStatus emojiStatus;
-        n5 G;
+        l5 G;
         boolean z10;
         int i10;
         ArrayList arrayList;
@@ -105,7 +105,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i14 = 0;
-                G = v5.y(i13, false).G(j3, true);
+                G = t5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                     for (int i15 = 0; i15 < this.F.l.size(); i15++) {
@@ -165,13 +165,13 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                             paint.setShader(f0Var6.h);
                             TLRPC.Document document = f0Var6.b;
                             if (document != null) {
-                                f0Var6.j = org.telegram.ui.Components.o5.m(i13, i14, document);
+                                f0Var6.j = org.telegram.ui.Components.q5.m(i13, i14, document);
                             } else {
-                                f0Var6.j = org.telegram.ui.Components.o5.n(i13, f0Var6.c, null, i14);
+                                f0Var6.j = org.telegram.ui.Components.q5.n(i13, f0Var6.c, null, i14);
                             }
-                            org.telegram.ui.Components.c6 c6Var = new org.telegram.ui.Components.c6(this, 0L, 320L, (TimeInterpolator) null);
-                            f0Var6.k = c6Var;
-                            c6Var.d(0.0f, true);
+                            org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(this, 0L, 320L, (TimeInterpolator) null);
+                            f0Var6.k = e6Var;
+                            e6Var.d(0.0f, true);
                             if (isAttachedToWindow()) {
                                 f0Var6.j.a(this);
                             }
@@ -238,7 +238,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i142 = 0;
-            G = v5.y(i13, false).G(j3, true);
+            G = t5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1422 = 0;
-                G = v5.y(i13, false).G(j3, true);
+                G = t5.y(i13, false).G(j3, true);
                 this.F = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i14222 = 0;
-            G = v5.y(i13, false).G(j3, true);
+            G = t5.y(i13, false).G(j3, true);
             this.F = G;
             if (G != null) {
             }
@@ -371,7 +371,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
             float d = f0Var2.k.d(f12, z10);
             float lerp = AndroidUtilities.lerp(0.5f, f12, d);
             int i11 = i10;
-            float A = org.telegram.messenger.w1.A(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
+            float A = org.telegram.messenger.q.A(f12, g0Var.n, (f12 - g0Var.e) * d, clamp012);
             int i12 = f0Var2.g;
             float f19 = 1.6f;
             if (i12 != 0) {

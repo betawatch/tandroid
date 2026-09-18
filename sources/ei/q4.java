@@ -20,14 +20,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.jb;
+import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.vc;
 import org.telegram.ui.Components.vi;
-import org.telegram.ui.bo;
-import org.telegram.ui.d41;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.b41;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes4.dex */
 public final class q4 extends ni implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -36,9 +36,9 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
     public boolean H;
     public k4 I;
     public a3 J;
-    public org.telegram.ui.ActionBar.w0 K;
-    public org.telegram.ui.ActionBar.g1 L;
-    public org.telegram.ui.ActionBar.g1 M;
+    public org.telegram.ui.ActionBar.v0 K;
+    public org.telegram.ui.ActionBar.f1 L;
+    public org.telegram.ui.ActionBar.f1 M;
     public int N;
     public boolean O;
     public boolean P;
@@ -73,9 +73,9 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         if (j4Var.getWebView() != null) {
             j4Var.getWebView().scrollTo(0, 0);
         }
-        org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
-        if (o2Var != null) {
-            j4Var.setParentActivity(o2Var.getParentActivity());
+        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
+        if (n2Var != null) {
+            j4Var.setParentActivity(n2Var.getParentActivity());
         }
         this.K.setVisibility(0);
         if (j4Var.R) {
@@ -111,16 +111,16 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         alertDialog$Builder.a.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
         alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new i4(this));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
-        c2Var.show();
-        ((TextView) c2Var.d(-1)).setTextColor(j6.v0(j6.q7, this.a));
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        b2Var.show();
+        ((TextView) b2Var.d(-1)).setTextColor(j6.v0(j6.q7, this.a));
         return false;
     }
 
     public final void L() {
         vi viVar = this.b;
-        org.telegram.ui.ActionBar.o2 o2Var = viVar.f0;
-        if ((o2Var instanceof bo) && ((bo) o2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
+        org.telegram.ui.ActionBar.n2 n2Var = viVar.f0;
+        if ((n2Var instanceof zn) && ((zn) n2Var).X0.R() > AndroidUtilities.dp(20.0f)) {
             AndroidUtilities.hideKeyboard(viVar.f0.getFragmentView());
             AndroidUtilities.runOnUIThread(new g4(this, 1), 250L);
         } else {
@@ -214,13 +214,13 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
     public final void m() {
         NotificationCenter.getInstance(this.F).removeObserver(this, NotificationCenter.webViewResultSent);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewTheme);
-        org.telegram.ui.ActionBar.a0 n10 = this.b.X0.n();
-        org.telegram.ui.ActionBar.w0 w0Var = this.K;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = w0Var.b;
+        org.telegram.ui.ActionBar.z n10 = this.b.X0.n();
+        org.telegram.ui.ActionBar.v0 v0Var = this.K;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = v0Var.b;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
             actionBarPopupWindow$ActionBarPopupWindowLayout.d();
         }
-        n10.removeView(w0Var);
+        n10.removeView(v0Var);
         this.n.i();
         this.T = true;
         AndroidUtilities.cancelRunOnUIThread(this.U);
@@ -322,7 +322,7 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
         if (i10 == i11) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.v);
-            viVar.f0.presentFragment(new bo(bundle));
+            viVar.f0.presentFragment(new zn(bundle));
             viVar.dismiss();
             return;
         }
@@ -370,10 +370,10 @@ public final class q4 extends ni implements NotificationCenter.NotificationCente
             if (i10 == R.id.menu_report_bot) {
                 int i13 = this.F;
                 Context context = getContext();
-                vc vcVar = new vc(jb.a(getContext()), this.a);
+                xc xcVar = new xc(lb.a(getContext()), this.a);
                 long j3 = this.v;
-                int i14 = d41.v;
-                d41.K(i13, context, j3, false, false, new ArrayList(), vcVar, null, new byte[0], null, null);
+                int i14 = b41.v;
+                b41.K(i13, context, j3, false, false, new ArrayList(), xcVar, null, new byte[0], null, null);
             }
         }
     }

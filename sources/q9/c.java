@@ -3,9 +3,8 @@ package q9;
 import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import java.lang.reflect.InvocationTargetException;
-import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-d78a0c589da3eb5af18b0124af787db3a92715981032555471643c0389950a57 */
+/* compiled from: r8-map-id-c0e607070f32dbde65005355ff6c489b77f9395a3e0f8720848e2402860dea84 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements pa.b {
     public final /* synthetic */ int a;
@@ -35,9 +34,9 @@ public final /* synthetic */ class c implements pa.b {
                 } catch (InstantiationException e7) {
                     throw new m(a4.a.p("Could not instantiate ", str, "."), e7);
                 } catch (NoSuchMethodException e10) {
-                    throw new m(p6.i("Could not instantiate ", str), e10);
+                    throw new m(t8.b.i("Could not instantiate ", str), e10);
                 } catch (InvocationTargetException e11) {
-                    throw new m(p6.i("Could not instantiate ", str), e11);
+                    throw new m(t8.b.i("Could not instantiate ", str), e11);
                 }
             case 1:
                 return (ComponentRegistrar) this.b;
